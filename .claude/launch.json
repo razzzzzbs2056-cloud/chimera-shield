@@ -2,15 +2,15 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "ChimeraShield Frontend",
+      "name": "Next.js Frontend",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
     },
     {
-      "name": "ChimeraShield Backend",
-      "runtimeExecutable": "uvicorn",
-      "runtimeArgs": ["backend.main:app", "--reload", "--port", "8000"],
+      "name": "FastAPI Backend",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "uvicorn", "backend.main:app", "--reload", "--port", "8000"],
       "port": 8000
     }
   ]
