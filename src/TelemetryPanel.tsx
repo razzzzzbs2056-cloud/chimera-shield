@@ -366,7 +366,11 @@ export function TelemetryPanel({ fires }: { fires: number }) {
         </div>
       </div>
     </aside>
-    <ModuleDetail id={openId} color={openModule?.c} onClose={() => setOpenId(null)} />
+    <ModuleDetail
+      module={openModule ? { id: openModule.id, pct: openModule.pct, n: openModule.n, status: openModule.status } : null}
+      color={openModule?.c}
+      onClose={() => setOpenId(null)}
+    />
     </>
   );
 }

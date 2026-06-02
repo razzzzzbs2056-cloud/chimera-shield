@@ -11,10 +11,16 @@ export type Section = {
   bullets?: string[];
 };
 
+export type Stat = { label: string; value: string };
+
 export type Blueprint = {
   id: string;
   title: string;
   tagline: string;
+  /** one-line essence shown in the hero band */
+  essence?: string;
+  /** small header metrics */
+  stats?: Stat[];
   sections: Section[];
 };
 
