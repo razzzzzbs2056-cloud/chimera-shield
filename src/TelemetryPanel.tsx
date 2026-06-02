@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ModuleDetail } from "./ModuleDetail";
 
 const C = "#06EAF8";
 const V = "#7B61FF";
@@ -157,6 +158,7 @@ function EEGCanvas() {
 
 export function TelemetryPanel({ fires }: { fires: number }) {
   const [active, setActive] = useState("04");
+  const [openId, setOpenId] = useState<string | null>(null);
   const [streamIdx, setStreamIdx] = useState(0);
   const [coherence, setCoherence] = useState(94);
 
@@ -173,7 +175,10 @@ export function TelemetryPanel({ fires }: { fires: number }) {
     ...STREAM_EVENTS.slice(0, streamIdx),
   ];
 
+  const openModule = MODULES.find((m) => m.id === openId);
+
   return (
+    <>
     <aside className="relative z-20 flex h-screen w-[340px] shrink-0 flex-col border-l border-white/5 glass-panel">
       {/* Top header */}
       <div className="border-b border-white/5 px-5 py-4">
@@ -291,7 +296,7 @@ export function TelemetryPanel({ fires }: { fires: number }) {
         </PanelBlock>
 
         {/* Modules */}
-        <PanelBlock title="Module Cluster" badge="9 NODES" accent={V}>
+        <PanelBlock title="Module Cluster" badge="TAP TO OPEN" accent={V}>
           <div className="space-y-1 p-3">
             {MODULES.map((m) => {
               const isActive = active === m.id;
@@ -299,8 +304,11 @@ export function TelemetryPanel({ fires }: { fires: number }) {
               return (
                 <button
                   key={m.id}
-                  onClick={() => setActive(m.id)}
-                  className="group flex w-full flex-col gap-1.5 rounded-lg border p-2.5 text-left transition-all"
+                  onClick={() => {
+                    setActive(m.id);
+                    setOpenId(m.id);
+                  }}
+                  className="group flex w-full flex-col gap-1.5 rounded-lg border p-2.5 text-left transition-all hover:border-white/20"
                   style={{
                     borderColor: isActive ? `${m.c}50` : "rgba(255,255,255,0.05)",
                     background: isActive ? `${m.c}0A` : "rgba(255,255,255,0.01)",
@@ -312,7 +320,8 @@ export function TelemetryPanel({ fires }: { fires: number }) {
                       <span className="font-mono text-[8px] tracking-widest font-semibold" style={{ color: m.c }}>{m.id}</span>
                     </div>
                     <span className="flex-1 text-[10px] text-white/75 font-medium">{m.t}</span>
-                    <span className="font-mono text-[7.5px] tracking-widest text-white/30">{m.n.toLocaleString()}</span>
+                    <span className="font-mono text-[7.5px] tracking-widest text-white/30 group-hover:hidden">{m.n.toLocaleString()}</span>
+                    <span className="hidden font-mono text-[7.5px] tracking-widest group-hover:inline" style={{ color: m.c }}>OPEN ›</span>
                   </div>
                   <div className="flex h-0.5 overflow-hidden rounded-full w-full" style={{ background: "rgba(255,255,255,0.04)" }}>
                     <div
@@ -357,5 +366,7 @@ export function TelemetryPanel({ fires }: { fires: number }) {
         </div>
       </div>
     </aside>
+    <ModuleDetail id={openId} color={openModule?.c} onClose={() => setOpenId(null)} />
+    </>
   );
 }
