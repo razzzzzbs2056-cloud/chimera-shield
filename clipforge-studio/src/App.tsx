@@ -12,6 +12,13 @@ import {
   useReducedMotion,
   type Variants,
 } from 'framer-motion'
+import {
+  analyzeAudio,
+  findHighlights,
+  trimSilence,
+  type AudioAnalysis,
+} from './lib/audio'
+import { captionIdeas, transcribe } from './lib/aiClient'
 
 /* -------------------------------------------------------------------------- */
 /*  Types & constants                                                          */
@@ -311,6 +318,20 @@ export default function App() {
   const [captionPosition, setCaptionPosition] = useState<CaptionPosition>('bottom')
   const [captionSize, setCaptionSize] = useState(5)
 
+  // Smart auto-edit (in-browser audio analysis)
+  const [analysis, setAnalysis] = useState<AudioAnalysis | null>(null)
+  const [analyzing, setAnalyzing] = useState(false)
+  const [analyzeError, setAnalyzeError] = useState<string | null>(null)
+
+  // AI assist (optional hosted backend)
+  const [aiTopic, setAiTopic] = useState('')
+  const [aiIdeas, setAiIdeas] = useState<string[]>([])
+  const [aiBusy, setAiBusy] = useState(false)
+  const [aiNote, setAiNote] = useState<string | null>(null)
+  const [transcript, setTranscript] = useState('')
+  const [transcribing, setTranscribing] = useState(false)
+  const [transcribeError, setTranscribeError] = useState<string | null>(null)
+
   // Export
   const [isExporting, setIsExporting] = useState(false)
   const [exportProgress, setExportProgress] = useState(0)
@@ -319,6 +340,7 @@ export default function App() {
   const [exportHadAudio, setExportHadAudio] = useState(false)
 
   // Refs
+  const fileRef = useRef<File | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const rafRef = useRef<number>(0)
@@ -371,7 +393,14 @@ export default function App() {
           if (prev) URL.revokeObjectURL(prev)
           return url
         })
+        fileRef.current = file
         setFileName(file.name)
+        // Reset analysis/AI state for the new clip.
+        setAnalysis(null)
+        setAnalyzeError(null)
+        setTranscript('')
+        setAiIdeas([])
+        setAiNote(null)
       } catch {
         setUploadError('We could not read that file. Please try a different video.')
       }
@@ -455,6 +484,87 @@ export default function App() {
       previewingRef.current = false
       setUploadError('Playback was blocked. Tap the video controls to start it manually.')
     })
+  }, [])
+
+  /* --------------------------- Smart auto-edit --------------------------- */
+
+  const runAnalysis = useCallback(async (): Promise<AudioAnalysis | null> => {
+    const file = fileRef.current
+    if (!file) {
+      setAnalyzeError('Upload a video first.')
+      return null
+    }
+    if (analysis) return analysis
+    setAnalyzing(true)
+    setAnalyzeError(null)
+    try {
+      const result = await analyzeAudio(file)
+      setAnalysis(result)
+      return result
+    } catch {
+      setAnalyzeError(
+        'Could not analyze the audio. This file may have no decodable audio track — try an MP4 with sound.',
+      )
+      return null
+    } finally {
+      setAnalyzing(false)
+    }
+  }, [analysis])
+
+  const autoFindHighlights = useCallback(async () => {
+    const result = await runAnalysis()
+    if (!result) return
+    const ranges = findHighlights(result)
+    if (ranges.length) applyRange(ranges[0].start, ranges[0].end)
+  }, [runAnalysis, applyRange])
+
+  const autoTrimSilence = useCallback(async () => {
+    const result = await runAnalysis()
+    if (!result) return
+    const { start: s, end: e } = trimSilence(result)
+    applyRange(s, e)
+  }, [runAnalysis, applyRange])
+
+  const highlightRanges = useMemo(
+    () => (analysis ? findHighlights(analysis) : []),
+    [analysis],
+  )
+
+  /* ------------------------------ AI assist ------------------------------ */
+
+  const generateIdeas = useCallback(async () => {
+    setAiBusy(true)
+    setAiNote(null)
+    try {
+      const result = await captionIdeas({
+        topic: aiTopic || caption || fileName,
+        transcript,
+        platform: ASPECTS.find((a) => a.key === aspect)?.note ?? 'short-form',
+      })
+      setAiIdeas(result.ideas)
+      if (result.source === 'fallback') setAiNote(result.note ?? null)
+    } finally {
+      setAiBusy(false)
+    }
+  }, [aiTopic, caption, fileName, transcript, aspect])
+
+  const runTranscribe = useCallback(async () => {
+    const file = fileRef.current
+    if (!file) {
+      setTranscribeError('Upload a video first.')
+      return
+    }
+    setTranscribing(true)
+    setTranscribeError(null)
+    try {
+      const { text } = await transcribe(file)
+      setTranscript(text)
+      if (text.trim()) setCaption(text.trim().slice(0, 120))
+    } catch (err) {
+      setTranscribeError(err instanceof Error ? err.message : 'Transcription failed.')
+    } finally {
+      setTranscribing(false)
+    }
   }, [])
 
   /* --------------------------- Canvas drawing --------------------------- */
@@ -1135,6 +1245,82 @@ export default function App() {
                 </ControlCard>
               </Reveal>
 
+              {/* Smart auto-edit (in-browser audio analysis) */}
+              <Reveal delay={0.07}>
+                <ControlCard title="Smart auto-edit" badge="On-device AI">
+                  <p className="mb-3 text-xs text-slate-400">
+                    Analyzes your clip's audio right in the browser to find the loudest,
+                    most eventful moments — no upload, no account.
+                  </p>
+                  <div className="flex flex-col gap-2 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={autoFindHighlights}
+                      disabled={!videoUrl || analyzing}
+                      className="flex-1 rounded-xl bg-brand-gradient px-3 py-2.5 text-sm font-bold text-white shadow-glow transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      {analyzing ? 'Analyzing…' : '✨ Auto-find highlights'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={autoTrimSilence}
+                      disabled={!videoUrl || analyzing}
+                      className="flex-1 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:bg-white/[0.07] disabled:opacity-40"
+                    >
+                      ✂ Trim silence
+                    </button>
+                  </div>
+
+                  {/* Loudness waveform */}
+                  {analysis && (
+                    <div
+                      className="mt-4 flex h-14 items-end gap-px overflow-hidden rounded-lg bg-black/30 p-1"
+                      aria-hidden
+                    >
+                      {analysis.envelope
+                        .filter((_, i) => i % Math.ceil(analysis.envelope.length / 80) === 0)
+                        .map((v, i) => (
+                          <span
+                            key={i}
+                            className="flex-1 rounded-sm bg-gradient-to-t from-brand/50 to-accent"
+                            style={{ height: `${Math.max(4, v * 100)}%` }}
+                          />
+                        ))}
+                    </div>
+                  )}
+
+                  {/* Detected highlights */}
+                  {highlightRanges.length > 0 && (
+                    <div className="mt-3 grid gap-2">
+                      {highlightRanges.map((r, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => applyRange(r.start, r.end)}
+                          className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-left transition hover:border-brand/40 hover:bg-brand/10"
+                        >
+                          <span className="text-sm font-semibold text-white">
+                            Highlight {i + 1}
+                          </span>
+                          <span className="font-mono text-xs text-brand-soft">
+                            {formatTime(r.start)}–{formatTime(r.end)}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {analyzeError && (
+                    <p
+                      role="alert"
+                      className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm text-amber-200"
+                    >
+                      {analyzeError}
+                    </p>
+                  )}
+                </ControlCard>
+              </Reveal>
+
               {/* Aspect ratio */}
               <Reveal delay={0.1}>
                 <ControlCard title="Aspect ratio" badge="Crop">
@@ -1285,6 +1471,80 @@ export default function App() {
                         onChange={(e) => setCaptionSize(Number(e.target.value))}
                         aria-label="Caption size"
                       />
+                    </div>
+                  </div>
+                </ControlCard>
+              </Reveal>
+
+              {/* AI assist (optional hosted backend) */}
+              <Reveal delay={0.16}>
+                <ControlCard title="AI assist" badge="Optional · Claude">
+                  <p className="mb-3 text-xs text-slate-400">
+                    Optional cloud features. Without a backend the app still works — these
+                    just add Claude-written hooks and speech-to-text captions.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="ai-topic" className="mb-1.5 block text-sm font-medium text-slate-300">
+                        What's the clip about?
+                      </label>
+                      <input
+                        id="ai-topic"
+                        type="text"
+                        value={aiTopic}
+                        onChange={(e) => setAiTopic(e.target.value)}
+                        placeholder="e.g. a 3-step morning routine"
+                        className="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-brand/50 focus:outline-none"
+                      />
+                      <button
+                        type="button"
+                        onClick={generateIdeas}
+                        disabled={aiBusy}
+                        className="mt-2 w-full rounded-xl bg-brand-gradient px-4 py-2.5 text-sm font-bold text-white shadow-glow transition hover:brightness-110 disabled:opacity-50"
+                      >
+                        {aiBusy ? 'Thinking…' : '🪄 Generate caption ideas'}
+                      </button>
+                    </div>
+
+                    {aiIdeas.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {aiIdeas.map((idea) => (
+                          <button
+                            key={idea}
+                            type="button"
+                            onClick={() => setCaption(idea)}
+                            className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-slate-300 transition hover:border-brand/40 hover:bg-brand/10 hover:text-white"
+                          >
+                            {idea}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    {aiNote && <p className="text-xs text-slate-500">{aiNote}</p>}
+
+                    <div className="border-t border-white/5 pt-4">
+                      <button
+                        type="button"
+                        onClick={runTranscribe}
+                        disabled={!videoUrl || transcribing}
+                        className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-white/20 hover:bg-white/[0.07] disabled:opacity-40"
+                      >
+                        {transcribing ? 'Transcribing…' : '🎙 Transcribe audio → caption'}
+                      </button>
+                      {transcript && (
+                        <p className="mt-2 max-h-20 overflow-y-auto rounded-xl bg-black/30 px-3 py-2 text-xs leading-relaxed text-slate-400">
+                          {transcript}
+                        </p>
+                      )}
+                      {transcribeError && (
+                        <p
+                          role="alert"
+                          className="mt-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm text-amber-200"
+                        >
+                          {transcribeError}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </ControlCard>

@@ -25,6 +25,49 @@ device.
 | **Canvas output preview** | Live canvas rendering the cropped video + filter + caption + progress overlay. |
 | **Clip preview** | “Preview selected clip” plays only the trimmed start→end range. |
 | **Export** | Renders the canvas via `canvas.captureStream` + `MediaRecorder` to a downloadable **WebM**, including audio when the browser supports `video.captureStream` audio tracks. |
+| **Smart auto-edit** *(on-device)* | Analyzes the clip's audio with the Web Audio API to **auto-find highlights** and **trim silence** — fully local, no upload, no account. |
+| **AI assist** *(optional backend)* | **Claude**-written caption/hook ideas and **Whisper** speech-to-text auto-captions. Degrades gracefully to built-in ideas when no backend/key is present. |
+
+---
+
+## 🤖 "Auto-editing" & AI — what's real, and what needs training
+
+ClipForge gives you **two tiers of automation**, neither of which requires you to
+train a model:
+
+1. **On-device smart auto-edit (no setup, works offline).** The
+   [`Smart auto-edit`](./src/lib/audio.ts) panel decodes your file's audio in the
+   browser, measures loudness over time, and suggests highlight ranges + trims
+   silence. This is a fast heuristic — private, instant, and free.
+
+2. **Optional hosted AI (`AI assist` panel).** Backed by the FastAPI server in
+   [`../backend`](../backend):
+   - **Caption ideas** → `POST /api/clipforge/caption-ideas` calls **Claude**
+     (`claude-opus-4-8`). Without an `ANTHROPIC_API_KEY` it returns built-in
+     ideas, so the UI never breaks.
+   - **Transcription** → `POST /api/clipforge/transcribe` calls **Whisper**
+     (needs `OPENAI_API_KEY`); returns a clear, handled 501 when not configured.
+
+> **Do you need to train your own model?** Almost certainly not — read
+> [`docs/TRAINING-DATA-GUIDE.md`](./docs/TRAINING-DATA-GUIDE.md). It explains
+> what data, labels, and pipeline a custom auto-editing model would require, and
+> why orchestrating existing models (as above) is the smarter first step. The
+> recommended path: ship the heuristic + hosted-AI version now, log which
+> suggested clips users keep, and let that become your training set later.
+
+### Enabling the optional AI backend
+
+```bash
+# from the repo root
+cp .env.example .env        # add ANTHROPIC_API_KEY (caption ideas) and/or OPENAI_API_KEY (transcription)
+pip install -r requirements.txt
+python -m uvicorn backend.main:app --reload --port 8000
+```
+
+The dev server proxies `/api/*` to `http://localhost:8000` (see
+[`vite.config.ts`](./vite.config.ts)). For a deployed frontend, set
+`VITE_AI_API_BASE` to the backend's URL. **You can skip this entirely** — the app
+is fully functional without it.
 
 ---
 
