@@ -1,0 +1,26 @@
+# --- API core (required to run the backend) ---
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+httpx==0.27.0
+python-dotenv==1.0.1
+
+# --- tests ---
+pytest==8.2.0
+pytest-asyncio==0.23.7
+
+# --- geospatial / scientific stack (used by the worker + DB layers) ---
+# Kept as documented optional deps; the pure-compute engines and public
+# connectors above do not require them, so the API runs without a build
+# toolchain. Install these when wiring the Celery imagery/DEM workers.
+# psycopg[binary]==3.1.19
+# sqlalchemy==2.0.30
+# geoalchemy2==0.15.1
+# shapely==2.0.4
+# geopandas==0.14.4
+# rasterio==1.3.10
+# xarray==2024.5.0
+# numpy==1.26.4
+# pandas==2.2.2
+# redis==5.0.4
+# celery==5.4.0
