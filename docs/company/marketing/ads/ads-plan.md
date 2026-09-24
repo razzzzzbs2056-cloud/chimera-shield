@@ -46,7 +46,7 @@ No ad account exists, so we have no real bid data. These are **planning ranges b
 | $1,000: LinkedIn $250 | 17–31 (about 21) | 1–4 (about 2) | about 0 |
 | $1,000: retargeting $100 | 8–25 | 1–3 | about 0 |
 
-**Unit economics (why the thresholds in §7 are what they are).** At the $495 founding Pack price the catalog tests, with 5% of checks becoming Packs, a completed check is worth about **$25** in first-order revenue ($495 × 5%). Watch ($49–$149/mo, catalog §4) adds value later, so we accept up to **$60 per completed check** during this learning season and call anything **≤ $25** a clear win. Price and conversion are both unvalidated, so re-run this math after the first 3 Packs.
+**Unit economics (why the thresholds in §8 are what they are).** At the $495 founding Pack price (now set by finance, `docs/company/finance/pricing.md`), with 5% of checks becoming Packs, a completed check is worth about **$25** in first-order revenue ($495 × 5%). Watch ($49–$149/mo, catalog §4) adds value later, so we accept up to **$60 per completed check** during this learning season and call anything **≤ $25** a clear win. Price and conversion are both unvalidated, so re-run this math after the first 3 Packs.
 
 ## 4. Google Search setup
 
@@ -168,7 +168,7 @@ I'm only planning. The founder owns and operates every account.
 1. **Run paid at all this season?** My recommendation is **yes at $300, Google Search only**, as a cost-data probe that doesn't compete for founder time (about 30 min/week). Go to $1,000 only if `/check` is live by **Oct 20** and conversion tracking is proven.
 2. **Resolve the conflict with `../channel-plan.md`**, which lists Google Ads as "not now". Either accept this as a capped learning test outside the two core channels, or decline it.
 3. **Unit-economics threshold:** keep the $60 maximum cost per completed check, or tighten it to $25 (breakeven on the first order)?
-4. **Pack price** ($495 founding vs. $795 list) changes the math in §3. Tell me which one to use.
+4. **Pack price:** §3 uses the $495 founding price, which finance has now set (`.claude/skills/company-context/SKILL.md`, `docs/company/finance/pricing.md`). The founding price runs until the first 10 Packs or 31 Dec 2026. Re-run the math at the $795 or $1,195 list prices after that.
 
 ## Sources
 - IRS PTIN renewal FAQ: https://www.irs.gov/tax-professionals/frequently-asked-questions-ptin-application-renewal-assistance
