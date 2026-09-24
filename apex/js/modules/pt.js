@@ -78,13 +78,15 @@
   }
 
   const EVENTS = ['push', 'core', 'pull', 'run'];
+  /** Scoring settings a test was taken under (test stores event values in core/run, modes in coreMode/runMode). */
+  const snapOf = (t) => ({ age: t.age, sex: t.sex, core: t.coreMode || 'situps', run: t.runMode || '2mile' });
   function testResult(t) {
     if (!t) return null;
     const pts = {};
     let total = 0;
     let n = 0;
     EVENTS.forEach((e) => {
-      pts[e] = eventPoints(e, t[e], t);
+      pts[e] = eventPoints(e, t[e], snapOf(t));
       if (pts[e] != null) { total += pts[e]; n++; }
     });
     if (!n) return null;
@@ -142,12 +144,12 @@
   const BASELINE = { push: 10, core: 20, plankSec: 30, pull: 0, pace: 450 }; // pace = s per km
   function maxesFrom(t) {
     if (!t) return Object.assign({ baseline: true }, BASELINE);
-    const km = t.run === '3k' ? 3 : KM_2MILE;
+    const km = t.runMode === '3k' ? 3 : KM_2MILE;
     return {
       baseline: false,
       push: t.push || 0,
-      core: t.core === 'plank' ? null : t.core || 0,
-      plankSec: t.core === 'plank' ? t.core || 0 : null,
+      core: t.coreMode === 'plank' ? null : t.core || 0,
+      plankSec: t.coreMode === 'plank' ? t.core || 0 : null,
       pull: t.pull || 0,
       pace: t.run ? t.run / km : BASELINE.pace,
     };
@@ -267,7 +269,7 @@
 @media (max-width: 420px) { .pt-form { grid-template-columns: 1fr; } }
 .pt-note { font-size: .78rem; color: var(--muted); border-left: 2px solid var(--pt-olive); padding-left: 8px; margin: 4px 0 0; }
 .pt-order { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-.pt-order-day { text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 800; background: var(--pt-olive); color: #fff; padding: 3px 9px; border-radius: 4px; }
+.pt-order-day { text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 800; background: var(--pt-olive); color: var(--bg); padding: 3px 9px; border-radius: 4px; }
 .pt-order-title { font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: .92rem; }
 .pt-banner { background: var(--pt-olive-bg); border: 1px dashed var(--pt-olive); border-radius: var(--radius-sm); padding: 8px 12px; font-size: .85rem; margin-bottom: 10px; }
 .pt-items { border-top: 1px solid var(--border); margin-top: 4px; }
@@ -365,9 +367,11 @@
 
       /* --- test entry --- */
       const t = d.test ? Object.assign({}, d.test) : null;
-      const snap = t || { age: c.age, sex: c.sex, core: c.core, run: c.run };
+      const snap = t ? snapOf(t) : { age: c.age, sex: c.sex, core: c.core, run: c.run };
       const setEv = (k, v) => {
-        const next = Object.assign({ push: null, core: null, pull: null, run: null }, d.test || {}, { age: c.age, sex: c.sex, core: (d.test && d.test.core) || c.core, run: (d.test && d.test.run) || c.run });
+        // Editing re-snapshots age/sex; event modes stay what the test was taken with.
+        const next = Object.assign({ push: null, core: null, pull: null, run: null }, d.test || {},
+          { age: c.age, sex: c.sex, coreMode: snap.core, runMode: snap.run });
         next[k] = v;
         if (EVENTS.every((e) => next[e] == null)) d.test = null; else d.test = next;
         save();
@@ -447,13 +451,14 @@
   });
 
   function eventBars(t, res) {
-    const names = EVENT_NAMES(t);
+    const s = snapOf(t);
+    const names = EVENT_NAMES(s);
     return h('div', { class: 'pt-events' }, EVENTS.map((e) => {
       const p = res.pts[e];
-      const [lo, hi] = standard(e, t);
-      const fmtStd = (v) => (e === 'run' || (e === 'core' && t.core === 'plank') ? fmtTime(v) : String(Math.round(v)));
+      const [lo, hi] = standard(e, s);
+      const fmtStd = (v) => (e === 'run' || (e === 'core' && s.core === 'plank') ? fmtTime(v) : String(Math.round(v)));
       return h('div', null,
-        h('div', { class: 'pt-ev-head' }, h('span', null, names[e], h('span', { class: 'muted' }, ' · ' + fmtEvent(e, t[e], t))),
+        h('div', { class: 'pt-ev-head' }, h('span', null, names[e], h('span', { class: 'muted' }, ' · ' + fmtEvent(e, t[e], s))),
           h('strong', null, p == null ? '—' : `${p} pts`)),
         Apex.ui.progress(p || 0, 100, p == null ? null : p >= 60 ? 'var(--pt-olive)' : 'var(--bad)'),
         h('div', { class: 'pt-ev-std' }, `60 pts at ${fmtStd(lo)} · 100 pts at ${fmtStd(hi)}`));

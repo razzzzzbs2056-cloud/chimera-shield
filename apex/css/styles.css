@@ -28,6 +28,8 @@
     --text: #141a29;
     --muted: #5d6679;
     --accent: #d97706;
+    --good: #15803d;
+    --bad: #b91c1c;
     --shadow: 0 1px 2px rgba(20, 26, 41, .06), 0 6px 18px rgba(20, 26, 41, .06);
     color-scheme: light;
   }
