@@ -11,7 +11,7 @@
 
 ## 1. The three numbers that matter
 
-1. **27 Watch subscribers** at blended list price cover all running costs **plus a $2,000/mo founder salary**. The base case reaches that level around **month 14 (Nov 2027)** on subscriptions alone, and sooner if pack revenue is counted.
+1. **27 Watch subscribers** at blended list price cover all running costs **plus a $2,000/mo founder salary**. The base case reaches that level at **month 15 (Dec 2027)** on subscriptions alone, and sooner if pack revenue is counted.
 2. **About 5 packs by 15 Dec 2026** (base; conservative 2.6, aggressive 8.4). That meets the "3 paying customers" north star, and it's demand-bound, not capacity-bound. One founder could deliver ~17.
 3. **$1,150 peak cash need** before founder pay (base; conservative $3,550). The company is default-alive on a shoestring **if the founder takes no salary**. Paying $2,000/mo from day one needs about **$12,900** of starting cash (base).
 
@@ -79,7 +79,7 @@ Running costs after launch: **$235/mo** for tools and infra (workspace, domain, 
 
 The salary is gross, before any payroll tax, self-employment tax or local income tax (ask your accountant). Servicing 58 subscribers takes about 29 founder hours a month, which is feasible for one person.
 
-**When the base case gets there on Watch alone:** 7 subs in M7–M8 (Apr–May 2027); 27 subs in M14–M15 (Nov–Dec 2027); 58 subs not within 24 months (45 at M24). Counting pack cash, the $2,000 level holds every month from M8 and the $5,000 level from M20.
+**When the base case gets there on Watch alone:** 7 subs in M8 (May 2027); 27 subs in M15 (Dec 2027); 58 subs not within 24 months (45 at M24). Counting pack cash, the $2,000 level holds every month from M8 and the $5,000 level from M20.
 
 ---
 
