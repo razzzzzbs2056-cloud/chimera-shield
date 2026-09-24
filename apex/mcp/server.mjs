@@ -119,6 +119,15 @@ function lifeScore(date) {
   };
 }
 
+function rankInfo(date) {
+  const r = Apex.rank(date);
+  return {
+    rank: r.rank.name, abbr: r.rank.abbr, xp: r.xp, readiness7d: r.readiness, activeDaysLastYear: r.activeDays,
+    next: r.next ? { rank: r.next.name, xpNeeded: r.toNext } : null,
+    ladder: Apex.RANKS.map((x) => `${x.abbr} ${x.name} (${x.xp} XP)`),
+  };
+}
+
 function weeklyReport(end) {
   const days = Apex.date.lastN(end, 7);
   const daily = days.map((d) => ({ date: d, score: Apex.lifeScore(d).score }));
@@ -138,6 +147,7 @@ function weeklyReport(end) {
     averageLifeScore: avg,
     tier: Apex.tier(avg).label,
     streakDaysAtOrAbove70: Apex.streak(end, 70),
+    rank: rankInfo(end),
     daily,
     trackers,
     weakest: weakest.map((t) => t.id),
@@ -176,6 +186,12 @@ const TOOLS = [
     description: 'Seven-day coaching report: average Life Score, streak, each tracker ranked by average, weakest/strongest areas, and book principles aimed at the weakest areas.',
     inputSchema: { type: 'object', properties: { end: { type: 'string', description: 'last day of the week, YYYY-MM-DD, default today' } } },
     run: (a) => weeklyReport(dateArg(a.end)),
+  },
+  {
+    name: 'get_rank',
+    description: 'Military rank earned from Life Score XP over a rolling 365 days (Recruit → General), XP to next rank, and 7-day readiness.',
+    inputSchema: { type: 'object', properties: { date: { type: 'string', description: 'YYYY-MM-DD, default today' } } },
+    run: (a) => rankInfo(dateArg(a.date)),
   },
   {
     name: 'get_day',

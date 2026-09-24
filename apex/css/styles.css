@@ -220,6 +220,20 @@ input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible
 .library-meta { align-items: center; gap: 6px; }
 .pill.small { font-size: .75rem; padding: 3px 10px; min-width: 0; }
 
+/* ---------- rank ---------- */
+.rank-chip { display: inline-flex; align-items: center; gap: 4px; font-size: .72rem; font-weight: 800; letter-spacing: .08em; padding: 3px 8px; border-radius: 6px; background: #3f4a2a; color: #e8e2c8; }
+.rank-card { border-top: 4px solid #65a30d; }
+.rank-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.rank-head .stat { flex: none; min-width: 100px; }
+.rank-insignia { width: 64px; height: 64px; flex: none; border-radius: 12px; background: #3f4a2a; color: #e8e2c8; display: grid; place-items: center; font-size: 1.3rem; font-weight: 800; letter-spacing: -.1em; }
+.rank-body { flex: 1; min-width: 160px; }
+.rank-body h3 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: .06em; margin: 0; }
+.rank-next { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.rank-ladder { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.rank-step { font-size: .75rem; font-weight: 700; letter-spacing: .06em; padding: 4px 9px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--border); }
+.rank-step.current { background: #65a30d; border-color: #65a30d; color: #fff; }
+.rank-step.locked { opacity: .5; }
+
 /* ---------- settings ---------- */
 .settings-row { display: flex; gap: 16px; align-items: center; border-bottom: 1px solid var(--border); padding: 6px 0; }
 .settings-row .toggle { flex: 1; }

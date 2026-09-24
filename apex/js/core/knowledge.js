@@ -32,6 +32,25 @@
     'good-life': { title: 'The Good Life', author: 'Robert Waldinger & Marc Schulz' },
     'cant-hurt-me': { title: "Can't Hurt Me", author: 'David Goggins' },
     'full-engagement': { title: 'The Power of Full Engagement', author: 'Jim Loehr & Tony Schwartz' },
+    // military & mental toughness
+    'extreme-ownership': { title: 'Extreme Ownership', author: 'Jocko Willink & Leif Babin' },
+    'discipline-freedom': { title: 'Discipline Equals Freedom', author: 'Jocko Willink' },
+    'make-your-bed': { title: 'Make Your Bed', author: 'Adm. William H. McRaven' },
+    'grit': { title: 'Grit', author: 'Angela Duckworth' },
+    'obstacle-way': { title: 'The Obstacle Is the Way', author: 'Ryan Holiday' },
+    'peak-performance': { title: 'Peak Performance', author: 'Brad Stulberg & Steve Magness' },
+    // research (peer-reviewed studies)
+    'study-dunedin': { title: 'Dunedin cohort study, PNAS 2011', author: 'Moffitt et al.' },
+    'study-conscientiousness': { title: 'Terman Life Cycle Study, Ann. Behav. Med. 2009', author: 'Kern, Friedman et al.' },
+    'study-grit': { title: 'Grit study incl. West Point cadets, JPSP 2007', author: 'Duckworth et al.' },
+    'study-practice': { title: 'Deliberate practice meta-analysis, Psych. Science 2014', author: 'Macnamara, Hambrick & Oswald' },
+    'study-if-then': { title: 'Implementation intentions meta-analysis, 2006', author: 'Gollwitzer & Sheeran' },
+    'study-fitness': { title: 'Cardiorespiratory fitness & mortality, JAMA Netw Open 2018', author: 'Mandsager et al.' },
+    'study-strength': { title: 'Resistance training & mortality meta-analysis, AJPM 2022', author: 'Shailendra et al.' },
+    'study-steps': { title: 'Daily steps & mortality, Lancet Public Health 2022', author: 'Paluch et al.' },
+    'study-social': { title: 'Social relationships & mortality, PLOS Medicine 2010', author: 'Holt-Lunstad, Smith & Layton' },
+    'study-breath': { title: 'Structured breathing RCT, Cell Reports Medicine 2023', author: 'Balban et al.' },
+    'study-seal': { title: 'Navy SEAL "Big Four" mental-toughness training', author: 'Eric Potterat (US Navy)' },
   };
 
   // [book, modules, principle, action]
@@ -87,6 +106,28 @@
     ['good-life', ['social'], 'In an 80-year Harvard study, the quality of relationships was the strongest predictor of health and happiness.', 'Reach out to someone you haven\'t talked to in a while.'],
     ['win-friends', ['social'], 'Be genuinely interested in other people. Remember names, listen more than you talk, and give honest appreciation.', 'Ask someone a question about their life and truly listen.'],
     ['7-habits', ['social'], 'Seek first to understand, then to be understood.', 'In your next disagreement, restate their view before giving yours.'],
+    // military & mental toughness
+    ['extreme-ownership', ['character', 'bootcamp'], 'Own everything in your world. No blaming, no excuses. Leaders take responsibility for failures and give away the credit for wins.', 'Write down one thing that went wrong today and own it completely.'],
+    ['extreme-ownership', ['goals', 'bootcamp'], 'Prioritise and execute: when everything is on fire, pick the single most important problem, solve it, then move to the next.', 'List today\'s problems and attack only the top one first.'],
+    ['discipline-freedom', ['bootcamp', 'sleep'], 'Discipline creates freedom. The early alarm, the workout done, the money saved: each buys you options later.', 'Get up the moment the alarm sounds. No snooze.'],
+    ['make-your-bed', ['bootcamp', 'habits'], 'Start the day with one task completed. A made bed is a small win that sets the tone, and a reminder that small things matter.', 'Make your bed within five minutes of waking.'],
+    ['make-your-bed', ['character'], 'Life is not fair; move forward anyway. The standard doesn\'t lower because the conditions got worse.', 'Name one unfair thing today, then do your job anyway.'],
+    ['grit', ['character', 'goals'], 'Talent counts, but effort counts twice: effort builds skill, and effort turns skill into achievement.', 'Put in one more focused rep on your most important skill.'],
+    ['obstacle-way', ['character', 'mindset'], 'The obstacle in the path becomes the path. Treat setbacks as training material.', 'Reframe today\'s biggest obstacle as a drill you get to practise.'],
+    ['peak-performance', ['pt', 'focus', 'sleep'], 'Stress + rest = growth. Push hard, then recover fully; growth happens in the rest.', 'Match every hard session with deliberate recovery tonight.'],
+    ['cant-hurt-me', ['character', 'bootcamp'], 'Keep a "cookie jar" of hard things you have survived and reach into it when you want to quit.', 'Log today\'s hard thing so future-you can draw on it.'],
+    // research-backed factors
+    ['study-dunedin', ['character', 'bootcamp', 'finance'], 'In a 32-year study of 1,000 children, self-control predicted adult health, wealth and staying out of trouble, even between siblings. Self-control can also improve with age.', 'Pick one impulse to resist today and log it.'],
+    ['study-conscientiousness', ['character', 'habits'], 'Conscientiousness (being organised, dependable and hard-working) is the personality trait most consistently linked to job performance, and it is also associated with living longer.', 'Finish one task you have been putting off, to completion.'],
+    ['study-grit', ['character', 'goals'], 'Perseverance and passion for long-term goals predicted which West Point cadets made it through summer training better than their test scores did. The effect is real but modest.', 'Do one thing today for a goal that will take years.'],
+    ['study-practice', ['learning', 'pt'], 'Deliberate practice matters most in games, music and sport, and less in education and professions. Practice is necessary but not the whole story, so train smart and pick the right arena.', 'Practise your weakest sub-skill with immediate feedback.'],
+    ['study-if-then', ['goals', 'bootcamp', 'habits'], 'Across 94 studies, "if-then" plans (If X happens, then I will do Y) had a medium-to-large effect on actually reaching goals.', 'Write one if-then plan: "If it is 06:00, then I lace my shoes and run."'],
+    ['study-fitness', ['pt', 'fitness'], 'In 122,000 adults, higher aerobic fitness meant lower mortality with no upper limit. The fittest group had about 80% lower risk than the least fit.', 'Do one session today that makes you breathe hard.'],
+    ['study-strength', ['pt', 'fitness'], 'Any resistance training is linked to about 15% lower all-cause mortality; the benefit peaks around 30–60 minutes a week and adds up with aerobic training.', 'Get two 30-minute strength sessions into your week.'],
+    ['study-steps', ['fitness', 'pt'], 'Across 15 cohorts, more daily steps meant lower mortality, levelling off around 8,000–10,000 steps for adults under 60.', 'Hit 8,000 steps before dinner.'],
+    ['study-social', ['social'], 'Across 148 studies, people with stronger social relationships had about 50% higher odds of survival, an effect comparable to classic risk factors.', 'Schedule real time with someone who matters this week.'],
+    ['study-breath', ['bootcamp', 'mindset'], 'Five minutes a day of exhale-focused breathing improved mood and lowered breathing rate more than the same time spent on mindfulness meditation.', 'Do five minutes of slow breathing with long exhales.'],
+    ['study-seal', ['bootcamp', 'mindset'], 'The SEAL "Big Four" (micro-goals, mental rehearsal, command-style self-talk and breath control) were taught to help candidates handle fear and stress in selection.', 'Before your hardest task: set a micro-goal, picture it done, give yourself a command, then box-breathe.'],
   ];
 
   const principles = RAW.map(([book, modules, text, action], i) => ({

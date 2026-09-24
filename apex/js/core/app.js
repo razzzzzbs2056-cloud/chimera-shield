@@ -28,6 +28,8 @@
     };
   }
 
+  const drillMode = () => Apex.store.getConfig('_app', { drill: true }).drill !== false;
+
   // ---------- header ----------
   function renderHeader() {
     const today = Apex.date.today();
@@ -45,6 +47,7 @@
         h('button', { class: 'icon-btn', 'aria-label': 'Next day', disabled: state.date >= today ? true : null, onClick: () => shiftDate(1) }, '›'),
         state.date !== today ? h('button', { class: 'btn btn-ghost small', onClick: () => { state.date = today; render(); } }, 'Today') : null),
       h('a', { class: 'header-score', href: '#/', title: 'Life Score' },
+        drillMode() ? rankChip(Apex.rank(state.date)) : null,
         h('span', { class: 'header-score-num' }, String(score)),
         h('span', { class: 'tag', style: { background: tier.color } }, tier.label)));
   }
@@ -76,6 +79,30 @@
         link('#/settings', '⚙️', 'Settings', r.name === 'settings')));
   }
 
+  function rankChip(r) {
+    return h('span', { class: 'rank-chip', title: `${r.rank.name} · ${r.xp.toLocaleString()} XP` }, h('span', { 'aria-hidden': 'true' }, r.rank.insignia), r.rank.abbr);
+  }
+
+  function rankCard(date) {
+    const r = Apex.rank(date);
+    const ladder = Apex.RANKS.slice(Math.max(0, r.level - 1), r.level + 3);
+    return h('section', { class: 'card rank-card' },
+      h('div', { class: 'rank-head' },
+        h('div', { class: 'rank-insignia', 'aria-hidden': 'true' }, r.rank.insignia),
+        h('div', { class: 'rank-body' },
+          h('div', { class: 'principle-kicker' }, 'Chain of command'),
+          h('h3', null, r.rank.name),
+          h('div', { class: 'muted small' }, `${r.xp.toLocaleString()} XP · last 365 days · ${r.activeDays} days reported`)),
+        Apex.ui.stat('Readiness', String(r.readiness), '7-day avg')),
+      r.next
+        ? h('div', { class: 'rank-next' }, Apex.ui.progress(r.progress * 100, 100, '#65a30d'),
+          h('span', { class: 'small muted' }, `${r.toNext.toLocaleString()} XP to ${r.next.name}`))
+        : h('p', { class: 'small' }, 'Highest rank achieved. Now hold it: rank is re-earned every day.'),
+      h('div', { class: 'rank-ladder' }, ladder.map((x) => h('span', { class: 'rank-step' + (x === r.rank ? ' current' : '') + (x.xp > r.xp ? ' locked' : '') },
+        `${x.insignia} ${x.abbr}`))),
+      h('p', { class: 'small muted' }, 'Every point of Life Score is 1 XP. Rank is counted over a rolling year, so if you stop reporting, you get demoted.'));
+  }
+
   // ---------- dashboard ----------
   function renderDashboard(el) {
     const date = state.date;
@@ -87,6 +114,7 @@
     const weekAvg = Math.round(week.reduce((a, b) => a + b, 0) / week.length);
     const streak = Apex.streak(date, 70);
     const mods = Apex.modules.enabled();
+    const drill = drillMode();
 
     if (!mods.length) {
       el.append(card('No trackers enabled', h('p', null, 'Turn some on in ', h('a', { href: '#/settings' }, 'Settings'), '.')));
@@ -104,11 +132,15 @@
         h('div', { class: 'hero-body' },
           h('div', { class: 'tag big', style: { background: tier.color } }, tier.label),
           h('h2', null, date === Apex.date.today() ? 'Today' : Apex.date.format(date, { weekday: 'long', month: 'long', day: 'numeric' })),
-          h('p', { class: 'muted' }, `${ls.tracked} of ${ls.total} areas logged. Areas you skip count as 0, so log everything.`),
+          h('p', { class: 'muted' }, drill
+            ? `${ls.tracked}/${ls.total} areas reported. Anything you don't report scores zero. No excuses.`
+            : `${ls.tracked} of ${ls.total} areas logged. Areas you skip count as 0, so log everything.`),
           h('div', { class: 'kpis' },
             Apex.ui.stat('7-day avg', String(weekAvg), Apex.tier(weekAvg).label),
             Apex.ui.stat('Streak ≥70', `${streak}d`, streak ? '🔥 keep it alive' : 'start today'),
             Apex.ui.stat('Best (14d)', String(Math.max(...history)))))),
+
+      drill ? rankCard(date) : null,
 
       h('div', { class: 'grid grid-2' },
         card('Life Score · last 14 days', bars(history, { max: 100, labels: days.map((d) => Apex.date.format(d, { weekday: 'narrow' })), height: 110 })),
@@ -121,7 +153,7 @@
 
       principleCard('Principle of the day', Apex.knowledge.daily(date, weakest.map((w) => w.m.id))),
 
-      card('Focus next: your weakest areas',
+      card(drill ? 'Weak points: fix them, recruit' : 'Focus next: your weakest areas',
         h('div', { class: 'focus-list' }, weakest.map(({ m, s }) =>
           h('a', { class: 'focus-item', href: '#/m/' + m.id },
             h('span', { class: 'nav-icon' }, m.icon),
@@ -179,11 +211,14 @@
 
   // ---------- settings ----------
   function renderSettings(el) {
-    const cfg = Apex.store.getConfig('_app', { disabled: [], weights: {} });
+    const cfg = Apex.store.getConfig('_app', { disabled: [], weights: {}, drill: true });
     const save = () => { Apex.store.setConfig('_app', cfg); render(); };
 
     el.append(
       h('h2', null, 'Settings'),
+      card('Mode',
+        toggle({ label: '🪖 Drill Sergeant mode', hint: 'Shows military ranks, the chain of command, and blunt language. Turn it off for a softer tone.', checked: cfg.drill !== false,
+          onChange: (on) => { cfg.drill = on; save(); } })),
       card('Trackers & weights',
         h('p', { class: 'muted small' }, 'Turn areas on or off and choose how much each one counts toward your Life Score.'),
         h('div', { class: 'settings-list' }, Apex.modules.all().map((m) => h('div', { class: 'settings-row' },
@@ -243,6 +278,7 @@
   }
 
   function renderNow() {
+    Apex.invalidateScores();
     const r = route();
     const main = $('#main');
     const scrollY = window.scrollY;

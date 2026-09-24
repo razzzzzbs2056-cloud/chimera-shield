@@ -17,6 +17,7 @@ against one shared contract. The core connects them together at the end.
                         │   tiers · streaks             │
                         └──────────────┬───────────────┘
       ┌────────────┬───────────┬───────┴─────┬────────────┬────────────┐
+   DISCIPLINE: bootcamp (orders ← auto-links to other trackers) · pt · character
    BODY          MIND        WORK          WEALTH        LIFE
    sleep         mindset     focus         finance       habits
    fitness       learning    goals                       social
@@ -40,7 +41,9 @@ against one shared contract. The core connects them together at the end.
 3. **The tiers** map the score to a rank: 90+ Top 1%, 80+ Top 5%, 70+ Top 10%, 50+ Above average.
 4. **The shell** renders the dashboard: a Life Score ring, a 14-day trend, balance by area, your
    weakest areas, and one tile per module. Each module also gets its own page at `#/m/<id>`.
-5. **Daily Review** is the loop-closer. It reads every other module's score, so each evening you
+5. **Ranks** (`Apex.rank`) turn a rolling year of Life Scores into military rank. Life Scores are memoised and the cache is cleared on every write.
+6. **Boot Camp orders** can link to any tracker ("Deep work block" is done when Deep Work scores ≥ 50), so discipline is measured across the whole system.
+7. **Daily Review** is the loop-closer. It reads every other module's score, so each evening you
    see your whole day in one place.
 
 ## Around the core
@@ -66,6 +69,8 @@ tracker shows up in the AI tools automatically.
 | Agent 2 · Mind | mindset, learning, digital discipline |
 | Agent 3 · Work | deep work (focus timer), goals, habits |
 | Agent 4 · Wealth & Life | finance, relationships, daily review |
+| Agent 5 · Boot Camp | Boot Camp HQ: orders, drill sergeant, Iron 75, Big Four, AAR |
+| Agent 6 · PT & Character | PT test and drills, Code & Ownership |
 
 ## Adding a new tracker
 

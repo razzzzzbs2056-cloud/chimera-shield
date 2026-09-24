@@ -43,7 +43,7 @@ try {
   proc.stdin.write(JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' }) + '\n');
 
   const tools = (await rpc('tools/list')).result.tools.map((t) => t.name);
-  for (const t of ['list_trackers', 'get_life_score', 'get_trend', 'weekly_report', 'get_day', 'log_day', 'get_principles']) assert.ok(tools.includes(t), 'missing tool ' + t);
+  for (const t of ['list_trackers', 'get_life_score', 'get_trend', 'weekly_report', 'get_day', 'log_day', 'get_principles', 'get_rank']) assert.ok(tools.includes(t), 'missing tool ' + t);
 
   // every <script> module in index.html must load and register in Node too
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
@@ -65,6 +65,10 @@ try {
   assert.equal((await call('get_trend', { days: 7 })).value.length, 7);
   const report = (await call('weekly_report')).value;
   assert.equal(report.daily.length, 7);
+  assert.ok(report.rank && report.rank.rank, 'weekly report includes rank');
+  const rank = (await call('get_rank')).value;
+  assert.equal(rank.rank, 'Recruit');
+  assert.ok(rank.xp > 0 && rank.next.rank === 'Private');
   assert.ok(Array.isArray(report.recommendedPrinciples));
   assert.ok((await call('get_principles', { tracker: 'sleep' })).value.length > 0);
 

@@ -15,7 +15,7 @@ Life Score, navigation, streaks, and backup.
     id: ID,                      // unique, lowercase, also used in the URL: #/m/sleep
     name: 'Sleep',
     icon: '😴',                  // one emoji
-    category: 'body',            // body | mind | work | wealth | life
+    category: 'body',            // discipline | body | mind | work | wealth | life
     order: 10,                   // position in nav (lower = earlier)
     weight: 1,                   // default weight in the Life Score (user can change)
     description: 'One line explaining why this matters for the top 1%.',
