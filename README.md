@@ -123,6 +123,12 @@ This project is Codespaces-ready. After opening in Codespaces:
 
 ---
 
+## 🏢 AI Company Team
+
+The repo includes Claude Code sub-agents that act as a startup team (market research, competitors, customer discovery, product, engineering, finance, marketing, sales, legal, fundraising), plus a `/company-hq` orchestrator skill. See [docs/company/README.md](docs/company/README.md).
+
+---
+
 ## 📄 License
 
 MIT
