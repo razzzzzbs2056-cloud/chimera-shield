@@ -1,4 +1,4 @@
-.PHONY: dev frontend backend install install-fe install-be
+.PHONY: dev frontend backend install install-fe install-be agency agency-demo test
 
 ## Start both servers concurrently
 dev:
@@ -12,7 +12,7 @@ install-fe:
 	npm install
 
 install-be:
-	pip install -r requirements.txt
+	pip install -r requirements.txt -r agency/requirements.txt
 
 ## Install deps + start both servers
 setup: install dev
@@ -24,3 +24,13 @@ frontend:
 ## Start backend only
 backend:
 	python -m uvicorn backend.main:app --reload --port 8000
+
+## AI content company (agents): make agency GOAL="Launch our newsletter"
+agency:
+	python -m agency "$(GOAL)"
+
+agency-demo:
+	python -m agency "Launch our AI newsletter service" --mock
+
+test:
+	python -m pytest tests -q

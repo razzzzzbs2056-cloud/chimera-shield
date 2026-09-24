@@ -52,6 +52,20 @@ This starts:
 
 ---
 
+## 🤖 Chimera Agency: AI content company
+
+The repo also ships a multi-agent **AI content creation company**. A CEO agent delegates to
+Marketing, Content, Email and Engineer sub-agents, which share one board of everything produced.
+
+```bash
+make agency-demo                                   # offline, scripted
+make agency GOAL="Launch our AI newsletter service" # real run with Claude
+```
+
+See [agency/README.md](agency/README.md) for the architecture, email setup and configuration.
+
+---
+
 ## 🧰 Make Commands
 
 | Command | Description |
@@ -61,6 +75,9 @@ This starts:
 | `make backend` | Start FastAPI backend only |
 | `make install` | Install all dependencies (npm + pip) |
 | `make setup` | Install dependencies then start both servers |
+| `make agency GOAL="..."` | Run the AI content company on a goal |
+| `make agency-demo` | Run the AI content company offline (no API key) |
+| `make test` | Run the Python tests |
 
 ---
 
@@ -75,7 +92,9 @@ chimera-shield/
 │   └── globals.css       # Global styles
 ├── backend/              # FastAPI backend
 │   └── main.py           # API entry point
+├── agency/               # Multi-agent AI content company (CEO + sub-agents)
 ├── docs/                 # Project documentation
+├── tests/                # Python tests
 ├── .env.example          # Environment variable template
 ├── Makefile              # Dev workflow shortcuts
 ├── package.json          # Node dependencies
@@ -123,6 +142,12 @@ This project is Codespaces-ready. After opening in Codespaces:
 
 ---
 
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
 ## 📄 License
 
-MIT
+MIT — see [LICENSE](LICENSE).
