@@ -10,7 +10,7 @@ The whole product today is one working prototype: a paste-an-email phishing chec
 - there is no auth, no rate limiting and no input-size limit, and it uses the most expensive model tier;
 - dependencies have 7 npm advisories (1 critical: `next` 14.2.3) and 30 Python advisories.
 
-None of these is hard to fix (about 2 to 3 days total, ticket CS-01 in `sprint-plan.md`). There is no domain check, report, database, auth, billing or scheduler yet.
+None of these is hard to fix (about 2.5 days: tickets CS-01 and CS-02 in `sprint-plan.md`). There is no domain check, report, database, auth, billing or scheduler yet.
 
 ---
 

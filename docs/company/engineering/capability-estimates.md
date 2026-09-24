@@ -143,4 +143,4 @@
 1. **PHI and BAAs.** Healthcare and dental users of b and e may send PHI. Until we have a BAA with our LLM vendor, DB and email providers, ToS and UI must prohibit PHI. The dental offers (D4) must be designed to collect no ePHI.
 2. **Founder location and payments.** If the company is not US-incorporated, Stripe may not be available directly (see ADR-001).
 3. **Commodity features.** a and b are free elsewhere. Technical effort should go to packaging (c, f, S5), not to making the checks more elaborate.
-4. **Single engineer.** Everything above totals about 10–14 weeks. The MVP (a+b+c) is about 4 weeks including the foundation.
+4. **Single engineer.** Everything above totals about 10–14 weeks. The MVP (a+b+c) is about 24 dev-days (4 to 5 weeks) including the foundation; see `sprint-plan.md`.
