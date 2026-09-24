@@ -130,7 +130,81 @@ Offer one standard DPA to every customer. Tax preparers in particular **need** c
 
 ---
 
+## Part E: P1 "Safeguards-Ready WISP & Evidence Pack" (first paid offer)
+
+Source spec: `docs/company/product/prd-wisp-evidence-pack.md`. First market: US CPA and tax-prep firms.
+
+### E1. Regulatory check: the FTC Safeguards Rule small-firm exception (16 CFR 314.6)
+
+**Verified text (2026-09-24).** The proxy blocked direct fetches of eCFR, govinfo and ftc.gov, so this text comes from search snippets of the official eCFR page. **Re-read it on [eCFR §314.6](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314/section-314.6) before the first sale.**
+> "Section 314.4(b)(1), (d)(2), (h), and (i) do not apply to financial institutions that maintain customer information concerning fewer than five thousand consumers."
+
+**What that removes and what stays**, per [16 CFR 314.4](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314/section-314.4) and [314.3](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314/section-314.3):
+
+| Element | Under 5,000 consumers | Note |
+|---|---|---|
+| §314.3(a): a **written** information security program ("in one or more readily accessible parts") | **Still required** | This is the WISP. The exception does **not** remove it. |
+| §314.4(a): a Qualified Individual | Still required | |
+| §314.4(b): risk assessment | **Still required**, but **not** the formal written-assessment criteria in **(b)(1)** | The firm still has to identify and assess risks. The WISP should record them briefly. |
+| §314.4(c): safeguards (access controls, data inventory, **encryption**, secure development, **MFA**, disposal, change management, logging) | Still required | |
+| §314.4(d)(1): regularly test or monitor safeguards | Still required | |
+| §314.4(d)(2): continuous monitoring **or** periodic penetration testing and vulnerability assessments | **Exempt** | P1 doesn't offer pen testing anyway (PRD §8). |
+| §314.4(e): staff training and qualified security personnel | Still required | |
+| §314.4(f): service-provider oversight | Still required | This applies to us if we ever access customer information (see E3.6). |
+| §314.4(g): evaluate and adjust the program | Still required | |
+| §314.4(h): **written** incident response plan | **Exempt** | Still **recommended**, and insurers ask for it. Label it "recommended, not required for your size". |
+| §314.4(i): annual written report to the board or senior officer | **Exempt** | |
+| §314.4(j): **notify the FTC** within 30 days of an event affecting 500+ consumers | **Still required**: §314.6 does not list (j) | [FTC, May 2024](https://www.ftc.gov/business-guidance/blog/2024/05/safeguards-rule-notification-requirement-now-effect) |
+
+**FLAG, needs a lawyer: how to count "fewer than five thousand consumers."** The Rule counts *consumers whose customer information the firm maintains*, not clients served this year. A firm that keeps several years of returns, including spouses and dependents, may pass 5,000 even with about 1,000 returns a year. **This is my inference and is not verified.** The intake should ask for "individuals whose records you keep, including past years" and must **not** tell a firm it is exempt. The firm decides, and a lawyer should give us a counting rule.
+
+**How this changes the pitch for small preparers:**
+1. **Don't sell fear of pen tests or board reports** to small firms. Those elements are exempt, and saying otherwise is inaccurate.
+2. **The core message gets stronger:** "Even the smallest firm must have a **written** security program, a named Qualified Individual, MFA, encryption, training and vendor oversight, and must tell the FTC about a breach affecting 500+ people. Line 11 of your W-12 asks you to confirm you know that."
+3. **Sell "right-sized", not "full enterprise":** "Your plan applies the small-firm exception where it fits, so you don't carry paperwork the rule doesn't require." That is a real advantage over generic templates, which include everything.
+4. **Never state a firm's exemption status as fact.** Say "if you maintain information on fewer than 5,000 consumers, these elements are not required", and let the owner confirm their count in writing at intake.
+
+### E2. Disclaimer wording for the pack (draft for lawyer review)
+
+**Short form (footer of every page of the WISP, Evidence Report and Fix-First plan):**
+> Prepared with [FIRM NAME] from information the firm provided and passive public checks run on [DATE]. Not legal advice and not a compliance certification or audit. [FIRM NAME] remains responsible for its information security program and for its IRS Form W-12 / PTIN attestation.
+
+**Long form (cover page and engagement letter):**
+> **About this document.** ChimeraShield helped [FIRM NAME] prepare this written information security plan (WISP), Evidence Report and Fix-First plan. We based them on information the firm gave us during intake, screenshots and screen-shares the firm chose to show us, and passive checks of public records for [DOMAIN] on [DATE].
+>
+> **What this is not.** This is **not legal, tax or insurance advice**. It is **not an audit, certification, attestation or guarantee** that [FIRM NAME] complies with the FTC Safeguards Rule (16 CFR Part 314), IRS requirements, state law or any other standard, and ChimeraShield is not a law firm or a CPA firm. Controls marked **"Owner-stated"** were reported by the firm and not checked by us. Controls marked **"Verified"** were observed only on the date shown and may have changed since. No review can find every weakness or prevent every incident.
+>
+> **The firm's responsibility.** [FIRM NAME] and its Qualified Individual, [NAME], decide what the firm's security program contains. They are responsible for adopting it, putting it in place, keeping it current, and answering truthfully on **IRS Form W-12 (including line 11)**, to insurers, clients and regulators. Whether the small-firm exception in 16 CFR 314.6 applies depends on the firm's own count of consumers, which the firm confirmed as [BAND] on [DATE]. If you have legal questions about your obligations, consult a qualified attorney.
+
+**Wording rules (matches PRD AC7 and AC10):** never use "compliant", "certified", "passes", "approved" or "guaranteed". "Safeguards-Ready" is a product name. **FLAG:** the lawyer should confirm that "Safeguards-Ready" doesn't imply certification under FTC Act §5 (deceptive claims). A safer fallback is "Safeguards WISP & Evidence Pack".
+
+### E3. Engagement terms outline for the one-time P1 service
+
+A short **engagement letter** (2–3 pages), accepted by click-through before payment or signed by e-signature. It references the ToS and adds:
+
+| # | Section | Contents |
+|---|---|---|
+| E3.1 | Parties and authority | `[ENTITY]` and the firm. The signer confirms authority to bind the firm. |
+| E3.2 | Scope (what's included) | 60-min intake, passive checks on **one** domain, three deliverables (WISP, one-page Evidence Report, Fix-First top 5), and a 30-min debrief. Delivery within **7 business days** of the intake **and** receipt of the owner's intake facts. One round of factual corrections within 14 days. |
+| E3.3 | Out of scope | Legal, tax or insurance advice. Acting as the firm's Qualified Individual. Pen tests, vulnerability scans, phishing simulations or any active testing. Logging into the firm's systems. Fixing the gaps. Filling in insurer, client or regulator forms. Responding to incidents. Anything about taxpayer data. |
+| E3.4 | Firm responsibilities | Provide accurate facts. Confirm its consumer-count band in writing. Name the Qualified Individual. Review, adopt and sign the WISP. Decide which recommendations to implement. Keep the plan current (annual review date in the WISP). |
+| E3.5 | Authorization to check | The consent text from PRD §7 and clause A4.1, **passive tier only**, for the listed domain. Recorded with name, email and UTC timestamp **before** any check. |
+| E3.6 | **No taxpayer data** | The firm must not share taxpayer or client information with us, including during screen-shares (close client files first; we stop the session if client data appears). The intake collects only information about the firm itself. **Purpose:** to keep us out of "customer information" under the Safeguards Rule and IRS rules. **FLAG:** if accidental exposure happens anyway, we may be a **service provider under §314.4(f)**. Offer the DPA (Part C) as a fallback, and have the lawyer confirm. |
+| E3.7 | Confidentiality and data | Intake notes, screenshots and findings are encrypted at rest and shared only with named firm contacts. Retained for 12 months (for the annual-review upsell) unless the firm asks for earlier deletion, then deleted. No AI training on firm data. LLM-drafted text is reviewed by a human before delivery. |
+| E3.8 | Fees and payment | One-time fee `[$495 founding / $795 list]`, paid upfront through Stripe (or Paddle, depending on the entity path). **Refund:** full refund before the intake call; after delivery, a refund only if we miss the 7-business-day delivery (lawyer and founder to decide). Optional credit toward Watch if started within 30 days (PRD §10). |
+| E3.9 | Ownership and licence | On payment, the firm owns its completed WISP and reports and may share them with insurers, clients and regulators **with the disclaimer intact**. ChimeraShield keeps its templates, methods and anonymized know-how. |
+| E3.10 | Disclaimer | The E2 long form, incorporated in full |
+| E3.11 | Limitation of liability | Total liability capped at **the fee paid for the pack**. No indirect or consequential damages, including regulatory penalties, breach costs or lost clients. Carve-outs for fraud, wilful misconduct and our confidentiality breach (lawyer to set a cap for the latter). **FLAG:** check enforceability and match to Tech E&O coverage. **Buy E&O before the first pack is sold** (launch checklist 7.1). |
+| E3.12 | Reliance | The deliverables are for the firm's own use. No third party (insurer, client, regulator) may rely on them as our representation. |
+| E3.13 | Term and termination | Ends on delivery plus the correction window. Either party may cancel before intake. |
+| E3.14 | Governing law | `[JURISDICTION]` (see A15) |
+
+**Timing conflict to resolve (for the coordinator):** the PRD wants a **live Stripe link by 8 Oct 2026** and sales from 15 Oct. Stripe requires a legal entity, and **no entity exists and the founder's country is still unknown.** US-resident path: Atlas can finish in days, so it is feasible if started this week. Nepal-resident path: **not feasible by 8 Oct** without the Nepal lawyer's clearance (see `entity-options.md`). Interim options for a lawyer to weigh: sell as a sole proprietor in the founder's own name (US only), or delay paid sales and run S5 plus interviews first.
+
+---
+
 ## Needs a real lawyer
+- **P1:** re-verify §314.6 on eCFR, set the consumer-counting rule, approve the E2 disclaimer and the E3 engagement letter, confirm that "Safeguards-Ready" isn't misleading, and consider whether preparing a WISP for a client raises any unauthorized-practice-of-law concern in the states we sell to (**FLAG**, not researched).
 - Final drafting of the ToS, privacy policy, DPA and BAA, plus governing law once the entity location is known.
 - Enforceability of the disclaimer and liability cap, and our negotiating fallback (super-cap) matched to insurance.
 - Handling of accidental PHI under a "no PHI" clause.
