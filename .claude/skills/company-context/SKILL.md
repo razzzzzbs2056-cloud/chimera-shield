@@ -17,7 +17,7 @@ Single source of truth. If a fact here conflicts with another doc, this file win
 | Founder sender email | `TODO`: use the placeholder `[FOUNDER_NAME]@[DOMAIN]` in drafts. |
 | Founder name / title | `[FOUNDER_NAME]`, Founder |
 | Legal entity | Not registered yet |
-| Pricing (draft) | Founding member $49/mo (first 10 customers); Starter $49, Pro $99, MSP $149 (to be validated) |
+| Pricing (set by finance, not yet validated with customers) | WISP & Evidence Pack: $495 founding (first 10 or until 31 Dec 2026), list $795 (5–15 staff) / $1,195 (16–50). Watch per firm: Solo $49, Standard $99, Plus $149 /mo; annual = 10 months for 12; founding $49/mo locked 24 months. $300 pack credit toward Watch annual ($150 for founding packs) within 30 days. See `docs/company/finance/pricing.md`. |
 | Primary ICP | Owners and operations managers at 5–50 employee firms in healthcare, legal, accounting, e-commerce |
 | Recommended first segment | US accounting / CPA / tax-prep firms, 5–50 staff (score 44/50; runner-up: US dental, 41/50). Pending founder confirmation. See `docs/company/market/first-market-selection.md`. |
 | Secondary ICP | Solo IT generalists and small MSPs |
