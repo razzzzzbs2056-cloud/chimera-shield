@@ -19,6 +19,7 @@ Single source of truth. If a fact here conflicts with another doc, this file win
 | Legal entity | Not registered yet |
 | Pricing (draft) | Founding member $49/mo (first 10 customers); Starter $49, Pro $99, MSP $149 (to be validated) |
 | Primary ICP | Owners and operations managers at 5–50 employee firms in healthcare, legal, accounting, e-commerce |
+| Recommended first segment | US accounting / CPA / tax-prep firms, 5–50 staff (score 44/50; runner-up: US dental, 41/50). Pending founder confirmation. See `docs/company/market/first-market-selection.md`. |
 | Secondary ICP | Solo IT generalists and small MSPs |
 | North star (day 90) | 3 paying customers |
 
