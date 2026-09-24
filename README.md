@@ -126,3 +126,10 @@ This project is Codespaces-ready. After opening in Codespaces:
 ## 📄 License
 
 MIT
+
+---
+
+## ▲ Apex: Top 1% Life OS
+
+This repo also contains **Apex**, a life-tracking website and installable app in [`apex/`](apex/README.md).
+Run it with `make apex`, then open http://localhost:5173.

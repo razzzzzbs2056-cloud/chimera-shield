@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Apex</title>
+  <meta name="description" content="Apex: track every part of your day and climb to the top 1%.">
+  <meta name="theme-color" content="#0b0f1a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav id="nav" aria-label="Trackers"></nav>
+  <div class="nav-scrim" onclick="document.body.classList.remove('nav-open')"></div>
+  <div class="shell">
+    <header id="header"></header>
+    <main id="main"></main>
+  </div>
+
+  <!-- core -->
+  <script src="js/core/store.js"></script>
+  <script src="js/core/registry.js"></script>
+  <script src="js/core/ui.js"></script>
+
+  <!-- modules: each registers itself via Apex.registerModule (see docs/MODULE_CONTRACT.md) -->
+  <!-- body -->
+  <script src="js/modules/sleep.js"></script>
+  <script src="js/modules/fitness.js"></script>
+  <script src="js/modules/nutrition.js"></script>
+  <!-- mind -->
+  <script src="js/modules/mindset.js"></script>
+  <script src="js/modules/learning.js"></script>
+  <script src="js/modules/digital.js"></script>
+  <!-- work -->
+  <script src="js/modules/focus.js"></script>
+  <script src="js/modules/goals.js"></script>
+  <script src="js/modules/habits.js"></script>
+  <!-- wealth + life -->
+  <script src="js/modules/finance.js"></script>
+  <script src="js/modules/social.js"></script>
+  <script src="js/modules/review.js"></script>
+
+  <!-- shell: must be last -->
+  <script src="js/core/app.js"></script>
+</body>
+</html>
