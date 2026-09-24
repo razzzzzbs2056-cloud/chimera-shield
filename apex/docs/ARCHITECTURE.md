@@ -43,11 +43,25 @@ against one shared contract. The core connects them together at the end.
 5. **Daily Review** is the loop-closer. It reads every other module's score, so each evening you
    see your whole day in one place.
 
+## Around the core
+
+```
+ Library (knowledge.js) ── principle of the day · per-tracker tips · #/library
+          │
+ Browser app ⇄ Export/Import JSON ⇄ ~/.apex/data.json ⇄ MCP server (mcp/server.mjs) ⇄ Claude
+                                                              ▲
+                                             skills: apex-coach, apex-new-tracker
+```
+
+The MCP server loads `store.js`, `registry.js`, `knowledge.js` and every tracker listed in `index.html` into a
+Node sandbox with a file-backed `localStorage`. So scoring logic exists in one place only, and a new
+tracker shows up in the AI tools automatically.
+
 ## Build split (who built what)
 
 | Agent | Parts |
 |-------|-------|
-| Orchestrator | core store, registry and Life Score, UI kit, app shell, dashboard, settings, PWA, smoke tests, integration |
+| Orchestrator | core store, registry and Life Score, UI kit, app shell, dashboard, settings, PWA, library, MCP server, skills, tests, CI, integration |
 | Agent 1 · Body | sleep, fitness, nutrition |
 | Agent 2 · Mind | mindset, learning, digital discipline |
 | Agent 3 · Work | deep work (focus timer), goals, habits |

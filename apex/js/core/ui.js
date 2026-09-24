@@ -119,10 +119,10 @@
       return h('div', { class: 'field' }, label ? h('span', null, label) : null, wrap);
     },
 
-    toggle({ label, checked, onChange, hint }) {
+    toggle({ label, checked, onChange, hint, ariaLabel }) {
       const id = nextId();
       return h('label', { class: 'toggle', for: id },
-        h('input', { id, type: 'checkbox', checked, onChange: (e) => onChange && onChange(e.target.checked) }),
+        h('input', { id, type: 'checkbox', checked, 'aria-label': ariaLabel || null, onChange: (e) => onChange && onChange(e.target.checked) }),
         h('span', { class: 'toggle-box', 'aria-hidden': 'true' }),
         h('span', { class: 'toggle-label' }, label, hint ? h('small', null, hint) : null));
     },
@@ -144,7 +144,7 @@
       const r = size / 2 - 8;
       const c = 2 * Math.PI * r;
       const pct = Math.max(0, Math.min(100, score || 0)) / 100;
-      return h('div', { class: 'ring', style: { width: size + 'px', height: size + 'px' } },
+      return h('div', { class: 'ring', style: { width: size + 'px', height: size + 'px', fontSize: Math.max(9, size * 0.13) + 'px' } },
         svg('svg', { width: size, height: size, viewBox: `0 0 ${size} ${size}`, 'aria-hidden': 'true' },
           svg('circle', { cx: size / 2, cy: size / 2, r, class: 'ring-track', 'stroke-width': 8, fill: 'none' }),
           svg('circle', { cx: size / 2, cy: size / 2, r, fill: 'none', stroke: color || 'var(--accent)', 'stroke-width': 8,
@@ -158,7 +158,8 @@
       const top = max || Math.max(1, ...values.map((v) => v || 0));
       return h('div', { class: 'bars', style: { height: height + 'px' } },
         values.map((v, i) => h('div', { class: 'bar-col', title: labels ? `${labels[i]}: ${v == null ? '—' : v}` : String(v == null ? '—' : v) },
-          h('div', { class: 'bar' + (v == null ? ' bar-empty' : ''), style: { height: (v == null ? 2 : Math.max(2, (v / top) * 100)) + '%', background: v == null ? '' : color || '' } }),
+          h('div', { class: 'bar-track' },
+            h('div', { class: 'bar' + (v == null ? ' bar-empty' : ''), style: { height: (v == null ? 2 : Math.max(2, Math.min(100, (v / top) * 100))) + '%', background: v == null ? '' : color || '' } })),
           labels ? h('span', { class: 'bar-label' }, labels[i]) : null)));
     },
 

@@ -15,6 +15,7 @@
     const m = hash.match(/^#\/m\/([\w-]+)/);
     if (m) return { name: 'module', id: m[1] };
     if (hash.startsWith('#/settings')) return { name: 'settings' };
+    if (hash.startsWith('#/library')) return { name: 'library' };
     return { name: 'dashboard' };
   }
 
@@ -67,10 +68,12 @@
     $('#nav').replaceChildren(
       h('div', { class: 'brand' }, h('span', { class: 'brand-mark' }, '▲'), h('span', null, 'Apex'), h('small', null, 'Top 1% Life OS')),
       link('#/', '🏆', 'Dashboard', r.name === 'dashboard'),
-      Object.keys(Apex.CATEGORIES).filter((c) => byCat[c]).map((c) => h('div', { class: 'nav-group' },
+      ...Object.keys(Apex.CATEGORIES).filter((c) => byCat[c]).map((c) => h('div', { class: 'nav-group' },
         h('div', { class: 'nav-group-title' }, Apex.CATEGORIES[c].name),
         byCat[c].map((m) => link('#/m/' + m.id, m.icon, m.name, r.name === 'module' && r.id === m.id, lifeScore.byModule[m.id])))),
-      h('div', { class: 'nav-group' }, link('#/settings', '⚙️', 'Settings', r.name === 'settings')));
+      h('div', { class: 'nav-group' },
+        link('#/library', '📖', 'Library', r.name === 'library'),
+        link('#/settings', '⚙️', 'Settings', r.name === 'settings')));
   }
 
   // ---------- dashboard ----------
@@ -116,6 +119,8 @@
               Apex.ui.progress(ls.byCategory[k], 100, c.color),
               h('strong', null, String(ls.byCategory[k]))))))),
 
+      principleCard('Principle of the day', Apex.knowledge.daily(date, weakest.map((w) => w.m.id))),
+
       card('Focus next: your weakest areas',
         h('div', { class: 'focus-list' }, weakest.map(({ m, s }) =>
           h('a', { class: 'focus-item', href: '#/m/' + m.id },
@@ -134,6 +139,42 @@
           h('div', { class: 'tile-summary muted small' }, Apex.moduleSummary(m, date) || m.description),
           bars(hist, { max: 100, color: cat.color, height: 28 }));
       })));
+  }
+
+  // ---------- library ----------
+  function principleCard(title, p) {
+    if (!p) return null;
+    return h('section', { class: 'card principle' },
+      h('div', { class: 'principle-kicker' }, title),
+      h('p', { class: 'principle-text' }, p.text),
+      h('p', { class: 'principle-action' }, h('strong', null, 'Do today: '), p.action),
+      h('div', { class: 'muted small' }, `📖 ${p.title} · ${p.author}`));
+  }
+
+  let libraryQuery = '';
+  function renderLibrary(el) {
+    const results = h('div', { class: 'library-list' });
+    const draw = () => {
+      const list = libraryQuery ? Apex.knowledge.search(libraryQuery) : Apex.knowledge.principles;
+      results.replaceChildren(...(list.length ? list.map((p) => h('article', { class: 'card library-item' },
+        h('p', { class: 'principle-text' }, p.text),
+        h('p', { class: 'principle-action' }, h('strong', null, 'Do today: '), p.action),
+        h('div', { class: 'row library-meta' },
+          h('span', { class: 'muted small' }, `📖 ${p.title} · ${p.author}`),
+          h('span', { class: 'spacer' }),
+          p.modules.map((id) => {
+            const m = Apex.modules.get(id);
+            return m ? h('a', { class: 'pill small', href: '#/m/' + id }, `${m.icon} ${m.name}`) : null;
+          })))) : [Apex.ui.empty('No principles match that search.')]));
+    };
+    const search = h('input', { type: 'search', placeholder: 'Search sleep, money, focus, Atomic Habits…', value: libraryQuery, 'aria-label': 'Search the library',
+      onInput: (e) => { libraryQuery = e.target.value; draw(); } });
+    el.append(
+      h('h2', null, '📖 Library'),
+      h('p', { class: 'muted' }, `${Apex.knowledge.principles.length} principles from ${Object.keys(Apex.knowledge.books).length} books, summarised and linked to your trackers.`),
+      h('div', { class: 'field' }, search),
+      results);
+    draw();
   }
 
   // ---------- settings ----------
@@ -232,9 +273,13 @@
           console.error(`[apex] ${m.id}.render failed`, err);
           body.append(card('Something broke', h('p', { class: 'muted' }, String(err.message || err))));
         }
+        const related = Apex.knowledge.forModule(m.id);
+        if (related.length) main.append(principleCard('From the library', Apex.knowledge.daily(state.date, [m.id])));
       }
     } else if (r.name === 'settings') {
       renderSettings(main);
+    } else if (r.name === 'library') {
+      renderLibrary(main);
     } else {
       renderDashboard(main);
     }
@@ -242,6 +287,18 @@
     if (sameView) window.scrollTo(0, scrollY);
     else window.scrollTo(0, 0);
   }
+
+  // Background saves (e.g. the focus timer finishing on another page) only need the
+  // header and nav refreshed; re-rendering main would wipe whatever the user is typing.
+  let chromeTimer = null;
+  Apex.store.onChange(() => {
+    clearTimeout(chromeTimer);
+    chromeTimer = setTimeout(() => {
+      if (rendering) return;
+      renderHeader();
+      renderNav(route());
+    }, 50);
+  });
 
   Apex.render = render;
   Apex.state = state;

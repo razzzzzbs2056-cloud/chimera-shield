@@ -87,6 +87,13 @@ async function check(viewport, label) {
   if (shots) await page.screenshot({ path: path.join(shots, `${label}-dashboard.png`), fullPage: true });
   await page.goto(base + '#/settings');
   await page.waitForSelector('.settings-list');
+  await page.goto(base + '#/library');
+  await page.waitForSelector('.library-item');
+  await page.fill('input[type=search]', 'sleep');
+  if (!(await page.$$('.library-item')).length) failures.push(`[${label}] library search found nothing for "sleep"`);
+  if (shots) await page.screenshot({ path: path.join(shots, `${label}-library.png`), fullPage: false });
+  const navLinks = await page.$$eval('#nav .nav-link', (els) => els.length);
+  if (navLinks < ids.length + 3) failures.push(`[${label}] nav shows ${navLinks} links, expected ${ids.length + 3}`);
 
   errors.forEach((e) => failures.push(`[${label}] console: ${e}`));
   await page.close();

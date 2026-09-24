@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "apex": {
+      "command": "node",
+      "args": ["apex/mcp/server.mjs"],
+      "env": {}
+    }
+  }
+}

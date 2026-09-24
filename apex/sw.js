@@ -1,8 +1,8 @@
 /* Apex service worker: cache-first app shell so the app works fully offline. */
-const CACHE = 'apex-v1';
+const CACHE = 'apex-v2';
 const ASSETS = [
   './', 'index.html', 'manifest.webmanifest', 'icons/icon.svg', 'css/styles.css',
-  'js/core/store.js', 'js/core/registry.js', 'js/core/ui.js', 'js/core/app.js',
+  'js/core/store.js', 'js/core/registry.js', 'js/core/ui.js', 'js/core/knowledge.js', 'js/core/app.js',
   'js/modules/sleep.js', 'js/modules/fitness.js', 'js/modules/nutrition.js',
   'js/modules/mindset.js', 'js/modules/learning.js', 'js/modules/digital.js',
   'js/modules/focus.js', 'js/modules/goals.js', 'js/modules/habits.js',

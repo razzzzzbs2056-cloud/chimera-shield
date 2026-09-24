@@ -75,7 +75,7 @@ Life Score, navigation, streaks, and backup.
 `h(tag, attrs, ...children)`, `svg`, `card(title, ...)`, `row(...)`, `grid(...)`, `stat(label, value, sub)`,
 `number({label,value,onChange,min,max,step,unit})`, `text({...})`, `textarea({...})`,
 `select({label,value,options,onChange})`, `rating({label,value,max,onChange,icons})`,
-`toggle({label,checked,onChange,hint})`, `button(label,onClick,variant)` (variants: `primary`, `ghost`, `danger`),
+`toggle({label,checked,onChange,hint,ariaLabel})`, `button(label,onClick,variant)` (variants: `primary`, `ghost`, `danger`),
 `progress(value,max,color)`, `ring(score,{size,color,label})`, `bars(values,{max,color,labels,height})`,
 `sparkline(values,{width,height,color})`, `list(items,render,onRemove)`, `adder(placeholder,onAdd)`,
 `empty(text)`, `toast(msg)`, `fmtMinutes(min)`.
