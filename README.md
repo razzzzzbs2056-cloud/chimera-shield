@@ -126,3 +126,15 @@ This project is Codespaces-ready. After opening in Codespaces:
 ## 📄 License
 
 MIT
+
+---
+
+## 🎯 Betting desk
+
+A multi-agent sports-betting desk lives in `betting/`. It tracks games and odds across books, finds +EV and arbitrage bets, sizes them with fractional Kelly, and logs paper bets with P&L, ROI, and CLV. It needs only the standard library:
+
+```bash
+python -m betting train && python -m betting scan && python -m betting report
+```
+
+See [docs/betting/README.md](docs/betting/README.md) for the agent roster, strategy, and API.

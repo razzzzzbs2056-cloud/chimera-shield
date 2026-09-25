@@ -1,0 +1,87 @@
+[
+ {
+  "id": "nfl-kc-buf",
+  "sport_key": "americanfootball_nfl",
+  "completed": true,
+  "home_team": "Kansas City Chiefs",
+  "away_team": "Buffalo Bills",
+  "scores": [
+   {
+    "name": "Kansas City Chiefs",
+    "score": "24"
+   },
+   {
+    "name": "Buffalo Bills",
+    "score": "27"
+   }
+  ]
+ },
+ {
+  "id": "nba-bos-nyk",
+  "sport_key": "basketball_nba",
+  "completed": true,
+  "home_team": "Boston Celtics",
+  "away_team": "New York Knicks",
+  "scores": [
+   {
+    "name": "Boston Celtics",
+    "score": "112"
+   },
+   {
+    "name": "New York Knicks",
+    "score": "108"
+   }
+  ]
+ },
+ {
+  "id": "nba-lal-gsw",
+  "sport_key": "basketball_nba",
+  "completed": true,
+  "home_team": "Los Angeles Lakers",
+  "away_team": "Golden State Warriors",
+  "scores": [
+   {
+    "name": "Los Angeles Lakers",
+    "score": "118"
+   },
+   {
+    "name": "Golden State Warriors",
+    "score": "121"
+   }
+  ]
+ },
+ {
+  "id": "nfl-phi-dal",
+  "sport_key": "americanfootball_nfl",
+  "completed": true,
+  "home_team": "Philadelphia Eagles",
+  "away_team": "Dallas Cowboys",
+  "scores": [
+   {
+    "name": "Philadelphia Eagles",
+    "score": "31"
+   },
+   {
+    "name": "Dallas Cowboys",
+    "score": "20"
+   }
+  ]
+ },
+ {
+  "id": "epl-ars-che",
+  "sport_key": "soccer_epl",
+  "completed": true,
+  "home_team": "Arsenal",
+  "away_team": "Chelsea",
+  "scores": [
+   {
+    "name": "Arsenal",
+    "score": "1"
+   },
+   {
+    "name": "Chelsea",
+    "score": "1"
+   }
+  ]
+ }
+]

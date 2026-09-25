@@ -39,3 +39,6 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 tsconfig.json
+
+# Betting desk ledger (your bets and bankroll stay local)
+betting/data/*.db

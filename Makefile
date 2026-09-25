@@ -24,3 +24,17 @@ frontend:
 ## Start backend only
 backend:
 	python -m uvicorn backend.main:app --reload --port 8000
+
+## Betting desk
+.PHONY: bet-scan bet-settle bet-report bet-test
+bet-scan:
+	python -m betting scan
+
+bet-settle:
+	python -m betting settle
+
+bet-report:
+	python -m betting report
+
+bet-test:
+	python -m unittest discover -s betting/tests -t .

@@ -1,0 +1,1007 @@
+[
+ {
+  "id": "nfl-kc-buf",
+  "sport_key": "americanfootball_nfl",
+  "commence_time": "2030-10-04T00:20:00Z",
+  "home_team": "Kansas City Chiefs",
+  "away_team": "Buffalo Bills",
+  "bookmakers": [
+   {
+    "key": "pinnacle",
+    "title": "pinnacle",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.74
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 2.2
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.93,
+        "point": -2.5
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 1.95,
+        "point": 2.5
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.95,
+        "point": 47.5
+       },
+       {
+        "name": "Under",
+        "price": 1.93,
+        "point": 47.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "draftkings",
+    "title": "draftkings",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.71
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 2.18
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.91,
+        "point": -2.5
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 1.91,
+        "point": 2.5
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 2.04,
+        "point": 47.5
+       },
+       {
+        "name": "Under",
+        "price": 1.8,
+        "point": 47.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "fanduel",
+    "title": "fanduel",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.67
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 2.36
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.87,
+        "point": -2.5
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 1.95,
+        "point": 2.5
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.91,
+        "point": 47.5
+       },
+       {
+        "name": "Under",
+        "price": 1.91,
+        "point": 47.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "betmgm",
+    "title": "betmgm",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.7
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 2.2
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.91,
+        "point": -2.5
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 1.91,
+        "point": 2.5
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.91,
+        "point": 47.5
+       },
+       {
+        "name": "Under",
+        "price": 1.91,
+        "point": 47.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "williamhill_us",
+    "title": "williamhill_us",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.73
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 2.15
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.95,
+        "point": -2.5
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 1.87,
+        "point": 2.5
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.87,
+        "point": 47.5
+       },
+       {
+        "name": "Under",
+        "price": 1.95,
+        "point": 47.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "espnbet",
+    "title": "espnbet",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.69
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 2.22
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Kansas City Chiefs",
+        "price": 1.91,
+        "point": -3.0
+       },
+       {
+        "name": "Buffalo Bills",
+        "price": 1.91,
+        "point": 3.0
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.91,
+        "point": 48.0
+       },
+       {
+        "name": "Under",
+        "price": 1.91,
+        "point": 48.0
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "nba-bos-nyk",
+  "sport_key": "basketball_nba",
+  "commence_time": "2030-10-05T23:30:00Z",
+  "home_team": "Boston Celtics",
+  "away_team": "New York Knicks",
+  "bookmakers": [
+   {
+    "key": "pinnacle",
+    "title": "pinnacle",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Boston Celtics",
+        "price": 1.62
+       },
+       {
+        "name": "New York Knicks",
+        "price": 2.44
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.93,
+        "point": 221.5
+       },
+       {
+        "name": "Under",
+        "price": 1.95,
+        "point": 221.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "draftkings",
+    "title": "draftkings",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Boston Celtics",
+        "price": 1.61
+       },
+       {
+        "name": "New York Knicks",
+        "price": 2.4
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.91,
+        "point": 221.5
+       },
+       {
+        "name": "Under",
+        "price": 1.91,
+        "point": 221.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "fanduel",
+    "title": "fanduel",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Boston Celtics",
+        "price": 1.56
+       },
+       {
+        "name": "New York Knicks",
+        "price": 2.56
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.87,
+        "point": 221.5
+       },
+       {
+        "name": "Under",
+        "price": 1.95,
+        "point": 221.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "betmgm",
+    "title": "betmgm",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Boston Celtics",
+        "price": 1.7
+       },
+       {
+        "name": "New York Knicks",
+        "price": 2.2
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.91,
+        "point": 221.5
+       },
+       {
+        "name": "Under",
+        "price": 1.91,
+        "point": 221.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "betrivers",
+    "title": "betrivers",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Boston Celtics",
+        "price": 1.6
+       },
+       {
+        "name": "New York Knicks",
+        "price": 2.38
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.95,
+        "point": 221.5
+       },
+       {
+        "name": "Under",
+        "price": 1.87,
+        "point": 221.5
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "nba-lal-gsw",
+  "sport_key": "basketball_nba",
+  "commence_time": "2030-10-06T02:30:00Z",
+  "home_team": "Los Angeles Lakers",
+  "away_team": "Golden State Warriors",
+  "bookmakers": [
+   {
+    "key": "draftkings",
+    "title": "draftkings",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.91
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.91
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.91,
+        "point": -1.0
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.91,
+        "point": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "fanduel",
+    "title": "fanduel",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.87
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.95
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.91,
+        "point": -1.0
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.91,
+        "point": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "betmgm",
+    "title": "betmgm",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.95
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.87
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.87,
+        "point": -1.0
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.95,
+        "point": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "williamhill_us",
+    "title": "williamhill_us",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.91
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.91
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.91,
+        "point": -1.0
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.91,
+        "point": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "bovada",
+    "title": "bovada",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.83
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 2.1
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Los Angeles Lakers",
+        "price": 1.91,
+        "point": -1.0
+       },
+       {
+        "name": "Golden State Warriors",
+        "price": 1.91,
+        "point": 1.0
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "nfl-phi-dal",
+  "sport_key": "americanfootball_nfl",
+  "commence_time": "2030-10-06T20:25:00Z",
+  "home_team": "Philadelphia Eagles",
+  "away_team": "Dallas Cowboys",
+  "bookmakers": [
+   {
+    "key": "pinnacle",
+    "title": "pinnacle",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.5
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 2.78
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.94,
+        "point": -3.5
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 1.94,
+        "point": 3.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "draftkings",
+    "title": "draftkings",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.48
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 2.7
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.91,
+        "point": -3.5
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 1.91,
+        "point": 3.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "fanduel",
+    "title": "fanduel",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.49
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 2.72
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.89,
+        "point": -3.5
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 1.93,
+        "point": 3.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "betmgm",
+    "title": "betmgm",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.47
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 2.75
+       }
+      ]
+     },
+     {
+      "key": "spreads",
+      "outcomes": [
+       {
+        "name": "Philadelphia Eagles",
+        "price": 1.91,
+        "point": -3.5
+       },
+       {
+        "name": "Dallas Cowboys",
+        "price": 1.91,
+        "point": 3.5
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "epl-ars-che",
+  "sport_key": "soccer_epl",
+  "commence_time": "2030-10-05T14:00:00Z",
+  "home_team": "Arsenal",
+  "away_team": "Chelsea",
+  "bookmakers": [
+   {
+    "key": "pinnacle",
+    "title": "pinnacle",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Arsenal",
+        "price": 1.95
+       },
+       {
+        "name": "Chelsea",
+        "price": 4.0
+       },
+       {
+        "name": "Draw",
+        "price": 3.7
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.9,
+        "point": 2.5
+       },
+       {
+        "name": "Under",
+        "price": 1.98,
+        "point": 2.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "bet365",
+    "title": "bet365",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Arsenal",
+        "price": 1.91
+       },
+       {
+        "name": "Chelsea",
+        "price": 3.9
+       },
+       {
+        "name": "Draw",
+        "price": 3.6
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.87,
+        "point": 2.5
+       },
+       {
+        "name": "Under",
+        "price": 1.95,
+        "point": 2.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "williamhill",
+    "title": "williamhill",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Arsenal",
+        "price": 1.9
+       },
+       {
+        "name": "Chelsea",
+        "price": 3.8
+       },
+       {
+        "name": "Draw",
+        "price": 3.75
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.85,
+        "point": 2.5
+       },
+       {
+        "name": "Under",
+        "price": 1.95,
+        "point": 2.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "unibet_eu",
+    "title": "unibet_eu",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Arsenal",
+        "price": 1.93
+       },
+       {
+        "name": "Chelsea",
+        "price": 3.85
+       },
+       {
+        "name": "Draw",
+        "price": 3.95
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.91,
+        "point": 2.5
+       },
+       {
+        "name": "Under",
+        "price": 1.91,
+        "point": 2.5
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "key": "paddypower",
+    "title": "paddypower",
+    "markets": [
+     {
+      "key": "h2h",
+      "outcomes": [
+       {
+        "name": "Arsenal",
+        "price": 1.9
+       },
+       {
+        "name": "Chelsea",
+        "price": 4.2
+       },
+       {
+        "name": "Draw",
+        "price": 3.5
+       }
+      ]
+     },
+     {
+      "key": "totals",
+      "outcomes": [
+       {
+        "name": "Over",
+        "price": 1.83,
+        "point": 2.5
+       },
+       {
+        "name": "Under",
+        "price": 2.0,
+        "point": 2.5
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

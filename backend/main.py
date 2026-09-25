@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from backend.routers import scan
+from backend.routers import scan, betting
 
 load_dotenv()
 
@@ -20,6 +20,7 @@ app.add_middleware(
 )
 
 app.include_router(scan.router)
+app.include_router(betting.router)
 
 
 @app.get("/")
