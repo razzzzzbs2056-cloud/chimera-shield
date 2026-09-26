@@ -84,7 +84,7 @@ New domains and mailboxes have no reputation, so start slowly. The goal is a rea
 
 ## Step 5. Daily volume caps (per inbox)
 
-The ramp follows the outreach skill (5–10 a day in week 1, about 30 a day by week 4) and the playbook's weekly caps.
+The ramp stays inside the outreach skill's warm-up limits (5–10 a day in week 1, about 30 a day by week 4) and the playbook's weekly targets (§5.3), which are now lower because the lawful list is smaller.
 
 These are **ceilings**. The Spam Act-limited list (playbook §5.3) means the real numbers will usually sit well below them.
 
@@ -101,7 +101,8 @@ These are **ceilings**. The Spam Act-limited list (playbook §5.3) means the rea
 
 **Pause at once** (channel plan §5): bounces over 3% in any week, any spam placement in a weekly seed test, or the Postmaster spam rate climbing toward 0.3% (the Gmail sender guidelines above say to stay below 0.3%). Cut volume in half for a week, clean the list and re-check the records.
 
-- Send Tuesday to Thursday mornings in the recipient's time zone. Use Mondays and Fridays for follow-ups only. Space sends 2–5 minutes apart (every tool below can do this).
+- Send Tuesday to Thursday mornings (08:00–11:00) in the recipient's time zone. Use Mondays and Fridays for follow-ups only. Space sends 2–5 minutes apart (every tool below can do this).
+- **Sending from Sydney:** US Tue–Thu 08:00–11:00 Pacific is about **02:00–06:00 Sydney, Wed–Fri** (03:00–06:00 after Nov 1). Load and **schedule** the next day's sends in the Sydney late morning; never send by hand overnight. Set the tool's time zone per row from `state`, not from your own clock.
 - Plain text, no images, no attachments. **Turn off open tracking and click tracking.** Tracking pixels and redirected links hurt deliverability, and we tell prospects we don't track them covertly.
 
 ## Step 6. Sending tool: options
@@ -112,27 +113,39 @@ These are **ceilings**. The Spam Act-limited list (playbook §5.3) means the rea
 | **Google Workspace + YAMM** (Yet Another Mail Merge) | Personal about **$25/year**, Professional about $50/year ([Mailmeteor summary](https://mailmeteor.com/blog/yamm-pricing); [YAMM pricing](https://yamm.com/pricing/)) | No | A basic mail merge from Google Sheets. Follow-ups are more manual. | Cheapest. Fine for touch 1, but a 4-touch sequence with stop-on-reply takes manual work. |
 | **Instantly** | Growth about **$47/mo**, or $37.60/mo billed annually ([Woodpecker summary](https://woodpecker.co/blog/instantly-ai-pricing/); [Landbase](https://www.landbase.com/blog/instantly-ai-pricing)) | Yes | Yes, with a unified inbox across mailboxes | Pick this if you want built-in warm-up or expect to add inboxes. |
 | **Smartlead** | Basic about **$39/mo** ([Smartlead pricing](https://www.smartlead.ai/pricing); [La Growth Machine summary](https://lagrowthmachine.com/smartlead-pricing/)) | Yes | Yes | Similar to Instantly. Choose on UI preference. |
-| **Apollo** | Basic about **$59/user/mo**, or $49 billed annually ([Warmly summary](https://www.warmly.ai/p/blog/apollo-pricing); [Landbase](https://www.landbase.com/blog/apollo-pricing)) | Yes | Yes, plus a contact database | **Not recommended now.** Its main value is a third-party contact database. Our rules say to build the list from public directories and firm websites and never buy lists (outreach skill). If you use it, use it only as a sender, with our own list. |
+| **Apollo** | Basic about **$59/user/mo**, or $49 billed annually ([Warmly summary](https://www.warmly.ai/p/blog/apollo-pricing); [Landbase](https://www.landbase.com/blog/apollo-pricing)) | Yes | Yes, plus a contact database | **Not recommended.** Its database is **banned as a source** under the Spam Act (addresses not published by the recipient; possibly a harvested-address list). If ever used, it is a **sender only**, with our own evidenced list, and its database and enrichment features must stay off. |
 
 **Suggested setup:** Workspace (about $7–8.40/mo) + GMass Standard (about $30/mo) + manual warm-up, **about $37–38/mo** (estimate). Move to Instantly or Smartlead only if you add inboxes.
-**Email verification:** run the list through a verifier before each upload (most tools above include one, or have a paid add-on). Aim for a bounce rate under 3%.
+**Email verification:** run the list through a verifier before each upload (most tools above include one, or have a paid add-on). Aim for a bounce rate under 3%. A verifier only checks addresses we already evidenced; it must never be used to find or guess addresses.
+
+**Banned tools and features (Spam Act "address-harvesting" risk):** contact databases and enrichment (Apollo, ZoomInfo, RocketReach, Clearbit, Lusha and similar), "email finder" tools (Hunter and similar), pattern guessers, browser extensions or scrapers that collect addresses from websites or LinkedIn, and purchased or rented lists. Any built-in lead database or lead finder in Instantly or Smartlead is also off. Build the list by hand.
 
 ## Step 7. Building the list (`mail-merge-template.csv`)
 
-Header only, and no real people in the repo. Keep the working list in your own Google Sheet, not in git.
+Header only, and no real people in the repo. Keep the working list and the evidence in your own Google Sheet and Drive folder, not in git.
+
+**Rule: no evidence, no send.** Under the Spam Act the burden of showing consent is on us, so every row needs the evidence columns below before it is uploaded. Allowed sources are listed in `docs/company/sales/playbook.md` §3.4: the firm's own website first; a directory profile only if the directory's terms allow solicitation and legal-ops has cleared it; express-consent sources (Readiness Check opt-in, ads opt-in, partner intro). Never the PTIN extract, databases, enrichment tools, scrapers or guesses.
 
 | Column | What goes in it | Rule |
 |---|---|---|
+| `id` | Pipeline id | Joins to `docs/company/sales/pipeline.csv` |
 | `first_name` | The contact's first name, as it appears on the source page | Required |
 | `firm_name` | The firm's everyday name (e.g. "Example & Co. CPAs", not "Example & Co. CPAs, LLC") | Required |
 | `city` | Office city | Required |
-| `state` | Two-letter state code | **US only** (sequences.md rules). Drop Canadian rows (CASL). |
-| `trigger` | The **personal first line**, written by hand and true: e.g. "Your NAEA listing says your firm has three enrolled agents serving [CITY]." | Must be checked against the source. If you can't write one in 2 minutes, skip the prospect (sequences.md rules). Never mention their domain, DNS or security settings. |
-| `email` | A business address published for client contact | Not a personal address found elsewhere. Not guessed patterns. No bought lists. |
-| `source` | URL where you found the email, plus the date you checked it | e.g. `https://example-firm.com/contact (2026-10-05)` |
-| `consent_basis` | Why emailing is lawful and expected | Use one fixed phrase, e.g. `B2B: business contact address published on firm website; message relevant to role` |
+| `state` | Two-letter state code | **US only** in this kit. Drop Canadian rows (CASL). Sets the send time zone. |
+| `country` | `US` | AU pilot contacts go in a separate campaign (`docs/company/sales/australia-pilot.md`) |
+| `role` | Owner / Managing partner / QI / Ops lead with an IT role / generic inbox | Helpers only if the site shows they handle operations or IT. Prefer the owner's address over `info@`. |
+| `trigger` | The **personal first line**, written by hand, true, 12 words or fewer | Must be checked against the source. If you can't write one in 2 minutes, skip the prospect. Never mention their domain, DNS or security settings. |
+| `email` | The exact address shown on the source page | **Published by the firm or the person themselves.** Not guessed, not from a database or tool, not from a PDF, not from LinkedIn. |
+| `source_label` | Short text for the footer's `[SOURCE]`, e.g. "your firm's website" | Must match `source_url` |
+| `source_url` | The exact page showing the address | e.g. `https://example-firm.com/contact` |
+| `source_checked_date` | ISO date you checked the page | Re-check if older than 60 days at send time |
+| `evidence_file` | Drive link to a saved PDF or screenshot of the page | Required |
+| `no_marketing_statement` | `none seen` / `present → excluded` | Any "no solicitation" or "not for marketing" note excludes the row |
+| `directory_terms_ok` | `n/a (firm site)` / `yes` / `no → excluded` | Directory terms that ban commercial solicitation exclude the row |
+| `consent_basis` | `inferred: conspicuous publication` / `express: [form or intro], [date]` / `inferred: existing relationship` | Never `none: LinkedIn only` in this file |
 
-Before each upload: dedupe against `docs/company/sales/pipeline.csv` (don't sequence anyone already in discovery or opted out), and against the suppression list (step 9).
+Before each upload: dedupe against `docs/company/sales/pipeline.csv` (don't sequence anyone already in discovery or opted out), and against the suppression list (step 9). Keep the evidence for at least 2 years after the last message (legal-ops to confirm the period).
 
 ## Step 8. Loading `sequences.md` into the tool
 
@@ -146,33 +159,48 @@ Before each upload: dedupe against `docs/company/sales/pipeline.csv` (don't sequ
 | `[CITY]` | `{city}` |
 | `[PERSONAL_LINE]` / `[SHORT_PERSONAL_LINE]` | `{trigger}` |
 | `[EVENT]` (A1-EVENT only) | Write the event name into `{trigger}` and edit the line so it reads naturally |
-| `[FOUNDER_NAME]`, `[DOMAIN]`, `[POSTAL_ADDRESS]`, `[READINESS_CHECK_URL]` | **Type the real values into the template itself.** They're the same for everyone. |
+| `[SOURCE]` (footer) | `{source_label}` |
+| `[FOUNDER_NAME]`, `[DOMAIN]`, `[ABN]`, `[US_POSTAL_ADDRESS]`, `[READINESS_CHECK_URL]` | **Type the real values into the template itself.** They're the same for everyone. |
 
 3. **Steps and waits:** Step 1 = A1 variant (day 0). Step 2 = A2, **3 days** later. Step 3 = A3, **5 days** after step 2. Step 4 = A4, **7 days** after step 3. Send steps 2–4 **as replies in the same thread** (keep the "re:" subject for A2, per sequences.md).
 4. **Touch 1 has no links** (sequences.md). The first link is A3's `[READINESS_CHECK_URL]`. If the check isn't live, use the fallback line in sequences.md.
-5. **Settings:** plain text; open and click tracking **off**; **stop on reply** (any reply, including "not now"); **stop for the whole firm's domain on reply** if the tool supports it; daily cap from step 5; send window Tue–Thu mornings in recipient time; skip Nov 26–27.
-6. **Pre-send check:** preview 5 random rows. Search each preview for `[` and `{`. If either appears, a placeholder or merge field is unfilled, so don't send. Check the word count stays under 100 (sequences.md has a word-count check).
-7. **Log it:** each Friday, export sends, replies and opt-outs and update `docs/company/sales/pipeline.csv` (`sequence`, `touch_step`, `last_touch_date`, `opted_out`).
+5. **Settings:** plain text; open and click tracking **off**; **stop on reply** (any reply, including "not now"); **stop for the whole firm's domain on reply** if the tool supports it; daily cap from step 5; send window Tue–Thu 08:00–11:00 in recipient time (scheduled, step 5); skip Nov 26–27.
+6. **Footer:** paste footer F1 (owners) or F2 (ops leads) from `sequences.md` into every step. It carries the ABN, `[US_POSTAL_ADDRESS]`, the "I found your address on {source_label}" line and the unsubscribe line. Never shorten it.
+7. **Pre-send check:** preview 5 random rows. Search each preview for `[` and `{`. If either appears, a placeholder or merge field is unfilled, so don't send. Check each body (greeting to ask) is 65 words or fewer (sequences.md word-count check).
+8. **Log it:** each Monday (Sydney), export sends, replies and opt-outs and update `docs/company/sales/pipeline.csv` (`sequence`, `touch_step`, `last_touch_date`, `opted_out`). Check unsubscribes **daily**, not weekly.
 
-## Step 9. CAN-SPAM checklist (check before the first send and monthly)
+## Step 9. CAN-SPAM and Spam Act checklist (check before the first send and monthly)
 
-Based on the [FTC CAN-SPAM Compliance Guide for Business](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business). The law applies to B2B email too. This is not legal advice: legal-ops confirms it.
+Based on the [FTC CAN-SPAM Compliance Guide for Business](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) and `docs/company/legal/spam-act-cold-email.md` (Australian Spam Act 2003, which applies because we send from Australia). Both laws apply to B2B email; where they differ, follow the stricter one. This is not legal advice: legal-ops confirms it.
 
+**Consent and sources (Spam Act)**
+- [ ] **Consent evidence for every address** (step 7): `source_url`, `source_checked_date`, `evidence_file`, `no_marketing_statement`, `directory_terms_ok`, `consent_basis`. No evidence, no send.
+- [ ] **Only self-published addresses** relevant to the recipient's role, or express consent. No guessed addresses, no databases or enrichment tools, no scrapers or extensions, no purchased lists, no PTIN-extract emails (no harvested-address lists).
+- [ ] **No consent-request emails** ("can I send you info?"). They are commercial messages themselves.
+
+**Identity and content (both laws)**
 - [ ] **Accurate header information:** From name "[FOUNDER_NAME] · ChimeraShield", a real mailbox, and a Reply-To that you read.
+- [ ] **Entity name and ABN in every email:** "ChimeraShield Pty Ltd (ABN [ABN])", or the founder's name and sole-trader ABN if the company isn't registered yet. Contact details stay valid for at least 30 days after the last send.
 - [ ] **Honest subject lines** that match the body. The sequences.md subjects qualify: no "re:" on a first touch and no fake urgency.
-- [ ] **Identify the message as an ad.** The FTC guide asks commercial messages to disclose this clearly and gives leeway on how. **Legal-ops decides the wording** (for example, a footer line like "You're receiving this because [FIRM] lists this address for business enquiries."). Don't send until they have.
-- [ ] **Valid physical postal address** in every email. A registered PO box or a private mailbox at a commercial mail receiving agency is acceptable (FTC guide). Playbook gate G3.
-- [ ] **Clear opt-out.** "Reply 'no' and I won't follow up" is in the signature block. The FTC guide allows opt-out by reply email. Add a one-click unsubscribe link too if the tool supports it.
-- [ ] **Honor opt-outs within 10 business days.** Our standard is the same day. The opt-out must keep working for **at least 30 days** after each send, which means keeping the mailbox open after the campaign ends.
-- [ ] **No fee or extra steps** to opt out, and no asking for anything beyond the email address.
+- [ ] **Identify the message as an ad / say why they're getting it.** The footer line "I found your address on [SOURCE] and am writing because you run a tax practice." does both jobs. **Legal-ops confirms the wording** (G3c) before the first send.
+- [ ] **Valid physical postal address** in every email: `[US_POSTAL_ADDRESS]`. A registered PO box or a private mailbox at a commercial mail receiving agency is acceptable (FTC guide). A US virtual mailbox is the safer choice; the lawyer confirms whether an Australian address would do. Playbook gate G3.
+
+**Unsubscribe (stricter Spam Act timing)**
+- [ ] **Unsubscribe line in every email:** "Not relevant? Reply "unsubscribe" (or just "no") and I won't email you again." (It replaces the old "I won't follow up" line.) Add a one-click unsubscribe link too if the tool supports it.
+- [ ] **Action it within 5 business days** (Spam Act; CAN-SPAM allows 10). **Our standard is the same day.** Check replies daily.
+- [ ] It removes the person from **all** our marketing on every channel (email and LinkedIn), not just this sequence, and suppresses the whole firm unless someone else there asked to hear from us.
+- [ ] The opt-out keeps working for **at least 30 days** after each send, which means keeping the mailbox open after the campaign ends.
+- [ ] **No fee, login or extra steps** to opt out, and no asking for anything beyond the email address.
 - [ ] **Suppression list:** everyone who opts out goes on a permanent "do not contact" list (a Sheet tab), mark `opted_out` in pipeline.csv. Never sell or transfer those addresses.
+
+**General**
 - [ ] **You're responsible** even when a tool sends the email. Check the tool's settings yourself.
-- [ ] **Scope:** US business addresses only. No EU/UK (GDPR/PECR) or Canadian (CASL) contacts this season.
+- [ ] **Scope:** US business addresses only in this kit. No EU/UK (GDPR/PECR) or Canadian (CASL) contacts this season. Australian pilot contacts follow `docs/company/sales/australia-pilot.md` (same Spam Act rules, no CAN-SPAM).
 - [ ] **Gmail sender rules:** SPF and DKIM pass, and the spam rate stays under 0.3% ([Gmail sender guidelines](https://support.google.com/mail/answer/81126?hl=en)). The one-click unsubscribe requirement applies at 5,000+ messages a day to Gmail, which is far above our volume, but add it anyway if the tool makes it easy.
 
-## Step 10. Weekly health routine (15 minutes, Fridays)
+## Step 10. Weekly health routine (15 minutes, Mondays in Sydney = US weekend)
 
-1. Bounce rate (target under 3%), reply rate, opt-outs, positive replies.
+1. Bounce rate (target under 3%), reply rate, opt-outs (all actioned the same day?), positive replies, and any complaint (a complaint means pause and tell legal-ops).
 2. Postmaster Tools spam rate and domain reputation.
 3. Seed test touch 1 to your 4–6 test accounts.
 4. DMARC reports: anything unexpected sending as your domain?

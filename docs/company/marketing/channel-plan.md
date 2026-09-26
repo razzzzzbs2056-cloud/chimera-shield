@@ -1,6 +1,7 @@
 # Channel plan: Oct–Dec 2026 (PTIN renewal window)
 
-**Owner:** head-of-growth · **Date:** 2026-09-24 · **Status:** draft for founder decision
+**Owner:** head-of-growth · **Date:** 2026-09-24 · **Status:** draft for founder decision. Legal review (compliance-roadmap §5) applied 2026-09-26.
+**US only. Do not reuse in Australia. See `docs/company/market/australia-vs-us.md` §6.**
 **Goal:** 3 paid WISP & Evidence Packs by 15 Dec 2026 (PRD §9). **Leading goal:** 60 completed readiness checks and 30 qualified conversations by 1 Dec 2026.
 **Messaging:** `messaging.md`. **Pages:** `landing-readiness-check.md`, `landing-pack.md`. **Content:** `content-calendar.md`.
 
@@ -34,9 +35,9 @@
 | **29 Sep** | Update LinkedIn headline and About (content calendar §1) | Founder | Channel 1 |
 | **1 Oct** | Channel 1 starts (post 1 + first DMs) | Founder | - |
 | **5 Oct** | Channel 2 warm-up starts at 5–10 emails/day, first touch plain text, no links | Founder | - |
-| **8 Oct** | Legal-ops approves the disclaimer, consent text and every sentence in `messaging.md` §6a. Postal address in place for CAN-SPAM. | Legal-ops | Publishing the pages |
+| **8 Oct** | Legal-ops approves the disclaimer, consent text and every sentence in `messaging.md` §6a. Postal address in place for CAN-SPAM. ABN issued for the Spam Act footer (no email sends with `[ABN]` still a placeholder). | Legal-ops + founder | Publishing the pages, all email |
 | **15 Oct** | Readiness check live at `[DOMAIN]/check`. Pack page and Stripe link live. | Tech-lead | Both channels' calls to action |
-| **~5 Dec** | Last Pack intake call (PRD §11) | Founder | - |
+| **Fri 4 Dec** | Last Pack intake call (sales playbook; `australia-vs-us.md` §7). Same date in every file. | Founder | - |
 | **15 Dec** | Goal date: 3 Packs paid | - | - |
 | **18 Dec** | Stop cold outreach for the year. Holiday weeks and the start of filing season. Follow up only with warm leads and Watch prepay. | Founder | - |
 
@@ -102,15 +103,17 @@ Ramp follows the outreach-writing skill: 5–10/day in week 1, rising to about 3
    >
    > I built a free 12-question check that tells a firm its 3 biggest gaps before renewal. Want me to send the link?
    >
-   > [FOUNDER_NAME], Founder, ChimeraShield
-   > [POSTAL_ADDRESS]
+   > [FOUNDER_NAME], Founder, ChimeraShield Pty Ltd (ABN [ABN])
+   > [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
    >
-   > If this isn't relevant, just reply "no" and I won't follow up.
+   > Not relevant? Reply "unsubscribe" (or just "no") and I won't email you again.
+
+   (Footer per `legal/spam-act-cold-email.md` §4. The live sequence and kit are owned by sales: `sales/sequences.md`, `ads/cold-email-launch-kit.md`. If they differ, theirs wins.)
 2. **+3 days:** short bump adding one useful fact (e.g. the 5,000-consumer exemption in one sentence).
 3. **+5 days:** the resource. The check link, plus a link to the free IRS Pub 5708.
 4. **+7 days:** "closing the loop". No more emails after this.
 
-**Compliance (CAN-SPAM):** accurate sender and subject, real postal address, working opt-out honored within 10 business days (we honor it immediately). Only publicly listed business emails that relate to the person's role. No bought lists. Keep a suppression list and apply it to both domains.
+**Compliance (CAN-SPAM and, because we send from Australia, the Spam Act 2003):** accurate sender and subject; the authorising entity and ABN; real postal address; working unsubscribe for at least 30 days, honoured within 5 business days (the stricter Spam Act limit; we honour it the same day). Only addresses the firm or person published themselves, where the message relates to their role, with the source recorded as consent evidence. No bought lists. Keep a suppression list and apply it to both domains and to the readiness-check emails.
 
 ---
 
@@ -148,7 +151,7 @@ Checkpoints: **Fri 30 Oct** (2 weeks after the check goes live) and **Fri 20 Nov
 | Main site (1st choice) | `chimerashield.com` | Matches the company name. Hosts `/check` and `/wisp-pack`. |
 | Main site (2nd choice) | `chimerashield.co` | Only if the .com is taken by an unrelated business. Check that nobody is using the .com in security first (a confusion risk). |
 | Main site (3rd choice) | `trychimerashield.com` | Common startup pattern. Fine for a site, a little weaker for trust. |
-| **Cold-email secondary domain** | `getchimerashield.com` | Per the outreach-writing skill. Used **only** for cold email so any reputation hit doesn't reach the main domain. Redirect its website to the main domain, and give it its own SPF, DKIM and DMARC. Every email still says "ChimeraShield" and gives the real sender name and postal address. |
+| **Cold-email secondary domain** | `getchimerashield.com` | Per the outreach-writing skill. Used **only** for cold email so any reputation hit doesn't reach the main domain. Redirect its website to the main domain, and give it its own SPF, DKIM and DMARC. Every email still says "ChimeraShield Pty Ltd" and gives the real sender name, ABN and postal address. |
 
 **Avoid:** anything containing "irs", "ptin", "5708" or "gov". It could look like a government site, and we'd look like the template sellers we want to stand apart from.
 

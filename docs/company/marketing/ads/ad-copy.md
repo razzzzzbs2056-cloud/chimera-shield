@@ -2,7 +2,8 @@
 
 **Owner:** growth-marketer (paid) · **Date:** 2026-09-24 · **Status:** draft. Founder approval needed, and legal-ops must check every regulatory line (see "Facts used") before anything goes live.
 **Offer:** the free readiness check at `https://[DOMAIN]/check` (`docs/company/marketing/landing-readiness-check.md`). **Plan and budgets:** `ads-plan.md`. **Images:** `png/` (sources in `src/`).
-**Character counts:** checked by `src/check_copy.py` (Python `len()`, 2026-09-24). Every item below is within its limit. Re-run the script after any edit.
+**Character counts:** checked by `src/check_copy.py` (Python `len()`, 2026-09-24). Every item below is within its limit. Re-run the script after any edit. **2026-09-26 legal edits (M1, M4) were hand-counted and the script's strings updated, but the script has not been re-run yet: run `python3 src/check_copy.py` before upload.**
+**US only. Do not reuse in Australia. See `docs/company/market/australia-vs-us.md` §6.** Keep every Google and LinkedIn campaign geo-targeted to the US.
 
 ## Rules this copy follows
 - **No fear.** No breaches, hackers or fines. We name the obligation calmly (`messaging.md` §4, §8).
@@ -60,7 +61,9 @@ Use one RSA per ad group (ad groups are in `ads-plan.md` §4). Keep the same ass
 | How the Check Works | 12 questions plus a domain check | Passive, with your written OK | `[DOMAIN]/check#how` |
 | What You Get | 3 ranked gaps in plain English | Plus your email-domain result | `[DOMAIN]/check#get` |
 | Is It Really Free? | No payment details needed | One follow-up email, no more | `[DOMAIN]/check#faq` |
-| Who Sees My Results? | Only you, at your work email | Stored encrypted, never shared | `[DOMAIN]/check#faq` |
+| Who Sees My Results? | You and our reviewer only | Encrypted. Never sold. | `[DOMAIN]/check#faq` |
+
+The FAQ this sitelink points to names the service providers (hosting, email, AI) that process results under contract (compliance-roadmap §5 M1–M2).
 
 **Callouts** (25 or fewer): Free, No Payment Details · About 10 Minutes · Passive Checks Only · No Client Data Needed · Plain English · Independent Company
 
@@ -87,10 +90,10 @@ LinkedIn shows about the first 150 characters of intro text before "...see more"
 - **Facts:** none. This variant describes our offer only.
 
 ### Variant 3: What applies to you (image `png/li-3-steps.png`)
-- **Intro text (223 chars):** Fewer than 5,000 clients? Four FTC Safeguards Rule items don't apply to you. The rest, like multi-factor login, encryption and staff training, still do. Our free check tells you which is which and the 3 gaps to close first.
+- **Intro text (224 chars):** Hold data on fewer than 5,000 consumers? Four Safeguards items may not apply. The rest, like multi-factor login, encryption and staff training, still do. Our free check tells you which is which and the 3 gaps to close first.
 - **Headline (53):** Which Safeguards items apply to your firm? Check free
 - **CTA button:** Learn more
-- **Facts:** F3, F4, F5. **Legal-ops:** "fewer than 5,000 clients" is shorthand for the rule's "fewer than five thousand consumers" (16 CFR 314.6). If that shorthand isn't acceptable, use "Hold data on fewer than 5,000 consumers?" instead (it's 41 characters, so the hook still fits).
+- **Facts:** F3, F4, F5. Uses the rule's word "consumers" (which includes past years' clients, spouses and dependents) and "may not apply", per compliance-roadmap §5 M4 and `terms-outline.md` E1. Never say "clients" or state exemption as fact. The hook ends at character 77, well before the 150 cut.
 
 **Test plan:** run all 3 at once. After roughly 1,500 impressions each, pause the lowest CTR. Details in `ads-plan.md` §7.
 
@@ -115,7 +118,7 @@ Retargeting runs only after an audience reaches the platform minimum: 100 active
 | **Image** | `png/sq-3-trust.png` | `png/sq-1-deadline.png` | `png/sq-1-deadline.png` |
 
 - "About two hours" and "top 5 fixes" come from the Pack definition (`messaging.md` §3, §5).
-- "Last intake calls Dec 4" is our own capacity limit (`docs/company/sales/sequences.md`, rules). Change it in all three places if the founder moves that date.
+- "Last intake calls Dec 4" is our own capacity limit (`docs/company/sales/sequences.md`, rules; `australia-vs-us.md` §7). It is the single last-intake date used everywhere (`landing-pack.md`, `messaging.md`, `channel-plan.md`, `content-calendar.md`), per compliance-roadmap §5 M10. If the founder moves it, change every file on the same day.
 - "Within one business day" is the concierge promise on the landing page. Change it if delivery becomes automated.
 - Stop R3 on **Dec 5**, the day after the last intake.
 

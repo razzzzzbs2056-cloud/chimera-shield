@@ -3,6 +3,7 @@
 **Owner:** head-of-growth · **Date:** 2026-09-24 · **Status:** draft copy. Legal-ops review required before publishing.
 **URL (proposed):** `[DOMAIN]/check` · **Goal:** a completed readiness check with consent recorded. **Secondary goal:** book a Pack call from the result email.
 **Go-live target:** 15 Oct 2026 (catalog §7). Messaging and facts: `docs/company/marketing/messaging.md`.
+**US only. Do not reuse in Australia. See `docs/company/market/australia-vs-us.md` §6.** Legal review edits M2, M3, M5–M8, M13 (compliance-roadmap §5) applied 2026-09-26.
 
 Notes for the builder (tech-lead) are in `> Builder:` blocks. Everything in `[BRACKETS]` is a placeholder and must stay visible until it's filled with a real value.
 
@@ -19,7 +20,7 @@ A free readiness check for tax and accounting firms. Answer 12 plain-English que
 **Primary button:** `Start the free check`
 **Under the button (small):** About 10 minutes. No payment details. No passwords or client data.
 
-> Builder: "About 10 minutes" is an estimate. Time the first 10 completions and correct it. "Within one business day" reflects concierge delivery (catalog §7). Change it to "in minutes" only once results are automated.
+> Builder: "About 10 minutes" is an estimate. Time the first 10 completions and correct it. "Within one business day" reflects concierge delivery (catalog §7). It's a future promise, so it needs reasonable grounds (ACL s 4, compliance-roadmap §5 M13): keep it only while the founder's capacity plan supports it, and pause ads or change the wording if the backlog passes one day. Change it to "in minutes" only once results are automated.
 
 **Trust strip (only true statements):**
 - Structured on IRS Publication 5708 and the FTC Safeguards Rule
@@ -61,7 +62,7 @@ Within one business day, we email you a short, plain-English result: the 3 gaps 
 
 - **Your 3 priority gaps**, ranked, each with a one-sentence "why" and a first step
 - **Your email-domain result** in plain English: what's set up, what's missing, and whether someone could more easily send email pretending to be you
-- **Which Safeguards items may not apply to you.** Firms with fewer than 5,000 consumers are excused from four items under 16 CFR 314.6; we tell you which ones
+- **Which Safeguards items may not apply to you.** Firms that hold information on fewer than 5,000 consumers (everyone whose records you keep, including past years) may be excused from four items under 16 CFR 314.6; we tell you which ones
 - **A short list of free official resources** (IRS Pub 5708, Pub 4557, the FTC guide)
 
 What you **won't** get: a score out of 100, a sales call you didn't ask for, or a claim that you're "compliant".
@@ -79,11 +80,14 @@ What you **won't** get: a score out of 100, a sales call you didn't ask for, or 
 | Work email | required. Must be on your firm's own domain for the domain check. |
 | Your role | Owner / Partner · Office or firm manager · Staff · IT provider working for the firm |
 | Staff count | 1–4 · 5–10 · 11–25 · 26–50 · 50+ |
-| Roughly how many clients' records do you keep? | Fewer than 5,000 · 5,000 or more · Not sure |
+| Roughly how many people's records do you keep, including past years? | Fewer than 5,000 · 5,000 or more · Not sure. Helper text: "Count everyone whose information you hold, including past years' clients, spouses and dependents." |
 | Consent checkbox (required for the domain check) | *"I confirm I own or am authorized by the owner to test [domain], and I authorize ChimeraShield to perform the passive checks described. I understand results may include sensitive security information."* |
 | Optional checkbox | "Send me occasional plain-English notes about security for tax firms. Unsubscribe anytime." (unchecked by default) |
+| Line above the submit button (not a checkbox) | "We'll email your result and one follow-up about it." |
 
-**Under the form:** We'll send your result only to this email address. We don't sell or share your details. `[LINK: Privacy policy, legal-ops]`
+**Under the form:** We'll send your result only to this email address. We don't sell your details. We use them only to run your check, with the service providers listed in our privacy policy. `[LINK: Privacy policy, legal-ops]`
+
+> Builder: store the "We'll email your result and one follow-up about it" line shown, with the timestamp, in the same consent record as the domain-check consent. Under the Spam Act we carry the burden of proving consent for the follow-up (compliance-roadmap §5 M7). The newsletter box stays unticked by default and is recorded separately.
 
 **If the email is Gmail, Yahoo, Outlook.com or similar:**
 > Using a personal-style email for the firm is common. We can't run the domain part of the check on a shared email service, but you can still answer the 12 questions and get your 3 gaps. (Tip: a firm domain with proper email settings makes it harder for someone to impersonate you. We'll explain in your result.)
@@ -117,11 +121,11 @@ No. It's a plain-English readiness check from a security company. It doesn't tel
 **Are you connected to the IRS?**
 No. ChimeraShield is an independent company. The IRS publishes a free WISP template (Publication 5708), and we link to it in your result.
 
-**We have fewer than 5,000 clients. Does the Safeguards Rule apply?**
-Most of it does. Firms with fewer than 5,000 consumers are excused from four items: a written risk assessment, continuous monitoring or annual penetration testing, a written incident response plan, and an annual report to a board. The written security program, MFA, encryption and training still apply. [Source: 16 CFR 314.6]
+**We're a small firm. Does the whole Safeguards Rule apply?**
+Most of it does. Firms that hold information on fewer than 5,000 consumers (everyone whose records you keep, including past years) may be excused from four items: a written risk assessment, continuous monitoring or annual penetration testing, a written incident response plan, and an annual report to a board. The written security program, MFA, encryption and training still apply. [Source: 16 CFR 314.6]
 
 **Who sees my results?**
-Only you, at the email address you gave us. Results are stored encrypted and aren't shared with anyone else.
+You, and the ChimeraShield person who reviews it. Our service providers (hosting, email and AI) process it under contract, and we never sell it. Results are stored encrypted and sent only to the email address you gave us. `[LINK: Subprocessor list]`
 
 **Do you use AI?**
 Yes, to help turn technical results into plain English. A person reviews your result before it's sent, and nothing is changed in your systems.
@@ -130,7 +134,7 @@ Yes, to help turn technical results into plain English. A person reviews your re
 If you want help closing the gaps, you can book a call about the WISP & Evidence Pack. If not, the result is yours to keep and use however you like.
 
 **Will you email me a lot?**
-No. You get your result and one follow-up. Anything more only if you tick the box for occasional notes, and every email has an unsubscribe link.
+No. You get your result and one follow-up. Anything more only if you tick the box for occasional notes. Every email tells you how to unsubscribe, and we stop within 5 business days at most (usually the same day).
 
 ---
 
@@ -147,7 +151,9 @@ No. You get your result and one follow-up. Anything more only if you tick the bo
 ## Footer disclaimer (verbatim, legal-ops to approve)
 
 > ChimeraShield is not affiliated with the IRS or the FTC. The readiness check is general information, not legal, tax or insurance advice, and it doesn't determine whether your firm complies with any law. Results are based on your answers and on publicly visible records for the domain you authorized. You remain responsible for your firm's compliance.
-> ChimeraShield · `[POSTAL_ADDRESS]` · `hello@[DOMAIN]` · `[LINK: Privacy]` · `[LINK: Terms]`
+> ChimeraShield Pty Ltd · ABN `[ABN]` · `[POSTAL_ADDRESS]` · `hello@[DOMAIN]` · `[LINK: Privacy]` · `[LINK: Terms]`
+
+> Builder: **FLAG (legal-ops):** whether Corporations Act s 153 (name and ACN/ABN on public documents) covers web pages. Showing the entity and ABN is safe either way. If the Pty Ltd isn't registered at go-live, use the founder's name and sole-trader ABN instead (`spam-act-cold-email.md` §4).
 
 ---
 
@@ -165,15 +171,26 @@ No. You get your result and one follow-up. Anything more only if you tick the bo
 > **3. [GAP_3_TITLE].** [ONE-SENTENCE WHY]. First step: [ACTION].
 >
 > **Your email domain ([DOMAIN_CHECKED]):** [PLAIN-ENGLISH SUMMARY].
-> **Items that may not apply to you:** [314.6 NOTE based on client-count answer].
+> **Items that may not apply to you:** [314.6 NOTE based on consumer-count answer, always worded "may be excused"].
 >
 > Free resources: IRS Pub 5708 (WISP template), IRS Pub 4557, FTC Safeguards Rule guide. [LINKS]
 >
 > If you'd like help, our WISP & Evidence Pack builds a plan around how [FIRM] actually works, marks what's verified, and ranks your top 5 fixes, in about two hours of your time. [Book a 15-minute call](BOOKING_LINK). If not, no problem. This result is yours.
 >
-> [FOUNDER_NAME], Founder, ChimeraShield
-> [POSTAL_ADDRESS]
+> [FOUNDER_NAME], Founder
+> ChimeraShield Pty Ltd (ABN [ABN])
+> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
 >
-> Not legal advice. We aren't affiliated with the IRS or the FTC. Reply "stop" and we won't email again.
+> Not legal advice. We aren't affiliated with the IRS or the FTC.
+> Reply "unsubscribe" (or "stop") and we won't email you again.
 
-**One follow-up only**, 4 business days later, if they haven't booked: "Did gap #1 make sense? Happy to answer questions by reply." Then stop.
+**One follow-up only**, 4 business days later, if they haven't booked: "Did gap #1 make sense? Happy to answer questions by reply." It carries the **same signature and unsubscribe footer** as the result email. Then stop.
+
+**Why the footer matters:** this email promotes the Pack, so under Australia's Spam Act 2003 it's a commercial electronic message (compliance-roadmap §5 M6; `spam-act-cold-email.md` §4). It must name the authorising entity and ABN and include a working unsubscribe.
+
+> Builder, unsubscribe and suppression handling:
+> - Treat any reply containing "unsubscribe", "stop", "no" or "remove" as an unsubscribe. Add the address to the suppression list **the same day** (legal maximum: 5 business days).
+> - Check the suppression list before sending the follow-up, and before any newsletter or future email to that address, from either domain.
+> - Keep the reply mailbox working for at least 30 days after the last email sent.
+> - No fee, login or questions to unsubscribe.
+> - If the Pty Ltd isn't registered yet, sign with the founder's name and sole-trader ABN. Don't send with `[ABN]` still a placeholder.

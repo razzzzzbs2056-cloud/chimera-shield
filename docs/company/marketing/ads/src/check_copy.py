@@ -23,7 +23,7 @@ D = [
 "PTINs expire Dec 31. Check your written security plan now, not in filing season.",
 ]
 SL = ["How the Check Works","What You Get","Is It Really Free?","Who Sees My Results?"]
-SLD = ["12 questions plus a domain check","Passive, with your written OK","3 ranked gaps in plain English","Plus your email-domain result","No payment details needed","One follow-up email, no more","Only you, at your work email","Stored encrypted, never shared"]
+SLD = ["12 questions plus a domain check","Passive, with your written OK","3 ranked gaps in plain English","Plus your email-domain result","No payment details needed","One follow-up email, no more","You and our reviewer only","Encrypted. Never sold."]
 CO = ["Free, No Payment Details","About 10 Minutes","Passive Checks Only","No Client Data Needed","Plain English","Independent Company"]
 RT_H = ["Finish Your Free Check","Want Help Closing the Gaps?","Done Before Filing Season"]
 RT_L = ["Pick up your free WISP readiness check where you left off","Want help closing your 3 gaps? Get a WISP that fits your firm","Get your written security plan done before filing season"]
@@ -43,7 +43,7 @@ LI = [
  "Find the 3 gaps in your security plan before you renew"),
 ("A WISP template gives you the structure. It doesn't tell you what's true at your firm today. Answer 12 plain-English questions, and with your OK we read your email domain's public settings. You get 3 gaps, ranked, with a first step for each.",
  "Free WISP & Safeguards Readiness Check for tax firms"),
-("Fewer than 5,000 clients? Four FTC Safeguards Rule items don't apply to you. The rest, like multi-factor login, encryption and staff training, still do. Our free check tells you which is which and the 3 gaps to close first.",
+("Hold data on fewer than 5,000 consumers? Four Safeguards items may not apply. The rest, like multi-factor login, encryption and staff training, still do. Our free check tells you which is which and the 3 gaps to close first.",
  "Which Safeguards items apply to your firm? Check free"),
 ]
 RT_LI = [

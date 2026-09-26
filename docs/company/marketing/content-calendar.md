@@ -3,6 +3,7 @@
 **Owner:** head-of-growth · **Date:** 2026-09-24 · **Status:** draft. Posts 1–6 are ready once legal-ops confirms the facts in `messaging.md` §6a.
 **Voice:** the founder, first person, calm, short sentences. We explain; we don't scare. No AI hype, no invented stats, no invented stories.
 **Channel role:** channel 1 in `channel-plan.md`. Posts build trust; DMs and comments do the converting.
+**US only. Do not reuse in Australia. See `docs/company/market/australia-vs-us.md` §6.** Legal review (compliance-roadmap §5) applied 2026-09-26: "consumers" not "clients", "may be excused", last intake 4 Dec.
 
 ---
 
@@ -32,7 +33,7 @@
 |---|---|---|---|---|---|---|
 | 1 | Thu Oct 1 | 1 | The checkbox on your PTIN renewal (W-12 line 11) | Text | FULL | Question in comments |
 | 2 | Tue Oct 6 | 1 | The Safeguards Rule for a 10-person firm, in 9 lines | Text list | FULL | Save / question |
-| 3 | Thu Oct 8 | 1 | Under 5,000 clients: what you're excused from, and what you're not | Text | FULL | Question |
+| 3 | Thu Oct 8 | 1 | Under 5,000 consumers: what you may be excused from, and what you're not | Text | FULL | Question |
 | 4 | Tue Oct 13 | 2 | The free IRS template (Pub 5708) is good. Where do people stall? | Text | FULL | Question |
 | 5 | Wed Oct 14 | 2 | A plan vs. proof: Verified, Owner-stated, Gap | Text + 3-question self-test | FULL | "Check comes out tomorrow" |
 | 6 | Thu Oct 15 | 2 | Launch: the free WISP & Safeguards Readiness Check | Text | FULL | Link in first comment |
@@ -47,7 +48,7 @@
 | 15 | Thu Nov 5 | 5 | What the first `[N]` readiness checks showed (anonymized, real data only) | Text | OUTLINE | Check link |
 | 16 | Tue Nov 10 | 6 | Voice-cloned calls and "urgent" wire or refund requests: a callback rule | Text | OUTLINE | Question |
 | 17 | Wed Nov 11 | 6 | Introducing the WISP & Evidence Pack: what's in it, who it's not for | Text + sample image (fictional firm) | OUTLINE | Book a call |
-| 18 | Thu Nov 12 | 6 | Before Dec 31: a 5-item year-end list for a small firm | Text list | OUTLINE | Book by `[LAST_INTAKE_DATE]` |
+| 18 | Thu Nov 12 | 6 | Before Dec 31: a 5-item year-end list for a small firm | Text list | OUTLINE | Book by Fri 4 Dec |
 
 ---
 
@@ -104,13 +105,13 @@
 
 ---
 
-### Post 3: Thu Oct 8 · Under 5,000 clients
+### Post 3: Thu Oct 8 · Under 5,000 consumers
 
 > "We're a small firm, so the Safeguards Rule doesn't really apply to us."
 >
 > That's partly right, and the part that's wrong matters.
 >
-> If your firm holds information on fewer than 5,000 consumers, the rule excuses you from four things:
+> If your firm holds information on fewer than 5,000 consumers, the rule may excuse you from four things:
 > • a written risk assessment
 > • continuous monitoring, or yearly penetration testing
 > • a written incident response plan
@@ -235,8 +236,8 @@
 | 14 | Staff pasting client information into AI chatbots. A 5-line usage policy for a small firm: which tools are approved, no SSNs or return data in consumer AI tools, who to ask. Tie it to the Safeguards Rule's access and service-provider items. | F4. | Claiming any specific AI tool is unsafe or safe. |
 | 15 | Aggregated, anonymized findings from real readiness checks: e.g. "X of Y firms had no DMARC record". **Only publish if Y ≥ 25. Otherwise swap in a post answering the most common question from checks.** | Our own data, with the sample size. | Any number not from real data. |
 | 16 | Voice-cloned or spoofed phone calls asking to change a refund deposit account or send a wire. A callback rule: always verify on a number you already have, and require two people for changes. | Qualitative. You may link the FTC consumer alert on voice cloning if you find and open it first. | Statistics. |
-| 17 | The WISP & Evidence Pack: what you get (3 deliverables), about two hours of your time, 7 business days, who it's not for, `[PACK_PRICE]`. Image: the **sample** Evidence Report for a fictional firm, clearly labeled. | PRD deliverables. | Testimonials (none exist), "compliant". |
-| 18 | Year-end list before Dec 31: renew your PTIN, confirm MFA everywhere, check laptop encryption, name your QI, and put the WISP review on next year's calendar. Close with the intake deadline. | F2. | Urgency tricks, fake scarcity. |
+| 17 | The WISP & Evidence Pack: what you get (3 deliverables), about two hours of your time, delivery within 7 business days of the intake call and receipt of the checklist, who it's not for, `[PACK_PRICE]`. Image: the **sample** Evidence Report for a fictional firm, clearly labeled. | PRD deliverables. | Testimonials (none exist), "compliant". |
+| 18 | Year-end list before Dec 31: renew your PTIN, confirm MFA everywhere, check laptop encryption, name your QI, and put the WISP review on next year's calendar. Close with the intake deadline: last intake call Fri 4 Dec. | F2. | Urgency tricks, fake scarcity. |
 
 ---
 
@@ -251,7 +252,7 @@
 
 ### Reddit post A: week 2 (around Tue Oct 13, alongside LinkedIn post 4)
 
-**Title:** Plain-English summary: W-12 line 11, the FTC Safeguards Rule, and what's excused for firms under 5,000 clients
+**Title:** Plain-English summary: W-12 line 11, the FTC Safeguards Rule, and what may be excused for firms under 5,000 consumers
 
 > Renewal season is coming, so I put together a short summary of what the WISP question on the W-12 actually connects to. It's written for small practices. Corrections welcome. Several of you know this better than I do.
 >
@@ -268,7 +269,7 @@
 > - overseeing service providers
 > - testing or monitoring, and reviewing the plan as things change
 >
-> **3. The under-5,000 exemption (16 CFR 314.6).** If you hold customer information on fewer than 5,000 consumers, four items don't apply: the written risk assessment, continuous monitoring or annual pen testing, the written incident response plan, and the annual report to a board. MFA, encryption, training and the written program itself still apply.
+> **3. The under-5,000 exemption (16 CFR 314.6).** If you hold customer information on fewer than 5,000 consumers (past years' clients count too), four items may not apply: the written risk assessment, continuous monitoring or annual pen testing, the written incident response plan, and the annual report to a board. MFA, encryption, training and the written program itself still apply.
 >
 > **4. The FTC breach notice.** Since May 13, 2024, if unencrypted customer information on 500+ consumers is acquired without authorization, you notify the FTC no later than 30 days after discovery.
 >
@@ -295,7 +296,7 @@
 > 9. Do we have backups we've actually test-restored?
 > 10. If something went wrong tomorrow, who would we call first, and do we know about the 30-day FTC notice for 500+ consumers?
 >
-> If you have fewer than 5,000 consumers, some formal items are excused (see 16 CFR 314.6). Most of this list still applies.
+> If you hold information on fewer than 5,000 consumers, some formal items may be excused (see 16 CFR 314.6). Most of this list still applies.
 >
 > What would you add? Especially anything specific to your tax software that people tend to miss.
 

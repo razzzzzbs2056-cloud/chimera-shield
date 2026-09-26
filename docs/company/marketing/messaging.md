@@ -1,6 +1,7 @@
 # Messaging house: US tax, CPA and accounting firms (5–50 staff)
 
-**Owner:** head-of-growth · **Date:** 2026-09-24 · **Status:** draft for founder review. Legal-ops must check every regulatory sentence (see §5) before publishing.
+**Owner:** head-of-growth · **Date:** 2026-09-24 · **Status:** draft for founder review. Legal-ops must check every regulatory sentence (see §5) before publishing. Legal review of 2026-09-26 applied (changelog at the bottom).
+**US only. Do not reuse in Australia. See `docs/company/market/australia-vs-us.md` §6.** AU copy never uses "WISP", "certified" or "compliant".
 **Inputs:** `docs/company/product/catalog.md`, `docs/company/product/prd-wisp-evidence-pack.md`, `docs/company/market/first-market-selection.md`, `docs/company/competitors/smb-landscape-2026.md`, `docs/company/interviews/recruiting-kit.md`, `docs/chimera/02-ideal-customer-profile.md`, `docs/chimera/03-competitive-landscape.md`.
 **Customer voice:** none yet. There are 0 interviews and no `docs/company/interviews/synthesis.md`. Every phrase below is **our** wording and a hypothesis. After the first 6 accounting interviews, replace the headline, the pillars and the objections with words customers actually used.
 
@@ -40,7 +41,7 @@ The "about two hours" is the PRD's 60-min intake + 30-min debrief + a 15-min int
 
 | Pillar | Promise | What backs it up (feature) | Say it like this |
 |---|---|---|---|
-| **1. Ready before the deadline** | Your WISP is done and signed before your PTIN renewal, not in the middle of filing season. | Delivered within 7 business days of the intake call (PRD AC13). Last intake about Dec 5 so delivery lands before the holidays (PRD §11). | "Done in a week. About two hours of your time." |
+| **1. Ready before the deadline** | Your WISP is done and signed before your PTIN renewal, not in the middle of filing season. | Delivered within 7 business days of the intake call and receipt of the checklist (PRD AC13; `terms-outline.md` E3.2). Last intake **Fri 4 Dec 2026** so delivery lands by 15 Dec (sales playbook; `australia-vs-us.md` §7). | "Done in a week. About two hours of your time." |
 | **2. A plan that describes *your* firm, with proof** | Not a template with your name pasted in. Each safeguard is marked Verified, Owner-stated or Gap, so you know which lines are backed by evidence. | Firm-specific WISP structured on IRS Pub 5708 and mapped to each element of 16 CFR 314.4 (PRD AC4–AC5); one-page Evidence Report (AC8–AC10). | "You'll know what's true, what you told us, and what's missing." |
 | **3. Plain English and a short list** | You understand your #1 fix and why, without an IT department. | Fix-First plan: exactly 5 items with why, who and how long, at grade 9 reading level (AC11); owner understanding test at the debrief (AC12). | "Five fixes, ranked. No jargon without a one-line explanation." |
 
@@ -84,13 +85,13 @@ We have **none yet**: 0 customers, 0 testimonials, no certifications. Placeholde
 | "I bought a $29 WISP template already." | "Then you have the structure. The question is whether it describes your firm today and whether you could show someone it's true. The free check will tell you in about 10 minutes whether the Pack is worth it for you." |
 | "My IT person / MSP handles it." | "Great. Ask them for a copy of your current WISP and when it was last reviewed. If they have one, you don't need our Pack. The free check is still useful as a second look." (PRD §2: firms whose MSP maintains a WISP are not our buyer.) |
 | "The FTC isn't going to come after a 10-person firm." | "We can't tell you the odds, and we won't try to scare you. You still attest on the W-12 each year, and insurers and clients increasingly ask. A plan that matches reality also makes you faster if something ever does go wrong." |
-| "We have fewer than 5,000 clients, so it doesn't apply." | "Part of it doesn't. Four items are excused under 16 CFR 314.6. MFA, encryption, training and having a written plan still apply. The WISP we write marks exactly which items are exempt for you and why." |
+| "We're small, so it doesn't apply." | "Part of it may not. If you hold information on fewer than 5,000 consumers (everyone whose records you keep, including past years), four items may be excused under 16 CFR 314.6. MFA, encryption, training and having a written plan still apply. The WISP we write marks which items may be excused for you and why." |
 | "It's almost filing season. I have no time." | "That's why the timing is now. About two hours of your time in October or November, delivered within a week, and you're not thinking about it in February." |
 | "Is this legal advice?" | "No. We're a security company, not lawyers or CPAs. We prepare the plan with you from facts you give us. You sign it and remain responsible. If you want a legal review, your attorney can review what we deliver." |
 | "Do you need our passwords or client data?" | "No. We never log into your systems and never collect taxpayer data. We read public DNS records for your own domain, with your written permission. For settings like MFA, you show us on a screen-share and it's marked Verified." |
 | "You're new. Why trust you?" | "Fair question. You don't have to. The readiness check is free and needs no payment details. Judge us by the result. `[PROOF PLACEHOLDER: add real customer count/testimonial when available.]`" |
 | "Is this AI?" | "We use AI to help draft and to explain technical results in plain English. A person reviews everything before you get it, and nothing is changed in your systems automatically." |
-| "What happens if you find something bad?" | "You'll hear it privately, in plain English, with what to do first. Findings are encrypted and only shared with the contacts you name." |
+| "What happens if you find something bad?" | "You'll hear it privately, in plain English, with what to do first. Findings are stored encrypted. The ChimeraShield person reviewing your result sees them, our service providers (hosting, email and AI) process them under contract, and we send them only to the contacts you name. We never sell them." |
 
 ## 8. Words to use / words to avoid
 
@@ -109,6 +110,10 @@ We have **none yet**: 0 customers, 0 testimonials, no certifications. Placeholde
 | "we don't give legal advice" | "our experts will protect you" | Honest scope. |
 | (none in headlines) | "AI-powered", "AI-native", "agentic", "next-gen", "military-grade" | Every competitor says it; our buyer doesn't buy it. |
 | "we can't promise nothing will go wrong" | "breach-proof", "bulletproof", "never worry again" | No security guarantees (brand rule). |
+| "you and our reviewer", "our service providers process it under contract", "we never sell it" | "only you", "never shared", "no one else sees it" | A person reviews every result and subprocessors handle it (legal review M1–M3). |
+| "fewer than 5,000 **consumers**", "may be excused", "may not apply" | "fewer than 5,000 clients", "doesn't apply to you" | The rule counts consumers, including past years, and exemption depends on facts (M4–M5). |
+| "we never ask for client data" | "no client data, ever" | We can't fully control screen-share accidents (M12). |
+| "Safeguards WISP & Evidence Pack" | "Safeguards-Ready" | May imply certification (M9). |
 
 **Don't imply government affiliation.** No IRS logos, seals or "IRS" in our domain or product name. Several WISP template sites use PTIN/IRS-style domains (search results, 2026-09-24). That's their choice. We stand out by being clearly independent.
 
@@ -129,3 +134,28 @@ We have **none yet**: 0 customers, 0 testimonials, no certifications. Placeholde
 - eCFR 16 CFR Part 314: https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314
 - eCFR 16 CFR 314.6: https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314/section-314.6
 - Cornell LII 16 CFR 314.6: https://www.law.cornell.edu/cfr/text/16/314.6
+
+---
+
+## Changelog: Legal review applied 2026-09-26
+
+Source: `docs/company/legal/compliance-roadmap.md` §5. Sales-owned files (`docs/company/sales/*`, `ads/cold-email-launch-kit.md`) were not touched.
+
+| # | Edit | Where |
+|---|---|---|
+| M1 | Sitelink "Who Sees My Results?" is now "You and our reviewer only" / "Encrypted. Never sold." (25 and 22 chars). | `ads/ad-copy.md`, `ads/src/check_copy.py` |
+| M2 | "Only you… not shared" replaced: you, the ChimeraShield reviewer, and service providers (hosting, email, AI) under contract; never sold; subprocessor-list link. Same fix to the "something bad" objection and the Pack's "what happens to our information" FAQ. | `landing-readiness-check.md`, `landing-pack.md`, §7 here |
+| M3 | Under the form: "We don't sell your details. We use them only to run your check, with the service providers listed in our privacy policy." | `landing-readiness-check.md` |
+| M4 | LinkedIn Variant 3 hook is now "Hold data on fewer than 5,000 consumers? Four Safeguards items may not apply." (224 chars). | `ads/ad-copy.md`, `ads/src/check_copy.py` |
+| M5 | "clients" becomes "consumers (everyone whose records you keep, including past years)"; "are excused" becomes "may be excused"; the form question adds "including past years". Also applied to §7 here, LinkedIn post 3 and both Reddit drafts. | `landing-readiness-check.md`, `landing-pack.md`, `content-calendar.md`, §7 and §8 here |
+| M6 | Result email and its one follow-up: "ChimeraShield Pty Ltd (ABN [ABN])", contact email, [POSTAL_ADDRESS], "Reply 'unsubscribe' (or 'stop') and we won't email you again", plus suppression-list handling (same day; 5 business days max; 30-day mailbox). Channel-plan sample email and compliance rules updated to the same footer. | `landing-readiness-check.md`, `channel-plan.md` |
+| M7 | Line above submit: "We'll email your result and one follow-up about it", stored with the consent record; newsletter box stays unticked. | `landing-readiness-check.md` |
+| M8 | Footers: "ChimeraShield Pty Ltd · ABN [ABN] · [POSTAL_ADDRESS] · hello@[DOMAIN]", with the s 153 FLAG noted. | both landing pages |
+| M9 | Product name "Safeguards-Ready…" becomes "Safeguards WISP & Evidence Pack" pending a lawyer; added to §8 avoid list. | `landing-pack.md`, §8 here |
+| M10 | One last-intake date everywhere: **Fri 4 Dec 2026** (was "~5 Dec" / `[LAST_INTAKE_DATE]`). | `landing-pack.md`, `channel-plan.md`, `content-calendar.md`, §5 here, `ads/ad-copy.md` note |
+| M11 | Founding offer shown with its real limit ("first 10 Packs or until 31 Dec 2026"), enforced; list price shown only if genuinely charged; refund text from E3.8 / A17.3 (legal-ops to confirm). Prices stay placeholders. | `landing-pack.md` |
+| M12 | "No client data, ever" becomes "We never ask for client data"; added to §8 avoid list. | `landing-pack.md`, §8 here |
+| M13 | 7-day promise now reads "of the intake call and receipt of your checklist"; builder notes tie both delivery promises to founder capacity. | `landing-pack.md`, `landing-readiness-check.md`, §5 here, `content-calendar.md` |
+| M14 | Header line "US only. Do not reuse in Australia. See australia-vs-us.md §6." added; ads stay US geo-targeted. | all six files |
+
+Not changed: ad images (no on-image text was affected, so no PNG re-render). `check_copy.py` strings were updated but the script still needs to be re-run.
