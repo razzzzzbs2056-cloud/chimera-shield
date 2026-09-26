@@ -1,6 +1,6 @@
 # ChimeraShield Product and Services Catalog (v0.2)
 
-**Owner:** product-manager · **Date:** 2026-09-24 · **Status:** draft for founder decision
+**Owner:** product-manager · **Date:** 2026-09-24 (Australia section §10 added 2026-09-26) · **Status:** draft for founder decision
 **First market:** US accounting, CPA and tax-prep firms with 5–50 staff (score 44/50). **Runner-up:** US independent dental (41/50). Source: `docs/company/market/first-market-selection.md`.
 **Evidence status:** 0 customer interviews (`docs/company/interviews/recruiting-kit.md`); no `synthesis.md` yet. **Every score is a hypothesis.** Confidence is capped at 40%, and that cap is used only where an external buying trigger is verified (a rule or form, such as FTC Safeguards or the W-12 line 11 attestation). It never reflects proven demand.
 
@@ -127,3 +127,24 @@ Side doors: insurer renewal leads to P1 with the D2 mapping. A phishing incident
 4. MSP or no MSP? Business Premium or not? (This decides the S4 and MSP-channel questions.)
 5. Last suspicious IRS/e-Services or client-document email: what did staff do? (A2)
 6. Dental: last HIPAA risk analysis, who did it and at what cost? (D4)
+
+---
+
+## 10. Australia (pilot, added 2026-09-26)
+
+**Plan C** (company-context skill): the US lineup above is unchanged and remains the revenue plan. Australia is a **learning pilot** for AU tax agent and accounting practices (5–50 staff, score 35/50, `docs/company/market/australia-vs-us.md`): interviews now, **1–2 paid pilots 3 Nov – 11 Dec 2026** (avoid 18–25 Nov), decision gate **15 Feb 2027**. No AU paid ads in 2026. Founder time cap: about 20%.
+
+**AU copy rules:** never use "WISP", "certified" or "compliant" (also avoid "TPB-approved", "ATO-endorsed", "Essential Eight assessment"). Never claim the Privacy Act small-business exemption ends in Dec 2026 or on any date.
+
+| ID | AU offer | US counterpart | Type | Spec | Price (Assumption; finance-modeler to set) |
+|---|---|---|---|---|---|
+| S5-AU | **Free TFN & client-data check** | S5 | Self-serve (concierge until AU mode ships) | 12 questions (own myID + MFA, TFN storage/disposal, client document intake, breach plan, backups, E8 basics) plus the passive domain check. Result: "3 things to tighten in how your practice protects client data" | $0 |
+| AU-P1 | **Client Data Security Pack (TPB & TFN ready)** | P1 | Done-with-you, concierge | (a) information security policy structured on the TFN Rule and TPB guidance; (b) data breach response plan (ATO "tell us immediately", NDB 30-day assessment, TPB significant-breach 30-day check, TFN Rule, 72 h ransomware line if >A$3M); (c) one-page **Essential Eight snapshot** evidence page (Verified / Owner-stated / Gap); (d) Fix-First 5. PRD: `docs/company/product/prd-au-client-data-pack.md` | A$750 founding / A$1,200 list, ex GST |
+| Watch-AU | **Watch (AU edition)** | Watch | Subscription | US Watch plus the **Australian lodgment calendar** (2 Nov, 25 Nov, 1 Mar, 15 May, 5 Jun), each practitioner's TPB renewal month, insurer renewal, annual policy/plan review, NDB 30-day clock on reported incidents; A2 helpdesk tuned to ATO/myGov/myID lures | A$79 / A$149 / A$229 per month ex GST |
+| D2-AU | Insurance prep | D2 | Done-with-you | Maps AU insurer questions (MFA, EDR, backups) to the snapshot. Side door only | TBD |
+
+**RICE (pilot, AU reach only to 11 Dec):** AU-P1 R 30 × I 2 × C 30% ÷ E 2 = **9**; S5-AU R 60 × I 1 × C 30% ÷ E 0.5 = **36**. Confidence is 30%, not 40%: the TFN/NDB trigger is verified but **there is no dated attestation** like the W-12, and there's no customer evidence. Low scores are expected; this is a learning bet, not a revenue bet.
+
+**Reuse from the US Pack:** delivery flow, consent text, Verified/Owner-stated/Gap method, Fix-First template, understanding test, passive checks engine, findings store. **New:** policy and breach-plan templates, AU intake questions, E8-ordered A4 evidence layout, AU calendar, AU disclaimer and engagement letter (legal-ops). **Not reused:** WISP template, W-12/PTIN/FTC content.
+
+**Tech-lead (AU mode of the readiness check, target 30 Oct, else concierge):** Public Suffix List handling for `.com.au`/`.au` domains; AU free-mail/ISP blocklist (bigpond, optusnet, iinet, tpg and similar); per-org market field (US/AU) driving questions, copy, currency, A4 and calendar; AU copy and rules text with cyber.gov.au links; CI banned-phrase lint; Spam Act footer. Detail in the PRD §12.
