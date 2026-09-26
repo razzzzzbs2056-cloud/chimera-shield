@@ -23,10 +23,10 @@ _Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window o
 | Build order | Fix critical code bugs → Readiness Check → harden phishing analyzer; weekly report deferred; Pack delivered by hand | `engineering/sprint-plan.md` |
 
 ## Open decisions (founder only)
-1. **Country of residence**: decides entity, payments (Stripe vs. Paddle/Payoneer) and legal path. Nepal residents: see a Nepali lawyer first.
-2. Ad budget: $0 / $300 / $1,000.
+1. ✅ **Country: Australia** (2026-09-26). Re-checking market (US vs. Australia), entity and anti-spam law.
+2. ✅ **Ad budget: ~US$300 Google Search test.**
 3. Salary: none until profitable (~$1.1k needed) vs. $2k/mo (~$12.9k needed).
-4. Approve the tech-lead to fix critical bugs (API key not loading, no auth or rate limit, critical `next` advisory).
+4. ✅ Tech-lead approved to fix the critical bugs (in progress).
 
 ## Deadlines
 | Date | What |
