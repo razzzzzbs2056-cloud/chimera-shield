@@ -1,6 +1,8 @@
 # Cold email launch kit (for the founder)
 
-**Owner:** growth-marketer · **Date:** 2026-09-24 · **Status:** a step-by-step for the founder to carry out. No agent has sent email, bought a domain or created an account.
+**Owner:** growth-marketer · **Date:** 2026-09-24 · **Updated:** 2026-09-26 by head-of-sales (Spam Act 2003: steps 1, 2, 4–9) · **Status:** a step-by-step for the founder to carry out. No agent has sent email, bought a domain or created an account.
+
+> **Spam Act 2003 applies (2026-09-26).** The founder sends from Australia, so every cold email to a US firm must meet the Australian Spam Act **and** CAN-SPAM (`docs/company/legal/spam-act-cold-email.md`). Short version: email only addresses the firm or person published themselves, where the message relates to their role, with evidence saved per address; no Apollo-type databases, enrichment tools, scrapers or guessed addresses; the ABN and an unsubscribe line in every email, actioned within 5 business days (our standard: same day). **No ABN, no cold send.**
 **Sends:** the sequences in `docs/company/sales/sequences.md`, following `.claude/skills/outreach-writing/SKILL.md`. **Volume targets:** `docs/company/sales/playbook.md` §5.3. **Channel plan:** `docs/company/marketing/channel-plan.md` (channel 2). **Merge file:** `mail-merge-template.csv` (header only).
 
 **Timeline at a glance**
@@ -10,8 +12,9 @@
 | By **Sep 28** | Buy the secondary domain, create the mailbox, publish SPF, DKIM and DMARC (steps 1–3) |
 | **Sep 28 – Oct 11** | 14-day warm-up (step 4). **No cold email.** |
 | Oct 9–10 | Seed test and list check (steps 4 and 7) |
-| **Oct 12** | First cold sends, 10 a day (playbook week S1) |
-| Oct 12 – Dec 11 | Ramp to 30 a day per inbox (step 5) |
+| By **Oct 11** | ABN issued (entity or founder's sole-trader ABN), `[US_POSTAL_ADDRESS]` live, evidence Sheet built (step 7) |
+| **Oct 12** | First cold sends, up to 10 a day total (playbook week S1), only to evidenced addresses |
+| Oct 12 – Dec 11 | Ramp to at most 25 total sends a day (step 5). Expected volume is lower: ~20–25 new prospects a week |
 | **Dec 18** | Stop cold outreach for the year (channel plan) |
 
 Every price below is an **estimate from search-result summaries on 2026-09-24**. Check the vendor's pricing page before you buy.
@@ -24,7 +27,7 @@ Every price below is an **estimate from search-result summaries on 2026-09-24**.
 2. **Buy the secondary domain** at the same registrar, e.g. `get[DOMAIN]` (such as `getchimerashield.com`, if the main domain is `chimerashield.com`). Turn on registrar-account MFA, auto-renew and domain privacy.
 3. **Redirect its website** with a 301 redirect to `https://[DOMAIN]`, so anyone who types it lands on the real site.
 4. **Use it only for cold email.** Replies, the readiness-check result email and anything customers expect to receive come from the main domain. If the secondary domain's reputation drops, the main domain isn't affected.
-5. Every email still says **ChimeraShield**, gives your real name and includes the postal address. A second domain protects reputation. It never hides who is sending.
+5. Every email still says **ChimeraShield Pty Ltd**, gives your real name, the **ABN** and the `[US_POSTAL_ADDRESS]`. A second domain protects reputation. It never hides who is sending. The mailbox must keep working for at least 30 days after the last send (Spam Act and CAN-SPAM).
 
 ## Step 2. Mailbox
 
@@ -32,7 +35,7 @@ Every price below is an **estimate from search-result summaries on 2026-09-24**.
 - Add free aliases to the same inbox: `dmarc@get[DOMAIN]` (for DMARC reports) and `hello@get[DOMAIN]`.
 - Turn on 2-step verification with a security key or authenticator app, not SMS.
 - Set a real profile photo and name ("[FOUNDER_NAME] · ChimeraShield") and a plain signature that matches `sequences.md`.
-- **One inbox is enough.** At 30 new sends a day, 5 days a week, one inbox delivers about 150 first touches a week, which covers the playbook's roughly 50 email prospects a week. Add a second inbox only if the playbook targets rise.
+- **One inbox is enough.** The playbook now plans only ~15–25 new email prospects a week (~160 in total), because the Spam Act limits us to evidenced, self-published addresses. One inbox at ≤25 total sends a day covers that easily. Don't add inboxes to raise volume: the constraint is the lawful list, not sending capacity.
 
 ## Step 3. SPF, DKIM, DMARC (secondary domain)
 
@@ -69,7 +72,7 @@ New domains and mailboxes have no reputation, so start slowly. The goal is a rea
 | 5 | Oct 2 | 10 | 3–5 | 0 | |
 | 6 | Oct 3 | 10 | 2 | 0 | Weekend: keep it light |
 | 7 | Oct 4 | 10 | 2 | 0 | |
-| 8 | Oct 5 | 12 | 5 | 0 | Load the first 60 prospects into the tool (not scheduled) |
+| 8 | Oct 5 | 12 | 5 | 0 | Load the first 40 **evidenced** prospects into the tool (not scheduled). Every row has `source_url`, `evidence_file` and `consent_basis` |
 | 9 | Oct 6 | 15 | 5 | 0 | |
 | 10 | Oct 7 | 15 | 5 | 0 | |
 | 11 | Oct 8 | 18 | 5 | 0 | |
@@ -77,20 +80,24 @@ New domains and mailboxes have no reputation, so start slowly. The goal is a rea
 | 13 | Oct 10 | 20 | 3 | 0 | Fix anything the seed test flagged, then re-test |
 | 14 | Oct 11 | 20 | 3 | 0 | Go/no-go: all records pass, seeds reach the inbox, no bounces |
 
-**Don't start cold sends if** any seed lands in spam, any record fails, or the postal address or opt-out line is still a placeholder. Keep tool warm-up running at 10–20 a day for as long as you send cold email.
+**Don't start cold sends if** any seed lands in spam, any record fails, `[ABN]` or `[US_POSTAL_ADDRESS]` is still a placeholder, the unsubscribe line is missing, or any loaded row lacks consent evidence. Keep tool warm-up running at 10–20 a day for as long as you send cold email.
 
 ## Step 5. Daily volume caps (per inbox)
 
 The ramp follows the outreach skill (5–10 a day in week 1, about 30 a day by week 4) and the playbook's weekly caps.
 
-| Week of | New first touches / day | Total sends / day, including follow-ups | Days |
-|---|---|---|---|
-| Oct 12 (S1) | 10 | 15 | Mon–Fri |
-| Oct 19 (S2) | 15 | 25 | Mon–Fri |
-| Oct 26 (S3) | 25 | 40 | Mon–Fri |
-| Nov 2 onward | **30 (hard cap)** | **50 (hard cap)** | Mon–Fri. Thanksgiving week: Mon–Wed only (Nov 26 is Thanksgiving). |
-| Dec 7 | 0 new | follow-ups only | |
-| Dec 18 | stop | stop | |
+These are **ceilings**. The Spam Act-limited list (playbook §5.3) means the real numbers will usually sit well below them.
+
+| Week of (US) | Planned new email prospects / week | New first touches / day (cap) | Total sends / day incl. follow-ups (cap) | Days (recipient time) |
+|---|---|---|---|---|
+| Oct 12 (S1) | 15 | 5 | 10 | Mon–Fri |
+| Oct 19 (S2) | 20 | 6 | 15 | Mon–Fri |
+| Oct 26 (S3) | 25 | 8 | 20 | Mon–Fri |
+| Nov 2 – Nov 20 (S4–S6) | 25 | **8 (hard cap)** | **25 (hard cap)** | Mon–Fri |
+| Nov 23 (S7) | 10 | 8 | 25 | Mon–Wed only (Nov 26 is Thanksgiving) |
+| Nov 30 (S8) | 15 | 8 | 25 | Mon–Fri |
+| Dec 7 | 0 new | 0 | follow-ups only | |
+| Dec 18 | stop | stop | stop | |
 
 **Pause at once** (channel plan §5): bounces over 3% in any week, any spam placement in a weekly seed test, or the Postmaster spam rate climbing toward 0.3% (the Gmail sender guidelines above say to stay below 0.3%). Cut volume in half for a week, clean the list and re-check the records.
 

@@ -23,6 +23,7 @@ Discovery-phase partner asks ("introduce me for research") are in the recruiting
 - **No data sharing** beyond the fact of a sale: partners never see a customer's findings, WISP or Evidence Report **unless the customer gives written permission** (e.g. an MSP invited to the debrief).
 - Partners may not make claims we can't back: no "makes you compliant", no guarantees, no invented results. They use our approved one-pager and email copy only.
 - Partners follow the same anti-spam rules: no cold-blasting their lists with our offer; they introduce people they already have a relationship with.
+- **Our own partner emails fall under the Spam Act too** (we send from Australia; `docs/company/legal/spam-act-cold-email.md`). Email a partner candidate only at an address their organisation published itself, relevant to their role, with evidence saved (`playbook.md` §3.5), the ABN footer and the unsubscribe line. Otherwise use LinkedIn (non-commercial first) or an introduction.
 - Either side can end the arrangement with 30 days' notice; fees for sales already made are still paid.
 - Track partner-sourced deals in `pipeline.csv` via `partner_ref` (partner code, never a person's name).
 
@@ -59,10 +60,10 @@ Discovery-phase partner asks ("introduce me for research") are in the recruiting
 >
 > Open to 15 minutes on a referral arrangement?
 >
-> [FOUNDER_NAME], Founder, ChimeraShield
-> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
->
-> If this isn't relevant, just reply "no" and I won't follow up.
+> [FOUNDER_NAME], Founder, ChimeraShield Pty Ltd (ABN [ABN])
+> [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
+> I found your address on [SOURCE] and am writing because of your role at [ORG].
+> Not relevant? Reply "unsubscribe" (or just "no") and I won't email you again.
 
 **Where to find them:** MSP websites listing "accounting" or "CPA" as a vertical (search "IT services for CPA firms [STATE]"); r/msp (read rules; contribute before asking); local MSP peer groups; MSPs named by interviewees.
 **Watch-outs:** Some tax-focused MSPs sell their own WISP bundles (market doc names Bellator); they're competitors, not partners. Qualify by asking "Do you write WISPs for clients today?"
@@ -89,10 +90,10 @@ Targets (verify each exists and read its rules on vendor posts before contacting
 >
 > Worth a quick call to see if it fits?
 >
-> [FOUNDER_NAME], Founder, ChimeraShield
-> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
->
-> If this isn't relevant, just reply "no" and I won't follow up.
+> [FOUNDER_NAME], Founder, ChimeraShield Pty Ltd (ABN [ABN])
+> [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
+> I found your address on [SOURCE] and am writing because of your role at [ORG].
+> Not relevant? Reply "unsubscribe" (or just "no") and I won't email you again.
 
 ### 3.3 Cyber-insurance broker pitch
 > "When your small accounting clients renew, they're asked about MFA, backups, training and a written plan, and many aren't sure what's actually in place. Our Pack produces a one-page evidence report that marks each control as verified, owner-stated or a gap, plus a fix list. Your client answers the application themselves, but with facts instead of guesses. We're not asking for a fee; we'd like to be the resource you point clients to when they get stuck on security questions."
@@ -110,10 +111,10 @@ Targets (verify each exists and read its rules on vendor posts before contacting
 >
 > Worth 15 minutes to see if it helps your renewals?
 >
-> [FOUNDER_NAME], Founder, ChimeraShield
-> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
->
-> If this isn't relevant, just reply "no" and I won't follow up.
+> [FOUNDER_NAME], Founder, ChimeraShield Pty Ltd (ABN [ABN])
+> [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
+> I found your address on [SOURCE] and am writing because of your role at [ORG].
+> Not relevant? Reply "unsubscribe" (or just "no") and I won't email you again.
 
 **Never:** say the Pack lowers premiums or improves claim outcomes; we have no evidence of that.
 
