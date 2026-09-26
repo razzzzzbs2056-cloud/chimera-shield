@@ -1,6 +1,6 @@
 # ChimeraShield: Company Status
 
-_Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window opens mid-Oct._
+_Last updated 2026-09-26 by company-hq. Phase 1: Validation → selling window opens mid-Oct._
 
 ## Metrics
 | Metric | Now | Target by Dec 15 |
@@ -9,7 +9,7 @@ _Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window o
 | Sales calls | 0 | ~25 |
 | Packs sold | 0 | 3 minimum, 6 planned |
 | Watch subscribers | 0 | 2–3 |
-| Cash invested | $0 | ≤ $1,100 (base case) |
+| Cash invested | A$0 | 90-day budget: ≈A$3,090 minimum / ≈A$13,070 comfortable (A$8.2k if insurance paid monthly) |
 
 ## Decisions made (recommended, founder to confirm ✅)
 | Decision | Recommendation | Source |
@@ -19,7 +19,8 @@ _Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window o
 | Cold email | Spam Act 2003 rules: published work addresses only, ABN + unsubscribe in every email | `legal/spam-act-cold-email.md` |
 | Positioning | Owner-direct, plain-English security plan + proof + fix list, tied to PTIN renewal; AI only in the FAQ | `marketing/messaging.md` |
 | Lineup | Free Readiness Check → WISP & Evidence Pack → Watch (+ "Is this safe?" agent) | `product/catalog.md` |
-| Prices | Pack $495 founding / $795–$1,195 list; Watch $49 / $99 / $149 per firm | `finance/pricing.md` |
+| Prices | US: Pack US$495 founding / $795–$1,195 list; Watch $49 / $99 / $149. AU: Pack A$750 founding / A$1,195–1,795; Watch A$79 / 149 / 229 (ex GST) | `finance/pricing.md` |
+| Break-even | 8 Watch subs cover costs; 33 cover A$3k/mo founder pay + super (base case: May 2028) | `finance/model-summary.md` |
 | Channels | Founder LinkedIn + plain-text cold email from a secondary domain | `marketing/channel-plan.md` |
 | Funding | Bootstrap to Dec 15; revisit in Jan–Apr 2027 | `fundraising/verdict.md` |
 | Build order | Fix critical code bugs → Readiness Check → harden phishing analyzer; weekly report deferred; Pack delivered by hand | `engineering/sprint-plan.md` |
@@ -27,7 +28,9 @@ _Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window o
 ## Open decisions (founder only)
 1. ✅ **Country: Australia** (2026-09-26). Re-checking market (US vs. Australia), entity and anti-spam law.
 2. ✅ **Ad budget: ~US$300 Google Search test.**
-3. Salary: none until profitable (~$1.1k needed) vs. $2k/mo (~$12.9k needed).
+3. Salary: none until profitable (peak cash need ≈A$2.2k base / A$9.1k conservative) vs. A$3k/mo + super.
+5. Confirm US dental moves from Jan to May 2027 (Feb–Apr 2027 goes to Australia).
+6. Tell us your state (ASIC, grants, governing law).
 4. ✅ Tech-lead approved to fix the critical bugs (in progress).
 
 ## Deadlines
@@ -42,7 +45,7 @@ _Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window o
 | **Dec 4** | Last Pack intake call |
 | Dec 15 | Deliver all Packs; score results vs. the 3-customer floor |
 
-## Top 3 actions this week
-1. **Buy the domains and set up email** (done when a test email to Gmail passes SPF/DKIM/DMARC).
-2. **Book 5 discovery interviews with tax/CPA firm owners** using `interviews/recruiting-kit.md` (done when 5 are on the calendar).
-3. **Tell company-hq your country and budget** so legal, finance and payments can be finalized.
+## Top 3 actions this week (from 28 Sep)
+1. **Accountant consult, then register the Pty Ltd and ABN by ~2 Oct** (Director ID first). No email can go out without the ABN.
+2. **Buy the `.com` domains and set up email** (done when a test email to Gmail passes SPF/DKIM/DMARC); start warm-up.
+3. **Book 5 interviews**, mixing Australian accountants (same time zone) and US firms at 07:00–10:00 Sydney. Research 100 US firms with published addresses (`sales/playbook.md` §3.5).
