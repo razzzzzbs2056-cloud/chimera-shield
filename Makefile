@@ -1,4 +1,4 @@
-.PHONY: dev frontend backend install install-fe install-be
+.PHONY: dev frontend backend install install-fe install-be setup test test-be
 
 ## Start both servers concurrently
 dev:
@@ -12,7 +12,7 @@ install-fe:
 	npm install
 
 install-be:
-	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
 
 ## Install deps + start both servers
 setup: install dev
@@ -24,3 +24,9 @@ frontend:
 ## Start backend only
 backend:
 	python -m uvicorn backend.main:app --reload --port 8000
+
+## Run backend tests (Anthropic client is mocked; no API key or network needed)
+test: test-be
+
+test-be:
+	python -m pytest -q

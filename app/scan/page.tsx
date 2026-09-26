@@ -10,6 +10,7 @@ interface ScanResult {
   is_phishing: boolean;
   indicators: string[];
   recommendation: string;
+  analysis_complete?: boolean;
 }
 
 const riskColors: Record<RiskLevel, string> = {
@@ -18,6 +19,8 @@ const riskColors: Record<RiskLevel, string> = {
   HIGH: "text-orange-400 border-orange-400",
   CRITICAL: "text-red-400 border-red-400",
 };
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 const riskBg: Record<RiskLevel, string> = {
   LOW: "bg-green-900/20",
@@ -40,14 +43,21 @@ export default function ScanPage() {
     setError("");
     setResult(null);
     try {
-      const { data } = await axios.post("http://localhost:8000/api/scan/email", {
+      const { data } = await axios.post(`${API_URL}/api/scan/email`, {
         email_content: emailBody,
         sender,
         subject,
       });
       setResult(data);
-    } catch {
-      setError("Scan failed. Make sure the backend is running on port 8000.");
+    } catch (err) {
+      const status = axios.isAxiosError(err) ? err.response?.status : undefined;
+      if (status === 413) {
+        setError("That email is too long to analyze. Please paste only the message text (under 50 KB).");
+      } else if (status === 429) {
+        setError("Too many scans in a short time. Please wait a minute and try again.");
+      } else {
+        setError("Scan failed. Please try again in a moment.");
+      }
     } finally {
       setLoading(false);
     }
@@ -135,6 +145,12 @@ export default function ScanPage() {
                 </ul>
               )}
             </div>
+
+            {result.analysis_complete === false && (
+              <p className="text-sm text-yellow-400">
+                We couldn&apos;t fully analyze this email, so we&apos;re showing a cautious default.
+              </p>
+            )}
 
             <div className="border-t border-gray-700 pt-4">
               <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">Recommendation</p>

@@ -1,6 +1,6 @@
 # 🛡️ ChimeraShield
 
-An AI-powered security scanning tool built with a Next.js frontend and FastAPI backend. ChimeraShield leverages OpenAI and Anthropic models to analyze and identify security threats.
+An AI-powered security tool built with a Next.js frontend and FastAPI backend. ChimeraShield uses Anthropic Claude models to analyze and explain security threats. Today it ships one feature: a paste-an-email phishing analyzer.
 
 ---
 
@@ -8,9 +8,9 @@ An AI-powered security scanning tool built with a Next.js frontend and FastAPI b
 
 ### Prerequisites
 
-- **Node.js** v16+
-- **Python** 3.9+
-- An **OpenAI** API key and/or **Anthropic** API key
+- **Node.js** v18.18+ (Next.js 15)
+- **Python** 3.10+
+- An **Anthropic** API key
 
 ### 1. Clone & Install
 
@@ -26,19 +26,17 @@ make install
 cp .env.example .env
 ```
 
-Then open `.env` and fill in your API keys:
+Then open `.env` and set `ANTHROPIC_API_KEY`. The other variables have safe defaults and are documented in `.env.example`:
 
-```env
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-
-# Server ports (defaults shown)
-BACKEND_PORT=8000
-FRONTEND_PORT=3000
-
-# Environment
-NODE_ENV=development
-```
+| Variable | Default | Purpose |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | none | Required. Without it, `/api/scan/email` returns 503 with a clear message. |
+| `TRIAGE_MODEL` | `claude-haiku-4-5-20251001` | Model used by the phishing analyzer |
+| `ALLOWED_ORIGINS` | `http://localhost:3000` | Comma-separated CORS allowlist |
+| `SCAN_RATE_LIMIT` | `10/minute` | Per-IP limit on the scan endpoint |
+| `MAX_EMAIL_BYTES` | `51200` | Email body size cap (413 above it) |
+| `ENV` | `development` | `production` disables `/docs` |
+| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | Backend URL used by the browser |
 
 ### 3. Start Both Servers
 
@@ -61,6 +59,7 @@ This starts:
 | `make backend` | Start FastAPI backend only |
 | `make install` | Install all dependencies (npm + pip) |
 | `make setup` | Install dependencies then start both servers |
+| `make test` | Run backend tests (Anthropic client mocked, no key needed) |
 
 ---
 
@@ -74,12 +73,16 @@ chimera-shield/
 │   ├── page.tsx          # Home page
 │   └── globals.css       # Global styles
 ├── backend/              # FastAPI backend
-│   └── main.py           # API entry point
+│   ├── main.py           # API entry point (CORS, size guard, rate-limit handler)
+│   ├── config.py         # Settings read from env / .env
+│   ├── routers/scan.py   # Phishing analyzer endpoint
+│   └── tests/            # pytest suite
 ├── docs/                 # Project documentation
 ├── .env.example          # Environment variable template
 ├── Makefile              # Dev workflow shortcuts
 ├── package.json          # Node dependencies
-└── requirements.txt      # Python dependencies
+├── requirements.txt      # Python dependencies
+└── requirements-dev.txt  # Python dev/test dependencies
 ```
 
 ---
@@ -90,8 +93,9 @@ chimera-shield/
 |---|---|---|
 | `GET` | `/` | Service info and version |
 | `GET` | `/health` | Health check |
+| `POST` | `/api/scan/email` | Phishing analysis of a pasted email (`email_content`, optional `sender`, `subject`). Rate-limited per IP; bodies over 50 KB get 413. Email bodies are not stored or logged. |
 
-The API is self-documented via Swagger UI at [http://localhost:8000/docs](http://localhost:8000/docs).
+In development the API is self-documented via Swagger UI at [http://localhost:8000/docs](http://localhost:8000/docs) (disabled when `ENV=production`).
 
 ---
 
@@ -105,7 +109,6 @@ The API is self-documented via Swagger UI at [http://localhost:8000/docs](http:/
 **Backend**
 - [FastAPI](https://fastapi.tiangolo.com/) — Python API framework
 - [Uvicorn](https://www.uvicorn.org/) — ASGI server
-- [OpenAI](https://platform.openai.com/) — AI model integration
 - [Anthropic](https://www.anthropic.com/) — Claude model integration
 - [Pydantic](https://docs.pydantic.dev/) — Data validation
 
