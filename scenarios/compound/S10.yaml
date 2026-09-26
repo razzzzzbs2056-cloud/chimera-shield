@@ -1,0 +1,62 @@
+# S10 — Multiple simultaneous shocks
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S10
+title: Multiple simultaneous shocks
+category: compound
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: a Gulf conflict (S01) coincides with a global recession (S04), severe flooding (S05) and
+  India transit disruption (S02).'
+countries:
+- GCC states
+- India
+- global
+institutions:
+- IMF
+- World Bank
+- NDRRMA
+- NRB
+exposure_refs:
+- EXP-01
+- EXP-03
+- EXP-05
+- EXP-17
+- EXP-18
+- EXP-20
+channels:
+- financial_compliance
+components:
+- S01
+- S02
+- S04
+- S05
+depends_on: []
+shocks:
+- id: S10-a
+  channel: financial_compliance
+  variable: cross_border_payment_costs
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Sequenced liquidity, fiscal and humanitarian responses; each to be evaluated separately
+second_order_effects:
+- Reserve adequacy under simultaneous remittance fall and fuel price rise
+- Bank liquidity stress
+- Fiscal space exhausted by reconstruction plus revenue loss
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

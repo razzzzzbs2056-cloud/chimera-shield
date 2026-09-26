@@ -1,0 +1,67 @@
+# S03 — US-China economic fragmentation
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S03
+title: US-China economic fragmentation
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: escalating US-China trade restrictions and export controls raise technology costs and investment
+  uncertainty across Asia.'
+countries:
+- United States
+- China
+- India
+institutions:
+- US BIS
+- MOFCOM
+- WTO
+exposure_refs:
+- EXP-10
+- EXP-12
+- EXP-17
+- EXP-19
+channels:
+- technology_costs
+- external_financing
+- external_demand_goods
+- financial_compliance
+components: []
+depends_on: []
+shocks:
+- id: S03-a
+  channel: technology_costs
+  variable: capital_goods_prices
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 3
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S03-b
+  channel: external_financing
+  variable: fdi
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 3
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Diversified sourcing of ICT equipment (24B)
+- Compliance screening for controlled items (19B)
+second_order_effects:
+- Possible trade diversion opportunities (21C) — evidence required before assuming benefit
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

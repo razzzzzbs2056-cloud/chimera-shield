@@ -1,0 +1,66 @@
+# S08 — Trade preferences change with LDC graduation
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S08
+title: Trade preferences change with LDC graduation
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: LDC-specific preferences lapse at the end of transition periods; replacement arrangements
+  are narrower.'
+countries:
+- European Union
+- United Kingdom
+- United States
+- India
+- China
+institutions:
+- WTO
+- UN CDP
+- EU
+- UK
+exposure_refs:
+- EXP-11
+- EXP-13
+channels:
+- trade_preferences
+- external_financing
+components: []
+depends_on: []
+shocks:
+- id: S08-a
+  channel: trade_preferences
+  variable: goods_exports
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 5
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S08-b
+  channel: external_financing
+  variable: concessional_share
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 5
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- GSP+ / alternative preference eligibility (21A, 18C)
+- Rules-of-origin and quality compliance (12A)
+second_order_effects:
+- Higher borrowing costs as concessionality declines (20C)
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

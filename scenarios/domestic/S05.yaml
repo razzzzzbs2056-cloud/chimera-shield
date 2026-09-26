@@ -1,0 +1,91 @@
+# S05 — Severe Himalayan flooding
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S05
+title: Severe Himalayan flooding
+category: domestic
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: an extreme monsoon and/or glacial lake outburst flood damages hydropower plants, roads and
+  farmland across several basins.'
+countries:
+- Nepal
+- India
+- China (Tibet)
+institutions:
+- NDRRMA
+- DHM
+- ICIMOD
+- NEA
+exposure_refs:
+- EXP-06
+- EXP-07
+- EXP-20
+channels:
+- infrastructure_damage
+- hydro_generation
+- agricultural_output
+- electricity_trade
+- aggregate_real_growth
+components: []
+depends_on: []
+shocks:
+- id: S05-a
+  channel: infrastructure_damage
+  variable: capital_stock
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S05-b
+  channel: hydro_generation
+  variable: electricity_generation
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S05-c
+  channel: agricultural_output
+  variable: agriculture_gva
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S05-d
+  channel: aggregate_real_growth
+  variable: real_growth
+  unit: pp
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Early-warning expansion (13C)
+- Reconstruction financing and procurement (06C, 02C)
+- Climate-finance access (25D)
+second_order_effects:
+- Electricity export revenue loss then import need
+- Food price increases in affected regions
+- Displacement (14C)
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

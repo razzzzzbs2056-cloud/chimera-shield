@@ -1,0 +1,62 @@
+# S06 — Migration restrictions in major labour destinations
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S06
+title: Migration restrictions in major labour destinations
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: two or more major destination countries tighten foreign-worker quotas or nationalise workforce
+  requirements.'
+countries:
+- GCC states
+- Malaysia
+institutions:
+- Destination labour ministries
+- DoFE
+exposure_refs:
+- EXP-01
+- EXP-02
+channels:
+- migrant_employment
+- remittances
+components: []
+depends_on: []
+shocks:
+- id: S06-a
+  channel: migrant_employment
+  variable: new_labour_permits
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 3
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S06-b
+  channel: remittances
+  variable: remittances
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 3
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Destination diversification (23B)
+- Returnee skills certification and domestic absorption (09C, 10B)
+second_order_effects:
+- Domestic youth unemployment
+- Consumption and import compression
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

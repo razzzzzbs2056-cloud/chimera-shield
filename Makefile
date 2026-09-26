@@ -1,4 +1,4 @@
-.PHONY: dev frontend backend install install-fe install-be
+.PHONY: dev frontend backend install install-fe install-be nepal3t-test nepal3t-first-run nepal3t-validate
 
 ## Start both servers concurrently
 dev:
@@ -24,3 +24,13 @@ frontend:
 ## Start backend only
 backend:
 	python -m uvicorn backend.main:app --reload --port 8000
+
+## ---- NEPAL 3T research platform ----
+nepal3t-test:
+	python -m pytest
+
+nepal3t-first-run:
+	python -m src.cli first-run
+
+nepal3t-validate:
+	python -m src.cli generate --check && python -m src.cli validate

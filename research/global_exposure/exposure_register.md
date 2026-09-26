@@ -1,0 +1,28 @@
+# International Exposure Register
+
+_Generated 2026-09-26T15:49:47+00:00 from `exposure_register.json`._
+
+Entries: 20 · measured: 0 · pending: 20
+
+| ID | Exposure | Channel | Counterparties | Metric | Owner | Sources | Scenarios | Status |
+|---|---|---|---|---|---|---|---|---|
+| EXP-01 | Remittance dependence and corridor concentration | remittances | Gulf Cooperation Council states, Malaysia, India, other | personal remittances / GDP; share by source corridor | 23C | nrb, knomad, nso_nepal | S01, S04, S06, S10 | **PENDING** |
+| EXP-02 | Migrant workers by destination | migrant_employment | Qatar, Saudi Arabia, UAE, Kuwait, Malaysia, Republic of Korea, Japan | new labour permits by destination; estimated migrant stock | 23A | dofe, glmm | S01, S06, S10 | **PENDING** |
+| EXP-03 | Goods trade concentration with India | transit_and_logistics | India | India share of goods imports and exports | 04A | customs_nepal, tepc | S02, S10 | **PENDING** |
+| EXP-04 | Third-country trade transit via Indian ports | transit_and_logistics | India | share of third-country imports transiting Kolkata/Haldia/Visakhapatnam | 21B | customs_nepal, wb_lpi | S02, S10 | **PENDING** |
+| EXP-05 | Petroleum import dependence and supplier | fuel_prices | India | petroleum products share of imports; supplier share | 22A | noc_nepal, customs_nepal | S01, S02, S10 | **PENDING** |
+| EXP-06 | Cross-border electricity trade | electricity_trade | India, Bangladesh | electricity exports and imports by counterparty and season | 22B | nea, cea_india | S02, S05, S09 | **PENDING** |
+| EXP-07 | Glacier- and snow-fed share of hydropower | hydro_generation | shared basins | share of generation capacity in glacier/snow-fed basins | 25A | icimod, nea | S05, S09 | **PENDING** |
+| EXP-08 | Tourism source markets | tourism_demand | India, China, United States, United Kingdom, other | arrivals share by origin; travel receipts / GDP | 12C | tourism_ministry, nrb | S01, S04, S10 | **PENDING** |
+| EXP-09 | Air connectivity through Gulf hubs | aviation_connectivity | UAE, Qatar, India | share of international seats via Gulf and Indian hubs | 19C | caan | S01, S10 | **PENDING** |
+| EXP-10 | NPR-INR peg and INR/USD exposure | exchange_rate | India | share of trade invoiced in INR vs USD; INR/USD volatility | 20B | nrb, rbi | S02, S03, S10 | **PENDING** |
+| EXP-11 | External public debt by creditor and currency | external_financing | World Bank (IDA), ADB, bilateral creditors | external debt share by creditor/currency | 20C | pdmo, wb_ids | S04, S08, S10 | **PENDING** |
+| EXP-12 | FDI by source country | external_financing | all sources | FDI stock/inflows by source | 12B | nrb, doind | S03, S04 | **PENDING** |
+| EXP-13 | Loss of LDC-specific trade preferences | trade_preferences | European Union, United Kingdom, other preference-granting members | exports benefiting from LDC-only preferences / total exports | 21A | wto, undesa_ldc, eu_trade | S08 | **PENDING** |
+| EXP-14 | Digital-service exports exposed to AI substitution | digital_services_demand | United States, Europe, Australia | ICT/BPO exports by segment and destination | 08A | nrb, unctadstat | S07 | **PENDING** |
+| EXP-15 | Fertiliser import dependence | agricultural_output | India, China, other | imported share of fertiliser use; supplier concentration | 21D | customs_nepal, fao_stat | S02, S10 | **PENDING** |
+| EXP-16 | Medicine and medical-supply import dependence | transit_and_logistics | India, other | imported share of pharmaceutical consumption | 21D | customs_nepal, mohp | S02, S10 | **PENDING** |
+| EXP-17 | Correspondent banking concentration | financial_compliance | USD/INR correspondents | number of active correspondent relationships; share via top 3 | 20D | nrb, bis_bank | S03, S10 | **PENDING** |
+| EXP-18 | FATF/APG standing | financial_compliance | FATF, APG | current listing status and open action items | 20E | fatf, apg | S10 | **PENDING** |
+| EXP-19 | Imported technology subject to export controls | technology_costs | United States, China, EU | share of ICT capital imports under controlled categories | 19B | bis_us, un_comtrade | S03 | **PENDING** |
+| EXP-20 | Transboundary flood exposure | infrastructure_damage | India, China (Tibet) | capital stock in cross-border flood and GLOF hazard zones | 25C | ndrrma, icimod, thinkhazard | S05, S10 | **PENDING** |

@@ -1,0 +1,105 @@
+# S01 — Middle East conflict: energy, migrant employment, remittances and aviation
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S01
+title: 'Middle East conflict: energy, migrant employment, remittances and aviation'
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: an escalation of armed conflict in the Gulf region disrupts oil and LNG shipping, reduces
+  construction and services employment in GCC states and closes parts of regional airspace.'
+countries:
+- GCC states
+- Iran
+- Israel
+- India
+institutions:
+- IOM
+- GCC labour ministries
+- ICAO
+exposure_refs:
+- EXP-01
+- EXP-02
+- EXP-05
+- EXP-08
+- EXP-09
+channels:
+- remittances
+- migrant_employment
+- fuel_prices
+- aviation_connectivity
+- tourism_demand
+- exchange_rate
+components: []
+depends_on: []
+shocks:
+- id: S01-a
+  channel: remittances
+  variable: remittances
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S01-b
+  channel: migrant_employment
+  variable: migrant_stock
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S01-c
+  channel: fuel_prices
+  variable: petroleum_import_price
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S01-d
+  channel: aviation_connectivity
+  variable: international_seats
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S01-e
+  channel: tourism_demand
+  variable: tourist_arrivals
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Evacuation and consular support planning (19D)
+- Remittance-channel continuity measures (20D)
+- Fuel stock drawdown rules (19E)
+- Re-routing of migrant labour to alternative destinations (23B)
+second_order_effects:
+- Reserve cover falls as fuel import bill rises while remittance inflows fall
+- Returning workers raise domestic labour supply and unemployment
+- Lower import-based customs revenue if imports compress
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

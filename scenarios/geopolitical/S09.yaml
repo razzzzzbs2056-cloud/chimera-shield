@@ -1,0 +1,63 @@
+# S09 — Transformation of regional electricity markets
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S09
+title: Transformation of regional electricity markets
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: falling solar-plus-storage costs and new cross-border lines change the price and timing
+  of demand for Nepal''s hydropower in India and Bangladesh.'
+countries:
+- India
+- Bangladesh
+- Bhutan
+institutions:
+- CEA (India)
+- NEA
+- power exchanges
+exposure_refs:
+- EXP-06
+- EXP-07
+channels:
+- electricity_trade
+- hydro_generation
+components: []
+depends_on: []
+shocks:
+- id: S09-a
+  channel: electricity_trade
+  variable: export_price
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 5
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S09-b
+  channel: electricity_trade
+  variable: export_volume
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 5
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Export-vs-domestic-use rebalancing (22E, 05B)
+- Storage and reservoir project appraisal (05A)
+second_order_effects:
+- Value of run-of-river wet-season surplus may fall if solar saturates daytime prices
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

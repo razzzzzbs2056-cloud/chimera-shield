@@ -1,0 +1,120 @@
+# NEPAL 3T — source catalog
+#
+# A catalog of *where* evidence should come from. It contains NO data values.
+# `tier` follows the source hierarchy in CLAUDE.md (1 = highest priority):
+#   1 Nepal official (NSO, NRB, MoF, ministries, provincial authorities)
+#   2 IMF / World Bank / ADB
+#   3 UN system, ILO, UNCTAD, WTO
+#   4 Foreign governments and central banks
+#   5 IEA and energy authorities
+#   6 ICIMOD and climate-science bodies
+#   7 Academic research and reputable independent analysis
+#
+# endpoint_status: every URL below was recorded from general knowledge when the
+# catalog was created and is "unverified" until an agent successfully retrieves
+# a document from it and records the retrieval in the observation store.
+
+sources:
+  # ---------------- Tier 1: Nepal official ----------------
+  nso_nepal: {tier: 1, institution: National Statistics Office, Nepal, url: "https://nsonepal.gov.np", covers: [national accounts, census 2021, NLSS, NLFS, agricultural census], endpoint_status: unverified}
+  nrb: {tier: 1, institution: Nepal Rastra Bank, url: "https://www.nrb.org.np", covers: [monetary statistics, balance of payments, reserves, remittances, bank supervision, Current Macroeconomic and Financial Situation], endpoint_status: unverified}
+  mof_nepal: {tier: 1, institution: Ministry of Finance, Nepal, url: "https://mof.gov.np", covers: [Economic Survey, budget, fiscal outturn, intergovernmental transfers], endpoint_status: unverified}
+  pdmo: {tier: 1, institution: Public Debt Management Office, Nepal, url: "https://pdmo.gov.np", covers: [public debt stock and service], endpoint_status: unverified}
+  oag_nepal: {tier: 1, institution: Office of the Auditor General, Nepal, url: "https://oag.gov.np", covers: [annual audit reports, irregularities, arrears], endpoint_status: unverified}
+  npc_nepal: {tier: 1, institution: National Planning Commission, Nepal, url: "https://npc.gov.np", covers: [periodic plans, project monitoring, PDNA], endpoint_status: unverified}
+  nnrfc: {tier: 1, institution: National Natural Resources and Fiscal Commission, Nepal, url: "https://nnrfc.gov.np", covers: [fiscal transfer formulae, revenue sharing], endpoint_status: unverified}
+  ppmo: {tier: 1, institution: Public Procurement Monitoring Office, Nepal, url: "https://ppmo.gov.np", covers: [procurement rules, e-GP], endpoint_status: unverified}
+  ciaa: {tier: 1, institution: Commission for the Investigation of Abuse of Authority, Nepal, url: "https://ciaa.gov.np", covers: [anti-corruption case statistics], endpoint_status: unverified}
+  nea: {tier: 1, institution: Nepal Electricity Authority, url: "https://www.nea.org.np", covers: [generation, consumption, trade, tariffs, annual reports], endpoint_status: unverified}
+  doe_nepal: {tier: 1, institution: Department of Electricity Development, Nepal, url: "https://doed.gov.np", covers: [generation licences, project pipeline], endpoint_status: unverified}
+  customs_nepal: {tier: 1, institution: Department of Customs, Nepal, url: "https://customs.gov.np", covers: [trade by product and partner, border point statistics], endpoint_status: unverified}
+  tepc: {tier: 1, institution: Trade and Export Promotion Centre, Nepal, url: "https://tepc.gov.np", covers: [trade statistics, export promotion], endpoint_status: unverified}
+  ibn: {tier: 1, institution: Investment Board Nepal, url: "https://ibn.gov.np", covers: [large project pipeline, PPP, investment summits], endpoint_status: unverified}
+  doind: {tier: 1, institution: Department of Industry, Nepal, url: "https://doind.gov.np", covers: [FDI approvals, industry registration], endpoint_status: unverified}
+  dofe: {tier: 1, institution: Department of Foreign Employment, Nepal, url: "https://dofe.gov.np", covers: [labour permits by destination and skill], endpoint_status: unverified}
+  moest: {tier: 1, institution: Ministry of Education, Science and Technology, Nepal, url: "https://moest.gov.np", covers: [education statistics, national learning assessments], endpoint_status: unverified}
+  mohp: {tier: 1, institution: Ministry of Health and Population, Nepal, url: "https://mohp.gov.np", covers: [health statistics, NHA], endpoint_status: unverified}
+  mofa_nepal: {tier: 1, institution: Ministry of Foreign Affairs, Nepal, url: "https://mofa.gov.np", covers: [treaties, bilateral relations, consular data], endpoint_status: unverified}
+  tourism_ministry: {tier: 1, institution: Ministry of Culture, Tourism and Civil Aviation, Nepal, url: "https://tourism.gov.np", covers: [tourism statistics], endpoint_status: unverified}
+  ndrrma: {tier: 1, institution: National Disaster Risk Reduction and Management Authority (BIPAD portal), url: "https://bipad.gov.np", covers: [disaster events and losses], endpoint_status: unverified}
+  dhm: {tier: 1, institution: Department of Hydrology and Meteorology, Nepal, url: "https://dhm.gov.np", covers: [hydrology, climate observations, flood early warning], endpoint_status: unverified}
+  noc_nepal: {tier: 1, institution: Nepal Oil Corporation, url: "https://noc.org.np", covers: [petroleum imports, pricing, storage], endpoint_status: unverified}
+  caan: {tier: 1, institution: Civil Aviation Authority of Nepal, url: "https://caanepal.gov.np", covers: [aviation statistics], endpoint_status: unverified}
+  sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
+  lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
+  supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}
+
+  # ---------------- Tier 2: IMF / World Bank / ADB ----------------
+  imf_weo: {tier: 2, institution: IMF World Economic Outlook database / DataMapper API, url: "https://www.imf.org/external/datamapper/api/v1/", covers: [nominal GDP USD, real growth, inflation, projections], endpoint_status: unverified}
+  imf_article_iv: {tier: 2, institution: IMF country reports on Nepal (Article IV, programme reviews, DSA), url: "https://www.imf.org/en/Countries/NPL", covers: [macro assessment, debt sustainability], endpoint_status: unverified}
+  wb_wdi: {tier: 2, institution: World Bank World Development Indicators API, url: "https://api.worldbank.org/v2/", covers: [macro, social, financial inclusion indicators], endpoint_status: unverified}
+  wb_ids: {tier: 2, institution: World Bank International Debt Statistics, url: "https://www.worldbank.org/en/programs/debt-statistics/ids", covers: [external debt by creditor and currency], endpoint_status: unverified}
+  wb_pip: {tier: 2, institution: World Bank Poverty and Inequality Platform, url: "https://pip.worldbank.org", covers: [international poverty lines, Gini], endpoint_status: unverified}
+  wb_npl: {tier: 2, institution: World Bank Nepal country reports (Development Update, CCDR, PER), url: "https://www.worldbank.org/en/country/nepal", covers: [analytical reports], endpoint_status: unverified}
+  wb_lpi: {tier: 2, institution: World Bank Logistics Performance Index, url: "https://lpi.worldbank.org", covers: [logistics performance], endpoint_status: unverified}
+  wb_wgi: {tier: 2, institution: World Bank Worldwide Governance Indicators, url: "https://www.worldbank.org/en/publication/worldwide-governance-indicators", covers: [governance perception indices], endpoint_status: unverified}
+  adb_nepal: {tier: 2, institution: Asian Development Bank — Nepal, url: "https://www.adb.org/countries/nepal", covers: [country reports, project documents, Key Indicators], endpoint_status: unverified}
+  aiib: {tier: 2, institution: Asian Infrastructure Investment Bank, url: "https://www.aiib.org", covers: [project financing], endpoint_status: unverified}
+
+  # ---------------- Tier 3: UN system / ILO / UNCTAD / WTO ----------------
+  un_wpp: {tier: 3, institution: UN DESA World Population Prospects, url: "https://population.un.org/wpp/", covers: [population projections by variant], endpoint_status: unverified}
+  undesa_ldc: {tier: 3, institution: UN DESA / Committee for Development Policy — LDC category, url: "https://www.un.org/development/desa/dpad/least-developed-country-category.html", covers: [graduation status and timeline], endpoint_status: unverified}
+  undesa_egov: {tier: 3, institution: UN E-Government Survey, url: "https://publicadministration.un.org/egovkb", covers: [e-government index], endpoint_status: unverified}
+  undp_hdr: {tier: 3, institution: UNDP Human Development Reports, url: "https://hdr.undp.org", covers: [HDI and components], endpoint_status: unverified}
+  ilostat: {tier: 3, institution: ILOSTAT, url: "https://ilostat.ilo.org", covers: [labour statistics, modelled estimates], endpoint_status: unverified}
+  unctadstat: {tier: 3, institution: UNCTADstat, url: "https://unctadstat.unctad.org", covers: [trade, services trade, FDI, digitally deliverable services], endpoint_status: unverified}
+  unctad_rmt: {tier: 3, institution: UNCTAD Review of Maritime Transport, url: "https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport", covers: [shipping, freight], endpoint_status: unverified}
+  unctad_iia: {tier: 3, institution: UNCTAD International Investment Agreements Navigator, url: "https://investmentpolicy.unctad.org/international-investment-agreements", covers: [BITs and treaties], endpoint_status: unverified}
+  un_comtrade: {tier: 3, institution: UN Comtrade, url: "https://comtradeplus.un.org", covers: [merchandise trade by HS and partner], endpoint_status: unverified}
+  wto: {tier: 3, institution: World Trade Organization, url: "https://www.wto.org", covers: [trade rules, notifications, LDC provisions], endpoint_status: unverified}
+  wto_tariff: {tier: 3, institution: WTO Tariff & Trade Data, url: "https://ttd.wto.org", covers: [applied and preferential tariffs], endpoint_status: unverified}
+  unesco_uis: {tier: 3, institution: UNESCO Institute for Statistics, url: "https://uis.unesco.org", covers: [education statistics, R&D], endpoint_status: unverified}
+  who_gho: {tier: 3, institution: WHO Global Health Observatory, url: "https://www.who.int/data/gho", covers: [health indicators], endpoint_status: unverified}
+  fao_stat: {tier: 3, institution: FAOSTAT, url: "https://www.fao.org/faostat", covers: [agricultural production, yields, food balances], endpoint_status: unverified}
+  itu: {tier: 3, institution: International Telecommunication Union statistics, url: "https://www.itu.int/en/ITU-D/Statistics", covers: [connectivity, Global Cybersecurity Index], endpoint_status: unverified}
+  unwto: {tier: 3, institution: UN Tourism (UNWTO), url: "https://www.unwto.org", covers: [international tourism statistics], endpoint_status: unverified}
+  iom: {tier: 3, institution: International Organization for Migration, url: "https://www.iom.int", covers: [migration data, evacuation operations], endpoint_status: unverified}
+  ohchr: {tier: 3, institution: UN Office of the High Commissioner for Human Rights, url: "https://www.ohchr.org", covers: [treaty ratification status, UPR], endpoint_status: unverified}
+  un_sanctions: {tier: 3, institution: UN Security Council sanctions, url: "https://www.un.org/securitycouncil/sanctions/information", covers: [UN sanctions regimes], endpoint_status: unverified}
+  knomad: {tier: 3, institution: KNOMAD (World Bank-hosted migration and remittances data), url: "https://www.knomad.org", covers: [bilateral remittance estimates], endpoint_status: unverified}
+  oecd: {tier: 3, institution: OECD data (incl. DAC creditor reporting, migration outlook), url: "https://data-explorer.oecd.org", covers: [ODA flows, migration], endpoint_status: unverified}
+  fatf: {tier: 3, institution: Financial Action Task Force, url: "https://www.fatf-gafi.org", covers: [jurisdiction status], endpoint_status: unverified}
+  apg: {tier: 3, institution: Asia/Pacific Group on Money Laundering, url: "https://apgml.org", covers: [mutual evaluation reports], endpoint_status: unverified}
+  bis_bank: {tier: 3, institution: Bank for International Settlements statistics, url: "https://data.bis.org", covers: [cross-border banking, CPMI correspondent banking], endpoint_status: unverified}
+  gcf: {tier: 3, institution: Green Climate Fund, url: "https://www.greenclimate.fund", covers: [approved projects by country], endpoint_status: unverified}
+  gef: {tier: 3, institution: Global Environment Facility, url: "https://www.thegef.org", covers: [projects by country], endpoint_status: unverified}
+  saarc: {tier: 3, institution: SAARC Secretariat, url: "https://www.saarc-sec.org", covers: [regional agreements], endpoint_status: unverified}
+  bimstec: {tier: 3, institution: BIMSTEC Secretariat, url: "https://bimstec.org", covers: [regional agreements], endpoint_status: unverified}
+
+  # ---------------- Tier 4: foreign governments and central banks ----------------
+  rbi: {tier: 4, institution: Reserve Bank of India, url: "https://www.rbi.org.in", covers: [INR, Indian monetary policy], endpoint_status: unverified}
+  mea_india: {tier: 4, institution: Ministry of External Affairs, India, url: "https://www.mea.gov.in", covers: [bilateral documents], endpoint_status: unverified}
+  mofcom: {tier: 4, institution: Ministry of Commerce, People's Republic of China, url: "https://english.mofcom.gov.cn", covers: [trade and investment policy], endpoint_status: unverified}
+  fed: {tier: 4, institution: US Federal Reserve Board, url: "https://www.federalreserve.gov", covers: [US monetary policy], endpoint_status: unverified}
+  ustr: {tier: 4, institution: Office of the US Trade Representative, url: "https://ustr.gov", covers: [US trade preferences], endpoint_status: unverified}
+  ofac: {tier: 4, institution: US Treasury OFAC, url: "https://ofac.treasury.gov", covers: [US sanctions], endpoint_status: unverified}
+  bis_us: {tier: 4, institution: US Bureau of Industry and Security, url: "https://www.bis.gov", covers: [US export controls], endpoint_status: unverified}
+  eu_trade: {tier: 4, institution: European Commission — trade (GSP/EBA), url: "https://policy.trade.ec.europa.eu", covers: [EU preferences, trade regulation], endpoint_status: unverified}
+  eu_sanctions: {tier: 4, institution: EU Sanctions Map, url: "https://www.sanctionsmap.eu", covers: [EU restrictive measures], endpoint_status: unverified}
+  uk_trade: {tier: 4, institution: UK Government — Developing Countries Trading Scheme, url: "https://www.gov.uk", covers: [UK DCTS preferences], endpoint_status: unverified}
+
+  # ---------------- Tier 5: energy authorities ----------------
+  iea: {tier: 5, institution: International Energy Agency, url: "https://www.iea.org", covers: [energy markets, technology costs], endpoint_status: unverified}
+  irena: {tier: 5, institution: International Renewable Energy Agency, url: "https://www.irena.org", covers: [renewable costs and capacity], endpoint_status: unverified}
+  cea_india: {tier: 5, institution: Central Electricity Authority, India, url: "https://cea.nic.in", covers: [Indian power sector, cross-border trade guidelines], endpoint_status: unverified}
+
+  # ---------------- Tier 6: climate and hazard science ----------------
+  icimod: {tier: 6, institution: ICIMOD, url: "https://www.icimod.org", covers: [cryosphere, HKH assessment, river basins], endpoint_status: unverified}
+  ipcc: {tier: 6, institution: IPCC, url: "https://www.ipcc.ch", covers: [climate assessments], endpoint_status: unverified}
+  em_dat: {tier: 6, institution: EM-DAT (CRED, UCLouvain), url: "https://www.emdat.be", covers: [disaster events and losses], endpoint_status: unverified}
+  thinkhazard: {tier: 6, institution: GFDRR ThinkHazard!, url: "https://thinkhazard.org", covers: [hazard levels by area], endpoint_status: unverified}
+
+  # ---------------- Tier 7: academic and independent ----------------
+  pwt: {tier: 7, institution: Penn World Table (Groningen Growth and Development Centre), url: "https://www.rug.nl/ggdc/productivity/pwt/", covers: [capital stock, TFP, labour share], endpoint_status: unverified}
+  maddison: {tier: 7, institution: Maddison Project Database, url: "https://www.rug.nl/ggdc/historicaldevelopment/maddison/", covers: [long-run GDP per capita], endpoint_status: unverified}
+  ucdp: {tier: 7, institution: Uppsala Conflict Data Program, url: "https://ucdp.uu.se", covers: [conflict events], endpoint_status: unverified}
+  acled: {tier: 7, institution: ACLED, url: "https://acleddata.com", covers: [conflict events], endpoint_status: unverified}
+  glmm: {tier: 7, institution: Gulf Labour Markets, Migration and Population programme, url: "https://gulfmigration.grc.net", covers: [Gulf labour market statistics], endpoint_status: unverified}
+  dhs: {tier: 7, institution: The DHS Program (Nepal DHS), url: "https://dhsprogram.com", covers: [health and nutrition surveys], endpoint_status: unverified}
+  ti_cpi: {tier: 7, institution: Transparency International CPI, url: "https://www.transparency.org/en/cpi", covers: [perception index], endpoint_status: unverified}
+  academic: {tier: 7, institution: Peer-reviewed literature (cite each paper individually as its own source record), url: null, covers: [any], endpoint_status: not_applicable}

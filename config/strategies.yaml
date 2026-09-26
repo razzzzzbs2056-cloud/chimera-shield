@@ -1,0 +1,48 @@
+# NEPAL 3T — alternative national development strategies (Phase 5).
+# Definitions only. No strategy is endorsed or ranked. Quantities are pending.
+
+strategies:
+  - id: STR-0
+    name: Conservative continuation of current trends
+    thesis: Recent observed growth, investment, remittance and export patterns persist with no new structural policy.
+    lead_agents: ["01", "02"]
+    status: defined — awaiting verified baseline
+  - id: STR-A
+    name: Industrialisation-led economy with expanded infrastructure and reliable energy
+    thesis: Manufacturing growth enabled by reliable domestic electricity, logistics and industrial clusters.
+    lead_agents: ["05", "06", "12"]
+    status: defined — awaiting verified baseline
+  - id: STR-B
+    name: Technology and high-value services economy
+    thesis: Digital and professional services exports backed by large education and digital-infrastructure investment.
+    lead_agents: ["08", "09"]
+    status: defined — awaiting verified baseline
+  - id: STR-C
+    name: Energy and regional-trade economy
+    thesis: Hydropower, transmission and regional electricity trade, with domestic industrial use where it adds more value.
+    lead_agents: ["05", "22", "17"]
+    status: defined — awaiting verified baseline
+  - id: STR-D
+    name: Diversified development economy
+    thesis: Balanced gains across agriculture, industry, tourism, technology and other competitive services.
+    lead_agents: ["07", "12", "08"]
+    status: defined — awaiting verified baseline
+  - id: STR-E
+    name: Institution-first development pathway
+    thesis: Public-service capacity, regulatory certainty, human capital and investment execution come first.
+    lead_agents: ["11", "02", "09"]
+    status: defined — awaiting verified baseline
+
+required_calculations:
+  - {item: Capital investment requirements, owner: 01A}
+  - {item: Domestic financing capacity, owner: 03C}
+  - {item: External funding assumptions, owner: 20C}
+  - {item: Workforce and training requirements, owner: 09B}
+  - {item: Export and domestic-market assumptions, owner: 12A}
+  - {item: Infrastructure and energy needs, owner: 06C}
+  - {item: Public debt and fiscal implications, owner: 02C}
+  - {item: Expected GDP contribution (value added, no double counting), owner: 00C}
+  - {item: Effects on income and living standards, owner: 14A}
+  - {item: Key implementation constraints, owner: 11C}
+  - {item: Global dependencies, owner: 16B}
+  - {item: Risks and potential unintended consequences, owner: 15B}

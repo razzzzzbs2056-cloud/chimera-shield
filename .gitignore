@@ -39,3 +39,6 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 tsconfig.json
+
+# Pytest
+.pytest_cache/

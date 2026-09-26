@@ -1,0 +1,1506 @@
+# NEPAL 3T — canonical agent catalog (single source of truth)
+#
+# Edit THIS file, then run:  python -m src.cli generate
+# That regenerates config/agents.json, config/subagents.json,
+# .claude/agents/*.md and src/agents/specs/*.md. Tests fail if the
+# generated files drift from this catalog.
+#
+# depends_on entries may be an agent id ("01") — meaning every subagent of
+# that agent — or a subagent id ("16A"). Subagents inherit their agent's
+# depends_on and may add their own via `extra_depends_on`.
+#
+# `sources` refer to ids in research/sources/source_catalog.yaml.
+
+version: "1.0"
+platform: NEPAL 3T
+divisions:
+  A: National Strategy and Domestic Economy
+  B: Global Geopolitical Intelligence
+
+agents:
+
+# ======================================================================
+# DIVISION A — NATIONAL STRATEGY AND DOMESTIC ECONOMY
+# ======================================================================
+
+- id: "00"
+  slug: national-orchestrator
+  name: National Orchestrator
+  division: A
+  kind: orchestrator
+  mission: >-
+    Coordinate the entire platform, assign research, manage shared assumptions,
+    combine specialist findings and prepare auditable national scenarios.
+  responsibilities:
+    - Maintain the task graph, shared assumption register and run state.
+    - Assign scoped tasks with acceptance criteria to agents 01-28.
+    - Integrate only audited outputs into national scenarios.
+    - Never alter findings issued by Agent 15 or Agent 28.
+  depends_on: []
+  deliverables:
+    - Task graph and run plan (state/run_state.json)
+    - Shared assumption register (config/model_config.yaml, versioned)
+    - Integrated national scenario packages with audit status attached
+  subagents:
+  - id: 00A
+    name: Task Decomposition
+    focus: Convert broad goals into specific assignments, dependencies, deliverables and acceptance criteria.
+    questions:
+      - Which research questions must be answered before the US$3T arithmetic can be evaluated?
+      - What is the minimal dependency-ordered task set for each phase of the roadmap?
+      - What objective acceptance criterion closes each task?
+    data: [agent catalog, roadmap phases, open data-gap register]
+    sources: []
+    outputs: [task_list, dependency_edges, acceptance_criteria]
+  - id: 00B
+    name: Inter-Agent Coordination
+    focus: Coordinate parallel research, resolve data inconsistencies and escalate unresolved methodological disputes.
+    questions:
+      - Which agents report conflicting values for the same variable and period?
+      - Is each conflict a definitional, vintage, coverage or methodological difference?
+      - Which disputes require escalation to a human reviewer?
+    data: [observation store, assumption register, audit ledger]
+    sources: []
+    outputs: [conflict_register, escalations, resolution_notes]
+  - id: 00C
+    name: National Scenario Integration
+    focus: Combine independently verified sector results into consistent national projections without double-counting.
+    extra_depends_on: ["15", "28"]
+    questions:
+      - Do integrated sector value-added figures sum to GDP at basic prices without overlap?
+      - Are real growth, deflator and exchange-rate paths kept separate and consistent?
+      - Which inputs remain CONDITIONAL or UNVERIFIED and how do they propagate?
+    data: [audited sector outputs, shared model state, audit verdicts]
+    sources: []
+    outputs: [integrated_scenario, identity_check_results, audit_status_by_input]
+
+- id: "01"
+  slug: macroeconomic-strategy
+  name: Macroeconomic Strategy
+  division: A
+  kind: specialist
+  mission: >-
+    Investigate Nepal's long-term growth potential, macroeconomic constraints and
+    the feasibility of the US$3 trillion target.
+  responsibilities:
+    - Build and maintain growth-accounting and projection modules.
+    - Produce the US$3T required-growth arithmetic under multiple timelines.
+    - Identify conditions under which the target is unattainable.
+  depends_on: []
+  deliverables:
+    - Growth-accounting decomposition (historical, sourced)
+    - Required-trajectory tables for 2050/2060/2070 and an untargeted baseline
+    - Feasibility assessment with explicit failure conditions
+  subagents:
+  - id: 01A
+    name: Macroeconomic Modeller
+    focus: Research and model GDP, productivity, capital accumulation, labour supply and structural change.
+    extra_depends_on: [10B, 10C]
+    questions:
+      - What is the historical decomposition of real GDP growth into capital, labour and TFP?
+      - What investment rate and ICOR are implied by recent official national accounts?
+      - How has sectoral employment and value-added share shifted since the 2010s?
+    data: [real GDP (NPR constant prices), gross fixed capital formation, employment by sector, GVA by sector, labour share]
+    sources: [nso_nepal, mof_nepal, wb_wdi, imf_weo, pwt, ilostat]
+    outputs: [growth_accounting_table, investment_rate_series, icor_estimate, structural_change_table]
+  - id: 01B
+    name: International Growth Researcher
+    focus: Study historical transformations in relevant economies. Assess which lessons transfer to Nepal and which do not.
+    questions:
+      - Which economies sustained high real growth for 25+ years, and from what starting income?
+      - What preconditions (sea access, institutions, savings, energy) accompanied them?
+      - Which of those preconditions are absent or structurally different in Nepal?
+    data: [long-run GDP per capita panels, growth-spell durations, investment rates, export shares]
+    sources: [maddison, pwt, wb_wdi, academic]
+    outputs: [comparator_set, growth_spell_statistics, transferability_assessment]
+  - id: 01C
+    name: Long-Term Scenario Forecaster
+    focus: Construct alternative GDP and GDP-per-capita trajectories with explicit real growth, inflation, exchange-rate and demographic assumptions.
+    extra_depends_on: [01A, 01B, 03A, 05A, 06C, 07A, 08A, 09A, 10C, 12A, 16C]
+    questions:
+      - What nominal USD GDP results from each explicit (real growth, deflator, NPR/USD, population) path?
+      - What real growth is required to reach US$3T by 2050, 2060 and 2070 under stated price/FX assumptions?
+      - How sensitive is the answer to the exchange-rate and deflator assumptions?
+    data: [base-year nominal GDP, GDP deflator, NPR/USD, INR/USD, population projections]
+    sources: [nso_nepal, nrb, imf_weo, un_wpp]
+    outputs: [trajectory_table, required_growth_table, sensitivity_grid]
+
+- id: "02"
+  slug: public-finance
+  name: Public Finance
+  division: A
+  kind: specialist
+  mission: >-
+    Examine how Nepal could finance development without creating unsustainable
+    fiscal obligations.
+  responsibilities:
+    - Model revenue capacity, spending efficiency and debt dynamics.
+    - Test the fiscal cost of every strategy against sustainability thresholds.
+  depends_on: ["11"]
+  deliverables:
+    - Fiscal baseline (revenue, expenditure, debt; sourced)
+    - Debt-sustainability simulations per strategy
+  subagents:
+  - id: 02A
+    name: Revenue and Tax Researcher
+    focus: Investigate tax structure, revenue capacity, compliance, informality and the distributional effects of alternative tax policies.
+    questions:
+      - What is the composition of federal revenue by tax type, and its trend?
+      - How dependent is revenue on import-based taxes (customs, VAT at border)?
+      - What are the documented distributional effects of the main taxes?
+    data: [revenue by tax head, tax-to-GDP ratio, import-related revenue share, VAT gap estimates]
+    sources: [mof_nepal, imf_article_iv, wb_npl, customs_nepal]
+    outputs: [revenue_composition_table, import_tax_dependence, distributional_notes]
+  - id: 02B
+    name: Public Expenditure Researcher
+    focus: Examine spending efficiency, government procurement, investment execution and public-service outcomes.
+    questions:
+      - What share of budgeted capital expenditure is executed each fiscal year?
+      - How is capital spending concentrated in the final months of the fiscal year?
+      - What do audit reports identify as the main execution failures?
+    data: [capital budget vs actual, monthly expenditure profile, OAG findings]
+    sources: [mof_nepal, oag_nepal, ppmo, wb_npl]
+    outputs: [capex_execution_rate_series, execution_timing_profile, audit_findings_summary]
+  - id: 02C
+    name: Sovereign Debt Researcher
+    focus: Model public debt, borrowing costs, contingent liabilities, debt-service capacity and infrastructure-financing alternatives.
+    extra_depends_on: [01C, 02A, 02B]
+    questions:
+      - What is the stock and composition (domestic/external, concessional share) of public debt?
+      - What primary balance stabilises debt under each growth and interest scenario?
+      - Which contingent liabilities (SOEs, PPPs, guarantees) are documented?
+    data: [public debt stock, effective interest rate, external debt currency composition, SOE liabilities]
+    sources: [pdmo, mof_nepal, imf_article_iv, wb_ids]
+    outputs: [debt_baseline, debt_stabilising_primary_balance, contingent_liability_register]
+
+- id: "03"
+  slug: monetary-banking
+  name: Monetary Policy and Banking
+  division: A
+  kind: specialist
+  mission: >-
+    Research monetary stability, financial-sector capacity and Nepal's external
+    financial constraints.
+  responsibilities:
+    - Model the NPR-INR peg, reserves and balance-of-payments transmission.
+    - Assess banking-sector resilience and credit allocation.
+  depends_on: ["20"]
+  deliverables:
+    - External-sector baseline (reserves, BoP)
+    - Banking and capital-market capacity assessment
+  subagents:
+  - id: 03A
+    name: Monetary and Exchange-Rate Analyst
+    focus: Model inflation, exchange-rate arrangements, foreign reserves and balance-of-payments transmission.
+    questions:
+      - How does the NPR-INR peg transmit Indian inflation and INR/USD movements to Nepal?
+      - How many months of imports do gross reserves cover, and how volatile is that cover?
+      - What does the peg imply for any long-run NPR/USD assumption in the GDP model?
+    data: [CPI, NPR/INR, NPR/USD, gross FX reserves, import bill, current account]
+    sources: [nrb, imf_article_iv, rbi]
+    outputs: [peg_transmission_notes, reserve_cover_series, fx_assumption_constraints]
+  - id: 03B
+    name: Banking and Credit Analyst
+    focus: Study banking resilience, nonperforming loans, financial inclusion and productive credit allocation.
+    questions:
+      - What are the system NPL ratio, capital adequacy and sectoral credit concentration?
+      - How much private credit flows to productive sectors versus real estate and trade?
+      - What is the account-ownership and borrowing gap by province and gender?
+    data: [NPL ratio, CAR, credit by sector, Findex indicators]
+    sources: [nrb, wb_wdi, imf_article_iv]
+    outputs: [banking_health_table, credit_allocation_table, inclusion_gaps]
+  - id: 03C
+    name: Capital Markets Analyst
+    focus: Assess domestic savings mobilisation, capital-market development, insurance, investment instruments and financial-sector risks.
+    questions:
+      - What is the depth of equity, bond and insurance markets relative to GDP?
+      - What instruments could mobilise domestic and diaspora savings for long-term investment?
+      - What regulatory limits constrain foreign portfolio participation?
+    data: [market capitalisation, bond issuance, insurance penetration, gross domestic savings]
+    sources: [sebon, nrb, wb_wdi]
+    outputs: [market_depth_table, savings_mobilisation_options, regulatory_constraints]
+
+- id: "04"
+  slug: domestic-geopolitical-economy
+  name: Domestic Geopolitical Economy
+  division: A
+  kind: specialist
+  mission: >-
+    Study how Nepal's relations with its neighbours shape domestic economic decisions.
+  responsibilities:
+    - Translate verified regional facts (from Agent 17) into domestic policy constraints.
+  depends_on: ["17"]
+  deliverables:
+    - Neighbour-dependency register with domestic policy implications
+  subagents:
+  - id: 04A
+    name: India-Nepal Economic Relations
+    focus: Study bilateral trade, transit agreements, energy links, border administration, currency exposure and infrastructure.
+    questions:
+      - What share of Nepal's goods trade, fuel imports and transit passes through India?
+      - Which bilateral treaties and agreements govern trade, transit and power trade, and when were they last revised?
+      - What are the documented border-administration costs and delays?
+    data: [trade by partner, petroleum import origin, transit treaty texts, power trade volumes]
+    sources: [customs_nepal, tepc, nrb, mofa_nepal, mea_india, nea]
+    outputs: [india_trade_share, agreement_inventory, border_cost_evidence]
+  - id: 04B
+    name: China-Nepal Economic Relations
+    focus: Study cross-border transport, investment, trade, tourism, infrastructure and bilateral agreements.
+    questions:
+      - What are the volumes and composition of trade through northern border points?
+      - Which announced connectivity projects are under construction versus proposed?
+      - What FDI commitments versus actual inflows are documented from China?
+    data: [trade by border point, FDI commitments and inflows, project status records]
+    sources: [customs_nepal, ibn, nrb, mofa_nepal]
+    outputs: [northern_trade_profile, project_status_register, fdi_commitment_vs_actual]
+  - id: 04C
+    name: Cross-Border Policy Integration
+    focus: Compare regional opportunities, diplomatic constraints, institutional responsibilities and the economic effects of existing agreements.
+    extra_depends_on: [04A, 04B]
+    questions:
+      - Which domestic institutions hold responsibility for each cross-border agreement?
+      - Where do opportunities with one neighbour conflict with commitments to the other?
+      - What measurable economic effects of existing agreements are documented?
+    data: [agreement inventory, institutional mandates, evaluation studies]
+    sources: [mofa_nepal, npc_nepal, academic]
+    outputs: [responsibility_matrix, conflict_map, documented_effects]
+
+- id: "05"
+  slug: energy-industrial-development
+  name: Energy and Industrial Development
+  division: A
+  kind: specialist
+  mission: >-
+    Model the costs and benefits of expanding domestic energy availability,
+    electricity exports and industrial production.
+  responsibilities:
+    - Maintain the electricity balance (generation, consumption, trade, losses).
+    - Compare export versus domestic industrial use of electricity.
+  depends_on: [22A, 22B, 22C, 22D]
+  deliverables:
+    - Electricity balance baseline and capacity pipeline
+    - Export-versus-domestic-use opportunity-cost analysis (with Agent 22E)
+  subagents:
+  - id: 05A
+    name: Hydropower and Electricity Researcher
+    focus: Assess generation potential, project costs, seasonal output, transmission constraints and cross-border trade.
+    questions:
+      - What is installed capacity, annual generation and the wet/dry season gap?
+      - What is the licensed and under-construction pipeline, and its historical completion rate?
+      - Which transmission corridors constrain evacuation and export?
+    data: [installed capacity MW, generation GWh by month, pipeline MW by status, transmission capacity]
+    sources: [nea, doe_nepal, iea, cea_india]
+    outputs: [electricity_balance, seasonal_profile, pipeline_completion_rate, transmission_bottlenecks]
+  - id: 05B
+    name: Industrial Energy Researcher
+    focus: Investigate the opportunity cost of exporting electricity versus using it in Nepal for manufacturing and services.
+    extra_depends_on: [22E]
+    questions:
+      - What is the realised export tariff versus domestic industrial tariff?
+      - What is the value added per GWh in candidate domestic industries?
+      - What reliability and grid investments would domestic industrial use require?
+    data: [export prices, industrial tariffs, GVA per unit electricity by industry, outage statistics]
+    sources: [nea, nso_nepal, academic]
+    outputs: [tariff_comparison, value_added_per_gwh, reliability_requirements]
+  - id: 05C
+    name: Industrial Development Researcher
+    focus: Study sector competitiveness, industrial clusters, production costs, supply chains and infrastructure requirements.
+    questions:
+      - What is manufacturing's share of GDP and employment and its trend?
+      - Which sectors show revealed comparative advantage in export data?
+      - What landed-cost disadvantages arise from landlocked logistics?
+    data: [manufacturing GVA, manufacturing employment, export RCA, logistics costs]
+    sources: [nso_nepal, unctadstat, un_comtrade, wb_lpi]
+    outputs: [manufacturing_profile, rca_table, cost_disadvantage_estimates]
+
+- id: "06"
+  slug: infrastructure-urban
+  name: Infrastructure and Urban Development
+  division: A
+  kind: specialist
+  mission: >-
+    Study economically justified infrastructure and the long-term spatial
+    development of Nepal.
+  responsibilities:
+    - Provide physical, financial and delivery-capacity constraints to the shared model.
+  depends_on: ["05", "13"]
+  deliverables:
+    - Infrastructure stock and delivery-capacity baseline
+    - Project delivery constraint parameters (lags, cost overruns)
+  subagents:
+  - id: 06A
+    name: Transport and Logistics Researcher
+    focus: Examine roads, railways, aviation, border infrastructure and domestic and international transport costs.
+    questions:
+      - What is the strategic road network length and condition?
+      - What are door-to-port transport time and cost to Kolkata/Haldia and Visakhapatnam?
+      - What is the status of announced railway links?
+    data: [road network statistics, freight cost per TEU, dry-port throughput, LPI scores]
+    sources: [wb_lpi, wb_npl, adb_nepal, customs_nepal]
+    outputs: [network_baseline, trade_cost_estimates, rail_project_status]
+  - id: 06B
+    name: Urban Development Researcher
+    focus: Assess housing, urbanisation, land use, municipal services, congestion and provincial growth opportunities.
+    questions:
+      - What is the urban population share under the current municipal classification versus functional definitions?
+      - What are service-coverage gaps (water, sanitation, waste) by municipality type?
+      - Which secondary cities show fastest population growth?
+    data: [census 2021 urban population, municipal service coverage, city growth rates]
+    sources: [nso_nepal, un_wpp, wb_wdi]
+    outputs: [urbanisation_profile, service_gap_table, secondary_city_growth]
+  - id: 06C
+    name: Infrastructure Finance and Delivery Researcher
+    focus: Investigate procurement, project selection, engineering feasibility, maintenance and public-private financing.
+    questions:
+      - What are documented time and cost overruns on national-pride and donor-funded projects?
+      - What is the maintenance funding gap?
+      - What PPP frameworks exist and what is their track record?
+    data: [project completion records, cost overrun data, maintenance budgets, PPP pipeline]
+    sources: [oag_nepal, npc_nepal, ibn, adb_nepal]
+    outputs: [delivery_lag_distribution, cost_overrun_distribution, ppp_track_record]
+
+- id: "07"
+  slug: agriculture-food-systems
+  name: Agriculture and Food Systems
+  division: A
+  kind: specialist
+  mission: >-
+    Investigate how Nepal can improve agricultural productivity, food security and
+    rural incomes.
+  responsibilities:
+    - Provide agricultural output, employment and food-import baselines.
+  depends_on: ["25E"]
+  deliverables:
+    - Agricultural productivity baseline and constraint analysis
+  subagents:
+  - id: 07A
+    name: Agricultural Productivity Researcher
+    focus: Study irrigation, mechanisation, crop yields, climate exposure, agricultural research and farm economics.
+    questions:
+      - What are yields of major crops relative to regional comparators?
+      - What share of cultivated land has year-round irrigation?
+      - What share of employment is in agriculture versus its GVA share?
+    data: [crop yields, irrigated area, agricultural employment share, agricultural GVA share]
+    sources: [fao_stat, nso_nepal, ilostat]
+    outputs: [yield_gap_table, irrigation_coverage, labour_productivity_gap]
+  - id: 07B
+    name: Agribusiness and Logistics Researcher
+    focus: Assess storage, processing, cold chains, distribution, market access and agricultural exports.
+    questions:
+      - What are post-harvest losses for major perishables?
+      - Which agricultural exports (e.g. cardamom, tea, ginger) have documented market access barriers?
+      - What processing and cold-chain capacity exists?
+    data: [post-harvest loss estimates, agri export values, SPS barrier records]
+    sources: [fao_stat, tepc, un_comtrade]
+    outputs: [loss_estimates, export_barrier_register, processing_capacity]
+  - id: 07C
+    name: Land and Food Security Researcher
+    focus: Study land fragmentation, soil health, water availability, food imports and rural livelihood resilience.
+    questions:
+      - What is the average holding size and fragmentation trend?
+      - What is the food import bill and cereal import dependence?
+      - What share of households are food insecure by province?
+    data: [agricultural census holdings, food import values, food insecurity prevalence]
+    sources: [nso_nepal, fao_stat, customs_nepal]
+    outputs: [land_fragmentation_profile, food_import_dependence, food_insecurity_by_province]
+
+- id: "08"
+  slug: technology-ai-digital
+  name: Technology, AI and Digital Economy
+  division: A
+  kind: specialist
+  mission: >-
+    Evaluate technology as a potential contributor to domestic productivity and
+    internationally competitive exports.
+  responsibilities:
+    - Quantify digital-service exports and their verifiable demand.
+  depends_on: ["09", "24"]
+  deliverables:
+    - Digital economy baseline and export-demand evidence
+  subagents:
+  - id: 08A
+    name: AI and Software Export Researcher
+    focus: Identify viable digital-service markets, international competition, workforce needs and verifiable demand.
+    questions:
+      - What IT/ICT service export values are recorded in the balance of payments, and how much is unrecorded?
+      - Which segments face displacement by AI automation versus growth?
+      - What is the size of the qualified workforce?
+    data: [ICT services exports, IT workforce estimates, freelance platform evidence]
+    sources: [nrb, unctadstat, wb_wdi, academic]
+    outputs: [ict_export_series, recording_gap_notes, segment_outlook]
+  - id: 08B
+    name: Digital Infrastructure and Cybersecurity Researcher
+    focus: Study computing, broadband, electricity, cybersecurity, data protection and the costs of operating digital infrastructure.
+    questions:
+      - What are fixed and mobile broadband penetration, speeds and prices?
+      - What international bandwidth routes exist and how redundant are they?
+      - What cybersecurity and data-protection laws are in force?
+    data: [broadband subscriptions, international bandwidth, data-centre capacity, relevant statutes]
+    sources: [itu, lawcommission_nepal]
+    outputs: [connectivity_baseline, route_redundancy, legal_framework_status]
+  - id: 08C
+    name: Startup and Digital Government Researcher
+    focus: Assess entrepreneurship, commercialisation, public-service digitisation, regulatory barriers and technology adoption.
+    questions:
+      - What are business registration and foreign-payment barriers for startups?
+      - Which public services are fully online, and what is their uptake?
+      - Which regulations block cross-border digital payments?
+    data: [business registration statistics, e-government indices, payment regulations]
+    sources: [nrb, undesa_egov, wb_npl]
+    outputs: [startup_barrier_register, egov_service_inventory, payment_constraints]
+
+- id: "09"
+  slug: education-research-talent
+  name: Education, Research and Talent
+  division: A
+  kind: specialist
+  mission: >-
+    Investigate how Nepal can develop the skills and research capacity required for
+    sustainable economic growth.
+  responsibilities:
+    - Provide human-capital stock and flow estimates to the shared model.
+  depends_on: ["23"]
+  deliverables:
+    - Human-capital baseline (learning, completion, skills)
+  subagents:
+  - id: 09A
+    name: School Education Researcher
+    focus: Study foundational literacy, numeracy, teaching quality, completion rates and educational inequality.
+    questions:
+      - What do national learning assessments show for grade-level literacy and numeracy?
+      - What are completion rates by level, province and gender?
+      - What is learning-adjusted years of schooling?
+    data: [NASA learning results, completion rates, LAYS, HCI]
+    sources: [moest, unesco_uis, wb_wdi]
+    outputs: [learning_outcomes_table, completion_by_group, lays_value]
+  - id: 09B
+    name: University and Vocational Training Researcher
+    focus: Investigate workforce needs, technical training, applied research and institutional quality.
+    questions:
+      - What are tertiary enrolment, graduation by field and TVET capacity?
+      - What is R&D expenditure as a share of GDP?
+      - What employer-reported skill gaps are documented?
+    data: [tertiary enrolment by field, TVET seats, R&D expenditure, enterprise surveys]
+    sources: [moest, unesco_uis, wb_npl]
+    outputs: [tertiary_profile, tvet_capacity, rnd_intensity]
+  - id: 09C
+    name: Workforce and Diaspora Knowledge Researcher
+    focus: Examine skill gaps, migrant expertise, return migration and mechanisms for transferring knowledge.
+    questions:
+      - What skills do labour migrants acquire abroad, and are they certified on return?
+      - What is the documented scale of high-skill emigration?
+      - Which knowledge-transfer programmes have evaluated results?
+    data: [labour permits by skill level, return migration surveys, emigration of graduates]
+    sources: [dofe, nso_nepal, oecd]
+    outputs: [skill_acquisition_evidence, brain_drain_indicators, programme_evaluations]
+
+- id: "10"
+  slug: health-labour-demographics
+  name: Health, Labour and Demographics
+  division: A
+  kind: specialist
+  mission: >-
+    Assess the relationships among population health, employment, demographics and
+    economic productivity.
+  responsibilities:
+    - Supply population and labour-force paths to the shared model.
+  depends_on: ["23"]
+  deliverables:
+    - Population and labour-force baseline and projections (sourced)
+  subagents:
+  - id: 10A
+    name: Healthcare Systems Researcher
+    focus: Study preventive care, healthcare access, financing, workforce capacity and economic effects.
+    questions:
+      - What are out-of-pocket health expenditure shares and catastrophic spending rates?
+      - What are health-workforce densities by province?
+      - What does stunting prevalence imply for future labour productivity?
+    data: [health expenditure, OOP share, health workers per 10k, stunting prevalence]
+    sources: [who_gho, dhs, mohp]
+    outputs: [health_financing_table, workforce_density, stunting_trend]
+  - id: 10B
+    name: Labour Market Researcher
+    focus: Investigate employment, wages, working conditions, informality, labour productivity and social protection.
+    questions:
+      - What are labour-force participation, unemployment and informality rates (NLFS)?
+      - What is output per worker by sector?
+      - What social-protection coverage exists?
+    data: [NLFS indicators, informality rate, sectoral output per worker, SP coverage]
+    sources: [nso_nepal, ilostat]
+    outputs: [labour_market_baseline, productivity_by_sector, sp_coverage]
+  - id: 10C
+    name: Population and Participation Researcher
+    focus: Analyse ageing, population change, labour-force participation, migration and long-term workforce supply.
+    questions:
+      - What do census 2021 and UN WPP imply for working-age population to 2070?
+      - When does the demographic dividend window close under each variant?
+      - How large is the absent population abroad and how is it counted?
+    data: [census 2021 population, absentee population, WPP variants, fertility rate]
+    sources: [nso_nepal, un_wpp]
+    outputs: [population_paths, working_age_share_paths, dividend_window]
+
+- id: "11"
+  slug: law-governance-institutions
+  name: Law, Governance and Institutions
+  division: A
+  kind: specialist
+  mission: >-
+    Study institutional constraints and the legal requirements for effective
+    development programmes.
+  responsibilities:
+    - Maintain a legal-constraint register used by every strategy.
+  depends_on: []
+  deliverables:
+    - Legal and institutional constraint register
+  subagents:
+  - id: 11A
+    name: Legal and Regulatory Researcher
+    focus: Investigate contract enforcement, judicial capacity, business regulation and applicable constitutional requirements.
+    questions:
+      - What constitutional provisions govern economic policy, federal finance and natural resources?
+      - What is the documented time and cost of contract enforcement?
+      - Which laws govern FDI, land acquisition and PPPs?
+    data: [constitution text, case backlog statistics, key statutes]
+    sources: [lawcommission_nepal, supremecourt_nepal, wb_npl]
+    outputs: [constitutional_constraints, enforcement_metrics, statute_inventory]
+  - id: 11B
+    name: Procurement and Integrity Researcher
+    focus: Study transparent public procurement, auditing, administrative controls and mechanisms to prevent corruption.
+    questions:
+      - What irregularities and arrears does the Auditor General report?
+      - What share of procurement is e-procured and competitive?
+      - What do governance indicators show over time (with methodology caveats)?
+    data: [OAG annual report figures, e-GP statistics, WGI, CPI]
+    sources: [oag_nepal, ppmo, ciaa, wb_wgi, ti_cpi]
+    outputs: [audit_irregularities_trend, procurement_competition, governance_indicators]
+  - id: 11C
+    name: Federalism and Public Administration Researcher
+    focus: Analyse national, provincial and municipal responsibilities, administrative capacity and service-delivery systems.
+    questions:
+      - How are expenditure and revenue assignments split across the three tiers?
+      - What are intergovernmental transfer volumes and formulae?
+      - What capacity gaps are documented at local level?
+    data: [fiscal transfers, provincial budgets, local capacity assessments]
+    sources: [mof_nepal, nnrfc, wb_npl]
+    outputs: [assignment_matrix, transfer_flows, capacity_gaps]
+
+- id: "12"
+  slug: trade-investment
+  name: International Trade and Investment
+  division: A
+  kind: specialist
+  mission: >-
+    Research Nepal's opportunities to expand exports and attract economically
+    beneficial investment.
+  responsibilities:
+    - Maintain export and FDI baselines and market-access evidence.
+  depends_on: ["04", "21"]
+  deliverables:
+    - Export and FDI baseline; market-access evidence register
+  subagents:
+  - id: 12A
+    name: Export Market Researcher
+    focus: Assess goods and services exports, international demand, market access, quality standards and competitiveness.
+    questions:
+      - What is the export basket and its concentration (HHI) by product and partner?
+      - What is the goods trade deficit and its trend?
+      - Which quality-standard failures block exports?
+    data: [exports by HS code and partner, imports, services exports]
+    sources: [customs_nepal, tepc, un_comtrade, nrb]
+    outputs: [export_basket, concentration_indices, trade_balance_series]
+  - id: 12B
+    name: Foreign Investment Researcher
+    focus: Investigate investment barriers, financing, investor protections, value added and risks associated with different investment structures.
+    questions:
+      - What are FDI commitments versus realised inflows?
+      - What approval steps and timelines apply to FDI?
+      - What repatriation restrictions exist?
+    data: [FDI approvals, FDI inflows (BoP), approval timelines]
+    sources: [nrb, ibn, doind, unctadstat]
+    outputs: [fdi_commitment_realisation, approval_process_map, repatriation_rules]
+  - id: 12C
+    name: Tourism and Business Development Researcher
+    focus: Study sustainable tourism, business formation, international services and regional opportunities.
+    questions:
+      - What are international arrivals, length of stay and spending per visitor?
+      - What is travel-services export revenue in the BoP?
+      - What are environmental carrying-capacity limits at major destinations?
+    data: [tourist arrivals, travel receipts, carrying capacity studies]
+    sources: [tourism_ministry, nrb, unwto]
+    outputs: [tourism_baseline, receipts_series, capacity_constraints]
+
+- id: "13"
+  slug: environment-resilience
+  name: Environment and Domestic Resilience
+  division: A
+  kind: specialist
+  mission: >-
+    Incorporate environmental constraints and disaster exposure into national
+    development modelling.
+  responsibilities:
+    - Supply hazard exposure and loss parameters to the shared model.
+  depends_on: ["25"]
+  deliverables:
+    - Hazard exposure and historical-loss baseline
+  subagents:
+  - id: 13A
+    name: Disaster Risk Researcher
+    focus: Investigate earthquakes, landslides, floods, exposure and infrastructure vulnerability.
+    questions:
+      - What were the documented economic losses of the 2015 earthquake and major floods?
+      - What is annual average loss by hazard (where modelled)?
+      - Which critical infrastructure lies in high-hazard zones?
+    data: [PDNA 2015, disaster loss database, hazard maps]
+    sources: [ndrrma, npc_nepal, em_dat, thinkhazard]
+    outputs: [historical_loss_table, aal_estimates, exposed_assets]
+  - id: 13B
+    name: Himalayan Water and Ecosystem Researcher
+    focus: Study glaciers, watersheds, biodiversity, water availability and environmental protection.
+    questions:
+      - What is the documented glacier mass-balance trend in Nepal's basins?
+      - What is protected-area coverage and forest-cover trend?
+      - What water-availability changes are projected by basin?
+    data: [glacier mass balance, forest cover, protected areas, basin flow projections]
+    sources: [icimod, dhm, ipcc]
+    outputs: [cryosphere_summary, ecosystem_baseline, water_availability_projections]
+  - id: 13C
+    name: Adaptation and Resilient Investment Researcher
+    focus: Evaluate early-warning systems, resilient infrastructure, climate adaptation finance and risk reduction.
+    questions:
+      - What early-warning coverage exists for floods and GLOFs?
+      - What are benefit-cost ratios for documented resilience investments?
+      - How much adaptation finance has Nepal received versus pledged?
+    data: [EWS coverage, BCR studies, climate finance flows]
+    sources: [dhm, gcf, wb_npl, academic]
+    outputs: [ews_coverage, resilience_bcr_evidence, adaptation_finance_flows]
+
+- id: "14"
+  slug: social-development-distribution
+  name: Social Development and Distribution
+  division: A
+  kind: specialist
+  mission: >-
+    Examine how economic development affects different households, communities and
+    regions.
+  responsibilities:
+    - Maintain the welfare dashboard kept separate from GDP.
+  depends_on: [10B, 10C]
+  deliverables:
+    - Welfare baseline (poverty, inequality, regional gaps)
+    - Distributional impact notes for each strategy and scenario
+  subagents:
+  - id: 14A
+    name: Poverty and Household Welfare Researcher
+    focus: Model poverty, household consumption, living standards and affordability.
+    questions:
+      - What are national and international poverty headcounts (NLSS IV, PIP) and their methodology differences?
+      - What share of household income comes from remittances?
+      - What is the consumption Gini?
+    data: [poverty headcount, consumption distribution, remittance-receiving households]
+    sources: [nso_nepal, wb_pip]
+    outputs: [poverty_baseline, method_comparison, remittance_income_share]
+  - id: 14B
+    name: Regional and Gender Impact Researcher
+    focus: Study development differences across provinces, rural and urban communities and population groups.
+    extra_depends_on: [14A]
+    questions:
+      - What are poverty, HDI and income differences across the seven provinces?
+      - What are gender gaps in participation, wages and asset ownership?
+      - Which caste/ethnic group gaps are documented in official data?
+    data: [provincial indicators, gender-disaggregated labour data, group-level census data]
+    sources: [nso_nepal, undp_hdr]
+    outputs: [provincial_dashboard, gender_gap_table, group_gap_table]
+  - id: 14C
+    name: Citizen Consultation and Social Safeguards
+    focus: Design transparent research on citizen needs, participation, accessibility, displacement risks and procedural fairness.
+    extra_depends_on: [13A, 06C]
+    questions:
+      - What consultation and free-prior-informed-consent requirements apply to infrastructure?
+      - What displacement and resettlement outcomes are documented for major projects?
+      - How could citizen priorities be surveyed ethically (design only; no fieldwork without approval)?
+    data: [safeguard policies, resettlement evaluations]
+    sources: [lawcommission_nepal, adb_nepal, wb_npl]
+    outputs: [safeguard_requirements, displacement_evidence, consultation_design]
+
+- id: "15"
+  slug: independent-domestic-audit
+  name: Independent Domestic Audit
+  division: A
+  kind: auditor
+  independent: true
+  mission: >-
+    Challenge the assumptions, calculations and conclusions of every domestic
+    development proposal.
+  responsibilities:
+    - Issue VERIFIED / CONDITIONAL / UNVERIFIED / INCONSISTENT verdicts with specific reasons.
+    - Report independently; never be instructed to approve a proposal.
+  depends_on: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14"]
+  deliverables:
+    - Domestic audit records in the append-only audit ledger
+  subagents:
+  - id: 15A
+    name: Statistical and Evidence Auditor
+    focus: Verify sources, units, data lineage, assumptions, calculations and reproducibility.
+    questions:
+      - Does every factual value link to a registered source with period and retrieval metadata?
+      - Do units, price bases and currencies match wherever values are combined?
+      - Do accounting identities hold within tolerance?
+    data: [observation store, model outputs, raw-file hashes]
+    sources: []
+    outputs: [evidence_checks, unit_checks, identity_checks, verdict]
+  - id: 15B
+    name: Financial and Implementation Auditor
+    focus: Check budgets, financing, capacity constraints, delivery schedules and contingent liabilities.
+    questions:
+      - Is every investment requirement matched to an identified financing source?
+      - Are delivery schedules consistent with historical execution rates?
+      - Are contingent liabilities disclosed?
+    data: [strategy financing tables, capex execution history, debt paths]
+    sources: []
+    outputs: [financing_gap_checks, schedule_realism_checks, verdict]
+  - id: 15C
+    name: Legal, Social and Environmental Auditor
+    focus: Identify applicable legal requirements, rights risks, distributional consequences and environmental costs.
+    questions:
+      - Does the proposal identify every applicable legal requirement?
+      - Are distributional effects reported by income group and province?
+      - Are environmental costs quantified or explicitly flagged as unquantified?
+    data: [legal constraint register, welfare dashboard, environmental baseline]
+    sources: []
+    outputs: [legal_checks, distributional_checks, environmental_checks, verdict]
+
+# ======================================================================
+# DIVISION B — GLOBAL GEOPOLITICAL INTELLIGENCE
+# ======================================================================
+
+- id: "16"
+  slug: global-intelligence-director
+  name: Global Intelligence Director
+  division: B
+  kind: director
+  mission: >-
+    Coordinate global research, map Nepal's international exposure and connect
+    external developments to the national simulation.
+  responsibilities:
+    - Own the international exposure register.
+    - Convert verified external scenarios into domestic model inputs.
+    - Must not modify Agent 28's findings.
+  depends_on: []
+  deliverables:
+    - International exposure register
+    - External scenario input packages for the shared model
+  subagents:
+  - id: 16A
+    name: Global Research Coordination
+    focus: Assign international research and manage global source verification.
+    questions:
+      - Which external variables does the domestic model need, and which agent supplies each?
+      - Which global sources are primary for each variable?
+    data: [model variable list, source catalog]
+    sources: []
+    outputs: [global_task_list, source_assignments]
+  - id: 16B
+    name: Geopolitical Dependency Mapping
+    focus: Identify Nepal's exposure to foreign countries, institutions, labour markets, trade routes and financial systems.
+    questions:
+      - What are Nepal's concentrations by partner for trade, remittances, fuel, FDI, debt and tourism?
+      - Which single points of failure (routes, suppliers, labour markets) exist?
+    data: [trade by partner, remittance sources, migrant stocks by destination, external debt creditors]
+    sources: [nrb, customs_nepal, dofe, wb_ids, knomad]
+    outputs: [exposure_register_entries, concentration_metrics, single_points_of_failure]
+  - id: 16C
+    name: International Scenario Integration
+    focus: Translate independently verified external scenarios into consistent inputs for domestic economic models.
+    extra_depends_on: ["17", "18", "19", "20", "21", "22", "23", "24", "25", "26"]
+    questions:
+      - Which model variables does each external scenario shock, by how much, with what evidence?
+      - Are shocks applied once only when scenarios are combined?
+    data: [scenario definitions, specialist estimates, exposure register]
+    sources: []
+    outputs: [shock_vectors, evidence_links, overlap_checks]
+
+- id: "17"
+  slug: south-asian-geopolitics
+  name: South Asian Geopolitics
+  division: B
+  kind: specialist
+  mission: >-
+    Research Nepal's regional diplomatic, commercial, economic and physical
+    dependencies.
+  responsibilities:
+    - Supply verified regional facts to Agents 04, 16 and 27.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Regional dependency briefs (sourced, dated)
+  subagents:
+  - id: 17A
+    name: India Specialist
+    focus: Research Indian economic policy, trade, infrastructure, investment, transit and energy-market developments.
+    questions:
+      - Which Indian policies (trade, power-market rules, fuel pricing) most directly affect Nepal?
+      - What is India's cross-border electricity trade regulatory framework?
+      - What is the INR outlook in official sources, given the peg?
+    data: [Indian trade policy notices, CEA cross-border guidelines, RBI publications]
+    sources: [mea_india, cea_india, rbi]
+    outputs: [policy_watchlist, power_trade_rules, inr_context]
+  - id: 17B
+    name: China Specialist
+    focus: Research Chinese economic developments, bilateral trade, infrastructure, connectivity and regional strategic issues.
+    questions:
+      - Which Chinese policies govern Tibet-Nepal border trade and connectivity?
+      - What is the documented status of bilateral connectivity frameworks?
+    data: [official Chinese announcements, border trade statistics]
+    sources: [mofcom, mofa_nepal]
+    outputs: [policy_watchlist, connectivity_status]
+  - id: 17C
+    name: Bangladesh, Bhutan and Pakistan Specialist
+    focus: Investigate cross-border electricity, regional transport, trade opportunities and diplomatic constraints.
+    questions:
+      - What is the status of Nepal-India-Bangladesh power trade arrangements?
+      - What transit rights to Bangladeshi ports exist in practice?
+    data: [trilateral power agreements, transit usage statistics]
+    sources: [nea, mofa_nepal, cea_india]
+    outputs: [trilateral_power_status, port_access_status]
+  - id: 17D
+    name: South Asian Institutions Specialist
+    focus: Study SAARC, BIMSTEC, BBIN and relevant agreements, distinguishing operational arrangements from announced proposals.
+    questions:
+      - Which regional agreements are ratified and operational versus signed or proposed?
+      - What measurable trade effects of SAFTA are documented?
+    data: [agreement ratification status, SAFTA utilisation studies]
+    sources: [saarc, bimstec, academic]
+    outputs: [agreement_status_table, documented_effects]
+  - id: 17E
+    name: Regional Water and Humanitarian Cooperation Specialist
+    focus: Analyse shared river systems, disaster cooperation, border vulnerabilities and regional humanitarian coordination.
+    questions:
+      - Which treaties govern the Kosi, Gandak and Mahakali rivers and what disputes are documented?
+      - What cross-border flood-forecasting data-sharing exists?
+    data: [treaty texts, data-sharing arrangements]
+    sources: [mofa_nepal, mea_india, icimod]
+    outputs: [river_treaty_inventory, data_sharing_status]
+
+- id: "18"
+  slug: global-power-relations
+  name: Global Power Relations
+  division: B
+  kind: specialist
+  mission: >-
+    Assess how major international powers and geopolitical competition influence
+    Nepal's economic environment.
+  responsibilities:
+    - Supply major-power policy scenarios with evidence grades.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Major-power influence briefs with transmission channels to Nepal
+  subagents:
+  - id: 18A
+    name: United States Specialist
+    focus: Study American economic policy, monetary spillovers, trade, technology restrictions, investment and development cooperation.
+    questions:
+      - What US trade preferences apply to Nepal (e.g. any Nepal-specific preference programme) and when do they expire?
+      - What US development-cooperation commitments to Nepal are documented and at what disbursement stage?
+    data: [preference programme texts, development cooperation disbursements]
+    sources: [ustr, oecd]
+    outputs: [preference_status, cooperation_flows]
+  - id: 18B
+    name: China as a Global Power Specialist
+    focus: Research Chinese global economic policy, trade, technology, capital flows and strategic competition.
+    questions:
+      - How do Chinese outward lending and investment trends affect Nepal's financing options?
+    data: [Chinese outward FDI and lending data]
+    sources: [mofcom, wb_ids, academic]
+    outputs: [financing_trend_notes]
+  - id: 18C
+    name: European Union and United Kingdom Specialist
+    focus: Examine European trade regulation, investment, migration, climate requirements and development partnerships.
+    questions:
+      - How will EU GSP / UK DCTS treatment change after LDC graduation?
+      - Which EU regulations (e.g. CBAM, due-diligence rules) affect Nepali exports?
+    data: [GSP/DCTS rules, regulation texts]
+    sources: [eu_trade, uk_trade]
+    outputs: [post_graduation_preferences, regulatory_exposure]
+  - id: 18D
+    name: Other Major Partners Specialist
+    focus: Study Russia, Japan, South Korea, Australia, Gulf countries and other economically relevant partners.
+    questions:
+      - Which partners are major sources of ODA, labour demand (e.g. Korea EPS, Japan SSW) and trade?
+    data: [ODA by donor, labour agreements, trade by partner]
+    sources: [oecd, dofe, mof_nepal]
+    outputs: [partner_profiles]
+  - id: 18E
+    name: Strategic Competition Specialist
+    focus: Analyse geopolitical fragmentation, economic coercion, diplomatic risks and options available to smaller countries.
+    questions:
+      - What does the literature document on small-state hedging and its economic outcomes?
+    data: [academic literature]
+    sources: [academic]
+    outputs: [literature_review, option_set]
+
+- id: "19"
+  slug: global-conflict-security
+  name: Global Conflict and Security
+  division: B
+  kind: specialist
+  safety_note: >-
+    Use public and lawful information. Do not provide operational military
+    targeting, offensive cyberattack plans or political manipulation.
+  mission: >-
+    Study international security developments and their economic and humanitarian
+    consequences for Nepal.
+  responsibilities:
+    - Supply conflict-related transmission evidence (energy, migrants, routes).
+  depends_on: [16A, 16B]
+  deliverables:
+    - Conflict exposure briefs for scenarios 01 and 10
+  subagents:
+  - id: 19A
+    name: International Conflict Researcher
+    focus: Track documented conflicts, negotiations, displacement and relevant peace processes.
+    questions:
+      - Which active conflicts are in regions hosting Nepali migrant workers or on Nepal's supply routes?
+    data: [conflict event data]
+    sources: [ucdp, acled]
+    outputs: [conflict_watchlist]
+  - id: 19B
+    name: Sanctions and Export-Control Researcher
+    focus: Examine international sanctions, financial restrictions, technology controls and lawful commercial implications.
+    questions:
+      - Which sanctions regimes and export controls affect Nepal's trade, banking or technology imports?
+    data: [sanctions lists and export-control rules]
+    sources: [un_sanctions, ofac, eu_sanctions, bis_us]
+    outputs: [applicable_regimes, compliance_implications]
+  - id: 19C
+    name: Shipping and Transport Security Researcher
+    focus: Study maritime chokepoints, aviation restrictions, cargo insurance and critical trade-route vulnerabilities.
+    questions:
+      - Which chokepoints do Nepal's third-country imports transit via Indian ports?
+      - How did past chokepoint disruptions affect freight rates?
+    data: [freight rate indices, route data]
+    sources: [unctad_rmt, wb_lpi]
+    outputs: [route_exposure, freight_shock_history]
+  - id: 19D
+    name: Humanitarian and Migrant Safety Researcher
+    focus: Assess the consequences of conflict for Nepali citizens abroad, remittances, evacuations and humanitarian needs.
+    questions:
+      - How many Nepali workers are in conflict-exposed destinations?
+      - What evacuation precedents exist and at what cost?
+    data: [migrant stock by destination, evacuation records]
+    sources: [dofe, mofa_nepal, iom]
+    outputs: [exposed_worker_estimates, evacuation_precedents]
+  - id: 19E
+    name: Civilian Resilience Researcher
+    focus: Investigate essential-service continuity, civilian infrastructure protection and lawful disaster preparedness.
+    questions:
+      - How many days of fuel, food and medicine stock does Nepal hold?
+    data: [strategic stock levels]
+    sources: [noc_nepal, mof_nepal]
+    outputs: [stock_cover_days]
+
+- id: "20"
+  slug: international-finance
+  name: International Finance and Monetary Systems
+  division: B
+  kind: specialist
+  mission: >-
+    Study financial developments outside Nepal that can affect domestic economic
+    stability.
+  responsibilities:
+    - Supply global financial-condition paths to Agent 03 and the shared model.
+  depends_on: [16A, 16B]
+  deliverables:
+    - External financial-conditions briefs and parameter sets
+  subagents:
+  - id: 20A
+    name: Global Interest-Rate Researcher
+    focus: Monitor major central banks, interest rates, global liquidity and monetary spillovers.
+    questions:
+      - How do Fed and RBI policy rates transmit to Nepal's interest rates and liquidity?
+    data: [policy rates, NRB interbank rates]
+    sources: [fed, rbi, nrb]
+    outputs: [rate_transmission_evidence]
+  - id: 20B
+    name: Currency and Balance-of-Payments Researcher
+    focus: Analyse exchange-rate movements, dollar exposure, Nepal's currency arrangement and external financial transmission.
+    questions:
+      - What share of Nepal's imports and external debt is USD-denominated versus INR?
+      - How has INR/USD moved over the long run, and what does it imply for NPR/USD?
+    data: [invoice currency, external debt currency composition, INR/USD]
+    sources: [nrb, rbi, wb_ids]
+    outputs: [currency_exposure_table, long_run_fx_history]
+  - id: 20C
+    name: International Debt and Development Finance Researcher
+    focus: Study sovereign borrowing, concessional loans, debt vulnerabilities and international financial assistance.
+    questions:
+      - What is Nepal's risk of debt distress rating in the latest IMF-WB DSA?
+      - How will concessional terms change with graduation from IDA/ADF eligibility?
+    data: [DSA ratings, IDA/ADF eligibility criteria]
+    sources: [imf_article_iv, wb_ids, adb_nepal]
+    outputs: [dsa_status, concessionality_outlook]
+  - id: 20D
+    name: International Banking Researcher
+    focus: Investigate banking crises, capital flows, investment cycles, correspondent banking and financial contagion.
+    questions:
+      - How many correspondent banking relationships do Nepali banks rely on, and how concentrated are they?
+    data: [correspondent banking data]
+    sources: [bis_bank, nrb]
+    outputs: [correspondent_exposure]
+  - id: 20E
+    name: International Financial Compliance Researcher
+    focus: Examine FATF developments, anti-money-laundering standards and cross-border financial compliance.
+    questions:
+      - What is Nepal's current FATF/APG status and what action items remain?
+    data: [FATF public statements, APG mutual evaluation]
+    sources: [fatf, apg]
+    outputs: [fatf_status, action_items]
+
+- id: "21"
+  slug: global-trade-supply-chains
+  name: Global Trade and Supply Chains
+  division: B
+  kind: specialist
+  mission: >-
+    Evaluate how changes to global production, trade rules and transport affect Nepal.
+  responsibilities:
+    - Supply trade-cost and market-access parameters to the shared model.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Trade-rule and logistics exposure briefs
+  subagents:
+  - id: 21A
+    name: Global Trade Rules Researcher
+    focus: Investigate WTO rules, tariffs, preferences, subsidies and Nepal's LDC graduation arrangements.
+    questions:
+      - Which preferences does Nepal lose at LDC graduation, and on what transition timeline?
+      - What tariff changes face Nepal's top exports in each major market?
+    data: [preference schemes, applied tariffs, graduation timeline]
+    sources: [wto, wto_tariff, undesa_ldc]
+    outputs: [preference_loss_table, tariff_change_estimates]
+  - id: 21B
+    name: International Logistics Researcher
+    focus: Study ports, shipping routes, transit arrangements, freight costs and regional transport networks.
+    questions:
+      - What are costs and times via Kolkata/Haldia versus Visakhapatnam and potential Bangladeshi ports?
+    data: [freight costs, transit times]
+    sources: [wb_lpi, unctad_rmt]
+    outputs: [route_cost_comparison]
+  - id: 21C
+    name: Global Manufacturing Researcher
+    focus: Examine changing industrial locations, supply-chain diversification and production competitiveness.
+    questions:
+      - Which relocating industries have location requirements Nepal could meet?
+    data: [FDI relocation studies, cost benchmarks]
+    sources: [unctadstat, academic]
+    outputs: [relocation_fit_assessment]
+  - id: 21D
+    name: Essential Imports Researcher
+    focus: Assess foreign dependence for food, fuel, fertiliser, medicines and critical industrial inputs.
+    questions:
+      - What share of consumption of fuel, fertiliser, rice, and medicines is imported, and from where?
+    data: [import volumes by product and origin]
+    sources: [customs_nepal, un_comtrade, noc_nepal]
+    outputs: [essential_import_dependence]
+  - id: 21E
+    name: International Services Trade Researcher
+    focus: Study tourism, digitally delivered services, professional services, international demand and regulatory constraints.
+    questions:
+      - What is the composition and growth of Nepal's services exports?
+    data: [services trade by category]
+    sources: [nrb, unctadstat, wto]
+    outputs: [services_export_profile]
+
+- id: "22"
+  slug: global-energy-resources
+  name: Global Energy and Resource Security
+  division: B
+  kind: specialist
+  mission: >-
+    Research international energy markets and their impact on Nepal's electricity
+    and industrial strategy.
+  responsibilities:
+    - Supply energy-price and regional power-market parameters.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Energy market briefs and electricity export-vs-domestic-use parameters
+  subagents:
+  - id: 22A
+    name: Oil and Gas Researcher
+    focus: Study petroleum markets, fuel supply, pricing and international transport vulnerabilities.
+    questions:
+      - What is Nepal's petroleum import bill as a share of total imports, and its price sensitivity?
+    data: [petroleum import values, pricing formula]
+    sources: [noc_nepal, customs_nepal, iea]
+    outputs: [fuel_import_sensitivity]
+  - id: 22B
+    name: Regional Electricity Researcher
+    focus: Investigate regional power demand, cross-border grids, energy contracts and electricity-market development.
+    questions:
+      - What are Indian power exchange price levels and seasonal patterns relevant to Nepal's exports?
+      - What cross-border transmission capacity exists and is planned?
+    data: [exchange prices, cross-border line capacities]
+    sources: [cea_india, nea]
+    outputs: [regional_price_profile, cross_border_capacity]
+  - id: 22C
+    name: Energy Transition Researcher
+    focus: Study renewables, batteries, storage, electrification and critical industrial materials.
+    questions:
+      - How do solar-plus-storage cost trends affect the value of Nepal's hydropower exports?
+    data: [technology cost trends]
+    sources: [irena, iea]
+    outputs: [competitiveness_trend]
+  - id: 22D
+    name: Energy and Climate Researcher
+    focus: Assess climate-related generation variability, energy infrastructure exposure and long-term supply reliability.
+    questions:
+      - What run-of-river output variability is projected under climate scenarios?
+    data: [hydrological projections]
+    sources: [icimod, ipcc, dhm]
+    outputs: [generation_variability_ranges]
+  - id: 22E
+    name: Electricity Opportunity-Cost Researcher
+    focus: Compare electricity exports with domestic industrial consumption under realistic pricing, transmission and investment assumptions.
+    extra_depends_on: [22B, 05A]
+    questions:
+      - Under documented prices and costs, which use of a marginal GWh yields more national value added?
+    data: [export prices, domestic tariffs, industrial value added per GWh]
+    sources: [nea, cea_india, nso_nepal]
+    outputs: [opportunity_cost_table]
+
+- id: "23"
+  slug: global-migration-population
+  name: Global Migration and Population
+  division: B
+  kind: specialist
+  mission: >-
+    Study the future of international labour markets and its implications for Nepal.
+  responsibilities:
+    - Supply remittance and migrant-labour parameters to the shared model.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Migration and remittance exposure briefs
+  subagents:
+  - id: 23A
+    name: Gulf Labour Market Researcher
+    focus: Research employment, wages, migrant protections and policy developments in major Gulf destinations.
+    questions:
+      - How many labour permits go to each Gulf country and Malaysia, and in which sectors?
+    data: [labour permits by destination]
+    sources: [dofe, glmm]
+    outputs: [destination_concentration]
+  - id: 23B
+    name: International Immigration Policy Researcher
+    focus: Study labour migration and education pathways in economically relevant destination countries.
+    questions:
+      - Which destination policy changes (quotas, visa rules) are scheduled or proposed?
+    data: [destination policy texts]
+    sources: [oecd, iom]
+    outputs: [policy_change_register]
+  - id: 23C
+    name: Remittance and Household Exposure Researcher
+    focus: Quantify remittance concentration, financial dependence, vulnerabilities and household effects.
+    questions:
+      - What are remittance inflows as a share of GDP and by source corridor?
+      - What share of households receive remittances by province?
+    data: [remittance inflows, household receipt shares]
+    sources: [nrb, knomad, nso_nepal]
+    outputs: [remittance_baseline, corridor_shares, household_dependence]
+  - id: 23D
+    name: International Demographics Researcher
+    focus: Study ageing, foreign labour demand, demographic transitions and migration-related economic changes.
+    questions:
+      - How will ageing in destination countries change their foreign-labour demand?
+    data: [WPP projections for destinations]
+    sources: [un_wpp]
+    outputs: [destination_demand_outlook]
+  - id: 23E
+    name: Diaspora Investment and Knowledge Researcher
+    focus: Investigate diaspora networks, investment mechanisms, technology transfer and return migration.
+    questions:
+      - What diaspora investment instruments exist and what uptake is documented?
+    data: [diaspora bond records, NRN investments]
+    sources: [nrb, mof_nepal, academic]
+    outputs: [instrument_inventory]
+
+- id: "24"
+  slug: global-technology-cybersecurity
+  name: Global Technology and Cybersecurity
+  division: B
+  kind: specialist
+  mission: >-
+    Research technological developments that could create or remove economic
+    opportunities for Nepal.
+  responsibilities:
+    - Supply technology-shock parameters, distinguishing proven from speculative.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Technology outlook briefs with evidence grades
+  subagents:
+  - id: 24A
+    name: Global AI and Automation Researcher
+    focus: Study AI progress, task automation, labour-market effects, commercial adoption and relevant regulation.
+    questions:
+      - What does peer-reviewed evidence show about AI exposure of outsourced IT/BPO tasks?
+    data: [exposure studies]
+    sources: [academic, ilostat]
+    outputs: [task_exposure_evidence]
+  - id: 24B
+    name: Computing and Semiconductor Researcher
+    focus: Assess global computing infrastructure, semiconductor supply, hardware costs and energy requirements.
+    questions:
+      - What power and connectivity do data centres require, and could Nepal meet them?
+    data: [data-centre energy requirements]
+    sources: [iea, academic]
+    outputs: [data_centre_requirements]
+  - id: 24C
+    name: International Digital Economy Researcher
+    focus: Investigate remote work, digital exports, global platform dependence and digital-market access.
+    questions:
+      - How large is global demand for remotely delivered services in Nepal's candidate segments?
+    data: [digitally delivered services trade]
+    sources: [unctadstat, wto]
+    outputs: [market_size_evidence]
+  - id: 24D
+    name: International Cybersecurity Researcher
+    focus: Study defensive cybersecurity, data protection, digital sovereignty and critical digital infrastructure resilience.
+    questions:
+      - What defensive standards and incident-reporting frameworks are relevant to Nepal?
+    data: [ITU GCI, standards]
+    sources: [itu]
+    outputs: [defensive_posture_benchmarks]
+  - id: 24E
+    name: Emerging Science Researcher
+    focus: Research biotechnology, robotics, advanced manufacturing and relevant scientific developments, distinguishing proven applications from speculation.
+    questions:
+      - Which emerging technologies have proven commercial deployment relevant to Nepal's sectors?
+    data: [deployment evidence]
+    sources: [academic]
+    outputs: [evidence_graded_technology_list]
+
+- id: "25"
+  slug: global-climate-water
+  name: Global Climate and Water Geopolitics
+  division: B
+  kind: specialist
+  mission: >-
+    Evaluate cross-border environmental dependencies, global climate change and
+    international climate cooperation.
+  responsibilities:
+    - Supply climate-impact parameters to Agents 05, 07 and 13.
+  depends_on: [16A, 16B]
+  deliverables:
+    - Climate and water briefs; sectoral impact parameters with ranges
+  subagents:
+  - id: 25A
+    name: Himalayan Cryosphere Researcher
+    focus: Study glaciers, snowpack, river-flow variability, scientific projections and uncertainty.
+    questions:
+      - What ranges do ICIMOD and IPCC assessments give for glacier loss and peak water timing?
+    data: [cryosphere projections]
+    sources: [icimod, ipcc]
+    outputs: [projection_ranges]
+  - id: 25B
+    name: International Water Governance Researcher
+    focus: Examine transboundary water agreements, shared data, basin planning and water-related diplomatic arrangements.
+    questions:
+      - Which basin-level agreements affect hydropower development rights?
+    data: [agreement texts]
+    sources: [mofa_nepal, icimod]
+    outputs: [basin_agreement_table]
+  - id: 25C
+    name: Regional Disaster Researcher
+    focus: Investigate cross-border floods, climate hazards, displacement and infrastructure exposure.
+    questions:
+      - What cross-border flood events and losses are documented?
+    data: [flood event records]
+    sources: [em_dat, ndrrma]
+    outputs: [cross_border_events]
+  - id: 25D
+    name: International Climate Finance Researcher
+    focus: Assess climate funds, adaptation financing, funding eligibility and actual access constraints.
+    questions:
+      - How much climate finance has Nepal accessed from GCF, GEF and MDBs, versus approved?
+    data: [fund project databases]
+    sources: [gcf, gef, oecd]
+    outputs: [climate_finance_access]
+  - id: 25E
+    name: Environmental Economic Impact Researcher
+    focus: Model climate-related effects on farming, ecosystems, hydropower, tourism and livelihoods.
+    extra_depends_on: [25A]
+    questions:
+      - What sectoral damage functions are documented for Nepal or comparable Himalayan economies?
+    data: [damage function studies]
+    sources: [academic, wb_npl]
+    outputs: [sectoral_impact_ranges]
+
+- id: "26"
+  slug: international-institutions-law
+  name: International Institutions and Law
+  division: B
+  kind: specialist
+  mission: >-
+    Map the opportunities, requirements and restrictions associated with major
+    international institutions and agreements.
+  responsibilities:
+    - Maintain the international-commitment register.
+  depends_on: [16A, 16B]
+  deliverables:
+    - International institutions and commitments register
+  subagents:
+  - id: 26A
+    name: International Development Bank Researcher
+    focus: Examine IMF, World Bank, ADB, AIIB and relevant development-financing arrangements.
+    questions:
+      - What active programmes, lending envelopes and conditions apply to Nepal?
+    data: [programme documents]
+    sources: [imf_article_iv, wb_npl, adb_nepal, aiib]
+    outputs: [programme_register]
+  - id: 26B
+    name: Multilateral Trade Researcher
+    focus: Study WTO, UNCTAD, trade agreements and provisions affecting developing economies.
+    questions:
+      - Which WTO special and differential treatment provisions does Nepal use?
+    data: [WTO notifications]
+    sources: [wto]
+    outputs: [sdt_usage]
+  - id: 26C
+    name: United Nations and Development Researcher
+    focus: Examine international development frameworks, Nepal's LDC transition and relevant international commitments.
+    questions:
+      - What is the confirmed LDC graduation date and smooth-transition strategy?
+    data: [UN GA resolutions, CDP reports]
+    sources: [undesa_ldc]
+    outputs: [graduation_timeline]
+  - id: 26D
+    name: International Economic Law Researcher
+    focus: Study international financial standards, investment agreements, sanctions compliance and applicable dispute-resolution arrangements.
+    questions:
+      - Which bilateral investment treaties has Nepal signed and ratified?
+    data: [BIT texts]
+    sources: [unctad_iia]
+    outputs: [bit_inventory]
+  - id: 26E
+    name: International Cooperation Researcher
+    focus: Identify research partnerships, technical assistance, development programmes and institutional collaborations.
+    questions:
+      - Which technical-assistance programmes relevant to the platform's gaps exist?
+    data: [TA programme listings]
+    sources: [imf_article_iv, wb_npl, adb_nepal]
+    outputs: [ta_inventory]
+
+- id: "27"
+  slug: diplomacy-negotiation-simulation
+  name: Diplomacy and Negotiation Simulation
+  division: B
+  kind: specialist
+  safety_note: >-
+    Do not claim to represent the actual positions or private intentions of any
+    government. All simulated arrangements are hypothetical.
+  mission: >-
+    Develop transparent simulations of alternative diplomatic and international
+    economic arrangements.
+  responsibilities:
+    - Simulate hypothetical agreements using only documented positions and incentives.
+  depends_on: ["04", "17", "26"]
+  deliverables:
+    - Hypothetical agreement simulations with feasibility audit
+  subagents:
+  - id: 27A
+    name: Bilateral Agreement Researcher
+    focus: Verify existing treaties, negotiations, institutions and bilateral economic commitments.
+    questions:
+      - Which bilateral agreements are in force, with verified text and dates?
+    data: [treaty texts]
+    sources: [mofa_nepal, mea_india]
+    outputs: [verified_agreement_register]
+  - id: 27B
+    name: Regional Infrastructure Negotiation Researcher
+    focus: Model hypothetical electricity-trade, transit and shared-infrastructure arrangements.
+    extra_depends_on: [27A]
+    questions:
+      - What payoff structure would each party face under a hypothetical long-term power-purchase arrangement?
+    data: [price and cost parameters from 22B/22E]
+    sources: []
+    outputs: [hypothetical_arrangement_models]
+  - id: 27C
+    name: Investment and Technology Partnership Researcher
+    focus: Explore alternative commercial partnerships, investment structures, training agreements and technology-transfer arrangements.
+    questions:
+      - Which partnership structures have documented results in comparable economies?
+    data: [case studies]
+    sources: [academic, unctadstat]
+    outputs: [structure_options]
+  - id: 27D
+    name: Multilateral Cooperation Researcher
+    focus: Simulate economic diplomacy and international crisis-coordination scenarios using documented institutional procedures.
+    questions:
+      - What documented procedures govern crisis financing and coordination?
+    data: [institutional procedure documents]
+    sources: [imf_article_iv, wb_npl]
+    outputs: [procedure_maps]
+  - id: 27E
+    name: Agreement Feasibility Auditor
+    focus: Evaluate counterparty incentives, enforceability, opportunity costs and conflicting policy objectives.
+    extra_depends_on: [27B, 27C, 27D]
+    questions:
+      - Is each hypothetical arrangement incentive-compatible and enforceable?
+    data: [simulation outputs]
+    sources: []
+    outputs: [feasibility_findings]
+
+- id: "28"
+  slug: independent-geopolitical-red-team
+  name: Independent Geopolitical Red Team
+  division: B
+  kind: red_team
+  independent: true
+  mission: >-
+    Independently challenge the entire geopolitical research system.
+  responsibilities:
+    - Publish dissenting findings without modification by the Global Intelligence Director.
+    - Issue VERIFIED / CONDITIONAL / UNVERIFIED / INCONSISTENT verdicts with reasons.
+  depends_on: ["16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27"]
+  deliverables:
+    - Geopolitical audit and dissent records in the append-only audit ledger
+  subagents:
+  - id: 28A
+    name: International Source Auditor
+    focus: Verify factual claims, source independence, dates and disputed evidence.
+    questions:
+      - Is every international claim traceable to a dated primary source?
+      - Are apparently corroborating sources actually independent?
+    data: [observation store, source registry]
+    sources: []
+    outputs: [source_findings, verdict]
+  - id: 28B
+    name: Alternative Interpretation Researcher
+    focus: Construct evidence-based competing explanations for major geopolitical developments.
+    questions:
+      - What alternative explanations fit the same evidence?
+    data: [briefs under review]
+    sources: []
+    outputs: [alternative_interpretations]
+  - id: 28C
+    name: Global Scenario Auditor
+    focus: Identify omitted dependencies, unrealistic assumptions, inconsistent projections and unsupported probabilities.
+    questions:
+      - Does any scenario assign a probability without evidence?
+      - Are compound shocks double-counted?
+    data: [scenario definitions, shock vectors]
+    sources: []
+    outputs: [scenario_findings, verdict]
+  - id: 28D
+    name: Human Rights and International Law Auditor
+    focus: Examine relevant legal obligations, social consequences, humanitarian risks and environmental impacts.
+    questions:
+      - Does any proposal conflict with Nepal's international human-rights or environmental obligations?
+    data: [treaty obligations, proposals]
+    sources: [ohchr]
+    outputs: [rights_findings, verdict]
+  - id: 28E
+    name: Independent Model Reproduction Researcher
+    focus: Reproduce important calculations and test models against alternative datasets and assumptions.
+    questions:
+      - Do independent re-computations reproduce reported numbers?
+    data: [model inputs, outputs]
+    sources: []
+    outputs: [reproduction_results, verdict]

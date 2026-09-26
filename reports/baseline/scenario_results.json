@@ -1,0 +1,302 @@
+{
+  "S01": {
+    "scenario": "S01",
+    "title": "Middle East conflict: energy, migrant employment, remittances and aviation",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S01-a",
+        "channel": "remittances",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-b",
+        "channel": "migrant_employment",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-c",
+        "channel": "fuel_prices",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-d",
+        "channel": "aviation_connectivity",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-e",
+        "channel": "tourism_demand",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S02": {
+    "scenario": "S02",
+    "title": "Disruption of trade, transit, energy or logistics links with India",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S02-a",
+        "channel": "transit_and_logistics",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-b",
+        "channel": "transit_and_logistics",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-c",
+        "channel": "fuel_prices",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-d",
+        "channel": "electricity_trade",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S03": {
+    "scenario": "S03",
+    "title": "US-China economic fragmentation",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S03-a",
+        "channel": "technology_costs",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S03-b",
+        "channel": "external_financing",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S04": {
+    "scenario": "S04",
+    "title": "Global recession",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S04-a",
+        "channel": "remittances",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S04-b",
+        "channel": "tourism_demand",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S04-c",
+        "channel": "external_financing",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S04-d",
+        "channel": "aggregate_real_growth",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S05": {
+    "scenario": "S05",
+    "title": "Severe Himalayan flooding",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S05-a",
+        "channel": "infrastructure_damage",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-b",
+        "channel": "hydro_generation",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-c",
+        "channel": "agricultural_output",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-d",
+        "channel": "aggregate_real_growth",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S06": {
+    "scenario": "S06",
+    "title": "Migration restrictions in major labour destinations",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S06-a",
+        "channel": "migrant_employment",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S06-b",
+        "channel": "remittances",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S07": {
+    "scenario": "S07",
+    "title": "Rapid AI adoption changes outsourcing and digital-service demand",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S07-a",
+        "channel": "digital_services_demand",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S07-b",
+        "channel": "digital_services_demand",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S08": {
+    "scenario": "S08",
+    "title": "Trade preferences change with LDC graduation",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S08-a",
+        "channel": "trade_preferences",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S08-b",
+        "channel": "external_financing",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S09": {
+    "scenario": "S09",
+    "title": "Transformation of regional electricity markets",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S09-a",
+        "channel": "electricity_trade",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S09-b",
+        "channel": "electricity_trade",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  },
+  "S10": {
+    "scenario": "S10",
+    "title": "Multiple simultaneous shocks",
+    "not_a_forecast": true,
+    "shocks": [
+      {
+        "id": "S01-a",
+        "channel": "remittances",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-b",
+        "channel": "migrant_employment",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-c",
+        "channel": "fuel_prices",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-d",
+        "channel": "aviation_connectivity",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S01-e",
+        "channel": "tourism_demand",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-a",
+        "channel": "transit_and_logistics",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-b",
+        "channel": "transit_and_logistics",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-c",
+        "channel": "fuel_prices",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S02-d",
+        "channel": "electricity_trade",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S04-b",
+        "channel": "tourism_demand",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S04-c",
+        "channel": "external_financing",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S04-d",
+        "channel": "aggregate_real_growth",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-a",
+        "channel": "infrastructure_damage",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-b",
+        "channel": "hydro_generation",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-c",
+        "channel": "agricultural_output",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S05-d",
+        "channel": "aggregate_real_growth",
+        "status": "PENDING_EVIDENCE"
+      },
+      {
+        "id": "S10-a",
+        "channel": "financial_compliance",
+        "status": "PENDING_EVIDENCE"
+      }
+    ],
+    "status": "QUALITATIVE_ONLY"
+  }
+}

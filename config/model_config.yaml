@@ -1,0 +1,49 @@
+# NEPAL 3T — shared model configuration and assumption register (version-controlled).
+#
+# Every parameter is either `basis: evidence` (must cite observation ids) or
+# `basis: assumption` (a stated modelling choice, audited as a CONDITION).
+# Changing a value = new commit; Agent 00 owns this file, auditors read it.
+
+version: "0.1.0"
+engine_version: "0.1"
+
+target:
+  value_usd: 3.0e12
+  measure: nominal GDP, current US dollars, annual
+  milestones: [2050, 2060, 2070]
+  also_run: conservative continuation with no fixed target
+
+base_year:
+  status: PENDING  # set from the latest NSO release once retrieved and verified
+  nominal_gdp_lcu: null
+  fx_npr_per_usd: null
+  population: null
+
+conventions:
+  rates: decimal fractions per year
+  fiscal_year: "Nepal FY runs mid-July to mid-July; labelled by ending calendar year (FY2023/24 -> 2024)"
+  international_series: "calendar-year; keep separate from FY series, never mix without documented conversion"
+
+tolerances:
+  identity_rel_tol: 1.0e-6          # model-internal identities (exact by construction)
+  published_accounts_rel_tol: 5.0e-3  # published tables; larger residuals are reported, not absorbed
+  source_conflict_rel_tol: 1.0e-3
+
+orchestration:
+  max_parallel: 8   # platform-dependent; not a guarantee of simultaneous execution
+
+target_arithmetic:
+  grid_base_year: {id: A-TGT-01, basis: assumption, value: 2025,
+                   note: "placeholder until latest verified base year is known"}
+  hypothetical_base_usd_bn: {id: A-TGT-02, basis: assumption, value: [30, 40, 50, 60, 80],
+                             note: "grid only; NOT estimates of Nepal's GDP"}
+  illustrative_base_usd_bn: {id: A-TGT-03, basis: assumption, value: 45,
+                             note: "single hypothetical base for sections 2-3; replaced by verified value when available"}
+  price_fx_cases:
+    - {id: A-TGT-04a, basis: assumption, name: "no USD price growth", deflator: 0.00, depreciation: 0.00}
+    - {id: A-TGT-04b, basis: assumption, name: "deflator 5%, NPR depreciates 3%/yr", deflator: 0.05, depreciation: 0.03}
+    - {id: A-TGT-04c, basis: assumption, name: "deflator 4%, NPR depreciates 4%/yr", deflator: 0.04, depreciation: 0.04}
+    - {id: A-TGT-04d, basis: assumption, name: "deflator 5%, NPR depreciates 1%/yr", deflator: 0.05, depreciation: 0.01}
+  icor_values: {id: A-TGT-05, basis: assumption, value: [3, 4, 5]}
+  continuation_real_growth: {id: A-TGT-06, basis: assumption, value: [0.03, 0.045, 0.06, 0.08, 0.10]}
+  hypothetical_population_mn: {id: A-TGT-07, basis: assumption, value: [25, 30, 35, 40]}

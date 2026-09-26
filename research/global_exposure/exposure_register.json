@@ -1,0 +1,560 @@
+{
+  "generated_at": "2026-09-26T15:43:21+00:00",
+  "entries": [
+    {
+      "id": "EXP-01",
+      "title": "Remittance dependence and corridor concentration",
+      "channel": "remittances",
+      "counterparties": [
+        "Gulf Cooperation Council states",
+        "Malaysia",
+        "India",
+        "other"
+      ],
+      "metric": "personal remittances / GDP; share by source corridor",
+      "unit": "percent",
+      "owner": "23C",
+      "source_ids": [
+        "nrb",
+        "knomad",
+        "nso_nepal"
+      ],
+      "scenarios": [
+        "S01",
+        "S04",
+        "S06",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "What share of inflows comes from the top 3 corridors?",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-02",
+      "title": "Migrant workers by destination",
+      "channel": "migrant_employment",
+      "counterparties": [
+        "Qatar",
+        "Saudi Arabia",
+        "UAE",
+        "Kuwait",
+        "Malaysia",
+        "Republic of Korea",
+        "Japan"
+      ],
+      "metric": "new labour permits by destination; estimated migrant stock",
+      "unit": "persons",
+      "owner": "23A",
+      "source_ids": [
+        "dofe",
+        "glmm"
+      ],
+      "scenarios": [
+        "S01",
+        "S06",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-03",
+      "title": "Goods trade concentration with India",
+      "channel": "transit_and_logistics",
+      "counterparties": [
+        "India"
+      ],
+      "metric": "India share of goods imports and exports",
+      "unit": "percent",
+      "owner": "04A",
+      "source_ids": [
+        "customs_nepal",
+        "tepc"
+      ],
+      "scenarios": [
+        "S02",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-04",
+      "title": "Third-country trade transit via Indian ports",
+      "channel": "transit_and_logistics",
+      "counterparties": [
+        "India"
+      ],
+      "metric": "share of third-country imports transiting Kolkata/Haldia/Visakhapatnam",
+      "unit": "percent",
+      "owner": "21B",
+      "source_ids": [
+        "customs_nepal",
+        "wb_lpi"
+      ],
+      "scenarios": [
+        "S02",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-05",
+      "title": "Petroleum import dependence and supplier",
+      "channel": "fuel_prices",
+      "counterparties": [
+        "India"
+      ],
+      "metric": "petroleum products share of imports; supplier share",
+      "unit": "percent",
+      "owner": "22A",
+      "source_ids": [
+        "noc_nepal",
+        "customs_nepal"
+      ],
+      "scenarios": [
+        "S01",
+        "S02",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-06",
+      "title": "Cross-border electricity trade",
+      "channel": "electricity_trade",
+      "counterparties": [
+        "India",
+        "Bangladesh"
+      ],
+      "metric": "electricity exports and imports by counterparty and season",
+      "unit": "GWh",
+      "owner": "22B",
+      "source_ids": [
+        "nea",
+        "cea_india"
+      ],
+      "scenarios": [
+        "S02",
+        "S05",
+        "S09"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-07",
+      "title": "Glacier- and snow-fed share of hydropower",
+      "channel": "hydro_generation",
+      "counterparties": [
+        "shared basins"
+      ],
+      "metric": "share of generation capacity in glacier/snow-fed basins",
+      "unit": "percent",
+      "owner": "25A",
+      "source_ids": [
+        "icimod",
+        "nea"
+      ],
+      "scenarios": [
+        "S05",
+        "S09"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-08",
+      "title": "Tourism source markets",
+      "channel": "tourism_demand",
+      "counterparties": [
+        "India",
+        "China",
+        "United States",
+        "United Kingdom",
+        "other"
+      ],
+      "metric": "arrivals share by origin; travel receipts / GDP",
+      "unit": "percent",
+      "owner": "12C",
+      "source_ids": [
+        "tourism_ministry",
+        "nrb"
+      ],
+      "scenarios": [
+        "S01",
+        "S04",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-09",
+      "title": "Air connectivity through Gulf hubs",
+      "channel": "aviation_connectivity",
+      "counterparties": [
+        "UAE",
+        "Qatar",
+        "India"
+      ],
+      "metric": "share of international seats via Gulf and Indian hubs",
+      "unit": "percent",
+      "owner": "19C",
+      "source_ids": [
+        "caan"
+      ],
+      "scenarios": [
+        "S01",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "CAAN statistics may not include seat capacity; commercial schedule data may be needed.",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-10",
+      "title": "NPR-INR peg and INR/USD exposure",
+      "channel": "exchange_rate",
+      "counterparties": [
+        "India"
+      ],
+      "metric": "share of trade invoiced in INR vs USD; INR/USD volatility",
+      "unit": "percent",
+      "owner": "20B",
+      "source_ids": [
+        "nrb",
+        "rbi"
+      ],
+      "scenarios": [
+        "S02",
+        "S03",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-11",
+      "title": "External public debt by creditor and currency",
+      "channel": "external_financing",
+      "counterparties": [
+        "World Bank (IDA)",
+        "ADB",
+        "bilateral creditors"
+      ],
+      "metric": "external debt share by creditor/currency",
+      "unit": "percent",
+      "owner": "20C",
+      "source_ids": [
+        "pdmo",
+        "wb_ids"
+      ],
+      "scenarios": [
+        "S04",
+        "S08",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-12",
+      "title": "FDI by source country",
+      "channel": "external_financing",
+      "counterparties": [
+        "all sources"
+      ],
+      "metric": "FDI stock/inflows by source",
+      "unit": "percent",
+      "owner": "12B",
+      "source_ids": [
+        "nrb",
+        "doind"
+      ],
+      "scenarios": [
+        "S03",
+        "S04"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-13",
+      "title": "Loss of LDC-specific trade preferences",
+      "channel": "trade_preferences",
+      "counterparties": [
+        "European Union",
+        "United Kingdom",
+        "other preference-granting members"
+      ],
+      "metric": "exports benefiting from LDC-only preferences / total exports",
+      "unit": "percent",
+      "owner": "21A",
+      "source_ids": [
+        "wto",
+        "undesa_ldc",
+        "eu_trade"
+      ],
+      "scenarios": [
+        "S08"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-14",
+      "title": "Digital-service exports exposed to AI substitution",
+      "channel": "digital_services_demand",
+      "counterparties": [
+        "United States",
+        "Europe",
+        "Australia"
+      ],
+      "metric": "ICT/BPO exports by segment and destination",
+      "unit": "USD_current",
+      "owner": "08A",
+      "source_ids": [
+        "nrb",
+        "unctadstat"
+      ],
+      "scenarios": [
+        "S07"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-15",
+      "title": "Fertiliser import dependence",
+      "channel": "agricultural_output",
+      "counterparties": [
+        "India",
+        "China",
+        "other"
+      ],
+      "metric": "imported share of fertiliser use; supplier concentration",
+      "unit": "percent",
+      "owner": "21D",
+      "source_ids": [
+        "customs_nepal",
+        "fao_stat"
+      ],
+      "scenarios": [
+        "S02",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-16",
+      "title": "Medicine and medical-supply import dependence",
+      "channel": "transit_and_logistics",
+      "counterparties": [
+        "India",
+        "other"
+      ],
+      "metric": "imported share of pharmaceutical consumption",
+      "unit": "percent",
+      "owner": "21D",
+      "source_ids": [
+        "customs_nepal",
+        "mohp"
+      ],
+      "scenarios": [
+        "S02",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-17",
+      "title": "Correspondent banking concentration",
+      "channel": "financial_compliance",
+      "counterparties": [
+        "USD/INR correspondents"
+      ],
+      "metric": "number of active correspondent relationships; share via top 3",
+      "unit": "ratio",
+      "owner": "20D",
+      "source_ids": [
+        "nrb",
+        "bis_bank"
+      ],
+      "scenarios": [
+        "S03",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-18",
+      "title": "FATF/APG standing",
+      "channel": "financial_compliance",
+      "counterparties": [
+        "FATF",
+        "APG"
+      ],
+      "metric": "current listing status and open action items",
+      "unit": "index",
+      "owner": "20E",
+      "source_ids": [
+        "fatf",
+        "apg"
+      ],
+      "scenarios": [
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-19",
+      "title": "Imported technology subject to export controls",
+      "channel": "technology_costs",
+      "counterparties": [
+        "United States",
+        "China",
+        "EU"
+      ],
+      "metric": "share of ICT capital imports under controlled categories",
+      "unit": "percent",
+      "owner": "19B",
+      "source_ids": [
+        "bis_us",
+        "un_comtrade"
+      ],
+      "scenarios": [
+        "S03"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    },
+    {
+      "id": "EXP-20",
+      "title": "Transboundary flood exposure",
+      "channel": "infrastructure_damage",
+      "counterparties": [
+        "India",
+        "China (Tibet)"
+      ],
+      "metric": "capital stock in cross-border flood and GLOF hazard zones",
+      "unit": "USD_current",
+      "owner": "25C",
+      "source_ids": [
+        "ndrrma",
+        "icimod",
+        "thinkhazard"
+      ],
+      "scenarios": [
+        "S05",
+        "S10"
+      ],
+      "status": "pending",
+      "value": null,
+      "period": null,
+      "observation_id": null,
+      "notes": "",
+      "concentration_question": "",
+      "updated_at": "2026-09-26T15:43:21+00:00"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+# S04 — Global recession
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S04
+title: Global recession
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: a synchronised global recession lowers demand, tourism, investment and migrant labour demand.'
+countries:
+- global
+institutions:
+- IMF
+- World Bank
+exposure_refs:
+- EXP-01
+- EXP-08
+- EXP-11
+- EXP-12
+channels:
+- remittances
+- tourism_demand
+- external_demand_goods
+- external_financing
+- aggregate_real_growth
+components: []
+depends_on: []
+shocks:
+- id: S04-a
+  channel: remittances
+  variable: remittances
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S04-b
+  channel: tourism_demand
+  variable: tourist_arrivals
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S04-c
+  channel: external_financing
+  variable: fdi
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S04-d
+  channel: aggregate_real_growth
+  variable: real_growth
+  unit: pp
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 2
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Counter-cyclical fiscal space assessment (02C)
+- Access to IMF/WB emergency financing (26A)
+second_order_effects:
+- Bank asset quality deterioration (03B)
+- Fiscal revenue shortfall
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

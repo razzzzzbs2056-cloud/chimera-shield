@@ -1,0 +1,61 @@
+# S07 — Rapid AI adoption changes outsourcing and digital-service demand
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S07
+title: Rapid AI adoption changes outsourcing and digital-service demand
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: rapid adoption of AI tools substitutes for a large share of routine outsourced IT and BPO
+  tasks while raising demand for other skills.'
+countries:
+- United States
+- Europe
+- Australia
+- India
+institutions:
+- ILO
+- national regulators
+exposure_refs:
+- EXP-14
+channels:
+- digital_services_demand
+components: []
+depends_on: []
+shocks:
+- id: S07-a
+  channel: digital_services_demand
+  variable: ict_services_exports
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 5
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S07-b
+  channel: digital_services_demand
+  variable: employment_ict
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 5
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Skills transition programmes (09B)
+- Segment repositioning (08A)
+second_order_effects:
+- Both displacement and new opportunity; sign of net effect is an open research question (24A)
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence

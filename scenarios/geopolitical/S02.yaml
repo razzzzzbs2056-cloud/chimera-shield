@@ -1,0 +1,94 @@
+# S02 — Disruption of trade, transit, energy or logistics links with India
+# Hypothetical stress test. NOT a forecast. Magnitudes are null until evidence exists.
+id: S02
+title: Disruption of trade, transit, energy or logistics links with India
+category: geopolitical
+not_a_forecast: true
+trigger: 'HYPOTHETICAL: a prolonged disruption at major India-Nepal border points and transit corridors (cause unspecified:
+  administrative, political, or natural).'
+countries:
+- India
+- Nepal
+institutions:
+- Ministries of commerce
+- customs authorities
+- NEA
+- Indian port authorities
+exposure_refs:
+- EXP-03
+- EXP-04
+- EXP-05
+- EXP-06
+- EXP-10
+- EXP-15
+- EXP-16
+channels:
+- transit_and_logistics
+- fuel_prices
+- electricity_trade
+- agricultural_output
+- exchange_rate
+components: []
+depends_on: []
+shocks:
+- id: S02-a
+  channel: transit_and_logistics
+  variable: imports
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S02-b
+  channel: transit_and_logistics
+  variable: exports
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S02-c
+  channel: fuel_prices
+  variable: fuel_supply
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+- id: S02-d
+  channel: electricity_trade
+  variable: electricity_exports
+  unit: pct_change
+  magnitude: null
+  start_offset_years: 1
+  duration_years: 1
+  evidence: []
+  illustrative: false
+  note: magnitude pending evidence
+responses:
+- Strategic stock policies (19E)
+- Northern route capacity assessment (04B) — noting its physical limits
+- Diplomatic and trade-facilitation channels (27D)
+second_order_effects:
+- Price spikes for essentials; distributional effect on poor households
+- Industrial output loss from input shortages
+- Customs revenue collapse
+impact_dimensions:
+  household: PENDING — requires quantified shocks and the household/provincial module
+  regional: PENDING — requires quantified shocks and the household/provincial module
+  sectoral: PENDING — requires quantified shocks and the household/provincial module
+  fiscal: PENDING — requires quantified shocks and the household/provincial module
+uncertainty: Not yet assessed. All magnitudes are pending evidence; no probabilities are assigned.
+limitations: Engine v0.1 applies only aggregate real-growth, deflator and exchange-rate shocks directly; other channels
+  are recorded as transmission pathways until the BoP, fiscal and household modules are calibrated with verified
+  data.
+audits_required:
+- '15'
+- '28'
+status: defined — awaiting evidence
