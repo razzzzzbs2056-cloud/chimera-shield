@@ -5,7 +5,7 @@ description: Rules for what ChimeraShield may scan or test and how to prove auth
 
 # Authorized scanning rules
 
-ChimeraShield is a security company. Scanning something without permission is illegal in most countries (e.g. the US CFAA, UK Computer Misuse Act, Nepal Electronic Transactions Act) and would end the company. These rules are non-negotiable.
+ChimeraShield is a security company. Scanning something without permission is illegal in most countries (e.g. the US CFAA, Australia's Criminal Code Act 1995 Part 10.7 computer offences, UK Computer Misuse Act) and would end the company. These rules are non-negotiable.
 
 ## Tiers of checks
 | Tier | Examples | Authorization needed |
