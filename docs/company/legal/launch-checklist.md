@@ -1,100 +1,111 @@
-# Launch checklist: from zero to able to take money
+# Launch checklist: from zero to able to take money (Australia-resident founder)
 
 > **Draft for discussion. Not legal advice. Review with a qualified lawyer in your jurisdiction.**
 
-**As of:** 2026-09-24 · **Owner:** legal-ops agent · **Company status:** no entity, no domain, no email, pre-revenue
+**As of:** 2026-09-26 · **Owner:** legal-ops agent · **Company status:** no entity, no domain, no email, pre-revenue. Founder lives in **Australia**; first customers are **US** tax and accounting firms (Australian firms possibly later).
+**Path:** Australian **Pty Ltd** now; a Delaware flip only if a US investor requires it (`entity-options.md` §0). Details on US selling, GST, privacy, grants and insurance are in `australia-founder.md`. Outreach rules are in `spam-act-cold-email.md`.
 
-Work through the list top to bottom. Each step unblocks the next. Paths: **US** = US-resident founder, **NP-US** = Nepal-resident founder with a US entity, **NP** = Nepal Pvt. Ltd. See `entity-options.md`.
+**Status key:** `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocked on a lawyer, accountant or decision
+**(S)** = from a search-result summary; the official page was blocked on 2026-09-26, so check before relying on it.
 
-**Status key:** `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocked on a lawyer or decision
+**Dates that drive this list:** cold sends start **12 Oct**, the Readiness Check goes live **15 Oct**, first paid pack late Oct (`sales/playbook.md` §2 and §5.3).
 
 ---
 
-## Stage 0: Decisions (this week, free)
+## Stage 0: Decisions (this week, free or cheap)
 
-- [!] **0.1 Tell legal-ops your country of residence and whether you plan to raise.** Everything below depends on this.
-- [!] **0.2 Nepal residents only: book a Nepali corporate/FX lawyer** before step 3 to confirm whether you may own a US entity (Act Restricting Investment Abroad 1964; FERA §10A as amended in 2025). See `entity-options.md` §4.
-- [ ] **0.3 Co-founders?** If there is more than one founder, agree on these in writing *before* incorporation: equity split, roles, **4-year vesting with a 1-year cliff**, what happens if someone leaves (buyback of unvested shares), decision-making, IP assignment, and time commitment. A lawyer should review the final version.
+- [ ] **0.1 Confirm the entity** with a 1-hour **Australian accountant** consult: Pty Ltd now (recommended), and whether you already hold an ABN as a sole trader. Budget about A$0–400 (estimate).
+- [ ] **0.2 Fundraising intent.** If a US investor needs a Delaware C-corp **now**, stop and get a cross-border tax opinion first (`entity-options.md` §2). Otherwise continue.
+- [ ] **0.3 Co-founders?** Before registering, agree in writing: the equity split, **4-year vesting with a 1-year cliff**, leaver and buy-back terms, roles, decision-making, time commitment and **IP assignment**. A lawyer reviews the final shareholders' agreement.
+- [ ] **0.4 Tell me your state** (NSW, Vic, Qld and so on) so grants (`australia-founder.md` §3) and governing law can be narrowed down.
 
-## Stage 1: Domain and email (days 1–3, about $15–30/yr + $6–7/user/mo)
+## Stage 1: Name, domain and email (days 1–3)
 
-These can happen before the entity exists and they unblock outreach (see `docs/company/interviews/recruiting-kit.md`).
+- [ ] **1.1 Name screen** (15 min, free): the **ASIC** company and business-name register, **IP Australia** trade marks ([ATMOSS / IP Australia search](https://search.ipaustralia.gov.au/trademarks/search/quick)), and the **USPTO** ([tmsearch.uspto.gov](https://tmsearch.uspto.gov/)), for "ChimeraShield", "Chimera Shield" and "Chimera" in classes **9 and 42**. Also check Google, LinkedIn and GitHub. If "Chimera" is crowded in security, **rename now**.
+- [ ] **1.2 Register the domain** (`.com`; optionally `.com.au`, which needs an ABN or ACN). Turn on registrar lock, privacy and MFA. Transfer it to the company after step 3.
+- [ ] **1.3 Business email** (Google Workspace) with `hello@`, `[FOUNDER_NAME]@` and `security@`. Use hardware keys or passkeys on the admin account.
+- [ ] **1.4 SPF, DKIM and DMARC** on the main and secondary sending domains (`marketing/ads/cold-email-launch-kit.md` Steps 1–3).
+- [ ] **1.5 Postal address for CAN-SPAM** (still required for US recipients). A **US virtual mailbox** is the safer choice. Whether an Australian address or PO box is valid for CAN-SPAM is flagged for the lawyer (`spam-act-cold-email.md` §4).
 
-- [ ] **1.1 Name checks before you buy anything** (15 minutes, free). This is only a first screen; the full search is step 7.
-  - USPTO trademark search for "ChimeraShield", "Chimera Shield" and "Chimera" in classes **9** (software) and **42** (SaaS/security services) ([USPTO trademark search](https://tmsearch.uspto.gov/)).
-  - Search for existing businesses: Google, LinkedIn, GitHub, app stores, and Delaware or your state's entity search.
-  - If "Chimera" is crowded in security, rename **now** while it costs nothing.
-- [ ] **1.2 Register the domain** (e.g. `chimerashield.com` or an alternative). Turn on registrar lock, WHOIS privacy and **MFA**. Register it to the founder personally for now, and **transfer it to the company** in writing after incorporation (step 3.5).
-- [ ] **1.3 Business email** (Google Workspace or Microsoft 365). Create `hello@`, `[FOUNDER_NAME]@`, and `security@` for vulnerability reports. Use MFA with hardware keys or passkeys on the admin account.
-- [ ] **1.4 Email authentication** before any cold email: **SPF, DKIM, DMARC** (start at `p=none` with reporting, then move to `quarantine`). As a security company, our own domain must pass our own scan.
-- [ ] **1.5 Postal address** for CAN-SPAM footers (`[POSTAL_ADDRESS]` in the recruiting kit). Use a virtual mailbox or registered-agent address. Don't use your home address if you can avoid it ([FTC CAN-SPAM guide](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)).
+## Stage 2: Keep pre-launch activity legal
 
-## Stage 2: Keep discovery legal before the entity exists
+- [ ] **2.1 No sales and no scanning of prospects' assets** without written authorization (authorized-scanning skill). Interviews need no entity.
+- [ ] **2.2 Spam Act readiness before the first cold send (12 Oct).** Apply the consent tests, evidence columns, identity footer with ABN, and the "unsubscribe" wording in `spam-act-cold-email.md` §3–§5. **Blocks cold email.**
+- [ ] **2.3 Keep receipts** for all pre-registration spending; the accountant decides how the company reimburses them.
 
-- [ ] **2.1 No sales, no scanning of prospects' assets** without written authorization (see `.claude/skills/authorized-scanning/SKILL.md`). Interviews need no entity.
-- [ ] **2.2 Keep receipts** for every expense from today. Pre-formation costs can often be reimbursed by or contributed to the company later (**FLAG:** ask your accountant how).
+## Stage 3: Company (target: registered by Fri 2 Oct, so the ABN appears in cold emails from 12 Oct)
 
-## Stage 3: Entity (week 2–4, after 0.1–0.2)
+- [ ] **3.1 Director ID** for each director (free, online with myID; required before appointment, S).
+- [ ] **3.2 Register ChimeraShield Pty Ltd** with ASIC, online or through a provider or the accountant. **A$636** (from 1 Jul 2026, S: [ASIC fee indexation](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fee-indexation)). Choose a constitution with share-class flexibility (`entity-options.md` §3). Use the accountant's or a provider's address as the registered office if possible.
+- [ ] **3.3 ABN and TFN** for the company (free). Record the **ACN** and **ABN**. They go in email footers, invoices, the ToS and the privacy policy.
+- [ ] **3.4 GST decision.** Register once GST turnover is likely to reach **A$75k** (GST-free exports count towards it, S), or voluntarily earlier if the accountant advises. US sales are generally GST-free exports (`australia-founder.md` §1.4).
+- [ ] **3.5 Share issue** to the founder(s) with vesting terms in the shareholders' agreement, and the share register updated. (No 83(b): that's US-only and not relevant to a Pty Ltd.)
+- [ ] **3.6 IP assignment** from each founder and contractor to the company (code, docs, domain, brand). Contractors sign before writing code.
+- [ ] **3.7 Move the domain and accounts** (GitHub org, cloud, Workspace, registrar) into the company's name.
+- [ ] **3.8 Compliance calendar:** ASIC **annual review fee A$342** within 2 months of each review date (S); company tax return; BAS if GST-registered; keep records for 5 years (**FLAG**).
 
-- [ ] **3.1 Form the entity:**
-  - **US, raising:** Delaware C-corp via **Stripe Atlas** ($500) or Firstbase ($399 + $299/yr registered agent).
-  - **US, bootstrapping:** LLC in your home state.
-  - **NP-US:** only after the lawyer's green light in 0.2. Check first that a bank (step 4) will onboard you, because Mercury does not accept Nepal residents.
-  - **NP:** Pvt. Ltd. at the Office of the Company Registrar ([ocr.gov.np](https://ocr.gov.np/)). Consider IT-industry registration for export incentives.
-- [ ] **3.2 Tax ID.** **US/NP-US:** EIN (IRS SS-4; online for US residents, phone or fax for foreign applicants: [IRS SS-4 instructions](https://www.irs.gov/instructions/iss4)). **NP:** PAN/VAT with the Inland Revenue Department.
-- [ ] **3.3 Founder stock and 83(b).** C-corp only: issue founder shares with vesting, then **file the 83(b) within 30 days**. There is no extension and missing it can be very costly. Atlas files it for you, but keep the proof.
-- [ ] **3.4 IP assignment.** Every founder signs an **IP assignment / CIIAA** transferring all prior ChimeraShield code, designs, domain and brand to the company. Contractors sign one too before writing code.
-- [ ] **3.5 Transfer the domain and accounts** (GitHub org, cloud, Workspace) into the company's name.
-- [ ] **3.6 State registration.** US founders: register the Delaware company as a foreign entity in the state where you work, and get any local business license. California has an $800/yr minimum tax ([CA FTB](https://www.ftb.ca.gov/file/business/types/corporations/index.html)).
-- [ ] **3.7 Compliance calendar.** Delaware C-corp: franchise tax and annual report by **March 1**. Delaware LLC: $300 by **June 1** ([Delaware](https://corp.delaware.gov/frtax/)). Foreign-owned US LLC: **Form 5472 + pro forma 1120** every year ($25,000 penalty if missed: [IRS](https://www.irs.gov/instructions/i5472)). NP: OCR annual return, audit and IRD returns.
+## Stage 4: Bank (week 1–2 after registration)
 
-## Stage 4: Bank account (week 3–5)
+- [ ] **4.1 Business transaction account** at an Australian bank, in the company's name. **Never mix personal and company money** (Division 7A risk, `entity-options.md` §1).
+- [ ] **4.2 USD receiving option** if needed: a multi-currency account with US ACH details (e.g. Wise Business, Airwallex; **FLAG**, check fees and terms) for customers who pay invoices by bank transfer.
+- [ ] **4.3 Document the founder's capital contribution** (share subscription money, or a loan from the founder with a simple written loan agreement).
 
-- [ ] **4.1 Open a business bank account** in the company's name only. **Never mix personal and company money.**
-  - US: Mercury, Relay or a local bank.
-  - NP-US: Mercury **lists Nepal as prohibited** ([Mercury](https://support.mercury.com/hc/en-us/articles/28771710754580-Prohibited-countries)). Check alternatives' eligibility before forming.
-  - NP: a Nepali commercial bank, plus a foreign-currency account if eligible.
-- [ ] **4.2 Founder capital contribution** documented (a small wire from founder to company, with a note).
+## Stage 5: Payments and public terms (before the first paid pack)
 
-## Stage 5: Payments (week 4–6)
-
-- [ ] **5.1 Stripe** (US and NP-US). Create the account in the company's name. Turn on Stripe Billing for $49/$99/$149 plans and **Stripe Tax** to monitor where you owe SaaS sales tax. **FLAG:** SaaS sales-tax treatment differs by state; review it with a CPA once you have customers in several states.
-- [ ] **5.2 NP path:** Paddle (merchant of record, which handles tax; verify it accepts Nepal sellers), Payoneer, or SWIFT invoices. Confirm the NRB documentation your bank needs for each inbound payment.
-- [ ] **5.3 Publish ToS, privacy policy and refund terms** before taking the first payment (see `terms-outline.md`). Stripe and Paddle both require public policies.
+- [ ] **5.1 Stripe Australia** in the company's name. Prices in **USD**. Budget **~3.5% + A$0.30** for US cards, plus ~2% if currency is converted (S). Finance's 2.9% + US$0.30 is too low. **Ask Stripe about USD settlement**, which is available only to a limited number of Australian businesses (S). Turn on **Stripe Tax monitoring** for US state thresholds only; don't register in any state yet (`australia-founder.md` §1.1).
+- [ ] **5.2 Invoice template:** entity name, **ABN**, USD amount, "GST-free export" wording where relevant, and payment details.
+- [ ] **5.3 W-8BEN-E** filled in and kept ready for any US customer that asks. **Never sign a W-9.**
+- [ ] **5.4 Publish the ToS, privacy policy (APP-style), refund terms and the P1 engagement letter** (`terms-outline.md`), updated for an Australian entity (`australia-founder.md` §5). **Lawyer review required before taking money.**
 
 ## Stage 6: Bookkeeping (from the first transaction)
 
-- [ ] **6.1 Accounting software** (e.g. QuickBooks, Xero, or Wave for very early) connected to the bank and Stripe.
-- [ ] **6.2 A monthly 30-minute close:** categorize transactions, save receipts, reconcile.
-- [ ] **6.3 An accountant engaged before the first tax deadline.** NP-US needs a **cross-border** accountant familiar with Form 5472 and Nepali tax.
+- [ ] **6.1 Xero or MYOB** (Australian standards; Xero is the most common with accountants), connected to the bank and Stripe. Track USD sales and conversion.
+- [ ] **6.2 A monthly 30-minute close:** categorize, keep receipts, reconcile.
+- [ ] **6.3 Engage the accountant for the FY2026–27 company return** (the income year ends 30 June 2027). Ask about R&DTI record-keeping (timesheets and experiment notes) from day one.
 
-## Stage 7: Insurance (before the first paying customer or first scan of a customer asset)
+## Stage 7: Insurance (before the first paid pack or first customer scan)
 
-- [ ] **7.1 Technology E&O** (errors and omissions / professional liability). This covers claims that our advice or scan missed something and the customer suffered a loss. It is **essential for a security advisor.**
-- [ ] **7.2 Cyber liability** (first- and third-party). This covers a breach of *our* systems that exposes customer findings or pasted emails. It is often bundled with Tech E&O in one policy.
-- [ ] **7.3 General liability**, which is cheap and often requested in contracts.
-- [ ] **7.4 Get 2–3 quotes through a broker** who writes tech startups (US and NP-US paths). Expect questions about MFA, backups and EDR, so do the security basics in `compliance-roadmap.md` first. **FLAG:** premiums vary a lot. I have no reliable 2026 price range, so get quotes. **FLAG (NP):** US-grade E&O for a Nepal entity may be hard to get; ask a broker.
-- [ ] **7.5 Read the exclusions:** unauthorized-scanning / "intentional acts" exclusions, contractual-liability exclusions, and sub-limits for regulatory fines (HIPAA, FTC).
+- [ ] **7.1 Tech PI / E&O** with **worldwide jurisdiction including the USA and Canada.** Many Australian PI policies exclude US claims by default. **This is the key question to ask the broker.**
+- [ ] **7.2 Cyber liability** (first and third party), often bundled with 7.1. Check it covers US breach-notification costs.
+- [ ] **7.3 Public liability** (cheap, lower priority for a remote business).
+- [ ] **7.4 Get 2–3 broker quotes.** **Estimate:** A$3,500–8,000 a year combined with US jurisdiction. That's **unverified**; quotes decide (`australia-founder.md` §4). Do the security basics in `compliance-roadmap.md` first, because the insurer will ask.
+- [ ] **7.5 Read the exclusions:** US/Canada jurisdiction, unauthorized access or intentional acts, contractual liability, and fines and penalties.
 
-## Stage 8: Trademark for "ChimeraShield" (month 2–3, before public launch or spending on brand)
+## Stage 8: Trade marks (month 2–3, before spending on brand)
 
-- [ ] **8.1 Full clearance search** by a trademark attorney or a professional search service. Cover USPTO, state registrations, common-law uses, domains, and look-alike names ("Chimera", "*Shield" marks are common in security software).
-- [ ] **8.2 File a US application** if the name is clear. The base fee is **$350 per class** (since Jan 18, 2025), plus a $200/class surcharge for free-text descriptions ([USPTO fee information](https://www.uspto.gov/trademarks/trademark-fee-information), [Federal Register, Nov 18 2024](https://www.federalregister.gov/documents/2024/11/18/2024-26644/setting-and-adjusting-trademark-fees-during-fiscal-year-2025)). Likely classes are 9 and 42, so about $700 using ID-Manual descriptions. **Foreign-domiciled applicants must use a US-licensed attorney** at the USPTO (**FLAG:** confirm the current rule).
-- [ ] **8.3 NP path:** consider Nepal registration at the Department of Industry. **FLAG:** process not researched.
+- [ ] **8.1 Full clearance search** in Australia and the US by a trade mark attorney.
+- [ ] **8.2 File in Australia** with IP Australia (classes 9 and 42). **FLAG:** check the current IP Australia fees; not verified today.
+- [ ] **8.3 US filing:** USPTO **US$350 per class** base fee ([USPTO fees](https://www.uspto.gov/trademarks/trademark-fee-information)). **Foreign-domiciled applicants must be represented by a US-licensed attorney** (**FLAG**, confirm the rule). The Madrid Protocol, filed through IP Australia, is an alternative. Ask the attorney.
+
+## Stage 9: Australian support (optional, doesn't block launch)
+
+- [ ] **9.1** Ask the accountant whether R&DTI records are worth keeping from now (companies only; minimum A$20k spend, S).
+- [ ] **9.2** Check EMDG Tier 1 availability (Austrade) and your state's program (`australia-founder.md` §3).
+- [ ] **9.3** Consider the Stone & Chalk cyber scholarships (formerly AustCyber) and Startmate if you decide to raise.
 
 ---
 
-## Current status (2026-09-24)
+## First 5 steps (this week)
+
+1. **Accountant consult** (0.1) to confirm the Pty Ltd, and tell legal-ops your state (0.4).
+2. **Name screen** in Australia and the US (1.1), then **register the domain and set up email with SPF, DKIM and DMARC** (1.2–1.4).
+3. **Director ID, then register ChimeraShield Pty Ltd, ABN and TFN** by about **2 Oct** (3.1–3.3).
+4. **Make the Spam Act changes to the cold-email kit** (2.2) and set up the US virtual mailbox (1.5), both before **12 Oct**.
+5. **Request 2–3 insurance quotes with USA/Canada jurisdiction** (7.1–7.4), and **book a lawyer** to review the ToS, privacy policy and engagement letter (5.4).
+
+## Current status (2026-09-26)
 
 | Step | Status |
 |---|---|
-| 0.1 Location and fundraising decision | `[!]` waiting on founder |
-| 0.2 Nepal lawyer (if applicable) | `[!]` waiting on 0.1 |
-| 1.1 Name screen | `[ ]` |
-| 1.2–1.5 Domain, email, SPF/DKIM/DMARC, postal address | `[ ]` |
-| 3.x Entity, EIN, 83(b), IP assignment | `[ ]` blocked on 0.1 |
+| 0.1 Entity confirmation (accountant) | `[!]` needs an accountant, about 1 hr |
+| 0.2 Fundraising intent | `[ ]` founder |
+| 0.4 Founder's state | `[!]` waiting on founder |
+| 1.1–1.5 Name, domain, email, auth, postal address | `[ ]` |
+| 2.2 Spam Act changes to the kit | `[ ]` draft rules ready (`spam-act-cold-email.md`) |
+| 3.x Company, ABN, shares, IP assignment | `[ ]` |
 | 4.x Bank | `[ ]` |
-| 5.x Stripe/Paddle, public policies | `[ ]` drafts in `terms-outline.md` |
+| 5.x Stripe AU, invoices, W-8BEN-E, public terms | `[ ]` terms need updating for an AU entity, then a lawyer |
 | 6.x Bookkeeping | `[ ]` |
-| 7.x Insurance | `[ ]` |
-| 8.x Trademark | `[ ]` |
+| 7.x Insurance with US jurisdiction | `[ ]` |
+| 8.x Trade marks | `[ ]` |
+| 9.x Grants and R&DTI | `[ ]` optional |
