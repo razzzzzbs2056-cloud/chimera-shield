@@ -116,7 +116,7 @@ If we're still a sole trader, line 1 becomes `[FOUNDER_NAME], Founder, ChimeraSh
 >
 > With 31 October done, a question: if a staff laptop went missing tomorrow, is there a written plan for the TFNs on it? The TFN Rule applies whatever your turnover.
 >
-> I'm running two paid pilots of our Client Data Security Pack: a security policy and breach plan written for your practice, plus a short fix list.
+> I'm running two paid pilots of a Client Data Security Pack: a policy and breach plan for your practice, plus a short fix list.
 >
 > Worth 20 minutes before BAS week?
 >
