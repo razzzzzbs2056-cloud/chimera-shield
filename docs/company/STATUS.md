@@ -14,7 +14,9 @@ _Last updated 2026-09-24 by company-hq. Phase 1: Validation → selling window o
 ## Decisions made (recommended, founder to confirm ✅)
 | Decision | Recommendation | Source |
 |----------|----------------|--------|
-| First market | US accounting / CPA / tax-prep firms, 5–50 staff (44/50); dental next (41/50) | `market/first-market-selection.md` |
+| Market plan | Sell US tax/CPA firms in the PTIN window (43/50); pilot Australian tax/accounting practices from 3 Nov; decide the 2027 primary market on 15 Feb 2027 | `market/australia-vs-us.md` |
+| Entity | Australian Pty Ltd (~A$636 + A$342/yr), register by ~2 Oct | `legal/australia-founder.md` |
+| Cold email | Spam Act 2003 rules: published work addresses only, ABN + unsubscribe in every email | `legal/spam-act-cold-email.md` |
 | Positioning | Owner-direct, plain-English security plan + proof + fix list, tied to PTIN renewal; AI only in the FAQ | `marketing/messaging.md` |
 | Lineup | Free Readiness Check → WISP & Evidence Pack → Watch (+ "Is this safe?" agent) | `product/catalog.md` |
 | Prices | Pack $495 founding / $795–$1,195 list; Watch $49 / $99 / $149 per firm | `finance/pricing.md` |
