@@ -104,7 +104,7 @@ Ramp follows the outreach-writing skill: 5–10/day in week 1, rising to about 3
    > I built a free 12-question check that tells a firm its 3 biggest gaps before renewal. Want me to send the link?
    >
    > [FOUNDER_NAME], Founder, ChimeraShield Pty Ltd (ABN [ABN])
-   > [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
+   > ChimeraShield Pty Ltd (ABN [ABN]) · [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
    >
    > Not relevant? Reply "unsubscribe" (or just "no") and I won't email you again.
 

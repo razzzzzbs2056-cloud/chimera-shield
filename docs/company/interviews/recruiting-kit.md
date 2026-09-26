@@ -22,7 +22,7 @@ The first segment isn't chosen yet, so this kit covers the three leading candida
 - **Consent:** ask before recording ("Is it okay if I record this so I can take fewer notes? It stays with me."). If they say no, take notes only.
 - **No client or patient data.** If someone starts describing a specific client or patient, stop them politely. You only want their own process and experience.
 - **No scanning** of anyone's domain, email or systems unless they authorize it in writing.
-- **Email compliance (CAN-SPAM):** accurate sender and subject, a physical postal address (`[POSTAL_ADDRESS]`, still a TODO), and an opt-out line; honor opt-outs within 10 business days. Never buy lists. Use only business emails that the firm publishes.
+- **Email compliance (CAN-SPAM + Australian Spam Act 2003, since we send from Australia):** accurate sender and subject; `ChimeraShield Pty Ltd (ABN [ABN])`; a physical postal address (`[US_POSTAL_ADDRESS]`); a working unsubscribe, honoured within 5 business days. Only email addresses the firm or person published themselves, where the message relates to their role, and record the source URL as consent evidence. Never buy lists, scrape or guess addresses. See `docs/company/legal/spam-act-cold-email.md`.
 - **Company email doesn't exist yet.** Use `[FOUNDER_NAME]@[DOMAIN]` in drafts. Don't send cold email until the domain has SPF, DKIM and DMARC set up. Until then, **LinkedIn, warm intros and communities are the main channels.** Once email is live, warm up at 5–10 emails/day in week 1.
 - **Follow-up cadence:** touch 1 → +3 days short bump → +5 days helpful resource → +7 days "closing the loop". Stop on any reply or opt-out.
 - **Log everything** in the funnel table (section 6) and write notes with `raw/_TEMPLATE.md` within an hour of each call.
@@ -102,7 +102,7 @@ Opening: *"Thanks for making time. I'm researching how small tax and accounting 
 > I'm doing research, not selling. Would you share 15 minutes next week? I'll send you a summary of what I learn from other firms.
 >
 > [FOUNDER_NAME], Founder, ChimeraShield
-> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
+> ChimeraShield Pty Ltd (ABN [ABN]) · [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
 >
 > If this isn't relevant, just reply "no" and I won't follow up.
 
@@ -190,7 +190,7 @@ Opening: *"I'm researching how small practices handle IT security and HIPAA day 
 > This is research, not a sales call. Could I borrow 15 minutes next week? I'll share an anonymized summary of what other practices told me.
 >
 > [FOUNDER_NAME], Founder, ChimeraShield
-> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
+> ChimeraShield Pty Ltd (ABN [ABN]) · [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
 >
 > If this isn't relevant, just reply "no" and I won't follow up.
 
@@ -275,7 +275,7 @@ Opening: *"I'm researching how small firms handle cybersecurity and client confi
 > This is research, not a pitch. Would you have 15 minutes next week? I'll share an anonymized summary of what other firms say.
 >
 > [FOUNDER_NAME], Founder, ChimeraShield
-> [FOUNDER_NAME]@[DOMAIN] · [POSTAL_ADDRESS]
+> ChimeraShield Pty Ltd (ABN [ABN]) · [FOUNDER_NAME]@[DOMAIN] · [US_POSTAL_ADDRESS]
 >
 > If this isn't relevant, just reply "no" and I won't follow up.
 
@@ -294,7 +294,7 @@ Opening: *"I'm researching how small firms handle cybersecurity and client confi
 
 ## 5. Partners who can introduce you to many people at once
 One friendly partner can be worth 20 cold messages. In week 1, contact **2 MSPs, 1 cyber-insurance broker, and 1 state bar PMA**:
-> "Hi [FIRST_NAME], I'm researching how small [CPA firms / practices / law firms] handle security. I'm not selling to your clients. Would you share what you see most often, and would you be open to introducing me to 1–2 clients who'd talk for 15 minutes? I'll share the findings with you." Sign with `[FOUNDER_NAME]@[DOMAIN]`, include `[POSTAL_ADDRESS]` and the opt-out line if you send it by email.
+> "Hi [FIRST_NAME], I'm researching how small [CPA firms / practices / law firms] handle security. I'm not selling to your clients. Would you share what you see most often, and would you be open to introducing me to 1–2 clients who'd talk for 15 minutes? I'll share the findings with you." Sign with `[FOUNDER_NAME]@[DOMAIN]`, include the ABN, `[US_POSTAL_ADDRESS]` and the unsubscribe line if you send it by email.
 
 ## 6. Funnel tracker (copy into a sheet)
 
