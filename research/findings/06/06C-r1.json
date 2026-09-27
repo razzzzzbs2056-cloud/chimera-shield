@@ -1,0 +1,795 @@
+{
+ "subagent_id": "06C",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used). All empirical items are PENDING; no values were taken from search snippets. The r1 search confirmed that OAG annual reports (61st and 63rd identified), NPC reviews of the national-pride list and 2026 press coverage of repeated extensions exist; these are recorded as leads pointing to primary OAG/NPC records. Main output is the estimation design for DeliveryConstraints: a project-level panel from five sample frames (OAG/MoF national-pride panel, NPC project bank, World Bank and ADB completed projects, PPMO/OCDS contracts, plus a reconstruction reference class), harmonised for BS/AD/Nepal-FY dates, constant prices and FX, stratified by sector, financier, size and terrain. Approval lag and time overrun are estimated as right-censored duration distributions (Kaplan-Meier plus log-normal accelerated failure time), cost overrun as a log-normal distribution of real (1+overrun) ratios on the decision-to-build baseline, construction capacity as the P90 of sustained annual output, and execution rate as the ratio of planned to actual duration (cross-checked with 02B financial execution). Q2 (maintenance gap) is designed as DoR/Roads Board requirement minus Red Book/Road Maintenance Fund funding. Q3 (PPP) is an inventory of legal frameworks and a survival analysis of IBN/PPI projects from PDA to financial close and operation. Reported 2026 flood damage to Trishuli-basin infrastructure is recorded as an unverified event without numbers. 41 source leads (29 reused from the shared register, 8 general-knowledge URLs flagged unverified, 4 secondary press pointers from the r1 search).",
+ "findings": [
+  {
+   "claim": "Q1: Time overrun on national pride projects: original vs latest approved completion date and number of extensions per project.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "oag_nepal",
+    "npc_nepal",
+    "mof_nepal"
+   ],
+   "note": "OAG 61st-63rd annual reports and MoF Economic Survey pride-project annex; BS dates converted to AD and Nepal FY with documented rule. Leads: 06C-L01, 06C-L02, 06C-L06, 06C-L23, 06C-L35, 06C-L36, 06C-L38",
+   "period": "FY2070/71-FY2082/83 report years",
+   "unit": "years"
+  },
+  {
+   "claim": "Q1: Cost overrun on national pride projects: latest revised cost estimate vs original approved cost, nominal and deflated.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "oag_nepal",
+    "npc_nepal"
+   ],
+   "note": "Report nominal ratio and real ratio (deflated with NSO construction/GFCF deflator); separate scope change from price escalation where OAG/NPC records allow. Leads: 06C-L01, 06C-L06, 06C-L37, 06C-L38",
+   "period": "as above",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q1: Time and cost overruns on completed donor-financed infrastructure projects (ADB PCRs/PVRs, World Bank ICRs/ICR Reviews): original vs actual closing, appraisal vs actual cost.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "adb_nepal",
+    "wb_npl"
+   ],
+   "note": "Donor records are better documented but selected; report separately from GoN-financed projects. Leads: 06C-L12, 06C-L13, 06C-L14, 06C-L15, 06C-L16, 06C-L17",
+   "period": "projects closed 2000-2026 (calendar dates; convert to Nepal FY)",
+   "unit": "years"
+  },
+  {
+   "claim": "Q1: Approval lag (approval to construction start) distribution by sector and financier.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "npc_nepal",
+    "wb_npl",
+    "adb_nepal",
+    "ppmo"
+   ],
+   "note": "Approval lag = time from formal approval (NPC project bank entry / cabinet decision / donor Board approval) to construction start (first civil-works contract award or notice to proceed). Time overrun ratio = actual (or current forecast) duration / originally approved duration, measured from construction start. Leads: 06C-L07, 06C-L12, 06C-L13, 06C-L15, 06C-L25",
+   "period": "as above",
+   "unit": "years"
+  },
+  {
+   "claim": "Q1: Contract-level variation orders and time extensions on civil-works contracts (PPMO/OCDS).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ppmo"
+   ],
+   "note": "Contract amendment value / original contract value; extensions in days. Leads: 06C-L24, 06C-L25, 06C-L26",
+   "period": "OCDS coverage years",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q2: Road maintenance requirement (routine, recurrent, periodic) vs funded maintenance allocation, SRN, by Nepal FY.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mof_nepal"
+   ],
+   "note": "Requirement from DoR Annual Road Maintenance Plan (RMMS/HDM); funding from Roads Board and Red Book maintenance heads; gap = requirement - funding. Leads: 06C-L18, 06C-L19, 06C-L20, 06C-L21, 06C-L22",
+   "period": "FY2015/16-FY2083/84",
+   "unit": "NPR_current_mn"
+  },
+  {
+   "claim": "Q2: Maintenance funding gap for irrigation, water supply and public buildings.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mof_nepal"
+   ],
+   "note": "Red Book heads; requirement norms from sector ministries (no lead yet for requirement). Leads: 06C-L20, 06C-L21, 06C-L22",
+   "period": "FY2079/80-FY2083/84",
+   "unit": "NPR_current_mn"
+  },
+  {
+   "claim": "Q3: PPP legal framework inventory (BOOT Act 2006, PPP Policy, PPP and Investment Act 2019 and amendments) and institutional roles.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ibn"
+   ],
+   "note": "Legal texts only; dates from gazette. Leads: 06C-L28, 06C-L31, 06C-L30",
+   "period": "2006-2026"
+  },
+  {
+   "claim": "Q3: PPP track record: projects reaching PDA/financial close/operation vs projects stalled or cancelled, by sector (IBN and line ministries; PPI database).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ibn",
+    "wb_npl"
+   ],
+   "note": "Kaplan-Meier survival from PDA/approval to financial close and to COD, consistent with 05A licence-cohort method; hydropower IPPs under electricity licensing kept separate (05A). Leads: 06C-L29, 06C-L33, 06C-L30, 06C-L32",
+   "period": "IBN inception (2011) - 2026",
+   "unit": "count"
+  },
+  {
+   "claim": "Contractor/construction capacity: sustained maximum annual physical output (e.g. SRN blacktopping, bridges completed) and concurrent contracts per contractor class.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ppmo",
+    "mof_nepal"
+   ],
+   "note": "max_units_per_year = high quantile (P90) of annual delivered units over a 10-year window, by asset type; concurrency from OCDS. Leads: 06C-L19, 06C-L23, 06C-L25, 06C-L26",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "count"
+  },
+  {
+   "claim": "Reported 2026 flood damage to Trishuli-basin infrastructure (hydropower plants and headworks, Pasang Lhamu/Rasuwagadhi road, bridges, Rasuwagadhi border facilities): UNVERIFIED event. Extent, assets affected, repair cost and outage duration to be confirmed from BIPAD/NDRRMA, DoR, NEA/IPPAN, DoED and any government damage assessment.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "icimod",
+    "ndrrma"
+   ],
+   "note": "No numbers recorded. Once verified, it serves (a) as a capital-stock shock observation for 13A/X18 (damage values only) and (b) as a test of reconstruction lag (entered in the lag panel as a separate 'reconstruction' reference class). Leads: 06C-L39, 06C-L40",
+   "period": "2026 (calendar); FY2082/83-FY2083/84"
+  },
+  {
+   "claim": "06C-A1: For ongoing projects, time overrun is right-censored at the latest report date; distributions are estimated with survival methods rather than by dropping incomplete projects.",
+   "type": "assumption",
+   "value": null,
+   "note": "Method assumption."
+  },
+  {
+   "claim": "06C-A2: Cost overrun baseline is the cost approved at decision to build (first NPC/cabinet approval or donor appraisal), not a later revised estimate.",
+   "type": "assumption",
+   "value": null,
+   "note": "Method assumption following reference-class practice (06C-L34)."
+  },
+  {
+   "claim": "06C-A3: Until r2 estimates exist, any use of DeliveryConstraints in scenarios must declare parameters as labelled assumptions in config/model_config.yaml (owned by the orchestrator), not as evidence.",
+   "type": "assumption",
+   "value": null,
+   "note": "Governance assumption."
+  }
+ ],
+ "data_gaps": [
+  "OAG 61st-63rd annual report project chapters (Nepali originals) - download blocked; document paths not yet located.",
+  "NPC project bank project-level extract (approval dates and approved costs).",
+  "NPC pride-project review document referenced in press (primary text not located).",
+  "ADB PCR/PVR and World Bank ICR cost-at-appraisal vs actual tables for Nepal projects.",
+  "DoR Annual Road Maintenance Plan requirement estimates and Roads Board annual reports.",
+  "IBN PPP pipeline with status dates (PDA, financial close, COD, cancellation).",
+  "Construction-cost deflator (NSO) for real overrun computation.",
+  "Primary damage records for the reported 2026 Trishuli-basin flood."
+ ],
+ "assumptions": [
+  {
+   "id": "06C-A1",
+   "text": "Right-censoring handled by survival methods.",
+   "basis": "assumption"
+  },
+  {
+   "id": "06C-A2",
+   "text": "Decision-to-build cost baseline.",
+   "basis": "assumption"
+  },
+  {
+   "id": "06C-A3",
+   "text": "Pre-r2 DeliveryConstraints parameters are labelled assumptions only.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "02B",
+   "text": "Financial capex execution (spent / budget) is not the same as physical execution. DeliveryConstraints.execution_rate should be estimated from physical progress vs plan (06C) and cross-checked with 02B's financial series; please keep the two separate in the model register."
+  },
+  {
+   "to": "05A",
+   "text": "Hydropower completion rates: 06C will reuse the 05A licence-cohort Kaplan-Meier method for PPP/IBN projects; please confirm the censoring date and failure definition so the two are comparable, and avoid counting IBN hydropower projects in both."
+  },
+  {
+   "to": "11B",
+   "text": "OAG extraction: 06C needs project-level tables (cost, dates, progress) from the same OAG reports 11B and 02B use; propose one shared extraction keyed by OAG report number, chapter and table."
+  },
+  {
+   "to": "13A",
+   "text": "The reported 2026 Trishuli-basin flood should enter the capital-stock shock channel only as PDNA-style damage (asset) values once verified; 06C records the reconstruction duration separately as a lag reference class, not as damage."
+  },
+  {
+   "to": "01",
+   "text": "DeliveryConstraints.approval_lag_years is an integer and execution_rate a point value; scenario runs should pass quantiles (median, P75, P90) of the 06C distributions as separate stress settings rather than a single mean."
+  }
+ ],
+ "uncertainty": "No values in r1. Expected uncertainty is large and asymmetric: overrun distributions for infrastructure are right-skewed, OAG samples over-represent troubled projects, donor records under-represent GoN-only projects, and ongoing projects are censored. Cost overruns mix scope change, price escalation and FX effects which must be separated. Maintenance requirement estimates depend on DoR model assumptions. The 2026 Trishuli-basin damage is unverified.",
+ "specific": {
+  "estimation_design": {
+   "status": "pending",
+   "target": "src.economic_model.constraints.DeliveryConstraints (approval_lag_years:int, unit_cost, max_units_per_year, execution_rate in [0,1])",
+   "unit_of_observation": "project (and, where available, civil-works contract) with sector, financier, province, approval date, construction start, original completion date, latest/actual completion date, original cost, latest/actual cost, currency, price basis, status (completed/ongoing/cancelled/terminated)",
+   "sample_frames": [
+    {
+     "frame": "National pride and priority projects (GoN)",
+     "source": "OAG annual reports panel (52nd-63rd), MoF Economic Survey annexes, NPC reviews",
+     "lead_ids": [
+      "06C-L01",
+      "06C-L02",
+      "06C-L03",
+      "06C-L04",
+      "06C-L05",
+      "06C-L06",
+      "06C-L23"
+     ],
+     "bias": "OAG focuses on problem projects -> upward bias; use all listed pride projects, not only those discussed"
+    },
+    {
+     "frame": "NPC project bank (P1/P2 projects)",
+     "lead_ids": [
+      "06C-L07"
+     ],
+     "use": "approval dates and approved costs for broader, less selected sample"
+    },
+    {
+     "frame": "World Bank closed investment projects in Nepal",
+     "lead_ids": [
+      "06C-L12",
+      "06C-L13",
+      "06C-L14"
+     ],
+     "use": "board approval -> effectiveness -> closing (original vs actual); cost at appraisal vs actual from ICR annexes"
+    },
+    {
+     "frame": "ADB completed projects in Nepal",
+     "lead_ids": [
+      "06C-L15",
+      "06C-L16",
+      "06C-L17"
+     ],
+     "use": "PCR/PVR appraisal vs actual cost and closing dates; reasons for delay"
+    },
+    {
+     "frame": "PPMO/OCDS civil-works contracts",
+     "lead_ids": [
+      "06C-L24",
+      "06C-L25",
+      "06C-L26"
+     ],
+     "use": "contract-level extensions and variations; contractor concurrency"
+    },
+    {
+     "frame": "Reconstruction reference class (2015 earthquake; 2026 Trishuli event if verified)",
+     "lead_ids": [
+      "06C-L41",
+      "06C-L39",
+      "06C-L40"
+     ]
+    }
+   ],
+   "harmonisation": [
+    "BS dates -> AD -> Nepal FY with documented conversion (FY starts mid-July)",
+    "costs to constant prices with NSO construction/GFCF deflator; FX-denominated costs kept in USD and converted at NRB rates with FX effect reported separately",
+    "project restructurings: keep original baseline; record each revision as a separate observation",
+    "donor 'closing date' is a financing date, not physical completion: flag and, where ICR states physical completion, use that"
+   ],
+   "stratification": [
+    "sector (roads/bridges, hydropower, irrigation, water supply, airports, urban, buildings)",
+    "financier (GoN-only, donor, PPP)",
+    "size class (approved cost terciles)",
+    "terrain (hill/mountain vs Terai)",
+    "pre/post federalisation (2017)"
+   ]
+  },
+  "delivery_lag_distribution": {
+   "status": "pending",
+   "maps_to": [
+    "approval_lag_years",
+    "execution_rate"
+   ],
+   "definitions": "Approval lag = time from formal approval (NPC project bank entry / cabinet decision / donor Board approval) to construction start (first civil-works contract award or notice to proceed). Time overrun ratio = actual (or current forecast) duration / originally approved duration, measured from construction start.",
+   "method": "Kaplan-Meier for approval->start and start->completion with censoring at latest report date; log-normal AFT with covariates (sector, financier, size, terrain, post-2017); report median, P75, P90 by stratum. approval_lag_years = ceil(median) for central case; P75/P90 for stress cases. execution_rate = planned duration / actual (or forecast) duration, bounded to [0,1], by stratum; cross-check with 02B physical/financial execution.",
+   "units": {
+    "lag": "years",
+    "ratio": "ratio"
+   },
+   "lead_ids": [
+    "06C-L01",
+    "06C-L06",
+    "06C-L07",
+    "06C-L12",
+    "06C-L13",
+    "06C-L14",
+    "06C-L15",
+    "06C-L16",
+    "06C-L23",
+    "06C-L25"
+   ],
+   "capacity_parameter": {
+    "maps_to": "max_units_per_year",
+    "method": "P90 of annual physical output over FY2015/16-FY2025/26 by asset type; contractor concurrency from OCDS",
+    "unit": "count",
+    "lead_ids": [
+     "06C-L19",
+     "06C-L23",
+     "06C-L25",
+     "06C-L26"
+    ],
+    "status": "pending"
+   }
+  },
+  "cost_overrun_distribution": {
+   "status": "pending",
+   "maps_to": "unit_cost (uplift applied to engineering unit-cost estimates)",
+   "definition": "overrun = latest or actual cost / cost at decision to build - 1; nominal and real (constant prices); FX effect separate",
+   "method": "fit log-normal to (1+real overrun) by stratum; report median, mean, P80, P90; reference-class uplift = quantile at chosen acceptable-overrun risk; compare GoN vs donor vs PPP; contract-level variation-order distribution as lower bound",
+   "units": {
+    "overrun": "percent"
+   },
+   "lead_ids": [
+    "06C-L01",
+    "06C-L06",
+    "06C-L14",
+    "06C-L15",
+    "06C-L16",
+    "06C-L24",
+    "06C-L25",
+    "06C-L34"
+   ]
+  },
+  "ppp_track_record": {
+   "status": "pending",
+   "legal_framework": [
+    "BOOT Act 2006 (to verify)",
+    "PPP Policy (to verify)",
+    "PPP and Investment Act 2019 and amendments"
+   ],
+   "method": "inventory of IBN/line-ministry PPP and large private projects; Kaplan-Meier from approval/PDA to financial close and COD; outcomes: operational, under construction, stalled, cancelled; benchmark with PPI database and BI 2023 scores",
+   "units": {
+    "projects": "count",
+    "investment": "USD_current_mn"
+   },
+   "lead_ids": [
+    "06C-L28",
+    "06C-L29",
+    "06C-L30",
+    "06C-L31",
+    "06C-L32",
+    "06C-L33"
+   ]
+  },
+  "maintenance_gap": {
+   "status": "pending",
+   "method": "requirement (DoR ARMP, by category) minus funded allocation (Roads Board RMF + Red Book maintenance heads), Nepal FY, NPR current and constant",
+   "unit": "NPR_current_mn",
+   "lead_ids": [
+    "06C-L18",
+    "06C-L19",
+    "06C-L20",
+    "06C-L21",
+    "06C-L22"
+   ]
+  },
+  "unverified_events": [
+   {
+    "event": "Reported 2026 flood damage to Trishuli-basin infrastructure",
+    "status": "unverified",
+    "numbers": "none recorded",
+    "lead_ids": [
+     "06C-L39",
+     "06C-L40"
+    ]
+   }
+  ]
+ },
+ "source_leads": [
+  {
+   "lead_id": "06C-L01",
+   "url": "https://oag.gov.np/",
+   "title": "OAGN - Office of the Auditor General (annual reports incl. 61st, 62nd and 63rd)",
+   "publisher": "Office of the Auditor General, Nepal",
+   "source_id": "oag_nepal",
+   "contains": "Annual report chapters on national pride and priority projects: original vs revised cost estimate, original vs extended completion date, physical and financial progress, contract terminations; Nepali-language main reports, Nepal FY (BS). 61st and 63rd reports were identified as relevant by the r1 search; document paths still to locate. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (11B,02B) + r1 search",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L02",
+   "url": "https://old.oag.gov.np/menu-category/926/en",
+   "title": "Auditor General Nepal - Annual Report (index)",
+   "publisher": "Office of the Auditor General, Nepal",
+   "source_id": "oag_nepal",
+   "contains": "Archive of earlier annual reports for a project-level panel across report years. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L03",
+   "url": "https://oag.gov.np/site_uploads/bg1-Some%20sections%20of%20Annual%20Report%202078%20English%20Version..pdf",
+   "title": "The Auditor General's Fifty-Eighth Annual Report 2021 (2078), selected sections, English",
+   "publisher": "Office of the Auditor General, Nepal",
+   "source_id": "oag_nepal",
+   "contains": "English sections incl. project performance observations (FY2076/77). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L04",
+   "url": "https://old.oag.gov.np/uploads/files/fkr-executive_summary%20English.pdf",
+   "title": "Fifty-fifth Annual Report 2018 - executive summary (unofficial translation)",
+   "publisher": "Office of the Auditor General, Nepal",
+   "source_id": "oag_nepal",
+   "contains": "Project delay and cost-escalation observations (FY2073/74). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L05",
+   "url": "https://old.oag.gov.np/uploads/files/jKj-Executive%20Summary%20English%202071.pdf",
+   "title": "Fifty-Second Annual Report - executive summary (unofficial translation)",
+   "publisher": "Office of the Auditor General, Nepal",
+   "source_id": "oag_nepal",
+   "contains": "Earlier project observations (FY2070/71) for panel start. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L06",
+   "url": "https://npc.gov.np",
+   "title": "National Planning Commission, Nepal",
+   "publisher": "National Planning Commission, Nepal",
+   "source_id": "npc_nepal",
+   "contains": "National pride project list and status reviews; periodic plan (Sixteenth Plan) project tables; project classification (P1/P2) rules; MDAC/NDAC progress reviews. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L07",
+   "url": "https://npbmis.npc.gov.np",
+   "title": "National Project Bank Management Information System",
+   "publisher": "National Planning Commission, Nepal",
+   "source_id": "npc_nepal",
+   "contains": "Project-level records: appraisal/approval date, estimated cost, duration, readiness status - frame for approval-lag measurement. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L08",
+   "url": "https://documents1.worldbank.org/curated/en/099011526010021304/pdf/P507000-a1fb9a28-4888-400c-9dd9-0705326e7d7e.pdf",
+   "title": "Nepal Capital Expenditure Bottlenecks Analysis (October 2025)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Diagnostics of project readiness, land acquisition, procurement and contract management delays; any project-level sample. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (02B)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L09",
+   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548411112541261",
+   "title": "Nepal Development Update, November 2025: Reforms to Accelerate Public Investment",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Public investment management reforms, multi-year contract liabilities, project delays. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L10",
+   "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the",
+   "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "PIMA findings/action plan; capital budget execution; project selection and multi-year commitments. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L11",
+   "url": "https://www.imf.org/-/media/files/publications/books/2022/english/pimaea.pdf",
+   "title": "PIMA Handbook (2022)",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "PIMA institution definitions (appraisal, selection, portfolio management, maintenance funding) for a structured delivery-capacity assessment. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L12",
+   "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
+   "title": "World Bank projects list - Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Project-level approval date, effectiveness, original and revised closing dates, commitment and disbursement; frame for donor-project lag panel. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L13",
+   "url": "https://search.worldbank.org/api/v2/projects?countrycode_exact=NP&format=json&rows=500",
+   "title": "World Bank Projects API - Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Machine-readable project fields (boardapprovaldate, closingdate, totalcommamt, status, sector) for automated extraction. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L14",
+   "url": "https://ieg.worldbankgroup.org",
+   "title": "World Bank IEG - evaluations search (ICR Reviews / PPARs)",
+   "publisher": "World Bank Independent Evaluation Group",
+   "source_id": null,
+   "contains": "ICR Reviews for completed Nepal investment projects: extensions, cost at appraisal vs actual, outcome ratings. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (27C)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L15",
+   "url": "https://www.adb.org/projects/country/nep",
+   "title": "ADB projects in Nepal (project data sheets, PCRs, extended annual review reports)",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Project completion reports (PCRs): appraisal vs actual cost, original vs actual closing, reasons for delay; loan approval to effectiveness. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L16",
+   "url": "https://www.adb.org/site/evaluation/main",
+   "title": "ADB Independent Evaluation Department - validation reports and Nepal country assistance program evaluations",
+   "publisher": "Asian Development Bank IED",
+   "source_id": "adb_nepal",
+   "contains": "PCR validation reports (PVRs) and country program evaluations for Nepal with time/cost overrun assessments. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L17",
+   "url": "https://www.adb.org/sites/default/files/institutional-document/1058276/cps-nep-2025-2029.pdf",
+   "title": "Country Partnership Strategy: Nepal, 2025-2029",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Portfolio performance (contract awards, disbursement ratios, problem projects) and lessons. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L18",
+   "url": "https://www.roadsboard.org.np",
+   "title": "Roads Board Nepal - annual reports and road maintenance fund",
+   "publisher": "Roads Board Nepal",
+   "source_id": null,
+   "contains": "Road Maintenance Fund revenue (fuel levy, tolls, vehicle registration), maintenance allocation vs requirement for SRN and local roads, Nepal FY. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L19",
+   "url": "https://dor.gov.np",
+   "title": "Department of Roads - Annual Road Maintenance Plan and SSRN",
+   "publisher": "Department of Roads, Nepal",
+   "source_id": null,
+   "contains": "Maintenance needs by category (routine, recurrent, periodic, emergency) from HDM/RMMS, and funded amounts. URL from general knowledge — unverified",
+   "provenance": "general knowledge (shared with 06A-L01)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L20",
+   "url": "https://mof.gov.np/content/1745/statement-of-expenditure-estimates--red-book-2083-84/",
+   "title": "Statement of Expenditure Estimates (Red Book) FY2083/84",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Budget heads for maintenance (road, irrigation, building) and project-level capital allocations incl. pride projects. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L21",
+   "url": "https://mof.gov.np/content/1527/expenditure-estimates--red-book--208-83/",
+   "title": "Statement of Expenditure Estimates (Red Book) FY2082/83",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "As above, prior year. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L22",
+   "url": "https://mof.gov.np/content/81/expenditure-estimates--red-books--2079-80/",
+   "title": "Statement of Expenditure Estimates (Red Book) FY2079/80",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "As above, earlier year for trend. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L23",
+   "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+   "title": "Economic Survey 2082/83 (Nepali)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "National pride project progress annex (cumulative expenditure, physical progress, revised completion year). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L24",
+   "url": "https://ppmo.gov.np/index.php?_route_=reports/annual_reports",
+   "title": "PPMO Annual Reports",
+   "publisher": "Public Procurement Monitoring Office, Nepal",
+   "source_id": "ppmo",
+   "contains": "Contract counts by value, bidder numbers, contract amendments/variations, terminated contracts. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L25",
+   "url": "https://data.open-contracting.org/en/publication/36",
+   "title": "Nepal PPMO - OCP Data Registry (OCDS)",
+   "publisher": "Open Contracting Partnership",
+   "source_id": "ppmo",
+   "contains": "Contract-level award dates, amounts, amendments for computing variation-order overruns and contractor concurrency. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L26",
+   "url": "https://bolpatra.gov.np/egp/",
+   "title": "PPMO / Bolpatra e-GP",
+   "publisher": "PPMO, Nepal",
+   "source_id": "ppmo",
+   "contains": "Tender notices and award data (contractor capacity: concurrent contracts per firm). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L27",
+   "url": "https://ppmo.gov.np/content/7397/7397-public-procurement-act-2063/",
+   "title": "Public Procurement Act 2063 (with amendments)",
+   "publisher": "PPMO, Nepal",
+   "source_id": "ppmo",
+   "contains": "Rules on time extension, variation limits, liquidated damages, contractor capacity limits. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L28",
+   "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+   "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+   "publisher": "Investment Board Nepal",
+   "source_id": "ibn",
+   "contains": "PPP legal framework: project thresholds, IBN vs line-ministry roles, VGF, unsolicited proposals. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L29",
+   "url": "https://ibn.gov.np",
+   "title": "Investment Board Nepal",
+   "publisher": "Investment Board Nepal",
+   "source_id": "ibn",
+   "contains": "PPP/large-project pipeline: PDAs signed, investment approvals, financial close status (hydropower, cement, airports, cable cars, waste-to-energy). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L30",
+   "url": "https://bpp.worldbank.org/content/dam/sites/data/bpp/cntrypdf/BI-2023-Nepal-PPP.pdf",
+   "title": "Benchmarking Infrastructure 2023 in Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Scores on PPP preparation, procurement, contract management and unsolicited proposals framework. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L31",
+   "url": "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-nepal",
+   "title": "PPP Laws/Concessions Laws - Nepal",
+   "publisher": "World Bank PPP Resource Center",
+   "source_id": null,
+   "contains": "Legislative history (BOOT Act 2006, PPP Policy 2072, PPP and Investment Act 2019). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L32",
+   "url": "https://ieg.worldbankgroup.org/evaluations/world-bank-group-support-ppps",
+   "title": "WBG Support to PPPs: Lessons from Experience",
+   "publisher": "World Bank IEG",
+   "source_id": null,
+   "contains": "Cross-country PPP outcome benchmarks for reference-class comparison. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L33",
+   "url": "https://ppi.worldbank.org",
+   "title": "World Bank Private Participation in Infrastructure (PPI) database",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Nepal PPI projects: financial close year, sector, investment, status (operational/cancelled/distressed). URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L34",
+   "url": "https://doi.org/10.1080/01441640309904",
+   "title": "Flyvbjerg, Skamris Holm and Buhl (2003) How common and how large are cost overruns in transport infrastructure projects? Transport Reviews",
+   "publisher": "Taylor & Francis",
+   "source_id": "academic",
+   "contains": "Reference-class method and definitions of cost overrun (decision-to-build baseline, constant prices). URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L35",
+   "url": "https://kathmandupost.com/national/2026/06/09/nepal-s-pride-projects-dogged-by-delays-and-repeated-extensions",
+   "title": "Nepal's pride projects dogged by delays and repeated extensions",
+   "publisher": "The Kathmandu Post",
+   "source_id": "academic",
+   "contains": "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; points to OAG/NPC project records.",
+   "provenance": "r1 search",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L36",
+   "url": "https://kathmandupost.com/national/2026/09/23/expressway-deadline-extended-for-third-time-as-project-nears-a-decade-with-half-the-work-unfinished",
+   "title": "Expressway deadline extended for third time",
+   "publisher": "The Kathmandu Post",
+   "source_id": "academic",
+   "contains": "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; Kathmandu-Terai Expressway extension history to confirm from MoPIT/Nepal Army project office records.",
+   "provenance": "r1 search",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L37",
+   "url": "https://www.myrepublica.nagariknetwork.com/news/npc-recommends-revising-national-pride-project-list-over-escalating-costs-a-20-61.html",
+   "title": "NPC urges downsizing of national pride projects amid rising costs",
+   "publisher": "myRepublica",
+   "source_id": "academic",
+   "contains": "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; points to an NPC review of the pride-project list (primary NPC document to locate).",
+   "provenance": "r1 search",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L38",
+   "url": "https://myrepublica.nagariknetwork.com/news/both-cost-and-time-of-national-pride-projects-increase/",
+   "title": "Both cost and time of national pride projects increase",
+   "publisher": "myRepublica",
+   "source_id": "academic",
+   "contains": "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; points to OAG annual report chapter.",
+   "provenance": "r1 search",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L39",
+   "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+   "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+   "publisher": "ICIMOD",
+   "source_id": "icimod",
+   "contains": "Event note on 2026 flood in the Bhote Koshi-Trishuli corridor; affected hydropower/road/bridge assets to confirm from primary records; no values taken. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L40",
+   "url": "https://bipad.gov.np",
+   "title": "BIPAD Portal",
+   "publisher": "NDRRMA, Nepal",
+   "source_id": "ndrrma",
+   "contains": "Incident and infrastructure damage records for the reported 2026 Trishuli-basin event (to confirm). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06C-L41",
+   "url": "https://www.npc.gov.np/images/category/PDNA_Volume_A.pdf",
+   "title": "Nepal Earthquake 2015: PDNA Vol. A",
+   "publisher": "National Planning Commission, Nepal",
+   "source_id": "npc_nepal",
+   "contains": "Damage vs loss definitions for infrastructure capital-stock shocks; reconstruction timelines as a lag reference class. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  }
+ ]
+}

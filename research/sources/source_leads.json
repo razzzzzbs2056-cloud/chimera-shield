@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T14:25:20+00:00",
+  "updated_at": "2026-09-27T14:31:37+00:00",
   "leads": [
     {
       "url": "http://drrportal.gov.np",
@@ -79,13 +79,15 @@
         "Consolidated current regulatory text after amendments; compare with the 2019 original to list changes",
         "Market-access rules for cross-border participants on Indian power exchanges (reused from 17A)",
         "Current consolidated text of charges and conditions for cross-border trade (to compare with 2019 original).",
-        "Consolidated regulation text with amendment dates"
+        "Consolidated regulation text with amendment dates",
+        "Current consolidated text of cross-border charges and conditions"
       ],
       "found_by": [
         "17A",
         "04C",
         "22E",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -178,13 +180,15 @@
         "Transport cost penalty of landlockedness and the role of own and transit-country infrastructure; elasticity of trade to trade costs",
         "Method reference for separating transport-cost effects from tariff-preference effects when attributing trade changes to agreements; not a SAFTA study",
         "Method for separating own-infrastructure, transit-country and distance components of transport cost",
-        "Method reference for landlocked transit-cost effects (not Nepal-specific evidence) (reused from 17D)"
+        "Method reference for landlocked transit-cost effects (not Nepal-specific evidence) (reused from 17D)",
+        "Method for decomposing landlocked transport cost into own vs transit-country infrastructure. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "01B",
         "17D",
         "05C",
-        "04C"
+        "04C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -745,6 +749,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.URB.TOTL.IN.ZS?format=json&per_page=200",
+      "title": "WDI API: Urban population (% of total population), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "WDI urban share (derived from UN WUP, national definition), calendar year. Endpoint pattern follows register leads for other WDI series; this indicator URL URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://apps.who.int/nha/database",
       "title": "WHO Global Health Expenditure Database (GHED)",
       "publisher": "World Health Organization",
@@ -961,7 +978,9 @@
         "Event-level disaster incidents and losses (deaths, houses, infrastructure, livestock, crops) by district and date; basis for hazard frequency-loss curves.",
         "Incident records by date, hazard, district/municipality: deaths, missing, injured, houses damaged, infrastructure damaged, estimated loss (NPR); exportable by hazard and period",
         "Real-time river watch and alert layers; incident records to assess warning lead times against events",
-        "Incident records by date, hazard type (flood, GLOF, debris flow, landslide), district/municipality with deaths, missing, injured, houses and infrastructure damaged, estimated loss (NPR); export by hazard and period (16B lead L36) [reused from 25C:25C-L02]"
+        "Incident records by date, hazard type (flood, GLOF, debris flow, landslide), district/municipality with deaths, missing, injured, houses and infrastructure damaged, estimated loss (NPR); export by hazard and period (16B lead L36) [reused from 25C:25C-L02]",
+        "Incident records incl. road blockages and bridge damage by date and location (for disruption frequency on SRN links). reused from shared lead register (research/sources/source_leads.json)",
+        "Incident and infrastructure damage records for the reported 2026 Trishuli-basin event (to confirm). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "16A",
@@ -971,7 +990,9 @@
         "25E",
         "13A",
         "13C",
-        "16C"
+        "16C",
+        "06A",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -994,10 +1015,12 @@
       "publisher": "Public Procurement Monitoring Office",
       "source_id": "ppmo",
       "contains": [
-        "Live e-GP portal: active buyers and bidders, bid notices, running/closed/cancelled bids; point-in-time counts only."
+        "Live e-GP portal: active buyers and bidders, bid notices, running/closed/cancelled bids; point-in-time counts only.",
+        "Tender notices and award data (contractor capacity: concurrent contracts per firm). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "11B"
+        "11B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -1008,11 +1031,26 @@
       "source_id": null,
       "contains": [
         "Question-level assessment of Nepal's PPP regulatory framework (preparation, procurement, contract management, unsolicited proposals) for the 2023 benchmarking round.",
-        "Assessment of Nepal PPP framework quality by stage (preparation, procurement, contract management)"
+        "Assessment of Nepal PPP framework quality by stage (preparation, procurement, contract management)",
+        "Scores on PPP preparation, procurement, contract management and unsolicited proposals framework. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11A",
-        "27C"
+        "27C",
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://caanepal.gov.np",
+      "title": "Civil Aviation Authority of Nepal - Civil Aviation Report and airport statistics",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": [
+        "Airport inventory, passenger and cargo movements by airport (TIA, GBIA Bhairahawa, Pokhara International), Nepal FY; international route counts. Root URL from register lead caanepal.gov.np/air-transports/international; report path URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -1122,7 +1160,8 @@
         "Designated Authority approvals for Nepali projects (project, approved MW, validity, market segment); determines exportable quantum independent of physical line capacity",
         "Designated-authority approvals list by project; approval criteria (reused from 04A/17A)",
         "Approval orders for Nepali projects/entities to sell in Indian markets (approved MW, validity) and for India-to-Nepal supply - approved quantum caps the export column and defines approval-limited market access.",
-        "Index of amendments and approvals list"
+        "Index of amendments and approvals list",
+        "Approval orders by project/entity: approved quantum (MW), market segment, validity window; India-to-Nepal supply approvals with hour limits"
       ],
       "found_by": [
         "17A",
@@ -1133,7 +1172,8 @@
         "05A",
         "04C",
         "22E",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -1166,7 +1206,8 @@
         "Procedural requirements and documents for approval of cross-border trade by Nepali generators (reused from 04A)",
         "Approval procedure and validity periods - basis for approval-renewal risk on export revenue.",
         "Approval procedure, required documents, validity of approvals; basis for approval-renewal risk [reused from 22B:22B-L14]",
-        "Approval procedure text and date"
+        "Approval procedure text and date",
+        "Approval procedure, validity period of approvals, renewal conditions, provisions for trade between two neighbouring countries via India - sets the approval-state variable and tenor mismatch in all power arrangements"
       ],
       "found_by": [
         "17A",
@@ -1177,7 +1218,8 @@
         "04C",
         "22E",
         "16C",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -1192,7 +1234,8 @@
         "Rules for cross-border trade incl. eligibility, ownership conditions for exporting generators, market-participation conditions",
         "Eligibility and approval conditions for Indian import from neighbouring-country generators (incl. provisions on ownership/investor origin and bilateral-agreement status), Designated Authority role",
         "Eligibility/ownership conditions on generators selling into India (binding constraint per 25B challenge)",
-        "Eligibility and ownership conditions on exporting generators - determines which marginal GWh are exportable at all."
+        "Eligibility and ownership conditions on exporting generators - determines which marginal GWh are exportable at all.",
+        "Eligibility and ownership/financing-origin conditions on exporting generators; trade between neighbouring countries through the Indian grid; role of designated authority and nodal agencies - constrains who can sell under any hypothetical arrangement (04C CM-01)"
       ],
       "found_by": [
         "17A",
@@ -1200,7 +1243,8 @@
         "22B",
         "25B",
         "05A",
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -1211,11 +1255,13 @@
       "source_id": "cea_india",
       "contains": [
         "Existing and planned cross-border interconnections India-Nepal by voltage, circuit and capacity; 2022-27 plan and 2027-32 perspective; draft version - final version to be located",
-        "Existing and planned India-Nepal interconnections by voltage, circuit and capacity; 2022-27 plan and 2027-32 perspective (draft; final to locate)"
+        "Existing and planned India-Nepal interconnections by voltage, circuit and capacity; 2022-27 plan and 2027-32 perspective (draft; final to locate)",
+        "Existing and planned India-Nepal interconnections with capacity and schedule - capacity K_X and transfer limit in payoff functions"
       ],
       "found_by": [
         "22B",
-        "05A"
+        "05A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -1241,11 +1287,13 @@
       "source_id": "nso_nepal",
       "contains": [
         "Online census tables: population by age/sex/province; absent population tables",
-        "NPHC 2021 (census reference date within 2021; FY2078/79 label to record) population by province, urban/rural (municipality type), sex, caste/ethnicity (official census list), mother tongue, religion; literacy, educational attainment, economic activity, household amenities and female ownership of house/land by province and by caste/ethnic group where tabulated. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. Search also indicates a Caste/Ethnicity report on this portal (to verify)."
+        "NPHC 2021 (census reference date within 2021; FY2078/79 label to record) population by province, urban/rural (municipality type), sex, caste/ethnicity (official census list), mother tongue, religion; literacy, educational attainment, economic activity, household amenities and female ownership of house/land by province and by caste/ethnic group where tabulated. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. Search also indicates a Caste/Ethnicity report on this portal (to verify).",
+        "Census 2021 population and households by local level (metropolitan, sub-metropolitan, municipality, rural municipality), province and district; household amenities tables. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "10C",
-        "14B"
+        "14B",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -1284,13 +1332,15 @@
         "Index of CERC monthly market-monitoring reports with Excel data: power exchange prices and volumes (IEX, PXIL, HPX) by segment, bilateral trader prices, cross-border transactions section",
         "Cross-border transaction volumes with Nepal by month (Indian FY, April-March) - cross-check of NEA monthly export/import",
         "Monthly short-term market reports with Excel data: exchange prices by segment, bilateral trader prices, cross-border transactions with Nepal (Indian FY, April-March) - cross-check of NEA realised prices and volumes.",
-        "Monthly/annual short-term market reports incl. cross-border (Nepal) transaction volumes and prices by month (Indian FY) - cross-check of export realised price. Shared with 22E-L11."
+        "Monthly/annual short-term market reports incl. cross-border (Nepal) transaction volumes and prices by month (Indian FY) - cross-check of export realised price. Shared with 22E-L11.",
+        "Monthly exchange prices by segment, bilateral trader prices and cross-border transactions - bilateral contract price benchmark"
       ],
       "found_by": [
         "22B",
         "05A",
         "22E",
-        "05B"
+        "05B",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -1402,6 +1452,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-parliamentary-affairs",
+      "title": "Constitution of Nepal 2015 (official English translation, MoLJPA)",
+      "publisher": "Ministry of Law, Justice and Parliamentary Affairs, Nepal (hosted by ConstitutionNet)",
+      "source_id": "lawcommission_nepal",
+      "contains": [
+        "Treaty ratification article (natural resources and their use) - ratification majority requirement"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://content.trade.gov.in/TCP-CMS/12766729435441048/3080000217/3.pdf",
       "title": "Government of India Issues Final Notification Imposing Safeguard Duty on Steel",
       "publisher": "Government of India, Department of Commerce (trade.gov.in content service)",
@@ -1447,7 +1510,8 @@
         "Later trade books FY2080/81-FY2081/82 and monthly FTS for food import bill trend",
         "Imports by HS: LPG (HS 2711.19), petrol/diesel (HS 2710), electric vehicles (HS 8703.80, 8704), clinker (HS 2523.10), billets/sponge iron (HS 7203, 7207), urea/ammonia (HS 3102.10, 2814) - quantities and CIF values for import-substitution netbacks.",
         "Monthly and annual foreign trade statistics: exports/imports by HS chapter/heading and partner country, Nepal FY; customs-office data",
-        "Operating notices of northern border customs points (implementation record for border-port arrangements)"
+        "Operating notices of northern border customs points (implementation record for border-port arrangements)",
+        "Import/export value and quantity by customs point (Birgunj, Biratnagar, Bhairahawa, Tatopani, Rasuwa), Nepal FY and monthly; used to allocate traffic by corridor. Catalog URL URL from general knowledge — unverified"
       ],
       "found_by": [
         "02A",
@@ -1462,7 +1526,8 @@
         "07C",
         "05B",
         "12A",
-        "27A"
+        "27A",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -1660,11 +1725,13 @@
       "source_id": "ppmo",
       "contains": [
         "OCDS-format procurement data published from Nepal's e-GP (bolpatra) with coverage dates, fields and data-quality checks; potential source for competition metrics (bids per tender, single-bid share).",
-        "OCDS contract-level data: award dates, contract values, completion; enables project-level delay analysis."
+        "OCDS contract-level data: award dates, contract values, completion; enables project-level delay analysis.",
+        "Contract-level award dates, amounts, amendments for computing variation-order overruns and contractor concurrency. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -1987,6 +2054,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://ddnews.gov.in/en/nepal-to-export-40-mw-electricity-to-bangladesh-using-indian-transmission-lines/",
+      "title": "Nepal to export electricity to Bangladesh using Indian transmission lines (DD News)",
+      "publisher": "DD News (Prasar Bharati, India)",
+      "source_id": null,
+      "contains": [
+        "Indian public broadcaster report on the tripartite arrangement; locator only, not an official order"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://demo.mof.gov.np/uploads/document/file/1724825318_Budget%20Speech%202024_25%20English%20FV.pdf",
       "title": "Budget Speech of Fiscal Year 2024/25, English",
       "publisher": "Ministry of Finance, Nepal",
@@ -2068,11 +2148,13 @@
       "source_id": "dhs",
       "contains": [
         "Stunting, wasting, underweight among children under 5 by province, sex, wealth quintile (WHO 2006 growth standards); TFR; trend tables vs NDHS 2016, 2011, 2006, 2001",
-        "Women's and men's ownership of house and land (alone/jointly, with title), women's employment and cash earnings, control over earnings, participation in household decisions, mobile phone/bank account ownership, by province, urban/rural and wealth quintile; some tables by caste/ethnic group (grouping to record verbatim). Survey year 2022 (calendar). Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+        "Women's and men's ownership of house and land (alone/jointly, with title), women's employment and cash earnings, control over earnings, participation in household decisions, mobile phone/bank account ownership, by province, urban/rural and wealth quintile; some tables by caste/ethnic group (grouping to record verbatim). Survey year 2022 (calendar). Reused from existing lead register (research/sources/source_leads.json) / upstream finding.",
+        "Household drinking water, sanitation and handwashing by urban/rural (NDHS urban = municipalities) and province. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "10A",
-        "14B"
+        "14B",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -2313,10 +2395,12 @@
       "publisher": "World Bank",
       "source_id": "wb_npl",
       "contains": [
-        "Special focus on public investment: capex/GDP by tier, execution rates FY2019/20 onward, reform recommendations."
+        "Special focus on public investment: capex/GDP by tier, execution rates FY2019/20 onward, reform recommendations.",
+        "Public investment management reforms, multi-year contract liabilities, project delays. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -2365,10 +2449,12 @@
       "publisher": "World Bank",
       "source_id": "wb_npl",
       "contains": [
-        "Capex execution rates by fiscal year and tier, within-year timing, and bottleneck diagnosis (planning, land acquisition, forest clearance, procurement, contract management, cash management)."
+        "Capex execution rates by fiscal year and tier, within-year timing, and bottleneck diagnosis (planning, land acquisition, forest clearance, procurement, contract management, cash management).",
+        "Diagnostics of project readiness, land acquisition, procurement and contract management delays; any project-level sample. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -2477,14 +2563,16 @@
         "Bhutan's hydropower-export model with India; comparator for Nepal's cross-border power arrangements (coverage to check; no catalog id for World Bank Bhutan documents)",
         "Comparator: hydropower-export economy, seasonal import dependence and pipeline delays",
         "Landlocked Himalayan comparator for manufacturing diversification and logistics costs",
-        "Documented results of Bhutan's intergovernmental hydropower partnership model with India (revenues, debt, macro effects, diversification limits); comparable landlocked Himalayan economy"
+        "Documented results of Bhutan's intergovernmental hydropower partnership model with India (revenues, debt, macro effects, diversification limits); comparable landlocked Himalayan economy",
+        "Bhutan-India hydropower export model (intergovernmental projects, long-term tariffs, debt-financed plants) - structural comparator for contract design; not evidence about Nepal"
       ],
       "found_by": [
         "01B",
         "17C",
         "05A",
         "05C",
-        "27C"
+        "27C",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -2616,7 +2704,9 @@
         "Project appraisal: baseline time-release and cost for Kolkata/Haldia-Birgunj/Biratnagar/Bhairahawa corridors, rail transit via ICD Birgunj, customs/transit reforms, results-framework indicators",
         "Corridor baselines for border-crossing time and cost (Birgunj/Raxaul and other corridors), trade facilitation diagnostics and results framework",
         "Corridor diagnostics Kolkata/Haldia-Raxaul/Birgunj and Visakhapatnam: dwell and transit times, logistics cost baselines for third-country trade (project vintage)",
-        "Baseline trade-facilitation indicators and results framework; implementation completion report to be located for measured effects (reused from 04A)"
+        "Baseline trade-facilitation indicators and results framework; implementation completion report to be located for measured effects (reused from 04A)",
+        "Corridor baseline door-to-port time and cost Kolkata/Haldia-Birgunj/Biratnagar, border dwell times, results framework indicators (appraisal year per document). reused from shared lead register (research/sources/source_leads.json)",
+        "Ex-ante transit time/cost analysis and corridor design - locator for route cost parameters"
       ],
       "found_by": [
         "16A",
@@ -2624,7 +2714,9 @@
         "21B",
         "04A",
         "05C",
-        "04C"
+        "04C",
+        "06A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -2649,10 +2741,12 @@
       "publisher": "Government of Nepal / World Bank / UNDP",
       "source_id": "wb_npl",
       "contains": [
-        "Institutional, organisational and systems capacity gaps of federal, provincial and a sample of local governments (staffing, PFM, planning, procurement, IT)."
+        "Institutional, organisational and systems capacity gaps of federal, provincial and a sample of local governments (staffing, PFM, planning, procurement, IT).",
+        "Municipal capacity (staffing, engineering, planning) by local-level type - relevant to service delivery gaps. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "11C"
+        "11C",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -2855,6 +2949,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://doi.org/10.1080/01441640309904",
+      "title": "Flyvbjerg, Skamris Holm and Buhl (2003) How common and how large are cost overruns in transport infrastructure projects? Transport Reviews",
+      "publisher": "Taylor & Francis",
+      "source_id": "academic",
+      "contains": [
+        "Reference-class method and definitions of cost overrun (decision-to-build baseline, constant prices). URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://doi.org/10.1111/mcn.12080",
       "title": "Hoddinott, Alderman, Behrman, Haddad and Horton (2013) The economic rationale for investing in stunting reduction, Maternal and Child Nutrition 9(S2)",
       "publisher": "Wiley",
@@ -2969,6 +3076,34 @@
       "found_by": [
         "10B",
         "14B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://dor.gov.np",
+      "title": "Department of Roads, Nepal - publications (Statistics of Strategic Road Network, SSRN; Road Network Data)",
+      "publisher": "Department of Roads, Ministry of Physical Infrastructure and Transport, Nepal",
+      "source_id": null,
+      "contains": [
+        "SSRN statistics: strategic road network length by pavement type (blacktop, gravel, earthen), by province and highway/feeder class; condition classes (good/fair/poor/bad by IRI or visual survey); bridge inventory; editions by Nepal FY. Catalog lacks a dor_nepal id. URL from general knowledge — unverified",
+        "Maintenance needs by category (routine, recurrent, periodic, emergency) from HDM/RMMS, and funded amounts. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06A",
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://dorw.gov.np",
+      "title": "Department of Railways, Nepal - project status (East-West railway, Jaynagar-Kurtha-Bijalpura, Raxaul-Kathmandu, Kerung-Kathmandu)",
+      "publisher": "Department of Railways, Nepal",
+      "source_id": null,
+      "contains": [
+        "Rail project status: alignment, DPR/feasibility stage, financier, track constructed and operational sections, traffic on Jaynagar-Kurtha. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -3104,6 +3239,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export",
+      "title": "Full text of SC verdict released on long-term power trade agreement (news locator)",
+      "publisher": "Nepal News",
+      "source_id": null,
+      "contains": [
+        "Locator for the Supreme Court of Nepal verdict (Nov 2024) on the ratification route - Nepal-side domestic-ratification constraint"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export-to-india/",
       "title": "Full text of SC verdict released on long-term power trade agreement",
       "publisher": "Nepal News",
@@ -3232,11 +3380,13 @@
       "source_id": "erc_nepal",
       "contains": [
         "ERC consumer tariff order for NEA: industrial tariff categories by supply voltage (LV/MV/HV), demand charge (per kVA per month) and energy charge (per kWh), time-of-day and seasonal differentiation if any, dedicated/trunk-line surcharges; order year (Nepali FY label) to record. Located by r1 web search; order vintage (2078 order vs later revisions for FY2082/83) to verify.",
-        "ERC consumer tariff order: industrial categories by supply voltage (LV / MV 11-33 kV / HV 66 kV and above), demand charge per kVA per month, energy charge per kWh, time-of-day blocks and any seasonal differentiation, dedicated-feeder / trunk-line tariff, minimum charges. Order vintage (2078 order vs revision in force FY2082/83-FY2083/84) to verify. Shared with 22E-L01."
+        "ERC consumer tariff order: industrial categories by supply voltage (LV / MV 11-33 kV / HV 66 kV and above), demand charge per kVA per month, energy charge per kWh, time-of-day blocks and any seasonal differentiation, dedicated-feeder / trunk-line tariff, minimum charges. Order vintage (2078 order vs revision in force FY2082/83-FY2083/84) to verify. Shared with 22E-L01.",
+        "Industrial tariff T_IND (domestic outside option for Nepali energy)"
       ],
       "found_by": [
         "22E",
-        "05B"
+        "05B",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -3455,6 +3605,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://ghsl.jrc.ec.europa.eu/",
+      "title": "Global Human Settlement Layer - Degree of Urbanisation (GHS-SMOD, GHS-POP, GHS-UCDB)",
+      "publisher": "European Commission Joint Research Centre",
+      "source_id": null,
+      "contains": [
+        "Functional (grid-based) urban classification: urban centres, urban clusters, rural grid cells, by epoch; applied to Nepal local-level boundaries. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://giwmscdnone.gov.np/media/app/public/285/posts/1715754883_66.pdf",
       "title": "Statistical Information on Nepalese Agriculture 2078/79 (2021/22)",
       "publisher": "Ministry of Agriculture and Livestock Development, Nepal",
@@ -3576,14 +3739,16 @@
         "Text of the 2014 Power Trade Agreement: institutional mechanisms (JWG/JSC), market access clauses, validity",
         "Legal basis for cross-border interconnections and non-discriminatory access",
         "PTA text: JWG/JSC mechanism, authorised entities, market-access provisions (reused from 04A)",
-        "Full text of 2014 Power Trade Agreement: signature date, entry into force, duration, JSC/JWG clause"
+        "Full text of 2014 Power Trade Agreement: signature date, entry into force, duration, JSC/JWG clause",
+        "Framework text: permitted trade modes, JSC/JWG mechanism, transmission planning, non-discriminatory access clause wording, duration - the documented framework within which any hypothetical arrangement would sit (27A AR-05)"
       ],
       "found_by": [
         "25B",
         "04A",
         "05A",
         "04C",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -4114,7 +4279,8 @@
         "Project development agreements for large export-oriented hydropower and cross-border projects; IBN mandate under PPP and Investment Act 2019 (reused from 04B)",
         "Large-project approvals (cement, steel, green hydrogen/ammonia, data centre proposals if any) with investment amount and capacity - project-level capital cost inputs for marginal VA.",
         "Large-project (above threshold) approvals, PDAs, investment-summit commitments/MoUs, one-stop service",
-        "Project development agreements (PDAs), approved project list and investment summaries"
+        "Project development agreements (PDAs), approved project list and investment summaries",
+        "PPP/large-project pipeline: PDAs signed, investment approvals, financial close status (hydropower, cement, airports, cable cars, waste-to-energy). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "23E",
@@ -4123,7 +4289,8 @@
         "04C",
         "05B",
         "12B",
-        "27C"
+        "27C",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -4161,12 +4328,14 @@
       "contains": [
         "Full English text of the PPP and Investment Act 2019: project modalities, IBN mandate as PPP agency and investment promotion agency, approval thresholds, land provisions, dispute resolution and incentives.",
         "Statutory mandate of IBN for large projects incl. foreign-financed infrastructure (reused from 11A)",
-        "Legal basis for PPP/BOOT/project development agreements and IBN approval thresholds"
+        "Legal basis for PPP/BOOT/project development agreements and IBN approval thresholds",
+        "PPP legal framework: project thresholds, IBN vs line-ministry roles, VGF, unsolicited proposals. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11A",
         "04C",
-        "27C"
+        "27C",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -4182,7 +4351,9 @@
         "Study of Nepal's transit through Indian ports: routes, procedures, time and cost components, port choice (Kolkata/Haldia vs Visakhapatnam)",
         "Study of transit procedures, times and costs on India routes; documented delays at borders and ports",
         "Transit volumes, routes, costs and bottlenecks via Indian ports (tier 7; secondary check)",
-        "Evaluation of transit arrangements: time/cost effects of transit treaty provisions (reused from 04A)"
+        "Evaluation of transit arrangements: time/cost effects of transit treaty provisions (reused from 04A)",
+        "Transit procedures, time and cost components on Kolkata/Haldia and Visakhapatnam routes; survey period to verify. reused from shared lead register (research/sources/source_leads.json)",
+        "Transit route cost and time analysis - locator for per-route cost parameters c_r (tier 7)"
       ],
       "found_by": [
         "16A",
@@ -4192,7 +4363,9 @@
         "21B",
         "04A",
         "05C",
-        "04C"
+        "04C",
+        "06A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -4306,10 +4479,12 @@
       "publisher": "World Bank IEG",
       "source_id": null,
       "contains": [
-        "Ex-post evaluations of PPP, guarantees, SEZ and hydropower operations in comparable economies (search portal) [URL from general knowledge — unverified]"
+        "Ex-post evaluations of PPP, guarantees, SEZ and hydropower operations in comparable economies (search portal) [URL from general knowledge — unverified]",
+        "ICR Reviews for completed Nepal investment projects: extensions, cost at appraisal vs actual, outcome ratings. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "27C"
+        "27C",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -4319,10 +4494,12 @@
       "publisher": "World Bank IEG",
       "source_id": null,
       "contains": [
-        "Evaluation evidence on PPP outcomes and fiscal risks across client countries [URL from general knowledge — unverified]"
+        "Evaluation evidence on PPP outcomes and fiscal risks across client countries [URL from general knowledge — unverified]",
+        "Cross-country PPP outcome benchmarks for reference-class comparison. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "27C"
+        "27C",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -4719,6 +4896,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://kathmandupost.com/money/2024/11/16/nepal-begins-historic-power-export-to-bangladesh-via-india",
+      "title": "Nepal begins historic power export to Bangladesh via India (news locator, November 2024)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": [
+        "Locator for start of NEA-NVVN-BPDB tripartite deliveries; primary contract and NEA delivery records required"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
       "title": "Nepal, India sign deal to build two transmission lines",
       "publisher": "The Kathmandu Post",
@@ -4727,13 +4917,15 @@
         "Oct 2025 NEA-POWERGRID JV agreements for Inaruwa-New Purnea and Lamki (Dodhara)-Bareilly lines; pointer to NEA/POWERGRID documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document",
         "News locator only (October 2025): cross-border transmission agreement; implementing agreement text and NEA project records required",
         "Inaruwa-New Purnea and Lamki(Dodhara)-Bareilly JV agreements; pointer to NEA/POWERGRID documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence.",
-        "News locator of October 2025 transmission implementing agreements"
+        "News locator of October 2025 transmission implementing agreements",
+        "Locator for NEA-POWERGRID JV implementing agreements (Inaruwa-New Purnea; Lamki/Dodhara-Bareilly): ownership shares, cost sharing and tariff route - reference design for the shared-transmission model (27A AR-07)"
       ],
       "found_by": [
         "22B",
         "04A",
         "05A",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -4792,14 +4984,16 @@
         "News locator only: start of a new rail-cargo route; operating record from NITDB/Indian Railways required",
         "New rail route and Indian ECTS amendment; pointer to primary notifications. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence.",
         "News locator only: start of rail cargo under amended transit arrangements; effects claims not used (reused from 04A)",
-        "News report (July 2026) of new rail cargo service Kolkata-Biratnagar and Indian ECTS regulation amendment for Kolkata/Haldia/Visakhapatnam cargo; used only to identify the primary CBIC notification [reused from 19C:19C-L12]"
+        "News report (July 2026) of new rail cargo service Kolkata-Biratnagar and Indian ECTS regulation amendment for Kolkata/Haldia/Visakhapatnam cargo; used only to identify the primary CBIC notification [reused from 19C:19C-L12]",
+        "Press report (July 2026) of start of Kolkata-Biratnagar rail cargo; event unverified until confirmed by NITDB/customs/Indian Railways records. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "19C",
         "04A",
         "05C",
         "04C",
-        "16C"
+        "16C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -4908,13 +5102,15 @@
         "News report dated January 2024 on signing of the Nepal-India long-term power trade agreement at the Joint Commission; used only to locate the agreement text and signing record at MoFA/MoEWRI/MEA",
         "Jan 2024 Long-Term Power Trade Agreement signing; pointer to MoEWRI text. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document",
         "News locator only (January 2024) for the long-term power trade agreement; agreement text required",
-        "News locator of January 2024 signing; agreement text not public in r1"
+        "News locator of January 2024 signing; agreement text not public in r1",
+        "Locator only for the January 2024 long-term power trade agreement text (27A AR-06); terms must come from the text"
       ],
       "found_by": [
         "17A",
         "22B",
         "04A",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -5063,6 +5259,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://kathmandupost.com/national/2026/06/09/nepal-s-pride-projects-dogged-by-delays-and-repeated-extensions",
+      "title": "Nepal's pride projects dogged by delays and repeated extensions",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": [
+        "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; points to OAG/NPC project records."
+      ],
+      "found_by": [
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
       "title": "Additional electricity export to Bangladesh blocked as India withholds approval",
       "publisher": "The Kathmandu Post",
@@ -5071,13 +5280,15 @@
         "June 2026 report on Indian approval for Nepal-Bangladesh trilateral trade expansion withheld; pointer to CEA/NVVN documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document",
         "Pointer to CEA/NVVN decision on Nepal-Bangladesh trilateral quantum. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence.",
         "Pointer to CEA/NVVN decision on the Nepal-Bangladesh trilateral quantum - approval-limited access. Secondary media pointer only (not a primary source); use solely to locate the underlying official document.",
-        "June 2026 report on Indian approval for Nepal-Bangladesh trilateral trade expansion withheld; pointer to CEA/NVVN documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document [reused from 22B:22B-L25]"
+        "June 2026 report on Indian approval for Nepal-Bangladesh trilateral trade expansion withheld; pointer to CEA/NVVN documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document [reused from 22B:22B-L25]",
+        "Locator for the CEA/NVVN decision on extending Nepal-Bangladesh trade - illustrates the approval-state variable for wheeling arrangements; primary order required"
       ],
       "found_by": [
         "22B",
         "05A",
         "22E",
-        "16C"
+        "16C",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -5091,6 +5302,19 @@
       ],
       "found_by": [
         "16C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://kathmandupost.com/national/2026/09/23/expressway-deadline-extended-for-third-time-as-project-nears-a-decade-with-half-the-work-unfinished",
+      "title": "Expressway deadline extended for third time",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": [
+        "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; Kathmandu-Terai Expressway extension history to confirm from MoPIT/Nepal Army project office records."
+      ],
+      "found_by": [
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -5144,11 +5368,13 @@
       "source_id": "lawcommission_nepal",
       "contains": [
         "Procedure for treaty negotiation, signature, ratification and domestic legal effect; role of MoFA and line ministries. URL from general knowledge — unverified.",
-        "Treaty Act: categories requiring parliamentary ratification; defines when an agreement is in force for Nepal"
+        "Treaty Act: categories requiring parliamentary ratification; defines when an agreement is in force for Nepal",
+        "Treaty categories requiring parliamentary ratification (natural-resource sharing) - ratification threshold constraint on Nepal side"
       ],
       "found_by": [
         "04C",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -5495,14 +5721,16 @@
         "LPI 2023 scores and components for Nepal and comparators (survey-based; calendar year of survey)",
         "LPI 2023 scores for Nepal (overall, customs, infrastructure, international shipments, logistics competence, tracking, timeliness) and KPI dwell-time/lead-time indicators; survey-based, calendar year",
         "Logistics benchmark used as a location requirement (lead time, reliability) versus competitor locations",
-        "LPI 2023 overall and component scores for Nepal and comparators; earlier editions for trend (survey-based)"
+        "LPI 2023 overall and component scores for Nepal and comparators; earlier editions for trend (survey-based)",
+        "LPI overall and six components by edition (2007-2018, 2023); 2023 KPI (dwell time, big-data) coverage of Nepal to verify. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "16A",
         "16B",
         "21B",
         "21C",
-        "05C"
+        "05C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -5517,7 +5745,8 @@
         "LPI 2023 scores and KPI-based dwell/delay indicators by country",
         "Logistics performance context (not an agreement evaluation) (reused from 04A)",
         "Logistics components and dwell-time KPIs for Nepal; context for perishable export logistics",
-        "Logistics performance scores relevant to export competitiveness (2023 edition)"
+        "Logistics performance scores relevant to export competitiveness (2023 edition)",
+        "LPI 2023 methodology changes vs 2018 (score comparability), country table. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "19C",
@@ -5525,7 +5754,8 @@
         "05C",
         "04C",
         "07B",
-        "12A"
+        "12A",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -5535,10 +5765,12 @@
       "publisher": "ADB Law and Policy Reform (copy)",
       "source_id": null,
       "contains": [
-        "Functions, duties and powers of local governments, local planning and budgeting, local revenue powers, judicial committee, administrative structure."
+        "Functions, duties and powers of local governments, local planning and budgeting, local revenue powers, judicial committee, administrative structure.",
+        "Legal responsibilities of municipalities for water, sanitation, solid waste, local roads and urban planning. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "11C"
+        "11C",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -5668,7 +5900,8 @@
         "NPHC 2021 national report: total population by sex, age (single year / 5-year groups), province and district at the census reference date; enumeration concept; definition and count of absent population abroad (by sex, age, destination, reason, duration of absence); questionnaire and enumeration manual (absence-duration threshold); post-enumeration survey coverage results if published",
         "Usually economically active population by industry (census 2021 date) - alternative employment-share point, usual-activity concept; educational attainment by age for human-capital index. Shared lead.",
         "Census 2021 economic-activity tables by occupation (major/sub-major group) and industry; fallback for IT workforce stock where NLFS cell sizes are small.",
-        "NPHC 2021 national report volumes and thematic reports (gender, caste/ethnicity, migration, disability as published); tables by province x sex x caste/ethnicity. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+        "NPHC 2021 national report volumes and thematic reports (gender, caste/ethnicity, migration, disability as published); tables by province x sex x caste/ethnicity. Reused from existing lead register (research/sources/source_leads.json) / upstream finding.",
+        "Thematic reports incl. urbanisation/housing and household amenities (drinking water source, toilet type, cooking fuel, lighting) by local-level type; census questionnaire and definitions. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "16A",
@@ -5683,7 +5916,8 @@
         "10C",
         "01A",
         "08A",
-        "14B"
+        "14B",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -5885,10 +6119,12 @@
       "publisher": "Ministry of Finance, Nepal",
       "source_id": "mof_nepal",
       "contains": [
-        "Original capital appropriations by ministry/budget head for FY2082/83; prior-year revised estimate and actual columns give capex budget vs actual for FY2080/81-FY2081/82."
+        "Original capital appropriations by ministry/budget head for FY2082/83; prior-year revised estimate and actual columns give capex budget vs actual for FY2080/81-FY2081/82.",
+        "As above, prior year. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -5909,7 +6145,8 @@
         "Chapters on labour/employment and social security: social security allowance beneficiaries and outlays by category, SSF contributors, FY basis",
         "Macroeconomic chapter and statistical appendix: real GDP growth by FY, GVA by sector shares, gross fixed capital formation and gross capital formation as share of GDP, gross domestic and national saving, sourced from NSO; latest FY values preliminary. Shared lead.",
         "Energy and industry chapters: electricity consumption by sector, industrial capacity utilisation, electricity trade (Nepal FY; mid-FY cut-off to verify).",
-        "Energy chapter: electricity consumption by category, industrial production of cement, steel and other products (volumes), EV and LPG import data - cross-checks."
+        "Energy chapter: electricity consumption by category, industrial production of cement, steel and other products (volumes), EV and LPG import data - cross-checks.",
+        "National pride project progress annex (cumulative expenditure, physical progress, revised completion year). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "02A",
@@ -5923,7 +6160,8 @@
         "10B",
         "01A",
         "22E",
-        "05B"
+        "05B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -5933,10 +6171,12 @@
       "publisher": "Ministry of Finance, Nepal",
       "source_id": "mof_nepal",
       "contains": [
-        "Latest Red Book; prior-year columns for FY2082/83 revised estimate and FY2081/82 actual capital expenditure."
+        "Latest Red Book; prior-year columns for FY2082/83 revised estimate and FY2081/82 actual capital expenditure.",
+        "Budget heads for maintenance (road, irrigation, building) and project-level capital allocations incl. pride projects. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -5972,10 +6212,12 @@
       "publisher": "Ministry of Finance, Nepal",
       "source_id": "mof_nepal",
       "contains": [
-        "Budget-head-level appropriations split recurrent/capital/financing, plus prior-year actuals and revised estimates columns (Nepali)."
+        "Budget-head-level appropriations split recurrent/capital/financing, plus prior-year actuals and revised estimates columns (Nepali).",
+        "As above, earlier year for trend. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -6139,13 +6381,15 @@
         "Text of the BRI cooperation framework (signed Beijing, December 2024 per search listing): cooperation areas, legal character, validity/renewal clause; located by the single r1 WebSearch of this task",
         "Framework text: implementing agencies, financing modalities clause, validity (reused from 04B)",
         "Framework text (December 2024 per page title): legal character, validity/renewal, project annex",
-        "Framework text: cooperation modalities relevant to G2G/EPC-plus-finance structures"
+        "Framework text: cooperation modalities relevant to G2G/EPC-plus-finance structures",
+        "BRI framework (Dec 2024) incl. any reference to Kerung-Kathmandu railway feasibility and cross-border roads. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "04B",
         "04C",
         "27A",
-        "27C"
+        "27C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -6243,6 +6487,19 @@
       ],
       "found_by": [
         "08A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://myrepublica.nagariknetwork.com/news/both-cost-and-time-of-national-pride-projects-increase/",
+      "title": "Both cost and time of national pride projects increase",
+      "publisher": "myRepublica",
+      "source_id": "academic",
+      "contains": [
+        "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; points to OAG annual report chapter."
+      ],
+      "found_by": [
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -6430,7 +6687,8 @@
         "HS-level export queries by partner and period; SPS/TBT procedures and documentary requirements for agri exports",
         "HS-level import queries for cereals and food chapters by partner and FY",
         "Query tool: exports/imports by HS code, partner and FY; tariff and NTM information; SPS/TBT procedures",
-        "Register of Nepal's trade agreements with texts and status as recorded by Nepal"
+        "Register of Nepal's trade agreements with texts and status as recorded by Nepal",
+        "Nepal-Bangladesh trade and transit agreements and protocols; border procedures"
       ],
       "found_by": [
         "16A",
@@ -6447,7 +6705,8 @@
         "07B",
         "07C",
         "12A",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -6538,7 +6797,9 @@
         "ICP/ICD/dry-port cargo statistics and dwell times on the India border (Birgunj ICD, Biratnagar ICP etc.)",
         "Northern dry ports/ICDs (e.g. Rasuwagadhi, Tatopani) operating status and cargo statistics",
         "Dry-port cargo statistics by facility; tariff schedules for ICD handling",
-        "NITDB mandate over ICDs/dry ports on India and China borders; operations reports (reused from 04A/04B)"
+        "NITDB mandate over ICDs/dry ports on India and China borders; operations reports (reused from 04A/04B)",
+        "ICD/dry-port throughput (TEU, wagons, trucks) for Birgunj ICD, Biratnagar, Bhairahawa, Kakarbhitta, Tatopani, Rasuwagadhi (Timure), Chobhar; annual reports, Nepal FY. reused from shared lead register (research/sources/source_leads.json)",
+        "Dry-port cargo statistics by facility and route - transit volumes V_r in the transit payoff"
       ],
       "found_by": [
         "17B",
@@ -6547,7 +6808,9 @@
         "04A",
         "04B",
         "05C",
-        "04C"
+        "04C",
+        "06A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -6574,6 +6837,19 @@
       ],
       "found_by": [
         "10A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://nnrfc.gov.np",
+      "title": "National Natural Resources and Fiscal Commission",
+      "publisher": "NNRFC, Nepal",
+      "source_id": "nnrfc",
+      "contains": [
+        "Fiscal equalisation grant formula incl. infrastructure/service indicators by local level. Catalog URL URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -6727,6 +7003,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://npbmis.npc.gov.np",
+      "title": "National Project Bank Management Information System",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": [
+        "Project-level records: appraisal/approval date, estimated cost, duration, readiness status - frame for approval-lag measurement. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://npc.gov.np",
       "title": "National Planning Commission, Nepal - Post-Disaster Needs Assessments",
       "publisher": "National Planning Commission, Nepal",
@@ -6737,7 +7026,8 @@
         "Periodic plan chapters on international trade/connectivity; NPC evaluation studies of projects (candidate for documented-effects evidence) (reused from 25C/25E)",
         "Landing point for NPC PDNA reports (2015 earthquake PDNA Vol A/B; 2017 Terai flood PDNA) with sector damage vs loss in NPR by Nepal FY",
         "National MPI (with OPHI) by province, urban/rural (and by caste/ethnicity or sex of household head if published); Sixteenth Plan targets for provincial and gender inclusion. URL from general knowledge — unverified.",
-        "Official PDNA reports with sectoral damage and loss (NPR, Nepal FY) for major events [reused from 25C:25C-L16]"
+        "Official PDNA reports with sectoral damage and loss (NPR, Nepal FY) for major events [reused from 25C:25C-L16]",
+        "National pride project list and status reviews; periodic plan (Sixteenth Plan) project tables; project classification (P1/P2) rules; MDAC/NDAC progress reviews. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "25C",
@@ -6745,7 +7035,8 @@
         "04C",
         "13A",
         "14B",
-        "16C"
+        "16C",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -6797,7 +7088,8 @@
         "GVA by industry (section A agriculture, forestry and fishing) at current and constant prices, Nepal FY, base 2010/11 or later rebased series; agricultural GVA share",
         "GVA by ISIC section incl. manufacturing and electricity (section D) at current prices, Nepal FY; deflators - to put industrial VA per GWh on the same price basis as export revenue.",
         "Manufacturing GVA by ISIC division (current and constant prices, Nepal FY), supply-use tables if published - to scale census VA/GWh to national accounts and to check electricity sector intermediate use.",
-        "Provincial GDP and GVA by industry, current and constant prices, fiscal years (mid-July); used with NPHC 2021/NSO projections for provincial GDP per capita. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+        "Provincial GDP and GVA by industry, current and constant prices, fiscal years (mid-July); used with NPHC 2021/NSO projections for provincial GDP per capita. Reused from existing lead register (research/sources/source_leads.json) / upstream finding.",
+        "Census 2011 population by VDC/municipality for 2011-2021 growth after boundary harmonisation. Specific document path URL from general knowledge — unverified"
       ],
       "found_by": [
         "00A",
@@ -6813,7 +7105,8 @@
         "07A",
         "22E",
         "05B",
-        "14B"
+        "14B",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -6849,10 +7142,12 @@
       "publisher": "NTPC Vidyut Vyapar Nigam Ltd",
       "source_id": null,
       "contains": [
-        "Nodal trading agency for cross-border trade: trading margin, Nepal-Bangladesh trilateral arrangement - deduction from exchange price in export netback. URL from general knowledge - unverified. Not in source catalog."
+        "Nodal trading agency for cross-border trade: trading margin, Nepal-Bangladesh trilateral arrangement - deduction from exchange price in export netback. URL from general knowledge - unverified. Not in source catalog.",
+        "Nodal trading agency for cross-border trade: trading margin (C_TRD), trilateral Nepal-Bangladesh arrangement role"
       ],
       "found_by": [
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -6876,11 +7171,13 @@
       "source_id": "oag_nepal",
       "contains": [
         "Current OAG site; location of the 62nd Annual Report 2082 (covering FY2080/81) and any English summary.",
-        "62nd Annual Report (audit of FY2080/81): irregularities by tier, unsettled arrears, project-level findings (cost/time overruns, advances not settled, contract variations)."
+        "62nd Annual Report (audit of FY2080/81): irregularities by tier, unsettled arrears, project-level findings (cost/time overruns, advances not settled, contract variations).",
+        "Annual report chapters on national pride and priority projects: original vs revised cost estimate, original vs extended completion date, physical and financial progress, contract terminations; Nepali-language main reports, Nepal FY (BS). 61st and 63rd reports were identified as relevant by the r1 search; document paths still to locate. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -6891,11 +7188,13 @@
       "source_id": "oag_nepal",
       "contains": [
         "English sections of the 58th annual report (FY2076/77 audit): irregularity breakdown by category and tier, cumulative arrears table.",
-        "English sections incl. findings on project execution and budget management."
+        "English sections incl. findings on project execution and budget management.",
+        "English sections incl. project performance observations (FY2076/77). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -6973,11 +7272,13 @@
       "source_id": "oag_nepal",
       "contains": [
         "Index of OAG annual reports by BS year incl. English executive summaries: audited amounts, irregularities (to be recovered, to be regularised, advances), cumulative outstanding irregularities and arrears by federal, provincial and local tiers.",
-        "Annual reports by fiscal year: irregularities, arrears, and chapters on capital project and contract management failures."
+        "Annual reports by fiscal year: irregularities, arrears, and chapters on capital project and contract management failures.",
+        "Archive of earlier annual reports for a project-level panel across report years. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -6988,11 +7289,13 @@
       "source_id": "oag_nepal",
       "contains": [
         "Executive summary of the 55th report (FY2073/74 audit): irregularities and arrears; earlier point for trend.",
-        "Executive summary incl. year-end spending and project-delay findings."
+        "Executive summary incl. year-end spending and project-delay findings.",
+        "Project delay and cost-escalation observations (FY2073/74). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7003,11 +7306,13 @@
       "source_id": "oag_nepal",
       "contains": [
         "Executive summary of the 52nd report (FY2069/70 audit): pre-federal baseline for irregularities and arrears.",
-        "Pre-federal baseline of audit findings."
+        "Pre-federal baseline of audit findings.",
+        "Earlier project observations (FY2070/71) for panel start. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7348,14 +7653,16 @@
         "Mid-year estimates and variant projections; methodology on census adjustment (C-06).",
         "Population by age for destination countries (ageing and labour-demand projections), calendar year",
         "Population by single year of age and sex, 1950-2100, medium and alternative variants, for Saudi Arabia, UAE, Qatar, Kuwait, Oman, Bahrain, Malaysia, Japan, Republic of Korea, Australia, UK, Canada, India, Nepal; calendar year (1 July)",
-        "Nepal (ISO3 NPL, location code 524) population by 5-year age group and sex, 1 July reference, estimates 1950-2023 and projections 2024-2100 for the Medium, Low, High, Constant-fertility, Instant-replacement, Zero-migration, Constant-mortality, No-change, Momentum variants and probabilistic 80/95 percent intervals; demographic indicators (TFR, life expectancy, net migration, dependency ratios)"
+        "Nepal (ISO3 NPL, location code 524) population by 5-year age group and sex, 1 July reference, estimates 1950-2023 and projections 2024-2100 for the Medium, Low, High, Constant-fertility, Instant-replacement, Zero-migration, Constant-mortality, No-change, Momentum variants and probabilistic 80/95 percent intervals; demographic indicators (TFR, life expectancy, net migration, dependency ratios)",
+        "National population totals for denominators and projection consistency (calendar year). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "00A",
         "00B",
         "16A",
         "23D",
-        "10C"
+        "10C",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -7390,6 +7697,32 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://population.un.org/wup/",
+      "title": "World Urbanization Prospects (latest revision)",
+      "publisher": "UN DESA Population Division",
+      "source_id": null,
+      "contains": [
+        "Urban population share (national definition) and urban agglomeration series for Nepal (calendar year, national definition). Separate from WPP; catalog has no wup id. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://powerline.net.in/2024/10/14/nepal-india-bangladesh-sign-tripartite-power-agreement/",
+      "title": "Nepal, India, Bangladesh sign tripartite power agreement (trade-press locator, October 2024)",
+      "publisher": "Power Line Magazine",
+      "source_id": null,
+      "contains": [
+        "Locator for the October 2024 tripartite power sales agreement among NEA, NVVN and BPDB: parties, delivery season window, route, tenor - to verify against the contract"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
       "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018 (MoP content page)",
       "publisher": "Ministry of Power, Government of India",
@@ -7398,13 +7731,15 @@
         "MoP page for the 2018 guidelines; expected to link the addendum (2019) and later amendment orders (incl. 2024 amendment to clauses 5.2(a) and 8.9 as reported); needed to establish the currently applicable consolidated text",
         "MoP page with guidelines and amendments (to locate amendment texts)",
         "Official notification page and amendments",
-        "Links to later amendments; establishes currently applicable text"
+        "Links to later amendments; establishes currently applicable text",
+        "Amendment texts to the 2018 guidelines and their dates"
       ],
       "found_by": [
         "17A",
         "22B",
         "25B",
-        "05A"
+        "05A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -7433,10 +7768,12 @@
       "publisher": "World Bank",
       "source_id": null,
       "contains": [
-        "Project-level PPI transactions (type: BOT/BOO/concession/greenfield) in comparator economies [URL from general knowledge — unverified]"
+        "Project-level PPI transactions (type: BOT/BOO/concession/greenfield) in comparator economies [URL from general knowledge — unverified]",
+        "Nepal PPI projects: financial close year, sector, investment, status (operational/cancelled/distressed). URL from general knowledge — unverified"
       ],
       "found_by": [
-        "27C"
+        "27C",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7447,11 +7784,13 @@
       "source_id": "ppmo",
       "contains": [
         "Legal thresholds for procurement methods, e-procurement mandate, user-committee and direct-procurement exceptions, complaint review.",
-        "Legal procurement rules affecting timing (e.g. lowest-bid rule, contract variation provisions)."
+        "Legal procurement rules affecting timing (e.g. lowest-bid rule, contract variation provisions).",
+        "Rules on time extension, variation limits, liquidated damages, contractor capacity limits. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7462,11 +7801,13 @@
       "source_id": "ppmo",
       "contains": [
         "PPMO annual reports by fiscal year: procurement volume by method (open competitive bidding, sealed quotation, direct procurement, user committees), e-GP usage, number of bids per tender, complaints.",
-        "Procurement volumes, methods, e-GP usage, bid challenges and contract delays."
+        "Procurement volumes, methods, e-GP usage, bid challenges and contract delays.",
+        "Contract counts by value, bidder numbers, contract amendments/variations, terminated contracts. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "11B",
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7476,10 +7817,12 @@
       "publisher": "World Bank PPP Resource Center",
       "source_id": null,
       "contains": [
-        "Inventory of Nepal's PPP and concession-related laws and regulations."
+        "Inventory of Nepal's PPP and concession-related laws and regulations.",
+        "Legislative history (BOOT Act 2006, PPP Policy 2072, PPP and Investment Act 2019). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "11A"
+        "11A",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7510,6 +7853,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P144335",
+      "title": "NIRTTP project page (ISRs, ICR, restructurings)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Implementation Status Reports and Implementation Completion Report with updated corridor time/cost indicators vs baseline. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06A"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
       "title": "World Bank projects list - Nepal",
       "publisher": "World Bank",
@@ -7518,13 +7874,15 @@
         "Nepal IDA/IBRD projects with commitment, disbursed amount, approval dates; climate co-benefit shares in project documents",
         "ICRs and impact-evaluation references for TVET/skills projects with returnee or aspiring-migrant components. URL from general knowledge — unverified",
         "Hydromet and DRM projects (e.g. building resilience to climate-related hazards) commitments, disbursements, results indicators on EWS coverage",
-        "Nepal operations containing a CERC and any Cat DDO/DPF with Cat DDO; project documents"
+        "Nepal operations containing a CERC and any Cat DDO/DPF with Cat DDO; project documents",
+        "Project-level approval date, effectiveness, original and revised closing dates, commitment and disbursement; frame for donor-project lag panel. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "25D",
         "09C",
         "13C",
-        "27D"
+        "27D",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -7693,14 +8051,16 @@
         "Trade-press locator (September 2026) for an Indian MoP approval on power flows to Nepal; MoP/CEA order required",
         "Pointer to MoP/CEA order for India-to-Nepal supply Sep-Dec 2026 over named lines with hour limits - dry-season import dependence. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence.",
         "Pointer to MoP/CEA order for India-to-Nepal supply for the coming dry season with hour limits - import-marginal regime and import-access cap. Secondary media pointer only (not a primary source); use solely to locate the underlying official document.",
-        "Sep 2026 report on Indian MoP approval for India-to-Nepal supply (Sep-Dec 2026) over named cross-border lines with hours-per-day limit; pointer to MoP/CEA order. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document [reused from 22B:22B-L26]"
+        "Sep 2026 report on Indian MoP approval for India-to-Nepal supply (Sep-Dec 2026) over named cross-border lines with hours-per-day limit; pointer to MoP/CEA order. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document [reused from 22B:22B-L26]",
+        "Locator for MoP/CEA order on India-to-Nepal dry-season supply with hour limits - import leg of the banking/swap model"
       ],
       "found_by": [
         "22B",
         "04A",
         "05A",
         "22E",
-        "16C"
+        "16C",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -7783,6 +8143,19 @@
       ],
       "found_by": [
         "18C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://search.worldbank.org/api/v2/projects?countrycode_exact=NP&format=json&rows=500",
+      "title": "World Bank Projects API - Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Machine-readable project fields (boardapprovaldate, closingdate, totalcommamt, status, sector) for automated extraction. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -8184,6 +8557,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://thefinancialexpress.com.bd/trade/bangladesh-nepal-india-sign-tripartite-power-trading-deal",
+      "title": "Bangladesh, Nepal, India sign tripartite power trading deal (The Financial Express, Bangladesh)",
+      "publisher": "The Financial Express (Dhaka)",
+      "source_id": null,
+      "contains": [
+        "Bangladesh-side news locator for the tripartite agreement; points to BPDB records"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://thehimalayantimes.com/business/joint-steering-committee-meeting-advances-nepalindia-energy-cooperation",
       "title": "Joint Steering Committee meeting advances Nepal-India energy cooperation",
       "publisher": "The Himalayan Times (secondary; locating aid only)",
@@ -8191,12 +8577,14 @@
       "contains": [
         "Report on the July 2026 Nepal-India JSC and JWG meetings on power sector cooperation (Pokhara); points to the agreed minutes held by MoEWRI Nepal and MoP India, which must be retrieved",
         "News locator only: JSC outcomes on power trade; signed minutes required",
-        "News locator of JSC meeting; minutes must be retrieved from MoEWRI/MoP"
+        "News locator of JSC meeting; minutes must be retrieved from MoEWRI/MoP",
+        "Locator for JSC/JWG minutes - the documented bilateral forum where arrangement terms are discussed"
       ],
       "found_by": [
         "17A",
         "04A",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -8222,14 +8610,16 @@
         "Hazard-level classification for river flood at national and sub-national level (qualitative class, not exposure value)",
         "Hazard classification for river flood in Nepal by district; context for exposure, not treaty evidence",
         "Qualitative river-flood hazard class by administrative unit (16B lead L35)",
-        "Qualitative hazard class for river flood (national/sub-national); not a loss or exposure value"
+        "Qualitative hazard class for river flood (national/sub-national); not a loss or exposure value",
+        "Flood hazard classes to flag hazard exposure of fast-growing secondary cities (with 13A). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "16A",
         "16B",
         "17E",
         "25C",
-        "13A"
+        "13A",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -8239,10 +8629,12 @@
       "publisher": "GFDRR / World Bank",
       "source_id": "thinkhazard",
       "contains": [
-        "Qualitative landslide hazard class by district"
+        "Qualitative landslide hazard class by district",
+        "Landslide hazard class by district for overlay with SRN (exposure of road links, shared with 13A exposed_assets). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "13A"
+        "13A",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -8611,11 +9003,13 @@
       "source_id": "unctad_rmt",
       "contains": [
         "Full RMT 2025 (data January 2024-June 2025): maritime trade volumes, chokepoint transits (Suez, Bab el-Mandeb, Hormuz), freight rate indices (container, tanker), port congestion",
-        "Freight rate indices and port performance (India gateway ports) - ocean leg of landed cost"
+        "Freight rate indices and port performance (India gateway ports) - ocean leg of landed cost",
+        "Ocean freight rate indices to South Asian gateways (for the ocean leg of door-to-port costs; owned by 21B/05C). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "19C",
-        "05C"
+        "05C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -8832,6 +9226,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://washdata.org/data/household",
+      "title": "WHO/UNICEF JMP household WASH estimates",
+      "publisher": "WHO/UNICEF Joint Monitoring Programme",
+      "source_id": null,
+      "contains": [
+        "Safely managed / basic water and sanitation service ladders, urban vs rural, Nepal (calendar year). URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://whc.unesco.org/en/soc/4146/",
       "title": "State of Conservation (SOC 2021) Sagarmatha National Park (Nepal)",
       "publisher": "UNESCO World Heritage Centre",
@@ -8980,13 +9387,15 @@
         "Nepal sovereign projects, climate finance tracking (adaptation/mitigation), commitments vs disbursements; country partnership strategy",
         "Links to Nepal project list (active loans, grants, TA) and Member Fact Sheet with cumulative lending",
         "Project list filterable by TA (knowledge and support TA, transaction TA)",
-        "RRPs and sector assessments for Nepal power distribution and transmission projects: unit investment costs, reliability indices, industrial-corridor supply issues. URL from general knowledge — unverified."
+        "RRPs and sector assessments for Nepal power distribution and transmission projects: unit investment costs, reliability indices, industrial-corridor supply issues. URL from general knowledge — unverified.",
+        "Transport sector assessments linked to CPS 2025-2029 and SASEC projects; road asset management data. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "25D",
         "26A",
         "26E",
-        "05B"
+        "05B",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -9030,6 +9439,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://www.adb.org/projects/country/nep",
+      "title": "ADB projects in Nepal (project data sheets, PCRs, extended annual review reports)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": [
+        "Project completion reports (PCRs): appraisal vs actual cost, original vs actual closing, reasons for delay; loan approval to effectiveness. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://www.adb.org/publications/assessing-costs-climate-change-and-adaptation-south-asia",
       "title": "ADB (2014) Assessing the Costs of Climate Change and Adaptation in South Asia",
       "publisher": "Asian Development Bank",
@@ -9043,17 +9465,32 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://www.adb.org/site/evaluation/main",
+      "title": "ADB Independent Evaluation Department - validation reports and Nepal country assistance program evaluations",
+      "publisher": "Asian Development Bank IED",
+      "source_id": "adb_nepal",
+      "contains": [
+        "PCR validation reports (PVRs) and country program evaluations for Nepal with time/cost overrun assessments. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://www.adb.org/sites/default/files/institutional-document/1058276/cps-nep-2025-2029.pdf",
       "title": "Country Partnership Strategy: Nepal, 2025-2029",
       "publisher": "ADB",
       "source_id": "adb_nepal",
       "contains": [
         "CPS: strategic priorities, indicative resource envelope (ADF/OCR, concessional vs regular), lending modalities, alignment with 16th Plan; ADB calendar year basis",
-        "ADB crisis-response and disaster-resilience provisions for Nepal; contingent financing mentions"
+        "ADB crisis-response and disaster-resilience provisions for Nepal; contingent financing mentions",
+        "Portfolio performance (contract awards, disbursement ratios, problem projects) and lessons. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "26A",
-        "27D"
+        "27D",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -9091,12 +9528,14 @@
       "contains": [
         "Background on Nepal's transit corridors and logistics costs via Indian ports (project appraisal vintage to be confirmed)",
         "Transit corridor logistics costs via Indian ports (vintage to confirm)",
-        "Economic analysis of cross-border transport investment; completion/evaluation report to be located (reused from 19C)"
+        "Economic analysis of cross-border transport investment; completion/evaluation report to be located (reused from 19C)",
+        "Transport sector assessment for Nepal, SASEC corridor road condition and traffic, trade facilitation baseline. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "19C",
         "05C",
-        "04C"
+        "04C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -9136,12 +9575,16 @@
       "contains": [
         "Linked documents list incl. indicative lending and non-lending programme, country operations business plan pipeline",
         "Indicative non-lending (TA) programme",
-        "Linked documents incl. any disaster risk financing assessment"
+        "Linked documents incl. any disaster risk financing assessment",
+        "Index to sector assessment summaries incl. transport and urban for CPS 2025-2029. reused from shared lead register (research/sources/source_leads.json)",
+        "Index to urban sector assessment summary for CPS 2025-2029 (urban water, sanitation, solid waste). reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "26A",
         "26E",
-        "27D"
+        "27D",
+        "06A",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -9296,10 +9739,12 @@
       "publisher": "AIIB",
       "source_id": "aiib",
       "contains": [
-        "Project preparatory grant details"
+        "Project preparatory grant details",
+        "Project preparation document with municipal infrastructure baseline for participating municipalities. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "26A"
+        "26A",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -9449,6 +9894,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://www.bpdb.gov.bd",
+      "title": "Bangladesh Power Development Board",
+      "publisher": "Bangladesh Power Development Board",
+      "source_id": "bpdb_bd",
+      "contains": [
+        "BPDB annual reports: import sources and purchase cost by source - Bangladesh buyer's outside option P_ALT_BD [URL from general knowledge - unverified]"
+      ],
+      "found_by": [
+        "27B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://www.britannica.com/event/2026-Iran-war",
       "title": "2026 Iran war",
       "publisher": "Encyclopaedia Britannica",
@@ -9545,7 +10003,8 @@
         "Regulatory terms for cross-border trade (scheduling, transmission charges, market participation)",
         "Rules on transmission charges and losses applicable to cross-border transactions, scheduling, deviation settlement and exchange participation - components that convert an exchange price into a Nepal-border netback.",
         "Charges applicable to cross-border schedules (transmission charges and losses, trading margin rules, deviation settlement) - deductions from exchange price to Nepal-border netback. Shared with 22E-L13.",
-        "Regulation text and notification date"
+        "Regulation text and notification date",
+        "Transmission charges and losses applicable to cross-border schedules, scheduling, deviation settlement, trading-licensee role - parameters C_TX_IN, deviation penalty terms"
       ],
       "found_by": [
         "17A",
@@ -9553,7 +10012,8 @@
         "04A",
         "22E",
         "05B",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -9563,10 +10023,12 @@
       "publisher": "Central Electricity Regulatory Commission, India",
       "source_id": null,
       "contains": [
-        "Regulator's reasoning and stakeholder comments (incl. any from Nepali entities) on cross-border rules"
+        "Regulator's reasoning and stakeholder comments (incl. any from Nepali entities) on cross-border rules",
+        "Regulator's stated rationale for cross-border charge allocation (documented rationale only; not a statement of government intent)"
       ],
       "found_by": [
-        "17A"
+        "17A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -9578,12 +10040,14 @@
       "contains": [
         "Indian FY2023-24 (April-March) annual and monthly exchange price levels by segment, price-duration, cross-border trade with Nepal/Bhutan/Bangladesh",
         "Indian FY2023-24 cross-border trade with Nepal/Bhutan/Bangladesh",
-        "Indian FY2023-24 monthly exchange prices by segment and cross-border trade with Nepal - seasonal price baseline."
+        "Indian FY2023-24 monthly exchange prices by segment and cross-border trade with Nepal - seasonal price baseline.",
+        "Indian FY2023-24 monthly prices by segment, price-duration, cross-border trade with Nepal"
       ],
       "found_by": [
         "22B",
         "05A",
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -9767,10 +10231,12 @@
       "publisher": "Democracy Resource Center Nepal (hosting); original author to confirm",
       "source_id": "academic",
       "contains": [
-        "Secondary-hosted census document (likely preliminary results or census methodology); use only to cross-check NSO originals; not a primary source. Search-located in r1 (single WebSearch); identity and content to verify on retrieval."
+        "Secondary-hosted census document (likely preliminary results or census methodology); use only to cross-check NSO originals; not a primary source. Search-located in r1 (single WebSearch); identity and content to verify on retrieval.",
+        "Mirror of preliminary census 2021 report; use only to locate tables; final results from NSO take precedence. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "14B"
+        "14B",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -9870,6 +10336,32 @@
       ],
       "found_by": [
         "13C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.dudbc.gov.np",
+      "title": "Department of Urban Development and Building Construction, Nepal",
+      "publisher": "DUDBC, Nepal",
+      "source_id": null,
+      "contains": [
+        "National Urban Development Strategy (NUDS 2017), urban infrastructure investment plans, new town projects. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.dwssm.gov.np",
+      "title": "Department of Water Supply and Sewerage Management, Nepal",
+      "publisher": "DWSSM, Nepal",
+      "source_id": null,
+      "contains": [
+        "Sector status reports, urban water supply and sewerage coverage, scheme lists incl. Melamchi-dependent Kathmandu Valley service. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -10039,12 +10531,14 @@
       "contains": [
         "PPA rate approvals, tariff orders, annual reports with licence/PPA counts. URL from general knowledge - unverified. Not in source catalog - proposed to 00A.",
         "Index of tariff orders (retail consumer tariff by year), PPA rate approvals (NEA purchase rate from IPPs by season - marginal generation cost reference), bulk-supply and export-related decisions, ERC annual reports. URL from general knowledge - unverified.",
-        "Tariff-order history (vintages for tariff time series), cost-of-service annexes if published, distribution performance/reliability standards if issued, ERC annual reports. URL from general knowledge — unverified."
+        "Tariff-order history (vintages for tariff time series), cost-of-service annexes if published, distribution performance/reliability standards if issued, ERC annual reports. URL from general knowledge — unverified.",
+        "PPA rate approvals (NEA purchase rates from IPPs by season) - NEA's acquisition cost C_PPA when reselling IPP energy under an export contract; transmission-tariff determinations for Nepal-side lines"
       ],
       "found_by": [
         "05A",
         "22E",
-        "05B"
+        "05B",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -10714,7 +11208,9 @@
         "Northern crossing disruption (2026) - hazard context for northern route (reused from 04B)",
         "Reported late-August 2026 Kyirong/Rasuwa event account; UNVERIFIED event pointer; not retrieved",
         "Hazard event affecting northern tourism/trade routes (Langtang/Rasuwa)",
-        "ICIMOD account of the 2026 Kyirong-Rasuwa cross-border flood/debris event; damage to Rasuwagadhi-Kerung border infrastructure and hydropower in the Trishuli/Bhote Koshi corridor [reused from 16A:L34]"
+        "ICIMOD account of the 2026 Kyirong-Rasuwa cross-border flood/debris event; damage to Rasuwagadhi-Kerung border infrastructure and hydropower in the Trishuli/Bhote Koshi corridor [reused from 16A:L34]",
+        "Event note on 2026 flood in the Bhote Koshi-Trishuli corridor (Rasuwagadhi-Kerung); affected road/border infrastructure to be confirmed from DoR/BIPAD records; no values taken. reused from shared lead register (research/sources/source_leads.json)",
+        "Event note on 2026 flood in the Bhote Koshi-Trishuli corridor; affected hydropower/road/bridge assets to confirm from primary records; no values taken. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "16A",
@@ -10730,7 +11226,9 @@
         "04C",
         "13A",
         "12C",
-        "16C"
+        "16C",
+        "06A",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -10946,12 +11444,14 @@
       "contains": [
         "DAM area clearing prices by bidding area (INR/MWh), 15-minute blocks from April 2022, exportable by delivery period - basis for seasonal and time-of-day profile",
         "DAM area prices by 15-minute block (INR/MWh) - aligns seasonal export value with 05A seasonal surplus (shared with 22B)",
-        "DAM area clearing prices (INR/MWh) by 15-minute block and bidding area - upper reference for export value; re-aggregated to Nepali months and wet/dry seasons (shared with 22B)."
+        "DAM area clearing prices (INR/MWh) by 15-minute block and bidding area - upper reference for export value; re-aggregated to Nepali months and wet/dry seasons (shared with 22B).",
+        "DAM area clearing prices INR/MWh by 15-minute block - buyer outside option P_ALT and seller spot outside option (P_IEX)"
       ],
       "found_by": [
         "22B",
         "05A",
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -10976,12 +11476,14 @@
       "contains": [
         "G-DAM prices for renewable/hydro power (INR/MWh); segment relevant if Nepali hydro qualifies as green",
         "Market value of green power in India by block - links technology costs to realised prices (shared with 22B)",
-        "G-DAM prices (INR/MWh) by block - sensitivity if Nepali hydro is sold as green power."
+        "G-DAM prices (INR/MWh) by block - sensitivity if Nepali hydro is sold as green power.",
+        "G-DAM prices INR/MWh - green-attribute value in buyer's outside option"
       ],
       "found_by": [
         "22B",
         "22C",
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -10992,11 +11494,13 @@
       "source_id": "iex_india",
       "contains": [
         "HP-DAM prices for high-cost generation (INR/MWh); relevant to peak-hour value of storage hydro",
-        "HP-DAM prices (INR/MWh) - reference for dry-season evening-peak import cost ceiling."
+        "HP-DAM prices (INR/MWh) - reference for dry-season evening-peak import cost ceiling.",
+        "HP-DAM prices INR/MWh - peak-block value and dry-season import cost ceiling"
       ],
       "found_by": [
         "22B",
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -11020,11 +11524,13 @@
       "source_id": "iex_india",
       "contains": [
         "RTM/intra-day/TAM trade summaries; contract-type price comparison",
-        "RTM/TAM prices - sensitivity for export sales outside DAM."
+        "RTM/TAM prices - sensitivity for export sales outside DAM.",
+        "Term-ahead and real-time prices - reference for contract vs spot comparisons"
       ],
       "found_by": [
         "22B",
-        "22E"
+        "22E",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -11240,10 +11746,12 @@
       "publisher": "International Monetary Fund",
       "source_id": "imf_article_iv",
       "contains": [
-        "Method only: 15-institution PIMA framework; Nepal PIMA report itself not located in r1."
+        "Method only: 15-institution PIMA framework; Nepal PIMA report itself not located in r1.",
+        "PIMA institution definitions (appraisal, selection, portfolio management, maintenance funding) for a structured delivery-capacity assessment. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "02B"
+        "02B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -11482,10 +11990,12 @@
       "publisher": "IMF",
       "source_id": "imf_article_iv",
       "contains": [
-        "BoP tables with FDI projections and historical FDI; structural benchmarks on investment climate"
+        "BoP tables with FDI projections and historical FDI; structural benchmarks on investment climate",
+        "PIMA findings/action plan; capital budget execution; project selection and multi-year commitments. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "12B"
+        "12B",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -11989,12 +12499,14 @@
       "contains": [
         "Independent analysis of the January 2024 agreement terms; tier-7 interpretation, not a status source",
         "Ex-ante assessment of the long-term power trade agreement (not ex-post evidence) (reused from 17A)",
-        "Academic commentary describing the agreement; ex-ante, not a primary text"
+        "Academic commentary describing the agreement; ex-ante, not a primary text",
+        "Tier-7 interpretation of the January 2024 agreement; used only as a locator and for the list of contract features to verify"
       ],
       "found_by": [
         "17A",
         "04C",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -12324,6 +12836,32 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://www.mopit.gov.np",
+      "title": "Ministry of Physical Infrastructure and Transport, Nepal - annual progress and national pride project status",
+      "publisher": "Ministry of Physical Infrastructure and Transport, Nepal",
+      "source_id": null,
+      "contains": [
+        "Annual progress reports for roads, railways, national pride transport projects (Mid-Hill, Postal/Hulaki, Kathmandu-Terai Expressway, Kaligandaki corridor), budget vs physical progress, Nepal FY. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.myrepublica.nagariknetwork.com/news/npc-recommends-revising-national-pride-project-list-over-escalating-costs-a-20-61.html",
+      "title": "NPC urges downsizing of national pride projects amid rising costs",
+      "publisher": "myRepublica",
+      "source_id": "academic",
+      "contains": [
+        "located by the single r1 WebSearch (2026-09-27); secondary pointer only, no values taken from snippet; points to an NPC review of the pride-project list (primary NPC document to locate)."
+      ],
+      "found_by": [
+        "06C"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://www.nature.com/articles/s41558-017-0049-x",
       "title": "Huss and Hock (2018) Global-scale hydrological response to future glacier mass loss, Nature Climate Change 8",
       "publisher": "Nature Climate Change",
@@ -12459,7 +12997,8 @@
         "Nepal FY energy balance with monthly tables: exports to India/Bangladesh and imports from India by route/market (kWh 'units' and NPR revenue/cost) - basis for realised export netback and import cost by season; energy sold by consumer category (industrial GWh and NPR revenue) - realised average industrial tariff; system losses; spill/energy not evacuated if reported; average PPA purchase cost.",
         "Per Nepal FY: energy sold and revenue by consumer category (industrial GWh and NPR -> realised average industrial tariff incl. demand charges); export and import energy and NPR by route and month (-> realised export price, shared with 22E P_EXP); system losses; number of industrial consumers; distribution-centre performance; dedicated/trunk-line feeders; outage and interruption statistics if reported.",
         "Implementation evidence for power agreements (export sales by destination, approvals received)",
-        "PPA-based IPP structure outcomes in Nepal (IPP capacity, PPAs signed)"
+        "PPA-based IPP structure outcomes in Nepal (IPP capacity, PPAs signed)",
+        "Nepal FY monthly energy balance: exports by route/market and destination, imports from India, export revenue (realised netback P_EXP), IPP purchase cost, spill"
       ],
       "found_by": [
         "16A",
@@ -12477,7 +13016,8 @@
         "22E",
         "05B",
         "27A",
-        "27C"
+        "27C",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -12490,13 +13030,15 @@
         "Other NEA reports incl. system operation / power trade reports",
         "System operation / power trade reports; possible monthly and daily load-dispatch data and spill (energy not evacuated) records",
         "System operation / power trade reports: monthly/daily export and import schedules, hours when cross-border transfer limit or approved quantum binds, spill records - determines which seasonal regime (spill, export-marginal, import-marginal) applies.",
-        "System-operation reports: monthly peak demand, import/export schedules, forced outages and grid disturbances (system-wide blackouts), frequency/voltage events - input to reliability baseline."
+        "System-operation reports: monthly peak demand, import/export schedules, forced outages and grid disturbances (system-wide blackouts), frequency/voltage events - input to reliability baseline.",
+        "Hours/months when cross-border transfer limit or approved quantum binds; import/export schedules"
       ],
       "found_by": [
         "22B",
         "05A",
         "22E",
-        "05B"
+        "05B",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -12561,11 +13103,13 @@
       "source_id": "npc_nepal",
       "contains": [
         "Summary tables of damage and loss by sector (social, productive, infrastructure, cross-cutting), public/private split, recovery needs; NPR (FY2014/15 prices) and USD conversion rate used; macro impact on FY2014/15 growth",
-        "Documented precedent of PDNA procedure (government-led with UN/EU/WB/ADB) and coordination arrangements after a major disaster"
+        "Documented precedent of PDNA procedure (government-led with UN/EU/WB/ADB) and coordination arrangements after a major disaster",
+        "Damage vs loss definitions for infrastructure capital-stock shocks; reconstruction timelines as a lag reference class. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "13A",
-        "27D"
+        "27D",
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -13032,14 +13576,16 @@
         "Same as full text; PDF version for hashing",
         "FY2025/26 policy statement: exchange-rate regime (NPR-INR peg), reserve-adequacy target (months of imports), inflation ceiling, private credit growth target, corridor rates, prudential measures",
         "Statement of the exchange-rate regime (NPR-INR peg) in force; needed to document the conversion basis and peg-change sensitivity.",
-        "Statement of the NPR/INR peg regime in force (needed to document the conversion basis)."
+        "Statement of the NPR/INR peg regime in force (needed to document the conversion basis).",
+        "Statement of the NPR-INR peg regime - basis for treating INR-denominated contract prices as NPR-stable (peg-change is a scenario assumption)"
       ],
       "found_by": [
         "20A",
         "03A",
         "03B",
         "22E",
-        "05B"
+        "05B",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -13226,13 +13772,15 @@
         "Daily NRB reference buying/selling rates for USD and INR (fixed) and other currencies; export function for date ranges",
         "Daily NRB reference buying/selling rates for USD and INR (INR fixed under the peg); date-range export",
         "Daily NRB reference buying/selling rates for INR (fixed under the peg) and USD with date-range export - NPR_per_INR and NPR_per_USD conversion for each period.",
-        "Daily buying/selling reference rates NPR per INR (peg) and NPR per USD; middle rate averaged over the months of the tariff/price comparison. Shared with 22E-L19."
+        "Daily buying/selling reference rates NPR per INR (peg) and NPR per USD; middle rate averaged over the months of the tariff/price comparison. Shared with 22E-L19.",
+        "NPR/INR peg reference rate FX_INR and NPR/USD by date"
       ],
       "found_by": [
         "20B",
         "03A",
         "22E",
-        "05B"
+        "05B",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -13451,6 +13999,19 @@
       "status": "not_fetched"
     },
     {
+      "url": "https://www.nwash.gov.np",
+      "title": "National WASH Management Information System (NWASH)",
+      "publisher": "Ministry of Water Supply / DWSSM, Nepal",
+      "source_id": null,
+      "contains": [
+        "Water supply scheme inventory and functionality by local level; coverage by local-level type. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
+      ],
+      "status": "not_fetched"
+    },
+    {
       "url": "https://www.ocr.gov.np",
       "title": "Office of Company Registrar",
       "publisher": "Office of Company Registrar, Nepal",
@@ -13621,11 +14182,13 @@
       "source_id": null,
       "contains": [
         "Launch of final NEP (Transmission); pointer to final document and cross-border totals",
-        "Pointer to final NEP Transmission document and cross-border totals"
+        "Pointer to final NEP Transmission document and cross-border totals",
+        "Pointer to final NEP (Transmission) and cross-border totals"
       ],
       "found_by": [
         "22B",
-        "05A"
+        "05A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -13670,13 +14233,15 @@
         "Official release on an India-Nepal rail/transit arrangement (date and instrument to record on retrieval)",
         "Release on rail-services/transit amendment (letter of exchange); date of last transit-related revision",
         "Signatory institutions for rail-transit amendment (reused from 04A)",
-        "Official release on rail-connectivity amendment/letter of exchange: date and instrument name"
+        "Official release on rail-connectivity amendment/letter of exchange: date and instrument name",
+        "Rail transit instrument (date on release), routes covered (e.g. Jogbani-Biratnagar); status of rail freight access. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "17A",
         "04A",
         "04C",
-        "27A"
+        "27A",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -13804,7 +14369,8 @@
         "Indian exchange-control rules for INR transactions with Nepal (settlement currency, currency-note limits)",
         "INR settlement rules for Nepal trade (reused from 04A)",
         "India-side FX rules for payments to/from Nepal residents, relevant to India-market digital services receipts.",
-        "Unilateral Indian exchange-control rules applicable to Nepal; version date"
+        "Unilateral Indian exchange-control rules applicable to Nepal; version date",
+        "Currency of settlement and remittance rules for India-Nepal transactions - settlement-currency constraint on contract design"
       ],
       "found_by": [
         "16A",
@@ -13815,7 +14381,8 @@
         "04A",
         "04C",
         "08C",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -13859,6 +14426,19 @@
       ],
       "found_by": [
         "12C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.roadsboard.org.np",
+      "title": "Roads Board Nepal - annual reports and road maintenance fund",
+      "publisher": "Roads Board Nepal",
+      "source_id": null,
+      "contains": [
+        "Road Maintenance Fund revenue (fuel levy, tolls, vehicle registration), maintenance allocation vs requirement for SRN and local roads, Nepal FY. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06C"
       ],
       "status": "not_fetched"
     },
@@ -14015,13 +14595,15 @@
         "Programme news and documents on BBIN energy trade and transport corridors (Nepal-Bangladesh links); locating aid for primary agreements",
         "BBIN Motor Vehicles Agreement process documents and news; SASEC operational plans; locating aid for BBIN status",
         "SASEC/BBIN project records and Nepal nodal agencies (reused from 17C/17D)",
-        "Trilateral/regional power and transport records (cross-ref to 17C/17D)"
+        "Trilateral/regional power and transport records (cross-ref to 17C/17D)",
+        "BBIN energy trade and corridor documents; locator for regional wheeling studies"
       ],
       "found_by": [
         "17C",
         "17D",
         "04C",
-        "27A"
+        "27A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -14318,10 +14900,12 @@
       "publisher": "The DHS Program / ICF",
       "source_id": "dhs",
       "contains": [
-        "Machine-readable NDHS 2001-2022 indicators by province, residence, and caste/ethnicity for asset-ownership and women's empowerment indicators. URL from general knowledge — unverified."
+        "Machine-readable NDHS 2001-2022 indicators by province, residence, and caste/ethnicity for asset-ownership and women's empowerment indicators. URL from general knowledge — unverified.",
+        "NDHS indicators by residence and province, 2001-2022, for trends. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
-        "14B"
+        "14B",
+        "06B"
       ],
       "status": "not_fetched"
     },
@@ -14467,7 +15051,9 @@
         "Compilation of trade, transit and related agreements (incl. rail services, unauthorised-trade agreement); used for agreement inventory and last-revision dates",
         "Transit procedures that generate fixed landed-cost components (bonds, documentation, routing rules)",
         "Compilation of treaty, transit, unauthorised-trade and rail-services texts with amendments (reused from 04A)",
-        "Compiled texts incl. transit protocol, memorandum, letters of exchange, rail-services agreement, unauthorised-trade agreement; dates of each instrument"
+        "Compiled texts incl. transit protocol, memorandum, letters of exchange, rail-services agreement, unauthorised-trade agreement; dates of each instrument",
+        "Legal basis of transit routes, designated ports and rail access (incl. letters of exchange). reused from shared lead register (research/sources/source_leads.json)",
+        "Transit protocol: routes, points, fees/charges, customs sealing and guarantee requirements - baseline terms against which any hypothetical transit arrangement is compared"
       ],
       "found_by": [
         "17A",
@@ -14475,7 +15061,9 @@
         "04A",
         "05C",
         "04C",
-        "27A"
+        "27A",
+        "06A",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -14861,11 +15449,13 @@
       "source_id": null,
       "contains": [
         "Current multilateral framework for LLDC transit, trade facilitation, structural transformation; context for which transit constraints are policy-addressable",
-        "Multilateral commitments on transit rights of LLDCs; legal-normative context for Nepal's access to Bangladeshi ports (not a bilateral right)"
+        "Multilateral commitments on transit rights of LLDCs; legal-normative context for Nepal's access to Bangladeshi ports (not a bilateral right)",
+        "Multilateral normative commitments on LLDC transit - context for transit-state obligations (non-binding framing)"
       ],
       "found_by": [
         "01B",
-        "17C"
+        "17C",
+        "27B"
       ],
       "status": "not_fetched"
     },
@@ -14974,12 +15564,14 @@
       "contains": [
         "Nepal's dry ports/ICDs and their gateway ports (Kolkata/Haldia, Visakhapatnam), rail and road linkages; vintage to be confirmed",
         "Description of dry ports and ICPs on India border; operational status",
-        "Dry ports/ICDs, gateway ports and rail/road linkages"
+        "Dry ports/ICDs, gateway ports and rail/road linkages",
+        "Dry-port inventory, designated ports under the Intergovernmental Agreement on Dry Ports, operating model and capacity; date of presentation to verify. reused from shared lead register (research/sources/source_leads.json)"
       ],
       "found_by": [
         "19C",
         "04A",
-        "05C"
+        "05C",
+        "06A"
       ],
       "status": "not_fetched"
     },
@@ -15332,6 +15924,19 @@
       "found_by": [
         "26A",
         "26E"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldpop.org",
+      "title": "WorldPop gridded population (Nepal)",
+      "publisher": "WorldPop, University of Southampton",
+      "source_id": null,
+      "contains": [
+        "Gridded population by year for functional-area delineation and growth cross-check against census. URL from general knowledge — unverified"
+      ],
+      "found_by": [
+        "06B"
       ],
       "status": "not_fetched"
     },

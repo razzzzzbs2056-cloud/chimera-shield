@@ -1,6 +1,6 @@
 {
   "created_at": "2026-09-27T00:36:38+00:00",
-  "updated_at": "2026-09-27T14:25:20+00:00",
+  "updated_at": "2026-09-27T14:31:37+00:00",
   "tasks": {
     "00A": {
       "status": "done",
@@ -255,16 +255,52 @@
       "output": "research/findings/05/05C-r1.json"
     },
     "06A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T14:31:36+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T14:31:36+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/06/06A-r1.json"
     },
     "06B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T14:31:36+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T14:31:36+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/06/06B-r1.json"
     },
     "06C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T14:31:37+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T14:31:37+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/06/06C-r1.json"
     },
     "07A": {
       "status": "done",
@@ -1515,8 +1551,20 @@
       "output": "research/findings/27/27A-r1.json"
     },
     "27B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T14:31:37+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T14:31:37+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/27/27B-r1.json"
     },
     "27C": {
       "status": "done",
