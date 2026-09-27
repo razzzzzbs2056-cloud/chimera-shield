@@ -59,7 +59,7 @@ def target_arithmetic_proposal() -> dict:
 
 def scenario_proposal(s: Scenario) -> dict:
     claims = [{"text": f"{sh.id}: {sh.channel} shock to {sh.variable}", "type": "pending" if sh.magnitude is None
-               else ("estimate" if sh.evidence else "assumption"), "value": sh.magnitude, "unit": "percent",
+               else ("estimate" if sh.evidence else "assumption"), "value": sh.magnitude, "unit": sh.unit,
                "observation_ids": sh.evidence} for sh in s.shocks]
     return {
         "id": f"SCN-{s.id}",

@@ -1,0 +1,188 @@
+{
+ "subagent_id": "28D",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T14:48:16+00:00",
+ "summary": "Human-rights and international-law screen of the hypothetical arrangements in 27B/27E (and 27C structures) and the scenario responses in S01-S10. Q1: no proposal is shown to conflict with Nepal's international human-rights or environmental obligations. None is shown to comply either. No treaty obligation or ratification status has been retrieved (OHCHR/ILO/UNTS pending), and the arrangements treat rights only as a 'rights_accountability' channel with unknown direction. Key gaps: hydropower arrangements have no screen for indigenous peoples, FPIC, resettlement or ESIA; seasonal banking, trilateral sale and storage have unassessed transboundary river effects; migrant re-routing and destination diversification lack a destination-safety and fair-recruitment screen; a permit suspension is a two-sided restriction on the right to leave and the right to work; S01 omits airlift capacity for evacuation; S05 has no displacement-protection response; and S02/S10 lack an essential-supplies rights design. Verdict: UNVERIFIED.",
+ "findings": [
+  {
+   "claim": "Q1: No established conflict between any hypothetical arrangement or scenario response and Nepal's international obligations. Compliance cannot be assessed until treaty texts and ratification status are retrieved.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ohchr"
+   ],
+   "observation_ids": [],
+   "note": "Data required: Nepal's ratification and reservation status for ICCPR, ICESCR, ICRMW, ILO C169/C181/C189 and the core conventions, the UN Watercourses Convention and the VCCR, from OHCHR indicators, ILO NORMLEX and UNTS, with retrieval dates."
+  },
+  {
+   "claim": "Rights and environmental safeguards appear in 27B/27E only as conflict channels with direction '?'; there is no obligation-level analysis.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "Audit reading of committed files."
+  }
+ ],
+ "data_gaps": [
+  "Treaty ratification status (OHCHR, ILO NORMLEX, UNTS).",
+  "Texts of the Mahakali, Kosi and Gandak treaties from official copies.",
+  "E04 suspension decision text (legal basis, duration).",
+  "Bilateral labour MoU texts (27A AR-28).",
+  "Any Nepal-China hydrological data-sharing instrument."
+ ],
+ "assumptions": [
+  {
+   "id": "28D-A1",
+   "text": "Instruments are named as obligations to check. Nepal's party status is not asserted for any of them.",
+   "basis": "assumption"
+  },
+  {
+   "id": "28D-A2",
+   "text": "Non-binding instruments (UNDRIP, Guiding Principles on Internal Displacement, GCM, Sendai) are listed as standards, not obligations.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "27B",
+   "text": "Add, for HA-1..HA-4, a rights and transboundary-environment feasibility condition that names the instruments (ratification pending). An arrangement should not be FEASIBLE_IF until these conditions are listed."
+  },
+  {
+   "to": "27E",
+   "text": "Add 'rights/transboundary safeguards satisfied' as an explicit FEASIBLE_IF condition, and a rights-based INFEASIBLE_IF trigger (e.g. resettlement without the safeguards required by an applicable instrument), for HA-1..HA-4, SO-01, SO-02, SO-03 and SO-05."
+  },
+  {
+   "to": "23B",
+   "text": "Destination diversification should include a protection screen (recruitment-fee regime, contract enforcement, exit rules, complaint access) before any destination is modelled as a substitute."
+  },
+  {
+   "to": "16C",
+   "text": "S05 needs a displacement-protection response line and S10 a specified humanitarian and social-spending floor; S01 needs the evacuation airlift dependency (19D). These are proposals for human review."
+  },
+  {
+   "to": "15",
+   "text": "For the domestic auditor: L1/L2 checks on any strategy built from 27C structures should include the obligations listed in 28D rights_findings."
+  }
+ ],
+ "uncertainty": "High. No legal text or ratification record has been retrieved. The list of obligations is indicative, not exhaustive.",
+ "specific": {
+  "rights_findings": [
+   {
+    "id": "RD-01",
+    "subject": "27B HA-1..HA-4 and 27C/27E SO-01, SO-02 (hydropower export, banking, interconnector, JV/IPP structures)",
+    "issue": "Rights and safeguards are listed only as a 'rights_accountability' conflict channel with direction '?'. Across 27B, 27C and 27E there are no mentions of indigenous peoples, free prior and informed consent, involuntary resettlement standards or ESIA requirements, and 'resettlement' appears only as a trade-off label.",
+    "obligations_to_check": [
+     "ICESCR (adequate housing, food, water)",
+     "ICCPR",
+     "ILO Convention No. 169 (Indigenous and Tribal Peoples)",
+     "UNDRIP (non-binding)",
+     "Nepal Constitution fundamental rights",
+     "Environment Protection Act/Rules (EIA)",
+     "Land Acquisition Act",
+     "lender standards if DFI-financed (e.g. IFC Performance Standards 5 and 7)"
+    ],
+    "ratification_status": "PENDING: Nepal's ratification status of each instrument must be retrieved from OHCHR/ILO NORMLEX/UNTS; none is asserted here.",
+    "finding": "No established conflict. Compliance is unassessed and the arrangements are UNVERIFIED on rights grounds."
+   },
+   {
+    "id": "RD-02",
+    "subject": "27B HA-2 seasonal banking, HA-3 trilateral sale, S09 storage response",
+    "issue": "Changes in reservoir or plant operation alter the seasonal flows of rivers shared with India and, downstream, Bangladesh. Cross-border environmental and livelihood effects (fisheries, sediment, irrigation) are not addressed. The G6 check is unmet.",
+    "obligations_to_check": [
+     "Mahakali Treaty, Kosi and Gandak agreements (texts via 25B leads; verify by hash against official copies)",
+     "customary international-law duties on transboundary harm and transboundary EIA (ICJ jurisprudence; to locate and cite)",
+     "UN Watercourses Convention (Nepal's party status pending; not asserted)"
+    ],
+    "finding": "Unassessed. Required before any arrangement is marked FEASIBLE_IF without qualification."
+   },
+   {
+    "id": "RD-03",
+    "subject": "27C/27E SO-05 training-plus-migration partnership; S01 response 're-routing of migrant labour to alternative destinations'; S06 response 'destination diversification'",
+    "issue": "Re-routing workers can move them to destinations with weaker protection. Recruitment-fee, contract-substitution and passport-retention risks, and exit or visa-sponsorship regimes in some destinations, are not evaluated. MoUs are generally non-binding (27E).",
+    "obligations_to_check": [
+     "ICCPR Art. 12(2) (freedom to leave)",
+     "ICESCR Arts. 6-7 (work, just conditions)",
+     "ILO C181 and C189, ILO fair recruitment principles",
+     "ICRMW (Nepal's status pending)",
+     "Global Compact for Migration (non-binding)",
+     "Foreign Employment Act and rules",
+     "bilateral labour MoUs (27A AR-28)"
+    ],
+    "finding": "The scenario responses carry unassessed rights risks. A destination-safety screen is needed before any re-routing option is evaluated."
+   },
+   {
+    "id": "RD-04",
+    "subject": "Reported 2026 Nepal-side permit suspension (E04) as a scenario response template",
+    "issue": "A deployment ban protects workers from conflict zones but restricts the freedom to leave and the right to work, and bans are known to push migration into irregular channels. This is a two-sided rights trade-off, not a costless safety measure.",
+    "obligations_to_check": [
+     "ICCPR Art. 12(3) (restrictions must be provided by law, necessary and proportionate)",
+     "ICESCR Art. 6"
+    ],
+    "finding": "Any scenario response modelled on the suspension must document legal basis, duration, proportionality and irregular-migration effects. The E04 decision text is pending."
+   },
+   {
+    "id": "RD-05",
+    "subject": "S01 consular/evacuation response (19D); missing aviation capacity (19D challenge)",
+    "issue": "The duty of consular protection and the safety of nationals in conflict zones depend on airlift capacity and host-state cooperation, and S01 does not model the constraint.",
+    "obligations_to_check": [
+     "Vienna Convention on Consular Relations (Nepal's status pending)",
+     "Nepal's constitutional duties towards citizens abroad"
+    ],
+    "finding": "An omitted humanitarian dependency, shared with 28C SC-07(g)."
+   },
+   {
+    "id": "RD-06",
+    "subject": "S05 severe flooding (displacement listed as a second-order effect; no displacement response)",
+    "issue": "The responses cover early warning, reconstruction and climate finance, but not the protection of displaced persons, housing, land and property restitution, or the non-discriminatory allocation of relief. The upstream origin in TAR makes hazard-data sharing a cross-border dependency (25B BA-06, 25C).",
+    "obligations_to_check": [
+     "UN Guiding Principles on Internal Displacement (non-binding)",
+     "Sendai Framework (non-binding)",
+     "ICESCR Art. 11",
+     "Disaster Risk Reduction and Management Act",
+     "any Nepal-China hydrological data-sharing instrument (text pending)"
+    ],
+    "finding": "A protection response is missing. Distributional effects by province and income are pending (L2)."
+   },
+   {
+    "id": "RD-07",
+    "subject": "S02 India transit disruption; S10 'humanitarian responses'",
+    "issue": "Essential-supply shortages (medicines, food, fuel, fertiliser) engage the rights to health and food. S10's humanitarian response is unspecified, and there is no social-spending floor or targeting rule under fiscal stress.",
+    "obligations_to_check": [
+     "ICESCR Arts. 11-12",
+     "transit rights of landlocked states (GATT Art. V; UNCLOS Part X; bilateral transit treaty 1999 per 17A/27A leads)"
+    ],
+    "finding": "A rights-sensitive response design is needed. 27E's HA-5 treatment of multilateral transit law is noted, but its three transit-law leads are self-declared general-knowledge URLs."
+   },
+   {
+    "id": "RD-08",
+    "subject": "27C/27E SO-03 SEZ and SO-10 investment-treaty upgrade",
+    "issue": "SEZ labour regimes (freedom of association, inspection) and ISDS regulatory chill on environmental and labour regulation are listed as opportunity costs but not assessed against obligations.",
+    "obligations_to_check": [
+     "ILO core conventions (Nepal's ratification status pending)",
+     "treaty texts (26D leads)"
+    ],
+    "finding": "Unassessed."
+   }
+  ],
+  "verdict": {
+   "value": "UNVERIFIED",
+   "reasons": [
+    "No treaty obligations or ratification records retrieved.",
+    "Rights/safeguards unassessed for hydropower and migration arrangements.",
+    "Cross-border environmental consequences (G6) unaddressed for HA-2/HA-3/S09.",
+    "Humanitarian dependencies omitted in S01/S05/S10."
+   ]
+  }
+ },
+ "source_leads": [
+  {
+   "url": "https://www.ohchr.org",
+   "title": "Office of the UN High Commissioner for Human Rights (catalog entry 'ohchr')",
+   "publisher": "OHCHR",
+   "source_id": "ohchr",
+   "contains": "Treaty ratification status and UPR documents for Nepal. Root URL from the source catalog (general knowledge, unverified): a document-level URL (status-of-ratification dashboard for Nepal) must be located in r2.",
+   "lead_type": "general_reference_root"
+  }
+ ],
+ "independence_statement": "Agent 28 reports independently to the human reviewer. This file was not reviewed, edited or approved by Agent 00 or Agent 16. No data host was contacted; no web search was run; no numbers were taken from search snippets or memory."
+}

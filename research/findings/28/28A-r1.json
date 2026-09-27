@@ -1,0 +1,451 @@
+{
+ "subagent_id": "28A",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T14:48:16+00:00",
+ "summary": "Source audit of all 58 Division B r1 finding files (16A-27E). Counts below are audit counts over the committed lead lists, not economic data. No finding in Division B carries a fact or estimate: every empirical item is pending, and no source lead has been retrieved, so no international claim is yet traceable to a retrieved, dated primary document (Q1: NO; pending retrieval). Leads are unevenly tiered: most point to tier 1-5 institutions, but news leads and secondary or general-reference hosts remain, and several 2026 developments rest only on them. Independence (Q2): apparent corroboration is often not independent. Examples: one URL cited by many subagents; 16B re-using 16A's lead set; ACLED coding events from media reports; UNCTADstat, WDI, KNOMAD, WDI exchange-rate and IDS series repeating NRB, Nepal customs or PDMO submissions; treaty texts from third-party mirrors carrying the tier-1 source_id 'mofa_nepal'; and 19A's 'lead-level corroboration across tiers', which is based on titles and not on retrieved content. There are also 68 leads marked by their own authors as general-knowledge URLs and many root-domain URLs that identify no document. Pre-2023 URLs are cited for 2026 events (for example the 2021 CEA Designated Authority procedure for E07). Verdict: UNVERIFIED.",
+ "findings": [
+  {
+   "claim": "Q1: Every international claim traceable to a dated primary source - NOT MET. Zero Division B findings are fact/estimate; all empirical items are pending and no lead has been retrieved or hashed. Traceability can only be established in r2 via `leads --fetch`.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "Data required: retrieved raw files (SHA-256) and publication dates for each lead cited in the 16C unverified-events register E01-E11."
+  },
+  {
+   "claim": "Q2: Apparently corroborating sources are frequently not independent (shared URLs across subagents; data series derived from the same NRB/customs/PDMO submissions; media-derived event datasets; mirrors of one treaty text). Multi-agent citation counts ('flagged_by') must not be read as corroboration.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "Audit method rule applied by 28A; independence is judged by data-generating process, not by publisher."
+  },
+  {
+   "claim": "Developments resting only on news or secondary leads (no tier 1-4 primary text located): E04 Gulf permit suspension/resumption (DoFE/MoLESS decision text missing; MoFA leads give only context), E07 Indian approval withholding for additional export to Bangladesh and MoP approval of India-to-Nepal supply (news only; the CEA 2021 procedure is not evidence of a 2026 decision), E08 NTPP expiry/US reciprocal tariffs (single news lead in 16C; statute/proclamation texts not located by 16C though 18A lists US government leads), E09 Malaysia recruitment dispute (news only), E05 Indian steel safeguard / jute ADD (non-official mirrors worldtradescanner/taxguru plus news; Gazette/CBIC/DGTR originals not retrieved).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "Data required: official notices (DoFE, CEA DA orders, US Federal Register/Proclamation, CBIC/DGTR notifications) with dates."
+  },
+  {
+   "claim": "Developments with at least one tier 1-3 primary lead (still unretrieved): E01 Middle East conflict (MoFA Nepal, IOM DTM, UNCTAD, IMF Article IV 2026), E02 LDC extension request (UN documents, CDP crisis assessment, ECOSOC), E03 Rasuwa flood (NDRRMA SitRep, ICIMOD), E06 oil shock (IEA OMR, WB Pink Sheet, NRB CME), E10 WB AI-exposure paper.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mofa_nepal",
+    "iom",
+    "unctad_rmt",
+    "imf_article_iv",
+    "ndrrma",
+    "icimod",
+    "iea",
+    "nrb"
+   ],
+   "observation_ids": []
+  }
+ ],
+ "data_gaps": [
+  "Retrieval of every lead listed in the 16C unverified-events register with raw-file hash and publication date.",
+  "Tier assignment for 214 leads that carry no catalog source_id.",
+  "For each derived series (UNCTADstat, WDI, KNOMAD, IDS, Comtrade reporter data), the reporting source documented so that it is never treated as independent corroboration of NRB/customs/PDMO data. Partner-reported (mirror) Comtrade data is the exception: it is compiled independently."
+ ],
+ "assumptions": [
+  {
+   "id": "28A-A1",
+   "text": "Independence is judged by data-generating process: two series compiled from the same national submission are one source.",
+   "basis": "assumption"
+  },
+  {
+   "id": "28A-A2",
+   "text": "Domain-based tier classification in the audit script is approximate (e.g. NOC treated as Nepal official, IEX as an energy market operator, ACLED/UCDP as academic/independent). Borderline hosts should be reviewed by 00A against the catalog.",
+   "basis": "assumption"
+  },
+  {
+   "id": "28A-A3",
+   "text": "A root-domain URL (e.g. https://bipad.gov.np) is a pointer to an institution, not a lead to a document; it cannot support a claim until a document URL is recorded.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "19A",
+   "text": "Your statement that the 2026 Middle East escalation is 'corroborated at the lead level by independent sources across tiers' is not supportable in r1. Leads were not retrieved. ACLED codes events from media reports, so it is not independent of news. The Britannica lead (19A) is a tertiary general reference and should be removed. Please restate this as 'multiple unretrieved leads from different publishers'."
+  },
+  {
+   "to": "16C",
+   "text": "In the E01-E11 register, 'flagged_by' lists subagents that often cite the same URL (for example the ICIMOD Kyirong-Rasuwa note is cited by nine subagents). Please add a count of distinct primary documents per event, and do not use the number of flagging agents as a strength signal."
+  },
+  {
+   "to": "25B",
+   "text": "Treaty texts from CommonLII, CAWater-Info, FAOLEX and PCA hosts carry source_id 'mofa_nepal' and lead_type 'primary', which overstates their tier. Mark them 'mirror', keep the host as publisher, and verify each by hash against an official copy (MoFA Nepal or the Indian treaty series). The same applies to 27A."
+  },
+  {
+   "to": "16B",
+   "text": "16B's lead list largely duplicates 16A's. Please cite the 16A lead ids instead of copying them so that source counts are not inflated."
+  },
+  {
+   "to": "19E",
+   "text": "Lead title 'Rs 10 billion Lothar depot...' reproduces a headline figure. Titles are allowed, but the figure must not be carried into any claim. Retrieve the NOC primary record instead."
+  },
+  {
+   "to": "00A",
+   "text": "Please add catalog ids (or explicit tier-7/news labels) for the 214 leads without source_id, and add a lead_type field (primary | mirror | secondary | news | general_reference) to the lead schema so that tier inflation can be checked automatically."
+  },
+  {
+   "to": "20B",
+   "text": "WDI PA.NUS.FCRF is compiled from IMF IFS, which draws on NRB data. It can serve as a cross-check of transcription and period conversion, not as independent evidence of the NPR/USD rate. The same applies to 23C's use of WDI remittances/GDP and to 21C/21E/24C's use of UNCTADstat digitally deliverable services."
+  }
+ ],
+ "uncertainty": "High. The counts come from a heuristic domain classifier over committed JSON and do not measure evidence quality. No document was opened. A lead from a high-tier publisher can still point to the wrong table, period or vintage.",
+ "specific": {
+  "source_findings": {
+   "status": "audit of committed lead lists complete; evidentiary status of all claims pending retrieval",
+   "method": "Python audit over research/findings/16..27/*.json: lead domain classification into catalog tiers, news or secondary hosts; duplicate-URL detection across subagents; root-domain detection; self-declared general-knowledge leads; tier-1 source_id on non-government hosts; URL-year check; regex scan of summaries, claims and specific fields for embedded magnitudes. Script: scratchpad lead_audit.py (not committed); rerunnable from committed inputs.",
+   "audit_counts_not_data": {
+    "files": 58,
+    "leads": 1277,
+    "unique_urls": 688,
+    "leads_by_class": {
+     "T1_nepal_official": 320,
+     "T4_foreign_gov_or_central_bank": 205,
+     "T7_academic_think_tank_or_other": 167,
+     "T2_ifi": 162,
+     "T3_un_system": 189,
+     "T6_climate_disaster": 70,
+     "news": 104,
+     "T5_energy_authority_or_market": 45,
+     "secondary_aggregator_or_general_reference": 15
+    },
+    "unique_urls_by_class": {
+     "T5_energy_authority_or_market": 30,
+     "T4_foreign_gov_or_central_bank": 116,
+     "T1_nepal_official": 125,
+     "T7_academic_think_tank_or_other": 117,
+     "news": 55,
+     "T2_ifi": 92,
+     "T3_un_system": 105,
+     "T6_climate_disaster": 37,
+     "secondary_aggregator_or_general_reference": 11
+    },
+    "urls_cited_by_more_than_one_subagent": 287,
+    "leads_without_catalog_source_id": 214,
+    "leads_self_declared_general_knowledge": 68,
+    "tier1_source_id_on_non_government_host": 15
+   },
+   "most_shared_urls": [
+    {
+     "url": "https://www.nea.org.np/annual_report",
+     "subagents": [
+      "16A",
+      "16B",
+      "17C",
+      "21C",
+      "22B",
+      "22D",
+      "22E",
+      "24B",
+      "25E",
+      "27A",
+      "27B",
+      "27C",
+      "27E"
+     ]
+    },
+    {
+     "url": "https://nepaltradeportal.gov.np/",
+     "subagents": [
+      "16A",
+      "16B",
+      "17B",
+      "17C",
+      "17D",
+      "21B",
+      "21D",
+      "27A",
+      "27B",
+      "27E"
+     ]
+    },
+    {
+     "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+     "subagents": [
+      "16A",
+      "16B",
+      "16C",
+      "20C",
+      "20D",
+      "20E",
+      "23C",
+      "26A",
+      "26E",
+      "27D"
+     ]
+    },
+    {
+     "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+     "subagents": [
+      "16A",
+      "16B",
+      "16C",
+      "17B",
+      "17E",
+      "21B",
+      "22D",
+      "25C",
+      "25E"
+     ]
+    },
+    {
+     "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+     "subagents": [
+      "16A",
+      "16B",
+      "20B",
+      "21D",
+      "21E",
+      "22A",
+      "23C",
+      "24C"
+     ]
+    },
+    {
+     "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+     "subagents": [
+      "16A",
+      "16B",
+      "17E",
+      "22D",
+      "25A",
+      "25B",
+      "25C",
+      "25E"
+     ]
+    },
+    {
+     "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+     "subagents": [
+      "16C",
+      "17A",
+      "17C",
+      "22B",
+      "22E",
+      "27A",
+      "27B",
+      "27E"
+     ]
+    },
+    {
+     "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+     "subagents": [
+      "17A",
+      "17C",
+      "22B",
+      "22E",
+      "25B",
+      "27A",
+      "27B",
+      "27E"
+     ]
+    }
+   ],
+   "secondary_or_general_reference_leads": [
+    {
+     "subagent": "16C",
+     "url": "https://taxguru.in/custom-duty/anti-dumping-duty-bangladesh-nepal-jute-products-quantified-notification-24-2026.html"
+    },
+    {
+     "subagent": "16C",
+     "url": "https://worldtradescanner.com/02-Cus(SG)-30.12.2025.htm"
+    },
+    {
+     "subagent": "16C",
+     "url": "https://worldtradescanner.com/23-CBIC%20Circular-07.05.2026.htm"
+    },
+    {
+     "subagent": "16C",
+     "url": "https://www.scconline.com/blog/post/2025/12/03/rbi-revises-fema-export-and-import-of-currency-amendment-rules-2025/"
+    },
+    {
+     "subagent": "17A",
+     "url": "https://www.scconline.com/blog/post/2025/12/03/rbi-revises-fema-export-and-import-of-currency-amendment-rules-2025/"
+    },
+    {
+     "subagent": "19A",
+     "url": "https://www.britannica.com/event/2026-Iran-war"
+    },
+    {
+     "subagent": "23A",
+     "url": "https://www.scribd.com/document/850247409/Document-2024071711480"
+    },
+    {
+     "subagent": "25B",
+     "url": "http://gis.nacse.org/tfdd/tfdddocs/archiveApril2010/111ENG.htm"
+    },
+    {
+     "subagent": "25B",
+     "url": "http://www.cawater-info.net/bk/water_law/pdf/nepal-india-1966.pdf"
+    },
+    {
+     "subagent": "25B",
+     "url": "https://www.commonlii.org/in/other/treaties/INTSer/1959/18.html"
+    },
+    {
+     "subagent": "25D",
+     "url": "https://climatefundsupdate.org/data-dashboard/"
+    },
+    {
+     "subagent": "26D",
+     "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542"
+    },
+    {
+     "subagent": "27A",
+     "url": "http://www.cawater-info.net/bk/water_law/pdf/nepal-india-1966.pdf"
+    },
+    {
+     "subagent": "27A",
+     "url": "https://www.commonlii.org/in/other/treaties/INTSer/1959/18.html"
+    },
+    {
+     "subagent": "27A",
+     "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542"
+    }
+   ],
+   "root_domain_leads_examples": [
+    "http://drrportal.gov.np",
+    "https://api.worldbank.org/v2/",
+    "https://bimstec.org",
+    "https://bipad.gov.np",
+    "https://cea.nic.in",
+    "https://comtradeplus.un.org",
+    "https://customs.gov.np",
+    "https://data-explorer.oecd.org",
+    "https://data-explorer.oecd.org/vis?lc=en&df%5Bds%5D=DcdDisseminateFinalDMZ&df%5Bid%5D=DSD_CRS%40DF_CRS&df%5Bag%5D=OECD.DCD.FSD&dq=DAC..1000.100._T._T.D.Q._T..&lom=LASTNPERIODS&lo=5&to%5BTIME_PERIOD%5D=false",
+    "https://data.bis.org",
+    "https://dda.gov.np/",
+    "https://dhm.gov.np",
+    "https://disclosures.ifc.org",
+    "https://dofe.gov.np",
+    "https://doind.gov.np",
+    "https://english.mofcom.gov.cn",
+    "https://fts.unocha.org",
+    "https://gsp.cgdev.org",
+    "https://gulfmigration.grc.net/",
+    "https://ibn.gov.np",
+    "https://ieg.worldbankgroup.org",
+    "https://lawcommission.gov.np",
+    "https://lib.icimod.org/",
+    "https://lpi.worldbank.org",
+    "https://mof.gov.np"
+   ],
+   "stale_or_mismatched_period_examples": [
+    {
+     "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+     "issue": "Cited by 8 subagents, including as the only non-news lead for E07 (a 2026 decision). It documents the procedure, not the decision."
+    },
+    {
+     "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+     "issue": "2022 news report used by 16A/16B as a lead for a current arrangement; needs a primary G2G text or a current status record."
+    },
+    {
+     "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+     "issue": "Pre-2026 ITC study (April 2022 in file name) used by 16A/16B/18C/21A/21C; its preference-loss estimates predate the 2026 extension request, the US NTPP expiry and the US tariff changes."
+    }
+   ],
+   "non_independent_corroboration": [
+    {
+     "series": "UNCTADstat digitally deliverable services (Nepal)",
+     "derived_from": "Nepal BoP services data (NRB)",
+     "used_by": [
+      "16A",
+      "16B",
+      "21C",
+      "21E",
+      "24C"
+     ],
+     "treatment": "consistency cross-check only"
+    },
+    {
+     "series": "WDI/KNOMAD remittance inflows",
+     "derived_from": "IMF BoP, compiled from NRB",
+     "used_by": [
+      "16A",
+      "16B",
+      "23C"
+     ],
+     "treatment": "consistency cross-check only; the calendar-year basis differs"
+    },
+    {
+     "series": "WDI PA.NUS.FCRF",
+     "derived_from": "IMF IFS, compiled from NRB",
+     "used_by": [
+      "20B"
+     ],
+     "treatment": "consistency cross-check only"
+    },
+    {
+     "series": "WB IDS DT.DOD.DECT.CD",
+     "derived_from": "Debtor Reporting System (PDMO/MoF submissions)",
+     "used_by": [
+      "16A",
+      "16B",
+      "20B",
+      "20C"
+     ],
+     "treatment": "consistency cross-check only"
+    },
+    {
+     "series": "ACLED event data",
+     "derived_from": "media and partner reports",
+     "used_by": [
+      "16C",
+      "19A"
+     ],
+     "treatment": "not independent of the news leads it is cited alongside"
+    },
+    {
+     "series": "IMF 2026 Article IV (cited by 10 subagents)",
+     "derived_from": "NRB/MoF/NSO data plus staff estimates",
+     "used_by": [
+      "16A",
+      "16B",
+      "16C",
+      "20C",
+      "20D",
+      "20E",
+      "23C",
+      "26A",
+      "26E",
+      "27D"
+     ],
+     "treatment": "independent assessment of policy, but not independent of Nepal official data for macro values"
+    },
+    {
+     "series": "UN Comtrade partner-reported (mirror) data",
+     "derived_from": "partner customs",
+     "used_by": [
+      "16A",
+      "16B",
+      "17B",
+      "17D",
+      "18D",
+      "21D"
+     ],
+     "treatment": "genuinely independent of Nepal customs; valid for conflict checks (CIF/FOB and FY/CY differences must be documented)"
+    }
+   ],
+   "snippet_number_compliance": "Scan of summaries, claims, notes and specific fields found no embedded economic magnitudes. All regex hits were ISCO codes, calendar years or the 'US$3T' target label. One lead title (19E) and some URL slugs (e.g. 16C/17A Kathmandu Post URLs) contain headline figures; none is carried into a claim."
+  },
+  "verdict": {
+   "value": "UNVERIFIED",
+   "reasons": [
+    "No Division B claim is linked to a retrieved observation (E1/E4).",
+    "Several 2026 developments (E04, E05, E07, E08, E09) rest only on news or non-official mirrors.",
+    "Corroboration claims (19A, 16C 'lead-corroborated') count non-independent or unretrieved sources.",
+    "Tier inflation: mirror hosts are labelled with a tier-1 source_id (25B, 27A)."
+   ]
+  }
+ },
+ "source_leads": [],
+ "independence_statement": "Agent 28 reports independently to the human reviewer. This file was not reviewed, edited or approved by Agent 00 or Agent 16. No data host was contacted; no web search was run; no numbers were taken from search snippets or memory."
+}

@@ -17,6 +17,7 @@ PPP:     ``PPP_const{YEAR}[_{SCALE}]`` — international dollars at constant PPP
          ``PPP_const{YEAR}_per_person_per_day`` for poverty lines
 Rates:   ``NPR_per_USD``, ``NPR_per_INR``, ``INR_per_USD``
 Prices:  ``{CUR}_per_{kWh|MWh|GWh|tonne|litre|barrel|person|TEU}`` (current prices)
+Shocks:  ``pct_change`` (proportional level change) and ``pp`` (change in a rate), both decimal
 Other:   ``percent``, ``percentage_points``, ``ratio``, ``index``, ``persons``, ``persons_mn``,
          ``persons_k``, ``GWh``, ``MWh``, ``kWh``, ``MW``, ``m3_per_s``, ``tonnes``, ``Mbit_per_s``, ``Gbit_per_s``, ``km``, ``hectares``, ``km2``, ``tonnes_per_hectare``, ``m_we_per_year``, ``days``, ``months``, ``years``, ``count``
 """
@@ -48,6 +49,9 @@ _ENERGY_SCALE = {"kWh": 1e-6, "MWh": 1e-3, "GWh": 1.0}
 _SIMPLE = {
     "percent": ("percent", 1.0),
     "percentage_points": ("percentage_points", 1.0),
+    # scenario shock units (decimal scale): 0.05 = +5% level change / +5 percentage points
+    "pct_change": ("proportional_change", 1.0),
+    "pp": ("rate_change", 1.0),
     "ratio": ("ratio", 1.0),
     "index": ("index", 1.0),
     "persons": ("persons", 1.0),

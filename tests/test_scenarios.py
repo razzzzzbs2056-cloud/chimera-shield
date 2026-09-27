@@ -122,3 +122,34 @@ def test_exposure_register_valid_and_pending():
     for e in reg:
         assert validate_entry(e) == []
         assert e.status == "pending" and e.value is None
+
+
+def test_growth_channel_requires_pp_unit(scs, exposure_ids):
+    raw = copy.deepcopy(scs["S04"].raw)
+    for sh in raw["shocks"]:
+        if sh["channel"] == "aggregate_real_growth":
+            sh["unit"] = "pct_change"
+    assert any("needs unit 'pp'" in p for p in validate_scenario(Scenario(raw), exposure_ids, set(scs)))
+
+
+def test_conflicting_overlap_is_reported_not_silently_dropped():
+    a = _synthetic("A", [_shock("a1", -0.02)])
+    b = _synthetic("B", [_shock("b1", -0.05)])
+    c = _synthetic("C", [], components=["A", "B"])
+    r = run_scenario(c, {"A": a, "B": b, "C": c}, _baseline(), 2030)
+    assert r["shocks"][0]["status"] == "UNRESOLVED_OVERLAP"
+    assert r["requires_review"] and r["overlaps"][0]["kind"] == "conflicting_magnitudes"
+
+
+def test_stacked_distinct_shocks_flagged_for_review():
+    s = _synthetic("A", [_shock("a1", -0.02), dict(_shock("a2", -0.01), duration_years=2)])
+    r = run_scenario(s, {"A": s}, _baseline(), 2030)
+    assert r["stacked_shocks"] and set(r["stacked_shocks"][0]["shock_ids"]) == {"a1", "a2"}
+    assert r["requires_review"]
+
+
+def test_shock_units_are_registered_unit_codes():
+    from src.economic_model.units import parse_unit
+    from src.scenario_engine.engine import SHOCK_UNITS
+    for u in SHOCK_UNITS:
+        parse_unit(u)

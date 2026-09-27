@@ -30,6 +30,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S02": {
@@ -58,6 +61,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S03": {
@@ -76,6 +82,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S04": {
@@ -104,6 +113,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S05": {
@@ -132,6 +144,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S06": {
@@ -150,6 +165,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S07": {
@@ -168,6 +186,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S08": {
@@ -186,6 +207,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S09": {
@@ -204,6 +228,9 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   },
   "S10": {
@@ -297,6 +324,21 @@
         "status": "PENDING_EVIDENCE"
       }
     ],
+    "overlaps": [
+      {
+        "key": [
+          "remittances",
+          "remittances",
+          1,
+          2
+        ],
+        "first": "S01/S01-a",
+        "second": "S04/S04-a",
+        "kind": "duplicate_counted_once"
+      }
+    ],
+    "stacked_shocks": [],
+    "requires_review": false,
     "status": "QUALITATIVE_ONLY"
   }
 }

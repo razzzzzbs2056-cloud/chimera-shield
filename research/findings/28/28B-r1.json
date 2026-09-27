@@ -1,0 +1,302 @@
+{
+ "subagent_id": "28B",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T14:48:16+00:00",
+ "summary": "Competing evidence-based readings for six reported 2026 developments recorded by Division B agents: the Middle East conflict and Gulf labour effects, the LDC deferral request, the Rasuwa flood, Indian approval withholding for power to Bangladesh, Indian import measures, and US tariff changes. None of the developments is verified: each rests on unretrieved leads and some only on news. For each one, two to four readings fit the recorded evidence equally well at this stage. The file lists what would discriminate between them and what each implies for modelling. No probabilities or likelihood rankings are assigned. Main implication: scenarios must not encode motives (E05, E07) or a fixed shock sign (E01 remittances), and origin-side policy must be kept separate from destination-side shocks (E04).",
+ "findings": [
+  {
+   "claim": "E01 + E04 (16C register): 4 competing readings recorded; discriminating evidence pending retrieval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "E02: 3 competing readings recorded; discriminating evidence pending retrieval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "E03: 4 competing readings recorded; discriminating evidence pending retrieval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "E07: 4 competing readings recorded; discriminating evidence pending retrieval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "E05: 4 competing readings recorded; discriminating evidence pending retrieval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "E08: 4 competing readings recorded; discriminating evidence pending retrieval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "No reading is preferred. Ranking them would require retrieved evidence that does not yet exist.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  }
+ ],
+ "data_gaps": [
+  "All discriminating evidence listed per development (primary notices, administrative data series, event analyses).",
+  "Dated text of every policy decision so that timing can be compared with flows."
+ ],
+ "assumptions": [
+  {
+   "id": "28B-A1",
+   "text": "Readings are constructed only from descriptions recorded by agents in r1 files and from the legal and institutional form of the instruments; no new facts are introduced.",
+   "basis": "assumption"
+  },
+  {
+   "id": "28B-A2",
+   "text": "Motives of foreign governments are not modelled; policy actions are carried as states.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "16C",
+   "text": "E04 (Nepal-side permit suspension) is currently classified under S01 (OV-02). Reading B1-R2 supports a joint S01/S06 treatment in S10, as you asked for. Please record S10 without S06 as an open omission."
+  },
+  {
+   "to": "23C",
+   "text": "S01-a calibration must state whether it measures formal (NRB) or total receipts, and must allow a positive short-run response (B1-R3)."
+  },
+  {
+   "to": "25C",
+   "text": "Keep the conflicting news accounts of China-Nepal data sharing side by side, following the conflict rule. Neither is evidence."
+  },
+  {
+   "to": "17A",
+   "text": "Your framing of E05 as an 'import squeeze' implies a motive. Please carry the measure as a policy state and list origin-verification (B5-R2) and trade-remedy mechanics (B5-R3) as alternatives."
+  }
+ ],
+ "uncertainty": "Very high. Every development is unverified. The readings are not exhaustive and not mutually exclusive: several may operate together.",
+ "specific": {
+  "alternative_interpretations": [
+   {
+    "event_ref": "E01 + E04 (16C register); 19A, 19D, 23A, 23B, 23C, 22A",
+    "development_as_recorded_by_agents": "Reported 2026 Middle East escalation (Iran, Gulf states, Hormuz shipping), and a reported Nepal-side suspension (later partial resumption) of labour permits for Gulf/West-Asia destinations.",
+    "status": "UNVERIFIED (16C register); all readings are hypotheses, no probabilities assigned",
+    "competing_readings": [
+     {
+      "id": "B1-R1",
+      "reading": "Destination-demand shock: conflict and economic disruption in host countries reduce demand for Nepali workers and their earnings, so remittances fall with a lag through the migrant stock.",
+      "fits": "The trigger in S01 and the 16C mapping to S01-a/S01-b."
+     },
+     {
+      "id": "B1-R2",
+      "reading": "Origin-side policy shock: much of any fall in new departures reflects Nepal's own permit suspension (E04), not host-country demand. The effect would reverse when permits resume, so it behaves like S06 (a migration restriction) with Nepal as the restricting state.",
+      "fits": "Reported suspension and resumption dates; 16C OV-02 records this as a classification choice."
+     },
+     {
+      "id": "B1-R3",
+      "reading": "Counter-cyclical or precautionary remittances: migrants facing risk send savings home or return with them, so recorded inflows can rise in the short run while the stock falls; a later fall follows. A higher oil price can also raise labour demand in GCC states not directly affected.",
+      "fits": "The same event data; the sign of the near-term effect is ambiguous."
+     },
+     {
+      "id": "B1-R4",
+      "reading": "Channel and measurement shift: disruption to exchange houses, banks or flights moves transfers to informal channels or delays recording, so NRB formal inflows fall more than household receipts (16C OV-11).",
+      "fits": "Formal-versus-total divergence."
+     }
+    ],
+    "evidence_that_would_discriminate": [
+     "DoFE monthly approvals by destination, split into new and re-entry permits, before, during and after the suspension",
+     "NRB monthly remittance inflows, and corridor data where available",
+     "IOM DTM return flows",
+     "NLSS/household-survey receipts versus formal inflows",
+     "GCC labour-market and project-activity data by country",
+     "the dated text of the DoFE/MoLESS suspension and resumption decisions"
+    ],
+    "modelling_implication": "S01 and S06 should be combined in S10 or calibrated jointly (16C request). S01-a must state whether it measures formal or total receipts. The near-term sign of the remittance shock must not be fixed from the conflict narrative alone."
+   },
+   {
+    "event_ref": "E02; 18C, 21A, 26B, 26C",
+    "development_as_recorded_by_agents": "Nepal's reported 2026 request to extend the LDC preparatory period; CDP crisis assessment and ECOSOC handling have leads; no UNGA decision located.",
+    "status": "UNVERIFIED (16C register); all readings are hypotheses, no probabilities assigned",
+    "competing_readings": [
+     {
+      "id": "B2-R1",
+      "reading": "Vulnerability signal: the request reflects deteriorating economic or shock conditions that the CDP crisis assessment documents.",
+      "fits": "The existence of a CDP crisis-assessment lead."
+     },
+     {
+      "id": "B2-R2",
+      "reading": "Transition-management choice: the request aims to secure more preparation time (Smooth Transition Strategy, preference and concessional-finance continuity), possibly alongside another graduating country's request. It is not by itself evidence of weaker fundamentals.",
+      "fits": "Joint ECOSOC handling reported in the news lead."
+     },
+     {
+      "id": "B2-R3",
+      "reading": "Procedural non-event: until the UNGA acts, the graduation date in A/RES/76/8 stands. The request changes nothing legally, and markets and partners may treat it as uncertain.",
+      "fits": "No UNGA decision located (26C)."
+     }
+    ],
+    "evidence_that_would_discriminate": [
+     "UNGA decision text at the 81st session",
+     "CDP crisis-assessment conclusions and any conditions attached",
+     "partner-scheme rules on post-graduation transitions (EU, UK, others) from 18C/21A leads"
+    ],
+    "modelling_implication": "Carry the graduation date as a two-branch dated attribute (16C's proposal is endorsed). S08 must not treat a deferral as granted, and must not read the request as a measured decline in fundamentals."
+   },
+   {
+    "event_ref": "E03; 16A, 17B, 17E, 21B, 22D, 25B, 25C, 25E",
+    "development_as_recorded_by_agents": "Reported late-August 2026 Rasuwa / Bhote Koshi-Trishuli flood and debris flow originating upstream in TAR, affecting a border crossing and hydropower.",
+    "status": "UNVERIFIED (16C register); all readings are hypotheses, no probabilities assigned",
+    "competing_readings": [
+     {
+      "id": "B3-R1",
+      "reading": "Climate-intensified cryosphere hazard (GLOF or extreme precipitation) consistent with the HKH trends documented by ICIMOD/IPCC, supporting a higher hazard frequency in S05.",
+      "fits": "ICIMOD event note leads and the 25A/25C framing."
+     },
+     {
+      "id": "B3-R2",
+      "reading": "Geomorphic event (landslide dam breach or debris flow) whose single-event climate attribution cannot be established without a dedicated study. It shows exposure, not a trend.",
+      "fits": "The same event; attribution requires separate evidence."
+     },
+     {
+      "id": "B3-R3",
+      "reading": "Exposure-driven loss: the size of the damage reflects concentrated siting of hydropower and road assets in a known hazard corridor, which is a planning and insurance issue more than a change in hazard.",
+      "fits": "Damage to multiple plants and the crossing in one valley."
+     },
+     {
+      "id": "B3-R4",
+      "reading": "Two conflicting accounts of cross-border information: one lead reports gaps in China-Nepal data sharing and early warning (Bloomberg), another reports timely sharing (People's Review). Both are news; neither is verified.",
+      "fits": "25C leads L08-L10."
+     }
+    ],
+    "evidence_that_would_discriminate": [
+     "NDRRMA/BIPAD records",
+     "DHM hydrographs",
+     "ICIMOD event analysis (mechanism, origin)",
+     "NEA/IPP damage and outage records",
+     "Customs closure dates at Rasuwagadhi",
+     "any Nepal-China hydrological data-sharing instrument text (25B)",
+     "and keep the July 2025 event separate (25C)"
+    ],
+    "modelling_implication": "S05 calibration should separate hazard frequency from exposure. The event should not be used as evidence of a climate trend without an attribution study. OV-13 (baseline overlap) applies."
+   },
+   {
+    "event_ref": "E07; 17A, 17C, 22B, 22E, 27B, 27E",
+    "development_as_recorded_by_agents": "Reported 2026 Indian withholding of approval for additional Nepal-to-Bangladesh electricity export, and reported MoP approval of India-to-Nepal supply.",
+    "status": "UNVERIFIED (16C register); all readings are hypotheses, no probabilities assigned",
+    "competing_readings": [
+     {
+      "id": "B4-R1",
+      "reading": "Strategic or political leverage in India's relations with Bangladesh, or with Nepal, exercised through the unilateral approval state A_t.",
+      "fits": "The news framing 'India withholds approval'."
+     },
+     {
+      "id": "B4-R2",
+      "reading": "Administrative or technical: pending Designated Authority processing, transmission or grid-security assessment, charge allocation or trader-licence steps under the 2018 guidelines and 2021 procedure, with no policy intent.",
+      "fits": "The procedural leads (CEA DA procedure, CERC CBTE regulations)."
+     },
+     {
+      "id": "B4-R3",
+      "reading": "Commercial: unresolved price, payment-security or contract terms with the Bangladesh buyer or the Indian trader (27E notes that payment security and Bangladesh-side approval are missing from 27B).",
+      "fits": "Trilateral contract gaps."
+     },
+     {
+      "id": "B4-R4",
+      "reading": "Seasonal or system-adequacy prioritisation of Indian domestic demand. The concurrent reported approval of India-to-Nepal supply argues against a Nepal-targeted restriction.",
+      "fits": "The two 2026 news items read together."
+     }
+    ],
+    "evidence_that_would_discriminate": [
+     "CEA Designated Authority orders and correspondence with dates",
+     "NVVN/BPDB statements",
+     "transmission availability records",
+     "tripartite contract terms"
+    ],
+    "modelling_implication": "27E's treatment of A_t as an exogenous two-state variable without an attributed motive is endorsed. No scenario should encode a motive. S02-d and S09 should be tested in both approval states."
+   },
+   {
+    "event_ref": "E05; 17A, 21B, 21D, 27A",
+    "development_as_recorded_by_agents": "Reported Indian import-side measures affecting Nepal's exports (steel safeguard with Nepal excluded from the developing-country exemption; jute anti-dumping duty naming Nepal; treaty review agreed in September 2026).",
+    "status": "UNVERIFIED (16C register); all readings are hypotheses, no probabilities assigned",
+    "competing_readings": [
+     {
+      "id": "B5-R1",
+      "reading": "Bilateral pressure linked to broader relations or to the trade balance.",
+      "fits": "The news framing of an 'import squeeze'."
+     },
+     {
+      "id": "B5-R2",
+      "reading": "Origin and circumvention concern: India suspects third-country goods routed through Nepal under preferential access, hence the reported request to 'investigate before easing'. Such a measure targets rules of origin, not Nepal-made goods.",
+      "fits": "The 17A lead title on investigation before easing curbs."
+     },
+     {
+      "id": "B5-R3",
+      "reading": "Mechanical application of multilateral trade-remedy rules: exclusion from the developing-country exemption follows the import-share criteria in the WTO Agreement on Safeguards (Art. 9.1, thresholds to be verified from the text). For anti-dumping, country naming follows DGTR case-specific findings.",
+      "fits": "The legal form of the measures (SG and ADD notifications)."
+     },
+     {
+      "id": "B5-R4",
+      "reading": "Domestic-industry protection in India responding to product-specific import surges, with Nepal incidentally affected.",
+      "fits": "The product-specific scope."
+     }
+    ],
+    "evidence_that_would_discriminate": [
+     "Gazette/CBIC notification texts",
+     "DGTR final findings, including the import-share data used for the exclusion",
+     "Nepal customs exports of the affected HS lines to India by FY",
+     "the minutes of the commerce-secretary talks"
+    ],
+    "modelling_implication": "17A's proposal for a separate 'Indian import-side measures' variable is endorsed; it must not be attributed to S08 (16C OV-10). The motive must not be encoded; carry the measure as a policy state."
+   },
+   {
+    "event_ref": "E08; 18A, 21A, 26B",
+    "development_as_recorded_by_agents": "Reported expiry of the US Nepal Trade Preference Program at end-2025 and 2025 US reciprocal tariffs.",
+    "status": "UNVERIFIED (16C register); all readings are hypotheses, no probabilities assigned",
+    "competing_readings": [
+     {
+      "id": "B6-R1",
+      "reading": "Material preference loss for NTPP-eligible products (garments, carpets, pashmina) with a direct export effect.",
+      "fits": "The existence of the NTPP product list."
+     },
+     {
+      "id": "B6-R2",
+      "reading": "Small effect because utilisation of NTPP preferences was low or concentrated in a few lines, as reported by experts quoted in news. This is unverified.",
+      "fits": "The 16C/18A news lead."
+     },
+     {
+      "id": "B6-R3",
+      "reading": "Relative-competitiveness effect: what matters is Nepal's tariff relative to competing suppliers under the reciprocal-tariff schedule, so the net effect can go either way.",
+      "fits": "The country-differentiated tariff structure."
+     },
+     {
+      "id": "B6-R4",
+      "reading": "Legal and policy instability: the tariff instruments may be amended or legally challenged in the US, so any rate must be dated and version-controlled at retrieval.",
+      "fits": "The use of executive-order instruments (18A layers)."
+     }
+    ],
+    "evidence_that_would_discriminate": [
+     "US Federal Register / proclamation texts with effective dates",
+     "USITC DataWeb imports from Nepal by HTS line and program code (NTPP utilisation)",
+     "competitor tariff rates on the same lines"
+    ],
+    "modelling_implication": "Keep out of S08 (not LDC-conditioned). Model as a dated policy state with competitor-relative tariffs. 21A's strict case (no GSP+, standard transitions) should be run alongside it."
+   }
+  ],
+  "no_probabilities": true,
+  "status": "pending evidence for discrimination"
+ },
+ "source_leads": [],
+ "independence_statement": "Agent 28 reports independently to the human reviewer. This file was not reviewed, edited or approved by Agent 00 or Agent 16. No data host was contacted; no web search was run; no numbers were taken from search snippets or memory."
+}

@@ -1,0 +1,118 @@
+{
+ "subagent_id": "28E",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T14:48:16+00:00",
+ "summary": "Independent reproduction. (1) `python -m pytest -q`: 120 passed. (2) `python -m src.cli validate`: 0 problems, 0 open source conflicts. (3) `audit-verify` before 28 wrote anything: ledger OK (22 records). (4) Every table in reports/baseline/target_arithmetic.md (sections 1-4) was re-derived from config/model_config.yaml with standalone formulas that do not import src/economic_model, and compared cell by cell with the committed report: 50 of 50 row comparisons match exactly at the report's rounding. The platform's required_growth_table matches the standalone real-CAGR formula with zero absolute difference. Section 3 arrival years were re-derived by discrete annual compounding and match the report's ceil(log) formula. These are reproduced calculations on hypothetical assumption inputs (A-TGT-01..07), not estimates of Nepal's GDP. The arithmetic is VERIFIED; its application to Nepal is CONDITIONAL on those assumptions and UNVERIFIED until the base-year GDP and population are retrieved. Issues: the grid base year is a calendar-year label while Nepal's GDP is FY (01C ESC-03), and price/FX cases treat NPR depreciation independently of the INR peg (01C).",
+ "findings": [
+  {
+   "claim": "Reproduced calculation: the target-arithmetic tables in reports/baseline/target_arithmetic.md reproduce exactly from config/model_config.yaml (50/50 comparisons). Inputs are hypothetical assumptions A-TGT-01..07.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "reproduced_calculation; parametric; not empirical"
+  },
+  {
+   "claim": "Test suite and validation reproduce: pytest 120 passed; validate 0 problems; ledger chain OK prior to 28 entries.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "platform execution result, 2026-09-27"
+  },
+  {
+   "claim": "Nepal base-year nominal GDP (USD), population in milestone years and INR/USD path: required for any non-parametric use of the tables.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal",
+    "nrb",
+    "imf_weo",
+    "un_wpp"
+   ],
+   "observation_ids": []
+  }
+ ],
+ "data_gaps": [
+  "Verified base-year nominal GDP in NPR and the FY-average NPR/USD rate (01A/03A).",
+  "WPP population for milestone years (10C).",
+  "INR/USD path and peg-ratio history (20B, 17A) so that PF-4 and PF-5 can be specified."
+ ],
+ "assumptions": [
+  {
+   "id": "28E-A1",
+   "text": "Reproduction uses the report's own display rounding (2 dp for CAGR, 1 dp for I/Y) as the comparison precision.",
+   "basis": "assumption"
+  },
+  {
+   "id": "28E-A2",
+   "text": "Arrival year = first calendar-year label at which the discrete annual-compounding level reaches the target, matching math.ceil(base_year + years_to_target).",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "01C",
+   "text": "PF-4 (valuation-driven) and PF-5 (peg adjustment), as requested: PF-4 relies on sustained INR real appreciation against the USD plus a positive Nepal-India differential. Geopolitical stresses (S01 oil-price shock, S04 global recession, S10) typically bear on the INR and on regional risk premia, so PF-4 milestones should be reported as valuation-dependent and paired with an INR/USD stress, which no scenario provides yet (28C SC-05). A PF-5 peg step is a domestic policy decision; the platform should model its size only from historical parity changes (03A/20B) and must not imply any recommendation."
+  },
+  {
+   "to": "00A",
+   "text": "The target tables use calendar label 2025 as the base year while Nepal's GDP is fiscal-year. Please record the FY-to-label convention (01C ESC-03) in model_config before any verified base value replaces A-TGT-03."
+  }
+ ],
+ "uncertainty": "Low for the arithmetic, which is deterministic and reproduced exactly. High for any Nepal-specific reading, because every input is a labelled assumption.",
+ "specific": {
+  "reproduction_results": {
+   "label": "reproduced_calculation - outputs of repository code/config on hypothetical assumption inputs; not empirical estimates",
+   "pytest": {
+    "command": "python -m pytest -q",
+    "result": "120 passed"
+   },
+   "validate": {
+    "command": "python -m src.cli validate",
+    "result": "validation: 0 problems; 0 open source conflicts (kept, not errors)"
+   },
+   "audit_verify_pre": {
+    "command": "python -m src.cli audit-verify",
+    "result": "ledger OK",
+    "records": 22
+   },
+   "target_arithmetic": {
+    "report": "reports/baseline/target_arithmetic.md",
+    "report_generated": "_Generated 2026-09-26T15:49:47+00:00 by `python -m src.cli report` from `src/economic_model/target.py` and `config/model_config.yaml`._",
+    "inputs": "config/model_config.yaml target_arithmetic (A-TGT-01..07), target.milestones",
+    "method": "standalone formulas (no import of src.economic_model) for sections 1, 2a, 2b, 3 and 4; plus cross-check of target.required_growth_table",
+    "comparisons": 50,
+    "mismatches": [],
+    "max_abs_diff_code_vs_independent_real_cagr": 0,
+    "spot_values_reproduced": [
+     {
+      "what": "required nominal USD CAGR, hypothetical base US$45bn (A-TGT-03), base 2025 to 2050",
+      "value": "18.29%"
+     },
+     {
+      "what": "required real CAGR, same, case A-TGT-04d (deflator 5%, depreciation 1%)",
+      "value": "13.79%"
+     },
+     {
+      "what": "arrival year at 3.0% real growth, case A-TGT-04a",
+      "value": "2168"
+     }
+    ],
+    "forward_roundtrip": "for every (milestone, case) the implied real rate recombined with deflator and depreciation returns the USD CAGR (|diff| < 1e-12) and reaches the target (|rel diff| < 1e-9)"
+   },
+   "scenario_engine_probes": "see 28C engine_probe_results_synthetic (synthetic mechanics tests)",
+   "scripts": "scratchpad repro.py and engine_probe.py (not committed; the logic is described here and can be re-run from committed inputs)"
+  },
+  "verdict": {
+   "value": "CONDITIONAL",
+   "reasons": [
+    "Arithmetic reproduces exactly (no calculation error).",
+    "Results depend on labelled assumptions A-TGT-01..07.",
+    "Empirical base (GDP, population, INR/USD) pending: any Nepal-specific use is UNVERIFIED."
+   ]
+  }
+ },
+ "source_leads": [],
+ "independence_statement": "Agent 28 reports independently to the human reviewer. This file was not reviewed, edited or approved by Agent 00 or Agent 16. No data host was contacted; no web search was run; no numbers were taken from search snippets or memory."
+}

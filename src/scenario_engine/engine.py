@@ -114,6 +114,8 @@ def validate_scenario(s: Scenario, exposure_ids: set[str], all_ids: set[str]) ->
             p.append(f"{s.id}/{sh.id}: magnitude given without evidence and not marked illustrative")
         if sh.unit not in SHOCK_UNITS:
             p.append(f"{s.id}/{sh.id}: shock unit {sh.unit!r} must be one of {sorted(SHOCK_UNITS)}")
+        elif sh.channel in CHANNELS and projection_variable(sh.channel) and sh.unit != "pp":
+            p.append(f"{s.id}/{sh.id}: channel {sh.channel} shifts a growth rate and needs unit 'pp', not {sh.unit!r}")
         if sh.duration_years < 1 or sh.start_offset_years < 0:
             p.append(f"{s.id}/{sh.id}: invalid timing")
     for ref in s.components + s.depends_on:
@@ -174,13 +176,22 @@ def compose(s: Scenario, scenarios: dict[str, Scenario]) -> dict:
 
 def run_scenario(s: Scenario, scenarios: dict[str, Scenario], baseline: ProjectionAssumptions | None,
                  end_year: int) -> dict:
-    shocks = compose(s, scenarios)["shocks"] if s.components else s.shocks
-    result: dict = {"scenario": s.id, "title": s.raw["title"], "not_a_forecast": True, "shocks": []}
+    if s.components:
+        composed = compose(s, scenarios)
+        shocks, overlaps = composed["shocks"], composed["overlaps"]
+    else:
+        shocks, overlaps = s.shocks, []
+    unresolved = {tuple(o["key"]) for o in overlaps if o["kind"] == "conflicting_magnitudes"}
+    result: dict = {"scenario": s.id, "title": s.raw["title"], "not_a_forecast": True, "shocks": [],
+                    "overlaps": overlaps}
     applied: dict[str, dict[int, float]] = {}
+    contributors: dict[tuple, list[str]] = {}
     any_illustrative = False
     for sh in shocks:
         pv = projection_variable(sh.channel)
-        if not sh.quantified:
+        if sh.key in unresolved:
+            status = "UNRESOLVED_OVERLAP"  # components disagree; never silently dropped or summed
+        elif not sh.quantified:
             status = "PENDING_EVIDENCE"
         elif pv is None:
             status = "NOT_MODELLED_IN_PROJECTION"  # transmission recorded; needs sector/BoP module
@@ -193,7 +204,13 @@ def run_scenario(s: Scenario, scenarios: dict[str, Scenario], baseline: Projecti
                 year = baseline.base_year + sh.start_offset_years + k
                 applied.setdefault(pv, {})
                 applied[pv][year] = applied[pv].get(year, 0.0) + sh.magnitude
+                contributors.setdefault((pv, year), []).append(sh.id)
         result["shocks"].append({"id": sh.id, "channel": sh.channel, "status": status})
+    # Distinct shocks hitting the same projection variable in the same year are added. That is only
+    # correct if they are separate transmissions; flag every case for 16C/00C review.
+    result["stacked_shocks"] = [{"variable": k[0], "year": k[1], "shock_ids": v}
+                                for k, v in sorted(contributors.items()) if len(v) > 1]
+    result["requires_review"] = bool(unresolved or result["stacked_shocks"])
     if not applied:
         result["status"] = "QUALITATIVE_ONLY"
         return result

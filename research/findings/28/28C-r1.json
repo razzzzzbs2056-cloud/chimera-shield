@@ -1,0 +1,144 @@
+{
+ "subagent_id": "28C",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T14:48:16+00:00",
+ "summary": "Scenario audit of S01-S10, the 16C shock vectors and overlap checks, and engine v0.1. Q1 (unsupported probabilities): none found; G5 passes. Q2 (double counting): confirmed by in-memory engine probes with synthetic illustrative inputs. The engine adds overlapping real-growth shocks with different timing (S04-d + S05-d in S10). It nulls same-key shocks whose magnitudes conflict, which would silently remove the remittance shock from S10. 16C's fifteen overlap checks are endorsed. New findings: shock units 'pct_change'/'pp' are outside the platform unit registry; the audit adapter mislabels decimal shocks as 'percent'; and unit-channel compatibility is not validated. 01C's challenge is upheld: the engine can apply deflator and FX shocks, but no scenario defines one, so USD-GDP conclusions would omit price and FX channels. Because all magnitudes are null, no current quantitative conclusion is invalidated. Omitted dependencies are listed. Verdict: UNVERIFIED for the scenario set, with a latent calculation inconsistency on units (recorded as dissent).",
+ "findings": [
+  {
+   "claim": "Q1: No scenario or Division B finding assigns a probability.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "Audit result from reading scenarios/*/*.yaml and research/findings/16..27; not an empirical value."
+  },
+  {
+   "claim": "Q2: Compound shocks will be double-counted (S04-d + S05-d additive) or silently dropped (S01-a vs S04-a conflict) under engine v0.1 once magnitudes are set. Probe results come from synthetic inputs and say nothing about Nepal.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "All shock magnitudes are null; calibration evidence is pending for every shock (28 shocks across 10 scenarios).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "Data required: per-shock evidence listed in 16C shock_vectors.evidence_leads."
+  }
+ ],
+ "data_gaps": [
+  "Shock magnitudes for all 28 shocks.",
+  "A base-year period convention (Nepal FY) fixed by 00A before mapping calendar-year evidence.",
+  "A deflator/FX shock design (01C request) and INR/USD and peg historical evidence (20B, 03A)."
+ ],
+ "assumptions": [
+  {
+   "id": "28C-A1",
+   "text": "Engine probes used a synthetic baseline (all rates zero, arbitrary level) and illustrative magnitudes flagged illustrative; they test mechanics only.",
+   "basis": "assumption"
+  },
+  {
+   "id": "28C-A2",
+   "text": "Double counting is assessed at the level of shared causal pathways, not only identical engine keys.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "16C",
+   "text": "Please (i) record in S10 an explicit combination rule for components; (ii) add S06 to S10 or state why it is excluded; (iii) propose, for human review, domestic_prices and exchange_rate shocks (01C) and an Indian approval-state variable; (iv) restate shock units using codes registered in units.py or have 00A register 'pct_change'/'pp' there."
+  },
+  {
+   "to": "00A",
+   "text": "Platform-level items for human decision, which 28 does not edit: register the shock unit codes; make scenario_proposal pass the actual shock unit, not 'percent'; add unit-channel compatibility (pp for rate channels) to validate_scenario; stop compose() from dropping the second shock id silently on conflicting magnitudes; state in run_scenario whether same-variable shocks with different keys are additive by design."
+  },
+  {
+   "to": "01C",
+   "text": "Your challenge (no deflator/FX shock) is upheld. Also, PF-4 (valuation-driven) milestones depend on sustained real appreciation. A regional FX shock through the INR peg is the dominant geopolitical risk to that path, so PF-4 results should be labelled valuation-dependent and exposed to an INR/USD stress."
+  },
+  {
+   "to": "22A",
+   "text": "Supplier-continuity is an implicit assumption in S01, S02 and S10. Please propose a supplier-interruption variable separate from price (S01-c) and quantity (S02-c)."
+  }
+ ],
+ "uncertainty": "Moderate on mechanics (verified by execution). High on dependencies, where the omission list is not exhaustive.",
+ "specific": {
+  "scenario_findings": [
+   {
+    "id": "SC-01",
+    "question": "Q1 probabilities",
+    "finding": "No scenario YAML assigns a probability. All ten state 'no probabilities are assigned', and no Division B file asserts a numeric probability (27E uses conditional statuses only). G5 passes.",
+    "severity": "none"
+   },
+   {
+    "id": "SC-02",
+    "question": "Q2 double counting",
+    "finding": "Confirmed by independent engine probes with synthetic illustrative inputs (not estimates): (a) S04-d and S05-d (aggregate_real_growth, different timing keys) are summed additively in S10's first shocked year. run_scenario adds magnitudes per projection variable per year, so the two stack even if both scenarios' GDP effects share a common cause (16C OV-04). (b) S01-a and S04-a share the key (remittances, 1, 2). With equal (null) magnitudes they are 'counted once'. With different magnitudes compose() nulls the merged shock and keeps only S01-a's id, so S10 would silently carry no remittance shock (OV-01). (c) If S04-d/S05-d are kept once BoP or sector modules transmit their own channels, the channel effects and the aggregate override will double count.",
+    "severity": "high once quantified"
+   },
+   {
+    "id": "SC-03",
+    "question": "Q2 double counting",
+    "finding": "16C's OV-02 (migrant stock/permits vs remittances), OV-03 (seats vs arrivals), OV-05 (price x quantity), OV-06 (total imports vs petroleum), OV-07 (electricity export volume), OV-08 (AI demand vs substitution) and OV-11 (compliance vs formality) are reviewed and endorsed. The proposed rules (min operators, disjoint components, a single joint path) are appropriate. None is implemented in engine v0.1.",
+    "severity": "high"
+   },
+   {
+    "id": "SC-04",
+    "question": "shock units",
+    "finding": "Scenario and 16C shock units 'pct_change' and 'pp' are not unit codes in src/economic_model/units.py (parse_unit raises), contrary to CLAUDE.md rule 7; 24A raised the same point. src/auditing/proposals.scenario_proposal labels every shock claim unit 'percent', while engine SHOCK_UNITS define both as decimal. Once magnitudes are filled, audit records will mislabel decimal shocks as percent, a 100x scale ambiguity. validate_scenario does not check unit-channel compatibility: a 'pct_change' shock on aggregate_real_growth is accepted and applied as additive percentage points (probe P4).",
+    "severity": "calc (latent; all magnitudes null)"
+   },
+   {
+    "id": "SC-05",
+    "question": "engine limitation",
+    "finding": "The engine can apply three projection channels (aggregate_real_growth, domestic_prices, exchange_rate). No scenario shocks domestic_prices or exchange_rate: S01 and S02 declare exchange_rate without a shock, domestic_prices is declared nowhere, and EXP-10 (exchange rate) has no shock. In practice only S04-d and S05-d can move projections, and 26 of 28 shocks are NOT_MODELLED_IN_PROJECTION. 01C's challenge is upheld: a peg step, an INR/USD shock or oil-price pass-through to the deflator cannot be stress-tested. Because nominal USD GDP inherits INR/USD movements one-for-one under the peg (17A), any scenario conclusion about distance to the US$3T target from S01, S02, S04 or S10 would omit the price and FX channels.",
+    "severity": "invalidates USD-GDP conclusions; real-growth conclusions would rest on exogenous overrides"
+   },
+   {
+    "id": "SC-06",
+    "question": "does the limitation invalidate current conclusions",
+    "finding": "Not yet. With every magnitude null, every scenario is QUALITATIVE_ONLY and no quantitative conclusion exists to invalidate. Once magnitudes arrive, only real-growth results are interpretable, and only as aggregate overrides. USD-GDP, fiscal, BoP and household conclusions would be invalid until the corresponding modules and deflator/FX shocks exist.",
+    "severity": "condition"
+   },
+   {
+    "id": "SC-07",
+    "question": "omitted dependencies",
+    "finding": "(a) S10 omits S06, although origin- and destination-side migration restrictions co-occurred in the reported 2026 events (E01 with E04). (b) The global_interest_rates channel is unused in all scenarios despite 20A/20C leads. (c) There is no variable for Indian import-side policy (E05), which 17A proposed. (d) Northern-route transit (X10) has no shock (OV-14). (e) S10 assumes continuity of the single petroleum supplier during a regional disruption (22A); S01-c/S02-c do not model supplier-level interruption. (f) S09 depends on the Indian approval state A_t (22E, 27E), but no approval-state shock exists and S02-d stands in for it. (g) Aviation capacity for evacuation and return migration is missing from S01 (19D). (h) US aid volatility is missing from S08/S10 (18A). (i) The telecom/internet backbone single gateway is missing from S03/S07 (16B). (j) The domestic-use case in S09 is not independent of India in the dry season (22E).",
+    "severity": "evidence"
+   },
+   {
+    "id": "SC-08",
+    "question": "unrealistic or inconsistent assumptions",
+    "finding": "(a) S10 lists four components but states no rule for how they interact (additive, min or joint path); the engine therefore defaults to key-based merging and per-year additive summation. (b) S01's trigger is HYPOTHETICAL while a similar real 2026 event is reported. If the base year is FY2025/26 or later, applying S01 on top of a baseline that already contains the event double counts (OV-13). (c) Timing keys are offsets from a PENDING base year whose period type (Nepal FY) is not yet fixed, while international evidence is calendar-year (CLAUDE rule 6).",
+    "severity": "condition"
+   }
+  ],
+  "engine_probe_results_synthetic": {
+   "label": "Synthetic mechanics test. Magnitudes -1pp each are ILLUSTRATIVE test inputs, not estimates; baseline is synthetic.",
+   "P1_S10_compose_committed": "17 merged shocks; one overlap S01-a/S04-a counted once because both are null; real-growth shocks S04-d and S05-d both retained",
+   "P2_S04d_S05d_minus1pp_each": {
+    "status": "ILLUSTRATIVE",
+    "real_gdp_level_pct_vs_baseline": {
+     "year1": -2.0,
+     "year2_onward": -2.98
+    },
+    "reading": "additive in year 1"
+   },
+   "P3_conflicting_remittance_magnitudes": "merged shock S01-a magnitude null, note 'magnitude unresolved: components disagree'; S04-a id dropped",
+   "P4_pct_change_on_aggregate_real_growth": "validate_scenario reports no problem; engine applies it as additive pp"
+  },
+  "verdict": {
+   "value": "UNVERIFIED",
+   "reasons": [
+    "All shock magnitudes pending (E4).",
+    "Omitted dependencies SC-07 (G3/G4 not satisfied for S10).",
+    "Latent unit inconsistency SC-04 (would be INCONSISTENT once values exist; recorded as dissent)."
+   ],
+   "not_invalidated": "No quantitative scenario conclusion exists yet, so none is invalidated."
+  }
+ },
+ "source_leads": [],
+ "independence_statement": "Agent 28 reports independently to the human reviewer. This file was not reviewed, edited or approved by Agent 00 or Agent 16. No data host was contacted; no web search was run; no numbers were taken from search snippets or memory."
+}
