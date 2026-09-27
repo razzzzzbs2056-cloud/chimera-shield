@@ -1,0 +1,343 @@
+{
+  "subagent_id": "24C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Located 14 leads for sizing global demand for remotely delivered services in Nepal's candidate segments: UNCTADstat digitally deliverable services (EBOPS categories, calendar year), the WTO Digitally Delivered Services Trade Dataset (July 2026 update), the IMF/OECD/UNCTAD/WTO Handbook on Measuring Digital Trade (2nd ed., 2023) for definitions, UNCTAD LDC Report 2025, NRB BoP services (Nepal FY) and World Bank AI-exposure analyses for the demand-trend adjustment. No values retrieved; all empirical items pending. BPO, freelancing and remote education are not separately identified in BoP, so these segments require proxies.",
+  "findings": [
+    {
+      "claim": "Research design: Nepal's candidate remote-service segments are provisionally (i) software and IT services, (ii) BPO/contact-centre and back-office, (iii) digital creative and design, (iv) accounting and professional services, (v) online freelancing/microwork, (vi) remote education. Each is mapped to EBOPS 2010 codes; the list must be confirmed by 08A.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Definitions (Handbook on Measuring Digital Trade, 2nd ed.): 'digitally deliverable' (UNCTAD) is an upper bound of services that could be delivered over networks; 'digitally delivered' (WTO dataset) estimates services actually delivered digitally. They are reported separately and never interchanged.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "World and regional exports/imports of digitally deliverable services, by EBOPS category, and LDC share.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_bn",
+      "period": "Calendar years (latest available, UNCTADstat vintage 2025/2026)",
+      "source_ids": [
+        "unctadstat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24C-L01",
+        "24C-L02",
+        "24C-L03",
+        "24C-L04",
+        "24C-L05"
+      ],
+      "note": "Download UNCTADstat US.DigitallyDeliverableServices and record vintage. No values retrieved."
+    },
+    {
+      "claim": "Digitally delivered services trade by sector and importing market (US, EU, UK, Australia, India, Gulf) relevant to Nepal's segments.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_bn",
+      "period": "Calendar years (WTO dataset, July 2026 update)",
+      "source_ids": [
+        "wto"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24C-L06",
+        "24C-L07"
+      ],
+      "note": "WTO dataset download; import-side demand of Nepal's actual/potential client markets."
+    },
+    {
+      "claim": "Nepal's exports of computer and other business services (BoP), to place Nepal's share in each global segment.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "FY2024/25 and history (Nepal fiscal year); UNCTAD values are calendar year",
+      "source_ids": [
+        "nrb",
+        "unctadstat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24C-L01",
+        "24C-L09",
+        "24C-L10"
+      ],
+      "note": "Keep NRB FY values and UNCTAD calendar-year values separate; UNCTAD may estimate Nepal rather than use reported data - check metadata. Under-recording of IT exports via informal channels is a known issue (16A)."
+    },
+    {
+      "claim": "Demand-trend adjustment for AI substitution in each segment (from 24A evidence).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "2023-2026",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24C-L11",
+        "24C-L12",
+        "24C-L13"
+      ],
+      "note": "Qualitative until 24A values are retrieved."
+    }
+  ],
+  "data_gaps": [
+    "No source located for online freelancing demand by country (e.g. Online Labour Index / iLabour project) or for Nepal freelancer earnings. The session-wide WebSearch budget was exhausted during this round; data-source hosts and reference hosts (itu.int, nist.gov, wikipedia.org, arxiv.org) returned EGRESS_BLOCKED to WebFetch.",
+    "No Nepal IT-export survey or NRB study on ICT services exports located; informal receipts (freelancer income via wallets or abroad) likely missed in BoP.",
+    "WTO Global Trade Outlook / World Trade Statistical Review chapters on digitally delivered services not located.",
+    "Market-research estimates (e.g. BPO market size) are not in the source hierarchy and are excluded unless a tier-1-7 source is found."
+  ],
+  "assumptions": [
+    {
+      "id": "24C-A1",
+      "text": "Candidate segments are those listed in specific.market_size_evidence.segments pending confirmation by 08A.",
+      "basis": "assumption"
+    },
+    {
+      "id": "24C-A2",
+      "text": "Global import demand in Nepal's plausible client markets is the relevant demand measure, not world exports.",
+      "basis": "methodological; requires WTO partner detail"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X15 should separate demand size (24C) from AI substitution (24A); see 24A challenge."
+    },
+    {
+      "to": "08A",
+      "text": "Please confirm Nepal's candidate export segments and provide any domestic IT-export survey; NRB BoP detail on computer services is needed at the EBOPS level."
+    },
+    {
+      "to": "00A",
+      "text": "Catalog lacks an id for online labour platform indices (Oxford iLabour Online Labour Index) and for Nepal IT industry surveys; add if they are to be used."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. UNCTAD 'deliverable' and WTO 'delivered' measures differ conceptually and in coverage; many LDC values are estimated by the compiler; Nepal's own BoP likely under-records IT exports; BPO, freelancing and remote education lack statistical codes; AI may shift segment demand quickly.",
+  "specific": {
+    "market_size_evidence": {
+      "status": "pending",
+      "question": "How large is global demand for remotely delivered services in Nepal's candidate segments?",
+      "answer_r1": "Pending. Demand will be sized from UNCTADstat digitally deliverable services (upper bound, EBOPS categories) and the WTO Digitally Delivered Services dataset (actual delivery, partner detail), using the IMF/OECD/UNCTAD/WTO Handbook definitions. BPO, freelancing and remote education are not separately identified in BoP statistics, so segment sizing for them needs proxies. No values retrieved.",
+      "segments": [
+        {
+          "segment": "software_and_it_services",
+          "statistical_mapping": "EBOPS SJ (computer services) within SI telecom/computer/information",
+          "global_demand": "pending",
+          "nepal_exports": "pending",
+          "lead_ids": [
+            "24C-L01",
+            "24C-L06",
+            "24C-L09"
+          ]
+        },
+        {
+          "segment": "bpo_contact_centre_and_back_office",
+          "statistical_mapping": "EBOPS SK other business services - professional/management consulting and technical/trade-related; BPO not separately identified",
+          "global_demand": "pending",
+          "nepal_exports": "pending",
+          "lead_ids": [
+            "24C-L01",
+            "24C-L06",
+            "24C-L09"
+          ]
+        },
+        {
+          "segment": "digital_creative_and_design",
+          "statistical_mapping": "EBOPS SK/SL; graphic design and multimedia partly in computer services",
+          "global_demand": "pending",
+          "nepal_exports": "pending",
+          "lead_ids": [
+            "24C-L01",
+            "24C-L06",
+            "24C-L09"
+          ]
+        },
+        {
+          "segment": "accounting_and_professional_services",
+          "statistical_mapping": "EBOPS SK1 legal, accounting, management consulting",
+          "global_demand": "pending",
+          "nepal_exports": "pending",
+          "lead_ids": [
+            "24C-L01",
+            "24C-L06",
+            "24C-L09"
+          ]
+        },
+        {
+          "segment": "online_freelancing_microwork",
+          "statistical_mapping": "not separately identified in BoP; platform data required",
+          "global_demand": "pending",
+          "nepal_exports": "pending",
+          "lead_ids": [
+            "24C-L01",
+            "24C-L06",
+            "24C-L09"
+          ]
+        },
+        {
+          "segment": "education_and_tutoring_remote",
+          "statistical_mapping": "EBOPS SL personal, cultural and recreational",
+          "global_demand": "pending",
+          "nepal_exports": "pending",
+          "lead_ids": [
+            "24C-L01",
+            "24C-L06",
+            "24C-L09"
+          ]
+        }
+      ],
+      "measurement_basis": {
+        "deliverable_vs_delivered": "reported separately (UNCTAD vs WTO)",
+        "period_basis": "international series calendar year; NRB Nepal FY - conversion requires quarterly/monthly data",
+        "currency": "USD current"
+      },
+      "feeds": {
+        "external_variable": "X15 (16A)",
+        "model_variables": [
+          "services_exports"
+        ],
+        "channel": "digital_services_demand",
+        "exposure_ids": [
+          "EXP-14"
+        ],
+        "scenario": "S07",
+        "supports": "24D on X36"
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "24C-L01",
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "UNCTADstat - Digitally deliverable services: exports and imports by economy (annual)",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Annual (calendar year) exports and imports of digitally deliverable services (EBOPS 2010 categories: insurance and pension, financial, charges for IP, telecommunications/computer/information, other business services, personal/cultural/recreational) in current USD, by economy incl. Nepal, LDC group and world; metadata on estimation for non-reporting economies.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24C-L02",
+      "url": "https://unctadstat.unctad.org/insights/theme/254",
+      "title": "UNCTAD Data Insights - digitally deliverable services theme",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Latest UNCTAD nowcasts and annual releases on digitally deliverable services trade (developed vs developing vs LDC shares; ICT services trade by region); publication-year vintage to be recorded.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24C-L03",
+      "url": "https://unctad.org/news/digital-services-exports-are-growing-fast-least-developed-countries-are-not-keeping-pace",
+      "title": "Digital services exports are growing fast. Least developed countries are not keeping pace (UNCTAD news)",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "LDC share of global digitally deliverable services exports over time; locator for underlying UNCTADstat series.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24C-L04",
+      "url": "https://unctad.org/news/developing-economies-surpass-1-trillion-mark-digitally-deliverable-services-exports",
+      "title": "UNCTAD news release on developing economies' digitally deliverable services exports (December 2024)",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Developing-economy exports of digitally deliverable services, calendar 2023; locator for the release dataset.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24C-L05",
+      "url": "https://unctad.org/publication/least-developed-countries-report-2025",
+      "title": "The Least Developed Countries Report 2025: Are services the new path to structural transformation?",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "LDC services trade and digitally deliverable services analysis, possibly country tables incl. Nepal; constraints on LDC services exports (connectivity, payments, skills).",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24C-L06",
+      "url": "https://www.wto.org/english/res_e/statis_e/gstdh_digital_services_e.htm",
+      "title": "WTO Digitally Delivered Services Trade Dataset",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Estimates of services actually delivered through computer networks (digitally delivered, not merely deliverable) by economy, partner and sector, over 200 economies; updated July 2026 per page; calendar year; methodology note.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24C-L07",
+      "url": "https://www.wto.org/english/res_e/booksp_e/digital_trade_2023_e.pdf",
+      "title": "Handbook on Measuring Digital Trade, Second Edition (IMF, OECD, UNCTAD, WTO, 2023)",
+      "publisher": "IMF/OECD/UNCTAD/WTO",
+      "source_id": "wto",
+      "contains": "Definitions: digitally ordered vs digitally delivered trade; digitally deliverable services (potential) vs digitally delivered (actual); compilation guidance for developing economies (Mode 1 and freelancer income capture).",
+      "evidence_grade": "methodology"
+    },
+    {
+      "lead_id": "24C-L08",
+      "url": "https://www.oecd.org/en/publications/handbook-on-measuring-digital-trade-second-edition_ac99e6d3-en.html",
+      "title": "Handbook on Measuring Digital Trade, Second Edition (OECD page)",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Alternative host and support materials for lead 24C-L07.",
+      "evidence_grade": "methodology"
+    },
+    {
+      "lead_id": "24C-L09",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (annual FY2024/25) - also 16A lead L01",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Services receipts in BoP incl. any line for computer/ICT services or 'other services'; Nepal fiscal year (mid-July). Needed to place Nepal's current exports against global segment sizes.",
+      "evidence_grade": "official"
+    },
+    {
+      "lead_id": "24C-L10",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "NRB Current Macroeconomic and Financial Situation archive (16A lead L02)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical BoP services tables by fiscal year for Nepal ICT/other-business-services receipts.",
+      "evidence_grade": "official"
+    },
+    {
+      "lead_id": "24C-L11",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099520310212533663",
+      "title": "South Asia Development Update, October 2025: Jobs, AI, and Trade",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Services trade and business-services job-postings analysis for South Asia; complements demand-side sizing with an AI-adjustment signal.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24C-L12",
+      "url": "https://thedocs.worldbank.org/en/doc/9df559d23a6d80b3dfa2c4bc808f3a20-0050062026/original/The-AI-Exposure-of-Export-Linked-Jobs.pdf",
+      "title": "The AI Exposure of Export-Linked Jobs (World Bank, 2026)",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Links services-export demand to AI exposure; needed to adjust segment demand for AI substitution (shared with 24A).",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24C-L13",
+      "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2024.05420",
+      "title": "Demirci, Hannane, Zhu (2025) Who Is AI Replacing? Management Science 71(10)",
+      "publisher": "INFORMS",
+      "source_id": "academic",
+      "contains": "Platform-level demand shifts by freelance task cluster after GenAI; informs demand trend for freelance segments.",
+      "evidence_grade": "peer_reviewed"
+    },
+    {
+      "lead_id": "24C-L14",
+      "url": "https://dhulikhelmun.gov.np/sites/dhulikhelmun.gov.np/files/documents/ICT%20policy%20Nepal.pdf",
+      "title": "National Information and Communication Technology Policy, 2015 (Nepal) - copy hosted by Dhulikhel Municipality",
+      "publisher": "Government of Nepal (hosted copy)",
+      "source_id": null,
+      "contains": "Nepal policy objectives for ICT/IT-enabled services exports; primary copy should be retrieved from MoIC. Policy text, no statistics expected.",
+      "evidence_grade": "policy_document"
+    }
+  ]
+}
