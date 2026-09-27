@@ -1,0 +1,232 @@
+{
+  "subagent_id": "24E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Defined an evidence-grading scheme separating proven commercial deployment (G1 comparable LMIC, G2 higher-income only) from pilots (G3) and speculation (G4), and a candidate list of eleven technology families mapped to Nepal's sectors (remote sensing, drones, tissue culture, livestock genetics, hydropower digital monitoring, glacial-lake early warning, industrial robotics, additive manufacturing, molecular diagnostics, GenAI tools, batteries/e-mobility). No deployment evidence retrieved and no technology graded; only 4 marginal leads were located because the session's web-search budget was exhausted. All empirical items pending.",
+  "findings": [
+    {
+      "claim": "Evidence grading scheme (applies to every technology): G1 = proven commercial deployment at scale in low- or lower-middle-income settings comparable to Nepal, documented by tier 1-7 sources; G2 = proven commercial deployment only in high-income or upper-middle-income settings; G3 = pilots or trials with published evaluations; G4 = laboratory stage, projections or speculative claims. A grade requires retrieved evidence; ungraded items stay 'pending'.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Technology candidates were selected by matching Nepal's main sectors (agriculture, hydropower, tourism, remittance-dependent services, construction, light manufacturing, health) to technology families; the list is a research design, not an endorsement or a claim of relevance.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Evidence grade (G1-G4) for each candidate technology in specific.evidence_graded_technology_list, with deployment evidence (adoption counts, commercial users, evaluated productivity effects) and source.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Latest available (calendar year of study)",
+      "source_ids": [
+        "academic",
+        "iea",
+        "fao_stat",
+        "icimod"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24E-L01",
+        "24E-L02",
+        "24E-L03",
+        "24E-L04"
+      ],
+      "note": "No deployment evidence retrieved in r1; only 4 marginal leads located before the session search budget was exhausted."
+    },
+    {
+      "claim": "Nepal-specific adoption evidence for any G1/G2 technology (e.g. existing drone, remote-sensing, tissue-culture or early-warning deployments).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Nepal fiscal year or calendar year as reported",
+      "source_ids": [
+        "npc_nepal",
+        "moest",
+        "icimod"
+      ],
+      "observation_ids": [],
+      "lead_ids": [],
+      "note": "Requires Nepal ministry/NARC/ICIMOD documents; none located."
+    }
+  ],
+  "data_gaps": [
+    "No deployment evidence located for any candidate technology. The session-wide WebSearch budget was exhausted during this round; data-source hosts and reference hosts (itu.int, nist.gov, wikipedia.org, arxiv.org) returned EGRESS_BLOCKED to WebFetch.",
+    "Required primary sources to locate in r2: IFR World Robotics (industrial robot installations by country), FAO/CGIAR evaluations of agricultural biotechnology in South Asia, peer-reviewed evaluations of medical-drone logistics in LMICs, ICIMOD documentation of glacial-lake early-warning systems in Nepal, IEA/IRENA hydropower digitalisation case studies, WHO diagnostics guidance.",
+    "Catalog lacks ids for IFR, CGIAR/ILRI and NARC (Nepal Agricultural Research Council)."
+  ],
+  "assumptions": [
+    {
+      "id": "24E-A1",
+      "text": "A technology is not treated as relevant to Nepal's growth path without G1 or G2 evidence; G3/G4 items are reported as speculative and carry no parameter into the model.",
+      "basis": "task instruction to distinguish proven from speculative"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X37 has no located lead (as your data gaps note); 24E confirms it remains unresourced in r1 and cannot supply a tfp parameter until r2."
+    },
+    {
+      "to": "00A",
+      "text": "Search budget exhausted before 24E research; allocate searches or network access in r2. Add catalog ids for IFR, CGIAR/ILRI and NARC."
+    },
+    {
+      "to": "28",
+      "text": "Red-team: any strategy that credits emerging technologies (e.g. robotics, biotech) with tfp gains should be checked against this grading; currently no technology has retrieved G1/G2 evidence."
+    }
+  ],
+  "uncertainty": "Very high. No evidence retrieved; candidate list is design-only; leads are marginal and two are non-peer-reviewed preprints. Grades cannot be assigned in r1.",
+  "specific": {
+    "evidence_graded_technology_list": {
+      "status": "pending",
+      "question": "Which emerging technologies have proven commercial deployment relevant to Nepal's sectors?",
+      "answer_r1": "Pending. A grading scheme (G1-G4) and a candidate list of eleven technology families mapped to Nepal sectors are defined, but no deployment evidence was retrieved and no technology is graded. Leads located are marginal (two preprints, IEA Energy and AI, WDR 2026 concept note) because the session web-search budget was exhausted before 24E searches.",
+      "grading_scheme": {
+        "G1": "proven commercial deployment at scale in comparable LMIC settings",
+        "G2": "proven commercially only in higher-income settings",
+        "G3": "pilot/trial with published evaluation",
+        "G4": "laboratory, projection or speculative"
+      },
+      "technologies": [
+        {
+          "technology": "remote_sensing_and_satellite_data_for_agriculture_and_hazard_monitoring",
+          "nepal_sectors": "agriculture; disaster risk; hydropower",
+          "evidence_sources_to_search": "FAO, ICIMOD, peer-reviewed evaluations",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "drones_for_mapping_and_medical_logistics",
+          "nepal_sectors": "health; infrastructure survey; disaster response",
+          "evidence_sources_to_search": "peer-reviewed evaluations of LMIC medical-drone programmes",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "plant_tissue_culture_and_improved_seed_biotechnology",
+          "nepal_sectors": "agriculture; horticulture; cardamom/tea",
+          "evidence_sources_to_search": "FAO, CGIAR, NARC",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "livestock_genetics_and_artificial_insemination_improvements",
+          "nepal_sectors": "livestock/dairy",
+          "evidence_sources_to_search": "FAO, ILRI",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "hydropower_digital_monitoring_and_predictive_maintenance",
+          "nepal_sectors": "energy",
+          "evidence_sources_to_search": "IEA, IRENA, hydropower-operator case studies",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "glacial_lake_and_flood_early_warning_systems",
+          "nepal_sectors": "disaster risk; hydropower",
+          "evidence_sources_to_search": "ICIMOD, peer-reviewed",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "industrial_robotics_and_automation_in_garments_and_light_manufacturing",
+          "nepal_sectors": "manufacturing; competitiveness of labour-intensive exports",
+          "evidence_sources_to_search": "IFR World Robotics, peer-reviewed",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "additive_manufacturing_3d_printing",
+          "nepal_sectors": "construction; spare parts; medical devices",
+          "evidence_sources_to_search": "peer-reviewed",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "genomic_and_molecular_diagnostics",
+          "nepal_sectors": "health",
+          "evidence_sources_to_search": "WHO, peer-reviewed",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "generative_ai_services_tools",
+          "nepal_sectors": "IT/BPO; tourism services",
+          "evidence_sources_to_search": "see 24A",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        },
+        {
+          "technology": "battery_storage_and_electric_mobility",
+          "nepal_sectors": "transport; energy",
+          "evidence_sources_to_search": "IEA (supporting 22C, X32)",
+          "grade": "ungraded",
+          "status": "pending",
+          "lead_ids": []
+        }
+      ],
+      "feeds": {
+        "external_variable": "X37 (16A)",
+        "model_variables": [
+          "tfp"
+        ],
+        "channel": "technology_costs",
+        "supporting": "24A"
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "24E-L01",
+      "url": "https://arxiv.org/pdf/2605.17086",
+      "title": "Global Automation Atlas (arXiv preprint, 2026)",
+      "publisher": "arXiv",
+      "source_id": "academic",
+      "contains": "Preprint on automation across countries/occupations; relevance to deployed robotics and advanced manufacturing to be checked on retrieval. Not peer-reviewed.",
+      "evidence_grade": "preprint"
+    },
+    {
+      "lead_id": "24E-L02",
+      "url": "https://arxiv.org/pdf/2605.18935",
+      "title": "The Agentic Economy: Humans, AI Agents, Robots, and the Measurable Transition toward Distributed Economic Action (arXiv preprint, 2026)",
+      "publisher": "arXiv",
+      "source_id": "academic",
+      "contains": "Preprint proposing measures of AI-agent and robot activity; classed as speculative/conceptual unless it reports deployment data.",
+      "evidence_grade": "preprint"
+    },
+    {
+      "lead_id": "24E-L03",
+      "url": "https://www.iea.org/reports/energy-and-ai/executive-summary",
+      "title": "Energy and AI (IEA, 2025) - executive summary",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Check for evidence on deployed AI applications in electricity-system operation (grid management, hydropower dispatch, predictive maintenance) with documented adoption, as distinct from projections.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24E-L04",
+      "url": "https://thedocs.worldbank.org/en/doc/1e4e52502104a331fb42cba0d4afa995-0050062026/original/WDR2026-Concept-Note.pdf",
+      "title": "World Development Report 2026: Artificial Intelligence for Development - Concept Note",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Framework for AI applications in agriculture, health, education in developing countries; locator for WDR 2026 background papers with deployment evidence.",
+      "evidence_grade": "institutional"
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "subagent_id": "25C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). For Q1 (documented cross-border flood events and losses) the primary event databases and records were identified: NDRRMA BIPAD incident database (tier 1), EM-DAT (tier 6), DHM flood bulletins, NPC Post-Disaster Needs Assessments, and ICIMOD/UNDP glacial lake inventory (2020) with its historical GLOF table. Seven candidate cross-border event records are structured in specific.cross_border_events (TAR-origin GLOFs and debris flows into the Bhote Koshi/Trishuli and Koshi basins, the Kosi embankment breach, Mahakali border floods and recurrent Terai cross-border inundation). All losses are pending. The late-August 2026 Kyirong/Gyirong-Rasuwa event flagged by 16B remains UNVERIFIED: only news pointers (CNN, Bloomberg, Peoples' Review) and the not-yet-retrievable ICIMOD page were found; it must not enter scenarios until confirmed by DHM, BIPAD, MoHA/NDRRMA, ICIMOD or an official Chinese statement, and must be checked for conflation with a July 2025 Rasuwa GLOF.",
+  "findings": [
+    {
+      "claim": "Q1: Documented cross-border flood/GLOF events affecting Nepal and their losses (deaths, affected persons, damage value, infrastructure).",
+      "type": "pending",
+      "value": null,
+      "period": "event dates (calendar); fiscal costs in Nepal FY",
+      "source_ids": [
+        "ndrrma",
+        "em_dat",
+        "icimod",
+        "dhm",
+        "npc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Export BIPAD incidents for flood/GLOF/debris-flow by district and period; EM-DAT Nepal (and India/China for cross-border impact); ICIMOD/UNDP 2020 historical GLOF table (25C-L05)."
+    },
+    {
+      "claim": "Late-August 2026 Kyirong-Rasuwa event: occurrence, date, origin, losses and infrastructure damage.",
+      "type": "pending",
+      "value": null,
+      "period": "August 2026 (calendar); FY2026/27 (Nepal) for fiscal response",
+      "source_ids": [
+        "icimod",
+        "dhm",
+        "ndrrma"
+      ],
+      "observation_ids": [],
+      "note": "UNVERIFIED. Only news pointers located (25C-L08 to L10); ICIMOD page 25C-L01 blocked. Required: DHM bulletin/gauge record, BIPAD entries, NDRRMA/MoHA situation report, Chinese official statement."
+    },
+    {
+      "claim": "Damage to hydropower plants and border trade infrastructure from TAR-origin events (Rasuwagadhi, Tatopani corridors).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "nea",
+        "ndrrma"
+      ],
+      "observation_ids": [],
+      "note": "Needs plant-level outage/damage records (NEA, DoED, IPPAN) and customs-office closure periods (Department of Customs)."
+    },
+    {
+      "claim": "An event is 'cross-border' if its hazard originates in another country (e.g. TAR GLOF) or its impact/management spans the border (e.g. Kosi embankments under the Kosi Agreement, border inundation); losses are attributed by country of impact and never pooled across countries.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "BIPAD is preferred for Nepal-side losses (tier 1); EM-DAT is used for cross-country comparison; differences are kept and explained (EM-DAT inclusion thresholds and event aggregation vs BIPAD incident-level recording).",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No event losses retrieved (all hosts blocked).",
+    "EM-DAT requires registration; access route must be confirmed by 00A.",
+    "No primary lead yet for the July 2025 Rasuwa GLOF or the July 2016 Bhote Koshi GLOF beyond the ICIMOD/UNDP inventory.",
+    "Primary official record for the reported late-August 2026 Rasuwa event not located.",
+    "Hydropower plant-level damage and outage records not located.",
+    "Indian-side loss records (Bihar, Uttarakhand, Uttar Pradesh) for shared events not located.",
+    "Web search budget exhausted in r1."
+  ],
+  "assumptions": [
+    {
+      "id": "25C-A1",
+      "text": "Event dates recorded from prior knowledge in cross_border_events are candidate identifiers only and are marked 'to verify'; they carry no loss values.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25C-A2",
+      "text": "Losses in NPR are recorded in current prices with the Nepal FY of the event; USD losses (EM-DAT) are kept separate and converted only with documented exchange rates.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25C-A3",
+      "text": "News articles are used only to locate primary documents and are never cited for dates, casualties or losses.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "16B finding on the August 2026 Rasuwagadhi-Kerung flood: 25C could not verify it from primary sources in r1. A news report dates it 26 August 2026, and a separate July 2025 Rasuwa GLOF also affected the same crossing; please keep both as unverified and avoid referring to them as a single event until primary records are retrieved."
+    },
+    {
+      "to": "13",
+      "text": "Infrastructure-damage channel (X18) should wait for BIPAD/PDNA-based loss records; do not calibrate capital-stock shocks from news reports."
+    },
+    {
+      "to": "28",
+      "text": "Red-team note: the absence of real-time Nepal-China hazard data sharing (see 25B BA-06) is a scenario-relevant vulnerability for S05/S10; verification pending."
+    },
+    {
+      "to": "00A",
+      "text": "EM-DAT access requires a registered account; request a human-approved access route. Also suggest catalog ids for DesInventar and NPC PDNA series."
+    }
+  ],
+  "uncertainty": "High. Event identification for historical TAR-origin GLOFs is reasonably documented in ICIMOD literature but not yet retrieved; loss estimates differ systematically between BIPAD (incident-level, Nepal only), EM-DAT (thresholded, event-aggregated) and PDNAs (economic damage and loss methodology). The 2026 event is unverified.",
+  "specific": {
+    "cross_border_events": [
+      {
+        "event_id": "CBE-01",
+        "event": "Kyirong (Gyirong)-Rasuwa cross-border flood/debris event",
+        "date_as_reported": "late August 2026 as reported (a news report cites a Chinese statement dating it 26 August 2026); UNVERIFIED",
+        "origin_country_basin": "Tibet Autonomous Region (China) headwaters of Kyirong/Bhote Koshi-Trishuli",
+        "impacted_areas": "Rasuwa district; Rasuwagadhi-Kerung border crossing and dry port; Trishuli-corridor hydropower",
+        "hazard_type": "debris flow / flood (possible GLOF; to confirm)",
+        "verification_status": "unverified - news pointers only; ICIMOD page (16B L34) not yet retrieved",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L01",
+          "25C-L02",
+          "25C-L11",
+          "25C-L08",
+          "25C-L09",
+          "25C-L10"
+        ],
+        "data_required": "Primary dated record: ICIMOD event page; DHM flood bulletin/gauge record; BIPAD incident entries (Rasuwa, event dates); MoHA/NDRRMA situation report; Chinese Embassy in Nepal/MFA statement; losses by category and infrastructure (border point, bridge, hydropower plants and their capacities from NEA/DoED)",
+        "notes": "Must confirm this is distinct from CBE-02 (July 2025 Rasuwa event) and not a conflation; scenario use (S05, S10) blocked until verified",
+        "status": "pending"
+      },
+      {
+        "event_id": "CBE-02",
+        "event": "Lhende/Rasuwa glacial lake outburst flood affecting Rasuwagadhi-Kerung crossing",
+        "date_as_reported": "July 2025 (from prior knowledge; to verify)",
+        "origin_country_basin": "Glacial lake in Tibet Autonomous Region (China), Trishuli headwaters",
+        "impacted_areas": "Rasuwa district; Rasuwagadhi border bridge and dry port; hydropower in Bhote Koshi-Trishuli corridor",
+        "hazard_type": "GLOF",
+        "verification_status": "unverified - no lead located in r1",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L02",
+          "25C-L11",
+          "25C-L01"
+        ],
+        "data_required": "ICIMOD event analysis; BIPAD records for July 2025; DHM gauge; PDNA or MoHA report; damage to hydropower (NEA/IPPAN)",
+        "notes": "Listed from general knowledge only as a candidate; no value taken",
+        "status": "pending"
+      },
+      {
+        "event_id": "CBE-03",
+        "event": "Bhote Koshi/Sunkoshi GLOF originating in TAR",
+        "date_as_reported": "July 2016 (from prior knowledge; to verify)",
+        "origin_country_basin": "Glacial lake in Tibet Autonomous Region, Bhote Koshi headwaters",
+        "impacted_areas": "Sindhupalchok; Tatopani-Khasa border crossing; Bhote Koshi hydropower",
+        "hazard_type": "GLOF",
+        "verification_status": "unverified - to be checked against ICIMOD/UNDP 2020 GLOF history table",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L04",
+          "25C-L05",
+          "25C-L14",
+          "25C-L02"
+        ],
+        "data_required": "Historical GLOF table (ICIMOD/UNDP 2020); BIPAD and DesInventar records; hydropower damage records",
+        "notes": "Candidate from general knowledge; confirm date and origin lake from 25C-L05",
+        "status": "pending"
+      },
+      {
+        "event_id": "CBE-04",
+        "event": "Historical TAR-origin GLOFs into Nepal (e.g. Sunkoshi/Bhote Koshi and Arun events)",
+        "date_as_reported": "various dates (to be listed from ICIMOD/UNDP 2020 historical GLOF table)",
+        "origin_country_basin": "Tibet Autonomous Region",
+        "impacted_areas": "Koshi basin valleys",
+        "hazard_type": "GLOF",
+        "verification_status": "pending",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L04",
+          "25C-L05",
+          "25C-L14"
+        ],
+        "data_required": "Full list with dates, source lakes and recorded damages",
+        "notes": "Build event list solely from the retrieved table",
+        "status": "pending"
+      },
+      {
+        "event_id": "CBE-05",
+        "event": "Kosi embankment breach (Kusaha) with flooding in Nepal and Bihar",
+        "date_as_reported": "August 2008 (from prior knowledge; to verify)",
+        "origin_country_basin": "Koshi river, Nepal (Sunsari) - embankment under Kosi Agreement",
+        "impacted_areas": "Sunsari and Saptari (Nepal); Bihar (India)",
+        "hazard_type": "riverine flood / embankment failure",
+        "verification_status": "unverified",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L02",
+          "25C-L03",
+          "25C-L15",
+          "25C-L16"
+        ],
+        "data_required": "EM-DAT records for Nepal and India; Government of Nepal and Bihar government damage reports; any Nepal PDNA",
+        "notes": "Cross-border in both origin (Indian-maintained works in Nepal) and impact",
+        "status": "pending"
+      },
+      {
+        "event_id": "CBE-06",
+        "event": "Mahakali/Darchula floods on Nepal-India border",
+        "date_as_reported": "June 2013 (from prior knowledge; to verify)",
+        "origin_country_basin": "Mahakali headwaters (Nepal-India border)",
+        "impacted_areas": "Darchula (Nepal); Uttarakhand/Dharchula (India)",
+        "hazard_type": "flash flood",
+        "verification_status": "unverified",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L02",
+          "25C-L03"
+        ],
+        "data_required": "EM-DAT and BIPAD records; Nepal MoHA report",
+        "notes": "Losses in India must be kept separate from Nepal losses",
+        "status": "pending"
+      },
+      {
+        "event_id": "CBE-07",
+        "event": "Terai monsoon floods with cross-border inundation (embankments and roads along the border)",
+        "date_as_reported": "recurrent; August 2017 major episode (from prior knowledge; to verify)",
+        "origin_country_basin": "Terai rivers (Koshi, Kamala, Bagmati, Narayani, Rapti etc.)",
+        "impacted_areas": "Terai districts (Nepal); Bihar and Uttar Pradesh (India)",
+        "hazard_type": "riverine flood / inundation",
+        "verification_status": "unverified",
+        "losses": {
+          "deaths": null,
+          "affected_persons": null,
+          "damage_value": null,
+          "damage_unit": "NPR_current_mn or USD_current_mn (per source)",
+          "period_basis": "event date (calendar) and Nepal FY for fiscal cost"
+        },
+        "infrastructure_affected": "pending",
+        "lead_ids": [
+          "25C-L02",
+          "25C-L03",
+          "25C-L16",
+          "25C-L15"
+        ],
+        "data_required": "Nepal PDNA for 2017 floods (NPC); EM-DAT records; JCIFM records on inundation from border structures",
+        "notes": "Attribution of inundation to cross-border structures is contested; record claims by each side separately",
+        "status": "pending"
+      }
+    ],
+    "status": "pending",
+    "verification_protocol": "An event is verified when at least one tier-1 (DHM, NDRRMA/BIPAD, MoHA, NPC) or tier-6 (ICIMOD) primary record is retrieved, hashed and ingested; losses require BIPAD or PDNA extraction with period basis stated.",
+    "research_question_status": {
+      "Q1": "pending - database and document leads located; events listed as candidates; all losses pending"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "25C-L01",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "ICIMOD account of the reported 2026 Kyirong-Rasuwa cross-border flood/debris event, origin in TAR, damage to Rasuwagadhi-Kerung border infrastructure and hydropower (16B lead L34)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L02",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal incident database",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Incident records by date, hazard type (flood, GLOF, debris flow, landslide), district/municipality with deaths, missing, injured, houses and infrastructure damaged, estimated loss (NPR); export by hazard and period (16B lead L36)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L03",
+      "url": "https://public.emdat.be",
+      "title": "EM-DAT public data portal",
+      "publisher": "CRED, UCLouvain",
+      "source_id": "em_dat",
+      "contains": "Event-level records for Nepal and India/China/Bangladesh: disaster type, start/end dates, deaths, affected, total damage (USD, nominal and CPI-adjusted); registration required",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L04",
+      "url": "https://lib.icimod.org/records/p869r-n4132",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India (2020)",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": "Glacial lake inventory and ranked potentially dangerous glacial lakes by basin and country; historical GLOF event list including transboundary events originating in TAR",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L05",
+      "url": "https://nepal.un.org/sites/default/files/2020-10/Inventory_Glacial_Lakes_2020_Full2.pdf",
+      "title": "Inventory of Glacial Lakes 2020 (full report PDF)",
+      "publisher": "UN Nepal / UNDP / ICIMOD",
+      "source_id": "icimod",
+      "contains": "Downloadable full report; historical GLOF table with dates, source lake, country of origin and impacted valleys",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L06",
+      "url": "https://rds.icimod.org/Home/DataDetail?metadataId=1971950",
+      "title": "Potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali basins (dataset)",
+      "publisher": "ICIMOD Regional Database System",
+      "source_id": "icimod",
+      "contains": "Geospatial dataset of potentially dangerous glacial lakes by country; for mapping exposure of hydropower and border infrastructure",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L07",
+      "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+      "title": "ThinkHazard - Nepal - River flood",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Qualitative river-flood hazard class by administrative unit (16B lead L35)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L08",
+      "url": "https://www.cnn.com/2026/08/29/asia/himalayas-risk-china-nepal-india-infrastructure-intl-hnk",
+      "title": "The Himalayas are unpredictable. But countries are building there like never before (29 Aug 2026)",
+      "publisher": "CNN (news)",
+      "source_id": "academic",
+      "contains": "News pointer to the late-August 2026 Nepal-China border flood and infrastructure exposure; not evidence",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "news_pointer_not_evidence"
+    },
+    {
+      "lead_id": "25C-L09",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-31/nepal-floods-expose-gaps-in-warning-systems-china-data-sharing",
+      "title": "Nepal Floods Expose Gaps in Warning, China Data Sharing (31 Aug 2026)",
+      "publisher": "Bloomberg (news)",
+      "source_id": "academic",
+      "contains": "News pointer: reported event and early-warning/data-sharing gaps; not evidence",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "news_pointer_not_evidence"
+    },
+    {
+      "lead_id": "25C-L10",
+      "url": "https://peoplesreview.com.np/2026/09/02/china-is-timely-sharing-hydrological-information-with-nepali-authorities/",
+      "title": "China is timely sharing hydrological information with Nepali authorities (2 Sep 2026)",
+      "publisher": "Peoples' Review (news)",
+      "source_id": "academic",
+      "contains": "News report quoting a Chinese statement dating a mudslide at the Gyirong/Rasuwa port to 26 August 2026; pointer to locate the primary Chinese Embassy/MFA statement",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "news_pointer_not_evidence"
+    },
+    {
+      "lead_id": "25C-L11",
+      "url": "https://dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal",
+      "publisher": "DHM Nepal",
+      "source_id": "dhm",
+      "contains": "Flood bulletins, river-gauge records (e.g. Trishuli, Bhote Koshi/Sunkoshi, Koshi at Chatara) for event dating and magnitude",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L12",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Hydropower exposure to cryosphere hazards by basin (16B lead L33)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L13",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP5.pdf",
+      "title": "IPCC AR6 WGII Cross-Chapter Paper 5: Mountains",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Assessment of GLOF and cascading mountain hazards and trends (context, no event losses)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L14",
+      "url": "https://lib.icimod.org/records/ce924-5h586",
+      "title": "HKH Assessment (2019) - disaster chapter",
+      "publisher": "ICIMOD / Springer",
+      "source_id": "icimod",
+      "contains": "Assessment of transboundary floods and GLOF history in HKH, incl. Koshi and Bhote Koshi events",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25C-L15",
+      "url": "https://isetnepal.org.np/issue-brief-status-and-implementation-of-transboundary-river-agreements-on-the-kosi-river-in-nepal/",
+      "title": "Status and Implementation of Transboundary River Agreements on the Kosi River (issue brief)",
+      "publisher": "ISET-Nepal",
+      "source_id": "academic",
+      "contains": "Koshi embankment failures and cross-border flood governance history (pointer to primary records)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "analysis"
+    },
+    {
+      "lead_id": "25C-L16",
+      "url": "https://npc.gov.np",
+      "title": "National Planning Commission, Nepal - Post-Disaster Needs Assessments",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Official PDNA reports with sectoral damage and loss (NPR, Nepal FY) for major events",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    }
+  ]
+}

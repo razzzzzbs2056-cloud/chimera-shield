@@ -357,8 +357,8 @@
       "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
       "title": "Bhutan Country Economic Memorandum (2024)",
       "publisher": "World Bank",
-      "source_id": "wb_npl",
-      "contains": "Bhutan's hydropower-export model with India; comparator for Nepal's cross-border power arrangements (to check coverage; catalog id wb_npl used as nearest World Bank id)"
+      "source_id": null,
+      "contains": "Bhutan's hydropower-export model with India; comparator for Nepal's cross-border power arrangements (coverage to check; no catalog id for World Bank Bhutan documents)"
     }
   ]
 }

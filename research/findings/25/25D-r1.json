@@ -1,0 +1,422 @@
+{
+  "subagent_id": "25D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). For Q1 (climate finance Nepal has accessed from GCF, GEF and MDBs versus approved) the structure of the answer is defined in specific.climate_finance_access: eight channels (GCF, GEF/LDCF/SCCF, Adaptation Fund, CIF, World Bank, ADB, OECD all-provider climate-related development finance, and MoF on-budget climate expenditure) each with approved, committed, disbursed, access ratio, grant share and adaptation share, plus NDC/NAP need-side figures. All values are pending. Only one lead (GCF portfolio, carried from 16A) was found by search; the remaining fund-portal URLs are from the source catalog or general knowledge and are marked unverified because the web search budget was exhausted before 25D searches and all fund hosts are blocked. Main methodological risks: double counting across funds channelled via MDBs, attribution of multi-country projects, Rio-marker over-attribution, and mismatched period bases (calendar, World Bank FY, Nepal FY).",
+  "findings": [
+    {
+      "claim": "Q1: Climate finance approved for Nepal by GCF, GEF (incl. LDCF/SCCF), Adaptation Fund, CIF, World Bank and ADB, cumulative to latest cut-off.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "cumulative to a common cut-off date (to be set on retrieval)",
+      "source_ids": [
+        "gcf",
+        "gef",
+        "wb_npl",
+        "adb_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25D-L01 to L08."
+    },
+    {
+      "claim": "Q1: Climate finance disbursed (accessed) to Nepal by the same channels, and access ratio disbursed/approved per channel.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "cumulative to the same cut-off",
+      "source_ids": [
+        "gcf",
+        "gef",
+        "wb_npl",
+        "adb_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Disbursement fields on GCF project pages, GEF database, WB/ADB project pages."
+    },
+    {
+      "claim": "All-provider climate-related development finance to Nepal (OECD CRS, Rio markers), commitments vs disbursements.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "calendar years",
+      "source_ids": [
+        "oecd"
+      ],
+      "observation_ids": [],
+      "note": "Lead 25D-L04; convert to Nepal FY only via transaction-level dates."
+    },
+    {
+      "claim": "Nepal's stated climate finance needs (NDC, NAP) for the access-vs-need comparison.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Lead 25D-L11 (UNFCCC NDC registry; catalog lacks a UNFCCC id)."
+    },
+    {
+      "claim": "Access is measured as cumulative disbursement over cumulative approval per channel at a common cut-off date; multi-country projects are included only for stated Nepal allocations; funds flowing via MDBs (CIF, GCF co-financing) are netted to avoid double counting.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "MDB climate finance is reported as the climate co-benefit share of project commitments per joint MDB methodology and kept separate from dedicated climate-fund flows.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No values retrieved; all fund portals blocked.",
+    "Only one fund lead found by search (GCF root, via 16A); other URLs unverified.",
+    "Nepal allocations within multi-country GCF/GEF projects may not be published.",
+    "MoF Development Cooperation Report and climate budget code documents for FY2023/24-FY2025/26 not located as direct files.",
+    "Source catalog lacks ids for Adaptation Fund, CIF, UNFCCC and Climate Funds Update (academic used as proxy)."
+  ],
+  "assumptions": [
+    {
+      "id": "25D-A1",
+      "text": "USD current prices are the reporting unit for fund flows; NPR conversions use NRB exchange rates at transaction dates and are labelled.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25D-A2",
+      "text": "Loans and grants are reported separately; loan-financed climate finance also enters external debt (Agent 26E), so it is not added to grants in the model's grants variable.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25D-A3",
+      "text": "Approval is not access; scenario inputs for external financing (X24) use disbursement paths, not approvals.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "26A",
+      "text": "Coordinate on X24: ODA totals from OECD/MoF include climate-related flows; 25D will supply the climate component with a double-counting reconciliation, not an additive series."
+    },
+    {
+      "to": "26E",
+      "text": "MDB climate loans add to external public debt; please flag concessional terms so the debt module does not treat them as grants."
+    },
+    {
+      "to": "16A",
+      "text": "channels.py external_financing owners omit 25D (as 16A itself noted); 25D confirms it supplies the climate-finance component of X24."
+    },
+    {
+      "to": "00A",
+      "text": "Request catalog ids for adaptation_fund, cif, unfccc and climate_funds_update, and confirmation of the GCF and GEF country-page URLs on first fetch."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Structural uncertainty from attribution of multi-country projects, co-benefit accounting in MDB portfolios, Rio-marker coding, and disbursement reporting lags (disbursement data are often reported with a lag of a year or more relative to approvals). Period bases differ across sources (calendar, World Bank FY, Nepal FY).",
+  "specific": {
+    "climate_finance_access": {
+      "definitions": {
+        "approved": "Board/Council approval of financing attributed to Nepal (single-country projects fully; multi-country projects only where the Nepal allocation is stated)",
+        "committed": "Legal agreement signed/effective (MDB commitment; GCF FAA effectiveness)",
+        "disbursed": "Cumulative transfers to the executing/implementing entity or recipient to the cut-off date",
+        "access_ratio": "disbursed divided by approved, computed per channel with matching cut-off dates"
+      },
+      "by_channel": [
+        {
+          "id": "CF-01",
+          "channel": "Green Climate Fund (funded projects and readiness)",
+          "measures": {
+            "approved": null,
+            "committed": null,
+            "disbursed": null,
+            "approved_minus_disbursed": null,
+            "grant_share": null,
+            "adaptation_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "calendar (Board approval dates); convert to Nepal FY via transaction dates",
+          "lead_ids": [
+            "25D-L01",
+            "25D-L02",
+            "25D-L09"
+          ],
+          "status": "pending",
+          "notes": "Multi-country programmes must not be attributed fully to Nepal; record accredited entity (international vs direct access)"
+        },
+        {
+          "id": "CF-02",
+          "channel": "GEF Trust Fund, LDCF, SCCF",
+          "measures": {
+            "approved": null,
+            "committed": null,
+            "disbursed": null,
+            "approved_minus_disbursed": null,
+            "grant_share": null,
+            "adaptation_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "GEF replenishment period and calendar approval dates",
+          "lead_ids": [
+            "25D-L03",
+            "25D-L09"
+          ],
+          "status": "pending",
+          "notes": "LDCF is GEF-managed but separate; GEF grant and co-financing kept separate"
+        },
+        {
+          "id": "CF-03",
+          "channel": "Adaptation Fund",
+          "measures": {
+            "approved": null,
+            "committed": null,
+            "disbursed": null,
+            "approved_minus_disbursed": null,
+            "grant_share": null,
+            "adaptation_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "calendar",
+          "lead_ids": [
+            "25D-L07",
+            "25D-L09"
+          ],
+          "status": "pending",
+          "notes": "Record implementing entity type"
+        },
+        {
+          "id": "CF-04",
+          "channel": "Climate Investment Funds (PPCR, SREP)",
+          "measures": {
+            "approved": null,
+            "committed": null,
+            "disbursed": null,
+            "approved_minus_disbursed": null,
+            "grant_share": null,
+            "adaptation_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "calendar",
+          "lead_ids": [
+            "25D-L08",
+            "25D-L09"
+          ],
+          "status": "pending",
+          "notes": "Channelled through MDBs; avoid double counting with CF-05/CF-06"
+        },
+        {
+          "id": "CF-05",
+          "channel": "World Bank (IDA/IBRD) climate co-benefits",
+          "measures": {
+            "approved": null,
+            "committed": null,
+            "disbursed": null,
+            "approved_minus_disbursed": null,
+            "grant_share": null,
+            "adaptation_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "World Bank FY (July-June) - differs from Nepal FY and calendar",
+          "lead_ids": [
+            "25D-L05",
+            "25D-L04"
+          ],
+          "status": "pending",
+          "notes": "Climate co-benefit share is a methodology-based attribution, not a separate flow"
+        },
+        {
+          "id": "CF-06",
+          "channel": "ADB climate finance",
+          "measures": {
+            "approved": null,
+            "committed": null,
+            "disbursed": null,
+            "approved_minus_disbursed": null,
+            "grant_share": null,
+            "adaptation_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "calendar",
+          "lead_ids": [
+            "25D-L06",
+            "25D-L04"
+          ],
+          "status": "pending",
+          "notes": "Joint MDB climate finance methodology; adaptation/mitigation split"
+        },
+        {
+          "id": "CF-07",
+          "channel": "Bilateral and all-provider climate-related development finance (OECD)",
+          "measures": {
+            "committed": null,
+            "disbursed": null,
+            "adaptation_share": null,
+            "grant_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "calendar",
+          "lead_ids": [
+            "25D-L04"
+          ],
+          "status": "pending",
+          "notes": "Rio-marker 'significant' flows overstate climate finance if counted fully; report principal and significant separately"
+        },
+        {
+          "id": "CF-08",
+          "channel": "Nepal on-budget climate-relevant expenditure and receipts (MoF)",
+          "measures": {
+            "allocated": null,
+            "spent": null,
+            "foreign_financed_share": null
+          },
+          "unit": "USD_current_mn",
+          "period_basis": "Nepal FY (mid-July)",
+          "lead_ids": [
+            "25D-L10"
+          ],
+          "status": "pending",
+          "notes": "Climate budget code covers domestic and foreign-financed spending; not a measure of access alone"
+        }
+      ],
+      "need_side": {
+        "ndc_and_nap_finance_needs": null,
+        "unit": "USD_current_mn",
+        "status": "pending",
+        "lead_ids": [
+          "25D-L11"
+        ]
+      },
+      "access_constraints_to_assess": [
+        "number and type of accredited entities based in Nepal (direct access)",
+        "project preparation capacity and readiness support",
+        "co-financing requirements",
+        "MDB loan vs grant terms and debt implications (link to 26E)",
+        "fiduciary and procurement delays (link to domestic Agent 03)"
+      ],
+      "status": "pending"
+    },
+    "status": "pending",
+    "research_question_status": {
+      "Q1": "pending - measurement framework defined; portal leads recorded (mostly unverified URLs); values to be retrieved in r2"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "25D-L01",
+      "url": "https://www.greenclimate.fund",
+      "title": "Green Climate Fund project portfolio",
+      "publisher": "Green Climate Fund",
+      "source_id": "gcf",
+      "contains": "Approved projects and disbursements for Nepal by accredited entity (16A lead L78)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L02",
+      "url": "https://www.greenclimate.fund/countries/nepal",
+      "title": "GCF country page - Nepal",
+      "publisher": "Green Climate Fund",
+      "source_id": "gcf",
+      "contains": "Nepal single- and multi-country funded projects (FP ids), readiness grants, GCF financing vs co-financing, approval dates, disbursement to date, national designated authority",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L03",
+      "url": "https://www.thegef.org/projects-operations/database",
+      "title": "GEF Projects database (filter: Nepal)",
+      "publisher": "Global Environment Facility",
+      "source_id": "gef",
+      "contains": "Nepal projects by GEF period, trust fund (GEFTF, LDCF, SCCF), focal area, agency, GEF grant, co-financing, status (approved, under implementation, completed)",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L04",
+      "url": "https://data-explorer.oecd.org",
+      "title": "OECD Data Explorer - Creditor Reporting System and climate-related development finance",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "CRS commitments and disbursements to Nepal with Rio markers (adaptation/mitigation, principal/significant) and OECD climate-related development finance dataset by provider; calendar-year basis",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L05",
+      "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
+      "title": "World Bank projects list - Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Nepal IDA/IBRD projects with commitment, disbursed amount, approval dates; climate co-benefit shares in project documents",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L06",
+      "url": "https://www.adb.org/countries/nepal",
+      "title": "ADB Nepal country page and project documents",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Nepal sovereign projects, climate finance tracking (adaptation/mitigation), commitments vs disbursements; country partnership strategy",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L07",
+      "url": "https://www.adaptation-fund.org/projects-programmes/",
+      "title": "Adaptation Fund projects and programmes (filter: Nepal)",
+      "publisher": "Adaptation Fund",
+      "source_id": "academic",
+      "contains": "Nepal approved projects, implementing entity, amounts approved and transferred",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L08",
+      "url": "https://www.cif.org/country/nepal",
+      "title": "Climate Investment Funds - Nepal (PPCR, SREP)",
+      "publisher": "Climate Investment Funds",
+      "source_id": "academic",
+      "contains": "Nepal investment plans and projects under PPCR and SREP, endorsed vs approved vs disbursed via MDBs",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L09",
+      "url": "https://climatefundsupdate.org/data-dashboard/",
+      "title": "Climate Funds Update data dashboard",
+      "publisher": "ODI and Heinrich Boell Stiftung",
+      "source_id": "academic",
+      "contains": "Cross-fund compilation of pledged/approved/disbursed amounts by recipient country; for cross-check only",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "secondary_compilation"
+    },
+    {
+      "lead_id": "25D-L10",
+      "url": "https://mof.gov.np",
+      "title": "Ministry of Finance Nepal - Development Cooperation Report, Budget (climate budget code), Economic Survey",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Nepal FY on-budget climate-relevant allocations (climate budget tagging), foreign aid disbursements by donor incl. climate funds (Development Cooperation Report / AMIS)",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L11",
+      "url": "https://unfccc.int/NDCREG",
+      "title": "UNFCCC NDC Registry - Nepal",
+      "publisher": "UNFCCC",
+      "source_id": "academic",
+      "contains": "Nepal NDC (latest) conditional/unconditional finance needs; NAP finance needs (for access-vs-need gap)",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25D-L12",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter10.pdf",
+      "title": "IPCC AR6 WGII Chapter 10: Asia",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Assessed adaptation finance gaps and access barriers in Asian LDCs (qualitative context)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    }
+  ]
+}

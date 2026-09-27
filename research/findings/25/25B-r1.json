@@ -1,0 +1,594 @@
+{
+  "subagent_id": "25B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). For Q1 (which basin-level agreements affect hydropower development rights) the primary texts of the Nepal-India Kosi Agreement (1954, revised 1966), Gandak Agreement (1959, revised 1964) and Mahakali Treaty (1996) were located in official or treaty repositories (Nepal MoEWRI, India Ministry of Jal Shakti, PCA, FAOLEX, CommonLII), together with the Nepal-India Power Trade Agreement (2014) and India's unilateral Guidelines for Import/Export (Cross Border) of Electricity (2018) and 2021 Procedure, which condition export-oriented hydropower. No primary instrument for Nepal-China data sharing was located; only news pointers following the reported late-August 2026 Gyirong/Rasuwa event. The basin_agreement_table (ten rows) lists provisions to extract and the relevance of each to hydropower rights; provision-level content is pending until texts are downloaded and read. No empirical values are involved beyond dates, which are to be confirmed from the texts.",
+  "findings": [
+    {
+      "claim": "Q1: Basin agreements affecting hydropower development rights - the Kosi (1954/1966), Gandak (1959/1964) and Mahakali (1996) instruments with India are the water-allocation agreements; the PTA (2014) and India's cross-border electricity guidelines (2018/2021) govern market access. Provision-level analysis pending retrieval of texts.",
+      "type": "pending",
+      "value": null,
+      "period": "instruments dated 1954-2021",
+      "source_ids": [
+        "mofa_nepal",
+        "cea_india"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25B-L01 to 25B-L13; download, hash and extract clause text in r2."
+    },
+    {
+      "claim": "Whether any Nepal-China instrument governs flood-season hydrological data sharing or glacial-lake monitoring in the Koshi and Trishuli headwaters.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "dhm"
+      ],
+      "observation_ids": [],
+      "note": "Only news pointers (25B-L20, L21). Require MoFA treaty register, DHM, and Chinese Embassy in Nepal/MFA primary statements."
+    },
+    {
+      "claim": "Current implementation status of Pancheshwar (DPR, Pancheshwar Development Authority) and Sapta Koshi High Dam studies.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Need JCWR/PDA meeting minutes or joint statements (MoFA, MoEWRI, MEA India)."
+    },
+    {
+      "claim": "Downstream India-Bangladesh Ganges treaty term and renewal status, and Nepal-India-Bangladesh power trade arrangements.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mea_india"
+      ],
+      "observation_ids": [],
+      "note": "No lead located (search budget exhausted)."
+    },
+    {
+      "claim": "Agreement relevance is classified as (a) water allocation/works rights, (b) electricity market access, (c) data sharing/hazard governance; hydropower development rights are affected by (a) and (b) directly and by (c) through risk and cost.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Treaty texts hosted by the counterpart government or by FAOLEX/PCA are treated as primary texts; Nepal-hosted versions (MoEWRI, GIWMS) take precedence where available, and textual differences between copies are recorded, not resolved silently.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No downloads possible in r1; provision-level content pending.",
+    "Nepal-China water or hydrological data-sharing instrument: none located.",
+    "JCWR / JCIFM / Pancheshwar Development Authority meeting records not located.",
+    "Nepal-India long-term power trade understanding (reported 2024) and trilateral Nepal-India-Bangladesh power sale arrangement not located as primary texts.",
+    "India-Bangladesh Ganges Water Sharing Treaty text and renewal status not located.",
+    "WECS basin plans and National Water Resources Policy text not located.",
+    "UN Treaty Collection status for the 1997 Watercourses Convention not located.",
+    "Web search budget exhausted in r1; r2 must continue location work."
+  ],
+  "assumptions": [
+    {
+      "id": "25B-A1",
+      "text": "Dates given in basin_agreement_table are identifiers from located document titles and are to be confirmed from the texts on retrieval.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25B-A2",
+      "text": "India's unilateral cross-border electricity rules are included as a de facto basin-level constraint because they determine market access for Nepali hydropower even though they are not bilateral agreements.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25B-A3",
+      "text": "Analytical sources (ISET-Nepal, JVS, MP-IDSA, academic papers) are used to identify contested clauses only; clause content is taken from treaty texts.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "17E",
+      "text": "Please confirm whether 17E holds MoFA/MEA joint-statement records for JCWR, PDA and power-trade mechanisms; 25B needs them to set implementation status."
+    },
+    {
+      "to": "05",
+      "text": "Hydropower export scenarios should treat India's cross-border electricity guidelines (ownership/eligibility conditions) as a binding constraint parameter until the text is retrieved; do not assume open access to the Indian market."
+    },
+    {
+      "to": "16B",
+      "text": "SPOF 'India as sole electricity market' should cite BA-04 and BA-05 rows once texts are retrieved; data-sharing gap with China (BA-06) is an additional hazard-governance SPOF candidate for EXP-20."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog lacks ids for MoEWRI, WECS, FAOLEX/treaty repositories and UN Treaty Collection; suggest adding them (mofa_nepal used as proxy for treaty texts)."
+    }
+  ],
+  "uncertainty": "Moderate for identification of instruments (texts located in official or treaty repositories); high for implementation status and for Nepal-China arrangements, where only news pointers exist. Clause interpretation is contested between Nepali and Indian analyses; both readings will be recorded.",
+  "specific": {
+    "basin_agreement_table": [
+      {
+        "id": "BA-01",
+        "instrument": "Kosi Project Agreement (1954), revised 1966",
+        "parties": "Nepal-India",
+        "basin": "Koshi (Sapta Koshi) / Ganges",
+        "date_signed_or_revised": "1954; revised 1966 (dates to confirm from text)",
+        "text_lead_ids": [
+          "25B-L01",
+          "25B-L02",
+          "25B-L16",
+          "25B-L19"
+        ],
+        "provisions_to_extract": [
+          "Barrage and embankment rights and land lease terms",
+          "Nepal's rights to withdraw water upstream for irrigation and other uses (clause to verify in 1966 text)",
+          "Power generation and supply provisions",
+          "Duration/termination clauses"
+        ],
+        "hydropower_rights_relevance": "Defines Indian-built barrage rights and whether upstream Nepali abstraction for hydropower/storage is constrained; relevance to Sapta Koshi High Dam and Koshi-basin storage projects",
+        "institutions": "Joint mechanisms under JCWR; Joint Committee on Kosi and Gandak Projects (to verify)",
+        "implementation_status": "pending (text located; implementation status via ISET brief and MoFA/MoEWRI records)",
+        "status": "pending",
+        "gaps": [
+          "Current status of lease and any post-1966 amendments"
+        ]
+      },
+      {
+        "id": "BA-02",
+        "instrument": "Gandak Irrigation and Power Project Agreement (1959), revised 1964",
+        "parties": "Nepal-India",
+        "basin": "Gandaki (Narayani) / Ganges",
+        "date_signed_or_revised": "1959; revised 1964 (dates to confirm)",
+        "text_lead_ids": [
+          "25B-L03",
+          "25B-L04",
+          "25B-L05",
+          "25B-L14",
+          "25B-L15",
+          "25B-L17"
+        ],
+        "provisions_to_extract": [
+          "Barrage location and Indian rights",
+          "Nepal's upstream water-use rights (1964 revision)",
+          "Power station provisions and transfer",
+          "Irrigation canals for Nepal"
+        ],
+        "hydropower_rights_relevance": "Whether Nepal's upstream use in the Gandaki basin (incl. storage hydropower) is subject to the agreement; power-sharing precedent",
+        "institutions": "Joint committee (to verify)",
+        "implementation_status": "pending",
+        "status": "pending",
+        "gaps": [
+          "1964 amendment text copy not yet separately located"
+        ]
+      },
+      {
+        "id": "BA-03",
+        "instrument": "Mahakali Treaty (Integrated Development of the Mahakali River), 1996",
+        "parties": "Nepal-India",
+        "basin": "Mahakali (Sarada) / Ganges",
+        "date_signed_or_revised": "1996 (signed); ratification/entry-into-force dates to confirm",
+        "text_lead_ids": [
+          "25B-L06",
+          "25B-L07",
+          "25B-L08",
+          "25B-L17",
+          "25B-L18"
+        ],
+        "provisions_to_extract": [
+          "Pancheshwar Multipurpose Project principles: equal partnership, cost and benefit sharing, energy pricing",
+          "Water entitlements and 'existing consumptive uses' clauses",
+          "Tanakpur and Sarada barrage provisions",
+          "Mahakali River Commission and arbitration",
+          "Review period clause"
+        ],
+        "hydropower_rights_relevance": "Directly governs development rights, energy sharing and water entitlements for Pancheshwar; unresolved DPR/entitlement issues delay the largest Nepal-India storage project",
+        "institutions": "Mahakali River Commission; Pancheshwar Development Authority",
+        "implementation_status": "pending (DPR status and PDA meeting records to be located)",
+        "status": "pending",
+        "gaps": [
+          "Pancheshwar DPR finalisation status; PDA records not yet located"
+        ]
+      },
+      {
+        "id": "BA-04",
+        "instrument": "Agreement on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (PTA), 2014",
+        "parties": "Nepal-India",
+        "basin": "All basins (market access, not water)",
+        "date_signed_or_revised": "21 October 2014",
+        "text_lead_ids": [
+          "25B-L09",
+          "25B-L10"
+        ],
+        "provisions_to_extract": [
+          "Market access and non-discriminatory access to interconnections",
+          "Institutional mechanisms (JWG, JSC)",
+          "Duration and review"
+        ],
+        "hydropower_rights_relevance": "Governs whether Nepali hydropower output (export-oriented projects) can be sold to/through India; does not allocate water",
+        "institutions": "Joint Working Group; Joint Steering Committee",
+        "implementation_status": "pending",
+        "status": "pending",
+        "gaps": [
+          "Subsequent long-term power trade understanding (reported 2024) not yet located as primary text"
+        ]
+      },
+      {
+        "id": "BA-05",
+        "instrument": "India Guidelines for Import/Export (Cross Border) of Electricity 2018 and 2021 Procedure (unilateral)",
+        "parties": "India (applies to Nepal-origin generators)",
+        "basin": "All basins",
+        "date_signed_or_revised": "December 2018 guidelines; February 2021 procedure (to confirm)",
+        "text_lead_ids": [
+          "25B-L11",
+          "25B-L12",
+          "25B-L13"
+        ],
+        "provisions_to_extract": [
+          "Eligibility of exporting generators by ownership/investor country",
+          "Designated Authority approval process",
+          "Tripartite trade via Indian grid"
+        ],
+        "hydropower_rights_relevance": "Unilateral Indian rules effectively condition which Nepali projects (by ownership/financing origin) can export to India; key constraint for hydropower export scenarios",
+        "institutions": "Designated Authority (India)",
+        "implementation_status": "pending",
+        "status": "pending",
+        "gaps": [
+          "Project-level approval lists and any amendments after 2021"
+        ]
+      },
+      {
+        "id": "BA-06",
+        "instrument": "Nepal-China hydrological/flood-season data sharing and glacial-lake joint monitoring",
+        "parties": "Nepal-China",
+        "basin": "Koshi (Bhote Koshi/Sunkoshi, Arun), Trishuli (Kyirong/Rasuwa)",
+        "date_signed_or_revised": "No primary instrument located",
+        "text_lead_ids": [
+          "25B-L20",
+          "25B-L21",
+          "25B-L22",
+          "25B-L23"
+        ],
+        "provisions_to_extract": [
+          "Existence, scope and legal form of any data-sharing MoU",
+          "Real-time vs seasonal data provision",
+          "Joint monitoring of transboundary glacial lakes"
+        ],
+        "hydropower_rights_relevance": "No allocation of hydropower rights; affects hazard risk to hydropower in Trishuli and Koshi corridors and design/insurance costs",
+        "institutions": "Unknown",
+        "implementation_status": "pending (only news pointers; primary MoFA/DHM/Chinese Embassy documents required)",
+        "status": "pending",
+        "gaps": [
+          "Primary instrument text; Chinese statement of late-August 2026 in primary form"
+        ]
+      },
+      {
+        "id": "BA-07",
+        "instrument": "Nepal-India flood-season data sharing and Joint Committee on Inundation and Flood Management (JCIFM)",
+        "parties": "Nepal-India",
+        "basin": "Terai rivers incl. Koshi, Gandaki, Kamala, Bagmati, Mahakali",
+        "date_signed_or_revised": "To be located",
+        "text_lead_ids": [
+          "25B-L22",
+          "25B-L23"
+        ],
+        "provisions_to_extract": [
+          "Hydrological data transfer arrangements",
+          "Embankment and inundation dispute procedures"
+        ],
+        "hydropower_rights_relevance": "Indirect: governs flood management along embankments that also affect project siting and transmission corridors",
+        "institutions": "JCWR, JCIFM (names to verify)",
+        "implementation_status": "pending",
+        "status": "pending",
+        "gaps": [
+          "No primary text located in r1"
+        ]
+      },
+      {
+        "id": "BA-08",
+        "instrument": "Downstream instruments affecting Ganges flows (India-Bangladesh Ganges Water Sharing Treaty, 1996) and trilateral power trade arrangements",
+        "parties": "India-Bangladesh; Nepal-India-Bangladesh",
+        "basin": "Ganges",
+        "date_signed_or_revised": "To verify (treaty term and renewal status to be confirmed from primary text)",
+        "text_lead_ids": [],
+        "provisions_to_extract": [
+          "Farakka flow-sharing arrangement and term",
+          "Any provisions referencing upstream augmentation (storage in Nepal)",
+          "Nepal-India-Bangladesh power sale arrangement (reported 2024)"
+        ],
+        "hydropower_rights_relevance": "Downstream demand for dry-season augmentation could create both leverage and constraints on Nepali storage projects",
+        "institutions": "Joint Rivers Commission (India-Bangladesh)",
+        "implementation_status": "pending (no lead located; search budget exhausted)",
+        "status": "pending",
+        "gaps": [
+          "Primary text and renewal status"
+        ]
+      },
+      {
+        "id": "BA-09",
+        "instrument": "Nepal domestic framework: Water Resources Act (1992), Electricity Act (1992), National Water Resources Policy (2020) and basin plans (WECS)",
+        "parties": "Nepal (domestic)",
+        "basin": "All basins",
+        "date_signed_or_revised": "1992; 2020 (to confirm)",
+        "text_lead_ids": [
+          "25B-L22"
+        ],
+        "provisions_to_extract": [
+          "Licensing and prior-use provisions",
+          "Downstream-benefit and treaty-consistency clauses",
+          "Basin plan allocation priorities"
+        ],
+        "hydropower_rights_relevance": "Domestic rules determine licensing and how treaty obligations are transposed",
+        "institutions": "MoEWRI, DoED, WECS",
+        "implementation_status": "pending (leads not located in r1)",
+        "status": "pending",
+        "gaps": [
+          "WECS river basin plan documents not located"
+        ]
+      },
+      {
+        "id": "BA-10",
+        "instrument": "UN Watercourses Convention (1997) - Nepal's party status",
+        "parties": "Multilateral",
+        "basin": "All transboundary basins",
+        "date_signed_or_revised": "1997 (convention); Nepal status to verify",
+        "text_lead_ids": [],
+        "provisions_to_extract": [
+          "Nepal/India/China/Bangladesh signature/ratification status from UN Treaty Collection"
+        ],
+        "hydropower_rights_relevance": "Customary principles (equitable and reasonable use, no significant harm) frame negotiations even without ratification",
+        "institutions": "None",
+        "implementation_status": "pending",
+        "status": "pending",
+        "gaps": [
+          "UN Treaty Collection status page not yet located"
+        ]
+      }
+    ],
+    "status": "pending",
+    "research_question_status": {
+      "Q1": "partially answered at instrument-identification level; provision content pending retrieval"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "25B-L01",
+      "url": "https://faolex.fao.org/docs/pdf/bi203689.pdf",
+      "title": "Revised Agreement between HMG Nepal and the Government of India on the Kosi Project (1966)",
+      "publisher": "FAO FAOLEX (treaty text repository)",
+      "source_id": "mofa_nepal",
+      "contains": "Full text of the 1954 Kosi Agreement as revised in 1966: barrage, embankments, land lease, Nepal's water-use rights upstream, power provisions, compensation",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L02",
+      "url": "http://www.cawater-info.net/bk/water_law/pdf/nepal-india-1966.pdf",
+      "title": "Amended Kosi agreement 1966 (text)",
+      "publisher": "CAWater-Info (treaty text repository)",
+      "source_id": "mofa_nepal",
+      "contains": "Alternative copy of 1966 amended Kosi agreement for cross-check",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L03",
+      "url": "https://moewri.gov.np/content/65/agreement-nepal-india-on-the-gandak-irrigation-and-power-project-1959/",
+      "title": "Agreement (Nepal-India) on the Gandak Irrigation and Power Project, 1959",
+      "publisher": "Ministry of Energy, Water Resources and Irrigation, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Official Nepal-hosted text of the 1959 Gandak agreement (tier 1); check for 1964 amendment",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L04",
+      "url": "https://www.commonlii.org/in/other/treaties/INTSer/1959/18.html",
+      "title": "Agreement between HMG Nepal and GoI on the Gandak Irrigation and Power Project [1959] INTSer 18",
+      "publisher": "CommonLII (India Treaty Series)",
+      "source_id": "mofa_nepal",
+      "contains": "India Treaty Series text of the Gandak agreement for cross-check",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L05",
+      "url": "https://policy.asiapacificenergy.org/sites/default/files/Agreement-Nepal-and-India-Gandak-River-1959.pdf",
+      "title": "Agreement Nepal and India Gandak River 1959 (PDF)",
+      "publisher": "UN ESCAP Asia Pacific Energy Portal",
+      "source_id": "mofa_nepal",
+      "contains": "PDF copy of Gandak agreement text",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L06",
+      "url": "https://www.jalshakti-dowr.gov.in/static/uploads/2024/02/MAHAKALI_TREATY_19961.pdf",
+      "title": "Mahakali Treaty 1996 (Treaty concerning the Integrated Development of the Mahakali River)",
+      "publisher": "Department of Water Resources, Ministry of Jal Shakti, India",
+      "source_id": "mofa_nepal",
+      "contains": "Full treaty text: Sarada barrage, Tanakpur barrage, Pancheshwar Multipurpose Project principles (equal sharing of costs and benefits, energy pricing), Mahakali River Commission, dispute resolution, review clause",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L07",
+      "url": "https://docs.pca-cpa.org/2016/01/Treaty-Between-His-Majesty%E2%80%99s-Government-of-Nepal-and-the-Government-of-India-Feb.-12-1996-36-I.L.M.-531..pdf",
+      "title": "Treaty between HMG Nepal and GoI (Mahakali), 36 I.L.M. 531",
+      "publisher": "Permanent Court of Arbitration document archive",
+      "source_id": "mofa_nepal",
+      "contains": "Second copy of Mahakali Treaty text incl. exchange of letters",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L08",
+      "url": "https://faolex.fao.org/docs/pdf/bi-17432.pdf",
+      "title": "Mahakali Treaty text (FAOLEX)",
+      "publisher": "FAO FAOLEX",
+      "source_id": "mofa_nepal",
+      "contains": "Third copy for text comparison",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L09",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+      "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (21 Oct 2014)",
+      "publisher": "Government of Nepal (GIWMS CDN)",
+      "source_id": "mofa_nepal",
+      "contains": "Full PTA text: market access, non-discriminatory access to interconnections, JWG/JSC institutions, duration and review",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L10",
+      "url": "https://policy.asiapacificenergy.org/node/378",
+      "title": "PTA 2014 record",
+      "publisher": "UN ESCAP Asia Pacific Energy Portal",
+      "source_id": "mofa_nepal",
+      "contains": "Metadata and alternative copy of PTA 2014",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L11",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
+      "publisher": "Ministry of Power / Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Eligibility and approval conditions for Indian import from neighbouring-country generators (incl. provisions on ownership/investor origin and bilateral-agreement status), Designated Authority role",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L12",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "CEA Import/Export (Cross Border) of Electricity page",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Procedure (2021) for approval by Designated Authority; approved project lists for cross-border trade",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L13",
+      "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity 2018 (MoP page)",
+      "publisher": "Ministry of Power, India",
+      "source_id": "cea_india",
+      "contains": "Official notification page and amendments",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L14",
+      "url": "http://gis.nacse.org/tfdd/tfdddocs/archiveApril2010/111ENG.htm",
+      "title": "Transboundary Freshwater Dispute Database: Gandak agreement text",
+      "publisher": "Oregon State University TFDD",
+      "source_id": "academic",
+      "contains": "TFDD treaty record; database of Ganges-basin agreements for completeness check",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "secondary_repository"
+    },
+    {
+      "lead_id": "25B-L15",
+      "url": "https://isetnepal.org.np/wp-content/uploads/2018/12/Gandak-River-Agreement_Final-press-copy_15-Dec-2017-2-.pdf",
+      "title": "Dixit, Benefits and Burden: A case study of Gandak River Agreement",
+      "publisher": "ISET-Nepal",
+      "source_id": "academic",
+      "contains": "Implementation history, benefit sharing, maintenance and irrigation outcomes of Gandak agreement",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "analysis"
+    },
+    {
+      "lead_id": "25B-L16",
+      "url": "https://isetnepal.org.np/issue-brief-status-and-implementation-of-transboundary-river-agreements-on-the-kosi-river-in-nepal/",
+      "title": "Status and Implementation of Transboundary River Agreements on the Kosi River in Nepal (issue brief)",
+      "publisher": "ISET-Nepal",
+      "source_id": "academic",
+      "contains": "Implementation status of Kosi agreements, flood/embankment governance",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "analysis"
+    },
+    {
+      "lead_id": "25B-L17",
+      "url": "https://jvs-nwp.org.np/wp-content/uploads/2021/04/Troubled-transboundary-cooperation-in-South-Asia.pdf",
+      "title": "Troubled transboundary cooperation in South Asia: Indo-Nepal Gandak and Mahakali treaties",
+      "publisher": "JVS / Nepal Water Partnership",
+      "source_id": "academic",
+      "contains": "Comparative analysis of Gandak and Mahakali implementation disputes",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "analysis"
+    },
+    {
+      "lead_id": "25B-L18",
+      "url": "https://www.researchgate.net/publication/342148937_Mahakali_Treaty_delay_in_implementation_and_resulting_impacts_from_Nepal's_perspective",
+      "title": "Mahakali Treaty: delay in implementation and resulting impacts from Nepal's perspective",
+      "publisher": "ResearchGate (peer-reviewed article)",
+      "source_id": "academic",
+      "contains": "Pancheshwar DPR delay, contested clauses (prior use, water sharing)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "analysis"
+    },
+    {
+      "lead_id": "25B-L19",
+      "url": "https://idsa.in/publisher/comments/revisiting-the-kosi-agreement-lessons-for-indo-nepal-water-diplomacy",
+      "title": "Revisiting the Kosi Agreement: Lessons for Indo-Nepal Water Diplomacy",
+      "publisher": "MP-IDSA (India)",
+      "source_id": "academic",
+      "contains": "Indian-perspective analysis; use only to identify contested provisions",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "analysis"
+    },
+    {
+      "lead_id": "25B-L20",
+      "url": "https://peoplesreview.com.np/2026/09/02/china-is-timely-sharing-hydrological-information-with-nepali-authorities/",
+      "title": "China is timely sharing hydrological information with Nepali authorities (2 Sep 2026)",
+      "publisher": "Peoples' Review (news)",
+      "source_id": "academic",
+      "contains": "News report of a Chinese statement on hydrological data sharing with Nepal DHM after the reported late-August 2026 Gyirong/Rasuwa event; pointer only - primary Chinese Embassy/MFA statement and any Nepal-China data-sharing instrument must be located",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "news_pointer_not_evidence"
+    },
+    {
+      "lead_id": "25B-L21",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-31/nepal-floods-expose-gaps-in-warning-systems-china-data-sharing",
+      "title": "Nepal Floods Expose Gaps in Warning, China Data Sharing (31 Aug 2026)",
+      "publisher": "Bloomberg (news)",
+      "source_id": "academic",
+      "contains": "News pointer on absence of a real-time Nepal-China glacial-lake/river data mechanism; not evidence",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "news_pointer_not_evidence"
+    },
+    {
+      "lead_id": "25B-L22",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - treaties and bilateral relations",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Treaty register; Nepal-India and Nepal-China bilateral water/energy instruments, joint mechanism meeting records (JCWR, JSC, JCIFM)",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L23",
+      "url": "https://dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal",
+      "publisher": "DHM Nepal",
+      "source_id": "dhm",
+      "contains": "Flood-season hydrological data-exchange arrangements with India and China; early-warning bulletins",
+      "url_status": "unverified_general_knowledge_or_catalog (web search budget exhausted; confirm URL on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25B-L24",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level evidence relevant to benefit-sharing and data needs (16B lead L33)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    }
+  ]
+}

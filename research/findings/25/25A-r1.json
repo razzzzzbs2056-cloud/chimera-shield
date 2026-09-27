@@ -1,0 +1,635 @@
+{
+  "subagent_id": "25A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Primary documents answering Q1 (ICIMOD and IPCC ranges for glacier loss and peak-water timing) were located as source leads: the ICIMOD HKH Assessment (2019, Chapter 7 on the cryosphere) and HI-WISE outlook (2023), ICIMOD Nepal glacier inventories and HKH Snow Updates (2024-2026) and Glacier Outlook 2026, IPCC AR6 WGI Chapter 9, AR6 WGII Chapter 10 and Cross-Chapter Paper 5, IPCC SROCC Chapter 2, plus peer-reviewed basin and global studies (Huss and Hock 2018; Lutz et al. 2014; Rounce et al. 2023; Khadka et al. 2020 on the Koshi). No document could be downloaded (data hosts blocked), so every projection range is pending. Seven projection-range parameters are defined in specific.projection_ranges with scenario basis, metric, method and methodological cautions. Key known sources of disagreement: glacier volume vs mass vs area, differing reference years, CMIP5/RCP vs CMIP6/SSP vs warming-level framing, HKH vs RGI High Mountain Asia region definitions, and glacier-runoff vs total-runoff definitions of peak water.",
+  "findings": [
+    {
+      "claim": "Q1(a): ICIMOD range for HKH glacier volume loss by 2100 by warming level/pathway (HKH Assessment Ch.7, 2019; HI-WISE, 2023).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "reference period to 2100 (calendar years)",
+      "source_ids": [
+        "icimod"
+      ],
+      "observation_ids": [],
+      "note": "Download leads 25A-L02 and 25A-L06; extract low/central/high per scenario; record both vintages as separate observations."
+    },
+    {
+      "claim": "Q1(b): IPCC range for glacier mass change in High Mountain Asia / South Asia by 2100 by scenario (AR6 WGI Ch.9 section 9.5.1 and SM; SROCC Ch.2).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "reference period to 2100 (calendar years)",
+      "source_ids": [
+        "ipcc"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25A-L10 to 25A-L13; use regional table for RGI South Asia East where available."
+    },
+    {
+      "claim": "Q1(c): Peak-water timing for glacier runoff in the Ganges and Brahmaputra basins and in Nepal sub-basins (Koshi, Gandaki, Karnali) by scenario.",
+      "type": "pending",
+      "value": null,
+      "unit": "years",
+      "period": "calendar year of peak annual glacier runoff",
+      "source_ids": [
+        "icimod",
+        "ipcc",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25A-L06, 25A-L12, 25A-L14/L15, 25A-L16, 25A-L23."
+    },
+    {
+      "claim": "Nepal basin-level projected glacier volume and area change (Koshi study located; Gandaki, Karnali, Mahakali basin studies not yet located).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "2021-2100 (calendar)",
+      "source_ids": [
+        "academic",
+        "icimod"
+      ],
+      "observation_ids": [],
+      "note": "Lead 25A-L23 for Koshi; r2 must locate Gandaki/Karnali/Mahakali studies."
+    },
+    {
+      "claim": "Observed snow-persistence anomalies for winters 2023/24, 2024/25 and 2025/26 across HKH basins, including the Ganges basin.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "winter seasons 2023/24-2025/26",
+      "source_ids": [
+        "icimod"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25A-L24, 25A-L25, 25A-L26."
+    },
+    {
+      "claim": "Dry-season melt contribution to flow at Nepal hydropower catchments (parameter for Agent 05 and 22D).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "present-day and scenario horizon",
+      "source_ids": [
+        "icimod",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25A-L29, 25A-L20, 25A-L19."
+    },
+    {
+      "claim": "Projection ranges are carried as scenario-conditional ranges (low/central/high per emission pathway or warming level), never collapsed into a single probability-weighted value; scenarios are stress tests, not forecasts.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Where ICIMOD and IPCC ranges differ, both are retained with model ensemble, reference period, region definition and variable (mass, volume, area) recorded; no source is silently preferred despite ICIMOD and IPCC sharing catalog tier 6.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No download of any lead was possible in r1; all projection ranges pending.",
+    "Basin-scale projections for Gandaki, Karnali and Mahakali (Nepal side) not yet located; only a Koshi study was found.",
+    "Hydropower-catchment-level dry-season flow projections (project-scale) not located; needed by Agent 05/22D.",
+    "DHM (tier 1) observed discharge series for glacier-fed rivers not located as downloadable files.",
+    "Whether HI-WISE (2023) provides basin-specific peak-water years for Nepal sub-basins must be checked on retrieval.",
+    "Web search budget was exhausted during r1; further leads (e.g. DHM hydrological yearbooks, WECS basin plans) must be located in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "25A-A1",
+      "text": "The HKH region follows ICIMOD's definition; IPCC and global studies use RGI regions (South Asia East covers the Nepal Himalaya). Values are mapped only where the source reports the matching region; otherwise the aggregate is labelled with its own region.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25A-A2",
+      "text": "Projected climate parameters are on calendar-year or multi-decade horizons; conversion to Nepal FY is not meaningful for these ranges and they enter the model only as scenario parameters for S05 and S09.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25A-A3",
+      "text": "Peak water refers to annual glacier runoff unless the source states otherwise; total river-flow change is carried as a separate parameter (PR-05).",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "05",
+      "text": "Hydropower generation paths should not assume stationary dry-season flow; request that Agent 05 take PR-05/PR-07 ranges (when retrieved) as scenario parameters and report sensitivity rather than a point path."
+    },
+    {
+      "to": "16A",
+      "text": "X17 (hydrology and cryosphere change) is a range-valued, scenario-conditional input, not a time series; the deliverable description in global_task_list should allow scenario-conditional ranges."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog has no id for DHM hydrological yearbooks beyond 'dhm' generic entry, nor for peer-reviewed glacier studies other than the generic 'academic'; suggest specific ids for traceability."
+    }
+  ],
+  "uncertainty": "High. Structural uncertainty spans emission pathway, GCM precipitation spread, glacier-model physics (debris cover, dynamics) and reference-period choice. Peak-water timing is especially sensitive to definition (annual vs monthly; glacier vs total runoff). All values pending; no ranges are yet recorded as observations.",
+  "specific": {
+    "projection_ranges": [
+      {
+        "id": "PR-01",
+        "variable": "HKH glacier volume loss by end-century",
+        "spatial_scope": "Whole HKH (ICIMOD definition)",
+        "metric": "percent of reference-period glacier volume",
+        "scenario_basis": "Global warming levels (e.g. 1.5 C, 2 C, higher) and RCP pathways as used by each source",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "percent",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L02",
+          "25A-L01",
+          "25A-L06",
+          "25A-L05"
+        ],
+        "method": "Extract low/central/high per scenario from HKH Assessment Ch.7 tables and HI-WISE 2023; keep both vintages separately",
+        "methodological_notes": "HKH Assessment (2019, CMIP5/RCP) vs HI-WISE (2023, warming levels, newer glacier models): different model ensembles and baselines; keep both and report the difference",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      },
+      {
+        "id": "PR-02",
+        "variable": "High Mountain Asia / South Asia glacier mass change to 2100",
+        "spatial_scope": "RGI regions for South Asia East, South Asia West, Central Asia",
+        "metric": "percent of 2015 (or source-stated) glacier mass",
+        "scenario_basis": "SSP1-2.6 to SSP5-8.5 (AR6 WGI); RCP2.6/RCP8.5 (SROCC); warming levels (Rounce 2023)",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "percent",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L10",
+          "25A-L11",
+          "25A-L12",
+          "25A-L13",
+          "25A-L16"
+        ],
+        "method": "Extract regional values for RGI South Asia East (Nepal Himalaya) where tabulated; otherwise HMA aggregate labelled as such",
+        "methodological_notes": "IPCC chapters assess published model ensembles; Rounce et al. is a single-model-framework study relative to 2015; mass vs volume vs area are not interchangeable",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      },
+      {
+        "id": "PR-03",
+        "variable": "Nepal basin glacier volume/area change",
+        "spatial_scope": "Koshi basin (Nepal + TAR); Karnali, Gandaki, Mahakali where available",
+        "metric": "percent of source-baseline glacier volume and area",
+        "scenario_basis": "RCP4.5 / RCP8.5 (Khadka 2020); SSP scenarios in newer basin studies",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "percent",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L23",
+          "25A-L21",
+          "25A-L22",
+          "25A-L20"
+        ],
+        "method": "Basin-level ranges per study; attach model (OGGM+GDM etc.) and baseline; Karnali/Gandaki studies still to be located in r2",
+        "methodological_notes": "Area loss and volume loss diverge; debris-covered glaciers respond differently; basin boundaries cross into TAR",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      },
+      {
+        "id": "PR-04",
+        "variable": "Peak water timing (annual glacier melt runoff)",
+        "spatial_scope": "Ganges, Brahmaputra (and Nepal sub-basins Koshi, Gandaki, Karnali)",
+        "metric": "calendar year (or decade) of peak annual glacier runoff",
+        "scenario_basis": "RCP/SSP or warming level per source",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "calendar year (or decade) of peak annual glacier runoff",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L14",
+          "25A-L15",
+          "25A-L06",
+          "25A-L12",
+          "25A-L07",
+          "25A-L16",
+          "25A-L23"
+        ],
+        "method": "Extract peak-water year/decade by basin and scenario from Huss and Hock (2018), HI-WISE, SROCC Ch.2, Rounce (2023) and basin studies; record 'already passed' where stated",
+        "methodological_notes": "Peak water defined for glacier runoff only (not total river flow) in most sources; timing is later for more glacierised basins and higher emission scenarios; monthly peak differs from annual peak",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      },
+      {
+        "id": "PR-05",
+        "variable": "Total river runoff change to mid-century",
+        "spatial_scope": "Upper Ganges and Brahmaputra; Nepal sub-basins",
+        "metric": "percent change in mean annual and seasonal runoff vs reference period",
+        "scenario_basis": "RCP4.5 / RCP8.5 (Lutz 2014); SSPs in AR6-era studies",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "percent",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L17",
+          "25A-L07",
+          "25A-L19",
+          "25A-L20"
+        ],
+        "method": "Separate annual vs dry-season (Dec-May) changes; dry-season change is the hydropower-relevant parameter for Agent 05",
+        "methodological_notes": "Precipitation-driven increases can mask melt decline; GCM precipitation spread is the dominant uncertainty",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      },
+      {
+        "id": "PR-06",
+        "variable": "Snow cover / snow persistence",
+        "spatial_scope": "HKH basins incl. Ganges; Nepal sub-basins where reported",
+        "metric": "percent anomaly vs MODIS-era baseline (observed) and percent change in snow cover (projected)",
+        "scenario_basis": "Observed anomalies (Snow Updates 2024-2026); projected change in HI-WISE",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "percent",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L24",
+          "25A-L25",
+          "25A-L26",
+          "25A-L06",
+          "25A-L19"
+        ],
+        "method": "Observed annual anomalies are facts once retrieved; projected ranges are estimates; do not mix",
+        "methodological_notes": "Snow persistence (ICIMOD MODIS index) is not snow water equivalent; baselines are short (post-2003)",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      },
+      {
+        "id": "PR-07",
+        "variable": "Melt contribution to dry-season flow at hydropower sites",
+        "spatial_scope": "Nepal run-of-river project catchments by basin",
+        "metric": "percent of dry-season flow from snow and glacier melt",
+        "scenario_basis": "Present-day and scenario",
+        "low": null,
+        "central": null,
+        "high": null,
+        "unit": "percent",
+        "baseline_period": "pending (extract from source; differs by source)",
+        "horizon": "2050 and 2100 where reported",
+        "status": "pending",
+        "lead_ids": [
+          "25A-L29",
+          "25A-L20",
+          "25A-L23",
+          "25A-L19"
+        ],
+        "method": "Supply as parameter for Agent 05 (hydro generation) and 22D; attach catchment and season definition",
+        "methodological_notes": "Contribution varies strongly with catchment elevation; national averages are misleading for project-level generation",
+        "consumers": [
+          "05",
+          "07",
+          "13",
+          "25E"
+        ]
+      }
+    ],
+    "status": "pending",
+    "research_question_status": {
+      "Q1": "pending - leads located for ICIMOD (25A-L01 to L06, L21 to L27) and IPCC (25A-L07 to L13); values to be extracted in r2"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "25A-L01",
+      "url": "https://lib.icimod.org/records/ce924-5h586",
+      "title": "The Hindu Kush Himalaya Assessment: Mountains, Climate Change, Sustainability and People (2019)",
+      "publisher": "ICIMOD / Springer",
+      "source_id": "icimod",
+      "contains": "Full assessment (published 2019); cryosphere projections by warming level and emission pathway for HKH glaciers to 2100; chapters on water, disasters, energy",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L02",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-92288-1_7",
+      "title": "Bolch et al. (2019) Status and Change of the Cryosphere in the Extended Hindu Kush Himalaya Region, HKH Assessment Chapter 7",
+      "publisher": "Springer (open access, CC BY 4.0) for ICIMOD",
+      "source_id": "icimod",
+      "contains": "Chapter 7 text, tables and figures: observed glacier area/mass change, projected glacier volume change to 2100 by RCP/warming level and sub-region, snow and permafrost projections, peak-water discussion",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L03",
+      "url": "https://lib.icimod.org/records/da288-m9y08",
+      "title": "Status and Change of the Cryosphere in the Extended HKH Region (ICIMOD HimalDoc record)",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Mirror of HKH Assessment Chapter 7 for download and hashing",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L04",
+      "url": "https://lib.icimod.org/records/3af1f-7ry53/files/Chapter%207%20brief.pdf?download=1",
+      "title": "HKH Assessment Chapter 7 brief: Status and change of the HKH cryosphere",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Policy brief summarising Chapter 7 projection ranges (for cross-check against chapter text only)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L05",
+      "url": "https://lib.icimod.org/record/34450/files/SummaryofHKHAssessmentReport.pdf",
+      "title": "Summary of the Hindu Kush Himalaya Assessment Report",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Headline glacier-loss ranges by warming scenario (summary; cite chapter for values)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L06",
+      "url": "https://lib.icimod.org/record/36322/files/HI-WISE_REPORT_Water_Ice_Society_and_Ecosystems_in_the_HKH-2023.pdf",
+      "title": "Water, ice, society, and ecosystems in the Hindu Kush Himalaya: An outlook (HI-WISE, 2023)",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Updated (2023) projections of HKH glacier volume loss by warming level, snow-cover change, permafrost, peak-water timing by basin (Ganges, Brahmaputra, Indus etc.), downstream water and hazard implications",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L07",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter10.pdf",
+      "title": "IPCC AR6 WGII Chapter 10: Asia (2022)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Assessed cryosphere and water-resource impacts for South Asia/HKH with confidence levels; peak-water statements; hydropower and agriculture risk",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L08",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter10_SM.pdf",
+      "title": "IPCC AR6 WGII Chapter 10 Supplementary Material",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Supporting tables for Chapter 10 assessments",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L09",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP5.pdf",
+      "title": "IPCC AR6 WGII Cross-Chapter Paper 5: Mountains (2022)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Mountain cryosphere and water risks; peak water across mountain regions; GLOF and hazard assessment",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L10",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter09.pdf",
+      "title": "IPCC AR6 WGI Chapter 9: Ocean, Cryosphere and Sea Level Change (2021)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Section 9.5.1 glaciers: projected glacier mass change to 2100 by SSP and region (incl. High Mountain Asia RGI regions South Asia East/West, Central Asia)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L11",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter09_SM.pdf",
+      "title": "IPCC AR6 WGI Chapter 9 Supplementary Material",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Regional glacier projection tables by RGI region and scenario",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L12",
+      "url": "https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/06_SROCC_Ch02_FINAL.pdf",
+      "title": "IPCC SROCC Chapter 2: High Mountain Areas (2019)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Projected glacier mass change by RCP2.6/RCP8.5 for High Mountain Asia; peak-water timing assessment; snow cover; runoff seasonality",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L13",
+      "url": "https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/SROCC_FinalDraft_Chapter2-SM.pdf",
+      "title": "IPCC SROCC Chapter 2 Supplementary Material",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Regional glacier projection tables underlying SROCC Chapter 2",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L14",
+      "url": "https://www.nature.com/articles/s41558-017-0049-x",
+      "title": "Huss and Hock (2018) Global-scale hydrological response to future glacier mass loss, Nature Climate Change 8",
+      "publisher": "Nature Climate Change",
+      "source_id": "academic",
+      "contains": "Modelled glacier-runoff trajectories and peak-water year by large basin (incl. Ganges, Brahmaputra, Indus) under RCPs",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L15",
+      "url": "https://folia.unifr.ch/rerodoc/309006/files/hus_gsh.pdf",
+      "title": "Huss and Hock (2018) author copy",
+      "publisher": "University of Fribourg repository",
+      "source_id": "academic",
+      "contains": "Retrievable full text of Huss and Hock (2018) incl. basin peak-water table",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L16",
+      "url": "https://www.science.org/doi/10.1126/science.abo1324",
+      "title": "Rounce et al. (2023) Global glacier change in the 21st century: Every increase in temperature matters, Science 379",
+      "publisher": "Science",
+      "source_id": "academic",
+      "contains": "Glacier mass loss to 2100 by global warming level, relative to 2015, by RGI region; share of glaciers disappearing; regional peak-water timing",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L17",
+      "url": "https://www.futurewater.nl/wp-content/uploads/2014/06/nclimate2237.pdf",
+      "title": "Lutz, Immerzeel, Shrestha, Bierkens (2014) Consistent increase in High Asia's runoff due to increasing glacier melt and precipitation, Nature Climate Change 4",
+      "publisher": "FutureWater (author copy of Nature Climate Change article)",
+      "source_id": "academic",
+      "contains": "Projected runoff change for upper Ganges, Brahmaputra, Indus, Salween, Mekong to 2050 under RCP4.5/8.5; melt vs rainfall contribution",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31816624/",
+      "title": "Immerzeel et al. (2020) Importance and vulnerability of the world's water towers, Nature 577",
+      "publisher": "Nature / PubMed",
+      "source_id": "academic",
+      "contains": "Water Tower Index and vulnerability for Ganges-Brahmaputra and other HKH towers",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L19",
+      "url": "https://www.nature.com/articles/s41558-021-01074-x",
+      "title": "Climate change decisive for Asia's snow meltwater supply (Nature Climate Change, 2021)",
+      "publisher": "Nature Climate Change",
+      "source_id": "academic",
+      "contains": "Snowmelt contribution to Asian rivers and its projected change by scenario",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L20",
+      "url": "https://www.science.org/doi/10.1126/science.abf3668",
+      "title": "Glaciohydrology of the Himalaya-Karakoram (Science, 2021)",
+      "publisher": "Science",
+      "source_id": "academic",
+      "contains": "Review of glacier melt contribution to Himalayan river flow and projected changes; Nepal basins",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L21",
+      "url": "https://lib.icimod.org/records/pgbnf-p3v73/files/GSN-RR14-2.pdf?download=1",
+      "title": "Glacier Status in Nepal and Decadal Change from 1980 to 2010 Based on Landsat Data",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Nepal glacier inventory by basin (Koshi, Gandaki, Karnali, Mahakali) for c.1980, 1990, 2000, 2010: glacier number, area, estimated ice reserve; glacial lake counts",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L22",
+      "url": "https://lib.icimod.org/records/rrpvn-g3q31",
+      "title": "Changing dynamics of glaciers in the Hindu Kush Himalayan region from 1990 to 2020",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Updated HKH glacier area change 1990-2020 by country/basin",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L23",
+      "url": "https://www.cambridge.org/core/journals/journal-of-glaciology/article/future-projection-of-cryospheric-and-hydrologic-regimes-in-koshi-river-basin-central-himalaya-using-coupled-glacier-dynamics-and-glaciohydrological-models/0BA61115A9E2780AD059509F24B86ED1",
+      "title": "Khadka, Kayastha, Kayastha (2020) Future projection of cryospheric and hydrologic regimes in Koshi River basin, Journal of Glaciology 66(259)",
+      "publisher": "Journal of Glaciology (Cambridge)",
+      "source_id": "academic",
+      "contains": "Koshi sub-basin (Nepal and TAR) projected glacier area and volume change 2021-2100 under RCP4.5/8.5 (OGGM+GDM); discharge composition and timing",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "peer_reviewed"
+    },
+    {
+      "lead_id": "25A-L24",
+      "url": "https://lib.icimod.org/records/kcknw-ers18/files/HKH%20Snow%20Update%20Report%202025.pdf?download=1",
+      "title": "HKH Snow Update 2025",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Snow persistence anomaly by major HKH basin for winter 2024/25 vs MODIS-era baseline",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L25",
+      "url": "https://lib.icimod.org/records/6ef5v-h8144",
+      "title": "HKH Snow Update 2026",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Snow persistence anomaly by basin for winter 2025/26 (released April 2026); basin-level anomalies for Ganges and Koshi/Gandaki/Karnali sub-basins if reported",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L26",
+      "url": "https://lib.icimod.org/record/36512/files/HimalDoc_SnowOutlookReport2024.pdf",
+      "title": "HKH Snow Update 2024",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Snow persistence anomaly by basin for winter 2023/24",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L27",
+      "url": "https://lib.icimod.org/records/fk7f9-2ha88",
+      "title": "HKH Glacier Outlook 2026: Understanding Change Through 50 Years of Field Observation",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "In-situ glacier mass-balance series for benchmark glaciers (e.g. Nepal benchmark glaciers) and 2026 outlook",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L28",
+      "url": "https://lib.icimod.org/records/xzenh-3qh36",
+      "title": "HKH Monsoon Outlook 2026",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Seasonal monsoon outlook 2026 for HKH (context for flow variability; not a projection range)",
+      "url_status": "found_by_websearch_r1",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25A-L29",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level melt contribution and hazard exposure for hydropower (16B lead L33)",
+      "url_status": "carried_from_16B_or_16A_leads",
+      "lead_type": "primary"
+    }
+  ]
+}
