@@ -1,0 +1,927 @@
+{
+  "subagent_id": "04A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked, session search budget largely exhausted). Fifty source leads recorded for India-Nepal economic relations, reused from the shared lead register and upstream agents 16A/16B/17A/17C/17D/21B/22A/22B: Nepal customs trade books and portal, NTIP/TEPC treaty texts (Treaty of Trade, Treaty of Transit 1999 and compilation), unauthorised-trade agreement, MEA/MoFA joint statements, PIB releases on IGC and rail connectivity, NOC import pages and IOC release, NEA annual reports, the 2014 Power Trade Agreement text, Indian MoP/CEA/CERC cross-border electricity instruments, NRB CME reports and peg analysis, RBI exchange-control rules, World Bank NIRTTP appraisal and LPI 2023, ICRIER transit study, WTO TPR and NITDB. Q1 (India share of goods trade, fuel imports and transit) is split into partner share, route share, petroleum supplier/route share, electricity trade and currency exposure - all pending. Q2 (governing agreements and last revision) is set up as an eleven-row inventory - all statuses and revision dates pending primary texts. Q3 (border-administration costs and delays) is pending; no Nepal time-release study was located. Qualitative domestic policy constraints (peg, power-market approvals, treaty-bounded trade policy) are recorded as labelled assumptions. No numbers are recorded.",
+  "findings": [
+    {
+      "claim": "Q1a: Share of Nepal's merchandise imports and exports accounted for by India (partner basis), Nepal FY2022/23 onward.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY2022/23-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "nrb",
+        "tepc"
+      ],
+      "observation_ids": [],
+      "note": "Customs partner tables (04A-L01..L03), NRB CME trade-by-country table (04A-L33, L34) as conflict check, UN Comtrade India-reported mirror (04A-L46). Leads: 04A-L01, 04A-L02, 04A-L03, 04A-L04, 04A-L33, 04A-L34, 04A-L46"
+    },
+    {
+      "claim": "Q1b: Share of Nepal's total goods trade (including third-country trade) that physically crosses the India border, i.e. transits India, Nepal FY2022/23 onward.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY2022/23-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "nitdb"
+      ],
+      "observation_ids": [],
+      "note": "Requires customs-office-level totals (southern offices vs northern offices vs airport) from customs trade books and NITDB cargo statistics; partner share understates India-route dependence because third-country imports transit Indian ports. Leads: 04A-L01, 04A-L03, 04A-L43, 04A-L39"
+    },
+    {
+      "claim": "Q1c: Share of petroleum-product imports sourced from India (supplier) and share entering via India (route), by product, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY2022/23-FY2025/26",
+      "source_ids": [
+        "noc_nepal",
+        "customs_nepal"
+      ],
+      "observation_ids": [],
+      "note": "NOC import records (04A-L19, L20) and customs HS 27 by partner (04A-L01); supplier concentration primarily owned by 22A/21D (X07)."
+    },
+    {
+      "claim": "Q1d: Electricity traded with India (exports and imports) by market segment, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "GWh",
+      "period": "Nepal FY2022/23-FY2025/26",
+      "source_ids": [
+        "nea"
+      ],
+      "observation_ids": [],
+      "note": "NEA annual reports energy-balance tables (04A-L23); approved capacity (CEA list, 04A-L25) must be kept separate from realised flows. Primary owner 22B/17C; 04A consumes."
+    },
+    {
+      "claim": "Q1e: Currency exposure - share of Nepal's external payments settled in INR and NRB INR purchases against convertible currency, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY2024/25-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "NRB CME reports (04A-L33, L34); RBI exchange-control rules for context (04A-L36, L37)."
+    },
+    {
+      "claim": "Q2: Instruments governing Nepal-India trade, transit and power trade are inventoried in specific.agreement_inventory (Treaty of Trade; Treaty of Transit with protocol and letters of exchange; agreement on control of unauthorised trade; rail-services agreement; 2014 Power Trade Agreement; long-term power trade agreement reported January 2024; Indian cross-border electricity guidelines/procedure/regulations; petroleum supply arrangement IOC-NOC; RBI exchange-control rules). Last-revision dates are pending retrieval of primary texts.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "tepc",
+        "mofa_nepal",
+        "mea_india",
+        "cea_india",
+        "noc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Revision chronology from the texts themselves and joint statements/IGC releases (04A-L05..L16, L24..L30); news items (L17, L29, L31, L32, L48) only locate documents."
+    },
+    {
+      "claim": "Q3: Documented border-administration time and cost for Nepal-India crossings (import and export clearance time at principal ICPs/customs offices; transit time from Kolkata/Haldia/Visakhapatnam; documentary requirements) are pending.",
+      "type": "pending",
+      "value": null,
+      "unit": "days",
+      "period": "latest available study year (to be recorded)",
+      "source_ids": [
+        "wb_npl",
+        "wb_lpi",
+        "customs_nepal",
+        "nitdb",
+        "wto"
+      ],
+      "observation_ids": [],
+      "note": "World Bank NIRTTP appraisal baselines (04A-L39), LPI 2023 (L40), ICRIER transit study (L41), WTO TPR (L42), NITDB (L43); Nepal customs time-release study not located (data gap). Route-cost comparison primarily owned by 21B (X08)."
+    },
+    {
+      "claim": "Method: India trade share is computed on Nepal customs basis (imports CIF, exports FOB, Nepal FY mid-July to mid-July); India-reported mirror values (Indian FY April-March or calendar year) are kept as a separate series and differences documented per 00B conflict register, never netted or silently replaced.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Domestic policy constraint (qualitative, conditional on lead retrieval): because the NPR is pegged to the INR (NRB analysis, 04A-L38), Indian monetary conditions and INR/USD movements transmit into Nepal's price level and external accounts, which constrains the independent use of the exchange rate and interest rates in Nepal's macro policy. Magnitude pending.",
+      "type": "assumption",
+      "source_ids": [
+        "nrb"
+      ]
+    },
+    {
+      "claim": "Domestic policy constraint (qualitative): Nepal's electricity-export strategy and hydropower investment planning depend on Indian approval and market-access rules (MoP guidelines, CEA designated-authority procedure, CERC regulations; 04A-L25..L28); planned export revenues should be modelled as conditional on approvals, not as baseline.",
+      "type": "assumption",
+      "source_ids": [
+        "cea_india",
+        "nea"
+      ]
+    },
+    {
+      "claim": "Domestic policy constraint (qualitative): trade-policy instruments available to Nepal (tariff changes, quantitative measures, rules of origin) are bounded by the Treaty of Trade and Treaty of Transit terms and their review process reported for September 2026 (04A-L05..L07, L17); content and binding clauses pending retrieval of texts.",
+      "type": "assumption",
+      "source_ids": [
+        "tepc",
+        "mea_india"
+      ]
+    },
+    {
+      "claim": "This register describes documented dependencies and the policy constraints they imply; it does not state or represent the position of the Government of Nepal or the Government of India.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Nepal customs trade books FY2023/24 and FY2024/25 (document-level URLs not located); office-level trade by customs point for route share.",
+    "Nepal customs time-release study or equivalent border clearance-time measurement for principal India-border ICPs.",
+    "NOC supply agreement text with IOC and product-level import records by entry point.",
+    "Text of the January 2024 long-term power trade agreement and signed JSC/JWG minutes (2025-2026).",
+    "IGSC/IGC minutes for the September 2026 treaty review and Indian primary notifications behind the reported 2026 import-side measures.",
+    "Letters of exchange amending the Treaty of Transit after 1999 (consolidated list).",
+    "Informal/unrecorded Nepal-India border trade estimates (no lead)."
+  ],
+  "assumptions": [
+    {
+      "id": "04A-A1",
+      "text": "India trade share is computed on Nepal customs basis (Nepal FY); mirror data are a separate series for conflict checks.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04A-A2",
+      "text": "Agreement status classes follow 17B-A1; news items locate documents but never set status.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04A-A3",
+      "text": "Approved (CEA) export capacity and contracted power volumes are not realised exports; only NEA energy-balance records count as realised.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04A-A4",
+      "text": "Policy-constraint statements are qualitative translations of documented arrangements and do not represent any government's position.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-03 (goods trade concentration with India) should record partner share and route share as separate measures: partner share understates dependence because third-country trade transits Indian ports and border offices."
+    },
+    {
+      "to": "21B",
+      "text": "Border-cost evidence overlaps X08; please confirm that 21B owns port-to-border transit time/cost and 04A owns border-crossing clearance/dwell time, to avoid double counting in S02/S10."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog lacks ids for India's Ministry of Power, CERC, PIB and IOC; 04A leads use cea_india/mea_india as nearest ids or null. Add ids before r2."
+    },
+    {
+      "to": "17A",
+      "text": "17A lists the Treaty of Trade revision year and the June 2023 transit protocol as provisional; 04A agreement_inventory will adopt them only after the primary texts (04A-L05..L08, L13, L16) are retrieved."
+    }
+  ],
+  "uncertainty": "Very high for r1: no document was downloaded, so every share, date and cost is pending. The agreement inventory may omit instruments signed in 2025-2026 (only news locators were available for the September 2026 treaty review, 2026 import-side measures, October 2025 transmission agreements and September 2026 MoP approval). Border-cost evidence is sparse and methodologically heterogeneous. Qualitative policy constraints are hypotheses to be confirmed against texts.",
+  "specific": {
+    "india_trade_share": {
+      "status": "pending",
+      "value": null,
+      "unit": "percent",
+      "period_basis": "Nepal FY (mid-July to mid-July); partner mirror data calendar or Indian FY, kept separate",
+      "method": "Four distinct shares, not to be conflated: (a) partner share of imports and exports (customs partner tables); (b) route share - trade crossing India border offices incl. third-country transit (customs office-level tables, NITDB); (c) petroleum supplier and route share by product (NOC, customs HS 27); (d) electricity trade by segment (NEA). Conflict checks: NRB CME trade table and UN Comtrade India-reported mirror.",
+      "components": [
+        {
+          "component": "partner_share_imports_exports",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04A-L01",
+            "04A-L02",
+            "04A-L03",
+            "04A-L04",
+            "04A-L33",
+            "04A-L34",
+            "04A-L46",
+            "04A-L47"
+          ],
+          "data_required": "Imports and exports by partner (India, total), Nepal FY2022/23-FY2025/26"
+        },
+        {
+          "component": "route_share_trade_via_india",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04A-L01",
+            "04A-L03",
+            "04A-L43",
+            "04A-L39",
+            "04A-L41"
+          ],
+          "data_required": "Trade by customs office (southern border offices, northern offices, TIA airport), third-country cargo through Indian ports"
+        },
+        {
+          "component": "petroleum_supplier_and_route_share",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04A-L19",
+            "04A-L20",
+            "04A-L21",
+            "04A-L22",
+            "04A-L01"
+          ],
+          "data_required": "Petroleum imports by product, supplier and entry point (pipeline vs road)"
+        },
+        {
+          "component": "electricity_trade_by_segment",
+          "status": "pending",
+          "unit": "GWh",
+          "leads": [
+            "04A-L23",
+            "04A-L25",
+            "04A-L48"
+          ],
+          "data_required": "Exports/imports to India by bilateral, exchange and trilateral segment; realised price (22B)"
+        },
+        {
+          "component": "currency_exposure_inr",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04A-L33",
+            "04A-L34",
+            "04A-L35",
+            "04A-L36",
+            "04A-L37",
+            "04A-L38"
+          ],
+          "data_required": "INR share of payments; NRB INR purchase/USD sales; exchange-control limits"
+        }
+      ],
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-04",
+        "EXP-05"
+      ],
+      "external_variables": [
+        "X07",
+        "X08",
+        "X09",
+        "X31"
+      ],
+      "known_methodological_issues": [
+        "CIF vs FOB valuation",
+        "Nepal FY vs Indian FY/calendar year",
+        "informal/unrecorded border trade",
+        "whether electricity exports are included in customs merchandise totals varies by year - verify",
+        "partner share (origin) differs from route share (transit)"
+      ]
+    },
+    "agreement_inventory": {
+      "status": "pending",
+      "method": "One row per instrument; status class per 17B-A1 (OPERATIONAL, IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE, AGREED_IN_PRINCIPLE_OR_ANNOUNCED, PROPOSED, LAPSED_OR_STALLED) assigned only from retrieved primary text; last-revision date recorded from the text, joint statement or IGC minutes. Coordinates with 17A policy_watchlist and 17D agreement_status_table (row 'India-Nepal Treaty of Trade and Treaty of Transit').",
+      "entries": [
+        {
+          "instrument": "Treaty of Trade (Nepal-India) and protocol",
+          "domain": "trade",
+          "status": "pending",
+          "last_revision": "pending (17A records a 2009 revision to verify from text)",
+          "review_status": "September 2026 review reported by news only (04A-L17); IGSC minutes required",
+          "leads": [
+            "04A-L05",
+            "04A-L07",
+            "04A-L09",
+            "04A-L13",
+            "04A-L15",
+            "04A-L17"
+          ],
+          "domestic_policy_constraint": "Bounds tariff/quota and rules-of-origin options for Nepal's imports from and exports to India; pending text"
+        },
+        {
+          "instrument": "Treaty of Transit (1999) with protocol, memorandum and later letters of exchange (incl. rail services)",
+          "domain": "transit",
+          "status": "pending",
+          "last_revision": "pending (revised protocol welcomed in June 2023 joint statement per 17A; rail-connectivity amendment per PIB release 04A-L16)",
+          "leads": [
+            "04A-L06",
+            "04A-L07",
+            "04A-L08",
+            "04A-L13",
+            "04A-L14",
+            "04A-L16"
+          ],
+          "domestic_policy_constraint": "Determines ports, routes and procedures available for third-country trade; conditions logistics investment (ICDs, rail)"
+        },
+        {
+          "instrument": "Agreement of Co-operation to Control Unauthorized Trade (revised)",
+          "domain": "border administration",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L10",
+            "04A-L07",
+            "04A-L15"
+          ],
+          "domestic_policy_constraint": "Framework for joint border enforcement; relevant to informal-trade coverage and customs cooperation"
+        },
+        {
+          "instrument": "Nepal-India Rail Services Agreement and amendments",
+          "domain": "transit",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L07",
+            "04A-L16",
+            "04A-L45"
+          ],
+          "domestic_policy_constraint": "Scope of rail-borne cargo routes into Nepal"
+        },
+        {
+          "instrument": "Power Trade Agreement (2014): electric power trade, cross-border transmission interconnection and grid connectivity",
+          "domain": "power trade",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L24",
+            "04A-L14",
+            "04A-L13"
+          ],
+          "domestic_policy_constraint": "Institutional basis (JWG/JSC) for export plans"
+        },
+        {
+          "instrument": "Long-term power trade agreement (reported signed January 2024)",
+          "domain": "power trade",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L29",
+            "04A-L30",
+            "04A-L48"
+          ],
+          "domestic_policy_constraint": "Upper bound on contracted export channel; text required before any volume assumption"
+        },
+        {
+          "instrument": "Indian cross-border electricity rules: MoP Guidelines 2018 (amended), CEA DA Procedure 2021 (amended), CERC CBTE Regulations 2019 (amended)",
+          "domain": "power market access",
+          "status": "pending",
+          "last_revision": "pending (consolidated CERC text with second amendment located by 17A)",
+          "leads": [
+            "04A-L25",
+            "04A-L26",
+            "04A-L27",
+            "04A-L28",
+            "04A-L32"
+          ],
+          "domestic_policy_constraint": "Approval-by-project regime conditions which Nepali plants can export and to which market segment"
+        },
+        {
+          "instrument": "Cross-border transmission line implementing agreements (reported October 2025)",
+          "domain": "power infrastructure",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L31",
+            "04A-L23"
+          ],
+          "domestic_policy_constraint": "Physical export capacity timing"
+        },
+        {
+          "instrument": "Petroleum supply arrangement NOC-IOC and Motihari-Amlekhganj pipeline agreements",
+          "domain": "fuel",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L19",
+            "04A-L20",
+            "04A-L21",
+            "04A-L22",
+            "04A-L13"
+          ],
+          "domestic_policy_constraint": "Single-supplier dependence shapes fuel pricing formula, storage policy and supply-security options"
+        },
+        {
+          "instrument": "G2G fertiliser supply arrangement",
+          "domain": "essential imports",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L49"
+          ],
+          "domestic_policy_constraint": "Agricultural input supply security"
+        },
+        {
+          "instrument": "RBI exchange-control rules applicable to Nepal (incl. currency export/import amendment reported December 2025)",
+          "domain": "currency",
+          "status": "pending",
+          "last_revision": "pending",
+          "leads": [
+            "04A-L36",
+            "04A-L37"
+          ],
+          "domestic_policy_constraint": "Limits on INR cash and settlement channels; affects cross-border retail trade, tourism and remittance channels"
+        }
+      ]
+    },
+    "border_cost_evidence": {
+      "status": "pending",
+      "value": null,
+      "unit": "days",
+      "method": "Collect documented clearance/dwell times and costs per crossing and direction from (1) World Bank NIRTTP appraisal baselines, (2) Nepal customs/time-release studies (not yet located), (3) NITDB ICD/ICP dwell statistics, (4) ICRIER transit study, (5) LPI 2023 as country-level context only; record study year and method; costs in USD_current or NPR_current per consignment/TEU with year; no pooling across methods.",
+      "evidence_items": [
+        {
+          "item": "Corridor time/cost baselines (Birgunj-Raxaul, Bhairahawa-Sunauli, Biratnagar-Jogbani)",
+          "status": "pending",
+          "leads": [
+            "04A-L39",
+            "04A-L50"
+          ],
+          "unit": "days"
+        },
+        {
+          "item": "Clearance and dwell time at ICDs/ICPs",
+          "status": "pending",
+          "leads": [
+            "04A-L43",
+            "04A-L44"
+          ],
+          "unit": "days"
+        },
+        {
+          "item": "Transit time and cost Kolkata/Haldia/Visakhapatnam to Nepal border",
+          "status": "pending",
+          "leads": [
+            "04A-L41",
+            "04A-L39"
+          ],
+          "unit": "USD_per_TEU",
+          "owner": "21B (X08); 04A consumes"
+        },
+        {
+          "item": "Country-level logistics indicators (LPI 2023)",
+          "status": "pending",
+          "leads": [
+            "04A-L40"
+          ],
+          "unit": "index"
+        },
+        {
+          "item": "Customs procedures and TFA implementation, time-release study references",
+          "status": "pending",
+          "leads": [
+            "04A-L42",
+            "04A-L04"
+          ],
+          "unit": "days"
+        },
+        {
+          "item": "Documented disruptions/import-side measures at the India border in 2026",
+          "status": "pending",
+          "leads": [
+            "04A-L18",
+            "04A-L17"
+          ],
+          "unit": "count",
+          "note": "News locators only; Indian notifications and Nepal customs monthly data required"
+        }
+      ]
+    },
+    "neighbour_dependency_register_rows": {
+      "status": "pending",
+      "note": "Agent 04 deliverable; rows for India are defined by the components above and the agreement inventory; 04C integrates with 04B.",
+      "rows": [
+        {
+          "dependency": "Goods trade partner concentration (India)",
+          "exposure_id": "EXP-03",
+          "variable": "X09",
+          "status": "pending"
+        },
+        {
+          "dependency": "Transit route dependence on India (ports, corridors)",
+          "exposure_id": "EXP-04",
+          "variable": "X08",
+          "status": "pending"
+        },
+        {
+          "dependency": "Petroleum supply via India",
+          "exposure_id": "EXP-05",
+          "variable": "X07",
+          "status": "pending"
+        },
+        {
+          "dependency": "Electricity export market access in India",
+          "exposure_id": null,
+          "variable": "X16",
+          "status": "pending"
+        },
+        {
+          "dependency": "Currency peg and INR settlement",
+          "exposure_id": null,
+          "variable": "pending mapping (20B)",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "04A-L01",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Annual trade book FY2022/23: imports/exports by partner country, by HS chapter and by customs office (southern border offices e.g. Birgunj, Bhairahawa, Biratnagar); petroleum imports (HS 27) by partner; basis for India share of goods trade and fuel imports (reused from 16B/17B)"
+    },
+    {
+      "lead_id": "04A-L02",
+      "url": "https://customs.gov.np/content/43/annual-foreign-trade-statistics-book-2079-80/",
+      "title": "Annual Foreign Trade Statistics Book 2079-80 (landing page)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Landing page for the FY2022/23 trade book; later books (FY2023/24, FY2024/25) to be located on the same portal"
+    },
+    {
+      "lead_id": "04A-L03",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Monthly and annual trade by partner and by customs office, Nepal FY; later-year trade books; ASYCUDA-based office-level data needed for share of trade crossing the India border including third-country transit cargo"
+    },
+    {
+      "lead_id": "04A-L04",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Trade and Export Promotion Centre / MoICS, Nepal",
+      "source_id": "tepc",
+      "contains": "Trade statistics query by partner and HS; trade-agreement register; border procedures and documentary requirements (used for border-administration process mapping)"
+    },
+    {
+      "lead_id": "04A-L05",
+      "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
+      "title": "Treaty of Trade between the Government of Nepal and the Government of India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Text of the Nepal-India Treaty of Trade and protocol (rules of origin, tariff treatment, safeguards, customs points); revision date and validity clause"
+    },
+    {
+      "lead_id": "04A-L06",
+      "url": "https://tepc.gov.np/pages/treaty-of-transit-1999-india",
+      "title": "Treaty of Transit, 1999 - India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Treaty of Transit text page; protocol and memorandum on transit procedures; later letters of exchange must be located separately"
+    },
+    {
+      "lead_id": "04A-L07",
+      "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+      "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Compilation of trade, transit and related agreements (incl. rail services, unauthorised-trade agreement); used for agreement inventory and last-revision dates"
+    },
+    {
+      "lead_id": "04A-L08",
+      "url": "https://tadb.unescap.org/NPL/bilat_IND_NPL_1999_eng.pdf",
+      "title": "Treaty of Transit between HMG Nepal and the Government of India (1999)",
+      "publisher": "UNESCAP Trade Agreements Database",
+      "source_id": "mea_india",
+      "contains": "Alternative copy of the 1999 Treaty of Transit text; cross-check against TEPC version (host blocked in r1 per 17B)"
+    },
+    {
+      "lead_id": "04A-L09",
+      "url": "https://aric.adb.org/fta/indo-nepal-treaty-of-trade",
+      "title": "Indo-Nepal Treaty of Trade",
+      "publisher": "Asian Development Bank - Asia Regional Integration Center",
+      "source_id": "adb_nepal",
+      "contains": "FTA database record: signature/entry-into-force dates and status of the Treaty of Trade; secondary check on revision chronology"
+    },
+    {
+      "lead_id": "04A-L10",
+      "url": "https://www.commerce.gov.in/wp-content/uploads/2020/02/Unauthorized_Trade_Nepal.pdf",
+      "title": "Revised Agreement of Co-operation between Government of India and Government of Nepal to Control Unauthorized Trade",
+      "publisher": "Department of Commerce, India",
+      "source_id": "mea_india",
+      "contains": "Text of the agreement on control of unauthorised trade (border administration cooperation); relevant to informal-trade coverage gap"
+    },
+    {
+      "lead_id": "04A-L11",
+      "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+      "title": "Commerce Wing Brief",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "Indian-side summary of trade and transit arrangements, ICPs, rail links, petroleum pipeline and power-trade cooperation; used to locate primary instruments, not as data"
+    },
+    {
+      "lead_id": "04A-L12",
+      "url": "https://indembkathmandu.gov.in/about-india-nepal-relations",
+      "title": "About India-Nepal Relations",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "Overview of bilateral mechanisms (IGC, IGSC, JSC on power) and agreements; locator only"
+    },
+    {
+      "lead_id": "04A-L13",
+      "url": "https://www.mea.gov.in/bilateral-documents?dtl%2F27407%2FIndiaNepal_Joint_Statement_during_the_State_visit_of_Prime_Minister_of_Nepal_to_India",
+      "title": "India-Nepal Joint Statement during the State visit of Prime Minister of Nepal to India",
+      "publisher": "Ministry of External Affairs, India",
+      "source_id": "mea_india",
+      "contains": "Joint statement listing agreements signed/welcomed (revised transit treaty, ICPs, petroleum pipeline, power trade); dated record of revisions"
+    },
+    {
+      "lead_id": "04A-L14",
+      "url": "https://mofa.gov.np/content/112/joint-press-meet-between-the-prime-ministers/",
+      "title": "Joint Press Meet between the Prime Ministers of Nepal and India - Statement",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Nepal-side record of agreements signed/announced at the same visit; cross-check with MEA text"
+    },
+    {
+      "lead_id": "04A-L15",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2092280",
+      "title": "India-Nepal Inter-Governmental Committee meeting on trade, transit and cooperation to control unauthorised trade",
+      "publisher": "Press Information Bureau, Government of India",
+      "source_id": "mea_india",
+      "contains": "IGC meeting release: agenda items on treaty review, ICPs, customs/SPS harmonisation, border-administration issues"
+    },
+    {
+      "lead_id": "04A-L16",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2189629",
+      "title": "India, Nepal Ink Deal to Boost Rail Trade Connectivity",
+      "publisher": "Press Information Bureau, Government of India",
+      "source_id": "mea_india",
+      "contains": "Release on rail-services/transit amendment (letter of exchange); date of last transit-related revision"
+    },
+    {
+      "lead_id": "04A-L17",
+      "url": "https://kathmandupost.com/money/2026/09/23/nepal-india-agree-to-review-treaty-amid-widening-trade-deficit",
+      "title": "Nepal, India agree to review treaty amid widening trade deficit",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only (September 2026): reported agreement to review the trade/transit treaty; IGSC minutes required before use"
+    },
+    {
+      "lead_id": "04A-L18",
+      "url": "https://kathmandupost.com/money/2026/09/20/nepal-lost-rs10-billion-in-india-s-import-squeeze-new-delhi-seeks-investigation-before-easing-cur",
+      "title": "Nepal exporters affected by India's import squeeze (September 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only: reported Indian import-side measures on Nepali goods; primary Indian notifications (DGFT/CBIC/DGTR) with HS codes required"
+    },
+    {
+      "lead_id": "04A-L19",
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Petroleum product import volumes by product and period; supplier (IOC) and entry points/depots; basis for share of fuel imports sourced from/through India"
+    },
+    {
+      "lead_id": "04A-L20",
+      "url": "https://noc.org.np/publication",
+      "title": "Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC annual reports: supply agreement with IOC, pipeline throughput, storage"
+    },
+    {
+      "lead_id": "04A-L21",
+      "url": "https://iocl.com/NewsDetails/49412",
+      "title": "IndianOil news release - IOCL-NOC agreement on petroleum infrastructure in Nepal",
+      "publisher": "Indian Oil Corporation",
+      "source_id": null,
+      "contains": "IOC-side record of the supply/infrastructure agreement with NOC; date and scope"
+    },
+    {
+      "lead_id": "04A-L22",
+      "url": "https://www.indembkathmandu.gov.in/media-detail/298",
+      "title": "Embassy of India Kathmandu - media release (petroleum cooperation, to verify)",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "Release on petroleum cooperation (pipeline/supply); content to verify"
+    },
+    {
+      "lead_id": "04A-L23",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Energy balance: imports from and exports to India by segment (bilateral, IEX day-ahead/RTM, trilateral to Bangladesh) and by border interconnection; FY basis"
+    },
+    {
+      "lead_id": "04A-L24",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+      "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
+      "publisher": "Government of Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Text of the 2014 Power Trade Agreement: institutional mechanisms (JWG/JSC), market access clauses, validity"
+    },
+    {
+      "lead_id": "04A-L25",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "Import/Export (Cross Border) of Electricity - CEA page",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Designated-authority approvals for Nepali generators (project, capacity, market segment, validity); amendments"
+    },
+    {
+      "lead_id": "04A-L26",
+      "url": "https://powermin.gov.in/sites/default/files/uploads/Guidelines_for_ImportExport_Cross%20Border_of_Electricity_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity 2018",
+      "publisher": "Ministry of Power, India",
+      "source_id": "cea_india",
+      "contains": "Indian rules governing Nepal's access to Indian power markets (ownership/financing provisions, approval routes)"
+    },
+    {
+      "lead_id": "04A-L27",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+      "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority (2021)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Approval procedure and documentation requirements for cross-border electricity trade"
+    },
+    {
+      "lead_id": "04A-L28",
+      "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+      "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cea_india",
+      "contains": "Regulatory terms for cross-border trade (scheduling, transmission charges, market participation)"
+    },
+    {
+      "lead_id": "04A-L29",
+      "url": "https://kathmandupost.com/national/2024/01/04/nepal-india-ink-10-year-10-000mw-power-trade",
+      "title": "Nepal signs deal with India to export power (long-term power trade agreement)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only (January 2024) for the long-term power trade agreement; agreement text required"
+    },
+    {
+      "lead_id": "04A-L30",
+      "url": "https://www.sasec.asia/index.php?page=news&nid=1565&url=ind-nep-sign-long-term-energy-deal",
+      "title": "India, Nepal Sign Long-term Power Trade Deal",
+      "publisher": "SASEC (ADB)",
+      "source_id": "adb_nepal",
+      "contains": "Secondary record of the long-term power trade agreement; date; locator for text"
+    },
+    {
+      "lead_id": "04A-L31",
+      "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
+      "title": "Nepal, India sign deal to build cross-border transmission lines",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only (October 2025): cross-border transmission agreement; implementing agreement text and NEA project records required"
+    },
+    {
+      "lead_id": "04A-L32",
+      "url": "https://renewablewatch.in/2026/09/15/mop-approves-export-of-power-to-nepal/",
+      "title": "MoP approves export of power to Nepal",
+      "publisher": "Renewable Watch",
+      "source_id": null,
+      "contains": "Trade-press locator (September 2026) for an Indian MoP approval on power flows to Nepal; MoP/CEA order required"
+    },
+    {
+      "lead_id": "04A-L33",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (annual data of FY2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Trade with India, China and other countries (table), petroleum imports, INR-convertible vs convertible-currency flows; FY2024/25; conflict check vs customs"
+    },
+    {
+      "lead_id": "04A-L34",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Monthly CME reports FY2025/26: trade by India/China/others; INR purchase against USD sales (currency exposure)"
+    },
+    {
+      "lead_id": "04A-L35",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Macroeconomic_Report_July_2026.pdf",
+      "title": "Macroeconomic Report, July 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB assessment of external sector and peg; context for currency exposure"
+    },
+    {
+      "lead_id": "04A-L36",
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Indian exchange-control rules for INR transactions with Nepal (settlement currency, currency-note limits)"
+    },
+    {
+      "lead_id": "04A-L37",
+      "url": "https://m.rbi.org.in/Scripts/BS_FemaNotifications.aspx?Id=2558",
+      "title": "FEMA notification (RBI) - currency export/import rules relating to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Amendment to currency export/import rules (reported late 2025); effective date and scope"
+    },
+    {
+      "lead_id": "04A-L38",
+      "url": "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+      "title": "The Impact of the Indian Monetary Policy and the Official Exchange Rate on Nepalese Monetary Policy",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB analysis of monetary-policy transmission under the INR peg; supports the qualitative constraint on domestic monetary autonomy"
+    },
+    {
+      "lead_id": "04A-L39",
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project - project appraisal document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Corridor baselines for border-crossing time and cost (Birgunj/Raxaul and other corridors), trade facilitation diagnostics and results framework"
+    },
+    {
+      "lead_id": "04A-L40",
+      "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+      "title": "Connecting to Compete 2023: Trade Logistics in an Uncertain Global Economy (LPI 2023)",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "LPI 2023 report: Nepal scores and dwell/clearance time indicators (country-level, not border-specific)"
+    },
+    {
+      "lead_id": "04A-L41",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Study of transit procedures, times and costs on India routes; documented delays at borders and ports"
+    },
+    {
+      "lead_id": "04A-L42",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "WTO Secretariat",
+      "source_id": "wto",
+      "contains": "Customs procedures, trade facilitation (TFA implementation, time-release studies), trade agreements with India; dated inventory check"
+    },
+    {
+      "lead_id": "04A-L43",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "ICP/ICD/dry-port cargo statistics and dwell times on the India border (Birgunj ICD, Biratnagar ICP etc.)"
+    },
+    {
+      "lead_id": "04A-L44",
+      "url": "https://www.unescap.org/sites/default/files/6.%20Nepal.pdf",
+      "title": "Dry Ports Development in Nepal",
+      "publisher": "UNESCAP / NITDB",
+      "source_id": "nitdb",
+      "contains": "Description of dry ports and ICPs on India border; operational status"
+    },
+    {
+      "lead_id": "04A-L45",
+      "url": "https://kathmandupost.com/money/2026/07/18/historic-kolkata-biratnagar-rail-cargo-service-begins-transit-costs-set-to-fall",
+      "title": "Kolkata-Biratnagar rail cargo service begins (July 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News locator only: start of a new rail-cargo route; operating record from NITDB/Indian Railways required"
+    },
+    {
+      "lead_id": "04A-L46",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus - India-reported trade with Nepal",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror data: India-reported exports to/imports from Nepal by HS, calendar/Indian FY; conflict check vs Nepal customs"
+    },
+    {
+      "lead_id": "04A-L47",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Foreign trade chapter: trade by partner, petroleum imports; FY2023/24; cross-check"
+    },
+    {
+      "lead_id": "04A-L48",
+      "url": "https://thehimalayantimes.com/business/joint-steering-committee-meeting-advances-nepalindia-energy-cooperation",
+      "title": "Joint Steering Committee meeting advances Nepal-India energy cooperation",
+      "publisher": "The Himalayan Times",
+      "source_id": null,
+      "contains": "News locator only: JSC outcomes on power trade; signed minutes required"
+    },
+    {
+      "lead_id": "04A-L49",
+      "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+      "title": "Nepal signs deal with India to procure chemical fertiliser",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only: G2G fertiliser supply arrangement; agreement text required"
+    },
+    {
+      "lead_id": "04A-L50",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Chapters on trade costs, connectivity and electricity trade with India; interpretation only"
+    }
+  ]
+}

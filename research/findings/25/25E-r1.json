@@ -1,0 +1,1385 @@
+{
+  "subagent_id": "25E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (documented sectoral damage functions for Nepal or comparable Himalayan economies) is PENDING: no document could be downloaded. A sectoral damage-function framework is defined for farming (crop yield response to temperature/precipitation plus event losses), ecosystems (area-weighted service loss, reported as welfare not GDP), hydropower (plant-level flow-generation transfer function aligned with 22D, plus hazard expected annual damage), tourism (seasonal arrivals-and-spend exposure with disruption days and amenity change) and livelihoods (asset-loss to well-being-loss by quintile), with an aggregate macro damage function as cross-check only. Each lists the functional form, the parameters needed, the candidate studies and lead ids. All ranges are carried as low/high bounds by scenario, horizon and adaptation assumption, with no point estimates. The single allowed web search located the World Bank Nepal CCDR (2022) records; other leads are reused from upstream findings and source_leads.json; ten leads are URLs from general knowledge and are marked unverified.",
+  "findings": [
+    {
+      "claim": "Q1: Documented damage-function parameters for farming (SIR-AG-1): low/high ranges by scenario and horizon from the candidate studies listed in specific.sectoral_impact_ranges.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons 2030/2050/2100 (calendar); base-year sector VA in Nepal FY",
+      "source_ids": [
+        "academic",
+        "adb_nepal",
+        "fao_stat",
+        "ipcc",
+        "ndrrma",
+        "npc_nepal",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Data required: b1,b2 yield-temperature coefficients by crop (paddy, maize, wheat, millet) and zone (Terai, Hill, Mountain); b3 yield-precipitation / monsoon-onset sensitivity; irrigation dampening factor; crop value-added weights w_c; annual expected flood/drought crop loss EAD_ag. Leads: 25E-L01, 25E-L03, 25E-L37, 25E-L28, 25E-L09, 25E-L32, 25E-L24, 25E-L36, 25E-L21, 25E-L23"
+    },
+    {
+      "claim": "Q1: Documented damage-function parameters for ecosystems (SIR-EC-1): low/high ranges by scenario and horizon from the candidate studies listed in specific.sectoral_impact_ranges.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons 2030/2050/2100 (calendar); base-year sector VA in Nepal FY",
+      "source_ids": [
+        "icimod",
+        "ipcc",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Data required: f_k fraction of ecosystem k degraded or shifted per warming level (forest, rangeland, wetland, alpine); v_k unit service value per hectare; A_k ecosystem area; g forestry/NTFP output response. Leads: 25E-L07, 25E-L08, 25E-L10, 25E-L11, 25E-L01, 25E-L34"
+    },
+    {
+      "claim": "Q1: Documented damage-function parameters for hydropower (SIR-HY-1): low/high ranges by scenario and horizon from the candidate studies listed in specific.sectoral_impact_ranges.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons 2030/2050/2100 (calendar); base-year sector VA in Nepal FY",
+      "source_ids": [
+        "academic",
+        "dhm",
+        "icimod",
+        "nea",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Data required: dry-season flow change at hydropower catchments; wet-season spill share (flow above design discharge); sediment-driven efficiency loss / downtime; GLOF/debris-flow expected annual damage to plants; observed generation-flow elasticity by plant class (snow/glacier-fed vs rain-fed). Leads: 25E-L12, 25E-L13, 25E-L14, 25E-L15, 25E-L16, 25E-L17, 25E-L18, 25E-L01"
+    },
+    {
+      "claim": "Q1: Documented damage-function parameters for tourism (SIR-TO-1): low/high ranges by scenario and horizon from the candidate studies listed in specific.sectoral_impact_ranges.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons 2030/2050/2100 (calendar); base-year sector VA in Nepal FY",
+      "source_ids": [
+        "icimod",
+        "ipcc",
+        "ndrrma",
+        "npc_nepal",
+        "tourism_ministry"
+      ],
+      "observation_ids": [],
+      "note": "Data required: monthly arrivals Arr_m and spend per visitor-day S_m; disruption days per hazard event d_m (floods, landslides, airport/road closure); amenity elasticity a_m of arrivals to climate/landscape change; cancellation/substitution share after major events. Leads: 25E-L19, 25E-L20, 25E-L10, 25E-L11, 25E-L21, 25E-L23, 25E-L18"
+    },
+    {
+      "claim": "Q1: Documented damage-function parameters for livelihoods (SIR-LV-1): low/high ranges by scenario and horizon from the candidate studies listed in specific.sectoral_impact_ranges.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons 2030/2050/2100 (calendar); base-year sector VA in Nepal FY",
+      "source_ids": [
+        "icimod",
+        "ndrrma",
+        "npc_nepal",
+        "nso_nepal",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Data required: asset exposure by quintile and zone; vulnerability (asset loss fraction given event) by housing type; socio-economic resilience R_q; agricultural income share and remittance share by quintile; migration response to climate stress. Leads: 25E-L33, 25E-L01, 25E-L35, 25E-L07, 25E-L08, 25E-L21, 25E-L23"
+    },
+    {
+      "claim": "Q1: Documented damage-function parameters for macro_cross_check (SIR-MA-1): low/high ranges by scenario and horizon from the candidate studies listed in specific.sectoral_impact_ranges.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons 2030/2050/2100 (calendar); base-year sector VA in Nepal FY",
+      "source_ids": [
+        "academic",
+        "adb_nepal",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Data required: CCDR Nepal GDP deviation by scenario and horizon; ADB 2014 Nepal GDP loss by scenario; panel-estimated temperature coefficients (Burke 2015; Kalkuhl-Wenz 2020; Kotz 2024). Leads: 25E-L01, 25E-L02, 25E-L03, 25E-L28, 25E-L29, 25E-L30, 25E-L31"
+    },
+    {
+      "claim": "Q1: Whether the World Bank Nepal CCDR (2022) publishes sector-level damage functions (functional form and coefficients) or only macro-model outputs; its background papers must be checked.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Leads 25E-L01, 25E-L03."
+    },
+    {
+      "claim": "Q1: Comparable Himalayan-economy damage functions (Bhutan, Indian Himalayan states, Pakistan northern areas) not yet located; required for benchmarking tourism and hydropower forms.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Locate Bhutan and Pakistan CCDRs and Indian state climate action plans in r2."
+    },
+    {
+      "claim": "Sectoral damage parameters are carried as low/high bounds per scenario, horizon and adaptation assumption; no central value or probability distribution is assigned without evidence, and propagation uses envelope (corner) combinations rather than Monte Carlo with invented distributions.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Sectoral damages enter GDP only through the value added of the affected sector; ecosystem and livelihood losses are reported under welfare objectives and not netted into GDP; aggregate macro damage functions are a cross-check only, never added to sectoral sums.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Where sources disagree (e.g. CCDR vs ADB 2014 vs IDS-Nepal 2014), both ranges are retained with model type, climate scenario generation (CMIP5/CMIP6), baseline year, price basis and adaptation assumption recorded.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No lead downloaded; all damage parameters pending.",
+    "Unknown whether the CCDR publishes sector-level coefficients or only macro outputs; background papers must be checked.",
+    "No Nepal-specific tourism or ecosystem-service damage function located; these may remain qualitative.",
+    "IDS-Nepal/PAC/GCAP (2014) Nepal economic impact study, MoFE NAP (2021) and Climate Change Scenarios for Nepal (2019), NLSS IV and MoALD statistics have no verified document URLs (general knowledge only).",
+    "Comparable Himalayan-economy studies (Bhutan, Pakistan CCDRs; Indian Himalayan states) not located.",
+    "Plant-level hydropower head/design-discharge data needed for the flow-generation function not located (shared gap with 22D).",
+    "Hazard frequency-loss curves need BIPAD event data, which is not downloadable in this environment."
+  ],
+  "assumptions": [
+    {
+      "id": "25E-A1",
+      "text": "Ranges are scenario-conditional low/high bounds; no probabilities or central values are assigned without evidence; scenarios are stress tests, not forecasts.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25E-A2",
+      "text": "Damage fractions apply to sector gross value added in Nepal FY; climate horizons are calendar/multi-decade; conversions happen only at the scenario-parameter interface with documented mapping.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25E-A3",
+      "text": "Slow-onset (trend) and event (hazard) channels are estimated separately per sector and summed only after a double-counting check.",
+      "basis": "assumption"
+    },
+    {
+      "id": "25E-A4",
+      "text": "Money-denominated parameters keep their source price basis (current vs constant, base year) and are converted with deflators, not exchange rates alone.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "05",
+      "text": "Hydropower paths should use SIR-HY-1 (flow-transfer plus hazard EAD) with ranges from 25A PR-05/PR-07 when retrieved, not a stationary-flow assumption."
+    },
+    {
+      "to": "07",
+      "text": "Agricultural projections should carry crop- and zone-specific yield-response bounds (SIR-AG-1) and keep CO2-fertilisation and irrigation assumptions explicit."
+    },
+    {
+      "to": "13",
+      "text": "Ecosystem and livelihood losses (SIR-EC-1, SIR-LV-1) should be reported under welfare objectives, not netted against GDP; macro damage functions are cross-checks only."
+    },
+    {
+      "to": "22",
+      "text": "22D and 25E share the hydropower flow-generation design; propose that 22D own plant-level calibration and 25E own hazard EAD to avoid double counting."
+    },
+    {
+      "to": "00A",
+      "text": "Catalog has no source ids for MoFE (climate scenarios, NAP) or MoALD (agricultural statistics), nor for the IDS-Nepal 2014 study (currently tagged academic); request ids and verified URLs."
+    }
+  ],
+  "uncertainty": "Very high. Structural uncertainty in damage-function form (level vs growth, reduced-form vs process models), climate-scenario spread (especially monsoon precipitation), adaptation assumptions, and benefit-transfer valuation for ecosystems. Nepal-specific quantified evidence is thin outside the CCDR; tourism and ecosystem channels may remain qualitative. No values recorded.",
+  "specific": {
+    "sectoral_impact_ranges": {
+      "status": "pending",
+      "method": "Per sector: define functional form, list required parameters with low/high placeholders, map each to candidate studies and lead ids; on retrieval, extract ranges by scenario x horizon x adaptation, record each as an observation, keep conflicting sources side by side.",
+      "range_convention": "low/high bounds only; central values not carried; no probability weights; propagation by envelope combinations; unit codes from src/economic_model/units.py",
+      "sectors": [
+        {
+          "id": "SIR-AG-1",
+          "sector": "farming",
+          "functional_form": "Crop-specific yield response to temperature, precipitation and CO2 (reduced-form or crop-model emulator), plus separate flood/drought event-loss term",
+          "equation": "dY_c,z/Y_c,z = b1_c,z*dT + b2_c,z*dT^2 + b3_c,z*dP + b4_c*dCO2 (or degree-day piecewise-linear form); dVA_ag = VA_ag,base * sum_c w_c * dY_c/Y_c (adjusted for irrigation share) - EAD_ag(flood, drought)",
+          "parameters": [
+            {
+              "name": "b1,b2 yield-temperature coefficients by crop (paddy, maize, wheat, millet) and zone (Terai, Hill, Mountain)",
+              "unit": "percent",
+              "description": "per degree C; quadratic or degree-day form",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L03",
+                "25E-L09",
+                "25E-L28",
+                "25E-L37"
+              ]
+            },
+            {
+              "name": "b3 yield-precipitation / monsoon-onset sensitivity",
+              "unit": "percent",
+              "description": "per percent change in seasonal rainfall",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L09",
+                "25E-L37",
+                "25E-L16"
+              ]
+            },
+            {
+              "name": "irrigation dampening factor",
+              "unit": "ratio",
+              "description": "share of damage avoided on irrigated area",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L36"
+              ]
+            },
+            {
+              "name": "crop value-added weights w_c",
+              "unit": "ratio",
+              "description": "crop shares of agricultural value added (Nepal FY)",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L26",
+                "25E-L36",
+                "25E-L24"
+              ]
+            },
+            {
+              "name": "annual expected flood/drought crop loss EAD_ag",
+              "unit": "percent",
+              "description": "percent of agricultural VA, from event-loss curve",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L21",
+                "25E-L22",
+                "25E-L23"
+              ]
+            }
+          ],
+          "candidate_studies": [
+            {
+              "study": "World Bank Nepal CCDR (2022) ch.3 and background papers",
+              "role": "primary Nepal-specific agriculture channel in macro model",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L03"
+              ]
+            },
+            {
+              "study": "IDS-Nepal/PAC/GCAP (2014) Economic impact assessment",
+              "role": "Nepal crop-yield impact ranges",
+              "lead_ids": [
+                "25E-L37"
+              ]
+            },
+            {
+              "study": "ADB (2014) South Asia costs of climate change",
+              "role": "regional agriculture damage curve",
+              "lead_ids": [
+                "25E-L28"
+              ]
+            },
+            {
+              "study": "IPCC AR6 WGII Ch.10",
+              "role": "assessed South Asia yield-change ranges by warming level",
+              "lead_ids": [
+                "25E-L09"
+              ]
+            },
+            {
+              "study": "Schlenker and Roberts (2009)",
+              "role": "functional-form template only",
+              "lead_ids": [
+                "25E-L32"
+              ]
+            }
+          ],
+          "entry_into_model": "Damage fraction applied to agriculture gross value added (src/economic_model/sectors.py); never directly to GDP.",
+          "scenario_axes": {
+            "emission_or_warming": "SSP1-2.6 / SSP2-4.5 / SSP5-8.5 or 1.5/2/3 C warming levels as reported by each source",
+            "horizon": [
+              "2030",
+              "2050",
+              "2100 (where reported)"
+            ],
+            "adaptation": [
+              "no additional adaptation",
+              "planned adaptation as described by the source"
+            ]
+          },
+          "range_carriage": {
+            "low": null,
+            "high": null,
+            "central": "not carried (no point estimates)",
+            "unit": "percent",
+            "status": "pending"
+          },
+          "channels": [
+            "agricultural_output",
+            "aggregate_real_growth"
+          ],
+          "consumers": [
+            "07",
+            "13"
+          ],
+          "methodological_notes": "Keep crop-model (process) and statistical (reduced-form) estimates separate; CO2 fertilisation inclusion differs across studies; MoALD data are Nepal FY while FAOSTAT is calendar/agricultural year; event losses must not double-count with trend yield effects.",
+          "lead_ids": [
+            "25E-L01",
+            "25E-L03",
+            "25E-L37",
+            "25E-L28",
+            "25E-L09",
+            "25E-L32",
+            "25E-L24",
+            "25E-L36",
+            "25E-L21",
+            "25E-L23"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "SIR-EC-1",
+          "sector": "ecosystems",
+          "functional_form": "Area-weighted ecosystem-service value loss driven by land-cover/biome shift and degradation; reported as a welfare (non-GDP) indicator plus a small market channel through forestry/NTFP value added",
+          "equation": "dESV = sum_k A_k * v_k * f_k(dT, dP); market part dVA_forestry = VA_forestry,base * g(dT) ; non-market part reported under the environmental objective in src/economic_model/welfare.py",
+          "parameters": [
+            {
+              "name": "f_k fraction of ecosystem k degraded or shifted per warming level (forest, rangeland, wetland, alpine)",
+              "unit": "percent",
+              "description": "by warming level",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L07",
+                "25E-L08",
+                "25E-L10",
+                "25E-L11"
+              ]
+            },
+            {
+              "name": "v_k unit service value per hectare",
+              "unit": "USD_const2020",
+              "description": "benefit-transfer value; per hectare per year",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L08",
+                "25E-L01"
+              ]
+            },
+            {
+              "name": "A_k ecosystem area",
+              "unit": "count",
+              "description": "hectares by type (count of ha)",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L34"
+              ]
+            },
+            {
+              "name": "g forestry/NTFP output response",
+              "unit": "percent",
+              "description": "per degree C or per warming level",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L08"
+              ]
+            }
+          ],
+          "candidate_studies": [
+            {
+              "study": "ICIMOD HI-WISE (2023)",
+              "role": "ecosystem impact by warming level in HKH",
+              "lead_ids": [
+                "25E-L07"
+              ]
+            },
+            {
+              "study": "ICIMOD HKH Assessment (2019) biodiversity/ecosystem-services chapter",
+              "role": "ecosystem-service baseline and change narratives",
+              "lead_ids": [
+                "25E-L08"
+              ]
+            },
+            {
+              "study": "IPCC AR6 WGII CCP5 and SROCC Ch.2",
+              "role": "assessed mountain ecosystem impacts",
+              "lead_ids": [
+                "25E-L10",
+                "25E-L11"
+              ]
+            },
+            {
+              "study": "World Bank CCDR (2022) water-agriculture-forests transition",
+              "role": "forest sector channel",
+              "lead_ids": [
+                "25E-L01"
+              ]
+            }
+          ],
+          "entry_into_model": "Market part via forestry value added only; non-market part enters the welfare/environment objective, never GDP.",
+          "scenario_axes": {
+            "emission_or_warming": "SSP1-2.6 / SSP2-4.5 / SSP5-8.5 or 1.5/2/3 C warming levels as reported by each source",
+            "horizon": [
+              "2030",
+              "2050",
+              "2100 (where reported)"
+            ],
+            "adaptation": [
+              "no additional adaptation",
+              "planned adaptation as described by the source"
+            ]
+          },
+          "range_carriage": {
+            "low": null,
+            "high": null,
+            "central": "not carried (no point estimates)",
+            "unit": "percent",
+            "status": "pending"
+          },
+          "channels": [
+            "environmental_welfare"
+          ],
+          "consumers": [
+            "13"
+          ],
+          "methodological_notes": "Benefit-transfer values are highly uncertain and not additive to GDP; ecosystem losses are reported as a separate objective, not netted against GDP gains. Most sources are qualitative for Nepal; a quantified range may not exist and must then stay pending.",
+          "lead_ids": [
+            "25E-L07",
+            "25E-L08",
+            "25E-L10",
+            "25E-L11",
+            "25E-L01",
+            "25E-L34"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "SIR-HY-1",
+          "sector": "hydropower",
+          "functional_form": "Plant-level flow-generation transfer function (run-of-river capped by installed capacity) driven by seasonal runoff change, plus hazard expected-annual-damage and outage term",
+          "equation": "G_p,m = min(eta_p * rho * g * H_p * min(Q_p,m, Q_design,p), Cap_p) * hours_m ; dQ_p,m from 25A PR-05/PR-07 (dry vs wet season); dVA_elec = VA_elec,base * dG/G - EAD_hy (GLOF, debris flow, sediment) - outage-days * daily VA",
+          "parameters": [
+            {
+              "name": "dry-season flow change at hydropower catchments",
+              "unit": "percent",
+              "description": "Dec-May vs reference, by scenario (25A PR-05, PR-07)",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L13",
+                "25E-L14",
+                "25E-L12",
+                "25E-L07"
+              ]
+            },
+            {
+              "name": "wet-season spill share (flow above design discharge)",
+              "unit": "percent",
+              "description": "share of monsoon flow not convertible",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L15",
+                "25E-L16"
+              ]
+            },
+            {
+              "name": "sediment-driven efficiency loss / downtime",
+              "unit": "days",
+              "description": "per year per plant class",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L12"
+              ]
+            },
+            {
+              "name": "GLOF/debris-flow expected annual damage to plants",
+              "unit": "percent",
+              "description": "percent of hydropower capital stock per year, from hazard frequency x vulnerability",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L17",
+                "25E-L18",
+                "25E-L21",
+                "25E-L23"
+              ]
+            },
+            {
+              "name": "observed generation-flow elasticity by plant class (snow/glacier-fed vs rain-fed)",
+              "unit": "ratio",
+              "description": "dG/G per dQ/Q",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L15",
+                "25E-L16"
+              ]
+            }
+          ],
+          "candidate_studies": [
+            {
+              "study": "ICIMOD basin-scale hydropower risk programme",
+              "role": "Nepal basin-level flow and hazard parameters",
+              "lead_ids": [
+                "25E-L12"
+              ]
+            },
+            {
+              "study": "Lutz et al. (2014); Khadka et al. (2020)",
+              "role": "runoff projection inputs",
+              "lead_ids": [
+                "25E-L13",
+                "25E-L14"
+              ]
+            },
+            {
+              "study": "World Bank CCDR (2022) hydropower transition",
+              "role": "climate-risk-adjusted hydropower pathways",
+              "lead_ids": [
+                "25E-L01"
+              ]
+            },
+            {
+              "study": "NEA annual reports + DHM discharge",
+              "role": "calibration of flow-generation relation",
+              "lead_ids": [
+                "25E-L15",
+                "25E-L16"
+              ]
+            },
+            {
+              "study": "Agent 22D r1 method",
+              "role": "shared transfer-function design; 25E adopts it to avoid duplication",
+              "lead_ids": [
+                "25E-L12"
+              ]
+            }
+          ],
+          "entry_into_model": "Generation change applied to electricity value added and export volume (Agent 05); capital damage enters the capital stock, not VA directly.",
+          "scenario_axes": {
+            "emission_or_warming": "SSP1-2.6 / SSP2-4.5 / SSP5-8.5 or 1.5/2/3 C warming levels as reported by each source",
+            "horizon": [
+              "2030",
+              "2050",
+              "2100 (where reported)"
+            ],
+            "adaptation": [
+              "no additional adaptation",
+              "planned adaptation as described by the source"
+            ]
+          },
+          "range_carriage": {
+            "low": null,
+            "high": null,
+            "central": "not carried (no point estimates)",
+            "unit": "percent",
+            "status": "pending"
+          },
+          "channels": [
+            "hydro_generation",
+            "infrastructure_damage",
+            "electricity_trade"
+          ],
+          "consumers": [
+            "05",
+            "13",
+            "22"
+          ],
+          "methodological_notes": "Aligned with 22D design; flow variability and hazard damage kept as separate channels; project-level head/design discharge data not yet located; NEA data are Nepal FY while runoff projections are calendar/multi-decade.",
+          "lead_ids": [
+            "25E-L12",
+            "25E-L13",
+            "25E-L14",
+            "25E-L15",
+            "25E-L16",
+            "25E-L17",
+            "25E-L18",
+            "25E-L01"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "SIR-TO-1",
+          "sector": "tourism",
+          "functional_form": "Seasonal arrivals-and-spend exposure function with (i) hazard disruption days and (ii) slow-onset amenity change (snow/ice landscape, trekking-season shift)",
+          "equation": "dRev_t = sum_m Arr_m * S_m * [ -d_m(hazard) * stay/30 - a_m * dCI_m ] ; dVA_tour = dRev * VA/output ratio of accommodation and food services and transport",
+          "parameters": [
+            {
+              "name": "monthly arrivals Arr_m and spend per visitor-day S_m",
+              "unit": "USD_current",
+              "description": "by month and purpose (trekking/mountaineering)",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L19",
+                "25E-L20"
+              ]
+            },
+            {
+              "name": "disruption days per hazard event d_m (floods, landslides, airport/road closure)",
+              "unit": "days",
+              "description": "by season",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L21",
+                "25E-L23",
+                "25E-L18"
+              ]
+            },
+            {
+              "name": "amenity elasticity a_m of arrivals to climate/landscape change",
+              "unit": "ratio",
+              "description": "per unit change in climate index or snow cover",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L10",
+                "25E-L11"
+              ]
+            },
+            {
+              "name": "cancellation/substitution share after major events",
+              "unit": "percent",
+              "description": "share of arrivals lost vs displaced",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L23"
+              ]
+            }
+          ],
+          "candidate_studies": [
+            {
+              "study": "IPCC AR6 WGII CCP5 / SROCC Ch.2",
+              "role": "assessed mountain-tourism impacts (qualitative-to-quantitative)",
+              "lead_ids": [
+                "25E-L10",
+                "25E-L11"
+              ]
+            },
+            {
+              "study": "Nepal Tourism Statistics 2023, 2024",
+              "role": "exposure base (seasonality, trekking areas)",
+              "lead_ids": [
+                "25E-L19",
+                "25E-L20"
+              ]
+            },
+            {
+              "study": "NPC Post-Disaster Needs Assessments",
+              "role": "observed tourism loss after events",
+              "lead_ids": [
+                "25E-L23"
+              ]
+            }
+          ],
+          "entry_into_model": "Revenue change mapped to accommodation/food and transport value added; foreign-exchange receipts routed to BoP channel.",
+          "scenario_axes": {
+            "emission_or_warming": "SSP1-2.6 / SSP2-4.5 / SSP5-8.5 or 1.5/2/3 C warming levels as reported by each source",
+            "horizon": [
+              "2030",
+              "2050",
+              "2100 (where reported)"
+            ],
+            "adaptation": [
+              "no additional adaptation",
+              "planned adaptation as described by the source"
+            ]
+          },
+          "range_carriage": {
+            "low": null,
+            "high": null,
+            "central": "not carried (no point estimates)",
+            "unit": "percent",
+            "status": "pending"
+          },
+          "channels": [
+            "tourism_receipts",
+            "aggregate_real_growth"
+          ],
+          "consumers": [
+            "13",
+            "07"
+          ],
+          "methodological_notes": "No Nepal-specific tourism damage function located; amenity elasticity may have to be carried as a labelled assumption bracket until a study is found. Tourism statistics are calendar year; VA is Nepal FY.",
+          "lead_ids": [
+            "25E-L19",
+            "25E-L20",
+            "25E-L10",
+            "25E-L11",
+            "25E-L21",
+            "25E-L23",
+            "25E-L18"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "SIR-LV-1",
+          "sector": "livelihoods",
+          "functional_form": "Household asset-loss to well-being-loss function (socio-economic resilience) by quintile and zone, with income-loss channel from farming and remittance buffer",
+          "equation": "WL_q = AL_q / R_q ; AL_q = exposure_q * vulnerability_q * hazard_loss ; R_q = f(savings, remittances, social protection, diversification); outputs: consumption loss by quintile and change in poverty headcount",
+          "parameters": [
+            {
+              "name": "asset exposure by quintile and zone",
+              "unit": "percent",
+              "description": "share of assets in hazard zones",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L35",
+                "25E-L21",
+                "25E-L33"
+              ]
+            },
+            {
+              "name": "vulnerability (asset loss fraction given event) by housing type",
+              "unit": "percent",
+              "description": "per event",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L23",
+                "25E-L33"
+              ]
+            },
+            {
+              "name": "socio-economic resilience R_q",
+              "unit": "ratio",
+              "description": "asset-to-well-being loss ratio",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L33",
+                "25E-L01"
+              ]
+            },
+            {
+              "name": "agricultural income share and remittance share by quintile",
+              "unit": "percent",
+              "description": "NLSS IV (2022/23)",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L35"
+              ]
+            },
+            {
+              "name": "migration response to climate stress",
+              "unit": "persons_k",
+              "description": "additional out-migration by scenario",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L07",
+                "25E-L08"
+              ]
+            }
+          ],
+          "candidate_studies": [
+            {
+              "study": "Hallegatte et al. (2017) Unbreakable",
+              "role": "framework and country resilience indicators",
+              "lead_ids": [
+                "25E-L33"
+              ]
+            },
+            {
+              "study": "World Bank CCDR (2022)",
+              "role": "poverty/distributional results for Nepal",
+              "lead_ids": [
+                "25E-L01"
+              ]
+            },
+            {
+              "study": "NLSS IV (NSO)",
+              "role": "household exposure base",
+              "lead_ids": [
+                "25E-L35"
+              ]
+            },
+            {
+              "study": "ICIMOD HI-WISE / HKH Assessment livelihood chapters",
+              "role": "mountain livelihood and migration impacts",
+              "lead_ids": [
+                "25E-L07",
+                "25E-L08"
+              ]
+            }
+          ],
+          "entry_into_model": "Enters welfare and poverty objectives (src/economic_model/welfare.py); income loss flows from sector VA losses above, not double counted.",
+          "scenario_axes": {
+            "emission_or_warming": "SSP1-2.6 / SSP2-4.5 / SSP5-8.5 or 1.5/2/3 C warming levels as reported by each source",
+            "horizon": [
+              "2030",
+              "2050",
+              "2100 (where reported)"
+            ],
+            "adaptation": [
+              "no additional adaptation",
+              "planned adaptation as described by the source"
+            ]
+          },
+          "range_carriage": {
+            "low": null,
+            "high": null,
+            "central": "not carried (no point estimates)",
+            "unit": "percent",
+            "status": "pending"
+          },
+          "channels": [
+            "household_welfare",
+            "poverty"
+          ],
+          "consumers": [
+            "13",
+            "07"
+          ],
+          "methodological_notes": "Livelihood losses are distributional and welfare measures, not additive to sectoral GDP losses; well-being loss exceeds asset loss for poor households by construction of the framework; migration effects interact with remittances (check with remittance agents).",
+          "lead_ids": [
+            "25E-L33",
+            "25E-L01",
+            "25E-L35",
+            "25E-L07",
+            "25E-L08",
+            "25E-L21",
+            "25E-L23"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "SIR-MA-1",
+          "sector": "macro_cross_check",
+          "functional_form": "Aggregate macro damage function used only as a cross-check bracket on the sum of sectoral losses (level effect vs growth effect)",
+          "equation": "Level: D(dT) = a*dT + b*dT^2 (share of GDP); Growth: g_t = g0 + c1*T + c2*T^2 (country/regional panel); CCDR macro-structural simulation as Nepal-specific comparator",
+          "parameters": [
+            {
+              "name": "CCDR Nepal GDP deviation by scenario and horizon",
+              "unit": "percent",
+              "description": "deviation from baseline real GDP",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L03",
+                "25E-L02"
+              ]
+            },
+            {
+              "name": "ADB 2014 Nepal GDP loss by scenario",
+              "unit": "percent",
+              "description": "share of GDP",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L28"
+              ]
+            },
+            {
+              "name": "panel-estimated temperature coefficients (Burke 2015; Kalkuhl-Wenz 2020; Kotz 2024)",
+              "unit": "percent",
+              "description": "per degree C",
+              "low": null,
+              "high": null,
+              "status": "pending",
+              "lead_ids": [
+                "25E-L29",
+                "25E-L30",
+                "25E-L31"
+              ]
+            }
+          ],
+          "candidate_studies": [
+            {
+              "study": "World Bank CCDR (2022)",
+              "role": "Nepal-specific macro comparator",
+              "lead_ids": [
+                "25E-L01",
+                "25E-L03"
+              ]
+            },
+            {
+              "study": "ADB (2014)",
+              "role": "regional IAM comparator",
+              "lead_ids": [
+                "25E-L28"
+              ]
+            },
+            {
+              "study": "Burke et al. (2015); Kalkuhl and Wenz (2020); Kotz et al. (2024)",
+              "role": "global empirical growth/level bracket",
+              "lead_ids": [
+                "25E-L29",
+                "25E-L30",
+                "25E-L31"
+              ]
+            }
+          ],
+          "entry_into_model": "Cross-check only; does not enter GDP.",
+          "scenario_axes": {
+            "emission_or_warming": "SSP1-2.6 / SSP2-4.5 / SSP5-8.5 or 1.5/2/3 C warming levels as reported by each source",
+            "horizon": [
+              "2030",
+              "2050",
+              "2100 (where reported)"
+            ],
+            "adaptation": [
+              "no additional adaptation",
+              "planned adaptation as described by the source"
+            ]
+          },
+          "range_carriage": {
+            "low": null,
+            "high": null,
+            "central": "not carried (no point estimates)",
+            "unit": "percent",
+            "status": "pending"
+          },
+          "channels": [
+            "aggregate_real_growth"
+          ],
+          "consumers": [
+            "13",
+            "15",
+            "28"
+          ],
+          "methodological_notes": "Level vs growth specifications diverge greatly at long horizons; global panels are not Nepal-calibrated; must not be added to sectoral sums (double counting). Kotz et al. status must be checked.",
+          "lead_ids": [
+            "25E-L01",
+            "25E-L02",
+            "25E-L03",
+            "25E-L28",
+            "25E-L29",
+            "25E-L30",
+            "25E-L31"
+          ],
+          "status": "pending"
+        }
+      ],
+      "upstream_inputs": {
+        "25A": [
+          "PR-05",
+          "PR-07",
+          "PR-04"
+        ],
+        "22D": "hydropower flow-variability method",
+        "16A/16B": "exposure register entries EXP-06, EXP-07, EXP-20 (S05)"
+      },
+      "scenario_links": [
+        "S05",
+        "S10"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "25E-L01",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099415012072225780",
+      "title": "Nepal - Country Climate and Development Report (2022)",
+      "publisher": "World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "Full CCDR (Sept 2022). Chapter 3 assesses climate impacts on the macroeconomy and road transport; sectoral channels (agriculture, water, hydropower, labour/heat, floods) used in macro modelling; transitions for water-agriculture-forests and hydropower. Extract damage channels, functional forms, scenario set and GDP-deviation ranges.",
+      "url_status": "found_by_websearch_r1 (this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L02",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099415012072213110",
+      "title": "Nepal - Country Climate and Development Report: Executive Summary (2022)",
+      "publisher": "World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "Executive summary of CCDR; headline macro impact ranges by scenario and priority transitions. Use only to cross-check full report tables.",
+      "url_status": "found_by_websearch_r1 (this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "25E-L03",
+      "url": "https://openknowledge.worldbank.org/handle/10986/38012",
+      "title": "Nepal Country Climate and Development Report (Open Knowledge Repository record)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "OKR record for the CCDR with PDF download and any background papers/annexes (macro-structural model description, damage-channel parameterisation).",
+      "url_status": "found_by_websearch_r1 (this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L04",
+      "url": "https://www.climatenepal.org.np/sites/default/files/doc_resources/Country%20Climate%20and%20Development%20Report%202022,%20World%20Bank.pdf",
+      "title": "Country Climate and Development Report 2022, World Bank (mirror PDF)",
+      "publisher": "climatenepal.org.np (mirror of World Bank publication)",
+      "source_id": "wb_npl",
+      "contains": "Mirror PDF of the CCDR; use only if the World Bank host is blocked, and verify SHA-256 against the OKR copy.",
+      "url_status": "found_by_websearch_r1 (this task)",
+      "lead_type": "mirror"
+    },
+    {
+      "lead_id": "25E-L05",
+      "url": "https://www.worldbank.org/en/country/nepal/brief/key-highlights-country-climate-and-development-report-for-nepal",
+      "title": "Key highlights: Country Climate and Development Report for Nepal (Aug 2022)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Brief listing the CCDR's key messages; pointer only.",
+      "url_status": "found_by_websearch_r1 (this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "25E-L06",
+      "url": "https://www.ifc.org/en/insights-reports/2022/nepal-country-climate-and-development-report",
+      "title": "Nepal - Country Climate and Development Report (IFC page)",
+      "publisher": "IFC / World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "WBG landing page for the CCDR; pointer only.",
+      "url_status": "found_by_websearch_r1 (this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "25E-L07",
+      "url": "https://lib.icimod.org/record/36322/files/HI-WISE_REPORT_Water_Ice_Society_and_Ecosystems_in_the_HKH-2023.pdf",
+      "title": "Water, ice, society, and ecosystems in the Hindu Kush Himalaya: An outlook (HI-WISE, 2023)",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Cryosphere-change impacts on water, ecosystems, livelihoods and hazards in the HKH; sectoral impact narratives and any quantified ecosystem/livelihood impact ranges by warming level.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L08",
+      "url": "https://lib.icimod.org/records/ce924-5h586",
+      "title": "The Hindu Kush Himalaya Assessment (2019)",
+      "publisher": "ICIMOD / Springer",
+      "source_id": "icimod",
+      "contains": "Chapters on biodiversity/ecosystem services, food and nutrition security, energy, disasters and livelihoods/migration in the HKH; qualitative and quantified impacts.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L09",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter10.pdf",
+      "title": "IPCC AR6 WGII Chapter 10: Asia (2022)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Assessed sectoral impacts in South Asia (crop yields, water, ecosystems, health/labour, economic losses) with confidence levels by warming level.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L10",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP5.pdf",
+      "title": "IPCC AR6 WGII Cross-Chapter Paper 5: Mountains (2022)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Mountain-specific impacts: tourism (snow/ice dependent), hydropower, agriculture, ecosystems, livelihoods and hazards; assessed ranges and confidence.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L11",
+      "url": "https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/06_SROCC_Ch02_FINAL.pdf",
+      "title": "IPCC SROCC Chapter 2: High Mountain Areas (2019)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "High-mountain impacts on water, hydropower, agriculture, tourism, ecosystems and hazards.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L12",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level climate risks to hydropower (flow change, sediment, GLOF/debris-flow exposure); pointers to underlying studies.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L13",
+      "url": "https://doi.org/10.1038/nclimate2237",
+      "title": "Lutz et al. (2014) Consistent increase in High Asia's runoff due to increasing glacier melt and precipitation",
+      "publisher": "Nature Climate Change",
+      "source_id": "academic",
+      "contains": "Runoff projections for upper Ganges/Brahmaputra by RCP (input to hydropower flow-generation function via 25A PR-05).",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L14",
+      "url": "https://www.cambridge.org/core/journals/journal-of-glaciology/article/future-projection-of-cryospheric-and-hydrologic-regimes-in-koshi-river-basin-central-himalaya-using-coupled-glacier-dynamics-and-glaciohydrological-models/0BA61115A9E2780AD059509F24B86ED1",
+      "title": "Khadka, Kayastha, Kayastha (2020) Future projection of cryospheric and hydrologic regimes in Koshi River basin",
+      "publisher": "Journal of Glaciology",
+      "source_id": "academic",
+      "contains": "Koshi basin projected discharge by season and scenario (hydropower and irrigation water input).",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L15",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Plant-level generation by fiscal year (Nepal FY); needed to calibrate flow-generation response and outage losses.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L16",
+      "url": "https://www.dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal",
+      "publisher": "DHM",
+      "source_id": "dhm",
+      "contains": "Observed discharge, temperature and rainfall series for calibrating crop and hydropower response functions.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L17",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali basins",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Exposure of assets (incl. hydropower) to potentially dangerous glacial lakes: hazard input for expected-annual-damage functions.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L18",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "2026 event account: damaged infrastructure incl. hydropower and road links; event-loss calibration point for hazard damage functions.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L19",
+      "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+      "title": "Nepal Tourism Statistics 2024",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation",
+      "source_id": "tourism_ministry",
+      "contains": "Monthly arrivals, purpose of visit, trekking permits by area, average stay and spending; needed for seasonal exposure and disruption-day valuation.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L20",
+      "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
+      "title": "Nepal Tourism Statistics 2023",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation (via NTB)",
+      "source_id": "tourism_ministry",
+      "contains": "Same series, earlier vintage (2023); keep vintages separate.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L21",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal",
+      "publisher": "NDRRMA",
+      "source_id": "ndrrma",
+      "contains": "Event-level disaster incidents and losses (deaths, houses, infrastructure, livestock, crops) by district and date; basis for hazard frequency-loss curves.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L22",
+      "url": "https://public.emdat.be",
+      "title": "EM-DAT public data portal",
+      "publisher": "CRED / UCLouvain",
+      "source_id": "em_dat",
+      "contains": "International disaster loss records for Nepal; cross-check against BIPAD (different thresholds).",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L23",
+      "url": "https://npc.gov.np",
+      "title": "National Planning Commission, Nepal - Post-Disaster Needs Assessments",
+      "publisher": "NPC",
+      "source_id": "npc_nepal",
+      "contains": "PDNAs with damage vs loss split by sector (agriculture, tourism, energy, housing, livelihoods) for past events.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L24",
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Crop area, production and yield for Nepal by crop and year (calendar/agricultural-year basis) for yield-response estimation.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L25",
+      "url": "https://www.worldbank.org/en/country/nepal/publication/nepaldevelopmentupdate",
+      "title": "Nepal Development Update (April 2026)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Recent macro context; any update to climate/disaster impact estimates since the CCDR.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "25E-L26",
+      "url": "https://mof.gov.np",
+      "title": "Economic Survey (latest fiscal year)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Sectoral value added by fiscal year (agriculture, electricity, accommodation and food service) as the base to which damage fractions apply.",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L27",
+      "url": "https://unfccc.int/NDCREG",
+      "title": "UNFCCC NDC Registry - Nepal",
+      "publisher": "UNFCCC",
+      "source_id": "academic",
+      "contains": "Nepal NDC (adaptation component, loss and damage references).",
+      "url_status": "reused from upstream finding / source_leads.json",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "25E-L28",
+      "url": "https://www.adb.org/publications/assessing-costs-climate-change-and-adaptation-south-asia",
+      "title": "ADB (2014) Assessing the Costs of Climate Change and Adaptation in South Asia",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Regional integrated-assessment damage curves (PAGE-type) with country results incl. Nepal by scenario and sector (agriculture, water, ecosystems); functional form and parameters. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L29",
+      "url": "https://doi.org/10.1038/nature15725",
+      "title": "Burke, Hsiang, Miguel (2015) Global non-linear effect of temperature on economic production",
+      "publisher": "Nature",
+      "source_id": "academic",
+      "contains": "Growth-effect macro damage function (quadratic in annual mean temperature) with country panel; used only as an alternative macro bracket. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L30",
+      "url": "https://doi.org/10.1038/s41586-024-07219-0",
+      "title": "Kotz, Levermann, Wenz (2024) The economic commitment of climate change",
+      "publisher": "Nature",
+      "source_id": "academic",
+      "contains": "Sub-national damage function including temperature, variability and precipitation extremes; regional projections. Note: publication subject to post-publication correction/retraction debate — verify status on retrieval. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L31",
+      "url": "https://doi.org/10.1016/j.jeem.2020.102360",
+      "title": "Kalkuhl and Wenz (2020) The impact of climate conditions on economic production: evidence from a global panel of regions",
+      "publisher": "Journal of Environmental Economics and Management",
+      "source_id": "academic",
+      "contains": "Sub-national level vs growth effect damage functions; alternative macro bracket. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L32",
+      "url": "https://doi.org/10.1073/pnas.0906865106",
+      "title": "Schlenker and Roberts (2009) Nonlinear temperature effects indicate severe damages to U.S. crop yields",
+      "publisher": "PNAS",
+      "source_id": "academic",
+      "contains": "Degree-day piecewise-linear yield response form (methodological template only; not Nepal parameters). URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L33",
+      "url": "https://openknowledge.worldbank.org/handle/10986/25335",
+      "title": "Hallegatte et al. (2017) Unbreakable: Building the Resilience of the Poor in the Face of Natural Disasters",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Asset-loss to well-being-loss framework (socio-economic resilience), country-level resilience indicators; template for livelihood damage function. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L34",
+      "url": "https://mofe.gov.np",
+      "title": "Ministry of Forests and Environment, Nepal - National Adaptation Plan (2021), Climate Change Scenarios for Nepal (2019), Vulnerability and Risk Assessment framework",
+      "publisher": "MoFE",
+      "source_id": null,
+      "contains": "Official climate scenarios (temperature, precipitation by physiographic region) and sectoral vulnerability assessments; exact document URLs to be located. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L35",
+      "url": "https://nsonepal.gov.np",
+      "title": "National Statistics Office - Nepal Living Standards Survey IV (2022/23)",
+      "publisher": "NSO",
+      "source_id": "nso_nepal",
+      "contains": "Household income sources, agricultural dependence, remittance share, consumption by quintile and region; exposure base for livelihood function. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L36",
+      "url": "https://www.moald.gov.np",
+      "title": "Ministry of Agriculture and Livestock Development - Statistical Information on Nepalese Agriculture",
+      "publisher": "MoALD",
+      "source_id": null,
+      "contains": "Crop area/production/yield by district and fiscal year (Nepal FY); irrigation coverage. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "25E-L37",
+      "url": "https://www.cdkn.org/",
+      "title": "IDS-Nepal, PAC and GCAP (2014) Economic Impact Assessment of Climate Change in Key Sectors in Nepal (CDKN-funded)",
+      "publisher": "CDKN / IDS-Nepal",
+      "source_id": "academic",
+      "contains": "Nepal-specific sectoral climate cost estimates (agriculture, hydropower, water-induced disasters) — the only Nepal multi-sector economic impact study known; exact document URL to be located. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    }
+  ]
+}

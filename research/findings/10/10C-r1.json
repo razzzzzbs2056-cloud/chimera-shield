@@ -1,0 +1,582 @@
+{
+ "subagent_id": "10C",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked). No values retrieved; all empirical items pending. Defines exactly what the US$3T arithmetic needs for population to 2070: WPP 2024 Medium, Low, High, Constant-fertility and Zero-migration variants plus probabilistic 80/95 percent intervals (1 July, calendar year, 5-year age groups), the NSO projection from the NPHC 2021 base (document not yet located) and the NPHC 2021 count with the absent population abroad as a separate series. Rule: GDP per capita and domestic labour supply use resident-population paths; census absentees are never added to residents without a documented bridge because census absence and the SNA/BPM6 residency rule may differ. Dividend window is defined as the peak year of the 15-64 share per variant; the Zero-migration variant isolates the emigration effect. Twelve source leads recorded (nine from shared leads/catalog, three general-knowledge URLs marked unverified).",
+ "findings": [
+  {
+   "claim": "Q1: Census 2021 total population of Nepal (usual residents present, excluding absentees abroad) at the census reference date, by sex, 5-year age group and province.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Required: NPHC 2021 national report tables (10C-L01, 10C-L10). Record reference date and enumeration concept with the value.",
+   "unit": "persons",
+   "period": "NPHC 2021 reference date (not FY, not mid-year)",
+   "lead_ids": [
+    "10C-L01",
+    "10C-L10"
+   ]
+  },
+  {
+   "claim": "Q1: Census 2021 working-age population (15-64) resident in Nepal and its share of total.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Computed from census age tables once ingested; age-heaping smoothing method must be documented.",
+   "unit": "persons",
+   "period": "NPHC 2021 reference date",
+   "lead_ids": [
+    "10C-L01"
+   ]
+  },
+  {
+   "claim": "Q1: UN WPP 2024 Nepal total population, 1 July, 2024-2070, for each required variant (Medium, Low, High, Constant-fertility, Zero-migration) and probabilistic median with 80 and 95 percent intervals.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp"
+   ],
+   "observation_ids": [],
+   "note": "Required: WPP 2024 standard projection files (10C-L03, 10C-L04). Each variant is a separate observation with vintage 'WPP 2024'.",
+   "unit": "persons_mn",
+   "period": "calendar year, 1 July, 2024-2070",
+   "lead_ids": [
+    "10C-L03",
+    "10C-L04"
+   ]
+  },
+  {
+   "claim": "Q1: UN WPP 2024 Nepal population aged 15-64 and its share of total, 2024-2070, per variant.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp"
+   ],
+   "observation_ids": [],
+   "note": "Same files; age-group sums computed from 5-year groups; also 15-59 and 15-69 sensitivity.",
+   "unit": "percent",
+   "period": "calendar year, 1 July, 2024-2070",
+   "lead_ids": [
+    "10C-L03"
+   ]
+  },
+  {
+   "claim": "Q1: WPP 2024 Nepal estimates for the census year (2021, 1 July) versus Census 2021 count - size and direction of difference.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp",
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Conflict C-06 (00B). Both kept; difference decomposed into reference date, absentee treatment and coverage adjustment.",
+   "unit": "percent",
+   "period": "2021 (census date vs 1 July)",
+   "lead_ids": [
+    "10C-L01",
+    "10C-L03",
+    "10C-L05"
+   ]
+  },
+  {
+   "claim": "Q1: NSO official population projections from the NPHC 2021 base (national and provincial, by age and sex), all published variants and horizon.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Document not yet located (10C-L09 is a landing page). If the NSO horizon ends before 2070, NSO paths are used only to their end year and WPP is the only source beyond it.",
+   "unit": "persons_mn",
+   "period": "as published (state reference date)",
+   "lead_ids": [
+    "10C-L09"
+   ]
+  },
+  {
+   "claim": "Q1: Total fertility rate - census 2021 derived estimate, NDHS 2022 estimate, and WPP 2024 estimate and projected TFR per variant.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal",
+    "dhs",
+    "un_wpp"
+   ],
+   "observation_ids": [],
+   "note": "TFR in births per woman (unit ratio). Survey reference periods differ (NDHS: three years before survey); keep separate.",
+   "unit": "ratio",
+   "period": "various; state per source",
+   "lead_ids": [
+    "10C-L01",
+    "10C-L03"
+   ]
+  },
+  {
+   "claim": "Q2: Year in which the working-age (15-64) share of Nepal's population peaks, and year the total dependency ratio reaches its minimum, per WPP 2024 variant.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp"
+   ],
+   "observation_ids": [],
+   "note": "Computed from WPP files per the dividend-window definition in 10C-A3.",
+   "unit": "years",
+   "period": "calendar year",
+   "lead_ids": [
+    "10C-L03"
+   ]
+  },
+  {
+   "claim": "Q2: Year the working-age population (15-64) peaks in absolute size, per variant.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp"
+   ],
+   "observation_ids": [],
+   "note": "Computed from WPP files.",
+   "unit": "years",
+   "period": "calendar year",
+   "lead_ids": [
+    "10C-L03"
+   ]
+  },
+  {
+   "claim": "Q3: Census 2021 absent population abroad (total, by sex, age group, destination country incl. India, reason for absence).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Required: NPHC 2021 absent-population tables (10C-L01, 10C-L02). Shared with 23A. Stock at census date.",
+   "unit": "persons",
+   "period": "NPHC 2021 reference date",
+   "lead_ids": [
+    "10C-L01",
+    "10C-L02"
+   ]
+  },
+  {
+   "claim": "Q3: Census 2021 definition of 'absent population' - absence-duration threshold, whether absentees are included in the published total, and whether absentees with no household left in Nepal are captured.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Definitional item; read from questionnaire/enumeration manual/national report methodology chapter. Not a number to be inferred.",
+   "period": "NPHC 2021",
+   "lead_ids": [
+    "10C-L01"
+   ]
+  },
+  {
+   "claim": "Q3: Whether WPP 2024 Nepal estimates are de facto (present) or adjusted towards de jure, and how the census absentee count enters WPP's migration reconstruction.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp"
+   ],
+   "observation_ids": [],
+   "note": "Required: WPP 2024 methodology report and any Nepal-specific data-source notes (10C-L05). If undocumented, escalate per C-06 'escalate_if'.",
+   "period": "WPP 2024 vintage",
+   "lead_ids": [
+    "10C-L05"
+   ]
+  },
+  {
+   "claim": "Census counts, WPP estimates/projections and NSO projections are separate observations and separate model paths; they are never merged into one series or averaged (00A challenge to 10C; 00B C-06).",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Absent population abroad is recorded as its own series and is never added to the resident population in the model, because (a) GDP is output of resident units and migrants abroad beyond the residency threshold are non-residents in SNA 2008/BPM6, and (b) the census absence threshold and the SNA one-year residency rule may differ; any combination needs a documented bridge.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Per-capita GDP in the US$3T arithmetic uses the resident population path (WPP de facto or census-based NSO projection, chosen per use as a labelled assumption); domestic labour supply uses the resident working-age path; the absent working-age stock enters only the remittance/GNDI side and return-migration sensitivity.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Fiscal-year model periods (FY ending mid-July of year t) map to WPP calendar-year 1 July values of year t-1 (FY t/t+1 midpoint is approximately 1 January of t+1); the mapping choice is documented and tested as a sensitivity, not assumed silently.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  }
+ ],
+ "data_gaps": [
+  "NSO population projection document from the NPHC 2021 base not located (title, URL, variants, horizon unknown) - blocks POP-NSO-PROJ and the NSO/WPP comparison (00A P2-04).",
+  "Census 2021 absent-population definition (duration threshold) and inclusion rules not yet read from the questionnaire/manual.",
+  "WPP 2024 population concept for Nepal and treatment of census absentees not yet read from the methodology report.",
+  "Census 2021 post-enumeration coverage results (if published) - needed to separate coverage from concept in C-06.",
+  "Age profile of absentees by single year (only age groups located, 10C-L02).",
+  "No official projection of the absent population abroad exists to our knowledge; any path is an assumption tied to 23A/23D scenarios."
+ ],
+ "assumptions": [
+  {
+   "id": "10C-A1",
+   "text": "Census, WPP and NSO projection paths are kept as separate observations and model paths; no averaging or splicing without a documented rule.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10C-A2",
+   "text": "Resident population is the per-capita denominator and domestic labour-supply base; absentees abroad are a separate series used for remittance/GNDI and return-migration scenarios only.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10C-A3",
+   "text": "Dividend window closes in the calendar year the 15-64 share of total population peaks; secondary indicators are the dependency-ratio minimum and the peak of absolute working-age population.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10C-A4",
+   "text": "Nepal FY t/t+1 values are paired with WPP 1 July values by a documented mapping (default: FY t/t+1 paired with the average of 1 July t and 1 July t+1); alternative pairings are sensitivities.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10C-A5",
+   "text": "WPP projection variants and prediction intervals describe demographic uncertainty only; they are not probabilities of any economic scenario.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "00B",
+   "text": "C-06 accepted. Add a definitional sub-check: census 'absent population' threshold vs SNA/BPM6 one-year residency rule used for GDP/GNI; these may classify the same person differently."
+  },
+  {
+   "to": "00A",
+   "text": "P2-04 cannot close until the NSO projection document is located; propose AC-P2-04 accept 'NSO projection not published beyond year X' as a recorded fact, with WPP as sole source after that year."
+  },
+  {
+   "to": "01C",
+   "text": "Use resident-population paths (not resident plus absentees) as the per-capita denominator; replace A-TGT-07 hypothetical populations with WPP 2024 variant paths once ingested, keeping A-TGT-07 as a sensitivity grid."
+  },
+  {
+   "to": "23A",
+   "text": "Census 2021 absentee counts are a stock at the census date and DoFE approvals are flows; agree one shared observation set for the census absentee tables (10C-L01/L02 = 23A-L06) rather than ingesting twice."
+  },
+  {
+   "to": "23D",
+   "text": "Zero-migration vs Medium difference for Nepal should be read together with destination-demand scenarios; a demand shock changes Nepal's resident working-age path, not only remittances."
+  }
+ ],
+ "uncertainty": "High for r1: no values retrieved. Structural uncertainty sits in (i) the absentee concept - the census/WPP gap may be mostly definitional rather than coverage, and its size is unknown; (ii) WPP's migration assumption for Nepal, which dominates the resident working-age path and could shift the dividend-window closing year materially between Medium and Zero-migration; (iii) fertility, where TFR near or below replacement makes Low/Constant-fertility divergence grow after 2040; (iv) the NSO projection horizon, likely shorter than 2070, so post-horizon paths rest on WPP alone. Three lead URLs are from general knowledge and unverified.",
+ "source_leads": [
+  {
+   "lead_id": "10C-L01",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+   "title": "National Population and Housing Census 2021 - related materials (national report, thematic reports incl. international migration and population ageing)",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "NPHC 2021 national report: total population by sex, age (single year / 5-year groups), province and district at the census reference date; enumeration concept; definition and count of absent population abroad (by sex, age, destination, reason, duration of absence); questionnaire and enumeration manual (absence-duration threshold); post-enumeration survey coverage results if published",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L02",
+   "url": "https://data.nsonepal.gov.np/dataset/district-level-household/resource/5576441d-dce1-493e-b715-9b59cf3749fd",
+   "title": "District Level Household - Absent population abroad by age groups and level of education, NPHC 2021",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Machine-readable absent population abroad by district, age group and education, NPHC 2021 - age profile needed to estimate working-age absentees",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L03",
+   "url": "https://population.un.org/wpp/",
+   "title": "UN World Population Prospects 2024 - data portal",
+   "publisher": "UN DESA Population Division",
+   "source_id": "un_wpp",
+   "contains": "Nepal (ISO3 NPL, location code 524) population by 5-year age group and sex, 1 July reference, estimates 1950-2023 and projections 2024-2100 for the Medium, Low, High, Constant-fertility, Instant-replacement, Zero-migration, Constant-mortality, No-change, Momentum variants and probabilistic 80/95 percent intervals; demographic indicators (TFR, life expectancy, net migration, dependency ratios)",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L04",
+   "url": "https://www.un.org/development/desa/pd/content/world-population-prospects-2024-dataset",
+   "title": "World Population Prospects 2024: Dataset",
+   "publisher": "UN DESA Population Division",
+   "source_id": "un_wpp",
+   "contains": "Download links and file descriptions for the standard projection Excel/CSV files (population by age and sex per variant; compact demographic indicators); used to pin exact file names and vintage",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L05",
+   "url": "https://population.un.org/wpp/assets/Files/WPP2024_Methodology-Report_Final.pdf",
+   "title": "WPP 2024 Methodology Report (UN DESA/POP/2024/DC/NO.10)",
+   "publisher": "UN DESA Population Division",
+   "source_id": "un_wpp",
+   "contains": "Population concept (de facto vs de jure), treatment of census under-enumeration and of emigrants absent at census; how projection variants are defined (fertility, mortality, migration assumptions); probabilistic method",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L06",
+   "url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+   "title": "World Population Prospects 2024: Summary of Results",
+   "publisher": "UN DESA Population Division",
+   "source_id": "un_wpp",
+   "contains": "Variant definitions and headline results; context only - Nepal values come from the data files",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L07",
+   "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.TOTL?format=json&per_page=200",
+   "title": "WDI API: Population, total, Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_wdi",
+   "contains": "SP.POP.TOTL mid-year, WPP-derived; cross-check only (C-06); calendar year",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L08",
+   "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.1564.TO.ZS?format=json&per_page=200",
+   "title": "WDI API: Population ages 15-64 (% of total population), Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_wdi",
+   "contains": "SP.POP.1564.TO.ZS, WPP-derived historical working-age share; cross-check of WPP extraction; calendar year. Series code from general knowledge, URL built on the verified WDI API pattern",
+   "url_status": "URL from general knowledge — unverified (built on API pattern of shared lead 10C-L07)"
+  },
+  {
+   "lead_id": "10C-L09",
+   "url": "https://nsonepal.gov.np",
+   "title": "NSO Nepal - population projection report based on NPHC 2021 (exact document not yet located)",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Target: official national and provincial population projections by age and sex from the NPHC 2021 base, all published variants, projection horizon, assumptions on fertility, mortality and migration; document URL to be located on retrieval",
+   "url_status": "catalog endpoint from research/sources/source_catalog.yaml (endpoint_status: unverified)"
+  },
+  {
+   "lead_id": "10C-L10",
+   "url": "https://censusnepal.cbs.gov.np/results",
+   "title": "NPHC 2021 results portal",
+   "publisher": "National Statistics Office, Nepal (formerly CBS)",
+   "source_id": "nso_nepal",
+   "contains": "Online census tables: population by age/sex/province; absent population tables",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10C-L11",
+   "url": "https://academic.oup.com/wber/article-abstract/12/3/419/1632238",
+   "title": "Bloom and Williamson (1998) Demographic Transitions and Economic Miracles in Emerging Asia, World Bank Economic Review 12(3):419-455",
+   "publisher": "Oxford University Press / World Bank",
+   "source_id": "academic",
+   "contains": "Framework linking working-age population growth to per-capita growth; used for dividend-window method, not for Nepal values",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10C-L12",
+   "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+   "title": "Penn World Table (latest version)",
+   "publisher": "Groningen Growth and Development Centre",
+   "source_id": "pwt",
+   "contains": "emp and pop series for Nepal - cross-check of historical employment/population ratio (secondary)",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  }
+ ],
+ "specific": {
+  "population_paths": {
+   "status": "pending",
+   "value": null,
+   "unit": "persons_mn",
+   "reference_basis": "WPP: calendar year, 1 July; NSO census: census reference date; NSO projections: as published. No conversion to Nepal FY without the mapping in 10C-A4.",
+   "required_series": [
+    {
+     "path_id": "POP-WPP24-MED",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "Medium",
+     "role": "central resident population path for per-capita arithmetic",
+     "horizon": "2024-2070 (to 2100 retained)",
+     "lead_ids": [
+      "10C-L03",
+      "10C-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WPP24-LOW",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "Low (fertility lower than Medium by the WPP-defined margin)",
+     "role": "lower bound deterministic",
+     "horizon": "2024-2070",
+     "lead_ids": [
+      "10C-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WPP24-HIGH",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "High",
+     "role": "upper bound deterministic",
+     "horizon": "2024-2070",
+     "lead_ids": [
+      "10C-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WPP24-CF",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "Constant-fertility",
+     "role": "sensitivity: fertility decline stalls",
+     "horizon": "2024-2070",
+     "lead_ids": [
+      "10C-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WPP24-ZM",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "Zero-migration",
+     "role": "isolates the emigration assumption; bounds the effect of a migration shock/return (links to 23A-23D)",
+     "horizon": "2024-2070",
+     "lead_ids": [
+      "10C-L03",
+      "10C-L05"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WPP24-PROB",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "Probabilistic median, 80 and 95 percent prediction intervals",
+     "role": "uncertainty band (not a probability of any economic scenario)",
+     "horizon": "2024-2070",
+     "lead_ids": [
+      "10C-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WPP24-OPT",
+     "source_id": "un_wpp",
+     "vintage": "WPP 2024",
+     "variant": "Instant-replacement, Constant-mortality, No-change, Momentum (optional)",
+     "role": "decomposition of drivers; not used in headline arithmetic",
+     "horizon": "2024-2070",
+     "lead_ids": [
+      "10C-L03"
+     ],
+     "status": "pending (optional)"
+    },
+    {
+     "path_id": "POP-NSO-PROJ",
+     "source_id": "nso_nepal",
+     "vintage": "NSO projection from NPHC 2021 base (document to be located)",
+     "variant": "every published variant",
+     "role": "official national/provincial path; comparison with WPP over the overlapping horizon",
+     "horizon": "as published; WPP only beyond NSO end year",
+     "lead_ids": [
+      "10C-L09",
+      "10C-L01"
+     ],
+     "status": "pending - document not located"
+    },
+    {
+     "path_id": "POP-CENSUS-2021",
+     "source_id": "nso_nepal",
+     "vintage": "NPHC 2021",
+     "variant": "count (resident) + absent population abroad as separate series",
+     "role": "base-year anchor and C-06 comparison",
+     "horizon": "census reference date",
+     "lead_ids": [
+      "10C-L01",
+      "10C-L02",
+      "10C-L10"
+     ],
+     "status": "pending"
+    },
+    {
+     "path_id": "POP-WDI-XCHK",
+     "source_id": "wb_wdi",
+     "vintage": "latest WDI (WPP-derived)",
+     "variant": "n/a",
+     "role": "extraction cross-check only; never an independent source",
+     "lead_ids": [
+      "10C-L07"
+     ],
+     "status": "pending"
+    }
+   ],
+   "absentee_treatment": {
+    "census": "Absent population abroad is reported separately from the resident count; definition (duration threshold, household-based reporting) pending from 10C-L01.",
+    "wpp": "Concept (de facto/de jure) and use of census absentees pending from 10C-L05.",
+    "model_rule": "Resident path for GDP per capita and domestic labour supply; absent stock as separate series for remittance/GNDI and return-migration scenarios (10C-A2, 10C-A3). Never summed without a documented bridge."
+   },
+   "method": "Ingest WPP 2024 standard Excel/CSV files by variant (5-year age groups, both sexes and by sex); store each variant-year-age cell as an observation with vintage; aggregate to totals and 15-64 in code; compare WPP 2021 with census 2021 per C-06."
+  },
+  "working_age_share_paths": {
+   "status": "pending",
+   "value": null,
+   "unit": "percent",
+   "definition": "Primary 15-64; sensitivities 15-59 and 15-69 (retirement/pension age and school-leaving conventions). Share = population in age band / total population, same source and variant.",
+   "paths": [
+    "WAS-WPP24-MED",
+    "WAS-WPP24-LOW",
+    "WAS-WPP24-HIGH",
+    "WAS-WPP24-CF",
+    "WAS-WPP24-ZM",
+    "WAS-WPP24-PROB",
+    "WAS-NSO-PROJ (to its horizon)",
+    "WAS-CENSUS-2021 (resident) plus census absentee age profile (separate)"
+   ],
+   "labour_supply_link": "Labour input for 01A = working-age resident population x participation rate x (1 - unemployment rate), with participation/unemployment from 10B (NLFS 2017/18, NLSS IV 2022/23, NLFS 2024/25 when published); participation paths beyond the survey years are labelled assumptions.",
+   "lead_ids": [
+    "10C-L03",
+    "10C-L04",
+    "10C-L08",
+    "10C-L01",
+    "10C-L02"
+   ]
+  },
+  "dividend_window": {
+   "status": "pending",
+   "value": null,
+   "unit": "years",
+   "definition_primary": "Window open while the working-age (15-64) share is rising; closes in the calendar year the share peaks (10C-A3).",
+   "definition_secondary": "Support ratio (working-age / total) growth positive; and absolute working-age population growth positive (later closing year).",
+   "outputs_per_variant": [
+    "peak year of 15-64 share",
+    "minimum year of total dependency ratio",
+    "peak year of 15-64 population",
+    "years remaining from base year"
+   ],
+   "variants": [
+    "Medium",
+    "Low",
+    "High",
+    "Constant-fertility",
+    "Zero-migration",
+    "probabilistic 80/95 percent interval of peak year"
+   ],
+   "migration_caveat": "Nepal's resident working-age share is depressed by working-age emigration; the resident 'dividend' differs from a cohort dividend that counts absentees. Report the Zero-migration variant alongside Medium to show the effect.",
+   "lead_ids": [
+    "10C-L03",
+    "10C-L05",
+    "10C-L11"
+   ]
+  }
+ }
+}

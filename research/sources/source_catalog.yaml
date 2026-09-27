@@ -43,6 +43,8 @@ sources:
   nitdb: {tier: 1, institution: Nepal Intermodal Transport Development Board, url: "https://nitdb.gov.np", covers: [dry ports, transit cargo statistics], endpoint_status: unverified}
   caan: {tier: 1, institution: Civil Aviation Authority of Nepal, url: "https://caanepal.gov.np", covers: [aviation statistics], endpoint_status: unverified}
   nta_nepal: {tier: 1, institution: Nepal Telecommunications Authority, url: "https://nta.gov.np", covers: [telecom and internet statistics], endpoint_status: unverified}
+  mofe_nepal: {tier: 1, institution: Ministry of Forests and Environment, Nepal, url: "https://mofe.gov.np", covers: [NAP, NDC, climate scenarios], endpoint_status: unverified}
+  moald_nepal: {tier: 1, institution: Ministry of Agriculture and Livestock Development, Nepal, url: "https://moald.gov.np", covers: [crop and livestock statistics], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
   supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}
