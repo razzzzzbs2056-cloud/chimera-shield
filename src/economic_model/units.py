@@ -15,7 +15,7 @@ Money:   ``{CUR}_{BASIS}[_{SCALE}]``
          e.g. ``NPR_current_mn``, ``USD_current_bn``, ``NPR_const2010_mn``
 Rates:   ``NPR_per_USD``, ``NPR_per_INR``, ``INR_per_USD``
 Other:   ``percent``, ``ratio``, ``index``, ``persons``, ``persons_mn``,
-         ``persons_k``, ``GWh``, ``MW``, ``months``, ``years``
+         ``persons_k``, ``GWh``, ``MW``, ``days``, ``months``, ``years``, ``count``
 """
 
 from __future__ import annotations
@@ -48,6 +48,8 @@ _SIMPLE = {
     "MW": ("power", 1.0),
     "months": ("time", 1.0 / 12.0),
     "years": ("time", 1.0),
+    "days": ("time", 1.0 / 365.25),
+    "count": ("count", 1.0),
 }
 
 
