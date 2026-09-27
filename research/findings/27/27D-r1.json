@@ -1,0 +1,1454 @@
+{
+ "subagent_id": "27D",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T00:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked). The agent's single WebSearch located primary procedure documents for IMF and World Bank crisis instruments: the 2025 IMF factsheets on the RFI and RCF, the RFI factsheet page, the IDA Immediate Response Mechanism page, the World Bank guidance note on Contingent Emergency Response Components, the note on Operation of the Crisis Response Window, and IEG's CRW lessons synthesis. Together with register/upstream leads (IMF Nepal ECF extension and 2026 Article IV, IDA terms and products 2026, WB CPF, ADB CPS, CDP crisis assessment, NDRRMA, PDNA precedents, MoFA consular releases, AMIS/DCR) and leads marked 'URL from general knowledge - unverified' (CCRT, RSF, PRGT eligibility, Cat DDO, WB crisis toolkit, ADB APDRF and emergency policy, CERF, FTS, ReliefWeb, INSARAG), 43 leads are recorded. Q1 (documented procedures governing crisis financing and coordination) is set up as 17 procedure maps, each with trigger/eligibility, steps to verify, decision body, documents, terms, time-to-disbursement and Nepal applicability, all pending. A hypothetical sequencing design links the maps to scenarios S01, S04, S05 and S10 for 27E. No numbers recorded; search-snippet figures were deliberately not used. Nothing here represents any government or institution's decisions.",
+ "findings": [
+  {
+   "claim": "Q1: Documented procedures governing crisis financing and coordination available to Nepal - 17 procedure maps (IMF RFI, RCF, ECF augmentation/extension, CCRT, RSF; World Bank CRW, CERC, IRM, Cat DDO; ADB APDRF and emergency assistance; UN CERF/flash appeal, INSARAG, LDC-graduation crisis review; Nepal national disaster declaration and PDNA; consular evacuation; SAARC swap framework) in specific.procedure_maps.",
+   "type": "pending",
+   "value": null,
+   "period": "procedure vintages as at retrieval (2025-2026)",
+   "source_ids": [
+    "imf_article_iv",
+    "wb_npl",
+    "wb_ids",
+    "adb_nepal",
+    "ndrrma"
+   ],
+   "observation_ids": [],
+   "note": "Procedure texts located as leads (RFI/RCF factsheets 2025, CERC guidance note, CRW operation note, IRM page, IEG CRW synthesis); none retrieved. Step outlines are retrieval checklists only."
+  },
+  {
+   "claim": "Q1a: IMF emergency-financing access limits applicable to Nepal (RFI/RCF, regular and large-natural-disaster windows), as percent of quota.",
+   "type": "pending",
+   "value": null,
+   "unit": "percent",
+   "period": "facility rules as at 2025 factsheets; confirm current",
+   "source_ids": [
+    "imf_article_iv"
+   ],
+   "observation_ids": [],
+   "note": "Leads 27D-L01, L03; SDR amounts need a unit code (challenge to 00A)."
+  },
+  {
+   "claim": "Q1b: Documented time from request to first disbursement for each mechanism (IMF RFI/RCF, WB CERC/IRM/CRW, ADB APDRF, CERF).",
+   "type": "pending",
+   "value": null,
+   "unit": "days",
+   "period": "evaluation periods as reported",
+   "source_ids": [
+    "wb_npl",
+    "imf_article_iv",
+    "adb_nepal"
+   ],
+   "observation_ids": [],
+   "note": "IEG CRW synthesis (27D-L15) and institutional evaluations; Nepal precedents (2015, 2017, 2020) from IMF country page, WB project documents and AMIS."
+  },
+  {
+   "claim": "Q1c: Nepal's eligibility status for each mechanism (PRGT eligibility, IDA terms category, CERC-bearing operations, IRM readiness, Cat DDO, ADB category, NRB swap agreement).",
+   "type": "pending",
+   "value": null,
+   "period": "2026",
+   "source_ids": [
+    "imf_article_iv",
+    "wb_ids",
+    "wb_npl",
+    "adb_nepal",
+    "nrb"
+   ],
+   "observation_ids": [],
+   "note": "Depends on 26A programme register, 26C graduation timeline and 20C IDA terms."
+  },
+  {
+   "claim": "Q1d: Count of active Nepal World Bank operations containing a CERC and of any triggered CERCs.",
+   "type": "pending",
+   "value": null,
+   "unit": "count",
+   "period": "World Bank FY2024-FY2027 (July-June) - record basis",
+   "source_ids": [
+    "wb_npl"
+   ],
+   "observation_ids": [],
+   "note": "Project documents via the WB projects list (27D-L20)."
+  },
+  {
+   "claim": "Method: procedure maps are built from the institution's own procedure documents; the step outlines in r1 are retrieval checklists from lead titles and general knowledge and are not evidence.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: rules on concurrent use (e.g. IMF emergency facility alongside an ECF arrangement) are taken from the latest official policy text and dated; factsheet summaries are cross-checks.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Crisis-coordination simulations are hypothetical sequencing exercises; they do not predict or represent decisions of the Government of Nepal, the IMF, the World Bank, ADB, the UN or any other government.",
+   "type": "assumption",
+   "source_ids": []
+  }
+ ],
+ "data_gaps": [
+  "Retrieved RFI/RCF factsheets and the underlying IMF policy papers on emergency financing and concurrent use with PRGT arrangements (current vintage).",
+  "Current IDA-cycle CRW operating rules (the located operation note's cycle must be confirmed) and Crisis Preparedness and Response Toolkit documents.",
+  "List of Nepal World Bank operations with CERCs and their operations manuals; IRM readiness documents; any Cat DDO.",
+  "ADB APDRF and Disaster and Emergency Assistance Policy texts (general-knowledge URLs) and Nepal precedent use.",
+  "Nepal DRRM Act 2074 official text and National Disaster Response Framework (no document-level lead).",
+  "SAARC currency swap framework press releases/agreement and any NRB swap agreement (landing pages only).",
+  "Nepal's IMF emergency financing history (country page lending table) and documented disbursement timelines for past crises."
+ ],
+ "assumptions": [
+  {
+   "id": "27D-A1",
+   "text": "Procedure maps use the latest official policy text; factsheets are cross-checks, and vintages are recorded because rules change across IDA cycles and IMF reviews.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27D-A2",
+   "text": "IMF access limits are recorded as percent of quota (unit 'percent'); SDR amounts are not recorded until a unit code exists.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27D-A3",
+   "text": "World Bank periods are recorded on the Bank's fiscal year (July-June), IMF on calendar dates, and Nepal records on Nepal FY; no conversion without a documented method.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "00A",
+   "text": "Add an SDR money unit code (e.g. SDR_current_mn) to src/economic_model/units.py and catalog ids for IEG, UN OCHA/CERF, INSARAG and ADB APDRF; 27D cannot record IMF access in SDR otherwise."
+  },
+  {
+   "to": "26A",
+   "text": "programme_register should record whether the ECF extension approved in 2026 changes rules for concurrent emergency financing (RCF alongside ECF) and whether Nepal has CERC-bearing operations; PM-02, PM-03 and PM-07 depend on it."
+  },
+  {
+   "to": "26C",
+   "text": "PRGT eligibility and IDA terms may shift with the LDC graduation timeline; please record the dates on which Nepal's category under each institution would be reviewed, if documented."
+  },
+  {
+   "to": "13C",
+   "text": "PM-14 needs the DRRM Act 2074 official text and the National Disaster Response Framework; if 13A/13C hold these, please add document-level leads."
+  }
+ ],
+ "uncertainty": "High: procedure documents were located but not retrieved, so rules, limits and timelines are unverified; facility rules change frequently (temporary access increases, IDA cycle changes), so a retrieved document may already be superseded. Nepal's eligibility for several instruments depends on pending upstream items (PRGT eligibility, IDA terms, CERC-bearing operations). Many ADB/UN leads are general-knowledge URLs that may not resolve.",
+ "specific": {
+  "procedure_maps": {
+   "status": "pending",
+   "question": "Q1 What documented procedures govern crisis financing and coordination?",
+   "method": "For each mechanism: retrieve the governing procedure document (factsheet, policy paper, operational guidance, legal text) and the latest vintage; extract trigger/eligibility, steps, decision body, documents, terms, and any documented timelines; then record Nepal's applicability from Nepal-specific records (IMF country page and staff reports, WB CPF/project documents, ADB CPS, NDRRMA/Law Commission texts). Procedure vintage is recorded because facility rules change across IDA cycles and IMF reviews. Where two documents disagree (e.g. factsheet vs policy paper), both are kept and the later official policy text is flagged for 00B.",
+   "maps": [
+    {
+     "map_id": "PM-01",
+     "mechanism": "Rapid Financing Instrument (RFI)",
+     "institution": "IMF",
+     "instrument_type": "emergency balance-of-payments financing (GRA)",
+     "trigger_and_eligibility": {
+      "to_verify": "urgent BoP need; windows (regular, large natural disaster); whether a full programme is unnecessary or infeasible",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "authorities' request letter with policy commitments",
+      "staff assessment of BoP need, capacity to repay and debt sustainability",
+      "prior actions where required",
+      "Executive Board approval",
+      "single or limited disbursement"
+     ],
+     "decision_body": "IMF Executive Board",
+     "documents_required": [
+      "letter of intent / request",
+      "staff report",
+      "DSA"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "access limits (percent of quota, annual and cumulative)",
+       "repayment terms",
+       "interaction with existing ECF (concurrent use rules)"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending",
+      "unit": "percent",
+      "note": "IMF access is expressed as percent of quota; SDR amounts not recordable with current unit codes (see challenge to 00A)"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Whether Nepal would use the RFI (GRA) or RCF (PRGT) given PRGT eligibility; interaction with the ECF arrangement extended in 2026"
+     },
+     "leads": [
+      "27D-L01",
+      "27D-L02",
+      "27D-L04",
+      "27D-L07"
+     ],
+     "scenario_links": [
+      "S01",
+      "S04",
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-02",
+     "mechanism": "Rapid Credit Facility (RCF)",
+     "institution": "IMF",
+     "instrument_type": "concessional emergency financing (PRGT)",
+     "trigger_and_eligibility": {
+      "to_verify": "urgent BoP need of a PRGT-eligible member; windows incl. exogenous shock and large natural disaster",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "request",
+      "staff report incl. DSA and capacity to repay",
+      "Executive Board approval",
+      "disbursement"
+     ],
+     "decision_body": "IMF Executive Board",
+     "documents_required": [
+      "request letter",
+      "staff report"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "access limits",
+       "concessional terms (interest, grace, maturity)",
+       "rules on concurrent PRGT arrangement (ECF)",
+       "repeat-use rules"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending",
+      "unit": "percent",
+      "note": "IMF access is expressed as percent of quota; SDR amounts not recordable with current unit codes (see challenge to 00A)"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "PRGT eligibility status after LDC graduation and income changes (26C); relation to the extended ECF"
+     },
+     "leads": [
+      "27D-L03",
+      "27D-L09",
+      "27D-L04",
+      "27D-L07"
+     ],
+     "scenario_links": [
+      "S01",
+      "S04",
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-03",
+     "mechanism": "Augmentation, rephasing or extension of an existing ECF arrangement",
+     "institution": "IMF",
+     "instrument_type": "modification of existing arrangement",
+     "trigger_and_eligibility": {
+      "to_verify": "shock during an active arrangement",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "authorities' request",
+      "staff report on the review/modification",
+      "Executive Board decision"
+     ],
+     "decision_body": "IMF Executive Board",
+     "documents_required": [
+      "request",
+      "staff report"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "augmentation limits",
+       "modified performance criteria"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending",
+      "unit": "percent",
+      "note": "IMF access is expressed as percent of quota; SDR amounts not recordable with current unit codes (see challenge to 00A)"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Documented precedent: 2026 extension request and Board approval (leads A06/A07 of 26A)"
+     },
+     "leads": [
+      "27D-L05",
+      "27D-L06",
+      "27D-L07"
+     ],
+     "scenario_links": [
+      "S04",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text.",
+     "note": "Nepal-specific precedent exists (extension 2026); its procedure record is the highest-priority retrieval for this map."
+    },
+    {
+     "map_id": "PM-04",
+     "mechanism": "Catastrophe Containment and Relief Trust (CCRT)",
+     "institution": "IMF",
+     "instrument_type": "debt-service relief grant",
+     "trigger_and_eligibility": {
+      "to_verify": "catastrophic disaster or public-health disaster in eligible low-income members",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "request",
+      "eligibility assessment",
+      "Executive Board decision",
+      "debt-service relief on eligible IMF obligations"
+     ],
+     "decision_body": "IMF Executive Board",
+     "documents_required": [
+      "request"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "eligibility thresholds",
+       "resource availability"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending",
+      "unit": "percent",
+      "note": "IMF access is expressed as percent of quota; SDR amounts not recordable with current unit codes (see challenge to 00A)"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Whether Nepal meets CCRT income/eligibility criteria"
+     },
+     "leads": [
+      "27D-L08",
+      "27D-L04"
+     ],
+     "scenario_links": [
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-05",
+     "mechanism": "Resilience and Sustainability Facility (RSF)",
+     "institution": "IMF",
+     "instrument_type": "longer-term climate-resilience financing",
+     "trigger_and_eligibility": {
+      "to_verify": "eligible member with concurrent upper-credit-tranche programme",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "request",
+      "reform measures",
+      "Board approval",
+      "disbursement on reform completion"
+     ],
+     "decision_body": "IMF Executive Board",
+     "documents_required": [
+      "request",
+      "reform matrix"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "concurrent programme requirement",
+       "reform measures"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending",
+      "unit": "percent",
+      "note": "IMF access is expressed as percent of quota; SDR amounts not recordable with current unit codes (see challenge to 00A)"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Not crisis-rapid; recorded for preparedness scenarios only"
+     },
+     "leads": [
+      "27D-L10",
+      "27D-L07"
+     ],
+     "scenario_links": [
+      "S05"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-06",
+     "mechanism": "Crisis Response Window (CRW)",
+     "institution": "World Bank IDA",
+     "instrument_type": "crisis allocation to IDA countries",
+     "trigger_and_eligibility": {
+      "to_verify": "severe economic shock, natural disaster or public-health emergency meeting CRW criteria",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "country request via IDA operation",
+      "management assessment against CRW criteria",
+      "allocation decision",
+      "operation approval (Board)",
+      "disbursement through new or restructured operation"
+     ],
+     "decision_body": "World Bank management and Board",
+     "documents_required": [
+      "project paper",
+      "emergency operation documents"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "eligibility criteria",
+       "allocation ceiling rules for the current IDA cycle",
+       "terms per IDA Terms 2026"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "IDA eligibility and terms category of Nepal (20C)"
+     },
+     "leads": [
+      "27D-L14",
+      "27D-L15",
+      "27D-L17",
+      "27D-L18"
+     ],
+     "scenario_links": [
+      "S04",
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text.",
+     "note": "CRW operation document vintage must be matched to the current IDA cycle before use."
+    },
+    {
+     "map_id": "PM-07",
+     "mechanism": "Contingent Emergency Response Component (CERC)",
+     "institution": "World Bank",
+     "instrument_type": "zero-allocation component in investment projects",
+     "trigger_and_eligibility": {
+      "to_verify": "eligible crisis declaration and government request",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "CERC included at project design with operations manual",
+      "government declares eligible crisis and requests activation",
+      "Bank no-objection and reallocation of undisbursed funds",
+      "simplified procurement and fiduciary procedures",
+      "implementation per CERC manual"
+     ],
+     "decision_body": "World Bank (task team/management) and government implementing agency",
+     "documents_required": [
+      "CERC operations manual",
+      "request letter",
+      "emergency action plan"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "eligible expenditures",
+       "positive/negative lists",
+       "fiduciary and safeguard adjustments"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Which Nepal operations carry a CERC and whether any has been triggered"
+     },
+     "leads": [
+      "27D-L12",
+      "27D-L13",
+      "27D-L20",
+      "27D-L19"
+     ],
+     "scenario_links": [
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-08",
+     "mechanism": "Immediate Response Mechanism (IRM)",
+     "institution": "World Bank IDA",
+     "instrument_type": "reallocation of undisbursed IDA balances",
+     "trigger_and_eligibility": {
+      "to_verify": "declared emergency in an IRM-ready country",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "IRM readiness (operations manual, designated projects)",
+      "emergency declaration and request",
+      "reallocation and disbursement"
+     ],
+     "decision_body": "World Bank management",
+     "documents_required": [
+      "IRM operations manual",
+      "request"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "share of undisbursed balances available",
+       "eligible expenditures"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Whether Nepal is IRM-ready (readiness documents)"
+     },
+     "leads": [
+      "27D-L11",
+      "27D-L17",
+      "27D-L19"
+     ],
+     "scenario_links": [
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-09",
+     "mechanism": "Catastrophe Deferred Drawdown Option (Cat DDO)",
+     "institution": "World Bank",
+     "instrument_type": "contingent credit line attached to DPF",
+     "trigger_and_eligibility": {
+      "to_verify": "declared emergency; pre-agreed DRM programme",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "preparation of DRM programme and prior actions",
+      "Board approval of DPF with Cat DDO",
+      "emergency declaration triggers drawdown"
+     ],
+     "decision_body": "World Bank Board",
+     "documents_required": [
+      "programme document"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "prior actions",
+       "renewal and front-end fees"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Whether a Cat DDO exists or is planned for Nepal (CPF)"
+     },
+     "leads": [
+      "27D-L21",
+      "27D-L19",
+      "27D-L17"
+     ],
+     "scenario_links": [
+      "S05"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-10",
+     "mechanism": "Asia Pacific Disaster Response Fund (APDRF)",
+     "institution": "ADB",
+     "instrument_type": "rapid grant for disaster relief",
+     "trigger_and_eligibility": {
+      "to_verify": "declared disaster meeting fund criteria",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "government request",
+      "ADB assessment",
+      "approval",
+      "grant disbursement"
+     ],
+     "decision_body": "ADB management",
+     "documents_required": [
+      "request letter"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "grant ceiling",
+       "eligible uses"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Nepal's eligibility and any precedent use"
+     },
+     "leads": [
+      "27D-L25",
+      "27D-L23",
+      "27D-L24"
+     ],
+     "scenario_links": [
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-11",
+     "mechanism": "ADB emergency assistance loans and portfolio reallocation (Disaster and Emergency Assistance Policy)",
+     "institution": "ADB",
+     "instrument_type": "emergency loans, reallocation, contingent disaster financing",
+     "trigger_and_eligibility": {
+      "to_verify": "declared disaster or economic shock",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "request",
+      "ADB assessment/needs assessment",
+      "approval of emergency loan or reallocation"
+     ],
+     "decision_body": "ADB Board/management",
+     "documents_required": [
+      "request",
+      "needs assessment"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "terms by Nepal's ADB lending category",
+       "eligible uses"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Nepal's current ADB lending category and CPS crisis provisions"
+     },
+     "leads": [
+      "27D-L26",
+      "27D-L23",
+      "27D-L24"
+     ],
+     "scenario_links": [
+      "S04",
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-12",
+     "mechanism": "UN CERF rapid response and flash appeal",
+     "institution": "UN OCHA / CERF",
+     "instrument_type": "humanitarian grant and appeal",
+     "trigger_and_eligibility": {
+      "to_verify": "sudden-onset emergency; Resident/Humanitarian Coordinator request",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "government request or acceptance of international assistance",
+      "RC/HC and HCT prioritisation",
+      "CERF application and ERC approval",
+      "flash appeal launch",
+      "funding tracked in FTS"
+     ],
+     "decision_body": "UN Emergency Relief Coordinator; RC/HC",
+     "documents_required": [
+      "CERF application",
+      "flash appeal document"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "eligible sectors and agencies",
+       "time limits for implementation"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Nepal precedents (2015 earthquake appeal) and current HCT contingency plan"
+     },
+     "leads": [
+      "27D-L27",
+      "27D-L28",
+      "27D-L29"
+     ],
+     "scenario_links": [
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-13",
+     "mechanism": "International search-and-rescue coordination (INSARAG)",
+     "institution": "UN OCHA / INSARAG",
+     "instrument_type": "coordination procedure",
+     "trigger_and_eligibility": {
+      "to_verify": "request for international USAR after sudden-onset disaster",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "government request",
+      "virtual OSOCC activation",
+      "deployment and reception/departure centre",
+      "coordination through national authority"
+     ],
+     "decision_body": "National authority with UN OCHA support",
+     "documents_required": [
+      "INSARAG guidelines"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "classification of teams"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Nepal's designated national focal point and reception arrangements (NDRRMA)"
+     },
+     "leads": [
+      "27D-L30",
+      "27D-L33"
+     ],
+     "scenario_links": [
+      "S05"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-14",
+     "mechanism": "National disaster declaration and international-assistance coordination (Nepal)",
+     "institution": "Government of Nepal (NDRRMA/MoHA; MoF for financing; NPC for PDNA)",
+     "instrument_type": "domestic legal and coordination procedure",
+     "trigger_and_eligibility": {
+      "to_verify": "disaster declaration under the DRRM Act",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "declaration of disaster/crisis area",
+      "activation of NDRF/cluster system",
+      "request for international assistance",
+      "PDNA led by NPC with partners",
+      "donor conference/financing mobilisation",
+      "aid recorded in AMIS/DCR"
+     ],
+     "decision_body": "Council of Ministers / NDRRMA per DRRM Act (to verify)",
+     "documents_required": [
+      "DRRM Act 2074",
+      "National Disaster Response Framework",
+      "PDNA reports"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "legal basis for receiving international assistance",
+       "coordination roles"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Documented precedents 2015 PDNA and 2017 flood assessment"
+     },
+     "leads": [
+      "27D-L35",
+      "27D-L33",
+      "27D-L34",
+      "27D-L36",
+      "27D-L37",
+      "27D-L38",
+      "27D-L39"
+     ],
+     "scenario_links": [
+      "S05",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-15",
+     "mechanism": "Consular crisis coordination (evacuation of nationals abroad)",
+     "institution": "Government of Nepal (MoFA, with DoFE and Nepal Airlines)",
+     "instrument_type": "consular procedure",
+     "trigger_and_eligibility": {
+      "to_verify": "conflict or crisis affecting Nepali workers abroad",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "advisories",
+      "registration/daily updates",
+      "special flights",
+      "coordination with host governments and IOM (to verify)"
+     ],
+     "decision_body": "MoFA",
+     "documents_required": [
+      "press releases",
+      "advisories"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "financing of evacuations (Foreign Employment Welfare Fund - to verify)"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Documented 2026 West Asia actions (19D leads)"
+     },
+     "leads": [
+      "27D-L40",
+      "27D-L41"
+     ],
+     "scenario_links": [
+      "S01",
+      "S06"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    },
+    {
+     "map_id": "PM-16",
+     "mechanism": "SAARC currency swap framework",
+     "institution": "Reserve Bank of India / SAARC central banks",
+     "instrument_type": "central-bank liquidity line",
+     "trigger_and_eligibility": {
+      "to_verify": "short-term foreign-exchange liquidity need of a SAARC central bank",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "request by central bank",
+      "bilateral swap agreement under the framework",
+      "drawdown and rollover"
+     ],
+     "decision_body": "RBI and requesting central bank",
+     "documents_required": [
+      "swap agreement"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "framework size and per-country limits",
+       "tenor and rollover",
+       "currency options"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Whether NRB has a signed swap agreement under the framework"
+     },
+     "leads": [
+      "27D-L42",
+      "27D-L43"
+     ],
+     "scenario_links": [
+      "S02",
+      "S04"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text.",
+     "note": "Leads are landing pages only; primary press releases/agreements must be located."
+    },
+    {
+     "map_id": "PM-17",
+     "mechanism": "Crisis-related review of the LDC graduation timeline",
+     "institution": "UN CDP / ECOSOC / UN General Assembly",
+     "instrument_type": "international procedure (non-financial, affects preference and financing eligibility)",
+     "trigger_and_eligibility": {
+      "to_verify": "graduating country requests extension citing crisis",
+      "status": "pending"
+     },
+     "procedure_steps_to_verify": [
+      "government request",
+      "CDP crisis assessment",
+      "ECOSOC decision taking note/endorsing",
+      "UNGA decision"
+     ],
+     "decision_body": "UN General Assembly",
+     "documents_required": [
+      "CDP crisis assessment",
+      "ECOSOC and UNGA records"
+     ],
+     "conditionality_and_terms": {
+      "items_to_extract": [
+       "new graduation date",
+       "monitoring requirements"
+      ],
+      "status": "pending"
+     },
+     "time_to_disbursement": {
+      "status": "pending",
+      "unit": "days",
+      "evidence_required": "documented median or case timelines from institutional evaluations or Nepal precedents"
+     },
+     "access_limit": {
+      "status": "pending"
+     },
+     "nepal_applicability": {
+      "status": "pending",
+      "to_verify": "Nepal's 2026 request and CDP assessment (July 2026); UNGA decision pending per 26C"
+     },
+     "leads": [
+      "27D-L31",
+      "27D-L32"
+     ],
+     "scenario_links": [
+      "S08",
+      "S10"
+     ],
+     "basis": "Step outline is a retrieval checklist drawn from lead titles and general domain knowledge; it is not evidence and must be replaced by the retrieved procedure text."
+    }
+   ],
+   "coordination_simulation": {
+    "status": "pending",
+    "design": "Hypothetical crisis-coordination simulations (tabletop logic, not forecasts) will sequence the procedure maps under scenarios S01, S04, S05 and S10: which instruments are eligible given documented trigger conditions, the order of requests, documents each requires, and the documented time-to-disbursement ranges once retrieved. No probabilities are assigned; no government's choices or intentions are asserted.",
+    "scenario_sequences": [
+     {
+      "scenario": "S05 Severe Himalayan flooding",
+      "candidate_maps": [
+       "PM-14",
+       "PM-12",
+       "PM-13",
+       "PM-07",
+       "PM-08",
+       "PM-10",
+       "PM-11",
+       "PM-06",
+       "PM-02",
+       "PM-01",
+       "PM-04"
+      ]
+     },
+     {
+      "scenario": "S01 Middle East conflict (energy, migrant employment, remittances)",
+      "candidate_maps": [
+       "PM-15",
+       "PM-02",
+       "PM-01",
+       "PM-03",
+       "PM-06"
+      ]
+     },
+     {
+      "scenario": "S04 Global recession",
+      "candidate_maps": [
+       "PM-03",
+       "PM-02",
+       "PM-01",
+       "PM-06",
+       "PM-11",
+       "PM-16"
+      ]
+     },
+     {
+      "scenario": "S10 Multiple simultaneous shocks",
+      "candidate_maps": [
+       "PM-14",
+       "PM-12",
+       "PM-03",
+       "PM-02",
+       "PM-06",
+       "PM-07",
+       "PM-17"
+      ]
+     }
+    ],
+    "outputs_to_27E": "eligibility matrix (instrument x scenario), sequencing constraints (e.g. rules on concurrent IMF facilities), documentary prerequisites that must exist before a crisis (CERC manuals, IRM readiness, Cat DDO), and data gaps.",
+    "hypothetical_label": "All arrangements discussed are hypothetical research constructs; this work does not state or represent the actual position or private intentions of any government."
+   }
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "27D-L01",
+   "url": "https://www.imf.org/-/media/files/factsheets/english/2025/factsheetthe-rapid-financing-instrument-rfi2025final.pdf",
+   "title": "IMF Factsheet: The Rapid Financing Instrument (RFI), 2025",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "RFI eligibility, windows (regular, large natural disaster), access limits as percent of quota, prior actions, repayment terms; located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L02",
+   "url": "https://www.imf.org/en/about/factsheets/sheets/2023/rapid-financing-instrument-rfi",
+   "title": "The Rapid Financing Instrument (RFI) - IMF factsheet page",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "Web version of RFI factsheet (vintage to record); located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L03",
+   "url": "https://www.imf.org/-/media/files/factsheets/english/2025/the-rapid-credit-facility-rcf-2025final.pdf",
+   "title": "IMF Factsheet: The Rapid Credit Facility (RCF), 2025",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "RCF (PRGT concessional) eligibility, windows, access limits, interest/grace/maturity, relation to other PRGT arrangements; located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L04",
+   "url": "https://www.imf.org/en/countries/npl",
+   "title": "Nepal and the IMF (country page)",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "Nepal's lending history (arrangements and emergency disbursements, if any), quota, current ECF status",
+   "reused_from": "26A-A13"
+  },
+  {
+   "lead_id": "27D-L05",
+   "url": "https://www.imf.org/en/publications/cr/issues/2026/05/07/nepal-request-for-an-extension-of-the-extended-credit-facility-arrangement-press-release-575904",
+   "title": "Nepal: Request for an Extension of the ECF Arrangement - Press Release and Staff Report",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "Documented procedure precedent: request, staff report and Board approval for modifying an existing arrangement (2026)",
+   "reused_from": "26A-A06"
+  },
+  {
+   "lead_id": "27D-L06",
+   "url": "https://www.imf.org/en/news/articles/2026/05/06/imf-pr-26141-nepal-imf-executive-board-approves-ext-of-ecf-arrang",
+   "title": "PR 26/141: Executive Board approves extension of the ECF arrangement",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "Board decision date and scope of the extension",
+   "reused_from": "26A-A07"
+  },
+  {
+   "lead_id": "27D-L07",
+   "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+   "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "Debt sustainability analysis (risk rating), capacity to repay, PRGT eligibility context, risk assessment matrix incl. natural disasters",
+   "reused_from": "26A-A01"
+  },
+  {
+   "lead_id": "27D-L08",
+   "url": "https://www.imf.org/en/About/Factsheets/Sheets/2023/Catastrophe-containment-relief-trust-CCRT",
+   "title": "IMF Catastrophe Containment and Relief Trust (CCRT) factsheet",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "CCRT eligibility (PRGT-eligible, income thresholds), triggers and debt-service relief procedure [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L09",
+   "url": "https://www.imf.org/en/About/Factsheets/IMF-Support-for-Low-Income-Countries",
+   "title": "IMF Support for Low-Income Countries (PRGT eligibility and facilities)",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "PRGT eligibility criteria and graduation from PRGT eligibility (relevant to RCF access after income/LDC changes) [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L10",
+   "url": "https://www.imf.org/en/Topics/Resilience-and-Sustainability-Trust",
+   "title": "IMF Resilience and Sustainability Trust (RST/RSF)",
+   "publisher": "IMF",
+   "source_id": "imf_article_iv",
+   "contains": "RSF eligibility and requirement to have a concurrent UCT-quality programme (for climate-resilience financing) [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L11",
+   "url": "https://ida.worldbank.org/en/financing/crisis-financing/immediate-response-mechanism",
+   "title": "Immediate Response Mechanism - IDA crisis financing",
+   "publisher": "World Bank IDA",
+   "source_id": "wb_ids",
+   "contains": "IRM procedure: prerequisites (IRM-ready project portfolio, emergency response operations manual), trigger (declared emergency), reallocation of undisbursed balances; located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L12",
+   "url": "https://documents1.worldbank.org/curated/en/857351468325152844/pdf/659980WP00PUBL0ycontingencyresponse.pdf",
+   "title": "Guidance Note: Including Contingent Emergency Response Components in Standard Investment Projects",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "CERC design: zero-allocation component, trigger (eligible crisis declaration and request), CERC operations manual, simplified procurement/fiduciary rules, reallocation procedure; located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L13",
+   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/857351468325152844/including-contingent-emergency-response-components-in-standard-investment-projects-guidance-note-to-staff",
+   "title": "Including contingent emergency response components in standard investment projects: guidance note to staff (document page)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Document metadata (date, report number) for the CERC guidance note; located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L14",
+   "url": "https://thedocs.worldbank.org/en/doc/4bb7a3b805381883d8721892467a0777-0410012017/original/operation-crisis-response-window.pdf",
+   "title": "Operation of the Crisis Response Window",
+   "publisher": "World Bank IDA",
+   "source_id": "wb_ids",
+   "contains": "CRW eligibility (IDA countries), crisis types (economic shocks, natural disasters, public health), allocation criteria and approval procedure; vintage to confirm (IDA cycle); located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L15",
+   "url": "https://ieg.worldbankgroup.org/reports/idas-crisis-response-window-lessons-ieg-evaluations",
+   "title": "IDA's Crisis Response Window: Lessons from IEG Evaluations (synthesis report)",
+   "publisher": "World Bank Independent Evaluation Group",
+   "source_id": null,
+   "contains": "Ex-post evidence on CRW speed, targeting and effectiveness; located by the 27D r1 WebSearch"
+  },
+  {
+   "lead_id": "27D-L16",
+   "url": "https://www.disasterprotection.org/blogs/expanding-the-deck-or-just-reshuffling-what-the-crisis-preparedness-and-response-toolkit-could-mean-for-ida-countries",
+   "title": "Expanding the deck or just reshuffling? What the Crisis Preparedness and Response Toolkit could mean for IDA countries",
+   "publisher": "Centre for Disaster Protection",
+   "source_id": "academic",
+   "contains": "Independent description of the World Bank Crisis Preparedness and Response Toolkit components (locator for primary WB documents); located by the 27D r1 WebSearch",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27D-L17",
+   "url": "https://thedocs.worldbank.org/en/doc/74b666ec80119259f29b625cd3f04556-0340012024/original/IDA-financial-products-overview.pdf",
+   "title": "IDA Financial Products Overview (updated 8 April 2026)",
+   "publisher": "World Bank IDA",
+   "source_id": "wb_ids",
+   "contains": "IDA crisis instruments and terms (CRW, contingent financing, Cat DDO) as of the 2026 update",
+   "reused_from": "20C"
+  },
+  {
+   "lead_id": "27D-L18",
+   "url": "https://thedocs.worldbank.org/en/doc/45848f4b32bdefb1317a37feb9aba4c1-0410012026/related/IDA21-Terms-effective-07-01-2026.pdf",
+   "title": "IDA Terms (Effective as of July 1, 2026)",
+   "publisher": "World Bank IDA",
+   "source_id": "wb_ids",
+   "contains": "Lending terms by country category (grant/credit mix) that apply to any crisis financing for Nepal",
+   "reused_from": "20C"
+  },
+  {
+   "lead_id": "27D-L19",
+   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099050625143524020",
+   "title": "Nepal - Country Partnership Framework for the Period FY2025-2031",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Crisis-response provisions of the CPF (CERC use, Cat DDO, portfolio reallocation) for Nepal",
+   "reused_from": "26A-A14"
+  },
+  {
+   "lead_id": "27D-L20",
+   "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
+   "title": "World Bank projects list - Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Nepal operations containing a CERC and any Cat DDO/DPF with Cat DDO; project documents",
+   "reused_from": "25D; 13C"
+  },
+  {
+   "lead_id": "27D-L21",
+   "url": "https://www.worldbank.org/en/topic/disasterriskmanagement/brief/catastrophe-deferred-drawdown-option",
+   "title": "Catastrophe Deferred Drawdown Option (Cat DDO) - World Bank brief",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Cat DDO prerequisites (DRM programme, prior actions), trigger (declared emergency), drawdown procedure [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L22",
+   "url": "https://www.worldbank.org/en/topic/crisis-preparedness-and-response-toolkit",
+   "title": "World Bank Crisis Preparedness and Response Toolkit",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Current menu of WB crisis instruments (incl. climate-resilient debt clauses, rapid response options) [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L23",
+   "url": "https://www.adb.org/sites/default/files/institutional-document/1058276/cps-nep-2025-2029.pdf",
+   "title": "Country Partnership Strategy: Nepal, 2025-2029",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "ADB crisis-response and disaster-resilience provisions for Nepal; contingent financing mentions",
+   "reused_from": "26A-A16"
+  },
+  {
+   "lead_id": "27D-L24",
+   "url": "https://www.adb.org/sites/default/files/linked-documents/cps-nep-2025-2029-ld.pdf",
+   "title": "Annex 7 to CPS Nepal 2025-2029 (list of linked documents)",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Linked documents incl. any disaster risk financing assessment",
+   "reused_from": "26A-A17"
+  },
+  {
+   "lead_id": "27D-L25",
+   "url": "https://www.adb.org/what-we-do/funds/asia-pacific-disaster-response-fund",
+   "title": "Asia Pacific Disaster Response Fund (APDRF)",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "APDRF eligibility, trigger (declared disaster, UN/government request), grant approval procedure [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L26",
+   "url": "https://www.adb.org/documents/disaster-and-emergency-assistance-policy",
+   "title": "ADB Disaster and Emergency Assistance Policy",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Policy framework for emergency assistance loans, reallocation of existing loans, contingent disaster financing [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L27",
+   "url": "https://cerf.un.org/apply-for-a-grant/rapid-response",
+   "title": "CERF Rapid Response window - how to apply",
+   "publisher": "UN OCHA / Central Emergency Response Fund",
+   "source_id": null,
+   "contains": "Procedure: Resident/Humanitarian Coordinator request, prioritisation, ERC approval, agency implementation [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L28",
+   "url": "https://fts.unocha.org",
+   "title": "OCHA Financial Tracking Service",
+   "publisher": "UN OCHA",
+   "source_id": null,
+   "contains": "Flash appeal and response-plan funding records (for past Nepal appeals: 2015 earthquake etc.) [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L29",
+   "url": "https://reliefweb.int/country/npl",
+   "title": "ReliefWeb - Nepal",
+   "publisher": "UN OCHA",
+   "source_id": null,
+   "contains": "Humanitarian Country Team contingency/response plans and flash appeals for Nepal [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L30",
+   "url": "https://www.insarag.org",
+   "title": "INSARAG - International Search and Rescue Advisory Group",
+   "publisher": "UN OCHA",
+   "source_id": null,
+   "contains": "INSARAG guidelines governing international USAR deployment and coordination [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27D-L31",
+   "url": "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+   "title": "Crisis Assessment: Nepal (July 2026)",
+   "publisher": "UN DESA / Committee for Development Policy",
+   "source_id": "undesa_ldc",
+   "contains": "Documented UN procedure for crisis-related review of an LDC graduation timeline (request, CDP assessment, ECOSOC, UNGA)",
+   "reused_from": "26C-C07"
+  },
+  {
+   "lead_id": "27D-L32",
+   "url": "https://ecosoc.un.org/en/what-we-do/management-segment/management-meetings/2026-management-segment",
+   "title": "ECOSOC 2026 Management Segment",
+   "publisher": "UN ECOSOC",
+   "source_id": "undesa_ldc",
+   "contains": "ECOSOC step of the graduation-extension procedure (decision record)",
+   "reused_from": "26C-C08"
+  },
+  {
+   "lead_id": "27D-L33",
+   "url": "https://ndrrma.gov.np",
+   "title": "NDRRMA Nepal - publications (National DRR Strategic Action Plan, monsoon response plans)",
+   "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+   "source_id": "ndrrma",
+   "contains": "National coordination procedures: response plans, cluster lead designations, international assistance request procedures",
+   "reused_from": "13A"
+  },
+  {
+   "lead_id": "27D-L34",
+   "url": "http://drrportal.gov.np",
+   "title": "Nepal DRR Portal (Ministry of Home Affairs)",
+   "publisher": "Ministry of Home Affairs, Nepal",
+   "source_id": "ndrrma",
+   "contains": "National Disaster Response Framework and historical response documents (to locate on portal)",
+   "reused_from": "13A"
+  },
+  {
+   "lead_id": "27D-L35",
+   "url": "https://www.lawcommission.gov.np",
+   "title": "Nepal Law Commission - statutes",
+   "publisher": "Nepal Law Commission",
+   "source_id": "lawcommission_nepal",
+   "contains": "Disaster Risk Reduction and Management Act 2074 (declaration of disaster, crisis areas, international assistance) - to locate",
+   "reused_from": "03C; 08B"
+  },
+  {
+   "lead_id": "27D-L36",
+   "url": "https://www.npc.gov.np/images/category/PDNA_Volume_A.pdf",
+   "title": "Nepal Earthquake 2015: Post Disaster Needs Assessment, Vol. A: Key Findings",
+   "publisher": "National Planning Commission, Nepal",
+   "source_id": "npc_nepal",
+   "contains": "Documented precedent of PDNA procedure (government-led with UN/EU/WB/ADB) and coordination arrangements after a major disaster",
+   "reused_from": "13A"
+  },
+  {
+   "lead_id": "27D-L37",
+   "url": "https://www.npc.gov.np/images/category/PDNA_volume_final.pdf",
+   "title": "Nepal Flood 2017: Post Flood Recovery Needs Assessment",
+   "publisher": "National Planning Commission, Nepal",
+   "source_id": "npc_nepal",
+   "contains": "Second precedent of assessment procedure (flood)",
+   "reused_from": "13A"
+  },
+  {
+   "lead_id": "27D-L38",
+   "url": "https://amis2.mof.gov.np/dev/partner/9/detail",
+   "title": "MoF Aid Information and Management System (partner profiles)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": null,
+   "contains": "Nepal-official record of disbursements by partner, usable to verify crisis-financing flows",
+   "reused_from": "26A-A26; 26E-E15"
+  },
+  {
+   "lead_id": "27D-L39",
+   "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Final%20DCR%202024-25_26-03-2026_d06ntku.pdf",
+   "title": "Development Cooperation Report 2024/25",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Aid coordination framework (International Development Cooperation Policy) and partner disbursements, Nepal FY2024/25",
+   "reused_from": "04B-L26"
+  },
+  {
+   "lead_id": "27D-L40",
+   "url": "https://mofa.gov.np/category/presscategory/",
+   "title": "MoFA Nepal - Press Release archive",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Documented consular crisis-coordination actions (evacuation, advisories, special flights) during 2026 West Asia events",
+   "reused_from": "19D"
+  },
+  {
+   "lead_id": "27D-L41",
+   "url": "https://mofa.gov.np/content/1777/press-release--special-flight-operation-of-nepal/",
+   "title": "Press Release - Operation of Special Flights by Nepal Airlines",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Record of a consular evacuation coordination step (dated)",
+   "reused_from": "19D"
+  },
+  {
+   "lead_id": "27D-L42",
+   "url": "https://www.rbi.org.in",
+   "title": "Reserve Bank of India - press releases incl. SAARC currency swap framework",
+   "publisher": "Reserve Bank of India",
+   "source_id": "rbi",
+   "contains": "SAARC currency swap framework terms, eligible central banks and drawdown procedure (press releases to locate)",
+   "reused_from": "16A; 17A"
+  },
+  {
+   "lead_id": "27D-L43",
+   "url": "https://www.nrb.org.np",
+   "title": "Nepal Rastra Bank",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Any NRB swap/credit-line arrangements with RBI or others; reserve-management statements",
+   "reused_from": "00A"
+  }
+ ]
+}
