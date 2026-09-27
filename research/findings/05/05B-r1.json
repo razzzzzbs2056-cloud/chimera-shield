@@ -1,0 +1,1159 @@
+{
+ "subagent_id": "05B",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; one web search used). All three questions are PENDING: no tariff, export price, value-added or reliability value was retrieved. Q1 (realised export price vs ERC industrial tariff) is designed as a comparison at the generator busbar in NPR_per_MWh, with INR converted at the NRB NPR/INR middle rate for the same month, demand charges converted only via a stated load-factor range, and the export price taken from 22E/22B (not re-derived). Q2 (value added per GWh) is designed as a bounded marginal estimate: census average VA per GWh from the NSO National Industrial Survey 2019/20 (11th round of the Census of Manufacturing Establishments series, located by search) and CME 2011/12 as the upper bound; price paid for electricity as the lower bound; project-level marginal VA net of annualised capital and labour at a shadow wage for cement, steel, data centres, green hydrogen/ammonia, with electric cooking and transport valued as import substitution. Q3 (reliability) is designed as reliability classes (continuous, shift, flexible), a baseline of SAIDI/SAIFI, grid disturbances and Enterprise Survey outage indicators, and a costing of dedicated supply and unserved energy delivered to 22E as C_GRID. Aligned with 22E: 05B supplies T_IND, VA_IND, K_IND and the reliability part of C_GRID and does not duplicate the opportunity-cost table.",
+ "findings": [
+  {
+   "claim": "Q1. ERC industrial consumer tariff schedule in force: energy charge by supply voltage (LV, MV 11 kV, MV 33 kV, HV 66/132 kV) and time-of-day block, with any seasonal differentiation.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_kWh",
+   "period": "tariff order in force FY2082/83 (2025/26) and FY2083/84 (2026/27); earlier orders back to FY2078/79 for the time series",
+   "source_ids": [
+    "erc_nepal",
+    "nea"
+   ],
+   "lead_ids": [
+    "05B-L01",
+    "05B-L02",
+    "05B-L06"
+   ],
+   "note": "Data required: the tariff-order table for each industrial category (and dedicated/trunk-line categories). Record order date, effective date and vintage. Category labels in the order take precedence over the voltage labels used here."
+  },
+  {
+   "claim": "Q1. ERC industrial demand charge by supply voltage and dedicated-feeder status.",
+   "type": "pending",
+   "value": null,
+   "period": "as above",
+   "source_ids": [
+    "erc_nepal"
+   ],
+   "lead_ids": [
+    "05B-L01",
+    "05B-L02"
+   ],
+   "note": "Native unit is NPR per kVA per month, which has no code in units.py (challenge to 00A); recorded without unit until added. Converted to NPR_per_kWh only through a stated load-factor and power-factor range (22E-A4, 05B-A3)."
+  },
+  {
+   "claim": "Q1. Realised average industrial tariff = NEA industrial revenue / industrial energy sold, per Nepal FY (includes demand charges, ToD mix, surcharges and rebates).",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_kWh",
+   "period": "Nepal FY2019/20-FY2025/26",
+   "source_ids": [
+    "nea"
+   ],
+   "lead_ids": [
+    "05B-L03",
+    "05B-L04"
+   ],
+   "note": "Data required: NEA annual report table of sales (kWh) and revenue (NPR) by consumer category. Cross-check against implied price paid in NIS 2019/20 (electricity expenditure / kWh purchased) for FY2019/20."
+  },
+  {
+   "claim": "Q1. Realised export price per MWh (NEA export revenue / export energy) by route and Nepali month, as the comparator to the industrial tariff.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_MWh",
+   "period": "Nepal FY2021/22-FY2025/26, monthly",
+   "source_ids": [
+    "nea",
+    "cerc_india"
+   ],
+   "lead_ids": [
+    "05B-L03",
+    "05B-L07",
+    "05B-L08",
+    "05B-L09"
+   ],
+   "note": "Not re-derived here: taken from 22E parameter P_EXP / 22B decomposition once observed. 05B only aligns units and the metering point (see tariff_comparison)."
+  },
+  {
+   "claim": "Q1. NPR per INR reference rate (middle of buying and selling) by month, used to express INR-denominated export prices in NPR at the same period.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_INR",
+   "period": "monthly, Nepal FY2021/22-FY2025/26",
+   "source_ids": [
+    "nrb"
+   ],
+   "lead_ids": [
+    "05B-L10",
+    "05B-L11"
+   ],
+   "note": "Peg rate must be retrieved from NRB, not assumed; peg regime statement from the Monetary Policy document."
+  },
+  {
+   "claim": "Q1. Implied electricity price actually paid by manufacturing establishments, by ISIC industry (electricity expenditure / kWh purchased).",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_kWh",
+   "period": "Nepal FY2019/20 (NIS 2019/20); FY2011/12 (CME 2011/12)",
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "lead_ids": [
+    "05B-L12",
+    "05B-L13",
+    "05B-L14"
+   ],
+   "note": "Checks whether tariff-order categories map to what industry actually pays (penalties, minimum charges, captive generation excluded)."
+  },
+  {
+   "claim": "Q2. Average manufacturing value added per GWh of purchased electricity by ISIC industry (4-digit where cells allow, else 2-digit), current prices.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "Nepal FY2019/20 (NIS 2019/20); FY2011/12 (CME 2011/12)",
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "lead_ids": [
+    "05B-L12",
+    "05B-L13",
+    "05B-L14",
+    "05B-L15"
+   ],
+   "note": "VA_IND upper-bound input to 22E. Average ratio only; NOT marginal. Suppressed cells and establishments with own generation reported separately."
+  },
+  {
+   "claim": "Q2. Electricity cost share of gross output and of value added by ISIC industry.",
+   "type": "pending",
+   "value": null,
+   "unit": "percent",
+   "period": "Nepal FY2019/20; FY2011/12",
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "lead_ids": [
+    "05B-L12",
+    "05B-L13"
+   ],
+   "note": "Used for the cost-share (lower-bound) marginal-product method and to classify electricity-intensive industries for 05C RCA flags."
+  },
+  {
+   "claim": "Q2. Electricity intensity (GWh per NPR mn of VA) by ISIC industry - hand-off requested by 22E and 05C.",
+   "type": "pending",
+   "value": null,
+   "unit": "ratio",
+   "period": "Nepal FY2019/20",
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "lead_ids": [
+    "05B-L12",
+    "05B-L13"
+   ],
+   "note": "Reported as GWh / NPR_current_mn; 'ratio' used because units.py has no compound intensity code (challenge to 00A)."
+  },
+  {
+   "claim": "Q2. Marginal value added per GWh for new cement grinding / integrated cement capacity in Nepal, net of annualised capital charge and labour at shadow wage.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "2026 prices",
+   "source_ids": [
+    "nso_nepal",
+    "doind",
+    "ibn",
+    "iea"
+   ],
+   "lead_ids": [
+    "05B-L12",
+    "05B-L20",
+    "05B-L21",
+    "05B-L30",
+    "05B-L23"
+   ],
+   "note": "Requires ISIC 2394 NIS cell, DoInd/IBN project capital cost per tonne capacity, IEA kWh/t as transfer assumption, clinker/cement import prices from customs."
+  },
+  {
+   "claim": "Q2. Marginal value added per GWh for new steel melting (induction/electric-arc billets) and re-rolling capacity, net of capital and labour at shadow wage.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "2026 prices",
+   "source_ids": [
+    "nso_nepal",
+    "doind",
+    "iea"
+   ],
+   "lead_ids": [
+    "05B-L12",
+    "05B-L20",
+    "05B-L31",
+    "05B-L23"
+   ],
+   "note": "ISIC 2410/2431 NIS cells; scrap/sponge-iron/billet import prices (customs HS 7203/7204/7207)."
+  },
+  {
+   "claim": "Q2. Marginal value added per GWh for data centres (ISIC 6311), net of capital (incl. backup) and labour at shadow wage.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "2026 prices",
+   "source_ids": [
+    "iea",
+    "nso_nepal",
+    "ibn"
+   ],
+   "lead_ids": [
+    "05B-L32",
+    "05B-L34",
+    "05B-L35",
+    "05B-L15",
+    "05B-L21"
+   ],
+   "note": "Not covered by the manufacturing census; requires project documents or labelled international reference; export-of-services revenue and foreign-owned profit repatriation (GNI vs GDP) handled separately."
+  },
+  {
+   "claim": "Q2. Marginal value added per GWh for electrolytic hydrogen and ammonia/urea (import substitution of fertiliser), including capacity-factor effect when operated on wet-season surplus only.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "2026 prices",
+   "source_ids": [
+    "iea",
+    "irena",
+    "customs_nepal"
+   ],
+   "lead_ids": [
+    "05B-L29",
+    "05B-L33",
+    "05B-L23"
+   ],
+   "note": "No Nepal production; entirely transfer assumptions from IEA/IRENA plus customs urea import prices. Capital charge per GWh rises sharply at low capacity factor."
+  },
+  {
+   "claim": "Q2. Net national value per GWh of electric cooking (household LPG substitution): avoided LPG import cost (and subsidy) per GWh minus appliance and distribution-reinforcement cost.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "Nepal FY2024/25-FY2025/26",
+   "source_ids": [
+    "nso_nepal",
+    "customs_nepal",
+    "noc_nepal",
+    "nea"
+   ],
+   "lead_ids": [
+    "05B-L18",
+    "05B-L23",
+    "05B-L22",
+    "05B-L04"
+   ],
+   "note": "Not industrial value added: value is import substitution and welfare (indoor air quality) - enters MarginalUseComparison in place of domestic_value_added_per_gwh only with explicit labelling."
+  },
+  {
+   "claim": "Q2. Net national value per GWh of electric transport (EV cars, two-wheelers, buses; charging): avoided petrol/diesel imports per GWh minus vehicle premium and charging-infrastructure cost.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "Nepal FY2024/25-FY2025/26",
+   "source_ids": [
+    "customs_nepal",
+    "noc_nepal",
+    "mof_nepal"
+   ],
+   "lead_ids": [
+    "05B-L23",
+    "05B-L22",
+    "05B-L37"
+   ],
+   "note": "Import-substitution netback; EV import tariff policy changes affect the vehicle premium."
+  },
+  {
+   "claim": "Q2. Capital cost per unit capacity and annual electricity use per unit capacity (hence annualised capital charge per GWh, K_IND) for each candidate industry.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "2026 prices",
+   "source_ids": [
+    "doind",
+    "ibn",
+    "iea",
+    "irena"
+   ],
+   "lead_ids": [
+    "05B-L20",
+    "05B-L21",
+    "05B-L29",
+    "05B-L30",
+    "05B-L31",
+    "05B-L32",
+    "05B-L33"
+   ],
+   "note": "Delivered to 22E as K_IND. Discount rate and asset life are assumptions to be taken from the shared register (config/model_config.yaml), not set here."
+  },
+  {
+   "claim": "Q3. Distribution reliability indices (SAIDI, SAIFI) by NEA distribution centre / province, and for industrial and dedicated feeders where reported.",
+   "type": "pending",
+   "value": null,
+   "period": "Nepal FY2021/22-FY2025/26",
+   "source_ids": [
+    "nea",
+    "erc_nepal"
+   ],
+   "lead_ids": [
+    "05B-L04",
+    "05B-L03",
+    "05B-L02"
+   ],
+   "note": "SAIDI native unit is hours or minutes per customer per year; units.py lacks hours/minutes (challenge to 00A), recorded without unit until added. Availability of these indices in NEA publications is unconfirmed."
+  },
+  {
+   "claim": "Q3. Frequency of interruptions per customer per year (SAIFI) on industrial feeders.",
+   "type": "pending",
+   "value": null,
+   "unit": "count",
+   "period": "Nepal FY2021/22-FY2025/26",
+   "source_ids": [
+    "nea"
+   ],
+   "lead_ids": [
+    "05B-L04",
+    "05B-L05"
+   ],
+   "note": "Count per customer per year; definition (momentary interruptions included or not) to record."
+  },
+  {
+   "claim": "Q3. System-wide grid disturbances / blackouts and forced outages of the INPS by month.",
+   "type": "pending",
+   "value": null,
+   "unit": "count",
+   "period": "Nepal FY2021/22-FY2025/26",
+   "source_ids": [
+    "nea"
+   ],
+   "lead_ids": [
+    "05B-L05",
+    "05B-L03"
+   ],
+   "note": "From NEA system operation / load dispatch reports."
+  },
+  {
+   "claim": "Q3. Firm-reported outages in a typical month, losses due to outages as share of sales, and share of firms with generators (Nepal, latest Enterprise Survey round).",
+   "type": "pending",
+   "value": null,
+   "unit": "percent",
+   "period": "latest Enterprise Survey round for Nepal (calendar-year fieldwork; year to record)",
+   "source_ids": [
+    "wb_npl"
+   ],
+   "lead_ids": [
+    "05B-L24"
+   ],
+   "note": "Firm-perceived reliability baseline; calendar-year survey not mixed with Nepal FY series without note."
+  },
+  {
+   "claim": "Q3. Unit investment cost of dedicated industrial supply: 132/33 kV substation capacity, dedicated 33 kV/11 kV feeders, trunk lines, reactive compensation; and the tariff/contribution rules by which industry pays for them.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_GWh",
+   "period": "2026 prices",
+   "source_ids": [
+    "nea",
+    "aiib",
+    "adb_nepal",
+    "erc_nepal"
+   ],
+   "lead_ids": [
+    "05B-L25",
+    "05B-L26",
+    "05B-L04",
+    "05B-L01",
+    "05B-L28"
+   ],
+   "note": "Converted to per-GWh (C_GRID reliability component) with the candidate industry's load factor; delivered to 22E."
+  },
+  {
+   "claim": "Q3. Dry-season firm-supply requirement for continuous-process industry: capacity (MW) that must be met by imports or storage hydro in import-marginal months.",
+   "type": "pending",
+   "value": null,
+   "unit": "MW",
+   "period": "dry season (Mangsir-Baisakh), Nepal FY2024/25-FY2025/26 baseline",
+   "source_ids": [
+    "nea"
+   ],
+   "lead_ids": [
+    "05B-L03",
+    "05B-L05"
+   ],
+   "note": "Links to 05A seasonal profile and 22E P_IMP; the reliability of a continuous load in the dry season depends on Indian import approvals (see challenge to 28)."
+  },
+  {
+   "claim": "Tariff and export price are compared at a common metering point and currency: all values expressed in NPR_per_MWh (current prices, Nepal FY or Nepali month), INR converted with the NRB NPR_per_INR middle rate for the same month; industrial tariffs grossed back to the generator busbar with the busbar-to-meter loss factor, export price netted to the busbar per 22E.",
+   "type": "assumption",
+   "assumption_id": "05B-A1"
+  },
+  {
+   "claim": "Average VA per GWh from the manufacturing census is an upper bound for marginal VA; the lower bound is the price actually paid for electricity (cost-minimising firms value the marginal kWh at its price). Marginal VA for a new plant is computed project-by-project as (gross output - non-electricity intermediate inputs) per GWh, less annualised capital charge and labour at a shadow wage.",
+   "type": "assumption",
+   "assumption_id": "05B-A2"
+  },
+  {
+   "claim": "Demand charges are converted to per-kWh equivalents only through an explicit load-factor and power-factor range per industry (e.g. continuous-process vs single-shift vs flexible), reported as a sensitivity range.",
+   "type": "assumption",
+   "assumption_id": "05B-A3"
+  },
+  {
+   "claim": "Electric cooking and electric transport are evaluated as import substitution (avoided LPG/petroleum imports), not as industrial value added, and are labelled as such when entered in MarginalUseComparison.",
+   "type": "assumption",
+   "assumption_id": "05B-A4"
+  },
+  {
+   "claim": "Reliability requirement classes: (R1) continuous-process loads intolerant of interruptions (steel melting, cement kilns, data centres); (R2) shift-based loads tolerant of scheduled interruptions (cement grinding, re-rolling); (R3) flexible/interruptible loads that can follow wet-season surplus (electrolysers, managed EV charging, water pumping). Classes are a modelling assumption to be confirmed with the sources.",
+   "type": "assumption",
+   "assumption_id": "05B-A5"
+  }
+ ],
+ "data_gaps": [
+  "Every empirical value: no primary document downloaded in r1.",
+  "ERC tariff order vintage in force for FY2082/83-FY2083/84 unconfirmed (shared with 22E).",
+  "Whether NEA publishes SAIDI/SAIFI by distribution centre or feeder class is unconfirmed; may require a data request to NEA DCSD.",
+  "NIS 2019/20 report tables: whether electricity quantity (kWh) is published by ISIC industry or only expenditure; establishment-level microdata access terms unknown.",
+  "No Nepal-specific capital cost data for data centres, electrolytic hydrogen or ammonia; only international references (IEA/IRENA) with transfer assumptions.",
+  "Shadow wage for Nepal (needed for marginal VA net of labour) not located; depends on labour-market work by 10B/23 agents.",
+  "Block-level (hourly/15-minute) data needed to compare ToD tariffs with export/import prices in the same blocks.",
+  "Value of lost load for Nepali industry: no Nepal study located.",
+  "units.py lacks codes for NPR per kVA per month (demand charge), hours/minutes (SAIDI) and compound intensities (GWh per NPR mn).",
+  "WECS, MCA-Nepal, Uptime Institute and World Bank Enterprise Surveys are not (or not separately) in the source catalog."
+ ],
+ "assumptions": [
+  {
+   "id": "05B-A1",
+   "text": "Tariff and export price compared at the generator busbar in NPR_per_MWh by month; INR via NRB middle NPR_per_INR rate for the same month.",
+   "basis": "assumption (aligned with 22E-A1, 22E-A3)"
+  },
+  {
+   "id": "05B-A2",
+   "text": "Census average VA/GWh is an upper bound, electricity price paid a lower bound; project marginal VA is net of annualised capital and labour at shadow wage.",
+   "basis": "assumption (method)"
+  },
+  {
+   "id": "05B-A3",
+   "text": "Demand charges converted to per-kWh only via explicit load-factor and power-factor ranges by requirement class.",
+   "basis": "assumption (aligned with 22E-A4)"
+  },
+  {
+   "id": "05B-A4",
+   "text": "Electric cooking and transport valued as import substitution, not industrial VA, and labelled so.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05B-A5",
+   "text": "Reliability requirement classes R1 continuous / R2 shift / R3 flexible.",
+   "basis": "assumption (to be confirmed with sources)"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "22E",
+   "text": "Alignment: 05B will deliver T_IND (schedule, realised, implied paid), VA_IND (average, upper bound), K_IND by candidate and the reliability component of C_GRID; 05B does not reproduce the opportunity-cost table. Proposal: add a labour opportunity-cost deduction (labour cost x (1 - shadow-wage ratio) per GWh) to the domestic column; with emigration as the alternative for many workers, the shadow wage is not obviously low, and omitting it biases the domestic column upwards."
+  },
+  {
+   "to": "00A",
+   "text": "energy.MarginalUseComparison deducts annualised capital but not labour at shadow wage; propose an optional labour_opportunity_cost_per_gwh field. units.py: request codes for NPR per kVA per month (demand charges), hours/minutes (SAIDI/CAIDI) and a compound intensity code (GWh per NPR_current_mn). Source catalog: propose WECS (tier 1), World Bank Enterprise Surveys (tier 2), MCA-Nepal (tier 1/4), Uptime Institute (tier 7). NSO microdata exists on two hosts (microdata.nsonepal.gov.np and legacy microdata.cbs.gov.np); both should be accepted for the nso_nepal source."
+  },
+  {
+   "to": "05C",
+   "text": "Hand-off accepted: electricity-intensity classification by ISIC from NIS 2019/20 will be supplied for the RCA flag. Request: 05C RCA table should mark whether cement and steel RCA is driven by preferential access to India (tariff arbitrage), since this changes the marginal VA of new capacity."
+  },
+  {
+   "to": "05A",
+   "text": "05B needs the busbar-to-industrial-meter technical loss factor by voltage (LF_DOM) and dry-season available capacity, to gross up tariffs and to size firm supply for R1 loads."
+  },
+  {
+   "to": "24B",
+   "text": "Data-centre electricity use per MW and reliability/backup requirements: please share the IEA/Uptime references you retrieve; 05B treats data centres as R1 loads whose domestic value per GWh must net out foreign profit repatriation (GNI)."
+  },
+  {
+   "to": "19E",
+   "text": "Electric cooking and transport are valued via avoided LPG/petroleum imports; 05B needs landed LPG and petroleum product prices (and any NOC subsidy) by month from the fuel-supply work."
+  },
+  {
+   "to": "15",
+   "text": "Escalation: if the realised industrial tariff at the busbar is below the landed import cost in dry months, domestic industrial expansion implies a cross-subsidy funded by NEA; if wet-season spill is large, flexible (R3) loads may yield net national value even at low tariffs. Either finding would change electricity-led industrialisation proposals; r2 values must be audited before use."
+  },
+  {
+   "to": "28",
+   "text": "Red-team note: continuous-process (R1) domestic industry is dependent on dry-season imports from India under time-limited approvals, so domestic use does not remove exposure to Indian approval decisions; it shifts it from export revenue to industrial continuity."
+  }
+ ],
+ "uncertainty": "High: nothing retrieved. Structural uncertainties: (i) the gap between average and marginal VA per GWh is unknown and may be large, so the census ratio must never be used as the domestic value; (ii) the sign of tariff-minus-export-price plausibly changes by season and regime; (iii) demand-charge conversion depends on load factor, so all-in industrial tariffs are ranges; (iv) candidate industries without Nepal production (data centres, hydrogen/ammonia) rely on international transfer assumptions; (v) reliability baseline indices may not be published; (vi) the NIS 2019/20 reference year predates recent tariff and supply changes. No probabilities are assigned.",
+ "source_leads": [
+  {
+   "lead_id": "05B-L01",
+   "url": "https://erc.gov.np/act/tariff-order-full-detailed-tariff/nepal-electricity-authoritys-electricity-consumer",
+   "title": "Nepal Electricity Authority's electricity consumer tariff rate (tariff order, full detailed tariff)",
+   "publisher": "Electricity Regulatory Commission, Nepal",
+   "contains": "ERC consumer tariff order: industrial categories by supply voltage (LV / MV 11-33 kV / HV 66 kV and above), demand charge per kVA per month, energy charge per kWh, time-of-day blocks and any seasonal differentiation, dedicated-feeder / trunk-line tariff, minimum charges. Order vintage (2078 order vs revision in force FY2082/83-FY2083/84) to verify. Shared with 22E-L01.",
+   "source_id": "erc_nepal"
+  },
+  {
+   "lead_id": "05B-L02",
+   "url": "https://www.erc.gov.np",
+   "title": "Electricity Regulatory Commission, Nepal (index of tariff orders, annual reports, performance standards)",
+   "publisher": "Electricity Regulatory Commission, Nepal",
+   "contains": "Tariff-order history (vintages for tariff time series), cost-of-service annexes if published, distribution performance/reliability standards if issued, ERC annual reports. URL from general knowledge — unverified.",
+   "source_id": "erc_nepal"
+  },
+  {
+   "lead_id": "05B-L03",
+   "url": "https://www.nea.org.np/annual_report",
+   "title": "NEA Annual Reports",
+   "publisher": "Nepal Electricity Authority",
+   "contains": "Per Nepal FY: energy sold and revenue by consumer category (industrial GWh and NPR -> realised average industrial tariff incl. demand charges); export and import energy and NPR by route and month (-> realised export price, shared with 22E P_EXP); system losses; number of industrial consumers; distribution-centre performance; dedicated/trunk-line feeders; outage and interruption statistics if reported.",
+   "source_id": "nea"
+  },
+  {
+   "lead_id": "05B-L04",
+   "url": "https://www.nea.org.np/admin/assets/uploads/annual_publications/NEA_DCSD_Maganize_2082.pdf",
+   "title": "NEA Distribution and Consumer Services Directorate publication, FY2081/82 (2024/25)",
+   "publisher": "Nepal Electricity Authority",
+   "contains": "Distribution statistics FY2081/82: consumers and sales by category and distribution centre, distribution losses by centre, feeder/transformer capacity, reliability indices (SAIDI/SAIFI) if reported, industrial-corridor feeder data.",
+   "source_id": "nea"
+  },
+  {
+   "lead_id": "05B-L05",
+   "url": "https://www.nea.org.np/report",
+   "title": "NEA reports (publication subcommittee; system operation / load dispatch reports)",
+   "publisher": "Nepal Electricity Authority",
+   "contains": "System-operation reports: monthly peak demand, import/export schedules, forced outages and grid disturbances (system-wide blackouts), frequency/voltage events - input to reliability baseline.",
+   "source_id": "nea"
+  },
+  {
+   "lead_id": "05B-L06",
+   "url": "https://www.nea.org.np",
+   "title": "Nepal Electricity Authority - home page (tariff notices, annual reports, outage notices)",
+   "publisher": "Nepal Electricity Authority",
+   "contains": "Tariff schedule notices, industrial dedicated-feeder policy notices, scheduled-outage notices (source for counting planned interruptions).",
+   "source_id": "nea"
+  },
+  {
+   "lead_id": "05B-L07",
+   "url": "https://www.spotlightnepal.com/2026/07/24/nepal-earns-npr-2932-billion-electricity-exports/",
+   "title": "Nepal electricity export earnings FY2025/26 (New Spotlight, July 2026)",
+   "publisher": "New Spotlight (media)",
+   "contains": "Media pointer only to NEA FY2025/26 export revenue and volume release; not evidence. The NEA primary release must be retrieved (22E-L28)."
+  },
+  {
+   "lead_id": "05B-L08",
+   "url": "https://cercind.gov.in/report_MM.html",
+   "title": "CERC market monitoring reports index",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "contains": "Monthly/annual short-term market reports incl. cross-border (Nepal) transaction volumes and prices by month (Indian FY) - cross-check of export realised price. Shared with 22E-L11.",
+   "source_id": "cerc_india"
+  },
+  {
+   "lead_id": "05B-L09",
+   "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+   "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "contains": "Charges applicable to cross-border schedules (transmission charges and losses, trading margin rules, deviation settlement) - deductions from exchange price to Nepal-border netback. Shared with 22E-L13.",
+   "source_id": "cerc_india"
+  },
+  {
+   "lead_id": "05B-L10",
+   "url": "https://www.nrb.org.np/forex/",
+   "title": "NRB foreign exchange rates",
+   "publisher": "Nepal Rastra Bank",
+   "contains": "Daily buying/selling reference rates NPR per INR (peg) and NPR per USD; middle rate averaged over the months of the tariff/price comparison. Shared with 22E-L19.",
+   "source_id": "nrb"
+  },
+  {
+   "lead_id": "05B-L11",
+   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+   "title": "Monetary Policy FY2025/26",
+   "publisher": "Nepal Rastra Bank",
+   "contains": "Statement of the NPR/INR peg regime in force (needed to document the conversion basis).",
+   "source_id": "nrb"
+  },
+  {
+   "lead_id": "05B-L12",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/116/related-materials",
+   "title": "Nepal - National Industrial Survey 2019-2020 (related materials: report, questionnaire)",
+   "publisher": "National Statistics Office, Nepal",
+   "contains": "NIS 2019/20 (11th round of the manufacturing census series; located by r1 web search): report tables by ISIC (NSIC) industry of gross output, intermediate consumption, value added, employment, and fuel/electricity purchased (quantity kWh and NPR) - basis for average VA per GWh and implied tariff paid by industry. Reference period Nepal FY2019/20 (to confirm).",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L13",
+   "url": "https://microdata.cbs.gov.np/index.php/catalog/116",
+   "title": "Nepal - National Industrial Survey 2019-2020 (CBS microdata catalogue mirror)",
+   "publisher": "Central Bureau of Statistics (now NSO), Nepal",
+   "contains": "Same survey on the legacy CBS host: metadata, variable list (purchase of fuel, water and electricity; own generation), microdata access terms for establishment-level VA/kWh distributions (needed for marginal/percentile estimates).",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L14",
+   "url": "https://microdata.cbs.gov.np/index.php/catalog/44",
+   "title": "Nepal - National Census of Manufacturing Establishments 2011-2012, Tenth Round",
+   "publisher": "Central Bureau of Statistics (now NSO), Nepal",
+   "contains": "CME 2011/12: VA, output and electricity consumption by ISIC industry - second point for change in electricity intensity over time; questionnaire section on purchased fuel, water and electricity. Reference period Nepal FY2011/12.",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L15",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/92",
+   "title": "Nepal - National Economic Census 2018",
+   "publisher": "National Statistics Office, Nepal",
+   "contains": "NEC 2018 establishment counts and employment by ISIC incl. services (ISIC J 6311 data processing/hosting) not covered by manufacturing census; may hold electricity-expense variables (to check).",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L16",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+   "title": "NSO microdata catalogue",
+   "publisher": "National Statistics Office, Nepal",
+   "contains": "Index to CME/NIS rounds, NEC 2018, NLSS IV; confirms latest manufacturing census round and access conditions. Shared with 22E-L22.",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L17",
+   "url": "https://nsonepal.gov.np",
+   "title": "National Accounts of Nepal (NSO landing page)",
+   "publisher": "National Statistics Office, Nepal",
+   "contains": "Manufacturing GVA by ISIC division (current and constant prices, Nepal FY), supply-use tables if published - to scale census VA/GWh to national accounts and to check electricity sector intermediate use.",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L18",
+   "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+   "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+   "publisher": "National Statistics Office, Nepal",
+   "contains": "Household cooking fuel shares (LPG, firewood, electricity) and household energy expenditure - baseline for electric cooking substitution volume and value.",
+   "source_id": "nso_nepal"
+  },
+  {
+   "lead_id": "05B-L19",
+   "url": "https://www.wecs.gov.np",
+   "title": "Water and Energy Commission Secretariat, Nepal (energy synopsis / energy consumption surveys)",
+   "publisher": "Water and Energy Commission Secretariat, Nepal",
+   "contains": "Energy Synopsis / Energy Sector Synopsis reports: final energy consumption by sector (industrial, residential, transport) and fuel, industrial energy intensity by subsector - cross-check of census electricity use and captive/diesel use. Not in source catalog (proposed by 22E). URL from general knowledge — unverified."
+  },
+  {
+   "lead_id": "05B-L20",
+   "url": "https://doind.gov.np",
+   "title": "Department of Industry - industrial statistics",
+   "publisher": "Department of Industry, Nepal",
+   "contains": "Registered industries by category with fixed capital, capacity and employment (incl. cement, steel, data centres) - capital cost per unit capacity for K_IND; project approvals of electricity-intensive industry.",
+   "source_id": "doind"
+  },
+  {
+   "lead_id": "05B-L21",
+   "url": "https://ibn.gov.np",
+   "title": "Investment Board Nepal",
+   "publisher": "Investment Board Nepal",
+   "contains": "Large-project approvals (cement, steel, green hydrogen/ammonia, data centre proposals if any) with investment amount and capacity - project-level capital cost inputs for marginal VA.",
+   "source_id": "ibn"
+  },
+  {
+   "lead_id": "05B-L22",
+   "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+   "title": "Economic Survey 2082/83 (FY2025/26)",
+   "publisher": "Ministry of Finance, Nepal",
+   "contains": "Energy chapter: electricity consumption by category, industrial production of cement, steel and other products (volumes), EV and LPG import data - cross-checks.",
+   "source_id": "mof_nepal"
+  },
+  {
+   "lead_id": "05B-L23",
+   "url": "https://customs.gov.np",
+   "title": "Department of Customs (portal) - Foreign Trade Statistics",
+   "publisher": "Department of Customs, Nepal",
+   "contains": "Imports by HS: LPG (HS 2711.19), petrol/diesel (HS 2710), electric vehicles (HS 8703.80, 8704), clinker (HS 2523.10), billets/sponge iron (HS 7203, 7207), urea/ammonia (HS 3102.10, 2814) - quantities and CIF values for import-substitution netbacks.",
+   "source_id": "customs_nepal"
+  },
+  {
+   "lead_id": "05B-L24",
+   "url": "https://www.enterprisesurveys.org/en/data/exploreeconomies",
+   "title": "World Bank Enterprise Surveys - Nepal economy profile",
+   "publisher": "World Bank",
+   "contains": "Firm-level infrastructure indicators, latest Nepal round: electrical outages in a typical month, duration, losses due to outages as share of sales, share of firms owning/sharing a generator, electricity as biggest obstacle - baseline of reliability cost to industry.",
+   "source_id": "wb_npl"
+  },
+  {
+   "lead_id": "05B-L25",
+   "url": "https://www.aiib.org/en/projects/details/2019/approved/Nepal-Power-Distribution-System-Upgrade-and-Expansion-Project.html",
+   "title": "Nepal: Power Distribution System Upgrade and Expansion Project",
+   "publisher": "Asian Infrastructure Investment Bank",
+   "contains": "Project documents: distribution investment scope and unit costs (substations, feeders, transformers), reliability/loss baselines and targets - reference for C_GRID and reliability investment cost.",
+   "source_id": "aiib"
+  },
+  {
+   "lead_id": "05B-L26",
+   "url": "https://www.adb.org/countries/nepal",
+   "title": "ADB Nepal - energy sector project documents (distribution, transmission, SASEC power)",
+   "publisher": "Asian Development Bank",
+   "contains": "RRPs and sector assessments for Nepal power distribution and transmission projects: unit investment costs, reliability indices, industrial-corridor supply issues. URL from general knowledge — unverified.",
+   "source_id": "adb_nepal"
+  },
+  {
+   "lead_id": "05B-L27",
+   "url": "https://www.worldbank.org/en/country/nepal",
+   "title": "World Bank Nepal country reports (Development Update, CCDR, energy sector notes)",
+   "publisher": "World Bank",
+   "contains": "Nepal CCDR and energy analytics: electrification of cooking/transport scenarios and domestic-demand-versus-export analysis (method cross-check, not a value source for r2 without the primary document). URL from general knowledge — unverified.",
+   "source_id": "wb_npl"
+  },
+  {
+   "lead_id": "05B-L28",
+   "url": "https://mcanp.org",
+   "title": "Millennium Challenge Account Nepal (Electricity Transmission Project)",
+   "publisher": "Millennium Challenge Account Nepal",
+   "contains": "ETP 400 kV lines and substations: capacity and cost - part of bulk reinforcement needed to deliver firm supply to industrial load centres. URL from general knowledge — unverified."
+  },
+  {
+   "lead_id": "05B-L29",
+   "url": "https://www.iea.org/reports/global-hydrogen-review-2025",
+   "title": "IEA Global Hydrogen Review (latest edition)",
+   "publisher": "International Energy Agency",
+   "contains": "Electrolyser specific electricity use (kWh per kg H2), capex per kW, capacity-factor effect on levelised cost; ammonia synthesis electricity requirement - transfer assumptions for green hydrogen/ammonia K_IND and GWh per tonne. URL from general knowledge — unverified.",
+   "source_id": "iea"
+  },
+  {
+   "lead_id": "05B-L30",
+   "url": "https://www.iea.org/energy-system/industry/cement",
+   "title": "IEA Tracking - Cement",
+   "publisher": "International Energy Agency",
+   "contains": "Electricity intensity of cement production (kWh per tonne cement; grinding vs kiln), clinker ratio - transfer assumption where NIS does not separate clinker from grinding plants. URL from general knowledge — unverified.",
+   "source_id": "iea"
+  },
+  {
+   "lead_id": "05B-L31",
+   "url": "https://www.iea.org/energy-system/industry/steel",
+   "title": "IEA Tracking - Iron and Steel",
+   "publisher": "International Energy Agency",
+   "contains": "Electricity intensity of electric-arc / induction furnace steel and re-rolling (kWh per tonne) - transfer assumption for Nepal steel. URL from general knowledge — unverified.",
+   "source_id": "iea"
+  },
+  {
+   "lead_id": "05B-L32",
+   "url": "https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai",
+   "title": "IEA Energy and AI - Energy supply for AI",
+   "publisher": "International Energy Agency",
+   "contains": "Data-centre load factors, power usage effectiveness, reliability/backup requirements and grid-connection lead times - data-centre GWh per MW and reliability class. Shared with 24B.",
+   "source_id": "iea"
+  },
+  {
+   "lead_id": "05B-L33",
+   "url": "https://www.irena.org/Publications",
+   "title": "IRENA publications - green hydrogen cost reduction; renewable power generation costs",
+   "publisher": "International Renewable Energy Agency",
+   "contains": "Electrolyser cost and flexibility (ability to follow variable/seasonal supply) - evaluates spill-absorbing load at low capacity factor. URL from general knowledge — unverified.",
+   "source_id": "irena"
+  },
+  {
+   "lead_id": "05B-L34",
+   "url": "https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf",
+   "title": "Uptime Institute Global Data Center Survey 2025",
+   "publisher": "Uptime Institute",
+   "contains": "Outage frequency and causes, PUE, tier definitions - reliability requirement class for data centres (on-site backup vs grid availability)."
+  },
+  {
+   "lead_id": "05B-L35",
+   "url": "https://kathmandupost.com/national/2026/04/27/nepal-wants-to-become-a-data-centre-hub-it-has-no-rules-for-how",
+   "title": "Nepal wants to become a data centre hub. It has no rules for how (Kathmandu Post, 27 Apr 2026)",
+   "publisher": "Kathmandu Post (media)",
+   "contains": "Media pointer only: proposed data-centre projects and policy gaps in Nepal; primary IBN/MoCIT/NTA documents to be located."
+  },
+  {
+   "lead_id": "05B-L36",
+   "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20140389",
+   "title": "Allcott, Collard-Wexler and O'Connell (2016) How Do Electricity Shortages Affect Industry? Evidence from India, American Economic Review 106(3)",
+   "publisher": "American Economic Association",
+   "contains": "Method for costing supply shortages to manufacturing using plant-level census data and generator self-supply; basis for customer damage function / value of lost load for industry. URL from general knowledge — unverified.",
+   "source_id": "academic"
+  },
+  {
+   "lead_id": "05B-L37",
+   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+   "title": "Current Macroeconomic and Financial Situation of Nepal (annual data FY2024/25)",
+   "publisher": "Nepal Rastra Bank",
+   "contains": "Electricity export and import values (NPR) and petroleum/LPG import values FY2024/25 - cross-check of realised export price and import-substitution values.",
+   "source_id": "nrb"
+  }
+ ],
+ "specific": {
+  "tariff_comparison": {
+   "status": "pending",
+   "question": "What is the realised export tariff versus the domestic industrial tariff?",
+   "answer_status": "pending - no tariff, price or exchange-rate value retrieved in r1.",
+   "common_unit": "NPR_per_MWh (current prices); native units NPR_per_kWh (ERC/NEA), NPR per kVA per month (demand charge; no unit code yet), INR_per_MWh (CERC/IEX), converted with NPR_per_INR (NRB middle rate, same month).",
+   "alignment_with_22E": "05B supplies T_IND (tariff by category and realised average), LF_DOM (busbar-to-meter loss factor, with 05A) and the demand-charge conversion; P_EXP, C_TRD, C_TX_IN, C_TX_NP and P_IMP are taken from 22E/22B and not re-derived. 05B does not reproduce the 22E opportunity-cost table.",
+   "columns": [
+    {
+     "id": "T_IND_E",
+     "name": "energy charge by category and ToD block",
+     "unit": "NPR_per_kWh",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L01",
+      "05B-L02"
+     ]
+    },
+    {
+     "id": "T_IND_D",
+     "name": "demand charge by category",
+     "unit": "none (NPR per kVA per month; code requested)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L01"
+     ]
+    },
+    {
+     "id": "T_IND_EQ",
+     "name": "all-in equivalent tariff = energy charge + demand charge / (load factor x power factor x hours per month)",
+     "unit": "NPR_per_MWh",
+     "status": "pending",
+     "method": "computed for load-factor range per 05B-A3"
+    },
+    {
+     "id": "T_IND_REAL",
+     "name": "realised average industrial tariff (NEA revenue / sales)",
+     "unit": "NPR_per_kWh",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L03",
+      "05B-L04"
+     ]
+    },
+    {
+     "id": "T_IND_PAID",
+     "name": "implied price paid (NIS electricity expenditure / kWh)",
+     "unit": "NPR_per_kWh",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L12",
+      "05B-L13"
+     ]
+    },
+    {
+     "id": "P_EXP",
+     "name": "realised export price at border by route and month",
+     "unit": "NPR_per_MWh",
+     "status": "pending",
+     "source_agent": "22E/22B",
+     "lead_ids": [
+      "05B-L03",
+      "05B-L07",
+      "05B-L08",
+      "05B-L09"
+     ]
+    },
+    {
+     "id": "FX_INR",
+     "name": "NPR per INR, middle rate, same month",
+     "unit": "NPR_per_INR",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L10",
+      "05B-L11"
+     ]
+    }
+   ],
+   "rows": [
+    {
+     "category": "Industrial LV (small industry)",
+     "status": "pending"
+    },
+    {
+     "category": "Industrial MV 11 kV",
+     "status": "pending"
+    },
+    {
+     "category": "Industrial MV 33 kV",
+     "status": "pending"
+    },
+    {
+     "category": "Industrial HV 66 kV and above",
+     "status": "pending"
+    },
+    {
+     "category": "Dedicated feeder / trunk line (if separate category)",
+     "status": "pending"
+    },
+    {
+     "category": "Realised average industrial (all categories)",
+     "status": "pending"
+    }
+   ],
+   "comparisons": [
+    "tariff-at-busbar minus export price at busbar, by Nepali month and regime (wet export-marginal, wet spill, dry import-marginal)",
+    "tariff minus landed import cost in dry months (implied cross-subsidy of industry if negative)",
+    "ToD peak/off-peak tariff versus export price in the same time blocks (block-level data needed, shared gap with 22E)"
+   ],
+   "methodological_notes": [
+    "The tariff is a transfer between the industry and NEA; for national value (energy.MarginalUseComparison) it enters only as part of the utility's output. The tariff-vs-export comparison answers NEA's revenue question, not the national value question.",
+    "Energy is metered at different points: industrial tariff at the consumer meter (after distribution losses), export price at the border metering point. Both are brought to the busbar before comparison.",
+    "Nepal FY (mid-July) tariff years vs Indian FY (April-March) price data: comparison is monthly, never annual-to-annual across fiscal bases.",
+    "Tariff-order vintages: a revision mid-year splits the Nepal FY; weight by months in force."
+   ],
+   "lead_ids": [
+    "05B-L01",
+    "05B-L02",
+    "05B-L03",
+    "05B-L04",
+    "05B-L06",
+    "05B-L07",
+    "05B-L08",
+    "05B-L09",
+    "05B-L10",
+    "05B-L11",
+    "05B-L12",
+    "05B-L13"
+   ]
+  },
+  "value_added_per_gwh": {
+   "status": "pending",
+   "question": "What is the value added per GWh in candidate domestic industries?",
+   "answer_status": "pending - no census or project value retrieved in r1; method designed.",
+   "unit": "NPR_per_GWh (current prices, Nepal FY); constant-price version only with the NSO manufacturing deflator for the same base year",
+   "primary_source": "NSO National Industrial Survey 2019/20 (11th round of the Census of Manufacturing Establishments series) and CME 2011/12 (10th round); leads 05B-L12, L13, L14. Census round and reference period to be confirmed on retrieval.",
+   "method": {
+    "step1_average": "VA_avg(i) = census value added (i) / electricity purchased (i) in GWh [kWh x 1e-6], by ISIC industry i; own generation (diesel/captive) excluded from denominator and reported separately; suppressed cells flagged.",
+    "step2_cost_share_lower_bound": "Under cost minimisation the marginal product of electricity equals its price, so the private marginal value of a kWh to an existing firm is the price paid (T_IND_PAID). Extra national value beyond the tariff arises only from rents, un- or under-employed labour (shadow wage below market wage), or forex savings from import substitution.",
+    "step3_project_marginal": "For a new plant: VA_marg = (gross output - non-electricity intermediate inputs) / annual GWh - K_IND - labour cost x (1 - shadow-wage ratio)/GWh; inputs from DoInd/IBN project data or labelled international references (IEA/IRENA), prices from customs import parity.",
+    "step4_distribution": "Where microdata access is granted, compute establishment-level VA/GWh percentiles within each industry; the marginal entrant is proxied by the median or lower quartile, not the mean.",
+    "step5_seasonality": "Recompute K_IND per GWh at the capacity factor feasible under each supply regime (year-round firm supply vs wet-season-only surplus).",
+    "step6_gdp_vs_gni": "For foreign-owned plants (data centres, hydrogen) report VA and the share accruing to non-residents (profit repatriation) separately."
+   },
+   "candidates": [
+    {
+     "industry": "Cement (clinker and grinding)",
+     "isic": "2394",
+     "hs": "2523",
+     "nepal_census_coverage": "yes (NIS cell to verify)",
+     "method": "steps 1-5",
+     "reliability_class": "R1 kiln / R2 grinding",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L12",
+      "05B-L13",
+      "05B-L20",
+      "05B-L21",
+      "05B-L30",
+      "05B-L23"
+     ]
+    },
+    {
+     "industry": "Steel (induction/EAF melting, billets, re-rolling)",
+     "isic": "2410, 2431",
+     "hs": "7207, 7213, 7214",
+     "nepal_census_coverage": "yes (to verify)",
+     "method": "steps 1-5",
+     "reliability_class": "R1 melting / R2 re-rolling",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L12",
+      "05B-L13",
+      "05B-L20",
+      "05B-L31",
+      "05B-L23"
+     ]
+    },
+    {
+     "industry": "Data centres",
+     "isic": "6311",
+     "hs": "n/a (services)",
+     "nepal_census_coverage": "no (not manufacturing; NEC 2018 establishment counts only)",
+     "method": "step 3 with international references; step 6",
+     "reliability_class": "R1 (highest)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L15",
+      "05B-L21",
+      "05B-L32",
+      "05B-L34",
+      "05B-L35"
+     ]
+    },
+    {
+     "industry": "Green hydrogen / ammonia (fertiliser import substitution)",
+     "isic": "2011",
+     "hs": "2814, 3102.10",
+     "nepal_census_coverage": "no production",
+     "method": "step 3 with IEA/IRENA; step 5 at wet-season capacity factor",
+     "reliability_class": "R3 (flexible electrolysis) / R1 ammonia synthesis loop",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L29",
+      "05B-L33",
+      "05B-L23"
+     ]
+    },
+    {
+     "industry": "Electric cooking (households)",
+     "isic": "n/a (household consumption)",
+     "hs": "2711.19 (LPG substituted)",
+     "nepal_census_coverage": "NLSS IV cooking-fuel data",
+     "method": "import-substitution netback (05B-A4)",
+     "reliability_class": "evening-peak coincident; distribution transformer capacity binding",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L18",
+      "05B-L23",
+      "05B-L04"
+     ]
+    },
+    {
+     "industry": "Electric transport (EVs, buses, charging)",
+     "isic": "4922, 4923 (transport services) / households",
+     "hs": "2710 (fuel substituted), 8703.80",
+     "nepal_census_coverage": "no",
+     "method": "import-substitution netback (05B-A4)",
+     "reliability_class": "R3 if charging managed; peak-coincident otherwise",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L23",
+      "05B-L22",
+      "05B-L37"
+     ]
+    }
+   ],
+   "handoff_to_22E": "VA_IND (average, upper bound) and K_IND by candidate; labour shadow-cost deduction proposed as an additional parameter.",
+   "handoff_to_05C": "electricity-intensity classification by ISIC (GWh per NPR_current_mn VA) for the RCA flag.",
+   "lead_ids": [
+    "05B-L12",
+    "05B-L13",
+    "05B-L14",
+    "05B-L15",
+    "05B-L16",
+    "05B-L17",
+    "05B-L18",
+    "05B-L20",
+    "05B-L21",
+    "05B-L22",
+    "05B-L23",
+    "05B-L29",
+    "05B-L30",
+    "05B-L31",
+    "05B-L32",
+    "05B-L33",
+    "05B-L34",
+    "05B-L35",
+    "05B-L19"
+   ]
+  },
+  "reliability_requirements": {
+   "status": "pending",
+   "question": "What reliability and grid investments would domestic industrial use require?",
+   "answer_status": "pending - no reliability index or investment cost retrieved in r1; requirement classes and costing method designed.",
+   "baseline_metrics": [
+    {
+     "metric": "SAIDI by distribution centre / feeder class",
+     "unit": "none yet (hours per customer per year; code requested)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L04",
+      "05B-L03",
+      "05B-L02"
+     ]
+    },
+    {
+     "metric": "SAIFI",
+     "unit": "count",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L04",
+      "05B-L05"
+     ]
+    },
+    {
+     "metric": "INPS grid disturbances / blackouts",
+     "unit": "count",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L05"
+     ]
+    },
+    {
+     "metric": "Firm-reported outages per month, losses as share of sales, generator ownership",
+     "unit": "count / percent",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L24"
+     ]
+    },
+    {
+     "metric": "Voltage and frequency excursions at industrial feeders",
+     "unit": "count",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L05",
+      "05B-L04"
+     ]
+    }
+   ],
+   "requirement_classes": "05B-A5 (R1 continuous, R2 shift, R3 flexible)",
+   "grid_investments": [
+    {
+     "item": "Dedicated 33 kV / 11 kV industrial feeders and trunk lines (ERC tariff/contribution rules)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L01",
+      "05B-L04",
+      "05B-L25"
+     ]
+    },
+    {
+     "item": "132/33 kV substations and transformer capacity at industrial corridors (corridor names are candidate labels from general knowledge, to be replaced by NEA nomenclature)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L25",
+      "05B-L26",
+      "05B-L04"
+     ]
+    },
+    {
+     "item": "Bulk 220/400 kV reinforcement to load centres (overlaps 05A transmission register)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L28",
+      "05B-L03"
+     ]
+    },
+    {
+     "item": "Dry-season firm supply for R1 loads: storage hydro or import capacity/approvals (overlaps 05A, 22E P_IMP)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L03",
+      "05B-L05"
+     ]
+    },
+    {
+     "item": "Distribution transformer upgrades for household e-cooking and EV charging (evening peak)",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L04",
+      "05B-L25"
+     ]
+    },
+    {
+     "item": "On-site backup (data centres, continuous-process plants) - private cost included in K_IND",
+     "status": "pending",
+     "lead_ids": [
+      "05B-L32",
+      "05B-L34"
+     ]
+    }
+   ],
+   "costing_method": "C_GRID_rel(i) = annualised capex of dedicated supply / annual GWh of industry i + expected unserved energy x industrial value of lost load (customer damage function from Enterprise Survey losses-to-sales and the Allcott et al. method), minus avoided private backup cost. Delivered to 22E as the reliability part of C_GRID.",
+   "trade_off": "R3 flexible loads can absorb wet-season spill at near-zero opportunity cost and low reliability cost but run at low capacity factor, raising K_IND per GWh; R1 loads have high capacity factor but require dry-season firm supply whose marginal source is imports (approval-dependent). The net result is pending and may differ by candidate.",
+   "lead_ids": [
+    "05B-L01",
+    "05B-L02",
+    "05B-L03",
+    "05B-L04",
+    "05B-L05",
+    "05B-L24",
+    "05B-L25",
+    "05B-L26",
+    "05B-L28",
+    "05B-L32",
+    "05B-L34",
+    "05B-L36"
+   ]
+  }
+ }
+}

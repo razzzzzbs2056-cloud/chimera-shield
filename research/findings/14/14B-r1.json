@@ -1,0 +1,1354 @@
+{
+  "subagent_id": "14B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T14:17:59+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). No values retrieved; every empirical item is pending. Designed (1) a seven-province welfare dashboard with rows tagged to the 12 objectives in welfare.py, kept separate from GDP and without composite province ranking; (2) a gender-gap table in three blocks (participation from NLFS 2017/18 pending NLFS 2024/25; wages from NLFS earnings and ILOSTAT SDG 8.5.1; assets from NDHS 2022, NPHC 2021 and NSCA 2021/22); (3) a caste/ethnic group gap table restricted to NPHC 2021 official codes or the grouping as published in each source, reporting only documented gaps. Provincial HDI depends on Nepal HDR 2020 (reference year predates NPHC 2021) and NNRFC inputs; provincial poverty reuses 14A's NLSS IV observation set. One WebSearch located the NSO Nepal Atlas of Caste and Ethnic Groups and indicated an NPHC 2021 Caste/Ethnicity report on the census portal.",
+  "findings": [
+    {
+      "claim": "Q1: Poverty headcount at the national poverty line by province (7) and urban/rural, with standard errors; provincial dispersion (max-min range and population-weighted coefficient of variation) for the poverty_inclusion welfare indicator.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23 (survey within FY2022/23)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV provincial poverty table and SEs (same observation set as 14A poverty_baseline); dispersion computed from those observations. Leads: 14B-L06, 14B-L07."
+    },
+    {
+      "claim": "Q1: Multidimensional poverty (MPI headcount and intensity) by province.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Reference year of NPC/OPHI national MPI (survey vintage to record)",
+      "source_ids": [
+        "npc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: Latest NPC national MPI report province table; underlying survey and year. Leads: 14B-L22, 14B-L23."
+    },
+    {
+      "claim": "Q1: Human Development Index by province (and GDI/GII by province where published).",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "Reference year stated in Nepal HDR 2020 (to record; predates NPHC 2021)",
+      "source_ids": [
+        "undp_hdr",
+        "npc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: Nepal HDR 2020 province HDI/GDI/GII tables and method notes; NNRFC equalisation-grant HDI inputs if they are a later vintage (keep both, explain difference). Leads: 14B-L20, 14B-L21, 14B-L28."
+    },
+    {
+      "claim": "Q1: National HDI, GDI and GII time series (comparison only; no provincial detail in global HDR).",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "Calendar years, HDR vintage to record",
+      "source_ids": [
+        "undp_hdr"
+      ],
+      "observation_ids": [],
+      "note": "Required: HDR composite indices time-series file for Nepal. Leads: 14B-L19."
+    },
+    {
+      "claim": "Q1: Provincial GDP per capita (current NPR) and provincial GVA structure by industry.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_person",
+      "period": "FY2022/23 onward (fiscal year, mid-July), NA vintage to record",
+      "source_ids": [
+        "nso_nepal",
+        "un_wpp"
+      ],
+      "observation_ids": [],
+      "note": "Required: NSO provincial GDP release (current prices, FY) and provincial population denominators consistent with 10C (NPHC 2021 base / NSO projections). Leads: 14B-L24, 14B-L01."
+    },
+    {
+      "claim": "Q1: Mean per-capita household consumption and income by province and urban/rural.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_person",
+      "period": "NLSS IV 2022/23, per year, current NPR",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV consumption and income chapters by province; spatial price adjustment used (if any) recorded. Leads: 14B-L06, 14B-L07."
+    },
+    {
+      "claim": "Q1: Provincial fiscal resources per capita (provincial and local expenditure incl. transfers).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_person",
+      "period": "FY2023/24",
+      "source_ids": [
+        "mof_nepal",
+        "nnrfc"
+      ],
+      "observation_ids": [],
+      "note": "Required: CFS FY2023/24 province and local expenditure tables; population denominators from 10C. Leads: 14B-L29, 14B-L28."
+    },
+    {
+      "claim": "Q2: Labour force participation rate by sex (national, by province, urban/rural); gap in percentage points.",
+      "type": "pending",
+      "value": null,
+      "unit": "percentage_points",
+      "period": "NLFS 2017/18 (FY2017/18); update with NLFS 2024/25 when published",
+      "source_ids": [
+        "nso_nepal",
+        "ilostat"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS 2017/18 LFPR tables by sex x province (19th ICLS definition, consistent with 10B); ILOSTAT harmonised as cross-check only. Leads: 14B-L09, 14B-L10, 14B-L12, 14B-L11."
+    },
+    {
+      "claim": "Q2: Employment-to-population ratio, unemployment rate and informal employment share by sex.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLFS 2017/18 (FY2017/18)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS 2017/18 tables by sex. Leads: 14B-L09, 14B-L10."
+    },
+    {
+      "claim": "Q2: Gender pay gap: ratio of female to male mean and median monthly (and hourly) earnings of employees, unadjusted; adjusted gap from microdata.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "NLFS 2017/18 (FY2017/18)",
+      "source_ids": [
+        "nso_nepal",
+        "ilostat"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS 2017/18 earnings tables by sex and occupation; SDG 8.5.1 hourly earnings by sex; microdata for Oaxaca-Blinder adjusted gap. Leads: 14B-L09, 14B-L10, 14B-L12."
+    },
+    {
+      "claim": "Q2: Time spent on unpaid domestic and care work by sex (SDG 5.4.1).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLFS 2017/18 or time-use module (period to record)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS own-use production/unpaid care module tables by sex. Leads: 14B-L09, 14B-L12."
+    },
+    {
+      "claim": "Q2: Women's ownership of house and land (alone or jointly; with documented title) by province and residence.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NDHS 2022 (calendar 2022) and NPHC 2021",
+      "source_ids": [
+        "dhs",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NDHS 2022 women's empowerment chapter ownership tables by province; NPHC 2021 household-level female ownership of house/land tables. Keep both (individual vs household concept). Leads: 14B-L13, 14B-L14, 14B-L01, 14B-L02."
+    },
+    {
+      "claim": "Q2: Agricultural holdings and area operated by sex of holder, by province.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NSCA 2021/22 (agricultural year)",
+      "source_ids": [
+        "nso_nepal",
+        "fao_stat"
+      ],
+      "observation_ids": [],
+      "note": "Required: NSCA 2021/22 holder-sex tables. Leads: 14B-L15, 14B-L16."
+    },
+    {
+      "claim": "Q2: Account ownership and formal borrowing by sex (national).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Findex waves (calendar years)",
+      "source_ids": [
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: Findex female/male series; shared with 03B Q3 (same observations). Leads: 14B-L17, 14B-L18."
+    },
+    {
+      "claim": "Q2: Gender parity in education (literacy by sex from NPHC 2021; enrolment GPI by level) by province.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NPHC 2021; school year per Flash report",
+      "source_ids": [
+        "nso_nepal",
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: Census literacy by sex x province; Flash I/II GPI by province. Coordinate with 09A. Leads: 14B-L01, 14B-L32."
+    },
+    {
+      "claim": "Q3: Official caste/ethnic group list and codes (NPHC 2021) and population by group and province.",
+      "type": "pending",
+      "value": null,
+      "unit": "persons",
+      "period": "NPHC 2021",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NPHC 2021 caste/ethnicity report tables (group x province x sex); count of official groups recorded from the report, not from search snippets. Leads: 14B-L01, 14B-L02, 14B-L03."
+    },
+    {
+      "claim": "Q3: Literacy and educational attainment by official caste/ethnic group (NPHC 2021).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NPHC 2021",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NPHC 2021 caste/ethnicity report education tables. Leads: 14B-L01, 14B-L02."
+    },
+    {
+      "claim": "Q3: Poverty headcount and mean consumption by caste/ethnic grouping as tabulated by NSO (NLSS IV) or computed from microdata using the census code list.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV group tables (grouping recorded verbatim) or microdata with caste/ethnicity variable and design-based SEs; small-group cells suppressed below a precision threshold to be set in r2. Leads: 14B-L06, 14B-L07."
+    },
+    {
+      "claim": "Q3: Health, nutrition and women's empowerment indicators by caste/ethnic grouping (NDHS 2022).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NDHS 2022 (calendar 2022)",
+      "source_ids": [
+        "dhs"
+      ],
+      "observation_ids": [],
+      "note": "Required: NDHS 2022 tables by caste/ethnic grouping as defined in the report. Leads: 14B-L13, 14B-L14."
+    },
+    {
+      "claim": "Q3: HDI by caste/ethnic grouping where published by an official or UNDP national HDR.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "HDR reference year (to record)",
+      "source_ids": [
+        "undp_hdr"
+      ],
+      "observation_ids": [],
+      "note": "Required: Nepal national HDR group HDI table, if any; otherwise record as not published. Leads: 14B-L20, 14B-L21."
+    },
+    {
+      "claim": "Q3: Household amenities and asset ownership (including female ownership of house/land) by caste/ethnic group.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NPHC 2021",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NPHC 2021 group tabulations or NSO thematic report (the Dalit profile noted by DanChurchAid must be traced to its NSO original). Leads: 14B-L01, 14B-L02, 14B-L05."
+    },
+    {
+      "claim": "Method: provincial dispersion for the poverty_inclusion objective is measured as the population-weighted coefficient of variation and the max-min range of provincial national-line headcounts from the same NLSS round; changes between rounds are reported only on a comparable line.",
+      "type": "assumption",
+      "value": null,
+      "unit": "ratio",
+      "period": "per NLSS round",
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Design choice (14B-A2); to be confirmed with Agent 15."
+    },
+    {
+      "claim": "Method: group gap tables use only NSO/NPHC 2021 caste/ethnicity codes or the aggregated grouping exactly as published by the source table; no re-grouping, ranking or characterisation of groups; gaps are reported as differences to the national average with SEs where survey-based.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "14B-A1."
+    }
+  ],
+  "data_gaps": [
+    "No current labour force survey report: NLFS 2017/18 is the latest; NLFS 2024/25 report not located, so gender participation and wage gaps are dated.",
+    "Provincial HDI: latest known official-partner source is Nepal HDR 2020 (URL unverified); no post-NPHC 2021 provincial HDI located.",
+    "Provincial GDP release and consistent provincial population denominators (10C) not yet retrieved.",
+    "Caste/ethnic group welfare outcomes (poverty, consumption) require NLSS IV group tables or microdata; small groups may be too imprecise to report.",
+    "Adjusted gender pay gap requires NLFS microdata.",
+    "No official provincial series for safeguard/grievance (rights_accountability) or provincial exports identified.",
+    "Provincial MPI report (NPC) URL and reference year not verified."
+  ],
+  "assumptions": [
+    {
+      "id": "14B-A1",
+      "text": "Group gap tables use only official classifications (NPHC 2021 codes or the grouping as published in each source table), with verbatim labels; no characterisation or ranking of groups.",
+      "basis": "assumption (task rule and platform non-negotiables)"
+    },
+    {
+      "id": "14B-A2",
+      "text": "Provincial dispersion indicator for poverty_inclusion = population-weighted CV and max-min range of national-line headcounts within one NLSS round.",
+      "basis": "assumption (method choice)"
+    },
+    {
+      "id": "14B-A3",
+      "text": "NDHS 2022 is treated as an official MoHP survey for gender/asset indicators although the catalog lists dhs at tier 7.",
+      "basis": "assumption; flag for 00B source-tier review"
+    },
+    {
+      "id": "14B-A4",
+      "text": "Seven provinces use current official names; historical development-region series are not mapped to provinces without a documented district-level crosswalk.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00B",
+      "text": "Source tier: catalog places dhs at tier 7 although NDHS is implemented under MoHP; request tier review. Register watch items: women's house/land ownership NDHS 2022 (individual) vs NPHC 2021 (household) - definitional, not a conflict; provincial HDI Nepal HDR 2020 vs NNRFC formula inputs - vintage/method."
+    },
+    {
+      "to": "14A",
+      "text": "Please expose provincial and caste/ethnic breakdowns in the NLSS IV observation set so 14B reuses the same observations (no second extraction)."
+    },
+    {
+      "to": "10B",
+      "text": "Gender participation and wage gaps depend on 10B's NLFS 2017/18 ingestion; please include sex x province tables and earnings by sex, and flag when NLFS 2024/25 report is located."
+    },
+    {
+      "to": "10C",
+      "text": "Need provincial resident-population denominators by sex (NPHC 2021 base and NSO projection) for per-capita provincial indicators."
+    },
+    {
+      "to": "03B",
+      "text": "Findex gender account-ownership items are shared; 14B will cite 03B's observations rather than re-ingesting."
+    },
+    {
+      "to": "15",
+      "text": "Distributional conclusions for all strategies remain unverified until provincial and group gaps are populated; do not treat any strategy as inclusion-neutral in r1."
+    }
+  ],
+  "uncertainty": "Total for r1: no values retrieved. Main uncertainties for r2: (1) gender labour gaps rest on NLFS 2017/18 and may be materially outdated given migration since then; (2) provincial HDI source vintage predates the census and provincial GDP revisions; (3) group-level survey estimates may have wide SEs for small groups and group definitions differ across NPHC, NLSS and NDHS, so cross-source comparisons need crosswalks; (4) several URLs are from general knowledge and unverified (marked in leads); (5) NLSS IV data-quality critique noted by 14A applies to provincial and group breakdowns.",
+  "source_leads": [
+    {
+      "lead_id": "14B-L01",
+      "url": "https://censusnepal.cbs.gov.np/results",
+      "title": "NPHC 2021 results portal (national, provincial and thematic reports incl. Caste/Ethnicity report)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "NPHC 2021 (census reference date within 2021; FY2078/79 label to record) population by province, urban/rural (municipality type), sex, caste/ethnicity (official census list), mother tongue, religion; literacy, educational attainment, economic activity, household amenities and female ownership of house/land by province and by caste/ethnic group where tabulated. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. Search also indicates a Caste/Ethnicity report on this portal (to verify)."
+    },
+    {
+      "lead_id": "14B-L02",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials (national report, thematic reports)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "NPHC 2021 national report volumes and thematic reports (gender, caste/ethnicity, migration, disability as published); tables by province x sex x caste/ethnicity. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L03",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal_Atlas_Caste_and_Ethnic_Groups_mkuqof1.pdf",
+      "title": "Nepal Atlas: Caste and Ethnic Groups (NPHC 2021)",
+      "publisher": "National Statistics Office, Nepal (publisher to confirm on retrieval)",
+      "source_id": "nso_nepal",
+      "contains": "Spatial distribution of each officially recorded NPHC 2021 caste/ethnic group by local unit (palika) and province; provides the official group list and codes used for group gap tables. Search-located in r1 (single WebSearch); identity and content to verify on retrieval."
+    },
+    {
+      "lead_id": "14B-L04",
+      "url": "https://www.democracyresource.org/wp-content/uploads/2021/07/Nepal-Population-and-Housing-Census-2021_28January2022-1.pdf",
+      "title": "Nepal Population and Housing Census 2021 (document hosted by Democracy Resource Center Nepal)",
+      "publisher": "Democracy Resource Center Nepal (hosting); original author to confirm",
+      "source_id": "academic",
+      "contains": "Secondary-hosted census document (likely preliminary results or census methodology); use only to cross-check NSO originals; not a primary source. Search-located in r1 (single WebSearch); identity and content to verify on retrieval."
+    },
+    {
+      "lead_id": "14B-L05",
+      "url": "https://www.danchurchaid.org/data-for-evidence-based-advocacy-dalit-lives-matter",
+      "title": "Data for evidence-based Advocacy - Dalit Lives Matter (analysis of Dalit demographic profile from NPHC 2021, prepared with NSO per the page)",
+      "publisher": "DanChurchAid",
+      "source_id": "academic",
+      "contains": "Describes a Dalit demographic profile built on NPHC 2021 in collaboration with NSO; locate the underlying NSO publication and use that as primary. Search-located in r1 (single WebSearch); identity and content to verify on retrieval."
+    },
+    {
+      "lead_id": "14B-L06",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Poverty headcount/gap by province and urban/rural; per-capita consumption and income by province; indicators by sex of household head; any tabulation by caste/ethnic grouping (grouping to record verbatim). Survey period within FY2022/23. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (14A-L01)"
+    },
+    {
+      "lead_id": "14B-L07",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round - microdata catalogue",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Microdata for own tabulation of province x sex x caste/ethnicity gaps with design-based SEs, where published tables lack the cross-classification. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (14A-L03)"
+    },
+    {
+      "lead_id": "14B-L08",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1707800524_89.pdf",
+      "title": "Nepal Living Standards Survey IV 2022-23 (Government of Nepal CDN)",
+      "publisher": "Government of Nepal (office to confirm)",
+      "source_id": "nso_nepal",
+      "contains": "NLSS IV report/summary; provincial poverty table expected. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (14A-L02)"
+    },
+    {
+      "lead_id": "14B-L09",
+      "url": "https://cbs.gov.np/wp-content/upLoads/2019/05/Nepal-Labour-Force-Survey-2017_18-Report.pdf",
+      "title": "Report on the Nepal Labour Force Survey 2017/18",
+      "publisher": "National Statistics Office (then CBS), Nepal",
+      "source_id": "nso_nepal",
+      "contains": "LFPR, employment-to-population, unemployment, informality, time-related underemployment by sex and province; mean/median monthly earnings of employees by sex and occupation; unpaid care/own-use production work by sex. Reference period FY2017/18. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (10B-L02)"
+    },
+    {
+      "lead_id": "14B-L10",
+      "url": "https://data.nsonepal.gov.np/dataset/nepal-labour-force-survey-2018/resource/9f5e1585-2af7-4257-bb6b-59073b1da34f",
+      "title": "Nepal Labour Force Survey 2017/18 - NSO open data resource",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "NLFS 2017/18 data resource for sex x province labour tables and wage distribution (to compute adjusted and unadjusted gender pay gaps). Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (10B-L01)"
+    },
+    {
+      "lead_id": "14B-L11",
+      "url": "https://www.ilo.org/sites/default/files/2024-11/ToR_FieldEnumerators_NSO.pdf",
+      "title": "Nepal Labour Force Survey (NLFS) 2024/25 - ToR for field enumerators",
+      "publisher": "ILO / National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Confirms NLFS 2024/25 fieldwork; the future report will replace NLFS 2017/18 as gender labour baseline (report not yet located). Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (10B-L04)"
+    },
+    {
+      "lead_id": "14B-L12",
+      "url": "https://ilostat.ilo.org",
+      "title": "ILOSTAT - Nepal labour force indicators (by sex; gender wage gap series where available)",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Harmonised LFPR and employment by sex, and gender pay gap indicator (SDG 8.5.1 average hourly earnings by sex) for Nepal survey years; cross-check only. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L13",
+      "url": "https://dhsprogram.com/publications/publication-FR379-DHS-Final-Reports.cfm",
+      "title": "Nepal Demographic and Health Survey 2022 - Final Report",
+      "publisher": "Ministry of Health and Population / New ERA / ICF",
+      "source_id": "dhs",
+      "contains": "Women's and men's ownership of house and land (alone/jointly, with title), women's employment and cash earnings, control over earnings, participation in household decisions, mobile phone/bank account ownership, by province, urban/rural and wealth quintile; some tables by caste/ethnic group (grouping to record verbatim). Survey year 2022 (calendar). Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L14",
+      "url": "https://www.statcompiler.com",
+      "title": "DHS STATcompiler (Nepal indicators by background characteristics)",
+      "publisher": "The DHS Program / ICF",
+      "source_id": "dhs",
+      "contains": "Machine-readable NDHS 2001-2022 indicators by province, residence, and caste/ethnicity for asset-ownership and women's empowerment indicators. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L15",
+      "url": "https://data.nsonepal.gov.np/dataset/1454fffe-5d2d-461d-bcc8-fcd4bb95edfe/resource/4e4f528e-a1d1-413c-8008-c5810f06ac13/download/national-sample-census-of-agriculture-national-report.pdf",
+      "title": "National Sample Census of Agriculture Nepal 2021/22 - National Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Agricultural holders and holdings by sex of holder, area operated by sex of holder, by province; agricultural year 2021/22. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L16",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1715839697_14.pdf",
+      "title": "National Sample Census of Agriculture Nepal 2021/22 - District Summary",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "District-level holdings by sex of holder, aggregable to province. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L17",
+      "url": "https://www.worldbank.org/en/publication/globalfindex",
+      "title": "Global Findex Database (latest edition)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Account ownership, borrowing and saving by sex (national only; no province detail). Calendar survey years. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (shared with 03B)"
+    },
+    {
+      "lead_id": "14B-L18",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/FX.OWN.TOTL.FE.ZS?format=json&per_page=200",
+      "title": "WDI API: Account ownership, female (% of population ages 15+), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Female account ownership series (Findex waves); male series FX.OWN.TOTL.MA.ZS for the gap. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L19",
+      "url": "https://hdr.undp.org/data-center/documentation-and-downloads",
+      "title": "UNDP Human Development Reports - data center downloads (HDI, GDI, GII, IHDI time series)",
+      "publisher": "UNDP Human Development Report Office",
+      "source_id": "undp_hdr",
+      "contains": "National HDI, Gender Development Index (female/male HDI), Gender Inequality Index, inequality-adjusted HDI for Nepal; calendar years; national only. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L20",
+      "url": "https://www.undp.org/nepal/publications/nepal-human-development-report-2020",
+      "title": "Nepal Human Development Report 2020",
+      "publisher": "UNDP Nepal / Government of Nepal (National Planning Commission)",
+      "source_id": "undp_hdr",
+      "contains": "Province-level HDI, GDI, GII and component indicators; possibly HDI by caste/ethnic grouping (verify); reference year to record (estimates predate NPHC 2021). URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L21",
+      "url": "https://hdr.undp.org",
+      "title": "UNDP HDR - Nepal country page and national/sub-national HDR library",
+      "publisher": "UNDP Human Development Report Office",
+      "source_id": "undp_hdr",
+      "contains": "Entry point for Nepal national HDRs (earlier editions with HDI by development region/caste-ethnic grouping) and Subnational HDI documentation. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L22",
+      "url": "https://npc.gov.np",
+      "title": "National Planning Commission Nepal - Nepal Multidimensional Poverty Index report(s) and periodic plan",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": "National MPI (with OPHI) by province, urban/rural (and by caste/ethnicity or sex of household head if published); Sixteenth Plan targets for provincial and gender inclusion. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L23",
+      "url": "https://ophi.org.uk",
+      "title": "OPHI - Nepal national MPI documentation",
+      "publisher": "Oxford Poverty and Human Development Initiative",
+      "source_id": "academic",
+      "contains": "Methodology notes for Nepal's national MPI (indicators, weights, data source NDHS/MICS vintage) to interpret provincial MPI. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "14B-L24",
+      "url": "https://nsonepal.gov.np",
+      "title": "National Statistics Office - National Accounts (provincial GDP/GVA release) and statistical publications",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Provincial GDP and GVA by industry, current and constant prices, fiscal years (mid-July); used with NPHC 2021/NSO projections for provincial GDP per capita. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L25",
+      "url": "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+      "title": "Constitution of Nepal (Nepali authoritative text)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Articles on equality, social justice and proportional inclusion listing constitutionally recognised groups; used only as the legal source of group categories, verbatim. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L26",
+      "url": "https://documents1.worldbank.org/curated/en/290721625210540609/pdf/Federalism-and-Public-Expenditure-for-Human-Development-in-Nepal-An-Emerging-Agenda.pdf",
+      "title": "Federalism and Public Expenditure for Human Development in Nepal: An Emerging Agenda",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Provincial and local human-development spending and outcome gaps; secondary analysis to cross-check provincial dashboard. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L27",
+      "url": "https://documents1.worldbank.org/curated/en/966981520367373513/pdf/123958-SCD-nepal-CountryDiagnostic-10.pdf",
+      "title": "World Bank (2018) Nepal Systematic Country Diagnostic: A New Approach to a Federal Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Regional and group inclusion analysis (pre-NPHC 2021 data); methodology reference for spatial and group gaps. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L28",
+      "url": "https://nnrfc.gov.np/category/report/",
+      "title": "NNRFC reports (annual reports and recommendations)",
+      "publisher": "National Natural Resources and Fiscal Commission, Nepal",
+      "source_id": "nnrfc",
+      "contains": "Equalisation-grant formula indicators by province (HDI, poverty/deprivation, infrastructure index, revenue capacity); FY-labelled. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L29",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+      "title": "Consolidated Financial Statement (Federal, Province and Local Government) FY2023/24",
+      "publisher": "Financial Comptroller General Office / Government of Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Provincial government expenditure and transfers FY2023/24 for per-capita fiscal resources by province. Reused from existing lead register (research/sources/source_leads.json) / upstream finding."
+    },
+    {
+      "lead_id": "14B-L30",
+      "url": "https://www.nrb.org.np/category/publications/",
+      "title": "NRB publications (financial access reports)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "BFI branches and deposit/loan accounts by province (supply-side); gender split where reported. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (shared with 03B)"
+    },
+    {
+      "lead_id": "14B-L31",
+      "url": "https://donidcr.gov.np",
+      "title": "Department of National ID and Civil Registration - social security allowance",
+      "publisher": "Department of National ID and Civil Registration, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Social security allowance beneficiaries by category (incl. Dalit children, single women, endangered ethnic groups where listed) and province; FY. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (10B-L13)"
+    },
+    {
+      "lead_id": "14B-L32",
+      "url": "https://cehrd.gov.np",
+      "title": "CEHRD Flash I/II reports (EMIS)",
+      "publisher": "Center for Education and Human Resource Development",
+      "source_id": "moest",
+      "contains": "Enrolment by sex and by Dalit/Janajati category and province; gender parity indices; school year labels. Reused from existing lead register (research/sources/source_leads.json) / upstream finding. (09A-L14)"
+    }
+  ],
+  "specific": {
+    "provincial_dashboard": {
+      "status": "pending",
+      "design": "Seven provinces (Constitution of Nepal schedule; current names) as columns plus national; each row an indicator tagged to one of the 12 objectives in src/economic_model/welfare.py OBJECTIVES. Each cell will hold an observation id, value, unit, period (FY vs calendar stated) and SE where survey-based. Provincial dispersion (CV and max-min) computed per row. Dashboard is separate from GDP; provincial GDP per capita is one row under 'growth', not a summary score. No composite ranking of provinces.",
+      "provinces": [
+        "Koshi",
+        "Madhesh",
+        "Bagmati",
+        "Gandaki",
+        "Lumbini",
+        "Karnali",
+        "Sudurpaschim"
+      ],
+      "indicators": [
+        {
+          "indicator": "poverty headcount (national line)",
+          "welfare_objective": "poverty_inclusion",
+          "unit": "percent",
+          "period": "NLSS IV 2022/23",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L06",
+            "14B-L07"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Same observations as 14A poverty_baseline."
+        },
+        {
+          "indicator": "provincial poverty dispersion (CV, max-min)",
+          "welfare_objective": "poverty_inclusion",
+          "unit": "ratio",
+          "period": "NLSS IV 2022/23",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L06"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Derived; national-level single value."
+        },
+        {
+          "indicator": "MPI headcount",
+          "welfare_objective": "poverty_inclusion",
+          "unit": "percent",
+          "period": "NPC MPI reference year",
+          "source_ids": [
+            "npc_nepal"
+          ],
+          "lead_ids": [
+            "14B-L22",
+            "14B-L23"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "HDI",
+          "welfare_objective": "human_development",
+          "unit": "index",
+          "period": "Nepal HDR 2020 reference year",
+          "source_ids": [
+            "undp_hdr"
+          ],
+          "lead_ids": [
+            "14B-L20"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "stunting prevalence, under-5",
+          "welfare_objective": "human_development",
+          "unit": "percent",
+          "period": "NDHS 2022",
+          "source_ids": [
+            "dhs"
+          ],
+          "lead_ids": [
+            "14B-L13",
+            "14B-L14"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Coordinate with 10A."
+        },
+        {
+          "indicator": "literacy rate by sex",
+          "welfare_objective": "human_development",
+          "unit": "percent",
+          "period": "NPHC 2021",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L01"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "provincial GDP per capita (current NPR)",
+          "welfare_objective": "growth",
+          "unit": "NPR_per_person",
+          "period": "FY (mid-July), NA vintage",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L24",
+            "14B-L01"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "mean per-capita consumption",
+          "welfare_objective": "jobs_income",
+          "unit": "NPR_per_person",
+          "period": "NLSS IV 2022/23",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L06"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "labour force participation rate, female and male",
+          "welfare_objective": "jobs_income",
+          "unit": "percent",
+          "period": "NLFS 2017/18",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L09",
+            "14B-L10"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Replace with NLFS 2024/25 when published."
+        },
+        {
+          "indicator": "social security allowance beneficiaries per 1,000 eligible population",
+          "welfare_objective": "jobs_income",
+          "unit": "ratio",
+          "period": "FY",
+          "source_ids": [
+            "mof_nepal"
+          ],
+          "lead_ids": [
+            "14B-L31"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Coordinate with 10B social-protection coverage."
+        },
+        {
+          "indicator": "provincial + local expenditure per capita",
+          "welfare_objective": "institutions",
+          "unit": "NPR_per_person",
+          "period": "FY2023/24",
+          "source_ids": [
+            "mof_nepal"
+          ],
+          "lead_ids": [
+            "14B-L29",
+            "14B-L28"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "BFI branches per 10,000 adults / account holders by sex",
+          "welfare_objective": "exports_investment",
+          "unit": "ratio",
+          "period": "FY, NRB release",
+          "source_ids": [
+            "nrb"
+          ],
+          "lead_ids": [
+            "14B-L30"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Financial access tagged to investment objective; shared with 03B."
+        },
+        {
+          "indicator": "household electricity access (grid) share",
+          "welfare_objective": "energy_infrastructure",
+          "unit": "percent",
+          "period": "NPHC 2021 / NLSS IV",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L01",
+            "14B-L06"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Coordinate with 05."
+        },
+        {
+          "indicator": "household internet/mobile access share",
+          "welfare_objective": "technology_science",
+          "unit": "percent",
+          "period": "NPHC 2021 / NLSS IV",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L01",
+            "14B-L06"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Coordinate with 08."
+        },
+        {
+          "indicator": "absent population abroad per 100 residents",
+          "welfare_objective": "diaspora",
+          "unit": "ratio",
+          "period": "NPHC 2021",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L01",
+            "14B-L02"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Coordinate with 10C/23; never added to resident population."
+        },
+        {
+          "indicator": "households receiving remittances share",
+          "welfare_objective": "diaspora",
+          "unit": "percent",
+          "period": "NLSS IV 2022/23",
+          "source_ids": [
+            "nso_nepal"
+          ],
+          "lead_ids": [
+            "14B-L06"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Same observation set as 14A."
+        },
+        {
+          "indicator": "disaster losses per capita / affected persons",
+          "welfare_objective": "resilience",
+          "unit": "NPR_per_person",
+          "period": "FY",
+          "source_ids": [
+            "ndrrma"
+          ],
+          "lead_ids": [],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Owned by 13A; lead ids via 13A (BIPAD)."
+        },
+        {
+          "indicator": "fiscal sustainability of subnational governments (own revenue share of expenditure)",
+          "welfare_objective": "fiscal_financial",
+          "unit": "percent",
+          "period": "FY2023/24",
+          "source_ids": [
+            "mof_nepal"
+          ],
+          "lead_ids": [
+            "14B-L29"
+          ],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          }
+        },
+        {
+          "indicator": "safeguard and grievance indicators (subnational)",
+          "welfare_objective": "rights_accountability",
+          "unit": "count",
+          "period": "FY",
+          "source_ids": [],
+          "lead_ids": [],
+          "status": "pending",
+          "value_by_province": {
+            "Koshi": null,
+            "Madhesh": null,
+            "Bagmati": null,
+            "Gandaki": null,
+            "Lumbini": null,
+            "Karnali": null,
+            "Sudurpaschim": null
+          },
+          "note": "Owned by 14C; no official provincial series identified in r1."
+        }
+      ],
+      "objective_coverage": {
+        "growth": "provincial GDP per capita",
+        "jobs_income": "consumption, LFPR, social protection",
+        "poverty_inclusion": "headcount, dispersion, MPI",
+        "fiscal_financial": "subnational own-revenue share",
+        "exports_investment": "financial access (proxy; no provincial export series found)",
+        "energy_infrastructure": "electricity access",
+        "technology_science": "internet/mobile access",
+        "human_development": "HDI, stunting, literacy",
+        "institutions": "subnational expenditure per capita (proxy; execution rates pending from 11)",
+        "resilience": "disaster loss (13A)",
+        "diaspora": "absentees, remittance receipt",
+        "rights_accountability": "pending 14C"
+      },
+      "method": "Ingest NSO tables as primary (tier 1); UNDP/NPC HDR as tier 3; NDHS tier 7 per catalog but used as the official MoHP survey. Compute dispersion only across the same survey round and definition. Record FY vs calendar year per row."
+    },
+    "gender_gap_table": {
+      "status": "pending",
+      "design": "Rows = indicator; columns = female, male, gap (female minus male in percentage points, or female/male ratio for earnings), national and by province and urban/rural; each cell cites an observation id and SE. Three blocks: participation, wages, assets.",
+      "participation": [
+        {
+          "indicator": "labour force participation rate",
+          "unit": "percent",
+          "gap_unit": "percentage_points",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L09",
+            "14B-L10",
+            "14B-L12"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "employment-to-population ratio",
+          "unit": "percent",
+          "gap_unit": "percentage_points",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L09",
+            "14B-L10"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "informal employment share",
+          "unit": "percent",
+          "gap_unit": "percentage_points",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L09"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "unpaid domestic and care work time share (SDG 5.4.1)",
+          "unit": "percent",
+          "gap_unit": "percentage_points",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L09",
+            "14B-L12"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "female share of absent population abroad",
+          "unit": "percent",
+          "period": "NPHC 2021",
+          "lead_ids": [
+            "14B-L01",
+            "14B-L02"
+          ],
+          "status": "pending"
+        }
+      ],
+      "wages": [
+        {
+          "indicator": "female/male mean monthly earnings of employees (unadjusted)",
+          "unit": "ratio",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L09",
+            "14B-L10"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "female/male median monthly earnings",
+          "unit": "ratio",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L10"
+          ],
+          "status": "pending",
+          "note": "Microdata computation."
+        },
+        {
+          "indicator": "gender pay gap, average hourly earnings (SDG 8.5.1)",
+          "unit": "percent",
+          "period": "ILOSTAT survey years",
+          "lead_ids": [
+            "14B-L12"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "adjusted gender pay gap (Oaxaca-Blinder: education, age, occupation, industry, province)",
+          "unit": "percent",
+          "period": "NLFS 2017/18",
+          "lead_ids": [
+            "14B-L10"
+          ],
+          "status": "pending",
+          "note": "Estimate once microdata ingested; labelled estimate with method."
+        }
+      ],
+      "assets": [
+        {
+          "indicator": "women owning a house (alone/jointly)",
+          "unit": "percent",
+          "period": "NDHS 2022",
+          "lead_ids": [
+            "14B-L13",
+            "14B-L14"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "women owning land (alone/jointly); with title in own name",
+          "unit": "percent",
+          "period": "NDHS 2022",
+          "lead_ids": [
+            "14B-L13",
+            "14B-L14"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "households with female ownership of house and/or land",
+          "unit": "percent",
+          "period": "NPHC 2021",
+          "lead_ids": [
+            "14B-L01",
+            "14B-L02"
+          ],
+          "status": "pending",
+          "note": "Household concept differs from NDHS individual concept; keep both."
+        },
+        {
+          "indicator": "agricultural holdings with female holder; share of area operated",
+          "unit": "percent",
+          "period": "NSCA 2021/22",
+          "lead_ids": [
+            "14B-L15",
+            "14B-L16"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "account ownership, female and male (age 15+)",
+          "unit": "percent",
+          "gap_unit": "percentage_points",
+          "period": "Findex waves",
+          "lead_ids": [
+            "14B-L17",
+            "14B-L18"
+          ],
+          "status": "pending"
+        }
+      ],
+      "composite_references": [
+        {
+          "indicator": "GDI, GII (national; provincial from Nepal HDR 2020)",
+          "unit": "index",
+          "lead_ids": [
+            "14B-L19",
+            "14B-L20"
+          ],
+          "status": "pending"
+        }
+      ]
+    },
+    "group_gap_table": {
+      "status": "pending",
+      "classification_rule": "Use the NPHC 2021 caste/ethnicity code list exactly as published by NSO, or the aggregated grouping exactly as it appears in the source table (NLSS IV, NDHS 2022, Nepal HDR), recording the source's own labels and group definitions verbatim. No re-grouping across sources without a documented crosswalk; no ranking or characterisation of groups; only differences documented in official tables (or computed from official microdata with SEs) are reported. Constitutional inclusion categories (Constitution of Nepal, lead 14B-L25) are recorded as legal categories only.",
+      "official_classifications": [
+        {
+          "source": "NPHC 2021 caste/ethnicity list",
+          "lead_ids": [
+            "14B-L01",
+            "14B-L02",
+            "14B-L03"
+          ],
+          "status": "pending",
+          "note": "Number of groups and codes to be taken from the NSO report on retrieval."
+        },
+        {
+          "source": "NLSS IV grouping",
+          "lead_ids": [
+            "14B-L06",
+            "14B-L07"
+          ],
+          "status": "pending"
+        },
+        {
+          "source": "NDHS 2022 caste/ethnic grouping",
+          "lead_ids": [
+            "14B-L13"
+          ],
+          "status": "pending"
+        },
+        {
+          "source": "Constitutional inclusion categories",
+          "lead_ids": [
+            "14B-L25"
+          ],
+          "status": "pending"
+        }
+      ],
+      "indicators": [
+        {
+          "indicator": "population share by group and province",
+          "unit": "percent",
+          "period": "NPHC 2021",
+          "lead_ids": [
+            "14B-L01",
+            "14B-L03"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "literacy rate by group and sex",
+          "unit": "percent",
+          "period": "NPHC 2021",
+          "lead_ids": [
+            "14B-L01",
+            "14B-L02"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "poverty headcount by grouping (national line)",
+          "unit": "percent",
+          "period": "NLSS IV 2022/23",
+          "lead_ids": [
+            "14B-L06",
+            "14B-L07"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "mean per-capita consumption by grouping",
+          "unit": "NPR_per_person",
+          "period": "NLSS IV 2022/23",
+          "lead_ids": [
+            "14B-L06",
+            "14B-L07"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "under-5 stunting and women's asset ownership by grouping",
+          "unit": "percent",
+          "period": "NDHS 2022",
+          "lead_ids": [
+            "14B-L13",
+            "14B-L14"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "household amenities (electricity, piped water, internet) by group",
+          "unit": "percent",
+          "period": "NPHC 2021",
+          "lead_ids": [
+            "14B-L01",
+            "14B-L02",
+            "14B-L05"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "HDI by grouping (if published)",
+          "unit": "index",
+          "period": "HDR reference year",
+          "lead_ids": [
+            "14B-L20",
+            "14B-L21"
+          ],
+          "status": "pending"
+        },
+        {
+          "indicator": "school enrolment by Dalit/Janajati category",
+          "unit": "percent",
+          "period": "Flash report school year",
+          "lead_ids": [
+            "14B-L32"
+          ],
+          "status": "pending"
+        }
+      ],
+      "gap_metric": "Difference from national average (percentage_points) and ratio to national average; survey-based cells with design-based SEs; cells below a precision threshold suppressed and flagged."
+    }
+  }
+}
