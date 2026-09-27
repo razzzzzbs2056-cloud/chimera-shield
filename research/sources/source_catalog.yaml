@@ -108,6 +108,8 @@ sources:
   cwc_india: {tier: 4, institution: Central Water Commission, India, url: "https://cwc.gov.in", covers: [flood forecasting, basin data], endpoint_status: unverified}
   gacc_china: {tier: 4, institution: General Administration of Customs, China, url: "http://english.customs.gov.cn", covers: [China trade statistics], endpoint_status: unverified}
   bpdb_bd: {tier: 5, institution: Bangladesh Power Development Board, url: "https://bpdb.gov.bd", covers: [power imports], endpoint_status: unverified}
+  pib_india: {tier: 4, institution: Press Information Bureau, Government of India, url: "https://pib.gov.in", covers: [official releases], endpoint_status: unverified}
+  ioc_india: {tier: 5, institution: Indian Oil Corporation, url: "https://iocl.com", covers: [petroleum supply agreements], endpoint_status: unverified}
   fed: {tier: 4, institution: US Federal Reserve Board, url: "https://www.federalreserve.gov", covers: [US monetary policy], endpoint_status: unverified}
   ustr: {tier: 4, institution: Office of the US Trade Representative, url: "https://ustr.gov", covers: [US trade preferences], endpoint_status: unverified}
   ofac: {tier: 4, institution: US Treasury OFAC, url: "https://ofac.treasury.gov", covers: [US sanctions], endpoint_status: unverified}
