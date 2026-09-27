@@ -1,0 +1,690 @@
+{
+  "subagent_id": "03A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked; shared WebSearch budget exhausted except one query). All three questions are answered only at the level of research design; every empirical item is pending. Q1 (peg transmission of Indian inflation and INR/USD): leads are NRB CPI tables in the CME releases (FY2024/25 annual, FY2025/26 nine/ten-month, August 2026), NRB forex page/API and historical exchange-rate workbooks, NRB research on Indian monetary spillovers, RBI DBIE, reference-rate archive, Handbook and the June/August 2026 MPC documents, and IMF WEO for India CPI. Q2 (months of import cover and its volatility): NRB CME monthly reserve and import-cover tables (archive plus annual tables back to FY2019/20 and earlier), the IMF 2026 Article IV/seventh ECF review staff report (reserve adequacy), WDI FI.RES.TOTL.MO as a calendar-year cross-check. Q3 (implication for NPR/USD in the GDP model): recorded as an identity-based constraint (NPR/USD = peg ratio x INR/USD while the peg holds) consistent with 20B; INR/USD is the exogenous driver and the peg ratio a parameter with a break-scenario. No numbers are reported; the peg ratio itself is to be read from the NRB forex page.",
+  "findings": [
+    {
+      "claim": "Q1: Nepal CPI inflation, y/y monthly and FY average, FY2010/11 onward, headline plus food and non-food components.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "From NRB CME CPI tables; basket base-year changes must be documented (C-17). Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf; https://www.nrb.org.np/category/current-macroeconomic-situation/; https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf",
+      "unit": "percent",
+      "period": "Nepal FY monthly (mid-month), FY2010/11-FY2026/27"
+    },
+    {
+      "claim": "Q1: India CPI (combined) inflation, y/y monthly, same span, for Nepal-India inflation differential.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "rbi",
+        "imf_weo"
+      ],
+      "observation_ids": [],
+      "note": "RBI DBIE CPI series; IMF WEO PCPIPCH as annual cross-check (WEO India is Indian FY basis). Lead URLs: https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6; https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR80907599DE5FD164918A49085C9D6270116.PDF; https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR3855508EB4A59FF46F9B57BBA200AA250B8.PDF; https://www.imf.org/external/datamapper/api/v1/",
+      "unit": "percent",
+      "period": "calendar monthly, re-aggregated to Nepal FY"
+    },
+    {
+      "claim": "Q1: Official NPR/INR rate (fixed peg ratio) and the dates of any historical re-pegging.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "NRB forex page and API give the reference rate; WP 3 covers pre-peg history. Peg ratio not asserted here. Lead URLs: https://www.nrb.org.np/forex/; https://www.nrb.org.np/api-docs-v1/; https://www.nrb.org.np/contents/uploads/2019/12/NRB_Working_Paper-NRB-WP-03-Aug_2007_A_Study_of_the_Trends_in_the_Nepalese-Indian_Currency_Exchange_Rate_during_the_Period_of_1932-1960-Nephil_Matangi_Maskay.pdf",
+      "unit": "NPR_per_INR",
+      "period": "daily; peg history"
+    },
+    {
+      "claim": "Q1/Q3: NPR/USD (buying, selling, middle; period average and end-period) daily and FY averages.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Rate type and averaging must match C-18; WDI PA.NUS.FCRF only as a CY cross-check. Lead URLs: https://www.nrb.org.np/forex/; https://www.nrb.org.np/api-docs-v1/; https://www.nrb.org.np/contents/uploads/2022/07/Exchange-rates.xlsx; https://www.nrb.org.np/contents/uploads/2022/08/Exchange-rate-1.xlsx; https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "unit": "NPR_per_USD",
+      "period": "daily, Nepal FY and calendar averages"
+    },
+    {
+      "claim": "Q1/Q3: INR/USD reference rate (RBI to July 2018, FBIL thereafter), daily and Indian-FY averages.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "rbi"
+      ],
+      "observation_ids": [],
+      "note": "Needed to verify the identity NPR/USD = peg ratio x INR/USD and to measure residual spreads. Lead URLs: https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6; https://www.rbi.org.in/scripts/referenceratearchive.aspx; https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf",
+      "unit": "INR_per_USD",
+      "period": "daily; Indian FY April-March"
+    },
+    {
+      "claim": "Q1: Estimated pass-through of Indian CPI inflation to Nepal CPI (coefficient, lag, sample) and of INR/USD depreciation to Nepal CPI via third-country import prices.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Method: distributed-lag regression of Nepal monthly CPI inflation on India CPI inflation and change in NPR/USD, controlling for food/fuel; compare with NRB spillover study. No coefficient reported in r1. Lead URLs: https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/; https://www.nrb.org.np/category/current-macroeconomic-situation/; https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+      "unit": "ratio",
+      "period": "estimation sample FY2010/11 onward (to be set)"
+    },
+    {
+      "claim": "Q2: Gross foreign exchange reserves (total, NRB and BFIs; USD and NPR) at each FY end and monthly.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "NRB reserves include INR holdings; record currency composition where tabulated. IMF staff report as vintage cross-check. Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf; https://www.nrb.org.np/category/current-macroeconomic-situation/; https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "unit": "USD_current_mn",
+      "period": "Nepal FY monthly (mid-month), FY2010/11-FY2026/27"
+    },
+    {
+      "claim": "Q2: Import bill - merchandise imports and goods-and-services imports - monthly and FY.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "From CME BoP and trade tables; NRB import-cover uses its own import base (definition to be read from table notes). Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/category/current-macroeconomic-situation/; https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-ten-months-data-of-2025-26/",
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY monthly"
+    },
+    {
+      "claim": "Q2: Reserve cover in months of merchandise imports and of goods-and-services imports, as published by NRB, monthly.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Published ratio to be recorded as observed; a recomputed ratio (reserves / trailing 12-month imports x 12) will be labelled estimate. Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf; https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "unit": "months",
+      "period": "Nepal FY monthly"
+    },
+    {
+      "claim": "Q2: Volatility of import cover (standard deviation and range over FY2010/11-latest; largest peak-to-trough drawdown and its episode).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Estimate derived from the monthly series once retrieved. Lead URLs: https://www.nrb.org.np/category/current-macroeconomic-situation/; https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf",
+      "unit": "months",
+      "period": "FY2010/11-latest"
+    },
+    {
+      "claim": "Q2: Reserve cover in months of imports as reported by IMF (staff report) and WDI FI.RES.TOTL.MO, for methodological comparison.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Expected definitional differences: import base (prospective vs past imports), reserve coverage, CY vs FY. Lead URLs: https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691; https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml; https://api.worldbank.org/v2/country/NPL/indicator/FI.RES.TOTL.MO?format=json&per_page=200; https://www.imf.org/external/datamapper/datasets/ARA",
+      "unit": "months",
+      "period": "IMF: Nepal FY; WDI: calendar year"
+    },
+    {
+      "claim": "Q2: Current account balance (NPR and % of GDP) FY2010/11 onward, with remittance and trade components.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "CME BoP summary table; GDP denominator from NSO (C-01). Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/category/current-macroeconomic-situation/; https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q3 (identity): while the NPR-INR peg holds, NPR/USD equals the fixed NPR/INR ratio times INR/USD, up to rate-type and averaging differences; NPR/USD should therefore not be projected independently in the GDP model. INR/USD is the exogenous driver; the peg ratio is a parameter.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Consistent with 20B challenge to 03. Empirical verification of the identity is pending (INR/USD and NPR/USD series)."
+    },
+    {
+      "claim": "Q3: For scenario work, a long-run NPR/USD path is constructed only as INR/USD path assumption x peg ratio; a separate peg-adjustment (re-peg/devaluation) stress case is modelled as a discrete step, not as a trend. Neither is a forecast.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Q3: Nominal USD GDP growth under the peg equals NPR nominal growth minus INR/USD depreciation (approximately); a real appreciation from Nepal-India inflation differentials does not change the nominal NPR/USD path but affects competitiveness (REER) and the tradables sector.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Trade-off to report to 01/15: a USD GDP target cannot be helped by the exchange rate under the peg, while real appreciation from remittance inflows may weaken tradables."
+    },
+    {
+      "claim": "Q1 (hypothesis): Indian inflation transmits to Nepal mainly through the price of India-sourced imports (majority of trade with India, INR-settled) and the open border, while INR/USD movements transmit through third-country import prices and USD-denominated remittance receipts; to be tested.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No NRB, RBI, IMF or WB file was downloaded in r1 (hosts blocked); every series awaits `python -m src.cli leads --fetch` and ingestion in r2.",
+    "NRB Monetary Policy FY2026/27 (2083/84) document (inflation ceiling and reserve-adequacy target) not located as a direct file.",
+    "A single machine-readable monthly NRB file for reserves, import cover and CPI back to FY2010/11 not located; series must be assembled from CME monthly releases or NRB Quarterly Economic Bulletin tables.",
+    "Currency composition of reserves (INR vs convertible) and the definition of the import base in NRB's import-cover ratio need confirmation from table notes.",
+    "No located study estimates INR/USD-to-Nepal CPI pass-through directly; an original estimate (labelled estimate with method) may be needed in r2.",
+    "Several leads are from general knowledge (WDI FI.RES.TOTL.MO, IMF ARA) and are marked unverified."
+  ],
+  "assumptions": [
+    {
+      "id": "03A-A1",
+      "text": "The NPR-INR peg is maintained over the model horizon in the baseline; a peg-adjustment case is a scenario stress, not a forecast.",
+      "basis": "assumption"
+    },
+    {
+      "id": "03A-A2",
+      "text": "Monthly Indian and US-dollar series are re-aggregated to Nepal FY (mid-July to mid-July) by day-weighting; mid-month Nepali-calendar boundaries approximated by Gregorian mid-month (same convention as 20A-A1).",
+      "basis": "assumption"
+    },
+    {
+      "id": "03A-A3",
+      "text": "NRB reference middle rate (average of buying and selling) is used for NPR/USD model inputs unless 00B/01C registers a different convention (C-18).",
+      "basis": "assumption"
+    },
+    {
+      "id": "03A-A4",
+      "text": "Import cover is computed on goods-and-services imports as the primary metric and merchandise-only as secondary, matching NRB presentation; to be confirmed on retrieval.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "01",
+      "text": "Any long-run NPR/USD path in the GDP/target arithmetic must be derived from an INR/USD assumption times the peg ratio (not an independent NPR depreciation trend); report the USD-GDP sensitivity to INR/USD explicitly."
+    },
+    {
+      "to": "00B",
+      "text": "Add a watch item for reserve import cover: NRB (FY, own import base) vs IMF staff report (possibly prospective imports) vs WDI FI.RES.TOTL.MO (CY, incl. gold). Likely definitional; keep all values."
+    },
+    {
+      "to": "20B",
+      "text": "Agree on one rate type (middle vs selling) and averaging (FY average vs end-period) for NPR/USD and INR/USD before 03A tests the peg identity; please share the convention adopted."
+    },
+    {
+      "to": "20A",
+      "text": "Accepted: interbank rates will be modelled on domestic liquidity first (remittance inflows, government balances), with RBI/Fed rates as a secondary exogenous channel."
+    }
+  ],
+  "uncertainty": "High. No value retrieved. The transmission mechanism and pass-through are hypotheses; reserve-cover volatility cannot be characterised until monthly NRB series are assembled. Definitions of import cover differ across NRB, IMF and WDI; CPI basket rebasing and FY/CY mismatch add measurement uncertainty. Peg-continuity is a baseline assumption and its failure would dominate every NPR/USD result.",
+  "specific": {
+    "peg_transmission_notes": {
+      "status": "pending",
+      "question": "How does the NPR-INR peg transmit Indian inflation and INR/USD movements to Nepal?",
+      "method": "(1) Verify identity NPR/USD = peg ratio x INR/USD on daily NRB and RBI/FBIL data and measure residual spreads; (2) distributed-lag regression of Nepal monthly CPI inflation (headline, food, non-food) on India CPI inflation and on change in INR/USD, FY2010/11 onward, with food/fuel price controls and structural-break tests; (3) compare with NRB research on Indian monetary spillovers; (4) qualitative channel map: INR-settled India trade, open border, third-country imports priced in USD, remittances in USD/GCC currencies.",
+      "series_required": [
+        {
+          "series": "nepal_cpi_yoy",
+          "source_id": "nrb",
+          "frequency": "monthly",
+          "basis": "Nepal FY mid-month",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+            "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+            "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf"
+          ]
+        },
+        {
+          "series": "india_cpi_yoy",
+          "source_id": "rbi",
+          "frequency": "monthly",
+          "basis": "calendar months",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+            "https://www.imf.org/external/datamapper/api/v1/"
+          ]
+        },
+        {
+          "series": "npr_per_inr_official",
+          "source_id": "nrb",
+          "frequency": "daily",
+          "basis": "peg ratio",
+          "unit": "NPR_per_INR",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/forex/",
+            "https://www.nrb.org.np/api-docs-v1/",
+            "https://www.nrb.org.np/contents/uploads/2019/12/NRB_Working_Paper-NRB-WP-03-Aug_2007_A_Study_of_the_Trends_in_the_Nepalese-Indian_Currency_Exchange_Rate_during_the_Period_of_1932-1960-Nephil_Matangi_Maskay.pdf"
+          ]
+        },
+        {
+          "series": "npr_per_usd",
+          "source_id": "nrb",
+          "frequency": "daily/FY avg",
+          "basis": "Nepal FY",
+          "unit": "NPR_per_USD",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/forex/",
+            "https://www.nrb.org.np/api-docs-v1/",
+            "https://www.nrb.org.np/contents/uploads/2022/07/Exchange-rates.xlsx",
+            "https://www.nrb.org.np/contents/uploads/2022/08/Exchange-rate-1.xlsx",
+            "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200"
+          ]
+        },
+        {
+          "series": "inr_per_usd",
+          "source_id": "rbi",
+          "frequency": "daily/Indian FY avg",
+          "basis": "Indian FY",
+          "unit": "INR_per_USD",
+          "status": "pending",
+          "lead_urls": [
+            "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+            "https://www.rbi.org.in/scripts/referenceratearchive.aspx",
+            "https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf"
+          ]
+        }
+      ],
+      "institutional_leads": [
+        "https://www.nrb.org.np/ofg/governors_speech_at_rma_bhutan/",
+        "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+        "https://www.nrb.org.np/departments/fxm/",
+        "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+        "https://m.rbi.org.in/Scripts/BS_FemaNotifications.aspx?Id=2558",
+        "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+        "https://www.imf.org/en/publications/wp/issues/2025/06/20/how-do-remittances-affect-the-real-exchange-rate-an-empirical-investigation-567747",
+        "https://www.imf.org/external/pubs/ft/wp/2010/wp10271.pdf"
+      ],
+      "known_issues": [
+        "CPI basket rebasing (C-17)",
+        "FY vs CY aggregation",
+        "buying/selling/middle rate (C-18)",
+        "INR-settled vs convertible-currency settlement of India trade"
+      ]
+    },
+    "reserve_cover_series": {
+      "status": "pending",
+      "question": "How many months of imports do gross reserves cover, and how volatile is that cover?",
+      "method": "Record NRB-published import cover monthly (observation); recompute as gross reserves / trailing 12-month goods-and-services imports x 12 (estimate) to check consistency; compute volatility (std. dev., range, maximum drawdown and episode dating) over FY2010/11-latest; compare with IMF staff report and WDI FI.RES.TOTL.MO noting definitional differences; decompose changes into current-account, capital/financial-account and valuation components using BoP tables.",
+      "series_required": [
+        {
+          "series": "gross_fx_reserves_total",
+          "source_id": "nrb",
+          "frequency": "monthly",
+          "basis": "Nepal FY mid-month",
+          "unit": "USD_current_mn",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+            "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+            "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+            "https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf"
+          ]
+        },
+        {
+          "series": "imports_goods_and_services",
+          "source_id": "nrb",
+          "frequency": "monthly",
+          "basis": "Nepal FY",
+          "unit": "NPR_current_mn",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+            "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+            "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-ten-months-data-of-2025-26/"
+          ]
+        },
+        {
+          "series": "import_cover_published",
+          "source_id": "nrb",
+          "frequency": "monthly",
+          "basis": "Nepal FY",
+          "unit": "months",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+            "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+            "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf"
+          ]
+        },
+        {
+          "series": "current_account_balance",
+          "source_id": "nrb",
+          "frequency": "monthly cumulative/FY",
+          "basis": "Nepal FY",
+          "unit": "NPR_current_mn",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+            "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2025-26/",
+            "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-ten-months-data-of-2025-26/"
+          ]
+        },
+        {
+          "series": "import_cover_imf",
+          "source_id": "imf_article_iv",
+          "frequency": "annual",
+          "basis": "Nepal FY",
+          "unit": "months",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+            "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+            "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974"
+          ]
+        },
+        {
+          "series": "import_cover_wdi",
+          "source_id": "wb_wdi",
+          "frequency": "annual",
+          "basis": "calendar year",
+          "unit": "months",
+          "status": "pending",
+          "lead_urls": [
+            "https://api.worldbank.org/v2/country/NPL/indicator/FI.RES.TOTL.MO?format=json&per_page=200"
+          ]
+        }
+      ],
+      "benchmarks": "Conventional import-cover and ARA metrics to be cited from IMF ARA methodology on retrieval; no threshold asserted in r1.",
+      "benchmark_leads": [
+        "https://www.imf.org/external/datamapper/datasets/ARA",
+        "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+        "https://www.nrb.org.np/category/monetary-policy/monetary-policy-english/"
+      ]
+    },
+    "fx_assumption_constraints": {
+      "status": "pending (identity-based constraints recorded as assumptions)",
+      "question": "What does the peg imply for any long-run NPR/USD assumption in the GDP model?",
+      "constraints": [
+        "NPR/USD is derived: peg ratio x INR/USD; never an independent trend while the peg holds (03A-A1).",
+        "INR/USD path is an exogenous scenario input supplied with source (RBI/FBIL history for calibration; 20B for long-run history).",
+        "Peg adjustment is a discrete scenario shock with explicit reserve and inflation consequences, not a smooth trend.",
+        "USD nominal GDP = NPR nominal GDP / (peg ratio x INR/USD); growth, deflator and exchange-rate effects kept separate (CLAUDE.md rule 6).",
+        "Rate type and FY averaging follow the convention registered by 00B/01C (C-02, C-18)."
+      ],
+      "method": "Back-test the identity on FY averages; quantify historical INR/USD depreciation distribution (Indian FY) from RBI Handbook to bound scenario ranges; document in config/model_config.yaml via Agent 01 (not edited here).",
+      "lead_urls": [
+        "https://www.nrb.org.np/forex/",
+        "https://www.nrb.org.np/api-docs-v1/",
+        "https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf",
+        "https://www.rbi.org.in/scripts/referenceratearchive.aspx",
+        "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+        "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+        "https://www.nrb.org.np/ofg/governors_speech_at_rma_bhutan/",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691"
+      ],
+      "consumers": [
+        "01",
+        "15"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 (mid-July) statistical tables: CPI (y/y, FY average), BoP summary incl. current account, gross foreign exchange reserves (NRB and BFIs; USD and NPR), reserve adequacy in months of merchandise and of goods-and-services imports, merchandise imports; also monetary survey, deposit and private-sector credit, NEPSE indicators"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "First month of FY2026/27 (to mid-August 2026): CPI, BoP, gross reserves and import cover, interest rates, credit, NEPSE market capitalisation; Nepal FY mid-month basis"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of monthly/annual CME releases with Excel/PDF statistical tables; source for building monthly FY series of CPI, reserves, import cover, BoP, private credit, NEPSE indicators"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2025-26/",
+      "title": "Current Macroeconomic and Financial Situation (nine months data of FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 nine-month cumulative (to mid-April 2026) BoP, reserves, imports, CPI"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-ten-months-data-of-2025-26/",
+      "title": "Current Macroeconomic and Financial Situation (ten months data of FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 ten-month cumulative (to mid-May 2026) imports, BoP, reserves"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf",
+      "title": "Statistical Tables 2019/20 (CME annual tables)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical annual tables to FY2019/20: CPI, BoP, reserves and import cover, monetary survey; template for long FY series"
+    },
+    {
+      "url": "https://www.nrb.org.np/forex/",
+      "title": "Foreign Exchange Rate",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Daily NRB reference buying/selling rates for USD and INR (INR fixed under the peg); date-range export"
+    },
+    {
+      "url": "https://www.nrb.org.np/api-docs-v1/",
+      "title": "FOREX API Documentation (V1)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "API returning NRB exchange rates for a date range; machine-readable daily NPR/USD and NPR/INR"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2022/07/Exchange-rates.xlsx",
+      "title": "Exchange Rate USDNPR (xlsx)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical NPR/USD series; coverage and rate type to be confirmed"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2022/08/Exchange-rate-1.xlsx",
+      "title": "Exchange rate time series (xlsx)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical NPR exchange-rate series; rate type (buying/selling/middle, average/end-period) to be confirmed"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB_Working_Paper-NRB-WP-03-Aug_2007_A_Study_of_the_Trends_in_the_Nepalese-Indian_Currency_Exchange_Rate_during_the_Period_of_1932-1960-Nephil_Matangi_Maskay.pdf",
+      "title": "NRB Working Paper No. 3 (August 2007): Trends in the Nepalese-Indian Currency Exchange Rate 1932-1960",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Pre-peg history of the NPR-INR rate"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+      "title": "Monetary Policy for 2025/26 (English PDF)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 policy statement: exchange-rate regime (NPR-INR peg), reserve-adequacy target (months of imports), inflation ceiling, private credit growth target, corridor rates, prudential measures"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/monetary-policy/monetary-policy-english/",
+      "title": "Monetary Policy in English - archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual Monetary Policy documents incl. FY2026/27 (2083/84) (direct PDF not yet located); inflation and reserve targets, credit targets, macroprudential measures"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/02/MP-Mid-Term-Review-2082-83.pdf",
+      "title": "Mid-Term Review of Monetary Policy 2082/83 (FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Mid-year review of inflation, reserves, BoP, credit and prudential changes in FY2025/26"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Macroeconomic_Report_July_2026.pdf",
+      "title": "Macroeconomic Report, July 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 external sector, reserves, trade with India, INR-denominated flows (coverage to verify)"
+    },
+    {
+      "url": "https://www.nrb.org.np/ofg/governors_speech_at_rma_bhutan/",
+      "title": "Monetary Policy and Reserves Management under Pegged Exchange Rate (Governor's speech at RMA Bhutan)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB's own qualitative description of policy constraints and reserve management under the NPR-INR peg"
+    },
+    {
+      "url": "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+      "title": "The Impact of the Indian Monetary Policy and the Official Exchange Rate on Nepalese Monetary Policy",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Econometric evidence on spillover from Indian monetary aggregates and the official exchange rate to Nepal; structural-break analysis"
+    },
+    {
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Foreign exchange directives/circulars: convertible-currency vs INR settlement of imports from India; repatriation and foreign investment rules"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "BoP tables and projections, gross reserves and import cover, reserve adequacy assessment, external sector assessment (REER, peg), financial-sector section (NPLs, asset quality review, capital), FSI table"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+      "title": "Staff Report for the 2026 Article IV Consultation and Seventh Review (IMF eLibrary, CR 2026/127)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "HTML staff report text and statistical tables incl. BoP, monetary survey and financial soundness indicators"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+      "title": "Nepal: Sixth Review under the ECF Arrangement - Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Prior-vintage BoP/reserve tables and financial-sector structural benchmarks (loan portfolio review, NRB Act amendments) for vintage comparison"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/wp/issues/2025/06/20/how-do-remittances-affect-the-real-exchange-rate-an-empirical-investigation-567747",
+      "title": "How Do Remittances Affect the Real Exchange Rate? IMF WP 2025/122",
+      "publisher": "IMF",
+      "source_id": "academic",
+      "contains": "Remittance-REER relationship under fixed vs flexible regimes; relevant to real appreciation under the peg"
+    },
+    {
+      "url": "https://www.imf.org/external/pubs/ft/wp/2010/wp10271.pdf",
+      "title": "Magud and Sosa (2010) When and Why Worry About Real Exchange Rate Appreciation?",
+      "publisher": "IMF",
+      "source_id": "academic",
+      "contains": "Evidence on inflow-driven real appreciation and tradables"
+    },
+    {
+      "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+      "title": "BPM6 Manual",
+      "publisher": "IMF",
+      "source_id": "academic",
+      "contains": "Definitions of reserve assets, current account and personal remittances"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/",
+      "title": "IMF WEO DataMapper API",
+      "publisher": "IMF",
+      "source_id": "imf_weo",
+      "contains": "India CPI inflation (PCPIPCH, Indian FY basis in WEO), Nepal CPI and current account % GDP (BCA_NGDPD); vintage-stamped"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/datasets/ARA",
+      "title": "IMF Assessing Reserve Adequacy (ARA) dataset and methodology",
+      "publisher": "IMF",
+      "source_id": "imf_weo",
+      "contains": "ARA metric methodology and conventional import-cover and short-term-debt benchmarks; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+      "title": "Database on Indian Economy - statistics",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "INR/USD reference rates (FBIL), Indian CPI series; monthly, Indian FY April-March"
+    },
+    {
+      "url": "https://www.rbi.org.in/scripts/referenceratearchive.aspx",
+      "title": "Reference Rate Archive",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Daily RBI INR/USD reference rate to July 2018 (FBIL thereafter)"
+    },
+    {
+      "url": "https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf",
+      "title": "Handbook of Statistics on Indian Economy - Exchange Rate of the Indian Rupee",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Annual (Indian FY) average and end-year INR/USD, long historical span"
+    },
+    {
+      "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR80907599DE5FD164918A49085C9D6270116.PDF",
+      "title": "Resolution of the Monetary Policy Committee, August 3-5, 2026",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "India CPI inflation assessment and projections for Indian FY2026-27; repo rate"
+    },
+    {
+      "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR3855508EB4A59FF46F9B57BBA200AA250B8.PDF",
+      "title": "Monetary Policy Statement, 2026-27 (June 5, 2026)",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "India CPI projections for Indian FY2026-27"
+    },
+    {
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Indian-side exchange control rules for INR settlement with Nepal; legal basis of INR-invoiced trade"
+    },
+    {
+      "url": "https://m.rbi.org.in/Scripts/BS_FemaNotifications.aspx?Id=2558",
+      "title": "FEMA notification (RBI) - currency export/import rules relating to Nepal and Bhutan (to verify)",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Reported December 2025 amendment to Export and Import of Currency regulations covering Nepal and Bhutan; to verify"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate (LCU per US$, period average), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "PA.NUS.FCRF calendar-year average; cross-check of NRB FY averages (conflict C-18)"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/FI.RES.TOTL.MO?format=json&per_page=200",
+      "title": "WDI API: Total reserves in months of imports, Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "FI.RES.TOTL.MO calendar-year; definition (goods and services imports, reserves incl. gold) differs from NRB FY measure; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099315004072621459/pdf/IDU-5fbb7a2f-51fb-4e48-aadc-2a447660fbe1.pdf",
+      "title": "Nepal Development Update April 2026: Growth Under Pressure",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Macro and financial-sector update incl. external sector, reserves, banking asset quality and credit (to verify)"
+    }
+  ]
+}

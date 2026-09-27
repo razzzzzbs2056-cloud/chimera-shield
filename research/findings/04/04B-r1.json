@@ -1,0 +1,715 @@
+{
+  "subagent_id": "04B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Thirty-three source leads recorded for China-Nepal economic relations. The single permitted WebSearch located the MoFA Nepal page carrying the text of the Framework for Belt and Road Cooperation (signed December 2024) plus China-side and secondary records of it; the remaining leads are reused from the shared register and upstream agents: Nepal customs trade book FY2022/23 and portal (office-level data), NTIP, UN Comtrade mirror data, MOFCOM/State Council releases on LDC zero-tariff treatment, NRB FDI survey reports FY2022/23 and FY2023/24, DoI/IBN, FITTA 2019 and NRB FDI bylaw, MoF Development Cooperation Reports, PDMO debt bulletin, ICIMOD's 2026 Kyirong-Rasuwa flood note and NITDB. Q1 (volume/composition via northern points) is pending office-level customs data. Q2 (under construction vs proposed) is set up as a register in which no project is classified until an implementing record exists. Q3 (FDI commitments vs actual) separates pledges, approvals, realised inflows and ODA; all values pending. Qualitative domestic constraints (unverified legal character of the BRI framework; hazard exposure of northern routes) are labelled assumptions. No numbers are recorded.",
+  "findings": [
+    {
+      "claim": "Q1a: Value of Nepal's trade with China (imports and exports) passing through northern customs offices, by office (Rasuwa, Tatopani and others), Nepal FY2022/23 onward, and the northern share of total Nepal-China trade.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY2022/23-FY2025/26",
+      "source_ids": [
+        "customs_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Customs trade books and office-level data (04B-L10, L11, L12); most China-origin imports may enter via Indian ports and southern offices - route and origin must be separated."
+    },
+    {
+      "claim": "Q1b: Composition (HS chapter) of trade through northern border points, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY2022/23-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "tepc"
+      ],
+      "observation_ids": [],
+      "note": "Customs office x HS cross-tabulation required (04B-L10, L11); mirror check with China-reported data (04B-L13), calendar year."
+    },
+    {
+      "claim": "Q1c: Closure/disruption days at northern crossings (incl. the 2026 Kyirong-Rasuwa flood) by crossing and year.",
+      "type": "pending",
+      "value": null,
+      "unit": "days",
+      "period": "calendar 2025-2026 (dated events)",
+      "source_ids": [
+        "customs_nepal",
+        "icimod",
+        "mofa_nepal"
+      ],
+      "observation_ids": [],
+      "note": "ICIMOD event note establishes the event (04B-L28); closure and reopening dates require customs/MoFA notices."
+    },
+    {
+      "claim": "Q2: Status of announced Nepal-China connectivity projects (cross-border railway, northern roads and border ports, cross-border transmission, projects associated with the December 2024 BRI framework) is set up in specific.project_status_register; no project is classified as under construction until an implementing record (financing agreement, contract award, MoF DCR disbursement, agency progress report) is retrieved.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "mof_nepal",
+        "ibn",
+        "nitdb"
+      ],
+      "observation_ids": [],
+      "note": "BRI framework text located (04B-L01, L04); project list only in secondary sources (L05, L06) pending verification against MoF DCR (L25, L26), PDMO (L27) and IBN (L20)."
+    },
+    {
+      "claim": "Q3a: FDI commitments (approvals) from China, Nepal FY, from Department of Industry/IBN records.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY2020/21-FY2025/26",
+      "source_ids": [
+        "doind",
+        "ibn"
+      ],
+      "observation_ids": [],
+      "note": "DoI approval statistics by country (04B-L21), IBN approvals and summit commitments (L20); summit pledges are a third category, not approvals."
+    },
+    {
+      "claim": "Q3b: Realised FDI inflows and stock from China, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY2022/23-FY2023/24",
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "NRB FDI survey reports FY2022/23 and FY2023/24 (04B-L17, L18); BoP inflows (L19). Ratio of realised to committed computed only when both series use matching definitions and periods (00B conflict C-13 area)."
+    },
+    {
+      "claim": "Q3c: China official development assistance (grant and loan) commitments vs disbursements, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "Nepal FY2022/23-FY2024/25",
+      "source_ids": [
+        "mof_nepal",
+        "pdmo"
+      ],
+      "observation_ids": [],
+      "note": "MoF Development Cooperation Reports (04B-L25, L26) and PDMO debt bulletin (L27); ODA is distinct from FDI and reported separately."
+    },
+    {
+      "claim": "Method: three distinct investment categories are kept separate - (i) pledges/MoUs at summits or visits, (ii) regulatory approvals (DoI/IBN), (iii) realised inflows (NRB FDI survey/BoP); ODA from China (MoF DCR) is a separate stream. No ratio is formed across mismatched definitions or FY/CY periods.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: Chinese statistics (MOFCOM outward investment, China customs) are calendar year; Nepal series are Nepal FY; comparisons use documented conversion or are reported side by side.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Domestic policy constraint (qualitative, to verify against 04B-L01 text): the December 2024 BRI framework is a cooperation framework; whether it creates binding obligations or financing commitments must be established from its text before any project is treated as financed. Domestic fiscal and debt policy therefore cannot assume BRI financing terms (grant vs loan) until project-level agreements are retrieved.",
+      "type": "assumption",
+      "source_ids": [
+        "mofa_nepal"
+      ]
+    },
+    {
+      "claim": "Domestic policy constraint (qualitative): northern-route trade capacity is exposed to cryosphere hazards (2026 Kyirong-Rasuwa flood, 04B-L28), so northern connectivity cannot be treated as a reliable substitute for India transit in supply-security planning until operating and disruption records exist (consistent with 17B-A2 and 21B challenge).",
+      "type": "assumption",
+      "source_ids": [
+        "icimod"
+      ]
+    },
+    {
+      "claim": "This register describes documented arrangements and their implied constraints; it does not state or represent the position of the Government of Nepal or the Government of the PRC.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Customs office-level trade data for northern points FY2023/24-FY2025/26 (document-level URLs not located).",
+    "Official list and stage of projects under the December 2024 BRI framework (MoF/MoFA/IBN).",
+    "Nepal-China transit transport agreement and protocol texts and any implementation record.",
+    "Closure/reopening records for Rasuwagadhi and Tatopani crossings, 2025-2026.",
+    "Department of Industry FDI approvals by country (document-level URL); MOFCOM outward FDI statistical bulletin entry for Nepal.",
+    "Tourist arrivals from China by entry point (Ministry of Culture, Tourism and Civil Aviation) - no lead located.",
+    "China customs (GACC) data - no catalog id (see 17B challenge to 00A)."
+  ],
+  "assumptions": [
+    {
+      "id": "04B-A1",
+      "text": "Pledges, approvals, realised FDI and ODA are distinct categories and are never netted or ratioed across mismatched definitions.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04B-A2",
+      "text": "Project status classes follow 17B-A1; announced projects enter scenarios only as options (17B-A2).",
+      "basis": "assumption"
+    },
+    {
+      "id": "04B-A3",
+      "text": "Origin (China-made goods) and route (northern crossing) are measured separately.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04B-A4",
+      "text": "Policy-constraint statements are qualitative and do not represent any government's position.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "17B",
+      "text": "17B recorded no document-level lead for Nepal-China framework texts; 04B located the MoFA page for the December 2024 BRI framework (04B-L01) and the China-side release (04B-L04). Please adopt these leads in 17B policy_watchlist so the status assessment has one shared source."
+    },
+    {
+      "to": "12B",
+      "text": "For the 00B FDI commitments-vs-flows conflict entry, 04B proposes the four-category split (pledges, approvals, realised, ODA); please confirm definitions so 12B and 04B use one series per category."
+    },
+    {
+      "to": "00A",
+      "text": "Add catalog ids for MoCTCA (tourism statistics), China GACC and MOFCOM outward-FDI bulletin before r2."
+    }
+  ],
+  "uncertainty": "Very high for r1: no document was downloaded. The only new document-level lead (BRI framework text) was identified from a search listing; its content, including legal character and validity, is unverified. The project list is drawn from upstream watchlists and secondary sources and may be incomplete or outdated. Northern trade volumes, FDI series and disruption durations are unknown.",
+  "specific": {
+    "northern_trade_profile": {
+      "status": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period_basis": "Nepal FY; China mirror data calendar year kept separate",
+      "method": "Office-level customs data: northern offices (Rasuwa/Kerung corridor, Tatopani/Zhangmu corridor, other northern points) vs all other entry points for trade with China; HS-chapter composition per office; monthly series to date closures; mirror check with UN Comtrade China-reported data.",
+      "components": [
+        {
+          "component": "trade_by_northern_office",
+          "status": "pending",
+          "unit": "NPR_current_mn",
+          "leads": [
+            "04B-L10",
+            "04B-L11",
+            "04B-L12"
+          ],
+          "data_required": "Imports/exports by customs office and partner, Nepal FY2022/23-FY2025/26"
+        },
+        {
+          "component": "northern_share_of_china_trade",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04B-L10",
+            "04B-L11",
+            "04B-L19"
+          ],
+          "data_required": "Nepal-China trade total vs northern-office subtotal"
+        },
+        {
+          "component": "composition_hs",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04B-L10",
+            "04B-L11",
+            "04B-L13"
+          ],
+          "data_required": "Office x HS chapter tables"
+        },
+        {
+          "component": "disruption_days",
+          "status": "pending",
+          "unit": "days",
+          "leads": [
+            "04B-L28",
+            "04B-L11",
+            "04B-L09",
+            "04B-L29"
+          ],
+          "data_required": "Closure/reopening notices per crossing, 2025-2026"
+        },
+        {
+          "component": "tariff_treatment_in_china",
+          "status": "pending",
+          "unit": "percent",
+          "leads": [
+            "04B-L15",
+            "04B-L16",
+            "04B-L31"
+          ],
+          "data_required": "Zero-tariff coverage for Nepal and post-LDC-graduation applicability (with 21A/26B)"
+        },
+        {
+          "component": "tourism_and_air_links",
+          "status": "pending",
+          "unit": "persons",
+          "leads": [
+            "04B-L32"
+          ],
+          "data_required": "Tourist arrivals from China by entry point (air vs land) - Ministry of Culture, Tourism and Civil Aviation statistics (no lead located in r1); Nepal-China flight frequencies (CAAN)"
+        }
+      ],
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-20"
+      ],
+      "external_variables": [
+        "X10",
+        "X08"
+      ]
+    },
+    "project_status_register": {
+      "status": "pending",
+      "method": "Status classes per 17B-A1; a project is 'under construction' only with a contract award/financing agreement and a progress or disbursement record (MoF DCR, PDMO, implementing agency); 'proposed' covers studies, DPRs, MoUs and framework listings. News and secondary analyses only locate documents.",
+      "framework": {
+        "instrument": "Framework for Belt and Road Cooperation (Nepal-PRC)",
+        "signed": "December 2024 (per MoFA page title and search listing; verify from text)",
+        "legal_character": "pending - to be read from text 04B-L01; secondary commentary (L08) suggests non-treaty character, unverified",
+        "validity_and_renewal": "pending - from text",
+        "leads": [
+          "04B-L01",
+          "04B-L02",
+          "04B-L03",
+          "04B-L04",
+          "04B-L06",
+          "04B-L07",
+          "04B-L08"
+        ]
+      },
+      "entries": [
+        {
+          "project": "Kerung-Kathmandu cross-border railway (feasibility/study stage)",
+          "status": "pending",
+          "provisional_class": null,
+          "leads": [
+            "04B-L05",
+            "04B-L06",
+            "04B-L09"
+          ],
+          "data_required": "Study agreement, feasibility/DPR completion records, financing decision",
+          "note": "Named from upstream 17B watchlist; unverified"
+        },
+        {
+          "project": "Northern road corridors and border ports (Rasuwagadhi, Tatopani and others)",
+          "status": "pending",
+          "provisional_class": null,
+          "leads": [
+            "04B-L29",
+            "04B-L28",
+            "04B-L26",
+            "04B-L09"
+          ],
+          "data_required": "Operating status of ports, reconstruction records after 2026 flood, road project progress reports"
+        },
+        {
+          "project": "Projects listed under the December 2024 BRI framework",
+          "status": "pending",
+          "provisional_class": null,
+          "leads": [
+            "04B-L01",
+            "04B-L05",
+            "04B-L06",
+            "04B-L20",
+            "04B-L25",
+            "04B-L26"
+          ],
+          "data_required": "Official project list and stage per project; financing modality (grant/loan) from MoF/PDMO"
+        },
+        {
+          "project": "Nepal-China cross-border transmission interconnection",
+          "status": "pending",
+          "provisional_class": null,
+          "leads": [
+            "04B-L09",
+            "04B-L25",
+            "04B-L26"
+          ],
+          "data_required": "Study/DPR records, NEA project status",
+          "note": "Named from general domain knowledge as a document to locate; unverified"
+        },
+        {
+          "project": "Transit transport agreement and protocol (access to Chinese ports) - implementation",
+          "status": "pending",
+          "provisional_class": null,
+          "leads": [
+            "04B-L09",
+            "04B-L12",
+            "04B-L29"
+          ],
+          "data_required": "Agreement/protocol text, any cargo moved under it",
+          "note": "Named in 17B watchlist; unverified"
+        },
+        {
+          "project": "Other China-financed infrastructure recorded in MoF DCR/PDMO (e.g. airport, hydropower, roads)",
+          "status": "pending",
+          "provisional_class": null,
+          "leads": [
+            "04B-L25",
+            "04B-L26",
+            "04B-L27",
+            "04B-L33"
+          ],
+          "data_required": "Project-by-project commitment, disbursement and completion records"
+        }
+      ]
+    },
+    "fdi_commitment_vs_actual": {
+      "status": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period_basis": "Nepal FY",
+      "method": "Ratio of realised FDI (NRB survey/BoP) to approvals (DoI/IBN) for China, by FY and cohort where possible; pledges at summits listed separately; ODA (MoF DCR) reported separately. Definitions from FITTA 2019 and NRB bylaw.",
+      "series": [
+        {
+          "series": "pledges_mous",
+          "status": "pending",
+          "unit": "USD_current_mn",
+          "leads": [
+            "04B-L20",
+            "04B-L01",
+            "04B-L02",
+            "04B-L03"
+          ]
+        },
+        {
+          "series": "approvals_doi_ibn",
+          "status": "pending",
+          "unit": "NPR_current_mn",
+          "leads": [
+            "04B-L21",
+            "04B-L20",
+            "04B-L22"
+          ]
+        },
+        {
+          "series": "realised_fdi_inflows_stock_nrb",
+          "status": "pending",
+          "unit": "NPR_current_mn",
+          "leads": [
+            "04B-L17",
+            "04B-L18",
+            "04B-L19",
+            "04B-L23"
+          ]
+        },
+        {
+          "series": "china_oda_commitments_disbursements",
+          "status": "pending",
+          "unit": "USD_current_mn",
+          "leads": [
+            "04B-L25",
+            "04B-L26",
+            "04B-L27"
+          ]
+        },
+        {
+          "series": "china_side_outward_fdi_to_nepal",
+          "status": "pending",
+          "unit": "USD_current_mn",
+          "leads": [
+            "04B-L14"
+          ],
+          "note": "MOFCOM statistical bulletin (calendar year) - document-level URL not located"
+        }
+      ],
+      "conflict_register_link": "00B conflict entry involving 12B/04B (commitments vs flows; FY vs CY)",
+      "known_methodological_issues": [
+        "approvals are not flows",
+        "reinvested earnings treatment differs across NRB survey and BoP",
+        "China outward FDI statistics record by immediate destination and calendar year",
+        "NPR vs USD reporting and exchange-rate conversion per CLAUDE.md rule 6"
+      ]
+    },
+    "neighbour_dependency_register_rows": {
+      "status": "pending",
+      "note": "China rows for Agent 04 deliverable; integrated by 04C with 04A.",
+      "rows": [
+        {
+          "dependency": "Northern border trade route (capacity and disruption exposure)",
+          "exposure_id": "EXP-20",
+          "variable": "X10",
+          "status": "pending"
+        },
+        {
+          "dependency": "China as import origin (via any route)",
+          "exposure_id": "EXP-03",
+          "variable": "X10",
+          "status": "pending"
+        },
+        {
+          "dependency": "China FDI and ODA financing for infrastructure",
+          "exposure_id": null,
+          "variable": "pending mapping (18B)",
+          "status": "pending"
+        },
+        {
+          "dependency": "China tariff preferences for Nepal exports",
+          "exposure_id": null,
+          "variable": "pending mapping (21A)",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "04B-L01",
+      "url": "https://mofa.gov.np/content/641/framework-for-belt-and-road-cooperation-between/",
+      "title": "Framework for Belt and Road Cooperation between the Government of Nepal and the Government of the People's Republic of China",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Text of the BRI cooperation framework (signed Beijing, December 2024 per search listing): cooperation areas, legal character, validity/renewal clause; located by the single r1 WebSearch of this task"
+    },
+    {
+      "lead_id": "04B-L02",
+      "url": "https://kathmandupost.com/national/2024/12/04/nepal-and-china-sign-bri-cooperation-framework",
+      "title": "Nepal and China sign BRI Cooperation Framework",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only (December 2024): signing of the BRI framework; project list references to verify"
+    },
+    {
+      "lead_id": "04B-L03",
+      "url": "https://kathmandupost.com/national/2024/12/05/nepal-and-china-sign-framework-for-bri-cooperation-in-beijing",
+      "title": "Nepal and China sign framework for BRI cooperation in Beijing",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only: signing details and accompanying agreements of the December 2024 visit"
+    },
+    {
+      "lead_id": "04B-L04",
+      "url": "https://english.www.gov.cn/news/202412/06/content_WS67524b7fc6d0868f4e8edb5b.html",
+      "title": "China, Nepal sign framework agreement to promote Belt and Road cooperation",
+      "publisher": "State Council of the PRC (english.gov.cn)",
+      "source_id": "mofcom",
+      "contains": "China-side official release on the framework; cross-check of signatories, date and scope"
+    },
+    {
+      "lead_id": "04B-L05",
+      "url": "https://thediplomat.com/2024/12/nepal-and-china-identify-10-projects-for-execution-under-bri/",
+      "title": "Nepal and China identify projects for execution under BRI",
+      "publisher": "The Diplomat",
+      "source_id": "academic",
+      "contains": "Secondary analysis naming projects associated with the framework; project list to be verified against MoF/IBN/MoFA records"
+    },
+    {
+      "lead_id": "04B-L06",
+      "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/12/ISAS-Brief-1188-2.pdf",
+      "title": "ISAS Brief 1188 (December 2024) on the Nepal-China BRI framework",
+      "publisher": "Institute of South Asian Studies, NUS",
+      "source_id": "academic",
+      "contains": "Analytical brief on the framework's content and implications; interpretation only"
+    },
+    {
+      "lead_id": "04B-L07",
+      "url": "https://newbusinessage.com/news/41601/nepal-reveals-belt-and-road-cooperation-framework-signed-with-china/",
+      "title": "Nepal reveals Belt and Road Cooperation Framework signed with China",
+      "publisher": "New Business Age",
+      "source_id": null,
+      "contains": "News locator only: public release of framework text by the Nepal government"
+    },
+    {
+      "lead_id": "04B-L08",
+      "url": "https://www.allbrightlaw.com/EN/10531/7ece27d2c182e84c.aspx",
+      "title": "China and Nepal Sign Cooperation Framework Agreement on Advancing the Belt and Road Initiative",
+      "publisher": "AllBright Law Offices",
+      "source_id": "academic",
+      "contains": "Legal commentary on the framework's legal character; interpretation only"
+    },
+    {
+      "lead_id": "04B-L09",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - bilateral relations (China) and treaty/joint-statement archive",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Landing page: joint statements and agreements signed during high-level visits; transit transport agreement and protocol, border-port and railway study documents to locate"
+    },
+    {
+      "lead_id": "04B-L10",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Annual trade book FY2022/23: trade with China by HS chapter and by customs office (northern offices incl. Rasuwa and Tatopani, vs other entry points such as Kolkata-route offices and airport)"
+    },
+    {
+      "lead_id": "04B-L11",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Monthly and annual trade by customs office; later trade books FY2023/24-FY2025/26; closure notices for northern points"
+    },
+    {
+      "lead_id": "04B-L12",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Trade and Export Promotion Centre / MoICS, Nepal",
+      "source_id": "tepc",
+      "contains": "Trade statistics by partner/HS; agreement register (browse China entries: transit transport agreement, border trade, SPS); northern border-point procedures"
+    },
+    {
+      "lead_id": "04B-L13",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus - China-reported trade with Nepal",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "China-reported exports/imports with Nepal by HS, calendar year; mirror comparison with Nepal customs (FY)"
+    },
+    {
+      "lead_id": "04B-L14",
+      "url": "https://english.mofcom.gov.cn",
+      "title": "Ministry of Commerce, PRC - trade and investment policy releases",
+      "publisher": "Ministry of Commerce, PRC",
+      "source_id": "mofcom",
+      "contains": "China-side releases on outward investment, border trade and economic cooperation with Nepal; document-level URLs to locate"
+    },
+    {
+      "lead_id": "04B-L15",
+      "url": "https://english.www.gov.cn/news/202409/12/content_WS66e2db52c6d0868f4e8eae7b.html",
+      "title": "China announces zero-tariff treatment for least developed countries",
+      "publisher": "State Council of the PRC (english.gov.cn)",
+      "source_id": "mofcom",
+      "contains": "Announcement of zero-tariff treatment for LDCs with diplomatic relations; relevance to Nepal exports to China and post-graduation (with 21A/26B)"
+    },
+    {
+      "lead_id": "04B-L16",
+      "url": "https://wto.mofcom.gov.cn/meetingsandstatements/art/2025/art_187fc8210edf49fb9cddf9dab06a6fce.html",
+      "title": "China expands zero-tariff policy for least developed countries",
+      "publisher": "MOFCOM WTO Affairs",
+      "source_id": "mofcom",
+      "contains": "Expansion of the LDC zero-tariff policy; coverage and effective date"
+    },
+    {
+      "lead_id": "04B-L17",
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Realised FDI stock and inflows by source country (incl. China) and sector, FY2022/23; BoP-consistent actual flows"
+    },
+    {
+      "lead_id": "04B-L18",
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Realised FDI by source country and sector, FY2023/24"
+    },
+    {
+      "lead_id": "04B-L19",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (annual data of FY2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Trade with China table; FDI inflows in BoP; FY2024/25"
+    },
+    {
+      "lead_id": "04B-L20",
+      "url": "https://ibn.gov.np",
+      "title": "Investment Board Nepal",
+      "publisher": "Investment Board Nepal",
+      "source_id": "ibn",
+      "contains": "Large-project pipeline, approvals and investment-summit commitments (by investor country) - commitments, not flows"
+    },
+    {
+      "lead_id": "04B-L21",
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "source_id": "doind",
+      "contains": "FDI approvals/commitments by country (incl. China) and sector, Nepal FY; commitments vs realised flows"
+    },
+    {
+      "lead_id": "04B-L22",
+      "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-1688107036.pdf",
+      "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
+      "publisher": "Government of Nepal",
+      "source_id": "doind",
+      "contains": "Legal definitions of FDI approval vs investment; needed to define commitment"
+    },
+    {
+      "lead_id": "04B-L23",
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+      "title": "NRB Foreign Investment and Loan Management Bylaw",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Recording of FDI inflows (approval to bring in foreign exchange); defines when commitment becomes a recorded flow"
+    },
+    {
+      "lead_id": "04B-L24",
+      "url": "https://www.investnepal.gov.np/portal/index.php?p1=downloadlist&p2=8",
+      "title": "InvestNepal - Treaties and Agreements downloads",
+      "publisher": "Department of Industry / Government of Nepal",
+      "source_id": "doind",
+      "contains": "Bilateral investment and double-taxation agreements list (check China DTA); used for agreement inventory"
+    },
+    {
+      "lead_id": "04B-L25",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/DCR%20Report%202022_23_pt2fped.pdf",
+      "title": "Development Cooperation Report 2022/23",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Official development assistance commitments and disbursements by partner (China grants/loans) and project; FY2022/23"
+    },
+    {
+      "lead_id": "04B-L26",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Final%20DCR%202024-25_26-03-2026_d06ntku.pdf",
+      "title": "Development Cooperation Report 2024/25",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "China ODA commitments vs disbursements by project; FY2024/25; project status for China-financed infrastructure"
+    },
+    {
+      "lead_id": "04B-L27",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by creditor including China/Exim Bank of China; loan-financed project list"
+    },
+    {
+      "lead_id": "04B-L28",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Event note on the 2026 flood at the Kerung/Kyirong-Rasuwagadhi corridor; affected infrastructure; disruption dates require customs/MoFA notices"
+    },
+    {
+      "lead_id": "04B-L29",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "Northern dry ports/ICDs (e.g. Rasuwagadhi, Tatopani) operating status and cargo statistics"
+    },
+    {
+      "lead_id": "04B-L30",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Chapters on trade connectivity and FDI; interpretation only"
+    },
+    {
+      "lead_id": "04B-L31",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "WTO Secretariat",
+      "source_id": "wto",
+      "contains": "Trade relations with China, border trade arrangements, FDI regime; dated inventory check"
+    },
+    {
+      "lead_id": "04B-L32",
+      "url": "https://caanepal.gov.np/air-transports/international",
+      "title": "International Airlines",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "Airlines operating Nepal-China routes (air connectivity for tourism); flight frequency data to locate"
+    },
+    {
+      "lead_id": "04B-L33",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "Creditor composition and borrowing strategy; context for loan-financed BRI projects"
+    }
+  ]
+}

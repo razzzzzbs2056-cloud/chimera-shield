@@ -1,0 +1,469 @@
+{
+  "subagent_id": "03B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (system NPL ratio, capital adequacy, sectoral credit concentration), Q2 (private credit to productive sectors vs real estate and trade) and Q3 (account-ownership and borrowing gaps by province and gender) are pending. Primary leads: NRB Financial Stability Report Issue 17 (FY2024/25) and FY2022/23 FSR, NRB Bank Supervision Department release for mid-January 2026 (surfaced by this session's single search), NRB CME releases (sectoral credit tables), Monetary Policy FY2025/26 and mid-term review (productive-sector lending requirements and macroprudential limits), IMF 2026 Article IV/seventh ECF review (financial-sector section, loan-portfolio review) and prior sixth review, World Bank Financial Sector Stability DPC2 and NDU April 2026; for inclusion, Global Findex, WDI account-ownership codes, IMF FAS and NRB province-level access statistics (the last three are general-knowledge URLs, unverified). Method: banking health table by institution class and FY; credit taxonomy mapping NRB sector codes into productive / real estate / trade / consumption / other; inclusion gaps from Findex (gender, national) and NRB supply-side data (province), noting Findex lacks province detail. No numbers reported; secondary news items seen in the search were not used.",
+  "findings": [
+    {
+      "claim": "Q1: System NPL ratio for Class A, B and C BFIs, FY-end FY2015/16 onward and latest mid-month.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "NRB FSR and BSD statistics; IMF FSI/staff report and WDI FB.AST.NPER.ZS as cross-checks. Loan-classification rule changes (e.g. staging, restructuring relief) must be dated and documented. Lead URLs: https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf; https://www.nrb.org.np/contents/uploads/2024/06/FSR-2022_23.pdf; https://www.nrb.org.np/bsd/2082-83-mid-january-2026/; https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691; https://api.worldbank.org/v2/country/NPL/indicator/FB.AST.NPER.ZS?format=json&per_page=200",
+      "unit": "percent",
+      "period": "Nepal FY; latest mid-January 2026 or later"
+    },
+    {
+      "claim": "Q1: Capital adequacy ratio (total CAR and core/Tier-1 ratio) by institution class, FY-end series.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Basel framework version per NRB capital adequacy framework; do not confuse with WDI capital-to-assets (FB.BNK.CAPA.ZS). Lead URLs: https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf; https://www.nrb.org.np/bsd/2082-83-mid-january-2026/; https://www.nrb.org.np/category/directives/; https://data.imf.org/en/datasets/IMF.STA:FSIC; https://api.worldbank.org/v2/country/NPL/indicator/FB.BNK.CAPA.ZS?format=json&per_page=200",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q1: Sectoral credit concentration - share of outstanding BFI credit by NRB sector code and HHI across sectors; top-sector share.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "NRB sector-wise credit tables (CME/BSD); HHI computed as estimate once shares are retrieved. Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf; https://www.nrb.org.np/bsd/2082-83-mid-january-2026/; https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "unit": "percent",
+      "period": "Nepal FY-end and latest month"
+    },
+    {
+      "claim": "Q1: Asset-quality divergence between reported NPL and IMF/NRB loan-portfolio review findings (if published).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Programme structural benchmark documents; record verbatim scope and results. Lead URLs: https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691; https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974; https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "unit": "percentage_points",
+      "period": "latest review vintage"
+    },
+    {
+      "claim": "Q2: Private-sector credit by purpose/sector - productive sectors (agriculture, industry/manufacturing, energy, tourism) vs real estate (incl. residential home loans), wholesale/retail trade, consumption, margin lending - FY-end series.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Mapping of NRB sector codes to categories set out in credit_allocation_table; NRB's own 'productive sector' definition in Monetary Policy to be compared. Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nrb.org.np/category/current-macroeconomic-situation/; https://www.nrb.org.np/bsd/2082-83-mid-january-2026/; https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY FY2015/16-latest"
+    },
+    {
+      "claim": "Q2: Private-sector credit to GDP.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "NRB credit stock over NSO nominal GDP; WDI FS.AST.PRVT.GD.ZS as CY-labelled cross-check (C-01 denominator issue). Lead URLs: https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://api.worldbank.org/v2/country/NPL/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=200; https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q2: Compliance with NRB directed-lending requirements (agriculture, energy, MSME, deprived sector) by class.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requirements from Unified Directives/Monetary Policy; compliance from FSR/BSD reports. Lead URLs: https://www.nrb.org.np/category/directives/; https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf; https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf; https://www.nrb.org.np/bsd/2082-83-mid-january-2026/",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q3: Account ownership (% age 15+) total, female, male, and gender gap, latest Findex waves.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Findex microdata/database; WDI FX.OWN.TOTL.* codes. Lead URLs: https://www.worldbank.org/en/publication/globalfindex; https://api.worldbank.org/v2/country/NPL/indicator/FX.OWN.TOTL.ZS?format=json&per_page=200",
+      "unit": "percent",
+      "period": "Findex survey years (calendar)"
+    },
+    {
+      "claim": "Q3: Borrowing from a formal financial institution (% age 15+) by gender; share borrowing informally.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Findex borrowing indicators; NLSS IV for household borrowing sources as national survey cross-check. Lead URLs: https://www.worldbank.org/en/publication/globalfindex; https://nsonepal.gov.np",
+      "unit": "percent",
+      "period": "Findex survey years"
+    },
+    {
+      "claim": "Q3: Province-level access - BFI branches per 10,000 adults, deposit accounts and loan accounts per adult, by province.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "imf_weo"
+      ],
+      "observation_ids": [],
+      "note": "Findex has no province detail; province gaps must come from NRB supply-side data and NSO population (Census 2021). Lead URLs: https://www.nrb.org.np/category/publications/; https://www.nrb.org.np/bsd/2082-83-mid-january-2026/; https://data.imf.org/en/datasets/IMF.STA:FAS; https://nsonepal.gov.np",
+      "unit": "ratio",
+      "period": "Nepal FY latest"
+    },
+    {
+      "claim": "Productive-credit taxonomy (working definition): productive = agriculture, forestry, fisheries; mining; manufacturing; construction excluding residential real estate; electricity, gas and water; tourism (hotels and restaurants); transport and communications. Real estate = residential and commercial real estate lending, land and housing development, home loans. Trade = wholesale and retail. Consumption and other = consumable loans, margin/share loans, other services. To be reconciled with NRB sector codes and NRB's own productive-sector definition.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Definition only; drives estimate construction in r2."
+    },
+    {
+      "claim": "Headline NPL ratios are sensitive to classification forbearance and restructuring relief; reported NPL is treated as a lower bound on problem assets unless the portfolio review indicates otherwise.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Hypothesis to be tested against IMF/NRB review documents; not a finding."
+    }
+  ],
+  "data_gaps": [
+    "No NRB, IMF, WB or Findex file downloaded in r1; all values pending retrieval in r2.",
+    "Exact URL of NRB 'Banking and Financial Statistics' monthly/quarterly publication files (BSD) not confirmed beyond the mid-January 2026 page.",
+    "Findex does not report province-level results for Nepal; province gaps rely on NRB supply-side counts and Census population; gender-by-province borrowing may be unavailable except from NLSS IV microdata.",
+    "Loan-portfolio / asset-quality review results under the IMF ECF may be partly confidential; public scope unknown.",
+    "NRB sector codes changed over time; a concordance is required for a consistent FY2015/16-latest series.",
+    "Several leads (Findex, WDI financial codes, IMF FSI/FAS, NRB directives and publications archive, NSO) are from general knowledge and marked unverified."
+  ],
+  "assumptions": [
+    {
+      "id": "03B-A1",
+      "text": "Class A commercial banks dominate system assets; the banking health table reports Class A, B, C separately and a system aggregate weighted by loans; weights to be computed from retrieved data, not assumed.",
+      "basis": "assumption"
+    },
+    {
+      "id": "03B-A2",
+      "text": "Productive-credit taxonomy as stated in findings; any change is logged as a methodological revision.",
+      "basis": "assumption"
+    },
+    {
+      "id": "03B-A3",
+      "text": "FY-end (mid-July) stocks are the primary period; mid-month intra-year points are labelled with Nepali and Gregorian dates.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "15",
+      "text": "Banking capacity to fund a high-investment path depends on asset quality and capital; until NPL/CAR and portfolio-review results are retrieved, scenario credit-growth assumptions for STR-A..E should be flagged as unverified."
+    },
+    {
+      "to": "00B",
+      "text": "Register watch item: NPL ratio NRB (FY, national classification) vs IMF FSI/WDI FB.AST.NPER.ZS (possibly CY, FSI methodology) - likely definitional/vintage; and CAR (NRB Basel) vs WDI capital-to-assets (different concept, not a conflict)."
+    },
+    {
+      "to": "20D",
+      "text": "Correspondent-banking exposure (CPMI) and NRB FSR Issue 17 overlap; please share any FSR table references on foreign-currency exposures so 03B does not duplicate extraction."
+    }
+  ],
+  "uncertainty": "High. No value retrieved. NPL measurement depends on classification rules and forbearance; sector codes change over time; province and gender inclusion gaps rely on sparse survey waves (Findex) and supply-side counts that do not identify individuals. Productive-credit shares depend on the taxonomy chosen.",
+  "specific": {
+    "banking_health_table": {
+      "status": "pending",
+      "question": "What are the system NPL ratio, capital adequacy and sectoral credit concentration?",
+      "columns": [
+        "fy",
+        "institution_class",
+        "npl_ratio_percent",
+        "car_percent",
+        "core_capital_percent",
+        "credit_hhi_by_sector",
+        "top_sector_share_percent",
+        "liquidity_ratio_percent",
+        "source_observation_ids"
+      ],
+      "rows_planned": "FY2015/16-latest FY-end plus latest mid-month, Class A/B/C and system",
+      "method": "Extract from NRB FSR and BSD statistics; cross-check against IMF FSI and staff report tables; compute HHI across NRB sector codes (estimate); document loan-classification and capital-framework changes by date.",
+      "lead_urls": [
+        "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+        "https://www.nrb.org.np/contents/uploads/2024/06/FSR-2022_23.pdf",
+        "https://www.nrb.org.np/bsd/2082-83-mid-january-2026/",
+        "https://www.nrb.org.np/category/directives/",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+        "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+        "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+        "https://data.imf.org/en/datasets/IMF.STA:FSIC",
+        "https://api.worldbank.org/v2/country/NPL/indicator/FB.AST.NPER.ZS?format=json&per_page=200",
+        "https://api.worldbank.org/v2/country/NPL/indicator/FB.BNK.CAPA.ZS?format=json&per_page=200",
+        "https://documents1.worldbank.org/curated/en/561371612292643120/txt/Nepal-NP-Financial-sector-stability-DPC2.txt"
+      ],
+      "values": null
+    },
+    "credit_allocation_table": {
+      "status": "pending",
+      "question": "How much private credit flows to productive sectors versus real estate and trade?",
+      "categories": [
+        "productive",
+        "real_estate",
+        "trade",
+        "consumption_and_margin",
+        "other"
+      ],
+      "unit": "NPR_current_mn and percent of total private credit",
+      "method": "Map NRB sector-wise credit codes to categories (03B-A2); build FY-end series FY2015/16-latest; compare with NRB productive-sector definition and directed-lending requirements; express private credit as percent of NSO nominal GDP; note that collateral-based lending to 'productive' borrowers may finance real estate (qualitative caveat).",
+      "lead_urls": [
+        "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+        "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+        "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+        "https://www.nrb.org.np/bsd/2082-83-mid-january-2026/",
+        "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+        "https://www.nrb.org.np/contents/uploads/2026/02/MP-Mid-Term-Review-2082-83.pdf",
+        "https://www.nrb.org.np/category/directives/",
+        "https://api.worldbank.org/v2/country/NPL/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=200",
+        "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+        "https://www.nrb.org.np/contents/uploads/2023/01/vol25-2_art3.pdf",
+        "https://www.nrb.org.np/contents/uploads/2025/08/nrb-wp-61-2025-08.pdf"
+      ],
+      "values": null
+    },
+    "inclusion_gaps": {
+      "status": "pending",
+      "question": "What is the account-ownership and borrowing gap by province and gender?",
+      "dimensions": {
+        "gender": "Findex (national, survey years) and FAS where sex-disaggregated",
+        "province": "NRB branch/account counts per adult with Census 2021 population; NLSS IV household borrowing sources"
+      },
+      "indicators": [
+        "account_ownership_percent",
+        "formal_borrowing_percent",
+        "informal_borrowing_percent",
+        "branches_per_10k_adults",
+        "deposit_accounts_per_adult",
+        "loan_accounts_per_adult"
+      ],
+      "method": "Gender gap = male minus female in percentage points (Findex); province gap = province value minus national, supply-side; flag that deposit-account counts exceed individuals (multiple accounts) so they are not ownership rates.",
+      "lead_urls": [
+        "https://www.worldbank.org/en/publication/globalfindex",
+        "https://api.worldbank.org/v2/country/NPL/indicator/FX.OWN.TOTL.ZS?format=json&per_page=200",
+        "https://data.imf.org/en/datasets/IMF.STA:FAS",
+        "https://www.nrb.org.np/category/publications/",
+        "https://www.nrb.org.np/bsd/2082-83-mid-january-2026/",
+        "https://nsonepal.gov.np"
+      ],
+      "values": null
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 system NPL ratio, capital adequacy (CAR, core capital), credit concentration by sector, real-estate and margin lending exposure, liquidity, stress tests; also capital market and insurance sections"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2024/06/FSR-2022_23.pdf",
+      "title": "Financial Stability Report, FY2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2022/23 NPL, CAR, sectoral credit, capital-market and insurance-sector risk sections; prior vintage for trend (located by the single WebSearch of this session (URL only; no snippet values used))"
+    },
+    {
+      "url": "https://www.nrb.org.np/bsd/2082-83-mid-january-2026/",
+      "title": "Banking and Financial Statistics / BSD release 2082/83 mid-January 2026",
+      "publisher": "Nepal Rastra Bank (Bank Supervision Department)",
+      "source_id": "nrb",
+      "contains": "Institution-class tables (Class A/B/C) at mid-January 2026: NPL, CAR, sectoral credit, deposits, branches, deposit accounts; exact table titles to confirm (located by the single WebSearch of this session (URL only; no snippet values used))"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 (mid-July) statistical tables: CPI (y/y, FY average), BoP summary incl. current account, gross foreign exchange reserves (NRB and BFIs; USD and NPR), reserve adequacy in months of merchandise and of goods-and-services imports, merchandise imports; also monetary survey, deposit and private-sector credit, NEPSE indicators"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "First month of FY2026/27 (to mid-August 2026): CPI, BoP, gross reserves and import cover, interest rates, credit, NEPSE market capitalisation; Nepal FY mid-month basis"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of monthly/annual CME releases with Excel/PDF statistical tables; source for building monthly FY series of CPI, reserves, import cover, BoP, private credit, NEPSE indicators"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+      "title": "Monetary Policy for 2025/26 (English PDF)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 policy statement: exchange-rate regime (NPR-INR peg), reserve-adequacy target (months of imports), inflation ceiling, private credit growth target, corridor rates, prudential measures"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/monetary-policy/monetary-policy-english/",
+      "title": "Monetary Policy in English - archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual Monetary Policy documents incl. FY2026/27 (2083/84) (direct PDF not yet located); inflation and reserve targets, credit targets, macroprudential measures"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/02/MP-Mid-Term-Review-2082-83.pdf",
+      "title": "Mid-Term Review of Monetary Policy 2082/83 (FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Mid-year review of inflation, reserves, BoP, credit and prudential changes in FY2025/26"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/nrb-wp-61-2025-08.pdf",
+      "title": "NRB Working Paper No. 61 (August 2025): Do bank lending rates respond to monetary policy shocks",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Bank lending-rate response to NRB policy shocks since FY2017/18"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2023/01/vol25-2_art3.pdf",
+      "title": "The Bank Lending Channel of Monetary Policy in Nepal",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Bank-level evidence on lending channel; credit supply determinants"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/directives/",
+      "title": "NRB Unified Directives to BFIs (archive)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Capital adequacy framework, loan classification and provisioning, sectoral lending requirements (productive/priority sectors), real-estate and margin-lending limits; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/publications/",
+      "title": "NRB publications (incl. financial inclusion/access reports and Quarterly Economic Bulletin)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Province-level branch, deposit-account and loan-account statistics; financial access/inclusion survey reports if published; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "BoP tables and projections, gross reserves and import cover, reserve adequacy assessment, external sector assessment (REER, peg), financial-sector section (NPLs, asset quality review, capital), FSI table"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+      "title": "Staff Report for the 2026 Article IV Consultation and Seventh Review (IMF eLibrary, CR 2026/127)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "HTML staff report text and statistical tables incl. BoP, monetary survey and financial soundness indicators"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+      "title": "Nepal: Sixth Review under the ECF Arrangement - Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Prior-vintage BoP/reserve tables and financial-sector structural benchmarks (loan portfolio review, NRB Act amendments) for vintage comparison"
+    },
+    {
+      "url": "https://data.imf.org/en/datasets/IMF.STA:FSIC",
+      "title": "IMF Financial Soundness Indicators (FSI) dataset",
+      "publisher": "IMF",
+      "source_id": "imf_weo",
+      "contains": "Nepal deposit-taker core FSIs (regulatory capital to RWA, NPL ratio, ROA, liquid assets) where reported; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://data.imf.org/en/datasets/IMF.STA:FAS",
+      "title": "IMF Financial Access Survey (FAS)",
+      "publisher": "IMF",
+      "source_id": "imf_weo",
+      "contains": "Supply-side inclusion: accounts, branches, borrowers per 1000 adults, gender-disaggregated where reported; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099315004072621459/pdf/IDU-5fbb7a2f-51fb-4e48-aadc-2a447660fbe1.pdf",
+      "title": "Nepal Development Update April 2026: Growth Under Pressure",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Macro and financial-sector update incl. external sector, reserves, banking asset quality and credit (to verify)"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum 2025",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Growth constraints incl. finance, savings-investment and credit allocation"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/561371612292643120/txt/Nepal-NP-Financial-sector-stability-DPC2.txt",
+      "title": "Nepal Financial Sector Stability Development Policy Credit (DPC2) - programme document text",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Financial-sector reform prior actions (NRB supervision, insurance, capital market, NPL resolution) and results indicators; vintage c. 2021 (located by the single WebSearch of this session (URL only; no snippet values used))"
+    },
+    {
+      "url": "https://www.worldbank.org/en/publication/globalfindex",
+      "title": "Global Findex Database (latest edition)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Account ownership, borrowing from formal institution, digital payments by gender and income for Nepal (survey years); URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=200",
+      "title": "WDI API: Domestic credit to private sector (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "FS.AST.PRVT.GD.ZS calendar-year labelled series; cross-check of NRB private-credit/GDP; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/FB.AST.NPER.ZS?format=json&per_page=200",
+      "title": "WDI API: Bank nonperforming loans to total gross loans (%), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "FB.AST.NPER.ZS (IMF FSI-sourced); cross-check of NRB NPL; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/FB.BNK.CAPA.ZS?format=json&per_page=200",
+      "title": "WDI API: Bank capital to assets ratio (%), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "FB.BNK.CAPA.ZS leverage-type ratio; NOT the Basel CAR; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/FX.OWN.TOTL.ZS?format=json&per_page=200",
+      "title": "WDI API: Account ownership at a financial institution or mobile-money provider (% age 15+), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Findex-derived account ownership (total; companion codes FX.OWN.TOTL.FE.ZS / .MA.ZS for female/male); URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "title": "WDI API: GDP (current LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Nominal GDP denominator cross-check (C-01)"
+    },
+    {
+      "url": "https://nsonepal.gov.np",
+      "title": "National Statistics Office - NLSS IV and Census 2021",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household borrowing sources (formal/informal), account holding by province and sex where tabulated; URL from general knowledge — unverified"
+    }
+  ]
+}

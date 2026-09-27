@@ -1,0 +1,449 @@
+{
+  "subagent_id": "03C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (depth of equity, bond and insurance markets relative to GDP), Q2 (instruments to mobilise domestic and diaspora savings) and Q3 (regulatory limits on foreign portfolio participation) are pending. Leads: SEBON site and a SEBON Quarterly Securities Market Indicators PDF (surfaced by the single search), NEPSE (general knowledge), NRB CME releases and FSR Issue 17 (NEPSE capitalisation, capital-market and insurance risk sections), Nepal Insurance Authority (general knowledge; not in source catalog), MoF Economic Survey 2082/83 (capital market, insurance, savings chapters), PDMO debt bulletin and MTDS (domestic bond market and investor base), NRB Foreign Employment Saving Bond notices and user guide, ICAN FY2083/84 budget highlights (reported diaspora/offshore NPR bond proposals - to trace to the Budget Speech), NRB Foreign Investment and Loan Management Bylaw, FXM directives and the Nepal Law Commission for FITTA 2019 and Securities Act. Savings: WDI gross domestic/national savings codes (general knowledge) vs MoF/NSO. No numbers are reported; market-capitalisation figures seen in search snippets were deliberately not used.",
+  "findings": [
+    {
+      "claim": "Q1: NEPSE market capitalisation (NPR) at FY-end and latest, and as percent of nominal GDP.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "sebon",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Market cap is a price-driven stock; ratio to FY GDP uses NSO nominal GDP (C-01). Record NRB CME and SEBON values separately (different cut-off dates). Lead URLs: https://www.sebon.gov.np/uploads/uploads/xJyc1r7uimjK2XBhBt8LWQ1K85asUqkhCJWp5Qg0.pdf; https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf; https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf; https://www.nepalstock.com; https://api.worldbank.org/v2/country/NPL/indicator/CM.MKT.LCAP.GD.ZS?format=json&per_page=200",
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY-end FY2015/16-latest; latest mid-August 2026"
+    },
+    {
+      "claim": "Q1: Listed companies, turnover and turnover ratio (value traded / market cap).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "sebon"
+      ],
+      "observation_ids": [],
+      "note": "SEBON annual/quarterly indicators. Lead URLs: https://www.sebon.gov.np/uploads/uploads/xJyc1r7uimjK2XBhBt8LWQ1K85asUqkhCJWp5Qg0.pdf; https://www.sebon.gov.np; https://www.nepalstock.com",
+      "unit": "count",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q1: Bond market depth - outstanding government domestic debt by instrument (T-bills, development bonds, citizen savings bonds, foreign employment bonds) and listed corporate debentures, as percent of GDP; holder composition (banks vs non-banks).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "pdmo",
+        "sebon",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "PDMO bulletin/MTDS for government; SEBON for corporate debentures. Secondary-market liquidity to be characterised qualitatively. Lead URLs: https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf; https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf; https://www.sebon.gov.np/uploads/uploads/xJyc1r7uimjK2XBhBt8LWQ1K85asUqkhCJWp5Qg0.pdf; https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY-end"
+    },
+    {
+      "claim": "Q1: Insurance penetration (gross premium % GDP) and density (premium per person), life and non-life.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Nepal Insurance Authority annual report (regulator not yet in source catalog - request catalog addition via 00A); MoF Economic Survey as secondary official source. Lead URLs: https://nia.gov.np; https://mof.gov.np/content/1738/economic-survey-2082-83/; https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q1: Gross domestic savings and gross national savings (% GDP), FY series.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal",
+        "mof_nepal",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Gap between national and domestic savings approximates net factor income plus remittances; keep NSO/MoF and WDI values separately (C-01). Lead URLs: https://mof.gov.np/content/1738/economic-survey-2082-83/; https://api.worldbank.org/v2/country/NPL/indicator/NY.GDS.TOTL.ZS?format=json&per_page=200; https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "unit": "percent",
+      "period": "Nepal FY (NSO/MoF); CY-labelled (WDI)"
+    },
+    {
+      "claim": "Q2: Uptake of existing diaspora/retail instruments - Foreign Employment Saving Bonds issuance vs allotment by issue; citizen savings bonds; NRN IPO quota subscription.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "pdmo",
+        "sebon"
+      ],
+      "observation_ids": [],
+      "note": "Issue notices and allotment results; secondary NEF analysis only for leads. Lead URLs: https://www.nrb.org.np/category/public-debt-operations/foreign-employment-saving-bonds/; https://www.nrb.org.np/contents/uploads/2022/05/FESB-Client-End-User-Guide.pdf; https://nepaleconomicforum.org/14261-2/; https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf; https://www.sebon.gov.np",
+      "unit": "NPR_current_mn",
+      "period": "by issue, Nepal FY"
+    },
+    {
+      "claim": "Q2: FY2026/27 (2083/84) budget provisions for new diaspora or offshore NPR bonds - exact text.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "ICAN highlights is secondary; the Budget Speech 2083/84 must be located and quoted. Lead URLs: https://en.ican.org.np/_browsable/file/resouces/Federal_Budget_2083_84_Highlights_V1.pdf; https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "period": "FY2026/27"
+    },
+    {
+      "claim": "Q3: Legal limits on foreign portfolio investment in listed Nepali securities (eligibility of foreign institutional investors, NRNs, caps, approval and repatriation rules) - verbatim provisions with dates.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "lawcommission_nepal",
+        "nrb",
+        "sebon"
+      ],
+      "observation_ids": [],
+      "note": "FITTA 2019, Securities Act, SEBON regulations, NRB Foreign Investment and Loan Management Bylaw and FXM directives. No rule is asserted here. Lead URLs: https://www.lawcommission.gov.np; https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf; https://www.nrb.org.np/departments/fxm/; https://www.sebon.gov.np; https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "period": "statutes and directives in force as of retrieval"
+    },
+    {
+      "claim": "Q2 candidate instruments (options to evaluate, not recommendations): (a) redesigned diaspora bonds (USD- or NPR-denominated, digital subscription via remittance channels); (b) offshore NPR-linked bonds; (c) infrastructure/hydropower project bonds and green bonds; (d) mutual funds and specialised investment funds with NRN access; (e) expanded contractual savings (EPF, CIT, Social Security Fund) allocation to long-term instruments; (f) remittance-linked savings accounts with long-term deposit products. Each requires uptake evidence, cost vs alternatives, FX-risk allocation and legal feasibility (Q3).",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Options list only; uptake and cost evidence pending."
+    },
+    {
+      "claim": "Trade-off note: channelling remittance savings into long-term domestic assets raises investment capacity but concentrates household and bank exposure to domestic asset prices; FX-denominated diaspora bonds shift currency risk to the government under the peg. To be reported under welfare objectives, not optimised for GDP alone.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Market capitalisation/GDP is a valuation measure driven by prices and a bank-dominated listing base; it is not by itself evidence of long-term financing capacity. Primary-issuance flows (equity, debentures) are the preferred depth indicator for investment mobilisation.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No SEBON, NEPSE, NIA, PDMO or NRB file downloaded in r1; all values pending.",
+    "Nepal Insurance Authority is not in research/sources/source_catalog.yaml; request 00A to add it (tier 1) - leads tagged with 'academic' source_id as a placeholder.",
+    "Budget Speech FY2083/84 (2026/27) direct file not located; diaspora/offshore bond proposals known only via a secondary summary (ICAN).",
+    "Statutory texts (FITTA 2019, Securities Act, SEBON regulations on foreign institutional investors) not located as direct files; Law Commission URL is general knowledge.",
+    "Contractual savings institutions (EPF, CIT, SSF) portfolio data not located; not in source catalog.",
+    "Several leads (NEPSE, NIA, Law Commission, WDI savings and market-cap codes) are from general knowledge and marked unverified."
+  ],
+  "assumptions": [
+    {
+      "id": "03C-A1",
+      "text": "Market depth ratios use NSO FY nominal GDP as denominator and FY-end stocks; WDI CY-labelled ratios are cross-checks only.",
+      "basis": "assumption"
+    },
+    {
+      "id": "03C-A2",
+      "text": "Savings-mobilisation options are evaluated, not endorsed; any recommendation requires uptake evidence and audit by Agents 15/28.",
+      "basis": "assumption"
+    },
+    {
+      "id": "03C-A3",
+      "text": "Foreign portfolio rules are treated as those in force on the retrieval date; pending amendments are listed separately.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "23E",
+      "text": "03C and 23E share diaspora-finance leads (FESB, NRN IPO quota, NRB FI bylaw, ICAN budget highlights); propose 23E owns diaspora demand/uptake evidence and 03C owns market-structure and regulatory limits to avoid double extraction."
+    },
+    {
+      "to": "00A",
+      "text": "Add Nepal Insurance Authority, Nepal Stock Exchange and contractual savings funds (EPF, CIT, SSF) to the source catalog so leads can carry proper source ids."
+    },
+    {
+      "to": "01",
+      "text": "Do not use market capitalisation/GDP as a proxy for investment-financing capacity in the US$3T arithmetic; use primary issuance and bank credit capacity (03B) instead."
+    }
+  ],
+  "uncertainty": "High. No value retrieved. Market capitalisation is highly price-volatile and cut-off dates differ across SEBON, NEPSE and NRB; insurance data depend on a regulator not yet catalogued; legal limits on foreign portfolio investment must be read verbatim and may have recent amendments; savings ratios differ between domestic and national concepts and between FY and CY sources.",
+  "specific": {
+    "market_depth_table": {
+      "status": "pending",
+      "question": "What is the depth of equity, bond and insurance markets relative to GDP?",
+      "columns": [
+        "fy",
+        "market_cap_npr_mn",
+        "market_cap_pct_gdp",
+        "listed_companies",
+        "turnover_ratio",
+        "govt_domestic_debt_pct_gdp",
+        "corporate_debentures_outstanding_npr_mn",
+        "insurance_premium_pct_gdp",
+        "gross_domestic_savings_pct_gdp",
+        "gross_national_savings_pct_gdp",
+        "source_observation_ids"
+      ],
+      "method": "Extract FY-end stocks from SEBON/NRB/PDMO/NIA; divide by NSO FY nominal GDP; record WDI CM.MKT.LCAP.GD.ZS and NY.GDS.TOTL.ZS as CY cross-checks; peer comparison (South Asia) only with same-source data.",
+      "lead_urls": [
+        "https://www.sebon.gov.np/uploads/uploads/xJyc1r7uimjK2XBhBt8LWQ1K85asUqkhCJWp5Qg0.pdf",
+        "https://www.sebon.gov.np",
+        "https://www.nepalstock.com",
+        "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+        "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+        "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+        "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+        "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+        "https://nia.gov.np",
+        "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+        "https://api.worldbank.org/v2/country/NPL/indicator/CM.MKT.LCAP.GD.ZS?format=json&per_page=200",
+        "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDS.TOTL.ZS?format=json&per_page=200"
+      ],
+      "values": null
+    },
+    "savings_mobilisation_options": {
+      "status": "pending (options listed as assumptions; evidence pending)",
+      "question": "What instruments could mobilise domestic and diaspora savings for long-term investment?",
+      "options": [
+        "diaspora_bond_redesign",
+        "offshore_npr_bond",
+        "project_and_green_bonds",
+        "mutual_and_specialised_funds_nrn_access",
+        "contractual_savings_allocation",
+        "remittance_linked_long_term_deposits"
+      ],
+      "evaluation_criteria": [
+        "historical uptake (FESB, citizen bonds, NRN quota)",
+        "cost vs domestic borrowing",
+        "FX-risk allocation under the peg",
+        "legal feasibility (Q3)",
+        "distributional and welfare effects",
+        "operational channel (remittance firms, digital)"
+      ],
+      "lead_urls": [
+        "https://www.nrb.org.np/category/public-debt-operations/foreign-employment-saving-bonds/",
+        "https://www.nrb.org.np/contents/uploads/2022/05/FESB-Client-End-User-Guide.pdf",
+        "https://nepaleconomicforum.org/14261-2/",
+        "https://en.ican.org.np/_browsable/file/resouces/Federal_Budget_2083_84_Highlights_V1.pdf",
+        "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+        "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+        "https://www.knomad.org/data/remittances",
+        "https://www.sebon.gov.np",
+        "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf"
+      ],
+      "values": null
+    },
+    "regulatory_constraints": {
+      "status": "pending",
+      "question": "What regulatory limits constrain foreign portfolio participation?",
+      "items_to_extract": [
+        "eligibility of foreign institutional investors in secondary market",
+        "NRN participation rules and quotas in IPOs",
+        "minimum investment / approval requirements under FITTA 2019 and FI bylaw",
+        "repatriation and FX conversion rules (NRB FXM)",
+        "sectoral foreign-ownership caps (e.g. banking, insurance) where set by sector regulators",
+        "capital-gains and withholding tax treatment (MoF)"
+      ],
+      "method": "Quote provisions verbatim with instrument, section and date; classify as statutory vs regulatory vs directive; note pending amendments.",
+      "lead_urls": [
+        "https://www.lawcommission.gov.np",
+        "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+        "https://www.nrb.org.np/departments/fxm/",
+        "https://www.sebon.gov.np",
+        "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+        "https://documents1.worldbank.org/curated/en/561371612292643120/txt/Nepal-NP-Financial-sector-stability-DPC2.txt"
+      ],
+      "values": null
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.sebon.gov.np",
+      "title": "Securities Board of Nepal",
+      "publisher": "Securities Board of Nepal",
+      "source_id": "sebon",
+      "contains": "Annual reports, rules on NRN participation in IPOs and secondary market, reserved NRN quotas; securities regulations"
+    },
+    {
+      "url": "https://www.sebon.gov.np/uploads/uploads/xJyc1r7uimjK2XBhBt8LWQ1K85asUqkhCJWp5Qg0.pdf",
+      "title": "Quarterly Securities Market Indicators",
+      "publisher": "Securities Board of Nepal",
+      "source_id": "sebon",
+      "contains": "Quarterly market capitalisation, listed companies, turnover, public issues (equity, debentures, mutual funds); quarter and FY to be confirmed on retrieval (located by the single WebSearch of this session (URL only; no snippet values used))"
+    },
+    {
+      "url": "https://www.nepalstock.com",
+      "title": "Nepal Stock Exchange",
+      "publisher": "Nepal Stock Exchange Ltd",
+      "source_id": "sebon",
+      "contains": "Daily market capitalisation, listed securities (equity, debentures, mutual funds), turnover; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 system NPL ratio, capital adequacy (CAR, core capital), credit concentration by sector, real-estate and margin lending exposure, liquidity, stress tests; also capital market and insurance sections"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2024/06/FSR-2022_23.pdf",
+      "title": "Financial Stability Report, FY2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2022/23 NPL, CAR, sectoral credit, capital-market and insurance-sector risk sections; prior vintage for trend (located by the single WebSearch of this session (URL only; no snippet values used))"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 (mid-July) statistical tables: CPI (y/y, FY average), BoP summary incl. current account, gross foreign exchange reserves (NRB and BFIs; USD and NPR), reserve adequacy in months of merchandise and of goods-and-services imports, merchandise imports; also monetary survey, deposit and private-sector credit, NEPSE indicators"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "First month of FY2026/27 (to mid-August 2026): CPI, BoP, gross reserves and import cover, interest rates, credit, NEPSE market capitalisation; Nepal FY mid-month basis"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of monthly/annual CME releases with Excel/PDF statistical tables; source for building monthly FY series of CPI, reserves, import cover, BoP, private credit, NEPSE indicators"
+    },
+    {
+      "url": "https://nia.gov.np",
+      "title": "Nepal Insurance Authority",
+      "publisher": "Nepal Insurance Authority",
+      "source_id": "academic",
+      "contains": "Annual reports and insurance statistics: gross premium (life/non-life), penetration and density, insurer count; FY basis; tier-1 regulator not yet in source catalog; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Chapters on financial sector, capital market, insurance and gross domestic/national savings; statistical appendix (FY basis)"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Domestic debt instruments (treasury bills, development bonds, citizen savings bonds, foreign employment bonds) outstanding by instrument; FY basis"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Domestic-market borrowing strategy, instrument maturity profile, investor base (banks vs non-bank)"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/public-debt-operations/foreign-employment-saving-bonds/",
+      "title": "Foreign Employment Saving Bonds archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Issue notices for Foreign Employment Saving Bonds (size, coupon, tenor, eligibility), allotment results where posted"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2022/05/FESB-Client-End-User-Guide.pdf",
+      "title": "FESB Client End-User Guide",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Purchase procedure and channels for Foreign Employment Saving Bonds (operational barriers)"
+    },
+    {
+      "url": "https://nepaleconomicforum.org/14261-2/",
+      "title": "Nepal Foreign Employment Saving Bonds uptake analysis",
+      "publisher": "Nepal Economic Forum",
+      "source_id": "academic",
+      "contains": "Secondary analysis of FESB uptake and barriers; trace figures to NRB/PDMO"
+    },
+    {
+      "url": "https://en.ican.org.np/_browsable/file/resouces/Federal_Budget_2083_84_Highlights_V1.pdf",
+      "title": "Highlights of Federal Budget of Nepal FY2083/84 (2026/27)",
+      "publisher": "Institute of Chartered Accountants of Nepal",
+      "source_id": "academic",
+      "contains": "Secondary summary of budget 'alternative finance' provisions reportedly incl. diaspora bond and offshore NPR bond; trace to official Budget Speech"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+      "title": "NRB Foreign Investment and Loan Management Bylaw",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Rules for foreign/NRN investment inflow approval and repatriation; later amendments to locate"
+    },
+    {
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Foreign exchange directives/circulars: convertible-currency vs INR settlement of imports from India; repatriation and foreign investment rules"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock and flows by sector and source; portfolio vs direct classification"
+    },
+    {
+      "url": "https://www.lawcommission.gov.np",
+      "title": "Nepal Law Commission - statutes incl. Foreign Investment and Technology Transfer Act 2075 (2019), Securities Act 2063, Insurance Act 2079",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Statutory text governing foreign portfolio investment eligibility, securities offerings and insurance; exact document URLs to locate; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://www.knomad.org/data/remittances",
+      "title": "Remittances and Migration data",
+      "publisher": "KNOMAD / World Bank",
+      "source_id": "knomad",
+      "contains": "Inward remittances by country (calendar year) for diaspora-savings sizing; definition differs from NRB workers' remittances (C-05)"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "BoP tables and projections, gross reserves and import cover, reserve adequacy assessment, external sector assessment (REER, peg), financial-sector section (NPLs, asset quality review, capital), FSI table"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/561371612292643120/txt/Nepal-NP-Financial-sector-stability-DPC2.txt",
+      "title": "Nepal Financial Sector Stability Development Policy Credit (DPC2) - programme document text",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Financial-sector reform prior actions (NRB supervision, insurance, capital market, NPL resolution) and results indicators; vintage c. 2021 (located by the single WebSearch of this session (URL only; no snippet values used))"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum 2025",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Growth constraints incl. finance, savings-investment and credit allocation"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDS.TOTL.ZS?format=json&per_page=200",
+      "title": "WDI API: Gross domestic savings (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "NY.GDS.TOTL.ZS; companion NY.GNS.ICTR.ZS gross savings (national, incl. remittances); URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/CM.MKT.LCAP.GD.ZS?format=json&per_page=200",
+      "title": "WDI API: Market capitalization of listed domestic companies (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "CM.MKT.LCAP.GD.ZS; coverage for Nepal may be sparse; URL from general knowledge — unverified"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "title": "WDI API: GDP (current LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Nominal GDP denominator cross-check (C-01)"
+    }
+  ]
+}

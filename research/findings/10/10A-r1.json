@@ -1,0 +1,558 @@
+{
+ "subagent_id": "10A",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network). No values retrieved; all empirical items pending. Health financing will come from Nepal National Health Accounts (MoHP, tier 1) with WHO GHED kept separately; catastrophic spending (SDG 3.8.2) from WHO and own computation on NLSS IV microdata. Province-level health-worker density requires MoHP/DoHS filled-position data by cadre and province over 10C population denominators; WHO NHWA is national only and council registrations are not an active-workforce measure. Stunting trend from NDHS 2001-2022 (WHO 2006 standards) with the JME series as cross-check; its labour-productivity implication is defined as a cohort-weighted labour-quality adjustment to 2070 using literature elasticities as labelled assumptions. Sixteen leads: four shared, three catalog endpoints, nine general-knowledge URLs marked unverified.",
+ "findings": [
+  {
+   "claim": "Q1: Current health expenditure (CHE) as percent of GDP and per capita; out-of-pocket (OOP) expenditure as percent of CHE, from the latest Nepal National Health Accounts.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mohp"
+   ],
+   "observation_ids": [],
+   "note": "Required: NHA report tables (10A-L01). Record NHA round, FY coverage and SHA 2011 basis.",
+   "unit": "percent",
+   "period": "Nepal FY (NHA round)",
+   "lead_ids": [
+    "10A-L01"
+   ]
+  },
+  {
+   "claim": "Q1: CHE and OOP share of CHE from WHO GHED.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "who_gho"
+   ],
+   "observation_ids": [],
+   "note": "Separate observation; GHED year label vs Nepal FY mapping must be read from GHED metadata; may re-estimate NHA gaps.",
+   "unit": "percent",
+   "period": "GHED year label (mapping to FY pending)",
+   "lead_ids": [
+    "10A-L04"
+   ]
+  },
+  {
+   "claim": "Q1: Catastrophic health spending - share of population with household health spending above 10 percent and above 25 percent of total household consumption (SDG 3.8.2).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "who_gho",
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "WHO GHO published value (survey-year based) and own computation from NLSS IV microdata; keep both.",
+   "unit": "percent",
+   "period": "survey year (NLSS III 2010/11 or IV 2022/23 as used)",
+   "lead_ids": [
+    "10A-L03",
+    "10A-L12",
+    "10A-L13"
+   ]
+  },
+  {
+   "claim": "Q1: Health spending by government tier (federal, provincial, local) post-federalisation.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_npl",
+    "mohp"
+   ],
+   "observation_ids": [],
+   "note": "10A-L11 plus NHA; FY basis.",
+   "unit": "percent",
+   "period": "FY",
+   "lead_ids": [
+    "10A-L11",
+    "10A-L01"
+   ]
+  },
+  {
+   "claim": "Q2: Health-worker density (doctors, nurses/midwives, other cadres) per 10,000 population, national, WHO NHWA/GHO.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "who_gho"
+   ],
+   "observation_ids": [],
+   "note": "Unit ratio expressed per 10,000 population (stated in claim). National only unless MoHP reports provinces.",
+   "unit": "ratio",
+   "period": "calendar year as published",
+   "lead_ids": [
+    "10A-L03",
+    "10A-L05"
+   ]
+  },
+  {
+   "claim": "Q2: Health-worker density per 10,000 population by province (seven provinces).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mohp",
+    "dhs"
+   ],
+   "observation_ids": [],
+   "note": "Numerator: MoHP/DoHS filled positions by cadre and province, or HRH profile; denominator: 10C province population (census 2021 or NSO projection, stated). Public-sector only unless private staffing tables exist; NHFS 2021 covers sampled facilities only.",
+   "unit": "ratio",
+   "period": "FY",
+   "lead_ids": [
+    "10A-L01",
+    "10A-L02",
+    "10A-L07"
+   ]
+  },
+  {
+   "claim": "Q2: Registered vs active workforce gap and health-worker emigration (nurses in OECD countries).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mohp",
+    "oecd"
+   ],
+   "observation_ids": [],
+   "note": "Council registrations are cumulative and include emigrants/retirees; OECD IMO chapter for emigrant stock.",
+   "unit": "persons",
+   "period": "as published",
+   "lead_ids": [
+    "10A-L14",
+    "10A-L15",
+    "10A-L16"
+   ]
+  },
+  {
+   "claim": "Q3: Under-5 stunting prevalence, national and by province, NDHS 2001, 2006, 2011, 2016, 2022 (and MICS 2019 separately).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "dhs"
+   ],
+   "observation_ids": [],
+   "note": "Required: NDHS reports (10A-L06, 10A-L07). WHO 2006 standards for all rounds (earlier rounds re-analysed); JME harmonised series as cross-check (10A-L08).",
+   "unit": "percent",
+   "period": "survey years (fieldwork dates)",
+   "lead_ids": [
+    "10A-L06",
+    "10A-L07",
+    "10A-L08"
+   ]
+  },
+  {
+   "claim": "Q3: Implied effect of stunting on future labour productivity - cohort-weighted share of the working-age population that was stunted in childhood, 2025-2070, and the associated adult-productivity penalty.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "dhs",
+    "wb_npl",
+    "academic"
+   ],
+   "observation_ids": [],
+   "note": "Estimate to be built from stunting trend (by birth cohort), 10C age-structure paths and a literature productivity elasticity (HCI method, 10A-L09; Hoddinott et al., 10A-L10) entered as a labelled assumption. No elasticity value recorded in r1.",
+   "unit": "percent",
+   "period": "calendar years 2025-2070",
+   "lead_ids": [
+    "10A-L06",
+    "10A-L08",
+    "10A-L09",
+    "10A-L10"
+   ]
+  },
+  {
+   "claim": "Nepal National Health Accounts (tier 1) is the default for health-financing levels; WHO GHED is kept as a separate observation and differences are classified (vintage, year mapping, re-estimation) per 00B.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Registered health workers (council registrations) are not a measure of the active workforce and are never used as a density numerator.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Stunting affects labour productivity only through the cohorts that enter working age; the channel is lagged by roughly the age at labour-market entry, so current stunting affects productivity mostly after the mid-2030s. Elasticities from the literature are labelled assumptions, not Nepal-specific estimates.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  }
+ ],
+ "data_gaps": [
+  "Latest NHA round and its FY coverage not confirmed; document URL not located (catalog landing page only).",
+  "Province-level health-worker counts by cadre, including the private sector, may not be published; public filled positions are the likely only source.",
+  "Active (practising) workforce vs registrations unknown; emigration of nurses only partly visible through OECD data.",
+  "Catastrophic spending for FY2022/23 requires NLSS IV microdata access (registration may be needed).",
+  "Nepal-specific estimates of the stunting-productivity link not located; literature elasticities are cross-country."
+ ],
+ "assumptions": [
+  {
+   "id": "10A-A1",
+   "text": "NHA is the default for financing levels; GHED is a separate observation; differences classified per 00B.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10A-A2",
+   "text": "Density numerators use active/filled positions, never cumulative registrations.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10A-A3",
+   "text": "Stunting enters the economic model only as a lagged, cohort-weighted labour-quality adjustment with literature-range elasticities labelled as assumptions.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10A-A4",
+   "text": "Health spending is reported against the welfare objectives (financial protection, health outcomes), not only as a GDP input; trade-offs reported via src/economic_model/welfare.py.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "11C",
+   "text": "Share one observation set for health spending by government tier (lead 10A-L11 is also used by 11C) to avoid double ingestion and inconsistent FY mapping."
+  },
+  {
+   "to": "01A",
+   "text": "Human-capital adjustment in growth accounting should not double count: if PWT hc (schooling-based) is used, the stunting adjustment is an addition only if its channel (health/cognition) is argued separately."
+  },
+  {
+   "to": "23D",
+   "text": "OECD IMO 2025 health-professional migration chapter is relevant to Nepal's own workforce density, not only destination demand; please flag Nepal-origin nurse data when ingested."
+  }
+ ],
+ "uncertainty": "High for r1. Financing shares depend on NHA round and GHED re-estimation; OOP may differ materially between sources due to year mapping and treatment of informal payments. Province densities are uncertain because private-sector staffing and dual practice are poorly recorded. The stunting-productivity link rests on cross-country elasticities with wide ranges; its size for Nepal is not estimated in r1. Nine of sixteen lead URLs are general knowledge and unverified.",
+ "source_leads": [
+  {
+   "lead_id": "10A-L01",
+   "url": "https://mohp.gov.np",
+   "title": "Ministry of Health and Population - National Health Accounts (latest round) and Human Resources for Health documents",
+   "publisher": "Ministry of Health and Population, Nepal",
+   "source_id": "mohp",
+   "contains": "Nepal National Health Accounts: current health expenditure by financing scheme and source (government, household out-of-pocket, external), FY basis; HRH strategy/profile with health-worker stock by cadre and province",
+   "url_status": "catalog endpoint from research/sources/source_catalog.yaml (endpoint_status: unverified)"
+  },
+  {
+   "lead_id": "10A-L02",
+   "url": "https://dohs.gov.np",
+   "title": "Department of Health Services - Annual Report",
+   "publisher": "Department of Health Services, MoHP, Nepal",
+   "source_id": "mohp",
+   "contains": "DoHS annual report (FY): sanctioned and filled health posts by cadre and province; service coverage; nutrition programme data",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L03",
+   "url": "https://www.who.int/data/gho",
+   "title": "WHO Global Health Observatory",
+   "publisher": "World Health Organization",
+   "source_id": "who_gho",
+   "contains": "Nepal: medical doctors, nurses and midwives, and other cadres per 10,000 population (NHWA-based); UHC service coverage index (SDG 3.8.1); catastrophic health spending (SDG 3.8.2); calendar-year reference",
+   "url_status": "catalog endpoint from research/sources/source_catalog.yaml (endpoint_status: unverified)"
+  },
+  {
+   "lead_id": "10A-L04",
+   "url": "https://apps.who.int/nha/database",
+   "title": "WHO Global Health Expenditure Database (GHED)",
+   "publisher": "World Health Organization",
+   "source_id": "who_gho",
+   "contains": "Nepal current health expenditure (% GDP, per capita), domestic general government, out-of-pocket as % of CHE, external; SHA 2011 basis; year labels to be mapped to Nepal FY",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L05",
+   "url": "https://apps.who.int/nhwaportal/",
+   "title": "WHO National Health Workforce Accounts data portal",
+   "publisher": "World Health Organization",
+   "source_id": "who_gho",
+   "contains": "Nepal health-worker stock and density by cadre; subnational (province) data only if reported by MoHP",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L06",
+   "url": "https://dhsprogram.com/publications/publication-FR379-DHS-Final-Reports.cfm",
+   "title": "Nepal Demographic and Health Survey 2022 - Final Report",
+   "publisher": "MoHP Nepal, New ERA and ICF (The DHS Program)",
+   "source_id": "dhs",
+   "contains": "Stunting, wasting, underweight among children under 5 by province, sex, wealth quintile (WHO 2006 growth standards); TFR; trend tables vs NDHS 2016, 2011, 2006, 2001",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L07",
+   "url": "https://dhsprogram.com",
+   "title": "The DHS Program - Nepal survey catalogue (NDHS 2001-2022, Nepal Health Facility Survey 2015 and 2021)",
+   "publisher": "The DHS Program / ICF",
+   "source_id": "dhs",
+   "contains": "NDHS rounds for the stunting trend; NHFS 2021 service-provision data on staffing of sampled facilities by province",
+   "url_status": "catalog endpoint from research/sources/source_catalog.yaml (endpoint_status: unverified)"
+  },
+  {
+   "lead_id": "10A-L08",
+   "url": "https://data.unicef.org/resources/jme/",
+   "title": "UNICEF-WHO-World Bank Joint Child Malnutrition Estimates",
+   "publisher": "UNICEF / WHO / World Bank",
+   "source_id": "who_gho",
+   "contains": "Harmonised national stunting prevalence series for Nepal from all surveys (DHS, MICS, national nutrition surveys), with re-analysis to WHO standards; modelled country trend",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L09",
+   "url": "https://www.worldbank.org/en/publication/human-capital",
+   "title": "World Bank Human Capital Index",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "HCI components for Nepal incl. fraction of under-5 children not stunted and its method of converting stunting to adult productivity",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L10",
+   "url": "https://doi.org/10.1111/mcn.12080",
+   "title": "Hoddinott, Alderman, Behrman, Haddad and Horton (2013) The economic rationale for investing in stunting reduction, Maternal and Child Nutrition 9(S2)",
+   "publisher": "Wiley",
+   "source_id": "academic",
+   "contains": "Estimates linking childhood stunting to adult earnings/productivity and benefit-cost ratios by country; elasticities to be used as labelled assumptions",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L11",
+   "url": "https://documents1.worldbank.org/curated/en/290721625210540609/pdf/Federalism-and-Public-Expenditure-for-Human-Development-in-Nepal-An-Emerging-Agenda.pdf",
+   "title": "Federalism and Public Expenditure for Human Development in Nepal: An Emerging Agenda",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Health spending by federal, provincial and local tier before and after federalisation; functional assignment",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10A-L12",
+   "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+   "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Household health expenditure and consumption aggregates; basis for computing catastrophic health spending shares (SDG 3.8.2 thresholds) from microdata",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10A-L13",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+   "title": "NLSS IV 2022/23 microdata",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Household-level health spending and total consumption to compute catastrophic spending by province and quintile",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10A-L14",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+   "title": "International Migration Outlook 2025",
+   "publisher": "OECD",
+   "source_id": "oecd",
+   "contains": "Special chapter on international migration of health professionals - Nepal-trained nurses/doctors in OECD countries (emigration drain on workforce density)",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10A-L15",
+   "url": "https://nnc.org.np",
+   "title": "Nepal Nursing Council - registration statistics",
+   "publisher": "Nepal Nursing Council",
+   "source_id": "mohp",
+   "contains": "Cumulative registered nurses and midwives (registration, not active workforce); verification-for-abroad requests as emigration proxy",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10A-L16",
+   "url": "https://nmc.org.np",
+   "title": "Nepal Medical Council - registered practitioners",
+   "publisher": "Nepal Medical Council",
+   "source_id": "mohp",
+   "contains": "Cumulative registered doctors (registration, not active workforce)",
+   "url_status": "URL from general knowledge — unverified"
+  }
+ ],
+ "specific": {
+  "health_financing_table": {
+   "status": "pending",
+   "value": null,
+   "rows": [
+    {
+     "indicator": "CHE (% GDP)",
+     "unit": "percent",
+     "sources": [
+      "mohp NHA",
+      "who_gho GHED"
+     ],
+     "lead_ids": [
+      "10A-L01",
+      "10A-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "CHE per capita",
+     "unit": "NPR_per_person; USD_per_person",
+     "sources": [
+      "mohp NHA",
+      "who_gho GHED"
+     ],
+     "lead_ids": [
+      "10A-L01",
+      "10A-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "OOP (% CHE)",
+     "unit": "percent",
+     "sources": [
+      "mohp NHA",
+      "who_gho GHED"
+     ],
+     "lead_ids": [
+      "10A-L01",
+      "10A-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "Domestic general government health expenditure (% CHE)",
+     "unit": "percent",
+     "sources": [
+      "mohp NHA",
+      "who_gho GHED"
+     ],
+     "lead_ids": [
+      "10A-L01",
+      "10A-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "External financing (% CHE)",
+     "unit": "percent",
+     "sources": [
+      "mohp NHA",
+      "who_gho GHED"
+     ],
+     "lead_ids": [
+      "10A-L01",
+      "10A-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "Catastrophic spending, 10% and 25% thresholds (SDG 3.8.2)",
+     "unit": "percent",
+     "sources": [
+      "who_gho",
+      "nso_nepal NLSS IV microdata"
+     ],
+     "lead_ids": [
+      "10A-L03",
+      "10A-L12",
+      "10A-L13"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "Health spending by tier (federal/provincial/local)",
+     "unit": "percent",
+     "sources": [
+      "wb_npl",
+      "mohp"
+     ],
+     "lead_ids": [
+      "10A-L11",
+      "10A-L01"
+     ],
+     "status": "pending"
+    }
+   ],
+   "period_basis": "NHA and budget data on Nepal FY; GHED on its own year labels - mapping documented before comparison.",
+   "method": "Ingest NHA tables; compute catastrophic shares from NLSS IV with survey weights, consumption aggregate as published; keep WHO values separate."
+  },
+  "workforce_density": {
+   "status": "pending",
+   "value": null,
+   "unit": "ratio",
+   "unit_note": "health workers per 10,000 population",
+   "cadres": [
+    "medical doctors",
+    "nurses and midwives",
+    "paramedics/health assistants",
+    "community health workers (FCHVs reported separately, not counted as health workers)"
+   ],
+   "geography": [
+    "national",
+    "Koshi",
+    "Madhesh",
+    "Bagmati",
+    "Gandaki",
+    "Lumbini",
+    "Karnali",
+    "Sudurpashchim"
+   ],
+   "numerator_sources": [
+    "WHO NHWA/GHO (national)",
+    "MoHP/DoHS filled positions by province (public sector)",
+    "NHFS 2021 facility staffing (sample)"
+   ],
+   "denominator": "10C population paths (census 2021 provincial counts or NSO projection; source stated)",
+   "comparator": "WHO SDG index threshold for health workforce density to be cited from WHO documentation on retrieval (no value recorded in r1)",
+   "lead_ids": [
+    "10A-L01",
+    "10A-L02",
+    "10A-L03",
+    "10A-L05",
+    "10A-L07",
+    "10A-L14",
+    "10A-L15",
+    "10A-L16"
+   ]
+  },
+  "stunting_trend": {
+   "status": "pending",
+   "value": null,
+   "unit": "percent",
+   "series": [
+    {
+     "survey": "NDHS 2001"
+    },
+    {
+     "survey": "NDHS 2006"
+    },
+    {
+     "survey": "NDHS 2011"
+    },
+    {
+     "survey": "NDHS 2016"
+    },
+    {
+     "survey": "MICS 2019 (separate design)"
+    },
+    {
+     "survey": "NDHS 2022"
+    },
+    {
+     "survey": "JME harmonised series (cross-check)"
+    }
+   ],
+   "disaggregation": [
+    "province (2016, 2022 only - federal provinces)",
+    "sex",
+    "wealth quintile",
+    "urban/rural"
+   ],
+   "productivity_link": {
+    "method": "Map stunting prevalence by birth cohort onto the 10C age structure to obtain the share of the working-age population stunted in childhood each year to 2070; apply a literature adult-productivity penalty (labelled assumption, ranges from 10A-L09/10A-L10) to derive an aggregate labour-quality adjustment for 01A.",
+    "status": "pending - requires stunting trend, 10C age paths and elasticity range",
+    "lead_ids": [
+     "10A-L06",
+     "10A-L08",
+     "10A-L09",
+     "10A-L10"
+    ]
+   }
+  }
+ }
+}
