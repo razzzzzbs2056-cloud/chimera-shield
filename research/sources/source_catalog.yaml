@@ -39,6 +39,8 @@ sources:
   ndrrma: {tier: 1, institution: National Disaster Risk Reduction and Management Authority (BIPAD portal), url: "https://bipad.gov.np", covers: [disaster events and losses], endpoint_status: unverified}
   dhm: {tier: 1, institution: Department of Hydrology and Meteorology, Nepal, url: "https://dhm.gov.np", covers: [hydrology, climate observations, flood early warning], endpoint_status: unverified}
   noc_nepal: {tier: 1, institution: Nepal Oil Corporation, url: "https://noc.org.np", covers: [petroleum imports, pricing, storage], endpoint_status: unverified}
+  fcgo: {tier: 1, institution: Financial Comptroller General Office, Nepal, url: "https://fcgo.gov.np", covers: [consolidated financial statements, actual expenditure and transfers], endpoint_status: unverified}
+  nitdb: {tier: 1, institution: Nepal Intermodal Transport Development Board, url: "https://nitdb.gov.np", covers: [dry ports, transit cargo statistics], endpoint_status: unverified}
   caan: {tier: 1, institution: Civil Aviation Authority of Nepal, url: "https://caanepal.gov.np", covers: [aviation statistics], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
@@ -54,6 +56,7 @@ sources:
   wb_lpi: {tier: 2, institution: World Bank Logistics Performance Index, url: "https://lpi.worldbank.org", covers: [logistics performance], endpoint_status: unverified}
   wb_wgi: {tier: 2, institution: World Bank Worldwide Governance Indicators, url: "https://www.worldbank.org/en/publication/worldwide-governance-indicators", covers: [governance perception indices], endpoint_status: unverified}
   adb_nepal: {tier: 2, institution: Asian Development Bank — Nepal, url: "https://www.adb.org/countries/nepal", covers: [country reports, project documents, Key Indicators], endpoint_status: unverified}
+  wb_pinksheet: {tier: 2, institution: World Bank Commodity Markets (Pink Sheet), url: "https://www.worldbank.org/en/research/commodity-markets", covers: [commodity prices incl. oil, fertiliser, rice], endpoint_status: unverified}
   aiib: {tier: 2, institution: Asian Infrastructure Investment Bank, url: "https://www.aiib.org", covers: [project financing], endpoint_status: unverified}
 
   # ---------------- Tier 3: UN system / ILO / UNCTAD / WTO ----------------
@@ -84,6 +87,7 @@ sources:
   gcf: {tier: 3, institution: Green Climate Fund, url: "https://www.greenclimate.fund", covers: [approved projects by country], endpoint_status: unverified}
   gef: {tier: 3, institution: Global Environment Facility, url: "https://www.thegef.org", covers: [projects by country], endpoint_status: unverified}
   saarc: {tier: 3, institution: SAARC Secretariat, url: "https://www.saarc-sec.org", covers: [regional agreements], endpoint_status: unverified}
+  itc_trademap: {tier: 3, institution: ITC Trade Map, url: "https://www.trademap.org", covers: [mirror trade statistics, market access], endpoint_status: unverified}
   bimstec: {tier: 3, institution: BIMSTEC Secretariat, url: "https://bimstec.org", covers: [regional agreements], endpoint_status: unverified}
 
   # ---------------- Tier 4: foreign governments and central banks ----------------
@@ -103,6 +107,7 @@ sources:
   irena: {tier: 5, institution: International Renewable Energy Agency, url: "https://www.irena.org", covers: [renewable costs and capacity], endpoint_status: unverified}
   cea_india: {tier: 5, institution: Central Electricity Authority, India, url: "https://cea.nic.in", covers: [Indian power sector, cross-border trade guidelines], endpoint_status: unverified}
 
+  iex_india: {tier: 5, institution: Indian Energy Exchange, url: "https://www.iexindia.com", covers: [power exchange prices and volumes], endpoint_status: unverified}
   # ---------------- Tier 6: climate and hazard science ----------------
   icimod: {tier: 6, institution: ICIMOD, url: "https://www.icimod.org", covers: [cryosphere, HKH assessment, river basins], endpoint_status: unverified}
   ipcc: {tier: 6, institution: IPCC, url: "https://www.ipcc.ch", covers: [climate assessments], endpoint_status: unverified}
