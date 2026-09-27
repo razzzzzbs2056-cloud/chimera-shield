@@ -1,0 +1,770 @@
+{
+  "subagent_id": "00B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:31:36+00:00",
+  "summary": "Defines the inter-agent conflict-resolution protocol (classification order definitional -> vintage -> coverage -> methodological; keep both values; default model input chosen only as a labelled assumption) and pre-registers 18 likely conflicts to watch, including NSO fiscal-year vs WDI/WEO year-labelled GDP (C-01), USD conversion conventions (C-02), NRB workers' remittances vs BPM6 personal remittances (C-05), and Census 2021 vs UN WPP population (C-06). No actual conflicts can be detected in r1: the observation store is empty. One structural escalation to a human reviewer is open (ESC-01, catalog dependencies delaying the US$3T arithmetic), one to 00A (hosts unreachable), and two human escalations are pre-registered for the USD conversion convention and population concept.",
+  "findings": [
+    {
+      "claim": "Which agents report conflicting values for the same variable and period: none can be identified in r1 because the observation store is empty (research/sources/observations.jsonl absent) and no other findings exist.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [],
+      "note": "Required: retrieved observations from P2-01..P2-07 (00A-r1) and upstream findings; run find_conflicts in r2."
+    },
+    {
+      "claim": "Eighteen likely conflict areas are pre-registered (C-01..C-18) with anticipated classification; classifications are hypotheses to be confirmed against retrieved source metadata.",
+      "type": "assumption"
+    },
+    {
+      "claim": "Conflict classification follows a fixed order — definitional, vintage, coverage, then methodological — so that only residuals unexplained by the first three are treated as methodological disputes.",
+      "type": "assumption"
+    },
+    {
+      "claim": "Disputes requiring a human reviewer now: ESC-01 (catalog dependency structure delaying the US$3T arithmetic). Pre-registered for possible human escalation: ESC-03 (USD conversion convention), ESC-04 (population concept).",
+      "type": "assumption",
+      "note": "Based on platform records (config/subagents.json, state/plan.md); no empirical values."
+    },
+    {
+      "claim": "Audit ledger state: all 22 entries (TGT-ARITH-001 and SCN-S01..S10 by auditors 15 and 28) are UNVERIFIED with pending-input reasons; no auditor dispute exists yet to coordinate.",
+      "type": "assumption",
+      "note": "Read from reports/audits/audit_ledger.jsonl (platform record, not an economic observation); reproduced by reference, not paraphrased."
+    }
+  ],
+  "data_gaps": [
+    "research/sources/observations.jsonl does not exist; find_conflicts has nothing to compare.",
+    "WDI country metadata for Nepal (national-accounts reference period and FY label mapping) — needed for C-01.",
+    "IMF WEO country notes for Nepal (fiscal-year treatment, estimates-start year per vintage) — C-01..C-03.",
+    "NRB BoP compilation notes (BPM edition, remittance item definitions) — C-05.",
+    "Census 2021 enumeration concept and absentee treatment; WPP methodology note for Nepal — C-06.",
+    "PDMO and IMF debt coverage definitions — C-08, C-09."
+  ],
+  "assumptions": [
+    {
+      "id": "00B-A1",
+      "text": "The conflict tolerance is tolerances.source_conflict_rel_tol in config/model_config.yaml, applied after period alignment; published-table identity residuals use tolerances.published_accounts_rel_tol.",
+      "basis": "assumption"
+    },
+    {
+      "id": "00B-A2",
+      "text": "When concepts match after alignment, the higher-tier source is the default model input, recorded as a labelled assumption citing both observation ids.",
+      "basis": "assumption"
+    },
+    {
+      "id": "00B-A3",
+      "text": "A conflict is 'closed' only when both values remain in the store and the register entry documents the bridge or the escalation outcome.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "01C",
+      "text": "Adopt and register one USD conversion convention before re-running TGT-ARITH (C-02/ESC-03)."
+    },
+    {
+      "to": "23C",
+      "text": "Report NRB workers' remittances and BPM6 personal remittances as separate variables; do not compare them as one (C-05)."
+    },
+    {
+      "to": "10C",
+      "text": "Record census absentee treatment and WPP reference date explicitly (C-06)."
+    },
+    {
+      "to": "02C",
+      "text": "State institutional coverage for every debt ratio (C-08)."
+    },
+    {
+      "to": "15A",
+      "text": "Include period-basis and coverage checks from this register in statistical audits."
+    }
+  ],
+  "uncertainty": "High: the register is anticipatory. Classifications are hypotheses from known definitional differences and must be confirmed against source metadata once retrieved; some expected conflicts may not materialise and others (e.g. provincial vs national series) may appear. No values have been compared, so the size of any disagreement is unknown. All lead URLs are catalog-level and unverified.",
+  "specific": {
+    "conflict_register": [
+      {
+        "conflict_id": "C-01",
+        "variable": "gdp_nominal_lcu",
+        "sources_compared": [
+          "nso_nepal (FY)",
+          "wb_wdi NY.GDP.MKTP.CN",
+          "imf_weo"
+        ],
+        "likely_classification": [
+          "definitional (reference period)",
+          "vintage"
+        ],
+        "period_basis_issue": "NSO reports Nepal fiscal years (mid-July to mid-July); WDI/WEO present annual values under a single year label. The label mapping for Nepal must be read from WDI country metadata and WEO country notes, not assumed.",
+        "mechanism": "Apparent differences arise if one series labels FY2023/24 as 2023 and another as 2024, or if WDI/WEO carry an older NSO vintage.",
+        "investigation_steps": [
+          "Pair values by the underlying FY, not by label",
+          "Record NSO release date vs WDI/WEO vintage",
+          "Recompute relative difference after alignment; residual beyond tolerances.source_conflict_rel_tol is investigated further"
+        ],
+        "agents_involved": [
+          "01A",
+          "01C",
+          "15A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet",
+        "escalate_if": "label mapping cannot be determined from published metadata"
+      },
+      {
+        "conflict_id": "C-02",
+        "variable": "gdp_nominal_usd",
+        "sources_compared": [
+          "derived: NSO GDP / NRB FY-average NPR/USD",
+          "wb_wdi NY.GDP.MKTP.CD",
+          "imf_weo NGDPD"
+        ],
+        "likely_classification": [
+          "methodological",
+          "definitional (reference period)"
+        ],
+        "period_basis_issue": "FY GDP converted at FY-average FX vs CY-labelled GDP converted at CY-average FX (WDI PA.NUS.FCRF) or WEO's own conversion.",
+        "mechanism": "Differences stem from FX averaging period and from which GDP vintage each database used; not an error in either source.",
+        "investigation_steps": [
+          "Reproduce each USD figure from its NPR GDP and stated FX",
+          "Document which convention the headline US$3T arithmetic uses (00A task P3-01)"
+        ],
+        "agents_involved": [
+          "01C",
+          "03A",
+          "15A",
+          "28E"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet",
+        "escalate_if": "the choice of convention changes the milestone year at which a scenario reaches US$3T"
+      },
+      {
+        "conflict_id": "C-03",
+        "variable": "real_gdp_growth",
+        "sources_compared": [
+          "nso_nepal preliminary / revised / final",
+          "imf_weo NGDP_RPCH",
+          "wb_wdi NY.GDP.MKTP.KD.ZG"
+        ],
+        "likely_classification": [
+          "vintage",
+          "methodological (rebasing)"
+        ],
+        "period_basis_issue": "Latest FY is typically a preliminary estimate; WEO mixes outturns and projections.",
+        "mechanism": "Revisions between NSO releases, constant-price rebasing and WEO projection years.",
+        "investigation_steps": [
+          "Tag every observation with revision status",
+          "Flag WEO values after the estimates-start year as projections — never used as history (source_policy rule 6)",
+          "Compare only same-status values"
+        ],
+        "agents_involved": [
+          "01A",
+          "15A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-04",
+        "variable": "gdp_deflator_growth vs cpi_inflation",
+        "sources_compared": [
+          "nso_nepal implicit deflator",
+          "nrb CPI",
+          "wb_wdi NY.GDP.DEFL.KD.ZG / FP.CPI.TOTL.ZG"
+        ],
+        "likely_classification": [
+          "definitional"
+        ],
+        "period_basis_issue": "FY averages (NSO, NRB) vs CY (WDI); NRB also publishes year-on-year mid-month rates.",
+        "mechanism": "Deflator covers domestic output prices; CPI covers consumer basket incl. imports — different concepts, not a conflict to be resolved to one value.",
+        "investigation_steps": [
+          "Never substitute CPI for the deflator in USD GDP arithmetic",
+          "Record basket base year for CPI"
+        ],
+        "agents_involved": [
+          "01C",
+          "03A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-05",
+        "variable": "remittances_share",
+        "sources_compared": [
+          "nrb workers' remittances (FY)",
+          "wb_wdi BX.TRF.PWKR.DT.GD.ZS personal remittances",
+          "knomad"
+        ],
+        "likely_classification": [
+          "definitional",
+          "coverage",
+          "definitional (reference period)"
+        ],
+        "period_basis_issue": "NRB FY flows over FY GDP vs WDI CY flows over CY GDP.",
+        "mechanism": "Workers' remittances (NRB) vs personal remittances = personal transfers + compensation of employees (BPM6); informal channels excluded from both; KNOMAD bilateral figures are model-based estimates.",
+        "investigation_steps": [
+          "Record NRB item definition and BPM edition",
+          "Reconcile numerator items before comparing",
+          "Use same-period denominator"
+        ],
+        "agents_involved": [
+          "23C",
+          "03A",
+          "14A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet",
+        "escalate_if": "numerator items cannot be reconciled from published BoP detail"
+      },
+      {
+        "conflict_id": "C-06",
+        "variable": "population",
+        "sources_compared": [
+          "nso_nepal Census 2021",
+          "nso_nepal projections",
+          "un_wpp",
+          "wb_wdi SP.POP.TOTL (WPP-based)"
+        ],
+        "likely_classification": [
+          "coverage",
+          "methodological",
+          "definitional (reference date)"
+        ],
+        "period_basis_issue": "Census reference date vs WPP mid-year (1 July) estimates.",
+        "mechanism": "Census counts usual residents with the absent population abroad recorded separately; WPP applies demographic reconstruction and may adjust for under-enumeration; treatment of absentees may differ.",
+        "investigation_steps": [
+          "Record enumeration concept and absentee treatment for each",
+          "Keep census and WPP as separate observations; choose per use (per-capita GDP vs labour supply) as a labelled assumption"
+        ],
+        "agents_involved": [
+          "10C",
+          "23A",
+          "15A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet",
+        "escalate_if": "absentee treatment is undocumented in either source"
+      },
+      {
+        "conflict_id": "C-07",
+        "variable": "lfpr / employment",
+        "sources_compared": [
+          "nso_nepal NLFS rounds",
+          "ilostat modelled estimates"
+        ],
+        "likely_classification": [
+          "definitional",
+          "methodological"
+        ],
+        "period_basis_issue": "Survey rounds are years apart; ILO modelled series are annual interpolations/extrapolations.",
+        "mechanism": "Different ICLS work/employment definitions across NLFS rounds; modelled vs survey values.",
+        "investigation_steps": [
+          "Record ICLS resolution applied per round",
+          "Do not treat modelled values as observations of survey years"
+        ],
+        "agents_involved": [
+          "10B",
+          "01A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-08",
+        "variable": "gov_gross_debt_share",
+        "sources_compared": [
+          "pdmo",
+          "imf_weo GGXWDG_NGDP",
+          "imf_article_iv DSA"
+        ],
+        "likely_classification": [
+          "coverage",
+          "definitional (reference period)"
+        ],
+        "period_basis_issue": "FY-end stock (PDMO) vs WEO year label; denominator GDP period.",
+        "mechanism": "Central government vs general government; inclusion of subnational, SOE and guaranteed debt.",
+        "investigation_steps": [
+          "Record institutional coverage for each",
+          "Build coverage bridge table"
+        ],
+        "agents_involved": [
+          "02C",
+          "20C"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-09",
+        "variable": "external_debt_stock",
+        "sources_compared": [
+          "pdmo public external debt",
+          "wb_ids total external debt"
+        ],
+        "likely_classification": [
+          "coverage"
+        ],
+        "period_basis_issue": "FY-end vs calendar-year-end stock.",
+        "mechanism": "IDS total includes private non-guaranteed debt, IMF credit and short-term debt.",
+        "investigation_steps": [
+          "Compare public and publicly guaranteed component only, then report the remainder separately"
+        ],
+        "agents_involved": [
+          "02C",
+          "20C"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-10",
+        "variable": "exports/imports of goods",
+        "sources_compared": [
+          "customs_nepal / tepc",
+          "nrb BoP goods",
+          "un_comtrade mirror (partner-reported)"
+        ],
+        "likely_classification": [
+          "methodological",
+          "coverage"
+        ],
+        "period_basis_issue": "Nepali FY vs partner CY.",
+        "mechanism": "CIF vs FOB valuation, BoP adjustments, informal border trade, electricity trade treatment.",
+        "investigation_steps": [
+          "Record valuation basis",
+          "Treat mirror gaps as evidence of coverage issues, not as corrections"
+        ],
+        "agents_involved": [
+          "12A",
+          "04A",
+          "21D"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-11",
+        "variable": "electricity generation and trade",
+        "sources_compared": [
+          "nea annual report",
+          "cea_india cross-border data"
+        ],
+        "likely_classification": [
+          "coverage",
+          "definitional (reference period)"
+        ],
+        "period_basis_issue": "NEA FY vs Indian April-March fiscal year.",
+        "mechanism": "NEA-owned vs IPP purchases; gross vs net of losses; bilateral vs exchange sales.",
+        "investigation_steps": [
+          "Record which generators and trade channels are included"
+        ],
+        "agents_involved": [
+          "05A",
+          "22B",
+          "22E"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-12",
+        "variable": "poverty",
+        "sources_compared": [
+          "nso_nepal NLSS national line",
+          "wb_pip international line"
+        ],
+        "likely_classification": [
+          "definitional",
+          "vintage (PPP base)"
+        ],
+        "period_basis_issue": "Survey year(s) vs PIP reference year lining.",
+        "mechanism": "Different poverty lines, welfare aggregates and PPP vintages.",
+        "investigation_steps": [
+          "Report both; never merge"
+        ],
+        "agents_involved": [
+          "14A",
+          "14B"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-13",
+        "variable": "fdi",
+        "sources_compared": [
+          "nrb BoP actual inflows",
+          "doind / ibn approvals and commitments",
+          "unctadstat"
+        ],
+        "likely_classification": [
+          "definitional"
+        ],
+        "period_basis_issue": "FY vs CY.",
+        "mechanism": "Commitments/approvals are not flows; BoP flows include reinvested earnings depending on compilation.",
+        "investigation_steps": [
+          "Label commitments vs realised flows separately"
+        ],
+        "agents_involved": [
+          "12B",
+          "04B"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-14",
+        "variable": "labour migrants",
+        "sources_compared": [
+          "dofe labour permits (flow)",
+          "nso_nepal census absent population (stock)",
+          "glmm destination statistics"
+        ],
+        "likely_classification": [
+          "definitional",
+          "coverage"
+        ],
+        "period_basis_issue": "FY flows vs census stock at a reference date.",
+        "mechanism": "Permits include renewals depending on table; India-bound migration is not permitted-based; destination counts cover nationals of Nepal by residence permit.",
+        "investigation_steps": [
+          "Never compare flows with stocks",
+          "Record India-corridor coverage gap explicitly"
+        ],
+        "agents_involved": [
+          "23A",
+          "10C",
+          "19D"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-15",
+        "variable": "tourist arrivals and travel receipts",
+        "sources_compared": [
+          "tourism_ministry",
+          "unwto",
+          "nrb BoP travel credits"
+        ],
+        "likely_classification": [
+          "coverage",
+          "definitional"
+        ],
+        "period_basis_issue": "CY arrivals vs FY receipts.",
+        "mechanism": "Treatment of Indian land arrivals and same-day visitors; receipts from BoP vs survey spending.",
+        "investigation_steps": [
+          "Record arrival definition per source"
+        ],
+        "agents_involved": [
+          "12C"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-16",
+        "variable": "capex_execution_rate",
+        "sources_compared": [
+          "mof_nepal budget outturn",
+          "oag_nepal",
+          "FCGO accounts"
+        ],
+        "likely_classification": [
+          "definitional"
+        ],
+        "period_basis_issue": "Same FY but different closing dates of accounts.",
+        "mechanism": "Denominator: original vs revised budget; inclusion of foreign-aid direct payments.",
+        "investigation_steps": [
+          "State denominator explicitly"
+        ],
+        "agents_involved": [
+          "02B",
+          "06C",
+          "15B"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-17",
+        "variable": "cpi_inflation",
+        "sources_compared": [
+          "nrb CPI (FY average, y/y mid-month)",
+          "wb_wdi FP.CPI.TOTL.ZG",
+          "imf_weo PCPIPCH"
+        ],
+        "likely_classification": [
+          "definitional (reference period)",
+          "vintage (basket base year)"
+        ],
+        "period_basis_issue": "FY average vs CY average vs end-period.",
+        "mechanism": "Basket rebasing.",
+        "investigation_steps": [
+          "Compare like-for-like averages only"
+        ],
+        "agents_involved": [
+          "03A"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      },
+      {
+        "conflict_id": "C-18",
+        "variable": "fx_npr_usd",
+        "sources_compared": [
+          "nrb reference rates",
+          "wb_wdi PA.NUS.FCRF",
+          "IMF IFS"
+        ],
+        "likely_classification": [
+          "definitional"
+        ],
+        "period_basis_issue": "Period average vs end-period; FY vs CY.",
+        "mechanism": "Buying, selling or middle rate.",
+        "investigation_steps": [
+          "Record rate type and averaging method"
+        ],
+        "agents_involved": [
+          "03A",
+          "20B"
+        ],
+        "observation_ids": [],
+        "values": "pending — none retrieved in r1",
+        "status": "watch — no retrieved observations yet"
+      }
+    ],
+    "escalations": {
+      "open_and_preregistered": [
+        {
+          "id": "ESC-01",
+          "to": "human reviewer (via orchestrator)",
+          "trigger": "structural",
+          "status": "open",
+          "issue": "Catalog dependencies place 01C (US$3T arithmetic) and the data-ingestion tasks of 01A/03A/10C behind the global research wave, delaying the arithmetic although its inputs are Phase-2 data (see 00A-r1 catalog_bottlenecks).",
+          "positions": {
+            "keep_catalog": "Full upstream context ensures interpretation is informed by global evidence before any number is produced.",
+            "add_data_only_variants": "Base-year ingestion and arithmetic do not use that context; gating them delays auditability without evidential benefit."
+          },
+          "decision_required": "Whether to add data-only / arithmetic-only task variants to config/catalog.yaml."
+        },
+        {
+          "id": "ESC-02",
+          "to": "00A",
+          "trigger": "source inaccessible",
+          "status": "open",
+          "issue": "All tier-1 and tier-2 data hosts unreachable in r1; every conflict in the register is unverifiable until leads are fetched (task P2-01).",
+          "decision_required": "Schedule r2 in a network environment permitted to reach the hosts in docs/implementation/data_access.md."
+        },
+        {
+          "id": "ESC-03",
+          "to": "human reviewer",
+          "trigger": "pre-registered, not yet triggered",
+          "status": "watch",
+          "issue": "Headline USD conversion convention (C-02): FY GDP at FY-average FX vs CY-aligned series. Escalate with both positions if 01C and 15A/28E disagree or if the convention changes a milestone crossing.",
+          "decision_required": "Canonical convention for the headline target, recorded as an assumption in config/model_config.yaml."
+        },
+        {
+          "id": "ESC-04",
+          "to": "human reviewer",
+          "trigger": "pre-registered, not yet triggered",
+          "status": "watch",
+          "issue": "Population concept for per-capita and labour-supply use (C-06): census usual-resident vs WPP mid-year estimate, and absentee treatment.",
+          "decision_required": "Which concept is used for which model purpose."
+        },
+        {
+          "id": "ESC-05",
+          "to": "Agent 15 and Agent 28",
+          "trigger": "pre-registered",
+          "status": "watch",
+          "issue": "Any reconciliation in C-01..C-03 that changes base-year USD GDP beyond tolerance changes TGT-ARITH and all scenarios; must be re-audited."
+        }
+      ],
+      "criteria": [
+        "Escalate to 00B investigation (automatic): find_conflicts reports same variable/country/period/unit values differing beyond tolerances.source_conflict_rel_tol in config/model_config.yaml.",
+        "Escalate to 00A: a source required to classify or resolve a conflict is inaccessible — item stays pending with exact data required; no estimate substituted.",
+        "Escalate to Agents 15 and 28: a resolution would change a base-year input, a strategy result or a scenario conclusion.",
+        "Escalate to a human reviewer with both positions stated when: (a) the classification remains 'methodological' after definitions, period, vintage and coverage are aligned and the residual still exceeds tolerance; (b) two tier-equal sources disagree and the choice changes a headline result (e.g. milestone year); (c) agents disagree on the canonical convention after one challenge round; (d) resolving the dispute would require an action outside the repository (e.g. contacting a statistics office).",
+        "Never escalate by picking a value: both observations are kept; the chosen model input is recorded as a labelled assumption citing both observation ids."
+      ]
+    },
+    "resolution_notes": {
+      "protocol": {
+        "classification_order": [
+          {
+            "step": 1,
+            "class": "definitional",
+            "test": "Do the two values measure the same concept (item definition, price basis, currency, reference period type: FY vs CY, average vs end-period)? If not, the difference is definitional: record both, build a bridge if published detail allows, do not reconcile to one value."
+          },
+          {
+            "step": 2,
+            "class": "vintage",
+            "test": "Same concept but different release/revision status or base year? Compare publication dates and revision labels; the later official vintage of the same concept supersedes only by explicit status 'superseded', never by deletion."
+          },
+          {
+            "step": 3,
+            "class": "coverage",
+            "test": "Same concept and vintage but different institutional, geographic or population coverage? Record coverage of each and a bridge table."
+          },
+          {
+            "step": 4,
+            "class": "methodological",
+            "test": "Residual after steps 1-3 exceeds tolerance: differing estimation method (modelled vs survey, PPP method, imputation). Document both methods; escalate per criteria if unresolved."
+          }
+        ],
+        "records": "Each conflict gets a register entry with both observation ids, data vintages, classification, bridge or residual, and status: open / explained / escalated / closed.",
+        "source_hierarchy_use": "Hierarchy (CLAUDE.md rule 5) selects the default model input only when concepts match after step 1; it never deletes the other value.",
+        "fy_cy_rule": "No FY/CY mixing without a documented conversion registered as an assumption (CLAUDE.md rule 6); unconverted pairs are compared by underlying period only.",
+        "projection_rule": "Values past a database's estimates-start year are projections and excluded from historical comparison."
+      },
+      "r1_status": "pending — no observations retrieved; protocol and watch-list defined. In r2 run find_conflicts on the store and populate observation_ids and values fields of matching register entries; new conflicts get ids C-19 onward.",
+      "lead_dependencies": [
+        "https://nsonepal.gov.np",
+        "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+        "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CD?format=json&per_page=200",
+        "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+        "https://api.worldbank.org/v2/country/NPL/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&per_page=200",
+        "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.TOTL?format=json&per_page=200",
+        "https://www.imf.org/external/datamapper/api/v1/NGDPD/NPL",
+        "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NPL",
+        "https://www.nrb.org.np",
+        "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+        "https://population.un.org/wpp/",
+        "https://pdmo.gov.np",
+        "https://www.worldbank.org/en/programs/debt-statistics/ids",
+        "https://pip.worldbank.org",
+        "https://ilostat.ilo.org",
+        "https://comtradeplus.un.org"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://nsonepal.gov.np",
+      "title": "National Accounts of Nepal — latest release and methodology notes",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Catalog landing page (unverified). Needed for C-01, C-03, C-04: FY reference period, revision status, constant-price base year and rebasing notes."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "title": "WDI API: GDP (current LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series NY.GDP.MKTP.CN; compare year labels with NSO FY labels (C-01). Country metadata needed for national-accounts reference period."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CD?format=json&per_page=200",
+      "title": "WDI API: GDP (current US$), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series NY.GDP.MKTP.CD; USD conversion convention (C-02)."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate, Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series PA.NUS.FCRF calendar-year average (C-02, C-18)."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&per_page=200",
+      "title": "WDI API: Personal remittances received (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series BX.TRF.PWKR.DT.GD.ZS — personal remittances (personal transfers + compensation of employees) over calendar-year GDP (C-05)."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.TOTL?format=json&per_page=200",
+      "title": "WDI API: Population, total, Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series SP.POP.TOTL; derived from UN WPP, mid-year (C-06)."
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD/NPL",
+      "title": "IMF WEO DataMapper NGDPD, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "WEO nominal USD GDP; outturn vs projection boundary per vintage (C-02, C-03)."
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NPL",
+      "title": "IMF WEO DataMapper GGXWDG_NGDP, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "General government gross debt % of GDP; coverage vs PDMO central-government debt (C-08)."
+    },
+    {
+      "url": "https://www.nrb.org.np",
+      "title": "NRB balance of payments tables and exchange-rate statistics",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Catalog landing page (unverified). Workers' remittances and BoP presentation (BPM edition), FX reference rates (C-05, C-13, C-18)."
+    },
+    {
+      "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+      "title": "Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)",
+      "publisher": "International Monetary Fund",
+      "source_id": null,
+      "contains": "Standard definitions of personal transfers, compensation of employees and personal remittances; basis for classifying C-05 as definitional."
+    },
+    {
+      "url": "https://population.un.org/wpp/",
+      "title": "UN World Population Prospects — methodology and Nepal estimates",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Mid-year estimates and variant projections; methodology on census adjustment (C-06)."
+    },
+    {
+      "url": "https://pdmo.gov.np",
+      "title": "PDMO annual debt report",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "Catalog landing page (unverified). Debt coverage and FY-end stock (C-08, C-09)."
+    },
+    {
+      "url": "https://www.worldbank.org/en/programs/debt-statistics/ids",
+      "title": "International Debt Statistics — Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": "Total external debt incl. private non-guaranteed and IMF credit (C-09)."
+    },
+    {
+      "url": "https://pip.worldbank.org",
+      "title": "Poverty and Inequality Platform — Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "International-line poverty and PPP vintage (C-12)."
+    },
+    {
+      "url": "https://ilostat.ilo.org",
+      "title": "ILOSTAT — Nepal labour force indicators",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Survey-based vs modelled estimates (C-07)."
+    },
+    {
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade — Nepal and partner-reported trade",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror trade data for C-10."
+    }
+  ]
+}
