@@ -1,0 +1,364 @@
+{
+  "subagent_id": "17C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; web-search budget exhausted, data hosts blocked). Fifteen leads recorded, most reused from sibling tasks and upstream agents: CEA/MoP/CERC cross-border instruments that govern wheeling Nepali power to Bangladesh through India, NEA annual reports, MoFA Nepal, the NTIP agreement register, the India transit-treaty compilation, NITDB and customs statistics, SASEC, the UN Awaza Programme of Action, ICRIER and a World Bank Bhutan CEM as comparator. Q1 (Nepal-India-Bangladesh power trade): four components defined (agreement, Indian approval, delivered flows, announced expansion); none has a retrieved primary record, all pending. Q2 (transit rights to Bangladeshi ports): legal basis vs use-in-practice separated; both pending. Pakistan and Bhutan: no bilateral lead beyond MoFA landing page and SAARC-level instruments (see 17D). No numbers are recorded.",
+  "findings": [
+    {
+      "claim": "Q1: Status of the Nepal-India-Bangladesh power trade arrangement (agreement, Indian approval, delivered energy, announced expansion) is pending.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "cea_india",
+        "mofa_nepal"
+      ],
+      "note": "Agreement text/signing record, CEA approval, NEA sales by destination FY2024/25-FY2025/26."
+    },
+    {
+      "claim": "Energy delivered from Nepal to Bangladesh and realised tariff.",
+      "type": "pending",
+      "value": null,
+      "unit": "GWh",
+      "source_ids": [
+        "nea"
+      ],
+      "note": "NEA annual report sales tables; Bangladesh Power Development Board import record for cross-check (not in catalog)."
+    },
+    {
+      "claim": "Q2: Legal basis of Nepal's access to Bangladeshi ports (bilateral transit agreement/protocol and the India transit leg) is pending.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "tepc"
+      ],
+      "note": "Texts of Nepal-Bangladesh transit instruments; India transit protocol provisions on Bangladesh-bound traffic."
+    },
+    {
+      "claim": "Q2: Actual use of Bangladeshi ports and land routes for Nepal's trade (cargo volumes by route and year).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nitdb",
+        "customs_nepal"
+      ],
+      "note": "NITDB/customs route-level data; absence of data will be reported as a gap, not zero."
+    },
+    {
+      "claim": "Nepal trade with Bangladesh, Bhutan and Pakistan by HS chapter, Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal"
+      ],
+      "note": "Customs FY2022/23 trade book (17C-L11) and later books."
+    },
+    {
+      "claim": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Bangladeshi port access is carried in scenarios as an alternative route only when an in-use record exists; otherwise it is a scenario option with stated legal and physical preconditions (Indian transit leg, rail/road permissions).",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Text or official signing record of the Nepal-India-Bangladesh power sale arrangement.",
+    "Bangladesh Power Development Board and Bangladesh commerce/shipping ministry sources are not in the source catalog.",
+    "Nepal-Bangladesh transit agreement/protocol texts (not located).",
+    "Route-level cargo data for Nepal's use of Chittagong/Mongla and Bangladesh land routes.",
+    "Nepal-Pakistan and Nepal-Bhutan bilateral trade/transport instruments beyond SAARC (no leads).",
+    "Bhutan-specific evidence on BBIN and on its own India power-trade framework only via comparator (World Bank CEM)."
+  ],
+  "assumptions": [
+    {
+      "id": "17C-A1",
+      "text": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17C-A2",
+      "text": "Trilateral transactions depend on Indian approvals under the same MoP/CEA/CERC framework documented by 17A; 17C does not duplicate that framework but records transaction-specific approvals.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17C-A3",
+      "text": "Bangladesh FY (July-June) and Nepal FY (mid-July) are treated as distinct; conversion documented when flows are compared.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Add catalog ids for Bangladesh Power Development Board, Bangladesh Bank/Ministry of Commerce, Chittagong and Mongla port authorities, and Bhutan's Ministry of Energy/Druk Green; 17C cannot otherwise cite Bangladesh- or Bhutan-side records."
+    },
+    {
+      "to": "22B",
+      "text": "Trilateral (Bangladesh-destined) sales should be a separate segment in the electricity export series (X16), not merged with Indian exchange or bilateral sales, because pricing and approval regimes differ."
+    },
+    {
+      "to": "21B",
+      "text": "Bangladeshi port routes should enter transit modelling (X08) only with an in-use cargo record; otherwise model as an option with Indian transit-leg preconditions."
+    }
+  ],
+  "uncertainty": "Very high for r1. No primary record of the trilateral arrangement or of Bangladesh port usage was located; the component list is provisional and partly named from domain knowledge. Bangladeshi-side sources are absent from the catalog, so cross-validation is currently impossible.",
+  "specific": {
+    "trilateral_power_status": {
+      "status": "pending",
+      "question": "Q1 What is the status of Nepal-India-Bangladesh power trade arrangements?",
+      "components": [
+        {
+          "component": "Tripartite/trilateral power sale agreement (Nepal seller, Indian trading intermediary, Bangladesh buyer)",
+          "status_class": "pending",
+          "note": "Named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "evidence_needed": "Signed agreement text or NEA/BPDB/Indian intermediary record of signing; parties, term, tariff basis",
+          "leads": [
+            "17C-L05",
+            "17C-L06",
+            "17C-L12"
+          ]
+        },
+        {
+          "component": "Indian regulatory approval for wheeling Nepal power to Bangladesh",
+          "status_class": "pending",
+          "evidence_needed": "CEA designated-authority approval record; applicable CERC provisions",
+          "leads": [
+            "17C-L01",
+            "17C-L02",
+            "17C-L03",
+            "17C-L04"
+          ]
+        },
+        {
+          "component": "Physical flows actually delivered to Bangladesh",
+          "status_class": "pending",
+          "evidence_needed": "NEA annual report sales by destination (FY2024/25, FY2025/26); Bangladesh-side import record",
+          "leads": [
+            "17C-L05"
+          ]
+        },
+        {
+          "component": "Announced expansion (additional volumes, direct Nepal-Bangladesh transmission link, Bangladesh investment in Nepali hydropower)",
+          "status_class": "pending",
+          "note": "Named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "evidence_needed": "MoU/agreement texts; distinguish announcements from signed contracts",
+          "leads": [
+            "17C-L06",
+            "17C-L12"
+          ]
+        }
+      ],
+      "method": "Classify each component using 17C-A1; approvals, contracts and delivered energy recorded separately; Bangladesh FY (July-June) vs Nepal FY (mid-July) differences documented.",
+      "variables": [
+        "X16",
+        "X30"
+      ]
+    },
+    "port_access_status": {
+      "status": "pending",
+      "question": "Q2 What transit rights to Bangladeshi ports exist in practice?",
+      "legal_basis": [
+        {
+          "instrument": "Nepal-Bangladesh trade and transit agreement(s) and protocol(s)",
+          "status_class": "pending",
+          "note": "Named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "leads": [
+            "17C-L06",
+            "17C-L07"
+          ]
+        },
+        {
+          "instrument": "India-Nepal Treaty of Transit provisions for movement through Indian territory to/from Bangladesh",
+          "status_class": "pending",
+          "leads": [
+            "17C-L08"
+          ]
+        },
+        {
+          "instrument": "BBIN Motor Vehicles Agreement (cross-reference 17D)",
+          "status_class": "pending",
+          "leads": [
+            "17C-L12"
+          ]
+        },
+        {
+          "instrument": "Multilateral LLDC transit principles (Awaza Programme of Action)",
+          "status_class": "normative context only",
+          "leads": [
+            "17C-L13"
+          ]
+        }
+      ],
+      "in_practice": {
+        "status": "pending",
+        "evidence_needed": "Cargo volumes of Nepal's third-country trade routed via Chittagong/Mongla (by year); bilateral trade via the Kakarbhitta-Banglabandha route; rail routing (Rohanpur-Singhabad or other) usage records",
+        "leads": [
+          "17C-L09",
+          "17C-L10",
+          "17C-L11",
+          "17C-L14"
+        ],
+        "source_ids": [
+          "nitdb",
+          "customs_nepal"
+        ]
+      },
+      "method": "Right-on-paper (legal basis) vs right-in-use (cargo record) are reported separately; absence of cargo records is reported as a gap, not as zero use."
+    },
+    "bhutan_pakistan_notes": {
+      "status": "pending",
+      "note": "Bhutan: comparator for hydropower export to India (17C-L15) and BBIN participant; Pakistan: relevant only through SAARC instruments (17D). No bilateral leads located.",
+      "leads": [
+        "17C-L06",
+        "17C-L15"
+      ]
+    },
+    "supporting_variables": {
+      "X16": {
+        "role": "primary",
+        "contribution": "Trilateral (Bangladesh) segment of electricity exports, approvals and prices",
+        "status": "pending",
+        "leads": [
+          "17C-L01",
+          "17C-L02",
+          "17C-L03",
+          "17C-L05"
+        ]
+      },
+      "X30": {
+        "role": "supporting",
+        "contribution": "Bangladesh/Bhutan-related regional arrangements (BBIN) feeding 17D's status table",
+        "status": "pending",
+        "leads": [
+          "17C-L06",
+          "17C-L12"
+        ]
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "17C-L01",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "Import/Export (Cross Border) of Electricity - CEA page",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Designated-authority documents and (to verify) approvals for cross-border transactions, including any approval for Nepal-to-Bangladesh sale through the Indian grid (trilateral transaction)"
+    },
+    {
+      "lead_id": "17C-L02",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+      "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority (26 February 2021)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Provisions for trade between two neighbouring countries through Indian territory/grid (tripartite/trilateral transactions): approvals, transmission access, trading-licensee role"
+    },
+    {
+      "lead_id": "17C-L03",
+      "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+      "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": null,
+      "contains": "Rules on transmission charges, losses and scheduling applicable to electricity wheeled through India between Nepal and Bangladesh"
+    },
+    {
+      "lead_id": "17C-L04",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
+      "publisher": "Ministry of Power, Government of India (hosted by CEA)",
+      "source_id": "cea_india",
+      "contains": "Guideline clauses permitting trade between neighbouring countries via Indian grid and conditions attached"
+    },
+    {
+      "lead_id": "17C-L05",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Annual reports FY2023/24 and FY2024/25: export sales by destination/segment incl. any Bangladesh-destined (trilateral) sales, contract parties, tariff; Nepal FY"
+    },
+    {
+      "lead_id": "17C-L06",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - Nepal-Bangladesh, Nepal-Bhutan, Nepal-Pakistan relations",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Landing page only: bilateral relations briefs, joint statements, foreign-secretary/commerce-secretary level meeting outcomes with Bangladesh (transit, power, rail/road links)"
+    },
+    {
+      "lead_id": "17C-L07",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal - trade agreements and transit procedures",
+      "publisher": "Trade and Export Promotion Centre / MoICS, Nepal",
+      "source_id": "tepc",
+      "contains": "Agreement register (Nepal-Bangladesh trade and transit agreements and protocols) and border procedures (Kakarbhitta route to Bangladesh)"
+    },
+    {
+      "lead_id": "17C-L08",
+      "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+      "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "India transit treaty/protocol provisions governing Nepal traffic-in-transit through Indian territory to Bangladesh (routes, corridors, documentation) - to check"
+    },
+    {
+      "lead_id": "17C-L09",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "Dry-port cargo statistics by facility (Kakarbhitta, Biratnagar) and any records of cargo routed via Bangladeshi ports"
+    },
+    {
+      "lead_id": "17C-L10",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs, Nepal",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Trade by partner (Bangladesh, Bhutan, Pakistan) and by customs office; third-country import routing where recorded; Nepal FY"
+    },
+    {
+      "lead_id": "17C-L11",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "FY2022/23 partner tables for Bangladesh, Bhutan, Pakistan by HS chapter"
+    },
+    {
+      "lead_id": "17C-L12",
+      "url": "https://www.sasec.asia",
+      "title": "South Asia Subregional Economic Cooperation (SASEC) programme site",
+      "publisher": "SASEC Secretariat (ADB)",
+      "source_id": "adb_nepal",
+      "contains": "Programme news and documents on BBIN energy trade and transport corridors (Nepal-Bangladesh links); locating aid for primary agreements"
+    },
+    {
+      "lead_id": "17C-L13",
+      "url": "https://www.un.org/sites/un2.un.org/files/apoa_booklet.pdf",
+      "title": "Awaza Programme of Action for Landlocked Developing Countries 2024-2034",
+      "publisher": "United Nations",
+      "source_id": null,
+      "contains": "Multilateral commitments on transit rights of LLDCs; legal-normative context for Nepal's access to Bangladeshi ports (not a bilateral right)"
+    },
+    {
+      "lead_id": "17C-L14",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Analysis of transit routes through India, possibly incl. Bangladesh-bound corridors; interpretation only"
+    },
+    {
+      "lead_id": "17C-L15",
+      "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+      "title": "Bhutan Country Economic Memorandum (2024)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Bhutan's hydropower-export model with India; comparator for Nepal's cross-border power arrangements (to check coverage; catalog id wb_npl used as nearest World Bank id)"
+    }
+  ]
+}
