@@ -22,7 +22,7 @@
       "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Stored as area (hectares - unit to be added) and count of parcels; trend only across census rounds with comparable holding definitions (07C-L03)."
     },
     {
-      "claim": "Distribution of holdings by size class (e.g. below 0.5 ha, 0.5-1 ha, above 1 ha) and trend in fragmentation across census rounds.",
+      "claim": "Distribution of holdings by size class (size classes as tabulated by NSCA) and trend in fragmentation across census rounds.",
       "type": "pending",
       "value": null,
       "unit": "percent",

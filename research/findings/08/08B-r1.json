@@ -1,0 +1,598 @@
+{
+ "subagent_id": "08B",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T00:00:00+00:00",
+ "summary": "Round r1 (restricted network). Research design and 21 source leads for Nepal's digital infrastructure and cybersecurity baseline. Q1 (broadband penetration, speeds, prices): NTA MIS/annual report (subscription-based, Nepali-calendar months), ITU DataHub/WDI (person-based, calendar year), ITU Price Baskets, and crowd-sourced speed data are defined as distinct measures and kept apart. Q2 (international routes and redundancy): design to enumerate each cross-border fibre route, capacity and physical corridor and test single-point-of-failure exposure; NTA and Nepal Telecom disclosures and ITU bandwidth data are the leads. Q3 (laws): status register for the Electronic Transactions Act, Individual Privacy Act, National Cyber Security Policy, any IT/cyber bill, NTA IT Policy and NRB guidelines, each to be confirmed from primary text. Most NTA, MoCIT and Law Commission URLs are home pages from general knowledge (unverified). No values retrieved; all empirical items pending.",
+ "findings": [
+  {
+   "claim": "Definitions for Q1: (a) NTA 'internet/broadband penetration' is subscriptions per 100 population and counts SIMs/data packs, so it can exceed individual use; (b) ITU/WDI 'individuals using the internet' is a person-based survey/estimate; (c) speeds from crowd-sourced tests (Ookla) are not representative samples. These are reported side by side, never averaged. NTA months follow the Nepali calendar; ITU/WDI are calendar years.",
+   "type": "assumption",
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Route-redundancy design for Q2: enumerate each international terrestrial fibre route (border crossing point, operator, partner-country carrier, lit capacity), then test single-point-of-failure exposure: share of international bandwidth by country (India vs China) and by physical corridor, and whether diverse paths survive a single landslide/earthquake corridor loss. Physical-hazard overlay coordinated with 24D and 16B.",
+   "type": "assumption",
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Legal-framework design for Q3: status categories = in force (Act/Regulation with commencement date), policy only (Cabinet-approved policy, not law), draft bill, absent. Primary text from the Law Commission or issuing ministry is required for 'in force'; news is a locator only.",
+   "type": "assumption",
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Q1: fixed broadband subscriptions (total and FTTH) and mobile broadband subscriptions, by operator, latest month and FY time series.",
+   "type": "pending",
+   "value": null,
+   "period": "Nepali-calendar months; Nepal FY annual",
+   "source_ids": [
+    "nta_nepal"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L01",
+    "08B-L02"
+   ],
+   "note": "NTA MIS; host blocked.",
+   "unit": "count",
+   "data_required": "NTA MIS table on broadband subscriptions by technology and operator."
+  },
+  {
+   "claim": "Q1: fixed and active mobile-broadband subscriptions per 100 inhabitants and individuals using the internet (ITU/WDI).",
+   "type": "pending",
+   "value": null,
+   "period": "Calendar years 2015-latest",
+   "source_ids": [
+    "itu",
+    "wb_wdi"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L03",
+    "08B-L09"
+   ],
+   "note": "ITU derives subscriptions from NTA; use per-100 values as reported.",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q1: median fixed and mobile download speeds.",
+   "type": "pending",
+   "value": null,
+   "period": "Calendar months",
+   "source_ids": [
+    "academic"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L10",
+    "08B-L02"
+   ],
+   "note": "No Mbit/s unit code in units.py; unit to be added by 00A before recording. NTA QoS results preferred over crowd-sourced data."
+  },
+  {
+   "claim": "Q1: price of data-only mobile broadband and fixed broadband baskets as percent of GNI per capita (ITU ICT Price Baskets).",
+   "type": "pending",
+   "value": null,
+   "period": "Calendar years",
+   "source_ids": [
+    "itu"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L08"
+   ],
+   "note": "Also record USD values as USD_current observations.",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q2: total international internet bandwidth (lit/used), and split by India vs China routes.",
+   "type": "pending",
+   "value": null,
+   "period": "Calendar year (ITU); Nepal FY (NTA)",
+   "source_ids": [
+    "itu",
+    "nta_nepal"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L04",
+    "08B-L02",
+    "08B-L11"
+   ],
+   "note": "Bandwidth unit (Mbit/s or Gbit/s) missing from units.py; flagged to 00A (also raised by 24B)."
+  },
+  {
+   "claim": "Q2: inventory of cross-border fibre routes and international gateway licensees, with physical corridor for each.",
+   "type": "pending",
+   "value": null,
+   "period": "Latest available",
+   "source_ids": [
+    "nta_nepal"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L02",
+    "08B-L11",
+    "08B-L12"
+   ],
+   "note": "Needed to judge redundancy; not found in r1.",
+   "unit": "count"
+  },
+  {
+   "claim": "Q2/data centres: number, tier and IT-load capacity of data centres in Nepal (GIDC, private colocation), and IXP presence.",
+   "type": "pending",
+   "value": null,
+   "period": "Latest available",
+   "source_ids": [
+    "academic"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L17",
+    "08B-L21",
+    "08B-L18"
+   ],
+   "note": "Registry data self-reported; government capacity from NITC.",
+   "unit": "MW"
+  },
+  {
+   "claim": "Q3: status (in force/policy/draft) and dates of Electronic Transactions Act 2063, Individual Privacy Act 2075, National Cyber Security Policy 2080, any IT/cyber-security bill, NTA IT Policy 2080, NRB IT/cyber guidelines, and any data-centre directive.",
+   "type": "pending",
+   "value": null,
+   "period": "As of 2026-09",
+   "source_ids": [
+    "lawcommission_nepal",
+    "nta_nepal",
+    "nrb"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L14",
+    "08B-L15",
+    "08B-L12",
+    "08B-L19",
+    "08B-L13"
+   ],
+   "note": "Titles listed are working identifications; each must be confirmed from the primary text before being recorded as a fact."
+  },
+  {
+   "claim": "Q3: ITU Global Cybersecurity Index 2024 tier and pillar scores for Nepal.",
+   "type": "pending",
+   "value": null,
+   "period": "GCI 2024 edition (reference period per ITU methodology)",
+   "source_ids": [
+    "itu"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L16",
+    "08B-L05"
+   ],
+   "note": "Cross-edition comparisons invalid where methodology changed (24D note).",
+   "unit": "index"
+  },
+  {
+   "claim": "Operating cost: electricity tariff applicable to data-centre loads and reliability (outage hours) for commercial customers.",
+   "type": "pending",
+   "value": null,
+   "period": "Nepal FY",
+   "source_ids": [
+    "erc_nepal",
+    "nea"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08B-L20"
+   ],
+   "note": "ERC tariff schedule not located; coordinate with 24B/05A.",
+   "unit": "NPR_per_kWh"
+  }
+ ],
+ "data_gaps": [
+  "All values pending: nta.gov.np, itu.int, lawcommission.gov.np and other data hosts blocked; no document downloaded.",
+  "Exact NTA MIS-report and annual-report URLs not located (home page only, unverified).",
+  "No source located for cross-border fibre route inventory or corridor-level capacity.",
+  "No unit code for bandwidth or speed (Mbit/s, Gbit/s) in units.py.",
+  "Data-centre capacity data only from self-reported registries and government operator pages.",
+  "Primary texts of the National Cyber Security Policy 2080 and any IT/cyber bill not located; enactment status unknown.",
+  "ERC tariff schedule for data-centre loads not located (shared gap with 24B)."
+ ],
+ "assumptions": [
+  "Subscription-based and person-based connectivity measures are never merged.",
+  "Legal status is recorded only from primary texts; news is a locator.",
+  "Instrument titles in legal_framework_status are working identifications to be confirmed."
+ ],
+ "challenges": [
+  {
+   "to": "00A",
+   "text": "Add bandwidth/speed unit codes (Mbit/s, Gbit/s) to units.py (also requested by 24B); add catalog ids for mocit_nepal and for industry registries (PeeringDB, Ookla) or confirm they fall under 'academic'. Allocate a network run to fetch 08B-L01, L02, L14, L15, L16."
+  },
+  {
+   "to": "24D",
+   "text": "08B's legal_framework_status register overlaps your defensive-posture benchmarks; propose 08B holds statute status and dates, 24D holds benchmark scoring, to avoid duplicate observations."
+  },
+  {
+   "to": "16B",
+   "text": "Support treating international connectivity dependence on India-routed transit as an exposure entry, pending route data from 08B-L02/L11."
+  },
+  {
+   "to": "28",
+   "text": "Red-team: any strategy premised on data-centre or digital-service exports should be checked against route redundancy and the absence (unverified) of data-centre regulation."
+  }
+ ],
+ "uncertainty": "High. No values retrieved. Definitions of penetration differ materially across NTA and ITU; speed data are non-representative; route and capacity data may be commercially confidential and unavailable; legal status may have changed since the last located document.",
+ "specific": {
+  "connectivity_baseline": {
+   "status": "pending",
+   "indicators": [
+    {
+     "indicator": "fixed broadband subscriptions (total, FTTH)",
+     "unit": "count",
+     "source_ids": [
+      "nta_nepal",
+      "itu"
+     ],
+     "lead_ids": [
+      "08B-L01",
+      "08B-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "mobile broadband subscriptions",
+     "unit": "count",
+     "source_ids": [
+      "nta_nepal",
+      "itu"
+     ],
+     "lead_ids": [
+      "08B-L01",
+      "08B-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "individuals using the internet",
+     "unit": "percent",
+     "source_ids": [
+      "itu",
+      "wb_wdi"
+     ],
+     "lead_ids": [
+      "08B-L03",
+      "08B-L09"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "median fixed/mobile speed",
+     "unit": "pending unit code (Mbit/s)",
+     "source_ids": [
+      "academic",
+      "nta_nepal"
+     ],
+     "lead_ids": [
+      "08B-L10",
+      "08B-L02"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "mobile and fixed broadband basket price, percent of GNI per capita",
+     "unit": "percent",
+     "source_ids": [
+      "itu"
+     ],
+     "lead_ids": [
+      "08B-L08"
+     ],
+     "status": "pending"
+    },
+    {
+     "indicator": "data-centre capacity (IT load)",
+     "unit": "MW",
+     "source_ids": [
+      "academic"
+     ],
+     "lead_ids": [
+      "08B-L17",
+      "08B-L21"
+     ],
+     "status": "pending"
+    }
+   ],
+   "method": "NTA administrative subscriptions, ITU person-based use and crowd-sourced speeds are kept as separate observations with their definitions; NTA Nepali-month data are not mixed with calendar-year ITU data without conversion."
+  },
+  "route_redundancy": {
+   "status": "pending",
+   "routes": [],
+   "questions": [
+    "Which cross-border fibre links (India border points; China via the northern corridor) are lit, by which operators, with what capacity?",
+    "What share of international bandwidth depends on India-routed transit?",
+    "Do the routes share physical corridors exposed to the same landslide/earthquake hazards?",
+    "Is there domestic IXP and caching that keeps domestic traffic local during an international outage?"
+   ],
+   "lead_ids": [
+    "08B-L02",
+    "08B-L04",
+    "08B-L11",
+    "08B-L21"
+   ],
+   "coordination": [
+    "24D (defensive resilience)",
+    "16B (single-gateway exposure entry)",
+    "24B (data-centre route diversity)"
+   ]
+  },
+  "legal_framework_status": {
+   "status": "pending",
+   "instruments": [
+    {
+     "instrument": "Electronic Transactions Act 2063 (2008)",
+     "scope": "e-signatures, electronic records, computer offences",
+     "status": "pending confirmation from primary text",
+     "lead_ids": [
+      "08B-L14"
+     ]
+    },
+    {
+     "instrument": "Individual Privacy Act 2075 (2018) and Regulations",
+     "scope": "personal data protection",
+     "status": "pending confirmation from primary text",
+     "lead_ids": [
+      "08B-L14"
+     ]
+    },
+    {
+     "instrument": "National Cyber Security Policy 2080 (2023)",
+     "scope": "national cyber-security governance, CERT",
+     "status": "pending confirmation (policy, not statute)",
+     "lead_ids": [
+      "08B-L15"
+     ]
+    },
+    {
+     "instrument": "Information Technology / cyber-security bill",
+     "scope": "comprehensive IT and cyber law",
+     "status": "pending: enactment status unknown",
+     "lead_ids": [
+      "08B-L15",
+      "08B-L14"
+     ]
+    },
+    {
+     "instrument": "NTA IT Policy 2080 (2023)",
+     "scope": "licensee security, hosting, incident handling",
+     "status": "pending confirmation from nta.gov.np copy",
+     "lead_ids": [
+      "08B-L12"
+     ]
+    },
+    {
+     "instrument": "NRB IT and cyber-resilience guidelines for BFIs",
+     "scope": "financial-sector cyber obligations",
+     "status": "pending location of documents",
+     "lead_ids": [
+      "08B-L19"
+     ]
+    },
+    {
+     "instrument": "Data-centre / cloud directive or licensing rule",
+     "scope": "data-centre licensing, localisation",
+     "status": "pending; secondary report suggests none exists (unverified)",
+     "lead_ids": [
+      "08B-L18",
+      "08B-L15"
+     ]
+    },
+    {
+     "instrument": "National ICT Policy 2015 / Digital Nepal Framework",
+     "scope": "policy targets",
+     "status": "pending",
+     "lead_ids": [
+      "08B-L13",
+      "08B-L15"
+     ]
+    }
+   ],
+   "benchmark": "ITU GCI 2024 (08B-L16), pending; cross-edition comparisons only with methodology notes."
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "08B-L01",
+   "url": "https://www.nta.gov.np/",
+   "title": "Nepal Telecommunications Authority - MIS reports (monthly telecom indicators)",
+   "publisher": "Nepal Telecommunications Authority",
+   "source_id": "nta_nepal",
+   "contains": "Monthly MIS report: mobile, fixed broadband (FTTH, ADSL/cable, wireless) and mobile broadband subscriptions by operator and technology; internet penetration as defined by NTA (subscription-based, Nepali-calendar months). Exact MIS page URL to be located.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L02",
+   "url": "https://www.nta.gov.np/",
+   "title": "Nepal Telecommunications Authority - Annual Report (FY)",
+   "publisher": "Nepal Telecommunications Authority",
+   "source_id": "nta_nepal",
+   "contains": "Annual report: licensed ISPs, international internet gateway licences, total international bandwidth by route/border point, tariffs, quality-of-service results, spectrum; Nepal fiscal year.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L03",
+   "url": "https://datahub.itu.int/data/?e=NPL&c=701&i=13067",
+   "title": "ITU DataHub - Nepal data explorer",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "Nepal ICT indicators: fixed and active mobile-broadband subscriptions per 100, internet use, international bandwidth usage; calendar year; administrative data reported by NTA.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L04",
+   "url": "https://datahub.itu.int/data/?i=19255",
+   "title": "ITU DataHub - Lit/equipped international bandwidth capacity",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "International bandwidth capacity (Mbit/s) by country incl. Nepal and comparators; calendar year.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L05",
+   "url": "https://datahub.itu.int/indicators/",
+   "title": "ITU DataHub - Indicator catalogue",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "Indicator codes and definitions (subscriptions, bandwidth, price baskets, GCI) to align NTA and ITU definitions.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L06",
+   "url": "https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/",
+   "title": "ITU Measuring Digital Development: Facts and Figures 2025",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "LDC and income-group connectivity and affordability benchmarks, calendar 2025.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L07",
+   "url": "https://www.itu.int/itu-d/reports/statistics/facts-figures-for-ldc/",
+   "title": "ITU Facts and Figures: Focus on Least Developed Countries",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "LDC connectivity, affordability and quality benchmarks.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L08",
+   "url": "https://www.itu.int/en/ITU-D/Statistics/Pages/ICTprices/default.aspx",
+   "title": "ITU ICT Price Baskets",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "Nepal data-only mobile broadband and fixed broadband basket prices in USD, PPP and as percent of GNI per capita; calendar year.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L09",
+   "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=NP",
+   "title": "Individuals using the Internet (% of population) - Nepal (WDI)",
+   "publisher": "World Bank",
+   "source_id": "wb_wdi",
+   "contains": "Survey/estimate-based internet use (ITU-sourced), calendar year; differs conceptually from NTA subscription-based penetration.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L10",
+   "url": "https://www.speedtest.net/global-index/nepal",
+   "title": "Speedtest Global Index - Nepal",
+   "publisher": "Ookla",
+   "source_id": "academic",
+   "contains": "Median fixed and mobile download/upload speeds, monthly; crowd-sourced, user-initiated tests (selection bias).",
+   "verification": "URL from general knowledge — unverified",
+   "evidence_grade": "industry crowd-sourced data - lowest tier"
+  },
+  {
+   "lead_id": "08B-L11",
+   "url": "https://www.ntc.net.np/",
+   "title": "Nepal Telecom - annual report and investor information",
+   "publisher": "Nepal Doorsanchar Company Ltd (Nepal Telecom)",
+   "source_id": "academic",
+   "contains": "Operator annual report: international connectivity via India and China (cross-border fibre links), backbone and IP transit capacity; listed-company disclosures.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L12",
+   "url": "https://dig.watch/resource/the-it-policy-of-the-nepal-telecommunications-authority-nta-2080-2023",
+   "title": "The IT Policy of the Nepal Telecommunications Authority (NTA), 2080 (2023)",
+   "publisher": "Nepal Telecommunications Authority (copy on dig.watch)",
+   "source_id": "nta_nepal",
+   "contains": "NTA IT policy text: information security, incident handling, data centres/hosting, connectivity. Primary copy to be retrieved from nta.gov.np.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L13",
+   "url": "https://dhulikhelmun.gov.np/sites/dhulikhelmun.gov.np/files/documents/ICT%20policy%20Nepal.pdf",
+   "title": "National Information and Communication Technology Policy, 2015 (copy hosted by Dhulikhel Municipality)",
+   "publisher": "Government of Nepal (Ministry of Information and Communication)",
+   "source_id": "moest",
+   "contains": "Policy targets for broadband, international connectivity and e-government; baseline policy framework.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L14",
+   "url": "https://www.lawcommission.gov.np",
+   "title": "Nepal Law Commission - statute database",
+   "publisher": "Nepal Law Commission",
+   "source_id": "lawcommission_nepal",
+   "contains": "Authoritative texts: Electronic Transactions Act 2063 (2008) with amendments; Individual Privacy Act 2075 (2018) and Privacy Regulations; Telecommunications Act 2053; any Information Technology / cyber-security bill status. Record enactment, commencement and amendment dates.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L15",
+   "url": "https://mocit.gov.np/",
+   "title": "Ministry of Communication and Information Technology - policies (National Cyber Security Policy 2080, Digital Nepal Framework, IT bill drafts)",
+   "publisher": "Ministry of Communication and Information Technology, Nepal",
+   "source_id": "lawcommission_nepal",
+   "contains": "Primary text of National Cyber Security Policy 2080 (2023), Digital Nepal Framework, data-centre and cloud guidelines, draft IT/cyber bills; approval dates.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L16",
+   "url": "https://www.itu.int/epublications/publication/global-cybersecurity-index-2024",
+   "title": "ITU Global Cybersecurity Index 2024",
+   "publisher": "ITU",
+   "source_id": "itu",
+   "contains": "GCI 2024 tier and pillar results (legal, technical, organisational, capacity, cooperation) for Nepal and comparators; methodology notes (self-reported questionnaire).",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L17",
+   "url": "https://nitc.gov.np/aboutus/introduction",
+   "title": "National Information Technology Center - Introduction",
+   "publisher": "National Information Technology Center, Nepal",
+   "source_id": null,
+   "contains": "Operator of the Government Integrated Data Center (GIDC) and government cloud; locator for capacity, tier, disaster-recovery site and national CERT/CSIRT arrangements.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08B-L18",
+   "url": "https://kathmandupost.com/national/2026/04/27/nepal-wants-to-become-a-data-centre-hub-it-has-no-rules-for-how",
+   "title": "Nepal wants to become a data centre hub. It has no rules for how (Kathmandu Post, 27 Apr 2026)",
+   "publisher": "The Kathmandu Post",
+   "source_id": "academic",
+   "contains": "Secondary report on absent data-centre regulation (licensing, tariff category, localisation); locator only.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+   "evidence_grade": "news - locator only"
+  },
+  {
+   "lead_id": "08B-L19",
+   "url": "https://www.nrb.org.np/",
+   "title": "NRB Information Technology Guidelines and Cyber Resilience Guidelines for BFIs",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Sectoral cyber-security obligations for banks and financial institutions (IT guidelines, cyber resilience guidelines, incident reporting). Exact document URLs to be located.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08B-L20",
+   "url": "https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf",
+   "title": "Uptime Institute Global Data Center Survey 2025",
+   "publisher": "Uptime Institute",
+   "source_id": "academic",
+   "contains": "Reference facility metrics (PUE, outages) for costing data-centre operation; not Nepal-specific (shared with 24B-L08).",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+   "evidence_grade": "industry survey"
+  },
+  {
+   "lead_id": "08B-L21",
+   "url": "https://www.peeringdb.com/",
+   "title": "PeeringDB - Nepal facilities, IXPs and networks",
+   "publisher": "PeeringDB",
+   "source_id": "academic",
+   "contains": "Registered data centres (facilities), internet exchange points (e.g. Nepal IX) and networks in Nepal; self-reported registry used as a locator for data-centre and IXP inventory.",
+   "verification": "URL from general knowledge — unverified",
+   "evidence_grade": "self-reported registry"
+  }
+ ]
+}
