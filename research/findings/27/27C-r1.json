@@ -1,0 +1,881 @@
+{
+ "subagent_id": "27C",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T00:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; no WebSearch used for 27C). 37 source leads recorded from the shared lead register and upstream findings (04B, 26D, 26A/26E, 18A/18D, 24C, 01B), plus leads marked 'URL from general knowledge - unverified' (India-Bhutan hydropower framework, Nam Theun 2 project page, UNCTAD WIR 2019 on SEZs, SEZ Authority Nepal, MIGA, IFC disclosures, CGD Global Skill Partnerships, PPI database, IEG). Q1 (which partnership structures have documented results in comparable economies) is set up as 10 hypothetical structure options: intergovernmental hydropower JV, export IPP under BOOT with guarantees, SEZ with anchor investor, FITTA technology licensing, training-plus-migration skills partnership, digital-services delivery centres, EPC-plus-finance under a G2G framework, development compact, DFI blended finance, and investment-treaty/facilitation upgrade. Each lists comparator cases to verify, Nepal's legal basis, feasibility conditions, trade-offs across objectives, links to 27A register rows and 04C conflict items, and scenario links. No documented result has been retrieved; all empirical items are pending and no numbers are recorded. The options are hypothetical and do not represent any government's position.",
+ "findings": [
+  {
+   "claim": "Q1: Partnership, investment, training and technology-transfer structures with documented results in comparable economies - 10 hypothetical structure options in specific.structure_options, each with comparator cases to verify, Nepal legal basis, feasibility conditions and trade-offs.",
+   "type": "pending",
+   "value": null,
+   "period": "case-specific; calendar vs local fiscal year recorded per case",
+   "source_ids": [
+    "unctadstat",
+    "academic",
+    "wb_npl",
+    "unctad_iia"
+   ],
+   "observation_ids": [],
+   "note": "No case study retrieved in r1. Required per option: ex-post evaluation or completion report with outcome indicators."
+  },
+  {
+   "claim": "Q1a: Current use of these structures in Nepal (FDI by sector/source, technology-transfer approvals, PDAs, IPP PPAs) as baseline.",
+   "type": "pending",
+   "value": null,
+   "unit": "count",
+   "period": "Nepal FY2022/23-FY2025/26",
+   "source_ids": [
+    "nrb",
+    "doind",
+    "ibn",
+    "nea"
+   ],
+   "observation_ids": [],
+   "note": "NRB FDI surveys, DoI approvals, IBN PDA list, NEA annual reports."
+  },
+  {
+   "claim": "Q1b: Documented outcomes of Bhutan's intergovernmental hydropower model (fiscal revenue, public debt, diversification) as the closest structural comparator for SO-01.",
+   "type": "pending",
+   "value": null,
+   "period": "Bhutan FY (July-June) and calendar year as reported; record basis",
+   "source_ids": [
+    "academic"
+   ],
+   "observation_ids": [],
+   "note": "World Bank Bhutan CEM 2024 (lead 27C-L13); intergovernmental framework text (URL from general knowledge - unverified)."
+  },
+  {
+   "claim": "Method: only ex-post evaluations and official outcome statistics count as 'documented results'; ex-ante appraisals and commentary are context or locators.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: comparability is established by documented criteria (landlocked, LDC status, hydropower, remittance dependence, market size) applied to data, and differences from Nepal are stated for every case.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "All structure options are hypothetical research constructs; none is attributed to, or claimed to reflect the intentions of, any government or company, and none is recommended before 27E audit and Agent 15/28 review.",
+   "type": "assumption",
+   "source_ids": []
+  }
+ ],
+ "data_gaps": [
+  "Ex-post evaluations for each comparator case (Bhutan hydropower JV, Lao export IPP, SEZs in LDCs/landlocked economies, skills partnerships, EPC+F projects, compacts).",
+  "Nepal technology-transfer agreement approvals by year and sector (DoI) - no document-level lead.",
+  "IBN list of signed project development agreements with dates and structures.",
+  "SEZ Act/Authority records and zone performance in Nepal (URL from general knowledge).",
+  "Academic evidence on BIT/DTAA effects on FDI in LDCs - no document-level lead.",
+  "Comparator FDI series from UNCTADstat (calendar year) for the comparator set."
+ ],
+ "assumptions": [
+  {
+   "id": "27C-A1",
+   "text": "Comparator economies are candidates to test against documented criteria; Bhutan and Lao PDR are named because of structural similarity (landlocked, hydropower export) and remain unverified comparators until data are retrieved.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27C-A2",
+   "text": "Structure options are partner-neutral templates; any partner named appears only as a documented case, not as a proposed counterparty.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27C-A3",
+   "text": "Trade-offs are reported across the 12 objectives (src/economic_model/welfare.py); no option is ranked on GDP alone.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "26D",
+   "text": "SO-02, SO-09 and SO-10 depend on which BITs are in force (India-Nepal BIPPA contested); please resolve the status before 27E audits these options."
+  },
+  {
+   "to": "04B",
+   "text": "SO-07 (EPC plus finance) needs the financing modality (grant vs loan) of projects under the December 2024 BRI framework; 04B marks this pending - please retrieve MoF DCR/PDMO project-level terms in r2."
+  },
+  {
+   "to": "00A",
+   "text": "Add catalog ids for IEG, MIGA, IFC, PPI database, CGD Global Skill Partnerships and SEZ Authority Nepal; 27C leads use null ids."
+  },
+  {
+   "to": "18D",
+   "text": "SO-05 needs documented outcomes of Korea EPS and Japan SSW pathways for Nepali workers (placement, return, skills use); please include in 18D r2 if in scope."
+  }
+ ],
+ "uncertainty": "Very high for r1: no case evidence retrieved. The evaluation literature on several structures (technology licensing, skills partnerships, BIT effects) is heterogeneous and may not isolate causal effects; comparability to Nepal (market size, peg to INR, transit dependence) will be imperfect for every case. Several leads are general-knowledge URLs that may not resolve.",
+ "specific": {
+  "structure_options": {
+   "status": "pending",
+   "question": "Q1 Which partnership structures have documented results in comparable economies?",
+   "method": "(1) Define comparator economies by documented criteria: landlocked, LDC or recently graduated, small open economy, hydropower-rich or remittance-dependent (criteria to be applied to data, not assumed). (2) For each structure option, retrieve ex-post evaluations (completion reports, IEG/independent evaluations, peer-reviewed studies); ex-ante appraisals are kept separate and never used as documented results. (3) Record outcomes per case with period basis (calendar year vs local fiscal year) and conflicts between sources. (4) Map each option to Nepal's legal basis and to 27A register rows and 04C conflict-map items. (5) 27E audits feasibility; trade-offs across the 12 objectives are reported, not optimised for GDP.",
+   "comparator_selection_criteria": [
+    "landlocked or transit-dependent",
+    "LDC status or graduated within the past decade",
+    "hydropower export potential",
+    "remittance dependence",
+    "small domestic market"
+   ],
+   "evidence_hierarchy": [
+    "ex-post evaluation by independent evaluator (IEG, ADB IED, peer-reviewed)",
+    "completion report by financier",
+    "official statistics on outcomes",
+    "ex-ante appraisal (context only)",
+    "news/commentary (locator only)"
+   ],
+   "options": [
+    {
+     "option_id": "SO-01",
+     "structure": "Intergovernmental hydropower joint venture (G2G framework with bilateral off-take)",
+     "hypothetical": true,
+     "description": "Two governments (or their utilities) co-own an export-oriented hydropower company under an intergovernmental framework; capital from grant/loan mix; power sold to the partner's market.",
+     "mechanism": "Equity plus concessional finance under a treaty-level framework; off-take by partner utility.",
+     "comparable_economy_cases_to_verify": [
+      "Bhutan-India hydropower model (Bhutan CEM 2024; intergovernmental framework text)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "Mahakali Treaty/Pancheshwar Development Authority (27A AR-12); 2014 Power Trade Agreement (AR-05); PPP and Investment Act"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Revenue, debt and diversification outcomes of Bhutan's projects (tariffs, debt-to-GDP, construction delays) from the CEM and project records; calendar vs Bhutan FY basis recorded."
+     },
+     "feasibility_conditions_to_test": [
+      "Partner-market access rules (Indian cross-border electricity instruments, 27A AR-08)",
+      "Debt sustainability of the equity/loan share (26A IMF DSA)",
+      "Parliamentary ratification route (04C)"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Export revenue and fiscal receipts vs public-debt exposure and single-buyer dependence",
+      "Environmental and resettlement impacts (welfare objectives)",
+      "Dutch-disease/real-exchange-rate effects documented in the Bhutan CEM - to verify"
+     ],
+     "interaction_with_agreements": "27A AR-05, AR-08, AR-12; 04C CM-01",
+     "scenario_links": [
+      "S02",
+      "S09"
+     ],
+     "leads": [
+      "27C-L13",
+      "27C-L14",
+      "27C-L05",
+      "27C-L34"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-02",
+     "structure": "Export-oriented IPP under BOOT with multilateral guarantees",
+     "hypothetical": true,
+     "description": "Private developer builds, owns and operates a plant under a project development agreement, with political-risk or partial-risk guarantees from MIGA/IDA/ADB; long-term PPA with an export buyer.",
+     "mechanism": "Limited-recourse project finance; PDA with host government; guarantees reduce sovereign/transfer risk.",
+     "comparable_economy_cases_to_verify": [
+      "Lao PDR Nam Theun 2 (World Bank project documents and completion report)",
+      "Nepal's own Upper Trishuli-1 financing structure (26A AIIB lead) as domestic comparator"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "PPP and Investment Act 2019; FITTA 2019; NRB foreign loan bylaw; IBN PDA practice"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Completion-report outcomes (delivered energy vs design, revenue to government, safeguard compliance) for each case; PPI database transaction records."
+     },
+     "feasibility_conditions_to_test": [
+      "Availability of a bankable export PPA under Indian approval rules",
+      "Contingent liabilities of the host government (PPA/termination payments)",
+      "Guarantee eligibility after LDC graduation and IDA terms changes (26C, 20C)"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Foreign-investment inflow vs contingent fiscal liabilities",
+      "Local benefit sharing and environmental safeguards",
+      "Tariff levels paid by domestic consumers if export sales fall short"
+     ],
+     "interaction_with_agreements": "27A AR-08, AR-15..AR-20 (treaty protection); 04C CM-01",
+     "scenario_links": [
+      "S09",
+      "S03"
+     ],
+     "leads": [
+      "27C-L15",
+      "27C-L05",
+      "27C-L06",
+      "27C-L01",
+      "27C-L08",
+      "27C-L26",
+      "27C-L33"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-03",
+     "structure": "Special economic zone with anchor-investor partnership",
+     "hypothetical": true,
+     "description": "Zone developed or managed with a partner government/company; anchor investor commits to production and export targets in exchange for zone incentives and infrastructure.",
+     "mechanism": "Incentive package plus infrastructure plus one-stop service; possibly partner-country zone developer.",
+     "comparable_economy_cases_to_verify": [
+      "UNCTAD WIR 2019 SEZ case evidence (LDC and landlocked zones)",
+      "IEG evaluations of SEZ support"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "SEZ Act and SEZ Authority rules; FITTA; Industrial Enterprises Act (to locate)"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Zone-level occupancy, exports and employment for each case; Nepal SEZ performance records."
+     },
+     "feasibility_conditions_to_test": [
+      "Transit time and cost to ports (21B, 04A Q3)",
+      "Rules of origin in Treaty of Trade and China LDC scheme (04C CM-02)",
+      "Post-graduation preference changes (26B, 26C, S08)"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Export jobs vs fiscal cost of incentives",
+      "Labour standards and environmental compliance",
+      "Regional balance (zone location)"
+     ],
+     "interaction_with_agreements": "27A AR-01, AR-24; 04C CM-02",
+     "scenario_links": [
+      "S08",
+      "S02",
+      "S03"
+     ],
+     "leads": [
+      "27C-L17",
+      "27C-L25",
+      "27C-L23",
+      "27C-L24",
+      "27C-L16",
+      "27C-L18"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-04",
+     "structure": "Technology-licensing and know-how agreements under FITTA",
+     "hypothetical": true,
+     "description": "Foreign firm licenses technology/brand/know-how to Nepali firms for royalty or fee, with training obligations; approval by the Department of Industry and foreign-exchange approval by NRB.",
+     "mechanism": "Contractual transfer without equity; royalty repatriation.",
+     "comparable_economy_cases_to_verify": [
+      "UNCTAD IPR implementation report (Nepal) as the domestic baseline; comparator evidence from academic literature (to locate)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "FITTA 2019 technology-transfer chapter; NRB bylaw on royalty/fee payments"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Number and sectors of approved technology-transfer agreements (DoI records); evidence of productivity effects in comparable economies."
+     },
+     "feasibility_conditions_to_test": [
+      "Approval time and fee ceilings in FITTA practice",
+      "Intellectual-property enforcement",
+      "Absorptive capacity (skills)"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Productivity gains vs foreign-exchange outflows for royalties",
+      "Domestic firm upgrading vs dependence on licensors"
+     ],
+     "interaction_with_agreements": "27A AR-15..AR-21 (DTAAs for royalty withholding)",
+     "scenario_links": [
+      "S03",
+      "S07"
+     ],
+     "leads": [
+      "27C-L01",
+      "27C-L02",
+      "27C-L08",
+      "27C-L11",
+      "27C-L04",
+      "27C-L03"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-05",
+     "structure": "Training-plus-migration skills partnership",
+     "hypothetical": true,
+     "description": "Destination-country government or employers co-finance training in Nepal linked to a regulated labour pathway, with part of the trained cohort serving the domestic market.",
+     "mechanism": "G2G MoU plus training provider plus skills test; returnee reintegration.",
+     "comparable_economy_cases_to_verify": [
+      "Korea Employment Permit System (CGD Global Skill Partnerships record)",
+      "Japan Specified Skilled Worker memorandum",
+      "Other Global Skill Partnership pilots (CGD database)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "Foreign Employment Act and DoFE rules (to locate); bilateral labour MoUs (27A AR-28)"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Documented outcomes (placement, earnings, return rates, domestic skills retention) for each partnership; DoFE yearly reports as Nepal baseline."
+     },
+     "feasibility_conditions_to_test": [
+      "Destination-country demand volatility (S01, S06)",
+      "Recruitment-cost and worker-protection rules",
+      "Domestic retention of trained workers"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Remittance income vs domestic skills drain",
+      "Worker welfare and protection objectives",
+      "Gender inclusion"
+     ],
+     "interaction_with_agreements": "27A AR-28",
+     "scenario_links": [
+      "S01",
+      "S06"
+     ],
+     "leads": [
+      "27C-L28",
+      "27C-L29",
+      "27C-L30",
+      "27C-L31"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-06",
+     "structure": "Digital/IT-enabled services partnership (anchor buyer or delivery-centre model)",
+     "hypothetical": true,
+     "description": "Foreign firm establishes a delivery centre or long-term sourcing contract in Nepal, combined with a skills programme and data/connectivity commitments.",
+     "mechanism": "Services FDI or long-term outsourcing contract; export earnings via banking channel.",
+     "comparable_economy_cases_to_verify": [
+      "UNCTAD LDC Report 2025 service-led cases",
+      "Comparable LDC digital-services cases (to locate)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "FITTA (IT sector), NRB rules on export-earnings repatriation, ICT policy"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Case-level employment and export outcomes; Nepal IT export records (08A)."
+     },
+     "feasibility_conditions_to_test": [
+      "AI-driven change in outsourcing demand (S07)",
+      "Connectivity reliability and payment channels",
+      "Data-protection rules in partner markets"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Export earnings and youth jobs vs exposure to automation",
+      "Formalisation of freelancing income vs tax burden"
+     ],
+     "interaction_with_agreements": "none directly; check DTAAs (27A AR-21)",
+     "scenario_links": [
+      "S07"
+     ],
+     "leads": [
+      "27C-L19",
+      "27C-L20",
+      "27C-L01",
+      "27C-L08"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-07",
+     "structure": "Engineering-procurement-construction plus financing (EPC+F) under a G2G framework",
+     "hypothetical": true,
+     "description": "A partner government's policy bank finances a project built by its contractor under a bilateral framework; repayment by Nepal.",
+     "mechanism": "Tied concessional/commercial loan; G2G project list.",
+     "comparable_economy_cases_to_verify": [
+      "Comparator experience documented in IEG/academic evaluations (to locate); Nepal's own BRI framework modalities"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "BRI framework (27A AR-22); PDMO debt rules; Public Procurement Act (to locate)"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Loan terms, cost outcomes and completion records for comparable projects; MoF DCR and PDMO records."
+     },
+     "feasibility_conditions_to_test": [
+      "Debt sustainability and loan terms (26A)",
+      "Procurement transparency",
+      "Project selection and appraisal (NPC)"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Speed of infrastructure delivery vs debt and procurement risk",
+      "Local contractor participation"
+     ],
+     "interaction_with_agreements": "27A AR-22; 04C CM-10 (financing terms)",
+     "scenario_links": [
+      "S03"
+     ],
+     "leads": [
+      "27C-L36",
+      "27C-L35",
+      "27C-L31",
+      "27C-L16"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-08",
+     "structure": "Development compact (grant plus policy-reform conditions)",
+     "hypothetical": true,
+     "description": "Large grant programme tied to agreed reforms and infrastructure (e.g. transmission, roads), with a local accountable entity.",
+     "mechanism": "Grant; compact treaty; performance conditions.",
+     "comparable_economy_cases_to_verify": [
+      "MCC Nepal Compact (27A AR-27); MCC evaluations in other compact countries (to locate)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "Compact text and ratification record (27A AR-27)"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Compact evaluation results in comparable countries; Nepal compact implementation records."
+     },
+     "feasibility_conditions_to_test": [
+      "Domestic political durability of compact commitments (no attribution of positions)",
+      "Implementation capacity"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Grant-financed infrastructure vs conditionality burden",
+      "Timeliness"
+     ],
+     "interaction_with_agreements": "27A AR-27",
+     "scenario_links": [
+      "S03",
+      "S09"
+     ],
+     "leads": [
+      "27C-L32",
+      "27C-L31"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-09",
+     "structure": "Blended-finance and risk-sharing platform with DFIs (IFC/ADB private sector/AIIB)",
+     "hypothetical": true,
+     "description": "DFIs co-invest equity/debt with private sponsors and provide first-loss or guarantee layers to crowd in commercial finance.",
+     "mechanism": "Blended finance; guarantees; local-currency lending.",
+     "comparable_economy_cases_to_verify": [
+      "IFC and MIGA project disclosures in Nepal and comparators",
+      "AIIB Nepal hydropower project (26A lead)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "FITTA; NRB bylaw on foreign loans; PPP Act"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Private capital mobilised per unit of DFI finance in comparable cases; Nepal DFI portfolio records."
+     },
+     "feasibility_conditions_to_test": [
+      "Currency risk under the NPR-INR peg (04A)",
+      "Local-currency hedging availability",
+      "Eligibility changes after graduation"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Mobilised private capital vs public risk-bearing",
+      "Transparency of subsidy element"
+     ],
+     "interaction_with_agreements": "27A AR-15..AR-20 (investment treaty protection)",
+     "scenario_links": [
+      "S03",
+      "S04"
+     ],
+     "leads": [
+      "27C-L27",
+      "27C-L26",
+      "27C-L06",
+      "27C-L08",
+      "27C-L37"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    },
+    {
+     "option_id": "SO-10",
+     "structure": "Investment-facilitation and treaty-based protection upgrade (BIT/DTAA renegotiation or new model)",
+     "hypothetical": true,
+     "description": "Hypothetical update of investment-treaty network (newer model BITs, DTAAs) combined with investment-facilitation measures, as a partner-neutral structure.",
+     "mechanism": "Treaty protection; tax certainty; facilitation.",
+     "comparable_economy_cases_to_verify": [
+      "UNCTAD IIA reform cases; academic evidence on BIT effects in LDCs (to locate)"
+     ],
+     "nepal_legal_basis_to_verify": [
+      "27A AR-15..AR-21; FITTA dispute-settlement provisions"
+     ],
+     "documented_results": {
+      "status": "pending",
+      "evidence_required": "Empirical evidence on BIT/DTAA effects on FDI in comparable economies; Nepal's FDI by source country (NRB surveys)."
+     },
+     "feasibility_conditions_to_test": [
+      "Contested status of the India-Nepal BIPPA (27A AR-15)",
+      "Treaty Act ratification route (04C)"
+     ],
+     "objective_tradeoffs_to_assess": [
+      "Investor certainty vs regulatory space (environment, labour)",
+      "Tax revenue vs attraction"
+     ],
+     "interaction_with_agreements": "27A AR-15..AR-21",
+     "scenario_links": [
+      "S03"
+     ],
+     "leads": [
+      "27C-L12",
+      "27C-L04",
+      "27C-L03",
+      "27C-L02",
+      "27C-L24"
+     ],
+     "status": "pending",
+     "label": "Hypothetical structure option for research; not a recommendation and not attributed to any government."
+    }
+   ],
+   "current_nepal_usage": {
+    "status": "pending",
+    "evidence_required": "NRB FDI survey (FY2022/23, FY2023/24) by sector and source; DoI technology-transfer approvals; IBN PDA list; NEA IPP PPAs",
+    "leads": [
+     "27C-L09",
+     "27C-L10",
+     "27C-L11",
+     "27C-L06",
+     "27C-L34"
+    ]
+   },
+   "hypothetical_label": "All arrangements discussed are hypothetical research constructs; this work does not state or represent the actual position or private intentions of any government."
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "27C-L01",
+   "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-1688107036.pdf",
+   "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
+   "publisher": "Government of Nepal (official host)",
+   "source_id": null,
+   "contains": "Nepal legal basis for technology-transfer agreements (licensing, franchise, management, know-how), approval route and repatriation provisions",
+   "reused_from": "04B-L22; 11A"
+  },
+  {
+   "lead_id": "27C-L02",
+   "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2075-",
+   "title": "Nepal - FITTA 2019 (Investment Laws Navigator)",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "Second copy of FITTA text with UNCTAD classification",
+   "reused_from": "26D-D05"
+  },
+  {
+   "lead_id": "27C-L03",
+   "url": "https://investmentpolicy.unctad.org/investment-policy-monitor/150/nepal",
+   "title": "Investment Policy Monitor - Nepal",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "Dated investment-policy measures incl. automatic-route notification (2026, per 26D)",
+   "reused_from": "26D-D04"
+  },
+  {
+   "lead_id": "27C-L04",
+   "url": "https://investmentpolicy.unctad.org/publications/1223/report-on-the-implementation-of-the-investment-policy-review-of-nepal",
+   "title": "Report on the Implementation of the Investment Policy Review of Nepal",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "UNCTAD assessment of Nepal's investment regime, incl. recommendations on partnership and linkage programmes",
+   "reused_from": "26D-D13; 26E-E14"
+  },
+  {
+   "lead_id": "27C-L05",
+   "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+   "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+   "publisher": "Investment Board Nepal",
+   "source_id": null,
+   "contains": "Legal basis for PPP/BOOT/project development agreements and IBN approval thresholds",
+   "reused_from": "11A; 04C"
+  },
+  {
+   "lead_id": "27C-L06",
+   "url": "https://ibn.gov.np",
+   "title": "Investment Board Nepal",
+   "publisher": "Investment Board Nepal",
+   "source_id": "ibn",
+   "contains": "Project development agreements (PDAs), approved project list and investment summaries",
+   "reused_from": "04B-L20"
+  },
+  {
+   "lead_id": "27C-L07",
+   "url": "https://bpp.worldbank.org/content/dam/sites/data/bpp/cntrypdf/BI-2023-Nepal-PPP.pdf",
+   "title": "Benchmarking Infrastructure 2023 in Nepal: survey question analysis",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Assessment of Nepal PPP framework quality by stage (preparation, procurement, contract management)",
+   "reused_from": "11A"
+  },
+  {
+   "lead_id": "27C-L08",
+   "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+   "title": "NRB Foreign Investment and Loan Management Bylaw",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Foreign-currency approvals and repatriation rules governing royalty/technology-fee payments and external loans",
+   "reused_from": "04B-L23"
+  },
+  {
+   "lead_id": "27C-L09",
+   "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+   "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "FDI stock/flows by sector and source country, Nepal FY2022/23; baseline for which structures are currently used",
+   "reused_from": "04B-L17"
+  },
+  {
+   "lead_id": "27C-L10",
+   "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+   "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Same, Nepal FY2023/24",
+   "reused_from": "04B-L18"
+  },
+  {
+   "lead_id": "27C-L11",
+   "url": "https://doind.gov.np",
+   "title": "Department of Industry - industrial statistics",
+   "publisher": "Department of Industry, Nepal",
+   "source_id": "doind",
+   "contains": "FDI approvals and technology-transfer agreement approvals by year and sector",
+   "reused_from": "04B-L21"
+  },
+  {
+   "lead_id": "27C-L12",
+   "url": "https://investmentpolicy.unctad.org/international-investment-agreements/countries/147/nepal",
+   "title": "IIA Navigator - Nepal",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "Treaty protection available to partner-country investors (links to 27A AR-15..AR-20)",
+   "reused_from": "26D-D01"
+  },
+  {
+   "lead_id": "27C-L13",
+   "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+   "title": "World Bank (2024) Bhutan Country Economic Memorandum: Maximizing Bhutan's Potential for Economic Diversification and Structural Transformation",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Documented results of Bhutan's intergovernmental hydropower partnership model with India (revenues, debt, macro effects, diversification limits); comparable landlocked Himalayan economy",
+   "reused_from": "01B; 17C-L15"
+  },
+  {
+   "lead_id": "27C-L14",
+   "url": "https://www.mea.gov.in/bilateral-documents.htm?dtl/5263/",
+   "title": "India-Bhutan agreement on cooperation in hydroelectric power (MEA bilateral documents)",
+   "publisher": "Ministry of External Affairs, India",
+   "source_id": "mea_india",
+   "contains": "Text of the intergovernmental framework used for Bhutan hydropower joint ventures (structure reference, not a Nepal commitment) [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L15",
+   "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P076445",
+   "title": "Lao PDR - Nam Theun 2 Hydroelectric Project (World Bank project page)",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Project documents incl. implementation completion report: export-oriented IPP with multilateral guarantees in a landlocked LDC; documented results and safeguard lessons [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L16",
+   "url": "https://ieg.worldbankgroup.org",
+   "title": "World Bank Independent Evaluation Group - evaluations search",
+   "publisher": "World Bank IEG",
+   "source_id": null,
+   "contains": "Ex-post evaluations of PPP, guarantees, SEZ and hydropower operations in comparable economies (search portal) [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L17",
+   "url": "https://unctad.org/publication/world-investment-report-2019",
+   "title": "World Investment Report 2019: Special Economic Zones",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "Cross-country review of SEZ outcomes and design features, incl. LDC and landlocked cases [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L18",
+   "url": "https://unctadstat.unctad.org",
+   "title": "UNCTADstat - FDI flows and stocks",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "FDI inflows/stocks by economy (calendar year) for comparator set; greenfield project announcements",
+   "reused_from": "05C"
+  },
+  {
+   "lead_id": "27C-L19",
+   "url": "https://unctad.org/publication/least-developed-countries-report-2025",
+   "title": "The Least Developed Countries Report 2025: Are services the new path to structural transformation?",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "LDC services-led partnership cases (digital/IT-enabled services), comparators",
+   "reused_from": "24C; 08A"
+  },
+  {
+   "lead_id": "27C-L20",
+   "url": "https://unctad.org/news/digital-services-exports-are-growing-fast-least-developed-countries-are-not-keeping-pace",
+   "title": "Digital services exports are growing fast. Least developed countries are not keeping pace",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "Context for technology/services partnership options in LDCs",
+   "reused_from": "24C"
+  },
+  {
+   "lead_id": "27C-L21",
+   "url": "https://www.imf.org/-/media/Files/Publications/DP/2020/English/DPLTEREA.ashx",
+   "title": "IMF (2020) Departmental Paper including The Experience of Rwanda (landlocked growth case)",
+   "publisher": "IMF",
+   "source_id": null,
+   "contains": "Landlocked-economy case incl. investment-promotion and partnership policies",
+   "reused_from": "01B"
+  },
+  {
+   "lead_id": "27C-L22",
+   "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+   "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Nepal-specific diagnosis of FDI barriers and partnership opportunities; comparator discussion",
+   "reused_from": "04A-L50; 01B"
+  },
+  {
+   "lead_id": "27C-L23",
+   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+   "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+   "publisher": "WTO",
+   "source_id": "wto",
+   "contains": "Investment regime, SEZ regime and services commitments of Nepal",
+   "reused_from": "26B; 04A-L42"
+  },
+  {
+   "lead_id": "27C-L24",
+   "url": "https://www.state.gov/reports/2024-investment-climate-statements/nepal",
+   "title": "2024 Investment Climate Statements: Nepal",
+   "publisher": "US Department of State",
+   "source_id": null,
+   "contains": "Foreign-government (tier 4) description of Nepal's SEZs, PPPs, technology-transfer approval practice",
+   "reused_from": "26D-D08"
+  },
+  {
+   "lead_id": "27C-L25",
+   "url": "https://sezauthority.gov.np",
+   "title": "Special Economic Zone Authority of Nepal",
+   "publisher": "SEZ Authority, Nepal",
+   "source_id": null,
+   "contains": "SEZ Act/regulations, zone list, occupancy and export-obligation rules [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L26",
+   "url": "https://www.miga.org/projects",
+   "title": "MIGA projects database",
+   "publisher": "MIGA (World Bank Group)",
+   "source_id": null,
+   "contains": "Political-risk guarantee cases in comparable economies (hydropower, manufacturing) with project documents [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L27",
+   "url": "https://disclosures.ifc.org",
+   "title": "IFC project information and data portal",
+   "publisher": "IFC (World Bank Group)",
+   "source_id": null,
+   "contains": "IFC investments in Nepal and comparators (hydropower, finance, manufacturing): project disclosures [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L28",
+   "url": "https://gsp.cgdev.org/legalpathway/employment-permit-system-eps/",
+   "title": "Employment Permit System (EPS) - Global Skill Partnerships database",
+   "publisher": "Center for Global Development",
+   "source_id": "academic",
+   "contains": "Documented structure of a government-to-government labour/skills pathway (Korea EPS) incl. evaluations",
+   "reused_from": "18D; 09C"
+  },
+  {
+   "lead_id": "27C-L29",
+   "url": "https://gsp.cgdev.org",
+   "title": "Global Skill Partnerships database",
+   "publisher": "Center for Global Development",
+   "source_id": "academic",
+   "contains": "Catalogue of training-plus-migration partnerships with documented results in origin countries [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L30",
+   "url": "https://migrationnetwork.un.org/policy-repository/memorandum-cooperation-between-ministry-justice-ministry-foreign-affairs-0",
+   "title": "Japan-Nepal SSW Memorandum of Cooperation (UN Network on Migration repository)",
+   "publisher": "UN Network on Migration",
+   "source_id": "iom",
+   "contains": "Structure of skills-test-linked labour partnership",
+   "reused_from": "18D; 23B"
+  },
+  {
+   "lead_id": "27C-L31",
+   "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Final%20DCR%202024-25_26-03-2026_d06ntku.pdf",
+   "title": "Development Cooperation Report 2024/25",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Partner-wise grants/loans incl. TA and training components, Nepal FY2024/25",
+   "reused_from": "04B-L26; 18B"
+  },
+  {
+   "lead_id": "27C-L32",
+   "url": "https://www.state.gov/policy-issues/millennium-challenge-corporation/",
+   "title": "Millennium Challenge Corporation - U.S. Department of State",
+   "publisher": "US Department of State",
+   "source_id": null,
+   "contains": "Development-compact structure (grant plus policy reform) reference; MCC evaluations to locate",
+   "reused_from": "18A"
+  },
+  {
+   "lead_id": "27C-L33",
+   "url": "https://ppi.worldbank.org",
+   "title": "World Bank Private Participation in Infrastructure (PPI) database",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Project-level PPI transactions (type: BOT/BOO/concession/greenfield) in comparator economies [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27C-L34",
+   "url": "https://www.nea.org.np/annual_report",
+   "title": "NEA Annual Reports",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "PPA-based IPP structure outcomes in Nepal (IPP capacity, PPAs signed)",
+   "reused_from": "04A-L23"
+  },
+  {
+   "lead_id": "27C-L35",
+   "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/12/ISAS-Brief-1188-2.pdf",
+   "title": "ISAS Brief 1188 (December 2024) on the Nepal-China BRI framework",
+   "publisher": "Institute of South Asian Studies",
+   "source_id": "academic",
+   "contains": "Commentary on financing modalities (grant vs loan) under the framework; locator only",
+   "reused_from": "04B-L06",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27C-L36",
+   "url": "https://mofa.gov.np/content/641/framework-for-belt-and-road-cooperation-between/",
+   "title": "Framework for Belt and Road Cooperation between Nepal and the PRC",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Framework text: cooperation modalities relevant to G2G/EPC-plus-finance structures",
+   "reused_from": "04B-L01"
+  },
+  {
+   "lead_id": "27C-L37",
+   "url": "https://ieg.worldbankgroup.org/evaluations/world-bank-group-support-ppps",
+   "title": "World Bank Group Support to Public-Private Partnerships: Lessons from Experience in Client Countries (IEG)",
+   "publisher": "World Bank IEG",
+   "source_id": null,
+   "contains": "Evaluation evidence on PPP outcomes and fiscal risks across client countries [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  }
+ ]
+}
