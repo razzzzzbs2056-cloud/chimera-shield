@@ -1,0 +1,447 @@
+{
+  "subagent_id": "19A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). A seven-theatre conflict watchlist was built linking conflicts to Nepal's channels (migrant employment, remittances, fuel and shipping routes, aviation hubs). Primary conflict-data leads located: UCDP GED 25.1 (codebook, Zenodo deposit, download centre incl. monthly Candidate Events) and ACLED (Conflict Index and 2026 Watchlist, Middle East monthly overviews January-July 2026, Gulf region hub). The 2026 Middle East escalation flagged unverified by 16B is corroborated at the lead level by independent sources across tiers (Nepal MoFA press statements, IOM DTM, UNCTAD, ACLED), but no event observation has been recorded; all intensity metrics are pending. No values were retrieved.",
+  "findings": [
+    {
+      "claim": "Q1: Active conflicts in countries hosting Nepali migrant workers - list of countries with UCDP state-based/non-state/one-sided violence events and ACLED severity category, matched against DoFE labour-approval destinations.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ucdp",
+        "acled",
+        "dofe"
+      ],
+      "note": "Requires GED 25.1 (calendar 2024) and UCDP Candidate Events 2025-2026, ACLED Conflict Index (Dec 2024-Nov 2025 window) and DoFE destination list (Nepal FY). Leads 19A-L01..L07; DoFE list from 16B L12/L13.",
+      "unit": "count",
+      "period": "calendar year 2024-2026 (conflict); Nepal FY2024/25 (destinations)"
+    },
+    {
+      "claim": "Q1: Active conflicts on Nepal's supply routes - Red Sea/Bab el-Mandeb, Strait of Hormuz, Indian Ocean approaches to Kolkata/Haldia and Visakhapatnam, and air corridors via Gulf hubs.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "acled",
+        "ucdp",
+        "unctad_rmt"
+      ],
+      "note": "Requires ACLED maritime/coastal event extracts (Yemen, Iran, Gulf littoral) and UNCTAD chokepoint transit data; leads 19A-L09..L13, 19A-L18; 19C route mapping.",
+      "unit": "count",
+      "period": "calendar year 2023-2026"
+    },
+    {
+      "claim": "Status of the reported 2026 Middle East conflict (flagged unverified by 16B): multiple independent leads were located - ACLED Middle East special issue (March 2026) and monthly overviews (April, May, July 2026), Government of Nepal MoFA press statements and advisories, IOM DTM mobility reports, and UNCTAD Hormuz rapid analysis - describing an escalation beginning late February 2026 involving the United States, Israel and Iran with spillover to GCC states and shipping in the Strait of Hormuz. Status is corroborated at the lead level only; no event observation has been recorded.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "acled",
+        "mofa_nepal",
+        "iom",
+        "unctad_rmt"
+      ],
+      "note": "Retrieve 19A-L09, L10, L13, L17 and 19C-L05..L07; record dated event observations (onset date, affected countries, current ceasefire/agreement status) before any scenario use. No counts or fatalities taken from snippets.",
+      "period": "calendar year 2026"
+    },
+    {
+      "claim": "Conflict-affected destinations with Nepali workers outside the Gulf: Israel, Lebanon, Iraq (incl. Kurdistan Region), and Russia (reports of Nepali nationals recruited into armed forces) - event exposure and worker presence unquantified.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ucdp",
+        "acled",
+        "mofa_nepal",
+        "dofe"
+      ],
+      "note": "Requires ACLED/UCDP country extracts and MoFA consular records; no Russia-specific primary lead was located in r1 (search budget exhausted).",
+      "unit": "count",
+      "period": "calendar year 2024-2026"
+    },
+    {
+      "claim": "A conflict is 'active' for watchlist purposes if UCDP records at least the UCDP threshold of battle-related deaths for the calendar year, OR ACLED classifies the country in its top severity categories in the latest Conflict Index; the two sources are reported side by side, never merged.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Exposure is defined by overlap with Nepal's channels (migrant employment, remittances, fuel and shipping routes, aviation hubs), not by conflict intensity alone.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "UCDP GED annual release ends calendar 2024; 2025-2026 coverage requires UCDP Candidate Events (provisional) or ACLED.",
+    "ACLED data exports require registration/terms acceptance; access under platform terms must be confirmed by 00A.",
+    "No primary Nepal source located for Nepali nationals in Russian armed forces (MoFA statements expected).",
+    "Country-level match of conflict events to Nepali worker locations within destination countries (sub-national) is not available.",
+    "WebSearch budget for the session was exhausted during r1 before all lead searches were completed; leads marked 'NOT confirmed by web search' use catalog base URLs or known primary domains and must be verified on fetch."
+  ],
+  "assumptions": [
+    {
+      "id": "19A-A1",
+      "text": "UCDP and ACLED differ in event definitions (UCDP: organised violence with fatality threshold; ACLED: includes demonstrations, strategic developments); values are reported separately.",
+      "basis": "methodology"
+    },
+    {
+      "id": "19A-A2",
+      "text": "Watchlist inclusion is qualitative until intensity metrics are retrieved.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "The 2026 Middle East escalation now has tier-1 (MoFA Nepal) and tier-3 (IOM, UNCTAD) leads in addition to ACLED; recommend upgrading its status from 'unverified report' to 'lead-corroborated, pending retrieval' in the exposure register notes."
+    },
+    {
+      "to": "28",
+      "text": "S01's trigger is labelled HYPOTHETICAL but a real 2026 event with similar features is lead-corroborated; red team should review whether S01 needs recalibration as a historical-analogue scenario once observations exist."
+    },
+    {
+      "to": "15",
+      "text": "Escalation per rules: once retrieved, 2026 event observations may change S01 and S10 conclusions."
+    },
+    {
+      "to": "00A",
+      "text": "Russia-related migrant-safety theatre has no catalog source; request MoFA consular statements be added as leads in r2."
+    }
+  ],
+  "uncertainty": "High. Watchlist is qualitative; all conflict intensity measures are pending. Event status of 2026 developments rests on lead descriptions, not retrieved documents. UCDP/ACLED coverage and definitions differ.",
+  "specific": {
+    "conflict_watchlist": {
+      "status": "pending",
+      "method": "Match UCDP GED/Candidate events and ACLED Conflict Index categories by country and calendar month to (a) DoFE destination countries and (b) route segments from 19C; report UCDP and ACLED separately.",
+      "entries": [
+        {
+          "id": "CW-01",
+          "theatre": "Iran and GCC states (2026 escalation)",
+          "countries": [
+            "Iran",
+            "Saudi Arabia",
+            "United Arab Emirates",
+            "Qatar",
+            "Kuwait",
+            "Bahrain",
+            "Oman"
+          ],
+          "nepal_channels": [
+            "migrant_employment",
+            "remittances",
+            "fuel_prices",
+            "aviation_connectivity"
+          ],
+          "scenarios": [
+            "S01",
+            "S10"
+          ],
+          "event_status": "reported by multiple leads (ACLED, MoFA Nepal, IOM, UNCTAD); not yet recorded as observation",
+          "intensity_metric": "pending - ACLED event and fatality counts by country and month (calendar 2026); UCDP Candidate Events",
+          "lead_ids": [
+            "19A-L07",
+            "19A-L09",
+            "19A-L10",
+            "19A-L12",
+            "19A-L13",
+            "19A-L14",
+            "19A-L17"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "CW-02",
+          "theatre": "Strait of Hormuz maritime disruption",
+          "countries": [
+            "Iran",
+            "Oman",
+            "United Arab Emirates"
+          ],
+          "nepal_channels": [
+            "fuel_prices",
+            "transit_and_logistics"
+          ],
+          "scenarios": [
+            "S01",
+            "S10"
+          ],
+          "event_status": "reported (UNCTAD, ACLED July 2026); not yet recorded",
+          "intensity_metric": "pending - vessel transit counts and freight/insurance indices (see 19C)",
+          "lead_ids": [
+            "19A-L13",
+            "19C-L05",
+            "19C-L06",
+            "19C-L07"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "CW-03",
+          "theatre": "Israel-Palestine and Lebanon",
+          "countries": [
+            "Israel",
+            "Palestine",
+            "Lebanon"
+          ],
+          "nepal_channels": [
+            "migrant_employment",
+            "remittances"
+          ],
+          "scenarios": [
+            "S01"
+          ],
+          "event_status": "ACLED lists Israeli-Palestinian conflict among highest-severity in latest index (per lead description); to verify",
+          "intensity_metric": "pending - ACLED Conflict Index category; UCDP GED 2024 events",
+          "lead_ids": [
+            "19A-L02",
+            "19A-L03",
+            "19A-L04",
+            "19A-L16"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "CW-04",
+          "theatre": "Iraq (incl. Kurdistan Region)",
+          "countries": [
+            "Iraq"
+          ],
+          "nepal_channels": [
+            "migrant_employment"
+          ],
+          "scenarios": [
+            "S01"
+          ],
+          "event_status": "MoFA-related reporting of relocation of Nepali airport staff in Erbil (news-level); to verify from MoFA primary release",
+          "intensity_metric": "pending",
+          "lead_ids": [
+            "19A-L10",
+            "19D-L03"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "CW-05",
+          "theatre": "Red Sea / Bab el-Mandeb (Yemen)",
+          "countries": [
+            "Yemen"
+          ],
+          "nepal_channels": [
+            "transit_and_logistics",
+            "fuel_prices"
+          ],
+          "scenarios": [
+            "S01",
+            "S10"
+          ],
+          "event_status": "documented 2023-2024 disruption (UNCTAD); current status pending",
+          "intensity_metric": "pending - Suez/Bab el-Mandeb transit counts (UNCTAD, PortWatch)",
+          "lead_ids": [
+            "19A-L18",
+            "19C-L02",
+            "19C-L03"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "CW-06",
+          "theatre": "Russia-Ukraine",
+          "countries": [
+            "Russia",
+            "Ukraine"
+          ],
+          "nepal_channels": [
+            "migrant_safety",
+            "fuel_prices",
+            "fertiliser_prices"
+          ],
+          "scenarios": [
+            "S04",
+            "S10"
+          ],
+          "event_status": "ongoing per ACLED index (deadliest in latest index per lead description); Nepali nationals in Russian forces reported - no primary Nepal lead located in r1",
+          "intensity_metric": "pending",
+          "lead_ids": [
+            "19A-L04"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "CW-07",
+          "theatre": "India-Pakistan and Myanmar border regions (regional)",
+          "countries": [
+            "India",
+            "Pakistan",
+            "Myanmar"
+          ],
+          "nepal_channels": [
+            "aviation_connectivity",
+            "transit_and_logistics"
+          ],
+          "scenarios": [
+            "S02",
+            "S10"
+          ],
+          "event_status": "not researched in r1 beyond ACLED index lead; Myanmar listed among extreme hotspots per lead description",
+          "intensity_metric": "pending",
+          "lead_ids": [
+            "19A-L04"
+          ],
+          "status": "pending"
+        }
+      ]
+    },
+    "source_leads_count": 19
+  },
+  "source_leads": [
+    {
+      "lead_id": "19A-L01",
+      "url": "https://ucdp.uu.se/downloads/",
+      "title": "UCDP Dataset Download Center",
+      "publisher": "Uppsala Conflict Data Program",
+      "source_id": "ucdp",
+      "contains": "Download page for UCDP GED global (annual), UCDP/PRIO Armed Conflict Dataset, Non-State and One-Sided Violence datasets, and UCDP Candidate Events (monthly, provisional) - candidate events are the only UCDP series that can cover 2026 before the annual release"
+    },
+    {
+      "lead_id": "19A-L02",
+      "url": "https://ucdp.uu.se/downloads/ged/ged251.pdf",
+      "title": "UCDP Georeferenced Event Dataset Codebook Version 25.1",
+      "publisher": "Uppsala Conflict Data Program",
+      "source_id": "ucdp",
+      "contains": "Codebook for GED 25.1: definitions of state-based, non-state and one-sided violence, fatality best/low/high estimates, geoprecision codes; data period calendar years 1989-2024"
+    },
+    {
+      "lead_id": "19A-L03",
+      "url": "https://zenodo.org/records/17397479",
+      "title": "The UCDP Georeferenced Event Dataset (GED) - Version 25.1",
+      "publisher": "Uppsala Conflict Data Program (Zenodo deposit)",
+      "source_id": "ucdp",
+      "contains": "Archived GED 25.1 data files (CSV/RDS) with DOI; event-level records by country and date, calendar years 1989-2024; used to tabulate events and fatalities for migrant-destination and route countries"
+    },
+    {
+      "lead_id": "19A-L04",
+      "url": "https://acleddata.com/conflict-index-2026-watchlist",
+      "title": "ACLED Conflict Index & 2026 Watchlist",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Country-level Conflict Index (deadliness, danger, diffusion, fragmentation indicators and severity category) for the December 2024-November 2025 window, plus the 2026 watchlist of countries at risk of escalation"
+    },
+    {
+      "lead_id": "19A-L05",
+      "url": "https://acleddata.com/series/acled-conflict-index",
+      "title": "Conflict Index (series page)",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Series page for all Conflict Index editions (methodology and past rankings) to build a comparable time series of severity categories"
+    },
+    {
+      "lead_id": "19A-L06",
+      "url": "https://acleddata.com/general-guide/about-conflict-index",
+      "title": "About the Conflict Index",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Methodology of the Conflict Index: indicator definitions and thresholds for severity categories; needed to reconcile with UCDP definitions"
+    },
+    {
+      "lead_id": "19A-L07",
+      "url": "https://acleddata.com/platform/weekly-conflict-index",
+      "title": "Weekly Conflict Index",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Weekly-updated country severity index (platform; access terms to be checked); candidate for monitoring 2026 developments in GCC, Iran, Israel, Lebanon, Iraq, Yemen"
+    },
+    {
+      "lead_id": "19A-L08",
+      "url": "https://acleddata.com/update/middle-east-overview-january-2026",
+      "title": "Middle East Overview: January 2026",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Monthly narrative and event summary for the Middle East region, January 2026 (pre-escalation baseline)"
+    },
+    {
+      "lead_id": "19A-L09",
+      "url": "https://acleddata.com/update/middle-east-special-issue-march-2026",
+      "title": "Middle East Special Issue: March 2026",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Special issue on the late-February 2026 escalation involving the United States, Israel and Iran and its spread to Gulf Cooperation Council states; event counts by country (to be retrieved)"
+    },
+    {
+      "lead_id": "19A-L10",
+      "url": "https://acleddata.com/update/middle-east-overview-april-2026",
+      "title": "Middle East Overview: April 2026",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Monthly event summary April 2026 incl. attacks affecting GCC states and trend in attack frequency"
+    },
+    {
+      "lead_id": "19A-L11",
+      "url": "https://reliefweb.int/report/iran-islamic-republic/acled-regional-overview-middle-east-april-2026",
+      "title": "ACLED Regional Overview Middle East: April 2026 (ReliefWeb mirror)",
+      "publisher": "ACLED via ReliefWeb",
+      "source_id": "acled",
+      "contains": "Mirror of the April 2026 regional overview; alternate retrieval path"
+    },
+    {
+      "lead_id": "19A-L12",
+      "url": "https://acleddata.com/update/middle-east-overview-may-2026",
+      "title": "Middle East Overview: May 2026",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Monthly event summary May 2026"
+    },
+    {
+      "lead_id": "19A-L13",
+      "url": "https://acleddata.com/update/middle-east-overview-july-2026",
+      "title": "Middle East Overview: July 2026",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Monthly event summary July 2026 incl. status of the reported June 2026 US-Iran understanding and Strait of Hormuz tensions"
+    },
+    {
+      "lead_id": "19A-L14",
+      "url": "https://acleddata.com/region/gulf",
+      "title": "The Gulf (region page)",
+      "publisher": "ACLED",
+      "source_id": "acled",
+      "contains": "Regional hub for Gulf-state conflict analysis and data exports (Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE)"
+    },
+    {
+      "lead_id": "19A-L15",
+      "url": "https://www.iom.int/explainer/regional-escalation-middle-east-10-things-know",
+      "title": "Regional Escalation in the Middle East: 10 Things to Know",
+      "publisher": "International Organization for Migration",
+      "source_id": "iom",
+      "contains": "IOM explainer on the 2026 regional escalation: mobility, displacement and migrant-worker impacts"
+    },
+    {
+      "lead_id": "19A-L16",
+      "url": "https://dtm.iom.int/reports/escalation-middle-east-and-beyond-mobility-report-03-08-june-2026",
+      "title": "Escalation in the Middle East and Beyond - Mobility Report (03-08 June 2026)",
+      "publisher": "IOM Displacement Tracking Matrix",
+      "source_id": "iom",
+      "contains": "DTM mobility report: displacement, returns and cross-border movements by country, June 2026"
+    },
+    {
+      "lead_id": "19A-L17",
+      "url": "https://mofa.gov.np/content/1761/press-statement-on-the-evolving-situation-in/",
+      "title": "Press Statement on the Evolving Situation in the Middle East",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Official Government of Nepal statement on the 2026 Middle East escalation (date to be confirmed on retrieval); primary verification of event status from Nepal's perspective"
+    },
+    {
+      "lead_id": "19A-L18",
+      "url": "https://unctad.org/publication/navigating-troubled-waters-impact-global-trade-disruption-shipping-routes-red-sea-black",
+      "title": "Navigating troubled waters: Impact to global trade of disruption of shipping routes in the Red Sea, Black Sea and Panama Canal",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "Rapid assessment (February 2024) of Red Sea/Suez disruption from late 2023 - conflict on a route used by Nepal-bound cargo from Europe"
+    },
+    {
+      "lead_id": "19A-L19",
+      "url": "https://www.britannica.com/event/2026-Iran-war",
+      "title": "2026 Iran war",
+      "publisher": "Encyclopaedia Britannica",
+      "source_id": "academic",
+      "contains": "Tertiary chronology of the 2026 Iran war (dates, parties, Strait of Hormuz); used only to cross-check event chronology, never as a value source"
+    }
+  ]
+}

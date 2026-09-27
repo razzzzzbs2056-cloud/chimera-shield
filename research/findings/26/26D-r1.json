@@ -1,0 +1,277 @@
+{
+  "subagent_id": "26D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Leads located for Nepal's bilateral investment treaties: the UNCTAD IIA Navigator Nepal page and India-Nepal BIT record, the Investment Laws Navigator and Investment Policy Monitor (incl. FITTA 2019), Nepal-official treaty downloads (InvestNepal portal, Department of Industry notice), US State Department Investment Climate Statements (2021, 2024) as a tier-4 cross-check, the India-Nepal BIPPA text, and UNCTAD's IPR implementation report. Located leads name a small set of partners (France, Germany, United Kingdom, Finland, Mauritius, India); signature, ratification and termination status are pending retrieval. The India-Nepal BIPPA status is contested across leads (entry into force vs reported Indian revocation) and must be settled from dated instruments. ISDS/ICSID information was not located.",
+  "findings": [
+    {
+      "claim": "Q1 Inventory of Nepal's BITs: partner, date of signature, ratification/entry into force, termination.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctad_iia"
+      ],
+      "note": "IIA Navigator D01 (primary for status), cross-checked with Nepal-official InvestNepal/DoI D06/D07 and US ICS D08/D09. Keep conflicting status records side by side."
+    },
+    {
+      "claim": "Q1 Status of the India-Nepal BIPPA (2011): in force, never in force, or terminated.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctad_iia"
+      ],
+      "note": "Conflicting descriptions in located leads (Navigator D02, treaty text D10, Supreme Court news D11). Requires Navigator status record plus Indian and Nepali official notices on entry into force and any termination notice."
+    },
+    {
+      "claim": "Q1 Treaties with investment provisions (FTAs/regional agreements with investment chapters) and double taxation agreements relevant to investors.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctad_iia"
+      ],
+      "note": "D01 'TIPs' tab; DTAAs via D06. Not yet retrieved."
+    },
+    {
+      "claim": "Dispute-resolution framework: ICSID/New York Convention membership, ISDS clauses in BITs, and known investor-state cases involving Nepal.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctad_iia"
+      ],
+      "note": "UNCTAD ISDS Navigator and ICSID member list required; no lead located in r1 (search budget exhausted)."
+    },
+    {
+      "claim": "Treaty status hierarchy: UNCTAD IIA Navigator status is the default record; Nepal-official lists override only when they cite a dated instrument (ratification or termination notice); disagreements are recorded, not resolved silently.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Navigator status fields (signed/in force/terminated) for every Nepal IIA - not retrieved.",
+    "Dated ratification instruments and any termination notices, esp. India-Nepal BIPPA.",
+    "ICSID and New York Convention membership records; UNCTAD ISDS Navigator entries for Nepal - no lead.",
+    "Double taxation agreement list (Inland Revenue Department) - lead D06 only.",
+    "Sanctions-compliance and financial-standards obligations (FATF/APG) are covered by 16B/20-series leads; not duplicated here."
+  ],
+  "assumptions": [
+    {
+      "id": "26D-A1",
+      "text": "Partner names in bit_inventory are candidates drawn from lead descriptions; status is not asserted until the Navigator and a Nepal-official record are retrieved.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "12B",
+      "text": "Investment-protection assumptions in FDI scenarios should not presume treaty coverage for India (largest investor candidate) until the India-Nepal BIPPA status is resolved."
+    },
+    {
+      "to": "00A",
+      "text": "Add InvestNepal portal and ICSID/UNCTAD ISDS Navigator to the source catalog; leads D06, D08-D12 carry source_id null."
+    }
+  ],
+  "uncertainty": "High. No treaty status retrieved. Partner list may be incomplete (treaties with investment provisions and recently signed BITs not checked). India-Nepal BIPPA status conflict is material for FDI scenarios.",
+  "specific": {
+    "bit_inventory": [
+      {
+        "partner": "France",
+        "status": "pending",
+        "fields_pending": [
+          "signed",
+          "in force",
+          "terminated"
+        ],
+        "lead_ids": [
+          "D01",
+          "D06",
+          "D08"
+        ]
+      },
+      {
+        "partner": "Germany",
+        "status": "pending",
+        "fields_pending": [
+          "signed",
+          "in force",
+          "terminated"
+        ],
+        "lead_ids": [
+          "D01",
+          "D06",
+          "D08"
+        ]
+      },
+      {
+        "partner": "United Kingdom",
+        "status": "pending",
+        "fields_pending": [
+          "signed",
+          "in force",
+          "terminated"
+        ],
+        "lead_ids": [
+          "D01",
+          "D06",
+          "D08"
+        ]
+      },
+      {
+        "partner": "Finland",
+        "status": "pending",
+        "fields_pending": [
+          "signed",
+          "in force",
+          "terminated"
+        ],
+        "lead_ids": [
+          "D01",
+          "D06",
+          "D08"
+        ]
+      },
+      {
+        "partner": "Mauritius",
+        "status": "pending",
+        "fields_pending": [
+          "signed",
+          "in force (leads suggest not in force - verify)"
+        ],
+        "lead_ids": [
+          "D01",
+          "D06",
+          "D08"
+        ]
+      },
+      {
+        "partner": "India",
+        "status": "pending - contested",
+        "fields_pending": [
+          "entry into force",
+          "termination notice and effective date"
+        ],
+        "conflict": "leads describe both an in-force treaty with automatic renewal and a revocation by India; resolve from dated instruments",
+        "lead_ids": [
+          "D01",
+          "D02",
+          "D10",
+          "D11",
+          "D12"
+        ]
+      },
+      {
+        "partner": "Other IIAs / treaties with investment provisions",
+        "status": "pending",
+        "lead_ids": [
+          "D01"
+        ]
+      }
+    ],
+    "method": "Download Navigator country table and treaty pages; cross-check against InvestNepal/DoI; record each status with instrument date and source."
+  },
+  "source_leads": [
+    {
+      "lead_id": "D01",
+      "url": "https://investmentpolicy.unctad.org/international-investment-agreements/countries/147/nepal",
+      "title": "IIA Navigator - Nepal",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_iia",
+      "contains": "List of Nepal's BITs and treaties with investment provisions: partner, status (signed / in force / terminated), date of signature, date of entry into force, termination date, full-text links"
+    },
+    {
+      "lead_id": "D02",
+      "url": "https://investmentpolicy.unctad.org/international-investment-agreements/treaties/bit/1939/india---nepal-bit-2011-",
+      "title": "India - Nepal BIT (2011)",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_iia",
+      "contains": "Status record and text of India-Nepal BIPPA (signature, entry into force, any termination)"
+    },
+    {
+      "lead_id": "D03",
+      "url": "https://investmentpolicy.unctad.org/investment-laws/150/nepal",
+      "title": "Investment Laws Navigator - Nepal",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_iia",
+      "contains": "Domestic investment laws incl. FITTA 2019 dispute-settlement and treaty references"
+    },
+    {
+      "lead_id": "D04",
+      "url": "https://investmentpolicy.unctad.org/investment-policy-monitor/150/nepal",
+      "title": "Investment Policy Monitor - Nepal",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_iia",
+      "contains": "Dated investment policy measures incl. 2026 FITTA section 42 automatic-route notification; any IIA-related measures"
+    },
+    {
+      "lead_id": "D05",
+      "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2075-",
+      "title": "Foreign Investment and Technology Transfer Act 2019 (2075)",
+      "publisher": "UNCTAD Investment Laws Navigator (Nepal law text)",
+      "source_id": "unctad_iia",
+      "contains": "Provisions on dispute settlement, repatriation and treaty precedence"
+    },
+    {
+      "lead_id": "D06",
+      "url": "https://www.investnepal.gov.np/portal/index.php?p1=downloadlist&p2=8",
+      "title": "InvestNepal - Treaties and Agreements downloads",
+      "publisher": "Government of Nepal (Investment Board / InvestNepal portal)",
+      "source_id": null,
+      "contains": "Nepal-official copies of BIPPAs and DTAAs"
+    },
+    {
+      "lead_id": "D07",
+      "url": "https://doind.gov.np/uploads/notices/Notices-20230118130540685.pdf",
+      "title": "Ministry of Industry, Commerce and Supplies / Department of Industry notice (2023)",
+      "publisher": "Department of Industry, Government of Nepal",
+      "source_id": "doind",
+      "contains": "Nepal-official notice surfaced for BIPPA search; content to verify (possible list of BIPPAs/DTAAs)"
+    },
+    {
+      "lead_id": "D08",
+      "url": "https://www.state.gov/reports/2024-investment-climate-statements/nepal",
+      "title": "2024 Investment Climate Statements: Nepal",
+      "publisher": "US Department of State",
+      "source_id": null,
+      "contains": "Section on bilateral investment and taxation treaties: partners and status as reported by a foreign government (tier 4)"
+    },
+    {
+      "lead_id": "D09",
+      "url": "https://www.state.gov/reports/2021-investment-climate-statements/nepal",
+      "title": "2021 Investment Climate Statements: Nepal",
+      "publisher": "US Department of State",
+      "source_id": null,
+      "contains": "Earlier vintage of treaty list for change tracking"
+    },
+    {
+      "lead_id": "D10",
+      "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542",
+      "title": "Nepal-India BIPPA (in Nepali), October 2011",
+      "publisher": "TDM Journal",
+      "source_id": null,
+      "contains": "Treaty text (Nepali) incl. entry-into-force and termination clauses"
+    },
+    {
+      "lead_id": "D11",
+      "url": "https://myrepublica.nagariknetwork.com/news/sc-quashes-writ-challenging-bippa",
+      "title": "SC quashes writ challenging BIPPA",
+      "publisher": "Republica",
+      "source_id": null,
+      "contains": "Secondary report of Supreme Court case on India-Nepal BIPPA; reference to Indian revocation (tier 7, chronology only)"
+    },
+    {
+      "lead_id": "D12",
+      "url": "https://mpra.ub.uni-muenchen.de/100276/1/MPRA_paper_100276.pdf",
+      "title": "Foreign Direct Investment and BIPPA in Nepal (MPRA working paper)",
+      "publisher": "MPRA (academic)",
+      "source_id": null,
+      "contains": "Academic review of Nepal's BIPPAs and FDI; tier 7"
+    },
+    {
+      "lead_id": "D13",
+      "url": "https://investmentpolicy.unctad.org/publications/1223/report-on-the-implementation-of-the-investment-policy-review-of-nepal",
+      "title": "Report on the Implementation of the Investment Policy Review of Nepal",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_iia",
+      "contains": "IPR implementation review incl. IIA policy recommendations"
+    }
+  ]
+}

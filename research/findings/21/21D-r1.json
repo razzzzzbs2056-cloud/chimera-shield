@@ -1,0 +1,301 @@
+{
+  "subagent_id": "21D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Imported shares of consumption and origins for fuel, fertiliser, rice and medicines are all pending. The method (apparent-consumption ratio in physical units, supplier HHI, origin vs route distinction, FY vs calendar-year separation) is specified. Leads reused from 16A and extended: Department of Customs annual trade statistics book FY2079/80 and Nepal Trade Portal (product-by-origin tables), UN Comtrade mirror data, NOC import/sales and publications, FAOSTAT food balance and fertiliser data, DDA, NRB major-imports table, World Bank Pink Sheet and NLSS-IV. Latest customs books after FY2079/80, MoALD production statistics and the G2G fertiliser agreement text were not located; these are data gaps.",
+  "findings": [
+    {
+      "claim": "Imported share of consumption for petroleum products (petrol, diesel, kerosene, ATF, LPG), by product, and origin of imports.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "customs_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Petroleum: domestic production is nil for refined products, so consumption equals NOC sales plus stock change; origin from NOC supply arrangement and customs HS 27 by partner.",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Imported share of chemical fertiliser use (urea, DAP, MoP) and origin (India, China, others; G2G vs tender).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "fao_stat",
+        "un_comtrade"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Customs HS 31 by partner (product tonnes) vs FAOSTAT nutrient use; informal cross-border inflows unrecorded.",
+      "unit": "percent",
+      "period": "Nepal FY / calendar year - keep separate"
+    },
+    {
+      "claim": "Imported share of rice consumption (HS 1006 rice and paddy) and origin, and exposure to Indian export restrictions on rice.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "fao_stat",
+        "un_comtrade"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Paddy-to-milled-rice conversion factor must be documented; MoALD production statistics needed as denominator (lead not yet located).",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Imported share of medicine consumption (finished formulations, HS 30) and origin; origin of active pharmaceutical ingredients (HS 2941 and HS 29 chapters) used by domestic manufacturers.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mohp",
+        "customs_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. DDA domestic vs imported market share; customs HS 30 and API lines by partner.",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Supplier concentration (HHI) by product across origin countries.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "un_comtrade"
+      ],
+      "observation_ids": [],
+      "note": "Computed from customs partner data once retrieved.",
+      "unit": "index"
+    },
+    {
+      "claim": "Import dependence = imports / (domestic production + imports - exports +/- stock change), computed in physical units where possible (tonnes, kilolitres), with value-based shares reported separately; formal customs data understate imports where informal border trade is material (rice, fertiliser).",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Country of origin (customs) is distinct from route of supply; India-route dependence for non-Indian-origin goods is taken from 21B, not inferred from origin data.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Mirror data (partner-reported exports to Nepal, calendar year) are kept as a separate value from Nepal customs imports (Nepal FY); differences are investigated, not averaged.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Customs annual trade statistics books for FY2080/81 and FY2081/82 not located as files.",
+    "MoALD Statistical Information on Nepalese Agriculture (rice production, fertiliser distribution) not located.",
+    "Primary text of the India-Nepal G2G fertiliser supply arrangement not located (news pointer only).",
+    "NOC-IOC supply agreement text and product-level annual report not yet located as files.",
+    "DDA annual report with domestic vs imported market share not located as a file.",
+    "The session web-search budget was exhausted part-way through r1; further leads for this task must be located in r2 or by the orchestrator."
+  ],
+  "assumptions": [
+    {
+      "id": "21D-A1",
+      "text": "Import dependence = imports / (domestic production + imports - exports +/- stock change), computed in physical units where possible (tonnes, kilolitres), with value-based shares reported separately; formal customs data understate imports where informal border trade is material (rice, fertiliser).",
+      "basis": "assumption"
+    },
+    {
+      "id": "21D-A2",
+      "text": "Country of origin (customs) is distinct from route of supply; India-route dependence for non-Indian-origin goods is taken from 21B, not inferred from origin data.",
+      "basis": "assumption"
+    },
+    {
+      "id": "21D-A3",
+      "text": "Mirror data (partner-reported exports to Nepal, calendar year) are kept as a separate value from Nepal customs imports (Nepal FY); differences are investigated, not averaged.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "Agree with proposed EXP-P01 (food staples) and EXP-P09 (API origin). Also note that petroleum (EXP-05) should record a supplier-concentration metric distinct from import share, since import share is structurally complete for refined products."
+    },
+    {
+      "to": "00A",
+      "text": "channels.py lacks an 'essential_supplies' channel owned by 21D; fertiliser and medicine dependence are currently mapped to agricultural_output and transit_and_logistics respectively. Suggest reconciling; 21D does not edit platform code."
+    },
+    {
+      "to": "07A",
+      "text": "Rice import-dependence needs MoALD production data as the denominator; request that 07A share the production series it uses so the same vintage is applied."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Import shares are sensitive to informal trade, stock changes, unit conversions and FY/calendar-year mismatches; medicine dependence understated if API origin is ignored.",
+  "specific": {
+    "essential_import_dependence": {
+      "status": "pending",
+      "formula": "imported_share = imports / apparent_consumption; apparent_consumption = production + imports - exports - stock_change",
+      "products": [
+        {
+          "product": "petroleum products (petrol, diesel, kerosene, ATF, LPG)",
+          "hs": "27",
+          "denominator_source": "NOC sales",
+          "import_share": null,
+          "origins": "pending",
+          "supplier_hhi": null,
+          "status": "pending",
+          "lead_urls": [
+            "https://noc.org.np/import",
+            "https://noc.org.np/publication",
+            "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf"
+          ]
+        },
+        {
+          "product": "chemical fertiliser (urea, DAP, MoP)",
+          "hs": "31",
+          "denominator_source": "FAOSTAT nutrient use; MoALD/AICL-STCL distribution",
+          "import_share": null,
+          "origins": "pending",
+          "supplier_hhi": null,
+          "status": "pending",
+          "lead_urls": [
+            "https://www.fao.org/faostat",
+            "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf"
+          ]
+        },
+        {
+          "product": "rice and paddy",
+          "hs": "1006",
+          "denominator_source": "MoALD production statistics (lead pending); FAOSTAT food balance",
+          "import_share": null,
+          "origins": "pending",
+          "supplier_hhi": null,
+          "status": "pending",
+          "lead_urls": [
+            "https://www.fao.org/faostat",
+            "https://comtradeplus.un.org"
+          ]
+        },
+        {
+          "product": "medicines (formulations) and APIs",
+          "hs": "30; 2941 and other HS 29 API lines",
+          "denominator_source": "DDA market data",
+          "import_share": null,
+          "origins": "pending",
+          "supplier_hhi": null,
+          "status": "pending",
+          "lead_urls": [
+            "https://dda.gov.np/",
+            "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf"
+          ]
+        }
+      ],
+      "period_basis": "Nepal FY for customs, NOC, DDA; calendar year for FAOSTAT and Comtrade mirror data - separate columns, no mixing without documented conversion",
+      "known_issues": [
+        "informal cross-border trade in rice and fertiliser",
+        "paddy vs milled rice conversion",
+        "product tonnes vs nutrient tonnes for fertiliser",
+        "domestic medicine production depends on imported APIs",
+        "customs records origin not route"
+      ]
+    },
+    "channel": "agricultural_output; fuel_prices; transit_and_logistics",
+    "exposure_ids": [
+      "EXP-05",
+      "EXP-15",
+      "EXP-16",
+      "EXP-P01",
+      "EXP-P09"
+    ],
+    "external_variables": [
+      "X07",
+      "X09",
+      "X29"
+    ],
+    "scenarios": [
+      "S02",
+      "S10"
+    ]
+  },
+  "source_leads": [
+    {
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Annual FY2079/80 (mid-July basis) imports and exports by HS chapter/heading and by partner country, plus trade by customs office; source for product-by-origin tables (HS 10 rice, HS 27 petroleum, HS 30 medicines, HS 31 fertiliser) and for exports by destination"
+    },
+    {
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Ministry of Industry, Commerce and Supplies / Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Trade-statistics query interface (HS-level imports/exports by partner, Nepal FY), import/export procedures, tariff schedule and transit procedures"
+    },
+    {
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror (partner-reported) trade data by HS6 and calendar year: India, China, EU, US, UK imports from Nepal and exports to Nepal; used to cross-check customs data and informal-trade gaps"
+    },
+    {
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Petroleum product imports and sales by product (petrol, diesel, kerosene, ATF, LPG) and year/month; single supplier arrangement with Indian Oil Corporation"
+    },
+    {
+      "url": "https://noc.org.np/publication",
+      "title": "Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC annual reports: import volumes, supplier, pipeline (Motihari-Amlekhgunj) throughput, storage days"
+    },
+    {
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Food balance sheets (rice production, imports, domestic supply), fertiliser nutrient use and imports; calendar/marketing year"
+    },
+    {
+      "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+      "title": "Nepal signs deal with India to procure chemical fertiliser",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News pointer to the G2G fertiliser supply agreement with India (to locate the primary MoALD/MoICS agreement text); not to be cited for values"
+    },
+    {
+      "url": "https://dda.gov.np/",
+      "title": "Department of Drug Administration",
+      "publisher": "Department of Drug Administration, Nepal",
+      "source_id": "mohp",
+      "contains": "DDA annual reports: registered medicines, domestic vs imported market share, import registration by country of origin"
+    },
+    {
+      "url": "https://pharmexcil.com/uploads/countryreports/Nepal.pdf",
+      "title": "Regulatory and Market Profile of Nepal",
+      "publisher": "Pharmexcil (Indian pharmaceutical export council)",
+      "source_id": null,
+      "contains": "Secondary market profile of Nepal's pharmaceutical imports from India; used only to locate primary DDA/customs tables"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-May-2026.pdf",
+      "title": "Commodity Markets Pink Sheet, May 2026",
+      "publisher": "World Bank",
+      "source_id": "wb_pinksheet",
+      "contains": "Monthly international prices for crude oil, urea, DAP, rice (Thai/Viet) - price side of essential-import dependence"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Major imports table (petroleum products, rice/paddy, medicines, chemical fertiliser) by value, FY2024/25"
+    },
+    {
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round (microdata catalogue)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household consumption of rice and fuels - denominator cross-check for import shares"
+    }
+  ]
+}

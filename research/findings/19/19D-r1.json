@@ -1,0 +1,339 @@
+{
+  "subagent_id": "19D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Leads located to measure Nepali workers in conflict-exposed destinations and evacuation precedents: Government of Nepal MoFA press releases on the 2026 West Asia situation (daily updates, status of Nepali citizens, Nepal Airlines special flights, advisories for Israel and Iran) and the MoFA press archive; DoFE yearly progress reports and the MoLESS Nepal Labour Migration Report 2024; Census 2021 absentee data; GLMM host-country counts; IOM DTM 2026 mobility reports. The 2026 labour-permit suspension for Middle East/Gulf destinations is reported in news and must be verified from the DoFE notice. Stock estimates are defined as three separate measures (MoFA consular, census, host-country); all counts and evacuation costs are pending. No numbers were taken from snippets.",
+  "findings": [
+    {
+      "claim": "Q1: Nepali workers in conflict-exposed destinations - stock by destination country for watchlist theatres CW-01..CW-06 (GCC states, Israel, Lebanon, Iraq, Iran, Russia).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe",
+        "mofa_nepal",
+        "nso_nepal",
+        "glmm"
+      ],
+      "note": "Three methodologically different measures to be kept separate: (a) MoFA consular estimates of Nepalis by country (2026 press releases), (b) Census 2021 absentee stock by destination, (c) GLMM host-country counts; DoFE approvals are flows, not stocks. Leads 19D-L02, L08, L11, L12.",
+      "unit": "persons",
+      "period": "2026 (MoFA); census 2021; host-country years vary"
+    },
+    {
+      "claim": "Q1b: 2026 labour-permit suspension for Middle East/Gulf destinations and partial resumption - dates, countries covered and permits forgone.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe"
+      ],
+      "note": "Retrieve the DoFE Foreign Labour Permit Branch notice(s) of March 2026 and subsequent resumption notices; news leads 19D-L14 used only to locate them.",
+      "unit": "count",
+      "period": "calendar 2026 / Nepal FY2025/26"
+    },
+    {
+      "claim": "Q2: Evacuation precedents and cost - 2026 Nepal Airlines special flights from the Gulf; relocations within affected countries; earlier precedents (Israel 2023, Ukraine 2022, Libya 2011, Kuwait/Iraq 1990-91) with persons evacuated, cost and payer (Foreign Employment Board welfare fund, state budget, employers, IOM).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "dofe",
+        "iom",
+        "mof_nepal"
+      ],
+      "note": "Retrieve MoFA press releases (19D-L02..L07) and Foreign Employment Board annual reports/budget lines; no FEB report lead was located in r1 (search budget exhausted).",
+      "unit": "NPR",
+      "period": "event dates; cost in Nepal FY"
+    },
+    {
+      "claim": "Reported fatalities/injuries of Nepali nationals from 2026 attacks in the Gulf - counts pending MoFA primary retrieval (news reports not used).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal"
+      ],
+      "note": "19D-L02, L03.",
+      "unit": "persons",
+      "period": "calendar 2026"
+    },
+    {
+      "claim": "Evacuation capacity is bounded by aviation (airspace, aircraft availability) and host-country exit conditions; a full-scale evacuation of the Gulf stock is treated in S01 as a stress-test bound, not an expected event.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Remittance effects of worker exposure are modelled by 23C; 19D supplies stock-at-risk and return-flow inputs only.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Foreign Employment Board annual reports / welfare-fund expenditure on rescue and repatriation not located.",
+    "DoFE March 2026 suspension and resumption notices located only via news reports.",
+    "Historical evacuation records (1990-91, 2011, 2022, 2023) not located as primary files.",
+    "Irregular and India-routed migrants to Gulf/Russia are absent from DoFE data.",
+    "WebSearch budget for the session was exhausted during r1 before all lead searches were completed; leads marked 'NOT confirmed by web search' use catalog base URLs or known primary domains and must be verified on fetch."
+  ],
+  "assumptions": [
+    {
+      "id": "19D-A1",
+      "text": "Stock (persons abroad) and flow (labour approvals) are never combined without a documented stock-flow method.",
+      "basis": "methodology"
+    },
+    {
+      "id": "19D-A2",
+      "text": "Evacuation cost is recorded by payer; FEB welfare-fund spending and state-budget spending are kept separate.",
+      "basis": "methodology"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "23A",
+      "text": "Use MoFA 2026 country estimates as a separate stock series alongside Census 2021 and GLMM; do not overwrite."
+    },
+    {
+      "to": "16B",
+      "text": "The 2026 Gulf permit suspension flagged unverified has tier-1 MoFA context leads; DoFE notice still required - EXP-02 note should say 'lead-corroborated, pending retrieval'."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: 2026 permit suspension and evacuation events may alter S01 migrant-employment shock calibration once observed."
+    },
+    {
+      "to": "28",
+      "text": "Red team: assess whether S01 omits the aviation-capacity constraint on evacuation and return migration."
+    }
+  ],
+  "uncertainty": "High. No stock, casualty or cost value retrieved. Consular estimates, census and host-country counts differ in coverage and date; 2026 events rest on lead descriptions.",
+  "specific": {
+    "exposed_worker_estimates": {
+      "status": "pending",
+      "method": "For each watchlist destination report three series separately: MoFA consular estimate (2026), Census 2021 absentees, GLMM host-country count; flag DoFE approvals as flow context.",
+      "destinations": [
+        {
+          "country_group": "GCC states (Saudi Arabia, UAE, Qatar, Kuwait, Bahrain, Oman)",
+          "watchlist": "CW-01",
+          "mofa_2026": "pending",
+          "census_2021": "pending",
+          "host_country": "pending",
+          "lead_ids": [
+            "19D-L02",
+            "19D-L12",
+            "19D-L11",
+            "19D-L08"
+          ]
+        },
+        {
+          "country_group": "Israel",
+          "watchlist": "CW-03",
+          "mofa_2026": "pending",
+          "census_2021": "pending",
+          "host_country": "pending",
+          "lead_ids": [
+            "19D-L05",
+            "19D-L07"
+          ]
+        },
+        {
+          "country_group": "Lebanon, Iraq, Iran",
+          "watchlist": "CW-03/CW-04/CW-01",
+          "mofa_2026": "pending",
+          "census_2021": "pending",
+          "host_country": "pending",
+          "lead_ids": [
+            "19D-L02",
+            "19D-L03"
+          ]
+        },
+        {
+          "country_group": "Russia (incl. nationals in armed forces)",
+          "watchlist": "CW-06",
+          "mofa_2026": "pending",
+          "census_2021": "pending",
+          "host_country": "pending",
+          "lead_ids": [
+            "19D-L07"
+          ]
+        }
+      ]
+    },
+    "evacuation_precedents": {
+      "status": "pending",
+      "precedents": [
+        {
+          "event": "2026 West Asia escalation - Nepal Airlines special flights, in-country relocations",
+          "period": "calendar 2026",
+          "persons": "pending",
+          "cost": "pending",
+          "payer": "pending",
+          "lead_ids": [
+            "19D-L02",
+            "19D-L03",
+            "19D-L04",
+            "19D-L13"
+          ]
+        },
+        {
+          "event": "Israel, October 2023",
+          "period": "calendar 2023",
+          "persons": "pending",
+          "cost": "pending",
+          "payer": "pending",
+          "lead_ids": [
+            "19D-L07"
+          ]
+        },
+        {
+          "event": "Ukraine, 2022",
+          "period": "calendar 2022",
+          "persons": "pending",
+          "cost": "pending",
+          "payer": "pending",
+          "lead_ids": [
+            "19D-L07"
+          ]
+        },
+        {
+          "event": "Libya, 2011",
+          "period": "calendar 2011",
+          "persons": "pending",
+          "cost": "pending",
+          "payer": "pending",
+          "lead_ids": [
+            "19D-L07",
+            "19D-L10"
+          ]
+        },
+        {
+          "event": "Kuwait/Iraq, 1990-91",
+          "period": "calendar 1990-1991",
+          "persons": "pending",
+          "cost": "pending",
+          "payer": "pending",
+          "lead_ids": []
+        }
+      ]
+    },
+    "source_leads_count": 15
+  },
+  "source_leads": [
+    {
+      "lead_id": "19D-L01",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal%20Labour%20Migration%202024_Final-Version%20for%20Approval%20(1)_peesvxa.pdf",
+      "title": "Nepal Labour Migration Report 2024",
+      "publisher": "Ministry of Labour, Employment and Social Security, Nepal",
+      "source_id": "dofe",
+      "contains": "Labour approvals by destination country (FY2022/23-FY2023/24), deaths and injuries abroad, Foreign Employment Board rescue/repatriation provisions (lead also 16B L12)"
+    },
+    {
+      "lead_id": "19D-L02",
+      "url": "https://mofa.gov.np/content/1772/press-release---daily-updated-information-on/",
+      "title": "Press Release - Daily Updates on Situation in West Asia and Security of Nepali Nationals",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "2026 daily updates: status of Nepali nationals by country, casualties, stranded passengers, flight suspension, rapid response taskforces"
+    },
+    {
+      "lead_id": "19D-L03",
+      "url": "https://mofa.gov.np/content/1764/press-release-on-the-latest-situation/",
+      "title": "Press Release on the Latest Status of Nepali Citizens",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "MoFA statement on the status of Nepali citizens in the affected region (2026; date to be confirmed), incl. relocations"
+    },
+    {
+      "lead_id": "19D-L04",
+      "url": "https://mofa.gov.np/content/1777/press-release--special-flight-operation-of-nepal/",
+      "title": "Press Release - Operation of Special Flights by Nepal Airlines",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "2026 special/chartered Nepal Airlines flights for stranded Nepalis: routes, dates, passengers carried, cost-bearing arrangements (to be retrieved)"
+    },
+    {
+      "lead_id": "19D-L05",
+      "url": "https://mofa.gov.np/content/1760/advisory-to-nepali-nationals-in-israel-and-iran/",
+      "title": "Advisory to Nepali Nationals in Israel and Iran",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Safety advisory to Nepali nationals in Israel and Iran (date to be confirmed)"
+    },
+    {
+      "lead_id": "19D-L06",
+      "url": "https://mofa.gov.np/content/1668/press-release-on-the-unfolding-situation-in-middle-east/",
+      "title": "Press Release on the Unfolding Situation in the Middle East",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Earlier MoFA release (likely a pre-2026 episode, e.g. 2024-2025 escalation; date to be confirmed) - precedent for advisory/evacuation practice"
+    },
+    {
+      "lead_id": "19D-L07",
+      "url": "https://mofa.gov.np/category/presscategory/",
+      "title": "Press Release archive",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Archive of MoFA press releases; source for evacuation precedents (Israel 2023, Ukraine 2022, Libya 2011 if archived) and 2026 updates"
+    },
+    {
+      "lead_id": "19D-L08",
+      "url": "https://dofe.gov.np/yearly.aspx",
+      "title": "Yearly Progress Report",
+      "publisher": "Department of Foreign Employment, Nepal",
+      "source_id": "dofe",
+      "contains": "Annual labour approvals by country and sex (Nepal FY); stock proxy by cumulating approvals / renewals (lead also 16B L13)"
+    },
+    {
+      "lead_id": "19D-L09",
+      "url": "https://dtm.iom.int/reports/escalation-middle-east-and-beyond-mobility-report-29-april-04-may-2026",
+      "title": "Escalation in the Middle East and Beyond - Mobility Report (29 April - 04 May 2026)",
+      "publisher": "IOM Displacement Tracking Matrix",
+      "source_id": "iom",
+      "contains": "DTM mobility report incl. third-country national movements and returns by nationality where available"
+    },
+    {
+      "lead_id": "19D-L10",
+      "url": "https://nepal.iom.int/data-and-resources",
+      "title": "Migration Data and Resources - IOM Nepal",
+      "publisher": "IOM Nepal",
+      "source_id": "iom",
+      "contains": "IOM Nepal migration profiles, returnee and reintegration data, emergency support to stranded migrants"
+    },
+    {
+      "lead_id": "19D-L11",
+      "url": "https://gulfmigration.grc.net/",
+      "title": "Gulf Labour Markets, Migration and Population (GLMM) data portal",
+      "publisher": "Gulf Research Center",
+      "source_id": "glmm",
+      "contains": "Host-country counts of foreign residents/workers by nationality for GCC states (varying years; calendar) - independent check on Nepali stock (lead also 16B L14)"
+    },
+    {
+      "lead_id": "19D-L12",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Absent population abroad by destination country (census 2021, stock at census date) (lead also 16B L10)"
+    },
+    {
+      "lead_id": "19D-L13",
+      "url": "https://kathmandupost.com/national/2026/03/12/a-national-plan-would-be-needed-to-evacuate-nepalis-from-gulf-foreign-minister-sharma-says",
+      "title": "A 'national plan' would be needed to evacuate Nepalis from Gulf, Foreign Minister says",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News report (March 2026) on evacuation planning options (chartered flights, sea routes); used only to locate primary MoFA plans"
+    },
+    {
+      "lead_id": "19D-L14",
+      "url": "https://kathmandupost.com/national/2026/03/18/over-2-000-nepali-denied-labour-permits-daily-as-tensions-persist-in-west-asia",
+      "title": "Nepali denied labour permits daily as tensions persist in West Asia",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News report on the March 2026 DoFE labour-permit suspension for Middle East/Gulf countries and partial resumption; used only to locate the DoFE notice"
+    },
+    {
+      "lead_id": "19D-L15",
+      "url": "https://kathmandupost.com/national/2026/09/26/gulf-job-opportunities-are-narrowing-for-nepalis",
+      "title": "Gulf job opportunities are narrowing for Nepalis",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News report (September 2026) on post-conflict Gulf labour demand for Nepalis; pointer to DoFE FY2025/26 approval data"
+    }
+  ]
+}

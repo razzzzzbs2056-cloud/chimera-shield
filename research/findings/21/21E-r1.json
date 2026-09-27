@@ -1,0 +1,215 @@
+{
+  "subagent_id": "21E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). The composition and growth of Nepal's services exports are pending. Method specified: category-by-FY matrix from NRB BPM6 services credits (NPR and USD, with exchange-rate effects separated), cross-checked with UNCTAD digitally deliverable services and tourism statistics, keeping FY and calendar-year bases apart. Leads: NRB annual and nine-month FY2024/25 macroeconomic situation reports and archive, UNCTADstat digitally deliverable services, Nepal Tourism Statistics 2023 and 2024, and the WTO Trade Policy Review of Nepal 2025 (services trade and regulatory regime). The possible misrecording of IT/BPO receipts as remittances is carried as a data-quality issue.",
+  "findings": [
+    {
+      "claim": "Composition of Nepal's services exports (BPM6 credits) by category: travel, transport, telecommunications/computer/information, other business services, government goods and services n.i.e., other - latest FY and share of total.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. NRB BoP services table.",
+      "unit": "usd_million; percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Growth of services exports by category over at least the last ten fiscal years (nominal NPR and USD; separate exchange-rate effects).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. NRB CME archive tables by FY.",
+      "unit": "percent_per_year",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Digitally deliverable services exports (UNCTAD) and comparison with NRB ICT/other-business-services lines.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctadstat",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Calendar-year UNCTAD vs Nepal-FY NRB: compare only after conversion; keep both values.",
+      "unit": "usd_million",
+      "period": "calendar year (UNCTAD)"
+    },
+    {
+      "claim": "Tourism arrivals by source market and receipts, to split travel credits by demand origin.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "tourism_ministry",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Arrivals are calendar-year; receipts are Nepal FY - no per-arrival ratios across bases without conversion (16A challenge).",
+      "period": "calendar year (arrivals) / Nepal FY (receipts)"
+    },
+    {
+      "claim": "Regulatory constraints on services exports (FX repatriation rules for IT exporters, Mode 4, GATS commitments) from the WTO TPR and NRB foreign-exchange directives.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2."
+    },
+    {
+      "claim": "Services exports are measured as BPM6 credits in the NRB balance of payments; worker remittances (secondary income) are excluded even where industry reports claim that some IT/BPO payments are received through remittance channels; that possible misclassification is carried as a separately labelled data-quality issue.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Growth is decomposed into NPR nominal, USD nominal and exchange-rate effects; no real services-export series is constructed without a documented deflator.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "NRB services table with full BPM6 sub-categories for a ten-year FY span not yet confirmed as a single file.",
+    "UNCTAD services by category (EBOPS) for Nepal not yet located as a specific report.",
+    "Nepal's GATS schedule of specific commitments (WTO document) not located.",
+    "NRB foreign-exchange directive on IT-service export earnings not located.",
+    "The session web-search budget was exhausted part-way through r1; further leads for this task must be located in r2 or by the orchestrator."
+  ],
+  "assumptions": [
+    {
+      "id": "21E-A1",
+      "text": "Services exports are measured as BPM6 credits in the NRB balance of payments; worker remittances (secondary income) are excluded even where industry reports claim that some IT/BPO payments are received through remittance channels; that possible misclassification is carried as a separately labelled data-quality issue.",
+      "basis": "assumption"
+    },
+    {
+      "id": "21E-A2",
+      "text": "Growth is decomposed into NPR nominal, USD nominal and exchange-rate effects; no real services-export series is constructed without a documented deflator.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "24C",
+      "text": "Coordinate on ICT/BPO receipts: 21E uses NRB BPM6 credits as the recorded value; any industry-claimed value should be recorded as a separate observation and the gap escalated to 00B if beyond tolerance, rather than adjusting NRB figures."
+    },
+    {
+      "to": "16A",
+      "text": "Accepted: tourism arrivals (calendar year) and NRB travel receipts (Nepal FY) will not be combined without conversion."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Services statistics are revised and coverage of ICT and travel is uncertain; UNCTAD and NRB differ in period basis and possibly in estimation method.",
+  "specific": {
+    "services_export_profile": {
+      "status": "pending",
+      "method": "From NRB BoP services tables (Nepal FY), build a category-by-year matrix of credits in NPR and USD; compute shares and compound growth; cross-check ICT/other business services with UNCTAD digitally deliverable services (calendar year) after documented conversion; split travel by source market using tourism statistics (calendar year) only as indicative shares.",
+      "categories": [
+        "travel",
+        "transport",
+        "telecommunications, computer and information services",
+        "other business services",
+        "government goods and services n.i.e.",
+        "other services"
+      ],
+      "latest_period": "FY2024/25 (pending retrieval)",
+      "time_span": "ten or more Nepal FYs (pending)",
+      "values": [],
+      "cross_checks": {
+        "unctad_digitally_deliverable": "pending",
+        "tourism_receipts_vs_nrb_travel": "pending"
+      },
+      "known_issues": [
+        "possible recording of IT/BPO receipts as remittances",
+        "FY vs calendar year",
+        "coverage of Indian land arrivals",
+        "exchange-rate effects on NPR growth"
+      ],
+      "lead_urls": [
+        "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+        "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+        "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+        "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+        "https://www.wto.org/english/news_e/news_docs/s478_e.pdf"
+      ]
+    },
+    "channel": "tourism_demand; digital_services_demand",
+    "exposure_ids": [
+      "EXP-08",
+      "EXP-14"
+    ],
+    "external_variables": [
+      "X13",
+      "X15"
+    ],
+    "scenarios": [
+      "S01",
+      "S04",
+      "S07",
+      "S10"
+    ]
+  },
+  "source_leads": [
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 BoP tables: services credits (travel, transport, telecommunications/computer/information, other business services, government services), merchandise trade by partner group, petroleum imports"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2024-25/",
+      "title": "Current Macroeconomic and Financial Situation (nine months of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Nine-month FY2024/25 BoP detail with services-receipt lines by BPM6 category"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of annual and monthly CME releases with statistical tables; source for multi-year services-credit time series by category (Nepal FY)"
+    },
+    {
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "International trade in digitally deliverable services, value",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Digitally deliverable services exports for Nepal and comparators, calendar year, annual"
+    },
+    {
+      "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+      "title": "Nepal Tourism Statistics 2024",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": "Tourist arrivals by nationality and mode (air/land), length of stay, foreign-exchange earnings from tourism (calendar year and FY tables)"
+    },
+    {
+      "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
+      "title": "Nepal Tourism Statistics 2023",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": "Arrivals by nationality, purpose, mode; tourism receipts series"
+    },
+    {
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Secretariat report for Nepal's third TPR (Nov 2025): trade and investment regime, tariff structure, preferential market access, transit arrangements, trade facilitation, services trade and FDI chapters, export priorities"
+    },
+    {
+      "url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_npl_17nov25_e.htm",
+      "title": "Trade policy review - Nepal 2025",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Landing page for Nepal TPR 2025: Secretariat report WT/TPR/S/478, Government report WT/TPR/G/478, minutes and Chair's concluding remarks"
+    }
+  ]
+}

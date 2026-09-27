@@ -1,0 +1,264 @@
+{
+  "subagent_id": "19E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Days-of-cover for fuel, food and medicine are defined (usable stock or capacity divided by average daily consumption of the same product and period, with capacity-based and actual-stock-based cover kept separate). Leads located for petroleum: NOC publications, import/sales pages and notices, the MoF Economic Survey, and news items that point to the Lothar (Chitwan) depot and Amlekhgunj-Lothar pipeline extension and to 2026 fuel-supply measures during the Middle East disruption. No primary leads were located for food reserves (FMTCL/National Food Reserve) or medicine buffer stocks; these are pending with the exact data required. No values retrieved.",
+  "findings": [
+    {
+      "claim": "Q1a: Petroleum stock cover - days of consumption covered by NOC storage capacity and by actual stocks, by product (petrol, diesel, kerosene, ATF, LPG).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "mof_nepal"
+      ],
+      "note": "Requires NOC depot capacity (kl, t) by product and average daily sales (Nepal FY); capacity-based and actual-stock-based cover are distinct measures. Leads 19E-L01..L04.",
+      "unit": "days",
+      "period": "Nepal FY2024/25; 2026 monthly"
+    },
+    {
+      "claim": "Q1b: Food stock cover - days of national cereal requirement covered by Food Management and Trading Company / National Food Reserve stocks.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal"
+      ],
+      "note": "Requires food reserve stock (t) and consumption; no FMTCL or MoALD lead located in r1 (search budget exhausted); catalog lacks FMTCL.",
+      "unit": "days",
+      "period": "Nepal FY2024/25"
+    },
+    {
+      "claim": "Q1c: Medicine stock cover - buffer stock of essential medicines (Department of Health Services Logistics Management Section / Management Division) in months or days.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mohp"
+      ],
+      "note": "Requires DoHS logistics stock reports; no lead located in r1.",
+      "unit": "days",
+      "period": "Nepal FY2024/25"
+    },
+    {
+      "claim": "Q1d: 2026 petroleum supply measures during the Middle East disruption (tax cuts on fuel, demand management, price revisions) - verify from Cabinet/NOC/MoF primary documents.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "mof_nepal"
+      ],
+      "note": "News leads 19E-L07..L09 only locate primaries.",
+      "period": "calendar 2026"
+    },
+    {
+      "claim": "Days of cover = usable stock (or capacity) / average daily sales of the same product and period; tank capacity is not stock, and both are reported separately.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Resilience analysis covers lawful civilian preparedness only (essential-service continuity, stock policy); no security-sensitive facility detail is recorded.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Food Management and Trading Company / national food reserve stock data - not in catalog, no lead.",
+    "DoHS essential-medicine buffer stock reports - no lead.",
+    "NOC depot-level capacity by product in a dated primary file not yet located.",
+    "2026 Cabinet decisions on fuel taxes and demand measures - primary documents not located.",
+    "WebSearch budget for the session was exhausted during r1 before all lead searches were completed; leads marked 'NOT confirmed by web search' use catalog base URLs or known primary domains and must be verified on fetch."
+  ],
+  "assumptions": [
+    {
+      "id": "19E-A1",
+      "text": "Capacity-based and actual-stock-based days of cover are distinct measures and never substituted for each other.",
+      "basis": "methodology"
+    },
+    {
+      "id": "19E-A2",
+      "text": "Civilian preparedness scope only (safety note).",
+      "basis": "safety note"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "22A",
+      "text": "Fuel price shocks in S01 should be paired with a supply-quantity constraint when days-of-cover is short; request joint treatment."
+    },
+    {
+      "to": "21D",
+      "text": "X29 essential imports: food and medicine stock data are missing; propose FMTCL and DoHS as sources (with 00A)."
+    },
+    {
+      "to": "00A",
+      "text": "Add FMTCL, MoALD and DoHS Management Division to the source catalog."
+    },
+    {
+      "to": "16B",
+      "text": "SPOF-01 'days of storage cover' measure is supplied by 19E; the Lothar depot and pipeline extension are pending projects that should be noted as capacity changes with dates."
+    }
+  ],
+  "uncertainty": "High. No stock or cover value retrieved; food and medicine have no located primary source. Days-of-cover varies seasonally and by product.",
+  "specific": {
+    "stock_cover_days": {
+      "status": "pending",
+      "method": "Days of cover = usable stock (or capacity) / average daily sales, same product and period; Nepal FY or monthly.",
+      "items": [
+        {
+          "item": "Petrol",
+          "basis": [
+            "capacity-based",
+            "actual-stock-based"
+          ],
+          "value": "pending",
+          "unit": "days",
+          "lead_ids": [
+            "19E-L01",
+            "19E-L02"
+          ]
+        },
+        {
+          "item": "Diesel",
+          "basis": [
+            "capacity-based",
+            "actual-stock-based"
+          ],
+          "value": "pending",
+          "unit": "days",
+          "lead_ids": [
+            "19E-L01",
+            "19E-L02"
+          ]
+        },
+        {
+          "item": "Aviation turbine fuel",
+          "basis": [
+            "capacity-based",
+            "actual-stock-based"
+          ],
+          "value": "pending",
+          "unit": "days",
+          "lead_ids": [
+            "19E-L01",
+            "19E-L02"
+          ]
+        },
+        {
+          "item": "LPG",
+          "basis": [
+            "capacity-based",
+            "actual-stock-based"
+          ],
+          "value": "pending",
+          "unit": "days",
+          "lead_ids": [
+            "19E-L01",
+            "19E-L02"
+          ]
+        },
+        {
+          "item": "Food grains (national reserve)",
+          "basis": [
+            "actual-stock-based"
+          ],
+          "value": "pending",
+          "unit": "days",
+          "lead_ids": []
+        },
+        {
+          "item": "Essential medicines (public buffer stock)",
+          "basis": [
+            "actual-stock-based"
+          ],
+          "value": "pending",
+          "unit": "days",
+          "lead_ids": []
+        }
+      ],
+      "capacity_projects": [
+        {
+          "project": "Lothar (Chitwan) depot and Amlekhgunj-Lothar pipeline extension",
+          "status": "pending verification from NOC/IOC documents",
+          "lead_ids": [
+            "19E-L05",
+            "19E-L06"
+          ]
+        }
+      ]
+    },
+    "source_leads_count": 9
+  },
+  "source_leads": [
+    {
+      "lead_id": "19E-L01",
+      "url": "https://noc.org.np/publication",
+      "title": "Nepal Oil Corporation - Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC annual reports/progress: storage capacity by depot and product, sales per day, storage-cover norms (lead also 16B L27)"
+    },
+    {
+      "lead_id": "19E-L02",
+      "url": "https://noc.org.np/import",
+      "title": "Nepal Oil Corporation - Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Monthly/annual import and sales volumes by product (petrol, diesel, kerosene, ATF, LPG) - denominator for days-of-cover (lead also 16B L26)"
+    },
+    {
+      "lead_id": "19E-L03",
+      "url": "https://noc.org.np/",
+      "title": "Nepal Oil Corporation (home)",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Notices on supply status, price revisions and storage projects, incl. 2026 supply notices"
+    },
+    {
+      "lead_id": "19E-L04",
+      "url": "https://mof.gov.np",
+      "title": "Ministry of Finance, Nepal - Economic Survey",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Economic Survey FY2024/25 and FY2025/26 chapters on supplies/commerce (petroleum storage, food reserves) and fiscal cost of fuel tax changes. URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19E-L05",
+      "url": "https://myrepublica.nagariknetwork.com/news/fuel-depot-being-built-in-chitwan-at-cost-of-rs-10-billion-54-88.html",
+      "title": "Rs 10 billion Lothar depot to transform Nepal's fuel distribution network",
+      "publisher": "Republica",
+      "source_id": "academic",
+      "contains": "News on NOC's Lothar (Chitwan) depot under construction and IOC-financed pipeline extension; used only to locate NOC/IOC project documents"
+    },
+    {
+      "lead_id": "19E-L06",
+      "url": "https://kathmandupost.com/money/2021/03/10/feasibility-study-for-extending-oil-pipeline-to-chitwan-completed",
+      "title": "Feasibility study for extending oil pipeline to Chitwan completed",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News on Amlekhgunj-Lothar pipeline feasibility; pointer to NOC feasibility report"
+    },
+    {
+      "lead_id": "19E-L07",
+      "url": "https://english.ratopati.com/story/57075/how-many-days-can-nepals-storage-meet-the-demand-for-petroleum-products",
+      "title": "How many days can Nepal's storage meet the demand for petroleum products",
+      "publisher": "Ratopati",
+      "source_id": "academic",
+      "contains": "2026 news analysis of petroleum days-of-cover; used only to locate the NOC source it cites - no value taken"
+    },
+    {
+      "lead_id": "19E-L08",
+      "url": "https://www.aljazeera.com/news/2026/4/5/nepal-announces-two-day-weekends-as-fuel-crisis-caused-by-iran-war-deepens",
+      "title": "Nepal announces two-day weekends as fuel crisis caused by Iran war deepens",
+      "publisher": "Al Jazeera",
+      "source_id": "academic",
+      "contains": "News (April 2026) on demand-side fuel measures in Nepal; pointer to Cabinet decisions to verify"
+    },
+    {
+      "lead_id": "19E-L09",
+      "url": "https://kathmandupost.com/money/2026/03/04/nepal-braces-for-impact-as-gulf-crisis-pushes-oil-prices",
+      "title": "Nepal braces for impact as Gulf crisis pushes oil prices",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News (March 2026) incl. NOC statements on supply status and price stabilisation fund; pointer to NOC notices"
+    }
+  ]
+}

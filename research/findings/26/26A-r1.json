@@ -1,0 +1,449 @@
+{
+  "subagent_id": "26A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Primary documents for Nepal's multilateral financing arrangements were located as source leads: the IMF ECF arrangement (fourth to seventh reviews, the 2026 extension request and the combined 2026 Article IV / seventh review staff report), the World Bank Group CPF FY2025-2031, the ADB CPS 2025-2029 with linked documents and board chair summary, AIIB approved project pages, and the Ministry of Finance AMIS partner profile (tier 1) for cross-checking. No values were retrieved; envelopes, disbursements, conditionality and dates are pending. Lead titles indicate the IMF ECF reached its final review in 2026; whether a successor IMF arrangement is sought is unknown (no lead). Policy-matrix documents for any active DPF/PBL operations and IDA/ADF terms were not located.",
+  "findings": [
+    {
+      "claim": "Q1 IMF: status, remaining disbursements and conditionality of the ECF arrangement at completion, and whether any successor IMF arrangement or Policy Coordination Instrument has been requested.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "note": "Retrieve CR 2026/127 (A01-A03), extension request (A06/A08) and press releases (A04, A07); record access (SDR, percent of quota), disbursement schedule, QPC/IT/SB tables. No lead located for a successor arrangement - status unknown.",
+      "period": "ECF period 2022-2026 (IMF dates)"
+    },
+    {
+      "claim": "Q1 World Bank: CPF FY2025-2031 indicative envelope, instrument mix and IDA terms applicable to Nepal; active portfolio commitments.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "CPF document A14 (envelope table, results framework); active project list via A15; note World Bank FY (July-June) differs from Nepal FY (mid-July).",
+      "period": "WB FY2025-FY2031"
+    },
+    {
+      "claim": "Q1 ADB: CPS 2025-2029 indicative resource envelope split concessional/regular and by modality; active loans, grants and policy-based lending conditions.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "adb_nepal"
+      ],
+      "note": "CPS A16, linked documents A17/A18, chair summary A19, project list via A20. ADB uses calendar year.",
+      "period": "CY2025-CY2029"
+    },
+    {
+      "claim": "Q1 AIIB: approved sovereign and non-sovereign financing for Nepal and project status.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "aiib"
+      ],
+      "note": "Approved project pages A21-A25; cross-check commitment/disbursement with MoF AMIS A26 (Nepal FY)."
+    },
+    {
+      "claim": "Q1 Policy conditions: prior actions and triggers in any active World Bank DPF/PforR and ADB policy-based loans.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl",
+        "adb_nepal"
+      ],
+      "note": "Programme documents for DPF/PBL operations not yet located as direct files; required: DPF programme document policy matrix and ADB PBL report and recommendation of the President (RRP) policy matrix."
+    },
+    {
+      "claim": "Q1 Concessionality: current IDA and ADF terms applicable to Nepal and any change triggered by LDC graduation or income classification.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl",
+        "adb_nepal"
+      ],
+      "note": "IDA terms table (IDA21) and ADB concessional assistance eligibility policy; no lead located in r1. Note LDC graduation does not by itself determine IDA/ADF eligibility (eligibility is GNI-per-capita and creditworthiness based) - to confirm from policy documents."
+    },
+    {
+      "claim": "Programme register records each arrangement once per institution with: instrument, approval date, end date, envelope (committed vs disbursed kept separate), currency (SDR, USD), conditionality type, and the source's fiscal-year basis. Envelopes in strategies (CPF, CPS) are indicative and are never summed with committed project amounts.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Where MoF AMIS (tier 1) and institution portals (tier 2) differ on commitments/disbursements, both are kept; typical causes are fiscal-year basis (Nepal FY vs WB FY vs CY), exchange-rate conversion date and on-budget vs off-budget recording.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Successor IMF arrangement or PCI after ECF completion - no lead located.",
+    "World Bank active portfolio list (projects.worldbank.org export) and DPF programme documents not located as direct files.",
+    "ADB active project list and PBL policy matrices not located as direct files.",
+    "IDA21 terms and ADB concessional eligibility policy documents not located.",
+    "Other development-finance arrangements (NDB not applicable; EIB, IsDB, OPEC Fund, JICA, EXIM China/India lines of credit) not covered in r1 - require MoF AMIS/PDMO creditor lists.",
+    "MoF Development Cooperation Report latest FY not located (search budget exhausted)."
+  ],
+  "assumptions": [
+    {
+      "id": "26A-A1",
+      "text": "Strategy envelopes (CPF, CPS) are indicative planning figures and are recorded separately from approved commitments and from disbursements.",
+      "basis": "assumption"
+    },
+    {
+      "id": "26A-A2",
+      "text": "All amounts are recorded in the reporting currency of the source (SDR, USD) with the conversion date; no cross-institution totals are formed without a documented FY and FX conversion.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "Proposed EXP entry on multilateral creditor concentration should draw on A14/A16 envelopes only as forward-looking indicative figures; creditor stock shares must come from PDMO and IDS, not from strategy documents."
+    },
+    {
+      "to": "00A",
+      "text": "MoF AMIS (amis2.mof.gov.np) is a tier-1 source for aid commitments/disbursements by partner and is missing from the source catalog; lead A26 carries source_id null."
+    }
+  ],
+  "uncertainty": "High. No programme value is retrieved. Status statements rest on document titles only (e.g. ECF extension and final review in 2026) and must be verified from the documents. The existence of any successor IMF engagement is unknown. Strategy envelopes are indicative and subject to IDA/ADF replenishment outcomes and performance-based allocation.",
+  "specific": {
+    "programme_register": [
+      {
+        "institution": "IMF",
+        "instrument": "Extended Credit Facility arrangement",
+        "status": "pending",
+        "status_note": "Lead titles indicate a 2026 extension and completion of the seventh (final) review; verify end date and whether the arrangement has expired",
+        "fields_pending": [
+          "approval date",
+          "end date",
+          "total access (SDR, percent of quota)",
+          "disbursed to date",
+          "quantitative performance criteria",
+          "structural benchmarks and status"
+        ],
+        "method": "Extract from staff report tables (programme schedule, QPC/IT, SB) and press releases",
+        "lead_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "A08",
+          "A09",
+          "A10",
+          "A11",
+          "A12",
+          "A13"
+        ]
+      },
+      {
+        "institution": "IMF",
+        "instrument": "Successor arrangement / PCI / Article IV-only surveillance",
+        "status": "pending",
+        "status_note": "No lead located",
+        "fields_pending": [
+          "existence",
+          "instrument",
+          "timing"
+        ],
+        "method": "Check IMF country page and 2026 staff report for authorities' intentions",
+        "lead_ids": [
+          "A01",
+          "A13"
+        ]
+      },
+      {
+        "institution": "World Bank Group",
+        "instrument": "Country Partnership Framework FY2025-2031",
+        "status": "pending",
+        "fields_pending": [
+          "indicative envelope by IDA/IBRD/IFC/MIGA",
+          "instrument mix",
+          "results framework objectives",
+          "IDA terms"
+        ],
+        "method": "CPF document tables; WB FY basis",
+        "lead_ids": [
+          "A14",
+          "A15"
+        ]
+      },
+      {
+        "institution": "World Bank",
+        "instrument": "Active project portfolio incl. DPF/PforR",
+        "status": "pending",
+        "fields_pending": [
+          "project list",
+          "net commitments",
+          "disbursed",
+          "policy prior actions/DLIs"
+        ],
+        "method": "Project list export and programme documents (not located)",
+        "lead_ids": [
+          "A15"
+        ]
+      },
+      {
+        "institution": "ADB",
+        "instrument": "Country Partnership Strategy 2025-2029",
+        "status": "pending",
+        "fields_pending": [
+          "indicative envelope (concessional OCR/ADF grants vs regular OCR)",
+          "priorities",
+          "indicative pipeline"
+        ],
+        "method": "CPS main text and linked documents; CY basis",
+        "lead_ids": [
+          "A16",
+          "A17",
+          "A18",
+          "A19"
+        ]
+      },
+      {
+        "institution": "ADB",
+        "instrument": "Active loans/grants incl. policy-based lending",
+        "status": "pending",
+        "fields_pending": [
+          "project list",
+          "amounts",
+          "policy matrix conditions"
+        ],
+        "method": "ADB Nepal project list; RRPs",
+        "lead_ids": [
+          "A20"
+        ]
+      },
+      {
+        "institution": "AIIB",
+        "instrument": "Sovereign and non-sovereign project loans; project preparation special fund grants",
+        "status": "pending",
+        "fields_pending": [
+          "approved projects",
+          "amounts",
+          "status"
+        ],
+        "method": "AIIB project pages cross-checked with MoF AMIS",
+        "lead_ids": [
+          "A21",
+          "A22",
+          "A23",
+          "A24",
+          "A25",
+          "A26"
+        ]
+      }
+    ]
+  },
+  "source_leads": [
+    {
+      "lead_id": "A01",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF Arrangement - Press Release; Staff Report; Staff Supplement; Statement by the Executive Director",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "IMF Country Report 2026 no. 127 (per eLibrary path): staff report with quantitative performance criteria, indicative targets and structural benchmarks table, schedule of disbursements under the ECF, access and phasing, DSA, capacity-to-repay tables; programme status at final review"
+    },
+    {
+      "lead_id": "A02",
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A002-en.xml",
+      "title": "Nepal: Staff Report for the 2026 Article IV Consultation and Seventh Review (eLibrary, section A002)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "HTML staff report sections: programme performance, conditionality tables, structural benchmark status"
+    },
+    {
+      "lead_id": "A03",
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+      "title": "Nepal: Staff Report for the 2026 Article IV Consultation and Seventh Review (eLibrary, section A004)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Further staff report sections/annexes (verify content on retrieval: likely DSA or MEFP/TMU)"
+    },
+    {
+      "lead_id": "A04",
+      "url": "https://www.imf.org/en/news/articles/2026/06/08/pr26188-nepal-imf-exec-board-concludes-2026-article-iv-consult-completes-seventh-review-ecf",
+      "title": "PR 26/188: IMF Executive Board concludes 2026 Article IV and completes seventh review under the ECF",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Board completion date, final-review disbursement (SDR and USD), statement on programme completion"
+    },
+    {
+      "lead_id": "A05",
+      "url": "https://www.imf.org/en/news/articles/2026/02/20/pr26058-nepal-imf-reaches-sla-on-7th-review-under-ecf-and-concludes-2026-aiv-consultation",
+      "title": "PR 26/058: staff-level agreement on seventh ECF review",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Date of SLA, prior actions and outlook statement"
+    },
+    {
+      "lead_id": "A06",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/05/07/nepal-request-for-an-extension-of-the-extended-credit-facility-arrangement-press-release-575904",
+      "title": "Nepal: Request for an Extension of the ECF Arrangement - Press Release and Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Justification and new expiry date of the ECF arrangement; original approval date, total access (SDR, percent of quota)"
+    },
+    {
+      "lead_id": "A07",
+      "url": "https://www.imf.org/en/news/articles/2026/05/06/imf-pr-26141-nepal-imf-executive-board-approves-ext-of-ecf-arrang",
+      "title": "PR 26/141: Executive Board approves extension of the ECF arrangement",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Extension length and new end date of the ECF"
+    },
+    {
+      "lead_id": "A08",
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1nplea2026001-source-pdf.pdf",
+      "title": "IMF Country Report No. 26/92 Nepal (PDF)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "2026 Nepal country report PDF; title to be verified on retrieval (probable ECF extension request staff report)"
+    },
+    {
+      "lead_id": "A09",
+      "url": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+      "title": "Nepal: Sixth Review under the ECF Arrangement - Press Release; Staff Report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Sixth-review conditionality tables, disbursement, structural benchmarks status (FY2025/26 context)"
+    },
+    {
+      "lead_id": "A10",
+      "url": "https://www.imf.org/en/news/articles/2025/10/02/pr-25327-nepal-imf-executive-board-completes-the-sixth-review-under-the-ecf-arrangement",
+      "title": "PR 25/327: Board completes sixth ECF review",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Sixth-review disbursement and board date"
+    },
+    {
+      "lead_id": "A11",
+      "url": "https://www.imf.org/en/Publications/CR/Issues/2025/03/18/Nepal-Fifth-Review-Under-the-Extended-Credit-Facility-Arrangement-and-Request-for-565326",
+      "title": "Nepal: Fifth Review under the ECF and Request for Modification of a Performance Criterion",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Fifth-review conditionality, modified performance criterion, cumulative disbursements"
+    },
+    {
+      "lead_id": "A12",
+      "url": "https://www.imf.org/en/Publications/CR/Issues/2024/07/15/Nepal-Fourth-Review-Under-the-Extended-Credit-Facility-Arrangement-Press-Release-Staff-551887",
+      "title": "Nepal: Fourth Review under the ECF",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Fourth-review conditionality tables (history of structural benchmarks)"
+    },
+    {
+      "lead_id": "A13",
+      "url": "https://www.imf.org/en/countries/npl",
+      "title": "Nepal and the IMF (country page)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Index of IMF arrangements, lending history, country reports, SDR allocation/holdings links"
+    },
+    {
+      "lead_id": "A14",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099050625143524020",
+      "title": "Nepal - Country Partnership Framework for the Period FY2025-2031",
+      "publisher": "World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "CPF: objectives, indicative IDA/IBRD/IFC/MIGA envelope, instrument mix (DPF, PforR, IPF, guarantees), results matrix, IDA eligibility and terms (World Bank FY basis, July-June)"
+    },
+    {
+      "lead_id": "A15",
+      "url": "https://www.worldbank.org/ext/en/country/nepal",
+      "title": "World Bank in Nepal (country page)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Links to active project list and country overview; active portfolio commitments (to download from project list)"
+    },
+    {
+      "lead_id": "A16",
+      "url": "https://www.adb.org/sites/default/files/institutional-document/1058276/cps-nep-2025-2029.pdf",
+      "title": "Country Partnership Strategy: Nepal, 2025-2029",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "CPS: strategic priorities, indicative resource envelope (ADF/OCR, concessional vs regular), lending modalities, alignment with 16th Plan; ADB calendar year basis"
+    },
+    {
+      "lead_id": "A17",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/cps-nep-2025-2029-ld.pdf",
+      "title": "Annex 7 to CPS Nepal 2025-2029 (list of linked documents)",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "Linked documents list incl. indicative lending and non-lending programme, country operations business plan pipeline"
+    },
+    {
+      "lead_id": "A18",
+      "url": "https://www.adb.org/documents/nepal-country-partnership-strategy-2025-2029",
+      "title": "Nepal: Country Partnership Strategy (2025-2029) - document page",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "Landing page with all CPS linked documents"
+    },
+    {
+      "lead_id": "A19",
+      "url": "https://www.adb.org/documents/chair-summary-17-june-2025-nep",
+      "title": "Chair's Summary - CPS Nepal 2025-2029 board discussion",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "Board discussion date and issues raised (conditions, risks)"
+    },
+    {
+      "lead_id": "A20",
+      "url": "https://www.adb.org/countries/nepal",
+      "title": "ADB - Nepal country page",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "Links to Nepal project list (active loans, grants, TA) and Member Fact Sheet with cumulative lending"
+    },
+    {
+      "lead_id": "A21",
+      "url": "https://www.aiib.org/en/projects/approved/index.html",
+      "title": "AIIB Approved Projects Overview",
+      "publisher": "AIIB",
+      "source_id": "aiib",
+      "contains": "Approved project list filterable by member; Nepal sovereign and non-sovereign projects with approval dates and financing"
+    },
+    {
+      "lead_id": "A22",
+      "url": "https://www.aiib.org/en/projects/details/2019/approved/Nepal-Upper-Trishuli-1-Hydropower-Project.html",
+      "title": "Nepal: Upper Trishuli-1 Hydropower Project",
+      "publisher": "AIIB",
+      "source_id": "aiib",
+      "contains": "Project summary: non-sovereign hydropower loan, co-financiers, approval date, status"
+    },
+    {
+      "lead_id": "A23",
+      "url": "https://www.aiib.org/en/projects/details/2019/approved/Nepal-Power-Distribution-System-Upgrade-and-Expansion-Project.html",
+      "title": "Nepal: Power Distribution System Upgrade and Expansion Project",
+      "publisher": "AIIB",
+      "source_id": "aiib",
+      "contains": "Sovereign-backed loan: financing amount, approval date, implementing agency (NEA), status"
+    },
+    {
+      "lead_id": "A24",
+      "url": "https://www.aiib.org/en/projects/details/2017/special-fund/Nepal-Urban-Infrastructure-Investment-Project.html",
+      "title": "Nepal: Urban Infrastructure Investment Project (Project Preparation Special Fund)",
+      "publisher": "AIIB",
+      "source_id": "aiib",
+      "contains": "Project preparatory grant details"
+    },
+    {
+      "lead_id": "A25",
+      "url": "https://www.aiib.org/en/projects/details/2019/special-fund/Nepal-Tamakoshi-V-Hydroelectric-Project.html",
+      "title": "Nepal: Tamakoshi V Hydroelectric Project (Project Preparation Special Fund)",
+      "publisher": "AIIB",
+      "source_id": "aiib",
+      "contains": "Project preparatory grant details"
+    },
+    {
+      "lead_id": "A26",
+      "url": "https://amis2.mof.gov.np/dev/partner/9/detail",
+      "title": "AIIB donor profile - Aid Information and Management System",
+      "publisher": "Ministry of Finance, Government of Nepal (AMIS)",
+      "source_id": null,
+      "contains": "Nepal-official record of AIIB commitments and disbursements by project (Nepal FY basis); same system holds profiles for IDA, ADB, IMF and other partners"
+    }
+  ]
+}

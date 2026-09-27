@@ -1,0 +1,352 @@
+{
+  "subagent_id": "26C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). The 16B note on 'unverified reports of a request to extend the LDC preparatory period' is now traceable to dated UN primary leads: the CDP Crisis Assessment of Nepal (July 2026, UN DESA) reviewing Nepal's May 2026 request, and the ECOSOC 2026 management segment record (E/2026/L.24 and the related ECOSOC decision, July 2026) which, per the lead descriptions, took note of the CDP conclusion and referred the final decision to the General Assembly. No UNGA resolution granting the extension was located; secondary sources describe it as pending before the Second Committee of the 81st session. Therefore, as of this round, the confirmed graduation date remains that set by A/RES/76/8 (November 2026, to be verified from the resolution text), and the extension is requested and recommended-for-decision but not decided. The Smooth Transition Strategy (NPC) and its implementation review (ESCAP) were located. All items remain pending retrieval.",
+  "findings": [
+    {
+      "claim": "Q1 Currently scheduled graduation date under GA resolution A/RES/76/8 and the length of the preparatory period granted in 2021.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "undesa_ldc"
+      ],
+      "note": "Retrieve resolution text C02 (verify symbol) and C01/C04/C03; record adoption date and scheduled date.",
+      "period": "2021-2026"
+    },
+    {
+      "claim": "Q1 Status of Nepal's 2026 request to extend the preparatory period: CDP conclusion and conditions, ECOSOC action, and UNGA decision.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "undesa_ldc"
+      ],
+      "note": "CDP crisis assessment C07 and ECOSOC 2026 management segment C08 (E/2026/L.24 and adopted decision) establish the CDP and ECOSOC steps. UNGA decision: no primary document located; secondary sources (C19, C20) indicate it was pending and scheduled for the Second Committee of the 81st session. As of 2026-09-27 the confirmed date remains the one set by A/RES/76/8 until the GA acts.",
+      "period": "2026"
+    },
+    {
+      "claim": "Q1 Smooth transition strategy: adoption date, pillars, implementation status and the CDP-requested time-bound reprioritisation plan.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "npc_nepal",
+        "undesa_ldc"
+      ],
+      "note": "STS text C14/C15; UN record C16; implementation review C17; CDP conditions C07. A revised/reprioritised STS document has not been located."
+    },
+    {
+      "claim": "Q1 CDP monitoring reports on Nepal during the preparatory period (enhanced monitoring mechanism).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "undesa_ldc"
+      ],
+      "note": "CDP annual reports C09 (E/2022-2026/33 series) monitoring chapters; not located as direct files."
+    },
+    {
+      "claim": "Graduation date is treated as a two-branch scenario variable until a GA resolution is retrieved: branch G26 (graduation on the date set by A/RES/76/8) and branch G29 (extended date requested by Nepal). No probability is assigned to either branch.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Only UN primary documents (GA resolutions, ECOSOC decisions, CDP reports/assessments) establish status; news items are recorded for chronology only and cannot confirm a decision.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "UNGA resolution or decision on Nepal's extension request - not yet located (likely not yet adopted as of 2026-09-27; Second Committee scheduled in the 81st session).",
+    "Text of the ECOSOC decision adopted in July 2026 (symbol and paragraph) - landing page located only.",
+    "Nepal's formal request letter to the CDP/UN (May 2026) - not located as a document; described in C07.",
+    "Revised/reprioritised STS demanded by the CDP - not located.",
+    "CDP monitoring reports on Nepal 2022-2025 - not located as direct files."
+  ],
+  "assumptions": [
+    {
+      "id": "26C-A1",
+      "text": "Two-branch treatment of the graduation date (G26 per A/RES/76/8, G29 per the extension request) without probabilities until the GA acts.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "The extension request is no longer only 'unverified reports': CDP crisis assessment (L52/C07) and ECOSOC 2026 records (C08) are primary leads. What remains unverified is the GA decision. EXP-13 should carry graduation date as a dated event attribute with both branches."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: scenario and strategy conclusions that assume loss of LDC preferences/S&DT from late 2026 may change if the GA grants the extension; affected: EXP-13 timing, 26B S&DT timelines, preference-erosion channels."
+    },
+    {
+      "to": "28",
+      "text": "Escalation for red-team review: if the GA grants the extension, check whether CDP conditions (time-bound STS reprioritisation plan) create new commitments to track in the international-commitment register; if it does not act before the scheduled date, graduation takes effect under A/RES/76/8."
+    }
+  ],
+  "uncertainty": "High on timing. The CDP and ECOSOC steps are documented by primary leads (not yet retrieved); the GA outcome is unknown at 2026-09-27. Dates cited in this finding are drawn from document titles/descriptions and must be verified against retrieved texts.",
+  "specific": {
+    "graduation_timeline": [
+      {
+        "event": "CDP triennial review recommends Nepal's graduation",
+        "year": "2021",
+        "status": "pending",
+        "evidence": "CDP report (E/2021/33 series) via C09; Nepal statement C11; PMUN press release C13",
+        "lead_ids": [
+          "C09",
+          "C11",
+          "C13"
+        ]
+      },
+      {
+        "event": "ECOSOC endorses recommendation",
+        "year": "2021",
+        "status": "pending",
+        "lead_ids": [
+          "C10"
+        ]
+      },
+      {
+        "event": "General Assembly resolution A/RES/76/8 sets preparatory period and graduation date",
+        "year": "2021",
+        "status": "pending",
+        "note": "scheduled graduation November 2026 per lead descriptions; verify from resolution text",
+        "lead_ids": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ]
+      },
+      {
+        "event": "NPC adopts LDC Graduation Smooth Transition Strategy",
+        "year": "2024",
+        "status": "pending",
+        "lead_ids": [
+          "C14",
+          "C15",
+          "C16",
+          "C17"
+        ]
+      },
+      {
+        "event": "Government of Nepal requests extension of the preparatory period",
+        "year": "2026",
+        "status": "pending",
+        "note": "request described in CDP assessment; requested new date to verify (reported as 2029)",
+        "lead_ids": [
+          "C07",
+          "C18"
+        ]
+      },
+      {
+        "event": "CDP crisis assessment concludes on the request (with conditions)",
+        "year": "2026",
+        "status": "pending",
+        "lead_ids": [
+          "C07",
+          "C05"
+        ]
+      },
+      {
+        "event": "ECOSOC decision on CDP report concerning Bangladesh and Nepal; refers decision to the GA",
+        "year": "2026",
+        "status": "pending",
+        "lead_ids": [
+          "C08"
+        ]
+      },
+      {
+        "event": "UNGA (Second Committee then plenary) decision on extension",
+        "year": "2026",
+        "status": "pending - not decided as far as located; no primary document",
+        "lead_ids": [
+          "C19",
+          "C20",
+          "C05"
+        ]
+      },
+      {
+        "event": "Effective graduation",
+        "year": "2026 (branch G26) or later (branch G29)",
+        "status": "pending - conditional on GA decision",
+        "lead_ids": [
+          "C02",
+          "C07",
+          "C08"
+        ]
+      }
+    ],
+    "smooth_transition_strategy": {
+      "status": "pending",
+      "document": "NPC LDC Graduation Smooth Transition Strategy",
+      "lead_ids": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "open_item": "CDP-requested time-bound reprioritisation plan not located"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "C01",
+      "url": "https://www.un.org/ldcportal/news/general-assembly-issues-resolution-graduation-bangladesh-lao-pdr-and-nepal",
+      "title": "General Assembly issues resolution on the graduation of Bangladesh, Lao PDR and Nepal",
+      "publisher": "UN LDC Portal",
+      "source_id": "undesa_ldc",
+      "contains": "Summary of A/RES/76/8: adoption date, length of preparatory period, scheduled graduation date"
+    },
+    {
+      "lead_id": "C02",
+      "url": "https://documents.un.org/doc/undoc/gen/n21/355/26/pdf/n2135526.pdf",
+      "title": "UN Official Document (ODS) PDF surfaced for A/RES/76/8",
+      "publisher": "United Nations",
+      "source_id": "undesa_ldc",
+      "contains": "Resolution text expected to be A/RES/76/8 (verify symbol on retrieval): operative paragraphs on graduation date and preparatory period"
+    },
+    {
+      "lead_id": "C03",
+      "url": "https://digitallibrary.un.org/record/3980731/files/A_76_PV.40-EN.pdf",
+      "title": "A/76/PV.40 - General Assembly plenary record",
+      "publisher": "United Nations",
+      "source_id": "undesa_ldc",
+      "contains": "Plenary meeting record of adoption of the graduation resolution (date, statements)"
+    },
+    {
+      "lead_id": "C04",
+      "url": "https://www.un.org/development/desa/dpad/2021/graduation-of-bangladesh-lao-peoples-democratic-republic-and-nepal-from-the-ldc-category/",
+      "title": "Graduation of Bangladesh, Lao PDR and Nepal from the LDC category (2021)",
+      "publisher": "UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "DESA note on the 2021 decision and graduation dates"
+    },
+    {
+      "lead_id": "C05",
+      "url": "https://www.un.org/ldcportal/content/nepal-graduation-status",
+      "title": "Nepal graduation status",
+      "publisher": "UN LDC Portal",
+      "source_id": "undesa_ldc",
+      "contains": "Chronology of CDP reviews, ECOSOC/GA actions and 2026 extension request status"
+    },
+    {
+      "lead_id": "C06",
+      "url": "https://www.un.org/development/desa/dpad/least-developed-country-category/preparing-for-ldc-graduation-and-smooth-transition.html",
+      "title": "Graduating countries (preparatory period)",
+      "publisher": "UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "List of countries in preparatory period with scheduled dates; enhanced monitoring mechanism"
+    },
+    {
+      "lead_id": "C07",
+      "url": "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+      "title": "Crisis Assessment: Nepal (July 2026)",
+      "publisher": "UN CDP / UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "CDP crisis assessment of Nepal's May 2026 request to extend the preparatory period; requested new date; CDP conclusion and conditions (time-bound plan to reprioritise STS)"
+    },
+    {
+      "lead_id": "C08",
+      "url": "https://ecosoc.un.org/en/what-we-do/management-segment/management-meetings/2026-management-segment",
+      "title": "ECOSOC 2026 Management Segment",
+      "publisher": "UN ECOSOC",
+      "source_id": "undesa_ldc",
+      "contains": "Documents and actions incl. E/2026/L.24 and the ECOSOC decision on the CDP report concerning Bangladesh and Nepal, letter of the CDP Chair, adoption date"
+    },
+    {
+      "lead_id": "C09",
+      "url": "https://www.un.org/development/desa/dpad/our-work/committee-for-development-policy/cdp-reports-and-resolutions.html",
+      "title": "CDP reports and resolutions",
+      "publisher": "UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "CDP annual reports (E/20xx/33 series) incl. 2021 triennial review recommending Nepal's graduation"
+    },
+    {
+      "lead_id": "C10",
+      "url": "https://policy.desa.un.org/publications/cdp-resolutions-and-decisions-to-ecosoc",
+      "title": "CDP resolutions and decisions to ECOSOC",
+      "publisher": "UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "ECOSOC resolutions endorsing CDP recommendations (2021 endorsement of Nepal's graduation)"
+    },
+    {
+      "lead_id": "C11",
+      "url": "https://www.un.org/development/desa/dpad/wp-content/uploads/sites/45/Nepal-2021-CDP-Plenary.pdf",
+      "title": "Nepal's Statement on LDC Graduation for 2021 Triennial Review",
+      "publisher": "Government of Nepal (submitted to CDP)",
+      "source_id": "undesa_ldc",
+      "contains": "Government position at 2021 triennial review"
+    },
+    {
+      "lead_id": "C12",
+      "url": "https://www.un.org/development/desa/dpad/wp-content/uploads/sites/45/CDP-PL-2018-6c.pdf",
+      "title": "Vulnerability Profile of Nepal (CDP 2018)",
+      "publisher": "UNCTAD for CDP",
+      "source_id": "undesa_ldc",
+      "contains": "Pre-graduation vulnerability profile"
+    },
+    {
+      "lead_id": "C13",
+      "url": "https://www.un.int/nepal/statements_speeches/press-release-cdp-recommends-nepal%E2%80%99s-graduation-ldc-category",
+      "title": "Press release: CDP recommends Nepal's graduation from the LDC category",
+      "publisher": "Permanent Mission of Nepal to the UN",
+      "source_id": null,
+      "contains": "Nepal-official dated statement on the 2021 CDP recommendation"
+    },
+    {
+      "lead_id": "C14",
+      "url": "https://npc.gov.np/content/6480/ldc-graduationsmooth-transition-strategy/",
+      "title": "LDC Graduation Smooth Transition Strategy",
+      "publisher": "National Planning Commission, Government of Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Official STS text: pillars, actions, implementation and monitoring framework, publication date"
+    },
+    {
+      "lead_id": "C15",
+      "url": "https://www.undp.org/sites/g/files/zskgke326/files/2024-05/Final%20LDC%20Graduation%20STS.pdf",
+      "title": "LDC Graduation - Smooth Transition Strategy (PDF)",
+      "publisher": "UNDP Nepal / NPC",
+      "source_id": "npc_nepal",
+      "contains": "Full STS document (mirror)"
+    },
+    {
+      "lead_id": "C16",
+      "url": "https://www.un.org/ldcportal/content/nepal-ldc-graduation-smooth-transition-strategy",
+      "title": "Nepal LDC Graduation Smooth Transition Strategy",
+      "publisher": "UN LDC Portal",
+      "source_id": "undesa_ldc",
+      "contains": "UN record of Nepal's STS"
+    },
+    {
+      "lead_id": "C17",
+      "url": "https://www.unescap.org/sites/default/d8files/event-documents/Nepal%20STS%20Workshop_19-20%20June%202025_Report_190825_Final.pdf",
+      "title": "Nepal's Smooth Transition Strategy - workshop report (June 2025)",
+      "publisher": "UN ESCAP",
+      "source_id": null,
+      "contains": "Implementation status review of STS pillars and gaps"
+    },
+    {
+      "lead_id": "C18",
+      "url": "https://kathmandupost.com/money/2026/05/22/nepal-moves-to-defer-ldc-graduation-until-2029",
+      "title": "Nepal moves to defer LDC graduation until 2029",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Secondary (tier 7) dated report of NPC decision and requested deferral; for chronology only"
+    },
+    {
+      "lead_id": "C19",
+      "url": "https://www.atlanticcouncil.org/dispatches/nepal-and-bangladesh-are-delaying-ldc-graduation-now-comes-the-hard-part/",
+      "title": "Nepal and Bangladesh are delaying LDC graduation. Now comes the hard part.",
+      "publisher": "Atlantic Council",
+      "source_id": null,
+      "contains": "Secondary analysis; reports GA endorsement pending"
+    },
+    {
+      "lead_id": "C20",
+      "url": "https://www.tbsnews.net/economy/bangladeshs-ldc-graduation-when-and-how-will-un-decide-1554346",
+      "title": "Bangladesh's LDC graduation: when and how will UN decide?",
+      "publisher": "The Business Standard",
+      "source_id": null,
+      "contains": "Secondary report of UNGA Second Committee scheduling (81st session) for the Bangladesh/Nepal extension recommendation"
+    }
+  ]
+}

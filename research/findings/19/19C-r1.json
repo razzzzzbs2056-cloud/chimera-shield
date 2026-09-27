@@ -1,0 +1,331 @@
+{
+  "subagent_id": "19C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Route-exposure design maps Nepal's third-country imports through Indian gateway ports (Kolkata/Haldia, Visakhapatnam) to the maritime chokepoints on their origin lanes (Hormuz, Bab el-Mandeb/Suez, Malacca, Cape route), plus indirect petroleum exposure via Indian crude sourcing and aviation exposure via Gulf hubs. Leads located: UNCTAD Review of Maritime Transport 2024 (chokepoint chapter) and 2025, the February 2024 'Navigating Troubled Waters' rapid assessment of the Red Sea disruption, three 2026 UNCTAD notes on the Strait of Hormuz disruption, the World Bank LPI 2023 report, and Nepal dry-port/transit documents. Freight shock history (Red Sea 2023-2024, Hormuz 2026) is pending retrieval of index series; no values were taken from snippets.",
+  "findings": [
+    {
+      "claim": "Q1: Chokepoints transited by Nepal's third-country imports routed via Indian ports - share of third-country import value/volume by origin region (Gulf, Europe/Mediterranean, East/Southeast Asia, Americas) mapped to chokepoints (Hormuz, Bab el-Mandeb/Suez, Malacca/Singapore Strait, Cape route) and to Indian gateway (Kolkata/Haldia, Visakhapatnam).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "nitdb",
+        "unctad_rmt"
+      ],
+      "note": "Requires customs imports by origin country (Nepal FY) excluding India and China-overland, and NITDB/ICD cargo by gateway port; chokepoint assignment by great-circle shipping lane is an assumption (19C-A1). Leads 19C-L09..L11, 16B L18.",
+      "unit": "percent",
+      "period": "Nepal FY2023/24-FY2024/25"
+    },
+    {
+      "claim": "Q1b: Petroleum route exposure - crude origin of Indian refinery supply to IOC (Hormuz dependence) as indirect exposure of NOC imports.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "iea",
+        "mea_india"
+      ],
+      "note": "Requires Indian crude import origin shares (calendar/Indian FY April-March - document conversion) and NOC supplier arrangement (16B SPOF-01).",
+      "unit": "percent",
+      "period": "Indian FY2024/25; Nepal FY2024/25"
+    },
+    {
+      "claim": "Q2: Freight-rate response to past chokepoint disruptions - Red Sea/Suez 2023-2024 and Hormuz 2026 - measured by container spot indices (e.g. SCFI/Drewry WCI) and tanker indices (Baltic Dirty/Clean), plus war-risk premium changes.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctad_rmt"
+      ],
+      "note": "Retrieve RMT 2024 ch.3, RMT 2025, Navigating Troubled Waters and 2026 Hormuz notes (19C-L01..L07); record index base dates. No index values taken from snippets.",
+      "unit": "index",
+      "period": "calendar 2023-2026 (weekly/monthly)"
+    },
+    {
+      "claim": "Q2b: Pass-through from ocean freight to Nepal's landed import costs (inland leg India->Nepal) - no Nepal-specific study located.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_lpi",
+        "academic",
+        "nitdb"
+      ],
+      "note": "Requires freight-forwarder or NITDB tariff data per TEU Kolkata-Birgunj, and LPI 2023 timeliness indicators.",
+      "unit": "USD",
+      "period": "calendar 2023-2026"
+    },
+    {
+      "claim": "Aviation-route exposure: share of Nepal's international seat capacity routed via Gulf hubs and disruption from airspace closures (MoFA reports suspension of regular Middle East-sector flights from late February 2026 - to verify).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "caan",
+        "mofa_nepal"
+      ],
+      "note": "Requires CAAN international traffic by carrier/route (16B L39-L41) and MoFA flight press releases (19D-L02, 19D-L04); seat data licensed (OAG/IATA) - gap.",
+      "unit": "percent",
+      "period": "calendar 2025-2026"
+    },
+    {
+      "claim": "19C-A1: Chokepoint assignment by origin region follows standard shipping lanes to east-coast Indian ports (Gulf origins via Hormuz; Europe/Mediterranean/Black Sea via Suez-Bab el-Mandeb or Cape; East Asia via Malacca); transshipment hubs (Colombo, Singapore) are recorded separately.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Ocean freight indices are calendar-year; Nepal import values are Nepal FY (mid-July) - no mixing without a documented monthly conversion.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Port-level split of Nepal's third-country cargo (Kolkata/Haldia vs Visakhapatnam) - NITDB/ICD statistics not located as a file (also 16B gap).",
+    "No Nepal-specific pass-through study from ocean freight/insurance to landed costs.",
+    "Proprietary freight indices (Drewry, SCFI, Baltic) may only be available via UNCTAD/World Bank reproductions.",
+    "Seat-capacity by hub is licensed (OAG/IATA).",
+    "WebSearch budget for the session was exhausted during r1 before all lead searches were completed; leads marked 'NOT confirmed by web search' use catalog base URLs or known primary domains and must be verified on fetch."
+  ],
+  "assumptions": [
+    {
+      "id": "19C-A1",
+      "text": "Lane-based chokepoint assignment by origin region (see findings).",
+      "basis": "assumption"
+    },
+    {
+      "id": "19C-A2",
+      "text": "Freight shocks enter the model only via trade_costs on imports; they are not added to GDP directly.",
+      "basis": "model convention"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "21B",
+      "text": "X31 route data require the customs origin-by-gateway cross-tab; please include gateway port in the transit dataset request."
+    },
+    {
+      "to": "22A",
+      "text": "Tanker freight and war-risk premium spikes in 2026 should be modelled separately from crude price changes in fuel_prices, to avoid double counting."
+    },
+    {
+      "to": "16B",
+      "text": "SPOF-02 (Indian transit ports) should record the 2026 Kolkata-Biratnagar rail service and ECTS amendment (to verify from CBIC primary notification) as a partial diversification."
+    }
+  ],
+  "uncertainty": "High. Route shares and freight shock magnitudes are pending. Lane-based chokepoint assignment is an assumption; transshipment obscures true routing. 2026 Hormuz evidence is lead-level only.",
+  "specific": {
+    "route_exposure": {
+      "status": "pending",
+      "method": "Customs imports by origin (Nepal FY) x NITDB gateway port x lane-based chokepoint assignment (19C-A1); report value shares and HHI; petroleum and aviation handled as separate sub-routes.",
+      "routes": [
+        {
+          "route_id": "R-01",
+          "description": "Gulf origins -> Strait of Hormuz -> Arabian Sea -> east-coast Indian ports -> rail/road to Birgunj/Biratnagar",
+          "chokepoints": [
+            "Strait of Hormuz"
+          ],
+          "goods": "petroleum-linked (indirect via IOC), fertiliser, chemicals",
+          "share": "pending",
+          "lead_ids": [
+            "19C-L05",
+            "19C-L06",
+            "19C-L09"
+          ]
+        },
+        {
+          "route_id": "R-02",
+          "description": "Europe/Mediterranean/Black Sea origins -> Suez -> Bab el-Mandeb (or Cape diversion) -> Kolkata/Haldia/Visakhapatnam",
+          "chokepoints": [
+            "Suez Canal",
+            "Bab el-Mandeb",
+            "Cape of Good Hope (diversion)"
+          ],
+          "goods": "machinery, pharmaceuticals, food/edible oils",
+          "share": "pending",
+          "lead_ids": [
+            "19C-L03",
+            "19C-L04"
+          ]
+        },
+        {
+          "route_id": "R-03",
+          "description": "East/Southeast Asia origins -> Strait of Malacca/Singapore -> Bay of Bengal -> Kolkata/Haldia/Visakhapatnam",
+          "chokepoints": [
+            "Strait of Malacca"
+          ],
+          "goods": "electronics, capital goods, palm oil",
+          "share": "pending",
+          "lead_ids": [
+            "19C-L01",
+            "19C-L09"
+          ]
+        },
+        {
+          "route_id": "R-04",
+          "description": "Air cargo and passengers via Gulf hubs (Doha, Dubai, Abu Dhabi) and Indian hubs",
+          "chokepoints": [
+            "Gulf airspace"
+          ],
+          "goods": "migrant travel, tourism, high-value cargo",
+          "share": "pending",
+          "lead_ids": [
+            "19D-L02",
+            "19D-L04"
+          ]
+        }
+      ]
+    },
+    "freight_shock_history": {
+      "status": "pending",
+      "episodes": [
+        {
+          "episode": "Red Sea / Bab el-Mandeb disruption",
+          "period": "calendar late 2023-2024 (and after)",
+          "indicators": [
+            "container spot freight indices",
+            "Suez transits",
+            "Cape rerouting capacity"
+          ],
+          "magnitude": "pending",
+          "lead_ids": [
+            "19C-L03",
+            "19C-L04",
+            "19C-L01"
+          ]
+        },
+        {
+          "episode": "Strait of Hormuz disruption",
+          "period": "calendar 2026 from late February",
+          "indicators": [
+            "tanker freight indices (dirty/clean)",
+            "daily vessel transits",
+            "war-risk insurance premia",
+            "bunker prices"
+          ],
+          "magnitude": "pending",
+          "lead_ids": [
+            "19C-L05",
+            "19C-L06",
+            "19C-L07"
+          ]
+        },
+        {
+          "episode": "COVID-19 container freight spike (non-conflict comparator)",
+          "period": "calendar 2020-2022",
+          "indicators": [
+            "container spot freight indices"
+          ],
+          "magnitude": "pending",
+          "lead_ids": [
+            "19C-L01"
+          ]
+        }
+      ]
+    },
+    "source_leads_count": 13
+  },
+  "source_leads": [
+    {
+      "lead_id": "19C-L01",
+      "url": "https://unctad.org/system/files/official-document/rmt2025_en.pdf",
+      "title": "Review of Maritime Transport 2025: Staying the course in turbulent waters",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "Full RMT 2025 (data January 2024-June 2025): maritime trade volumes, chokepoint transits (Suez, Bab el-Mandeb, Hormuz), freight rate indices (container, tanker), port congestion"
+    },
+    {
+      "lead_id": "19C-L02",
+      "url": "https://unctad.org/system/files/official-document/rmt2025ch2_en.pdf",
+      "title": "Review of Maritime Transport 2025 - Chapter 2",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "RMT 2025 chapter on shipping costs/freight rates and route disruptions (chapter content to be confirmed on retrieval)"
+    },
+    {
+      "lead_id": "19C-L03",
+      "url": "https://unctad.org/system/files/official-document/rmt2024ch3_en.pdf",
+      "title": "Review of Maritime Transport 2024 - Chapter 3: Navigating maritime chokepoints",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "Chokepoint analysis: transits through Suez, Panama, Bab el-Mandeb, Hormuz; container and tanker freight rate movements during the 2023-2024 Red Sea disruption"
+    },
+    {
+      "lead_id": "19C-L04",
+      "url": "https://unctad.org/system/files/official-document/osginf2024d2_en.pdf",
+      "title": "Navigating Troubled Waters - UNCTAD Rapid Assessment (UNCTAD/OSG/INF/2024/2)",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "February 2024 rapid assessment: Suez/Panama/Black Sea transit declines, rerouting via Cape of Good Hope, container spot freight indices and modelled price pass-through; LDC vulnerability"
+    },
+    {
+      "lead_id": "19C-L05",
+      "url": "https://unctad.org/press-material/hormuz-shipping-disruptions-raise-risks-energy-fertilizers-and-vulnerable-economies",
+      "title": "Hormuz shipping disruptions raise risks for energy, fertilizers and vulnerable economies",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "2026 rapid analysis on Strait of Hormuz disruption: vessel transits, tanker freight indices (clean/dirty), war-risk insurance, fertiliser and energy exposure of vulnerable economies"
+    },
+    {
+      "lead_id": "19C-L06",
+      "url": "https://unctad.org/news/hormuz-disruption-deepens-global-economic-strain-across-trade-prices-and-finance",
+      "title": "Hormuz disruption deepens global economic strain across trade, prices and finance",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "2026 follow-up: transmission to trade growth, prices, currencies and borrowing costs of developing economies"
+    },
+    {
+      "lead_id": "19C-L07",
+      "url": "https://unctad.org/news/hormuz-disruption-shows-why-early-warning-data-matters",
+      "title": "Hormuz disruption shows why early-warning data matters",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "2026 note on shipping early-warning data sources (vessel-tracking based transit counts) usable for daily chokepoint monitoring"
+    },
+    {
+      "lead_id": "19C-L08",
+      "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+      "title": "Connecting to Compete 2023: Trade Logistics in an Uncertain Global Economy (LPI 2023)",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "LPI 2023 scores by country and component (customs, infrastructure, international shipments, logistics competence, tracking, timeliness) and new KPI-based dwell-time indicators; calendar 2022-2023 data"
+    },
+    {
+      "lead_id": "19C-L09",
+      "url": "https://www.unescap.org/sites/default/files/6.%20Nepal.pdf",
+      "title": "Dry Ports Development in Nepal",
+      "publisher": "UN ESCAP (Government of Nepal presentation)",
+      "source_id": "nitdb",
+      "contains": "Nepal's dry ports/ICDs and their gateway ports (Kolkata/Haldia, Visakhapatnam), rail and road linkages; vintage to be confirmed"
+    },
+    {
+      "lead_id": "19C-L10",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "ICD/dry-port cargo statistics (Birgunj, Biratnagar, Bhairahawa) by gateway port and mode, Nepal FY. URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19C-L11",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/44143-01-nep-oth.pdf",
+      "title": "Subregional Transport Enhancement Project (RRP NEP 44143) - linked document",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Background on Nepal's transit corridors and logistics costs via Indian ports (project appraisal vintage to be confirmed)"
+    },
+    {
+      "lead_id": "19C-L12",
+      "url": "https://kathmandupost.com/money/2026/07/18/historic-kolkata-biratnagar-rail-cargo-service-begins-transit-costs-set-to-fall",
+      "title": "Historic Kolkata-Biratnagar rail cargo service begins",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News report (July 2026) of new rail cargo service Kolkata-Biratnagar and Indian ECTS regulation amendment for Kolkata/Haldia/Visakhapatnam cargo; used only to identify the primary CBIC notification"
+    },
+    {
+      "lead_id": "19C-L13",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Analysis of Nepal transit routes, ports, time and cost (lead reused from 16B L25)"
+    }
+  ]
+}

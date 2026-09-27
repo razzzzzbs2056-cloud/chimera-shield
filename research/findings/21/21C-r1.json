@@ -1,0 +1,220 @@
+{
+  "subagent_id": "21C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). The relocation-fit question is pending. A method is specified: an industry-by-requirement matrix with nine candidate industries and seven requirement categories, to be populated from FDI relocation studies and cost benchmarks. Leads located or reused: NRB FDI survey reports, Department of Industry statistics, WTO TPR 2025 (investment regime, export priorities), ITC post-graduation export-potential study, ILO graduation employment study, Nepal's smooth transition strategy, World Bank LPI, NEA annual reports, UNCTADstat. The web-search budget ran out before UNCTAD World Investment Report files and academic relocation (China+1) studies could be located; these are recorded as data gaps.",
+  "findings": [
+    {
+      "claim": "Which relocating/diversifying industries (e.g. apparel and made-ups, footwear and travel goods, light electronics assembly, agro-processing, pharmaceuticals, electricity-intensive processing, IT-enabled services) have location requirements Nepal could meet, scored against Nepal's measured labour cost, electricity cost/reliability, logistics lead time, market access and investment regime.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctadstat",
+        "academic",
+        "nrb",
+        "doind",
+        "wb_lpi",
+        "nea"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Relocation studies (UNCTAD World Investment Report, academic China+1 literature) were not located because the search budget was exhausted; cost benchmarks require NEA tariffs, NLFS/minimum-wage data, LPI and competitor data."
+    },
+    {
+      "claim": "Greenfield FDI announcements and actual FDI inflows in manufacturing for Nepal and comparator economies (Bangladesh, Viet Nam, Cambodia, Sri Lanka, India) in recent years.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "unctadstat",
+        "nrb",
+        "doind"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2.",
+      "unit": "usd_million",
+      "period": "calendar year (UNCTAD) / Nepal FY (NRB, DoI) - keep separate"
+    },
+    {
+      "claim": "Cost benchmarks: manufacturing wages, industrial electricity tariff, land/industrial-estate rents, and export lead time for Nepal vs comparators.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "nso_nepal",
+        "wb_lpi",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Not yet located except NEA and LPI leads."
+    },
+    {
+      "claim": "Fit assessment scores each candidate industry on requirement categories (labour cost and skills, energy cost and reliability, logistics time and reliability, market access after graduation, input availability, regulatory/FDI regime, scale) as meets / partially meets / does not meet, with each score backed by observations; no score is assigned in r1.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Landlockedness is treated as a binding constraint for bulky, low-value-per-kg and time-sensitive supply-chain segments; high value-to-weight goods, electricity-intensive processing and digitally delivered services are candidate segments to test first, not conclusions.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "UNCTAD World Investment Report country fact sheet and annex tables (greenfield FDI by country and industry) not located as files.",
+    "Academic and multilateral studies of manufacturing relocation from China/East Asia and the location requirements by industry not located.",
+    "Comparator cost benchmarks (wages, electricity, industrial rent) for Bangladesh, Viet Nam, Cambodia, India not located.",
+    "Nepal industrial-estate availability and SEZ occupancy (Department of Industry/SEZ Authority) not located.",
+    "The session web-search budget was exhausted part-way through r1; further leads for this task must be located in r2 or by the orchestrator."
+  ],
+  "assumptions": [
+    {
+      "id": "21C-A1",
+      "text": "Fit assessment scores each candidate industry on requirement categories (labour cost and skills, energy cost and reliability, logistics time and reliability, market access after graduation, input availability, regulatory/FDI regime, scale) as meets / partially meets / does not meet, with each score backed by observations; no score is assigned in r1.",
+      "basis": "assumption"
+    },
+    {
+      "id": "21C-A2",
+      "text": "Landlockedness is treated as a binding constraint for bulky, low-value-per-kg and time-sensitive supply-chain segments; high value-to-weight goods, electricity-intensive processing and digitally delivered services are candidate segments to test first, not conclusions.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X33 has no located primary lead; 21C confirms the gap and requests that WIR/greenfield FDI data and a relocation-studies source id be added to the catalog (currently only 'unctadstat' and 'academic')."
+    },
+    {
+      "to": "12A",
+      "text": "Relocation-fit outputs should enter goods-export projections only through sector value added and investment, not as direct export-growth multipliers."
+    }
+  ],
+  "uncertainty": "Very high. No observations retrieved; relocation literature not yet located; industry requirements vary by firm and period and will be qualitative in part. Fit scores must not be read as forecasts of investment.",
+  "specific": {
+    "relocation_fit_assessment": {
+      "status": "pending",
+      "method": "Industry x requirement matrix. Requirements per industry from relocation/FDI literature (UNCTAD WIR, academic studies) and firm-location surveys; Nepal's attributes from observations (wages, NEA tariffs and outage data, LPI/time-release, preference status from 21A, FDI regime from WTO TPR and DoI). Each cell: meets / partial / does not meet / pending with observation ids. Report trade-offs (employment, environment, energy use).",
+      "candidate_industries": [
+        "apparel and textile made-ups",
+        "carpets, felt, pashmina and handicraft",
+        "travel goods and headwear",
+        "footwear",
+        "light electronics and electrical assembly",
+        "pharmaceuticals and APIs",
+        "agro and food processing",
+        "electricity-intensive processing (e.g. data centres, green hydrogen/ammonia, metals)",
+        "IT-enabled and business-process services"
+      ],
+      "requirement_categories": [
+        "labour cost and skills",
+        "energy cost and reliability",
+        "logistics time and reliability",
+        "market access (post-graduation)",
+        "input availability",
+        "FDI and regulatory regime",
+        "scale and agglomeration"
+      ],
+      "cells": [],
+      "status_by_industry": "all pending",
+      "dependencies": {
+        "21A": "post-graduation market access",
+        "21B": "route time and cost",
+        "24C": "services demand",
+        "nea": "electricity tariffs"
+      },
+      "lead_urls": [
+        "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+        "https://doind.gov.np",
+        "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+        "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+        "https://www.nea.org.np/annual_report",
+        "https://lpi.worldbank.org"
+      ]
+    },
+    "channel": "external_demand_goods",
+    "external_variables": [
+      "X11",
+      "X33"
+    ],
+    "scenarios": [
+      "S03",
+      "S04"
+    ]
+  },
+  "source_leads": [
+    {
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock and inflows by sector and source country (Nepal FY); identifies which manufacturing branches already attract FDI"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI by sector and country, FY2022/23"
+    },
+    {
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "source_id": "doind",
+      "contains": "FDI approvals/commitments by industry category and source country; industrial registration statistics"
+    },
+    {
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Secretariat report for Nepal's third TPR (Nov 2025): trade and investment regime, tariff structure, preferential market access, transit arrangements, trade facilitation, services trade and FDI chapters, export priorities"
+    },
+    {
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports",
+      "publisher": "International Trade Centre",
+      "source_id": "itc_trademap",
+      "contains": "Product-market analysis of Nepal exports after graduation: tariff changes by market for top exports, export potential by product and market (2022 publication)"
+    },
+    {
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Sectoral employment exposure to preference loss (garments, carpets, textiles, other LDC-preference-dependent exports) and graduation scenarios"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
+      "publisher": "WTO / Enhanced Integrated Framework",
+      "source_id": "wto",
+      "contains": "Nepal country chapter: exports by market, applicable preference scheme before/after graduation, tariff changes on main export products, estimated export change"
+    },
+    {
+      "url": "https://www.undp.org/sites/g/files/zskgke326/files/2024-05/Final%20LDC%20Graduation%20STS.pdf",
+      "title": "LDC Graduation - Smooth Transition Strategy (Nepal)",
+      "publisher": "Government of Nepal / UNDP",
+      "source_id": "npc_nepal",
+      "contains": "Priority export sectors and investment-promotion measures in Nepal's smooth transition strategy"
+    },
+    {
+      "url": "https://lpi.worldbank.org",
+      "title": "Logistics Performance Index",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "Logistics benchmark used as a location requirement (lead time, reliability) versus competitor locations"
+    },
+    {
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Industrial electricity tariffs and supply reliability - cost benchmark for electricity-intensive relocating industries"
+    },
+    {
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "International trade in digitally deliverable services, value (UNCTADstat)",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Digitally deliverable services exports for Nepal and comparators (calendar year); relevant to the IT-enabled services candidate only. UNCTAD FDI/greenfield tables (World Investment Report annex) are a separate lead still to be located."
+    }
+  ]
+}

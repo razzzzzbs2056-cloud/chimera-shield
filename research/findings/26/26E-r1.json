@@ -1,0 +1,273 @@
+{
+  "subagent_id": "26E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Leads were located for technical-assistance programmes relevant to the platform's gaps: IMF capacity development (2026 staff report CD content; SARTTAC regional centre and annual report), ADB's country knowledge plan and linked non-lending programme under the CPS 2025-2029, World Bank ASA/TA under the CPF FY2025-2031, WTO post-graduation LDC-specific TA and TFA category C capacity-building, UNDP and ESCAP support to the Smooth Transition Strategy, UNCTAD investment-policy review follow-up, and the MoF AMIS register as a Nepal-official cross-check. No programme details were retrieved; the inventory and the mapping of TA to platform data gaps are pending. The platform does not contact any provider.",
+  "findings": [
+    {
+      "claim": "Q1 IMF capacity development for Nepal: active TA areas (statistics, PFM, revenue, monetary/financial supervision) and delivery channels (HQ, SARTTAC).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "note": "CD annex of 2026 staff report E04; SARTTAC annual reports E01-E03 (latest FY to locate)."
+    },
+    {
+      "claim": "Q1 ADB TA to Nepal: active knowledge and support TA and planned knowledge products under the CPS 2025-2029.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "adb_nepal"
+      ],
+      "note": "Country knowledge plan E05, linked documents E06, project list E07."
+    },
+    {
+      "claim": "Q1 World Bank ASA/TA: planned analytics and trust-funded TA under the CPF FY2025-2031.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "CPF E08 annexes; country page E09."
+    },
+    {
+      "claim": "Q1 LDC-transition and trade TA: WTO/EIF post-graduation TA, TFA category C support, UNDP/ESCAP STS support, UNCTAD investment-policy TA.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto",
+        "unctad_iia"
+      ],
+      "note": "E10-E14; availability after graduation depends on the UN graduation date (26C)."
+    },
+    {
+      "claim": "Q1 Mapping of TA to platform data gaps (national accounts rebasing, BoP/remittance corridors, debt statistics, trade by partner, labour migration statistics).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv",
+        "adb_nepal",
+        "wb_npl"
+      ],
+      "note": "Requires retrieval of E04, E05, E08 and MoF AMIS E15 project lists; mapping done in r2."
+    },
+    {
+      "claim": "A TA programme is 'relevant to the platform's gaps' if its stated objective addresses a data or institutional gap recorded in any agent's data_gaps (statistics, PFM, debt, trade, migration, LDC transition). The platform itself does not seek, request or contact any TA provider; this inventory is research only.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Latest SARTTAC annual report (FY2025 or later) not located.",
+    "ADB TA project list for Nepal not exported.",
+    "World Bank trust-fund TA list not located.",
+    "EIF Nepal project pages not located (search budget exhausted).",
+    "Bilateral TA (e.g. JICA, FCDO, USAID successor arrangements, KOICA) not covered in r1 - require MoF AMIS."
+  ],
+  "assumptions": [
+    {
+      "id": "26E-A1",
+      "text": "Relevance criterion: TA objective matches a recorded platform data/institutional gap; relevance is a research classification, not an endorsement or request.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Collate data_gaps across agents into a single list so 26E can map TA programmes to them in r2."
+    }
+  ],
+  "uncertainty": "High. Inventory is lead-level only; TA programmes change frequently and some (LDC-specific) are contingent on the graduation date.",
+  "specific": {
+    "ta_inventory": [
+      {
+        "provider": "IMF (HQ and SARTTAC)",
+        "areas": "macroeconomic statistics, public financial management, revenue, monetary operations, financial supervision",
+        "status": "pending",
+        "lead_ids": [
+          "E01",
+          "E02",
+          "E03",
+          "E04"
+        ]
+      },
+      {
+        "provider": "ADB",
+        "areas": "knowledge and support TA under CPS 2025-2029",
+        "status": "pending",
+        "lead_ids": [
+          "E05",
+          "E06",
+          "E07"
+        ]
+      },
+      {
+        "provider": "World Bank Group",
+        "areas": "ASA and trust-funded TA under CPF FY2025-2031",
+        "status": "pending",
+        "lead_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "provider": "WTO / EIF",
+        "areas": "LDC-specific TA incl. post-graduation continuation; TFA category C capacity building",
+        "status": "pending - timing depends on graduation date",
+        "lead_ids": [
+          "E10",
+          "E11"
+        ]
+      },
+      {
+        "provider": "UNDP / UN ESCAP",
+        "areas": "LDC graduation smooth transition strategy support",
+        "status": "pending",
+        "lead_ids": [
+          "E12",
+          "E13"
+        ]
+      },
+      {
+        "provider": "UNCTAD",
+        "areas": "investment policy review implementation",
+        "status": "pending",
+        "lead_ids": [
+          "E14"
+        ]
+      },
+      {
+        "provider": "All partners (Nepal-official register)",
+        "areas": "cross-check of TA projects by partner",
+        "status": "pending",
+        "lead_ids": [
+          "E15"
+        ]
+      }
+    ],
+    "gap_mapping": "pending (r2)"
+  },
+  "source_leads": [
+    {
+      "lead_id": "E01",
+      "url": "https://www.sarttac.org/",
+      "title": "IMF South Asia Regional Training and Technical Assistance Center (SARTTAC)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Regional TA centre serving Nepal: work programme by area (public finance, monetary operations, financial supervision, macroeconomic statistics); mission lists"
+    },
+    {
+      "lead_id": "E02",
+      "url": "https://www.sarttac.org/content/dam/SARTTAC/Annual_Reports/SARTTAC%20Annual%20Report%20FY22_Web.pdf",
+      "title": "SARTTAC Annual Report FY22",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "TA missions and training by country incl. Nepal, by topic (IMF FY May-April); later annual reports to locate"
+    },
+    {
+      "lead_id": "E03",
+      "url": "https://www.sarttac.org/content/sarttac/en1/about-sarttac.html",
+      "title": "About SARTTAC",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Membership, funding partners, programme phases"
+    },
+    {
+      "lead_id": "E04",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "2026 Article IV / seventh ECF review staff report",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Capacity-development annex/strategy for Nepal (priority CD areas, e.g. national accounts, BoP, GFS, PFM, revenue, banking supervision)"
+    },
+    {
+      "lead_id": "E05",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/cps-nep-2025-2029-ckp.pdf",
+      "title": "Nepal CPS 2025-2029 linked document (country knowledge plan)",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "ADB knowledge and TA programme for Nepal: planned knowledge products and TA by sector"
+    },
+    {
+      "lead_id": "E06",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/cps-nep-2025-2029-ld.pdf",
+      "title": "Annex 7 to CPS Nepal 2025-2029 (linked documents)",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "Indicative non-lending (TA) programme"
+    },
+    {
+      "lead_id": "E07",
+      "url": "https://www.adb.org/countries/nepal",
+      "title": "ADB Nepal country page",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "Project list filterable by TA (knowledge and support TA, transaction TA)"
+    },
+    {
+      "lead_id": "E08",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099050625143524020",
+      "title": "World Bank CPF Nepal FY2025-2031",
+      "publisher": "World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "Advisory services and analytics (ASA) programme and TA planned under the CPF"
+    },
+    {
+      "lead_id": "E09",
+      "url": "https://www.worldbank.org/ext/en/country/nepal",
+      "title": "World Bank in Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Links to Nepal Development Update, CCDR and trust-funded TA projects"
+    },
+    {
+      "lead_id": "E10",
+      "url": "https://www.wto.org/english/tratop_e/devel_e/graduation_ldc_status_e.htm",
+      "title": "WTO - graduating from LDC status",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "LDC-specific TA continuing after graduation under MC13 decision; EIF access"
+    },
+    {
+      "lead_id": "E11",
+      "url": "https://tfadatabase.org/en/members/nepal",
+      "title": "TFAD - Nepal",
+      "publisher": "WTO (TFA Database)",
+      "source_id": "wto",
+      "contains": "Category C measures requiring capacity-building support and notified donor arrangements"
+    },
+    {
+      "lead_id": "E12",
+      "url": "https://www.undp.org/nepal/publications/ldc-graduation-smooth-transition-strategy",
+      "title": "UNDP Nepal - LDC Graduation Smooth Transition Strategy",
+      "publisher": "UNDP",
+      "source_id": null,
+      "contains": "UNDP support to NPC on STS (technical cooperation)"
+    },
+    {
+      "lead_id": "E13",
+      "url": "https://www.unescap.org/sites/default/d8files/event-documents/Nepal%20STS%20Workshop_19-20%20June%202025_Report_190825_Final.pdf",
+      "title": "ESCAP - Nepal STS workshop report (June 2025)",
+      "publisher": "UN ESCAP",
+      "source_id": null,
+      "contains": "ESCAP technical support to STS implementation; identified capacity gaps"
+    },
+    {
+      "lead_id": "E14",
+      "url": "https://investmentpolicy.unctad.org/publications/1223/report-on-the-implementation-of-the-investment-policy-review-of-nepal",
+      "title": "UNCTAD - Report on implementation of the Investment Policy Review of Nepal",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_iia",
+      "contains": "UNCTAD investment-policy technical assistance and recommendations"
+    },
+    {
+      "lead_id": "E15",
+      "url": "https://amis2.mof.gov.np/dev/partner/9/detail",
+      "title": "MoF Aid Information and Management System (partner profiles)",
+      "publisher": "Ministry of Finance, Government of Nepal",
+      "source_id": null,
+      "contains": "Nepal-official register of TA and grant projects by development partner (Nepal FY basis)"
+    }
+  ]
+}

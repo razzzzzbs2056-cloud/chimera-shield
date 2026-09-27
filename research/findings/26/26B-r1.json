@@ -1,0 +1,285 @@
+{
+  "subagent_id": "26B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Primary WTO documents on Nepal's use of special and differential treatment were located as leads: the 2025 Trade Policy Review (Secretariat report WT/TPR/S/478, Government report, chair's concluding remarks), Nepal's TFA categorisation in the TFA Database and notification portal, accession documents (WT/MIN(03)/19, WT/ACC/NPL/16) and goods schedule, WTO guidance on LDC graduation, the MC13 smooth-transition decision (via UN LDC Portal and MC13 documents) and MC14 LDC Group documents. No provision-level usage was retrieved; all items are pending. The key dependency is the UN graduation date (26C): LDC-specific S&DT lapses at graduation, so the pending UNGA decision on Nepal's extension request shifts the timing of every LDC-only provision.",
+  "findings": [
+    {
+      "claim": "Q1 TFA: Nepal's category A/B/C designations by measure, implementation dates notified and measures conditional on capacity-building support (category C).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto"
+      ],
+      "note": "TFAD Nepal page B06 and notification portal B07; TPR S/478 B02 section on trade facilitation."
+    },
+    {
+      "claim": "Q1 TRIPS: use of the LDC general transition period (Art. 66.1) and pharmaceutical transition; what ends at graduation.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto"
+      ],
+      "note": "TPR S/478 B02 IP chapter; WTO graduation page B11; Council for TRIPS decisions (symbols to be taken from B11)."
+    },
+    {
+      "claim": "Q1 Accession-specific transition periods and commitments (WT/ACC/NPL/16) still running or expired.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto"
+      ],
+      "note": "B08-B10: working party report commitment paragraphs with transition dates; goods schedule."
+    },
+    {
+      "claim": "Q1 Agriculture/SPS/TBT/subsidies: notification compliance and use of LDC exemptions (e.g. export-subsidy and SCM Annex VII status, de minimis).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto"
+      ],
+      "note": "S/478 notifications table B02; WTO documents online search required (not located)."
+    },
+    {
+      "claim": "Q1 Preferences received by Nepal as an LDC (DFQF schemes, LDC services waiver) and post-graduation treatment.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto",
+        "undesa_ldc"
+      ],
+      "note": "B11, B16 and 16B leads; post-graduation timing depends on the UN graduation date (see 26C)."
+    },
+    {
+      "claim": "Q1 Post-graduation WTO smooth-transition entitlements (MC13 decision) and MC14 outcome on graduation-related S&DT.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto"
+      ],
+      "note": "B12-B15; official MC13 decision symbol and MC14 outcome documents to be verified on docs.wto.org."
+    },
+    {
+      "claim": "S&DT is classified into (i) LDC-specific provisions that lapse at graduation (subject to transition decisions), (ii) developing-member S&DT that Nepal retains after graduation, and (iii) accession-specific commitments; usage is evidenced only by notifications or WTO Secretariat documents, not by eligibility alone.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Full list of Nepal notifications by agreement (WTO Documents Online / notification portal export) not retrieved.",
+    "Council for TRIPS decision symbols on LDC transition periods not confirmed in r1.",
+    "MC14 outcome documents (adopted decisions) not located; only LDC Group declaration and draft package.",
+    "Utilisation of preferences (as opposed to eligibility) requires partner-country import data by preference regime (with 22-series agents)."
+  ],
+  "assumptions": [
+    {
+      "id": "26B-A1",
+      "text": "'Uses' an S&DT provision means Nepal has notified, invoked or been recorded by the WTO Secretariat as applying it; eligibility alone is not counted as use.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-13 should distinguish WTO LDC-specific S&DT (rules) from unilateral LDC preference schemes (market access); they lapse on different schedules after graduation."
+    },
+    {
+      "to": "00A",
+      "text": "Nepal Government TPR report hosted on giwmscdnone.gov.np (lead B03) and WTO documents mirrored on tralac have no catalog source id; confirm tier and add WTO Documents Online as endpoint."
+    }
+  ],
+  "uncertainty": "High. No provision-level evidence retrieved. MC13 decision text is known only via a UN LDC Portal summary; MC14 outcome is unverified. Timing of loss of LDC-specific S&DT is conditional on the pending UNGA decision on Nepal's preparatory-period extension.",
+  "specific": {
+    "sdt_usage": [
+      {
+        "area": "Trade Facilitation Agreement (Section II S&DT, categories B/C)",
+        "status": "pending",
+        "to_populate": "per-measure category, implementation date, capacity-building requirement",
+        "lead_ids": [
+          "B06",
+          "B07",
+          "B02"
+        ]
+      },
+      {
+        "area": "TRIPS LDC transition periods (general and pharmaceutical)",
+        "status": "pending",
+        "to_populate": "whether invoked; post-graduation obligations",
+        "lead_ids": [
+          "B02",
+          "B11"
+        ]
+      },
+      {
+        "area": "Accession-specific transition periods",
+        "status": "pending",
+        "to_populate": "commitment paragraphs with end dates and status",
+        "lead_ids": [
+          "B08",
+          "B09",
+          "B10"
+        ]
+      },
+      {
+        "area": "Agriculture, SCM, SPS/TBT notification flexibilities",
+        "status": "pending",
+        "to_populate": "notification record and exemptions used",
+        "lead_ids": [
+          "B02",
+          "B04"
+        ]
+      },
+      {
+        "area": "LDC preferences received (DFQF, services waiver)",
+        "status": "pending",
+        "to_populate": "schemes, post-graduation transition by market",
+        "lead_ids": [
+          "B11",
+          "B16"
+        ]
+      },
+      {
+        "area": "Post-graduation smooth-transition entitlements (DSU Art. 24, LDC-specific TA)",
+        "status": "pending",
+        "to_populate": "decision symbol, duration, start date tied to UN graduation date",
+        "lead_ids": [
+          "B12",
+          "B13",
+          "B14",
+          "B15"
+        ]
+      }
+    ],
+    "graduation_dependency": "Timing of all LDC-specific items depends on 26C graduation_timeline (pending UNGA decision)."
+  },
+  "source_leads": [
+    {
+      "lead_id": "B01",
+      "url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_npl_17nov25_e.htm",
+      "title": "Trade Policy Review - Nepal 2025",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "TPR page: Secretariat report WT/TPR/S/478, government report, minutes; trade regime overview incl. notifications record and use of LDC flexibilities"
+    },
+    {
+      "lead_id": "B02",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "WT/TPR/S/478 - Trade Policy Review Nepal, Report by the Secretariat (September 2025)",
+      "publisher": "WTO Secretariat",
+      "source_id": "wto",
+      "contains": "Chapters on trade policy framework: WTO notifications status table, TFA categorisation and implementation, TRIPS, SPS/TBT, agriculture domestic support, LDC preferences received"
+    },
+    {
+      "lead_id": "B03",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/TPR%20Report_2025_jw22l99.pdf",
+      "title": "Nepal Trade Policy Review 2025 - Report by the Government of Nepal",
+      "publisher": "Government of Nepal (MoICS)",
+      "source_id": null,
+      "contains": "Government statement of trade policy, LDC graduation preparation, use of S&DT and technical assistance needs"
+    },
+    {
+      "lead_id": "B04",
+      "url": "https://www.wto.org/english/news_e/news_docs/NPL_Concluding_Remarks.pdf",
+      "title": "TPR of Nepal - Chairperson's concluding remarks (November 2025)",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Members' summary views incl. notification backlog and implementation issues"
+    },
+    {
+      "lead_id": "B05",
+      "url": "https://www.wto-ilibrary.org/content/books/9789287088444",
+      "title": "Trade Policy Review: Nepal 2025 (WTO iLibrary)",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Published TPR volume"
+    },
+    {
+      "lead_id": "B06",
+      "url": "https://tfadatabase.org/en/members/nepal",
+      "title": "TFAD - Nepal member page",
+      "publisher": "WTO (TFA Database)",
+      "source_id": "wto",
+      "contains": "Nepal's category A/B/C designations by TFA article, indicative and definitive implementation dates, capacity-building needs notified (G/TFA/N/NPL/*, WT/PCTF/N/NPL/*)"
+    },
+    {
+      "lead_id": "B07",
+      "url": "https://notifications.wto.org/en/notification-status/trade-facilitation-agreement",
+      "title": "WTO Notification Portal - TFA notification status",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Status of each member's TFA notifications incl. Nepal"
+    },
+    {
+      "lead_id": "B08",
+      "url": "https://www.wto.org/english/thewto_e/acc_e/a1_nepal_e.htm",
+      "title": "WTO Accessions: Nepal",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Accession documents: WT/MIN(03)/19 protocol, WT/ACC/NPL/16 working party report and addenda (commitments with transition periods)"
+    },
+    {
+      "lead_id": "B09",
+      "url": "https://www.wto.org/english/thewto_e/acc_e/completeacc_e.htm",
+      "title": "Protocols of accession for new members since 1995",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Links to Nepal's goods and services schedules and protocol"
+    },
+    {
+      "lead_id": "B10",
+      "url": "https://goods-schedules.wto.org/member/nepal",
+      "title": "Goods Schedules eLibrary - Nepal",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Nepal bound tariff schedule (bound rates by HS line, implementation periods)"
+    },
+    {
+      "lead_id": "B11",
+      "url": "https://www.wto.org/english/tratop_e/devel_e/graduation_ldc_status_e.htm",
+      "title": "Graduating from status of least-developed country",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "WTO rules on what changes at LDC graduation: LDC-specific S&DT provisions lost, transition periods, smooth-transition decisions"
+    },
+    {
+      "lead_id": "B12",
+      "url": "https://www.un.org/ldcportal/content/wto-smooth-transition-support-measures-favour-countries-graduated-ldc-category-ministerial",
+      "title": "WTO smooth transition support measures in favour of countries graduated from the LDC category - Ministerial decision (MC13, 2024)",
+      "publisher": "UN LDC Portal (summarising WTO decision)",
+      "source_id": "undesa_ldc",
+      "contains": "Text/summary of MC13 decision: continued DSU Art. 24 procedures and LDC-specific TA for a time-limited post-graduation period"
+    },
+    {
+      "lead_id": "B13",
+      "url": "https://www.wto.org/english/thewto_e/minist_e/mc13_e/documents_e.htm",
+      "title": "MC13 documents",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Official symbol and text of the MC13 smooth-transition decision"
+    },
+    {
+      "lead_id": "B14",
+      "url": "https://www.tralac.org/documents/resources/external-relations/wto/mc14/7393-wto-least-developed-countries-group-ministerial-declaration-16-march-2026/file.html",
+      "title": "WT/MIN(26)/12 - LDC Group Ministerial Declaration (MC14, March 2026)",
+      "publisher": "WTO document (hosted by tralac)",
+      "source_id": "wto",
+      "contains": "LDC Group positions at MC14 incl. graduation and S&DT requests; verify on docs.wto.org"
+    },
+    {
+      "lead_id": "B15",
+      "url": "https://www.tralac.org/documents/resources/external-relations/wto/mc14/7407-draft-ldc-specific-package-for-mc14-communication-from-the-gambia-on-behalf-of-the-ldc-group-10-march-2026/file.html",
+      "title": "WT/MIN(26)/W/7 - Draft LDC-specific package for MC14",
+      "publisher": "WTO document (hosted by tralac)",
+      "source_id": "wto",
+      "contains": "Draft LDC package incl. graduation-related S&DT extension proposals; outcome to verify"
+    },
+    {
+      "lead_id": "B16",
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: insights from country-specific market access analyses",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Nepal product/market lines losing LDC-only preferences (reused from 16B)"
+    }
+  ]
+}

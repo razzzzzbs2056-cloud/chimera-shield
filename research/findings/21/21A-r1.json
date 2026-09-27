@@ -1,0 +1,547 @@
+{
+  "subagent_id": "21A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Located primary legal and analytical documents for Nepal's LDC-graduation preference changes: GA resolution A/RES/76/8, CDP monitoring and July 2026 crisis-assessment reports, WTO/EIF graduation-impact studies and the WTO-rule transition decisions (WT/L/1172, MC13), the new EU GSP regulation (Regulation (EU) 2026/1395), UK DCTS briefing documents, US NTPP law and reports plus the 2025 reciprocal-tariff orders, China's zero-tariff scheme for LDCs, the India-Nepal Treaty of Trade, Nepal's 2025 WTO Trade Policy Review and WTO tariff data. No values were retrieved; both research questions (preferences lost and timeline; tariff changes on top exports by market) remain pending. A preference-loss table skeleton and a tariff-change method are specified. Key open item: whether the GA has granted Nepal's 2026 request to extend the preparatory period, which changes the timing in scenario S08.",
+  "findings": [
+    {
+      "claim": "Preferences Nepal loses at LDC graduation, by market and scheme (EU EBA -> standard GSP/GSP+, UK DCTS Comprehensive -> Enhanced, Japan/Canada/Korea/China LDC schemes, US NTPP, India treaty unaffected) and the legal transition timeline for each.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "undesa_ldc",
+        "wto",
+        "eu_trade",
+        "uk_trade",
+        "ustr",
+        "mofcom"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Extract from A/RES/76/8, Regulation (EU) 2026/1395, UK DCTS rules, 19 USC 4454 and China CTC announcement."
+    },
+    {
+      "claim": "Scheduled graduation date and whether Nepal's May 2026 request to extend the preparatory period has been granted by the General Assembly.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "undesa_ldc"
+      ],
+      "observation_ids": [],
+      "note": "Search results (not evidence) report a CDP crisis assessment (July 2026) and an ECOSOC recommendation that the GA decide before the scheduled date; the GA outcome was not located. Retrieve CDP crisis assessment, ECOSOC decision and any GA resolution; record as dated event observations."
+    },
+    {
+      "claim": "Share of Nepal's goods exports, by market, that currently enter under LDC-only preferences (eligibility and actual utilisation).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto",
+        "customs_nepal",
+        "un_comtrade",
+        "eu_trade"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. WTO/EIF Nepal chapter plus EU/UK preference-utilisation data by HS line; Nepal customs exports by destination FY.",
+      "unit": "percent",
+      "period": "latest Nepal FY and matching calendar year for partner data"
+    },
+    {
+      "claim": "Tariff change facing Nepal's top exports (HS6/HS8) in each major market after graduation and transition: pre-graduation preferential rate vs post-transition applicable rate (standard GSP, GSP+ if obtained, MFN).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto_tariff",
+        "wto",
+        "itc_trademap"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. WTO TTD applied and preferential tariffs by HS line for EU, UK, US, Japan, China, Canada; ITC Nepal study; WTO/EIF Nepal chapter.",
+      "unit": "percentage_points"
+    },
+    {
+      "claim": "Current US tariff treatment of Nepal's exports: NTPP status after its statutory expiry and any reciprocal (IEEPA) duties applicable to Nepal since 2025.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ustr"
+      ],
+      "observation_ids": [],
+      "note": "Retrieve 19 USC 4454 text, USTR NTPP page and 2025 Executive Orders' Annex I; record status as dated events. Legal status of IEEPA tariffs after litigation must also be verified from primary sources."
+    },
+    {
+      "claim": "Changes in WTO-rule flexibilities at graduation (TRIPS LDC transition, SCM export-subsidy exemption, S&DT) and the transition granted by WT/L/1172 and the MC13 decision.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2."
+    },
+    {
+      "claim": "Graduation affects only LDC-specific international support measures; the India-Nepal Treaty of Trade (bilateral, non-reciprocal) is not conditioned on LDC status and is treated as unchanged by graduation unless the treaty text shows otherwise (to be verified).",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Where preference schemes differ in rules of origin (e.g. EU EBA vs standard GSP, UK DCTS tiers), loss of preference is measured on eligibility of tariff lines, with actual utilisation carried as a separate variable; utilisation below eligibility reduces the real impact.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Post-graduation scenario variants: (a) graduation on the schedule in A/RES/76/8 with standard transition periods; (b) graduation deferred per Nepal's extension request; (c) Nepal obtains EU GSP+; (d) Nepal does not obtain GSP+. No probability is assigned.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "GA decision on Nepal's 2026 extension request not located.",
+    "National GSP legal texts for Japan, Canada, Korea, Australia, Türkiye, Norway and Switzerland (LDC tiers and graduation transitions) not located.",
+    "EU and UK preference-utilisation rates by HS line for Nepal not located (Eurostat/HMRC).",
+    "Post-graduation eligibility of Nepal for China's LDC zero-tariff scheme and any transition not located.",
+    "Current legal status of US NTPP after its statutory expiry and of US reciprocal tariffs as applied to Nepal not verified.",
+    "The session web-search budget was exhausted part-way through r1; further leads for this task must be located in r2 or by the orchestrator."
+  ],
+  "assumptions": [
+    {
+      "id": "21A-A1",
+      "text": "Graduation affects only LDC-specific international support measures; the India-Nepal Treaty of Trade (bilateral, non-reciprocal) is not conditioned on LDC status and is treated as unchanged by graduation unless the treaty text shows otherwise (to be verified).",
+      "basis": "assumption"
+    },
+    {
+      "id": "21A-A2",
+      "text": "Where preference schemes differ in rules of origin (e.g. EU EBA vs standard GSP, UK DCTS tiers), loss of preference is measured on eligibility of tariff lines, with actual utilisation carried as a separate variable; utilisation below eligibility reduces the real impact.",
+      "basis": "assumption"
+    },
+    {
+      "id": "21A-A3",
+      "text": "Post-graduation scenario variants: (a) graduation on the schedule in A/RES/76/8 with standard transition periods; (b) graduation deferred per Nepal's extension request; (c) Nepal obtains EU GSP+; (d) Nepal does not obtain GSP+. No probability is assigned.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-13 measurement should separate eligibility-based and utilisation-based preference exposure, and add a dated-event attribute for the GA decision on Nepal's extension request; also US exposure now depends on NTPP expiry and reciprocal tariffs, which are not LDC-conditioned and should not be counted as graduation effects."
+    },
+    {
+      "to": "26C",
+      "text": "Keep LDC-graduation effects (EU/UK/Japan/China LDC schemes, WTO S&DT) separate from non-graduation shocks (US NTPP expiry, US reciprocal tariffs) when attributing export changes in S08."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: if the GA grants the extension request, S08 timing and the transition-end years in the preference-loss table change; pending verification from CDP/ECOSOC/GA documents."
+    },
+    {
+      "to": "28",
+      "text": "Escalation for red team: test S08 against the case where standard transitions apply on schedule and GSP+ is not obtained (strict case), and against concurrent US tariff changes."
+    }
+  ],
+  "uncertainty": "High. All empirical items pending. Transition lengths and dates are known only from search snippets and are therefore not recorded. The GA decision on the extension request is unknown. Graduation-impact estimates in the WTO/EIF and ITC studies use older base years and may differ from current export structure; utilisation of preferences is unobserved so far.",
+  "specific": {
+    "preference_loss_table": {
+      "status": "pending",
+      "method": "One row per preference-granting market and scheme: current scheme, post-graduation scheme, legal instrument, transition length and end date, rules-of-origin change, eligibility of Nepal's top-export HS lines, GSP+/Enhanced eligibility conditions. Timeline fields populated only from retrieved legal texts.",
+      "rows": [
+        {
+          "market": "EU",
+          "current_scheme": "GSP - Everything But Arms",
+          "post_graduation_scheme": "Standard GSP (or GSP+ if Nepal applies and qualifies)",
+          "legal_instrument": "Regulation (EU) 2026/1395 (applies from 2027; replaces Regulation (EU) No 978/2012)",
+          "transition": "pending",
+          "status": "pending",
+          "lead_urls": [
+            "https://policy.trade.ec.europa.eu/development-and-sustainability/generalised-scheme-preferences/questions-answers-new-eu-generalised-scheme-preferences_en",
+            "https://trade.ec.europa.eu/access-to-markets/en/news/eus-renewed-gsp-scheme-key-updates-2027"
+          ]
+        },
+        {
+          "market": "UK",
+          "current_scheme": "DCTS Comprehensive Preferences",
+          "post_graduation_scheme": "DCTS Enhanced Preferences (per CDP/HoC analysis; to verify)",
+          "legal_instrument": "UK DCTS (Taxation (Cross-border Trade) Act 2018 regulations)",
+          "transition": "pending",
+          "status": "pending",
+          "lead_urls": [
+            "https://researchbriefings.files.parliament.uk/documents/CBP-9994/CBP-9994.pdf",
+            "https://www.un.org/development/desa/dpad/wp-content/uploads/sites/45/CDP-bp-2023-55.pdf"
+          ]
+        },
+        {
+          "market": "US",
+          "current_scheme": "Nepal Trade Preference Program (country-specific, not LDC-conditioned) and GSP (lapsed; to verify)",
+          "post_graduation_scheme": "pending - NTPP statutory expiry and any reauthorisation",
+          "legal_instrument": "19 USC 4454; Proclamation 9555",
+          "transition": "pending",
+          "status": "pending",
+          "lead_urls": [
+            "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title19-section4454&num=0&edition=prelim",
+            "https://ustr.gov/sites/default/files/2024%20Nepal%20TPP%20Report%20to%20Congress%20Final.pdf"
+          ]
+        },
+        {
+          "market": "China",
+          "current_scheme": "Zero-tariff treatment for LDCs with diplomatic relations (from Dec 2024)",
+          "post_graduation_scheme": "pending - APTA/MFN; transition not located",
+          "legal_instrument": "State Council Customs Tariff Commission announcement",
+          "transition": "pending",
+          "status": "pending",
+          "lead_urls": [
+            "https://english.www.gov.cn/news/202409/12/content_WS66e2db52c6d0868f4e8eae7b.html"
+          ]
+        },
+        {
+          "market": "India",
+          "current_scheme": "India-Nepal Treaty of Trade (bilateral, non-reciprocal duty-free access for Nepali manufactures subject to rules of origin)",
+          "post_graduation_scheme": "Unchanged by graduation (assumption, to verify)",
+          "legal_instrument": "Treaty of Trade 2009 and protocols",
+          "transition": "not applicable",
+          "status": "pending",
+          "lead_urls": [
+            "https://aric.adb.org/fta/indo-nepal-treaty-of-trade",
+            "https://www.indembkathmandu.gov.in/commerce-wing-brief"
+          ]
+        },
+        {
+          "market": "Japan, Canada, Korea, Australia, others",
+          "current_scheme": "LDC-specific GSP tiers",
+          "post_graduation_scheme": "pending",
+          "legal_instrument": "pending - national GSP laws not yet located",
+          "transition": "pending",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf"
+          ]
+        },
+        {
+          "market": "WTO rules",
+          "current_scheme": "LDC S&DT (TRIPS transition, SCM Annex VII, LDC technical assistance)",
+          "post_graduation_scheme": "Developing-member rules with transition per WT/L/1172 and MC13 decision",
+          "legal_instrument": "WT/L/1172; MC13 decision",
+          "transition": "pending",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.wto.org/english/res_e/booksp_e/ldc_graduation_pocket_e.pdf",
+            "https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q%3A%2FWT%2FL%2F1172.pdf&Open=True"
+          ]
+        }
+      ],
+      "graduation_timeline": {
+        "status": "pending",
+        "legal_basis": "A/RES/76/8",
+        "open_event": "Nepal's 2026 request to extend preparatory period (CDP crisis assessment July 2026; ECOSOC recommendation; GA decision not located)",
+        "lead_urls": [
+          "https://documents.un.org/doc/undoc/gen/n21/355/26/pdf/n2135526.pdf",
+          "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+          "https://www.un.org/ohrlls/node/904"
+        ]
+      }
+    },
+    "tariff_change_estimates": {
+      "status": "pending",
+      "method": "Identify Nepal's top export HS6/HS8 lines by market from customs FY data (and partner mirror data, calendar year). For each line and market take (i) current applied preferential rate, (ii) post-transition applicable rate under the scheme Nepal would qualify for, and (iii) MFN; change = (ii) - (i) in percentage points. Weight by export value to get a trade-weighted tariff change per market; report eligibility-based and utilisation-based variants separately. Compare with WTO/EIF and ITC estimates and keep all values; explain differences (base year, HS level, utilisation, scheme assumptions).",
+      "unit": "percentage_points",
+      "markets": [
+        "EU",
+        "UK",
+        "US",
+        "Japan",
+        "China",
+        "Canada",
+        "India"
+      ],
+      "products_to_cover": "top export lines by market from customs data (expected to include textiles/garments, carpets, felt and pashmina products, travel goods, headwear) - list to be derived from retrieved data, not assumed",
+      "inputs": [
+        "WTO TTD tariff lines",
+        "customs exports by HS and destination",
+        "EU/UK preference utilisation",
+        "WTO/EIF Nepal chapter",
+        "ITC Nepal after LDC graduation"
+      ],
+      "lead_urls": [
+        "https://ttd.wto.org",
+        "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+        "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+        "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf"
+      ],
+      "estimates": []
+    },
+    "channel": "trade_preferences",
+    "exposure_ids": [
+      "EXP-13"
+    ],
+    "external_variables": [
+      "X12"
+    ],
+    "scenarios": [
+      "S08"
+    ]
+  },
+  "source_leads": [
+    {
+      "url": "https://documents.un.org/doc/undoc/gen/n21/355/26/pdf/n2135526.pdf",
+      "title": "General Assembly resolution A/RES/76/8: Graduation of Bangladesh, the Lao People's Democratic Republic and Nepal from the least developed country category",
+      "publisher": "United Nations General Assembly",
+      "source_id": "undesa_ldc",
+      "contains": "Legal basis of Nepal's graduation: adoption date, length of preparatory period, scheduled graduation date and smooth-transition strategy request"
+    },
+    {
+      "url": "https://www.un.org/ldcportal/news/general-assembly-issues-resolution-graduation-bangladesh-lao-pdr-and-nepal",
+      "title": "General Assembly issues resolution on the graduation of Bangladesh, Lao PDR and Nepal",
+      "publisher": "UN LDC Portal (UN DESA)",
+      "source_id": "undesa_ldc",
+      "contains": "Summary and link to A/RES/76/8 and associated CDP documentation"
+    },
+    {
+      "url": "https://policy.desa.un.org/sites/default/files/2026-04/cdp-pl-2026-npl.pdf",
+      "title": "2026 Monitoring Report (March 2026): Nepal",
+      "publisher": "UN Committee for Development Policy",
+      "source_id": "undesa_ldc",
+      "contains": "CDP monitoring of Nepal's graduation preparedness in 2026: graduation criteria, productive-capacity indicators, status of smooth transition strategy and CDP view on the preparatory period"
+    },
+    {
+      "url": "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+      "title": "Crisis Assessment: Nepal (July 2026)",
+      "publisher": "UN Committee for Development Policy",
+      "source_id": "undesa_ldc",
+      "contains": "CDP crisis-response-process assessment of Nepal's May 2026 request to extend the preparatory period; recommendation to ECOSOC/GA"
+    },
+    {
+      "url": "https://policy.desa.un.org/sites/default/files/2025-06/cdp-pl-2024-6-6-nepal.pdf",
+      "title": "CDP monitoring report on Nepal (2024 cycle)",
+      "publisher": "UN Committee for Development Policy",
+      "source_id": "undesa_ldc",
+      "contains": "Earlier CDP monitoring report: graduation timeline and CDP position on extension of preparatory period"
+    },
+    {
+      "url": "https://www.un.org/ohrlls/node/904",
+      "title": "Official Documents on LDCs",
+      "publisher": "UN OHRLLS",
+      "source_id": "undesa_ldc",
+      "contains": "Index of official GA/ECOSOC documents on LDC graduation; location for the ECOSOC 2026 decision and any GA decision on Nepal's extension request"
+    },
+    {
+      "url": "https://www.undp.org/sites/g/files/zskgke326/files/2024-05/Final%20LDC%20Graduation%20STS.pdf",
+      "title": "LDC Graduation - Smooth Transition Strategy (Nepal)",
+      "publisher": "Government of Nepal / UNDP",
+      "source_id": "npc_nepal",
+      "contains": "Nepal's national smooth transition strategy: list of ISMs lost, planned negotiation of transition arrangements with trading partners"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation.pdf",
+      "title": "Trade impacts of LDC graduation",
+      "publisher": "WTO / Enhanced Integrated Framework",
+      "source_id": "wto",
+      "contains": "Cross-country estimates of export shares using LDC-specific preferences, preference-margin losses by market and product for graduating LDCs incl. Nepal; methodology for graduation impact"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
+      "publisher": "WTO / Enhanced Integrated Framework",
+      "source_id": "wto",
+      "contains": "Nepal country chapter: exports by market, applicable preference scheme before/after graduation, tariff changes on main export products, estimated export change"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/ldc_graduation_pocket_e.pdf",
+      "title": "Trade impacts of LDC graduation: Matters related to the WTO agreements",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "WTO-rule consequences of graduation: TRIPS transition, subsidies (SCM Annex VII), S&DT provisions, technical assistance"
+    },
+    {
+      "url": "https://www.wto.org/english/tratop_e/devel_e/nepalsasldc_e.htm",
+      "title": "Nepal - Overcoming graduation challenges through national, regional and global efforts",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "WTO page on Nepal's graduation challenges and support"
+    },
+    {
+      "url": "https://www.wto.org/english/tratop_e/devel_e/graduation_ldc_status_e.htm",
+      "title": "Graduating from status of least-developed country (LDC)",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Overview of WTO smooth-transition decisions (General Council 2023, MC13 2024) and links to legal texts"
+    },
+    {
+      "url": "https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q%3A%2FWT%2FL%2F1172.pdf&Open=True",
+      "title": "WT/L/1172: General Council decision on extension of unilateral DFQF preferences for graduated LDCs",
+      "publisher": "WTO General Council",
+      "source_id": "wto",
+      "contains": "Legal text encouraging preference-granting members to provide smooth transition periods for LDC-specific DFQF preferences"
+    },
+    {
+      "url": "https://www.wto.org/english/thewto_e/minist_e/mc13_e/briefing_notes_e/development_e.htm",
+      "title": "Thirteenth WTO Ministerial Conference - Trade and development briefing note",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "MC13 decision on transition period for graduating LDCs regarding certain WTO rules and LDC-specific technical assistance"
+    },
+    {
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Secretariat report for Nepal's third TPR (Nov 2025): trade and investment regime, tariff structure, preferential market access, transit arrangements, trade facilitation, services trade and FDI chapters, export priorities"
+    },
+    {
+      "url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_npl_17nov25_e.htm",
+      "title": "Trade policy review - Nepal 2025",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Landing page for Nepal TPR 2025: Secretariat report WT/TPR/S/478, Government report WT/TPR/G/478, minutes and Chair's concluding remarks"
+    },
+    {
+      "url": "https://ttd.wto.org",
+      "title": "WTO Tariff and Trade Data",
+      "publisher": "World Trade Organization",
+      "source_id": "wto_tariff",
+      "contains": "Applied MFN and preferential tariffs by HS line and importing market (EU, UK, US, Japan, India, China, Canada); needed for pre/post-graduation tariff on Nepal's top exports"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/statis_e/daily_update_e/tariff_profiles/np_e.pdf",
+      "title": "Nepal Part A.1 Tariffs and imports (World Tariff Profile)",
+      "publisher": "WTO / ITC / UNCTAD",
+      "source_id": "wto_tariff",
+      "contains": "Nepal's bound and applied MFN averages by product group and Part A.2/B tariffs faced by Nepal's exports in major markets"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/world_tariff_profiles25_e.pdf",
+      "title": "World Tariff Profiles 2025",
+      "publisher": "WTO / ITC / UNCTAD",
+      "source_id": "wto_tariff",
+      "contains": "Country tariff profiles (tariffs as of end-2024) including tariffs faced by each economy's exports in its main markets"
+    },
+    {
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports",
+      "publisher": "International Trade Centre",
+      "source_id": "itc_trademap",
+      "contains": "Product-market analysis of Nepal exports after graduation: tariff changes by market for top exports, export potential by product and market (2022 publication)"
+    },
+    {
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Sectoral employment exposure to preference loss (garments, carpets, textiles, other LDC-preference-dependent exports) and graduation scenarios"
+    },
+    {
+      "url": "https://trade.ec.europa.eu/access-to-markets/en/news/eus-renewed-gsp-scheme-key-updates-2027",
+      "title": "The EU's renewed GSP scheme: Key updates for 2027",
+      "publisher": "European Commission (Access2Markets)",
+      "source_id": "eu_trade",
+      "contains": "Summary of new EU GSP from 2027: EBA exit after transition for graduating LDCs, GSP+ access conditions, safeguards and graduation mechanisms"
+    },
+    {
+      "url": "https://policy.trade.ec.europa.eu/news/new-generalised-scheme-preferences-approved-application-2027-2026-04-28_en",
+      "title": "New Generalised Scheme of Preferences approved for application in 2027",
+      "publisher": "European Commission DG Trade",
+      "source_id": "eu_trade",
+      "contains": "Announcement of adopted new GSP regulation (Regulation (EU) 2026/1395), application period and treatment of graduating LDCs"
+    },
+    {
+      "url": "https://policy.trade.ec.europa.eu/development-and-sustainability/generalised-scheme-preferences/questions-answers-new-eu-generalised-scheme-preferences_en",
+      "title": "Questions & Answers on the new EU Generalised Scheme of Preferences",
+      "publisher": "European Commission DG Trade",
+      "source_id": "eu_trade",
+      "contains": "Rules on EBA transition after LDC graduation, standard GSP coverage and tariff reductions, GSP+ eligibility (vulnerability criterion, conventions)"
+    },
+    {
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/22/trade-council-signs-off-reinforced-rules-on-trade-preferences-for-developing-countries/",
+      "title": "Trade: Council signs off reinforced rules on trade preferences for developing countries",
+      "publisher": "Council of the European Union",
+      "source_id": "eu_trade",
+      "contains": "Council adoption of new GSP regulation (May 2026); pointer to Official Journal text"
+    },
+    {
+      "url": "https://researchbriefings.files.parliament.uk/documents/CBP-9994/CBP-9994.pdf",
+      "title": "Developing Countries Trading Scheme (House of Commons Library briefing CBP-9994)",
+      "publisher": "UK House of Commons Library",
+      "source_id": "uk_trade",
+      "contains": "UK DCTS tiers (Comprehensive, Enhanced, Standard), graduation transition rules for LDCs leaving Comprehensive Preferences, rules of origin"
+    },
+    {
+      "url": "https://www.un.org/development/desa/dpad/wp-content/uploads/sites/45/CDP-bp-2023-55.pdf",
+      "title": "What the United Kingdom's new Developing Countries Trading Scheme means for graduating LDCs (CDP background paper 2023-55)",
+      "publisher": "UN DESA / CDP",
+      "source_id": "undesa_ldc",
+      "contains": "Analysis of UK DCTS treatment of graduating LDCs incl. Nepal: Enhanced Preferences eligibility, tariff lines losing duty-free access"
+    },
+    {
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title19-section4454&num=0&edition=prelim",
+      "title": "19 USC 4454: Trade preferences for Nepal",
+      "publisher": "US House Office of the Law Revision Counsel",
+      "source_id": "ustr",
+      "contains": "Statutory basis and expiry date of the Nepal Trade Preference Program (NTPP)"
+    },
+    {
+      "url": "https://ustr.gov/sites/default/files/2024%20Nepal%20TPP%20Report%20to%20Congress%20Final.pdf",
+      "title": "2024 USTR Annual Report to Congress on the Implementation of the Nepal Trade Preference Program",
+      "publisher": "Office of the US Trade Representative",
+      "source_id": "ustr",
+      "contains": "NTPP eligible HTS lines, utilisation and US imports from Nepal under NTPP by product and year (calendar year)"
+    },
+    {
+      "url": "https://ustr.gov/issue-areas/preference-programs/nepal-trade-preference-program-ntpp",
+      "title": "Nepal Trade Preference Program (NTPP)",
+      "publisher": "Office of the US Trade Representative",
+      "source_id": "ustr",
+      "contains": "Programme page: status, eligible products list, reports"
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2016/12/20/2016-30738/to-implement-the-nepal-preference-program-and-for-other-purposes",
+      "title": "To Implement the Nepal Preference Program and for Other Purposes (Proclamation 9555)",
+      "publisher": "US Federal Register",
+      "source_id": "ustr",
+      "contains": "Implementing proclamation and HTS annex of NTPP-eligible lines"
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and",
+      "title": "Executive Order 14257: Regulating Imports With a Reciprocal Tariff",
+      "publisher": "US Federal Register",
+      "source_id": "ustr",
+      "contains": "Baseline and country-specific reciprocal ad valorem duties (Annex I); determines whether Nepal faces a country-specific rate"
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2025/08/06/2025-15010/further-modifying-the-reciprocal-tariff-rates",
+      "title": "Further Modifying the Reciprocal Tariff Rates (EO, Aug 2025)",
+      "publisher": "US Federal Register",
+      "source_id": "ustr",
+      "contains": "Revised Annex I of country-specific reciprocal tariff rates effective Aug 2025; Nepal entry if any"
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2025/09/10/2025-17507/modifying-the-scope-of-reciprocal-tariffs-and-establishing-procedures-for-implementing-trade-and-security-agreements",
+      "title": "Modifying the Scope of Reciprocal Tariffs and Establishing Procedures for Implementing Trade and Security Agreements",
+      "publisher": "US Federal Register",
+      "source_id": "ustr",
+      "contains": "Product exemptions (Annex II) and later scope changes to reciprocal tariffs"
+    },
+    {
+      "url": "https://english.www.gov.cn/news/202409/12/content_WS66e2db52c6d0868f4e8eae7b.html",
+      "title": "China announces zero-tariff treatment for least developed countries",
+      "publisher": "State Council of the PRC",
+      "source_id": "mofcom",
+      "contains": "Customs Tariff Commission announcement of zero-tariff treatment for all tariff lines from LDCs with diplomatic relations, effective date"
+    },
+    {
+      "url": "https://wto.mofcom.gov.cn/meetingsandstatements/art/2025/art_187fc8210edf49fb9cddf9dab06a6fce.html",
+      "title": "China expands zero-tariff policy for least developed countries",
+      "publisher": "Ministry of Commerce of the PRC (WTO mission)",
+      "source_id": "mofcom",
+      "contains": "China's notification/statement on LDC zero-tariff scheme; eligibility conditions relevant to post-graduation treatment of Nepal"
+    },
+    {
+      "url": "https://aric.adb.org/fta/indo-nepal-treaty-of-trade",
+      "title": "Indo-Nepal Treaty of Trade",
+      "publisher": "Asian Development Bank - Asia Regional Integration Center",
+      "source_id": "adb_nepal",
+      "contains": "Agreement record: signature/renewal dates, scope, links to treaty text and protocols (duty-free non-reciprocal access; rules of origin; primary products)"
+    },
+    {
+      "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+      "title": "Commerce Wing Brief",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "Summary of India-Nepal Treaty of Trade and Treaty of Transit, renewal status and bilateral trade framework"
+    }
+  ]
+}

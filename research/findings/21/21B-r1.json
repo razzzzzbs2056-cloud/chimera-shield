@@ -1,0 +1,246 @@
+{
+  "subagent_id": "21B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). The route-cost question (Kolkata/Haldia vs Visakhapatnam vs potential Bangladeshi ports) is pending: no time or cost values were retrieved. Leads located or reused: World Bank NIRTTP project document (corridor baselines), World Bank LPI, UNCTAD Review of Maritime Transport, ICRIER study of Nepal's transit through India, Indian Embassy commerce brief on the Treaty of Transit, Nepal customs statistics, WTO TPR 2025 and ICIMOD on the 2026 northern-route flood. The session web-search budget ran out before leads for time-release studies, NITDB traffic data, the Treaty of Transit text and letters of exchange, and any Nepal-Bangladesh transit arrangement could be located; these are data gaps. A route matrix and reference-shipment method are specified.",
+  "findings": [
+    {
+      "claim": "Door-to-door import time (days) and cost (USD per TEU) for a standard container from a common origin (e.g. East Asia hub) to Kathmandu/Birgunj via Kolkata/Haldia, via Visakhapatnam, and via Bangladeshi ports (Mongla, Chattogram) where transit is operational, broken down into ocean freight, port dwell, inland rail/road, border clearance and informal costs.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_lpi",
+        "wb_npl",
+        "unctad_rmt",
+        "academic",
+        "nitdb"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Time-release studies and NIRTTP results framework; NITDB ICD statistics; ICRIER route analysis. Bangladeshi route data not yet located.",
+      "unit": "usd_per_teu; days"
+    },
+    {
+      "claim": "Legal/operational status of each route: designated ports and modes under the India-Nepal Treaty of Transit and letters of exchange, and any Nepal-Bangladesh transit arrangement for Mongla/Chattogram (incl. transit through Indian territory at Kakarbhitta-Phulbari-Banglabandha or rail via Rohanpur-Singhabad).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mea_india",
+        "wto",
+        "nitdb"
+      ],
+      "observation_ids": [],
+      "note": "Treaty of Transit text/protocols and letters of exchange not yet located as primary documents; WTO TPR WT/TPR/S/478 transit section to be read."
+    },
+    {
+      "claim": "Share of Nepal's third-country containerised imports by gateway port and by ICD (Birgunj, Biratnagar, Bhairahawa, Dry port Kerung/Rasuwagadhi).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nitdb",
+        "customs_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Requires NITDB/ICD annual traffic and customs office tables (Nepal FY).",
+      "unit": "percent"
+    },
+    {
+      "claim": "World Bank LPI 2023 scores and KPI dwell times for Nepal, India and Bangladesh.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_lpi"
+      ],
+      "observation_ids": [],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2.",
+      "unit": "index_score",
+      "period": "LPI 2023 (survey calendar year)"
+    },
+    {
+      "claim": "Route comparison uses a standard 40ft/20ft container import from an East Asian transhipment hub to ICD Birgunj as the reference shipment; costs are expressed in USD current prices per TEU with the survey date recorded; time is median door-to-door days.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Bangladeshi ports are treated as 'potential' routes: they enter the scenario model only as an alternative-route option whose availability is a labelled scenario assumption until an operating arrangement is documented.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Treaty of Transit text, protocol and letters of exchange (Visakhapatnam, Dhamra, rail/inland waterways) not located as primary documents.",
+    "Nepal time-release studies (Department of Customs/WB) and NITDB ICD traffic statistics not located.",
+    "No document located on an operational Nepal-Bangladesh port transit arrangement (Mongla/Chattogram).",
+    "Freight-rate series (Drewry/SCFI) are licensed or not in catalog; UNCTAD RMT provides only indices.",
+    "Nepal-China Transit Transport Agreement protocol and northern route cost data not located.",
+    "The session web-search budget was exhausted part-way through r1; further leads for this task must be located in r2 or by the orchestrator."
+  ],
+  "assumptions": [
+    {
+      "id": "21B-A1",
+      "text": "Route comparison uses a standard 40ft/20ft container import from an East Asian transhipment hub to ICD Birgunj as the reference shipment; costs are expressed in USD current prices per TEU with the survey date recorded; time is median door-to-door days.",
+      "basis": "assumption"
+    },
+    {
+      "id": "21B-A2",
+      "text": "Bangladeshi ports are treated as 'potential' routes: they enter the scenario model only as an alternative-route option whose availability is a labelled scenario assumption until an operating arrangement is documented.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-04 proxy (third-country imports through southern customs offices) cannot distinguish Kolkata/Haldia from Visakhapatnam; recommend adding NITDB ICD-by-port data as primary table and treating Bangladeshi routes as a separate optional-route exposure."
+    },
+    {
+      "to": "19C",
+      "text": "Chokepoint and cargo-insurance shocks (X31) should be passed as ocean-leg cost multipliers so that 21B's route matrix can apply them per route rather than as a single transit-cost shock."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog id nitdb exists but no endpoint lead has been located; suggest the orchestrator allocate search budget for NITDB, customs time-release studies and treaty texts in r2."
+    }
+  ],
+  "uncertainty": "High. No time or cost value retrieved. LPI is perception-survey based and not route-specific; time-release studies are point-in-time; freight rates are volatile (post-2021 and Red Sea-related swings), so any route comparison must carry its survey date. Bangladeshi-route viability depends on arrangements not yet documented.",
+  "specific": {
+    "route_cost_comparison": {
+      "status": "pending",
+      "method": "Build a route matrix; for each route record legal status, operational status, time components and cost components from primary sources (time-release studies, NIRTTP, NITDB, LPI KPIs, UNCTAD RMT freight indices). Keep survey-based (LPI) and transaction-based (time-release) measures separate and document differences. Convert calendar-year international data to Nepal FY only where it enters the model.",
+      "reference_shipment": "TEU import, East Asian hub to ICD Birgunj/Kathmandu",
+      "units": {
+        "cost": "usd_per_teu",
+        "time": "days"
+      },
+      "routes": [
+        {
+          "route": "Kolkata/Haldia (Syama Prasad Mookerjee Port complex) - rail/road - Birgunj/Biratnagar",
+          "legal_basis": "India-Nepal Treaty of Transit (to retrieve)",
+          "time_days": null,
+          "cost_usd_per_teu": null,
+          "status": "pending",
+          "lead_urls": [
+            "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+            "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/"
+          ]
+        },
+        {
+          "route": "Visakhapatnam - rail - ICD Birgunj",
+          "legal_basis": "Letter of exchange to Treaty of Transit adding Visakhapatnam (to retrieve)",
+          "time_days": null,
+          "cost_usd_per_teu": null,
+          "status": "pending",
+          "lead_urls": [
+            "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+            "https://www.indembkathmandu.gov.in/commerce-wing-brief"
+          ]
+        },
+        {
+          "route": "Mongla / Chattogram (Bangladesh) - transit through India - Kakarbhitta/Biratnagar",
+          "legal_basis": "pending - Nepal-Bangladesh transit arrangement not located",
+          "time_days": null,
+          "cost_usd_per_teu": null,
+          "status": "pending",
+          "lead_urls": []
+        },
+        {
+          "route": "Northern: Chinese ports (e.g. Tianjin/Shenzhen) - Kerung/Rasuwagadhi or Tatopani",
+          "legal_basis": "Nepal-China Transit Transport Agreement and Protocol (to retrieve)",
+          "time_days": null,
+          "cost_usd_per_teu": null,
+          "status": "pending",
+          "note": "Route availability affected by 2026 Rasuwagadhi-Kerung flood (ICIMOD; to verify)",
+          "lead_urls": [
+            "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/"
+          ]
+        }
+      ],
+      "benchmarks": {
+        "lpi_2023": "pending",
+        "unctad_rmt_freight": "pending",
+        "lead_urls": [
+          "https://lpi.worldbank.org",
+          "https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport"
+        ]
+      },
+      "model_parameter": "trade_costs (ad valorem equivalent of transit cost by route) - pending"
+    },
+    "channel": "transit_and_logistics",
+    "exposure_ids": [
+      "EXP-04",
+      "EXP-P02"
+    ],
+    "external_variables": [
+      "X08",
+      "X10",
+      "X31"
+    ],
+    "scenarios": [
+      "S02",
+      "S10"
+    ]
+  },
+  "source_leads": [
+    {
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project (IDA credit) - project document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Project appraisal: baseline time-release and cost for Kolkata/Haldia-Birgunj/Biratnagar/Bhairahawa corridors, rail transit via ICD Birgunj, customs/transit reforms, results-framework indicators"
+    },
+    {
+      "url": "https://lpi.worldbank.org",
+      "title": "Logistics Performance Index",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "LPI 2023 scores for Nepal (overall, customs, infrastructure, international shipments, logistics competence, tracking, timeliness) and KPI dwell-time/lead-time indicators; survey-based, calendar year"
+    },
+    {
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Study of Nepal's transit through Indian ports: routes, procedures, time and cost components, port choice (Kolkata/Haldia vs Visakhapatnam)"
+    },
+    {
+      "url": "https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport",
+      "title": "Review of Maritime Transport",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "Freight rates and port-performance indicators; container-port time-in-port by country (India, Bangladesh); liner shipping connectivity; landlocked-country transport-cost chapter where available"
+    },
+    {
+      "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+      "title": "Commerce Wing Brief",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "India-Nepal Treaty of Transit, designated ports and routes, letters of exchange adding ports/modes, rail transit arrangements"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Annual FY2079/80 (mid-July basis) imports and exports by HS chapter/heading and by partner country, plus trade by customs office; source for product-by-origin tables (HS 10 rice, HS 27 petroleum, HS 30 medicines, HS 31 fertiliser) and for exports by destination"
+    },
+    {
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Ministry of Industry, Commerce and Supplies / Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Trade-statistics query interface (HS-level imports/exports by partner, Nepal FY), import/export procedures, tariff schedule and transit procedures"
+    },
+    {
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Secretariat report for Nepal's third TPR (Nov 2025): trade and investment regime, tariff structure, preferential market access, transit arrangements, trade facilitation, services trade and FDI chapters, export priorities"
+    },
+    {
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Event description of the 2026 flood affecting the Rasuwagadhi-Kerung crossing; relevant to northern-route availability"
+    }
+  ]
+}

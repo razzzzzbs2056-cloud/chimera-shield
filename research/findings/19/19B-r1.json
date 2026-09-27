@@ -1,0 +1,239 @@
+{
+  "subagent_id": "19B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Research design for identifying sanctions regimes and export controls that affect Nepal's trade, banking and technology imports, with leads to the UN consolidated list, OFAC sanctions programmes and SDN search, US BIS EAR (Country Chart, Country Groups, Entity List), the EU Sanctions Map and FATF monitoring pages. Four channels are defined: direct designation of Nepali parties, EAR licence requirements for dual-use/advanced-computing imports, secondary-sanctions exposure through counterparties (Iran, Russia, DPRK-linked), and FATF-driven correspondent-banking de-risking. Whether any regime names Nepal is pending retrieval; no values were retrieved. Several leads use catalog base URLs because the session search budget was exhausted.",
+  "findings": [
+    {
+      "claim": "Q1a: Whether Nepal, or any Nepali person or entity, is designated under UN, US (OFAC), EU sanctions regimes or on the US BIS Entity List.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "un_sanctions",
+        "ofac",
+        "eu_sanctions",
+        "bis_us"
+      ],
+      "note": "Query each consolidated list for country=Nepal on a stated retrieval date; record list vintage. Leads 19B-L01..L05.",
+      "unit": "count",
+      "period": "list vintage at retrieval date (calendar)"
+    },
+    {
+      "claim": "Q1b: US export-control treatment of Nepal - Country Group placement and Commerce Country Chart reasons for control applicable to Nepal, including advanced-computing/semiconductor rules.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "bis_us"
+      ],
+      "note": "Retrieve 15 CFR Part 738 Supplement 1, Part 740 Supplement 1 and the current advanced-computing rules; record Federal Register vintage.",
+      "period": "EAR as of retrieval date"
+    },
+    {
+      "claim": "Q1c: Secondary-sanctions exposure via Nepal's counterparties - trade and payments with Iran, Russia and DPRK-linked parties (value by HS chapter and partner) and any remittance corridors from sanctioned jurisdictions.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "nrb",
+        "ofac",
+        "eu_sanctions"
+      ],
+      "note": "Requires Nepal customs partner tables (FY) for Iran and Russia and NRB payment-system guidance; no Nepal-specific lead located in r1.",
+      "unit": "USD",
+      "period": "Nepal FY2023/24-FY2025/26"
+    },
+    {
+      "claim": "Q1d: FATF increased-monitoring status of Nepal and its effect on correspondent banking - current listing status and action-plan items.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fatf",
+        "apg",
+        "nrb"
+      ],
+      "note": "Retrieve latest FATF plenary outcome after February 2025 (19B-L06, L07); correspondent-relationship counts are supervisory data (see 20D/16B gap).",
+      "period": "calendar 2025-2026"
+    },
+    {
+      "claim": "FATF monitoring is not a sanctions regime but is included because it acts through the same compliance channel (correspondent banking, enhanced due diligence) on Nepal's banks.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "An HS-to-ECCN concordance (16B-A3) will be built as a labelled assumption: EAR controls attach to items (ECCNs), not HS codes, so any estimate of the share of Nepal's imports subject to licence requirements is an estimate, not a fact.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No Nepal-specific primary lead located for trade/payments with sanctioned jurisdictions (customs partner tables for Iran/Russia to be requested via 21A/17A).",
+    "Current FATF status after February 2025 not verified.",
+    "NRB directives on sanctions screening and correspondent-banking guidance not located.",
+    "WebSearch budget for the session was exhausted during r1 before all lead searches were completed; leads marked 'NOT confirmed by web search' use catalog base URLs or known primary domains and must be verified on fetch."
+  ],
+  "assumptions": [
+    {
+      "id": "19B-A1",
+      "text": "Only lawful compliance implications are analysed; no guidance on evading sanctions or controls is produced.",
+      "basis": "safety note"
+    },
+    {
+      "id": "19B-A2",
+      "text": "HS-to-ECCN concordance is an assumption to be documented (answers 16B-A3).",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "16B-A3 assigns the HS-to-ECCN concordance to 19B; accepted, but EXP-19 must be labelled an estimate and its unit/period fixed once the EAR vintage is retrieved."
+    },
+    {
+      "to": "26D",
+      "text": "X28 (sanctions regimes relevant to counterparties) and FATF monitoring overlap; agree a single owner for correspondent-banking indicators to avoid double counting."
+    },
+    {
+      "to": "00A",
+      "text": "Add NRB FIU-Nepal and NRB directives as sources; catalog lacks a Nepal-side sanctions-screening authority."
+    }
+  ],
+  "uncertainty": "High. No list has been queried; the applicability of each regime to Nepal is pending. Lists change frequently, so every result must carry a retrieval date. Several URLs unverified by search.",
+  "specific": {
+    "applicable_regimes": {
+      "status": "pending",
+      "method": "Query each list for Nepal and Nepal's key counterparties on a fixed retrieval date; classify each regime as direct, counterparty (secondary) or compliance-channel.",
+      "regimes": [
+        {
+          "regime": "UN Security Council sanctions (all active committees)",
+          "channel": "direct designation / counterparty",
+          "applicability": "pending",
+          "lead_ids": [
+            "19B-L01"
+          ]
+        },
+        {
+          "regime": "US OFAC programmes (Iran, Russia-related, DPRK, SDGT, narcotics)",
+          "channel": "direct designation / secondary sanctions via USD clearing",
+          "applicability": "pending",
+          "lead_ids": [
+            "19B-L02",
+            "19B-L03"
+          ]
+        },
+        {
+          "regime": "US EAR export controls (Country Chart, Country Groups, Entity List, advanced-computing rules)",
+          "channel": "technology imports",
+          "applicability": "pending - Nepal's country-group placement to be retrieved",
+          "lead_ids": [
+            "19B-L04"
+          ]
+        },
+        {
+          "regime": "EU restrictive measures (Russia, Iran, anti-circumvention)",
+          "channel": "counterparty / EUR payments and EU exports to Nepal",
+          "applicability": "pending",
+          "lead_ids": [
+            "19B-L05"
+          ]
+        },
+        {
+          "regime": "FATF increased monitoring (compliance channel, not sanctions)",
+          "channel": "correspondent banking",
+          "applicability": "pending - status after February 2025 to be retrieved",
+          "lead_ids": [
+            "19B-L06",
+            "19B-L07"
+          ]
+        }
+      ]
+    },
+    "compliance_implications": {
+      "status": "pending",
+      "items": [
+        {
+          "implication": "Enhanced due diligence and possible correspondent de-risking for Nepali banks",
+          "driver": "FATF monitoring; OFAC exposure through USD clearing",
+          "measure_needed": "count of active correspondent relationships and cost of cross-border payments (supervisory data)",
+          "status": "pending"
+        },
+        {
+          "implication": "Licence requirements or delays for imported dual-use items (telecom equipment, drones, advanced semiconductors, encryption)",
+          "driver": "EAR country-group placement and Entity List of suppliers",
+          "measure_needed": "import value by HS lines mapped to ECCNs (estimate via concordance)",
+          "status": "pending"
+        },
+        {
+          "implication": "Payment and shipping frictions for trade with Iran- or Russia-linked counterparties, including petroleum-related trade routed via India",
+          "driver": "OFAC/EU secondary sanctions",
+          "measure_needed": "customs partner tables for Iran/Russia; NRB payment guidance",
+          "status": "pending"
+        },
+        {
+          "implication": "Screening obligations on remittance service providers for inflows from sanctioned or conflict jurisdictions",
+          "driver": "OFAC/UN lists; FATF recommendations",
+          "measure_needed": "NRB/FIU directives",
+          "status": "pending"
+        }
+      ]
+    },
+    "source_leads_count": 7
+  },
+  "source_leads": [
+    {
+      "lead_id": "19B-L01",
+      "url": "https://www.un.org/securitycouncil/sanctions/information",
+      "title": "UN Security Council Sanctions - information",
+      "publisher": "United Nations Security Council",
+      "source_id": "un_sanctions",
+      "contains": "List of active UNSC sanctions regimes (committees, measures: arms embargo, asset freeze, travel ban) and the UN Security Council Consolidated List; check whether any regime names Nepal or Nepali entities, and regimes relevant to Nepal's counterparties (DPRK 1718, others). URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19B-L02",
+      "url": "https://ofac.treasury.gov",
+      "title": "Office of Foreign Assets Control - sanctions programs and country information",
+      "publisher": "US Department of the Treasury",
+      "source_id": "ofac",
+      "contains": "Sanctions programs (Iran, Russia-related, DPRK, counter-terrorism, narcotics), SDN list and advisories; basis for secondary-sanctions exposure of Nepali banks and traders. URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19B-L03",
+      "url": "https://sanctionssearch.ofac.treas.gov/",
+      "title": "OFAC Sanctions List Search",
+      "publisher": "US Department of the Treasury",
+      "source_id": "ofac",
+      "contains": "Searchable SDN and consolidated lists; query by country 'Nepal' to list any designated Nepali persons/entities with program tags and dates. URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19B-L04",
+      "url": "https://www.bis.gov",
+      "title": "Bureau of Industry and Security - Export Administration Regulations",
+      "publisher": "US Department of Commerce",
+      "source_id": "bis_us",
+      "contains": "EAR (15 CFR 730-774): Commerce Country Chart (Supplement 1 to Part 738), Country Groups (Supplement 1 to Part 740), Entity List (Supplement 4 to Part 744); Nepal's country-group placement determines licence requirements for dual-use and advanced-computing imports. URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19B-L05",
+      "url": "https://www.sanctionsmap.eu",
+      "title": "EU Sanctions Map",
+      "publisher": "European Union",
+      "source_id": "eu_sanctions",
+      "contains": "EU restrictive measures by country/regime incl. Russia and Iran regimes and anti-circumvention provisions; check for Nepal-related listings and third-country circumvention concerns. URL taken from the source catalog / known primary domain; NOT confirmed by web search in r1 (session search budget exhausted) - verify on fetch."
+    },
+    {
+      "lead_id": "19B-L06",
+      "url": "https://www.fatf-gafi.org/en/countries/detail/Nepal.html",
+      "title": "Nepal - country page",
+      "publisher": "Financial Action Task Force",
+      "source_id": "fatf",
+      "contains": "FATF/APG status of Nepal, mutual evaluation and follow-up reports (lead reused from 16B L64)"
+    },
+    {
+      "lead_id": "19B-L07",
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2025.html",
+      "title": "Jurisdictions under Increased Monitoring - 21 February 2025",
+      "publisher": "Financial Action Task Force",
+      "source_id": "fatf",
+      "contains": "FATF plenary outcome listing jurisdictions under increased monitoring as of February 2025 and their action plans (lead reused from 16B L65); later plenary outcomes (June 2025, October 2025, February 2026, June 2026) needed for current status"
+    }
+  ]
+}
