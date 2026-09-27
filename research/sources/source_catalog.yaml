@@ -54,6 +54,8 @@ sources:
   moics_nepal: {tier: 1, institution: Ministry of Industry, Commerce and Supplies, Nepal, url: "https://moics.gov.np", covers: [trade and industry policy], endpoint_status: unverified}
   ntcdb_nepal: {tier: 1, institution: National Tea and Coffee Development Board, Nepal, url: "https://teacoffee.gov.np", covers: [tea and coffee production and exports], endpoint_status: unverified}
   nepal_trade_portal: {tier: 1, institution: Nepal Trade Information Portal, url: "https://nepaltradeportal.gov.np", covers: [tariffs, SPS and trade procedures], endpoint_status: unverified}
+  opmcm_nepal: {tier: 1, institution: Office of the Prime Minister and Council of Ministers, Nepal, url: "https://opmcm.gov.np", covers: [allocation of business rules, cabinet decisions], endpoint_status: unverified}
+  moewri_nepal: {tier: 1, institution: Ministry of Energy, Water Resources and Irrigation, Nepal, url: "https://moewri.gov.np", covers: [energy and water policy, power trade], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
   supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}

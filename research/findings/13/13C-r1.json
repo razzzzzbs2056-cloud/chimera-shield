@@ -1,0 +1,573 @@
+{
+  "subagent_id": "13C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). All empirical items pending. The single WebSearch located the only Nepal-specific resilience BCR study found so far: Rai et al. (2020), a household-survey cost-benefit analysis of the Lower Karnali flood early-warning system (IJDRR; full text on DPNet); its values are not recorded because they appeared only in search snippets. EWS coverage leads: DHM flood forecasting portal, BIPAD real-time layers, ICIMOD/UNDP PDGL inventory, UNDP CFGORRP GLOF project, World Bank/CIF hydromet project results. Adaptation finance reuses 25D channels (GCF, GEF/LDCF, Adaptation Fund, CIF PPCR, OECD CRS adaptation marker, MoF climate budget code) plus NDC/NAP needs; 25D owns the flow series and 13C reports only the adaptation subset and access-vs-need gap. The reported August 2026 Rasuwagadhi-Kerung flood (unverified) is noted only as a test case for transboundary GLOF warning once verified.",
+  "findings": [
+    {
+      "claim": "Q1a: Flood early-warning coverage — number of real-time hydrometric/rainfall stations, rivers/basins with operational forecasts, and population/households receiving SMS or siren alerts.",
+      "type": "pending",
+      "value": null,
+      "period": "as of latest DHM/NDRRMA reporting date (calendar); project results by World Bank FY",
+      "source_ids": [
+        "dhm",
+        "ndrrma",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: DHM station list and forecast-point list; BIPAD/NDRRMA alert statistics; World Bank/CIF hydromet project results frameworks. Coverage definitions (stations vs forecast points vs population reached) kept separate.",
+      "unit": "count",
+      "lead_ids": [
+        "13C-L05",
+        "13C-L06",
+        "13C-L07",
+        "13C-L17",
+        "13C-L23"
+      ]
+    },
+    {
+      "claim": "Q1b: GLOF early-warning coverage — which potentially dangerous glacial lakes have monitoring/EWS or mitigation works.",
+      "type": "pending",
+      "value": null,
+      "period": "as of latest inventory/project date",
+      "source_ids": [
+        "icimod",
+        "dhm"
+      ],
+      "observation_ids": [],
+      "note": "Required: ICIMOD/UNDP 2020 PDGL list cross-tabulated with DHM/UNDP GLOF EWS installations; transboundary (TAR) lakes monitored or not, linked to 25B BA-06 data-sharing gap.",
+      "unit": "count",
+      "lead_ids": [
+        "13C-L08",
+        "13C-L09",
+        "13C-L10"
+      ]
+    },
+    {
+      "claim": "Q2: Benefit-cost ratios of documented resilience investments in Nepal (community flood EWS, hydromet, GLOF lake lowering, resilient roads, retrofitting).",
+      "type": "pending",
+      "value": null,
+      "period": "study year and price base as stated in each study",
+      "source_ids": [
+        "academic",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: Rai et al. 2020 Karnali EWS CBA (BCR range, discount rate, horizon, scenario definitions) retrieved from journal or DPNet full text; CCDR resilience cost-benefit tables; global benchmarks (GCA 2019; Lifelines 2019) labelled non-Nepal. No values recorded from search snippets.",
+      "unit": "ratio",
+      "lead_ids": [
+        "13C-L01",
+        "13C-L02",
+        "13C-L11",
+        "13C-L12",
+        "13C-L13"
+      ]
+    },
+    {
+      "claim": "Q3: Adaptation finance received (disbursed) versus approved/pledged, by channel, and versus NDC/NAP needs.",
+      "type": "pending",
+      "value": null,
+      "period": "fund approval years (calendar), World Bank FY, Nepal FY for on-budget; stated per channel",
+      "source_ids": [
+        "gcf",
+        "gef",
+        "adaptation_fund",
+        "cif",
+        "oecd",
+        "mof_nepal",
+        "unfccc"
+      ],
+      "observation_ids": [],
+      "note": "Supplied by 25D climate_finance_access (owner); 13C takes the adaptation subset only and adds needs comparison. Required: fund portals approved vs disbursed; OECD CRS adaptation-marked; NAP/NDC needs.",
+      "unit": "USD_current_mn",
+      "lead_ids": [
+        "13C-L14",
+        "13C-L15",
+        "13C-L16",
+        "13C-L17",
+        "13C-L18",
+        "13C-L19",
+        "13C-L20",
+        "13C-L21",
+        "13C-L22"
+      ]
+    },
+    {
+      "claim": "BCRs are study-specific (discount rate, horizon, counted benefit categories, counterfactual) and are not transferable across interventions or averaged; global benchmarks are labelled non-Nepal and used only to bound plausibility.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "13C does not re-estimate climate finance flows; 25D owns the channel-level series and double-counting reconciliation, and 13C reports the adaptation share and access-vs-need comparison only.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Avoided losses in BCR studies are not added to 13A historical losses or 25E damage functions; they are used only to parameterise adaptation-effect multipliers (share of loss avoided) once sources are retrieved.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No values retrieved (all hosts blocked).",
+    "Only one Nepal-specific BCR study located (community flood EWS, Karnali); no Nepal BCR located for hydromet modernisation, GLOF lake lowering, resilient roads or retrofitting.",
+    "No consolidated national statistic on EWS population coverage identified; definition to be fixed on retrieval.",
+    "Transboundary GLOF warning coverage from TAR lakes is undocumented pending 25B BA-06 and verification of the August 2026 event.",
+    "DHM hydrology portal, UNDP CFGORRP, GCA and Lifelines URLs are from general knowledge and unverified.",
+    "Web search budget used (one search)."
+  ],
+  "assumptions": [
+    {
+      "id": "13C-A1",
+      "text": "BCRs are carried with their study metadata and never pooled.",
+      "basis": "assumption"
+    },
+    {
+      "id": "13C-A2",
+      "text": "25D owns climate finance flows; 13C reports the adaptation subset.",
+      "basis": "assumption (coordination)"
+    },
+    {
+      "id": "13C-A3",
+      "text": "Avoided losses parameterise adaptation effects only; no additive loss series.",
+      "basis": "assumption (double-counting rule with 13A/25E)"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "25D",
+      "text": "Please tag each channel row with adaptation vs mitigation vs cross-cutting and approved vs disbursed so 13C can compute the adaptation access ratio without re-deriving flows."
+    },
+    {
+      "to": "25E",
+      "text": "Adaptation-effect parameters (share of hazard loss avoided by EWS) from 13C should enter 25E damage functions as multipliers under explicit adaptation assumptions, not as separate benefit lines."
+    },
+    {
+      "to": "17E",
+      "text": "GLOF early-warning for TAR-origin lakes depends on Nepal-China data sharing; please confirm whether any primary instrument exists (25B found none in r1)."
+    },
+    {
+      "to": "14",
+      "text": "Resilience investments with documented BCR above one are candidate welfare-improving actions but the single Nepal study covers only community flood EWS in one basin; do not generalise its BCR."
+    },
+    {
+      "to": "00A",
+      "text": "Request catalog entries for Practical Action, DPNet, UNDP Nepal and Global Commission on Adaptation, and verification of general-knowledge URLs."
+    }
+  ],
+  "uncertainty": "High. EWS coverage lacks a standard metric; BCRs depend heavily on discount rate, horizon and which benefits are counted (household-survey avoided losses vs modelled); finance flows differ by approved/committed/disbursed basis, Rio-marker attribution and period basis (calendar vs World Bank FY vs Nepal FY).",
+  "specific": {
+    "ews_coverage": {
+      "status": "pending",
+      "metrics": [
+        {
+          "metric": "real-time hydrometric and rainfall stations",
+          "unit": "count",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L05",
+            "13C-L06"
+          ]
+        },
+        {
+          "metric": "rivers/forecast points with operational flood forecast",
+          "unit": "count",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L05",
+            "13C-L06",
+            "13C-L23"
+          ]
+        },
+        {
+          "metric": "population or households reached by alerts",
+          "unit": "persons",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L07",
+            "13C-L23"
+          ]
+        },
+        {
+          "metric": "PDGLs with monitoring/EWS or mitigation (incl. transboundary lakes)",
+          "unit": "count",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L08",
+            "13C-L09",
+            "13C-L10"
+          ]
+        }
+      ],
+      "method": "Separate station, forecast-point and population-reached metrics; basin breakdown; flag transboundary gaps."
+    },
+    "resilience_bcr_evidence": {
+      "status": "pending",
+      "studies": [
+        {
+          "study_id": "BCR-01",
+          "intervention": "community-based flood EWS, Lower Karnali",
+          "geography": "Nepal",
+          "bcr": null,
+          "unit": "ratio",
+          "status": "pending",
+          "method_fields_required": [
+            "discount rate",
+            "horizon",
+            "benefit categories",
+            "scenarios",
+            "survey sample"
+          ],
+          "lead_ids": [
+            "13C-L01",
+            "13C-L02",
+            "13C-L03",
+            "13C-L04"
+          ]
+        },
+        {
+          "study_id": "BCR-02",
+          "intervention": "resilience/adaptation priorities in CCDR",
+          "geography": "Nepal",
+          "bcr": null,
+          "unit": "ratio",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L13"
+          ],
+          "notes": "to confirm whether CCDR reports BCRs"
+        },
+        {
+          "study_id": "BCR-03",
+          "intervention": "EWS and other adaptation classes (global benchmark)",
+          "geography": "global (non-Nepal)",
+          "bcr": null,
+          "unit": "ratio",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L11"
+          ]
+        },
+        {
+          "study_id": "BCR-04",
+          "intervention": "resilient infrastructure (global benchmark)",
+          "geography": "developing countries (non-Nepal)",
+          "bcr": null,
+          "unit": "ratio",
+          "status": "pending",
+          "lead_ids": [
+            "13C-L12"
+          ]
+        }
+      ]
+    },
+    "adaptation_finance_flows": {
+      "status": "pending",
+      "owner_of_flows": "25D (climate_finance_access)",
+      "channels": [
+        {
+          "channel": "GCF (adaptation and cross-cutting)",
+          "approved": null,
+          "disbursed": null,
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "13C-L14"
+          ]
+        },
+        {
+          "channel": "GEF LDCF/SCCF",
+          "approved": null,
+          "disbursed": null,
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "13C-L15"
+          ]
+        },
+        {
+          "channel": "Adaptation Fund",
+          "approved": null,
+          "disbursed": null,
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "13C-L16"
+          ]
+        },
+        {
+          "channel": "CIF PPCR",
+          "approved": null,
+          "disbursed": null,
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "13C-L17"
+          ]
+        },
+        {
+          "channel": "OECD CRS adaptation-marked (all providers)",
+          "approved": null,
+          "disbursed": null,
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "13C-L18",
+            "13C-L19"
+          ]
+        },
+        {
+          "channel": "MoF on-budget climate expenditure",
+          "approved": null,
+          "disbursed": null,
+          "unit": "NPR_current_mn",
+          "lead_ids": [
+            "13C-L22"
+          ]
+        }
+      ],
+      "needs_side": {
+        "items": [
+          "NAP priority programme cost",
+          "NDC conditional adaptation finance need"
+        ],
+        "status": "pending",
+        "lead_ids": [
+          "13C-L20",
+          "13C-L21"
+        ]
+      },
+      "method": "Access ratio = disbursed / approved per channel (same period basis); gap vs needs reported without summing overlapping channels (MDB-channelled fund money counted once)."
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "13C-L01",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S2212420920300868",
+      "title": "Rai et al. (2020) Cost-benefit analysis of flood early warning system in the Karnali River Basin of Nepal, International Journal of Disaster Risk Reduction",
+      "publisher": "Elsevier (peer-reviewed)",
+      "source_id": "academic",
+      "contains": "Household-survey-based CBA of the Lower Karnali flood EWS: benefit-cost ratio range across scenarios, avoided losses per household, willingness to pay; survey design and discount rate",
+      "url_status": "located_by_13_websearch_r1 (search result URL; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L02",
+      "url": "https://www.dpnet.org.np/uploads/files/CBA%20of%20EWS%20in%20Karnali%20Feb%202020%202021-09-12%2010-18-25.pdf",
+      "title": "Cost-benefit analysis of flood early warning system in the Karnali River Basin of Nepal (full text PDF)",
+      "publisher": "Disaster Preparedness Network Nepal (DPNet) repository",
+      "source_id": "academic",
+      "contains": "Full-text copy of the Karnali EWS CBA (for retrieval and hashing if publisher host blocked; verify against journal version)",
+      "url_status": "located_by_13_websearch_r1 (search result URL; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L03",
+      "url": "https://practicalaction.org/knowledge-centre/resources/cost-benefit-analysis-of-flood-early-warning-system-in-the-karnali-river-basin-of-nepal/",
+      "title": "Cost-benefit analysis of flood EWS in the Karnali River Basin (Practical Action resource page)",
+      "publisher": "Practical Action",
+      "source_id": "academic",
+      "contains": "Programme context (community-based EWS implementer) and link to the study",
+      "url_status": "located_by_13_websearch_r1 (search result URL; not fetched)",
+      "lead_type": "secondary_pointer"
+    },
+    {
+      "lead_id": "13C-L04",
+      "url": "https://www.preventionweb.net/publication/cost-benefit-analysis-flood-early-warning-system-karnali-river-basin-nepal",
+      "title": "PreventionWeb record: Cost-benefit analysis of flood EWS in the Karnali River Basin of Nepal",
+      "publisher": "UNDRR PreventionWeb",
+      "source_id": "academic",
+      "contains": "Bibliographic record and link",
+      "url_status": "located_by_13_websearch_r1 (search result URL; not fetched)",
+      "lead_type": "secondary_pointer"
+    },
+    {
+      "lead_id": "13C-L05",
+      "url": "https://www.hydrology.gov.np",
+      "title": "DHM flood forecasting and early warning portal (real-time river and rainfall stations)",
+      "publisher": "Department of Hydrology and Meteorology, Nepal",
+      "source_id": "dhm",
+      "contains": "Station network list (real-time hydrometric/rainfall stations by basin), warning thresholds, SMS alert coverage; basis for EWS coverage by river",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L06",
+      "url": "https://dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal - flood forecasting and early warning",
+      "publisher": "Department of Hydrology and Meteorology, Nepal",
+      "source_id": "dhm",
+      "contains": "Flood forecasting bulletins and station data; which rivers have forecasts",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L07",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal (incl. real-time/early-warning layers)",
+      "publisher": "NDRRMA, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Real-time river watch and alert layers; incident records to assess warning lead times against events",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L08",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and potentially dangerous glacial lakes (2020)",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": "Which PDGLs have monitoring/early warning or risk-reduction works (e.g. lake lowering); GLOF EWS status by lake",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L09",
+      "url": "https://www.undp.org/nepal/projects/community-based-flood-and-glacial-lake-outburst-risk-reduction-project",
+      "title": "UNDP Nepal - Community Based Flood and Glacial Lake Outburst Risk Reduction Project (CFGORRP)",
+      "publisher": "UNDP Nepal",
+      "source_id": "academic",
+      "contains": "GLOF risk reduction and EWS installed (e.g. Imja lake lowering, EWS in Tsho Rolpa/Imja downstream valleys); project documents and terminal evaluation",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L10",
+      "url": "https://www.icimod.org",
+      "title": "ICIMOD regional flood outlook / HKH-HYCOS and community-based flood EWS",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Regional flood outlook and community-based EWS programmes involving Nepal; coverage of transboundary rivers",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L11",
+      "url": "https://gca.org/reports/adapt-now-a-global-call-for-leadership-on-climate-resilience/",
+      "title": "Global Commission on Adaptation (2019) Adapt Now: A Global Call for Leadership on Climate Resilience",
+      "publisher": "Global Commission on Adaptation / WRI",
+      "source_id": "academic",
+      "contains": "Global benefit-cost ratios for adaptation investment classes (EWS, resilient infrastructure, dryland agriculture, mangroves, water); non-Nepal benchmark only",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L12",
+      "url": "https://openknowledge.worldbank.org/handle/10986/31805",
+      "title": "Hallegatte, Rentschler, Rozenberg (2019) Lifelines: The Resilient Infrastructure Opportunity",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Net benefit of investing in resilient infrastructure in developing countries; methods for infrastructure-disruption costs; non-Nepal benchmark",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L13",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099415012072225780",
+      "title": "Nepal - Country Climate and Development Report (2022)",
+      "publisher": "World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "Adaptation investment needs and priority resilience actions; any Nepal-specific BCR estimates (roads, hydromet)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L14",
+      "url": "https://www.greenclimate.fund/countries/nepal",
+      "title": "GCF country page - Nepal",
+      "publisher": "Green Climate Fund",
+      "source_id": "gcf",
+      "contains": "Nepal funded projects (FP ids), GCF finance, approval dates, disbursement to date, readiness grants",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L15",
+      "url": "https://www.thegef.org/projects-operations/database",
+      "title": "GEF Projects database (filter: Nepal)",
+      "publisher": "Global Environment Facility",
+      "source_id": "gef",
+      "contains": "LDCF/SCCF adaptation projects: grant, status, approval and completion",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L16",
+      "url": "https://www.adaptation-fund.org/projects-programmes/",
+      "title": "Adaptation Fund projects and programmes (filter: Nepal)",
+      "publisher": "Adaptation Fund",
+      "source_id": "adaptation_fund",
+      "contains": "Nepal approved projects, amounts approved and transferred",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L17",
+      "url": "https://www.cif.org/country/nepal",
+      "title": "Climate Investment Funds - Nepal (PPCR, SREP)",
+      "publisher": "Climate Investment Funds",
+      "source_id": "cif",
+      "contains": "PPCR adaptation programme endorsed vs disbursed (incl. hydromet building-resilience component)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L18",
+      "url": "https://data-explorer.oecd.org",
+      "title": "OECD CRS - climate-related development finance (Rio markers)",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Adaptation-marked commitments and disbursements to Nepal by provider and year (calendar)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L19",
+      "url": "https://climatefundsupdate.org/data-dashboard/",
+      "title": "Climate Funds Update data dashboard",
+      "publisher": "ODI / Heinrich Boll Stiftung",
+      "source_id": "academic",
+      "contains": "Multilateral climate fund pledged/approved/disbursed by recipient country; cross-check of fund-level data",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L20",
+      "url": "https://unfccc.int/NDCREG",
+      "title": "UNFCCC NDC Registry - Nepal",
+      "publisher": "UNFCCC",
+      "source_id": "unfccc",
+      "contains": "Nepal NDC adaptation finance needs; conditional/unconditional components",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L21",
+      "url": "https://mofe.gov.np",
+      "title": "MoFE Nepal - National Adaptation Plan (2021)",
+      "publisher": "MoFE",
+      "source_id": "mofe_nepal",
+      "contains": "NAP cost of priority adaptation programmes by theme and period (need side for access-vs-need gap)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L22",
+      "url": "https://mof.gov.np",
+      "title": "Ministry of Finance Nepal - Development Cooperation Report; climate budget code",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Donor disbursements by sector/FY; climate-relevant budget tagging (highly/relevant) by Nepal FY",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13C-L23",
+      "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
+      "title": "World Bank projects list - Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Hydromet and DRM projects (e.g. building resilience to climate-related hazards) commitments, disbursements, results indicators on EWS coverage",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    }
+  ]
+}

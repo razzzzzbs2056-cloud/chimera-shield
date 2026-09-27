@@ -1,0 +1,685 @@
+{
+ "subagent_id": "08C",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T00:00:00+00:00",
+ "summary": "Round r1 (restricted network). Research design and 22 source leads on startups and digital government. Q1: startup barrier register designed (entry, foreign capital under FITTA, inbound and outbound foreign payments, startup support, de facto constraints), with de jure rules from primary texts (Law Commission, NRB, DoInd/OCR) and de facto evidence from World Bank Enterprise Surveys/B-READY. Q2: 'fully online' defined as end-to-end transactional; a ten-service inventory and index series (UN EGDI/OSI, World Bank GTMI) are set up, with uptake to come only from administrative counts. Q3: cross-border digital payment constraints mapped by flow (inbound export receipts, outbound digital purchases, international wallets, QR interoperability, India-side RBI rules). Many URLs are home pages from general knowledge (unverified). No values retrieved; all empirical items pending.",
+ "findings": [
+  {
+   "claim": "Barrier register design for Q1: each barrier recorded with (instrument, issuing authority, date, requirement, who it binds, evidence type). Categories: entry (company/industry registration, minimum capital, PAN/VAT), foreign capital (FITTA minimum amount, approval route, repatriation), foreign payments inbound (receiving export proceeds, platform/wallet access) and outbound (paying for cloud, software, ads, SaaS; card limits), and IP/contract enforcement. De jure rules from primary texts; de facto time/cost from Enterprise Surveys/B-READY.",
+   "type": "assumption",
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "'Fully online' definition for Q2: a service is fully online only if application, identity verification, payment and delivery of the output can be completed without an office visit (transactional stage in UN DESA OSI terms). Information-only or downloadable-form services are recorded separately. Uptake = transactions or active users per period from administrative data; index scores (EGDI, GTMI) are not uptake measures.",
+   "type": "assumption",
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Q3 scope: cross-border digital payments include (a) inbound receipts for services exported by firms/freelancers, (b) outbound payments by residents for digital services, (c) consumer cross-border QR/wallet payments. Rules are recorded from NRB FX and payment-system directives and the Foreign Exchange (Regulation) Act; India-side rules (RBI) recorded separately.",
+   "type": "assumption",
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Q1: annual company registrations (total, private companies, foreign-invested) and registered IT/service industries.",
+   "type": "pending",
+   "value": null,
+   "period": "Nepal FY, latest 10 years",
+   "source_ids": [
+    "doind"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L01",
+    "08C-L02"
+   ],
+   "note": "OCR and DoInd statistics; hosts blocked.",
+   "unit": "count"
+  },
+  {
+   "claim": "Q1: minimum foreign investment amount per project and approval route under FITTA and its amendments/notifications, and time to FDI approval.",
+   "type": "pending",
+   "value": null,
+   "period": "As of 2026-09",
+   "source_ids": [
+    "lawcommission_nepal",
+    "unctad_iia"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L04",
+    "08C-L05",
+    "08C-L21"
+   ],
+   "note": "Amounts must come from the gazetted notification, not secondary summaries.",
+   "unit": "NPR_current_mn"
+  },
+  {
+   "claim": "Q1: firm-reported share citing licensing/permits and access to finance as major constraints, and time to register a business (B-READY/Enterprise Surveys).",
+   "type": "pending",
+   "value": null,
+   "period": "Survey year of latest Nepal Enterprise Survey / B-READY round",
+   "source_ids": [
+    "wb_npl"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L14",
+    "08C-L12",
+    "08C-L13"
+   ],
+   "note": "Check whether Nepal is covered in B-READY rounds.",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q1: startup definition, incentives and startup-loan/fund provisions (Industrial Enterprises Act 2076, budget FY2024/25-FY2026/27).",
+   "type": "pending",
+   "value": null,
+   "period": "FY2024/25-FY2026/27",
+   "source_ids": [
+    "doind",
+    "lawcommission_nepal"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L03",
+    "08C-L22"
+   ],
+   "note": "Instrument names to be confirmed from primary texts."
+  },
+  {
+   "claim": "Q2: EGDI, Online Service Index and E-Participation Index for Nepal, all editions, with rank and comparators.",
+   "type": "pending",
+   "value": null,
+   "period": "UN E-Government Survey editions (biennial; 2024 latest located)",
+   "source_ids": [
+    "undesa_egov"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L09",
+    "08C-L10"
+   ],
+   "note": "Methodology changes across editions; compare ranks with caution.",
+   "unit": "index"
+  },
+  {
+   "claim": "Q2: GovTech Maturity Index and sub-indices for Nepal.",
+   "type": "pending",
+   "value": null,
+   "period": "GTMI editions 2020, 2022 (later if available)",
+   "source_ids": [
+    "wb_npl"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L11"
+   ],
+   "note": "Index, not uptake.",
+   "unit": "index"
+  },
+  {
+   "claim": "Q2: inventory of fully online public services (national ID, tax filing/PAN, company registration, passport application, driving licence, land records, customs/ASYCUDA, social security, vital registration) with transactional status and annual transactions/users.",
+   "type": "pending",
+   "value": null,
+   "period": "Nepal FY",
+   "source_ids": [
+    "lawcommission_nepal",
+    "nta_nepal"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L16",
+    "08C-L17",
+    "08C-L18",
+    "08C-L01"
+   ],
+   "note": "Administrative uptake data likely require the ministries' annual progress reports; not located.",
+   "unit": "count"
+  },
+  {
+   "claim": "Q2: adult share making or receiving digital payments and making online purchases (Findex).",
+   "type": "pending",
+   "value": null,
+   "period": "Findex survey years (calendar)",
+   "source_ids": [
+    "wb_wdi"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L15"
+   ],
+   "note": "Demand-side adoption indicator.",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q3: NRB rules on (a) receipt of freelancer/IT export proceeds, (b) outbound card/online payments for digital services and annual per-person/per-firm limits, (c) access to international payment platforms, (d) cross-border QR/wallet interoperability.",
+   "type": "pending",
+   "value": null,
+   "period": "As of 2026-09",
+   "source_ids": [
+    "nrb"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L06",
+    "08C-L07",
+    "08C-L04",
+    "08C-L20"
+   ],
+   "note": "Limits are empirical values and must come from the directive text."
+  },
+  {
+   "claim": "Q3: digital payment volumes and values by instrument and any cross-border component (NRB Payment Systems Oversight Report).",
+   "type": "pending",
+   "value": null,
+   "period": "Nepal FY",
+   "source_ids": [
+    "nrb"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L07"
+   ],
+   "note": "Report URL not located.",
+   "unit": "NPR_current_mn"
+  },
+  {
+   "claim": "Q3: India-side exchange-control rules for payments to Nepal residents for services.",
+   "type": "pending",
+   "value": null,
+   "period": "Current RBI master direction",
+   "source_ids": [
+    "rbi"
+   ],
+   "observation_ids": [],
+   "lead_ids": [
+    "08C-L08"
+   ],
+   "note": "Recorded separately from Nepal-side rules."
+  }
+ ],
+ "data_gaps": [
+  "All values pending: nrb.org.np, ocr.gov.np, doind.gov.np, lawcommission.gov.np, UN DESA and World Bank hosts blocked.",
+  "Exact URLs for NRB FX directives on IT/freelancer receipts and online payment limits not located.",
+  "No administrative uptake data for online public services located.",
+  "Nepal's coverage in B-READY rounds unconfirmed.",
+  "NRB Payment Systems Oversight Report URL not located.",
+  "No catalog id for MoCIT or Nagarik App; filed under lawcommission_nepal/none as placeholders."
+ ],
+ "assumptions": [
+  "De jure rules are recorded only from primary texts; secondary legal summaries are locators.",
+  "Index scores (EGDI, GTMI) are not treated as measures of service uptake.",
+  "Nepal-side and India-side payment rules are recorded separately."
+ ],
+ "challenges": [
+  {
+   "to": "00A",
+   "text": "Add catalog ids for mocit_nepal, ocr_nepal and ird_nepal (Inland Revenue Department) so e-government and registration sources are not filed under placeholders; allocate a network run for 08C-L01, L06, L07, L09."
+  },
+  {
+   "to": "08A",
+   "text": "Internal: payment_constraints feeds 08A recording_gap_notes; keep one register of FX rules to avoid duplicate observations."
+  },
+  {
+   "to": "15",
+   "text": "For audit: any strategy relying on freelancer/IT export growth depends on FX and payment rules that are not yet documented from primary sources; treat such assumptions as UNVERIFIED until 08C-L06 is retrieved."
+  }
+ ],
+ "uncertainty": "High. No values retrieved. Legal rules on FX and payments change by directive and may differ from secondary summaries; e-government index scores reflect methodology choices and do not measure uptake; administrative uptake data may not exist publicly.",
+ "specific": {
+  "startup_barrier_register": {
+   "status": "pending",
+   "barriers": [
+    {
+     "category": "entry",
+     "item": "company registration procedure, time, fees (OCR); industry registration (DoInd)",
+     "instrument_leads": [
+      "08C-L01",
+      "08C-L02",
+      "08C-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "category": "foreign capital",
+     "item": "FITTA minimum foreign investment amount, approval route, repatriation",
+     "instrument_leads": [
+      "08C-L04",
+      "08C-L05",
+      "08C-L21"
+     ],
+     "status": "pending"
+    },
+    {
+     "category": "inbound foreign payments",
+     "item": "receipt of export proceeds by startups/freelancers; platform and wallet access",
+     "instrument_leads": [
+      "08C-L06",
+      "08C-L07"
+     ],
+     "status": "pending"
+    },
+    {
+     "category": "outbound foreign payments",
+     "item": "paying for cloud, SaaS, advertising; card and FX limits",
+     "instrument_leads": [
+      "08C-L06"
+     ],
+     "status": "pending"
+    },
+    {
+     "category": "startup support",
+     "item": "startup definition, loans/funds, tax incentives",
+     "instrument_leads": [
+      "08C-L03",
+      "08C-L22"
+     ],
+     "status": "pending"
+    },
+    {
+     "category": "de facto constraints",
+     "item": "firm-reported obstacles and time/cost (Enterprise Surveys, B-READY)",
+     "instrument_leads": [
+      "08C-L14",
+      "08C-L12"
+     ],
+     "status": "pending"
+    }
+   ],
+   "method": "De jure from primary texts (Law Commission, NRB, gazette); de facto from WB surveys; news only as locator."
+  },
+  "egov_service_inventory": {
+   "status": "pending",
+   "services": [
+    {
+     "service": "national identity card enrolment/verification",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "PAN registration and tax filing (IRD)",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "company registration (OCR)",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "passport application",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "driving licence",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "land records and transfer",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "customs declaration (ASYCUDA/national single window)",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "social security fund contributions",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "vital event registration",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    },
+    {
+     "service": "business/industry registration (DoInd)",
+     "online_stage": "pending",
+     "uptake": "pending",
+     "lead_ids": [
+      "08C-L16",
+      "08C-L17",
+      "08C-L18"
+     ]
+    }
+   ],
+   "indices": [
+    {
+     "index": "UN EGDI/OSI/EPI",
+     "source_ids": [
+      "undesa_egov"
+     ],
+     "lead_ids": [
+      "08C-L09",
+      "08C-L10"
+     ],
+     "status": "pending"
+    },
+    {
+     "index": "World Bank GTMI",
+     "source_ids": [
+      "wb_npl"
+     ],
+     "lead_ids": [
+      "08C-L11"
+     ],
+     "status": "pending"
+    }
+   ],
+   "method": "Classify each service by stage (information, one-way, two-way, transactional/end-to-end) using the 'fully online' definition; uptake only from administrative counts."
+  },
+  "payment_constraints": {
+   "status": "pending",
+   "constraints": [
+    {
+     "flow": "inbound receipts for exported digital services",
+     "instruments": [
+      "Foreign Exchange (Regulation) Act",
+      "NRB FX directives"
+     ],
+     "lead_ids": [
+      "08C-L06",
+      "08C-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "flow": "outbound payments for digital services by residents/firms",
+     "instruments": [
+      "NRB FX directives (card and online payment limits)"
+     ],
+     "lead_ids": [
+      "08C-L06"
+     ],
+     "status": "pending"
+    },
+    {
+     "flow": "international payment platforms/wallets",
+     "instruments": [
+      "Payment and Settlement Act 2075",
+      "NRB PSP/PSO licensing"
+     ],
+     "lead_ids": [
+      "08C-L07",
+      "08C-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "flow": "cross-border QR/wallet interoperability",
+     "instruments": [
+      "NRB payment-system directives; bilateral arrangements"
+     ],
+     "lead_ids": [
+      "08C-L07"
+     ],
+     "status": "pending"
+    },
+    {
+     "flow": "India-side receipts/payments",
+     "instruments": [
+      "RBI exchange-control regulations for Nepal and Bhutan"
+     ],
+     "lead_ids": [
+      "08C-L08"
+     ],
+     "status": "pending"
+    }
+   ],
+   "link_to_08A": "Payment-channel rules determine which freelancer/IT receipts are recorded as BoP ICT services (08A recording_gap_notes)."
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "08C-L01",
+   "url": "https://ocr.gov.np/",
+   "title": "Office of the Company Registrar - company registration statistics and online registration system",
+   "publisher": "Office of the Company Registrar, Nepal",
+   "source_id": "doind",
+   "contains": "Company registrations by year and type (private/public, foreign-invested), online registration process steps and fees; Nepal FY.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L02",
+   "url": "https://doind.gov.np",
+   "title": "Department of Industry - industrial statistics",
+   "publisher": "Department of Industry, Nepal",
+   "source_id": "doind",
+   "contains": "Registered industries by sector (incl. IT/service industries), FDI approvals by sector; Nepal FY.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L03",
+   "url": "https://doind.gov.np/detail/5c6a4832-321c-40b9-8b54-a0f4e94edce0",
+   "title": "The Industrial Enterprises Act, 2076 (2020)",
+   "publisher": "Department of Industry, Nepal",
+   "source_id": "doind",
+   "contains": "Legal definition and incentives for startup enterprises and IT industries; registration requirements.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L04",
+   "url": "https://www.lawcommission.gov.np",
+   "title": "Nepal Law Commission - statutes incl. FITTA 2075, Foreign Exchange (Regulation) Act, Payment and Settlement Act 2075, Companies Act 2063",
+   "publisher": "Nepal Law Commission",
+   "source_id": "lawcommission_nepal",
+   "contains": "Primary statute texts governing company formation, foreign investment thresholds and approvals, FX control on current-account receipts/payments, and payment-system licensing.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L05",
+   "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2075-",
+   "title": "Nepal - FITTA 2019 (Investment Laws Navigator)",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "FITTA text and amendments: minimum foreign investment amount, automatic-route approval, negative list; relevant to foreign VC into startups.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L06",
+   "url": "https://www.nrb.org.np/departments/fxm/",
+   "title": "NRB Foreign Exchange Management Department",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "FX directives: rules for receiving export proceeds (IT services, freelancers), outward payments for software subscriptions/cloud/advertising, card limits for online payments, foreign-currency accounts, PayPal/international wallet access.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L07",
+   "url": "https://www.nrb.org.np/departments/psd/",
+   "title": "NRB Payment Systems Department - licensed PSOs/PSPs, Payment Systems Oversight Report",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "List of licensed payment service providers/operators, oversight report with digital-payment volumes, cross-border payment permissions (e.g. QR interoperability arrangements).",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L08",
+   "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+   "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+   "publisher": "Reserve Bank of India",
+   "source_id": "rbi",
+   "contains": "India-side FX rules for payments to/from Nepal residents, relevant to India-market digital services receipts.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L09",
+   "url": "https://publicadministration.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024",
+   "title": "UN E-Government Survey 2024",
+   "publisher": "UN DESA",
+   "source_id": "undesa_egov",
+   "contains": "EGDI, Online Service Index, Telecommunication Infrastructure Index, Human Capital Index and E-Participation Index for Nepal and comparators; survey year 2024 (data collected in the preceding year).",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L10",
+   "url": "https://publicadministration.un.org/egovkb/en-us/Data-Center",
+   "title": "UN E-Government Knowledgebase - Data Center",
+   "publisher": "UN DESA",
+   "source_id": "undesa_egov",
+   "contains": "Time series of EGDI and sub-indices by country and edition (2003-2024) for Nepal; methodology changes between editions.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L11",
+   "url": "https://www.worldbank.org/en/programs/govtech/gtmi",
+   "title": "World Bank GovTech Maturity Index (GTMI)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "GTMI and sub-indices (core government systems, public service delivery, citizen engagement, GovTech enablers) for Nepal; editions 2020 and 2022 (later editions to be checked).",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L12",
+   "url": "https://www.worldbank.org/en/businessready/reports",
+   "title": "Business Ready (B-READY) reports",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "B-READY topic scores (business entry, international trade, financial services, digital public services components) for Nepal if covered in the 2024 or later rounds.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L13",
+   "url": "https://thedocs.worldbank.org/en/doc/6364c306d685203c859c60a075df5c3a-0540012026/original/B-READY-MH-2026.pdf",
+   "title": "B-READY Methodology Handbook, Third Edition",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Definitions of business-entry and digital-public-service indicators used in B-READY.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L14",
+   "url": "https://www.enterprisesurveys.org/en/data/exploreeconomies",
+   "title": "World Bank Enterprise Surveys - Nepal economy profile",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Firm-reported obstacles (business licensing, access to finance), website use, e-mail use with clients; survey year (fiscal-year fieldwork to be confirmed).",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L15",
+   "url": "https://www.worldbank.org/en/publication/globalfindex",
+   "title": "Global Findex Database (latest edition)",
+   "publisher": "World Bank",
+   "source_id": "wb_wdi",
+   "contains": "Digital payment use by adults (made/received digital payment, online purchase), calendar-year survey; demand-side adoption.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L16",
+   "url": "https://mocit.gov.np/",
+   "title": "Ministry of Communication and Information Technology - Digital Nepal Framework and e-governance programmes",
+   "publisher": "Ministry of Communication and Information Technology, Nepal",
+   "source_id": "lawcommission_nepal",
+   "contains": "Digital Nepal Framework initiatives, e-governance master plan, list of online government services and implementation status.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L17",
+   "url": "https://nitc.gov.np/aboutus/introduction",
+   "title": "National Information Technology Center - Introduction",
+   "publisher": "National Information Technology Center, Nepal",
+   "source_id": null,
+   "contains": "Operator of government data centre and shared e-government platforms; locator for online-service catalogue and national ID/single sign-on integration.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L18",
+   "url": "https://nagarikapp.gov.np/",
+   "title": "Nagarik App (Government of Nepal citizen services app)",
+   "publisher": "Government of Nepal",
+   "source_id": "lawcommission_nepal",
+   "contains": "Catalogue of services available end-to-end online vs information-only; user registrations if published. Uptake statistics may only exist in government progress reports.",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "08C-L19",
+   "url": "https://unctad.org/publication/least-developed-countries-report-2025",
+   "title": "The Least Developed Countries Report 2025",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "LDC constraints on digital-services exports incl. cross-border payments and platform access.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L20",
+   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+   "title": "WTO Trade Policy Review of Nepal 2025 - Secretariat report WT/TPR/S/478",
+   "publisher": "WTO",
+   "source_id": "wto",
+   "contains": "Description of Nepal's FX regime, e-commerce framework (E-Commerce Act status), company registration and services regulation.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L21",
+   "url": "https://investmentpolicy.unctad.org/investment-policy-monitor/150/nepal",
+   "title": "UNCTAD Investment Policy Monitor - Nepal",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "Chronology of investment-policy measures (FDI thresholds, automatic route, one-stop service) affecting startup financing.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  },
+  {
+   "lead_id": "08C-L22",
+   "url": "https://pioneerlaw.com/resource/key-highlights-of-the-fiscal-budget/",
+   "title": "Key Highlights of the fiscal budget 2081/82 (2024/25) for the ICT sector",
+   "publisher": "Pioneer Law Associates",
+   "source_id": "academic",
+   "contains": "Secondary summary of FY2024/25 startup and IT measures (startup fund, freelancer registration, FX limits); locator for Budget Speech and Finance Act 2081.",
+   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+   "evidence_grade": "secondary legal summary - locator only"
+  }
+ ]
+}
