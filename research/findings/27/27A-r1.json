@@ -1,0 +1,1646 @@
+{
+ "subagent_id": "27A",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T00:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; the agent's single WebSearch was spent on 27D). 69 source leads recorded, reused from the shared lead register and upstream findings 04A, 04B, 04C, 17A-17E, 26D, plus 18A/18D/23B/25B leads and three URLs marked 'URL from general knowledge - unverified' (UN Treaty Series, MoFA treaty list, MCC Nepal Compact page). Q1 (which bilateral agreements are in force, with verified text and dates) is set up as a 29-row de-duplicated verified_agreement_register: 15 India rows (trade, transit, rail, unauthorised trade, power 2014, long-term power 2024, transmission 2025, petroleum, fertiliser, Mahakali, Kosi, Gandak, BIPPA, including two unilateral Indian instruments that are flagged and excluded from agreement counts), five other BITs (26D), DTAAs, four China rows (BRI framework, transit protocol, border ports, unilateral LDC zero-tariff), US TIFA and MCC Compact, bilateral labour MoUs and a cross-reference to the 17C trilateral power arrangement. Regional instruments stay with 17D. Every status and date is pending: status can only be set from a retrieved primary text. Two documented conflicts are carried forward without resolution (India-Nepal BIPPA in force vs revoked; long-term power agreement ratification route). No numbers recorded. Nothing here represents any government's position.",
+ "findings": [
+  {
+   "claim": "Q1: Which bilateral agreements between Nepal and its partners are in force, with verified text, signature, entry-into-force and last-revision dates - 29-row consolidated register in specific.verified_agreement_register (India 15 rows incl. 2 unilateral Indian instruments; other BITs 5; DTAAs 1; China 4 incl. 1 unilateral measure; US 2; labour MoUs 1; trilateral cross-reference 1).",
+   "type": "pending",
+   "value": null,
+   "period": "instruments as at retrieval (2026)",
+   "source_ids": [
+    "mofa_nepal",
+    "mea_india",
+    "tepc",
+    "unctad_iia"
+   ],
+   "observation_ids": [],
+   "note": "No primary text retrieved in r1 (data hosts blocked). Required: authenticated texts and entry-into-force records per row; see data_required per row."
+  },
+  {
+   "claim": "Q1a: Count of bilateral agreements verified as in force (OPERATIONAL or IN_FORCE_NOT_EVIDENCED_IN_USE).",
+   "type": "pending",
+   "value": null,
+   "unit": "count",
+   "period": "2026",
+   "source_ids": [
+    "mofa_nepal",
+    "mea_india",
+    "unctad_iia"
+   ],
+   "observation_ids": [],
+   "note": "Computed only from rows with a retrieved primary text; unilateral instruments (AR-08, AR-11, AR-24) and cross-references (AR-29) excluded."
+  },
+  {
+   "claim": "Q1b: India-Nepal BIPPA (AR-15) status is contested across leads (in force with automatic renewal vs revoked by India).",
+   "type": "pending",
+   "value": null,
+   "period": "2011-2026",
+   "source_ids": [
+    "unctad_iia"
+   ],
+   "observation_ids": [],
+   "note": "Keep both readings (26D conflict) until a dated termination notice or official status record is retrieved; escalate to 00B if the retrieved records disagree."
+  },
+  {
+   "claim": "Q1c: Long-term power trade agreement (AR-06) - status cannot be set: no text located, and the Nepal-side ratification route was litigated per a news locator.",
+   "type": "pending",
+   "value": null,
+   "period": "January 2024 onward",
+   "source_ids": [
+    "mofa_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Needs agreement text and the Supreme Court verdict text; JSC minutes and NEA export records as implementing evidence."
+  },
+  {
+   "claim": "Method: a register row's status is set only from a retrieved primary text; joint statements yield at most AGREED_IN_PRINCIPLE_OR_ANNOUNCED; news and academic sources locate documents only.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: unilateral instruments that condition a bilateral relation (Indian cross-border electricity rules, RBI exchange-control rules, China LDC zero-tariff) are recorded but never counted as bilateral agreements.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: dates are recorded in the calendar given by the text (Gregorian or Bikram Sambat) with both shown when the text gives both; no conversion is inferred.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "This register records documented instruments; it does not state or represent the position or intentions of the Government of Nepal or any other government. Any arrangement modelled downstream (27B, 27E) is hypothetical.",
+   "type": "assumption",
+   "source_ids": []
+  }
+ ],
+ "data_gaps": [
+  "Authenticated current texts of the Treaty of Trade and Treaty of Transit with all protocols and letters of exchange (TEPC host blocked in r1).",
+  "Text of the January 2024 long-term power trade agreement and the Supreme Court verdict on its ratification route.",
+  "Dated record of any termination of the India-Nepal BIPPA (termination notice, effective date).",
+  "Nepal-China transit transport agreement and protocol texts; instruments designating northern border ports.",
+  "Official Nepal list of DTAAs and bilateral labour agreements/MoUs with dates (IRD/MoF, DoFE) - no document-level lead.",
+  "MCC Nepal Compact text and status record from mcc.gov (URL from general knowledge).",
+  "Consolidated MoFA treaty list or UNTS registration records for cross-checking entry-into-force dates.",
+  "Texts of transmission-line implementing agreements (October 2025) and G2G fertiliser arrangement."
+ ],
+ "assumptions": [
+  {
+   "id": "27A-A1",
+   "text": "Status classes follow 17B-A1, extended with TERMINATED; set only from primary text plus implementing record.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27A-A2",
+   "text": "Where the same instrument appears in several upstream inventories under different names, the most specific name from the text will replace the working name in r2; consolidated_from preserves the upstream references.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27A-A3",
+   "text": "Rail services agreement is kept as a separate row from the Treaty of Transit (04C merges them) to preserve amendment chronology; both rows cross-reference each other.",
+   "basis": "assumption"
+  },
+  {
+   "id": "27A-A4",
+   "text": "Instruments outside the upstream inventories (US TIFA, MCC Compact, labour MoUs, DTAAs, non-India BITs) are included because they are bilateral economic commitments; their owners (18A, 18D, 23B, 26D) remain primary.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "04C",
+   "text": "The responsibility matrix omits the October 2025 transmission implementing agreements, the G2G fertiliser arrangement, non-India BITs, DTAAs, US TIFA/MCC Compact and bilateral labour MoUs; register rows AR-07, AR-10, AR-16..AR-21, AR-26..AR-28 have no owner mapping - please add or state why excluded."
+  },
+  {
+   "to": "04A",
+   "text": "agreement_inventory lists the rail services agreement as a separate row while 04C merges it into transit; 27A keeps it separate (AR-03). Please align naming and add the water treaties and BIPPA (as already requested by 04C)."
+  },
+  {
+   "to": "26D",
+   "text": "The BIPPA conflict (in force vs revoked) bears directly on 27C investment-structure options and on 27E feasibility; please prioritise retrieval of the dated termination instrument in r2."
+  },
+  {
+   "to": "00A",
+   "text": "Add catalog ids for UN Treaty Series, MCC, DoFE labour agreements and IRD (DTAAs); several 27A leads use null or nearest ids."
+  }
+ ],
+ "uncertainty": "Very high for r1: no primary text retrieved, so no row has a verified status or date. Upstream inventories name instruments partly from general domain knowledge; some rows may merge or split once texts are read (e.g. transit protocol vs letters of exchange; labour MoUs). Two rows carry unresolved source conflicts (AR-06, AR-15). Coverage beyond India/China (DTAAs, labour MoUs) depends on lists not yet located.",
+ "specific": {
+  "verified_agreement_register": {
+   "status": "pending",
+   "question": "Q1 Which bilateral agreements are in force, with verified text and dates?",
+   "method": "One row per instrument, de-duplicated across 04A agreement_inventory, 04C responsibility_matrix, 17A policy_watchlist, 17B connectivity_status, 17C, 17D (bilateral rows only), 17E river_treaty_inventory, 04B project_status_register and 26D bit_inventory. Status classes follow 17B-A1 (OPERATIONAL, IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE, AGREED_IN_PRINCIPLE_OR_ANNOUNCED, PROPOSED, LAPSED_OR_STALLED) plus TERMINATED. A status is set only from a retrieved primary text (Nepal official host preferred; MEA/Indian official host, UNTS or depositary as second copy) and, for OPERATIONAL, an implementing record. News, academic and database records are locators or conflict checks only. Unilateral instruments are listed but flagged and excluded from counts of bilateral agreements. Where copies differ, both are kept and the difference recorded.",
+   "text_authority_order": [
+    "Nepal official host (MoFA, TEPC/NTIP, MoEWRI, Law Commission, InvestNepal, DoFE)",
+    "counterparty official host (MEA, PIB, MOFCOM/State Council, USTR/MCC)",
+    "UN Treaty Series / depositary",
+    "secondary reproductions (FAOLEX, ILM/PCA, CommonLII, ESCAP, TDM)",
+    "database records (UNCTAD IIA, ADB ARIC) - conflict check only",
+    "news and academic - locator only"
+   ],
+   "row_count": 29,
+   "counts_by_status": "pending (no primary text retrieved in r1)",
+   "rows": [
+    {
+     "register_id": "AR-01",
+     "instrument": "Treaty of Trade (Nepal-India) and protocol",
+     "counterparty": "India",
+     "instrument_type": "bilateral treaty",
+     "domain": "goods trade",
+     "consolidated_from": [
+      "04A agreement_inventory[0]",
+      "04C responsibility_matrix[0]",
+      "17A policy_watchlist (trade/transit entry, split)",
+      "17D agreement_status_table (conditioning bilateral row)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L01",
+      "27A-L02"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L05",
+      "27A-L13",
+      "27A-L15",
+      "27A-L07",
+      "27A-L09",
+      "27A-L10",
+      "27A-L16"
+     ],
+     "owner_institution_ref": "04C row 'Treaty of Trade (Nepal-India) and protocol'",
+     "verified": false,
+     "data_required": "Current authenticated text and protocol; date of last renewal/revision; IGSC record of September 2026 review; ARIC record kept only as a conflict check.",
+     "note": "17A records a 2009 revision to verify; September 2026 review reported by news only (IGSC minutes required)."
+    },
+    {
+     "register_id": "AR-02",
+     "instrument": "Treaty of Transit (1999) with protocol, memorandum and letters of exchange",
+     "counterparty": "India",
+     "instrument_type": "bilateral treaty",
+     "domain": "transit",
+     "consolidated_from": [
+      "04A agreement_inventory[1]",
+      "04C responsibility_matrix[1] (merged with rail)",
+      "17A",
+      "17D"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L03",
+      "27A-L02"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L04",
+      "27A-L07",
+      "27A-L09",
+      "27A-L10"
+     ],
+     "owner_institution_ref": "04C row 'Treaty of Transit (1999)...'",
+     "verified": false,
+     "data_required": "Authenticated treaty, protocol and all subsequent letters of exchange with dates; renewal record.",
+     "note": "17A reports a revised protocol welcomed in June 2023 (joint-statement level only); consolidated list of letters of exchange required."
+    },
+    {
+     "register_id": "AR-03",
+     "instrument": "Nepal-India Rail Services Agreement and amendments / letters of exchange on rail connectivity",
+     "counterparty": "India",
+     "instrument_type": "bilateral agreement (implementing)",
+     "domain": "transit (rail)",
+     "consolidated_from": [
+      "04A agreement_inventory[3]",
+      "04C responsibility_matrix[1] (merged)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L02"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L08",
+      "27A-L07"
+     ],
+     "owner_institution_ref": "04C row 'Treaty of Transit ... rail-services agreement' (merged); kept as separate register row here to avoid losing amendment chronology",
+     "verified": false,
+     "data_required": "Rail Services Agreement text and each amendment/letter of exchange with date (PIB release PRID 2189629 locates one).",
+     "note": "De-duplication: 04C merges rail into the transit row; 27A keeps a separate row linked to AR-02 because it has its own amendment chronology."
+    },
+    {
+     "register_id": "AR-04",
+     "instrument": "Revised Agreement of Co-operation to Control Unauthorized Trade",
+     "counterparty": "India",
+     "instrument_type": "bilateral agreement",
+     "domain": "border administration",
+     "consolidated_from": [
+      "04A agreement_inventory[2]",
+      "04C responsibility_matrix[2]"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L06",
+      "27A-L02"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L07"
+     ],
+     "owner_institution_ref": "04C row 'Revised Agreement of Co-operation to Control Unauthorized Trade'",
+     "verified": false,
+     "data_required": "Text with date and duration; third-country goods clause (feeds 04C CM-03)."
+    },
+    {
+     "register_id": "AR-05",
+     "instrument": "Agreement on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
+     "counterparty": "India",
+     "instrument_type": "bilateral agreement",
+     "domain": "power trade",
+     "consolidated_from": [
+      "04A agreement_inventory[4]",
+      "04C responsibility_matrix[3]",
+      "17A"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L17"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L09",
+      "27A-L69"
+     ],
+     "owner_institution_ref": "04C row 'Power Trade Agreement (2014)'",
+     "verified": false,
+     "data_required": "Signature and entry-into-force dates from text; duration/renewal clause; JSC/JWG establishment and meeting record."
+    },
+    {
+     "register_id": "AR-06",
+     "instrument": "Long-term power trade agreement (reported signed January 2024)",
+     "counterparty": "India",
+     "instrument_type": "bilateral agreement (text not located)",
+     "domain": "power trade",
+     "consolidated_from": [
+      "04A agreement_inventory[5]",
+      "04C responsibility_matrix[4]",
+      "17A policy_watchlist"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L18",
+      "27A-L19",
+      "27A-L21",
+      "27A-L20",
+      "27A-L22",
+      "27A-L69"
+     ],
+     "owner_institution_ref": "04C row 'Long-term power trade agreement'",
+     "verified": false,
+     "known_conflict": "Nepal-side ratification route litigated (news locator of Supreme Court full-text verdict); status cannot be set until the agreement text and verdict are retrieved.",
+     "data_required": "Agreement text; Supreme Court verdict text; signed JSC/JWG minutes; NEA export records as implementing evidence."
+    },
+    {
+     "register_id": "AR-07",
+     "instrument": "Cross-border transmission line implementing agreements (reported October 2025)",
+     "counterparty": "India",
+     "instrument_type": "implementing agreement(s) (entity level to verify)",
+     "domain": "power infrastructure",
+     "consolidated_from": [
+      "04A agreement_inventory[7]"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L23",
+      "27A-L69"
+     ],
+     "owner_institution_ref": "not in 04C matrix - challenge to 04C",
+     "verified": false,
+     "data_required": "Agreement texts, parties (government or utility/JV level), dates."
+    },
+    {
+     "register_id": "AR-08",
+     "instrument": "Indian cross-border electricity instruments (MoP Guidelines 2018, CEA DA Procedure 2021, CERC CBTE Regulations 2019, as amended)",
+     "counterparty": "India (unilateral)",
+     "instrument_type": "unilateral instrument conditioning a bilateral relation (not an agreement)",
+     "domain": "power market access",
+     "consolidated_from": [
+      "04A agreement_inventory[6]",
+      "04C responsibility_matrix[5]",
+      "17A power_trade_rules",
+      "17C"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L24",
+      "27A-L25",
+      "27A-L27",
+      "27A-L28"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L26"
+     ],
+     "owner_institution_ref": "04C row 'Indian cross-border electricity instruments'",
+     "verified": false,
+     "data_required": "Consolidated current texts with amendment dates; CEA approvals list.",
+     "note": "Listed for completeness; excluded from any count of bilateral agreements in force."
+    },
+    {
+     "register_id": "AR-09",
+     "instrument": "Petroleum supply arrangement NOC-IOC and pipeline agreements",
+     "counterparty": "India (state-owned enterprise counterparties)",
+     "instrument_type": "SOE commercial / G2G-backed arrangement (to verify)",
+     "domain": "fuel",
+     "consolidated_from": [
+      "04A agreement_inventory[8]",
+      "04C responsibility_matrix[9]",
+      "17A"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L29",
+      "27A-L30",
+      "27A-L31"
+     ],
+     "owner_institution_ref": "04C row 'Petroleum supply arrangement NOC-IOC and pipeline agreements'",
+     "verified": false,
+     "data_required": "Supply agreement text or NOC board record: parties, term, renewal date; pipeline agreements (G2G vs SOE)."
+    },
+    {
+     "register_id": "AR-10",
+     "instrument": "G2G fertiliser supply arrangement",
+     "counterparty": "India",
+     "instrument_type": "G2G supply arrangement (text not located)",
+     "domain": "essential imports",
+     "consolidated_from": [
+      "04A agreement_inventory[9]"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L32"
+     ],
+     "owner_institution_ref": "not in 04C matrix - challenge to 04C",
+     "verified": false,
+     "data_required": "Arrangement text/MoU, parties, term."
+    },
+    {
+     "register_id": "AR-11",
+     "instrument": "RBI exchange-control rules applicable to Nepal (incl. reported December 2025 amendment)",
+     "counterparty": "India (unilateral)",
+     "instrument_type": "unilateral instrument conditioning a bilateral relation",
+     "domain": "currency",
+     "consolidated_from": [
+      "04A agreement_inventory[10]",
+      "04C responsibility_matrix[10]",
+      "17A inr_context"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L33",
+      "27A-L34"
+     ],
+     "locator_or_cross_check_leads": [],
+     "owner_institution_ref": "04C row 'Exchange-control/INR settlement arrangements'",
+     "verified": false,
+     "note": "Not a bilateral agreement; excluded from agreement counts."
+    },
+    {
+     "register_id": "AR-12",
+     "instrument": "Treaty concerning the Integrated Development of the Mahakali River (1996) and Pancheshwar Development Authority",
+     "counterparty": "India",
+     "instrument_type": "bilateral treaty",
+     "domain": "water and hydropower",
+     "consolidated_from": [
+      "04C responsibility_matrix[6]",
+      "17E river_treaty_inventory (Mahakali)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L35",
+      "27A-L36",
+      "27A-L37"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L11",
+      "27A-L12"
+     ],
+     "owner_institution_ref": "04C row 'Mahakali Treaty (1996) and Pancheshwar Development Authority'",
+     "verified": false,
+     "data_required": "Authenticated text; ratification/entry-into-force record; PDA establishment record.",
+     "note": "Three text copies located; compare for textual differences before recording. Territorial questions reported in 17E are outside this register and no position is taken."
+    },
+    {
+     "register_id": "AR-13",
+     "instrument": "Kosi Project agreement (as revised; revised text 1966 per lead title)",
+     "counterparty": "India",
+     "instrument_type": "bilateral agreement",
+     "domain": "water and irrigation",
+     "consolidated_from": [
+      "04C responsibility_matrix[7]",
+      "17E river_treaty_inventory (Kosi)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L38",
+      "27A-L39"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L42",
+      "27A-L11"
+     ],
+     "owner_institution_ref": "04C row 'Kosi agreement (as revised)'",
+     "verified": false,
+     "data_required": "Original and revised texts with dates; lease/duration clauses."
+    },
+    {
+     "register_id": "AR-14",
+     "instrument": "Gandak Irrigation and Power Project agreement (1959 per lead titles, as amended)",
+     "counterparty": "India",
+     "instrument_type": "bilateral agreement",
+     "domain": "water and irrigation",
+     "consolidated_from": [
+      "04C responsibility_matrix[8]",
+      "17E river_treaty_inventory (Gandak)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L40",
+      "27A-L41"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L11"
+     ],
+     "owner_institution_ref": "04C row 'Gandak Irrigation and Power Project agreement'",
+     "verified": false,
+     "data_required": "Text and amendment instrument(s) with dates."
+    },
+    {
+     "register_id": "AR-15",
+     "instrument": "Nepal-India Bilateral Investment Promotion and Protection Agreement (BIPPA, 2011)",
+     "counterparty": "India",
+     "instrument_type": "bilateral investment treaty",
+     "domain": "investment",
+     "consolidated_from": [
+      "04C responsibility_matrix[11]",
+      "26D bit_inventory (India)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L44",
+      "27A-L45",
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L46",
+      "27A-L43"
+     ],
+     "owner_institution_ref": "04C row 'Nepal-India BIPPA (2011)'",
+     "verified": false,
+     "known_conflict": "26D: leads describe both an in-force treaty with automatic renewal and a revocation by India; keep both until dated instruments (termination notice, effective date) are retrieved; escalate to 00B if unresolved.",
+     "data_required": "Entry-into-force date; any termination notice and effective date; sunset clause."
+    },
+    {
+     "register_id": "AR-16",
+     "instrument": "Nepal-France bilateral investment treaty",
+     "counterparty": "France",
+     "instrument_type": "bilateral investment treaty",
+     "domain": "investment",
+     "consolidated_from": [
+      "26D bit_inventory (France)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L43",
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L48",
+      "27A-L49"
+     ],
+     "owner_institution_ref": "not in 04C matrix (26D-owned)",
+     "verified": false,
+     "data_required": "Signature, entry-into-force and any termination dates; text."
+    },
+    {
+     "register_id": "AR-17",
+     "instrument": "Nepal-Germany bilateral investment treaty",
+     "counterparty": "Germany",
+     "instrument_type": "bilateral investment treaty",
+     "domain": "investment",
+     "consolidated_from": [
+      "26D bit_inventory (Germany)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L43",
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L48",
+      "27A-L49"
+     ],
+     "owner_institution_ref": "not in 04C matrix (26D-owned)",
+     "verified": false,
+     "data_required": "Signature, entry-into-force and any termination dates; text."
+    },
+    {
+     "register_id": "AR-18",
+     "instrument": "Nepal-United Kingdom bilateral investment treaty",
+     "counterparty": "United Kingdom",
+     "instrument_type": "bilateral investment treaty",
+     "domain": "investment",
+     "consolidated_from": [
+      "26D bit_inventory (United Kingdom)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L43",
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L48",
+      "27A-L49"
+     ],
+     "owner_institution_ref": "not in 04C matrix (26D-owned)",
+     "verified": false,
+     "data_required": "Signature, entry-into-force and any termination dates; text."
+    },
+    {
+     "register_id": "AR-19",
+     "instrument": "Nepal-Finland bilateral investment treaty",
+     "counterparty": "Finland",
+     "instrument_type": "bilateral investment treaty",
+     "domain": "investment",
+     "consolidated_from": [
+      "26D bit_inventory (Finland)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L43",
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L48",
+      "27A-L49"
+     ],
+     "owner_institution_ref": "not in 04C matrix (26D-owned)",
+     "verified": false,
+     "data_required": "Signature, entry-into-force and any termination dates; text."
+    },
+    {
+     "register_id": "AR-20",
+     "instrument": "Nepal-Mauritius bilateral investment treaty",
+     "counterparty": "Mauritius",
+     "instrument_type": "bilateral investment treaty",
+     "domain": "investment",
+     "consolidated_from": [
+      "26D bit_inventory (Mauritius)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L43",
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L48",
+      "27A-L49"
+     ],
+     "owner_institution_ref": "not in 04C matrix (26D-owned)",
+     "verified": false,
+     "data_required": "Signature, entry-into-force and any termination dates; text.",
+     "note": "26D notes leads suggesting not in force - verify."
+    },
+    {
+     "register_id": "AR-21",
+     "instrument": "Double taxation avoidance agreements (partner list to be established)",
+     "counterparty": "multiple",
+     "instrument_type": "bilateral tax treaties",
+     "domain": "taxation",
+     "consolidated_from": [
+      "26D (InvestNepal lead mentions DTAAs)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L47"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L48",
+      "27A-L49"
+     ],
+     "owner_institution_ref": "not in 04C matrix",
+     "verified": false,
+     "data_required": "Partner list with signature/entry-into-force dates from Nepal-official host (IRD/MoF) - no document-level lead yet."
+    },
+    {
+     "register_id": "AR-22",
+     "instrument": "Framework for Belt and Road Cooperation (December 2024)",
+     "counterparty": "China",
+     "instrument_type": "framework (legal character to verify from text)",
+     "domain": "connectivity and investment",
+     "consolidated_from": [
+      "04B project_status_register.framework",
+      "04C responsibility_matrix[12]",
+      "17B connectivity_status"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L50"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L51"
+     ],
+     "owner_institution_ref": "04C row 'Framework for Belt and Road Cooperation'",
+     "verified": false,
+     "data_required": "Text: legal character, validity/renewal, project list.",
+     "note": "04B notes secondary commentary suggests a non-treaty character (unverified); 27A records the legal character only from the text."
+    },
+    {
+     "register_id": "AR-23",
+     "instrument": "Nepal-China transit transport agreement and protocol",
+     "counterparty": "China",
+     "instrument_type": "bilateral agreement and protocol",
+     "domain": "transit",
+     "consolidated_from": [
+      "04B project_status_register",
+      "04C responsibility_matrix[13]",
+      "17B connectivity_status"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L14",
+      "27A-L11",
+      "27A-L54"
+     ],
+     "owner_institution_ref": "04C row 'Transit transport agreement and protocol (Nepal-China)'",
+     "verified": false,
+     "data_required": "Agreement and protocol texts, dates of signature/entry into force; any cargo moved under them (implementing record)."
+    },
+    {
+     "register_id": "AR-24",
+     "instrument": "China zero-tariff treatment for LDCs",
+     "counterparty": "China (unilateral)",
+     "instrument_type": "unilateral preference (not an agreement)",
+     "domain": "goods trade",
+     "consolidated_from": [
+      "04B",
+      "04C responsibility_matrix[14]"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L52",
+      "27A-L53"
+     ],
+     "locator_or_cross_check_leads": [],
+     "owner_institution_ref": "04C row 'China zero-tariff treatment for LDCs'",
+     "verified": false,
+     "note": "Not a bilateral agreement; recorded because it conditions bilateral trade; eligibility may change with LDC graduation (26C)."
+    },
+    {
+     "register_id": "AR-25",
+     "instrument": "Northern border ports and crossing arrangements",
+     "counterparty": "China",
+     "instrument_type": "bilateral arrangements (instruments to identify)",
+     "domain": "border administration",
+     "consolidated_from": [
+      "04C responsibility_matrix[15]",
+      "17B connectivity_status",
+      "04B"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L11",
+      "27A-L54"
+     ],
+     "owner_institution_ref": "04C row 'Border ports and crossing arrangements'",
+     "verified": false,
+     "data_required": "Instruments designating border ports; operating notices."
+    },
+    {
+     "register_id": "AR-26",
+     "instrument": "US-Nepal Trade and Investment Framework Agreement (TIFA)",
+     "counterparty": "United States",
+     "instrument_type": "framework agreement",
+     "domain": "trade and investment",
+     "consolidated_from": [
+      "18A (outside 27A upstream set)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L55"
+     ],
+     "owner_institution_ref": "not in 04C matrix",
+     "verified": false,
+     "data_required": "TIFA text and signature date; council meeting records."
+    },
+    {
+     "register_id": "AR-27",
+     "instrument": "Millennium Challenge Corporation Nepal Compact",
+     "counterparty": "United States (MCC)",
+     "instrument_type": "development compact",
+     "domain": "infrastructure financing",
+     "consolidated_from": [
+      "18A (outside 27A upstream set)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L59"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L56",
+      "27A-L57",
+      "27A-L58"
+     ],
+     "owner_institution_ref": "not in 04C matrix",
+     "verified": false,
+     "data_required": "Compact text, entry-into-force and end dates; any amendment; parliamentary ratification record."
+    },
+    {
+     "register_id": "AR-28",
+     "instrument": "Bilateral labour agreements/MoUs (e.g. Korea EPS MoU, Japan SSW memorandum of cooperation, Gulf and Malaysia agreements)",
+     "counterparty": "multiple destination countries",
+     "instrument_type": "bilateral labour MoUs/agreements",
+     "domain": "labour migration",
+     "consolidated_from": [
+      "18D/23B (outside 27A upstream set)"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [
+      "27A-L60"
+     ],
+     "locator_or_cross_check_leads": [
+      "27A-L61",
+      "27A-L62",
+      "27A-L63"
+     ],
+     "owner_institution_ref": "not in 04C matrix",
+     "verified": false,
+     "data_required": "Official list of labour agreements/MoUs with partner, signature date, validity and renewal.",
+     "note": "One row per instrument to be created in r2 once the DoFE list is retrieved."
+    },
+    {
+     "register_id": "AR-29",
+     "instrument": "Nepal-India-Bangladesh power sale arrangement",
+     "counterparty": "India and Bangladesh",
+     "instrument_type": "trilateral commercial arrangement (cross-reference)",
+     "domain": "power trade",
+     "consolidated_from": [
+      "17C trilateral_power_status"
+     ],
+     "status_class": "pending",
+     "status_basis": "Status can only be set from a retrieved primary text (plus an implementing record for OPERATIONAL); pending.",
+     "signature_date": "pending",
+     "entry_into_force": "pending",
+     "duration_and_renewal": "pending",
+     "last_revision": "pending",
+     "ratification_route_nepal": "pending (Treaty Act / constitutional category; see 04C responsibility_matrix)",
+     "implementing_record": "pending",
+     "primary_text_leads": [],
+     "locator_or_cross_check_leads": [
+      "27A-L68",
+      "27A-L69"
+     ],
+     "owner_institution_ref": "17C owns; cross-reference only",
+     "verified": false,
+     "note": "Trilateral, not bilateral; owned by 17C and listed here only to avoid double counting."
+    }
+   ],
+   "cross_references": {
+    "regional_instruments_excluded": "SAFTA, SAPTA, SATIS, SAARC energy framework, SAARC Food Bank, SDF, BIMSTEC and BBIN instruments are owned by 17D agreement_status_table and are not duplicated here.",
+    "water_data_sharing": "Flood-data sharing arrangements owned by 17E data_sharing_status."
+   },
+   "hypothetical_label": "All arrangements discussed are hypothetical research constructs; this work does not state or represent the actual position or private intentions of any government."
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "27A-L01",
+   "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
+   "title": "Treaty of Trade between the Government of Nepal and the Government of India",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Text of Treaty of Trade and protocol: signature, entry-into-force, duration/renewal clause, rules of origin, safeguard and review clauses",
+   "reused_from": "04A-L05; 17A; 17D-L06"
+  },
+  {
+   "lead_id": "27A-L02",
+   "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+   "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India (compilation)",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Compiled texts incl. transit protocol, memorandum, letters of exchange, rail-services agreement, unauthorised-trade agreement; dates of each instrument",
+   "reused_from": "04A-L07; 17C-L08; 04C"
+  },
+  {
+   "lead_id": "27A-L03",
+   "url": "https://tepc.gov.np/pages/treaty-of-transit-1999-india",
+   "title": "Treaty of Transit, 1999 - India",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Treaty of Transit text page: signature, duration and renewal clause, transit routes/points annex reference",
+   "reused_from": "04A-L06; 17D-L05"
+  },
+  {
+   "lead_id": "27A-L04",
+   "url": "https://tadb.unescap.org/NPL/bilat_IND_NPL_1999_eng.pdf",
+   "title": "Treaty of Transit between HMG Nepal and the Government of India (1999) - ESCAP treaty database copy",
+   "publisher": "UN ESCAP (copy)",
+   "source_id": null,
+   "contains": "Secondary-host copy of the 1999 transit treaty for cross-checking the TEPC text (host blocked in r1)",
+   "reused_from": "04A-L08"
+  },
+  {
+   "lead_id": "27A-L05",
+   "url": "https://aric.adb.org/fta/indo-nepal-treaty-of-trade",
+   "title": "Indo-Nepal Treaty of Trade (ARIC FTA database record)",
+   "publisher": "ADB Asia Regional Integration Center",
+   "source_id": "adb_nepal",
+   "contains": "Database record: signature/effective dates and status as recorded by ADB (secondary record; conflict check only)",
+   "reused_from": "04A-L09"
+  },
+  {
+   "lead_id": "27A-L06",
+   "url": "https://www.commerce.gov.in/wp-content/uploads/2020/02/Unauthorized_Trade_Nepal.pdf",
+   "title": "Revised Agreement of Co-operation between Government of India and Government of Nepal to Control Unauthorized Trade",
+   "publisher": "Department of Commerce, Government of India",
+   "source_id": "mea_india",
+   "contains": "Agreement text: date, duration, third-country goods and enforcement clauses",
+   "reused_from": "04A-L10"
+  },
+  {
+   "lead_id": "27A-L07",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2092280",
+   "title": "India-Nepal Inter-Governmental Committee meeting on trade, transit and cooperation to combat unauthorised trade concludes",
+   "publisher": "Press Information Bureau, Government of India",
+   "source_id": null,
+   "contains": "Official release on IGC meeting: instruments discussed, any agreed amendments (dated)",
+   "reused_from": "04A-L15; 17A"
+  },
+  {
+   "lead_id": "27A-L08",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2189629",
+   "title": "India, Nepal Ink Deal to Boost Rail Trade Connectivity",
+   "publisher": "Press Information Bureau, Government of India",
+   "source_id": null,
+   "contains": "Official release on rail-connectivity amendment/letter of exchange: date and instrument name",
+   "reused_from": "04A-L16"
+  },
+  {
+   "lead_id": "27A-L09",
+   "url": "https://www.mea.gov.in/bilateral-documents?dtl%2F27407%2FIndiaNepal_Joint_Statement_during_the_State_visit_of_Prime_Minister_of_Nepal_to_India",
+   "title": "India-Nepal Joint Statement during the State visit of Prime Minister of Nepal to India",
+   "publisher": "Ministry of External Affairs, India",
+   "source_id": "mea_india",
+   "contains": "Joint statement listing agreements/MoUs exchanged and instruments welcomed (June 2023 visit per upstream); announcement record only",
+   "reused_from": "04A-L13; 17A"
+  },
+  {
+   "lead_id": "27A-L10",
+   "url": "https://mofa.gov.np/content/112/joint-press-meet-between-the-prime-ministers/",
+   "title": "Joint Press Meet between the Prime Ministers of Nepal and India - Statement by the Prime Minister of Nepal",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Nepal-side statement naming instruments concluded during the visit; announcement record only",
+   "reused_from": "04A-L14; 17E-L03"
+  },
+  {
+   "lead_id": "27A-L11",
+   "url": "https://mofa.gov.np",
+   "title": "Ministry of Foreign Affairs, Nepal - treaty and joint-statement archive",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Archive of bilateral treaties, MoUs and joint statements (India, China, others); landing page",
+   "reused_from": "04C-L01; 17B-L01; 17E-L01"
+  },
+  {
+   "lead_id": "27A-L12",
+   "url": "https://www.mea.gov.in",
+   "title": "Ministry of External Affairs, India - bilateral documents (Nepal)",
+   "publisher": "Ministry of External Affairs, India",
+   "source_id": "mea_india",
+   "contains": "Bilateral documents database filtered for Nepal; landing page",
+   "reused_from": "17E-L02"
+  },
+  {
+   "lead_id": "27A-L13",
+   "url": "https://nepaltradeportal.gov.np/",
+   "title": "Nepal Trade Information Portal - trade agreements register",
+   "publisher": "Trade and Export Promotion Centre / MoICS, Nepal",
+   "source_id": "tepc",
+   "contains": "Register of Nepal's trade agreements with texts and status as recorded by Nepal",
+   "reused_from": "04A-L04; 17D-L04"
+  },
+  {
+   "lead_id": "27A-L14",
+   "url": "https://nepaltradeportal.gov.np/trade-agreement?p_p_id=utilportlet_WAR_tepc&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_utilportlet_WAR_tepc_param=getDetail&id=306",
+   "title": "Trade Agreement detail page (NTIP, id=306)",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Single agreement record (identity to be confirmed on retrieval; upstream 17B associates it with China transit arrangements)",
+   "reused_from": "17B-L06"
+  },
+  {
+   "lead_id": "27A-L15",
+   "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+   "title": "Commerce Wing Brief",
+   "publisher": "Embassy of India, Kathmandu",
+   "source_id": "mea_india",
+   "contains": "Indian-side list of economic agreements with Nepal (secondary official summary)",
+   "reused_from": "04A-L11"
+  },
+  {
+   "lead_id": "27A-L16",
+   "url": "https://kathmandupost.com/money/2026/09/23/nepal-india-agree-to-review-treaty-amid-widening-trade-deficit",
+   "title": "Nepal, India agree to review treaty amid widening trade deficit",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "News locator for September 2026 treaty review; points to IGSC minutes to retrieve",
+   "reused_from": "04A-L17",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L17",
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+   "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity",
+   "publisher": "Government of Nepal (official CDN)",
+   "source_id": "mofa_nepal",
+   "contains": "Full text of 2014 Power Trade Agreement: signature date, entry into force, duration, JSC/JWG clause",
+   "reused_from": "04A-L24; 04C"
+  },
+  {
+   "lead_id": "27A-L18",
+   "url": "https://kathmandupost.com/national/2024/01/04/nepal-india-ink-10-year-10-000mw-power-trade",
+   "title": "Nepal signs deal with India to export power (long-term power trade agreement)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "News locator of January 2024 signing; agreement text not public in r1",
+   "reused_from": "04A-L29; 17A",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L19",
+   "url": "https://www.sasec.asia/index.php?page=news&nid=1565&url=ind-nep-sign-long-term-energy-deal",
+   "title": "India, Nepal Sign Long-term Power Trade Deal",
+   "publisher": "SASEC (ADB-supported programme)",
+   "source_id": "adb_nepal",
+   "contains": "Secondary programme news on the long-term power trade agreement",
+   "reused_from": "04A-L30",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L20",
+   "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export-to-india/",
+   "title": "Full text of SC verdict released on long-term power trade agreement",
+   "publisher": "Nepal News",
+   "source_id": null,
+   "contains": "News locator for Supreme Court full-text verdict on ratification route; verdict must be retrieved from Supreme Court host",
+   "reused_from": "22B; 04C",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L21",
+   "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/01/ISAS-Brief-1091_new.pdf",
+   "title": "Long-term Power Purchase Agreement: A Win-win Deal for Nepal and India (ISAS Brief)",
+   "publisher": "Institute of South Asian Studies, NUS",
+   "source_id": "academic",
+   "contains": "Academic commentary describing the agreement; ex-ante, not a primary text",
+   "reused_from": "17A; 04C",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L22",
+   "url": "https://thehimalayantimes.com/business/joint-steering-committee-meeting-advances-nepalindia-energy-cooperation",
+   "title": "Joint Steering Committee meeting advances Nepal-India energy cooperation",
+   "publisher": "The Himalayan Times",
+   "source_id": null,
+   "contains": "News locator of JSC meeting; minutes must be retrieved from MoEWRI/MoP",
+   "reused_from": "04A-L48",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L23",
+   "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
+   "title": "Nepal, India sign deal to build cross-border transmission lines",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "News locator of October 2025 transmission implementing agreements",
+   "reused_from": "04A-L31",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L24",
+   "url": "https://powermin.gov.in/sites/default/files/uploads/Guidelines_for_ImportExport_Cross%20Border_of_Electricity_2018.pdf",
+   "title": "Guidelines for Import/Export (Cross Border) of Electricity 2018",
+   "publisher": "Ministry of Power, India",
+   "source_id": null,
+   "contains": "Unilateral Indian instrument conditioning Nepal-India power trade: eligibility and approval clauses",
+   "reused_from": "04A-L26; 17A"
+  },
+  {
+   "lead_id": "27A-L25",
+   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+   "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Approval procedure text and date",
+   "reused_from": "04A-L27; 17C-L02"
+  },
+  {
+   "lead_id": "27A-L26",
+   "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+   "title": "Import/Export (Cross Border) of Electricity - CEA page",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Index of amendments and approvals list",
+   "reused_from": "04A-L25; 17C-L01"
+  },
+  {
+   "lead_id": "27A-L27",
+   "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+   "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "source_id": null,
+   "contains": "Regulation text and notification date",
+   "reused_from": "04A-L28; 17C-L03"
+  },
+  {
+   "lead_id": "27A-L28",
+   "url": "http://www.cercind.gov.in/regulations/COnsolidatedCBTE_Second_amendment.pdf",
+   "title": "CERC CBTE Regulations 2019 consolidated incl. First and Second Amendments",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "source_id": null,
+   "contains": "Consolidated regulation text with amendment dates",
+   "reused_from": "17A; 04C"
+  },
+  {
+   "lead_id": "27A-L29",
+   "url": "https://iocl.com/NewsDetails/49412",
+   "title": "IndianOil news release - IOCL-NOC agreement on petroleum infrastructure in Nepal",
+   "publisher": "Indian Oil Corporation",
+   "source_id": null,
+   "contains": "SOE-level agreement announcement (not a G2G treaty); date and parties",
+   "reused_from": "04A-L21"
+  },
+  {
+   "lead_id": "27A-L30",
+   "url": "https://www.indembkathmandu.gov.in/media-detail/298",
+   "title": "Embassy of India Kathmandu - media release (petroleum cooperation, to verify)",
+   "publisher": "Embassy of India, Kathmandu",
+   "source_id": "mea_india",
+   "contains": "Official release on petroleum pipeline/supply cooperation; content to verify",
+   "reused_from": "04A-L22"
+  },
+  {
+   "lead_id": "27A-L31",
+   "url": "https://noc.org.np/publication",
+   "title": "NOC Publications",
+   "publisher": "Nepal Oil Corporation",
+   "source_id": "noc_nepal",
+   "contains": "NOC reports that may reference supply-agreement term and renewals",
+   "reused_from": "04A-L20"
+  },
+  {
+   "lead_id": "27A-L32",
+   "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+   "title": "Nepal signs deal with India to procure chemical fertiliser",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "News locator for G2G fertiliser supply arrangement (2022); text required",
+   "reused_from": "04A-L49",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L33",
+   "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+   "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+   "publisher": "Reserve Bank of India",
+   "source_id": "rbi",
+   "contains": "Unilateral Indian exchange-control rules applicable to Nepal; version date",
+   "reused_from": "04A-L36"
+  },
+  {
+   "lead_id": "27A-L34",
+   "url": "https://m.rbi.org.in/Scripts/BS_FemaNotifications.aspx?Id=2558",
+   "title": "FEMA notification (RBI) - currency export/import rules relating to Nepal and Bhutan (to verify)",
+   "publisher": "Reserve Bank of India",
+   "source_id": "rbi",
+   "contains": "Notification text and date (reported December 2025 amendment, to verify)",
+   "reused_from": "04A-L37"
+  },
+  {
+   "lead_id": "27A-L35",
+   "url": "https://www.jalshakti-dowr.gov.in/static/uploads/2024/02/MAHAKALI_TREATY_19961.pdf",
+   "title": "Treaty concerning the Integrated Development of the Mahakali River (1996)",
+   "publisher": "Department of Water Resources, Ministry of Jal Shakti, India",
+   "source_id": "mofa_nepal",
+   "contains": "Treaty text: signature, entry-into-force/ratification clause, duration, Mahakali River Commission and Pancheshwar provisions",
+   "reused_from": "25B; 04C"
+  },
+  {
+   "lead_id": "27A-L36",
+   "url": "https://docs.pca-cpa.org/2016/01/Treaty-Between-His-Majesty%E2%80%99s-Government-of-Nepal-and-the-Government-of-India-Feb.-12-1996-36-I.L.M.-531..pdf",
+   "title": "Treaty between HMG Nepal and GoI (Mahakali), 36 I.L.M. 531",
+   "publisher": "Permanent Court of Arbitration document host (ILM reproduction)",
+   "source_id": "mofa_nepal",
+   "contains": "Second copy of the Mahakali treaty text for cross-check",
+   "reused_from": "25B"
+  },
+  {
+   "lead_id": "27A-L37",
+   "url": "https://faolex.fao.org/docs/pdf/bi-17432.pdf",
+   "title": "Mahakali Treaty text (FAOLEX)",
+   "publisher": "FAO FAOLEX",
+   "source_id": "mofa_nepal",
+   "contains": "Third copy for text cross-check",
+   "reused_from": "25B"
+  },
+  {
+   "lead_id": "27A-L38",
+   "url": "https://faolex.fao.org/docs/pdf/bi203689.pdf",
+   "title": "Revised Agreement between HMG Nepal and the Government of India on the Kosi Project (1966)",
+   "publisher": "FAO FAOLEX",
+   "source_id": "mofa_nepal",
+   "contains": "Revised Kosi agreement text: date, lease and duration clauses",
+   "reused_from": "25B; 04C"
+  },
+  {
+   "lead_id": "27A-L39",
+   "url": "http://www.cawater-info.net/bk/water_law/pdf/nepal-india-1966.pdf",
+   "title": "Amended Kosi agreement 1966 (text)",
+   "publisher": "CAWater-Info (copy)",
+   "source_id": "mofa_nepal",
+   "contains": "Second copy of amended Kosi agreement",
+   "reused_from": "25B"
+  },
+  {
+   "lead_id": "27A-L40",
+   "url": "https://moewri.gov.np/content/65/agreement-nepal-india-on-the-gandak-irrigation-and-power-project-1959/",
+   "title": "Agreement (Nepal-India) on the Gandak Irrigation and Power Project, 1959",
+   "publisher": "Ministry of Energy, Water Resources and Irrigation, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Nepal-official Gandak agreement text; amendment record",
+   "reused_from": "25B; 04C"
+  },
+  {
+   "lead_id": "27A-L41",
+   "url": "https://www.commonlii.org/in/other/treaties/INTSer/1959/18.html",
+   "title": "Agreement between HMG Nepal and GoI on the Gandak Irrigation and Power Project [1959] INTSer 18",
+   "publisher": "CommonLII (Indian Treaty Series)",
+   "source_id": "mofa_nepal",
+   "contains": "Indian Treaty Series reproduction for cross-check",
+   "reused_from": "25B; 04C"
+  },
+  {
+   "lead_id": "27A-L42",
+   "url": "https://isetnepal.org.np/issue-brief-status-and-implementation-of-transboundary-river-agreements-on-the-kosi-river-in-nepal/",
+   "title": "Status and Implementation of Transboundary River Agreements on the Kosi River in Nepal (issue brief)",
+   "publisher": "ISET-Nepal",
+   "source_id": "academic",
+   "contains": "Implementation review (secondary; status context only)",
+   "reused_from": "25B; 04C",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L43",
+   "url": "https://investmentpolicy.unctad.org/international-investment-agreements/countries/147/nepal",
+   "title": "IIA Navigator - Nepal",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "List of Nepal BITs with signature/entry-into-force/termination status and text links",
+   "reused_from": "26D-D01"
+  },
+  {
+   "lead_id": "27A-L44",
+   "url": "https://investmentpolicy.unctad.org/international-investment-agreements/treaties/bit/1939/india---nepal-bit-2011-",
+   "title": "India - Nepal BIT (2011)",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "Status record and text of India-Nepal BIPPA",
+   "reused_from": "26D-D02"
+  },
+  {
+   "lead_id": "27A-L45",
+   "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542",
+   "title": "Nepal-India BIPPA (in Nepali), October 2011",
+   "publisher": "TDM Journal",
+   "source_id": null,
+   "contains": "Treaty text (Nepali) incl. entry-into-force and termination clauses",
+   "reused_from": "26D-D10"
+  },
+  {
+   "lead_id": "27A-L46",
+   "url": "https://myrepublica.nagariknetwork.com/news/sc-quashes-writ-challenging-bippa",
+   "title": "SC quashes writ challenging BIPPA",
+   "publisher": "Republica",
+   "source_id": null,
+   "contains": "Secondary report of Supreme Court case and reported Indian revocation (chronology locator)",
+   "reused_from": "26D-D11",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L47",
+   "url": "https://www.investnepal.gov.np/portal/index.php?p1=downloadlist&p2=8",
+   "title": "InvestNepal - Treaties and Agreements downloads",
+   "publisher": "Investment Board Nepal / InvestNepal portal",
+   "source_id": null,
+   "contains": "Nepal-official copies of BIPPAs and DTAAs",
+   "reused_from": "26D-D06; 04B-L24"
+  },
+  {
+   "lead_id": "27A-L48",
+   "url": "https://doind.gov.np/uploads/notices/Notices-20230118130540685.pdf",
+   "title": "Department of Industry notice (2023)",
+   "publisher": "Department of Industry, Nepal",
+   "source_id": "doind",
+   "contains": "Possible Nepal-official list of BIPPAs/DTAAs; content to verify",
+   "reused_from": "26D-D07"
+  },
+  {
+   "lead_id": "27A-L49",
+   "url": "https://www.state.gov/reports/2024-investment-climate-statements/nepal",
+   "title": "2024 Investment Climate Statements: Nepal",
+   "publisher": "US Department of State",
+   "source_id": null,
+   "contains": "Foreign-government (tier 4) list of Nepal's BITs/DTAAs for cross-check",
+   "reused_from": "26D-D08"
+  },
+  {
+   "lead_id": "27A-L50",
+   "url": "https://mofa.gov.np/content/641/framework-for-belt-and-road-cooperation-between/",
+   "title": "Framework for Belt and Road Cooperation between the Government of Nepal and the Government of the People's Republic of China",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Framework text (December 2024 per page title): legal character, validity/renewal, project annex",
+   "reused_from": "04B-L01"
+  },
+  {
+   "lead_id": "27A-L51",
+   "url": "https://english.www.gov.cn/news/202412/06/content_WS67524b7fc6d0868f4e8edb5b.html",
+   "title": "China, Nepal sign framework agreement to promote Belt and Road cooperation",
+   "publisher": "State Council of the PRC (English portal)",
+   "source_id": "mofcom",
+   "contains": "China-side official release on signing (announcement record)",
+   "reused_from": "04B-L04"
+  },
+  {
+   "lead_id": "27A-L52",
+   "url": "https://english.www.gov.cn/news/202409/12/content_WS66e2db52c6d0868f4e8eae7b.html",
+   "title": "China announces zero-tariff treatment for least developed countries",
+   "publisher": "State Council of the PRC (English portal)",
+   "source_id": "mofcom",
+   "contains": "Unilateral Chinese LDC zero-tariff measure (not a bilateral agreement); effective date",
+   "reused_from": "04B-L15"
+  },
+  {
+   "lead_id": "27A-L53",
+   "url": "https://wto.mofcom.gov.cn/meetingsandstatements/art/2025/art_187fc8210edf49fb9cddf9dab06a6fce.html",
+   "title": "China expands zero-tariff policy for least developed countries",
+   "publisher": "MOFCOM WTO affairs portal",
+   "source_id": "mofcom",
+   "contains": "Later expansion of unilateral measure; date",
+   "reused_from": "04B-L16"
+  },
+  {
+   "lead_id": "27A-L54",
+   "url": "https://customs.gov.np",
+   "title": "Department of Customs, Nepal",
+   "publisher": "Department of Customs, Nepal",
+   "source_id": "customs_nepal",
+   "contains": "Operating notices of northern border customs points (implementation record for border-port arrangements)",
+   "reused_from": "17B-L03"
+  },
+  {
+   "lead_id": "27A-L55",
+   "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2023/may/joint-statement-6th-us-nepal-trade-and-investment-framework-agreement-council-meeting",
+   "title": "Joint Statement on the 6th U.S.-Nepal TIFA Council Meeting (May 2023)",
+   "publisher": "Office of the US Trade Representative",
+   "source_id": "ustr",
+   "contains": "Implementation record of US-Nepal TIFA (council meeting); TIFA text/date to locate",
+   "reused_from": "18A"
+  },
+  {
+   "lead_id": "27A-L56",
+   "url": "https://www.state.gov/policy-issues/millennium-challenge-corporation/",
+   "title": "Millennium Challenge Corporation - U.S. Department of State",
+   "publisher": "US Department of State",
+   "source_id": null,
+   "contains": "Landing page; MCC Nepal Compact text, entry-into-force and compact-end dates to locate on mcc.gov",
+   "reused_from": "18A"
+  },
+  {
+   "lead_id": "27A-L57",
+   "url": "https://np.usembassy.gov/wp-content/uploads/sites/27/2025/11/251127_GPN-9.3.pdf",
+   "title": "Millennium Challenge Account Nepal (MCA-Nepal) General Procurement Notice (Nov 2025)",
+   "publisher": "US Embassy Nepal host (MCA-Nepal notice)",
+   "source_id": null,
+   "contains": "Implementation record showing compact activity (procurement) in November 2025",
+   "reused_from": "18A; 05A"
+  },
+  {
+   "lead_id": "27A-L58",
+   "url": "https://kathmandupost.com/national/2025/07/26/us-pulls-mcc-nepal-compact-back-from-the-brink",
+   "title": "US pulls MCC Nepal Compact back from the brink (26 Jul 2025)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "News locator on compact review in 2025",
+   "reused_from": "18A",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L59",
+   "url": "https://www.mcc.gov/where-we-work/program/nepal-compact/",
+   "title": "MCC Nepal Compact programme page",
+   "publisher": "Millennium Challenge Corporation",
+   "source_id": null,
+   "contains": "Compact text, signing and entry-into-force dates, compact status [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27A-L60",
+   "url": "https://migrationnetwork.un.org/policy-repository/memorandum-cooperation-between-ministry-justice-ministry-foreign-affairs-0",
+   "title": "UN Network on Migration policy repository: Japan-Nepal SSW Memorandum of Cooperation",
+   "publisher": "UN Network on Migration",
+   "source_id": "iom",
+   "contains": "Text/record of Japan-Nepal Specified Skilled Worker memorandum of cooperation",
+   "reused_from": "18D; 23B"
+  },
+  {
+   "lead_id": "27A-L61",
+   "url": "https://epsnepal.gov.np/page/about-us",
+   "title": "EPS Korea Section - About us",
+   "publisher": "Department of Foreign Employment, Nepal",
+   "source_id": "dofe",
+   "contains": "Description of Nepal-Korea Employment Permit System MoU and its renewal",
+   "reused_from": "18D"
+  },
+  {
+   "lead_id": "27A-L62",
+   "url": "https://archive.ceslam.org/governance/bilateral-arrangements",
+   "title": "Bilateral Arrangements (labour migration)",
+   "publisher": "CESLAM (academic)",
+   "source_id": "academic",
+   "contains": "Academic compilation of Nepal's bilateral labour agreements/MoUs; locator for primary texts",
+   "reused_from": "18D",
+   "evidence_role": "locator only (news/secondary); cannot set status or values"
+  },
+  {
+   "lead_id": "27A-L63",
+   "url": "https://dofe.gov.np",
+   "title": "Department of Foreign Employment, Nepal",
+   "publisher": "Department of Foreign Employment, Nepal",
+   "source_id": "dofe",
+   "contains": "Official copies of labour agreements/MoUs with destination countries",
+   "reused_from": "18D"
+  },
+  {
+   "lead_id": "27A-L64",
+   "url": "https://lawcommission.gov.np",
+   "title": "Nepal Law Commission - Nepal Treaty Act, 2047 (1990)",
+   "publisher": "Nepal Law Commission",
+   "source_id": "lawcommission_nepal",
+   "contains": "Treaty Act: categories requiring parliamentary ratification; defines when an agreement is in force for Nepal",
+   "reused_from": "04C"
+  },
+  {
+   "lead_id": "27A-L65",
+   "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-and-parliamentary",
+   "title": "Constitution of Nepal 2015 (official English translation by MoLJPA)",
+   "publisher": "ConstitutionNet (hosting MoLJPA translation)",
+   "source_id": null,
+   "contains": "Treaty ratification article (categories requiring two-thirds / simple majority ratification)",
+   "reused_from": "11A; 04C"
+  },
+  {
+   "lead_id": "27A-L66",
+   "url": "https://treaties.un.org/Pages/UNTSOnline.aspx?id=1",
+   "title": "United Nations Treaty Series online - registered bilateral treaties",
+   "publisher": "UN Office of Legal Affairs",
+   "source_id": null,
+   "contains": "Registration records (UNTS volume, entry-into-force date) for Nepal bilateral treaties registered under Article 102 of the UN Charter [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27A-L67",
+   "url": "https://mofa.gov.np/treaties-and-agreements/",
+   "title": "MoFA Nepal - treaties and agreements listing (if present)",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Consolidated treaty list with dates as published by MoFA [URL from general knowledge — unverified]",
+   "verification": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "27A-L68",
+   "url": "https://www.sasec.asia",
+   "title": "South Asia Subregional Economic Cooperation (SASEC) programme site",
+   "publisher": "ADB (SASEC secretariat)",
+   "source_id": "adb_nepal",
+   "contains": "Trilateral/regional power and transport records (cross-ref to 17C/17D)",
+   "reused_from": "17C-L12; 17D-L03"
+  },
+  {
+   "lead_id": "27A-L69",
+   "url": "https://www.nea.org.np/annual_report",
+   "title": "NEA Annual Reports",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "Implementation evidence for power agreements (export sales by destination, approvals received)",
+   "reused_from": "04A-L23; 17C-L05"
+  }
+ ]
+}
