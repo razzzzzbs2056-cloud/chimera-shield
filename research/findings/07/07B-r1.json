@@ -1,0 +1,514 @@
+{
+  "subagent_id": "07B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). All empirical items are pending. Post-harvest losses have no official Nepal series; the plan is a study-level register (FAO Food Loss and Waste platform, MoALD) by commodity and stage, with FAOSTAT food-balance losses as a residual cross-check only. Agricultural export values for cardamom, ginger, tea, coffee, lentils and medicinal plants come from Department of Customs trade books (Nepal FY) and are cross-checked with UN Comtrade mirror data (calendar year). Market-access barriers are to be documented from WTO SPS/ePing records, the WTO Trade Policy Review of Nepal (2025) and the government report, DGFT notifications, the Nepal-India Treaty of Trade and plant-quarantine records; news items are used only as pointers. Processing and cold-chain capacity will come from MoALD, DFTQC, the tea board and NSO establishment censuses. Several institutional URLs are from general knowledge and unverified.",
+  "findings": [
+    {
+      "claim": "Post-harvest losses for major perishables (vegetables, fruits incl. citrus, potato, tomato; also grain storage losses), percent of production by supply-chain stage.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "study-specific years; state per study",
+      "source_ids": [
+        "fao_stat",
+        "moald_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07B-L14",
+        "07B-L15",
+        "07B-L13"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). No single official series; FAO FLW database holds study-level estimates with differing methods (farm survey, expert estimate, modelled) - each recorded with method and year; FBS 'losses' is a residual and only a cross-check."
+    },
+    {
+      "claim": "Agricultural export values by product (cardamom HS 0908, ginger HS 0910, tea HS 0902, lentils HS 0713, medicinal herbs HS 1211, coffee HS 0901) and destination.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY2079/80-FY2081/82",
+      "source_ids": [
+        "customs_nepal",
+        "tepc"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07B-L01",
+        "07B-L02",
+        "07B-L03",
+        "07B-L04"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory)."
+    },
+    {
+      "claim": "Mirror (partner-reported) imports from Nepal of the same HS headings.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "calendar years",
+      "source_ids": [
+        "un_comtrade"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07B-L05"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). FOB/CIF, timing and informal trade differences vs customs FY exports; conversion rates must be documented, not mixed silently."
+    },
+    {
+      "claim": "Documented market-access barriers for Nepali agricultural exports (SPS notifications, quarantine requirements, pesticide MRL rejections, Indian import restrictions/safeguard measures, China market-access protocols).",
+      "type": "pending",
+      "value": null,
+      "period": "dated records",
+      "source_ids": [
+        "wto",
+        "customs_nepal",
+        "tepc"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07B-L06",
+        "07B-L07",
+        "07B-L08",
+        "07B-L09",
+        "07B-L10",
+        "07B-L11",
+        "07B-L12",
+        "07B-L18"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Qualitative register; each entry requires a primary notification/document id and date. News items are pointers only."
+    },
+    {
+      "claim": "Cold-storage capacity (number of facilities and tonnes) and processing capacity for fruits, vegetables, dairy and tea.",
+      "type": "pending",
+      "value": null,
+      "unit": "tonnes",
+      "period": "latest available year",
+      "source_ids": [
+        "moald_nepal",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07B-L13",
+        "07B-L16",
+        "07B-L17",
+        "07B-L19"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Cold-store capacity may only be in MoALD/ADS monitoring or project documents; if absent, record as data gap."
+    },
+    {
+      "claim": "Food-processing establishments and persons engaged (ISIC 10-11).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "National Economic Census 2018 / CME reference year",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07B-L16"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory)."
+    }
+  ],
+  "data_gaps": [
+    "No official post-harvest loss series; study-level estimates to be located",
+    "Customs trade books after FY2079/80 not located",
+    "SPS notification/STC records for Nepal products not retrieved (ePing, SPS IMS URLs unverified)",
+    "Cold-storage inventory and capacity - no source located",
+    "TEPC, DFTQC, NPPO and tea-board URLs unverified"
+  ],
+  "assumptions": [
+    {
+      "id": "07B-A1",
+      "text": "A barrier counts as 'documented' only if a primary legal instrument, notification or official report records it; media reports are pointers.",
+      "basis": "assumption"
+    },
+    {
+      "id": "07B-A2",
+      "text": "Loss estimates from different methods are not averaged; ranges are reported with method labels.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Request catalog ids for Nepal Trade Information Portal, National Tea and Coffee Development Board, and MoICS (government TPR report); currently source_id null."
+    },
+    {
+      "to": "17A",
+      "text": "Indian import-side measures on Nepali agricultural goods (07B-L10, 07B-L11) overlap with 17A's DGFT watchlist; propose 17A own the Indian-measure register and 07B reference it to avoid duplicate observations."
+    },
+    {
+      "to": "21D",
+      "text": "Agricultural import and export HS extractions from the same customs book (07B-L01 = 21D's customs lead) should be ingested once and shared."
+    }
+  ],
+  "uncertainty": "All pending. Loss estimates are expected to vary widely across studies and methods; export values differ between customs and mirror data because of FY/calendar-year timing, valuation and informal trade; barrier documentation depends on notification coverage and will under-record informal non-tariff barriers at border points.",
+  "specific": {
+    "loss_estimates": {
+      "status": "pending",
+      "method": "Register of study-level loss estimates by commodity x stage (harvest, storage, transport, market) with method, year, geography and source; no pooling across methods; FAOSTAT FBS losses as residual cross-check.",
+      "commodities": {
+        "tomato": "pending",
+        "potato": "pending",
+        "cauliflower_cabbage": "pending",
+        "citrus": "pending",
+        "apple": "pending",
+        "banana": "pending",
+        "paddy_storage": "pending",
+        "maize_storage": "pending",
+        "milk": "pending"
+      },
+      "unit": "percent",
+      "lead_ids": [
+        "07B-L13",
+        "07B-L14",
+        "07B-L15"
+      ]
+    },
+    "export_barrier_register": {
+      "status": "pending",
+      "method": "One entry per product x market x measure: measure type (SPS, TBT, quota/restriction, safeguard, rules of origin, lab-testing/certification gap), legal instrument id and date, source; export values for the product-market pair from customs (Nepal FY) and mirror data (calendar year).",
+      "entries": [
+        {
+          "product": "large cardamom",
+          "hs": "0908",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        },
+        {
+          "product": "ginger",
+          "hs": "0910",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        },
+        {
+          "product": "tea",
+          "hs": "0902",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        },
+        {
+          "product": "coffee",
+          "hs": "0901",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        },
+        {
+          "product": "lentils",
+          "hs": "0713",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        },
+        {
+          "product": "medicinal and aromatic plants",
+          "hs": "1211",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        },
+        {
+          "product": "fresh vegetables/fruits",
+          "hs": "07-08",
+          "markets": [
+            "India",
+            "China",
+            "Bangladesh",
+            "EU",
+            "US"
+          ],
+          "barriers": "pending",
+          "export_value": "pending"
+        }
+      ],
+      "lead_ids": [
+        "07B-L01",
+        "07B-L03",
+        "07B-L05",
+        "07B-L06",
+        "07B-L07",
+        "07B-L08",
+        "07B-L09",
+        "07B-L10",
+        "07B-L12",
+        "07B-L18"
+      ]
+    },
+    "processing_capacity": {
+      "status": "pending",
+      "method": "Inventory of cold storage (count, tonnes), packhouses, food-processing establishments (NEC 2018/CME), tea factories, dairy processing and accredited testing labs; distinguish public, cooperative and private capacity; utilisation where reported.",
+      "components": {
+        "cold_storage_count": "pending",
+        "cold_storage_capacity_tonnes": "pending",
+        "food_processing_establishments": "pending",
+        "persons_engaged_food_processing": "pending",
+        "tea_factories": "pending",
+        "accredited_labs": "pending"
+      },
+      "lead_ids": [
+        "07B-L13",
+        "07B-L16",
+        "07B-L17",
+        "07B-L19",
+        "07B-L21"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "07B-L01",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, FY2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Exports by HS heading and destination: cardamom (HS 0908), ginger (HS 0910), tea (HS 0902), lentils (HS 0713), fruit juices, medicinal herbs (HS 1211); agricultural imports by HS chapter 01-24, Nepal FY2079/80",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L02",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Later annual trade books FY2080/81, FY2081/82 and monthly releases; agri exports by HS and destination",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L03",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "MoICS / Department of Customs",
+      "source_id": null,
+      "contains": "HS-level export queries by partner and period; SPS/TBT procedures and documentary requirements for agri exports",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L04",
+      "url": "https://tepc.gov.np",
+      "title": "Trade and Export Promotion Centre - trade statistics and export profiles",
+      "publisher": "TEPC, Nepal",
+      "source_id": "tepc",
+      "contains": "Export statistics by commodity and destination; product profiles for cardamom, ginger, tea, coffee. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L05",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade - Nepal and partner-reported trade",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror data: India, Bangladesh, EU, US imports from Nepal of HS 0902, 0908, 0910, 0713, calendar year - cross-check of customs FY exports",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L06",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "SPS regime, agricultural export performance, market-access issues and standards infrastructure (Nov 2025)",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L07",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/TPR%20Report_2025_jw22l99.pdf",
+      "title": "Nepal Trade Policy Review 2025 - Report by the Government of Nepal",
+      "publisher": "Government of Nepal (MoICS)",
+      "source_id": null,
+      "contains": "Government statement of export constraints, SPS/quarantine capacity and priorities",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L08",
+      "url": "https://epingalert.org",
+      "title": "ePing SPS & TBT notification alert system",
+      "publisher": "WTO/UN DESA/ITC",
+      "source_id": "wto",
+      "contains": "SPS and TBT notifications by importing members affecting HS 0902/0908/0910 and other Nepali agri exports; specific trade concerns. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L09",
+      "url": "https://spsims.wto.org",
+      "title": "WTO SPS Information Management System",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "SPS notifications and specific trade concerns filed by/against Nepal; Nepal enquiry point and NNA. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L10",
+      "url": "https://apeda.gov.in/dgft-notifications",
+      "title": "DoC/DGFT Notifications",
+      "publisher": "Government of India (DGFT, via APEDA)",
+      "source_id": null,
+      "contains": "Indian import/export policy notifications affecting agricultural goods traded with Nepal",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L11",
+      "url": "https://kathmandupost.com/money/2026/09/20/nepal-lost-rs10-billion-in-india-s-import-squeeze-new-delhi-seeks-investigation-before-easing-curbs",
+      "title": "Nepal lost ... in India's import squeeze (Sept 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Secondary pointer (tier 7) to Indian import-side measures on Nepali exports; used only to locate DGTR/DGFT primary notifications - no values",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07B-L12",
+      "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
+      "title": "Treaty of Trade (Nepal-India, 2009 revision)",
+      "publisher": "TEPC (GoN)",
+      "source_id": "tepc",
+      "contains": "Market-access, rules-of-origin, SPS/quarantine cooperation and safeguard clauses relevant to primary agricultural products",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L13",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOALD-Statical-Book-Magre-2081-Final_wgfs8ph.pdf",
+      "title": "Statistical Information on Nepalese Agriculture 2079/80",
+      "publisher": "MoALD, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Production of cardamom, ginger, tea, coffee, vegetables, fruits (tonnes), Nepal FY; any post-harvest/storage tables (cold stores, capacity) if published",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L14",
+      "url": "https://www.fao.org/platform-food-loss-waste/en/",
+      "title": "FAO Technical Platform on the Measurement and Reduction of Food Loss and Waste (Food Loss Index, SDG 12.3.1a; Food Loss and Waste database)",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Food Loss and Waste database entries for Nepal by commodity and supply-chain stage (study-level, various years/methods); Food Loss Index. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L15",
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Food Balances: 'losses' element by commodity (calendar year) - residual-based, cross-check only",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L16",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+      "title": "NSO microdata catalogue (National Economic Census 2018; Census of Manufacturing Establishments)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Establishments and persons engaged in food processing (ISIC 10-11) and warehousing (ISIC 52); CME value added for food manufacturing",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L17",
+      "url": "https://dftqc.gov.np",
+      "title": "Department of Food Technology and Quality Control - annual report",
+      "publisher": "DFTQC (MoALD), Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Food-testing laboratory capacity and accreditation, licensed food industries, export certification. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L18",
+      "url": "https://npponepal.gov.np",
+      "title": "National Plant Protection Organization Nepal (Plant Quarantine and Pesticide Management Centre)",
+      "publisher": "MoALD, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Phytosanitary certificates issued, pest-risk analyses, market-access dossiers (e.g. for fresh produce to China/India), quarantine check-posts. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L19",
+      "url": "https://www.teacoffee.gov.np",
+      "title": "National Tea and Coffee Development Board",
+      "publisher": "NTCDB, Nepal",
+      "source_id": null,
+      "contains": "Tea/coffee area, production, processing factories and exports; orthodox vs CTC; export barriers noted. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07B-L20",
+      "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+      "title": "Connecting to Compete 2023 (LPI 2023)",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "Logistics components and dwell-time KPIs for Nepal; context for perishable export logistics",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07B-L21",
+      "url": "https://www.enterprisesurveys.org/en/data/exploreeconomies",
+      "title": "World Bank Enterprise Surveys - Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Food-manufacturing firm obstacles (electricity, transport, customs time) where sample allows",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "secondary"
+    }
+  ]
+}

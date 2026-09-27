@@ -1,0 +1,531 @@
+{
+  "subagent_id": "13B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). All empirical items pending; no document downloaded. Leads identified for Q1 (ICIMOD Glacier Outlook 2026 benchmark mass-balance series, ICIMOD Nepal glacier inventory 1980-2010 and HKH 1990-2020 change, HKH Assessment Ch.7, HI-WISE 2023, IPCC SROCC Ch.2 and AR6 WGI Ch.9), Q2 (DNPWC and WDPA for protected areas; FRTC national forest assessment, FAO FRA 2020 and WDI for forest cover; Global Forest Watch as a separate satellite tree-cover indicator) and Q3 (Khadka 2020 Koshi, Lutz 2014, Huss and Hock 2018, HI-WISE, WECS basin plans, DHM observed discharge). 13B relies on 25A for projection ranges and does not duplicate them. Key methodological issues: in-situ vs geodetic mass balance; forest land-use vs tree-cover definitions; protected area with vs without buffer zones; glacier-runoff vs total-runoff; CMIP5 vs CMIP6 scenario framing. Glacier mass balance lacks a unit code in units.py.",
+  "findings": [
+    {
+      "claim": "Q1: Documented glacier mass-balance trend for Nepal basins (in-situ benchmark glaciers and geodetic regional estimates), with period and method.",
+      "type": "pending",
+      "value": null,
+      "period": "hydrological years (calendar-based, glacier-specific); multi-decade geodetic periods",
+      "source_ids": [
+        "icimod",
+        "ipcc",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Required: benchmark glacier annual mass-balance series (ICIMOD Glacier Outlook 2026); geodetic mass balance for Central/Eastern Himalaya (HKH Ch.7, HI-WISE, AR6 WGI Ch.9); inventory area change by basin (ICIMOD 2014, 1990-2020 study). Unit metre water-equivalent per year has no code in units.py; see challenge to 00A.",
+      "lead_ids": [
+        "13B-L01",
+        "13B-L02",
+        "13B-L03",
+        "13B-L04",
+        "13B-L05",
+        "13B-L06",
+        "13B-L07"
+      ]
+    },
+    {
+      "claim": "Q2a: Protected-area coverage of Nepal's territory (national parks, reserves, conservation areas, buffer zones), with reference date.",
+      "type": "pending",
+      "value": null,
+      "period": "as of gazettement date / WDPA vintage (calendar)",
+      "source_ids": [
+        "mofe_nepal",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: DNPWC area list; WDPA extract; WDI ER.PTD.TOTL.ZS. Keep with/without buffer zones distinct.",
+      "unit": "percent",
+      "lead_ids": [
+        "13B-L16",
+        "13B-L17",
+        "13B-L19"
+      ]
+    },
+    {
+      "claim": "Q2b: Forest-cover level and trend.",
+      "type": "pending",
+      "value": null,
+      "period": "FRA reference years (calendar) and national assessment years (Nepal FY/BS)",
+      "source_ids": [
+        "mofe_nepal",
+        "fao_stat",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: FRTC national assessment and local-level maps; FAO FRA 2020 series; GFW tree-cover loss as separate satellite indicator. Definitions differ (forest land use vs tree cover); do not merge.",
+      "unit": "percent",
+      "lead_ids": [
+        "13B-L15",
+        "13B-L18",
+        "13B-L20",
+        "13B-L21"
+      ]
+    },
+    {
+      "claim": "Q3: Projected changes in water availability by basin (Koshi, Gandaki, Karnali, Mahakali, and southern rivers): annual and dry-season flow, by scenario and horizon.",
+      "type": "pending",
+      "value": null,
+      "period": "projection horizons (e.g. 2021-2050, 2071-2100) vs stated baseline period",
+      "source_ids": [
+        "icimod",
+        "ipcc",
+        "academic",
+        "dhm"
+      ],
+      "observation_ids": [],
+      "note": "Required: basin-level runoff projections (Khadka 2020 Koshi; Lutz 2014 upper Ganges; HI-WISE; Huss and Hock 2018 for glacier runoff). 25A owns cryosphere projection ranges PR-xx; 13B maps them to water availability and records only basin-level additions.",
+      "unit": "percent",
+      "lead_ids": [
+        "13B-L05",
+        "13B-L10",
+        "13B-L11",
+        "13B-L12",
+        "13B-L13",
+        "13B-L14",
+        "13B-L23"
+      ]
+    },
+    {
+      "claim": "13B does not duplicate 25A projection ranges; cryosphere_summary references 25A PR ids for glacier volume and peak-water, and 13B adds observed mass-balance and basin water-availability framing only.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Ecosystem losses are reported under welfare/environment objectives, not netted against GDP (consistent with 25E SIR-EC-1).",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Glacier-runoff change and total-runoff change are different quantities; water availability uses total runoff with seasonal (dry-season) breakdown, and glacier-runoff only as a component.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No values retrieved (all hosts blocked).",
+    "No unit code for glacier mass balance (m w.e. per year) or area (km2) in src/economic_model/units.py.",
+    "No basin-specific runoff projection located for Gandaki, Karnali or Mahakali (only Koshi and upper Ganges aggregate).",
+    "FRTC, DNPWC, WDPA, FAO FRA, GFW and WECS URLs are from general knowledge and unverified.",
+    "No catalog id for UNEP-WCMC/WDPA, WRI/GFW, FRTC, DNPWC or WECS.",
+    "Biodiversity trend indicators (species status, Red List Index) not scoped with leads in r1."
+  ],
+  "assumptions": [
+    {
+      "id": "13B-A1",
+      "text": "25A projection ranges are referenced, not re-estimated.",
+      "basis": "assumption (coordination)"
+    },
+    {
+      "id": "13B-A2",
+      "text": "Forest definitions (FAO/FRTC land use vs GFW tree-cover threshold) are kept as separate series and never spliced.",
+      "basis": "assumption"
+    },
+    {
+      "id": "13B-A3",
+      "text": "Ecosystem service changes enter welfare objectives, not GDP.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Add unit codes for glacier mass balance (m water-equivalent per year) and area (km2) to units.py, and catalog ids for WDPA, GFW, FRTC, DNPWC and WECS."
+    },
+    {
+      "to": "25A",
+      "text": "Please confirm PR ids 13B should reference for peak-water and dry-season flow so 13B water_availability_projections do not duplicate 25A ranges."
+    },
+    {
+      "to": "05",
+      "text": "Hydropower planning should use basin dry-season availability ranges (when retrieved) rather than stationary historical flows; 13B will provide basin mapping."
+    },
+    {
+      "to": "07",
+      "text": "Irrigation water availability in Terai depends on southern (non-snow-fed) rivers and groundwater, which glacier studies do not cover; request agriculture not infer from glacier projections."
+    }
+  ],
+  "uncertainty": "High. Few in-situ benchmark glaciers represent Nepal's glacier population; geodetic and in-situ estimates differ in period and coverage; runoff projections vary by glacio-hydrological model, climate forcing and baseline period, with larger spread in precipitation than temperature; forest-cover trends depend strongly on definition and sensor.",
+  "specific": {
+    "cryosphere_summary": {
+      "status": "pending",
+      "method": "Table of observed mass-balance by glacier/region: source, method (glaciological/geodetic), period, value (m w.e./yr, unit code pending), uncertainty; plus inventory area change by basin; projections referenced from 25A PR ids.",
+      "items": [
+        {
+          "item": "benchmark glacier mass-balance series (Nepal)",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L01"
+          ]
+        },
+        {
+          "item": "regional geodetic mass balance Central/Eastern Himalaya",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L04",
+            "13B-L05",
+            "13B-L07"
+          ]
+        },
+        {
+          "item": "glacier area change by basin (Koshi, Gandaki, Karnali, Mahakali)",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L02",
+            "13B-L03"
+          ]
+        },
+        {
+          "item": "projected glacier volume loss and peak water",
+          "status": "referenced_from_25A",
+          "lead_ids": [
+            "13B-L05",
+            "13B-L06",
+            "13B-L09",
+            "13B-L10"
+          ]
+        }
+      ],
+      "known_methodological_issues": [
+        "in-situ vs geodetic",
+        "area vs mass vs volume",
+        "reference-year differences",
+        "RGI vs HKH region boundaries"
+      ]
+    },
+    "ecosystem_baseline": {
+      "status": "pending",
+      "indicators": [
+        {
+          "indicator": "protected area share of territory (with and without buffer zones)",
+          "unit": "percent",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L16",
+            "13B-L17",
+            "13B-L19"
+          ]
+        },
+        {
+          "indicator": "forest area share (FAO/FRTC definition)",
+          "unit": "percent",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L15",
+            "13B-L18",
+            "13B-L20"
+          ]
+        },
+        {
+          "indicator": "tree-cover loss by year (GFW; separate definition)",
+          "unit": "percent",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L21"
+          ]
+        },
+        {
+          "indicator": "biodiversity status (NBSAP, species/ecosystem assessments)",
+          "unit": "index",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L22",
+            "13B-L08"
+          ]
+        }
+      ],
+      "method": "Record each indicator with reference year, definition and source; trend computed only within a consistent definition."
+    },
+    "water_availability_projections": {
+      "status": "pending",
+      "method": "By basin x scenario x horizon: change in annual and dry-season total runoff (percent vs stated baseline), glacier-melt share, peak-water timing referenced to 25A; observed baseline from DHM discharge.",
+      "basins": [
+        {
+          "basin": "Koshi",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L12",
+            "13B-L05",
+            "13B-L14"
+          ]
+        },
+        {
+          "basin": "Gandaki",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L05",
+            "13B-L13",
+            "13B-L14"
+          ],
+          "notes": "no basin-specific study located"
+        },
+        {
+          "basin": "Karnali",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L05",
+            "13B-L13",
+            "13B-L14"
+          ],
+          "notes": "no basin-specific study located"
+        },
+        {
+          "basin": "Mahakali",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L13",
+            "13B-L23"
+          ],
+          "notes": "no basin-specific study located"
+        },
+        {
+          "basin": "upper Ganges aggregate",
+          "status": "pending",
+          "lead_ids": [
+            "13B-L10",
+            "13B-L11",
+            "13B-L06"
+          ]
+        }
+      ],
+      "unit": "percent"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "13B-L01",
+      "url": "https://lib.icimod.org/records/fk7f9-2ha88",
+      "title": "HKH Glacier Outlook 2026: Understanding Change Through 50 Years of Field Observation",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "In-situ glacier mass-balance series for benchmark glaciers incl. Nepal (e.g. Yala, Rikha Samba, Mera, Pokalde, West Changri Nup if reported), period of record, measurement method",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L02",
+      "url": "https://lib.icimod.org/records/pgbnf-p3v73/files/GSN-RR14-2.pdf?download=1",
+      "title": "Glacier Status in Nepal and Decadal Change from 1980 to 2010 Based on Landsat Data",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Nepal glacier inventory by basin (Koshi, Gandaki, Karnali, Mahakali) c.1980-2010: number, area, estimated ice reserve",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L03",
+      "url": "https://lib.icimod.org/records/rrpvn-g3q31",
+      "title": "Changing dynamics of glaciers in the Hindu Kush Himalayan region from 1990 to 2020",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "HKH glacier area change 1990-2020 by country/basin",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L04",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-92288-1_7",
+      "title": "Bolch et al. (2019) Status and Change of the Cryosphere in the Extended HKH (HKH Assessment Ch. 7)",
+      "publisher": "Springer (open access) for ICIMOD",
+      "source_id": "icimod",
+      "contains": "Observed geodetic mass-balance by sub-region (incl. Central/Eastern Himalaya), projected volume change by RCP/warming level",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L05",
+      "url": "https://lib.icimod.org/record/36322/files/HI-WISE_REPORT_Water_Ice_Society_and_Ecosystems_in_the_HKH-2023.pdf",
+      "title": "Water, ice, society, and ecosystems in the HKH: An outlook (HI-WISE, 2023)",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Updated glacier mass-loss rates, projected volume loss by warming level, peak-water timing by basin, ecosystem and biodiversity chapter",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L06",
+      "url": "https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/06_SROCC_Ch02_FINAL.pdf",
+      "title": "IPCC SROCC Chapter 2: High Mountain Areas (2019)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Assessed regional mass balance for High Mountain Asia; projected runoff seasonality and peak water with confidence",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L07",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter09.pdf",
+      "title": "IPCC AR6 WGI Chapter 9 (2021)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Regional glacier mass change observed and projected by SSP for RGI South Asia East/West",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L08",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP5.pdf",
+      "title": "IPCC AR6 WGII Cross-Chapter Paper 5: Mountains (2022)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Mountain water availability, ecosystem shifts, biodiversity risk with confidence levels",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L09",
+      "url": "https://www.science.org/doi/10.1126/science.abo1324",
+      "title": "Rounce et al. (2023) Global glacier change in the 21st century",
+      "publisher": "Science",
+      "source_id": "academic",
+      "contains": "Projected mass loss by warming level and RGI region relative to 2015",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L10",
+      "url": "https://www.nature.com/articles/s41558-017-0049-x",
+      "title": "Huss and Hock (2018) Global-scale hydrological response to future glacier mass loss",
+      "publisher": "Nature Climate Change",
+      "source_id": "academic",
+      "contains": "Glacier-runoff trajectories and peak-water year for Ganges basin under RCPs",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L11",
+      "url": "https://www.futurewater.nl/wp-content/uploads/2014/06/nclimate2237.pdf",
+      "title": "Lutz et al. (2014) Consistent increase in High Asia's runoff due to increasing glacier melt and precipitation",
+      "publisher": "FutureWater (author copy)",
+      "source_id": "academic",
+      "contains": "Projected total runoff change to 2050 upper Ganges under RCP4.5/8.5; melt vs rain components",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L12",
+      "url": "https://www.cambridge.org/core/journals/journal-of-glaciology/article/future-projection-of-cryospheric-and-hydrologic-regimes-in-koshi-river-basin-central-himalaya-using-coupled-glacier-dynamics-and-glaciohydrological-models/0BA61115A9E2780AD059509F24B86ED1",
+      "title": "Khadka, Kayastha, Kayastha (2020) Future projection of cryospheric and hydrologic regimes in Koshi River basin",
+      "publisher": "Journal of Glaciology",
+      "source_id": "academic",
+      "contains": "Koshi sub-basin projected glacier area/volume and discharge composition 2021-2100 (RCP4.5/8.5)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L13",
+      "url": "https://lib.icimod.org/",
+      "title": "ICIMOD HimalDoc library",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Search point for basin-scale runoff projections for Gandaki, Karnali, Mahakali (no basin-specific record identified in r1)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L14",
+      "url": "https://www.dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal",
+      "publisher": "Department of Hydrology and Meteorology, Nepal",
+      "source_id": "dhm",
+      "contains": "Observed discharge at hydrometric stations by basin; hydrological yearbooks; data-request procedure (observed trend baseline for projections)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L15",
+      "url": "https://frtc.gov.np",
+      "title": "Forest Research and Training Centre (FRTC), Nepal - forest resource assessment and forest cover maps",
+      "publisher": "Forest Research and Training Centre, MoFE",
+      "source_id": "mofe_nepal",
+      "contains": "National Forest Resource Assessment (2010-2014) and Forest Cover Maps of local levels; forest area and share of land area by physiographic zone and province, reference year",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L16",
+      "url": "https://dnpwc.gov.np",
+      "title": "Department of National Parks and Wildlife Conservation, Nepal - protected areas",
+      "publisher": "DNPWC, MoFE",
+      "source_id": "mofe_nepal",
+      "contains": "List of national parks, wildlife reserves, conservation areas, hunting reserve and buffer zones with area and gazettement year",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L17",
+      "url": "https://www.protectedplanet.net/country/NPL",
+      "title": "Protected Planet - Nepal (WDPA)",
+      "publisher": "UNEP-WCMC and IUCN",
+      "source_id": "academic",
+      "contains": "WDPA-based protected area coverage (terrestrial) with designation status and monthly vintage",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L18",
+      "url": "https://data.worldbank.org/indicator/AG.LND.FRST.ZS?locations=NP",
+      "title": "World Development Indicators - Forest area (% of land area), Nepal (AG.LND.FRST.ZS)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Annual forest area share series (FAO FRA-derived), calendar year",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L19",
+      "url": "https://data.worldbank.org/indicator/ER.PTD.TOTL.ZS?locations=NP",
+      "title": "World Development Indicators - Terrestrial and marine protected areas (% of total territorial area), Nepal (ER.PTD.TOTL.ZS)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Protected area share (WDPA-derived), calendar year",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L20",
+      "url": "https://www.fao.org/forest-resources-assessment/fra-2020/country-reports/en/",
+      "title": "FAO Global Forest Resources Assessment 2020 - Nepal country report",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Forest area 1990-2020 time series, definitions, national data sources and reclassification notes",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L21",
+      "url": "https://www.globalforestwatch.org/dashboards/country/NPL/",
+      "title": "Global Forest Watch - Nepal dashboard",
+      "publisher": "World Resources Institute",
+      "source_id": "academic",
+      "contains": "Satellite tree-cover loss/gain (Hansen) by year and province; tree-cover definition differs from FAO forest definition",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L22",
+      "url": "https://mofe.gov.np",
+      "title": "Ministry of Forests and Environment, Nepal - NAP (2021), climate scenarios, biodiversity strategy",
+      "publisher": "MoFE",
+      "source_id": "mofe_nepal",
+      "contains": "NAP basin/sector vulnerability; National Biodiversity Strategy and Action Plan; national climate scenarios",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13B-L23",
+      "url": "https://www.wecs.gov.np",
+      "title": "Water and Energy Commission Secretariat, Nepal - water resources studies and basin plans",
+      "publisher": "WECS",
+      "source_id": "academic",
+      "contains": "River basin plans (e.g. Koshi, Gandaki, Karnali, Mahakali) with water availability assessments",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    }
+  ]
+}

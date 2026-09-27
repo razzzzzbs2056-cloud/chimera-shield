@@ -1,0 +1,445 @@
+{
+  "subagent_id": "07C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). All empirical items are pending. Holding size and fragmentation will come from the NSO National Sample Census of Agriculture 2021/22 (located by web search), with the FAO metadata review used to check comparability with the 2001/02 and 2011/12 rounds before any trend is stated. The food import bill will come from Department of Customs trade books (Nepal FY, fixed HS definition), cross-checked against the NRB major-imports table. Cereal import dependence will use FAOSTAT food balances (calendar year) and a Nepal-FY variant built from MoALD production and customs imports, with UN Comtrade India mirror data to gauge informal trade. Provincial food insecurity will come from NLSS IV 2022/23 and NDHS 2022, keeping each measure's definition separate, with WFP/NeKSAP and FAO SOFI as cross-checks. Soil health and water-availability sources were not located.",
+  "findings": [
+    {
+      "claim": "Average size of agricultural holding (operated area per holding) and parcels per holding, national and by province.",
+      "type": "pending",
+      "value": null,
+      "period": "agricultural years 2001/02, 2011/12, 2021/22 (census rounds)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07C-L01",
+        "07C-L02",
+        "07C-L04",
+        "07C-L05"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Stored as area (hectares - unit to be added) and count of parcels; trend only across census rounds with comparable holding definitions (07C-L03)."
+    },
+    {
+      "claim": "Distribution of holdings by size class (e.g. below 0.5 ha, 0.5-1 ha, above 1 ha) and trend in fragmentation across census rounds.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "census rounds 2001/02-2021/22",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07C-L01",
+        "07C-L03",
+        "07C-L05"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory)."
+    },
+    {
+      "claim": "Food import bill: imports of HS chapters 02-24 (or FAO food definition) in value, Nepal FY, and share of total merchandise imports.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY2079/80-FY2081/82",
+      "source_ids": [
+        "customs_nepal",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07C-L06",
+        "07C-L07",
+        "07C-L08",
+        "07C-L09"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Definition of 'food' must be fixed (HS 01-24 incl. tobacco/beverages vs SITC 0+1+22+4 vs FAO) and stated; NRB major-imports table is a subset."
+    },
+    {
+      "claim": "Cereal import dependency ratio (imports / (production + imports - exports)) for rice, maize, wheat and total cereals.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FAOSTAT calendar year; Nepal FY variant computed separately",
+      "source_ids": [
+        "fao_stat",
+        "customs_nepal",
+        "moald_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07C-L10",
+        "07C-L06",
+        "07C-L20",
+        "07C-L11"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Rice: paddy-to-milled conversion; informal imports from India omitted from customs - mirror data comparison. Share rice series with 21D."
+    },
+    {
+      "claim": "Prevalence of household food insecurity by province (moderate or severe, FIES-based or food-sufficiency based).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "survey years 2022 (NDHS), 2022/23 (NLSS IV)",
+      "source_ids": [
+        "nso_nepal",
+        "dhs",
+        "fao_stat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07C-L12",
+        "07C-L13",
+        "07C-L14",
+        "07C-L16"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Measures differ: FIES (experience scale), self-reported months of food sufficiency (NLSS), food consumption score (WFP). Keep separate with standard errors; do not combine."
+    },
+    {
+      "claim": "National prevalence of moderate/severe food insecurity and undernourishment (FAO SDG 2.1.1/2.1.2).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "3-year average, calendar years",
+      "source_ids": [
+        "fao_stat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07C-L10",
+        "07C-L17"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory)."
+    }
+  ],
+  "data_gaps": [
+    "NSCA 2021/22 holdings tables not downloaded; earlier census reports (2011/12, 2001/02) URLs not located",
+    "Food import bill FY2080/81-FY2081/82: customs books not located",
+    "Cereal food balance (FAOSTAT FBS) not downloaded",
+    "Provincial food-insecurity prevalence: NDHS 2022 module presence unverified; NLSS IV tables not downloaded",
+    "Soil health (soil organic matter, nutrient status) and water availability for agriculture - no source located (NARC/Soil Management Directorate to be searched in r2)",
+    "No hectare unit in units.py"
+  ],
+  "assumptions": [
+    {
+      "id": "07C-A1",
+      "text": "Food is defined as HS chapters 01-24 excluding 24 (tobacco) and 22 (beverages) unless a source uses another definition, which is then recorded with its definition.",
+      "basis": "assumption"
+    },
+    {
+      "id": "07C-A2",
+      "text": "Fragmentation trend is reported only between census rounds whose holding definitions are confirmed comparable.",
+      "basis": "assumption"
+    },
+    {
+      "id": "07C-A3",
+      "text": "Different food-insecurity measures (FIES, food sufficiency months, food consumption score) are not converted into one another.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Request catalog ids for WFP (NeKSAP), IPC and Nepal Trade Information Portal; request 'hectares' unit code."
+    },
+    {
+      "to": "21D",
+      "text": "Rice import dependence: 07C and 21D compute the same ratio; propose 21D own the essential-import ratio and 07C own the cereal FBS/production denominator, using one MoALD/FAOSTAT observation set."
+    },
+    {
+      "to": "23C",
+      "text": "NLSS IV provincial tables (07C-L12/L13) are also used by 10B/23C; food-insecurity items should be ingested once with standard errors."
+    }
+  ],
+  "uncertainty": "All pending. Holding-size trends are sensitive to sampling and definitional changes between census rounds; the food import bill depends on the HS definition and misses informal trade across the open India border; food-insecurity prevalence varies strongly with the measure chosen, and provincial estimates carry sampling error that must be reported.",
+  "specific": {
+    "land_fragmentation_profile": {
+      "status": "pending",
+      "method": "From NSCA rounds: holdings (count), operated area (hectares), average holding size, parcels per holding, share of holdings by size class, tenure and female-operated share, by province; trend across 2001/02, 2011/12, 2021/22 only where holding definitions match (FAO metadata review). Soil health and water availability: qualitative pointers pending (no source located).",
+      "components": {
+        "avg_holding_size": "pending",
+        "parcels_per_holding": "pending",
+        "size_class_distribution": "pending",
+        "by_province": "pending",
+        "trend": "pending"
+      },
+      "lead_ids": [
+        "07C-L01",
+        "07C-L02",
+        "07C-L03",
+        "07C-L04",
+        "07C-L05",
+        "07C-L12"
+      ]
+    },
+    "food_import_dependence": {
+      "status": "pending",
+      "method": "Food import bill from customs (Nepal FY, NPR_current_mn) with fixed HS definition; cereal import dependency ratio by crop from FAOSTAT FBS (calendar year) and a Nepal-FY variant from MoALD production + customs imports; mirror data from India for informal-trade gap; exposure to Indian export restrictions noted (DGFT 43/2023).",
+      "components": {
+        "food_import_bill": "pending",
+        "food_share_of_imports": "pending",
+        "cereal_idr_rice": "pending",
+        "cereal_idr_maize": "pending",
+        "cereal_idr_wheat": "pending",
+        "cereal_idr_total": "pending",
+        "partner_concentration": "pending"
+      },
+      "units": {
+        "bill": "NPR_current_mn",
+        "ratios": "percent",
+        "quantities": "tonnes"
+      },
+      "lead_ids": [
+        "07C-L06",
+        "07C-L07",
+        "07C-L08",
+        "07C-L09",
+        "07C-L10",
+        "07C-L11",
+        "07C-L19",
+        "07C-L20",
+        "07C-L21"
+      ],
+      "coordinate_with": [
+        "21D",
+        "17A"
+      ]
+    },
+    "food_insecurity_by_province": {
+      "status": "pending",
+      "method": "Province-level prevalence from NLSS IV 2022/23 (food adequacy/sufficiency) and NDHS 2022 (household food insecurity module if present), each with its own definition and standard error; WFP NeKSAP phase data as monitoring cross-check; FAO SOFI national FIES as national benchmark.",
+      "provinces": {
+        "Koshi": "pending",
+        "Madhesh": "pending",
+        "Bagmati": "pending",
+        "Gandaki": "pending",
+        "Lumbini": "pending",
+        "Karnali": "pending",
+        "Sudurpashchim": "pending"
+      },
+      "unit": "percent",
+      "lead_ids": [
+        "07C-L12",
+        "07C-L13",
+        "07C-L14",
+        "07C-L16",
+        "07C-L17",
+        "07C-L18"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "07C-L01",
+      "url": "https://data.nsonepal.gov.np/dataset/1454fffe-5d2d-461d-bcc8-fcd4bb95edfe/resource/4e4f528e-a1d1-413c-8008-c5810f06ac13/download/national-sample-census-of-agriculture-national-report.pdf",
+      "title": "National Sample Census of Agriculture Nepal 2021/22 - National Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Number of holdings, operated area, average holding size, parcels per holding, holdings by size class, tenure, female-operated holdings, by province; reference agricultural year 2021/22",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L02",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1714714371_20.pdf",
+      "title": "NSCA 2021/22 - Report on Land Use",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Land use, parcels and fragmentation indicators by province",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L03",
+      "url": "https://www.fao.org/fileadmin/templates/ess/ess_test_folder/World_Census_Agriculture/WCA_2020/WCA2020_new_MRs2/MR_Nepal_2021-2022_VF.pdf",
+      "title": "NSCA 2021/2022 - Metadata Review (FAO WCA 2020)",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Comparability of 2021/22 census with earlier censuses (1961/62-2011/12): holding definition, sampling, coverage - needed for fragmentation trend",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07C-L04",
+      "url": "https://nsonepal.gov.np/content/7507/7507-national-sample-census-of-agri/",
+      "title": "National Sample Census of Agriculture 2078 - key results (Nepali)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Key results summary in Nepali; cross-check of national holding-size figures",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07C-L05",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+      "title": "NSO microdata catalogue (earlier agricultural censuses 2001/02, 2011/12)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Earlier census rounds (2011/12, 2001/02) holdings, area and parcels for trend; specific study ids to locate. Catalogue root is a shared lead; earlier census reports URL not located",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L06",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, FY2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Imports of HS chapters 02-24 (food), cereals HS 10 (rice 1006, maize 1005, wheat 1001, paddy), HS 11 flour, HS 15 edible oils, HS 07 vegetables, HS 08 fruits; value and quantity by partner, Nepal FY2079/80",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L07",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Later trade books FY2080/81-FY2081/82 and monthly FTS for food import bill trend",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L08",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "MoICS / Department of Customs",
+      "source_id": null,
+      "contains": "HS-level import queries for cereals and food chapters by partner and FY",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L09",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation (annual data FY2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Major imports table (rice/paddy, edible oil, vegetables, maize, fruits) FY2024/25; total imports - food import bill cross-check",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L10",
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Food Balances (cereals): production, imports, exports, stock change, domestic supply - cereal import dependency ratio; Suite of Food Security Indicators incl. FIES-based prevalence of moderate/severe food insecurity (3-year averages, calendar)",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L11",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "India-reported exports of HS 1006/1001/1005/15 to Nepal, calendar year - mirror check incl. informal-trade gap",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L12",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household food consumption, food share of expenditure, food adequacy/self-reported food sufficiency and poverty by province; landholding distribution",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L13",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "NLSS 2022-23 microdata",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Microdata allowing provincial food-insecurity/adequacy tabulation with standard errors and survey weights",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L14",
+      "url": "https://dhsprogram.com/methodology/survey/survey-display-578.cfm",
+      "title": "Nepal Demographic and Health Survey 2022",
+      "publisher": "MoHP / New ERA / DHS Program",
+      "source_id": "dhs",
+      "contains": "Household food insecurity module (FIES-type, if included) and child nutrition by province; survey year 2022. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L15",
+      "url": "https://data.unicef.org/resources/jme/",
+      "title": "UNICEF-WHO-World Bank Joint Child Malnutrition Estimates",
+      "publisher": "UNICEF/WHO/World Bank",
+      "source_id": "who_gho",
+      "contains": "Stunting/wasting series for Nepal - nutrition outcome context, not food insecurity per se",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07C-L16",
+      "url": "https://www.wfp.org/countries/nepal",
+      "title": "WFP Nepal - Nepal Food Security Monitoring System (NeKSAP) bulletins and mVAM",
+      "publisher": "World Food Programme / MoALD",
+      "source_id": null,
+      "contains": "District/province food-security phase classification and household food consumption scores; seasonal monitoring. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L17",
+      "url": "https://www.fao.org/publications/home/fao-flagship-publications/the-state-of-food-security-and-nutrition-in-the-world",
+      "title": "The State of Food Security and Nutrition in the World (SOFI), latest edition",
+      "publisher": "FAO/IFAD/UNICEF/WFP/WHO",
+      "source_id": "fao_stat",
+      "contains": "Country annex: prevalence of undernourishment and FIES moderate/severe food insecurity for Nepal (3-year averages). URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L18",
+      "url": "https://www.ipcinfo.org",
+      "title": "Integrated Food Security Phase Classification (IPC) - Nepal analyses",
+      "publisher": "IPC Global Partnership",
+      "source_id": null,
+      "contains": "IPC acute/chronic analyses for Nepal if conducted (district level). URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L19",
+      "url": "https://apeda.gov.in//sites/default/files/dgft_notifications/Notification_No_43_2023.pdf",
+      "title": "DGFT Notification No. 43/2023 (export of non-basmati rice)",
+      "publisher": "Government of India (DGFT)",
+      "source_id": null,
+      "contains": "Nepal-specific exemption under India's rice export restriction (2023) - supply-risk for cereal imports",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L20",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOALD-Statical-Book-Magre-2081-Final_wgfs8ph.pdf",
+      "title": "Statistical Information on Nepalese Agriculture 2079/80",
+      "publisher": "MoALD, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Cereal production (paddy, maize, wheat, millet), edible cereal requirement/balance tables (food balance by district, if published) - denominator for import dependence",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07C-L21",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Agriculture chapter: food balance, food reserves (Food Management and Trading Company), agricultural imports narrative",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    }
+  ]
+}

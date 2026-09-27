@@ -1,0 +1,596 @@
+{
+  "subagent_id": "07A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). All empirical items are pending; no values were retrieved. Primary sources were located by one web search: the NSO National Sample Census of Agriculture 2021/22 (national report, land-use report, district summary, microdata catalogue, FAO metadata review) for irrigation and mechanisation, and the MoALD Statistical Information on Nepalese Agriculture editions FY2078/79 to FY2081/82 for crop area, production and yield. FAOSTAT is used for comparator yields (calendar year), NSO national accounts and NLFS 2017/18 (with NLFS 2024/25 pending release) for the agricultural GVA and employment shares, and ILOSTAT as a cross-check. The method defines a yield-gap table, three-source irrigation coverage (census farm-reported, administrative command area, FAOSTAT equipped area) and a relative labour-productivity ratio on matched fiscal years.",
+  "findings": [
+    {
+      "claim": "Yields of major cereals (paddy, maize, wheat, millet, barley) in Nepal, national and by ecological zone/province, latest three Nepal fiscal years.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "Nepal FY2078/79-FY2081/82",
+      "source_ids": [
+        "moald_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L07",
+        "07A-L08",
+        "07A-L09",
+        "07A-L10"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Yield is t/ha; units.py has no tonnes_per_hectare or hectare code, so production (tonnes) and area must be stored separately until a unit is added (challenge to 00A). 'ratio' used here only as placeholder for Nepal/comparator yield ratios."
+    },
+    {
+      "claim": "Yields of the same crops in regional comparators (India, Bangladesh, Pakistan, Sri Lanka, Bhutan, China) and Nepal-to-comparator yield ratios.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "calendar years, latest 3-year average",
+      "source_ids": [
+        "fao_stat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L12"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Use FAOSTAT for both Nepal and comparators for like-for-like; MoALD (FY) vs FAOSTAT (calendar year) Nepal yields to be compared as a conflict check, not mixed."
+    },
+    {
+      "claim": "Share of cultivated (operated) land with year-round irrigation.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "agricultural year 2021/22 (census reference)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L01",
+        "07A-L02",
+        "07A-L03",
+        "07A-L04",
+        "07A-L05"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Numerator: area irrigated in all seasons per NSCA definition; denominator: operated/cultivated area of holdings. Confirm whether NSCA tabulates year-round irrigation or only 'any irrigation'."
+    },
+    {
+      "claim": "Irrigated area share per MoALD/DWRI administrative statistics (irrigable vs irrigated, year-round vs seasonal) as a second source.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY latest",
+      "source_ids": [
+        "moald_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L07",
+        "07A-L20",
+        "07A-L19"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Administrative 'irrigated area' counts scheme command area, typically larger than farm-reported irrigated area; keep both values (find_conflicts)."
+    },
+    {
+      "claim": "FAOSTAT land area equipped for irrigation and area actually irrigated, Nepal.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "calendar year",
+      "source_ids": [
+        "fao_stat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L12"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). AQUASTAT/FAOSTAT 'equipped' differs from 'year-round' - cross-check only."
+    },
+    {
+      "claim": "Share of employment in agriculture, forestry and fishing (ISIC A).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLFS 2017/18 (Nepal FY 2074/75); NLFS 2024/25 when released",
+      "source_ids": [
+        "nso_nepal",
+        "ilostat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L14",
+        "07A-L13",
+        "07A-L15",
+        "07A-L17"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). 19th ICLS excludes own-use food production work from employment; older (13th ICLS) and census usual-activity figures are much broader - concept break must be flagged (consistent with 10B C-07)."
+    },
+    {
+      "claim": "Share of agriculture, forestry and fishing in GVA at current prices.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal FY latest (FY2024/25 revised / FY2025/26 preliminary)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L16"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Take from the same NA vintage used by Agent 01/10B."
+    },
+    {
+      "claim": "Relative labour productivity of agriculture (agricultural GVA share / agricultural employment share) and GVA per worker in agriculture vs non-agriculture.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "Nepal FY2074/75 (NLFS III year) and NLFS 2024/25 year",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L16",
+        "07A-L14"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Derived estimate once both inputs are observations; FY must match."
+    },
+    {
+      "claim": "Mechanisation indicators (tractor/power tiller use, share of holdings using machinery) from NSCA 2021/22.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "agricultural year 2021/22",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L01",
+        "07A-L04"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory)."
+    },
+    {
+      "claim": "Climate exposure of yields: crop- and zone-specific yield-response bounds (SIR-AG-1) and irrigation dampening factor.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "scenario horizons per 25E",
+      "source_ids": [
+        "wb_npl",
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "07A-L18"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. No value recorded in r1 (restricted network; no numbers from snippets or memory). Parameters owned by 25E (leads 25E-L01, 25E-L37, 25E-L09, 25E-L28); 07A supplies crop VA weights and irrigation shares."
+    }
+  ],
+  "data_gaps": [
+    "Crop yields by crop and district, FY2078/79-FY2081/82 (MoALD SINA tables) - not downloaded",
+    "Comparator yields, FAOSTAT QCL, calendar years - not downloaded",
+    "NSCA 2021/22 irrigated area by season/source and operated area - not downloaded",
+    "DWRI irrigable/irrigated area series - URL unverified, no catalog id",
+    "NLFS 2024/25 report not located; NLFS 2017/18 employment by industry not downloaded",
+    "Agricultural GVA share, latest NA vintage - not downloaded",
+    "No unit codes for hectares or tonnes per hectare in units.py"
+  ],
+  "assumptions": [
+    {
+      "id": "07A-A1",
+      "text": "Yield comparisons use 3-year averages to damp weather shocks; Nepal FY series and calendar-year FAOSTAT series are compared, never combined.",
+      "basis": "assumption"
+    },
+    {
+      "id": "07A-A2",
+      "text": "Year-round irrigation is defined per NSCA 2021/22 census definition; if not tabulated, 'irrigated in both main seasons' is used as proxy and labelled.",
+      "basis": "assumption"
+    },
+    {
+      "id": "07A-A3",
+      "text": "Agricultural employment uses the 19th ICLS concept (NLFS) for consistency with 10B; broader census usual-activity measures are reported separately.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "units.py lacks 'hectares' and 'tonnes_per_hectare' codes; yields and irrigated area cannot be stored in native units. Request addition. Also request a catalog id for the Department of Water Resources and Irrigation (DWRI) and Department of Livestock Services (currently mapped to moald_nepal)."
+    },
+    {
+      "to": "21D",
+      "text": "Response to 21D challenge: 07A will use MoALD SINA (07A-L07..L10) paddy production series, Nepal FY, as the rice denominator; paddy-to-milled conversion factor must be sourced (MoALD/FAOSTAT extraction rate), not assumed."
+    },
+    {
+      "to": "25E",
+      "text": "Accepted SIR-AG-1: 07A supplies crop VA weights and irrigation shares (year-round vs seasonal) as the irrigation-dampening input; CO2 fertilisation remains an explicit labelled assumption in 25E."
+    },
+    {
+      "to": "10B",
+      "text": "Agricultural employment share and productivity by sector should share one NLFS observation set and NA vintage to avoid double ingestion."
+    }
+  ],
+  "uncertainty": "Entire answer is pending. Main expected uncertainties: MoALD yield estimates rely on district reporting and crop-cutting coverage; FAOSTAT may impute; irrigated-area definitions differ widely between census, administrative and FAO sources; agricultural employment share is highly sensitive to the ICLS concept (own-use production), so the relative-productivity ratio can differ by a large factor depending on the denominator.",
+  "specific": {
+    "yield_gap_table": {
+      "status": "pending",
+      "method": "For each crop c in {paddy, maize, wheat, millet, barley, potato, lentil}: Nepal yield (MoALD, Nepal FY, 3-year average) and FAOSTAT Nepal yield (calendar year) reported side by side; comparator yields from FAOSTAT (same calendar years); gap = 1 - Nepal/comparator (ratio). Also sub-national: Terai vs Hill vs Mountain from MoALD district tables. Production stored in tonnes, area in hectares (unit to be added).",
+      "rows": [
+        {
+          "crop": "paddy",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        },
+        {
+          "crop": "maize",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        },
+        {
+          "crop": "wheat",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        },
+        {
+          "crop": "millet",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        },
+        {
+          "crop": "barley",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        },
+        {
+          "crop": "potato",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        },
+        {
+          "crop": "lentil",
+          "nepal_moald": "pending",
+          "nepal_faostat": "pending",
+          "comparators": {
+            "India": "pending",
+            "Bangladesh": "pending",
+            "Pakistan": "pending",
+            "Sri_Lanka": "pending",
+            "Bhutan": "pending",
+            "China": "pending"
+          },
+          "gap_ratio": "pending"
+        }
+      ],
+      "lead_ids": [
+        "07A-L07",
+        "07A-L08",
+        "07A-L09",
+        "07A-L10",
+        "07A-L12"
+      ],
+      "known_issues": [
+        "FY vs calendar-year mismatch",
+        "MoALD estimates are district-office crop-cut/eye estimates; FAOSTAT may reproduce or impute them",
+        "paddy vs milled rice basis must be stated"
+      ]
+    },
+    "irrigation_coverage": {
+      "status": "pending",
+      "method": "Primary: NSCA 2021/22 area irrigated year-round / operated area; secondary: DWRI/MoALD administrative irrigated vs irrigable area; tertiary: FAOSTAT area equipped/actually irrigated. Keep all three; explain definitional differences (farm-reported vs scheme command area vs equipped area).",
+      "components": {
+        "year_round_share": "pending",
+        "any_irrigation_share": "pending",
+        "admin_irrigated_share": "pending",
+        "faostat_equipped_share": "pending",
+        "by_province": "pending"
+      },
+      "lead_ids": [
+        "07A-L01",
+        "07A-L02",
+        "07A-L03",
+        "07A-L05",
+        "07A-L07",
+        "07A-L12",
+        "07A-L20"
+      ]
+    },
+    "labour_productivity_gap": {
+      "status": "pending",
+      "method": "Relative productivity = (ag GVA share)/(ag employment share); ag GVA per worker vs non-ag GVA per worker, NPR_current per person, same FY and NA vintage; employment from NLFS (19th ICLS) with ILOSTAT modelled as cross-check.",
+      "components": {
+        "ag_employment_share": "pending",
+        "ag_gva_share": "pending",
+        "relative_productivity_ratio": "pending",
+        "gva_per_worker_ag": "pending",
+        "gva_per_worker_nonag": "pending"
+      },
+      "units": {
+        "shares": "percent",
+        "ratio": "ratio",
+        "per_worker": "NPR_per_person"
+      },
+      "lead_ids": [
+        "07A-L13",
+        "07A-L14",
+        "07A-L15",
+        "07A-L16",
+        "07A-L17"
+      ],
+      "coordinate_with": [
+        "10B",
+        "01A"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "07A-L01",
+      "url": "https://data.nsonepal.gov.np/dataset/1454fffe-5d2d-461d-bcc8-fcd4bb95edfe/resource/4e4f528e-a1d1-413c-8008-c5810f06ac13/download/national-sample-census-of-agriculture-national-report.pdf",
+      "title": "National Sample Census of Agriculture Nepal 2021/22 - National Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Seventh decennial agricultural census (reference agricultural year 2021/22): holdings, operated area, land use, area irrigated by source and season, crop area, machinery and equipment use, labour on holding, by province/district. Census concept: area irrigated, not production.",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L02",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1714714371_20.pdf",
+      "title": "National Sample Census of Agriculture Nepal, 2021/22 - Report on Land Use",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Land use of holdings; cultivated area; irrigated area by source (canal, tube well, pond, other) and by season if tabulated - basis for year-round irrigation share",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L03",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1715839697_14.pdf",
+      "title": "National Sample Census of Agriculture Nepal 2021/22 - District Summary",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "District summary tables: holdings, area, irrigated area, major crop area; allows Terai/Hill/Mountain aggregation",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L04",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/134",
+      "title": "Nepal - National Sample Census of Agriculture 2021/22 (microdata catalogue)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Questionnaire, sampling design, definitions (holding, irrigated area, year-round irrigation), microdata access conditions",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L05",
+      "url": "https://www.fao.org/fileadmin/templates/ess/ess_test_folder/World_Census_Agriculture/WCA_2020/WCA2020_new_MRs2/MR_Nepal_2021-2022_VF.pdf",
+      "title": "Nepal - National Sample Census of Agriculture 2021/2022 - Metadata Review (WCA 2020)",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "FAO World Programme for the Census of Agriculture metadata review: concepts, reference period, coverage, comparability with 2011/12 census",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07A-L06",
+      "url": "https://www.fao.org/fileadmin/user_upload/faoweb/Effimia_files/Documents/NPL_REP1_ENG__2021_2022.pdf",
+      "title": "National Sample Census of Agriculture Nepal 2021/22 (FAO-hosted copy)",
+      "publisher": "FAO (copy of NSO report)",
+      "source_id": "fao_stat",
+      "contains": "Second copy of NSCA national report for hash/version comparison with 07A-L01",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07A-L07",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOALD-Statical-Book-Magre-2081-Final_wgfs8ph.pdf",
+      "title": "Statistical Information on Nepalese Agriculture 2079/80 (2022/23)",
+      "publisher": "Ministry of Agriculture and Livestock Development, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Area, production and yield of cereals (paddy, maize, wheat, millet, barley), cash crops, pulses, vegetables, fruits by district/province and Nepal FY; irrigation statistics; time series tables",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L08",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Statistical%20Information%20on%20Nepalese%20Agriculture,%202080_81_a7s8aj4.pdf",
+      "title": "Statistical Information on Nepalese Agriculture 2080/81 (2023/24)",
+      "publisher": "Ministry of Agriculture and Livestock Development, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Crop area/production/yield by district and province, FY2080/81; later vintage for trend",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L09",
+      "url": "https://moald.gov.np/content/500/statistics-information-on-nepalese-agriculture-2081-82/",
+      "title": "Statistics Information on Nepalese Agriculture 2081/82 (landing page)",
+      "publisher": "Ministry of Agriculture and Livestock Development, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Landing page for the FY2081/82 (2024/25) edition - latest crop yields; locate PDF on fetch",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L10",
+      "url": "https://giwmscdnone.gov.np/media/app/public/285/posts/1715754883_66.pdf",
+      "title": "Statistical Information on Nepalese Agriculture 2078/79 (2021/22)",
+      "publisher": "Ministry of Agriculture and Livestock Development, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Earlier vintage: crop area/production/yield FY2078/79; consistency check of revisions between editions",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L11",
+      "url": "https://dls.gov.np/downloadfiles/Livestock_and_Fisheries_Statistics_2079_80-1727349185.pdf",
+      "title": "Livestock and Fisheries Statistics of Nepal 2079/80",
+      "publisher": "Department of Livestock Services (MoALD), Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Livestock numbers, milk, meat, egg, fish production by province, FY2079/80 - livestock share of agricultural output",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L12",
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "FAO",
+      "source_id": "fao_stat",
+      "contains": "Production domain (QCL): area harvested, production and yield for rice paddy, maize, wheat, millet, potatoes, lentils for Nepal and comparators (India, Bangladesh, Pakistan, Sri Lanka, Bhutan, China), calendar year; Land use domain (RL): land area equipped for irrigation, actually irrigated; Inputs (fertiliser use per ha)",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L13",
+      "url": "https://ilostat.ilo.org",
+      "title": "ILOSTAT - Nepal labour force indicators",
+      "publisher": "ILO",
+      "source_id": "ilostat",
+      "contains": "Employment by economic activity ISIC Rev.4 section A (agriculture, forestry, fishing): survey-based (NLFS 2017/18) vs ILO modelled estimates; distinguish concepts (C-07)",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L14",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+      "title": "NSO microdata catalogue (NLFS 2017/18 etc.)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "NLFS III 2017/18 employment by industry (19th ICLS concept, own-use production excluded from employment); NLFS 2024/25 when released",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L15",
+      "url": "https://www.ilo.org/sites/default/files/2024-11/ToR_FieldEnumerators_NSO.pdf",
+      "title": "Nepal Labour Force Survey (NLFS) 2024/25 - ToR for field enumerators",
+      "publisher": "NSO / ILO",
+      "source_id": "nso_nepal",
+      "contains": "Confirms NLFS 2024/25 fieldwork; report not yet located - future base for agricultural employment share",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "07A-L16",
+      "url": "https://nsonepal.gov.np",
+      "title": "National Accounts of Nepal (latest annual release) - NSO landing page",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "GVA by industry (section A agriculture, forestry and fishing) at current and constant prices, Nepal FY, base 2010/11 or later rebased series; agricultural GVA share",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L17",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household farm activity, landholding, agricultural income, employment in agriculture (non-LFS concept) - intermediate point only",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L18",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099415012072225780",
+      "title": "Nepal - Country Climate and Development Report (2022)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Agriculture climate channel, irrigation investment and yield-response assumptions used in macro modelling (25E-L01)",
+      "url_status": "shared lead from research/sources/source_leads.json (not re-verified in this task)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L19",
+      "url": "https://www.moald.gov.np",
+      "title": "MoALD - Statistical Information on Nepalese Agriculture (portal)",
+      "publisher": "Ministry of Agriculture and Livestock Development, Nepal",
+      "source_id": "moald_nepal",
+      "contains": "Portal for SINA series and Agriculture Development Strategy (ADS 2015-2035) monitoring reports. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L20",
+      "url": "https://dwri.gov.np",
+      "title": "Department of Water Resources and Irrigation - irrigation statistics / annual progress",
+      "publisher": "Department of Water Resources and Irrigation, Nepal",
+      "source_id": null,
+      "contains": "Irrigable vs irrigated area, year-round irrigation area served by government schemes, by province and FY; Irrigation Master Plan 2019. URL from general knowledge — unverified. No catalog id - requested from 00A.",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "07A-L21",
+      "url": "https://www.nepjol.info/index.php/nutaj/article/download/62827/48993/189640",
+      "title": "Status of Agricultural Stagnation in Nepalese Economy",
+      "publisher": "NUTA Journal (NepJOL)",
+      "source_id": "academic",
+      "contains": "Secondary review of agricultural growth, productivity and share of GDP/employment; pointer to primary series only; not to be cited for values",
+      "url_status": "found_by_websearch_r1 (this task, 07; one search)",
+      "lead_type": "secondary"
+    }
+  ]
+}
