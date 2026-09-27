@@ -1,0 +1,673 @@
+{
+  "subagent_id": "01A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). Research design only; no empirical values recorded. Q1 (growth accounting): Cobb-Douglas log-difference decomposition via src.economic_model.growth.growth_accounting into capital, quality-adjusted labour (employment x Mincerian human-capital index) and a TFP residual, by FY sub-period, with capital stock from perpetual inventory (growth.capital_path) on spliced NSO constant-price GFCF, steady-state initial stock and a labelled depreciation grid; capital share from 1 - labour share under three alternatives (PWT labsh, ILO SDG 10.4.1, fixed grid) because NSO compensation of employees omits self-employed income. Q2: investment rate as GFCF/GDP and GCF/GDP at current prices by FY from the same NSO release, and gross ICOR by window (inverse of investment_rate_from_icor), with unstable windows (earthquake, pandemic) flagged; results to be compared with model assumption A-TGT-05. Q3: sector GVA shares (ProductionAccounts.sector_shares) and employment shares at survey benchmark FYs, with a shift-share productivity decomposition; constant-price series spliced across the FY2000/01 -> FY2010/11 NSO rebasing by overlap-ratio splice. All computations on Nepal FY basis; WDI, ILO modelled, IMF and PWT series are cross-checks only. 26 source leads (7 located by one WebSearch in r1 or shared search-verified leads, the rest shared catalog leads or general-knowledge URLs marked unverified).",
+  "findings": [
+    {
+      "claim": "Q1: Real GDP (NPR, constant FY2010/11 prices) by fiscal year for the longest available series, with a spliced back-series across the FY2000/01 -> FY2010/11 rebasing",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_const2011_mn",
+      "period": "FY (mid-July), FY1974/75 or earliest to latest available; label = ending calendar year",
+      "source_ids": [
+        "nso_nepal",
+        "mof_nepal",
+        "wb_wdi",
+        "adb_nepal"
+      ],
+      "lead_ids": [
+        "01A-L01",
+        "01A-L02",
+        "01A-L03",
+        "01A-L06",
+        "01A-L24"
+      ],
+      "note": "Unit code convention: const2011 denotes FY2010/11 prices (FY labelled by ending year, docs/methodology/economic_model.md). Record base year, revision status per FY and the overlap year(s) used for splicing. Data required: NSO constant-price GDP and GVA by industry, both bases, including the overlap year(s)."
+    },
+    {
+      "claim": "Q1: Real gross fixed capital formation (NPR, constant prices) by fiscal year, total and public/private, for perpetual-inventory capital stock",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_const2011_mn",
+      "period": "FY, earliest available to latest",
+      "source_ids": [
+        "nso_nepal",
+        "wb_wdi",
+        "pwt"
+      ],
+      "lead_ids": [
+        "01A-L01",
+        "01A-L02",
+        "01A-L09",
+        "01A-L10",
+        "01A-L25"
+      ],
+      "note": "If NSO does not publish constant-price GFCF for early years, deflate current-price GFCF by the GFCF implicit deflator of the nearest available vintage (documented) - never by the GDP deflator without a flag."
+    },
+    {
+      "claim": "Q1: Employment level by fiscal year (persons) and, if available, hours; quality-adjusted labour input using educational attainment",
+      "type": "pending",
+      "value": null,
+      "unit": "persons_k",
+      "period": "Survey points FY2007/08 (NLFS II), FY2017/18 (NLFS III), FY2022/23 (NLSS IV, non-LFS), FY2024/25 (NLFS IV, report not yet located); census 2011 and 2021",
+      "source_ids": [
+        "nso_nepal",
+        "ilostat",
+        "pwt"
+      ],
+      "lead_ids": [
+        "01A-L13",
+        "01A-L14",
+        "01A-L15",
+        "01A-L16",
+        "01A-L17"
+      ],
+      "note": "Only benchmark years exist; annual series requires interpolation (assumption 01A-A05). Concept breaks between NLFS 2008 (pre-19th ICLS) and 2017/18 (19th ICLS) must be bridged or treated as separate segments (10B challenge accepted)."
+    },
+    {
+      "claim": "Q1: Labour share of income (for capital share alpha = 1 - labour share) for Nepal",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "Latest available; calendar year for ILO/PWT, FY for any NSO income-approach table",
+      "source_ids": [
+        "pwt",
+        "ilostat",
+        "nso_nepal"
+      ],
+      "lead_ids": [
+        "01A-L13",
+        "01A-L17",
+        "01A-L19"
+      ],
+      "note": "NSO compensation of employees (if published) excludes mixed income of the self-employed; PWT labsh and ILO SDG 10.4.1 adjust for self-employment by different methods. Keep all three; do not pick silently."
+    },
+    {
+      "claim": "Q1: Historical decomposition of real GDP growth into capital deepening, labour (quantity and human capital) and TFP residual, by sub-period",
+      "type": "pending",
+      "value": null,
+      "unit": "percentage_points",
+      "period": "FY sub-periods defined in growth_accounting_table.periods",
+      "source_ids": [
+        "nso_nepal",
+        "pwt",
+        "ilostat"
+      ],
+      "note": "Computed only after the four inputs above are ingested; cross-checked against PWT rtfpna and APO Databook. No values in r1."
+    },
+    {
+      "claim": "Q2: Investment rate (GFCF / GDP and GCF / GDP, current prices) by fiscal year, public and private",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY, FY2000/01 to latest (both NSO bases)",
+      "source_ids": [
+        "nso_nepal",
+        "mof_nepal",
+        "wb_wdi",
+        "imf_weo"
+      ],
+      "lead_ids": [
+        "01A-L01",
+        "01A-L04",
+        "01A-L07",
+        "01A-L08",
+        "01A-L09",
+        "01A-L22"
+      ]
+    },
+    {
+      "claim": "Q2: Incremental capital-output ratio implied by official national accounts, by multi-year window",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "Rolling and fixed FY windows (see icor_estimate.windows)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "note": "Derived from Q2 investment rate and Q1 real growth; compared with model assumption A-TGT-05 (config/model_config.yaml)."
+    },
+    {
+      "claim": "Q3: Sector GVA shares at basic prices (current and constant prices) by ISIC section and broad sector, FY2010/11 onward, with spliced earlier series",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY",
+      "source_ids": [
+        "nso_nepal",
+        "mof_nepal",
+        "wb_wdi"
+      ],
+      "lead_ids": [
+        "01A-L01",
+        "01A-L02",
+        "01A-L04",
+        "01A-L11"
+      ]
+    },
+    {
+      "claim": "Q3: Sector employment shares by ISIC section and broad sector at survey benchmark years",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2007/08, FY2017/18, FY2022/23, FY2024/25 (pending report); census 2011 and 2021",
+      "source_ids": [
+        "nso_nepal",
+        "ilostat"
+      ],
+      "lead_ids": [
+        "01A-L12",
+        "01A-L13",
+        "01A-L14",
+        "01A-L15",
+        "01A-L16"
+      ]
+    },
+    {
+      "claim": "Q3: Shift-share decomposition of aggregate labour-productivity growth into within-sector and between-sector (structural change) components",
+      "type": "pending",
+      "value": null,
+      "unit": "percentage_points",
+      "period": "Between survey benchmark FYs",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "note": "Requires Q3 GVA (constant prices) and employment on the same FY and NA vintage (10B definition of output per worker)."
+    },
+    {
+      "claim": "Method: growth accounting uses src.economic_model.growth.growth_accounting(g_output, g_capital, g_labour, capital_share) with log-difference growth rates averaged over each sub-period; g_labour is quality-adjusted (employment x human-capital index)",
+      "type": "assumption",
+      "value": null,
+      "note": "Research design; see specific.growth_accounting_table.method."
+    },
+    {
+      "claim": "Method: capital stock built with src.economic_model.growth.capital_path(k0, investment, depreciation_rate) on constant-price GFCF; k0 by the steady-state (Harberger) method, with sensitivity to start year and delta",
+      "type": "assumption",
+      "value": null,
+      "note": "See specific.growth_accounting_table.capital_stock_construction and assumptions 01A-A02..A04."
+    }
+  ],
+  "data_gaps": [
+    "NSO national accounts time series (GDP, GVA by industry, GFCF; current and constant prices; FY2010/11 and FY2000/01 bases with overlap year) - not downloaded (host blocked)",
+    "NSO rebasing methodology note and any post-FY2010/11 base-year announcement - not located",
+    "Constant-price GFCF before the earliest NSO constant-price year and asset breakdown (residential / non-residential / machinery) - availability unknown",
+    "Employment by industry and educational attainment of employed: NLFS 2008, 2017/18 (downloadable, not retrieved); NLFS 2024/25 report not yet located",
+    "Labour share: NSO income-approach compensation of employees (availability unknown), PWT labsh, ILO SDG 10.4.1 - not retrieved",
+    "PWT 11.0 Nepal rows (rnna, delta, hc, labsh, rtfpna) - not downloaded",
+    "Annual employment between survey years does not exist; interpolation needed (01A-A05)",
+    "Hours worked by year - largely unavailable; growth accounting will be on persons, not hours"
+  ],
+  "assumptions": [
+    {
+      "id": "01A-A01",
+      "basis": "assumption",
+      "text": "Production function is Cobb-Douglas with constant returns: Y = A K^alpha (hL)^(1-alpha); decomposition by log differences, alpha constant within each sub-period. This is an accounting framework, not a causal model; TFP is a residual that absorbs measurement error, capacity utilisation and informal-sector mismeasurement."
+    },
+    {
+      "id": "01A-A02",
+      "basis": "assumption",
+      "text": "Depreciation rate delta for the aggregate PIM is a labelled modelling assumption, not an estimate: run a sensitivity grid delta in {0.04, 0.05, 0.06} (geometric), and a fourth run using PWT 'delta' for Nepal once ingested. No value is claimed to be Nepal-specific evidence."
+    },
+    {
+      "id": "01A-A03",
+      "basis": "assumption",
+      "text": "Initial capital stock K0 by the steady-state (Harberger) method: K0 = I0 / (g_I + delta), where I0 is the average real GFCF of the first 5 FYs of the series and g_I the average real GFCF growth over the first 10 FYs; sensitivity: K0 = capital-output ratio x Y0 using PWT rnna/rgdpna for the start year. Because the influence of K0 decays at rate (1-delta)^t, results are reported only for sub-periods starting at least 20 FYs after the series start."
+    },
+    {
+      "id": "01A-A04",
+      "basis": "assumption",
+      "text": "Capital-share alternatives: (a) 1 - PWT labsh (Nepal, time-varying averaged by sub-period); (b) 1 - ILO SDG 10.4.1 labour income share; (c) fixed grid alpha in {0.35, 0.40, 0.50} as labelled sensitivity. NSO compensation of employees / GVA is reported but not used directly because it excludes self-employed labour income."
+    },
+    {
+      "id": "01A-A05",
+      "basis": "assumption",
+      "text": "Annual employment between survey benchmarks is interpolated log-linearly on the employment-to-working-age-population ratio applied to 10C resident working-age paths (not WPP totals including absentees). Interpolated years are flagged 'estimate' and sub-period results are reported only between benchmark years."
+    },
+    {
+      "id": "01A-A06",
+      "basis": "assumption",
+      "text": "Human capital index h = exp(phi(s)) with Mincerian returns piecewise as in PWT (Feenstra et al. 2015) applied to average years of schooling of the employed from NLFS/census; PWT hc used as cross-check. Quality (learning-adjusted) measures are a sensitivity only."
+    },
+    {
+      "id": "01A-A07",
+      "basis": "assumption",
+      "text": "Splicing across NSO rebasings: level of the old-base series is rescaled by the ratio new/old in the overlap FY (ratio splice), applied separately to each ISIC section and to GFCF; interpolation splice (spreading the level discrepancy linearly over the back period) as sensitivity. The spliced series is labelled 'estimate' and never replaces the published series."
+    },
+    {
+      "id": "01A-A08",
+      "basis": "assumption",
+      "text": "All national-accounts computations are on Nepal FY basis (mid-July, labelled by ending calendar year). Calendar-year series (WDI, ILO modelled, PWT) are used only as cross-checks, compared after an explicit documented conversion or on a year-label-mapping basis recorded from source metadata; they are never mixed into the FY computation."
+    },
+    {
+      "id": "01A-A09",
+      "basis": "assumption",
+      "text": "ICOR computed as gross (not net) investment over real output change, as in investment_rate_from_icor; its limits (ignores depreciation, lags, utilisation, relative price of capital) are reported alongside every value."
+    }
+  ],
+  "challenges": [
+    {
+      "to": "10B",
+      "text": "Please supply, with employment by industry, the educational attainment (years of schooling or level) of the employed by survey round, and hours worked if tabulated, so labour input can be quality- and hours-adjusted consistently with the 19th ICLS concept."
+    },
+    {
+      "to": "10C",
+      "text": "Please provide resident working-age population (15-64 and 15+) on a FY-compatible basis (mid-July reference or documented conversion from 1 July), historical as well as projected, as the denominator for the employment interpolation in 01A-A05."
+    },
+    {
+      "to": "00B",
+      "text": "Register two conflicts to watch: C-new-a, NSO spliced constant-price GDP vs WDI NY.GDP.MKTP.KN vs PWT rgdpna (splicing method and year label); C-new-b, 01A PIM capital stock vs PWT rnna (delta, initial stock, asset mix). Also, NSO labour share vs PWT labsh vs ILO SDG 10.4.1 (self-employment adjustment) - methodological."
+    },
+    {
+      "to": "01C",
+      "text": "Model assumption A-TGT-05 (ICOR grid) should be re-read against 01A's historical ICOR range once computed; until then A-TGT-05 remains an unlabelled-by-evidence assumption and should not be described as historically grounded."
+    },
+    {
+      "to": "00A",
+      "text": "Hosts for NSO, WDI, PWT, ILOSTAT and IMF were unreachable in r1; all inputs for RQ-04 (real growth history) and investment/ICOR are pending. Confirm whether NSO has announced or published a new base year after FY2010/11; if so the splicing plan must add a second overlap."
+    }
+  ],
+  "uncertainty": "High. No data have been retrieved in r1, so all tables are pending. Structurally: (i) TFP is a residual and inherits every measurement error in output, capital and labour; (ii) the PIM capital stock depends on the unverified depreciation rate and initial-stock method, whose influence fades only after about two decades of investment data; (iii) the capital share for a largely self-employed, agricultural labour force is poorly identified and results will be shown for three alternatives; (iv) employment exists only at a few survey benchmark years with a concept break between NLFS 2008 and 2017/18, so annual labour input is interpolated; (v) splicing across NSO rebasing introduces level and non-additivity discrepancies; (vi) ICOR is unstable in short or shock-affected windows and is a consistency check, not a production parameter. Decompositions are descriptive accounting, not causal attributions, and are not forecasts.",
+  "specific": {
+    "growth_accounting_table": {
+      "status": "pending",
+      "question": "Q1",
+      "columns": [
+        "period (FY range, ending-year labels)",
+        "g_Y real GDP (log diff, avg)",
+        "g_K real capital stock",
+        "g_L employment",
+        "g_h human capital",
+        "g_hL quality-adjusted labour",
+        "alpha (capital share, with source)",
+        "capital_contribution",
+        "labour_contribution (split: quantity, human capital)",
+        "tfp_residual",
+        "g_y per worker",
+        "capital deepening per worker",
+        "observation_ids",
+        "label (estimate)"
+      ],
+      "periods": [
+        "FY1975-FY1990 (if pre-2000/01 base data are retrievable)",
+        "FY1991-FY2000",
+        "FY2001-FY2006 (conflict period)",
+        "FY2007-FY2015",
+        "FY2016-FY2019 (post-earthquake reconstruction)",
+        "FY2020-FY2021 (pandemic)",
+        "FY2022-latest"
+      ],
+      "period_note": "Sub-period boundaries are a research-design choice (conflict, reconstruction, pandemic); robustness run with fixed 5-FY windows. Periods using interpolated employment are flagged.",
+      "method": [
+        "1. Ingest NSO constant-price GDP (both bases), GFCF, GVA by industry; splice per 01A-A07 -> Y_t, I_t (NPR_const2011_mn, FY).",
+        "2. Capital: K = capital_path(k0, [I_t...], delta) from src.economic_model.growth; k0 per 01A-A03; delta grid per 01A-A02. g_K_t = ln(K_t/K_{t-1}) using beginning-of-year stock (capital services proxy).",
+        "3. Labour: L_t employment per 01A-A05; h_t per 01A-A06; g_hL = g_L + g_h.",
+        "4. Output: g_Y_t = ln(Y_t/Y_{t-1}); sub-period averages of all growth rates.",
+        "5. Decompose: growth_accounting(g_output=g_Y, g_capital=g_K, g_labour=g_hL, capital_share=alpha) per sub-period and per alpha/delta variant; labour contribution further split (1-alpha)g_L and (1-alpha)g_h.",
+        "6. Per-worker version: g_y = alpha*g_(K/L) + (1-alpha)*g_h + TFP (same function with g_labour = g_h - 0? i.e. apply to per-worker rates with capital_share alpha) for comparison with 01B comparators.",
+        "7. Cross-check with PWT 11.0 rgdpna, rnna, emp, hc, labsh, rtfpna (calendar-year labels; compare trends, not year-matched levels) and APO Productivity Databook; register discrepancies with 00B."
+      ],
+      "sensitivity": [
+        "delta in {0.04,0.05,0.06, PWT delta}",
+        "alpha per 01A-A04 (a),(b),(c)",
+        "k0 method (steady-state vs PWT K/Y)",
+        "splice method (ratio vs interpolation)",
+        "with/without human capital",
+        "NLFS 2008 vs 2017/18 concept bridge"
+      ],
+      "code": "src.economic_model.growth.growth_accounting, capital_path; src.economic_model.units.Quantity for unit/period enforcement",
+      "data_required": [
+        "NSO real GDP and GVA by industry, FY2010/11 base and FY2000/01 base with overlap",
+        "NSO real GFCF (or current GFCF + GFCF deflator)",
+        "NLFS 2008, 2017/18 (and 2024/25 when published) employment and education of employed",
+        "Labour share: PWT labsh, ILO SDG 10.4.1, NSO compensation of employees if published",
+        "PWT 11.0 Nepal rows for cross-check"
+      ],
+      "lead_urls": [
+        "https://giwmscdnone.gov.np/media/pdf_upload/National%20Report_bzpm6lk.pdf",
+        "https://giwmscdnone.gov.np/media/app/public/36/posts/1693055240_78.pdf",
+        "https://nsonepal.gov.np",
+        "https://api.worldbank.org/v2/country/NPL/indicator/NE.GDI.FTOT.KN?format=json&per_page=200",
+        "https://ilostat.ilo.org",
+        "https://cbs.gov.np/wp-content/upLoads/2019/05/Nepal-Labour-Force-Survey-2017_18-Report.pdf",
+        "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+        "https://www.rug.nl/ggdc/productivity/pwt/",
+        "https://doi.org/10.34894/FABVLR",
+        "https://www.aeaweb.org/articles?id=10.1257%2Faer.20130954",
+        "https://www.apo-tokyo.org/publications/apo-productivity-databook/"
+      ],
+      "values": null
+    },
+    "investment_rate_series": {
+      "status": "pending",
+      "question": "Q2",
+      "columns": [
+        "FY",
+        "GFCF current NPR",
+        "GCF current NPR (GFCF + change in inventories)",
+        "nominal GDP current NPR",
+        "GFCF/GDP percent",
+        "GCF/GDP percent",
+        "public GFCF/GDP",
+        "private GFCF/GDP",
+        "real GFCF/real GDP (constant prices)",
+        "NA vintage and revision status",
+        "observation_ids"
+      ],
+      "period": "FY2000/01 to latest FY, both NSO bases, with base marked per row",
+      "method": "Ratios of current-price aggregates from the same NSO release and FY (Quantity.ratio_to enforces same unit family and period). Nominal and real investment ratios reported separately because the relative price of capital goods can move them apart. Change in inventories reported separately (can include valuables and statistical residuals in Nepal's expenditure accounts; confirm treatment in NSO methodology). ExpenditureAccounts identity check (src.economic_model.accounts) run per FY with the published statistical discrepancy supplied explicitly.",
+      "cross_checks": [
+        "WDI NE.GDI.FTOT.ZS, NE.GDI.TOTL.ZS, NE.GDI.FPRV.CN (year label from WDI metadata)",
+        "IMF WEO NID_NGDP",
+        "MoF Economic Survey appendix (later vs earlier vintage for revisions)"
+      ],
+      "units": {
+        "levels": "NPR_current_mn",
+        "shares": "percent"
+      },
+      "lead_urls": [
+        "https://giwmscdnone.gov.np/media/pdf_upload/National%20Report_bzpm6lk.pdf",
+        "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+        "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+        "https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS?locations=NP",
+        "https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS?locations=NP",
+        "https://data.worldbank.org/indicator/NE.GDI.FPRV.CN?view=chart&locations=NP",
+        "https://www.imf.org/external/datamapper/api/v1/NID_NGDP/NPL",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691"
+      ],
+      "values": null
+    },
+    "icor_estimate": {
+      "status": "pending",
+      "question": "Q2",
+      "definition": "ICOR_window = mean(GFCF_t / GDP_t, current prices) / mean(real GDP growth_t) over the window (average-ratio form, consistent with investment_rate_from_icor(real_growth, icor) = icor * real_growth). Alternative: sum(real GFCF_t-1) / (real GDP_T - real GDP_0) (lagged incremental form).",
+      "windows": [
+        "FY2001-FY2006",
+        "FY2007-FY2015",
+        "FY2016-FY2019",
+        "FY2022-latest",
+        "rolling 5-FY windows",
+        "full available period"
+      ],
+      "excluded_or_flagged": "Windows containing FY2015/16 (earthquake), FY2019/20-FY2020/21 (pandemic) or real growth near zero are flagged: ICOR is unstable when the denominator approaches zero and such windows are reported but not used for model calibration.",
+      "code": "Inverse of src.economic_model.growth.investment_rate_from_icor; ICOR = investment_rate / real_growth; values then compared with config/model_config.yaml A-TGT-05.",
+      "caveats": [
+        "Gross ICOR ignores depreciation; net ICOR reported with PIM depreciation when capital stock is available",
+        "Sensitive to capacity utilisation, investment lags, public capex execution (Agent 03/MoF) and the relative price of capital",
+        "Remittance-financed residential construction may account for a sizeable part of GFCF with low measured output response; split residential vs non-residential if NSO asset breakdown exists"
+      ],
+      "unit": "ratio",
+      "lead_urls": [
+        "https://giwmscdnone.gov.np/media/pdf_upload/National%20Report_bzpm6lk.pdf",
+        "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+        "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.KN?format=json&per_page=200",
+        "https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS?locations=NP",
+        "https://www.imf.org/external/datamapper/api/v1/NID_NGDP/NPL"
+      ],
+      "value": null
+    },
+    "structural_change_table": {
+      "status": "pending",
+      "question": "Q3",
+      "sectors": "NSO industry classification (ISIC Rev.4 sections A-S as published: agriculture/forestry/fishing; mining; manufacturing; electricity/gas; water/waste; construction; wholesale/retail; transport/storage; accommodation/food; information/communication; finance/insurance; real estate; professional; administrative; public administration; education; health/social work; other services), aggregated to agriculture / industry (B-F) / services (G-S) with manufacturing and electricity shown separately.",
+      "columns": [
+        "FY",
+        "sector",
+        "GVA current NPR",
+        "GVA constant NPR",
+        "GVA share current prices",
+        "GVA share constant prices",
+        "employment (persons_k, benchmark years only)",
+        "employment share",
+        "output per worker (constant prices)",
+        "relative productivity (sector/aggregate)",
+        "base year",
+        "observation_ids"
+      ],
+      "benchmark_years": [
+        "FY2007/08 (NLFS II)",
+        "FY2010/11 (census 2011 usual activity)",
+        "FY2017/18 (NLFS III)",
+        "FY2020/21 (census 2021 usual activity)",
+        "FY2022/23 (NLSS IV, non-LFS)",
+        "FY2024/25 (NLFS IV, report pending)"
+      ],
+      "splicing": "GVA shares at current prices need no splicing but show a level break at rebasing (classification and coverage changes) - report both bases in the overlap FY. Constant-price sectoral series spliced per 01A-A07 section by section; aggregates of spliced components will not equal spliced total (non-additivity) - the discrepancy is reported, not forced to zero.",
+      "fy_labelling": "All rows labelled by ending calendar year of Nepal FY (e.g. FY2017/18 -> '2018' only in machine fields, with 'FY2017/18' retained in display). NLFS survey periods mapped to the FY they fall in, documented per round.",
+      "method": [
+        "ProductionAccounts.sector_shares() (src.economic_model.accounts) for GVA shares per FY, with production_gdp identity check (taxes less subsidies on products supplied)",
+        "Shift-share: d ln(Y/L) = sum_i [s_i,0 * d(y_i)] (within) + sum_i [y_i,0 * d s_i] (between/static reallocation) + interaction, on constant-price GVA and employment for the same FY pairs",
+        "Employment and GVA must be on the same FY and NA vintage; census usual-activity and NLFS current-activity points are not combined in one shift-share pair"
+      ],
+      "known_issues": [
+        "Concept break NLFS 2008 (pre-19th ICLS; own-use production work counted as employment) vs NLFS 2017/18 (19th ICLS) - large mechanical fall in agricultural employment possible; bridge using NLFS 2017/18 tabulation under both concepts if published",
+        "NLSS IV is not a labour force survey (10B)",
+        "ILO modelled sector shares are calendar-year and model-imputed between surveys - cross-check only (C-07)"
+      ],
+      "lead_urls": [
+        "https://giwmscdnone.gov.np/media/pdf_upload/National%20Report_bzpm6lk.pdf",
+        "https://giwmscdnone.gov.np/media/app/public/36/posts/1693055240_78.pdf",
+        "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+        "https://api.worldbank.org/v2/country/NPL/indicator/NV.AGR.TOTL.ZS;NV.IND.TOTL.ZS;NV.IND.MANF.ZS;NV.SRV.TOTL.ZS?source=2&format=json&per_page=500",
+        "https://api.worldbank.org/v2/country/NPL/indicator/SL.AGR.EMPL.ZS;SL.IND.EMPL.ZS;SL.SRV.EMPL.ZS?source=2&format=json&per_page=500",
+        "https://ilostat.ilo.org",
+        "https://cbs.gov.np/wp-content/upLoads/2019/05/Nepal-Labour-Force-Survey-2017_18-Report.pdf",
+        "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+        "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials"
+      ],
+      "values": null
+    },
+    "status": "pending",
+    "round": "r1 (restricted network)"
+  },
+  "source_leads": [
+    {
+      "id": "01A-L01",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/National%20Report_bzpm6lk.pdf",
+      "title": "National Accounts Statistics of Nepal 2024/25",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Annual national accounts, Nepal fiscal years: GDP and GVA by ISIC industry at basic prices (current and constant prices, base FY2010/11 per NSO; to confirm in methodology chapter), expenditure-side GDP incl. gross fixed capital formation (current and constant prices) and change in inventories, implicit deflators, revision status (preliminary/revised/final) by FY. Located by WebSearch in r1 (title and URL only)."
+    },
+    {
+      "id": "01A-L02",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1693055240_78.pdf",
+      "title": "Government of Nepal, National Planning Commission, Central Bureau of Statistics publication (national accounts, earlier vintage; exact title to confirm on retrieval)",
+      "publisher": "Central Bureau of Statistics (now NSO), Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Earlier-vintage CBS national accounts document; needed for back-series under the previous base year (FY2000/01) and for the rebasing overlap used in splicing. Located by WebSearch in r1; content type to confirm."
+    },
+    {
+      "id": "01A-L03",
+      "url": "https://nsonepal.gov.np",
+      "title": "NSO Nepal landing page - national accounts releases and methodology notes",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Locator for (a) national accounts time-series tables (Excel) by FY for all available years under base FY2010/11 and FY2000/01, (b) rebasing methodology note, (c) any announced new base year. Shared lead (00A/00B/10B)."
+    },
+    {
+      "id": "01A-L04",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (FY2025/26)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Macroeconomic chapter and statistical appendix: real GDP growth by FY, GVA by sector shares, gross fixed capital formation and gross capital formation as share of GDP, gross domestic and national saving, sourced from NSO; latest FY values preliminary. Shared lead."
+    },
+    {
+      "id": "01A-L05",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Statistical appendix: GDP by industry, GFCF, saving/investment ratios by FY (earlier vintage for revision comparison). Shared lead."
+    },
+    {
+      "id": "01A-L06",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.KN?format=json&per_page=200",
+      "title": "WDI NY.GDP.MKTP.KN - GDP (constant LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Real GDP in constant NPR, annual; WDI year label for Nepal FY to be read from country metadata; WDI may splice across NSO rebasings (method in metadata) - cross-check only. Series code from general knowledge; URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L07",
+      "url": "https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS?locations=NP",
+      "title": "WDI NE.GDI.FTOT.ZS - Gross fixed capital formation (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "GFCF share of GDP (current prices), annual, Nepal; year-label convention to confirm. Located by WebSearch in r1."
+    },
+    {
+      "id": "01A-L08",
+      "url": "https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS?locations=NP",
+      "title": "WDI NE.GDI.TOTL.ZS - Gross capital formation (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Gross capital formation (GFCF plus change in inventories) share of GDP, Nepal; used to show inventory component separately from GFCF. Located by WebSearch in r1."
+    },
+    {
+      "id": "01A-L09",
+      "url": "https://data.worldbank.org/indicator/NE.GDI.FPRV.CN?view=chart&locations=NP",
+      "title": "WDI NE.GDI.FPRV.CN - Gross fixed capital formation, private sector (current LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Private GFCF in current NPR; public/private split of investment. Located by WebSearch in r1."
+    },
+    {
+      "id": "01A-L10",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NE.GDI.FTOT.KN?format=json&per_page=200",
+      "title": "WDI NE.GDI.FTOT.KN - Gross fixed capital formation (constant LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Real GFCF in constant NPR for perpetual-inventory cross-check against NSO constant-price GFCF. Series code from general knowledge; URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L11",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NV.AGR.TOTL.ZS;NV.IND.TOTL.ZS;NV.IND.MANF.ZS;NV.SRV.TOTL.ZS?source=2&format=json&per_page=500",
+      "title": "WDI value-added shares by broad sector (agriculture, industry, manufacturing, services), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Broad-sector value added % of GDP, annual, Nepal; cross-check only for NSO GVA shares (WDI shares are of GDP at market prices or basic prices per metadata). Series codes from general knowledge; URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L12",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SL.AGR.EMPL.ZS;SL.IND.EMPL.ZS;SL.SRV.EMPL.ZS?source=2&format=json&per_page=500",
+      "title": "WDI employment shares by broad sector (ILO modelled estimates), Nepal",
+      "publisher": "World Bank / ILO",
+      "source_id": "wb_wdi",
+      "contains": "Employment in agriculture, industry, services % of total employment; ILO modelled estimates, calendar year - cross-check only (C-07). Series codes from general knowledge; URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L13",
+      "url": "https://ilostat.ilo.org",
+      "title": "ILOSTAT - Nepal employment by economic activity; labour income share",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Employment by ISIC Rev.4 section (survey-based NLFS 2008, 2017/18 and ILO modelled series); SDG 10.4.1 labour income share (ILO modelled, adjusted for self-employment) - candidate source for capital share alternative. Shared lead."
+    },
+    {
+      "id": "01A-L14",
+      "url": "https://cbs.gov.np/wp-content/upLoads/2019/05/Nepal-Labour-Force-Survey-2017_18-Report.pdf",
+      "title": "Report on the Nepal Labour Force Survey 2017/18",
+      "publisher": "Central Bureau of Statistics (NSO), Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Employment by industry (NSIC/ISIC sections) under 19th ICLS, hours worked, educational attainment of employed; benchmark employment levels for FY2017/18. Shared lead (10B)."
+    },
+    {
+      "id": "01A-L15",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Employment by sector FY2022/23 (non-LFS concept; comparability break flagged by 10B). Shared lead."
+    },
+    {
+      "id": "01A-L16",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Usually economically active population by industry (census 2021 date) - alternative employment-share point, usual-activity concept; educational attainment by age for human-capital index. Shared lead."
+    },
+    {
+      "id": "01A-L17",
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "title": "Penn World Table (latest version, 11.0)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": "Nepal: rgdpna, rnna (capital stock at constant national prices), delta (average depreciation rate), emp, avh, hc, labsh, rtfpna, csh_i; used as cross-check for 01A's own PIM capital stock and TFP, and for like-for-like comparison with 01B comparators. Shared lead."
+    },
+    {
+      "id": "01A-L18",
+      "url": "https://doi.org/10.34894/FABVLR",
+      "title": "PWT 11.0 Dataverse record",
+      "publisher": "DataverseNL / GGDC",
+      "source_id": "pwt",
+      "contains": "Persistent-identifier copy of PWT 11.0 files incl. capital-detail and labour-detail files for hashed download. Shared lead (01B)."
+    },
+    {
+      "id": "01A-L19",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20130954",
+      "title": "Feenstra, Inklaar and Timmer (2015) The Next Generation of the Penn World Table, AER",
+      "publisher": "American Economic Association",
+      "source_id": "academic",
+      "contains": "Method for rnna, asset-specific depreciation, initial capital stock, labsh (incl. treatment of self-employed income), hc construction; basis for 01A method choices. Shared lead."
+    },
+    {
+      "id": "01A-L20",
+      "url": "https://www.rug.nl/ggdc/blog/penn-world-table-version-11-0-is-published?lang=en",
+      "title": "Penn World Table version 11.0 is published (release note)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": "Vintage changes in PWT 11.0 vs 10.01 (ICP 2021, extension to 2023) - documents vintage differences for capital and TFP series. Shared lead."
+    },
+    {
+      "id": "01A-L21",
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/NPL",
+      "title": "IMF WEO DataMapper - real GDP growth, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "Real GDP growth by year (Nepal FY per WEO country notes), outturn vs projection boundary per vintage; cross-check for NSO real growth. Indicator code from general knowledge; URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L22",
+      "url": "https://www.imf.org/external/datamapper/api/v1/NID_NGDP/NPL",
+      "title": "IMF WEO DataMapper - total investment % of GDP, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "Total investment (gross capital formation) % of GDP and gross national saving (NGSD_NGDP) by year; cross-check for investment rate. Indicator code from general knowledge; URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L23",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Selected economic indicators table (real growth, investment, saving by FY); any staff growth-accounting or potential-growth annex; capex execution discussion. Shared lead."
+    },
+    {
+      "id": "01A-L24",
+      "url": "https://kidb.adb.org/",
+      "title": "ADB Key Indicators Database - Nepal national accounts",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "GDP by industrial origin and by expenditure (current and constant prices), Nepal FY basis, as compiled by ADB from NSO; cross-check of splicing and year labels. URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L25",
+      "url": "https://unstats.un.org/unsd/snaama/",
+      "title": "UN National Accounts Main Aggregates Database - Nepal",
+      "publisher": "United Nations Statistics Division",
+      "source_id": "academic",
+      "contains": "Long-run GDP by expenditure (incl. GFCF) and value added by ISIC groupings at constant 2015 USD and current NPR, calendar-year converted; long back-series usable for initial capital stock investment history, with UNSD FY-to-CY conversion documented. URL from general knowledge — unverified."
+    },
+    {
+      "id": "01A-L26",
+      "url": "https://www.apo-tokyo.org/publications/apo-productivity-databook/",
+      "title": "APO Productivity Databook (latest edition)",
+      "publisher": "Asian Productivity Organization",
+      "source_id": "academic",
+      "contains": "Growth-accounting decompositions (capital, labour, TFP) including Nepal as APO member, with APO's own capital-stock method; independent comparison for 01A's decomposition. URL from general knowledge — unverified."
+    }
+  ]
+}

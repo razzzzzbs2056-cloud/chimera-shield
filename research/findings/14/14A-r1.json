@@ -1,0 +1,573 @@
+{
+  "subagent_id": "14A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). No values retrieved; all empirical items pending. Poverty baseline defined as the NLSS IV 2022/23 national-line headcount (NSO, Cost of Basic Needs, new line with 2022/23 base year per search-located NSO material, to confirm) with PIP international-line headcounts and Gini kept as a separate, differently constructed indicator (00B C-12): the two differ in poverty line, possibly welfare aggregate and spatial deflation, CPI/PPP conversion and PPP vintage, survey-year labelling, and PIP lined-up years are model extrapolations. NLSS III-IV comparison is not a like-for-like trend unless NSO back-casts. The NLSS IV data-quality critique flagged by 23C/10B is set up as a structured check list (sample frame, consumption module, survey/NA consumption ratio, census/BoP/NLFS consistency). Remittance income share is defined from the NLSS IV income-by-source module as both aggregate ratio and mean of household shares, by quintile/province, with an NRB BoP coverage diagnostic. Sixteen leads: ten search-located or shared (three of them, L02, L07, L08, with document identity to confirm), six general-knowledge URLs marked unverified.",
+  "findings": [
+    {
+      "claim": "Q1: Poverty headcount at the national poverty line (NLSS IV), national, urban/rural and by province, with standard errors.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23 (survey within FY2022/23)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV poverty chapter tables (headcount, poverty gap, squared gap) and SEs; publication date. Leads: 14A-L01, 14A-L02, 14A-L03."
+    },
+    {
+      "claim": "Q1: National poverty line value and its derivation (food line, non-food allowance, base year, spatial deflators).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_person",
+      "period": "NLSS IV 2022/23 (per person per year, current NPR)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: poverty-line annex of NLSS IV report: food basket, calorie norm, non-food allowance method, regional price indices. Leads: 14A-L01, 14A-L02."
+    },
+    {
+      "claim": "Q1: Earlier-round national-line headcounts (NLSS I 1995/96, II 2003/04, III 2010/11) and whether NSO publishes an NLSS III estimate on the NLSS IV line.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS rounds, survey FYs",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS III poverty report and any NSO back-cast; without a back-cast, the NLSS III-IV change is not a like-for-like trend. Leads: 14A-L13, 14A-L01."
+    },
+    {
+      "claim": "Q1: International-line headcounts (PIP) at each current international poverty line for each Nepal survey in PIP, with PPP vintage, welfare type and survey/reporting year.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "PIP survey years (calendar-year labels) ; PPP vintage to record",
+      "source_ids": [
+        "wb_pip"
+      ],
+      "observation_ids": [],
+      "note": "Required: PIP country profile/API extraction with retrieval date and PIP release version. Leads: 14A-L04, 14A-L05, 14A-L06."
+    },
+    {
+      "claim": "Q1: International poverty line values in PIP (per person per day) and PPP vintage used.",
+      "type": "pending",
+      "value": null,
+      "unit": "PPP_const2021",
+      "period": "PIP release current at retrieval",
+      "source_ids": [
+        "wb_pip"
+      ],
+      "observation_ids": [],
+      "note": "Required: PIP methodology note. Unit caveat: poverty lines are per person per day; units.py lacks a per-person-per-day PPP code (challenge to 01C) - store with explicit note until added. Leads: 14A-L06, 14A-L10."
+    },
+    {
+      "claim": "Q1: PIP lined-up (nowcast) headcount for years after 2022/23.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "PIP reporting years",
+      "source_ids": [
+        "wb_pip"
+      ],
+      "observation_ids": [],
+      "note": "Required: PIP lined-up series flagged as extrapolated; treated as model estimate, never as survey fact. Leads: 14A-L04, 14A-L05."
+    },
+    {
+      "claim": "Q2: Share of remittances in total household income (aggregate ratio and mean of household shares), national, urban/rural, province and consumption quintile; foreign and domestic remittances separately.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV income-by-source tables or microdata income module with weights. Leads: 14A-L01, 14A-L03."
+    },
+    {
+      "claim": "Q2: Share of households receiving remittances (any source; foreign only) by quintile and province.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV remittance chapter; same observation set as 23C (no double ingestion). Leads: 14A-L01, 14A-L03."
+    },
+    {
+      "claim": "Q2: Ratio of NLSS IV grossed-up foreign remittance receipts to NRB BoP personal remittances for FY2022/23 (survey coverage check).",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "FY2022/23",
+      "source_ids": [
+        "nso_nepal",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV total weighted remittance receipts and NRB FY2022/23 BoP inflow (23C observation). Different concepts; used only as coverage diagnostic. Leads: 14A-L01, 14A-L03."
+    },
+    {
+      "claim": "Q3: Consumption Gini (per-capita, spatially deflated) from NLSS IV report.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "NLSS IV 2022/23",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV inequality table; record scale (0-1 or 0-100) as published. Leads: 14A-L01, 14A-L03."
+    },
+    {
+      "claim": "Q3: PIP Gini for Nepal by survey year and WDI SI.POV.GINI cross-check.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "PIP survey years",
+      "source_ids": [
+        "wb_pip",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: PIP/WDI extraction; differences vs NSO Gini to be explained by aggregate/deflator choice (C-12). Leads: 14A-L04, 14A-L05, 14A-L09."
+    },
+    {
+      "claim": "Q3: Consumption shares by quintile/decile and Palma ratio (NLSS IV).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: consumption distribution table or microdata. Leads: 14A-L01, 14A-L03."
+    },
+    {
+      "claim": "Method: national-line and PIP headcounts are different indicators (different lines, possibly different welfare aggregates/deflators, PPP conversion, year labelling) and are reported side by side, never merged or averaged (C-12).",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Method: the NSO adopted a new national poverty line with 2022/23 as base year (per search-located NSO material; to confirm on retrieval). Unless NSO publishes NLSS III on the new line, NLSS III and NLSS IV national-line headcounts are not a like-for-like trend.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": []
+    },
+    {
+      "claim": "Method: NLSS IV fieldwork falls within FY2022/23 (mid-July to mid-July) spanning two calendar years; PIP assigns its own survey-year label. Year labels are recorded as published and mapped only with a documented rule.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "NLSS IV poverty chapter and poverty-line annex (headcount, gap, SEs, line derivation, spatial deflators)",
+    "NLSS IV microdata (consumption aggregate, income by source, weights) for quintile/province replication",
+    "NSO back-cast of NLSS III poverty on the NLSS IV line (existence unknown)",
+    "PIP Nepal survey list, welfare type, PPP vintage and headcounts at current international lines",
+    "NLSS IV consumption Gini and quintile shares; PIP Gini",
+    "Content of the NLSS IV data-quality critique and any NSO/World Bank response",
+    "units.py code for per-person-per-day PPP amounts"
+  ],
+  "assumptions": [
+    {
+      "id": "14A-A1",
+      "text": "The official welfare-dashboard poverty indicator is the NSO national-line headcount from the latest NLSS round; PIP is a comparison indicator.",
+      "basis": "assumption"
+    },
+    {
+      "id": "14A-A2",
+      "text": "Households are ranked by per-capita (spatially deflated) consumption for quintile analysis of remittance shares.",
+      "basis": "assumption"
+    },
+    {
+      "id": "14A-A3",
+      "text": "PIP lined-up estimates for non-survey years are model estimates and are labelled estimate, never fact, when ingested.",
+      "basis": "assumption"
+    },
+    {
+      "id": "14A-A4",
+      "text": "Remittance income share uses the NLSS IV definition of total household income; no re-imputation of missing income components in r2.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00B",
+      "text": "C-12 accepted. Add classifications 'survey-round comparability (national line rebased to 2022/23)' and 'lined-up extrapolation'. Escalation route for NLSS IV data-quality divergences."
+    },
+    {
+      "to": "01C",
+      "text": "units.py has no per-person-per-day PPP code; international poverty lines cannot be stored in native unit. Request e.g. PPP_const2021_per_person_day via Agent 00 (same issue as 10B's SDG 8.2.1 request)."
+    },
+    {
+      "to": "23C",
+      "text": "Agree one NLSS IV observation set for remittance receipt; 14A adds income-share and quintile tabulations. Please record foreign vs within-Nepal remittances separately so 14A shares are not inflated by domestic transfers."
+    },
+    {
+      "to": "10B",
+      "text": "Social-transfer receipt and remittance income come from the same NLSS IV income module; share one extraction and one income definition."
+    },
+    {
+      "to": "01A",
+      "text": "Need household final consumption expenditure (NA) for FY2010/11 and FY2022/23 on a consistent vintage for the survey/NA consumption ratio check on NLSS IV."
+    },
+    {
+      "to": "14B",
+      "text": "Provincial poverty and gender breakdowns should use the 14A NLSS IV observation set and SEs; do not rank provinces where confidence intervals overlap."
+    }
+  ],
+  "uncertainty": "Total for r1: no values retrieved. Main uncertainties for r2: (1) national vs PIP headcounts can diverge substantially for definitional and PPP-vintage reasons, so the gap itself is not evidence of error; (2) NLSS III-IV trend is not identified without an NSO back-cast; (3) NLSS IV data-quality critique unassessed; (4) survey income, especially remittances, is prone to under-reporting, so the remittance income share is likely a lower bound relative to BoP-based ratios, direction and size unknown until the coverage ratio is computed; (5) search-located documents L02, L07, L08 have unconfirmed identity.",
+  "source_leads": [
+    {
+      "lead_id": "14A-L01",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Poverty chapter (headcount, poverty gap, squared gap at national line; national, urban/rural, province); consumption distribution by quintile; consumption Gini if published; income-by-source and remittance/transfer income chapter (household receipt share, remittances by source within Nepal/India/other countries). Survey period within FY2022/23. Shared lead (23C, 10B, 16A, 02A); search-verified in r1."
+    },
+    {
+      "lead_id": "14A-L02",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1707800524_89.pdf",
+      "title": "Nepal Living Standards Survey IV 2022-23 (document hosted on Government of Nepal CDN)",
+      "publisher": "Government of Nepal (publisher/office to confirm on retrieval; likely NSO poverty report or summary)",
+      "source_id": "nso_nepal",
+      "contains": "Search-located r1. Expected: NLSS IV poverty report / summary with poverty-line derivation (Cost of Basic Needs), base year of the new line, food and non-food components, spatial price adjustment, headcount by domain. Identity and content to verify on retrieval."
+    },
+    {
+      "lead_id": "14A-L03",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round - microdata catalogue",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household microdata and documentation: sample design (frame, strata, households), consumption aggregate construction, poverty-line file, income-by-source modules incl. remittances with survey weights; needed for remittance income share by quintile/province and own Gini/headcount replication with standard errors. Shared lead; search-verified r1."
+    },
+    {
+      "lead_id": "14A-L04",
+      "url": "https://pip.worldbank.org",
+      "title": "Poverty and Inequality Platform - Nepal country profile",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "International-line headcounts (per PIP lines at the PPP vintage in use), survey-year vs lined-up estimates, Gini, welfare type (consumption/income), survey rounds included for Nepal, PPP vintage (C-12). Shared lead (00B)."
+    },
+    {
+      "lead_id": "14A-L05",
+      "url": "https://api.worldbank.org/pip/v1/pip?country=NPL&year=all",
+      "title": "PIP API - Nepal survey-year estimates",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "URL from general knowledge — unverified. Machine-readable survey-year headcount, poverty gap, Gini, welfare_type, reporting_year, survey_year, ppp vintage; poverty-line parameter set at fetch time to each current international line."
+    },
+    {
+      "lead_id": "14A-L06",
+      "url": "https://datanalytics.worldbank.org/PIP-Methodology/",
+      "title": "Poverty and Inequality Platform Methodology Handbook",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "URL from general knowledge — unverified. Welfare-aggregate harmonisation, CPI/PPP conversion, lining-up (interpolation/extrapolation with national-accounts growth) and international poverty line derivation; needed for method_comparison."
+    },
+    {
+      "lead_id": "14A-L07",
+      "url": "https://documents1.worldbank.org/curated/en/099051101062533877/pdf/IDU-7b8e9555-a244-4fe7-9608-28aa787130cc.pdf",
+      "title": "Poverty & Equity Brief (World Bank; country to confirm on retrieval)",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "Search-located r1; country not confirmed from search result. If Nepal: summary of national- and international-line poverty, Gini, survey used, and methodology notes. Secondary to PIP and NSO primaries."
+    },
+    {
+      "lead_id": "14A-L08",
+      "url": "https://documents1.worldbank.org/curated/en/099236304222515459/pdf/IDU-a339af51-fcc0-41a9-9f5b-2cb760dbac2b.pdf",
+      "title": "Poverty & Equity Brief (World Bank; country and vintage to confirm on retrieval)",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "Search-located r1; country and edition not confirmed. If Nepal: earlier/later edition of the brief for vintage comparison of PIP estimates."
+    },
+    {
+      "lead_id": "14A-L09",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SI.POV.GINI?format=json",
+      "title": "WDI API: Gini index, Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "URL from general knowledge — unverified. SI.POV.GINI (PIP-derived) by survey year; cross-check only for consumption Gini."
+    },
+    {
+      "lead_id": "14A-L10",
+      "url": "https://www.worldbank.org/en/programs/icp",
+      "title": "International Comparison Program - PPP results",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": "URL from general knowledge — unverified. ICP PPP vintages (2017, 2021) for private consumption used by PIP; required to document PPP vintage effect on Nepal international-line headcount (C-12)."
+    },
+    {
+      "lead_id": "14A-L11",
+      "url": "https://kathmandupost.com/columns/2024/07/15/data-cooking-in-government-surveys",
+      "title": "Opinion: Data cooking in government surveys",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "Critique of NLSS IV data quality (shared lead 23C/10B). Content not retrieved in r1; the specific allegations must be read and each tested against the NLSS IV methodology and external benchmarks."
+    },
+    {
+      "lead_id": "14A-L12",
+      "url": "https://en.nepalkhabar.com/news/detail/8315/",
+      "title": "News report on the NLSS IV poverty release (Nepal Khabar)",
+      "publisher": "Nepal Khabar",
+      "source_id": "academic",
+      "contains": "Search-located r1. News locator for NLSS IV poverty release date and the official NSO document; not evidence of any value."
+    },
+    {
+      "lead_id": "14A-L13",
+      "url": "https://cbs.gov.np",
+      "title": "Central Bureau of Statistics archive - NLSS III 2010/11 Poverty in Nepal report and NLSS I/II reports",
+      "publisher": "Central Bureau of Statistics (now NSO), Nepal",
+      "source_id": "nso_nepal",
+      "contains": "URL from general knowledge — unverified. Earlier-round national-line headcount, line derivation and consumption aggregate for comparability assessment with NLSS IV (NLSS I 1995/96, II 2003/04, III 2010/11)."
+    },
+    {
+      "lead_id": "14A-L14",
+      "url": "https://www.nepjol.info/index.php/DSAJ/article/view/84892",
+      "title": "Changing Remittance Patterns in Nepal: Evidence from NLSS III and IV",
+      "publisher": "Dhaulagiri Journal of Sociology and Anthropology",
+      "source_id": "academic",
+      "contains": "Secondary comparison of NLSS III and IV remittance incidence/share (shared lead 23C); method cross-check only, cite NLSS primaries."
+    },
+    {
+      "lead_id": "14A-L15",
+      "url": "https://www.nrb.org.np/red/nrb-wp-53-impact-of-remittances-rohan-and-mira/",
+      "title": "NRB Working Paper No. 53 - Impact of remittances",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Methodology reference on household effects of remittances (shared lead 23C)."
+    },
+    {
+      "lead_id": "14A-L16",
+      "url": "https://www.worldbank.org/en/country/nepal",
+      "title": "World Bank Nepal - country page (Nepal Development Update, poverty assessments)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "URL from general knowledge — unverified. Locator for World Bank Nepal poverty assessment / Development Update discussing NLSS IV vs NLSS III comparability and PIP updates."
+    }
+  ],
+  "specific": {
+    "poverty_baseline": {
+      "status": "pending",
+      "value": null,
+      "metrics": [
+        {
+          "metric": "headcount_national_line",
+          "unit": "percent",
+          "period": "NLSS IV 2022/23",
+          "breakdowns": [
+            "national",
+            "urban",
+            "rural",
+            "province (7)"
+          ],
+          "lead_ids": [
+            "14A-L01",
+            "14A-L02",
+            "14A-L03"
+          ]
+        },
+        {
+          "metric": "poverty_gap_and_squared_gap_national_line",
+          "unit": "percent",
+          "period": "NLSS IV 2022/23",
+          "lead_ids": [
+            "14A-L01"
+          ]
+        },
+        {
+          "metric": "national_poverty_line",
+          "unit": "NPR_per_person",
+          "period": "NLSS IV 2022/23, per year",
+          "lead_ids": [
+            "14A-L01",
+            "14A-L02"
+          ]
+        },
+        {
+          "metric": "headcount_international_lines",
+          "unit": "percent",
+          "period": "PIP survey years; PPP vintage recorded",
+          "lead_ids": [
+            "14A-L04",
+            "14A-L05",
+            "14A-L10"
+          ]
+        },
+        {
+          "metric": "consumption_gini_nso",
+          "unit": "index",
+          "period": "NLSS IV 2022/23",
+          "lead_ids": [
+            "14A-L01",
+            "14A-L03"
+          ]
+        },
+        {
+          "metric": "consumption_gini_pip",
+          "unit": "index",
+          "period": "PIP survey years",
+          "lead_ids": [
+            "14A-L04",
+            "14A-L09"
+          ]
+        },
+        {
+          "metric": "quintile_consumption_shares",
+          "unit": "percent",
+          "period": "NLSS IV 2022/23",
+          "lead_ids": [
+            "14A-L01",
+            "14A-L03"
+          ]
+        }
+      ],
+      "welfare_dashboard_indicator": "poverty_inclusion objective (welfare.py owner 14): 'poverty headcount (national line)' = NLSS IV headcount on the 2022/23-base line; provincial dispersion handed to 14B from the same observation set.",
+      "method": "Ingest NSO tables as primary; PIP as tier-2 international comparison; replicate from microdata with survey weights and design-based SEs where tables lack breakdowns.",
+      "note": "No values retrieved in r1 (data hosts blocked)."
+    },
+    "method_comparison": {
+      "status": "pending",
+      "conflict_ref": "00B C-12",
+      "dimensions": [
+        {
+          "dimension": "poverty line",
+          "national": "Cost of Basic Needs: food line from a reference basket priced at local prices meeting a calorie norm, plus non-food allowance; new line with 2022/23 base year (to confirm details)",
+          "pip": "International lines derived from national lines of poor countries, expressed in PPP dollars per person per day; line values change with PPP vintage",
+          "status": "method documented; values pending"
+        },
+        {
+          "dimension": "welfare aggregate",
+          "national": "Per-capita household consumption (food incl. own production, non-food, use value of durables, imputed/actual rent - components to confirm from NLSS IV annex)",
+          "pip": "PIP uses the survey's welfare aggregate (consumption for Nepal expected) as harmonised by World Bank; whether identical to the NSO aggregate is to be confirmed",
+          "status": "pending confirmation"
+        },
+        {
+          "dimension": "price adjustment",
+          "national": "Spatial price deflators across survey domains/regions; line set in 2022/23 prices",
+          "pip": "CPI deflation from survey period to ICP base year, then PPP conversion (private consumption PPP); may or may not apply NSO spatial deflators",
+          "status": "pending confirmation"
+        },
+        {
+          "dimension": "PPP vintage",
+          "national": "not applicable",
+          "pip": "Headcount depends on PPP vintage (2017 vs 2021 ICP); record vintage and PIP release with each value",
+          "status": "pending"
+        },
+        {
+          "dimension": "survey rounds",
+          "national": "NLSS I 1995/96, II 2003/04, III 2010/11, IV 2022/23; each round's line and aggregate differ; comparability requires NSO back-cast",
+          "pip": "Nepal surveys included in PIP and their year labels to be confirmed; lined-up years are interpolated/extrapolated with national-accounts growth (model estimates)",
+          "status": "pending"
+        },
+        {
+          "dimension": "period basis",
+          "national": "Survey within FY2022/23 (mid-July basis)",
+          "pip": "Calendar-year or decimal survey-year label",
+          "status": "method rule: record as published; no silent mapping"
+        },
+        {
+          "dimension": "urban/rural definition",
+          "national": "Post-2017 municipal classification likely differs from NLSS III urban definition (to verify); urban/rural trends across rounds may be definitional",
+          "pip": "PIP urban/rural splits, if any, inherit survey definition",
+          "status": "to verify"
+        }
+      ],
+      "nlss_iv_data_quality_debate": {
+        "status": "pending",
+        "flagged_by": [
+          "23C",
+          "10B"
+        ],
+        "lead_ids": [
+          "14A-L11",
+          "14A-L16",
+          "14A-L03"
+        ],
+        "checks_planned": [
+          "Read the critique (L11) and list each specific allegation before judging it",
+          "Sample frame and design (census frame used, strata, households, response) from microdata documentation",
+          "Consumption module design and recall periods vs NLSS III",
+          "Ratio of survey mean consumption to national-accounts household final consumption, NLSS III vs IV (NA from 01A observations)",
+          "Consistency of remittance incidence with census 2021 absentee households (10C) and NRB BoP (23C)",
+          "Consistency of labour indicators with NLFS (10B)",
+          "World Bank/PIP treatment: whether NLSS IV is accepted into PIP and any comparability flags"
+        ],
+        "escalation": "If NSO and PIP (or survey vs NA benchmarks) diverge beyond tolerance with unclear cause, escalate to 00B."
+      },
+      "lead_ids": [
+        "14A-L01",
+        "14A-L02",
+        "14A-L04",
+        "14A-L06",
+        "14A-L07",
+        "14A-L08",
+        "14A-L10",
+        "14A-L13",
+        "14A-L16"
+      ]
+    },
+    "remittance_income_share": {
+      "status": "pending",
+      "value": null,
+      "metrics": [
+        {
+          "metric": "remittance_share_of_household_income_aggregate",
+          "unit": "percent",
+          "definition": "sum over households (weighted) of remittance receipts / sum of total household income"
+        },
+        {
+          "metric": "remittance_share_of_household_income_mean_of_shares",
+          "unit": "percent",
+          "definition": "weighted mean of household-level remittance/income ratios"
+        },
+        {
+          "metric": "households_receiving_remittances",
+          "unit": "percent"
+        },
+        {
+          "metric": "remittance_to_consumption_ratio",
+          "unit": "ratio",
+          "definition": "robustness check because survey income is typically less reliable than consumption"
+        },
+        {
+          "metric": "survey_to_BoP_coverage_ratio",
+          "unit": "ratio",
+          "period": "FY2022/23"
+        }
+      ],
+      "breakdowns": [
+        "foreign vs domestic remittances",
+        "source (India / other countries / by country from microdata)",
+        "cash vs in-kind",
+        "consumption quintile",
+        "province",
+        "urban/rural"
+      ],
+      "method": "Use NLSS IV income-by-source module (the survey's own total-income definition, incl. imputed agricultural own-consumption if NSO includes it). Report aggregate share and mean-of-shares separately; rank households by per-capita consumption not income. Coverage diagnostic against NRB BoP FY2022/23 (23C) is a separate-concept comparison, not a calibration. Shared NLSS IV observation set with 23C/10B.",
+      "lead_ids": [
+        "14A-L01",
+        "14A-L03",
+        "14A-L14",
+        "14A-L15"
+      ]
+    },
+    "source_leads_count": 16
+  }
+}

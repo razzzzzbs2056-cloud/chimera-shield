@@ -1,0 +1,698 @@
+{
+  "subagent_id": "13A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). All empirical items are pending: data hosts are blocked and no document was downloaded. Primary leads were identified for Q1 (NPC PDNA 2015 Vol A/B and 2017 flood assessment; BIPAD, MoHA DRR Portal and NDRRMA reports; EM-DAT and DesInventar as cross-checks), Q2 (UNDRR GAR15 global risk model and GEM seismic risk for modelled AAL; World Bank CCDR for reconciliation) and Q3 (ThinkHazard classes, ICIMOD potentially dangerous glacial lakes layer, NEA plant list for overlay). specific.historical_loss_table structures eight candidate events (event dates from general knowledge, to verify) with damage/loss/needs columns; specific.aal_estimates defines hazard-by-hazard AAL slots; specific.exposed_assets defines the overlay method and asset classes. The reported late-August 2026 Rasuwagadhi-Kerung flood remains UNVERIFIED and is excluded from all tables. Ownership with 25C/25E is set to prevent double counting: 13A = historical losses and exposure; 25E = climate damage functions; 25C = cross-border event list.",
+  "findings": [
+    {
+      "claim": "Q1a: Documented economic damage and loss of the April-May 2015 Gorkha earthquake sequence (total, by sector, public vs private, and recovery needs).",
+      "type": "pending",
+      "value": null,
+      "period": "event April-May 2015; values in NPR at FY2014/15 prices (Nepal FY) plus USD at PDNA conversion rate",
+      "source_ids": [
+        "npc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: PDNA 2015 Vol A summary table (damage, loss, total effects by sector) and Vol B sector tables; record NPR and USD separately with the PDNA's stated exchange rate; recovery needs kept separate from damage and loss.",
+      "unit": "NPR_current_bn",
+      "lead_ids": [
+        "13A-L01",
+        "13A-L02",
+        "13A-L03"
+      ]
+    },
+    {
+      "claim": "Q1b: Documented losses of major floods (2008 Koshi embankment breach, 2014 Mid-West floods, 2017 Terai floods, 2021 Melamchi flood, September 2024 floods) by event.",
+      "type": "pending",
+      "value": null,
+      "period": "event dates (calendar); NPR values by Nepal FY of event",
+      "source_ids": [
+        "npc_nepal",
+        "ndrrma",
+        "em_dat"
+      ],
+      "observation_ids": [],
+      "note": "Required: 2017 flood PDNA tables; BIPAD/MoHA event totals for other events; EM-DAT damage (USD) kept alongside, not merged. Event list is candidate only (dates from general knowledge; to verify).",
+      "unit": "NPR_current_mn",
+      "lead_ids": [
+        "13A-L04",
+        "13A-L05",
+        "13A-L06",
+        "13A-L07",
+        "13A-L08",
+        "13A-L22"
+      ]
+    },
+    {
+      "claim": "Q1c: Annual recorded disaster losses by hazard and Nepal FY (deaths, affected, houses damaged, estimated NPR loss) from BIPAD/MoHA, FY2011/12 onward.",
+      "type": "pending",
+      "value": null,
+      "period": "Nepal FY series",
+      "source_ids": [
+        "ndrrma"
+      ],
+      "observation_ids": [],
+      "note": "Required: BIPAD export by hazard x FY; pre-2019 series from DRR Portal/DesInventar with a documented splice.",
+      "unit": "NPR_current_mn",
+      "lead_ids": [
+        "13A-L05",
+        "13A-L07",
+        "13A-L09"
+      ]
+    },
+    {
+      "claim": "Q2: Modelled average annual loss (AAL) by hazard (earthquake, flood, landslide, GLOF) for Nepal.",
+      "type": "pending",
+      "value": null,
+      "period": "model reference year (exposure vintage) — calendar",
+      "source_ids": [
+        "academic",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: GAR15 country AAL by hazard, GEM seismic AAL, any World Bank/GFDRR probabilistic assessment; each with exposure vintage, currency-year and hazard model. Not present in r1; if no probabilistic study exists for flood/landslide, report as a gap rather than derive.",
+      "unit": "USD_current_mn",
+      "lead_ids": [
+        "13A-L13",
+        "13A-L14",
+        "13A-L15"
+      ]
+    },
+    {
+      "claim": "Q3: Critical infrastructure in high-hazard zones — hydropower plants (MW) in PDGL-downstream reaches and high landslide/flood classes; strategic roads and border crossings; health and school facilities in high seismic class.",
+      "type": "pending",
+      "value": null,
+      "period": "current stock (calendar 2026 layer dates)",
+      "source_ids": [
+        "icimod",
+        "nea",
+        "thinkhazard",
+        "ndrrma"
+      ],
+      "observation_ids": [],
+      "note": "Required: NEA/DoED plant list with coordinates; ICIMOD PDGL layer; ThinkHazard classes; DoR road network; overlay method in specific.exposed_assets.",
+      "unit": "MW",
+      "lead_ids": [
+        "13A-L10",
+        "13A-L11",
+        "13A-L12",
+        "13A-L16",
+        "13A-L17",
+        "13A-L18",
+        "13A-L19"
+      ]
+    },
+    {
+      "claim": "Reported late-August 2026 Rasuwagadhi-Kerung (Kyirong/Rasuwa) flood: occurrence, date, losses and infrastructure damage.",
+      "type": "pending",
+      "value": null,
+      "period": "August 2026 (calendar); FY2026/27 (Nepal)",
+      "source_ids": [
+        "icimod",
+        "dhm",
+        "ndrrma"
+      ],
+      "observation_ids": [],
+      "note": "UNVERIFIED. Only news pointers and an unretrieved ICIMOD page. Must not enter the loss table, AAL or scenarios until a primary record (DHM bulletin, BIPAD entries, NDRRMA/MoHA situation report, ICIMOD analysis, or official Chinese statement) is retrieved; must be distinguished from the July 2025 Rasuwa GLOF (25C CBE-02).",
+      "lead_ids": [
+        "13A-L20",
+        "13A-L21",
+        "13A-L05",
+        "13A-L22"
+      ]
+    },
+    {
+      "claim": "Loss accounting follows the PDNA/DaLA convention: damage (destroyed physical assets, replacement value) and loss (changes in economic flows) are kept separate; only damage maps to capital-stock shocks, loss maps to flow shocks, and recovery needs are never added to either.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Division of labour to avoid double counting: 13A owns observed historical disaster losses and exposure (event records, PDNA, BIPAD, modelled AAL from published probabilistic studies); 25E owns forward-looking climate damage functions; 25C owns the cross-border event list. 13A supplies historical AAL as the baseline hazard loss; climate-change uplift is applied by 25E as a multiplier on the hazard component, never as an additive second loss series.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "BIPAD (tier 1) is preferred for Nepal-side incident losses; EM-DAT and DesInventar are cross-checks. Where they disagree both values are retained with the methodological cause (EM-DAT thresholds and event aggregation; BIPAD incident-level reporting and under-recording of economic loss).",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "NPR losses stay in current prices tagged with Nepal FY of the event; conversion to constant prices uses the GDP deflator from the shared baseline and conversion to USD uses a documented FY-average rate; calendar-year EM-DAT USD values are never mixed with FY NPR series without a documented conversion.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "PDNA 2015 and 2017 flood assessment tables not retrieved (npc.gov.np blocked; PDF URLs from general knowledge, unverified).",
+    "BIPAD and MoHA incident exports not retrieved; pre-2019 splice method untested.",
+    "EM-DAT requires registration (access route pending with 00A, per 25C).",
+    "No Nepal-specific probabilistic flood or landslide AAL study located; GAR15 and GEM are global models with coarse exposure.",
+    "Infrastructure geolocation (NEA/DoED plant coordinates, DoR road network, facility registries) not located as downloadable primary files.",
+    "No primary record for the reported late-August 2026 Rasuwagadhi-Kerung flood; candidate events 2014, 2021, 2023, 2024 not yet confirmed from primary documents.",
+    "Web search budget: one search used (spent on 13C BCR evidence); 13A leads are reused or general-knowledge URLs."
+  ],
+  "assumptions": [
+    {
+      "id": "13A-A1",
+      "text": "Damage, loss and recovery needs are separate quantities and never summed.",
+      "basis": "assumption (PDNA/DaLA method)"
+    },
+    {
+      "id": "13A-A2",
+      "text": "13A = historical losses and exposure; 25E = climate damage functions; 25C = cross-border event list. Shared events carry one event_id cross-referenced across files.",
+      "basis": "assumption (coordination rule)"
+    },
+    {
+      "id": "13A-A3",
+      "text": "News articles only locate primary documents and are never cited for dates, casualties or losses.",
+      "basis": "assumption"
+    },
+    {
+      "id": "13A-A4",
+      "text": "Event dates in historical_loss_table are candidate identifiers from general knowledge, marked 'to verify', and carry no values.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "25E",
+      "text": "To avoid double counting: 25E damage functions should take 13A historical AAL (hazard baseline) as the base and model only the climate-driven change; please do not add a separate observed-disaster loss term. Please confirm SIR-HY-1 hazard EAD for hydropower uses 13A exposed_assets rather than an independent plant list."
+    },
+    {
+      "to": "25C",
+      "text": "Please share event_ids for cross-border events (CBE-01..07); 13A will reference them rather than duplicate rows, and Koshi 2008 losses will be recorded once (13A HL-02 references CBE for the event identity)."
+    },
+    {
+      "to": "16B",
+      "text": "The August 2026 Rasuwagadhi-Kerung flood is still UNVERIFIED in 13A; it is excluded from loss tables and exposure calibration until a primary record exists. Please do not cite 13A as corroboration."
+    },
+    {
+      "to": "06",
+      "text": "Capital-stock shock channel (X18) should use PDNA damage (asset) values only, not loss or needs, once retrieved; no calibration is available in r1."
+    },
+    {
+      "to": "00A",
+      "text": "Request catalog ids for DesInventar, UNDRR GAR, GEM and Department of Roads, and a human-approved EM-DAT access route. Please verify general-knowledge PDNA PDF URLs on first fetch."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Known structural uncertainty: PDNA values depend on DaLA pricing and the exchange rate chosen; BIPAD under-records economic loss for small events; EM-DAT has inclusion thresholds and sparse damage fields for Nepal; global AAL models (GAR15, GEM) use coarse exposure and differ in hazard models, so AAL values from different models are not comparable without reconciliation. Exposure overlays depend on layer vintage and hazard classification thresholds.",
+  "specific": {
+    "historical_loss_table": {
+      "status": "pending",
+      "method": "One row per event; columns: event_id, hazard, dates (calendar), Nepal FY, deaths, affected, houses damaged, damage (NPR_current_bn), loss (NPR_current_bn), recovery needs (NPR_current_bn), USD values as reported with conversion rate, source priority PDNA > BIPAD/MoHA > EM-DAT; divergent values kept side by side.",
+      "unit_codes": [
+        "NPR_current_bn",
+        "NPR_current_mn",
+        "USD_current_mn",
+        "persons",
+        "count"
+      ],
+      "rows": [
+        {
+          "event_id": "HL-01",
+          "event": "Gorkha earthquake and aftershocks",
+          "dates": "April-May 2015 (to verify)",
+          "fy": "FY2014/15",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L02",
+            "13A-L03"
+          ],
+          "data_required": "PDNA Vol A summary table; Vol B sector tables; exchange rate stated in PDNA"
+        },
+        {
+          "event_id": "HL-02",
+          "event": "Koshi embankment breach flood (cross-border; see 25C)",
+          "dates": "August 2008 (to verify)",
+          "fy": "FY2008/09",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L07",
+            "13A-L08",
+            "13A-L09"
+          ],
+          "data_required": "MoHA/DesInventar records; EM-DAT; Nepal-side only",
+          "cross_ref": "25C event list"
+        },
+        {
+          "event_id": "HL-03",
+          "event": "Mid-West floods and landslides",
+          "dates": "August 2014 (to verify)",
+          "fy": "FY2014/15",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L07",
+            "13A-L08"
+          ],
+          "data_required": "MoHA Nepal Disaster Report; EM-DAT"
+        },
+        {
+          "event_id": "HL-04",
+          "event": "Terai floods",
+          "dates": "August 2017 (to verify)",
+          "fy": "FY2017/18",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L04",
+            "13A-L05"
+          ],
+          "data_required": "NPC post-flood recovery needs assessment tables"
+        },
+        {
+          "event_id": "HL-05",
+          "event": "Melamchi flood/debris flow",
+          "dates": "June 2021 (to verify)",
+          "fy": "FY2020/21 or FY2021/22 (to confirm against mid-June/mid-July FY boundary)",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L05",
+            "13A-L22"
+          ],
+          "data_required": "BIPAD; MoHA/NDRRMA reports; Melamchi water supply damage assessment"
+        },
+        {
+          "event_id": "HL-06",
+          "event": "Jajarkot/Rukum West earthquake",
+          "dates": "November 2023 (to verify)",
+          "fy": "FY2023/24",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L01",
+            "13A-L05"
+          ],
+          "data_required": "NPC PDNA if published; BIPAD"
+        },
+        {
+          "event_id": "HL-07",
+          "event": "Late-September floods and landslides (Kathmandu Valley and central Nepal)",
+          "dates": "September 2024 (to verify)",
+          "fy": "FY2024/25",
+          "status": "pending",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L05",
+            "13A-L06",
+            "13A-L22"
+          ],
+          "data_required": "BIPAD; NDRRMA/MoHA reports; any PDNA"
+        },
+        {
+          "event_id": "HL-08",
+          "event": "Reported Rasuwagadhi-Kerung (Kyirong/Rasuwa) flood",
+          "dates": "late August 2026 as reported; UNVERIFIED",
+          "fy": "FY2026/27",
+          "status": "unverified_excluded",
+          "damage": null,
+          "loss": null,
+          "recovery_needs": null,
+          "lead_ids": [
+            "13A-L20",
+            "13A-L21"
+          ],
+          "data_required": "Primary record: DHM bulletin, BIPAD entries, NDRRMA/MoHA situation report, ICIMOD analysis or official Chinese statement; separation from July 2025 Rasuwa GLOF",
+          "notes": "Excluded from all aggregates and scenarios until verified."
+        }
+      ],
+      "annual_series": {
+        "status": "pending",
+        "description": "BIPAD/MoHA recorded losses by hazard x Nepal FY",
+        "lead_ids": [
+          "13A-L05",
+          "13A-L07",
+          "13A-L09"
+        ]
+      }
+    },
+    "aal_estimates": {
+      "status": "pending",
+      "method": "Take AAL only from published probabilistic models; record model, exposure vintage, currency-year, return-period coverage. Do not derive AAL from short observed series except as a labelled empirical cross-check (mean annual recorded loss) with its record length. Express also as ratio to GDP of the same year basis once baseline GDP (calendar vs FY) is aligned.",
+      "hazards": [
+        {
+          "hazard": "earthquake",
+          "aal": null,
+          "unit": "USD_current_mn",
+          "status": "pending",
+          "candidate_models": [
+            "GAR15",
+            "GEM global seismic risk"
+          ],
+          "lead_ids": [
+            "13A-L13",
+            "13A-L14"
+          ]
+        },
+        {
+          "hazard": "riverine flood",
+          "aal": null,
+          "unit": "USD_current_mn",
+          "status": "pending",
+          "candidate_models": [
+            "GAR15"
+          ],
+          "lead_ids": [
+            "13A-L13",
+            "13A-L15"
+          ]
+        },
+        {
+          "hazard": "landslide",
+          "aal": null,
+          "unit": "USD_current_mn",
+          "status": "pending",
+          "candidate_models": [
+            "none located"
+          ],
+          "lead_ids": [
+            "13A-L12"
+          ],
+          "notes": "Likely gap; use empirical recorded loss mean as labelled cross-check only"
+        },
+        {
+          "hazard": "GLOF",
+          "aal": null,
+          "unit": "USD_current_mn",
+          "status": "pending",
+          "candidate_models": [
+            "none located; ICIMOD PDGL inventory provides hazard not loss"
+          ],
+          "lead_ids": [
+            "13A-L16",
+            "13A-L17"
+          ]
+        }
+      ],
+      "empirical_crosscheck": {
+        "status": "pending",
+        "description": "Mean annual recorded loss by hazard from BIPAD/MoHA over stated FY window",
+        "unit": "NPR_current_mn",
+        "lead_ids": [
+          "13A-L05",
+          "13A-L07"
+        ]
+      },
+      "handoff": "Baseline hazard AAL passes to 25E (climate uplift) and 06 (capital-stock shocks); 25E must not re-add observed losses."
+    },
+    "exposed_assets": {
+      "status": "pending",
+      "method": "GIS overlay of asset point/line layers on hazard classes: ThinkHazard high/medium classes (flood, earthquake, landslide), ICIMOD PDGL downstream reaches, and BIPAD incident density; report count, MW and km exposed per class, by basin and province.",
+      "asset_classes": [
+        {
+          "class": "hydropower plants (operating and under construction)",
+          "metric_unit": "MW",
+          "status": "pending",
+          "lead_ids": [
+            "13A-L19",
+            "13A-L16",
+            "13A-L17",
+            "13A-L18"
+          ]
+        },
+        {
+          "class": "strategic road network and bridges",
+          "metric_unit": "count",
+          "status": "pending",
+          "lead_ids": [
+            "13A-L10",
+            "13A-L12"
+          ],
+          "data_required": "Department of Roads SRN layer (no lead yet)"
+        },
+        {
+          "class": "border crossings and dry ports (Rasuwagadhi, Tatopani, Terai ports)",
+          "metric_unit": "count",
+          "status": "pending",
+          "lead_ids": [
+            "13A-L16",
+            "13A-L10"
+          ]
+        },
+        {
+          "class": "schools and health facilities",
+          "metric_unit": "count",
+          "status": "pending",
+          "lead_ids": [
+            "13A-L11"
+          ],
+          "data_required": "MoEST/MoHP facility registries with coordinates (no lead yet)"
+        },
+        {
+          "class": "population in high-hazard classes",
+          "metric_unit": "persons",
+          "status": "pending",
+          "lead_ids": [
+            "13A-L10",
+            "13A-L11",
+            "13A-L12"
+          ],
+          "data_required": "NSO census 2021 by municipality"
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "13A-L01",
+      "url": "https://npc.gov.np",
+      "title": "National Planning Commission, Nepal - Post-Disaster Needs Assessments",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Landing point for NPC PDNA reports (2015 earthquake PDNA Vol A/B; 2017 Terai flood PDNA) with sector damage vs loss in NPR by Nepal FY",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L02",
+      "url": "https://www.npc.gov.np/images/category/PDNA_Volume_A.pdf",
+      "title": "Nepal Earthquake 2015: Post Disaster Needs Assessment, Vol. A: Key Findings",
+      "publisher": "National Planning Commission, Government of Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Summary tables of damage and loss by sector (social, productive, infrastructure, cross-cutting), public/private split, recovery needs; NPR (FY2014/15 prices) and USD conversion rate used; macro impact on FY2014/15 growth",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L03",
+      "url": "https://www.npc.gov.np/images/category/PDNA_volume_BFinalVersion.pdf",
+      "title": "Nepal Earthquake 2015: Post Disaster Needs Assessment, Vol. B: Sector Reports",
+      "publisher": "National Planning Commission, Government of Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Sector-level damage and loss tables and methodology (DaLA), by district for housing, education, health, energy, transport, tourism",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L04",
+      "url": "https://www.npc.gov.np/images/category/PDNA_volume_final.pdf",
+      "title": "Nepal Flood 2017: Post Flood Recovery Needs Assessment",
+      "publisher": "National Planning Commission, Government of Nepal",
+      "source_id": "npc_nepal",
+      "contains": "August 2017 Terai flood: damage and loss by sector and district (NPR, FY2017/18), recovery needs",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L05",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal incident database",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Incident records by date, hazard, district/municipality: deaths, missing, injured, houses damaged, infrastructure damaged, estimated loss (NPR); exportable by hazard and period",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L06",
+      "url": "https://ndrrma.gov.np",
+      "title": "NDRRMA Nepal - publications (Nepal Disaster Report, National DRR Strategic Action Plan, monsoon response plans)",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Annual/biennial disaster reports with loss statistics by hazard and FY; DRR policy and strategic action plan 2018-2030",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L07",
+      "url": "http://drrportal.gov.np",
+      "title": "Nepal DRR Portal (Ministry of Home Affairs) - historical incident data and Nepal Disaster Report series",
+      "publisher": "Ministry of Home Affairs, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Pre-BIPAD historical incident records and MoHA Nepal Disaster Report editions (loss by hazard, FY)",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L08",
+      "url": "https://public.emdat.be",
+      "title": "EM-DAT public data portal",
+      "publisher": "CRED, UCLouvain",
+      "source_id": "em_dat",
+      "contains": "Event-level Nepal records: type, dates, deaths, affected, total damage (USD nominal and CPI-adjusted); registration required",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L09",
+      "url": "https://www.desinventar.net/DesInventar/profiletab.jsp?countrycode=npl",
+      "title": "DesInventar Nepal disaster loss database",
+      "publisher": "UNDRR / DesInventar",
+      "source_id": "academic",
+      "contains": "Historical incident-level loss database for Nepal (1971 onward) by district and hazard; precursor to BIPAD, for long-period frequency and loss series",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L10",
+      "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+      "title": "ThinkHazard - Nepal - River flood",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Qualitative hazard class for river flood (national/sub-national); not a loss or exposure value",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L11",
+      "url": "https://thinkhazard.org/en/report/175-nepal/EQ",
+      "title": "ThinkHazard - Nepal - Earthquake",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Qualitative earthquake hazard class by district; underlying PGA source reference",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L12",
+      "url": "https://thinkhazard.org/en/report/175-nepal/LS",
+      "title": "ThinkHazard - Nepal - Landslide",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Qualitative landslide hazard class by district",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L13",
+      "url": "https://www.preventionweb.net/english/hyogo/gar/2015/en/home/",
+      "title": "UNDRR Global Assessment Report 2015 - global risk model country results",
+      "publisher": "UNDRR",
+      "source_id": "academic",
+      "contains": "Probabilistic average annual loss (AAL) and probable maximum loss by hazard (earthquake, flood, etc.) for Nepal from the GAR15 global risk model; exposure model basis",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L14",
+      "url": "https://www.globalquakemodel.org/product/global-seismic-risk-map",
+      "title": "GEM Global Seismic Risk Map and country risk profiles",
+      "publisher": "Global Earthquake Model Foundation",
+      "source_id": "academic",
+      "contains": "Modelled seismic average annual economic loss and exposure (residential/non-residential/industrial) for Nepal; model version and exposure vintage",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L15",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099415012072225780",
+      "title": "Nepal - Country Climate and Development Report (2022)",
+      "publisher": "World Bank Group",
+      "source_id": "wb_npl",
+      "contains": "Climate hazard impact channels incl. road transport and flood/landslide exposure; check for AAL tables used (to reconcile with 25E, which owns damage functions)",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L16",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali basins (2020)",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": "Potentially dangerous glacial lakes by basin/country and historical GLOF list; input for GLOF exposure of hydropower and border infrastructure",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L17",
+      "url": "https://rds.icimod.org/Home/DataDetail?metadataId=1971950",
+      "title": "Potentially dangerous glacial lakes dataset (ICIMOD RDS)",
+      "publisher": "ICIMOD Regional Database System",
+      "source_id": "icimod",
+      "contains": "Geospatial layer of PDGLs for overlay with hydropower, roads and settlements",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L18",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level hazard exposure evidence for hydropower plants; pointer to underlying publications",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L19",
+      "url": "https://www.nea.org.np",
+      "title": "Nepal Electricity Authority - annual reports (plant list, capacity, location, outages)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Hydropower plant list with capacity (MW), river/basin, district, commissioning year; outage records after disaster events (for exposure overlay)",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L20",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Reported late-August 2026 Kyirong/Rasuwa event account; UNVERIFIED event pointer; not retrieved",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "13A-L21",
+      "url": "https://www.cnn.com/2026/08/29/asia/himalayas-risk-china-nepal-india-infrastructure-intl-hnk",
+      "title": "The Himalayas are unpredictable. But countries are building there like never before (29 Aug 2026)",
+      "publisher": "CNN (news)",
+      "source_id": "academic",
+      "contains": "News pointer only for the reported August 2026 event; never evidence",
+      "url_status": "reused_from_source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "secondary_pointer"
+    },
+    {
+      "lead_id": "13A-L22",
+      "url": "https://moha.gov.np",
+      "title": "Ministry of Home Affairs, Nepal - situation reports",
+      "publisher": "Ministry of Home Affairs, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Monsoon and event situation reports (e.g. Melamchi 2021, September 2024 floods, Jajarkot 2023 earthquake) with casualties and damage counts",
+      "url_status": "unverified_general_knowledge (URL from general knowledge — unverified; confirm on fetch)",
+      "lead_type": "primary"
+    }
+  ]
+}
