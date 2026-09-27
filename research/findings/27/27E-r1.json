@@ -1,0 +1,1777 @@
+{
+ "subagent_id": "27E",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T00:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; no WebSearch used - all leads reused from 27B/27C plus three multilateral transit-law texts marked 'URL from general knowledge - unverified'). Q1 (is each hypothetical arrangement incentive-compatible and enforceable?) is answered with conditional statuses, never probabilities. 27B arrangements: HA-1 long-term PPA FEASIBLE_IF nine conditions (price band, national-value W_NN >= 0, regime restriction, damages, approval-tenor, capacity, eligibility, ratification, outside-option drift); HA-2 energy banking FEASIBLE_IF (return-leg security is binding); HA-3 trilateral sale FEASIBLE_IF (approval state exogenous; payment security and Bangladesh-side approval missing from 27B); HA-4 joint interconnector UNDETERMINED (India-side benefit unspecified; discount rate unregistered); HA-5 transit service UNDETERMINED (fee choice set may be fixed by treaty and multilateral transit law). 27C structures: SO-01, SO-02, SO-04, SO-05, SO-07, SO-08, SO-09 FEASIBLE_IF; SO-03, SO-06, SO-10 UNDETERMINED; 27D crisis sequencing UNDETERMINED pending its eligibility matrix. No arrangement is marked INFEASIBLE because no retrieved evidence supports it; infeasibility triggers are listed. Welfare conflicts are mapped to the 12 objectives as channels with unknown direction. All empirical items pending; no numbers recorded. Nothing here represents any government's position or intentions.",
+ "findings": [
+  {
+   "claim": "Q1: Incentive compatibility and enforceability of HA-1..HA-5 (27B), SO-01..SO-10 (27C) and the 27D coordination design are assessed as conditional statuses (FEASIBLE_IF: HA-1, HA-2, HA-3, SO-01, SO-02, SO-04, SO-05, SO-07, SO-08, SO-09; UNDETERMINED: HA-4, HA-5, SO-03, SO-06, SO-10, 27D-COORD). No condition can be evaluated in r1 because every price, cost, capacity, approval and legal-text parameter is unretrieved.",
+   "type": "pending",
+   "value": null,
+   "period": "Nepali months x time blocks aggregated to Nepal FY (electricity); legal status as of instrument dates",
+   "source_ids": [
+    "cea_india",
+    "cerc_india",
+    "iex_india",
+    "nea",
+    "erc_nepal",
+    "nrb"
+   ],
+   "observation_ids": [],
+   "note": "Requires 22B/22E parameters, CEA approval orders and guideline texts, CBTE text, agreement texts (27A AR-05/06/07/15/29), 26A DSA and 26D BIPPA instrument."
+  },
+  {
+   "claim": "HA-1 national-value condition W_NN >= 0 by contracted block, in addition to seller participation; sign pending.",
+   "type": "pending",
+   "value": null,
+   "unit": "NPR_per_MWh",
+   "period": "Nepali months x time blocks, Nepal FY",
+   "source_ids": [
+    "nea",
+    "iex_india",
+    "cerc_india",
+    "erc_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Needs OC_t by 22E regime and C_PPA_t."
+  },
+  {
+   "claim": "Approval validity V_A relative to contract tenor for HA-1/HA-2/HA-3 and line life for HA-4 (hold-up test).",
+   "type": "pending",
+   "value": null,
+   "unit": "months",
+   "period": "procedure in force 2021 onward, as amended",
+   "source_ids": [
+    "cea_india"
+   ],
+   "observation_ids": [],
+   "note": "CEA DA procedure text and approval orders (27E-L03, 27E-L04)."
+  },
+  {
+   "claim": "Dispute-resolution forum, governing law and any approval-linkage or non-discriminatory-access clauses in the 2014 India-Nepal power trade agreement and in any 2024 long-term agreement text (enforceability of HA-1, HA-4).",
+   "type": "pending",
+   "value": null,
+   "period": "2014 onward",
+   "source_ids": [],
+   "observation_ids": [],
+   "note": "27A AR-05, AR-06 primary texts."
+  },
+  {
+   "claim": "Admissible range of transit fees and procedures under the transit treaty/protocol and, if applicable, GATT Article V and TFA Article 11 (defines HA-5 choice set).",
+   "type": "pending",
+   "value": null,
+   "period": "instruments in force",
+   "source_ids": [
+    "wto"
+   ],
+   "observation_ids": [],
+   "note": "Treaty of Transit text (27E-L24) and WTO texts (new leads, unverified URLs)."
+  },
+  {
+   "claim": "Contract text, payment-security terms and currency of the reported October 2024 tripartite power sale (HA-3 enforceability reference).",
+   "type": "pending",
+   "value": null,
+   "period": "October 2024 onward",
+   "source_ids": [
+    "nea"
+   ],
+   "observation_ids": [],
+   "note": "News locators only."
+  },
+  {
+   "claim": "India-Nepal BIPPA status (in force vs revoked): two conflicting documented positions kept; SO-10 and treaty-protection conditions in SO-02/SO-09 undetermined until the dated instrument is retrieved.",
+   "type": "pending",
+   "value": null,
+   "period": "as of instrument date",
+   "source_ids": [
+    "unctad"
+   ],
+   "observation_ids": [],
+   "note": "26D r2; not resolved by 27E."
+  },
+  {
+   "claim": "Method: statuses are FEASIBLE_IF / INFEASIBLE_IF / UNDETERMINED only; no probabilities or likelihood language are assigned (CLAUDE.md).",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: national feasibility (22E opportunity cost, domestic transfers netted) and entity feasibility (seller/utility payoffs including C_PPA_t) are evaluated separately; an arrangement is reported FEASIBLE only where both hold or the divergence is stated.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: unilateral regulatory approvals are treated as exogenous states evaluated in both values (A_t = 0/1), never as a party's choice with attributed preferences.",
+   "type": "assumption",
+   "source_ids": []
+  },
+  {
+   "claim": "Method: welfare effects across the 12 objectives are recorded as conflict channels with direction '?' until observations support a sign; no GDP-only ranking.",
+   "type": "assumption",
+   "source_ids": []
+  }
+ ],
+ "data_gaps": [
+  "All 22B/22E block-level price and cost parameters and the 22E regime classification (no observations).",
+  "CEA approval orders (validity, renewal criteria, quanta) and 2018 Guidelines eligibility clause text.",
+  "Dispute-resolution and approval-linkage clauses of the 2014 power agreement and the reported 2024 long-term agreement; Supreme Court verdict on ratification route.",
+  "Tripartite contract text, payment-security and currency terms; Bangladesh procurement approval route.",
+  "JV agreements, tariff route, capital cost of cross-border lines; discount rate and asset life assumptions for CRF.",
+  "Transit treaty/protocol fee and procedure clauses; applicability of GATT Article V / TFA Article 11.",
+  "26A debt-sustainability analysis and contingent-liability register; 26D BIPPA instrument; 26C eligibility dates.",
+  "27C counterparty payoff specifications for SO-03 and SO-06; 27D eligibility matrix."
+ ],
+ "assumptions": [
+  {
+   "id": "27E-A1",
+   "text": "All arrangements audited are hypothetical constructs; party labels are generic roles.",
+   "basis": "assumption (safety note)"
+  },
+  {
+   "id": "27E-A2",
+   "text": "Opportunity costs follow 22E regimes (spill / export-marginal / import-marginal) and 27B-A2.",
+   "basis": "assumption consistent with 22E and 27B"
+  },
+  {
+   "id": "27E-A3",
+   "text": "Approval states are exogenous and evaluated in both values; no probability assigned.",
+   "basis": "assumption consistent with 27B-A4"
+  },
+  {
+   "id": "27E-A4",
+   "text": "Comparator cases (Bhutan, Lao PDR) inform mechanisms only; magnitudes are not transferred to Nepal without documented adjustment.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "27B",
+   "text": "HA-1 conditions are incomplete: (i) add a national-value participation condition W_NN >= 0 alongside seller participation - with C_PPA_t below p_c the seller can gain while the nation loses in import-marginal blocks; (ii) restrict firm delivery to spill/export-marginal regimes or price the import-marginal OC_t explicitly; (iii) specify dispute forum/governing law so d_S and d_B are enforceable; (iv) add outside-option drift over the tenor (S09/S04 price paths) and an indexation/reopener term as a decision variable."
+  },
+  {
+   "to": "27B",
+   "text": "HA-2 asserts that the return obligation falls in the counterparty's high-price season; this is an unverified empirical premise - mark it pending on 22B block-level prices by Nepali month. Also add a sequencing (first-mover) IC evaluated at the dry-leg date and the regulatory treatment of banked energy."
+  },
+  {
+   "to": "27B",
+   "text": "HA-3 omits the buyer-side procurement/regulatory approval, contract currency, convertibility and payment-security terms; the payoff uses a generic FX without payment-delay risk. Add these as conditions."
+  },
+  {
+   "to": "27B",
+   "text": "HA-4 cannot be audited on the India side: B_I 'system benefits' are unattributed, so IC4-individual is undefined. Also CRF needs a discount rate and asset life that are not in the parameter register - register them as labelled assumptions (config/model_config.yaml owners) with bounds. Add safeguard/right-of-way constraints."
+  },
+  {
+   "to": "27B",
+   "text": "HA-5 treats f_r as freely negotiable; fees and procedures may be fixed by the transit treaty/protocol and bounded by multilateral transit law (GATT Art. V, TFA Art. 11 - to verify). Also e_r is defined as an 'expected' cost, which implies a diversion probability; restate as documented procedure cost. The value of time h has no source or assumption label."
+  },
+  {
+   "to": "27B",
+   "text": "No HA is mapped to the 12 welfare objectives or to scenarios; 27E has added channels and scenario links - please adopt or contest them in r2."
+  },
+  {
+   "to": "27C",
+   "text": "Structure options list feasibility conditions but no counterparty payoff or enforcement mechanism; SO-03 and SO-06 are UNDETERMINED for that reason. Please specify the anchor investor/buyer outside option and the enforcement instrument (guarantee, treaty, contract forum) for each option."
+  },
+  {
+   "to": "27D",
+   "text": "27D-COORD cannot be audited until the eligibility matrix, concurrent-facility sequencing rules and documentary prerequisites promised in outputs_to_27E are delivered."
+  },
+  {
+   "to": "00A",
+   "text": "No contract layer exists in energy.MarginalUseComparison (27B's challenge); 27E feasibility statuses cannot be computed in code until p_c band, damages and approval state are implemented. Also add catalog ids for WTO legal texts and UN treaty texts if absent."
+  }
+ ],
+ "uncertainty": "Very high. Every condition is pending, so no status can move from conditional to settled in r1. Structural uncertainty: unilateral approval regimes may dominate price terms; entity and national feasibility can diverge; comparator evidence may not transfer; legal texts may fix variables that 27B treats as negotiable. Statuses are conditional classifications, not forecasts or probabilities, and say nothing about any government's intentions.",
+ "specific": {
+  "feasibility_findings": {
+   "status": "pending",
+   "question": "Q1 Is each hypothetical arrangement incentive-compatible and enforceable?",
+   "answer_status": "Answered as conditional statuses only. Every arrangement is either FEASIBLE_IF (exact conditions and the pending evidence that settles each) or UNDETERMINED (why, and what would convert it). No arrangement is marked INFEASIBLE: no retrieved evidence supports that; infeasibility triggers are listed per arrangement. No probabilities are assigned.",
+   "status_taxonomy": {
+    "FEASIBLE_IF": "a contract/structure satisfying all parties' participation and enforceability conditions exists if every listed condition holds; each condition maps to pending evidence",
+    "INFEASIBLE_IF": "listed triggers under which no admissible contract exists; used as a status only when evidence shows a trigger holds",
+    "UNDETERMINED": "the condition set cannot be written or evaluated (missing payoff, undefined choice set or unresolved documented conflict)"
+   },
+   "method": "For each arrangement: (1) incentive compatibility = participation of every modelled party against its documented outside option, no-deviation (diversion/walkaway) conditions, and physical/legal feasibility (capacity, eligibility, approval, ratification); national value (22E OC_t) checked separately from entity-level payoffs; (2) enforceability = who can compel performance, in which forum, and which obligations sit outside any contract (unilateral approvals); (3) opportunity costs from 22E and fiscal owners; (4) conflicts with the 12 objectives in src/economic_model/welfare.py recorded as channels with direction '?' until evidenced; (5) scenario links for stress tests.",
+   "summary_table": [
+    {
+     "id": "HA-1",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "HA-2",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "HA-3",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "HA-4",
+     "status": "UNDETERMINED"
+    },
+    {
+     "id": "HA-5",
+     "status": "UNDETERMINED"
+    },
+    {
+     "id": "SO-01",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-02",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-03",
+     "status": "UNDETERMINED"
+    },
+    {
+     "id": "SO-04",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-05",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-06",
+     "status": "UNDETERMINED"
+    },
+    {
+     "id": "SO-07",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-08",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-09",
+     "status": "FEASIBLE_IF"
+    },
+    {
+     "id": "SO-10",
+     "status": "UNDETERMINED"
+    },
+    {
+     "id": "27D-COORD",
+     "status": "UNDETERMINED"
+    }
+   ],
+   "arrangements": [
+    {
+     "id": "HA-1",
+     "source": "27B",
+     "name": "Hypothetical long-term power-purchase arrangement (seller in Nepal, buyer in India)",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Structure admits a feasible contract under stated conditions; no condition can yet be evaluated because every parameter is pending. Status is conditional, not a probability or a forecast.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "F1 price band non-empty: q-weighted (P_ALT_t - C_TX_IN - C_TRD) >= q-weighted (OC_t + C_TX_NP)/FX_INR over the months/blocks actually contracted (27B IC1-feasible-price-band).",
+       "F2 national-value condition (added by 27E): W_NN >= 0 in addition to U_NS >= outside option; a contract can satisfy seller participation (C_PPA_t below p_c) while the national payoff is negative when contracted blocks fall in the import-marginal regime (OC_t = P_IMP_t + delivery cost). Both must hold.",
+       "F3 regime restriction (added by 27E): contracted q_t is confined to spill or export-marginal regimes, or p_c clears the import-marginal OC_t in any block where a firm delivery obligation falls in the dry season.",
+       "F4 damages: d_S and d_B satisfy 27B IC1-no-diversion-NS and IC1-no-walkaway-IB on block-level price distributions, and the damages are enforceable in a named forum (see enforceability).",
+       "F5 approval-tenor: either V_A >= T, or renewal criteria are text-specified, or both parties' participation holds in the state A_t = 0 from the first renewal date (27B IC1-approval-tenor).",
+       "F6 capacity: sum q_t per block <= min(Cap_X, approved quantum) net of committed flows.",
+       "F7 eligibility: allocated generating assets meet the 2018 Guidelines eligibility clauses as amended (04C CM-01).",
+       "F8 ratification: if the arrangement falls in the constitutional natural-resource category, parliamentary ratification is completed (route pending from Supreme Court verdict text).",
+       "F9 outside-option drift (added by 27E): participation re-checked under the scenario price paths of S09 (regional electricity-market transformation) and S04, not only on historical block prices; otherwise p_c needs an indexation or reopener clause, whose terms are then a decision variable."
+      ],
+      "evidence_to_settle": [
+       "22B/22E block-level P_IEX, P_EXP, C_TRD, C_TX_IN, C_TX_NP, P_IMP by Nepali month",
+       "22E regime classification per month/block (needs 05A spill/limit data)",
+       "C_PPA_t from ERC-approved PPA rates",
+       "V_A and renewal criteria from CEA DA procedure and approval orders",
+       "eligibility clause text",
+       "Supreme Court verdict text on ratification route",
+       "S09/S04 price-path assumptions from scenario owners"
+      ]
+     },
+     "enforceability": {
+      "assessment": "weak_until_text_verified",
+      "issues": [
+       "Approval layer (IR) is unilateral and outside the contract: no private remedy can compel A_t = 1, so enforceability of volume commitments rests on the approval-lapse clause and on any government-to-government linkage clause in the 2014 agreement (to verify).",
+       "Dispute forum and governing law for cross-border damages are not specified in 27B; enforcement of an award against a state-owned counterparty depends on documented dispute clauses (to locate in the 2014 agreement and any 2024 long-term agreement text).",
+       "Deviation-settlement charges under CBTE act as a regulatory floor on non-delivery cost; interaction with contractual d_S pending.",
+       "Repeated-game support: in a long tenor, continuation value can sustain compliance, but no reputation parameter is estimated or attributed to any party."
+      ]
+     },
+     "opportunity_costs": [
+      "Nepal national: OC_t by 22E regime; zero only in spill blocks.",
+      "Domestic-industry alternative DNV_t (22E) for MWh locked in over the tenor - long tenor forecloses later domestic use if DNV_t rises above ENV_t.",
+      "Seller: best of spot export (ENV_spot_t) and domestic sale.",
+      "Fiscal: take-or-pay or delivery damages borne by a state utility are contingent liabilities (26A/02 to record)."
+     ],
+     "infeasible_if": [
+      "F1 fails in every contracted season (band empty).",
+      "F7 fails for all assets proposed for allocation.",
+      "Approved quantum is zero for the relevant route and no approval process is available."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "exports_investment": "export earnings vs dependence on a single market",
+       "energy_infrastructure": "firm export obligations vs domestic dry-season supply reliability (F3)",
+       "fiscal_financial": "utility contingent liabilities from damages; FX_INR stability under peg",
+       "resilience": "single-buyer and approval-state dependence (S02, S09)",
+       "institutions": "ratification route and treaty-compliance capacity",
+       "growth": "value added only through electricity sector VA (sectors.py), not gross revenue",
+       "rights_accountability": "project-level safeguards for plants allocated to the contract"
+      }
+     },
+     "scenario_links": [
+      "S02",
+      "S09",
+      "S04",
+      "S10"
+     ],
+     "lead_ids": [
+      "27E-L01",
+      "27E-L02",
+      "27E-L03",
+      "27E-L04",
+      "27E-L05",
+      "27E-L06",
+      "27E-L08",
+      "27E-L09",
+      "27E-L10",
+      "27E-L12",
+      "27E-L13",
+      "27E-L14",
+      "27E-L15",
+      "27E-L16",
+      "27E-L17",
+      "27E-L18",
+      "27E-L19",
+      "27E-L29"
+     ]
+    },
+    {
+     "id": "HA-2",
+     "source": "27B",
+     "name": "Hypothetical seasonal energy-banking (wet-season delivery against dry-season return)",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on the beta band being non-empty and the return leg being enforceable; the enforceability condition is the binding design issue. Not a probability.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "G1 beta band non-empty: 27B IC2-NS floor <= IC2-IB ceiling on q-weighted block values.",
+       "G2 sequencing (added by 27E): because Nepal delivers first, the counterparty's incentive to return in the dry leg must hold at the dry-leg date, not ex ante: U_IB evaluated from the dry-leg start must be non-negative, else a cash-settlement fallback at a stated index or collateral is required.",
+       "G3 approvals: export-leg and import-leg approvals are separate instruments; both must be valid for their seasons (A_t for both legs).",
+       "G4 capacity for each leg per block.",
+       "G5 seasonality premise (challenge to 27B): 27B states that the return obligation falls in the counterparty's high-price season; this is an empirical premise that must be verified from 22B block-level Indian price data by Nepali month before it is used."
+      ],
+      "evidence_to_settle": [
+       "22B block-level Indian prices by Nepali month (wet and dry legs)",
+       "22E spill regime months",
+       "import approval orders with hours and validity (27B-L33 locator; primary order required)",
+       "CBTE treatment of banked energy and deviation settlement"
+      ]
+     },
+     "enforceability": {
+      "assessment": "weak_without_security",
+      "issues": [
+       "Non-simultaneous exchange creates a one-sided exposure for the first mover; enforceable only with a security instrument (cash-settlement index, escrow or letter of credit) whose availability under exchange-control rules is pending (27B-L23).",
+       "Accounting treatment of banked energy under Indian cross-border regulations is not documented in 27B; if banking is not recognised, the arrangement must be restated as two cash trades."
+      ]
+     },
+     "opportunity_costs": [
+      "Wet leg: OC_w (zero in spill blocks, ENV_t otherwise).",
+      "Dry leg: avoided P_IMP_d; foregone alternative dry-season supply routes.",
+      "Fiscal: security instrument cost."
+     ],
+     "infeasible_if": [
+      "G1 fails (floor above ceiling).",
+      "Banked energy has no recognised regulatory treatment and no cash-settlement alternative is available."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "energy_infrastructure": "dry-season reliability improves only if return leg is honoured",
+       "resilience": "exposure to counterparty and approval state in the dry season (S02, S10)",
+       "fiscal_financial": "security instrument cost and unreturned-energy loss",
+       "exports_investment": "reduces cash export receipts relative to HA-1"
+      }
+     },
+     "scenario_links": [
+      "S02",
+      "S09",
+      "S10"
+     ],
+     "lead_ids": [
+      "27E-L03",
+      "27E-L04",
+      "27E-L05",
+      "27E-L06",
+      "27E-L10",
+      "27E-L14"
+     ]
+    },
+    {
+     "id": "HA-3",
+     "source": "27B",
+     "name": "Hypothetical expanded trilateral sale (Nepal seller, Bangladesh buyer, wheeling through India)",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on a transit approval that the Nepal and Bangladesh parties cannot secure contractually; with A_t exogenous, feasibility is conditional on the approval state in every expansion tranche. Not a probability.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "H1 joint surplus: q-weighted P_ALT_BD_t - C_TX_BD - c_IT_t >= q-weighted OC_t + C_TX_NP, same-period rates (27B IC3-joint).",
+       "H2 approval: DA approval for trade between neighbouring countries through India valid for the tranche and tenor; evaluated with A_t = 0 for expansion tranches as a state, since a news locator reports a withheld extension (primary order required).",
+       "H3 payment security and currency (added by 27E): contract currency, convertibility and a payment-security mechanism for the Bangladesh buyer are specified; 27B's payoff uses a generic FX without a convertibility or payment-delay term.",
+       "H4 Bangladesh-side regulatory/procurement approval (added by 27E): the buyer's procurement approval route is documented; 27B models only the Indian regulatory layer.",
+       "H5 corridor congestion: c_IT_t evaluated in Nepal's wet-season blocks when Indian-side corridor opportunity cost may be highest (to measure, not assume)."
+      ],
+      "evidence_to_settle": [
+       "tripartite contract text or NEA board/annual-report record (27B-L34..L37 are news locators)",
+       "BPDB purchase-cost and payment-terms records",
+       "CEA approval orders for trilateral trade",
+       "CBTE wheeling charges and NVVN margin"
+      ]
+     },
+     "enforceability": {
+      "assessment": "weak_until_text_verified",
+      "issues": [
+       "Three jurisdictions; dispute forum and governing law unknown pending contract text.",
+       "The intermediary's regulatory layer holds a unilateral veto via A_t; no contractual remedy against non-approval is modelled or known."
+      ]
+     },
+     "opportunity_costs": [
+      "Nepal: ENV_t on the Indian exchange if separately approved, else OC_t.",
+      "Corridor capacity used for trilateral trade versus bilateral Nepal-India flows in the same blocks (Cap_X shared)."
+     ],
+     "infeasible_if": [
+      "H1 fails in all contracted blocks.",
+      "Approval for trilateral trade is absent for the relevant tranche (A_t = 0) and no alternative route exists."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "exports_investment": "market diversification away from a single buyer",
+       "resilience": "diversification benefit offset by added transit dependence",
+       "fiscal_financial": "payment-delay and convertibility exposure",
+       "institutions": "trilateral contract management capacity"
+      }
+     },
+     "scenario_links": [
+      "S09",
+      "S02",
+      "S03"
+     ],
+     "lead_ids": [
+      "27E-L01",
+      "27E-L03",
+      "27E-L04",
+      "27E-L05",
+      "27E-L08",
+      "27E-L21",
+      "27E-L22",
+      "27E-L23",
+      "27E-L14"
+     ]
+    },
+    {
+     "id": "HA-4",
+     "source": "27B",
+     "name": "Hypothetical shared cross-border transmission (jointly owned interconnector with cost and capacity-rent sharing)",
+     "status": "UNDETERMINED",
+     "status_basis": "The India-side participation condition cannot be written: 27B leaves B_I 'system benefits' unattributed, so the core of the cost game (IC4-individual) is not defined on one side. Nepal-side status is FEASIBLE_IF (below). Becomes FEASIBLE_IF for both sides once B_I is specified from documented planning criteria, or once a regulated-tariff route makes R_X cover K_X*CRF + OM_X (in which case sharing reduces to ownership shares).",
+     "incentive_compatibility": {
+      "assessment": "one side undetermined",
+      "conditions": [
+       "J1 aggregate: B_N + B_I + R_X >= K_X*CRF + OM_X.",
+       "J2 Nepal-side (FEASIBLE_IF): IC4-individual holds for NX with B_N evaluated at currently approved quanta only (hold-up robust), or a clause links trade approval to line capacity (to find in 2014 agreement / JV texts).",
+       "J3 discount rate (challenge to 27B): CRF requires a discount rate and asset life; these are unlisted parameters and must be registered as labelled assumptions in config/model_config.yaml, with sensitivity bounds.",
+       "J4 regulated vs merchant: the tariff route (ERC and CERC determinations for each segment) decides whether R_X is cost-plus (sharing trivial) or capacity-rent (sharing depends on price spreads)."
+      ],
+      "evidence_to_settle": [
+       "JV agreements for the October 2025 lines (news locator only)",
+       "tariff determination route for cross-border segments on each side",
+       "transfer limit and approved quanta",
+       "capital cost and O&M from project documents"
+      ]
+     },
+     "enforceability": {
+      "assessment": "moderate_if_JV_text_specifies",
+      "issues": [
+       "Joint ownership creates mutual hostage (sunk assets on both sides), which supports compliance, but the benefits B_N depend on unilateral approvals set for shorter periods than line life (hold-up).",
+       "Asset split across a border: which jurisdiction's regulator sets tariff for each segment is pending."
+      ]
+     },
+     "opportunity_costs": [
+      "Capital cost K_X versus domestic transmission investment (05 owners).",
+      "Public equity and debt service versus other public investment (fiscal_financial)."
+     ],
+     "infeasible_if": [
+      "J1 fails.",
+      "Nepal-side J2 fails at currently approved quanta and no approval-capacity linkage exists."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "energy_infrastructure": "import reliability and export capacity",
+       "fiscal_financial": "public equity/debt exposure",
+       "rights_accountability": "right-of-way, land acquisition and safeguard compliance along the corridor",
+       "poverty_inclusion": "regional distribution of benefits along the corridor",
+       "resilience": "physical interdependence (S02, S05 flood exposure of line assets)"
+      }
+     },
+     "scenario_links": [
+      "S09",
+      "S02",
+      "S05"
+     ],
+     "lead_ids": [
+      "27E-L09",
+      "27E-L12",
+      "27E-L15",
+      "27E-L20",
+      "27E-L04",
+      "27E-L05"
+     ]
+    },
+    {
+     "id": "HA-5",
+     "source": "27B",
+     "name": "Hypothetical transit-service arrangement (third-country cargo through a transit state to a port)",
+     "status": "UNDETERMINED",
+     "status_basis": "27B treats the transit fee f_r as a negotiable variable, but fees and procedures may be fixed or bounded by existing treaty/protocol texts and by multilateral transit law; until those texts are read the choice set itself is unknown. Also e_r is labelled 'expected enforcement cost', which implies a probability of diversion; it must be restated as documented procedure costs. Becomes FEASIBLE_IF once the legally admissible range of f_r and procedures is established.",
+     "incentive_compatibility": {
+      "assessment": "choice set undefined",
+      "conditions": [
+       "K1 admissible fee range from transit treaty/protocol and, where applicable, GATT Article V / TFA Article 11 (to verify applicability and text).",
+       "K2 IC5-joint on the admissible range: c_ref - c_r - tau_r*h >= a_r + e_r - m_r.",
+       "K3 value of time h: an unlisted parameter requiring a documented source (e.g. inventory-carrying cost method) or a labelled assumption with bounds.",
+       "K4 northern-route comparison (04C CM-04): c_ref must be defined per origin/destination; a single reference route mixes distinct markets."
+      ],
+      "evidence_to_settle": [
+       "Treaty of Transit and protocol text; Nepal-China transit protocol text",
+       "route costs and dwell times from dry-port/project documents",
+       "WTO membership and applicability for the transit states concerned"
+      ]
+     },
+     "enforceability": {
+      "assessment": "treaty-based; pending text",
+      "issues": [
+       "Transit is governed by government-to-government instruments with periodic renewal; renewal and review clauses determine credibility.",
+       "Customs guarantee/sealing procedures trade off diversion control against cost and time (the e_r vs c_r, tau_r trade-off)."
+      ]
+     },
+     "opportunity_costs": [
+      "Existing route costs; investment in alternative corridors (S02)."
+     ],
+     "infeasible_if": [
+      "No fee within the admissible range satisfies K2 for any route (route unused)."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "exports_investment": "trade costs for exporters",
+       "resilience": "route diversification (S02, S03)",
+       "jobs_income": "logistics employment",
+       "institutions": "customs procedure capacity"
+      }
+     },
+     "scenario_links": [
+      "S02",
+      "S03",
+      "S08"
+     ],
+     "lead_ids": [
+      "27E-L24",
+      "27E-L25",
+      "27E-L26",
+      "27E-L27",
+      "27E-L28",
+      "27E-L45",
+      "27E-L46",
+      "27E-L47"
+     ]
+    }
+   ],
+   "partnership_structures": [
+    {
+     "id": "SO-01",
+     "source": "27C",
+     "name": "Intergovernmental hydropower joint venture (G2G framework with bilateral off-take)",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional; counterparty payoff not specified by 27C (challenge).",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "Partner off-take satisfies HA-1 conditions F1-F9 for the project's output.",
+       "Nepal's equity/loan share is consistent with the 26A debt-sustainability analysis.",
+       "Ratification route (04C) completed where the natural-resource category applies.",
+       "Basin-treaty scope (04C CM-08) does not constrain the site.",
+       "Comparator transferability: Bhutan outcomes are used only for mechanisms, not magnitudes, and differences in market access terms are documented."
+      ],
+      "evidence_to_settle": [
+       "Bhutan CEM retrieved",
+       "26A DSA",
+       "27A AR-05/AR-12 texts",
+       "04C CM-08 clause text"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Intergovernmental framework ties enforcement to the bilateral relationship; single-buyer structure concentrates renegotiation power (not attributed to any party)."
+      ]
+     },
+     "opportunity_costs": [
+      "Public capital and borrowing capacity; alternative developer routes (SO-02)."
+     ],
+     "infeasible_if": [
+      "Off-take band empty (HA-1 F1) for the project's seasonal profile."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "fiscal_financial": "debt exposure",
+       "resilience": "single-buyer dependence",
+       "rights_accountability": "resettlement/safeguards",
+       "exports_investment": "export revenue"
+      }
+     },
+     "scenario_links": [
+      "S02",
+      "S09"
+     ],
+     "lead_ids": [
+      "27E-L34",
+      "27E-L31",
+      "27E-L29",
+      "27E-L15"
+     ]
+    },
+    {
+     "id": "SO-02",
+     "source": "27C",
+     "name": "Export-oriented IPP under BOOT with multilateral guarantees",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on a bankable export PPA (HA-1) and guarantee eligibility.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "HA-1 conditions hold for the IPP's output (including F5 approval-tenor for lender tenor).",
+       "Guarantee eligibility persists after LDC graduation/IDA terms change (26C, 20C).",
+       "Host-government contingent liabilities (PPA termination, take-or-pay) are recorded and within fiscal risk limits (26A).",
+       "Treaty protection status clear (BIPPA conflict, 27A AR-15/26D)."
+      ],
+      "evidence_to_settle": [
+       "PPP/Investment Act PDA clauses",
+       "MIGA/IDA guarantee eligibility",
+       "26D BIPPA termination instrument",
+       "HA-1 evidence list"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Guarantees and investment treaties provide third-party enforcement, but the approval layer (A_t) remains outside guarantee coverage unless explicitly covered (to verify)."
+      ]
+     },
+     "opportunity_costs": [
+      "Contingent fiscal liabilities; domestic tariff exposure if exports fall short."
+     ],
+     "infeasible_if": [
+      "No export PPA is approvable for the asset (eligibility) and domestic sale cannot service the debt."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "fiscal_financial": "contingent liabilities",
+       "exports_investment": "FDI inflow",
+       "energy_infrastructure": "domestic tariff pass-through",
+       "rights_accountability": "safeguards"
+      }
+     },
+     "scenario_links": [
+      "S09",
+      "S03"
+     ],
+     "lead_ids": [
+      "27E-L31",
+      "27E-L30",
+      "27E-L32",
+      "27E-L36",
+      "27E-L35",
+      "27E-L33",
+      "27E-L41"
+     ]
+    },
+    {
+     "id": "SO-03",
+     "source": "27C",
+     "name": "Special economic zone with anchor-investor partnership",
+     "status": "UNDETERMINED",
+     "status_basis": "27C gives no anchor-investor payoff or incentive terms; transit cost and rules-of-origin constraints are pending, so neither party's participation condition can be written.",
+     "incentive_compatibility": {
+      "assessment": "undetermined",
+      "conditions": [
+       "Needed: anchor investor payoff (landed cost to market vs alternative location) using 21B transit costs and 04C CM-02 origin rules.",
+       "Fiscal cost of incentives bounded by 02 fiscal rules."
+      ],
+      "evidence_to_settle": [
+       "Transit cost and time (21B, HA-5)",
+       "origin-rule texts",
+       "SEZ Act and incentive schedule"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Incentive commitments need statutory basis to be credible across governments."
+      ]
+     },
+     "opportunity_costs": [
+      "Fiscal cost of incentives; land."
+     ],
+     "infeasible_if": [
+      "Post-graduation preference loss (S08) removes the market-access rationale and transit cost exceeds the alternative location's."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "fiscal_financial": "tax expenditure",
+       "jobs_income": "export jobs",
+       "rights_accountability": "labour standards",
+       "poverty_inclusion": "regional balance"
+      }
+     },
+     "scenario_links": [
+      "S08",
+      "S02",
+      "S03"
+     ],
+     "lead_ids": [
+      "27E-L42",
+      "27E-L30",
+      "27E-L24"
+     ]
+    },
+    {
+     "id": "SO-04",
+     "source": "27C",
+     "name": "Technology-licensing and know-how agreements under FITTA",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Low-commitment contractual structure; feasibility depends mainly on approval practice and repatriation rules.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "FITTA approval and NRB royalty repatriation rules permit the fee structure.",
+       "IP enforcement adequate to the licensor (documented, not assumed).",
+       "Absorptive capacity documented (08 owners)."
+      ],
+      "evidence_to_settle": [
+       "FITTA text",
+       "NRB bylaw",
+       "DoI approval records"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Private contract; enforceability depends on domestic courts and DTAA withholding terms."
+      ]
+     },
+     "opportunity_costs": [
+      "Foreign-exchange outflow for royalties."
+     ],
+     "infeasible_if": [
+      "Repatriation of the fee type is not permitted."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "technology_science": "capability upgrading",
+       "fiscal_financial": "FX outflows",
+       "exports_investment": "productivity"
+      }
+     },
+     "scenario_links": [
+      "S03",
+      "S07"
+     ],
+     "lead_ids": [
+      "27E-L30",
+      "27E-L32"
+     ]
+    },
+    {
+     "id": "SO-05",
+     "source": "27C",
+     "name": "Training-plus-migration skills partnership",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on destination demand and worker-protection rules.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "Destination-country quota/pathway exists for the relevant period (S06 stress).",
+       "Recruitment-cost and protection rules enforceable (27A AR-28).",
+       "Domestic retention share is contractually specified; otherwise the skills-drain channel is unbounded."
+      ],
+      "evidence_to_settle": [
+       "EPS/SSW pathway documents",
+       "DoFE reports",
+       "MoU texts"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "MoUs are generally non-binding instruments (to verify for each text); enforcement relies on the destination administration."
+      ]
+     },
+     "opportunity_costs": [
+      "Domestic skilled labour supply."
+     ],
+     "infeasible_if": [
+      "Destination pathway closed (S06)."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "diaspora": "migration opportunities",
+       "human_development": "training",
+       "jobs_income": "domestic skills retention",
+       "rights_accountability": "worker protection",
+       "resilience": "remittance concentration (S01, S06)"
+      }
+     },
+     "scenario_links": [
+      "S01",
+      "S06"
+     ],
+     "lead_ids": [
+      "27E-L37"
+     ]
+    },
+    {
+     "id": "SO-06",
+     "source": "27C",
+     "name": "Digital/IT-enabled services partnership (anchor buyer or delivery-centre model)",
+     "status": "UNDETERMINED",
+     "status_basis": "27C gives no counterparty incentive or contract form; demand is scenario-dependent (S07) with no documented baseline retrieved.",
+     "incentive_compatibility": {
+      "assessment": "undetermined",
+      "conditions": [
+       "Needed: anchor buyer payoff versus alternative delivery locations; connectivity and payment-channel constraints."
+      ],
+      "evidence_to_settle": [
+       "LDC services data (UNCTAD)",
+       "connectivity reliability records"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Commercial contracts; data-protection compliance determines market access."
+      ]
+     },
+     "opportunity_costs": [
+      "Public connectivity investment."
+     ],
+     "infeasible_if": [
+      "Automation removes the demand segment (S07)."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "technology_science": "ICT exports",
+       "jobs_income": "youth jobs",
+       "fiscal_financial": "tax base formalisation"
+      }
+     },
+     "scenario_links": [
+      "S07"
+     ],
+     "lead_ids": [
+      "27E-L43"
+     ]
+    },
+    {
+     "id": "SO-07",
+     "source": "27C",
+     "name": "Engineering-procurement-construction plus financing (EPC+F) under a G2G framework",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on financing terms and procurement rules; debt interaction per 04C CM-09.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "Financing modality and terms documented (grant vs loan) and consistent with the 26A DSA and debt strategy.",
+       "Procurement process meets PPA 2007 / partner rules (to locate).",
+       "Project appraisal by NPC documented."
+      ],
+      "evidence_to_settle": [
+       "MoF DCR project-level terms",
+       "BRI framework text",
+       "04C CM-09"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "G2G framework; enforceability of performance obligations depends on EPC contract terms (pending)."
+      ]
+     },
+     "opportunity_costs": [
+      "Debt service; competitive-procurement savings foregone."
+     ],
+     "infeasible_if": [
+      "Terms breach debt-sustainability thresholds in the 26A DSA."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "fiscal_financial": "debt",
+       "institutions": "procurement transparency",
+       "energy_infrastructure": "delivery speed",
+       "jobs_income": "local contractor participation"
+      }
+     },
+     "scenario_links": [
+      "S03",
+      "S02"
+     ],
+     "lead_ids": [
+      "27E-L40",
+      "27E-L38",
+      "27E-L31"
+     ]
+    },
+    {
+     "id": "SO-08",
+     "source": "27C",
+     "name": "Development compact (grant plus policy-reform conditions)",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on ratification and implementation capacity; no attribution of any party's political position.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "Compact instrument ratified/approved through the documented domestic route.",
+       "Implementation capacity (capital budget execution) documented."
+      ],
+      "evidence_to_settle": [
+       "Compact text and status (27A AR-27)",
+       "capital budget execution data (11)"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Grant conditionality enforced by disbursement suspension clauses (to verify)."
+      ]
+     },
+     "opportunity_costs": [
+      "Conditionality burden; co-financing."
+     ],
+     "infeasible_if": [
+      "Ratification route not completed."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "institutions": "implementation and accountability",
+       "energy_infrastructure": "grant-financed assets",
+       "fiscal_financial": "co-financing"
+      }
+     },
+     "scenario_links": [
+      "S02",
+      "S09"
+     ],
+     "lead_ids": [
+      "27E-L39",
+      "27E-L38"
+     ]
+    },
+    {
+     "id": "SO-09",
+     "source": "27C",
+     "name": "Blended-finance and risk-sharing platform with DFIs (IFC/ADB private sector/AIIB)",
+     "status": "FEASIBLE_IF",
+     "status_basis": "Conditional on FX-risk allocation and eligibility after graduation.",
+     "incentive_compatibility": {
+      "assessment": "conditional",
+      "conditions": [
+       "Currency risk allocation documented (hedging availability; NPR-INR peg context, 04A).",
+       "DFI eligibility after graduation (26C).",
+       "Subsidy element disclosed."
+      ],
+      "evidence_to_settle": [
+       "DFI project disclosures",
+       "NRB bylaw",
+       "26C eligibility dates"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "DFI covenants and investment treaties provide enforcement; BIPPA status pending."
+      ]
+     },
+     "opportunity_costs": [
+      "Public risk-bearing (first-loss)."
+     ],
+     "infeasible_if": [
+      "No hedging route and FX risk falls wholly on a public entity beyond fiscal risk limits."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "fiscal_financial": "public risk-bearing",
+       "exports_investment": "mobilised capital",
+       "institutions": "transparency"
+      }
+     },
+     "scenario_links": [
+      "S03",
+      "S04"
+     ],
+     "lead_ids": [
+      "27E-L36",
+      "27E-L32",
+      "27E-L41",
+      "27E-L33"
+     ]
+    },
+    {
+     "id": "SO-10",
+     "source": "27C",
+     "name": "Investment-facilitation and treaty-based protection upgrade (BIT/DTAA renegotiation or new model)",
+     "status": "UNDETERMINED",
+     "status_basis": "Depends on the documented conflict over India-Nepal BIPPA status (in force vs revoked), which 27A carries unresolved; per CLAUDE.md both values are kept and the option cannot be assessed until 26D retrieves the dated instrument.",
+     "incentive_compatibility": {
+      "assessment": "undetermined",
+      "conditions": [
+       "Status of BIPPA and other BITs; Treaty Act ratification route."
+      ],
+      "evidence_to_settle": [
+       "26D termination instrument",
+       "UNCTAD IIA Navigator record"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Investor-state dispute settlement provisions (to verify per treaty)."
+      ]
+     },
+     "opportunity_costs": [
+      "Regulatory space (environment, labour); tax revenue under DTAAs."
+     ],
+     "infeasible_if": [
+      "None determinable in r1."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "institutions": "regulatory space",
+       "fiscal_financial": "tax revenue",
+       "exports_investment": "investor certainty",
+       "rights_accountability": "regulatory space for safeguards"
+      }
+     },
+     "scenario_links": [
+      "S03"
+     ],
+     "lead_ids": [
+      "27E-L33",
+      "27E-L18"
+     ]
+    }
+   ],
+   "other": [
+    {
+     "id": "27D-COORD",
+     "source": "27D",
+     "name": "Hypothetical crisis-coordination sequencing (procedure maps PM-01..PM-17 under S01, S04, S05, S10)",
+     "status": "UNDETERMINED",
+     "status_basis": "Not an agreement with counterparties' incentives; audit requires 27D's promised eligibility matrix and sequencing constraints (outputs_to_27E), none of which exist in r1. Deferred to r2.",
+     "incentive_compatibility": {
+      "assessment": "not applicable in r1",
+      "conditions": [
+       "Concurrent-facility rules (e.g. emergency financing alongside an existing arrangement) documented (26A challenge from 27D)."
+      ],
+      "evidence_to_settle": [
+       "27D eligibility matrix",
+       "26A programme register"
+      ]
+     },
+     "enforceability": {
+      "issues": [
+       "Procedure-based; feasibility is eligibility and documentary readiness, not enforcement."
+      ]
+     },
+     "opportunity_costs": [
+      "Pre-arranged instruments' commitment fees/terms (pending)."
+     ],
+     "infeasible_if": [
+      "Eligibility lost after graduation for a given instrument (26C dates)."
+     ],
+     "welfare": {
+      "directions": {
+       "growth": "?",
+       "jobs_income": "?",
+       "poverty_inclusion": "?",
+       "fiscal_financial": "?",
+       "exports_investment": "?",
+       "energy_infrastructure": "?",
+       "technology_science": "?",
+       "human_development": "?",
+       "institutions": "?",
+       "resilience": "?",
+       "diaspora": "?",
+       "rights_accountability": "?"
+      },
+      "direction_note": "All directions '?' (unknown) in r1: no observation supports a sign. Channels listed are where a conflict can arise and must be measured; src/economic_model/welfare.py ObjectiveAssessment.tradeoffs() flags nothing until growth is evidenced '+'.",
+      "conflict_channels": {
+       "resilience": "shock response",
+       "fiscal_financial": "emergency borrowing"
+      }
+     },
+     "scenario_links": [
+      "S01",
+      "S04",
+      "S05",
+      "S10"
+     ],
+     "lead_ids": []
+    }
+   ],
+   "cross_cutting_findings": [
+    "The unilateral approval state A_t is the dominant enforceability constraint for HA-1..HA-4 and SO-01/SO-02: it cannot be secured by any private contract, so every electricity arrangement is at best FEASIBLE_IF evaluated in both approval states.",
+    "Entity-level feasibility (seller participation) and national feasibility (W_NN >= 0) can diverge; both must be reported.",
+    "No arrangement is assessed as GDP-positive; GDP effects enter only via sector value added, and every conflict channel remains '?' until observations exist."
+   ],
+   "hypothetical_label": "All arrangements are hypothetical research constructs by NEPAL 3T. This audit does not state, predict or represent the positions, preferences, bargaining power or intentions of any government, utility or institution."
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "27E-L01",
+   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+   "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
+   "publisher": "Ministry of Power / Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Eligibility and ownership/financing-origin conditions on exporting generators; trade between neighbouring countries through the Indian grid; role of designated authority and nodal agencies - constrains who can sell under any hypothetical arrangement (04C CM-01) | 27E use: IC1-eligibility test for HA-1/HA-3/SO-01/SO-02",
+   "reused_from": "27B-L01; 22B-L13; 22E-L16; 17A-L01; 17C-L04"
+  },
+  {
+   "lead_id": "27E-L02",
+   "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
+   "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018 (MoP page with amendments)",
+   "publisher": "Ministry of Power, India",
+   "source_id": "mop_india",
+   "contains": "Amendment texts to the 2018 guidelines and their dates | 27E use: amendment text for eligibility clause",
+   "reused_from": "27B-L02; 22B-L15; 17A-L02"
+  },
+  {
+   "lead_id": "27E-L03",
+   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+   "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority (2021)",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Approval procedure, validity period of approvals, renewal conditions, provisions for trade between two neighbouring countries via India - sets the approval-state variable and tenor mismatch in all power arrangements | 27E use: approval validity V_A vs tenor T (IC1-approval-tenor, IC2-enforcement, IC4-holdup)",
+   "reused_from": "27B-L03; 22B-L14; 22E-L17; 17A-L05; 17C-L02"
+  },
+  {
+   "lead_id": "27E-L04",
+   "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+   "title": "Import/Export (Cross Border) of Electricity - Designated Authority page",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Approval orders by project/entity: approved quantum (MW), market segment, validity window; India-to-Nepal supply approvals with hour limits | 27E use: approval orders: validity windows, renewal criteria, approved quanta",
+   "reused_from": "27B-L04; 22B-L12; 22E-L15; 17A-L04; 17C-L01"
+  },
+  {
+   "lead_id": "27E-L05",
+   "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+   "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "source_id": "cerc_india",
+   "contains": "Transmission charges and losses applicable to cross-border schedules, scheduling, deviation settlement, trading-licensee role - parameters C_TX_IN, deviation penalty terms | 27E use: charge allocation, deviation settlement overlay on damages, trilateral wheeling provisions",
+   "reused_from": "27B-L05; 22E-L13; 17A-L06; 17C-L03; 05B-L09"
+  },
+  {
+   "lead_id": "27E-L06",
+   "url": "http://www.cercind.gov.in/regulations/COnsolidatedCBTE_Second_amendment.pdf",
+   "title": "CERC CBTE Regulations 2019 consolidated incl. First and Second Amendments",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "source_id": "cerc_india",
+   "contains": "Current consolidated text of cross-border charges and conditions | 27E use: consolidated charges applicable to each leg",
+   "reused_from": "27B-L06; 22E-L14; 17A-L07"
+  },
+  {
+   "lead_id": "27E-L07",
+   "url": "https://www.cercind.gov.in/2019/regulation/SOR_CBTE_Regulations_2019.pdf",
+   "title": "Statement of Reasons, CERC CBTE Regulations 2019",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "source_id": "cerc_india",
+   "contains": "Regulator's stated rationale for cross-border charge allocation (documented rationale only; not a statement of government intent) | 27E use: regulator's stated rationale for cross-border rules (context for enforceability)",
+   "reused_from": "27B-L07; 17A-L08"
+  },
+  {
+   "lead_id": "27E-L08",
+   "url": "https://nvvn.co.in",
+   "title": "NTPC Vidyut Vyapar Nigam (NVVN)",
+   "publisher": "NTPC Vidyut Vyapar Nigam Ltd, India",
+   "source_id": null,
+   "contains": "Nodal trading agency for cross-border trade: trading margin (C_TRD), trilateral Nepal-Bangladesh arrangement role | 27E use: intermediary role and margin (HA-1, HA-3)",
+   "reused_from": "27B-L14; 22E-L18"
+  },
+  {
+   "lead_id": "27E-L09",
+   "url": "https://cea.nic.in/wp-content/uploads/psp___a_i/2024/01/Draft_NEP_Vol_II.pdf",
+   "title": "National Electricity Plan Volume II: Transmission (draft)",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Existing and planned India-Nepal interconnections with capacity and schedule - capacity K_X and transfer limit in payoff functions | 27E use: line capacity and planning status (IC1-capacity, HA-4)",
+   "reused_from": "27B-L15; 22B-L16"
+  },
+  {
+   "lead_id": "27E-L10",
+   "url": "https://www.nea.org.np/annual_report",
+   "title": "NEA Annual Reports",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "Nepal FY monthly energy balance: exports by route/market and destination, imports from India, export revenue (realised netback P_EXP), IPP purchase cost, spill | 27E use: seasonal spill/import profile defining regime of each month (all HA)",
+   "reused_from": "27B-L17; 22B-L19; 22E-L03; 17C-L05; 05B-L03"
+  },
+  {
+   "lead_id": "27E-L11",
+   "url": "https://erc.gov.np/act/tariff-order-full-detailed-tariff/nepal-electricity-authoritys-electricity-consumer",
+   "title": "NEA electricity consumer tariff rate (ERC tariff order)",
+   "publisher": "Electricity Regulatory Commission, Nepal",
+   "source_id": "erc_nepal",
+   "contains": "Industrial tariff T_IND (domestic outside option for Nepali energy) | 27E use: domestic tariff affected by export commitments (energy_infrastructure objective)",
+   "reused_from": "27B-L19; 22E-L01; 05B-L01"
+  },
+  {
+   "lead_id": "27E-L12",
+   "url": "https://www.erc.gov.np",
+   "title": "Electricity Regulatory Commission, Nepal",
+   "publisher": "Electricity Regulatory Commission, Nepal",
+   "source_id": "erc_nepal",
+   "contains": "PPA rate approvals (NEA purchase rates from IPPs by season) - NEA's acquisition cost C_PPA when reselling IPP energy under an export contract; transmission-tariff determinations for Nepal-side lines | 27E use: ERC tariff determination for line segments and PPA rates (HA-4, C_PPA_t)",
+   "reused_from": "27B-L20; 22E-L02; 05B-L02"
+  },
+  {
+   "lead_id": "27E-L13",
+   "url": "https://www.nrb.org.np/forex/",
+   "title": "NRB foreign exchange rates",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "NPR/INR peg reference rate FX_INR and NPR/USD by date | 27E use: NPR/INR rate for conversion (IC1-currency)",
+   "reused_from": "27B-L21; 22E-L19"
+  },
+  {
+   "lead_id": "27E-L14",
+   "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+   "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+   "publisher": "Reserve Bank of India",
+   "source_id": "rbi",
+   "contains": "Currency of settlement and remittance rules for India-Nepal transactions - settlement-currency constraint on contract design | 27E use: exchange-control rules on settlement currency (HA-1, HA-3)",
+   "reused_from": "27B-L23; 17A-L14; 27A-L33"
+  },
+  {
+   "lead_id": "27E-L15",
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+   "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
+   "publisher": "Government of Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Framework text: permitted trade modes, JSC/JWG mechanism, transmission planning, non-discriminatory access clause wording, duration - the documented framework within which any hypothetical arrangement would sit (27A AR-05) | 27E use: bilateral framework clauses on planning, dispute settlement and non-discriminatory access (enforceability)",
+   "reused_from": "27B-L24; 27A-L17"
+  },
+  {
+   "lead_id": "27E-L16",
+   "url": "https://kathmandupost.com/national/2024/01/04/nepal-india-ink-10-year-10-000mw-power-trade",
+   "title": "Nepal signs deal with India on long-term power trade (news locator, January 2024)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Locator only for the January 2024 long-term power trade agreement text (27A AR-06); terms must come from the text | 27E use: news locator only; primary text required",
+   "reused_from": "27B-L25; 22B-L23; 17A-L09; 27A-L18"
+  },
+  {
+   "lead_id": "27E-L17",
+   "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export",
+   "title": "Full text of SC verdict released on long-term power trade agreement (news locator)",
+   "publisher": "Nepal News",
+   "source_id": null,
+   "contains": "Locator for the Supreme Court of Nepal verdict (Nov 2024) on the ratification route - Nepal-side domestic-ratification constraint | 27E use: ratification route (IC1-ratification; institutions objective)",
+   "reused_from": "27B-L27; 22B-L24; 27A-L20"
+  },
+  {
+   "lead_id": "27E-L18",
+   "url": "https://lawcommission.gov.np",
+   "title": "Nepal Law Commission - Nepal Treaty Act, 2047 (1990)",
+   "publisher": "Nepal Law Commission",
+   "source_id": "lawcommission_nepal",
+   "contains": "Treaty categories requiring parliamentary ratification (natural-resource sharing) - ratification threshold constraint on Nepal side | 27E use: treaty categories requiring parliamentary ratification",
+   "reused_from": "27B-L28; 27A-L64"
+  },
+  {
+   "lead_id": "27E-L19",
+   "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-parliamentary-affairs",
+   "title": "Constitution of Nepal 2015 (official English translation, MoLJPA)",
+   "publisher": "Ministry of Law, Justice and Parliamentary Affairs, Nepal (hosted by ConstitutionNet)",
+   "source_id": "lawcommission_nepal",
+   "contains": "Treaty ratification article (natural resources and their use) - ratification majority requirement | 27E use: constitutional provision on natural-resource treaties",
+   "reused_from": "27B-L29; 27A-L65"
+  },
+  {
+   "lead_id": "27E-L20",
+   "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
+   "title": "Nepal, India sign deal to build cross-border transmission lines (news locator, October 2025)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Locator for NEA-POWERGRID JV implementing agreements (Inaruwa-New Purnea; Lamki/Dodhara-Bareilly): ownership shares, cost sharing and tariff route - reference design for the shared-transmission model (27A AR-07) | 27E use: news locator for JV lines; JV agreements required (HA-4)",
+   "reused_from": "27B-L31; 22B-L22; 27A-L23"
+  },
+  {
+   "lead_id": "27E-L21",
+   "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
+   "title": "Additional electricity export to Bangladesh blocked as India withholds approval (news locator, June 2026)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Locator for the CEA/NVVN decision on extending Nepal-Bangladesh trade - illustrates the approval-state variable for wheeling arrangements; primary order required | 27E use: news locator illustrating A_t = 0 for an expansion tranche; primary order required",
+   "reused_from": "27B-L32; 22B-L25; 22E-L26"
+  },
+  {
+   "lead_id": "27E-L22",
+   "url": "https://powerline.net.in/2024/10/14/nepal-india-bangladesh-sign-tripartite-power-agreement/",
+   "title": "Nepal, India, Bangladesh sign tripartite power agreement (trade-press locator, October 2024)",
+   "publisher": "Power Line Magazine",
+   "source_id": null,
+   "contains": "Locator for the October 2024 tripartite power sales agreement among NEA, NVVN and BPDB: parties, delivery season window, route, tenor - to verify against the contract | 27E use: news locator for tripartite agreement; contract required (HA-3)",
+   "reused_from": "27B-L35"
+  },
+  {
+   "lead_id": "27E-L23",
+   "url": "https://www.bpdb.gov.bd",
+   "title": "Bangladesh Power Development Board",
+   "publisher": "Bangladesh Power Development Board",
+   "source_id": "bpdb_bd",
+   "contains": "BPDB annual reports: import sources and purchase cost by source - Bangladesh buyer's outside option P_ALT_BD [URL from general knowledge - unverified] | 27E use: Bangladesh buyer outside option and payment-security terms (HA-3)",
+   "reused_from": "27B-L38"
+  },
+  {
+   "lead_id": "27E-L24",
+   "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+   "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India (compilation)",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Transit protocol: routes, points, fees/charges, customs sealing and guarantee requirements - baseline terms against which any hypothetical transit arrangement is compared | 27E use: transit fees, routes and procedures (HA-5)",
+   "reused_from": "27B-L40; 17A-L23; 17C-L08; 27A-L02"
+  },
+  {
+   "lead_id": "27E-L25",
+   "url": "https://nepaltradeportal.gov.np/",
+   "title": "Nepal Trade Information Portal - trade agreements and transit procedures",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "nepal_trade_portal",
+   "contains": "Nepal-Bangladesh trade and transit agreements and protocols; border procedures | 27E use: Nepal-Bangladesh transit instruments (HA-5)",
+   "reused_from": "27B-L41; 17C-L07; 27A-L13"
+  },
+  {
+   "lead_id": "27E-L26",
+   "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+   "title": "An Analysis of Nepal's Transit through India",
+   "publisher": "ICRIER",
+   "source_id": "academic",
+   "contains": "Transit route cost and time analysis - locator for per-route cost parameters c_r (tier 7) | 27E use: route cost comparison (HA-5)",
+   "reused_from": "27B-L43; 17C-L14"
+  },
+  {
+   "lead_id": "27E-L27",
+   "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+   "title": "Nepal-India Regional Trade and Transport Project (IDA) - project document",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Ex-ante transit time/cost analysis and corridor design - locator for route cost parameters | 27E use: project documents on corridor procedures and costs (HA-5)",
+   "reused_from": "27B-L44"
+  },
+  {
+   "lead_id": "27E-L28",
+   "url": "https://www.un.org/sites/un2.un.org/files/apoa_booklet.pdf",
+   "title": "Awaza Programme of Action for Landlocked Developing Countries 2024-2034",
+   "publisher": "United Nations",
+   "source_id": "undesa_ldc",
+   "contains": "Multilateral normative commitments on LLDC transit - context for transit-state obligations (non-binding framing) | 27E use: LLDC transit framing (HA-5)",
+   "reused_from": "27B-L45; 17C-L13"
+  },
+  {
+   "lead_id": "27E-L29",
+   "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+   "title": "Bhutan Country Economic Memorandum (2024)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Bhutan-India hydropower export model (intergovernmental projects, long-term tariffs, debt-financed plants) - structural comparator for contract design; not evidence about Nepal | 27E use: Bhutan comparator for single-buyer hydropower dependence (HA-1, SO-01)",
+   "reused_from": "27B-L46; 17C-L15"
+  },
+  {
+   "lead_id": "27E-L30",
+   "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-1688107036.pdf",
+   "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
+   "publisher": "Government of Nepal (official host)",
+   "source_id": null,
+   "contains": "Nepal legal basis for technology-transfer agreements (licensing, franchise, management, know-how), approval route and repatriation provisions | 27E use: FITTA approval and repatriation rules (SO-02, SO-04, SO-09)",
+   "reused_from": "27C-L01; 04B-L22; 11A"
+  },
+  {
+   "lead_id": "27E-L31",
+   "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+   "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+   "publisher": "Investment Board Nepal",
+   "source_id": null,
+   "contains": "Legal basis for PPP/BOOT/project development agreements and IBN approval thresholds | 27E use: PPP and Investment Act: PDA, guarantees, contingent liabilities (SO-02, SO-07)",
+   "reused_from": "27C-L05; 11A; 04C"
+  },
+  {
+   "lead_id": "27E-L32",
+   "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+   "title": "NRB Foreign Investment and Loan Management Bylaw",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Foreign-currency approvals and repatriation rules governing royalty/technology-fee payments and external loans | 27E use: NRB foreign loan/royalty rules (SO-04, SO-09)",
+   "reused_from": "27C-L08; 04B-L23"
+  },
+  {
+   "lead_id": "27E-L33",
+   "url": "https://investmentpolicy.unctad.org/international-investment-agreements/countries/147/nepal",
+   "title": "IIA Navigator - Nepal",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_iia",
+   "contains": "Treaty protection available to partner-country investors (links to 27A AR-15..AR-20) | 27E use: BIT/DTAA status incl. contested BIPPA (SO-10, SO-02, SO-09)",
+   "reused_from": "27C-L12; 26D-D01"
+  },
+  {
+   "lead_id": "27E-L34",
+   "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+   "title": "World Bank (2024) Bhutan Country Economic Memorandum: Maximizing Bhutan's Potential for Economic Diversification and Structural Transformation",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Documented results of Bhutan's intergovernmental hydropower partnership model with India (revenues, debt, macro effects, diversification limits); comparable landlocked Himalayan economy | 27E use: Bhutan intergovernmental hydropower results (SO-01)",
+   "reused_from": "27C-L13; 01B; 17C-L15"
+  },
+  {
+   "lead_id": "27E-L35",
+   "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P076445",
+   "title": "Lao PDR - Nam Theun 2 Hydroelectric Project (World Bank project page)",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Project documents incl. implementation completion report: export-oriented IPP with multilateral guarantees in a landlocked LDC; documented results and safeguard lessons [URL from general knowledge — unverified] | 27E use: Nam Theun 2 documents (SO-02 comparator)",
+   "reused_from": "27C-L15"
+  },
+  {
+   "lead_id": "27E-L36",
+   "url": "https://www.miga.org/projects",
+   "title": "MIGA projects database",
+   "publisher": "MIGA (World Bank Group)",
+   "source_id": null,
+   "contains": "Political-risk guarantee cases in comparable economies (hydropower, manufacturing) with project documents [URL from general knowledge — unverified] | 27E use: guarantee coverage precedent (SO-02, SO-09)",
+   "reused_from": "27C-L26"
+  },
+  {
+   "lead_id": "27E-L37",
+   "url": "https://gsp.cgdev.org/legalpathway/employment-permit-system-eps/",
+   "title": "Employment Permit System (EPS) - Global Skill Partnerships database",
+   "publisher": "Center for Global Development",
+   "source_id": "academic",
+   "contains": "Documented structure of a government-to-government labour/skills pathway (Korea EPS) incl. evaluations | 27E use: EPS pathway rules (SO-05)",
+   "reused_from": "27C-L28; 18D; 09C"
+  },
+  {
+   "lead_id": "27E-L38",
+   "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Final%20DCR%202024-25_26-03-2026_d06ntku.pdf",
+   "title": "Development Cooperation Report 2024/25",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Partner-wise grants/loans incl. TA and training components, Nepal FY2024/25 | 27E use: financing terms by partner (SO-07, SO-08, SO-09)",
+   "reused_from": "27C-L31; 04B-L26; 18B"
+  },
+  {
+   "lead_id": "27E-L39",
+   "url": "https://www.state.gov/policy-issues/millennium-challenge-corporation/",
+   "title": "Millennium Challenge Corporation - U.S. Department of State",
+   "publisher": "US Department of State",
+   "source_id": null,
+   "contains": "Development-compact structure (grant plus policy reform) reference; MCC evaluations to locate | 27E use: compact model (SO-08)",
+   "reused_from": "27C-L32; 18A"
+  },
+  {
+   "lead_id": "27E-L40",
+   "url": "https://mofa.gov.np/content/641/framework-for-belt-and-road-cooperation-between/",
+   "title": "Framework for Belt and Road Cooperation between Nepal and the PRC",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Framework text: cooperation modalities relevant to G2G/EPC-plus-finance structures | 27E use: BRI framework text (SO-07; 04C CM-09)",
+   "reused_from": "27C-L36; 04B-L01"
+  },
+  {
+   "lead_id": "27E-L41",
+   "url": "https://ieg.worldbankgroup.org/evaluations/world-bank-group-support-ppps",
+   "title": "World Bank Group Support to Public-Private Partnerships: Lessons from Experience in Client Countries (IEG)",
+   "publisher": "World Bank IEG",
+   "source_id": null,
+   "contains": "Evaluation evidence on PPP outcomes and fiscal risks across client countries [URL from general knowledge — unverified] | 27E use: IEG PPP lessons (SO-02, SO-09 enforceability)",
+   "reused_from": "27C-L37"
+  },
+  {
+   "lead_id": "27E-L42",
+   "url": "https://unctad.org/publication/world-investment-report-2019",
+   "title": "World Investment Report 2019: Special Economic Zones",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "Cross-country review of SEZ outcomes and design features, incl. LDC and landlocked cases [URL from general knowledge — unverified] | 27E use: SEZ evidence (SO-03)",
+   "reused_from": "27C-L17"
+  },
+  {
+   "lead_id": "27E-L43",
+   "url": "https://unctad.org/publication/least-developed-countries-report-2025",
+   "title": "The Least Developed Countries Report 2025: Are services the new path to structural transformation?",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "LDC services-led partnership cases (digital/IT-enabled services), comparators | 27E use: services exports in LDCs (SO-06)",
+   "reused_from": "27C-L19; 24C; 08A"
+  },
+  {
+   "lead_id": "27E-L44",
+   "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+   "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Nepal-specific diagnosis of FDI barriers and partnership opportunities; comparator discussion | 27E use: Nepal CEM constraints (cross-cutting)",
+   "reused_from": "27C-L22; 04A-L50; 01B"
+  },
+  {
+   "lead_id": "27E-L45",
+   "url": "https://www.wto.org/english/docs_e/legal_e/gatt47_01_e.htm",
+   "title": "GATT 1994 (incorporating GATT 1947) Article V - Freedom of Transit",
+   "publisher": "World Trade Organization",
+   "source_id": "wto",
+   "contains": "Legal text of Article V (freedom of transit; conditions on transit charges) - to verify whether it constrains the fee variable f_r in HA-5 between WTO members. URL from general knowledge - unverified.",
+   "reused_from": "new (27E)"
+  },
+  {
+   "lead_id": "27E-L46",
+   "url": "https://www.wto.org/english/docs_e/legal_e/tfa-nov14_e.htm",
+   "title": "Agreement on Trade Facilitation - Article 11 (Freedom of Transit)",
+   "publisher": "World Trade Organization",
+   "source_id": "wto",
+   "contains": "Legal text of TFA Article 11 (transit charges, formalities, guarantees) - to verify constraints on f_r, a_r and guarantee procedures in HA-5. URL from general knowledge - unverified.",
+   "reused_from": "new (27E)"
+  },
+  {
+   "lead_id": "27E-L47",
+   "url": "https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf",
+   "title": "United Nations Convention on the Law of the Sea - Part X (right of access of land-locked States to and from the sea)",
+   "publisher": "United Nations",
+   "source_id": "un_treaties",
+   "contains": "Part X text on transit access and its dependence on bilateral agreements - to verify whether any transit-state obligation applies and whether Nepal and the transit states are parties (ratification status required). URL from general knowledge - unverified.",
+   "reused_from": "new (27E)"
+  }
+ ]
+}

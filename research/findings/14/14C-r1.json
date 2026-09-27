@@ -1,0 +1,1079 @@
+{
+  "subagent_id": "14C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T14:35:47+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used). No document retrieved; every empirical and legal item is pending. Q1: built a safeguard requirement matrix spanning Nepal's Constitution, Environment Protection Act 2076 and Rules 2077 (search located Law Commission and ECOLEX copies), Land Acquisition Act 2034, LARR Policy 2015, Forest, RTI and disability laws, ILO C169 (ratification to be confirmed from NORMLEX), UNDRIP, and WB ESF, ADB SPS/ESF, AIIB ESF and IFC PS5/PS7; no gap is asserted until texts are read. Q2: listed candidate projects and evaluators (ADB IED, WB IEG and Inspection Panel, ADB Accountability Mechanism, KfW, OAG, NHRC, Supreme Court) for a project-level displacement evidence table; no counts. Q3: a design-only, ethics-reviewed citizen-priorities survey (stratified two-stage sample on the NPHC 2021 frame, layered consent, accessibility, data protection) that cannot be piloted or fielded without recorded human approvals for fieldwork and contact_third_party under src/orchestrator/approvals.py; none exist.",
+  "findings": [
+    {
+      "claim": "Q1: EIA/IEE/BES screening under the Environment Protection Act 2076 and Rules 2077 - which infrastructure categories and size thresholds trigger each level, and the approving authority (federal/provincial/local).",
+      "type": "pending",
+      "value": null,
+      "period": "Law in force as of retrieval date (Act 2076 = 2019; Rules 2077 = 2020)",
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: official texts of Act and Rules incl. schedules; thresholds read from schedules only; amendments since 2020 recorded. Leads: 14C-L01, 14C-L02, 14C-L03."
+    },
+    {
+      "claim": "Q1: Public-consultation steps in the EIA process (scoping notice, public hearing, written opinions from local levels, disclosure period, language/format of notices) and whether hearings must occur at the project site.",
+      "type": "pending",
+      "value": null,
+      "period": "Rules 2077 (2020) as amended",
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: rule numbers and verbatim procedural text; time limits recorded from the gazetted text (search-snippet figures deliberately not used). Leads: 14C-L01, 14C-L02."
+    },
+    {
+      "claim": "Q1: Compulsory land acquisition - procedure, compensation basis, objection/appeal rights, treatment of tenants and non-titled occupants under the Land Acquisition Act 2034 and the 2015 LARR policy; whether replacement cost is binding or policy guidance.",
+      "type": "pending",
+      "value": null,
+      "period": "Act 2034 (1977) as amended; policy 2071 (2015)",
+      "source_ids": [
+        "lawcommission_nepal",
+        "ibn"
+      ],
+      "observation_ids": [],
+      "note": "Required: current consolidated Act text, LARR policy text and any cabinet-approved guidelines; confirm legal status of each. Coordinate single observation set with 11A. Leads: 14C-L05, 14C-L06, 14C-L07, 14C-L08, 14C-L09."
+    },
+    {
+      "claim": "Q1: FPIC / consultation obligations for indigenous nationalities - ILO C169 ratification status and date for Nepal, the Articles applicable to infrastructure and relocation, domestic implementing legislation (if any), and CEACR comments on implementation.",
+      "type": "pending",
+      "value": null,
+      "period": "C169 ratification date (to verify); CEACR comments by year",
+      "source_ids": [
+        "ilostat",
+        "ohchr",
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NORMLEX ratification record for Nepal; C169 text; CEACR comments on Nepal; UNDRIP text and Nepal vote; check for a domestic FPIC procedure. Brief states Nepal ratified C169; this is to be confirmed from NORMLEX, not assumed. Leads: 14C-L17, 14C-L18, 14C-L19, 14C-L20, 14C-L21, 14C-L15."
+    },
+    {
+      "claim": "Q1: Constitutional rights engaged by displacement and consultation (property and compensation, information, clean environment, indigenous/Dalit/women/disability rights, natural-resource benefit sharing).",
+      "type": "pending",
+      "value": null,
+      "period": "Constitution of Nepal 2015 (2072 BS)",
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: article numbers and verbatim text from the authoritative Nepali text with MoLJPA translation. Leads: 14C-L09, 14C-L10."
+    },
+    {
+      "claim": "Q1: Other domestic laws affecting project consultation: Forest Act 2076 forest-land diversion conditions; Right to Information Act 2064 disclosure; Rights of Persons with Disabilities Act 2074 accessibility.",
+      "type": "pending",
+      "value": null,
+      "period": "Laws in force as of retrieval",
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: official texts; exact URLs to locate on lawcommission.gov.np. Leads: 14C-L11, 14C-L16, 14C-L14."
+    },
+    {
+      "claim": "Q1: MDB safeguard requirements for Nepal projects: World Bank ESF (ESS1, ESS5, ESS7, ESS10) and legacy OP 4.12/4.10; ADB SPS 2009 and successor ESF; AIIB ESF; IFC Performance Standards 5 and 7 - trigger conditions for FPIC/consent vs consultation, entitlements for non-titled occupants, livelihood restoration, grievance mechanisms.",
+      "type": "pending",
+      "value": null,
+      "period": "Framework versions and effective dates to record",
+      "source_ids": [
+        "wb_npl",
+        "adb_nepal",
+        "aiib"
+      ],
+      "observation_ids": [],
+      "note": "Required: framework texts with effective dates and transition rules; gap analysis vs Nepali law (see specific.safeguard_requirements.gap_matrix). Leads: 14C-L22, 14C-L23, 14C-L24, 14C-L25, 14C-L26."
+    },
+    {
+      "claim": "Q2: Documented resettlement outcomes for major Nepal infrastructure projects (hydropower, roads, transmission, water supply, airports): households/persons physically and economically displaced, compensation and resettlement cost, time to payment, livelihood restoration and post-project income relative to baseline.",
+      "type": "pending",
+      "value": null,
+      "period": "Project-specific; evaluation years to record (calendar) and project FYs",
+      "source_ids": [
+        "adb_nepal",
+        "wb_npl",
+        "oag_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: evaluation/completion reports and monitoring reports for each project in specific.displacement_evidence.candidate_projects; record counts as published with definitions (physical vs economic displacement; titled vs non-titled). Leads: 14C-L27, 14C-L28, 14C-L29, 14C-L30, 14C-L31, 14C-L32, 14C-L33, 14C-L39.",
+      "unit": "persons"
+    },
+    {
+      "claim": "Q2: Grievances, accountability-mechanism complaints and court cases related to displacement/consultation on Nepal projects (count by mechanism and outcome).",
+      "type": "pending",
+      "value": null,
+      "period": "By filing year (calendar)",
+      "source_ids": [
+        "wb_npl",
+        "adb_nepal",
+        "supremecourt_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: case registers of Inspection Panel and ADB AM filtered for Nepal; NHRC reports; Supreme Court decisions. Count only after retrieval. Leads: 14C-L27, 14C-L28, 14C-L35, 14C-L36.",
+      "unit": "count"
+    },
+    {
+      "claim": "Q2: Land acquisition and compensation as a cause of project delay/cost overrun in Nepal public investment.",
+      "type": "pending",
+      "value": null,
+      "period": "FY2015/16 onward (fiscal year, mid-July)",
+      "source_ids": [
+        "oag_nepal",
+        "npc_nepal",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: OAG and NPC project-level delay causes; WB bottlenecks analysis section on land. Shared evidence with 06C. Leads: 14C-L37, 14C-L39, 14C-L40."
+    },
+    {
+      "claim": "Q2: International comparator evidence on long-run resettlement livelihood outcomes (e.g. Nam Theun 2 monitoring; MDB portfolio reviews).",
+      "type": "pending",
+      "value": null,
+      "period": "Evaluation years to record",
+      "source_ids": [
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: panel-of-experts/IEG reports; used only as comparator, not Nepal evidence. Leads: 14C-L32, 14C-L34."
+    },
+    {
+      "claim": "Q3: A citizen-priorities survey is designed but NOT fielded. Fielding, piloting, recruiting enumerators, contacting any person or organisation, or publishing the instrument requires recorded approvals under src/orchestrator/approvals.py for actions 'fieldwork' and 'contact_third_party' (and 'financial_action' if funded; 'publish_report' for release) from a named human, plus independent ethics-review clearance. No approval exists as of this finding.",
+      "type": "assumption",
+      "value": null,
+      "period": "n/a (design)",
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Design only; see specific.consultation_design. Approval keys to be computed from the exact design detail dict at request time."
+    },
+    {
+      "claim": "Q3: Sampling design proposal - stratified two-stage probability sample (7 provinces x urban/rural municipality type; PSUs = wards from NPHC 2021 frame, PPS; households by systematic listing; one adult per household by Kish or random selection), with purposive oversamples of project-affected communities analysed separately and never pooled into national estimates without design weights.",
+      "type": "assumption",
+      "value": null,
+      "period": "n/a (design)",
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Method choice; sample sizes to be set by power calculation after retrieving NLSS IV design effects (14A) - no sizes stated in r1."
+    },
+    {
+      "claim": "Q3: Group identity, disability status and caste/ethnicity are collected only with explicit, separate consent, using official NPHC 2021 categories and the Washington Group Short Set; results are reported only where cell sizes and SEs meet a pre-registered suppression rule, with no ranking of groups.",
+      "type": "assumption",
+      "value": null,
+      "period": "n/a (design)",
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Design principle aligned with 14B-A1."
+    }
+  ],
+  "data_gaps": [
+    "Official gazetted text of Environment Protection Rules 2077 not yet located on lawcommission.gov.np (only secondary copies found).",
+    "LARR Policy 2015, Forest Act 2076, Individual Privacy Act 2075, Statistics Act 2079, Disability Act 2074 and RTI Act 2064: exact official URLs not located.",
+    "ILO C169 ratification record and CEACR comments for Nepal not retrieved.",
+    "No known comprehensive register of project-induced displacement in Nepal; evidence is project-by-project and skewed to MDB-financed projects.",
+    "Resettlement outcome evaluations (ADB IED, WB IEG, KfW) not retrieved; project titles and years unverified.",
+    "Survey design parameters (sample size, design effects) await 14A NLSS IV design documentation.",
+    "Legal preconditions for conducting a survey in Nepal (Statistics Act, ethics body jurisdiction) unverified."
+  ],
+  "assumptions": [
+    {
+      "id": "14C-A1",
+      "text": "MDB frameworks are recorded as requirements only for projects they finance; they are not treated as Nepali law.",
+      "basis": "assumption (definition)"
+    },
+    {
+      "id": "14C-A2",
+      "text": "Project-affected-household evidence from complainants, NHRC and academic sources is kept as separate values from project self-reporting; differences are explained, not reconciled.",
+      "basis": "CLAUDE.md evidence rule 4"
+    },
+    {
+      "id": "14C-A3",
+      "text": "Consultation survey is design-only; its outputs are hypothetical until approvals and ethics clearance are recorded.",
+      "basis": "src/orchestrator/approvals.py gated actions"
+    },
+    {
+      "id": "14C-A4",
+      "text": "Group classifications use NPHC 2021 official categories and the legal schedule of indigenous nationalities; no ranking or characterisation of groups.",
+      "basis": "assumption aligned with 14B-A1"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "11A",
+      "text": "Land Acquisition Act 2034 is also in your lead set; please share one observation set for the Act text and confirm the legal status of the 2015 LARR policy so 14C and 11A do not extract divergent readings."
+    },
+    {
+      "to": "06C",
+      "text": "Please add land acquisition/compensation disputes, local obstruction and court injunctions as coded delay causes in the DeliveryConstraints panel; 14C will supply project-level safeguard categories. Faster delivery must not be modelled by assuming weaker safeguards without reporting the welfare trade-off."
+    },
+    {
+      "to": "13A",
+      "text": "Disaster-induced relocation and project-induced displacement should be recorded separately; please flag hazard-exposed project sites (e.g. GLOF-exposed hydropower) so resettlement-site risk can be assessed."
+    },
+    {
+      "to": "00B",
+      "text": "Source-tier questions: NHRC Nepal, KfW evaluations and accountability-mechanism findings are not in the catalog (or fall under generic tiers); request tier assignment. Watch item: project self-reported resettlement figures vs complaint/inspection findings - expected methodological differences, not errors."
+    },
+    {
+      "to": "15",
+      "text": "Any strategy (STR-A..E) that accelerates large hydropower/road/airport investment should be audited for whether displacement and FPIC costs, timelines and legal risk are included; 14C evidence is pending."
+    }
+  ],
+  "uncertainty": "Total for r1: nothing retrieved. Key uncertainties: (1) legal texts, amendment status and binding force of the LARR policy are unverified; (2) Nepal's C169 ratification and any domestic FPIC procedure must be confirmed from NORMLEX and Nepali law; (3) displacement evidence is fragmentary and biased toward MDB-financed projects, so no national total can be estimated; (4) many URLs are from general knowledge and unverified (marked in leads); (5) the survey design is hypothetical and its feasibility depends on legal preconditions and human approvals that do not exist.",
+  "source_leads": [
+    {
+      "lead_id": "14C-L01",
+      "url": "https://lawcommission.gov.np/content/12571/12571-the-environment-protection-act/",
+      "title": "Environment Protection Act, 2076 (2019) (Nepali authoritative text)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Statutory basis for brief environmental study (BES), initial environmental examination (IEE) and environmental impact assessment (EIA); provisions on public consultation, approval authority, monitoring and penalties. Sections to extract on retrieval.",
+      "url_status": "located by r1 WebSearch (2026-09-27); not fetched",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L02",
+      "url": "https://www.ecolex.org/details/legislation/environmental-protection-regulations-2077-2020-lex-faoc223710/",
+      "title": "Environment Protection Regulations/Rules, 2077 (2020) (ECOLEX/FAOLEX record)",
+      "publisher": "FAO/IUCN/UNEP ECOLEX (secondary host of Government of Nepal text)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Rules 2077: schedules listing projects requiring BES/IEE/EIA by sector and threshold; scoping, public notice, public hearing and disclosure procedure; timelines. Thresholds and time limits to be read from the text only (not from search snippets). Verify against Nepal Gazette/Law Commission version.",
+      "url_status": "located by r1 WebSearch (2026-09-27); not fetched",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "14C-L03",
+      "url": "https://dpnet.org.np/resource-detail/1821",
+      "title": "Environment Protection Regulation, 2020 (Vatavaran Samrakshan Niyamawali 2077) - document copy",
+      "publisher": "Disaster Preparedness Network Nepal (secondary host)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Copy of Rules 2077 (Nepali); use only to cross-check the official gazetted text.",
+      "url_status": "located by r1 WebSearch (2026-09-27); not fetched",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "14C-L04",
+      "url": "https://faolex.fao.org/docs/pdf/nep100343.pdf",
+      "title": "Environment Protection Rules, 2054 (1997) (FAOLEX copy)",
+      "publisher": "FAO FAOLEX",
+      "source_id": "lawcommission_nepal",
+      "contains": "Superseded 1997 rules; used only to document how public-hearing/consultation provisions changed between the 1997 and 2020 regimes (projects approved under the old regime).",
+      "url_status": "located by r1 WebSearch (2026-09-27); not fetched",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "14C-L05",
+      "url": "http://www.dorw.gov.np/downloadfile/Land-Acquisition-Act_2034_English.pdf",
+      "title": "Land Acquisition Act, 2034 (1977) (English)",
+      "publisher": "Department of Roads, Government of Nepal",
+      "source_id": "lawcommission_nepal",
+      "contains": "Compulsory acquisition procedure: public purpose, preliminary action notice, compensation determination committee, basis of compensation, objections/appeals, rights of tenants. Amendments to be checked.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L06",
+      "url": "https://faolex.fao.org/docs/pdf/nep6227.pdf",
+      "title": "Land Acquisition Act, 2034 (1977) (FAOLEX copy)",
+      "publisher": "FAO FAOLEX",
+      "source_id": "lawcommission_nepal",
+      "contains": "Cross-check copy of the Land Acquisition Act text.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "14C-L07",
+      "url": "https://ibn.gov.np/ibn-faq/details/what-are-the-key-acts-laws-governing-land-acquisition-in-nepal-8691",
+      "title": "IBN FAQ: key acts and laws governing land acquisition in Nepal",
+      "publisher": "Investment Board Nepal",
+      "source_id": "ibn",
+      "contains": "Government list of statutes and policies governing land acquisition for investment projects (use to confirm whether the 2015 LARR policy and later guidelines are cited as in force).",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L08",
+      "url": "https://lawcommission.gov.np",
+      "title": "Land Acquisition, Resettlement and Rehabilitation Policy for Infrastructure Development Projects, 2071 (2015)",
+      "publisher": "Government of Nepal (landing page; exact document URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Policy on replacement-cost compensation, resettlement and livelihood restoration for non-titleholders, vulnerable groups and consultation; status (policy vs binding) to verify. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L09",
+      "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-parliamentary-affairs",
+      "title": "Constitution of Nepal 2015 (official English translation, MoLJPA)",
+      "publisher": "Ministry of Law, Justice and Parliamentary Affairs (hosted by ConstitutionNet)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Fundamental rights relevant to safeguards: right to property and compensation for acquisition, right to information, right to a clean environment, rights of Dalits, women, persons with disabilities; State policies on indigenous nationalities and natural-resource benefit sharing. Article numbers to extract.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "secondary"
+    },
+    {
+      "lead_id": "14C-L10",
+      "url": "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+      "title": "Constitution of Nepal (Nepali authoritative text)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Authoritative text for the provisions listed under 14C-L09.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L11",
+      "url": "https://lawcommission.gov.np",
+      "title": "Forest Act, 2076 (2019)",
+      "publisher": "Nepal Law Commission (landing page; exact URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Conditions for using forest land (incl. community forests) for national-priority projects: replacement land/plantation, consultation with forest user groups. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L12",
+      "url": "https://lawcommission.gov.np",
+      "title": "Individual Privacy Act, 2075 (2018)",
+      "publisher": "Nepal Law Commission (landing page; exact URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Legal requirements for collecting, storing and using personal data: consent, purpose limitation, sensitive data categories. Governs consultation_design data protection. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L13",
+      "url": "https://lawcommission.gov.np",
+      "title": "Statistics Act, 2079 (2022)",
+      "publisher": "Nepal Law Commission (landing page; exact URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Whether statistical surveys by non-government bodies require NSO notification/approval, and confidentiality duties. Existence of such a clause is NOT asserted; to be verified from the text before any fieldwork request. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L14",
+      "url": "https://lawcommission.gov.np",
+      "title": "Rights of Persons with Disabilities Act, 2074 (2017)",
+      "publisher": "Nepal Law Commission (landing page; exact URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Accessibility obligations for public information and consultation (formats, sign language, physical access). URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L15",
+      "url": "https://lawcommission.gov.np",
+      "title": "National Foundation for Development of Indigenous Nationalities Act, 2058 (2002) and its schedule of indigenous nationalities",
+      "publisher": "Nepal Law Commission (landing page; exact URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Official legal list of Adivasi Janajati used to determine when indigenous-peoples safeguards / ILO C169 consultation apply. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L16",
+      "url": "https://lawcommission.gov.np",
+      "title": "Right to Information Act, 2064 (2007)",
+      "publisher": "Nepal Law Commission (landing page; exact URL to locate)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Disclosure rights for EIA reports, resettlement plans and compensation decisions. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L17",
+      "url": "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:11300:0::NO::P11300_INSTRUMENT_ID:312314",
+      "title": "ILO NORMLEX: Indigenous and Tribal Peoples Convention, 1989 (No. 169) - ratifications",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Ratification status and date for Nepal (to verify); text of Articles on consultation (good faith, appropriate procedures, objective of agreement or consent), participation, land and relocation (consent; right to return; compensation). URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L18",
+      "url": "https://normlex.ilo.org/dyn/nrmlx_en/f?p=1000:13100:0::NO",
+      "title": "ILO NORMLEX: CEACR comments on Nepal's application of C169",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Committee of Experts direct requests/observations on Nepal (consultation mechanisms, hydropower/infrastructure, land rights); year of each comment to record. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L19",
+      "url": "https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html",
+      "title": "UN Declaration on the Rights of Indigenous Peoples (2007)",
+      "publisher": "United Nations DESA",
+      "source_id": "ohchr",
+      "contains": "Articles on free, prior and informed consent (relocation; projects affecting lands and resources); Nepal's vote to record. Soft law; distinguish from binding C169. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L20",
+      "url": "https://www.ohchr.org/en/special-procedures/sr-indigenous-peoples",
+      "title": "UN Special Rapporteur on the rights of Indigenous Peoples - country reports (Nepal)",
+      "publisher": "OHCHR",
+      "source_id": "ohchr",
+      "contains": "Country visit report on Nepal (2009, document symbol to verify) and later communications concerning infrastructure/hydropower consultation. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L21",
+      "url": "https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/countries.aspx?CountryCode=NPL&Lang=EN",
+      "title": "UN Treaty Body database - Nepal (CERD, CESCR concluding observations)",
+      "publisher": "OHCHR",
+      "source_id": "ohchr",
+      "contains": "Concluding observations referencing consultation/FPIC, forced eviction and land rights in Nepal; review years to record. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L22",
+      "url": "https://www.worldbank.org/en/projects-operations/environmental-and-social-framework",
+      "title": "World Bank Environmental and Social Framework (ESF)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "ESS1 (assessment), ESS5 (land acquisition, restrictions on land use, involuntary resettlement), ESS7 (Indigenous Peoples; circumstances requiring FPIC), ESS10 (stakeholder engagement and information disclosure); effective date and transition rules for older Nepal projects under OP 4.12/4.10. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L23",
+      "url": "https://www.adb.org/documents/safeguard-policy-statement",
+      "title": "ADB Safeguard Policy Statement (2009)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "SR2 involuntary resettlement and SR3 Indigenous Peoples (broad community support / consent for specified activities); meaningful consultation definition; applies to Nepal projects approved before the new framework. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L24",
+      "url": "https://www.adb.org/who-we-are/safeguards",
+      "title": "ADB Environmental and Social Framework (successor to SPS 2009) and ESS standards",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "New ADB ESF standards on land acquisition/resettlement, Indigenous Peoples, stakeholder engagement; approval and effective dates and transition to verify. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L25",
+      "url": "https://www.aiib.org/en/policies-strategies/framework-agreements/environmental-social-framework.html",
+      "title": "AIIB Environmental and Social Framework",
+      "publisher": "Asian Infrastructure Investment Bank",
+      "source_id": "aiib",
+      "contains": "ESS2 involuntary resettlement, ESS3 Indigenous Peoples (free, prior and informed consultation); relevant to AIIB-cofinanced Nepal projects. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L26",
+      "url": "https://www.ifc.org/en/insights-reports/2012/ifc-performance-standards",
+      "title": "IFC Performance Standards on Environmental and Social Sustainability (2012)",
+      "publisher": "International Finance Corporation",
+      "source_id": "wb_npl",
+      "contains": "PS5 land acquisition and involuntary resettlement; PS7 Indigenous Peoples incl. FPIC triggers; used by private hydropower lenders. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L27",
+      "url": "https://www.inspectionpanel.org/panel-cases",
+      "title": "World Bank Inspection Panel - case register (filter: Nepal)",
+      "publisher": "World Bank Inspection Panel",
+      "source_id": "wb_npl",
+      "contains": "Nepal requests (Arun III, 1994 - the Panel's first case; later Nepal power-sector requests) with eligibility reports and investigation findings on resettlement/indigenous consultation. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L28",
+      "url": "https://www.adb.org/who-we-are/accountability-mechanism",
+      "title": "ADB Accountability Mechanism - complaint registry (OSPF and Compliance Review Panel)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Nepal complaints (e.g. SASEC/transmission and hydropower projects; project names and dates to verify) with CRP compliance findings on consultation, compensation and IP safeguards. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L29",
+      "url": "https://www.adb.org/site/evaluation",
+      "title": "ADB Independent Evaluation Department - Nepal project/program evaluations",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Project performance evaluation reports and validation reports (e.g. Kali Gandaki A Hydroelectric, Melamchi Water Supply; titles/years to verify) with resettlement outcome sections: households affected, compensation delivered, livelihood restoration, post-project income comparisons. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L30",
+      "url": "https://www.adb.org/projects/country/nep",
+      "title": "ADB projects in Nepal - project documents (resettlement plans, semi-annual social monitoring reports, completion reports)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "For large projects (e.g. Tanahu Hydropower, road and transmission projects): RP entitlements, affected households, payment status and grievance logs by monitoring period. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L31",
+      "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
+      "title": "World Bank projects in Nepal - project documents (RAP, ESMF, ICR, IEG reviews)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Resettlement action plans, implementation completion reports and IEG ICR reviews with resettlement/IP outcome ratings for Nepal infrastructure projects. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L32",
+      "url": "https://ieg.worldbankgroup.org/evaluations",
+      "title": "World Bank IEG evaluations of involuntary resettlement and safeguards",
+      "publisher": "World Bank Independent Evaluation Group",
+      "source_id": "wb_npl",
+      "contains": "Portfolio-level evaluations of resettlement outcomes (titles/years to verify); plus the Bankwide Review 'Resettlement and Development' (1986-1993 portfolio) as historical comparator. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L33",
+      "url": "https://www.kfw-entwicklungsbank.de/International-financing/KfW-Development-Bank/Evaluations/",
+      "title": "KfW Development Bank ex-post evaluations (Middle Marsyangdi hydropower, Nepal)",
+      "publisher": "KfW (German Government development bank)",
+      "source_id": null,
+      "contains": "Ex-post evaluation of a Nepal hydropower project incl. resettlement/social-impact assessment; year to verify. Tier 4. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L34",
+      "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P076445",
+      "title": "Lao PDR - Nam Theun 2 Hydroelectric Project (World Bank project page)",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "International comparator: long-run resettlement livelihood monitoring and panel-of-experts reports; not Nepal evidence.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "comparator"
+    },
+    {
+      "lead_id": "14C-L35",
+      "url": "https://www.nhrcnepal.org",
+      "title": "National Human Rights Commission of Nepal - monitoring reports",
+      "publisher": "National Human Rights Commission, Nepal",
+      "source_id": null,
+      "contains": "Monitoring/inquiry reports on land acquisition, eviction and compensation disputes linked to infrastructure (e.g. road widening, airports, hydropower); report years to record. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L36",
+      "url": "https://supremecourt.gov.np",
+      "title": "Supreme Court of Nepal - decisions on EIA, land acquisition and indigenous consultation (e.g. Nijgadh airport case)",
+      "publisher": "Supreme Court of Nepal",
+      "source_id": "supremecourt_nepal",
+      "contains": "Full-text judgments and orders; decision dates and NKP citation numbers to record; used for legal interpretation of consultation/EIA duties, not outcome statistics. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L37",
+      "url": "https://documents1.worldbank.org/curated/en/099011526010021304/pdf/P507000-a1fb9a28-4888-400c-9dd9-0705326e7d7e.pdf",
+      "title": "Nepal Capital Expenditure Bottlenecks Analysis (October 2025)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Treatment of land acquisition, compensation and local obstruction as capital-spending bottlenecks (link displacement risk to 06C delivery constraints).",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L38",
+      "url": "https://bpp.worldbank.org/content/dam/sites/data/bpp/cntrypdf/BI-2023-Nepal-PPP.pdf",
+      "title": "Benchmarking Infrastructure 2023 in Nepal: survey question analysis",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "De jure scoring of Nepal's PPP framework incl. land acquisition, environmental and social assessment and consultation provisions.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L39",
+      "url": "https://oag.gov.np",
+      "title": "Office of the Auditor General - annual reports (land acquisition and compensation findings)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": "Audit observations on compensation payments, unresolved land acquisition and project delays by project; report editions (61st, 63rd located by 06C) and FY to record. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L40",
+      "url": "https://npc.gov.np",
+      "title": "National Planning Commission - project monitoring / national-pride project reviews",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Project-level reasons for delay incl. land acquisition and local disputes (shared with 06C). URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L41",
+      "url": "https://nhrc.gov.np",
+      "title": "Nepal Health Research Council - National Ethical Guidelines for Health Research in Nepal and ethical review board procedures",
+      "publisher": "Nepal Health Research Council",
+      "source_id": "mohp",
+      "contains": "National ethics-review standards (consent, vulnerable groups, data handling); whether non-health social surveys fall under NHRC or require university/IRB review to verify. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "method"
+    },
+    {
+      "lead_id": "14C-L42",
+      "url": "https://cioms.ch/publications/product/international-ethical-guidelines-for-health-related-research-involving-humans/",
+      "title": "CIOMS International Ethical Guidelines for Health-related Research Involving Humans (2016)",
+      "publisher": "Council for International Organizations of Medical Sciences",
+      "source_id": null,
+      "contains": "International standards on informed consent, community engagement, vulnerable participants, data and benefit sharing; used as design benchmark. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "method"
+    },
+    {
+      "lead_id": "14C-L43",
+      "url": "https://www.washingtongroup-disability.com/question-sets/wg-short-set-on-functioning-wg-ss/",
+      "title": "Washington Group Short Set on Functioning",
+      "publisher": "Washington Group on Disability Statistics (UN Statistical Commission city group)",
+      "source_id": null,
+      "contains": "Standard disability-identification questions for disaggregating consultation results and checking accessibility coverage. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "method"
+    },
+    {
+      "lead_id": "14C-L44",
+      "url": "https://asiafoundation.org/where-we-work/nepal/",
+      "title": "The Asia Foundation - A Survey of the Nepali People (multiple waves)",
+      "publisher": "The Asia Foundation",
+      "source_id": "academic",
+      "contains": "Existing nationally representative perception survey; questionnaire modules and sampling documentation for item benchmarking; wave years to record. URL from general knowledge — unverified",
+      "url_status": "URL from general knowledge — unverified",
+      "lead_type": "method"
+    },
+    {
+      "lead_id": "14C-L45",
+      "url": "https://censusnepal.cbs.gov.np/results",
+      "title": "NPHC 2021 results portal",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Sampling frame inputs: population by province, municipality type, sex, caste/ethnicity, mother tongue, disability (for stratification and language planning). Shared with 14B-L01.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    },
+    {
+      "lead_id": "14C-L46",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "NLSS IV 2022/23 microdata catalogue (survey methodology documentation)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Sampling design documentation (PSU frame, stratification) as template for a two-stage design; reused from 14A-L03.",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "method"
+    },
+    {
+      "lead_id": "14C-L47",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Hazard overlay for project sites to identify communities facing both project-induced displacement and disaster-induced relocation (shared with 13A-L18).",
+      "url_status": "reused from research/sources/source_leads.json (found by upstream agent; not fetched)",
+      "lead_type": "primary"
+    }
+  ],
+  "specific": {
+    "safeguard_requirements": {
+      "status": "pending",
+      "method": "Build a requirement matrix row per obligation (screening, consultation, disclosure, consent/FPIC, compensation basis, non-titled occupants, livelihood restoration, grievance, monitoring) x column per instrument (Nepal Constitution; EPA 2076/EPR 2077; Land Acquisition Act 2034; LARR Policy 2015; Forest Act 2076; RTI Act 2064; Disability Act 2074; ILO C169; UNDRIP; WB ESF; ADB SPS 2009/ESF; AIIB ESF; IFC PS). Each cell = verbatim provision + article/rule number + observation id of the retrieved text. Then a gap matrix: where MDB standards exceed Nepali law (to be determined from texts, not presumed).",
+      "instruments": [
+        {
+          "instrument": "Constitution of Nepal 2015",
+          "type": "domestic_constitution",
+          "lead_ids": [
+            "14C-L09",
+            "14C-L10"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "Environment Protection Act 2076 (2019)",
+          "type": "domestic_statute",
+          "lead_ids": [
+            "14C-L01"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "Environment Protection Rules 2077 (2020)",
+          "type": "domestic_regulation",
+          "lead_ids": [
+            "14C-L02",
+            "14C-L03"
+          ],
+          "status": "pending",
+          "note": "Official gazetted text still to locate on lawcommission.gov.np; ECOLEX/DPNet are secondary copies."
+        },
+        {
+          "instrument": "Environment Protection Rules 2054 (1997) (superseded)",
+          "type": "historical",
+          "lead_ids": [
+            "14C-L04"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "Land Acquisition Act 2034 (1977)",
+          "type": "domestic_statute",
+          "lead_ids": [
+            "14C-L05",
+            "14C-L06",
+            "14C-L07"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "Land Acquisition, Resettlement and Rehabilitation Policy 2071 (2015)",
+          "type": "domestic_policy",
+          "lead_ids": [
+            "14C-L08"
+          ],
+          "status": "pending",
+          "note": "Binding status to verify."
+        },
+        {
+          "instrument": "Forest Act 2076 (2019)",
+          "type": "domestic_statute",
+          "lead_ids": [
+            "14C-L11"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "Right to Information Act 2064 (2007)",
+          "type": "domestic_statute",
+          "lead_ids": [
+            "14C-L16"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "Rights of Persons with Disabilities Act 2074 (2017)",
+          "type": "domestic_statute",
+          "lead_ids": [
+            "14C-L14"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "National Foundation for Development of Indigenous Nationalities Act 2058 (2002)",
+          "type": "domestic_statute",
+          "lead_ids": [
+            "14C-L15"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "ILO Convention No. 169",
+          "type": "ratified_treaty (ratification to verify)",
+          "lead_ids": [
+            "14C-L17",
+            "14C-L18"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "UNDRIP (2007)",
+          "type": "soft_law",
+          "lead_ids": [
+            "14C-L19"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "UN treaty-body and Special Rapporteur recommendations on Nepal",
+          "type": "soft_law_interpretation",
+          "lead_ids": [
+            "14C-L20",
+            "14C-L21"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "World Bank ESF (ESS1, ESS5, ESS7, ESS10) and legacy OP 4.12/4.10",
+          "type": "mdb_framework",
+          "lead_ids": [
+            "14C-L22"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "ADB SPS 2009 and successor ESF",
+          "type": "mdb_framework",
+          "lead_ids": [
+            "14C-L23",
+            "14C-L24"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "AIIB ESF",
+          "type": "mdb_framework",
+          "lead_ids": [
+            "14C-L25"
+          ],
+          "status": "pending"
+        },
+        {
+          "instrument": "IFC Performance Standards 5 and 7",
+          "type": "lender_standard",
+          "lead_ids": [
+            "14C-L26"
+          ],
+          "status": "pending"
+        }
+      ],
+      "obligation_rows": [
+        "screening/categorisation",
+        "scoping and consultation",
+        "public hearing",
+        "disclosure (language, location, timing)",
+        "consent or FPIC trigger",
+        "compensation basis (market vs replacement cost)",
+        "entitlements of non-titled occupants, tenants, informal users",
+        "community/customary and forest land",
+        "livelihood restoration and vulnerable groups",
+        "gender-specific requirements (joint titles, women's participation)",
+        "accessibility (disability, language)",
+        "grievance redress mechanism",
+        "monitoring and completion audit",
+        "independent accountability recourse"
+      ],
+      "gap_matrix": {
+        "status": "pending",
+        "note": "Populated only after texts are retrieved; no gap is asserted in r1."
+      },
+      "open_legal_questions": [
+        "Is the 2015 LARR policy binding on all public projects or only where adopted in project agreements?",
+        "Does any domestic statute or procedure operationalise C169 consultation/consent, or is it applied only through MDB project conditions?",
+        "Which tier of government approves EIA/IEE for provincial and local projects after federalisation, and does the consultation duty differ by tier?",
+        "How do Supreme Court decisions (e.g. Nijgadh airport) interpret EIA and consultation duties?"
+      ]
+    },
+    "displacement_evidence": {
+      "status": "pending",
+      "method": "Evidence table, one row per project: sector, financier(s), approval year, safeguard framework applied, affected persons/households (physical vs economic; titled vs non-titled; indigenous/Dalit/female-headed shares where reported), compensation paid vs entitled, time to payment, livelihood-restoration outcome vs baseline, grievances/complaints and resolution, evaluator and independence (self-evaluation vs independent evaluation vs accountability mechanism vs academic/NHRC). Counts are recorded only as published with their definitions; no pooled Nepal-wide displacement total is estimated because no census of project-induced displacement is known (to verify).",
+      "candidate_projects": [
+        {
+          "project": "Kali Gandaki A Hydroelectric",
+          "financier": "ADB (and co-financiers to verify)",
+          "evidence_sought": "ADB IED evaluation / completion report resettlement sections",
+          "lead_ids": [
+            "14C-L29",
+            "14C-L30"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Arun III Hydroelectric (cancelled 1995) and Arun corridor successors",
+          "financier": "World Bank (Arun III)",
+          "evidence_sought": "Inspection Panel request and report (consultation, access-road displacement)",
+          "lead_ids": [
+            "14C-L27"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Middle Marsyangdi Hydroelectric",
+          "financier": "KfW",
+          "evidence_sought": "KfW ex-post evaluation social section",
+          "lead_ids": [
+            "14C-L33"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Melamchi Water Supply",
+          "financier": "ADB and others",
+          "evidence_sought": "Resettlement/social monitoring and completion/evaluation reports",
+          "lead_ids": [
+            "14C-L29",
+            "14C-L30"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Tanahu Hydropower",
+          "financier": "ADB, JICA, EIB (to verify)",
+          "evidence_sought": "RP, semi-annual social monitoring, IP plan",
+          "lead_ids": [
+            "14C-L30"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Transmission corridors (SASEC and WB/ADB power-sector projects)",
+          "financier": "ADB, World Bank",
+          "evidence_sought": "Accountability-mechanism complaints and compliance findings",
+          "lead_ids": [
+            "14C-L28",
+            "14C-L31"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Road widening and strategic roads (incl. Kathmandu Valley)",
+          "financier": "Government of Nepal and MDBs",
+          "evidence_sought": "NHRC reports, OAG findings, WB/ADB road project RAPs",
+          "lead_ids": [
+            "14C-L35",
+            "14C-L39",
+            "14C-L31"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Nijgadh international airport (proposed)",
+          "financier": "Government of Nepal",
+          "evidence_sought": "Supreme Court decision and EIA record",
+          "lead_ids": [
+            "14C-L36"
+          ],
+          "status": "pending"
+        },
+        {
+          "project": "Upper Tamakoshi and other NEA/domestically financed hydropower",
+          "financier": "Domestic",
+          "evidence_sought": "NEA/DoED environmental monitoring and compensation records",
+          "lead_ids": [
+            "14C-L40"
+          ],
+          "status": "pending"
+        }
+      ],
+      "comparators": [
+        {
+          "project": "Nam Theun 2 (Lao PDR)",
+          "lead_ids": [
+            "14C-L34"
+          ],
+          "status": "pending",
+          "note": "international comparator only"
+        }
+      ],
+      "portfolio_evidence": [
+        {
+          "description": "WB IEG and ADB IED portfolio evaluations of resettlement/safeguards",
+          "lead_ids": [
+            "14C-L29",
+            "14C-L32"
+          ],
+          "status": "pending"
+        }
+      ],
+      "known_methodological_issues": [
+        "Selection bias: evaluations exist mostly for MDB-financed projects; domestically financed projects (majority of roads) may have no public resettlement monitoring.",
+        "Self-reported completion data vs independent evaluation vs complainant accounts differ in purpose and should be kept as separate values (CLAUDE.md rule 4).",
+        "Definitions of 'affected' differ (land loss threshold, physical vs economic displacement, titled only vs all users).",
+        "Compensation in current NPR at different dates must be deflated (GDP deflator/CPI) before comparison; Nepal FY vs calendar year stated per value.",
+        "Displacement from disasters (13A) and from projects are distinct; overlap on hazard-exposed sites handled via 14C-L47 overlay."
+      ]
+    },
+    "consultation_design": {
+      "status": "design_only_not_approved_for_fielding",
+      "fielding_gate": {
+        "rule": "No piloting, enumerator recruitment, contact with any person/organisation, online deployment or publication of the instrument without (a) recorded approval by a named human in state/approvals.json for each gated action and (b) documented independent ethics-review clearance. Agents cannot grant approvals (src/orchestrator/approvals.py rejects agent-like approver ids).",
+        "gated_actions_required": [
+          "fieldwork",
+          "contact_third_party",
+          "financial_action (if any payment to enumerators/firms or participant compensation)",
+          "publish_report (release of results or instrument)",
+          "external_write (any online survey platform)"
+        ],
+        "approvals_recorded": [],
+        "legal_prerequisites_to_verify": [
+          "Statistics Act 2079 provisions on surveys by non-government bodies (14C-L13)",
+          "Individual Privacy Act 2075 consent and data-handling duties (14C-L12)",
+          "Applicable ethics review body: NHRC for health-related items; otherwise a Nepal-based institutional review board (14C-L41)",
+          "Local government notification norms (to verify)"
+        ]
+      },
+      "objectives": [
+        "Measure citizens' development priorities across the 12 welfare objectives (src/economic_model/welfare.py) without anchoring on GDP",
+        "Measure perceived procedural fairness, access to information and grievance channels for infrastructure",
+        "Measure accessibility barriers to participation (disability, language, literacy, distance, gender)",
+        "Separately document experiences of project-affected households (oversample, not pooled)"
+      ],
+      "sampling": {
+        "frame": "NPHC 2021 ward-level enumeration (NSO) - access conditions to verify (14C-L45, 14C-L46)",
+        "design": "Stratified two-stage: strata = 7 provinces x urban/rural municipality type; PSUs = wards selected PPS; households by systematic sampling from fresh listing; one adult respondent (18+) per household by random selection. Optional booster strata for project-affected areas identified from RP/EIA documents (displacement_evidence) - analysed as a separate domain.",
+        "size": "pending - to be set by power calculation using NLSS IV design effects (14A) and minimum detectable differences by province and sex; no size fixed in r1",
+        "weights": "Design weights x non-response adjustment; post-stratification to NPHC 2021 margins (province x sex x age group); report design-based SEs.",
+        "migrant_households": "Absent members recorded via proxy module; absent migrants not interviewed without separate approval."
+      },
+      "instrument": {
+        "modules": [
+          "household roster (minimal)",
+          "priorities ranking across welfare objectives (randomised order)",
+          "trust/information/procedural fairness for infrastructure decisions",
+          "experience of land acquisition or displacement (screened)",
+          "grievance knowledge and use",
+          "accessibility and participation barriers",
+          "Washington Group Short Set (14C-L43)",
+          "optional identity items (caste/ethnicity, mother tongue) with separate consent"
+        ],
+        "languages": "Nepali plus major mother tongues by stratum per NPHC 2021 language data; forward-back translation and cognitive testing (cognitive testing itself is fieldwork and gated).",
+        "item_benchmarking": "Reuse validated items from existing Nepal surveys where licences permit (14C-L44)."
+      },
+      "consent": {
+        "process": "Oral or written informed consent in the respondent's language, read aloud; covers purpose, independence (NEPAL 3T is not a government body and cannot promise projects or compensation), voluntariness, right to skip/withdraw, risks, data use and retention, contact for complaints.",
+        "special_cases": "Separate consent for sensitive modules (displacement, identity, disability); no interviews of minors; guardian/supported decision-making for persons who need it per disability-rights guidance; community-level consent/notification in indigenous areas in line with C169 principles in addition to individual consent.",
+        "no_inducement": "No promises of benefits; any token compensation requires financial_action approval."
+      },
+      "accessibility": [
+        "Multiple modes (in-person primary; phone only for follow-up with consent)",
+        "Audio/pictorial response cards for low literacy",
+        "Sign-language interpreter option and accessible venues for group sessions",
+        "Female enumerators available for women respondents",
+        "Scheduling around agricultural seasons and festivals",
+        "Transport-free participation (interview at home)"
+      ],
+      "data_protection": {
+        "principles": "Data minimisation; pseudonymisation at collection (IDs separated from names); GPS stored only at ward level in analysis files; encryption at rest and in transit; access restricted to named researchers; retention period and destruction plan set before fielding; no raw microdata published; aggregated outputs subject to small-cell suppression rule; compliance with Individual Privacy Act 2075 (to verify).",
+        "storage_location": "pending decision by human data controller (in-country vs external hosting is itself a decision requiring review)"
+      },
+      "risk_safeguards": [
+        "Do-no-harm screen for respondents in contested project areas (risk of retaliation); protocol to pause fieldwork",
+        "Referral information for grievance/legal aid bodies (verify before use)",
+        "Enumerator training on neutrality; no political party questions and no ranking of leaders or parties",
+        "Pre-registration of analysis plan to prevent selective reporting"
+      ],
+      "ethics_review": {
+        "status": "not_submitted",
+        "note": "Submission is itself a third-party contact and requires contact_third_party approval."
+      },
+      "outputs_if_approved": "Province x sex x urban/rural priority distributions with SEs feeding 14B dashboard rows for rights_accountability; separate affected-household domain report.",
+      "lead_ids": [
+        "14C-L12",
+        "14C-L13",
+        "14C-L14",
+        "14C-L41",
+        "14C-L42",
+        "14C-L43",
+        "14C-L44",
+        "14C-L45",
+        "14C-L46"
+      ]
+    }
+  }
+}
