@@ -67,3 +67,11 @@ def test_unit_prices_convert_across_energy_scales():
     with pytest.raises(UnitError):
         q.to("NPR_per_kWh")
     assert Quantity(1.0, "GWh").to("MWh").value == pytest.approx(1000.0)
+
+
+def test_ppp_international_dollars_do_not_mix_with_usd():
+    assert Quantity(2.0, "PPP_const2021_k").to("PPP_const2021").value == pytest.approx(2000.0)
+    with pytest.raises(UnitError):
+        Quantity(1.0, "PPP_const2021") + Quantity(1.0, "USD_current")
+    with pytest.raises(UnitError):
+        Quantity(1.0, "PPP_const2021") + Quantity(1.0, "PPP_const2017")

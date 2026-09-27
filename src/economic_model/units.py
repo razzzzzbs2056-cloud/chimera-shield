@@ -13,6 +13,7 @@ Money:   ``{CUR}_{BASIS}[_{SCALE}]``
          BASIS = current | const{YEAR}   (e.g. const2010 — base-year prices)
          SCALE = k | mn | bn | tn | crore | arba   (omitted = units)
          e.g. ``NPR_current_mn``, ``USD_current_bn``, ``NPR_const2010_mn``
+PPP:     ``PPP_const{YEAR}[_{SCALE}]`` — international dollars at constant PPP (e.g. ``PPP_const2021``)
 Rates:   ``NPR_per_USD``, ``NPR_per_INR``, ``INR_per_USD``
 Prices:  ``{CUR}_per_{kWh|MWh|GWh|tonne|litre|barrel|person|TEU}`` (current prices)
 Other:   ``percent``, ``percentage_points``, ``ratio``, ``index``, ``persons``, ``persons_mn``,
@@ -36,6 +37,8 @@ SCALES = {
 CURRENCIES = {"NPR", "USD", "INR"}
 
 _MONEY_RE = re.compile(r"^(NPR|USD|INR)_(current|const\d{4})(?:_(k|mn|bn|tn|crore|arba))?$")
+# international dollars at purchasing-power parity, constant prices of a PPP base year
+_PPP_RE = re.compile(r"^PPP_const(\d{4})(?:_(k|mn|bn|tn))?$")
 _RATE_RE = re.compile(r"^(NPR|USD|INR)_per_(NPR|USD|INR)$")
 _PRICE_RE = re.compile(r"^(NPR|USD|INR)_per_(kWh|MWh|GWh|tonne|litre|barrel|person|TEU)$")
 _ENERGY_SCALE = {"kWh": 1e-6, "MWh": 1e-3, "GWh": 1.0}
@@ -86,6 +89,9 @@ def parse_unit(code: str) -> Unit:
     if m:
         cur, basis, scale = m.group(1), m.group(2), m.group(3) or ""
         return Unit(code, "money", SCALES[scale], cur, basis)
+    m = _PPP_RE.match(code)
+    if m:
+        return Unit(code, "money", SCALES[m.group(2) or ""], "PPP", f"const{m.group(1)}")
     m = _RATE_RE.match(code)
     if m:
         if m.group(1) == m.group(2):
