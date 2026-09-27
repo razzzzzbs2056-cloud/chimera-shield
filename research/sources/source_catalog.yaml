@@ -42,6 +42,7 @@ sources:
   fcgo: {tier: 1, institution: Financial Comptroller General Office, Nepal, url: "https://fcgo.gov.np", covers: [consolidated financial statements, actual expenditure and transfers], endpoint_status: unverified}
   nitdb: {tier: 1, institution: Nepal Intermodal Transport Development Board, url: "https://nitdb.gov.np", covers: [dry ports, transit cargo statistics], endpoint_status: unverified}
   caan: {tier: 1, institution: Civil Aviation Authority of Nepal, url: "https://caanepal.gov.np", covers: [aviation statistics], endpoint_status: unverified}
+  nta_nepal: {tier: 1, institution: Nepal Telecommunications Authority, url: "https://nta.gov.np", covers: [telecom and internet statistics], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
   supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}
@@ -88,12 +89,20 @@ sources:
   gef: {tier: 3, institution: Global Environment Facility, url: "https://www.thegef.org", covers: [projects by country], endpoint_status: unverified}
   saarc: {tier: 3, institution: SAARC Secretariat, url: "https://www.saarc-sec.org", covers: [regional agreements], endpoint_status: unverified}
   itc_trademap: {tier: 3, institution: ITC Trade Map, url: "https://www.trademap.org", covers: [mirror trade statistics, market access], endpoint_status: unverified}
+  adaptation_fund: {tier: 3, institution: Adaptation Fund, url: "https://www.adaptation-fund.org", covers: [projects by country], endpoint_status: unverified}
+  cif: {tier: 3, institution: Climate Investment Funds, url: "https://www.cif.org", covers: [projects by country], endpoint_status: unverified}
+  unfccc: {tier: 3, institution: UNFCCC, url: "https://unfccc.int", covers: [NDCs, NAPs, national communications], endpoint_status: unverified}
+  ilo_research: {tier: 3, institution: ILO research publications, url: "https://www.ilo.org/research", covers: [working papers incl. AI exposure], endpoint_status: unverified}
   bimstec: {tier: 3, institution: BIMSTEC Secretariat, url: "https://bimstec.org", covers: [regional agreements], endpoint_status: unverified}
 
   # ---------------- Tier 4: foreign governments and central banks ----------------
   rbi: {tier: 4, institution: Reserve Bank of India, url: "https://www.rbi.org.in", covers: [INR, Indian monetary policy], endpoint_status: unverified}
   mea_india: {tier: 4, institution: Ministry of External Affairs, India, url: "https://www.mea.gov.in", covers: [bilateral documents], endpoint_status: unverified}
   mofcom: {tier: 4, institution: Ministry of Commerce, People's Republic of China, url: "https://english.mofcom.gov.cn", covers: [trade and investment policy], endpoint_status: unverified}
+  dgft_india: {tier: 4, institution: Directorate General of Foreign Trade, India, url: "https://www.dgft.gov.in", covers: [export and import notifications], endpoint_status: unverified}
+  cwc_india: {tier: 4, institution: Central Water Commission, India, url: "https://cwc.gov.in", covers: [flood forecasting, basin data], endpoint_status: unverified}
+  gacc_china: {tier: 4, institution: General Administration of Customs, China, url: "http://english.customs.gov.cn", covers: [China trade statistics], endpoint_status: unverified}
+  bpdb_bd: {tier: 5, institution: Bangladesh Power Development Board, url: "https://bpdb.gov.bd", covers: [power imports], endpoint_status: unverified}
   fed: {tier: 4, institution: US Federal Reserve Board, url: "https://www.federalreserve.gov", covers: [US monetary policy], endpoint_status: unverified}
   ustr: {tier: 4, institution: Office of the US Trade Representative, url: "https://ustr.gov", covers: [US trade preferences], endpoint_status: unverified}
   ofac: {tier: 4, institution: US Treasury OFAC, url: "https://ofac.treasury.gov", covers: [US sanctions], endpoint_status: unverified}
@@ -127,4 +136,5 @@ sources:
   ti_cpi: {tier: 7, institution: Transparency International CPI, url: "https://www.transparency.org/en/cpi", covers: [perception index], endpoint_status: unverified}
   aiddata: {tier: 7, institution: AidData (William & Mary), url: "https://www.aiddata.org", covers: [Chinese development finance dataset], endpoint_status: unverified}
   amis_nepal: {tier: 1, institution: Aid Management Information System, MoF Nepal, url: "https://amis.mof.gov.np", covers: [development cooperation disbursements], endpoint_status: unverified}
+  nist: {tier: 4, institution: US NIST (Cybersecurity Framework), url: "https://www.nist.gov/cyberframework", covers: [defensive cybersecurity standards], endpoint_status: unverified}
   academic: {tier: 7, institution: Peer-reviewed literature (cite each paper individually as its own source record), url: null, covers: [any], endpoint_status: not_applicable}

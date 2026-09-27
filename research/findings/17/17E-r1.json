@@ -1,0 +1,432 @@
+{
+  "subagent_id": "17E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; web-search budget exhausted, MoFA/MEA/DHM/ICIMOD document hosts not reachable). Eleven leads recorded: MoFA Nepal and MEA India archives (landing pages), the June 2023 Nepal PM statement (Mahakali-related items), the Indian mission's relations overview, DHM, BIPAD, three ICIMOD documents (2026 Kyirong-Rasuwa flood, transboundary glacial-lake inventory, hydropower basin-risk programme), the ICIMOD site and ThinkHazard. Q1 (treaties on Kosi, Gandak, Mahakali and documented disputes): a five-row inventory is set up (three river instruments, the bilateral water-resources mechanisms, and Nepal-China hydrological data provision), with provisions to extract and dispute topics to verify; no treaty text was retrieved so provisions, dates and disputes are pending, and the platform takes no position on disputes. Q2 (cross-border flood-forecasting data sharing): five arrangement types defined with a three-level test (arrangement exists / data transmitted / data used); all pending. No numbers are recorded.",
+  "findings": [
+    {
+      "claim": "Q1: Texts and amendments of the Kosi, Gandak and Mahakali instruments and their key provisions are unretrieved.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "mea_india"
+      ],
+      "note": "Treaty texts from MoFA Nepal / MEA bilateral documents; amendment instruments; Pancheshwar Development Authority records."
+    },
+    {
+      "claim": "Q1: Documented disputes (embankment/inundation, benefit sharing, Pancheshwar DPR, water-sharing interpretation) are pending evidence from official or peer-reviewed sources.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "mea_india",
+        "academic"
+      ],
+      "note": "Joint-mechanism minutes, official statements, peer-reviewed analyses; report both parties' documents."
+    },
+    {
+      "claim": "Q2: Existence and operating status of Nepal-India flood-forecasting data transmission is pending.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dhm",
+        "mofa_nepal"
+      ],
+      "note": "Arrangement text; DHM station list and transmission record."
+    },
+    {
+      "claim": "Q2: Existence and operating status of Nepal-China flood-season hydrological data provision, including performance during the 2026 Kyirong-Rasuwa flood, is pending.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "dhm",
+        "mofa_nepal"
+      ],
+      "note": "MoU/implementation plan; ICIMOD event note (17E-L07); DHM warning record. Relevant to S05/S10; escalate to 15/28 if data sharing is shown to have failed."
+    },
+    {
+      "claim": "Transboundary flood/GLOF event losses in Nepal by basin and year.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ndrrma",
+        "icimod"
+      ],
+      "note": "BIPAD event records; supports 25C (X18)."
+    },
+    {
+      "claim": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Data-sharing arrangements are assessed on three levels (formal arrangement, data transmitted, data used in warnings); a formal arrangement alone does not count as operational early warning.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Kosi, Gandak and Mahakali treaty texts and amendment instruments (document-level URLs not located).",
+    "Minutes of Nepal-India water-resources and flood-management committees.",
+    "Pancheshwar Development Authority records and DPR status.",
+    "Nepal-China hydrological data MoU and implementation records.",
+    "DHM list of stations transmitting to India/China and transmission logs.",
+    "India-side sources (Central Water Commission, Ministry of Jal Shakti) are not in the source catalog.",
+    "SAARC/BIMSTEC disaster-cooperation instruments and activation records."
+  ],
+  "assumptions": [
+    {
+      "id": "17E-A1",
+      "text": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17E-A2",
+      "text": "The platform records disputes only as documented by the parties or peer-reviewed sources and takes no position on territorial or treaty-interpretation questions.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17E-A3",
+      "text": "Hydrological and disaster data follow the reporting agency's calendar (Nepali dates for BIPAD/DHM, Gregorian for ICIMOD/CWC); dates are converted, not relabelled.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Add catalog ids for India's Central Water Commission and Ministry of Jal Shakti, and for China's Ministry of Water Resources, so 17E can cite both sides of each river arrangement."
+    },
+    {
+      "to": "25B",
+      "text": "X38: please use the three-level test (arrangement / transmission / use) so that the existence of an MoU is not modelled as functioning early warning."
+    },
+    {
+      "to": "25C",
+      "text": "X18: the 2026 Kyirong-Rasuwa event should be recorded as a dated observation from ICIMOD (17E-L07) and BIPAD before being used as a scenario calibration point."
+    }
+  ],
+  "uncertainty": "Very high for r1: no treaty text, mechanism minute or data-sharing record was retrieved. The instrument list is provisional (named from domain knowledge) and dispute topics are search targets, not findings. Operating status of data sharing, especially with China, is the largest unknown for S05/S10.",
+  "specific": {
+    "river_treaty_inventory": {
+      "status": "pending",
+      "question": "Q1 Which treaties govern the Kosi, Gandak and Mahakali rivers and what disputes are documented?",
+      "instruments": [
+        {
+          "river": "Kosi (Saptakoshi)",
+          "instrument": "Nepal-India agreement on the Kosi project and its later amendment",
+          "status_class": "pending",
+          "signature_and_amendments": "pending",
+          "key_provisions_to_extract": [
+            "project works and their location",
+            "land/lease terms",
+            "water allocation or use rights",
+            "irrigation/power entitlements for Nepal",
+            "operation and maintenance responsibility",
+            "joint mechanism"
+          ],
+          "documented_disputes": {
+            "status": "pending",
+            "topics_to_verify": [
+              "embankment maintenance and breaches",
+              "inundation from barrage operation",
+              "benefit sharing to Nepal",
+              "proposed high dam/multipurpose project status"
+            ],
+            "evidence_needed": "Official statements, joint-mechanism minutes, parliamentary records or peer-reviewed analysis; topics are search targets, not findings"
+          },
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "leads": [
+            "17E-L01",
+            "17E-L02"
+          ]
+        },
+        {
+          "river": "Gandak (Narayani)",
+          "instrument": "Nepal-India agreement on the Gandak irrigation and power project and its later amendment",
+          "status_class": "pending",
+          "signature_and_amendments": "pending",
+          "key_provisions_to_extract": [
+            "project works and their location",
+            "land/lease terms",
+            "water allocation or use rights",
+            "irrigation/power entitlements for Nepal",
+            "operation and maintenance responsibility",
+            "joint mechanism"
+          ],
+          "documented_disputes": {
+            "status": "pending",
+            "topics_to_verify": [
+              "canal and barrage maintenance",
+              "irrigation entitlements",
+              "inundation in border areas"
+            ],
+            "evidence_needed": "Official statements, joint-mechanism minutes, parliamentary records or peer-reviewed analysis; topics are search targets, not findings"
+          },
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "leads": [
+            "17E-L01",
+            "17E-L02"
+          ]
+        },
+        {
+          "river": "Mahakali",
+          "instrument": "Treaty concerning the integrated development of the Mahakali river (incl. Sarada barrage, Tanakpur, Pancheshwar Multipurpose Project) and the Pancheshwar Development Authority",
+          "status_class": "pending",
+          "signature_and_amendments": "pending",
+          "key_provisions_to_extract": [
+            "project works and their location",
+            "land/lease terms",
+            "water allocation or use rights",
+            "irrigation/power entitlements for Nepal",
+            "operation and maintenance responsibility",
+            "joint mechanism"
+          ],
+          "documented_disputes": {
+            "status": "pending",
+            "topics_to_verify": [
+              "Pancheshwar DPR finalisation",
+              "water-sharing interpretation",
+              "origin/boundary questions (Kalapani/Lipulekh region) as a related territorial matter - reported only, no position taken"
+            ],
+            "evidence_needed": "Official statements, joint-mechanism minutes, parliamentary records or peer-reviewed analysis; topics are search targets, not findings"
+          },
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "leads": [
+            "17E-L01",
+            "17E-L02",
+            "17E-L03"
+          ]
+        },
+        {
+          "river": "All Nepal-India rivers",
+          "instrument": "Bilateral water-resources and flood mechanisms (ministerial/secretary-level committee, technical committees, joint committees on Kosi-Gandak and on inundation and flood management)",
+          "status_class": "pending",
+          "signature_and_amendments": "pending",
+          "key_provisions_to_extract": [
+            "project works and their location",
+            "land/lease terms",
+            "water allocation or use rights",
+            "irrigation/power entitlements for Nepal",
+            "operation and maintenance responsibility",
+            "joint mechanism"
+          ],
+          "documented_disputes": {
+            "status": "pending",
+            "topics_to_verify": [
+              "frequency of meetings",
+              "implementation of agreed flood-protection works",
+              "border-area inundation from embankments/roads"
+            ],
+            "evidence_needed": "Official statements, joint-mechanism minutes, parliamentary records or peer-reviewed analysis; topics are search targets, not findings"
+          },
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "leads": [
+            "17E-L01",
+            "17E-L02",
+            "17E-L04"
+          ]
+        },
+        {
+          "river": "Nepal-China rivers (Bhote Koshi/Sun Koshi, Trishuli, Karnali headwaters)",
+          "instrument": "Hydrological information provision arrangement(s) with China for flood season",
+          "status_class": "pending",
+          "signature_and_amendments": "pending",
+          "key_provisions_to_extract": [
+            "project works and their location",
+            "land/lease terms",
+            "water allocation or use rights",
+            "irrigation/power entitlements for Nepal",
+            "operation and maintenance responsibility",
+            "joint mechanism"
+          ],
+          "documented_disputes": {
+            "status": "pending",
+            "topics_to_verify": [
+              "coverage and timeliness of upstream data",
+              "GLOF early warning"
+            ],
+            "evidence_needed": "Official statements, joint-mechanism minutes, parliamentary records or peer-reviewed analysis; topics are search targets, not findings"
+          },
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "leads": [
+            "17E-L01",
+            "17E-L07"
+          ]
+        }
+      ],
+      "method": "Extract provisions from retrieved treaty texts into a structured table; record disputes only when stated in an official record or peer-reviewed source, citing both parties' documents where available; the platform takes no position on territorial or treaty-interpretation disputes."
+    },
+    "data_sharing_status": {
+      "status": "pending",
+      "question": "Q2 What cross-border flood-forecasting data-sharing exists?",
+      "arrangements": [
+        {
+          "arrangement": "Nepal-India real-time hydro-meteorological data transmission from Nepali stations for flood forecasting (bilateral scheme)",
+          "status_class": "pending",
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "evidence_needed": "Agreement/MoU text or joint-committee minutes; DHM station list; data frequency",
+          "leads": [
+            "17E-L01",
+            "17E-L02",
+            "17E-L05"
+          ]
+        },
+        {
+          "arrangement": "Nepal-China provision of flood-season hydrological information from Tibetan stations",
+          "status_class": "pending",
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "evidence_needed": "MoU/implementation plan text; stations covered; whether it functioned during the 2026 Kyirong-Rasuwa event",
+          "leads": [
+            "17E-L01",
+            "17E-L07"
+          ]
+        },
+        {
+          "arrangement": "Regional flood information/outlook systems and HYCOS initiatives (ICIMOD-facilitated)",
+          "status_class": "pending",
+          "evidence_needed": "ICIMOD project documents; participating agencies; operational status",
+          "leads": [
+            "17E-L08",
+            "17E-L09",
+            "17E-L10"
+          ]
+        },
+        {
+          "arrangement": "GLOF early-warning systems on transboundary glacial lakes",
+          "status_class": "pending",
+          "evidence_needed": "DHM/ICIMOD system records; lakes covered",
+          "leads": [
+            "17E-L05",
+            "17E-L08"
+          ]
+        },
+        {
+          "arrangement": "Humanitarian/disaster cooperation frameworks (SAARC disaster instruments, BIMSTEC disaster cooperation, bilateral disaster-response arrangements)",
+          "status_class": "pending",
+          "note": "Instrument named from general domain knowledge as a document to locate; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); title, dates, amendments and provisions must be taken from the retrieved text.",
+          "evidence_needed": "Framework texts and activation records; cross-reference 17D",
+          "leads": [
+            "17E-L06"
+          ]
+        }
+      ],
+      "method": "Distinguish (a) formal arrangement exists, (b) data actually transmitted (station-level operating record), (c) data used in warnings; report each separately."
+    },
+    "supporting_variables": {
+      "X18": {
+        "role": "supporting",
+        "contribution": "Transboundary flood/GLOF events and warning-data availability",
+        "status": "pending",
+        "leads": [
+          "17E-L06",
+          "17E-L07",
+          "17E-L08"
+        ]
+      },
+      "X38": {
+        "role": "supporting",
+        "contribution": "Transboundary water agreements and data sharing",
+        "status": "pending",
+        "leads": [
+          "17E-L01",
+          "17E-L02",
+          "17E-L03",
+          "17E-L05",
+          "17E-L10"
+        ]
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "17E-L01",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - treaties and Nepal-India water-resources cooperation",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Landing page only: Nepal-side texts/briefs on the Kosi, Gandak and Mahakali instruments and records of bilateral water-resources mechanisms; document-level URLs to locate"
+    },
+    {
+      "lead_id": "17E-L02",
+      "url": "https://www.mea.gov.in",
+      "title": "Ministry of External Affairs, India - bilateral documents (Nepal)",
+      "publisher": "Ministry of External Affairs, India",
+      "source_id": "mea_india",
+      "contains": "Landing page only: MEA treaty/bilateral-documents archive for Kosi, Gandak and Mahakali instruments and joint statements referencing water resources and flood cooperation"
+    },
+    {
+      "lead_id": "17E-L03",
+      "url": "https://mofa.gov.np/content/112/joint-press-meet-between-the-prime-ministers/",
+      "title": "Joint Press Meet between the Prime Ministers of Nepal and India - Statement by the Prime Minister of Nepal, New Delhi, 1 June 2023",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "June 2023 statement (located in 17A search) reported to reference Mahakali-related items (bridges, Tanakpur link canal) and Pancheshwar; to check for water-cooperation commitments and their stated status"
+    },
+    {
+      "lead_id": "17E-L04",
+      "url": "https://indembkathmandu.gov.in/about-india-nepal-relations",
+      "title": "About India-Nepal Relations",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": null,
+      "contains": "Indian mission overview of bilateral mechanisms, to check for water-resources and flood-management committees and their latest meetings"
+    },
+    {
+      "lead_id": "17E-L05",
+      "url": "https://dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal - flood forecasting and early warning",
+      "publisher": "Department of Hydrology and Meteorology, Nepal",
+      "source_id": "dhm",
+      "contains": "Landing page: real-time hydrological stations, flood forecasting bulletins; to establish what station data are shared with India/China and under which arrangement"
+    },
+    {
+      "lead_id": "17E-L06",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal (NDRRMA)",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Disaster event and loss records incl. floods and GLOF/debris-flow events in transboundary basins (Kosi, Gandaki/Narayani, Mahakali, Trishuli/Bhote Koshi), Nepal-dated"
+    },
+    {
+      "lead_id": "17E-L07",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Event note on the 2026 cross-border flood originating in Tibet affecting Rasuwa; relevant to upstream-downstream data sharing with China and early-warning gaps"
+    },
+    {
+      "lead_id": "17E-L08",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes (Koshi, Gandaki, Karnali basins incl. Tibet)",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Transboundary glacial-lake inventory incl. lakes in the Tibetan part of Nepal's river basins; basis for identifying where cross-border GLOF warning data are required"
+    },
+    {
+      "lead_id": "17E-L09",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-scale risk evidence programme; context for flood/GLOF exposure of hydropower in transboundary basins"
+    },
+    {
+      "lead_id": "17E-L10",
+      "url": "https://www.icimod.org",
+      "title": "ICIMOD - regional flood outlook / HKH-HYCOS and flood information systems",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Landing page only: regional flood information and outlook services and hydrological-cycle observing initiatives involving Nepal, India, China, Bangladesh; document-level URLs to locate"
+    },
+    {
+      "lead_id": "17E-L11",
+      "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+      "title": "ThinkHazard - Nepal - River flood",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Hazard classification for river flood in Nepal by district; context for exposure, not treaty evidence"
+    }
+  ]
+}

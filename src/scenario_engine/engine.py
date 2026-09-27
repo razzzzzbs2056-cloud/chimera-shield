@@ -25,6 +25,8 @@ REQUIRED_FIELDS = (
     "limitations", "audits_required",
 )
 IMPACT_DIMENSIONS = ("household", "regional", "sectoral", "fiscal")
+SHOCK_UNITS = {"pct_change": "proportional change in the variable's level (decimal)",
+               "pp": "change in a rate, in decimal percentage points"}
 
 
 @dataclass
@@ -110,6 +112,8 @@ def validate_scenario(s: Scenario, exposure_ids: set[str], all_ids: set[str]) ->
             p.append(f"{s.id}/{sh.id}: channel {sh.channel} not declared in scenario channels")
         if sh.quantified and not sh.evidence and not sh.illustrative:
             p.append(f"{s.id}/{sh.id}: magnitude given without evidence and not marked illustrative")
+        if sh.unit not in SHOCK_UNITS:
+            p.append(f"{s.id}/{sh.id}: shock unit {sh.unit!r} must be one of {sorted(SHOCK_UNITS)}")
         if sh.duration_years < 1 or sh.start_offset_years < 0:
             p.append(f"{s.id}/{sh.id}: invalid timing")
     for ref in s.components + s.depends_on:
