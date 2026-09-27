@@ -48,6 +48,7 @@ sources:
   nia_nepal: {tier: 1, institution: Nepal Insurance Authority, url: "https://nia.gov.np", covers: [insurance market statistics], endpoint_status: unverified}
   nepse: {tier: 1, institution: Nepal Stock Exchange, url: "https://www.nepalstock.com", covers: [market capitalisation, listings, turnover], endpoint_status: unverified}
   epf_nepal: {tier: 1, institution: Employees Provident Fund, Nepal, url: "https://epfnepal.com.np", covers: [contractual savings], endpoint_status: unverified}
+  erc_nepal: {tier: 1, institution: Electricity Regulatory Commission, Nepal, url: "https://erc.gov.np", covers: [tariffs, PPA approvals], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
   supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}

@@ -1,6 +1,6 @@
 {
   "created_at": "2026-09-27T00:36:38+00:00",
-  "updated_at": "2026-09-27T00:46:48+00:00",
+  "updated_at": "2026-09-27T00:54:02+00:00",
   "tasks": {
     "00A": {
       "status": "done",
@@ -99,40 +99,124 @@
       "history": []
     },
     "03A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:57+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/03/03A-r1.json"
     },
     "03B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/03/03B-r1.json"
     },
     "03C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/03/03C-r1.json"
     },
     "04A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:58+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/04/04A-r1.json"
     },
     "04B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:59+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:59+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/04/04B-r1.json"
     },
     "04C": {
       "status": "pending",
       "history": []
     },
     "05A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:59+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:59+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/05/05A-r1.json"
     },
     "05B": {
       "status": "pending",
       "history": []
     },
     "05C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:53:59+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:53:59+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/05/05C-r1.json"
     },
     "06A": {
       "status": "pending",
@@ -171,28 +255,100 @@
       "history": []
     },
     "09A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:00+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:00+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/09/09A-r1.json"
     },
     "09B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:00+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:00+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/09/09B-r1.json"
     },
     "09C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:00+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:00+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/09/09C-r1.json"
     },
     "10A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/10/10A-r1.json"
     },
     "10B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/10/10B-r1.json"
     },
     "10C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/10/10C-r1.json"
     },
     "11A": {
       "status": "done",
@@ -1019,8 +1175,20 @@
       "output": "research/findings/25/25D-r1.json"
     },
     "25E": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T00:54:01+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T00:54:02+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/25/25E-r1.json"
     },
     "26A": {
       "status": "done",
