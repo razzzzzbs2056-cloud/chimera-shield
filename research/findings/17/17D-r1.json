@@ -1,0 +1,519 @@
+{
+  "subagent_id": "17D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; web-search budget exhausted, SAARC/BIMSTEC and depositary hosts blocked). Thirteen leads recorded: SAARC and BIMSTEC secretariats (landing pages), SASEC for BBIN, the NTIP agreement register, TEPC texts of the India trade and transit treaties, MoFA Nepal, WTO RTA database and tariff data, UN Comtrade, ITC Trade Map, the World Bank Nepal CEM 2025 and a method reference. Q1 (ratified/operational vs signed/proposed): a fifteen-row agreement status table is set up across SAARC, BIMSTEC, BBIN and conditioning bilateral treaties; each row requires signature date, entry into force, Nepal's party status and implementation evidence from the secretariat/depositary record, and all are pending - no status is asserted from memory. Q2 (measurable SAFTA effects): four evidence types and key attribution problems are defined; no SAFTA utilisation or econometric study was located, so all effects are pending. No numbers are recorded.",
+  "findings": [
+    {
+      "claim": "Q1: Ratification and operational status of SAARC, BIMSTEC and BBIN instruments (fifteen rows in specific.agreement_status_table) is pending.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "saarc",
+        "bimstec",
+        "mofa_nepal",
+        "wto"
+      ],
+      "note": "Secretariat/depositary ratification records; WTO RTA notifications; implementing records (e.g. customs preference claims, vehicle permits, grid transactions)."
+    },
+    {
+      "claim": "Q2: SAFTA preference utilisation for Nepal's exports and imports.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "saarc"
+      ],
+      "note": "Customs data on imports cleared under SAFTA preference, Nepal FY; partner customs data for Nepal's exports claiming SAFTA."
+    },
+    {
+      "claim": "Q2: Documented econometric trade effects of SAFTA (regional and Nepal-specific).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic",
+        "wb_npl"
+      ],
+      "note": "No study located in r1; locate peer-reviewed gravity-model studies and World Bank/ADB regional integration reports in r2."
+    },
+    {
+      "claim": "Q2: Preference margins on Nepal's principal export lines under SAFTA vs MFN.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wto_tariff",
+        "itc_trademap"
+      ],
+      "note": "Tariff line data by partner, latest year."
+    },
+    {
+      "claim": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "A regional arrangement is treated as contributing to baseline trade, transit or electricity only when OPERATIONAL; announced or signed-not-in-force instruments are scenario options with named preconditions.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Document-level URLs for SAARC and BIMSTEC agreement texts and ratification records (not located; hosts blocked).",
+    "BBIN MVA ratification record by party.",
+    "Any SAFTA utilisation study or Nepal-specific trade-effect estimate.",
+    "Customs data on SAFTA preference claims (Nepal and partners).",
+    "Status record of BIMSTEC FTA component negotiations."
+  ],
+  "assumptions": [
+    {
+      "id": "17D-A1",
+      "text": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17D-A2",
+      "text": "Instruments are listed from domain knowledge only to structure the search; every row stays pending until a secretariat/depositary or national ratification record is retrieved.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17D-A3",
+      "text": "Trade effects attributed to SAFTA must control for bilateral India-Nepal preferences and transport costs.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "26B",
+      "text": "Please supply LDC-graduation implications for SAFTA special-and-differential provisions (LDC treatment within SAFTA) so the status table can flag provisions that lapse on graduation."
+    },
+    {
+      "to": "16A",
+      "text": "X30 lists SAARC, BIMSTEC, BBIN and bilateral treaties together; bilateral India/China treaties are held by 17A/17B. Suggest 17D owns only multilateral/plurilateral rows and cross-references bilateral rows to avoid duplicate status records."
+    },
+    {
+      "to": "00A",
+      "text": "Catalog lacks a depositary/treaty-status source (e.g. national gazette of treaty ratifications, Nepal Treaty Act records) - required to establish Nepal's party status independently of secretariats."
+    }
+  ],
+  "uncertainty": "Very high for r1: no primary text or ratification record was retrieved. The instrument list is provisional and may be incomplete (new instruments from recent BIMSTEC summits could be missing). The SAFTA effect literature was not searched successfully; its existence and direction for Nepal are unknown at this stage.",
+  "specific": {
+    "agreement_status_table": {
+      "status": "pending",
+      "method": "One row per instrument; status class per 17D-A1 assigned only from secretariat/depositary/national ratification records plus an implementing record for OPERATIONAL.",
+      "rows": [
+        {
+          "organisation": "SAARC",
+          "instrument": "South Asian Free Trade Area (SAFTA) agreement and its sensitive lists / trade liberalisation programme",
+          "domain": "goods trade",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01",
+            "17D-L04",
+            "17D-L08"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "Preferential trading arrangement preceding SAFTA (SAPTA)",
+          "domain": "goods trade",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01",
+            "17D-L04"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "SAARC Agreement on Trade in Services (SATIS)",
+          "domain": "services trade",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01",
+            "17D-L04"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "SAARC Framework Agreement for Energy Cooperation (Electricity)",
+          "domain": "electricity",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01",
+            "17D-L07"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "SAARC Food Bank agreement",
+          "domain": "food security",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "SAARC Development Fund charter",
+          "domain": "finance",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "SAARC regional motor vehicles and railways agreements (proposed)",
+          "domain": "transport",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01"
+          ]
+        },
+        {
+          "organisation": "SAARC",
+          "instrument": "SAARC summit process (status of summits since last held)",
+          "domain": "institutional functioning",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L01",
+            "17D-L07"
+          ]
+        },
+        {
+          "organisation": "BIMSTEC",
+          "instrument": "BIMSTEC Charter",
+          "domain": "institutional",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L02",
+            "17D-L07"
+          ]
+        },
+        {
+          "organisation": "BIMSTEC",
+          "instrument": "BIMSTEC Framework Agreement on a Free Trade Area and its pending component agreements (goods, services, investment, customs, dispute settlement)",
+          "domain": "trade",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L02",
+            "17D-L04"
+          ]
+        },
+        {
+          "organisation": "BIMSTEC",
+          "instrument": "MoU for establishment of BIMSTEC Grid Interconnection",
+          "domain": "electricity",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L02"
+          ]
+        },
+        {
+          "organisation": "BIMSTEC",
+          "instrument": "BIMSTEC maritime transport cooperation agreement",
+          "domain": "transport",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L02"
+          ]
+        },
+        {
+          "organisation": "BIMSTEC",
+          "instrument": "BIMSTEC transport connectivity master plan",
+          "domain": "transport",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L02"
+          ]
+        },
+        {
+          "organisation": "BBIN",
+          "instrument": "BBIN Motor Vehicles Agreement (and passenger/cargo protocols)",
+          "domain": "transport",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Named from general domain knowledge as an instrument to verify; no document-level lead located in r1 (web-search budget exhausted, data hosts blocked); signature/entry-into-force dates and ratifying parties must come from the depositary or secretariat record.",
+          "leads": [
+            "17D-L03"
+          ]
+        },
+        {
+          "organisation": "Bilateral (conditions regional use)",
+          "instrument": "India-Nepal Treaty of Trade and Treaty of Transit",
+          "domain": "trade/transit",
+          "status_class": "pending",
+          "nepal_party": "pending",
+          "signature_date": "pending",
+          "entry_into_force": "pending",
+          "implementation_evidence": "pending",
+          "note": "Texts located (17A leads); revision dates per retrieved texts.",
+          "leads": [
+            "17D-L05",
+            "17D-L06"
+          ]
+        }
+      ]
+    },
+    "documented_effects": {
+      "status": "pending",
+      "question": "Q2 What measurable trade effects of SAFTA are documented?",
+      "evidence_types_sought": [
+        {
+          "type": "Preference utilisation rates (share of eligible imports entering under SAFTA preferences)",
+          "sources": "customs administrations' preference-claim data; secretariat reports",
+          "status": "pending",
+          "leads": [
+            "17D-L01",
+            "17D-L04"
+          ]
+        },
+        {
+          "type": "Preference margins (MFN minus SAFTA rate) on Nepal's export lines",
+          "sources": "WTO TTD, ITC Market Access Map",
+          "status": "pending",
+          "leads": [
+            "17D-L09",
+            "17D-L11"
+          ]
+        },
+        {
+          "type": "Ex-post econometric estimates of SAFTA effects on intra-regional trade (gravity models)",
+          "sources": "peer-reviewed literature; World Bank/ADB studies",
+          "status": "pending - no study located in r1",
+          "leads": []
+        },
+        {
+          "type": "Descriptive intra-SAARC trade shares before/after SAFTA",
+          "sources": "UN Comtrade, ITC Trade Map",
+          "status": "pending",
+          "leads": [
+            "17D-L10",
+            "17D-L11"
+          ]
+        }
+      ],
+      "attribution_issues": [
+        "Nepal's trade is dominated by India, where the bilateral Treaty of Trade already grants preferences; SAFTA's incremental effect for Nepal is likely hard to separate from bilateral preferences (method issue, not a finding)",
+        "Sensitive lists and non-tariff measures limit coverage",
+        "Rules-of-origin compliance costs affect utilisation",
+        "Calendar-year international data vs Nepal FY customs data"
+      ],
+      "method": "Report each documented effect with study, period, method and identification strategy; keep conflicting estimates side by side; do not generalise regional estimates to Nepal without Nepal-specific evidence."
+    },
+    "supporting_variables": {
+      "X30": {
+        "role": "primary",
+        "contribution": "Regional institutional arrangements - operational vs announced",
+        "status": "pending",
+        "leads": [
+          "17D-L01",
+          "17D-L02",
+          "17D-L03",
+          "17D-L04",
+          "17D-L07",
+          "17D-L08"
+        ]
+      },
+      "X08": {
+        "role": "supporting",
+        "contribution": "Regional transport agreements (BBIN MVA, BIMSTEC maritime) bearing on transit",
+        "status": "pending",
+        "leads": [
+          "17D-L02",
+          "17D-L03"
+        ]
+      },
+      "X09": {
+        "role": "supporting",
+        "contribution": "SAFTA/SAARC food-bank provisions relevant to export restrictions",
+        "status": "pending",
+        "leads": [
+          "17D-L01"
+        ]
+      },
+      "X16": {
+        "role": "supporting",
+        "contribution": "SAARC energy framework and BIMSTEC grid MoU status",
+        "status": "pending",
+        "leads": [
+          "17D-L01",
+          "17D-L02"
+        ]
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "17D-L01",
+      "url": "https://www.saarc-sec.org",
+      "title": "SAARC Secretariat - agreements, conventions and ratification status",
+      "publisher": "SAARC Secretariat",
+      "source_id": "saarc",
+      "contains": "Landing page only: texts of SAARC agreements (SAFTA, services, energy, food bank, development fund, conventions) and, where published, ratification/entry-into-force records; document-level URLs to locate"
+    },
+    {
+      "lead_id": "17D-L02",
+      "url": "https://bimstec.org",
+      "title": "BIMSTEC Secretariat - Charter, agreements, MoUs and summit declarations",
+      "publisher": "BIMSTEC Secretariat",
+      "source_id": "bimstec",
+      "contains": "Landing page only: Charter, conventions/agreements (incl. maritime transport, grid interconnection, FTA framework negotiations), summit declarations; status records to locate"
+    },
+    {
+      "lead_id": "17D-L03",
+      "url": "https://www.sasec.asia",
+      "title": "South Asia Subregional Economic Cooperation (SASEC) programme site",
+      "publisher": "SASEC Secretariat (ADB)",
+      "source_id": "adb_nepal",
+      "contains": "BBIN Motor Vehicles Agreement process documents and news; SASEC operational plans; locating aid for BBIN status"
+    },
+    {
+      "lead_id": "17D-L04",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal - trade agreements register",
+      "publisher": "Trade and Export Promotion Centre / MoICS, Nepal",
+      "source_id": "tepc",
+      "contains": "Nepal-side register of regional and bilateral trade agreements (SAFTA, BIMSTEC FTA framework, India/China/Bangladesh instruments) with Nepal's participation status"
+    },
+    {
+      "lead_id": "17D-L05",
+      "url": "https://tepc.gov.np/pages/treaty-of-transit-1999-india",
+      "title": "Treaty of Transit, 1999 - India (TEPC)",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Bilateral transit treaty page; row in the status table for bilateral instruments that condition regional arrangements"
+    },
+    {
+      "lead_id": "17D-L06",
+      "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
+      "title": "Treaty of Trade between the Government of Nepal and the Government of India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Bilateral trade treaty text (2009 revision); bilateral preferences that overlap SAFTA preferences - relevant to attributing trade effects"
+    },
+    {
+      "lead_id": "17D-L07",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - regional organisations (SAARC, BIMSTEC)",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Landing page only: Nepal's statements on SAARC/BIMSTEC, ratification notes; Nepal-side status source"
+    },
+    {
+      "lead_id": "17D-L08",
+      "url": "https://www.wto.org",
+      "title": "WTO - Regional Trade Agreements database and notifications",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "RTA notifications for SAFTA and other South Asian agreements (notification dates, coverage, entry into force as notified)"
+    },
+    {
+      "lead_id": "17D-L09",
+      "url": "https://ttd.wto.org",
+      "title": "WTO Tariff & Trade Data",
+      "publisher": "World Trade Organization",
+      "source_id": "wto_tariff",
+      "contains": "Applied MFN and preferential tariffs by partner (SAFTA preferential lines) for preference-margin calculation"
+    },
+    {
+      "lead_id": "17D-L10",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Intra-SAARC trade by HS and reporter/partner, calendar year; mirror data for Nepal; input to utilisation and trade-effect studies"
+    },
+    {
+      "lead_id": "17D-L11",
+      "url": "https://www.trademap.org",
+      "title": "ITC Trade Map",
+      "publisher": "International Trade Centre",
+      "source_id": "itc_trademap",
+      "contains": "Mirror trade and market-access (preferential tariff) data for SAFTA partners"
+    },
+    {
+      "lead_id": "17D-L12",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "To check for discussion of regional trade agreements and trade integration; interpretation only"
+    },
+    {
+      "lead_id": "17D-L13",
+      "url": "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+      "title": "Limao and Venables (2001) Infrastructure, Geographical Disadvantage, Transport Costs and Trade",
+      "publisher": "World Bank Economic Review (academic)",
+      "source_id": "academic",
+      "contains": "Method reference for separating transport-cost effects from tariff-preference effects when attributing trade changes to agreements; not a SAFTA study"
+    }
+  ]
+}
