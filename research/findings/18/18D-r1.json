@@ -104,12 +104,14 @@
     {
       "id": "18D-A1",
       "text": "Recipient-reported (DCR, Nepal FY) and donor-reported (OECD, calendar year) ODA are kept as separate series.",
-      "basis": "CLAUDE.md evidence rules 4 and 6"
+      "basis": "assumption",
+      "basis_note": "original label: 'CLAUDE.md evidence rules 4 and 6'"
     },
     {
       "id": "18D-A2",
       "text": "DoFE approvals measure flows of documented non-India migrants only; stocks come from Census 2021 and host-country statistics.",
-      "basis": "16B challenge to 23A"
+      "basis": "assumption",
+      "basis_note": "original label: '16B challenge to 23A'"
     }
   ],
   "challenges": [

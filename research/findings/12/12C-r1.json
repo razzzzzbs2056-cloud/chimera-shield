@@ -1,598 +1,600 @@
 {
- "subagent_id": "12C",
- "task_id": "r1",
- "generated_at": "2026-09-27T12:00:00+00:00",
- "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (arrivals, length of stay, spending per visitor), Q2 (BoP travel receipts) and Q3 (carrying capacity at major destinations) are designed but unanswered. Twenty-eight source leads: Nepal Tourism Statistics 2023 and 2024 (MoCTCA/NTB), NRB Current Macroeconomic and Financial Situation releases (BoP travel credits), BPM6, UNCTADstat, CAAN, WTO TPR 2025, World Bank NDU, IPCC and ICIMOD hazard documents, and - from the single permitted WebSearch - the UNESCO World Heritage 2021 State of Conservation record for Sagarmatha National Park and academic/UNDP studies on visitor impacts in Sagarmatha and Annapurna. Five portals (NTB, UN Tourism, DNPWC, NTNC, OCR) are marked as general-knowledge URLs. Arrivals (calendar year) and travel receipts (Nepal FY) are kept as separate series; per-arrival ratios require monthly re-aggregation. No official carrying-capacity determination was located. No numbers are recorded.",
- "findings": [
-  {
-   "claim": "International tourist arrivals, total and by nationality, mode (air/land) and purpose.",
-   "type": "pending",
-   "value": null,
-   "unit": "persons_k",
-   "period": "CY2010-CY2025 (calendar year)",
-   "source_ids": [
-    "tourism_ministry",
-    "unwto"
-   ],
-   "note": "Calendar-year series; Indian land arrivals coverage differs across years; keep separate from FY receipts. Leads: 12C-L01..L04, L11"
-  },
-  {
-   "claim": "Average length of stay of international visitors.",
-   "type": "pending",
-   "value": null,
-   "unit": "days",
-   "period": "CY2010-CY2025",
-   "source_ids": [
-    "tourism_ministry"
-   ],
-   "note": "Method (departure card vs survey) to be recorded per edition. Leads: 12C-L01, L02"
-  },
-  {
-   "claim": "Average spending per visitor per day and per visit (as published by MoCTCA).",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_per_person",
-   "period": "CY2010-CY2025",
-   "source_ids": [
-    "tourism_ministry"
-   ],
-   "note": "Per visitor-day and per visit both stored as USD_per_person with the basis stated in the claim note. Leads: 12C-L01, L02"
-  },
-  {
-   "claim": "Implied receipts per arrival: BoP travel credits (FY) divided by arrivals (CY converted to FY by documented monthly aggregation).",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_per_person",
-   "period": "FY2014/15-FY2025/26",
-   "source_ids": [
-    "nrb",
-    "tourism_ministry"
-   ],
-   "note": "Estimate; requires monthly arrivals to build FY totals — never divide FY receipts by CY arrivals directly. Leads: 12C-L01, L05..L07"
-  },
-  {
-   "claim": "BoP travel credits (receipts), Nepal FY.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2010/11-FY2025/26 (Nepal FY)",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "BPM6 travel; USD series with exchange-rate effect separated. Leads: 12C-L05..L09"
-  },
-  {
-   "claim": "BoP travel credits in USD.",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "FY2010/11-FY2025/26",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "Converted with NRB FY-average rate, documented. Leads: 12C-L05, L06"
-  },
-  {
-   "claim": "Travel exports, calendar-year (UNCTAD/UN Tourism inbound expenditure).",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "CY2010-CY2025",
-   "source_ids": [
-    "unctadstat",
-    "unwto"
-   ],
-   "note": "Separate series; differs from NRB FY series by period and possibly by compilation. Leads: 12C-L10, L11"
-  },
-  {
-   "claim": "Travel receipts share of total services exports and of current-account receipts.",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2010/11-FY2025/26",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "Coordinate with 21E services matrix. Leads: 12C-L05, L06"
-  },
-  {
-   "claim": "Protected-area visitor counts: Sagarmatha NP, Annapurna CA, Langtang NP, Chitwan NP, and mountaineering permits (Everest).",
-   "type": "pending",
-   "value": null,
-   "unit": "persons_k",
-   "period": "FY or CY as published (label per source)",
-   "source_ids": [
-    "tourism_ministry"
-   ],
-   "note": "DNPWC/NTNC records; MoCTCA statistics tables. Leads: 12C-L01, L02, L21, L22"
-  },
-  {
-   "claim": "Environmental/social carrying-capacity limits at major destinations (quantified capacity, method, year).",
-   "type": "pending",
-   "value": null,
-   "unit": "persons_k",
-   "period": "Study years as published",
-   "source_ids": [
-    "academic",
-    "tourism_ministry"
-   ],
-   "note": "No official carrying-capacity determination located; UNESCO requested an SNP study (2021 SOC). Academic figures must be traced to original studies and labelled with method; not adopted as policy limits. Leads: 12C-L13..L20"
-  },
-  {
-   "claim": "International air-seat and airport throughput capacity (TIA, Gautam Buddha, Pokhara) as a binding constraint on arrivals.",
-   "type": "pending",
-   "value": null,
-   "unit": "persons_mn",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "caan"
-   ],
-   "note": "Leads: 12C-L12"
-  },
-  {
-   "claim": "Business formation: new company registrations and tourism-industry registrations by FY.",
-   "type": "pending",
-   "value": null,
-   "unit": "count",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "ocr_nepal",
-    "doind"
-   ],
-   "note": "Leads: 12C-L26, L27"
-  },
-  {
-   "claim": "Arrivals (calendar year) and travel receipts (Nepal fiscal year) are kept as separate series; any per-visitor ratio uses monthly arrivals re-aggregated to FY.",
-   "type": "assumption",
-   "value": null,
-   "note": "CLAUDE.md rule 6; task instruction."
-  },
-  {
-   "claim": "Carrying capacity is treated as destination-specific and multidimensional (ecological, infrastructure, social); a single national capacity number is not constructed.",
-   "type": "assumption",
-   "value": null,
-   "note": "Method choice; academic capacity figures are context, not constraints, until adopted in a management plan."
-  },
-  {
-   "claim": "Tourism growth in scenarios enters GDP only through accommodation/food and related value added.",
-   "type": "assumption",
-   "value": null,
-   "note": "CLAUDE.md rule 7."
-  }
- ],
- "data_gaps": [
-  "Every empirical value: no primary document could be downloaded in r1.",
-  "No official carrying-capacity determination for any Nepali destination located; UNESCO-requested SNP study status unknown.",
-  "DNPWC and NTNC protected-area entry records not located at document level.",
-  "Nepal Tourism Statistics 2025 edition not located.",
-  "Monthly arrival series needed for FY re-aggregation not yet located in machine-readable form."
- ],
- "assumptions": [
-  {
-   "id": "12C-A1",
-   "text": "Arrivals CY and receipts FY kept separate.",
-   "basis": "rule"
-  },
-  {
-   "id": "12C-A2",
-   "text": "Carrying capacity treated per destination and dimension; no national cap constructed.",
-   "basis": "assumption"
-  },
-  {
-   "id": "12C-A3",
-   "text": "Tourism enters GDP only via value added.",
-   "basis": "rule"
-  }
- ],
- "challenges": [
-  {
-   "to": "21E",
-   "text": "Travel credits are owned by 12C for the tourism baseline and by 21E within the services matrix; use one NRB series with shared observation ids."
-  },
-  {
-   "to": "00A",
-   "text": "DNPWC, NTNC and Nepal Tourism Board are not in the source catalog; propose adding them (tier 1 for DNPWC/NTB; NTNC as statutory trust) for protected-area visitor and capacity data."
-  },
-  {
-   "to": "25E",
-   "text": "Please provide hazard-exposure layers for Sagarmatha, Annapurna and Langtang tourism corridors so capacity constraints include climate risk."
-  }
- ],
- "uncertainty": "High: no value retrieved. Structural uncertainties: (i) CY arrivals vs FY receipts; (ii) spending-per-visitor methods change across MoCTCA editions and may not reconcile with BoP; (iii) Indian visitor coverage; (iv) capacity studies are academic, site- and method-specific, and not policy limits; (v) climate hazards and air-capacity constraints can bind before ecological limits; (vi) the tourism-GDP link runs through value added and is sensitive to import leakage.",
- "specific": {
-  "tourism_baseline": {
-   "status": "pending",
-   "series": [
+  "subagent_id": "12C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T12:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (arrivals, length of stay, spending per visitor), Q2 (BoP travel receipts) and Q3 (carrying capacity at major destinations) are designed but unanswered. Twenty-eight source leads: Nepal Tourism Statistics 2023 and 2024 (MoCTCA/NTB), NRB Current Macroeconomic and Financial Situation releases (BoP travel credits), BPM6, UNCTADstat, CAAN, WTO TPR 2025, World Bank NDU, IPCC and ICIMOD hazard documents, and - from the single permitted WebSearch - the UNESCO World Heritage 2021 State of Conservation record for Sagarmatha National Park and academic/UNDP studies on visitor impacts in Sagarmatha and Annapurna. Five portals (NTB, UN Tourism, DNPWC, NTNC, OCR) are marked as general-knowledge URLs. Arrivals (calendar year) and travel receipts (Nepal FY) are kept as separate series; per-arrival ratios require monthly re-aggregation. No official carrying-capacity determination was located. No numbers are recorded.",
+  "findings": [
     {
-     "name": "arrivals_total",
-     "unit": "persons_k",
-     "period": "CY2010-CY2025",
-     "sources": [
-      "tourism_ministry",
-      "unwto"
-     ]
+      "claim": "International tourist arrivals, total and by nationality, mode (air/land) and purpose.",
+      "type": "pending",
+      "value": null,
+      "unit": "persons_k",
+      "period": "CY2010-CY2025 (calendar year)",
+      "source_ids": [
+        "tourism_ministry",
+        "unwto"
+      ],
+      "note": "Calendar-year series; Indian land arrivals coverage differs across years; keep separate from FY receipts. Leads: 12C-L01..L04, L11"
     },
     {
-     "name": "arrivals_by_nationality_top15",
-     "unit": "persons_k",
-     "period": "CY2010-CY2025"
+      "claim": "Average length of stay of international visitors.",
+      "type": "pending",
+      "value": null,
+      "unit": "days",
+      "period": "CY2010-CY2025",
+      "source_ids": [
+        "tourism_ministry"
+      ],
+      "note": "Method (departure card vs survey) to be recorded per edition. Leads: 12C-L01, L02"
     },
     {
-     "name": "arrivals_monthly",
-     "unit": "persons_k",
-     "period": "monthly, for FY re-aggregation"
+      "claim": "Average spending per visitor per day and per visit (as published by MoCTCA).",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_per_person",
+      "period": "CY2010-CY2025",
+      "source_ids": [
+        "tourism_ministry"
+      ],
+      "note": "Per visitor-day and per visit both stored as USD_per_person with the basis stated in the claim note. Leads: 12C-L01, L02"
     },
     {
-     "name": "average_length_of_stay",
-     "unit": "days",
-     "period": "CY2010-CY2025"
+      "claim": "Implied receipts per arrival: BoP travel credits (FY) divided by arrivals (CY converted to FY by documented monthly aggregation).",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_per_person",
+      "period": "FY2014/15-FY2025/26",
+      "source_ids": [
+        "nrb",
+        "tourism_ministry"
+      ],
+      "note": "Estimate; requires monthly arrivals to build FY totals — never divide FY receipts by CY arrivals directly. Leads: 12C-L01, L05..L07"
     },
     {
-     "name": "spending_per_visitor_per_day",
-     "unit": "USD_per_person",
-     "period": "CY2010-CY2025"
+      "claim": "BoP travel credits (receipts), Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2010/11-FY2025/26 (Nepal FY)",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "BPM6 travel; USD series with exchange-rate effect separated. Leads: 12C-L05..L09"
     },
     {
-     "name": "protected_area_visitors",
-     "unit": "persons_k",
-     "period": "as published"
+      "claim": "BoP travel credits in USD.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "FY2010/11-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "Converted with NRB FY-average rate, documented. Leads: 12C-L05, L06"
+    },
+    {
+      "claim": "Travel exports, calendar-year (UNCTAD/UN Tourism inbound expenditure).",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "CY2010-CY2025",
+      "source_ids": [
+        "unctadstat",
+        "unwto"
+      ],
+      "note": "Separate series; differs from NRB FY series by period and possibly by compilation. Leads: 12C-L10, L11"
+    },
+    {
+      "claim": "Travel receipts share of total services exports and of current-account receipts.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2010/11-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "Coordinate with 21E services matrix. Leads: 12C-L05, L06"
+    },
+    {
+      "claim": "Protected-area visitor counts: Sagarmatha NP, Annapurna CA, Langtang NP, Chitwan NP, and mountaineering permits (Everest).",
+      "type": "pending",
+      "value": null,
+      "unit": "persons_k",
+      "period": "FY or CY as published (label per source)",
+      "source_ids": [
+        "tourism_ministry"
+      ],
+      "note": "DNPWC/NTNC records; MoCTCA statistics tables. Leads: 12C-L01, L02, L21, L22"
+    },
+    {
+      "claim": "Environmental/social carrying-capacity limits at major destinations (quantified capacity, method, year).",
+      "type": "pending",
+      "value": null,
+      "unit": "persons_k",
+      "period": "Study years as published",
+      "source_ids": [
+        "academic",
+        "tourism_ministry"
+      ],
+      "note": "No official carrying-capacity determination located; UNESCO requested an SNP study (2021 SOC). Academic figures must be traced to original studies and labelled with method; not adopted as policy limits. Leads: 12C-L13..L20"
+    },
+    {
+      "claim": "International air-seat and airport throughput capacity (TIA, Gautam Buddha, Pokhara) as a binding constraint on arrivals.",
+      "type": "pending",
+      "value": null,
+      "unit": "persons_mn",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "caan"
+      ],
+      "note": "Leads: 12C-L12"
+    },
+    {
+      "claim": "Business formation: new company registrations and tourism-industry registrations by FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "ocr_nepal",
+        "doind"
+      ],
+      "note": "Leads: 12C-L26, L27"
+    },
+    {
+      "claim": "Arrivals (calendar year) and travel receipts (Nepal fiscal year) are kept as separate series; any per-visitor ratio uses monthly arrivals re-aggregated to FY.",
+      "type": "assumption",
+      "value": null,
+      "note": "CLAUDE.md rule 6; task instruction."
+    },
+    {
+      "claim": "Carrying capacity is treated as destination-specific and multidimensional (ecological, infrastructure, social); a single national capacity number is not constructed.",
+      "type": "assumption",
+      "value": null,
+      "note": "Method choice; academic capacity figures are context, not constraints, until adopted in a management plan."
+    },
+    {
+      "claim": "Tourism growth in scenarios enters GDP only through accommodation/food and related value added.",
+      "type": "assumption",
+      "value": null,
+      "note": "CLAUDE.md rule 7."
     }
-   ],
-   "methodological_issues": [
-    "Indian land-border arrivals coverage",
-    "length-of-stay and spending methods change across editions",
-    "CY vs FY"
-   ],
-   "lead_ids": [
-    "12C-L01",
-    "12C-L02",
-    "12C-L03",
-    "12C-L04",
-    "12C-L11",
-    "12C-L21",
-    "12C-L22"
-   ]
-  },
-  "receipts_series": {
-   "status": "pending",
-   "series": [
+  ],
+  "data_gaps": [
+    "Every empirical value: no primary document could be downloaded in r1.",
+    "No official carrying-capacity determination for any Nepali destination located; UNESCO-requested SNP study status unknown.",
+    "DNPWC and NTNC protected-area entry records not located at document level.",
+    "Nepal Tourism Statistics 2025 edition not located.",
+    "Monthly arrival series needed for FY re-aggregation not yet located in machine-readable form."
+  ],
+  "assumptions": [
     {
-     "name": "travel_credits_bop_npr",
-     "unit": "NPR_current_bn",
-     "period": "FY2010/11-FY2025/26",
-     "source": "nrb"
+      "id": "12C-A1",
+      "text": "Arrivals CY and receipts FY kept separate.",
+      "basis": "assumption",
+      "basis_note": "original label: 'rule'"
     },
     {
-     "name": "travel_credits_bop_usd",
-     "unit": "USD_current_mn",
-     "period": "FY2010/11-FY2025/26",
-     "source": "nrb",
-     "note": "exchange-rate effect separated"
+      "id": "12C-A2",
+      "text": "Carrying capacity treated per destination and dimension; no national cap constructed.",
+      "basis": "assumption"
     },
     {
-     "name": "travel_exports_cy",
-     "unit": "USD_current_mn",
-     "period": "CY2010-CY2025",
-     "source": "unctadstat / unwto"
-    },
-    {
-     "name": "implied_receipts_per_arrival",
-     "unit": "USD_per_person",
-     "period": "FY",
-     "method": "FY travel credits / FY-reaggregated arrivals; estimate"
+      "id": "12C-A3",
+      "text": "Tourism enters GDP only via value added.",
+      "basis": "assumption",
+      "basis_note": "original label: 'rule'"
     }
-   ],
-   "reconciliation": "MoCTCA spending-based estimates vs NRB BoP travel credits are kept both; differences (informal exchange, INR receipts, package-tour payments abroad, passenger transport classification) documented.",
-   "lead_ids": [
-    "12C-L05",
-    "12C-L06",
-    "12C-L07",
-    "12C-L08",
-    "12C-L09",
-    "12C-L10",
-    "12C-L11"
-   ]
-  },
-  "capacity_constraints": {
-   "status": "pending",
-   "destinations": [
+  ],
+  "challenges": [
     {
-     "site": "Sagarmatha National Park / Everest",
-     "dimensions": [
-      "ecological (trails, waste, water)",
-      "infrastructure (lodges, airstrip)",
-      "social (crowding)",
-      "mountaineering permits"
-     ],
-     "lead_ids": [
-      "12C-L13",
-      "12C-L14",
-      "12C-L15",
-      "12C-L16",
-      "12C-L17",
-      "12C-L21"
-     ],
-     "note": "UNESCO SOC 2021 requested a carrying-capacity study; whether one has been completed is pending."
+      "to": "21E",
+      "text": "Travel credits are owned by 12C for the tourism baseline and by 21E within the services matrix; use one NRB series with shared observation ids."
     },
     {
-     "site": "Annapurna Conservation Area",
-     "dimensions": [
-      "visitor plus support-staff pressure",
-      "road encroachment on trekking routes",
-      "biodiversity"
-     ],
-     "lead_ids": [
-      "12C-L18",
-      "12C-L19",
-      "12C-L22"
-     ]
+      "to": "00A",
+      "text": "DNPWC, NTNC and Nepal Tourism Board are not in the source catalog; propose adding them (tier 1 for DNPWC/NTB; NTNC as statutory trust) for protected-area visitor and capacity data."
     },
     {
-     "site": "Chitwan NP, Langtang NP, Kathmandu Valley heritage sites",
-     "dimensions": [
-      "wildlife disturbance",
-      "hazard exposure (Langtang/Rasuwa)",
-      "heritage-site crowding"
-     ],
-     "lead_ids": [
-      "12C-L20",
-      "12C-L21",
-      "12C-L24"
-     ]
-    },
-    {
-     "site": "National gateways",
-     "dimensions": [
-      "international airport throughput",
-      "air-seat capacity"
-     ],
-     "lead_ids": [
-      "12C-L12"
-     ]
+      "to": "25E",
+      "text": "Please provide hazard-exposure layers for Sagarmatha, Annapurna and Langtang tourism corridors so capacity constraints include climate risk."
     }
-   ],
-   "climate_overlay": "Glacier retreat and GLOF/flood hazards as time-varying constraints (link Agent 25/13)",
-   "lead_ids_climate": [
-    "12C-L23",
-    "12C-L24"
-   ],
-   "note": "No capacity value is asserted; academic figures seen in search snippets are not evidence and are not recorded."
+  ],
+  "uncertainty": "High: no value retrieved. Structural uncertainties: (i) CY arrivals vs FY receipts; (ii) spending-per-visitor methods change across MoCTCA editions and may not reconcile with BoP; (iii) Indian visitor coverage; (iv) capacity studies are academic, site- and method-specific, and not policy limits; (v) climate hazards and air-capacity constraints can bind before ecological limits; (vi) the tourism-GDP link runs through value added and is sensitive to import leakage.",
+  "specific": {
+    "tourism_baseline": {
+      "status": "pending",
+      "series": [
+        {
+          "name": "arrivals_total",
+          "unit": "persons_k",
+          "period": "CY2010-CY2025",
+          "sources": [
+            "tourism_ministry",
+            "unwto"
+          ]
+        },
+        {
+          "name": "arrivals_by_nationality_top15",
+          "unit": "persons_k",
+          "period": "CY2010-CY2025"
+        },
+        {
+          "name": "arrivals_monthly",
+          "unit": "persons_k",
+          "period": "monthly, for FY re-aggregation"
+        },
+        {
+          "name": "average_length_of_stay",
+          "unit": "days",
+          "period": "CY2010-CY2025"
+        },
+        {
+          "name": "spending_per_visitor_per_day",
+          "unit": "USD_per_person",
+          "period": "CY2010-CY2025"
+        },
+        {
+          "name": "protected_area_visitors",
+          "unit": "persons_k",
+          "period": "as published"
+        }
+      ],
+      "methodological_issues": [
+        "Indian land-border arrivals coverage",
+        "length-of-stay and spending methods change across editions",
+        "CY vs FY"
+      ],
+      "lead_ids": [
+        "12C-L01",
+        "12C-L02",
+        "12C-L03",
+        "12C-L04",
+        "12C-L11",
+        "12C-L21",
+        "12C-L22"
+      ]
+    },
+    "receipts_series": {
+      "status": "pending",
+      "series": [
+        {
+          "name": "travel_credits_bop_npr",
+          "unit": "NPR_current_bn",
+          "period": "FY2010/11-FY2025/26",
+          "source": "nrb"
+        },
+        {
+          "name": "travel_credits_bop_usd",
+          "unit": "USD_current_mn",
+          "period": "FY2010/11-FY2025/26",
+          "source": "nrb",
+          "note": "exchange-rate effect separated"
+        },
+        {
+          "name": "travel_exports_cy",
+          "unit": "USD_current_mn",
+          "period": "CY2010-CY2025",
+          "source": "unctadstat / unwto"
+        },
+        {
+          "name": "implied_receipts_per_arrival",
+          "unit": "USD_per_person",
+          "period": "FY",
+          "method": "FY travel credits / FY-reaggregated arrivals; estimate"
+        }
+      ],
+      "reconciliation": "MoCTCA spending-based estimates vs NRB BoP travel credits are kept both; differences (informal exchange, INR receipts, package-tour payments abroad, passenger transport classification) documented.",
+      "lead_ids": [
+        "12C-L05",
+        "12C-L06",
+        "12C-L07",
+        "12C-L08",
+        "12C-L09",
+        "12C-L10",
+        "12C-L11"
+      ]
+    },
+    "capacity_constraints": {
+      "status": "pending",
+      "destinations": [
+        {
+          "site": "Sagarmatha National Park / Everest",
+          "dimensions": [
+            "ecological (trails, waste, water)",
+            "infrastructure (lodges, airstrip)",
+            "social (crowding)",
+            "mountaineering permits"
+          ],
+          "lead_ids": [
+            "12C-L13",
+            "12C-L14",
+            "12C-L15",
+            "12C-L16",
+            "12C-L17",
+            "12C-L21"
+          ],
+          "note": "UNESCO SOC 2021 requested a carrying-capacity study; whether one has been completed is pending."
+        },
+        {
+          "site": "Annapurna Conservation Area",
+          "dimensions": [
+            "visitor plus support-staff pressure",
+            "road encroachment on trekking routes",
+            "biodiversity"
+          ],
+          "lead_ids": [
+            "12C-L18",
+            "12C-L19",
+            "12C-L22"
+          ]
+        },
+        {
+          "site": "Chitwan NP, Langtang NP, Kathmandu Valley heritage sites",
+          "dimensions": [
+            "wildlife disturbance",
+            "hazard exposure (Langtang/Rasuwa)",
+            "heritage-site crowding"
+          ],
+          "lead_ids": [
+            "12C-L20",
+            "12C-L21",
+            "12C-L24"
+          ]
+        },
+        {
+          "site": "National gateways",
+          "dimensions": [
+            "international airport throughput",
+            "air-seat capacity"
+          ],
+          "lead_ids": [
+            "12C-L12"
+          ]
+        }
+      ],
+      "climate_overlay": "Glacier retreat and GLOF/flood hazards as time-varying constraints (link Agent 25/13)",
+      "lead_ids_climate": [
+        "12C-L23",
+        "12C-L24"
+      ],
+      "note": "No capacity value is asserted; academic figures seen in search snippets are not evidence and are not recorded."
+    },
+    "business_formation": {
+      "status": "pending",
+      "series": [
+        "company registrations by FY (OCR)",
+        "tourism-industry registrations (DoI)"
+      ],
+      "lead_ids": [
+        "12C-L26",
+        "12C-L27"
+      ]
+    },
+    "research_questions": {
+      "Q1_arrivals_stay_spending": "pending",
+      "Q2_travel_receipts_bop": "pending",
+      "Q3_carrying_capacity": "pending (destination matrix designed)"
+    }
   },
-  "business_formation": {
-   "status": "pending",
-   "series": [
-    "company registrations by FY (OCR)",
-    "tourism-industry registrations (DoI)"
-   ],
-   "lead_ids": [
-    "12C-L26",
-    "12C-L27"
-   ]
-  },
-  "research_questions": {
-   "Q1_arrivals_stay_spending": "pending",
-   "Q2_travel_receipts_bop": "pending",
-   "Q3_carrying_capacity": "pending (destination matrix designed)"
-  }
- },
- "source_leads": [
-  {
-   "lead_id": "12C-L01",
-   "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
-   "title": "Nepal Tourism Statistics 2024",
-   "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
-   "contains": "International arrivals by nationality, month, purpose, entry point (calendar 2024); average length of stay; per-visitor spending; protected-area visitor counts; mountaineering permits",
-   "source_id": "tourism_ministry"
-  },
-  {
-   "lead_id": "12C-L02",
-   "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
-   "title": "Nepal Tourism Statistics 2023",
-   "publisher": "Ministry of Culture, Tourism and Civil Aviation / Nepal Tourism Board",
-   "contains": "As above for calendar 2023; time-series tables of arrivals, length of stay, spending",
-   "source_id": "tourism_ministry"
-  },
-  {
-   "lead_id": "12C-L03",
-   "url": "https://tourism.gov.np",
-   "title": "Ministry of Culture, Tourism and Civil Aviation",
-   "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
-   "contains": "Earlier Nepal Tourism Statistics editions (2015-2022, 2025) for time series; tourism policy and strategy",
-   "source_id": "tourism_ministry"
-  },
-  {
-   "lead_id": "12C-L04",
-   "url": "https://www.ntb.gov.np",
-   "title": "Nepal Tourism Board",
-   "publisher": "Nepal Tourism Board",
-   "contains": "URL from general knowledge — unverified. Monthly arrival releases, visitor surveys"
-  },
-  {
-   "lead_id": "12C-L05",
-   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-da",
-   "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "BoP services: travel credits (receipts) and debits FY2024/25, Nepal FY",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12C-L06",
-   "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
-   "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "BoP travel credits FY2025/26",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12C-L07",
-   "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
-   "title": "Current Macro-Economic and Financial Situation archive",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Travel credits time series by FY; convertible vs Indian-currency receipts split where reported",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12C-L08",
-   "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2024-25/",
-   "title": "Current Macroeconomic and Financial Situation (nine months of 2024/25)",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Sub-annual travel receipts FY2024/25",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12C-L09",
-   "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
-   "title": "BPM6",
-   "publisher": "IMF",
-   "contains": "Definition of travel (goods and services acquired by non-residents during visits); distinguishes passenger transport"
-  },
-  {
-   "lead_id": "12C-L10",
-   "url": "https://unctadstat.unctad.org",
-   "title": "UNCTADstat",
-   "publisher": "UNCTAD",
-   "contains": "Services exports by EBOPS category incl. travel, calendar years",
-   "source_id": "unctadstat"
-  },
-  {
-   "lead_id": "12C-L11",
-   "url": "https://www.unwto.org/tourism-statistics/key-tourism-statistics",
-   "title": "UN Tourism Key Tourism Statistics",
-   "publisher": "UN Tourism (UNWTO)",
-   "contains": "URL from general knowledge — unverified. Arrivals and inbound tourism expenditure for Nepal (CY), comparators",
-   "source_id": "unwto"
-  },
-  {
-   "lead_id": "12C-L12",
-   "url": "https://caanepal.gov.np/air-transports/international",
-   "title": "International Airlines",
-   "publisher": "Civil Aviation Authority of Nepal",
-   "contains": "International air-traffic statistics; airport capacity (TIA, Bhairahawa, Pokhara) relevant to arrival constraints",
-   "source_id": "caan"
-  },
-  {
-   "lead_id": "12C-L13",
-   "url": "https://whc.unesco.org/en/soc/4146/",
-   "title": "State of Conservation (SOC 2021) Sagarmatha National Park (Nepal)",
-   "publisher": "UNESCO World Heritage Centre",
-   "contains": "Committee decision text on visitor pressure and request for a visitor carrying-capacity study for Sagarmatha National Park (2021)"
-  },
-  {
-   "lead_id": "12C-L14",
-   "url": "https://www.academia.edu/16936742/Tourism_Sustainability_and_Health_Impacts_in_High_Altitude_Adventure_Cultural_and_Ecotourism_Destinations_A_Case_Study_of_Nepals_Sagarmatha_National_Park",
-   "title": "Tourism Sustainability and Health Impacts in High Altitude ... A Case Study of Nepal's Sagarmatha National Park",
-   "publisher": "Academia.edu (author upload)",
-   "contains": "Case study discussing carrying capacity of Sagarmatha National Park; tier-7; source of any cited capacity figure must be traced to the original study",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12C-L15",
-   "url": "https://www.academia.edu/109054575/Sagarmatha_National_Park_Mount_Everest_Visitor_Survey_and_Analysis_Everest_Visitor_Survey_",
-   "title": "Sagarmatha National Park (Mount Everest) Visitor Survey and Analysis",
-   "publisher": "Academia.edu (author upload)",
-   "contains": "Visitor survey: length of stay, spending, perceptions of crowding in SNP",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12C-L16",
-   "url": "https://www.researchgate.net/publication/8328079_Visitor_Impacts_on_Trails_in_the_Sagarmatha_Mt_Everest_National_Park_Nepal",
-   "title": "Visitor Impacts on Trails in the Sagarmatha (Mt. Everest) National Park, Nepal",
-   "publisher": "ResearchGate (journal article copy)",
-   "contains": "Trail-degradation measurements; ecological capacity indicators",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12C-L17",
-   "url": "https://www.mdpi.com/2073-445X/10/9/925",
-   "title": "Tourism-Related Facility Development in Sagarmatha (Mount Everest) National Park and Buffer Zone",
-   "publisher": "Land (MDPI), 2021",
-   "contains": "Lodge/facility growth mapping; land-use pressure indicators",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12C-L18",
-   "url": "https://www.academia.edu/58265201/Tourism_Development_in_Annapurna_Conservation_Area",
-   "title": "Tourism Development in Annapurna Conservation Area",
-   "publisher": "Academia.edu (author upload)",
-   "contains": "ACA visitor numbers and impacts (secondary; trace to NTNC/ACAP records)",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12C-L19",
-   "url": "https://www.undp.org/nepal/biodiversity-conservation-and-impacts-nature-based-tourism-annapurna-conservation-area",
-   "title": "Biodiversity conservation and the impacts of nature-based tourism in the Annapurna Conservation Area",
-   "publisher": "UNDP Nepal",
-   "contains": "ACA visitor and support-staff pressure; biodiversity impacts"
-  },
-  {
-   "lead_id": "12C-L20",
-   "url": "https://link.springer.com/chapter/10.1007/978-3-030-76833-1_12",
-   "title": "Nepal's Network of Protected Areas and Nature-Based Tourism",
-   "publisher": "Springer Nature (book chapter)",
-   "contains": "Protected-area visitor trends and management frameworks",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12C-L21",
-   "url": "https://dnpwc.gov.np",
-   "title": "Department of National Parks and Wildlife Conservation",
-   "publisher": "Department of National Parks and Wildlife Conservation, Nepal",
-   "contains": "URL from general knowledge — unverified. Protected-area visitor/entry-fee records by park and FY; park management plans with any visitor-capacity provisions"
-  },
-  {
-   "lead_id": "12C-L22",
-   "url": "https://ntnc.org.np",
-   "title": "National Trust for Nature Conservation (ACAP, MCAP)",
-   "publisher": "National Trust for Nature Conservation, Nepal",
-   "contains": "URL from general knowledge — unverified. ACAP/MCAP entry permits by year; management plans"
-  },
-  {
-   "lead_id": "12C-L23",
-   "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP5.pdf",
-   "title": "IPCC AR6 WGII Cross-Chapter Paper 5: Mountains (2022)",
-   "publisher": "IPCC",
-   "contains": "Climate risks to mountain tourism (glacier retreat, hazards) as constraints on capacity",
-   "source_id": "ipcc"
-  },
-  {
-   "lead_id": "12C-L24",
-   "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
-   "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
-   "publisher": "ICIMOD",
-   "contains": "Hazard event affecting northern tourism/trade routes (Langtang/Rasuwa)",
-   "source_id": "icimod"
-  },
-  {
-   "lead_id": "12C-L25",
-   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
-   "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
-   "publisher": "World Trade Organization",
-   "contains": "Tourism and services regime; FDI restrictions in tourism services",
-   "source_id": "wto"
-  },
-  {
-   "lead_id": "12C-L26",
-   "url": "https://doind.gov.np",
-   "title": "Department of Industry - industrial statistics",
-   "publisher": "Department of Industry, Nepal",
-   "contains": "Registered industries by category incl. tourism industries and business formation by FY",
-   "source_id": "doind"
-  },
-  {
-   "lead_id": "12C-L27",
-   "url": "https://www.ocr.gov.np",
-   "title": "Office of Company Registrar",
-   "publisher": "Office of Company Registrar, Nepal",
-   "contains": "URL from general knowledge — unverified. Company registrations by year (business formation)",
-   "source_id": "ocr_nepal"
-  },
-  {
-   "lead_id": "12C-L28",
-   "url": "https://www.worldbank.org/en/country/nepal/publication/nepaldevelopmentupdate",
-   "title": "Nepal Development Update (April 2026)",
-   "publisher": "World Bank",
-   "contains": "Tourism recovery and services analysis",
-   "source_id": "wb_npl"
-  }
- ]
+  "source_leads": [
+    {
+      "lead_id": "12C-L01",
+      "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+      "title": "Nepal Tourism Statistics 2024",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "contains": "International arrivals by nationality, month, purpose, entry point (calendar 2024); average length of stay; per-visitor spending; protected-area visitor counts; mountaineering permits",
+      "source_id": "tourism_ministry"
+    },
+    {
+      "lead_id": "12C-L02",
+      "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
+      "title": "Nepal Tourism Statistics 2023",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation / Nepal Tourism Board",
+      "contains": "As above for calendar 2023; time-series tables of arrivals, length of stay, spending",
+      "source_id": "tourism_ministry"
+    },
+    {
+      "lead_id": "12C-L03",
+      "url": "https://tourism.gov.np",
+      "title": "Ministry of Culture, Tourism and Civil Aviation",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "contains": "Earlier Nepal Tourism Statistics editions (2015-2022, 2025) for time series; tourism policy and strategy",
+      "source_id": "tourism_ministry"
+    },
+    {
+      "lead_id": "12C-L04",
+      "url": "https://www.ntb.gov.np",
+      "title": "Nepal Tourism Board",
+      "publisher": "Nepal Tourism Board",
+      "contains": "URL from general knowledge — unverified. Monthly arrival releases, visitor surveys"
+    },
+    {
+      "lead_id": "12C-L05",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-da",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "BoP services: travel credits (receipts) and debits FY2024/25, Nepal FY",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12C-L06",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "BoP travel credits FY2025/26",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12C-L07",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Travel credits time series by FY; convertible vs Indian-currency receipts split where reported",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12C-L08",
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2024-25/",
+      "title": "Current Macroeconomic and Financial Situation (nine months of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Sub-annual travel receipts FY2024/25",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12C-L09",
+      "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+      "title": "BPM6",
+      "publisher": "IMF",
+      "contains": "Definition of travel (goods and services acquired by non-residents during visits); distinguishes passenger transport"
+    },
+    {
+      "lead_id": "12C-L10",
+      "url": "https://unctadstat.unctad.org",
+      "title": "UNCTADstat",
+      "publisher": "UNCTAD",
+      "contains": "Services exports by EBOPS category incl. travel, calendar years",
+      "source_id": "unctadstat"
+    },
+    {
+      "lead_id": "12C-L11",
+      "url": "https://www.unwto.org/tourism-statistics/key-tourism-statistics",
+      "title": "UN Tourism Key Tourism Statistics",
+      "publisher": "UN Tourism (UNWTO)",
+      "contains": "URL from general knowledge — unverified. Arrivals and inbound tourism expenditure for Nepal (CY), comparators",
+      "source_id": "unwto"
+    },
+    {
+      "lead_id": "12C-L12",
+      "url": "https://caanepal.gov.np/air-transports/international",
+      "title": "International Airlines",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "contains": "International air-traffic statistics; airport capacity (TIA, Bhairahawa, Pokhara) relevant to arrival constraints",
+      "source_id": "caan"
+    },
+    {
+      "lead_id": "12C-L13",
+      "url": "https://whc.unesco.org/en/soc/4146/",
+      "title": "State of Conservation (SOC 2021) Sagarmatha National Park (Nepal)",
+      "publisher": "UNESCO World Heritage Centre",
+      "contains": "Committee decision text on visitor pressure and request for a visitor carrying-capacity study for Sagarmatha National Park (2021)"
+    },
+    {
+      "lead_id": "12C-L14",
+      "url": "https://www.academia.edu/16936742/Tourism_Sustainability_and_Health_Impacts_in_High_Altitude_Adventure_Cultural_and_Ecotourism_Destinations_A_Case_Study_of_Nepals_Sagarmatha_National_Park",
+      "title": "Tourism Sustainability and Health Impacts in High Altitude ... A Case Study of Nepal's Sagarmatha National Park",
+      "publisher": "Academia.edu (author upload)",
+      "contains": "Case study discussing carrying capacity of Sagarmatha National Park; tier-7; source of any cited capacity figure must be traced to the original study",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12C-L15",
+      "url": "https://www.academia.edu/109054575/Sagarmatha_National_Park_Mount_Everest_Visitor_Survey_and_Analysis_Everest_Visitor_Survey_",
+      "title": "Sagarmatha National Park (Mount Everest) Visitor Survey and Analysis",
+      "publisher": "Academia.edu (author upload)",
+      "contains": "Visitor survey: length of stay, spending, perceptions of crowding in SNP",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12C-L16",
+      "url": "https://www.researchgate.net/publication/8328079_Visitor_Impacts_on_Trails_in_the_Sagarmatha_Mt_Everest_National_Park_Nepal",
+      "title": "Visitor Impacts on Trails in the Sagarmatha (Mt. Everest) National Park, Nepal",
+      "publisher": "ResearchGate (journal article copy)",
+      "contains": "Trail-degradation measurements; ecological capacity indicators",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12C-L17",
+      "url": "https://www.mdpi.com/2073-445X/10/9/925",
+      "title": "Tourism-Related Facility Development in Sagarmatha (Mount Everest) National Park and Buffer Zone",
+      "publisher": "Land (MDPI), 2021",
+      "contains": "Lodge/facility growth mapping; land-use pressure indicators",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12C-L18",
+      "url": "https://www.academia.edu/58265201/Tourism_Development_in_Annapurna_Conservation_Area",
+      "title": "Tourism Development in Annapurna Conservation Area",
+      "publisher": "Academia.edu (author upload)",
+      "contains": "ACA visitor numbers and impacts (secondary; trace to NTNC/ACAP records)",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12C-L19",
+      "url": "https://www.undp.org/nepal/biodiversity-conservation-and-impacts-nature-based-tourism-annapurna-conservation-area",
+      "title": "Biodiversity conservation and the impacts of nature-based tourism in the Annapurna Conservation Area",
+      "publisher": "UNDP Nepal",
+      "contains": "ACA visitor and support-staff pressure; biodiversity impacts"
+    },
+    {
+      "lead_id": "12C-L20",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-76833-1_12",
+      "title": "Nepal's Network of Protected Areas and Nature-Based Tourism",
+      "publisher": "Springer Nature (book chapter)",
+      "contains": "Protected-area visitor trends and management frameworks",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12C-L21",
+      "url": "https://dnpwc.gov.np",
+      "title": "Department of National Parks and Wildlife Conservation",
+      "publisher": "Department of National Parks and Wildlife Conservation, Nepal",
+      "contains": "URL from general knowledge — unverified. Protected-area visitor/entry-fee records by park and FY; park management plans with any visitor-capacity provisions"
+    },
+    {
+      "lead_id": "12C-L22",
+      "url": "https://ntnc.org.np",
+      "title": "National Trust for Nature Conservation (ACAP, MCAP)",
+      "publisher": "National Trust for Nature Conservation, Nepal",
+      "contains": "URL from general knowledge — unverified. ACAP/MCAP entry permits by year; management plans"
+    },
+    {
+      "lead_id": "12C-L23",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP5.pdf",
+      "title": "IPCC AR6 WGII Cross-Chapter Paper 5: Mountains (2022)",
+      "publisher": "IPCC",
+      "contains": "Climate risks to mountain tourism (glacier retreat, hazards) as constraints on capacity",
+      "source_id": "ipcc"
+    },
+    {
+      "lead_id": "12C-L24",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "contains": "Hazard event affecting northern tourism/trade routes (Langtang/Rasuwa)",
+      "source_id": "icimod"
+    },
+    {
+      "lead_id": "12C-L25",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "contains": "Tourism and services regime; FDI restrictions in tourism services",
+      "source_id": "wto"
+    },
+    {
+      "lead_id": "12C-L26",
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "contains": "Registered industries by category incl. tourism industries and business formation by FY",
+      "source_id": "doind"
+    },
+    {
+      "lead_id": "12C-L27",
+      "url": "https://www.ocr.gov.np",
+      "title": "Office of Company Registrar",
+      "publisher": "Office of Company Registrar, Nepal",
+      "contains": "URL from general knowledge — unverified. Company registrations by year (business formation)",
+      "source_id": "ocr_nepal"
+    },
+    {
+      "lead_id": "12C-L28",
+      "url": "https://www.worldbank.org/en/country/nepal/publication/nepaldevelopmentupdate",
+      "title": "Nepal Development Update (April 2026)",
+      "publisher": "World Bank",
+      "contains": "Tourism recovery and services analysis",
+      "source_id": "wb_npl"
+    }
+  ]
 }

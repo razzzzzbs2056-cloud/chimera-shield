@@ -75,7 +75,8 @@
     {
       "id": "19B-A1",
       "text": "Only lawful compliance implications are analysed; no guidance on evading sanctions or controls is produced.",
-      "basis": "safety note"
+      "basis": "assumption",
+      "basis_note": "original label: 'safety note'"
     },
     {
       "id": "19B-A2",

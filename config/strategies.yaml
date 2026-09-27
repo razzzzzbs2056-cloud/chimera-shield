@@ -45,4 +45,4 @@ required_calculations:
   - {item: Effects on income and living standards, owner: 14A}
   - {item: Key implementation constraints, owner: 11C}
   - {item: Global dependencies, owner: 16B}
-  - {item: Risks and potential unintended consequences, owner: 15B}
+  - {item: Risks and potential unintended consequences, owner: 00C}  # audited by 15B/28C, never authored by an auditor

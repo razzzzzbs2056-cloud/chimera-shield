@@ -1,670 +1,671 @@
 {
- "subagent_id": "12A",
- "task_id": "r1",
- "generated_at": "2026-09-27T12:00:00+00:00",
- "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (export basket and product/partner HHI), Q2 (goods trade deficit and trend) and Q3 (quality-standard failures blocking exports) are designed but unanswered. Thirty-one source leads recorded, reused from the shared register and upstream agents (04A, 05C, 07B, 18C, 21A, 21E): Department of Customs trade books and portal, Nepal Trade Portal, TEPC, NRB Current Macroeconomic and Financial Situation (BoP basis), MoF Economic Surveys, UN Comtrade, ITC Trade Map and export-potential study, WITS, UNCTADstat, WTO TPR 2025 (Secretariat and Government reports), ePing and SPS IMS, DFTQC, Tea and Coffee Board, Indian DGFT notifications, Treaty of Trade, Enterprise Surveys and LPI 2023. The export basket is specified on Nepal-reported FY data with mirror CY data as a separate check; RCA is not recomputed (05C owns it). Trade balance is kept on customs and BoP bases separately, with exchange-rate effects separated in USD. The standards-barrier register is designed; no case is asserted without a primary instrument. No numbers are recorded.",
- "findings": [
-  {
-   "claim": "Merchandise exports by HS 2/4-digit product, Nepal-reported, FY2015/16-FY2025/26.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2015/16-FY2025/26 (Nepal FY)",
-   "source_ids": [
-    "customs_nepal",
-    "nepal_trade_portal",
-    "tepc"
-   ],
-   "note": "Customs FTS books / Nepal Trade Portal. Also convert to USD with NRB annual-average NPR_per_USD documented separately. Leads: 12A-L01..L05"
-  },
-  {
-   "claim": "Merchandise exports by partner country, Nepal-reported, FY2015/16-FY2025/26.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "customs_nepal",
-    "nrb"
-   ],
-   "note": "Direction of trade; NRB CME direction table as check. Leads: 12A-L01, L03, L10-L13"
-  },
-  {
-   "claim": "Partner-reported (mirror) imports from Nepal by HS 6-digit and partner.",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "CY2015-CY2025",
-   "source_ids": [
-    "un_comtrade",
-    "itc_trademap"
-   ],
-   "note": "Calendar-year; CIF vs FOB and timing differences vs customs FY data must be documented, not reconciled silently. Leads: 12A-L06, L07"
-  },
-  {
-   "claim": "Product HHI of merchandise exports (HS 4-digit, normalised and unnormalised).",
-   "type": "pending",
-   "value": null,
-   "unit": "index",
-   "period": "FY2015/16-FY2025/26 and CY2015-CY2025",
-   "source_ids": [
-    "customs_nepal",
-    "un_comtrade",
-    "unctadstat"
-   ],
-   "note": "Computed from observations; UNCTADstat/WITS published concentration index as cross-check (different product levels). Leads: 12A-L01, L06, L08, L09"
-  },
-  {
-   "claim": "Partner HHI of merchandise exports and India share of exports.",
-   "type": "pending",
-   "value": null,
-   "unit": "index",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "customs_nepal",
-    "un_comtrade"
-   ],
-   "note": "India share also in percent. Coordinate with 04A partner-share rows to avoid duplicated series. Leads: 12A-L01, L06, L08"
-  },
-  {
-   "claim": "Top-10 export products share of total exports and re-export/tariff-arbitrage flags (e.g. edible oils, palm/soybean products).",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "customs_nepal",
-    "wto"
-   ],
-   "note": "Arbitrage flag rules defined in 05C rca_table; here only share and flag status. Leads: 12A-L03, L16"
-  },
-  {
-   "claim": "Merchandise imports, total and by major commodity group (incl. petroleum), Nepal-reported.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "customs_nepal",
-    "nrb"
-   ],
-   "note": "Leads: 12A-L01, L03, L10, L11"
-  },
-  {
-   "claim": "Goods trade balance (customs basis), levels and as share of GDP.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2000/01-FY2025/26",
-   "source_ids": [
-    "customs_nepal",
-    "mof_nepal",
-    "nrb"
-   ],
-   "note": "Share of GDP requires NSO nominal GDP for same FY (00A baseline). Leads: 12A-L03, L12, L14, L15"
-  },
-  {
-   "claim": "Goods trade balance (BoP basis, BPM6) and export-import ratio.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2010/11-FY2025/26",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "BoP-basis goods differ from customs basis (valuation, coverage, electricity, adjustments); keep both. Leads: 12A-L10..L13"
-  },
-  {
-   "claim": "Goods trade balance in USD, with exchange-rate effect separated.",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "FY2010/11-FY2025/26",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "Convert with documented NRB FY-average NPR_per_USD; decompose change into NPR-value and exchange-rate effect. Leads: 12A-L10, L11"
-  },
-  {
-   "claim": "Services exports (credits) by BPM6 category: travel, transport, telecom/computer/information, other business, government.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "nrb",
-    "unctadstat"
-   ],
-   "note": "Composition owned by 21E; 12A uses totals for the export baseline only. Leads: 12A-L10, L11, L28"
-  },
-  {
-   "claim": "Electricity exports to India/Bangladesh within merchandise exports (customs) vs BoP.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2020/21-FY2025/26",
-   "source_ids": [
-    "customs_nepal",
-    "nea",
-    "nrb"
-   ],
-   "note": "Classification of electricity differs across sources; coordinate with 22B. Leads: 12A-L03, L10"
-  },
-  {
-   "claim": "Quality-standard / SPS-TBT failures blocking exports: register of cases (product, market, measure, date, instrument, resolution).",
-   "type": "pending",
-   "value": null,
-   "unit": "count",
-   "period": "2015-2026",
-   "source_ids": [
-    "wto",
-    "dgft_india",
-    "moald_nepal"
-   ],
-   "note": "Built from ePing/SPS IMS notifications and specific trade concerns, Indian DGFT/FSSAI/quarantine notices, DFTQC records, TPR 2025 chapters. Press reports are pointers only. Leads: 12A-L16..L24, L29, L31"
-  },
-  {
-   "claim": "Share of exporting firms with internationally recognised quality certification and export customs-clearance time.",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "Latest Enterprise Survey round",
-   "source_ids": [
-    "wb_npl"
-   ],
-   "note": "Leads: 12A-L30"
-  },
-  {
-   "claim": "Export-potential estimates by product and market (ITC EPI).",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "ITC 2022 study vintage",
-   "source_ids": [
-    "itc_trademap"
-   ],
-   "note": "Model-based estimates from ITC, to be labelled estimate with ITC method when retrieved. Leads: 12A-L25"
-  },
-  {
-   "claim": "Product concentration measured at HS 4-digit; partner concentration across all partners; both on Nepal-reported FY data (primary) and mirror CY data (check).",
-   "type": "assumption",
-   "value": null,
-   "note": "Design choice consistent with 05C rca_table; 05C's RCA table is referenced, not duplicated."
-  },
-  {
-   "claim": "Informal India-Nepal trade across the open border is not captured in customs or mirror data and is excluded from the baseline.",
-   "type": "assumption",
-   "value": null,
-   "note": "Known coverage gap; direction of bias unknown; noted in uncertainty."
-  },
-  {
-   "claim": "Relocation-fit outputs from 21C affect export projections only through sector value added and investment.",
-   "type": "assumption",
-   "value": null,
-   "note": "Accepted challenge from 21C; consistent with CLAUDE.md rule 7."
-  }
- ],
- "data_gaps": [
-  "Every empirical value: no primary document could be downloaded in r1.",
-  "Customs trade books after FY2022/23 (FY2023/24-FY2025/26) not located at document level.",
-  "No Nepal-specific consolidated register of SPS/TBT rejections exists; must be assembled from ePing, Indian notifications and DFTQC records.",
-  "Informal cross-border trade with India is unmeasured.",
-  "Nepal Bureau of Standards and Metrology document-level URLs not located (portal URL from general knowledge)."
- ],
- "assumptions": [
-  {
-   "id": "12A-A1",
-   "text": "HHI at HS 4-digit on Nepal-reported FY data is the primary concentration measure; mirror CY data are a separate check.",
-   "basis": "assumption"
-  },
-  {
-   "id": "12A-A2",
-   "text": "Informal trade excluded from baseline.",
-   "basis": "assumption"
-  },
-  {
-   "id": "12A-A3",
-   "text": "RCA table owned by 05C and referenced, not duplicated.",
-   "basis": "design"
-  }
- ],
- "challenges": [
-  {
-   "to": "05C",
-   "text": "Please expose the Nepal-reported FY HS 4-digit basket used as the RCA check series with its observation ids so 12A and 05C share one series; 12A will not compute a separate RCA."
-  },
-  {
-   "to": "21E",
-   "text": "12A takes services-export totals from 21E's BPM6 category matrix; please keep the IT/BPO-as-remittance misrecording issue explicit so the services export baseline is labelled accordingly."
-  },
-  {
-   "to": "22B",
-   "text": "Electricity exports appear in customs merchandise data and NRB BoP; confirm which classification 22B uses so the goods trade balance is not double-counted."
-  },
-  {
-   "to": "00A",
-   "text": "Nepal Bureau of Standards and Metrology (nbsm) is not in the source catalog; propose adding it (tier 1) for the quality-standards register."
-  }
- ],
- "uncertainty": "High: no value retrieved. Structural uncertainties: (i) customs FY vs mirror CY data differ in timing, valuation (CIF/FOB) and coverage; (ii) HHI depends on aggregation level; (iii) re-export and tariff-arbitrage episodes (edible oils) distort basket and concentration; (iv) informal India trade unmeasured; (v) BoP and customs goods balances differ by construction; (vi) 2026 Indian import restrictions and LDC graduation (21A/18C) may change market access within the baseline window; (vii) standards-barrier evidence is fragmentary and press-led until instruments are retrieved.",
- "specific": {
-  "export_basket": {
-   "status": "pending",
-   "structure": "Table by FY x HS 4-digit (top 25 + residual) and by FY x partner (top 15 + residual), NPR_current_bn and USD_current_mn with documented exchange rate; services credits by BPM6 category appended from 21E",
-   "primary_sources": [
-    "customs_nepal",
-    "nepal_trade_portal",
-    "nrb"
-   ],
-   "cross_check": [
-    "un_comtrade",
-    "itc_trademap",
-    "unctadstat"
-   ],
-   "lead_ids": [
-    "12A-L01",
-    "12A-L02",
-    "12A-L03",
-    "12A-L04",
-    "12A-L05",
-    "12A-L06",
-    "12A-L07",
-    "12A-L10",
-    "12A-L11",
-    "12A-L28"
-   ],
-   "rca_reference": "Revealed comparative advantage is NOT recomputed here; see research/findings/05/05C-r1.json specific.rca_table (Balassa RCA on mirror data, 3-year windows). 12A supplies the Nepal-reported FY basket used as its check series.",
-   "flags": [
-    "tariff-arbitrage/re-export products (edible oils)",
-    "electricity exports (22B)",
-    "preference-dependent lines (21A/18C)"
-   ]
-  },
-  "concentration_indices": {
-   "status": "pending",
-   "indices": [
+  "subagent_id": "12A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T12:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (export basket and product/partner HHI), Q2 (goods trade deficit and trend) and Q3 (quality-standard failures blocking exports) are designed but unanswered. Thirty-one source leads recorded, reused from the shared register and upstream agents (04A, 05C, 07B, 18C, 21A, 21E): Department of Customs trade books and portal, Nepal Trade Portal, TEPC, NRB Current Macroeconomic and Financial Situation (BoP basis), MoF Economic Surveys, UN Comtrade, ITC Trade Map and export-potential study, WITS, UNCTADstat, WTO TPR 2025 (Secretariat and Government reports), ePing and SPS IMS, DFTQC, Tea and Coffee Board, Indian DGFT notifications, Treaty of Trade, Enterprise Surveys and LPI 2023. The export basket is specified on Nepal-reported FY data with mirror CY data as a separate check; RCA is not recomputed (05C owns it). Trade balance is kept on customs and BoP bases separately, with exchange-rate effects separated in USD. The standards-barrier register is designed; no case is asserted without a primary instrument. No numbers are recorded.",
+  "findings": [
     {
-     "name": "product_HHI",
-     "formula": "sum_j s_j^2 over HS 4-digit export shares; normalised HHI* = (HHI-1/N)/(1-1/N)",
-     "unit": "index"
+      "claim": "Merchandise exports by HS 2/4-digit product, Nepal-reported, FY2015/16-FY2025/26.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2015/16-FY2025/26 (Nepal FY)",
+      "source_ids": [
+        "customs_nepal",
+        "nepal_trade_portal",
+        "tepc"
+      ],
+      "note": "Customs FTS books / Nepal Trade Portal. Also convert to USD with NRB annual-average NPR_per_USD documented separately. Leads: 12A-L01..L05"
     },
     {
-     "name": "partner_HHI",
-     "formula": "sum_k s_k^2 over partner shares",
-     "unit": "index"
+      "claim": "Merchandise exports by partner country, Nepal-reported, FY2015/16-FY2025/26.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "nrb"
+      ],
+      "note": "Direction of trade; NRB CME direction table as check. Leads: 12A-L01, L03, L10-L13"
     },
     {
-     "name": "india_share",
-     "unit": "percent"
+      "claim": "Partner-reported (mirror) imports from Nepal by HS 6-digit and partner.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "CY2015-CY2025",
+      "source_ids": [
+        "un_comtrade",
+        "itc_trademap"
+      ],
+      "note": "Calendar-year; CIF vs FOB and timing differences vs customs FY data must be documented, not reconciled silently. Leads: 12A-L06, L07"
     },
     {
-     "name": "top10_product_share",
-     "unit": "percent"
+      "claim": "Product HHI of merchandise exports (HS 4-digit, normalised and unnormalised).",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "FY2015/16-FY2025/26 and CY2015-CY2025",
+      "source_ids": [
+        "customs_nepal",
+        "un_comtrade",
+        "unctadstat"
+      ],
+      "note": "Computed from observations; UNCTADstat/WITS published concentration index as cross-check (different product levels). Leads: 12A-L01, L06, L08, L09"
     },
     {
-     "name": "extensive_margin_count",
-     "description": "number of HS 6-digit lines exported above a documented threshold",
-     "unit": "count"
+      "claim": "Partner HHI of merchandise exports and India share of exports.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "un_comtrade"
+      ],
+      "note": "India share also in percent. Coordinate with 04A partner-share rows to avoid duplicated series. Leads: 12A-L01, L06, L08"
+    },
+    {
+      "claim": "Top-10 export products share of total exports and re-export/tariff-arbitrage flags (e.g. edible oils, palm/soybean products).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "wto"
+      ],
+      "note": "Arbitrage flag rules defined in 05C rca_table; here only share and flag status. Leads: 12A-L03, L16"
+    },
+    {
+      "claim": "Merchandise imports, total and by major commodity group (incl. petroleum), Nepal-reported.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "nrb"
+      ],
+      "note": "Leads: 12A-L01, L03, L10, L11"
+    },
+    {
+      "claim": "Goods trade balance (customs basis), levels and as share of GDP.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2000/01-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "mof_nepal",
+        "nrb"
+      ],
+      "note": "Share of GDP requires NSO nominal GDP for same FY (00A baseline). Leads: 12A-L03, L12, L14, L15"
+    },
+    {
+      "claim": "Goods trade balance (BoP basis, BPM6) and export-import ratio.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2010/11-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "BoP-basis goods differ from customs basis (valuation, coverage, electricity, adjustments); keep both. Leads: 12A-L10..L13"
+    },
+    {
+      "claim": "Goods trade balance in USD, with exchange-rate effect separated.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "FY2010/11-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "Convert with documented NRB FY-average NPR_per_USD; decompose change into NPR-value and exchange-rate effect. Leads: 12A-L10, L11"
+    },
+    {
+      "claim": "Services exports (credits) by BPM6 category: travel, transport, telecom/computer/information, other business, government.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "nrb",
+        "unctadstat"
+      ],
+      "note": "Composition owned by 21E; 12A uses totals for the export baseline only. Leads: 12A-L10, L11, L28"
+    },
+    {
+      "claim": "Electricity exports to India/Bangladesh within merchandise exports (customs) vs BoP.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2020/21-FY2025/26",
+      "source_ids": [
+        "customs_nepal",
+        "nea",
+        "nrb"
+      ],
+      "note": "Classification of electricity differs across sources; coordinate with 22B. Leads: 12A-L03, L10"
+    },
+    {
+      "claim": "Quality-standard / SPS-TBT failures blocking exports: register of cases (product, market, measure, date, instrument, resolution).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "2015-2026",
+      "source_ids": [
+        "wto",
+        "dgft_india",
+        "moald_nepal"
+      ],
+      "note": "Built from ePing/SPS IMS notifications and specific trade concerns, Indian DGFT/FSSAI/quarantine notices, DFTQC records, TPR 2025 chapters. Press reports are pointers only. Leads: 12A-L16..L24, L29, L31"
+    },
+    {
+      "claim": "Share of exporting firms with internationally recognised quality certification and export customs-clearance time.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Latest Enterprise Survey round",
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "Leads: 12A-L30"
+    },
+    {
+      "claim": "Export-potential estimates by product and market (ITC EPI).",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "ITC 2022 study vintage",
+      "source_ids": [
+        "itc_trademap"
+      ],
+      "note": "Model-based estimates from ITC, to be labelled estimate with ITC method when retrieved. Leads: 12A-L25"
+    },
+    {
+      "claim": "Product concentration measured at HS 4-digit; partner concentration across all partners; both on Nepal-reported FY data (primary) and mirror CY data (check).",
+      "type": "assumption",
+      "value": null,
+      "note": "Design choice consistent with 05C rca_table; 05C's RCA table is referenced, not duplicated."
+    },
+    {
+      "claim": "Informal India-Nepal trade across the open border is not captured in customs or mirror data and is excluded from the baseline.",
+      "type": "assumption",
+      "value": null,
+      "note": "Known coverage gap; direction of bias unknown; noted in uncertainty."
+    },
+    {
+      "claim": "Relocation-fit outputs from 21C affect export projections only through sector value added and investment.",
+      "type": "assumption",
+      "value": null,
+      "note": "Accepted challenge from 21C; consistent with CLAUDE.md rule 7."
     }
-   ],
-   "periods": "Nepal FY (customs) and calendar year (mirror) computed separately; never mixed",
-   "published_cross_checks": [
-    "UNCTADstat concentration index",
-    "WITS HHI"
-   ],
-   "lead_ids": [
-    "12A-L01",
-    "12A-L06",
-    "12A-L08",
-    "12A-L09"
-   ],
-   "methodological_issues": [
-    "HHI sensitive to aggregation level (HS 4 vs 6)",
-    "re-export spikes (edible oils) inflate concentration temporarily",
-    "mirror data omit informal trade and have CIF/FOB gap"
-   ]
-  },
-  "trade_balance_series": {
-   "status": "pending",
-   "series": [
+  ],
+  "data_gaps": [
+    "Every empirical value: no primary document could be downloaded in r1.",
+    "Customs trade books after FY2022/23 (FY2023/24-FY2025/26) not located at document level.",
+    "No Nepal-specific consolidated register of SPS/TBT rejections exists; must be assembled from ePing, Indian notifications and DFTQC records.",
+    "Informal cross-border trade with India is unmeasured.",
+    "Nepal Bureau of Standards and Metrology document-level URLs not located (portal URL from general knowledge)."
+  ],
+  "assumptions": [
     {
-     "name": "goods_balance_customs",
-     "unit": "NPR_current_bn",
-     "period": "FY2000/01-FY2025/26",
-     "sources": [
-      "customs_nepal",
-      "mof_nepal"
-     ]
+      "id": "12A-A1",
+      "text": "HHI at HS 4-digit on Nepal-reported FY data is the primary concentration measure; mirror CY data are a separate check.",
+      "basis": "assumption"
     },
     {
-     "name": "goods_balance_bop",
-     "unit": "NPR_current_bn",
-     "period": "FY2010/11-FY2025/26",
-     "sources": [
-      "nrb"
-     ]
+      "id": "12A-A2",
+      "text": "Informal trade excluded from baseline.",
+      "basis": "assumption"
     },
     {
-     "name": "goods_balance_usd",
-     "unit": "USD_current_mn",
-     "period": "FY2010/11-FY2025/26",
-     "sources": [
-      "nrb"
-     ],
-     "note": "exchange-rate effect separated"
-    },
-    {
-     "name": "goods_balance_pct_gdp",
-     "unit": "percent",
-     "period": "FY2000/01-FY2025/26",
-     "sources": [
-      "customs_nepal",
-      "nso_nepal"
-     ]
-    },
-    {
-     "name": "export_import_ratio",
-     "unit": "ratio",
-     "period": "FY2000/01-FY2025/26"
-    },
-    {
-     "name": "services_balance_bop",
-     "unit": "NPR_current_bn",
-     "period": "FY2010/11-FY2025/26",
-     "sources": [
-      "nrb"
-     ]
+      "id": "12A-A3",
+      "text": "RCA table owned by 05C and referenced, not duplicated.",
+      "basis": "assumption",
+      "basis_note": "original label: 'design'"
     }
-   ],
-   "trend_method": "Descriptive: level, share of GDP, and decomposition of change into export and import contributions and (USD series) exchange-rate effect; petroleum and edible-oil re-export components shown separately",
-   "lead_ids": [
-    "12A-L03",
-    "12A-L10",
-    "12A-L11",
-    "12A-L12",
-    "12A-L13",
-    "12A-L14",
-    "12A-L15"
-   ]
+  ],
+  "challenges": [
+    {
+      "to": "05C",
+      "text": "Please expose the Nepal-reported FY HS 4-digit basket used as the RCA check series with its observation ids so 12A and 05C share one series; 12A will not compute a separate RCA."
+    },
+    {
+      "to": "21E",
+      "text": "12A takes services-export totals from 21E's BPM6 category matrix; please keep the IT/BPO-as-remittance misrecording issue explicit so the services export baseline is labelled accordingly."
+    },
+    {
+      "to": "22B",
+      "text": "Electricity exports appear in customs merchandise data and NRB BoP; confirm which classification 22B uses so the goods trade balance is not double-counted."
+    },
+    {
+      "to": "00A",
+      "text": "Nepal Bureau of Standards and Metrology (nbsm) is not in the source catalog; propose adding it (tier 1) for the quality-standards register."
+    }
+  ],
+  "uncertainty": "High: no value retrieved. Structural uncertainties: (i) customs FY vs mirror CY data differ in timing, valuation (CIF/FOB) and coverage; (ii) HHI depends on aggregation level; (iii) re-export and tariff-arbitrage episodes (edible oils) distort basket and concentration; (iv) informal India trade unmeasured; (v) BoP and customs goods balances differ by construction; (vi) 2026 Indian import restrictions and LDC graduation (21A/18C) may change market access within the baseline window; (vii) standards-barrier evidence is fragmentary and press-led until instruments are retrieved.",
+  "specific": {
+    "export_basket": {
+      "status": "pending",
+      "structure": "Table by FY x HS 4-digit (top 25 + residual) and by FY x partner (top 15 + residual), NPR_current_bn and USD_current_mn with documented exchange rate; services credits by BPM6 category appended from 21E",
+      "primary_sources": [
+        "customs_nepal",
+        "nepal_trade_portal",
+        "nrb"
+      ],
+      "cross_check": [
+        "un_comtrade",
+        "itc_trademap",
+        "unctadstat"
+      ],
+      "lead_ids": [
+        "12A-L01",
+        "12A-L02",
+        "12A-L03",
+        "12A-L04",
+        "12A-L05",
+        "12A-L06",
+        "12A-L07",
+        "12A-L10",
+        "12A-L11",
+        "12A-L28"
+      ],
+      "rca_reference": "Revealed comparative advantage is NOT recomputed here; see research/findings/05/05C-r1.json specific.rca_table (Balassa RCA on mirror data, 3-year windows). 12A supplies the Nepal-reported FY basket used as its check series.",
+      "flags": [
+        "tariff-arbitrage/re-export products (edible oils)",
+        "electricity exports (22B)",
+        "preference-dependent lines (21A/18C)"
+      ]
+    },
+    "concentration_indices": {
+      "status": "pending",
+      "indices": [
+        {
+          "name": "product_HHI",
+          "formula": "sum_j s_j^2 over HS 4-digit export shares; normalised HHI* = (HHI-1/N)/(1-1/N)",
+          "unit": "index"
+        },
+        {
+          "name": "partner_HHI",
+          "formula": "sum_k s_k^2 over partner shares",
+          "unit": "index"
+        },
+        {
+          "name": "india_share",
+          "unit": "percent"
+        },
+        {
+          "name": "top10_product_share",
+          "unit": "percent"
+        },
+        {
+          "name": "extensive_margin_count",
+          "description": "number of HS 6-digit lines exported above a documented threshold",
+          "unit": "count"
+        }
+      ],
+      "periods": "Nepal FY (customs) and calendar year (mirror) computed separately; never mixed",
+      "published_cross_checks": [
+        "UNCTADstat concentration index",
+        "WITS HHI"
+      ],
+      "lead_ids": [
+        "12A-L01",
+        "12A-L06",
+        "12A-L08",
+        "12A-L09"
+      ],
+      "methodological_issues": [
+        "HHI sensitive to aggregation level (HS 4 vs 6)",
+        "re-export spikes (edible oils) inflate concentration temporarily",
+        "mirror data omit informal trade and have CIF/FOB gap"
+      ]
+    },
+    "trade_balance_series": {
+      "status": "pending",
+      "series": [
+        {
+          "name": "goods_balance_customs",
+          "unit": "NPR_current_bn",
+          "period": "FY2000/01-FY2025/26",
+          "sources": [
+            "customs_nepal",
+            "mof_nepal"
+          ]
+        },
+        {
+          "name": "goods_balance_bop",
+          "unit": "NPR_current_bn",
+          "period": "FY2010/11-FY2025/26",
+          "sources": [
+            "nrb"
+          ]
+        },
+        {
+          "name": "goods_balance_usd",
+          "unit": "USD_current_mn",
+          "period": "FY2010/11-FY2025/26",
+          "sources": [
+            "nrb"
+          ],
+          "note": "exchange-rate effect separated"
+        },
+        {
+          "name": "goods_balance_pct_gdp",
+          "unit": "percent",
+          "period": "FY2000/01-FY2025/26",
+          "sources": [
+            "customs_nepal",
+            "nso_nepal"
+          ]
+        },
+        {
+          "name": "export_import_ratio",
+          "unit": "ratio",
+          "period": "FY2000/01-FY2025/26"
+        },
+        {
+          "name": "services_balance_bop",
+          "unit": "NPR_current_bn",
+          "period": "FY2010/11-FY2025/26",
+          "sources": [
+            "nrb"
+          ]
+        }
+      ],
+      "trend_method": "Descriptive: level, share of GDP, and decomposition of change into export and import contributions and (USD series) exchange-rate effect; petroleum and edible-oil re-export components shown separately",
+      "lead_ids": [
+        "12A-L03",
+        "12A-L10",
+        "12A-L11",
+        "12A-L12",
+        "12A-L13",
+        "12A-L14",
+        "12A-L15"
+      ]
+    },
+    "quality_standard_barriers_register": {
+      "status": "pending",
+      "columns": [
+        "product (HS)",
+        "market",
+        "measure type (SPS/TBT/quarantine/licensing)",
+        "instrument and date",
+        "documented trade effect (observation id)",
+        "resolution status"
+      ],
+      "lead_ids": [
+        "12A-L16",
+        "12A-L17",
+        "12A-L18",
+        "12A-L19",
+        "12A-L20",
+        "12A-L21",
+        "12A-L22",
+        "12A-L23",
+        "12A-L24",
+        "12A-L29",
+        "12A-L30",
+        "12A-L31"
+      ],
+      "note": "Candidate case families to verify from primary instruments only: Indian quarantine/lab-testing requirements on Nepali agri-food, 2026 Indian import restrictions reported in press, EU regulations mapped by 18C (CBAM, EUDR), private-standard certification in carpets/pashmina/tea. No case is asserted until an instrument is retrieved."
+    },
+    "research_questions": {
+      "Q1_export_basket_and_HHI": "pending",
+      "Q2_goods_trade_deficit_and_trend": "pending",
+      "Q3_quality_standard_failures": "pending (register designed)"
+    }
   },
-  "quality_standard_barriers_register": {
-   "status": "pending",
-   "columns": [
-    "product (HS)",
-    "market",
-    "measure type (SPS/TBT/quarantine/licensing)",
-    "instrument and date",
-    "documented trade effect (observation id)",
-    "resolution status"
-   ],
-   "lead_ids": [
-    "12A-L16",
-    "12A-L17",
-    "12A-L18",
-    "12A-L19",
-    "12A-L20",
-    "12A-L21",
-    "12A-L22",
-    "12A-L23",
-    "12A-L24",
-    "12A-L29",
-    "12A-L30",
-    "12A-L31"
-   ],
-   "note": "Candidate case families to verify from primary instruments only: Indian quarantine/lab-testing requirements on Nepali agri-food, 2026 Indian import restrictions reported in press, EU regulations mapped by 18C (CBAM, EUDR), private-standard certification in carpets/pashmina/tea. No case is asserted until an instrument is retrieved."
-  },
-  "research_questions": {
-   "Q1_export_basket_and_HHI": "pending",
-   "Q2_goods_trade_deficit_and_trend": "pending",
-   "Q3_quality_standard_failures": "pending (register designed)"
-  }
- },
- "source_leads": [
-  {
-   "lead_id": "12A-L01",
-   "url": "https://customs.gov.np",
-   "title": "Department of Customs (portal)",
-   "publisher": "Department of Customs, Nepal",
-   "contains": "Monthly and annual foreign trade statistics: exports/imports by HS chapter/heading and partner country, Nepal FY; customs-office data",
-   "source_id": "customs_nepal"
-  },
-  {
-   "lead_id": "12A-L02",
-   "url": "https://customs.gov.np/content/43/annual-foreign-trade-statistics-book-2079-80/",
-   "title": "Annual Foreign Trade Statistics Book 2079-80 (landing page)",
-   "publisher": "Department of Customs, Nepal",
-   "contains": "Landing page for FY2022/23 trade book; later books (FY2023/24, FY2024/25, FY2025/26) to be located from the same content series",
-   "source_id": "customs_nepal"
-  },
-  {
-   "lead_id": "12A-L03",
-   "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
-   "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
-   "publisher": "Department of Customs, Nepal",
-   "contains": "FY2022/23 exports and imports by HS 8-digit and by partner; top commodities; trade balance with India, China and others",
-   "source_id": "customs_nepal"
-  },
-  {
-   "lead_id": "12A-L04",
-   "url": "https://nepaltradeportal.gov.np/",
-   "title": "Nepal Trade Information Portal",
-   "publisher": "Ministry of Industry, Commerce and Supplies / TEPC",
-   "contains": "Query tool: exports/imports by HS code, partner and FY; tariff and NTM information; SPS/TBT procedures",
-   "source_id": "nepal_trade_portal"
-  },
-  {
-   "lead_id": "12A-L05",
-   "url": "https://tepc.gov.np",
-   "title": "Trade and Export Promotion Centre",
-   "publisher": "Trade and Export Promotion Centre, Nepal",
-   "contains": "Trade statistics compilations, export-product profiles, direction-of-trade tables (Nepal FY)",
-   "source_id": "tepc"
-  },
-  {
-   "lead_id": "12A-L06",
-   "url": "https://comtradeplus.un.org",
-   "title": "UN Comtrade — Nepal and partner-reported trade",
-   "publisher": "UN Statistics Division",
-   "contains": "Nepal-reported and partner-reported (mirror) trade by HS 6-digit and partner, calendar years; basis for partner HHI cross-check",
-   "source_id": "un_comtrade"
-  },
-  {
-   "lead_id": "12A-L07",
-   "url": "https://www.trademap.org",
-   "title": "ITC Trade Map",
-   "publisher": "International Trade Centre",
-   "contains": "Mirror export data by HS 4/6-digit and market; market concentration and growth indicators; calendar years",
-   "source_id": "itc_trademap"
-  },
-  {
-   "lead_id": "12A-L08",
-   "url": "https://wits.worldbank.org",
-   "title": "World Integrated Trade Solution (WITS)",
-   "publisher": "World Bank",
-   "contains": "Product and market concentration (HHI) indices and trade-outcome indicators computed from Comtrade; tariffs faced in partner markets"
-  },
-  {
-   "lead_id": "12A-L09",
-   "url": "https://unctadstat.unctad.org",
-   "title": "UNCTADstat",
-   "publisher": "UNCTAD",
-   "contains": "Merchandise trade matrix, product concentration and diversification indices, services trade by EBOPS category (BPM6), calendar years",
-   "source_id": "unctadstat"
-  },
-  {
-   "lead_id": "12A-L10",
-   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-da",
-   "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "BoP table FY2024/25: merchandise exports/imports (BoP basis), services credits/debits by category, trade balance, current account (Nepal FY)",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12A-L11",
-   "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
-   "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Annual FY2025/26 BoP and trade tables: exports/imports by major commodity and direction, services trade",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12A-L12",
-   "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
-   "title": "Current Macro-Economic and Financial Situation archive",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Archive of annual and sub-annual CME releases for building FY trade-balance time series",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12A-L13",
-   "url": "https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf",
-   "title": "Statistical Tables 2019/20 (CME annual tables)",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "FY2019/20 annual tables: direction of trade, major exports/imports, BoP",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12A-L14",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
-   "title": "Economic Survey 2023/24 (English)",
-   "publisher": "Ministry of Finance, Nepal",
-   "contains": "Foreign trade chapter and statistical appendix: trade balance time series, export composition, export-import ratio (Nepal FY)",
-   "source_id": "mof_nepal"
-  },
-  {
-   "lead_id": "12A-L15",
-   "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
-   "title": "Economic Survey 2081/82 (Nepali)",
-   "publisher": "Ministry of Finance, Nepal",
-   "contains": "Foreign trade chapter FY2024/25; trade balance and composition",
-   "source_id": "mof_nepal"
-  },
-  {
-   "lead_id": "12A-L16",
-   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
-   "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
-   "publisher": "World Trade Organization",
-   "contains": "Trade structure, export concentration, SPS/TBT regime, standards bodies, services trade regime (2025 review)",
-   "source_id": "wto"
-  },
-  {
-   "lead_id": "12A-L17",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/TPR%20Report_2025_jw22l99.pdf",
-   "title": "Nepal Trade Policy Review 2025 - Report by the Government of Nepal",
-   "publisher": "Government of Nepal",
-   "contains": "Government statement of trade policy, export strategy, standards and quality-infrastructure priorities",
-   "source_id": "moics_nepal"
-  },
-  {
-   "lead_id": "12A-L18",
-   "url": "https://epingalert.org",
-   "title": "ePing SPS & TBT notification alert system",
-   "publisher": "WTO/UN DESA/ITC",
-   "contains": "SPS/TBT notifications by importing members affecting Nepal's export products; specific trade concerns",
-   "source_id": "wto"
-  },
-  {
-   "lead_id": "12A-L19",
-   "url": "https://spsims.wto.org",
-   "title": "WTO SPS Information Management System",
-   "publisher": "World Trade Organization",
-   "contains": "SPS notifications and specific trade concerns involving Nepal or its export products",
-   "source_id": "wto"
-  },
-  {
-   "lead_id": "12A-L20",
-   "url": "https://dftqc.gov.np",
-   "title": "Department of Food Technology and Quality Control - annual report",
-   "publisher": "Department of Food Technology and Quality Control, Nepal",
-   "contains": "Food export certification, laboratory accreditation status, rejection/inspection records",
-   "source_id": "moald_nepal"
-  },
-  {
-   "lead_id": "12A-L21",
-   "url": "https://www.teacoffee.gov.np",
-   "title": "National Tea and Coffee Development Board",
-   "publisher": "National Tea and Coffee Development Board, Nepal",
-   "contains": "Tea/coffee export quality standards, certification and market-access issues (e.g. quarantine at Indian border)",
-   "source_id": "ntcdb_nepal"
-  },
-  {
-   "lead_id": "12A-L22",
-   "url": "https://kathmandupost.com/money/2026/09/20/nepal-lost-rs10-billion-in-india-s-import-squeeze-new-delhi-seeks-investigati",
-   "title": "Nepal lost ... in India's import squeeze. New Delhi seeks investigation before easing curb (Sept 2026)",
-   "publisher": "The Kathmandu Post",
-   "contains": "Press pointer to 2026 Indian import restrictions on Nepali products (products, instrument); primary Indian notification required",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12A-L23",
-   "url": "https://apeda.gov.in/dgft-notifications",
-   "title": "DoC/DGFT Notifications",
-   "publisher": "Directorate General of Foreign Trade, India",
-   "contains": "Indian import/export notifications affecting Nepali products (quarantine, import policy changes)",
-   "source_id": "dgft_india"
-  },
-  {
-   "lead_id": "12A-L24",
-   "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
-   "title": "Treaty of Trade between the Government of Nepal and the Government of India",
-   "publisher": "TEPC (copy of treaty)",
-   "contains": "Market-access terms, rules of origin, SPS/quarantine provisions for Nepali exports to India",
-   "source_id": "tepc"
-  },
-  {
-   "lead_id": "12A-L25",
-   "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
-   "title": "Nepal after LDC Graduation: New avenues for exports",
-   "publisher": "International Trade Centre",
-   "contains": "Export-potential by product and market; untapped potential; preference-margin exposure",
-   "source_id": "itc_trademap"
-  },
-  {
-   "lead_id": "12A-L26",
-   "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
-   "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
-   "publisher": "World Trade Organization",
-   "contains": "Nepal market-access analysis after graduation: tariff changes on current exports by market",
-   "source_id": "wto"
-  },
-  {
-   "lead_id": "12A-L27",
-   "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
-   "title": "Connecting to Compete 2023 (LPI 2023)",
-   "publisher": "World Bank",
-   "contains": "Logistics performance scores relevant to export competitiveness (2023 edition)",
-   "source_id": "wb_lpi"
-  },
-  {
-   "lead_id": "12A-L28",
-   "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
-   "title": "International trade in digitally deliverable services, value",
-   "publisher": "UNCTAD",
-   "contains": "Nepal digitally deliverable services exports, calendar years",
-   "source_id": "unctadstat"
-  },
-  {
-   "lead_id": "12A-L29",
-   "url": "https://www.eeas.europa.eu/delegations/nepal/nepal-launches-national-pashmina-sector-export-strategy-increase-exports-us",
-   "title": "Nepal launches National Pashmina Sector Export Strategy (EU Delegation)",
-   "publisher": "EU Delegation to Nepal",
-   "contains": "Sector export strategy pointer (pashmina): quality, certification and market-access constraints",
-   "source_id": "eu_trade"
-  },
-  {
-   "lead_id": "12A-L30",
-   "url": "https://www.enterprisesurveys.org/en/data/exploreeconomies",
-   "title": "World Bank Enterprise Surveys - Nepal economy profile",
-   "publisher": "World Bank",
-   "contains": "Firm-level exporting shares, internationally recognised quality certification share, customs clearance days",
-   "source_id": "wb_npl"
-  },
-  {
-   "lead_id": "12A-L31",
-   "url": "https://nbsm.gov.np",
-   "title": "Nepal Bureau of Standards and Metrology",
-   "publisher": "Nepal Bureau of Standards and Metrology",
-   "contains": "URL from general knowledge — unverified. Nepal Standards list, certification-mark scheme, laboratory accreditation, mutual-recognition status"
-  }
- ]
+  "source_leads": [
+    {
+      "lead_id": "12A-L01",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "contains": "Monthly and annual foreign trade statistics: exports/imports by HS chapter/heading and partner country, Nepal FY; customs-office data",
+      "source_id": "customs_nepal"
+    },
+    {
+      "lead_id": "12A-L02",
+      "url": "https://customs.gov.np/content/43/annual-foreign-trade-statistics-book-2079-80/",
+      "title": "Annual Foreign Trade Statistics Book 2079-80 (landing page)",
+      "publisher": "Department of Customs, Nepal",
+      "contains": "Landing page for FY2022/23 trade book; later books (FY2023/24, FY2024/25, FY2025/26) to be located from the same content series",
+      "source_id": "customs_nepal"
+    },
+    {
+      "lead_id": "12A-L03",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "contains": "FY2022/23 exports and imports by HS 8-digit and by partner; top commodities; trade balance with India, China and others",
+      "source_id": "customs_nepal"
+    },
+    {
+      "lead_id": "12A-L04",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Ministry of Industry, Commerce and Supplies / TEPC",
+      "contains": "Query tool: exports/imports by HS code, partner and FY; tariff and NTM information; SPS/TBT procedures",
+      "source_id": "nepal_trade_portal"
+    },
+    {
+      "lead_id": "12A-L05",
+      "url": "https://tepc.gov.np",
+      "title": "Trade and Export Promotion Centre",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "contains": "Trade statistics compilations, export-product profiles, direction-of-trade tables (Nepal FY)",
+      "source_id": "tepc"
+    },
+    {
+      "lead_id": "12A-L06",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade — Nepal and partner-reported trade",
+      "publisher": "UN Statistics Division",
+      "contains": "Nepal-reported and partner-reported (mirror) trade by HS 6-digit and partner, calendar years; basis for partner HHI cross-check",
+      "source_id": "un_comtrade"
+    },
+    {
+      "lead_id": "12A-L07",
+      "url": "https://www.trademap.org",
+      "title": "ITC Trade Map",
+      "publisher": "International Trade Centre",
+      "contains": "Mirror export data by HS 4/6-digit and market; market concentration and growth indicators; calendar years",
+      "source_id": "itc_trademap"
+    },
+    {
+      "lead_id": "12A-L08",
+      "url": "https://wits.worldbank.org",
+      "title": "World Integrated Trade Solution (WITS)",
+      "publisher": "World Bank",
+      "contains": "Product and market concentration (HHI) indices and trade-outcome indicators computed from Comtrade; tariffs faced in partner markets"
+    },
+    {
+      "lead_id": "12A-L09",
+      "url": "https://unctadstat.unctad.org",
+      "title": "UNCTADstat",
+      "publisher": "UNCTAD",
+      "contains": "Merchandise trade matrix, product concentration and diversification indices, services trade by EBOPS category (BPM6), calendar years",
+      "source_id": "unctadstat"
+    },
+    {
+      "lead_id": "12A-L10",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-da",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "BoP table FY2024/25: merchandise exports/imports (BoP basis), services credits/debits by category, trade balance, current account (Nepal FY)",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12A-L11",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Annual FY2025/26 BoP and trade tables: exports/imports by major commodity and direction, services trade",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12A-L12",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Archive of annual and sub-annual CME releases for building FY trade-balance time series",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12A-L13",
+      "url": "https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf",
+      "title": "Statistical Tables 2019/20 (CME annual tables)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "FY2019/20 annual tables: direction of trade, major exports/imports, BoP",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12A-L14",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Foreign trade chapter and statistical appendix: trade balance time series, export composition, export-import ratio (Nepal FY)",
+      "source_id": "mof_nepal"
+    },
+    {
+      "lead_id": "12A-L15",
+      "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+      "title": "Economic Survey 2081/82 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Foreign trade chapter FY2024/25; trade balance and composition",
+      "source_id": "mof_nepal"
+    },
+    {
+      "lead_id": "12A-L16",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "contains": "Trade structure, export concentration, SPS/TBT regime, standards bodies, services trade regime (2025 review)",
+      "source_id": "wto"
+    },
+    {
+      "lead_id": "12A-L17",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/TPR%20Report_2025_jw22l99.pdf",
+      "title": "Nepal Trade Policy Review 2025 - Report by the Government of Nepal",
+      "publisher": "Government of Nepal",
+      "contains": "Government statement of trade policy, export strategy, standards and quality-infrastructure priorities",
+      "source_id": "moics_nepal"
+    },
+    {
+      "lead_id": "12A-L18",
+      "url": "https://epingalert.org",
+      "title": "ePing SPS & TBT notification alert system",
+      "publisher": "WTO/UN DESA/ITC",
+      "contains": "SPS/TBT notifications by importing members affecting Nepal's export products; specific trade concerns",
+      "source_id": "wto"
+    },
+    {
+      "lead_id": "12A-L19",
+      "url": "https://spsims.wto.org",
+      "title": "WTO SPS Information Management System",
+      "publisher": "World Trade Organization",
+      "contains": "SPS notifications and specific trade concerns involving Nepal or its export products",
+      "source_id": "wto"
+    },
+    {
+      "lead_id": "12A-L20",
+      "url": "https://dftqc.gov.np",
+      "title": "Department of Food Technology and Quality Control - annual report",
+      "publisher": "Department of Food Technology and Quality Control, Nepal",
+      "contains": "Food export certification, laboratory accreditation status, rejection/inspection records",
+      "source_id": "moald_nepal"
+    },
+    {
+      "lead_id": "12A-L21",
+      "url": "https://www.teacoffee.gov.np",
+      "title": "National Tea and Coffee Development Board",
+      "publisher": "National Tea and Coffee Development Board, Nepal",
+      "contains": "Tea/coffee export quality standards, certification and market-access issues (e.g. quarantine at Indian border)",
+      "source_id": "ntcdb_nepal"
+    },
+    {
+      "lead_id": "12A-L22",
+      "url": "https://kathmandupost.com/money/2026/09/20/nepal-lost-rs10-billion-in-india-s-import-squeeze-new-delhi-seeks-investigati",
+      "title": "Nepal lost ... in India's import squeeze. New Delhi seeks investigation before easing curb (Sept 2026)",
+      "publisher": "The Kathmandu Post",
+      "contains": "Press pointer to 2026 Indian import restrictions on Nepali products (products, instrument); primary Indian notification required",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12A-L23",
+      "url": "https://apeda.gov.in/dgft-notifications",
+      "title": "DoC/DGFT Notifications",
+      "publisher": "Directorate General of Foreign Trade, India",
+      "contains": "Indian import/export notifications affecting Nepali products (quarantine, import policy changes)",
+      "source_id": "dgft_india"
+    },
+    {
+      "lead_id": "12A-L24",
+      "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
+      "title": "Treaty of Trade between the Government of Nepal and the Government of India",
+      "publisher": "TEPC (copy of treaty)",
+      "contains": "Market-access terms, rules of origin, SPS/quarantine provisions for Nepali exports to India",
+      "source_id": "tepc"
+    },
+    {
+      "lead_id": "12A-L25",
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports",
+      "publisher": "International Trade Centre",
+      "contains": "Export-potential by product and market; untapped potential; preference-margin exposure",
+      "source_id": "itc_trademap"
+    },
+    {
+      "lead_id": "12A-L26",
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
+      "publisher": "World Trade Organization",
+      "contains": "Nepal market-access analysis after graduation: tariff changes on current exports by market",
+      "source_id": "wto"
+    },
+    {
+      "lead_id": "12A-L27",
+      "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+      "title": "Connecting to Compete 2023 (LPI 2023)",
+      "publisher": "World Bank",
+      "contains": "Logistics performance scores relevant to export competitiveness (2023 edition)",
+      "source_id": "wb_lpi"
+    },
+    {
+      "lead_id": "12A-L28",
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "International trade in digitally deliverable services, value",
+      "publisher": "UNCTAD",
+      "contains": "Nepal digitally deliverable services exports, calendar years",
+      "source_id": "unctadstat"
+    },
+    {
+      "lead_id": "12A-L29",
+      "url": "https://www.eeas.europa.eu/delegations/nepal/nepal-launches-national-pashmina-sector-export-strategy-increase-exports-us",
+      "title": "Nepal launches National Pashmina Sector Export Strategy (EU Delegation)",
+      "publisher": "EU Delegation to Nepal",
+      "contains": "Sector export strategy pointer (pashmina): quality, certification and market-access constraints",
+      "source_id": "eu_trade"
+    },
+    {
+      "lead_id": "12A-L30",
+      "url": "https://www.enterprisesurveys.org/en/data/exploreeconomies",
+      "title": "World Bank Enterprise Surveys - Nepal economy profile",
+      "publisher": "World Bank",
+      "contains": "Firm-level exporting shares, internationally recognised quality certification share, customs clearance days",
+      "source_id": "wb_npl"
+    },
+    {
+      "lead_id": "12A-L31",
+      "url": "https://nbsm.gov.np",
+      "title": "Nepal Bureau of Standards and Metrology",
+      "publisher": "Nepal Bureau of Standards and Metrology",
+      "contains": "URL from general knowledge — unverified. Nepal Standards list, certification-mark scheme, laboratory accreditation, mutual-recognition status"
+    }
+  ]
 }

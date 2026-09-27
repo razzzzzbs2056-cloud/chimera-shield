@@ -1,1292 +1,1296 @@
 {
- "subagent_id": "27B",
- "task_id": "r1",
- "generated_at": "2026-09-27T00:00:00+00:00",
- "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used, which located only news/trade-press locators for the October 2024 Nepal-India-Bangladesh tripartite power sales agreement). All arrangements here are HYPOTHETICAL and do not represent any government's position or intentions. Q1 (payoff structure under a hypothetical long-term power-purchase arrangement) is answered structurally: HA-1 specifies parametric payoffs for a Nepal-side seller, the Nepal national-value stance and an Indian offtaker in terms of the 22E/22B parameters (P_EXP, P_IEX, C_TRD, C_TX_IN, C_TX_NP, P_IMP, OC_t regimes, FX_INR) plus contract variables (p_c, q_t, tenor, damages, charge allocation), with ten incentive-compatibility conditions: participation, a feasible price band, no-diversion and no-walkaway damages, approval-validity vs tenor, capacity, eligibility, ratification and currency. Variants cover seasonal energy banking (HA-2), trilateral wheeling to Bangladesh (HA-3), a jointly owned interconnector (HA-4) and a transit-service arrangement (HA-5). Documented constraints are tied to 46 source leads (Indian MoP/CEA/CERC instruments, IEX/CERC price data, NEA/ERC/NRB, the 2014 bilateral power agreement, Nepal Treaty Act and Constitution, transit texts); nearly all are reused from 22B, 22E, 17A, 17C and 27A. Every empirical item is pending; no numbers are recorded and no payoff is simulated.",
- "findings": [
-  {
-   "claim": "Q1: Payoff structure of each party under a hypothetical long-term power-purchase arrangement is specified parametrically (HA-1: Nepal seller, Nepal national-value stance, Indian offtaker; Indian regulator as constraint only). Evaluation is pending: every price/cost parameter from 22B/22E is unretrieved.",
-   "type": "pending",
-   "value": null,
-   "period": "Nepali months x time blocks, aggregated to Nepal FY",
-   "source_ids": [
-    "nea",
-    "iex_india",
-    "cerc_india",
-    "cea_india",
-    "erc_nepal",
-    "nrb"
-   ],
-   "observation_ids": [],
-   "note": "Requires 22E P_EXP, C_TRD, C_TX_IN, C_TX_NP, P_IMP, FX_INR and 22B block-level P_IEX/G-DAM/HP-DAM by Nepali month."
-  },
-  {
-   "claim": "Feasible contract-price band for HA-1 (p_min, p_max) by season and 22E regime.",
-   "type": "pending",
-   "value": null,
-   "unit": "INR_per_MWh",
-   "period": "Nepali months, Nepal FY",
-   "source_ids": [
-    "iex_india",
-    "cerc_india",
-    "nea"
-   ],
-   "observation_ids": [],
-   "note": "p_min from OC_t + C_TX_NP (22E); p_max from buyer outside option P_ALT_t minus Indian-side charges (22B)."
-  },
-  {
-   "claim": "Validity period of Indian Designated Authority approvals for Nepali exporters and whether renewal criteria are specified (sets the approval-state variable A_t and the tenor-mismatch IC condition).",
-   "type": "pending",
-   "value": null,
-   "unit": "months",
-   "period": "procedure in force 2021 onward, as amended",
-   "source_ids": [
-    "cea_india"
-   ],
-   "observation_ids": [],
-   "note": "CEA DA Procedure 2021 text and approval orders."
-  },
-  {
-   "claim": "Eligibility/ownership conditions on exporting generators under the 2018 Guidelines as amended (IC1-eligibility; 04C CM-01).",
-   "type": "pending",
-   "value": null,
-   "period": "2018 onward",
-   "source_ids": [
-    "cea_india",
-    "mop_india"
-   ],
-   "observation_ids": [],
-   "note": "Exact clause text and amendment dates."
-  },
-  {
-   "claim": "Cross-border charges and losses applicable to Nepal schedules (C_TX_IN), trading margin (C_TRD) and deviation-settlement exposure (overlay on d_S, d_B).",
-   "type": "pending",
-   "value": null,
-   "unit": "INR_per_MWh",
-   "period": "CBTE 2019 as amended",
-   "source_ids": [
-    "cerc_india"
-   ],
-   "observation_ids": [],
-   "note": "Consolidated CBTE text; NVVN margin order/contract."
-  },
-  {
-   "claim": "Operational transfer limit of each India-Nepal interconnection and the approved trading quantum per block (IC1-capacity).",
-   "type": "pending",
-   "value": null,
-   "unit": "MW",
-   "period": "latest available, by Nepali month",
-   "source_ids": [
-    "cea_india",
-    "nea"
-   ],
-   "observation_ids": [],
-   "note": "Distinguish thermal rating, transfer limit and approved quantum (22B)."
-  },
-  {
-   "claim": "NEA acquisition cost of exported energy under ERC-approved IPP PPA rates by season (C_PPA_t), needed for the seller's (not the national) payoff.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_per_MWh",
-   "period": "Nepal FY, wet vs dry season",
-   "source_ids": [
-    "erc_nepal",
-    "nea"
-   ],
-   "observation_ids": [],
-   "note": "Not in the 22E parameter set; see challenge to 22E."
-  },
-  {
-   "claim": "Terms and delivery record of the reported October 2024 NEA-NVVN-BPDB tripartite agreement (reference for HA-3).",
-   "type": "pending",
-   "value": null,
-   "period": "October 2024 onward",
-   "source_ids": [
-    "nea",
-    "bpdb_bd"
-   ],
-   "observation_ids": [],
-   "note": "News locators only (27B-L34..L37); contract text and NEA delivery records required."
-  },
-  {
-   "claim": "Bangladesh buyer's alternative procurement cost in Nepal's wet-season window (P_ALT_BD_t).",
-   "type": "pending",
-   "value": null,
-   "period": "Bangladesh FY (July-June) - conversion to Nepali months required",
-   "source_ids": [
-    "bpdb_bd"
-   ],
-   "observation_ids": [],
-   "note": "BPDB annual report purchase cost by source; URL unverified."
-  },
-  {
-   "claim": "Capital cost, O&M and ownership shares of the reported October 2025 JV cross-border lines (reference for HA-4).",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_mn",
-   "period": "project documents, 2025 onward",
-   "source_ids": [
-    "nea",
-    "cea_india"
-   ],
-   "observation_ids": [],
-   "note": "JV agreement text and project appraisal documents."
-  },
-  {
-   "claim": "Transit route costs, fees and volumes by route for HA-5.",
-   "type": "pending",
-   "value": null,
-   "period": "Nepal FY",
-   "source_ids": [
-    "tepc",
-    "nitdb",
-    "wb_npl"
-   ],
-   "observation_ids": [],
-   "note": "Transit protocol text; NITDB dry-port statistics; World Bank NIRTTP document."
-  },
-  {
-   "claim": "Method: every arrangement in this file is HYPOTHETICAL; no model represents or predicts the actual position, preferences, bargaining power or intentions of any government or utility.",
-   "type": "assumption",
-   "source_ids": []
-  },
-  {
-   "claim": "Method: payoffs use the 22E opportunity-cost regimes (spill, export-marginal, import-marginal) as Nepal's outside option; generation cost cancels at national level but NEA's PPA acquisition cost enters the seller's payoff.",
-   "type": "assumption",
-   "source_ids": []
-  },
-  {
-   "claim": "Method: approval lapse is represented as a state variable evaluated in both states; no probability of lapse or renewal is assigned without evidence.",
-   "type": "assumption",
-   "source_ids": []
-  },
-  {
-   "claim": "Method: surplus division uses generalised Nash bargaining with the weight reported only as bounds (0, 1/2, 1); the weight is not estimated or attributed.",
-   "type": "assumption",
-   "source_ids": []
-  },
-  {
-   "claim": "Method: incentive compatibility is checked on block-level (15-minute/hourly aggregated to time-of-day) price distributions by Nepali month, not on monthly or annual means.",
-   "type": "assumption",
-   "source_ids": []
-  }
- ],
- "data_gaps": [
-  "All 22B/22E price and cost parameters at block level by Nepali month (none retrieved in r1).",
-  "Text of the January 2024 long-term power trade agreement and the Supreme Court verdict on its ratification route (27A AR-06).",
-  "CEA DA approval orders with validity windows and renewal criteria; amendment texts of the 2018 Guidelines (eligibility clauses).",
-  "Consolidated CERC CBTE charges and NVVN trading margin applicable to Nepal schedules and to trilateral wheeling.",
-  "ERC-approved IPP PPA purchase rates by season (NEA acquisition cost C_PPA_t).",
-  "Contract text and delivery records of the October 2024 NEA-NVVN-BPDB tripartite agreement; Bangladesh buyer's alternative procurement cost (BPDB).",
-  "JV agreements, capital cost and tariff route of the October 2025 cross-border lines.",
-  "Transit protocol fee schedules, route costs and dry-port volumes for HA-5."
- ],
- "assumptions": [
-  {
-   "id": "27B-A1",
-   "text": "All arrangements are hypothetical constructions for stress-testing; party labels are generic roles, not specific institutions' positions.",
-   "basis": "assumption (safety note)"
-  },
-  {
-   "id": "27B-A2",
-   "text": "Nepal's outside option per MWh is the 22E opportunity cost OC_t by regime; the Indian buyer's outside option is its alternative procurement cost P_ALT_t from 22B exchange/bilateral series.",
-   "basis": "assumption consistent with 22E-A1/A2"
-  },
-  {
-   "id": "27B-A3",
-   "text": "INR-settled prices are converted at the NRB NPR/INR rate for the same month; a peg change is a scenario assumption, not a forecast.",
-   "basis": "assumption consistent with 22E-A3 and 17A"
-  },
-  {
-   "id": "27B-A4",
-   "text": "Approval lapse/renewal is modelled as a binary state evaluated in both states; no probabilities assigned.",
-   "basis": "assumption (CLAUDE.md: no probabilities without evidence)"
-  },
-  {
-   "id": "27B-A5",
-   "text": "Bargaining weights are reported as bounds only and are never attributed to any party.",
-   "basis": "assumption"
-  },
-  {
-   "id": "27B-A6",
-   "text": "National-value evaluation nets out domestic transfers (e.g. NEA-IPP PPA payments); seller-level evaluation does not.",
-   "basis": "assumption"
-  }
- ],
- "challenges": [
-  {
-   "to": "22E",
-   "text": "The opportunity-cost table has no parameter for NEA's acquisition cost of IPP energy under ERC-approved seasonal PPA rates (C_PPA_t). It cancels at national level but determines the seller-level participation constraint in any export contract; please add it or confirm another agent owns it."
-  },
-  {
-   "to": "22B",
-   "text": "Contract incentive-compatibility checks need block-level (time-of-day) price distributions per Nepali month and the approval validity window for each approved quantum, not only monthly means and MW totals; please retain block-level extracts and validity dates in r2."
-  },
-  {
-   "to": "27A",
-   "text": "HA-1, HA-3 and HA-4 are anchored to AR-05 (2014 agreement), AR-06 (January 2024 agreement), AR-07 (October 2025 transmission agreements) and AR-29 (trilateral); please prioritise primary text for these rows in r2, including any approval-linkage, non-discriminatory-access and dispute clauses."
-  },
-  {
-   "to": "17C",
-   "text": "The October 2024 tripartite NEA-NVVN-BPDB agreement is located only by news (27B-L34..L37); please add the contract or NEA board/annual-report record as a primary lead and a BPDB purchase-cost lead."
-  },
-  {
-   "to": "00A",
-   "text": "Add catalog ids for NVVN and POWERGRID, and verify the BPDB URL. Also note: energy.MarginalUseComparison has no contract layer (price band, damages, approval state); a small extension is needed before 27B payoffs can be computed in code."
-  }
- ],
- "uncertainty": "Very high for r1. No parameter is retrieved, so the sign of any participation constraint is unknown. Structural uncertainty: (i) whether contract prices are compared at the Nepal border or an Indian bus changes which party bears C_TX_IN; (ii) the approval regime (validity, renewal criteria, eligibility) may dominate price terms and cannot be characterised until the texts are read; (iii) block-level price variation may make monthly-mean feasibility misleading; (iv) the reference instruments (2024 long-term agreement, 2024 tripartite contract, 2025 JV lines) are located only through news and may differ from reports. Models are hypothetical and say nothing about any government's intentions.",
- "specific": {
-  "hypothetical_arrangement_models": {
-   "status": "pending",
-   "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
-   "question": "Q1 What payoff structure would each party face under a hypothetical long-term power-purchase arrangement?",
-   "answer_status": "Structure specified (HA-1, with variants HA-2..HA-4 and transit HA-5); all parameter values pending; no payoffs simulated in r1.",
-   "method": "Parametric payoff functions per party written in the 22E/22B parameter set (NPR_per_MWh primary, INR converted at the NRB NPR/INR rate for the same month). Periods are Nepali months x time blocks classified into the 22E regimes (spill, export-marginal, import-marginal). Incentive compatibility = participation for each party against its documented outside option + no-diversion/no-walkaway conditions + physical (capacity), legal (eligibility, approval validity, ratification) feasibility. Surplus division uses generalised Nash bargaining with the bargaining weight reported as bounds only. Approval lapse is treated as a state (A_t = 0/1) evaluated in both states, with no probability assigned. Payoffs are evaluated on block-level distributions, not monthly means (22E caveat).",
-   "parameter_register": {
-    "note": "All symbols are parameters, not values. Price/cost symbols are those defined by 22E (opportunity_cost_table.parameters) and 22B (regional_price_profile, cross_border_capacity); new symbols introduced here are listed with the data required. All are pending until observations exist.",
-    "from_22E": [
-     "P_EXP",
-     "P_IEX",
-     "C_TRD",
-     "C_TX_IN",
-     "C_TX_NP",
-     "P_IMP",
-     "T_IND",
-     "C_GRID",
-     "LF_DOM",
-     "VA_IND",
-     "K_IND",
-     "Q_CAP",
-     "FX_INR",
-     "FX_USD"
-    ],
-    "from_22B": [
-     "IEX DAM/G-DAM/HP-DAM/RTM price by block and Nepali month (P_IEX_t, P_GDAM_t, P_HPDAM_t)",
-     "line thermal rating, operational transfer limit and approved trading quantum (distinct)",
-     "NEA realised export price by route"
-    ],
-    "derived_from_22E": {
-     "ENV_t": "export_net_value in period t (22E formula): P_EXP_t - (C_TRD + C_TX_IN)*FX_INR - C_TX_NP, without double deduction when P_EXP is already a border netback",
-     "DNV_t": "domestic_net_value in period t (22E formula): (VA_IND - K_IND) + T_IND*1000 - C_GRID, scaled by (1 - LF_DOM)",
-     "OC_t": "opportunity cost of one MWh in Nepal in period t by 22E regime: spill -> 0; export-marginal -> ENV_t; import-marginal -> P_IMP_t + Nepal-side delivery cost"
+  "subagent_id": "27B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used, which located only news/trade-press locators for the October 2024 Nepal-India-Bangladesh tripartite power sales agreement). All arrangements here are HYPOTHETICAL and do not represent any government's position or intentions. Q1 (payoff structure under a hypothetical long-term power-purchase arrangement) is answered structurally: HA-1 specifies parametric payoffs for a Nepal-side seller, the Nepal national-value stance and an Indian offtaker in terms of the 22E/22B parameters (P_EXP, P_IEX, C_TRD, C_TX_IN, C_TX_NP, P_IMP, OC_t regimes, FX_INR) plus contract variables (p_c, q_t, tenor, damages, charge allocation), with ten incentive-compatibility conditions: participation, a feasible price band, no-diversion and no-walkaway damages, approval-validity vs tenor, capacity, eligibility, ratification and currency. Variants cover seasonal energy banking (HA-2), trilateral wheeling to Bangladesh (HA-3), a jointly owned interconnector (HA-4) and a transit-service arrangement (HA-5). Documented constraints are tied to 46 source leads (Indian MoP/CEA/CERC instruments, IEX/CERC price data, NEA/ERC/NRB, the 2014 bilateral power agreement, Nepal Treaty Act and Constitution, transit texts); nearly all are reused from 22B, 22E, 17A, 17C and 27A. Every empirical item is pending; no numbers are recorded and no payoff is simulated.",
+  "findings": [
+    {
+      "claim": "Q1: Payoff structure of each party under a hypothetical long-term power-purchase arrangement is specified parametrically (HA-1: Nepal seller, Nepal national-value stance, Indian offtaker; Indian regulator as constraint only). Evaluation is pending: every price/cost parameter from 22B/22E is unretrieved.",
+      "type": "pending",
+      "value": null,
+      "period": "Nepali months x time blocks, aggregated to Nepal FY",
+      "source_ids": [
+        "nea",
+        "iex_india",
+        "cerc_india",
+        "cea_india",
+        "erc_nepal",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Requires 22E P_EXP, C_TRD, C_TX_IN, C_TX_NP, P_IMP, FX_INR and 22B block-level P_IEX/G-DAM/HP-DAM by Nepali month."
     },
-    "new_symbols": [
-     {
-      "id": "p_c",
-      "meaning": "contract energy price under the hypothetical arrangement, at a stated delivery point",
-      "unit": "INR_per_MWh or NPR_per_MWh (stated per arrangement)",
-      "status": "decision variable of the simulation - not an observed value"
-     },
-     {
-      "id": "q_t",
-      "meaning": "contracted delivery in period t (Nepali month x time block)",
-      "unit": "MWh",
-      "status": "decision variable"
-     },
-     {
-      "id": "T",
-      "meaning": "contract tenor",
-      "unit": "years",
-      "status": "decision variable"
-     },
-     {
-      "id": "A_t",
-      "meaning": "approval state in period t (1 if the Indian Designated Authority approval covering the quantity, segment and route is valid; 0 otherwise)",
-      "unit": "indicator",
-      "status": "state variable; validity windows pending from CEA approval orders",
-      "lead_ids": [
-       "27B-L03",
-       "27B-L04"
-      ]
-     },
-     {
-      "id": "V_A",
-      "meaning": "validity period of an approval",
+    {
+      "claim": "Feasible contract-price band for HA-1 (p_min, p_max) by season and 22E regime.",
+      "type": "pending",
+      "value": null,
+      "unit": "INR_per_MWh",
+      "period": "Nepali months, Nepal FY",
+      "source_ids": [
+        "iex_india",
+        "cerc_india",
+        "nea"
+      ],
+      "observation_ids": [],
+      "note": "p_min from OC_t + C_TX_NP (22E); p_max from buyer outside option P_ALT_t minus Indian-side charges (22B)."
+    },
+    {
+      "claim": "Validity period of Indian Designated Authority approvals for Nepali exporters and whether renewal criteria are specified (sets the approval-state variable A_t and the tenor-mismatch IC condition).",
+      "type": "pending",
+      "value": null,
       "unit": "months",
-      "status": "pending",
-      "lead_ids": [
-       "27B-L03",
-       "27B-L04"
-      ]
-     },
-     {
-      "id": "d_S, d_B",
-      "meaning": "per-MWh damages paid by seller for short delivery / by buyer for short offtake (take-or-pay)",
+      "period": "procedure in force 2021 onward, as amended",
+      "source_ids": [
+        "cea_india"
+      ],
+      "observation_ids": [],
+      "note": "CEA DA Procedure 2021 text and approval orders."
+    },
+    {
+      "claim": "Eligibility/ownership conditions on exporting generators under the 2018 Guidelines as amended (IC1-eligibility; 04C CM-01).",
+      "type": "pending",
+      "value": null,
+      "period": "2018 onward",
+      "source_ids": [
+        "cea_india",
+        "mop_india"
+      ],
+      "observation_ids": [],
+      "note": "Exact clause text and amendment dates."
+    },
+    {
+      "claim": "Cross-border charges and losses applicable to Nepal schedules (C_TX_IN), trading margin (C_TRD) and deviation-settlement exposure (overlay on d_S, d_B).",
+      "type": "pending",
+      "value": null,
       "unit": "INR_per_MWh",
-      "status": "decision variables; any deviation-settlement charges under CBTE are a floor/overlay (pending)",
-      "lead_ids": [
-       "27B-L05",
-       "27B-L06"
-      ]
-     },
-     {
-      "id": "P_ALT_t",
-      "meaning": "Indian buyer's alternative procurement cost for the same block (exchange segment or bilateral trader price, plus any green-attribute value)",
-      "unit": "INR_per_MWh",
-      "status": "pending (22B series)",
-      "lead_ids": [
-       "27B-L08",
-       "27B-L09",
-       "27B-L10",
-       "27B-L11",
-       "27B-L12",
-       "27B-L13"
-      ]
-     },
-     {
-      "id": "C_PPA_t",
-      "meaning": "NEA acquisition cost of the exported energy when purchased from IPPs under ERC-approved PPA rates (seasonal)",
-      "unit": "NPR_per_MWh",
-      "status": "pending",
-      "lead_ids": [
-       "27B-L20",
-       "27B-L17"
-      ]
-     },
-     {
-      "id": "K_X, CRF, OM_X",
-      "meaning": "capital cost of a cross-border line segment, capital recovery factor (interest rate, life), annual O&M",
-      "unit": "NPR_current_mn / ratio / NPR_current_mn",
-      "status": "pending; project documents of the October 2025 JV lines are the reference design",
-      "lead_ids": [
-       "27B-L31",
-       "27B-L15",
-       "27B-L16"
-      ]
-     },
-     {
-      "id": "Cap_X",
-      "meaning": "operational transfer limit of the interconnection (not thermal rating)",
+      "period": "CBTE 2019 as amended",
+      "source_ids": [
+        "cerc_india"
+      ],
+      "observation_ids": [],
+      "note": "Consolidated CBTE text; NVVN margin order/contract."
+    },
+    {
+      "claim": "Operational transfer limit of each India-Nepal interconnection and the approved trading quantum per block (IC1-capacity).",
+      "type": "pending",
+      "value": null,
       "unit": "MW",
-      "status": "pending (22B cross_border_capacity)",
-      "lead_ids": [
-       "27B-L15",
-       "27B-L18"
-      ]
-     },
-     {
-      "id": "w",
-      "meaning": "wheeling/transit charge per MWh levied for use of the Indian network and trading service in a third-country sale",
-      "unit": "INR_per_MWh",
-      "status": "pending (CBTE charges + NVVN margin)",
-      "lead_ids": [
-       "27B-L05",
-       "27B-L06",
-       "27B-L14"
-      ]
-     },
-     {
-      "id": "P_ALT_BD_t",
-      "meaning": "Bangladesh buyer's alternative marginal procurement cost in the delivery season",
-      "unit": "USD_per_MWh or INR_per_MWh",
-      "status": "pending; no Bangladesh official price lead beyond BPDB landing page (unverified URL)",
-      "lead_ids": [
-       "27B-L38"
-      ]
-     },
-     {
-      "id": "beta",
-      "meaning": "return ratio in an energy-banking arrangement: MWh returned in the dry season per MWh delivered in the wet season",
-      "unit": "ratio",
-      "status": "decision variable"
-     },
-     {
-      "id": "C_DRY_IN_t",
-      "meaning": "counterparty's marginal cost of supplying energy in the Nepal dry-season blocks (proxy: DAM/HP-DAM price in those blocks)",
-      "unit": "INR_per_MWh",
-      "status": "pending (22B)",
-      "lead_ids": [
-       "27B-L08",
-       "27B-L10"
-      ]
-     }
-    ]
-   },
-   "models": [
-    {
-     "id": "HA-1",
-     "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
-     "name": "Hypothetical long-term power-purchase arrangement (seller in Nepal, buyer in India)",
-     "question_answered": "Q1",
-     "parties": [
-      {
-       "party": "Nepal-side seller/aggregator (modelled generically as 'NS'; could be NEA reselling own or IPP energy)",
-       "role": "seller"
-      },
-      {
-       "party": "Nepal national accounting stance ('NN'; national value of the MWh, per 22E)",
-       "role": "welfare evaluation, not an actor"
-      },
-      {
-       "party": "Indian offtaker ('IB'; distribution utility or trader, modelled generically)",
-       "role": "buyer"
-      },
-      {
-       "party": "Indian regulatory/approval layer ('IR')",
-       "role": "constraint-setter; modelled as the approval state A_t and charge schedule, with no payoff attributed"
-      }
-     ],
-     "contract_terms_as_decision_variables": [
-      "p_c",
-      "q_t by season/block",
-      "T",
-      "d_S",
-      "d_B",
-      "delivery point (Nepal border vs Indian bus)",
-      "allocation of C_TX_IN and C_TRD",
-      "settlement currency (INR under peg) and indexation rule",
-      "force-majeure and approval-lapse clause"
-     ],
-     "payoff_functions": {
-      "NS": "U_NS = sum_t A_t * q_t * [ p_c*FX_INR - C_TX_NP - (theta_S * (C_TX_IN + C_TRD))*FX_INR - C_PPA_t ] - sum_t (1-A_t) * q_t * L_S_t ;  theta_S = share of Indian-side charges borne by the seller (contract term); L_S_t = seller loss when approval lapses (damages owed unless the approval-lapse clause excuses them, net of the salvage value OC_t of the undelivered MWh)",
-      "NN": "W_NN = sum_t A_t * q_t * [ p_c*FX_INR - C_TX_NP - theta_S*(C_TX_IN + C_TRD)*FX_INR - OC_t ]  (national gain relative to the 22E opportunity cost; C_PPA_t is a domestic transfer and nets out nationally)",
-      "IB": "U_IB = sum_t A_t * q_t * [ P_ALT_t - p_c - (1-theta_S)*(C_TX_IN + C_TRD) ] - sum_t (1-A_t) * q_t * L_B_t ;  L_B_t = buyer's replacement-cost exposure when approval lapses",
-      "IR": "No payoff attributed. Represented only through documented rules: eligibility (ownership/financing-origin) clauses, approval validity V_A, charges C_TX_IN, deviation settlement."
-     },
-     "outside_options": {
-      "NS": "sell the same MWh on the Indian exchange under a separate approval (netback ENV_t using P_IEX_t) or to the domestic grid (T_IND pathway) - whichever 22E marks as marginal",
-      "NN": "OC_t by 22E regime",
-      "IB": "procure at P_ALT_t (exchange segment or bilateral trader)"
-     },
-     "incentive_compatibility_conditions": [
-      {
-       "id": "IC1-participation-NS",
-       "condition": "E_seasons[ U_NS ] >= sum_t q_t * max(ENV_spot_t, domestic sale value_t) - C_PPA_t terms, evaluated separately with A_t = 1 and with A_t lapsing at each renewal date (no probability assigned)"
-      },
-      {
-       "id": "IC1-participation-IB",
-       "condition": "sum_t q_t * [ P_ALT_t - p_c - (1-theta_S)(C_TX_IN + C_TRD) ] >= 0 over the tenor, evaluated on the block-level price distribution, not monthly means"
-      },
-      {
-       "id": "IC1-feasible-price-band",
-       "condition": "a p_c exists with p_min <= p_c <= p_max, where p_min = [OC_t + C_TX_NP]/FX_INR + theta_S*(C_TX_IN + C_TRD) (q-weighted) and p_max = P_ALT_t - (1-theta_S)*(C_TX_IN + C_TRD) (q-weighted). The band is non-empty iff q-weighted P_ALT_t - (C_TX_IN + C_TRD) >= q-weighted (OC_t + C_TX_NP)/FX_INR. In spill-regime months OC_t = 0, so the Nepal-side floor is transmission cost only."
-      },
-      {
-       "id": "IC1-no-diversion-NS",
-       "condition": "seller must not gain by diverting contracted MWh to spot in high-price blocks: d_S >= max_t( ENV_spot_t/FX_INR - p_c + theta_S-adjusted charges ) for blocks where spot netback exceeds p_c"
-      },
-      {
-       "id": "IC1-no-walkaway-IB",
-       "condition": "buyer must not gain by curtailing offtake when spot is below contract: d_B >= max_t( p_c - P_ALT_t ) for blocks where P_ALT_t < p_c (take-or-pay floor)"
-      },
-      {
-       "id": "IC1-approval-tenor",
-       "condition": "contract value is conditional on A_t; unless the approval validity V_A covers T or renewal criteria are text-specified, both parties' participation must hold in the state where A_t lapses at the first renewal date. Tenor mismatch (T > V_A) is the key documented source of non-credibility to be tested from the DA procedure text."
-      },
-      {
-       "id": "IC1-capacity",
-       "condition": "sum of contracted q_t per block <= min(Cap_X, approved quantum) net of other committed flows (22E Q_CAP); otherwise the contract is physically infeasible regardless of prices"
-      },
-      {
-       "id": "IC1-eligibility",
-       "condition": "the generating assets allocated to the contract satisfy the eligibility/ownership conditions of the 2018 Guidelines as amended (04C CM-01); if not, the arrangement is infeasible for those assets"
-      },
-      {
-       "id": "IC1-ratification",
-       "condition": "if the arrangement falls within the Nepal Treaty Act / constitutional category requiring parliamentary ratification (natural-resource sharing), ratification is a precondition; the route is documented only by the Supreme Court verdict (text pending)"
-      },
-      {
-       "id": "IC1-currency",
-       "condition": "INR settlement under an unchanged NPR-INR peg makes p_c*FX_INR stable in NPR; a peg change is a scenario assumption that shifts NS/NN payoffs by the change in FX_INR"
-      }
-     ],
-     "bargaining_representation": "Generalised Nash bargaining over p_c within the feasible band: maximise (U_NS - D_NS)^alpha * (U_IB - D_IB)^(1-alpha), D = outside options. alpha is NOT estimated and not attributed to any government; results are reported as the full band plus alpha in {0, 1/2, 1} as bounds, to show how surplus division moves with bargaining power.",
-     "documented_constraints": [
-      {
-       "constraint": "Eligibility/ownership conditions on exporting generators (India, unilateral)",
-       "lead_ids": [
-        "27B-L01",
-        "27B-L02"
-       ],
-       "status": "pending text retrieval"
-      },
-      {
-       "constraint": "Approval validity and renewal procedure (India, unilateral)",
-       "lead_ids": [
-        "27B-L03",
-        "27B-L04"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Cross-border transmission charges, losses, deviation settlement (India, regulatory)",
-       "lead_ids": [
-        "27B-L05",
-        "27B-L06",
-        "27B-L07"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Bilateral framework (2014 power trade agreement) and reported January 2024 long-term agreement",
-       "lead_ids": [
-        "27B-L24",
-        "27B-L25",
-        "27B-L26",
-        "27B-L30"
-       ],
-       "status": "pending; 27A AR-05 and AR-06 unverified"
-      },
-      {
-       "constraint": "Nepal ratification route for natural-resource agreements",
-       "lead_ids": [
-        "27B-L28",
-        "27B-L29",
-        "27B-L27"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Interconnection transfer limit and approved quantum",
-       "lead_ids": [
-        "27B-L15",
-        "27B-L16",
-        "27B-L18",
-        "27B-L04"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Settlement currency and exchange-control rules; peg regime",
-       "lead_ids": [
-        "27B-L23",
-        "27B-L22",
-        "27B-L21"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Seasonal surplus/deficit profile of Nepal system (defines 22E regimes)",
-       "lead_ids": [
-        "27B-L17",
-        "27B-L18"
-       ],
-       "status": "pending"
-      }
-     ],
-     "status": "pending - structure specified; every parameter pending; no simulated payoffs computed",
-     "model_link": "src/economic_model/energy.py MarginalUseComparison supplies ENV_t/DNV_t; contract layer not yet implemented (see challenge to 00A)"
+      "period": "latest available, by Nepali month",
+      "source_ids": [
+        "cea_india",
+        "nea"
+      ],
+      "observation_ids": [],
+      "note": "Distinguish thermal rating, transfer limit and approved quantum (22B)."
     },
     {
-     "id": "HA-2",
-     "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
-     "name": "Hypothetical seasonal energy-banking (wet-season delivery against dry-season return)",
-     "question_answered": "Q1 (variant of a long-term arrangement without cash price)",
-     "parties": [
-      {
-       "party": "Nepal-side utility ('NS')",
-       "role": "wet-season deliverer, dry-season receiver"
-      },
-      {
-       "party": "Indian counterparty utility/trader ('IB')",
-       "role": "wet-season receiver, dry-season returner"
-      }
-     ],
-     "payoff_functions": {
-      "NS": "U_NS = sum_wet q_w * [ -OC_w - C_TX_NP ] + sum_dry beta*q_w_alloc_d * [ P_IMP_d - C_TX_NP ]  (value of avoided dry-season imports minus wet-season opportunity cost; charges as allocated)",
-      "IB": "U_IB = sum_wet q_w * [ P_ALT_w - C_TX_IN_w ] - sum_dry beta*q_w_alloc_d * [ C_DRY_IN_d + C_TX_IN_d ]"
-     },
-     "incentive_compatibility_conditions": [
-      {
-       "id": "IC2-NS",
-       "condition": "beta >= (q-weighted OC_w + C_TX_NP) / (q-weighted P_IMP_d - C_TX_NP). In spill months OC_w = 0, so any beta above the charge-only floor is acceptable to NS."
-      },
-      {
-       "id": "IC2-IB",
-       "condition": "beta <= (q-weighted P_ALT_w - C_TX_IN_w) / (q-weighted C_DRY_IN_d + C_TX_IN_d)"
-      },
-      {
-       "id": "IC2-feasible",
-       "condition": "arrangement feasible iff the NS floor <= the IB ceiling; i.e. iff the wet/dry value ratio for NS is at most the wet/dry value ratio for IB. Because both parties' dry-season values reference Indian dry-season block prices, feasibility depends mainly on (i) whether Nepal's wet surplus is in spill regime and (ii) the wet-block P_ALT_w relative to dry-block prices - both pending from 22B/22E."
-      },
-      {
-       "id": "IC2-enforcement",
-       "condition": "return obligation falls in the counterparty's high-price season; credible only if return is scheduled under an approval with validity spanning both seasons (A_t for both legs) or secured by a cash-settlement fallback at a stated index"
-      },
-      {
-       "id": "IC2-capacity",
-       "condition": "wet-leg and dry-leg flows each within Cap_X and approved quanta in their blocks"
-      }
-     ],
-     "documented_constraints": [
-      {
-       "constraint": "Import approvals for India-to-Nepal supply are hour-limited and time-bound (to verify from order)",
-       "lead_ids": [
-        "27B-L33",
-        "27B-L04"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Charges applicable to each leg",
-       "lead_ids": [
-        "27B-L05",
-        "27B-L06"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Dry-season import cost and wet-season spill",
-       "lead_ids": [
-        "27B-L17",
-        "27B-L18",
-        "27B-L10"
-       ],
-       "status": "pending"
-      }
-     ],
-     "status": "pending"
+      "claim": "NEA acquisition cost of exported energy under ERC-approved IPP PPA rates by season (C_PPA_t), needed for the seller's (not the national) payoff.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_MWh",
+      "period": "Nepal FY, wet vs dry season",
+      "source_ids": [
+        "erc_nepal",
+        "nea"
+      ],
+      "observation_ids": [],
+      "note": "Not in the 22E parameter set; see challenge to 22E."
     },
     {
-     "id": "HA-3",
-     "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
-     "name": "Hypothetical expanded trilateral sale (Nepal seller, Bangladesh buyer, wheeling through India)",
-     "question_answered": "Q1 (multi-party extension)",
-     "reference_instrument": "A tripartite NEA-NVVN-BPDB power sales agreement signed October 2024 is reported by news locators (27B-L34..L37); its terms are NOT used here until the contract is retrieved. HA-3 is a generic hypothetical, not a model of that contract.",
-     "parties": [
-      {
-       "party": "Nepal seller ('NS')",
-       "role": "seller"
-      },
-      {
-       "party": "Bangladesh buyer ('BB')",
-       "role": "buyer"
-      },
-      {
-       "party": "Indian intermediary/transit ('IT'; trader plus network)",
-       "role": "wheeling and trading service"
-      }
-     ],
-     "payoff_functions": {
-      "NS": "U_NS = sum_t A_t * q_t * [ p_B*FX - C_TX_NP - theta_S*w*FX_INR - C_PPA_t ]  (FX = NPR per unit of the contract currency)",
-      "BB": "U_BB = sum_t A_t * q_t * [ P_ALT_BD_t - p_B - (1-theta_S)*w_conv - C_TX_BD ]  (C_TX_BD = Bangladesh-side delivery cost, pending)",
-      "IT": "U_IT = sum_t A_t * q_t * [ w - c_IT_t ]  where c_IT_t = losses cost + congestion opportunity cost of the corridor capacity in block t (value of the same capacity for Indian own trades, proxied by the block price spread) - pending"
-     },
-     "incentive_compatibility_conditions": [
-      {
-       "id": "IC3-NS",
-       "condition": "p_B net of w and Nepal-side cost >= Nepal's best alternative for the same MWh (ENV_t on the Indian exchange if approved, else OC_t)"
-      },
-      {
-       "id": "IC3-BB",
-       "condition": "P_ALT_BD_t >= p_B + delivery and wheeling cost borne by BB"
-      },
-      {
-       "id": "IC3-IT",
-       "condition": "w >= c_IT_t in every scheduled block; if the corridor is congested in Nepal's wet season, c_IT_t rises and the approval state A_t is the operative constraint"
-      },
-      {
-       "id": "IC3-joint",
-       "condition": "a (p_B, w) pair satisfying all three exists iff q-weighted P_ALT_BD_t - C_TX_BD - c_IT_t >= q-weighted OC_t + C_TX_NP (all converted at same-period rates). Surplus split is a three-party bargaining problem; no split is attributed to any party."
-      },
-      {
-       "id": "IC3-approval",
-       "condition": "requires Indian DA approval for trade between two neighbouring countries through India; the reported June 2026 withholding of an extension (news locator only) shows A_t can be 0 for expansion tranches - to verify from the primary order"
-      }
-     ],
-     "documented_constraints": [
-      {
-       "constraint": "Provisions for trade between neighbouring countries via the Indian grid",
-       "lead_ids": [
-        "27B-L01",
-        "27B-L03",
-        "27B-L05"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Trading agency margin and role",
-       "lead_ids": [
-        "27B-L14"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Existence and terms of the 2024 tripartite contract; delivery records",
-       "lead_ids": [
-        "27B-L34",
-        "27B-L35",
-        "27B-L36",
-        "27B-L37",
-        "27B-L17"
-       ],
-       "status": "pending (news locators only)"
-      },
-      {
-       "constraint": "Approval status for extension",
-       "lead_ids": [
-        "27B-L32",
-        "27B-L04"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Bangladesh buyer's outside option",
-       "lead_ids": [
-        "27B-L38",
-        "27B-L39"
-       ],
-       "status": "pending; BPDB URL unverified"
-      }
-     ],
-     "status": "pending"
+      "claim": "Terms and delivery record of the reported October 2024 NEA-NVVN-BPDB tripartite agreement (reference for HA-3).",
+      "type": "pending",
+      "value": null,
+      "period": "October 2024 onward",
+      "source_ids": [
+        "nea",
+        "bpdb_bd"
+      ],
+      "observation_ids": [],
+      "note": "News locators only (27B-L34..L37); contract text and NEA delivery records required."
     },
     {
-     "id": "HA-4",
-     "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
-     "name": "Hypothetical shared cross-border transmission (jointly owned interconnector with cost and capacity-rent sharing)",
-     "question_answered": "supporting Q1: the physical precondition for HA-1..HA-3",
-     "reference_instrument": "October 2025 NEA-POWERGRID JV agreements reported by news locator (27B-L31; 27A AR-07). Their ownership shares and tariff route are unverified and not used.",
-     "parties": [
-      {
-       "party": "Nepal-side owner ('NX')",
-       "role": "co-owner"
-      },
-      {
-       "party": "India-side owner ('IX')",
-       "role": "co-owner"
-      }
-     ],
-     "payoff_functions": {
-      "NX": "U_NX = s_N * ( R_X - OM_X ) - s_N * K_X * CRF + B_N ;  B_N = sum_t Q_trade_t(Cap_X, A_t) * [ ENV_t - OC_t ]^+ + import-reliability value (dry-season P_IMP savings vs unserved energy cost, pending from 05B)",
-      "IX": "U_IX = (1 - s_N) * ( R_X - OM_X ) - (1 - s_N) * K_X * CRF + B_I ;  B_I = sum_t Q_trade_t * [ P_ALT_t - p_c ]^+ (buyer-side gains) + system benefits (not attributed without evidence)",
-      "R_X": "regulated line revenue = allowed transmission tariff (ERC/CERC determination, pending) x usage; or capacity rent = flow x cross-border price difference if merchant (hypothetical variant)"
-     },
-     "incentive_compatibility_conditions": [
-      {
-       "id": "IC4-aggregate",
-       "condition": "B_N + B_I + R_X >= K_X*CRF + OM_X (line is worth building jointly)"
-      },
-      {
-       "id": "IC4-individual",
-       "condition": "cost share s_N lies in [ (K_X*CRF + OM_X - R_X - B_I)/(K_X*CRF + OM_X - R_X), B_N/(K_X*CRF + OM_X - R_X) ] when K_X*CRF + OM_X > R_X (core of the two-party cost game); empty if B_N or B_I is too small"
-      },
-      {
-       "id": "IC4-holdup",
-       "condition": "B_N depends on A_t and approved quanta, which are set unilaterally and for shorter periods than line life. Nepal-side participation is robust only if IC4-individual holds when B_N is evaluated with Q_trade limited to currently approved quanta, or if approval of trade over the line is contractually linked to capacity (clause to look for in the 2014 agreement and JV texts)"
-      }
-     ],
-     "documented_constraints": [
-      {
-       "constraint": "Line capacity, schedule and planning status",
-       "lead_ids": [
-        "27B-L15",
-        "27B-L16",
-        "27B-L31"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Transmission planning clauses of the 2014 agreement",
-       "lead_ids": [
-        "27B-L24"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Tariff determination for cross-border line segments",
-       "lead_ids": [
-        "27B-L20",
-        "27B-L05"
-       ],
-       "status": "pending"
-      }
-     ],
-     "status": "pending"
+      "claim": "Bangladesh buyer's alternative procurement cost in Nepal's wet-season window (P_ALT_BD_t).",
+      "type": "pending",
+      "value": null,
+      "period": "Bangladesh FY (July-June) - conversion to Nepali months required",
+      "source_ids": [
+        "bpdb_bd"
+      ],
+      "observation_ids": [],
+      "note": "BPDB annual report purchase cost by source; URL unverified."
     },
     {
-     "id": "HA-5",
-     "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
-     "name": "Hypothetical transit-service arrangement (third-country cargo through a transit state to a port)",
-     "question_answered": "task scope (transit arrangements); prices are not from 22B/22E - route cost parameters come from 17C/04C leads",
-     "parties": [
-      {
-       "party": "Nepal-side shippers/traders ('NT')",
-       "role": "user of transit"
-      },
-      {
-       "party": "Transit state authorities and operators ('TS'; generic)",
-       "role": "provider of transit"
-      }
-     ],
-     "payoff_functions": {
-      "NT": "U_NT = sum_r V_r * [ c_ref - c_r - f_r - tau_r * h ]  (V_r volume on route r; c_ref cost on the reference route; c_r route cost; f_r transit fees/charges; tau_r transit time; h value of time per unit cargo)",
-      "TS": "U_TS = sum_r V_r * [ f_r + m_r - a_r - e_r ]  (m_r operator margin on port/rail services; a_r administration/security cost; e_r expected enforcement cost of diversion into the domestic market - modelled as a documented-procedure cost, not a probability)"
-     },
-     "incentive_compatibility_conditions": [
-      {
-       "id": "IC5-NT",
-       "condition": "c_r + f_r + tau_r*h <= c_ref for a route to attract volume"
-      },
-      {
-       "id": "IC5-TS",
-       "condition": "f_r + m_r >= a_r + e_r per unit"
-      },
-      {
-       "id": "IC5-joint",
-       "condition": "a fee f_r exists iff c_ref - c_r - tau_r*h >= a_r + e_r - m_r; sealing/guarantee procedures lower e_r but raise c_r and tau_r - the trade-off to be measured from procedure texts and dry-port statistics"
-      }
-     ],
-     "documented_constraints": [
-      {
-       "constraint": "Transit treaty/protocol terms (routes, fees, customs procedures)",
-       "lead_ids": [
-        "27B-L40"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Nepal-Bangladesh transit instruments",
-       "lead_ids": [
-        "27B-L41"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Route volumes and costs",
-       "lead_ids": [
-        "27B-L42",
-        "27B-L43",
-        "27B-L44"
-       ],
-       "status": "pending"
-      },
-      {
-       "constraint": "Multilateral LLDC transit framing",
-       "lead_ids": [
-        "27B-L45"
-       ],
-       "status": "pending"
-      }
-     ],
-     "status": "pending"
+      "claim": "Capital cost, O&M and ownership shares of the reported October 2025 JV cross-border lines (reference for HA-4).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "project documents, 2025 onward",
+      "source_ids": [
+        "nea",
+        "cea_india"
+      ],
+      "observation_ids": [],
+      "note": "JV agreement text and project appraisal documents."
+    },
+    {
+      "claim": "Transit route costs, fees and volumes by route for HA-5.",
+      "type": "pending",
+      "value": null,
+      "period": "Nepal FY",
+      "source_ids": [
+        "tepc",
+        "nitdb",
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Transit protocol text; NITDB dry-port statistics; World Bank NIRTTP document."
+    },
+    {
+      "claim": "Method: every arrangement in this file is HYPOTHETICAL; no model represents or predicts the actual position, preferences, bargaining power or intentions of any government or utility.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: payoffs use the 22E opportunity-cost regimes (spill, export-marginal, import-marginal) as Nepal's outside option; generation cost cancels at national level but NEA's PPA acquisition cost enters the seller's payoff.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: approval lapse is represented as a state variable evaluated in both states; no probability of lapse or renewal is assigned without evidence.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: surplus division uses generalised Nash bargaining with the weight reported only as bounds (0, 1/2, 1); the weight is not estimated or attributed.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: incentive compatibility is checked on block-level (15-minute/hourly aggregated to time-of-day) price distributions by Nepali month, not on monthly or annual means.",
+      "type": "assumption",
+      "source_ids": []
     }
-   ],
-   "outputs_planned": [
-    "feasible p_c band by season/regime (HA-1)",
-    "feasible beta band (HA-2)",
-    "feasible (p_B, w) region (HA-3)",
-    "core of cost shares s_N (HA-4)",
-    "feasible fee range f_r (HA-5)",
-    "list of binding constraints per model (price, capacity, approval, eligibility, ratification)"
-   ],
-   "hand_off": {
-    "27E": "feasibility audit of each HA against the documented constraints once texts are retrieved",
-    "28": "red-team the approval-state and eligibility assumptions",
-    "27A": "status of AR-05, AR-06, AR-07, AR-29 needed to anchor reference instruments"
-   },
-   "disclaimer": "No model here states, predicts or attributes the position, preferences, bargaining power or intentions of the Government of Nepal, India or Bangladesh, or of NEA, NVVN, BPDB or POWERGRID. All arrangements are hypothetical constructions for stress-testing."
-  }
- },
- "source_leads": [
-  {
-   "lead_id": "27B-L01",
-   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
-   "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
-   "publisher": "Ministry of Power / Central Electricity Authority, India",
-   "source_id": "cea_india",
-   "contains": "Eligibility and ownership/financing-origin conditions on exporting generators; trade between neighbouring countries through the Indian grid; role of designated authority and nodal agencies - constrains who can sell under any hypothetical arrangement (04C CM-01)",
-   "reused_from": "22B-L13; 22E-L16; 17A-L01; 17C-L04"
+  ],
+  "data_gaps": [
+    "All 22B/22E price and cost parameters at block level by Nepali month (none retrieved in r1).",
+    "Text of the January 2024 long-term power trade agreement and the Supreme Court verdict on its ratification route (27A AR-06).",
+    "CEA DA approval orders with validity windows and renewal criteria; amendment texts of the 2018 Guidelines (eligibility clauses).",
+    "Consolidated CERC CBTE charges and NVVN trading margin applicable to Nepal schedules and to trilateral wheeling.",
+    "ERC-approved IPP PPA purchase rates by season (NEA acquisition cost C_PPA_t).",
+    "Contract text and delivery records of the October 2024 NEA-NVVN-BPDB tripartite agreement; Bangladesh buyer's alternative procurement cost (BPDB).",
+    "JV agreements, capital cost and tariff route of the October 2025 cross-border lines.",
+    "Transit protocol fee schedules, route costs and dry-port volumes for HA-5."
+  ],
+  "assumptions": [
+    {
+      "id": "27B-A1",
+      "text": "All arrangements are hypothetical constructions for stress-testing; party labels are generic roles, not specific institutions' positions.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (safety note)'"
+    },
+    {
+      "id": "27B-A2",
+      "text": "Nepal's outside option per MWh is the 22E opportunity cost OC_t by regime; the Indian buyer's outside option is its alternative procurement cost P_ALT_t from 22B exchange/bilateral series.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption consistent with 22E-A1/A2'"
+    },
+    {
+      "id": "27B-A3",
+      "text": "INR-settled prices are converted at the NRB NPR/INR rate for the same month; a peg change is a scenario assumption, not a forecast.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption consistent with 22E-A3 and 17A'"
+    },
+    {
+      "id": "27B-A4",
+      "text": "Approval lapse/renewal is modelled as a binary state evaluated in both states; no probabilities assigned.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (CLAUDE.md: no probabilities without evidence)'"
+    },
+    {
+      "id": "27B-A5",
+      "text": "Bargaining weights are reported as bounds only and are never attributed to any party.",
+      "basis": "assumption"
+    },
+    {
+      "id": "27B-A6",
+      "text": "National-value evaluation nets out domestic transfers (e.g. NEA-IPP PPA payments); seller-level evaluation does not.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "22E",
+      "text": "The opportunity-cost table has no parameter for NEA's acquisition cost of IPP energy under ERC-approved seasonal PPA rates (C_PPA_t). It cancels at national level but determines the seller-level participation constraint in any export contract; please add it or confirm another agent owns it."
+    },
+    {
+      "to": "22B",
+      "text": "Contract incentive-compatibility checks need block-level (time-of-day) price distributions per Nepali month and the approval validity window for each approved quantum, not only monthly means and MW totals; please retain block-level extracts and validity dates in r2."
+    },
+    {
+      "to": "27A",
+      "text": "HA-1, HA-3 and HA-4 are anchored to AR-05 (2014 agreement), AR-06 (January 2024 agreement), AR-07 (October 2025 transmission agreements) and AR-29 (trilateral); please prioritise primary text for these rows in r2, including any approval-linkage, non-discriminatory-access and dispute clauses."
+    },
+    {
+      "to": "17C",
+      "text": "The October 2024 tripartite NEA-NVVN-BPDB agreement is located only by news (27B-L34..L37); please add the contract or NEA board/annual-report record as a primary lead and a BPDB purchase-cost lead."
+    },
+    {
+      "to": "00A",
+      "text": "Add catalog ids for NVVN and POWERGRID, and verify the BPDB URL. Also note: energy.MarginalUseComparison has no contract layer (price band, damages, approval state); a small extension is needed before 27B payoffs can be computed in code."
+    }
+  ],
+  "uncertainty": "Very high for r1. No parameter is retrieved, so the sign of any participation constraint is unknown. Structural uncertainty: (i) whether contract prices are compared at the Nepal border or an Indian bus changes which party bears C_TX_IN; (ii) the approval regime (validity, renewal criteria, eligibility) may dominate price terms and cannot be characterised until the texts are read; (iii) block-level price variation may make monthly-mean feasibility misleading; (iv) the reference instruments (2024 long-term agreement, 2024 tripartite contract, 2025 JV lines) are located only through news and may differ from reports. Models are hypothetical and say nothing about any government's intentions.",
+  "specific": {
+    "hypothetical_arrangement_models": {
+      "status": "pending",
+      "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
+      "question": "Q1 What payoff structure would each party face under a hypothetical long-term power-purchase arrangement?",
+      "answer_status": "Structure specified (HA-1, with variants HA-2..HA-4 and transit HA-5); all parameter values pending; no payoffs simulated in r1.",
+      "method": "Parametric payoff functions per party written in the 22E/22B parameter set (NPR_per_MWh primary, INR converted at the NRB NPR/INR rate for the same month). Periods are Nepali months x time blocks classified into the 22E regimes (spill, export-marginal, import-marginal). Incentive compatibility = participation for each party against its documented outside option + no-diversion/no-walkaway conditions + physical (capacity), legal (eligibility, approval validity, ratification) feasibility. Surplus division uses generalised Nash bargaining with the bargaining weight reported as bounds only. Approval lapse is treated as a state (A_t = 0/1) evaluated in both states, with no probability assigned. Payoffs are evaluated on block-level distributions, not monthly means (22E caveat).",
+      "parameter_register": {
+        "note": "All symbols are parameters, not values. Price/cost symbols are those defined by 22E (opportunity_cost_table.parameters) and 22B (regional_price_profile, cross_border_capacity); new symbols introduced here are listed with the data required. All are pending until observations exist.",
+        "from_22E": [
+          "P_EXP",
+          "P_IEX",
+          "C_TRD",
+          "C_TX_IN",
+          "C_TX_NP",
+          "P_IMP",
+          "T_IND",
+          "C_GRID",
+          "LF_DOM",
+          "VA_IND",
+          "K_IND",
+          "Q_CAP",
+          "FX_INR",
+          "FX_USD"
+        ],
+        "from_22B": [
+          "IEX DAM/G-DAM/HP-DAM/RTM price by block and Nepali month (P_IEX_t, P_GDAM_t, P_HPDAM_t)",
+          "line thermal rating, operational transfer limit and approved trading quantum (distinct)",
+          "NEA realised export price by route"
+        ],
+        "derived_from_22E": {
+          "ENV_t": "export_net_value in period t (22E formula): P_EXP_t - (C_TRD + C_TX_IN)*FX_INR - C_TX_NP, without double deduction when P_EXP is already a border netback",
+          "DNV_t": "domestic_net_value in period t (22E formula): (VA_IND - K_IND) + T_IND*1000 - C_GRID, scaled by (1 - LF_DOM)",
+          "OC_t": "opportunity cost of one MWh in Nepal in period t by 22E regime: spill -> 0; export-marginal -> ENV_t; import-marginal -> P_IMP_t + Nepal-side delivery cost"
+        },
+        "new_symbols": [
+          {
+            "id": "p_c",
+            "meaning": "contract energy price under the hypothetical arrangement, at a stated delivery point",
+            "unit": "INR_per_MWh or NPR_per_MWh (stated per arrangement)",
+            "status": "decision variable of the simulation - not an observed value"
+          },
+          {
+            "id": "q_t",
+            "meaning": "contracted delivery in period t (Nepali month x time block)",
+            "unit": "MWh",
+            "status": "decision variable"
+          },
+          {
+            "id": "T",
+            "meaning": "contract tenor",
+            "unit": "years",
+            "status": "decision variable"
+          },
+          {
+            "id": "A_t",
+            "meaning": "approval state in period t (1 if the Indian Designated Authority approval covering the quantity, segment and route is valid; 0 otherwise)",
+            "unit": "indicator",
+            "status": "state variable; validity windows pending from CEA approval orders",
+            "lead_ids": [
+              "27B-L03",
+              "27B-L04"
+            ]
+          },
+          {
+            "id": "V_A",
+            "meaning": "validity period of an approval",
+            "unit": "months",
+            "status": "pending",
+            "lead_ids": [
+              "27B-L03",
+              "27B-L04"
+            ]
+          },
+          {
+            "id": "d_S, d_B",
+            "meaning": "per-MWh damages paid by seller for short delivery / by buyer for short offtake (take-or-pay)",
+            "unit": "INR_per_MWh",
+            "status": "decision variables; any deviation-settlement charges under CBTE are a floor/overlay (pending)",
+            "lead_ids": [
+              "27B-L05",
+              "27B-L06"
+            ]
+          },
+          {
+            "id": "P_ALT_t",
+            "meaning": "Indian buyer's alternative procurement cost for the same block (exchange segment or bilateral trader price, plus any green-attribute value)",
+            "unit": "INR_per_MWh",
+            "status": "pending (22B series)",
+            "lead_ids": [
+              "27B-L08",
+              "27B-L09",
+              "27B-L10",
+              "27B-L11",
+              "27B-L12",
+              "27B-L13"
+            ]
+          },
+          {
+            "id": "C_PPA_t",
+            "meaning": "NEA acquisition cost of the exported energy when purchased from IPPs under ERC-approved PPA rates (seasonal)",
+            "unit": "NPR_per_MWh",
+            "status": "pending",
+            "lead_ids": [
+              "27B-L20",
+              "27B-L17"
+            ]
+          },
+          {
+            "id": "K_X, CRF, OM_X",
+            "meaning": "capital cost of a cross-border line segment, capital recovery factor (interest rate, life), annual O&M",
+            "unit": "NPR_current_mn / ratio / NPR_current_mn",
+            "status": "pending; project documents of the October 2025 JV lines are the reference design",
+            "lead_ids": [
+              "27B-L31",
+              "27B-L15",
+              "27B-L16"
+            ]
+          },
+          {
+            "id": "Cap_X",
+            "meaning": "operational transfer limit of the interconnection (not thermal rating)",
+            "unit": "MW",
+            "status": "pending (22B cross_border_capacity)",
+            "lead_ids": [
+              "27B-L15",
+              "27B-L18"
+            ]
+          },
+          {
+            "id": "w",
+            "meaning": "wheeling/transit charge per MWh levied for use of the Indian network and trading service in a third-country sale",
+            "unit": "INR_per_MWh",
+            "status": "pending (CBTE charges + NVVN margin)",
+            "lead_ids": [
+              "27B-L05",
+              "27B-L06",
+              "27B-L14"
+            ]
+          },
+          {
+            "id": "P_ALT_BD_t",
+            "meaning": "Bangladesh buyer's alternative marginal procurement cost in the delivery season",
+            "unit": "USD_per_MWh or INR_per_MWh",
+            "status": "pending; no Bangladesh official price lead beyond BPDB landing page (unverified URL)",
+            "lead_ids": [
+              "27B-L38"
+            ]
+          },
+          {
+            "id": "beta",
+            "meaning": "return ratio in an energy-banking arrangement: MWh returned in the dry season per MWh delivered in the wet season",
+            "unit": "ratio",
+            "status": "decision variable"
+          },
+          {
+            "id": "C_DRY_IN_t",
+            "meaning": "counterparty's marginal cost of supplying energy in the Nepal dry-season blocks (proxy: DAM/HP-DAM price in those blocks)",
+            "unit": "INR_per_MWh",
+            "status": "pending (22B)",
+            "lead_ids": [
+              "27B-L08",
+              "27B-L10"
+            ]
+          }
+        ]
+      },
+      "models": [
+        {
+          "id": "HA-1",
+          "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
+          "name": "Hypothetical long-term power-purchase arrangement (seller in Nepal, buyer in India)",
+          "question_answered": "Q1",
+          "parties": [
+            {
+              "party": "Nepal-side seller/aggregator (modelled generically as 'NS'; could be NEA reselling own or IPP energy)",
+              "role": "seller"
+            },
+            {
+              "party": "Nepal national accounting stance ('NN'; national value of the MWh, per 22E)",
+              "role": "welfare evaluation, not an actor"
+            },
+            {
+              "party": "Indian offtaker ('IB'; distribution utility or trader, modelled generically)",
+              "role": "buyer"
+            },
+            {
+              "party": "Indian regulatory/approval layer ('IR')",
+              "role": "constraint-setter; modelled as the approval state A_t and charge schedule, with no payoff attributed"
+            }
+          ],
+          "contract_terms_as_decision_variables": [
+            "p_c",
+            "q_t by season/block",
+            "T",
+            "d_S",
+            "d_B",
+            "delivery point (Nepal border vs Indian bus)",
+            "allocation of C_TX_IN and C_TRD",
+            "settlement currency (INR under peg) and indexation rule",
+            "force-majeure and approval-lapse clause"
+          ],
+          "payoff_functions": {
+            "NS": "U_NS = sum_t A_t * q_t * [ p_c*FX_INR - C_TX_NP - (theta_S * (C_TX_IN + C_TRD))*FX_INR - C_PPA_t ] - sum_t (1-A_t) * q_t * L_S_t ;  theta_S = share of Indian-side charges borne by the seller (contract term); L_S_t = seller loss when approval lapses (damages owed unless the approval-lapse clause excuses them, net of the salvage value OC_t of the undelivered MWh)",
+            "NN": "W_NN = sum_t A_t * q_t * [ p_c*FX_INR - C_TX_NP - theta_S*(C_TX_IN + C_TRD)*FX_INR - OC_t ]  (national gain relative to the 22E opportunity cost; C_PPA_t is a domestic transfer and nets out nationally)",
+            "IB": "U_IB = sum_t A_t * q_t * [ P_ALT_t - p_c - (1-theta_S)*(C_TX_IN + C_TRD) ] - sum_t (1-A_t) * q_t * L_B_t ;  L_B_t = buyer's replacement-cost exposure when approval lapses",
+            "IR": "No payoff attributed. Represented only through documented rules: eligibility (ownership/financing-origin) clauses, approval validity V_A, charges C_TX_IN, deviation settlement."
+          },
+          "outside_options": {
+            "NS": "sell the same MWh on the Indian exchange under a separate approval (netback ENV_t using P_IEX_t) or to the domestic grid (T_IND pathway) - whichever 22E marks as marginal",
+            "NN": "OC_t by 22E regime",
+            "IB": "procure at P_ALT_t (exchange segment or bilateral trader)"
+          },
+          "incentive_compatibility_conditions": [
+            {
+              "id": "IC1-participation-NS",
+              "condition": "E_seasons[ U_NS ] >= sum_t q_t * max(ENV_spot_t, domestic sale value_t) - C_PPA_t terms, evaluated separately with A_t = 1 and with A_t lapsing at each renewal date (no probability assigned)"
+            },
+            {
+              "id": "IC1-participation-IB",
+              "condition": "sum_t q_t * [ P_ALT_t - p_c - (1-theta_S)(C_TX_IN + C_TRD) ] >= 0 over the tenor, evaluated on the block-level price distribution, not monthly means"
+            },
+            {
+              "id": "IC1-feasible-price-band",
+              "condition": "a p_c exists with p_min <= p_c <= p_max, where p_min = [OC_t + C_TX_NP]/FX_INR + theta_S*(C_TX_IN + C_TRD) (q-weighted) and p_max = P_ALT_t - (1-theta_S)*(C_TX_IN + C_TRD) (q-weighted). The band is non-empty iff q-weighted P_ALT_t - (C_TX_IN + C_TRD) >= q-weighted (OC_t + C_TX_NP)/FX_INR. In spill-regime months OC_t = 0, so the Nepal-side floor is transmission cost only."
+            },
+            {
+              "id": "IC1-no-diversion-NS",
+              "condition": "seller must not gain by diverting contracted MWh to spot in high-price blocks: d_S >= max_t( ENV_spot_t/FX_INR - p_c + theta_S-adjusted charges ) for blocks where spot netback exceeds p_c"
+            },
+            {
+              "id": "IC1-no-walkaway-IB",
+              "condition": "buyer must not gain by curtailing offtake when spot is below contract: d_B >= max_t( p_c - P_ALT_t ) for blocks where P_ALT_t < p_c (take-or-pay floor)"
+            },
+            {
+              "id": "IC1-approval-tenor",
+              "condition": "contract value is conditional on A_t; unless the approval validity V_A covers T or renewal criteria are text-specified, both parties' participation must hold in the state where A_t lapses at the first renewal date. Tenor mismatch (T > V_A) is the key documented source of non-credibility to be tested from the DA procedure text."
+            },
+            {
+              "id": "IC1-capacity",
+              "condition": "sum of contracted q_t per block <= min(Cap_X, approved quantum) net of other committed flows (22E Q_CAP); otherwise the contract is physically infeasible regardless of prices"
+            },
+            {
+              "id": "IC1-eligibility",
+              "condition": "the generating assets allocated to the contract satisfy the eligibility/ownership conditions of the 2018 Guidelines as amended (04C CM-01); if not, the arrangement is infeasible for those assets"
+            },
+            {
+              "id": "IC1-ratification",
+              "condition": "if the arrangement falls within the Nepal Treaty Act / constitutional category requiring parliamentary ratification (natural-resource sharing), ratification is a precondition; the route is documented only by the Supreme Court verdict (text pending)"
+            },
+            {
+              "id": "IC1-currency",
+              "condition": "INR settlement under an unchanged NPR-INR peg makes p_c*FX_INR stable in NPR; a peg change is a scenario assumption that shifts NS/NN payoffs by the change in FX_INR"
+            }
+          ],
+          "bargaining_representation": "Generalised Nash bargaining over p_c within the feasible band: maximise (U_NS - D_NS)^alpha * (U_IB - D_IB)^(1-alpha), D = outside options. alpha is NOT estimated and not attributed to any government; results are reported as the full band plus alpha in {0, 1/2, 1} as bounds, to show how surplus division moves with bargaining power.",
+          "documented_constraints": [
+            {
+              "constraint": "Eligibility/ownership conditions on exporting generators (India, unilateral)",
+              "lead_ids": [
+                "27B-L01",
+                "27B-L02"
+              ],
+              "status": "pending text retrieval"
+            },
+            {
+              "constraint": "Approval validity and renewal procedure (India, unilateral)",
+              "lead_ids": [
+                "27B-L03",
+                "27B-L04"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Cross-border transmission charges, losses, deviation settlement (India, regulatory)",
+              "lead_ids": [
+                "27B-L05",
+                "27B-L06",
+                "27B-L07"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Bilateral framework (2014 power trade agreement) and reported January 2024 long-term agreement",
+              "lead_ids": [
+                "27B-L24",
+                "27B-L25",
+                "27B-L26",
+                "27B-L30"
+              ],
+              "status": "pending; 27A AR-05 and AR-06 unverified"
+            },
+            {
+              "constraint": "Nepal ratification route for natural-resource agreements",
+              "lead_ids": [
+                "27B-L28",
+                "27B-L29",
+                "27B-L27"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Interconnection transfer limit and approved quantum",
+              "lead_ids": [
+                "27B-L15",
+                "27B-L16",
+                "27B-L18",
+                "27B-L04"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Settlement currency and exchange-control rules; peg regime",
+              "lead_ids": [
+                "27B-L23",
+                "27B-L22",
+                "27B-L21"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Seasonal surplus/deficit profile of Nepal system (defines 22E regimes)",
+              "lead_ids": [
+                "27B-L17",
+                "27B-L18"
+              ],
+              "status": "pending"
+            }
+          ],
+          "status": "pending - structure specified; every parameter pending; no simulated payoffs computed",
+          "model_link": "src/economic_model/energy.py MarginalUseComparison supplies ENV_t/DNV_t; contract layer not yet implemented (see challenge to 00A)"
+        },
+        {
+          "id": "HA-2",
+          "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
+          "name": "Hypothetical seasonal energy-banking (wet-season delivery against dry-season return)",
+          "question_answered": "Q1 (variant of a long-term arrangement without cash price)",
+          "parties": [
+            {
+              "party": "Nepal-side utility ('NS')",
+              "role": "wet-season deliverer, dry-season receiver"
+            },
+            {
+              "party": "Indian counterparty utility/trader ('IB')",
+              "role": "wet-season receiver, dry-season returner"
+            }
+          ],
+          "payoff_functions": {
+            "NS": "U_NS = sum_wet q_w * [ -OC_w - C_TX_NP ] + sum_dry beta*q_w_alloc_d * [ P_IMP_d - C_TX_NP ]  (value of avoided dry-season imports minus wet-season opportunity cost; charges as allocated)",
+            "IB": "U_IB = sum_wet q_w * [ P_ALT_w - C_TX_IN_w ] - sum_dry beta*q_w_alloc_d * [ C_DRY_IN_d + C_TX_IN_d ]"
+          },
+          "incentive_compatibility_conditions": [
+            {
+              "id": "IC2-NS",
+              "condition": "beta >= (q-weighted OC_w + C_TX_NP) / (q-weighted P_IMP_d - C_TX_NP). In spill months OC_w = 0, so any beta above the charge-only floor is acceptable to NS."
+            },
+            {
+              "id": "IC2-IB",
+              "condition": "beta <= (q-weighted P_ALT_w - C_TX_IN_w) / (q-weighted C_DRY_IN_d + C_TX_IN_d)"
+            },
+            {
+              "id": "IC2-feasible",
+              "condition": "arrangement feasible iff the NS floor <= the IB ceiling; i.e. iff the wet/dry value ratio for NS is at most the wet/dry value ratio for IB. Because both parties' dry-season values reference Indian dry-season block prices, feasibility depends mainly on (i) whether Nepal's wet surplus is in spill regime and (ii) the wet-block P_ALT_w relative to dry-block prices - both pending from 22B/22E."
+            },
+            {
+              "id": "IC2-enforcement",
+              "condition": "return obligation falls in the counterparty's high-price season; credible only if return is scheduled under an approval with validity spanning both seasons (A_t for both legs) or secured by a cash-settlement fallback at a stated index"
+            },
+            {
+              "id": "IC2-capacity",
+              "condition": "wet-leg and dry-leg flows each within Cap_X and approved quanta in their blocks"
+            }
+          ],
+          "documented_constraints": [
+            {
+              "constraint": "Import approvals for India-to-Nepal supply are hour-limited and time-bound (to verify from order)",
+              "lead_ids": [
+                "27B-L33",
+                "27B-L04"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Charges applicable to each leg",
+              "lead_ids": [
+                "27B-L05",
+                "27B-L06"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Dry-season import cost and wet-season spill",
+              "lead_ids": [
+                "27B-L17",
+                "27B-L18",
+                "27B-L10"
+              ],
+              "status": "pending"
+            }
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "HA-3",
+          "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
+          "name": "Hypothetical expanded trilateral sale (Nepal seller, Bangladesh buyer, wheeling through India)",
+          "question_answered": "Q1 (multi-party extension)",
+          "reference_instrument": "A tripartite NEA-NVVN-BPDB power sales agreement signed October 2024 is reported by news locators (27B-L34..L37); its terms are NOT used here until the contract is retrieved. HA-3 is a generic hypothetical, not a model of that contract.",
+          "parties": [
+            {
+              "party": "Nepal seller ('NS')",
+              "role": "seller"
+            },
+            {
+              "party": "Bangladesh buyer ('BB')",
+              "role": "buyer"
+            },
+            {
+              "party": "Indian intermediary/transit ('IT'; trader plus network)",
+              "role": "wheeling and trading service"
+            }
+          ],
+          "payoff_functions": {
+            "NS": "U_NS = sum_t A_t * q_t * [ p_B*FX - C_TX_NP - theta_S*w*FX_INR - C_PPA_t ]  (FX = NPR per unit of the contract currency)",
+            "BB": "U_BB = sum_t A_t * q_t * [ P_ALT_BD_t - p_B - (1-theta_S)*w_conv - C_TX_BD ]  (C_TX_BD = Bangladesh-side delivery cost, pending)",
+            "IT": "U_IT = sum_t A_t * q_t * [ w - c_IT_t ]  where c_IT_t = losses cost + congestion opportunity cost of the corridor capacity in block t (value of the same capacity for Indian own trades, proxied by the block price spread) - pending"
+          },
+          "incentive_compatibility_conditions": [
+            {
+              "id": "IC3-NS",
+              "condition": "p_B net of w and Nepal-side cost >= Nepal's best alternative for the same MWh (ENV_t on the Indian exchange if approved, else OC_t)"
+            },
+            {
+              "id": "IC3-BB",
+              "condition": "P_ALT_BD_t >= p_B + delivery and wheeling cost borne by BB"
+            },
+            {
+              "id": "IC3-IT",
+              "condition": "w >= c_IT_t in every scheduled block; if the corridor is congested in Nepal's wet season, c_IT_t rises and the approval state A_t is the operative constraint"
+            },
+            {
+              "id": "IC3-joint",
+              "condition": "a (p_B, w) pair satisfying all three exists iff q-weighted P_ALT_BD_t - C_TX_BD - c_IT_t >= q-weighted OC_t + C_TX_NP (all converted at same-period rates). Surplus split is a three-party bargaining problem; no split is attributed to any party."
+            },
+            {
+              "id": "IC3-approval",
+              "condition": "requires Indian DA approval for trade between two neighbouring countries through India; the reported June 2026 withholding of an extension (news locator only) shows A_t can be 0 for expansion tranches - to verify from the primary order"
+            }
+          ],
+          "documented_constraints": [
+            {
+              "constraint": "Provisions for trade between neighbouring countries via the Indian grid",
+              "lead_ids": [
+                "27B-L01",
+                "27B-L03",
+                "27B-L05"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Trading agency margin and role",
+              "lead_ids": [
+                "27B-L14"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Existence and terms of the 2024 tripartite contract; delivery records",
+              "lead_ids": [
+                "27B-L34",
+                "27B-L35",
+                "27B-L36",
+                "27B-L37",
+                "27B-L17"
+              ],
+              "status": "pending (news locators only)"
+            },
+            {
+              "constraint": "Approval status for extension",
+              "lead_ids": [
+                "27B-L32",
+                "27B-L04"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Bangladesh buyer's outside option",
+              "lead_ids": [
+                "27B-L38",
+                "27B-L39"
+              ],
+              "status": "pending; BPDB URL unverified"
+            }
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "HA-4",
+          "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
+          "name": "Hypothetical shared cross-border transmission (jointly owned interconnector with cost and capacity-rent sharing)",
+          "question_answered": "supporting Q1: the physical precondition for HA-1..HA-3",
+          "reference_instrument": "October 2025 NEA-POWERGRID JV agreements reported by news locator (27B-L31; 27A AR-07). Their ownership shares and tariff route are unverified and not used.",
+          "parties": [
+            {
+              "party": "Nepal-side owner ('NX')",
+              "role": "co-owner"
+            },
+            {
+              "party": "India-side owner ('IX')",
+              "role": "co-owner"
+            }
+          ],
+          "payoff_functions": {
+            "NX": "U_NX = s_N * ( R_X - OM_X ) - s_N * K_X * CRF + B_N ;  B_N = sum_t Q_trade_t(Cap_X, A_t) * [ ENV_t - OC_t ]^+ + import-reliability value (dry-season P_IMP savings vs unserved energy cost, pending from 05B)",
+            "IX": "U_IX = (1 - s_N) * ( R_X - OM_X ) - (1 - s_N) * K_X * CRF + B_I ;  B_I = sum_t Q_trade_t * [ P_ALT_t - p_c ]^+ (buyer-side gains) + system benefits (not attributed without evidence)",
+            "R_X": "regulated line revenue = allowed transmission tariff (ERC/CERC determination, pending) x usage; or capacity rent = flow x cross-border price difference if merchant (hypothetical variant)"
+          },
+          "incentive_compatibility_conditions": [
+            {
+              "id": "IC4-aggregate",
+              "condition": "B_N + B_I + R_X >= K_X*CRF + OM_X (line is worth building jointly)"
+            },
+            {
+              "id": "IC4-individual",
+              "condition": "cost share s_N lies in [ (K_X*CRF + OM_X - R_X - B_I)/(K_X*CRF + OM_X - R_X), B_N/(K_X*CRF + OM_X - R_X) ] when K_X*CRF + OM_X > R_X (core of the two-party cost game); empty if B_N or B_I is too small"
+            },
+            {
+              "id": "IC4-holdup",
+              "condition": "B_N depends on A_t and approved quanta, which are set unilaterally and for shorter periods than line life. Nepal-side participation is robust only if IC4-individual holds when B_N is evaluated with Q_trade limited to currently approved quanta, or if approval of trade over the line is contractually linked to capacity (clause to look for in the 2014 agreement and JV texts)"
+            }
+          ],
+          "documented_constraints": [
+            {
+              "constraint": "Line capacity, schedule and planning status",
+              "lead_ids": [
+                "27B-L15",
+                "27B-L16",
+                "27B-L31"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Transmission planning clauses of the 2014 agreement",
+              "lead_ids": [
+                "27B-L24"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Tariff determination for cross-border line segments",
+              "lead_ids": [
+                "27B-L20",
+                "27B-L05"
+              ],
+              "status": "pending"
+            }
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "HA-5",
+          "label": "HYPOTHETICAL - constructed by NEPAL 3T for stress-testing; not a description of any existing, proposed or intended arrangement, and not the position of any government or utility.",
+          "name": "Hypothetical transit-service arrangement (third-country cargo through a transit state to a port)",
+          "question_answered": "task scope (transit arrangements); prices are not from 22B/22E - route cost parameters come from 17C/04C leads",
+          "parties": [
+            {
+              "party": "Nepal-side shippers/traders ('NT')",
+              "role": "user of transit"
+            },
+            {
+              "party": "Transit state authorities and operators ('TS'; generic)",
+              "role": "provider of transit"
+            }
+          ],
+          "payoff_functions": {
+            "NT": "U_NT = sum_r V_r * [ c_ref - c_r - f_r - tau_r * h ]  (V_r volume on route r; c_ref cost on the reference route; c_r route cost; f_r transit fees/charges; tau_r transit time; h value of time per unit cargo)",
+            "TS": "U_TS = sum_r V_r * [ f_r + m_r - a_r - e_r ]  (m_r operator margin on port/rail services; a_r administration/security cost; e_r expected enforcement cost of diversion into the domestic market - modelled as a documented-procedure cost, not a probability)"
+          },
+          "incentive_compatibility_conditions": [
+            {
+              "id": "IC5-NT",
+              "condition": "c_r + f_r + tau_r*h <= c_ref for a route to attract volume"
+            },
+            {
+              "id": "IC5-TS",
+              "condition": "f_r + m_r >= a_r + e_r per unit"
+            },
+            {
+              "id": "IC5-joint",
+              "condition": "a fee f_r exists iff c_ref - c_r - tau_r*h >= a_r + e_r - m_r; sealing/guarantee procedures lower e_r but raise c_r and tau_r - the trade-off to be measured from procedure texts and dry-port statistics"
+            }
+          ],
+          "documented_constraints": [
+            {
+              "constraint": "Transit treaty/protocol terms (routes, fees, customs procedures)",
+              "lead_ids": [
+                "27B-L40"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Nepal-Bangladesh transit instruments",
+              "lead_ids": [
+                "27B-L41"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Route volumes and costs",
+              "lead_ids": [
+                "27B-L42",
+                "27B-L43",
+                "27B-L44"
+              ],
+              "status": "pending"
+            },
+            {
+              "constraint": "Multilateral LLDC transit framing",
+              "lead_ids": [
+                "27B-L45"
+              ],
+              "status": "pending"
+            }
+          ],
+          "status": "pending"
+        }
+      ],
+      "outputs_planned": [
+        "feasible p_c band by season/regime (HA-1)",
+        "feasible beta band (HA-2)",
+        "feasible (p_B, w) region (HA-3)",
+        "core of cost shares s_N (HA-4)",
+        "feasible fee range f_r (HA-5)",
+        "list of binding constraints per model (price, capacity, approval, eligibility, ratification)"
+      ],
+      "hand_off": {
+        "27E": "feasibility audit of each HA against the documented constraints once texts are retrieved",
+        "28": "red-team the approval-state and eligibility assumptions",
+        "27A": "status of AR-05, AR-06, AR-07, AR-29 needed to anchor reference instruments"
+      },
+      "disclaimer": "No model here states, predicts or attributes the position, preferences, bargaining power or intentions of the Government of Nepal, India or Bangladesh, or of NEA, NVVN, BPDB or POWERGRID. All arrangements are hypothetical constructions for stress-testing."
+    }
   },
-  {
-   "lead_id": "27B-L02",
-   "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
-   "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018 (MoP page with amendments)",
-   "publisher": "Ministry of Power, India",
-   "source_id": "mop_india",
-   "contains": "Amendment texts to the 2018 guidelines and their dates",
-   "reused_from": "22B-L15; 17A-L02"
-  },
-  {
-   "lead_id": "27B-L03",
-   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
-   "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority (2021)",
-   "publisher": "Central Electricity Authority, India",
-   "source_id": "cea_india",
-   "contains": "Approval procedure, validity period of approvals, renewal conditions, provisions for trade between two neighbouring countries via India - sets the approval-state variable and tenor mismatch in all power arrangements",
-   "reused_from": "22B-L14; 22E-L17; 17A-L05; 17C-L02"
-  },
-  {
-   "lead_id": "27B-L04",
-   "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
-   "title": "Import/Export (Cross Border) of Electricity - Designated Authority page",
-   "publisher": "Central Electricity Authority, India",
-   "source_id": "cea_india",
-   "contains": "Approval orders by project/entity: approved quantum (MW), market segment, validity window; India-to-Nepal supply approvals with hour limits",
-   "reused_from": "22B-L12; 22E-L15; 17A-L04; 17C-L01"
-  },
-  {
-   "lead_id": "27B-L05",
-   "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
-   "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
-   "publisher": "Central Electricity Regulatory Commission, India",
-   "source_id": "cerc_india",
-   "contains": "Transmission charges and losses applicable to cross-border schedules, scheduling, deviation settlement, trading-licensee role - parameters C_TX_IN, deviation penalty terms",
-   "reused_from": "22E-L13; 17A-L06; 17C-L03; 05B-L09"
-  },
-  {
-   "lead_id": "27B-L06",
-   "url": "http://www.cercind.gov.in/regulations/COnsolidatedCBTE_Second_amendment.pdf",
-   "title": "CERC CBTE Regulations 2019 consolidated incl. First and Second Amendments",
-   "publisher": "Central Electricity Regulatory Commission, India",
-   "source_id": "cerc_india",
-   "contains": "Current consolidated text of cross-border charges and conditions",
-   "reused_from": "22E-L14; 17A-L07"
-  },
-  {
-   "lead_id": "27B-L07",
-   "url": "https://www.cercind.gov.in/2019/regulation/SOR_CBTE_Regulations_2019.pdf",
-   "title": "Statement of Reasons, CERC CBTE Regulations 2019",
-   "publisher": "Central Electricity Regulatory Commission, India",
-   "source_id": "cerc_india",
-   "contains": "Regulator's stated rationale for cross-border charge allocation (documented rationale only; not a statement of government intent)",
-   "reused_from": "17A-L08"
-  },
-  {
-   "lead_id": "27B-L08",
-   "url": "https://www.iexindia.com/market-data/day-ahead-market/area-prices",
-   "title": "Day Ahead Market - Area Prices",
-   "publisher": "Indian Energy Exchange",
-   "source_id": "iex_india",
-   "contains": "DAM area clearing prices INR/MWh by 15-minute block - buyer outside option P_ALT and seller spot outside option (P_IEX)",
-   "reused_from": "22B-L01; 22E-L07"
-  },
-  {
-   "lead_id": "27B-L09",
-   "url": "https://www.iexindia.com/market-data/green-day-ahead-market/area-prices",
-   "title": "Green Day Ahead Market - Area Prices",
-   "publisher": "Indian Energy Exchange",
-   "source_id": "iex_india",
-   "contains": "G-DAM prices INR/MWh - green-attribute value in buyer's outside option",
-   "reused_from": "22B-L05; 22E-L08"
-  },
-  {
-   "lead_id": "27B-L10",
-   "url": "https://www.iexindia.com/market-data/high-price-day-ahead-market/area-prices",
-   "title": "High-Price Day Ahead Market - Area Prices",
-   "publisher": "Indian Energy Exchange",
-   "source_id": "iex_india",
-   "contains": "HP-DAM prices INR/MWh - peak-block value and dry-season import cost ceiling",
-   "reused_from": "22B-L03; 22E-L09"
-  },
-  {
-   "lead_id": "27B-L11",
-   "url": "https://www.iexindia.com/market-data/intra-day-ahead-contingency/trade-summary-details",
-   "title": "Intra-day / contingency / RTM / TAM trade summary",
-   "publisher": "Indian Energy Exchange",
-   "source_id": "iex_india",
-   "contains": "Term-ahead and real-time prices - reference for contract vs spot comparisons",
-   "reused_from": "22B-L06; 22E-L10"
-  },
-  {
-   "lead_id": "27B-L12",
-   "url": "https://cercind.gov.in/report_MM.html",
-   "title": "Monthly Report on Short-term Transactions of Electricity (index)",
-   "publisher": "Central Electricity Regulatory Commission, India",
-   "source_id": "cerc_india",
-   "contains": "Monthly exchange prices by segment, bilateral trader prices and cross-border transactions - bilateral contract price benchmark",
-   "reused_from": "22B-L07; 22E-L11; 05B-L08"
-  },
-  {
-   "lead_id": "27B-L13",
-   "url": "https://www.cercind.gov.in/2024/market_monitoring/Annual%20Report%202023-24.pdf",
-   "title": "Annual Report on Short-Term Power Market in India: 2023-24",
-   "publisher": "Central Electricity Regulatory Commission, India",
-   "source_id": "cerc_india",
-   "contains": "Indian FY2023-24 monthly prices by segment, price-duration, cross-border trade with Nepal",
-   "reused_from": "22B-L10; 22E-L12"
-  },
-  {
-   "lead_id": "27B-L14",
-   "url": "https://nvvn.co.in",
-   "title": "NTPC Vidyut Vyapar Nigam (NVVN)",
-   "publisher": "NTPC Vidyut Vyapar Nigam Ltd, India",
-   "source_id": null,
-   "contains": "Nodal trading agency for cross-border trade: trading margin (C_TRD), trilateral Nepal-Bangladesh arrangement role",
-   "reused_from": "22E-L18"
-  },
-  {
-   "lead_id": "27B-L15",
-   "url": "https://cea.nic.in/wp-content/uploads/psp___a_i/2024/01/Draft_NEP_Vol_II.pdf",
-   "title": "National Electricity Plan Volume II: Transmission (draft)",
-   "publisher": "Central Electricity Authority, India",
-   "source_id": "cea_india",
-   "contains": "Existing and planned India-Nepal interconnections with capacity and schedule - capacity K_X and transfer limit in payoff functions",
-   "reused_from": "22B-L16"
-  },
-  {
-   "lead_id": "27B-L16",
-   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2064751",
-   "title": "National Electricity Plan (Transmission) launched",
-   "publisher": "Press Information Bureau, India",
-   "source_id": "pib_india",
-   "contains": "Pointer to final NEP (Transmission) and cross-border totals",
-   "reused_from": "22B-L17"
-  },
-  {
-   "lead_id": "27B-L17",
-   "url": "https://www.nea.org.np/annual_report",
-   "title": "NEA Annual Reports",
-   "publisher": "Nepal Electricity Authority",
-   "source_id": "nea",
-   "contains": "Nepal FY monthly energy balance: exports by route/market and destination, imports from India, export revenue (realised netback P_EXP), IPP purchase cost, spill",
-   "reused_from": "22B-L19; 22E-L03; 17C-L05; 05B-L03"
-  },
-  {
-   "lead_id": "27B-L18",
-   "url": "https://www.nea.org.np/report",
-   "title": "NEA reports (system operation / power trade)",
-   "publisher": "Nepal Electricity Authority",
-   "source_id": "nea",
-   "contains": "Hours/months when cross-border transfer limit or approved quantum binds; import/export schedules",
-   "reused_from": "22B-L21; 22E-L05; 05B-L05"
-  },
-  {
-   "lead_id": "27B-L19",
-   "url": "https://erc.gov.np/act/tariff-order-full-detailed-tariff/nepal-electricity-authoritys-electricity-consumer",
-   "title": "NEA electricity consumer tariff rate (ERC tariff order)",
-   "publisher": "Electricity Regulatory Commission, Nepal",
-   "source_id": "erc_nepal",
-   "contains": "Industrial tariff T_IND (domestic outside option for Nepali energy)",
-   "reused_from": "22E-L01; 05B-L01"
-  },
-  {
-   "lead_id": "27B-L20",
-   "url": "https://www.erc.gov.np",
-   "title": "Electricity Regulatory Commission, Nepal",
-   "publisher": "Electricity Regulatory Commission, Nepal",
-   "source_id": "erc_nepal",
-   "contains": "PPA rate approvals (NEA purchase rates from IPPs by season) - NEA's acquisition cost C_PPA when reselling IPP energy under an export contract; transmission-tariff determinations for Nepal-side lines",
-   "reused_from": "22E-L02; 05B-L02"
-  },
-  {
-   "lead_id": "27B-L21",
-   "url": "https://www.nrb.org.np/forex/",
-   "title": "NRB foreign exchange rates",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "NPR/INR peg reference rate FX_INR and NPR/USD by date",
-   "reused_from": "22E-L19"
-  },
-  {
-   "lead_id": "27B-L22",
-   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
-   "title": "Monetary Policy FY2025/26",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "Statement of the NPR-INR peg regime - basis for treating INR-denominated contract prices as NPR-stable (peg-change is a scenario assumption)",
-   "reused_from": "22E-L21; 17A-L19"
-  },
-  {
-   "lead_id": "27B-L23",
-   "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
-   "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
-   "publisher": "Reserve Bank of India",
-   "source_id": "rbi",
-   "contains": "Currency of settlement and remittance rules for India-Nepal transactions - settlement-currency constraint on contract design",
-   "reused_from": "17A-L14; 27A-L33"
-  },
-  {
-   "lead_id": "27B-L24",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
-   "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
-   "publisher": "Government of Nepal",
-   "source_id": "mofa_nepal",
-   "contains": "Framework text: permitted trade modes, JSC/JWG mechanism, transmission planning, non-discriminatory access clause wording, duration - the documented framework within which any hypothetical arrangement would sit (27A AR-05)",
-   "reused_from": "27A-L17"
-  },
-  {
-   "lead_id": "27B-L25",
-   "url": "https://kathmandupost.com/national/2024/01/04/nepal-india-ink-10-year-10-000mw-power-trade",
-   "title": "Nepal signs deal with India on long-term power trade (news locator, January 2024)",
-   "publisher": "The Kathmandu Post",
-   "source_id": null,
-   "contains": "Locator only for the January 2024 long-term power trade agreement text (27A AR-06); terms must come from the text",
-   "reused_from": "22B-L23; 17A-L09; 27A-L18"
-  },
-  {
-   "lead_id": "27B-L26",
-   "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/01/ISAS-Brief-1091_new.pdf",
-   "title": "Long-term Power Purchase Agreement: A Win-win Deal for Nepal and India (ISAS Brief)",
-   "publisher": "Institute of South Asian Studies, NUS",
-   "source_id": "academic",
-   "contains": "Tier-7 interpretation of the January 2024 agreement; used only as a locator and for the list of contract features to verify",
-   "reused_from": "17A-L11; 27A-L21"
-  },
-  {
-   "lead_id": "27B-L27",
-   "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export",
-   "title": "Full text of SC verdict released on long-term power trade agreement (news locator)",
-   "publisher": "Nepal News",
-   "source_id": null,
-   "contains": "Locator for the Supreme Court of Nepal verdict (Nov 2024) on the ratification route - Nepal-side domestic-ratification constraint",
-   "reused_from": "22B-L24; 27A-L20"
-  },
-  {
-   "lead_id": "27B-L28",
-   "url": "https://lawcommission.gov.np",
-   "title": "Nepal Law Commission - Nepal Treaty Act, 2047 (1990)",
-   "publisher": "Nepal Law Commission",
-   "source_id": "lawcommission_nepal",
-   "contains": "Treaty categories requiring parliamentary ratification (natural-resource sharing) - ratification threshold constraint on Nepal side",
-   "reused_from": "27A-L64"
-  },
-  {
-   "lead_id": "27B-L29",
-   "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-parliamentary-affairs",
-   "title": "Constitution of Nepal 2015 (official English translation, MoLJPA)",
-   "publisher": "Ministry of Law, Justice and Parliamentary Affairs, Nepal (hosted by ConstitutionNet)",
-   "source_id": "lawcommission_nepal",
-   "contains": "Treaty ratification article (natural resources and their use) - ratification majority requirement",
-   "reused_from": "27A-L65"
-  },
-  {
-   "lead_id": "27B-L30",
-   "url": "https://thehimalayantimes.com/business/joint-steering-committee-meeting-advances-nepalindia-energy-cooperation",
-   "title": "Joint Steering Committee meeting advances Nepal-India energy cooperation (news locator, July 2026)",
-   "publisher": "The Himalayan Times",
-   "source_id": null,
-   "contains": "Locator for JSC/JWG minutes - the documented bilateral forum where arrangement terms are discussed",
-   "reused_from": "17A-L12; 27A-L22"
-  },
-  {
-   "lead_id": "27B-L31",
-   "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
-   "title": "Nepal, India sign deal to build cross-border transmission lines (news locator, October 2025)",
-   "publisher": "The Kathmandu Post",
-   "source_id": null,
-   "contains": "Locator for NEA-POWERGRID JV implementing agreements (Inaruwa-New Purnea; Lamki/Dodhara-Bareilly): ownership shares, cost sharing and tariff route - reference design for the shared-transmission model (27A AR-07)",
-   "reused_from": "22B-L22; 27A-L23"
-  },
-  {
-   "lead_id": "27B-L32",
-   "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
-   "title": "Additional electricity export to Bangladesh blocked as India withholds approval (news locator, June 2026)",
-   "publisher": "The Kathmandu Post",
-   "source_id": null,
-   "contains": "Locator for the CEA/NVVN decision on extending Nepal-Bangladesh trade - illustrates the approval-state variable for wheeling arrangements; primary order required",
-   "reused_from": "22B-L25; 22E-L26"
-  },
-  {
-   "lead_id": "27B-L33",
-   "url": "https://renewablewatch.in/2026/09/15/mop-approves-export-of-power-to-nepal/",
-   "title": "MoP approves export of power to Nepal (news locator, September 2026)",
-   "publisher": "Renewable Watch",
-   "source_id": null,
-   "contains": "Locator for MoP/CEA order on India-to-Nepal dry-season supply with hour limits - import leg of the banking/swap model",
-   "reused_from": "22B-L26; 22E-L27"
-  },
-  {
-   "lead_id": "27B-L34",
-   "url": "https://kathmandupost.com/money/2024/11/16/nepal-begins-historic-power-export-to-bangladesh-via-india",
-   "title": "Nepal begins historic power export to Bangladesh via India (news locator, November 2024)",
-   "publisher": "The Kathmandu Post",
-   "source_id": null,
-   "contains": "Locator for start of NEA-NVVN-BPDB tripartite deliveries; primary contract and NEA delivery records required"
-  },
-  {
-   "lead_id": "27B-L35",
-   "url": "https://powerline.net.in/2024/10/14/nepal-india-bangladesh-sign-tripartite-power-agreement/",
-   "title": "Nepal, India, Bangladesh sign tripartite power agreement (trade-press locator, October 2024)",
-   "publisher": "Power Line Magazine",
-   "source_id": null,
-   "contains": "Locator for the October 2024 tripartite power sales agreement among NEA, NVVN and BPDB: parties, delivery season window, route, tenor - to verify against the contract"
-  },
-  {
-   "lead_id": "27B-L36",
-   "url": "https://ddnews.gov.in/en/nepal-to-export-40-mw-electricity-to-bangladesh-using-indian-transmission-lines/",
-   "title": "Nepal to export electricity to Bangladesh using Indian transmission lines (DD News)",
-   "publisher": "DD News (Prasar Bharati, India)",
-   "source_id": null,
-   "contains": "Indian public broadcaster report on the tripartite arrangement; locator only, not an official order"
-  },
-  {
-   "lead_id": "27B-L37",
-   "url": "https://thefinancialexpress.com.bd/trade/bangladesh-nepal-india-sign-tripartite-power-trading-deal",
-   "title": "Bangladesh, Nepal, India sign tripartite power trading deal (The Financial Express, Bangladesh)",
-   "publisher": "The Financial Express (Dhaka)",
-   "source_id": null,
-   "contains": "Bangladesh-side news locator for the tripartite agreement; points to BPDB records"
-  },
-  {
-   "lead_id": "27B-L38",
-   "url": "https://www.bpdb.gov.bd",
-   "title": "Bangladesh Power Development Board",
-   "publisher": "Bangladesh Power Development Board",
-   "source_id": "bpdb_bd",
-   "contains": "BPDB annual reports: import sources and purchase cost by source - Bangladesh buyer's outside option P_ALT_BD [URL from general knowledge - unverified]"
-  },
-  {
-   "lead_id": "27B-L39",
-   "url": "https://www.sasec.asia",
-   "title": "South Asia Subregional Economic Cooperation (SASEC) programme site",
-   "publisher": "Asian Development Bank",
-   "source_id": "adb_nepal",
-   "contains": "BBIN energy trade and corridor documents; locator for regional wheeling studies",
-   "reused_from": "17C-L12; 27A-L68"
-  },
-  {
-   "lead_id": "27B-L40",
-   "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
-   "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India (compilation)",
-   "publisher": "Trade and Export Promotion Centre, Nepal",
-   "source_id": "tepc",
-   "contains": "Transit protocol: routes, points, fees/charges, customs sealing and guarantee requirements - baseline terms against which any hypothetical transit arrangement is compared",
-   "reused_from": "17A-L23; 17C-L08; 27A-L02"
-  },
-  {
-   "lead_id": "27B-L41",
-   "url": "https://nepaltradeportal.gov.np/",
-   "title": "Nepal Trade Information Portal - trade agreements and transit procedures",
-   "publisher": "Trade and Export Promotion Centre, Nepal",
-   "source_id": "nepal_trade_portal",
-   "contains": "Nepal-Bangladesh trade and transit agreements and protocols; border procedures",
-   "reused_from": "17C-L07; 27A-L13"
-  },
-  {
-   "lead_id": "27B-L42",
-   "url": "https://nitdb.gov.np",
-   "title": "Nepal Intermodal Transport Development Board",
-   "publisher": "Nepal Intermodal Transport Development Board",
-   "source_id": "nitdb",
-   "contains": "Dry-port cargo statistics by facility and route - transit volumes V_r in the transit payoff",
-   "reused_from": "17C-L09"
-  },
-  {
-   "lead_id": "27B-L43",
-   "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
-   "title": "An Analysis of Nepal's Transit through India",
-   "publisher": "ICRIER",
-   "source_id": "academic",
-   "contains": "Transit route cost and time analysis - locator for per-route cost parameters c_r (tier 7)",
-   "reused_from": "17C-L14"
-  },
-  {
-   "lead_id": "27B-L44",
-   "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
-   "title": "Nepal-India Regional Trade and Transport Project (IDA) - project document",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "Ex-ante transit time/cost analysis and corridor design - locator for route cost parameters"
-  },
-  {
-   "lead_id": "27B-L45",
-   "url": "https://www.un.org/sites/un2.un.org/files/apoa_booklet.pdf",
-   "title": "Awaza Programme of Action for Landlocked Developing Countries 2024-2034",
-   "publisher": "United Nations",
-   "source_id": "undesa_ldc",
-   "contains": "Multilateral normative commitments on LLDC transit - context for transit-state obligations (non-binding framing)",
-   "reused_from": "17C-L13"
-  },
-  {
-   "lead_id": "27B-L46",
-   "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
-   "title": "Bhutan Country Economic Memorandum (2024)",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "Bhutan-India hydropower export model (intergovernmental projects, long-term tariffs, debt-financed plants) - structural comparator for contract design; not evidence about Nepal",
-   "reused_from": "17C-L15"
-  }
- ]
+  "source_leads": [
+    {
+      "lead_id": "27B-L01",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
+      "publisher": "Ministry of Power / Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Eligibility and ownership/financing-origin conditions on exporting generators; trade between neighbouring countries through the Indian grid; role of designated authority and nodal agencies - constrains who can sell under any hypothetical arrangement (04C CM-01)",
+      "reused_from": "22B-L13; 22E-L16; 17A-L01; 17C-L04"
+    },
+    {
+      "lead_id": "27B-L02",
+      "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018 (MoP page with amendments)",
+      "publisher": "Ministry of Power, India",
+      "source_id": "mop_india",
+      "contains": "Amendment texts to the 2018 guidelines and their dates",
+      "reused_from": "22B-L15; 17A-L02"
+    },
+    {
+      "lead_id": "27B-L03",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+      "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority (2021)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Approval procedure, validity period of approvals, renewal conditions, provisions for trade between two neighbouring countries via India - sets the approval-state variable and tenor mismatch in all power arrangements",
+      "reused_from": "22B-L14; 22E-L17; 17A-L05; 17C-L02"
+    },
+    {
+      "lead_id": "27B-L04",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "Import/Export (Cross Border) of Electricity - Designated Authority page",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Approval orders by project/entity: approved quantum (MW), market segment, validity window; India-to-Nepal supply approvals with hour limits",
+      "reused_from": "22B-L12; 22E-L15; 17A-L04; 17C-L01"
+    },
+    {
+      "lead_id": "27B-L05",
+      "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+      "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Transmission charges and losses applicable to cross-border schedules, scheduling, deviation settlement, trading-licensee role - parameters C_TX_IN, deviation penalty terms",
+      "reused_from": "22E-L13; 17A-L06; 17C-L03; 05B-L09"
+    },
+    {
+      "lead_id": "27B-L06",
+      "url": "http://www.cercind.gov.in/regulations/COnsolidatedCBTE_Second_amendment.pdf",
+      "title": "CERC CBTE Regulations 2019 consolidated incl. First and Second Amendments",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Current consolidated text of cross-border charges and conditions",
+      "reused_from": "22E-L14; 17A-L07"
+    },
+    {
+      "lead_id": "27B-L07",
+      "url": "https://www.cercind.gov.in/2019/regulation/SOR_CBTE_Regulations_2019.pdf",
+      "title": "Statement of Reasons, CERC CBTE Regulations 2019",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Regulator's stated rationale for cross-border charge allocation (documented rationale only; not a statement of government intent)",
+      "reused_from": "17A-L08"
+    },
+    {
+      "lead_id": "27B-L08",
+      "url": "https://www.iexindia.com/market-data/day-ahead-market/area-prices",
+      "title": "Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "DAM area clearing prices INR/MWh by 15-minute block - buyer outside option P_ALT and seller spot outside option (P_IEX)",
+      "reused_from": "22B-L01; 22E-L07"
+    },
+    {
+      "lead_id": "27B-L09",
+      "url": "https://www.iexindia.com/market-data/green-day-ahead-market/area-prices",
+      "title": "Green Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "G-DAM prices INR/MWh - green-attribute value in buyer's outside option",
+      "reused_from": "22B-L05; 22E-L08"
+    },
+    {
+      "lead_id": "27B-L10",
+      "url": "https://www.iexindia.com/market-data/high-price-day-ahead-market/area-prices",
+      "title": "High-Price Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "HP-DAM prices INR/MWh - peak-block value and dry-season import cost ceiling",
+      "reused_from": "22B-L03; 22E-L09"
+    },
+    {
+      "lead_id": "27B-L11",
+      "url": "https://www.iexindia.com/market-data/intra-day-ahead-contingency/trade-summary-details",
+      "title": "Intra-day / contingency / RTM / TAM trade summary",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "Term-ahead and real-time prices - reference for contract vs spot comparisons",
+      "reused_from": "22B-L06; 22E-L10"
+    },
+    {
+      "lead_id": "27B-L12",
+      "url": "https://cercind.gov.in/report_MM.html",
+      "title": "Monthly Report on Short-term Transactions of Electricity (index)",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Monthly exchange prices by segment, bilateral trader prices and cross-border transactions - bilateral contract price benchmark",
+      "reused_from": "22B-L07; 22E-L11; 05B-L08"
+    },
+    {
+      "lead_id": "27B-L13",
+      "url": "https://www.cercind.gov.in/2024/market_monitoring/Annual%20Report%202023-24.pdf",
+      "title": "Annual Report on Short-Term Power Market in India: 2023-24",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Indian FY2023-24 monthly prices by segment, price-duration, cross-border trade with Nepal",
+      "reused_from": "22B-L10; 22E-L12"
+    },
+    {
+      "lead_id": "27B-L14",
+      "url": "https://nvvn.co.in",
+      "title": "NTPC Vidyut Vyapar Nigam (NVVN)",
+      "publisher": "NTPC Vidyut Vyapar Nigam Ltd, India",
+      "source_id": null,
+      "contains": "Nodal trading agency for cross-border trade: trading margin (C_TRD), trilateral Nepal-Bangladesh arrangement role",
+      "reused_from": "22E-L18"
+    },
+    {
+      "lead_id": "27B-L15",
+      "url": "https://cea.nic.in/wp-content/uploads/psp___a_i/2024/01/Draft_NEP_Vol_II.pdf",
+      "title": "National Electricity Plan Volume II: Transmission (draft)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Existing and planned India-Nepal interconnections with capacity and schedule - capacity K_X and transfer limit in payoff functions",
+      "reused_from": "22B-L16"
+    },
+    {
+      "lead_id": "27B-L16",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2064751",
+      "title": "National Electricity Plan (Transmission) launched",
+      "publisher": "Press Information Bureau, India",
+      "source_id": "pib_india",
+      "contains": "Pointer to final NEP (Transmission) and cross-border totals",
+      "reused_from": "22B-L17"
+    },
+    {
+      "lead_id": "27B-L17",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Nepal FY monthly energy balance: exports by route/market and destination, imports from India, export revenue (realised netback P_EXP), IPP purchase cost, spill",
+      "reused_from": "22B-L19; 22E-L03; 17C-L05; 05B-L03"
+    },
+    {
+      "lead_id": "27B-L18",
+      "url": "https://www.nea.org.np/report",
+      "title": "NEA reports (system operation / power trade)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Hours/months when cross-border transfer limit or approved quantum binds; import/export schedules",
+      "reused_from": "22B-L21; 22E-L05; 05B-L05"
+    },
+    {
+      "lead_id": "27B-L19",
+      "url": "https://erc.gov.np/act/tariff-order-full-detailed-tariff/nepal-electricity-authoritys-electricity-consumer",
+      "title": "NEA electricity consumer tariff rate (ERC tariff order)",
+      "publisher": "Electricity Regulatory Commission, Nepal",
+      "source_id": "erc_nepal",
+      "contains": "Industrial tariff T_IND (domestic outside option for Nepali energy)",
+      "reused_from": "22E-L01; 05B-L01"
+    },
+    {
+      "lead_id": "27B-L20",
+      "url": "https://www.erc.gov.np",
+      "title": "Electricity Regulatory Commission, Nepal",
+      "publisher": "Electricity Regulatory Commission, Nepal",
+      "source_id": "erc_nepal",
+      "contains": "PPA rate approvals (NEA purchase rates from IPPs by season) - NEA's acquisition cost C_PPA when reselling IPP energy under an export contract; transmission-tariff determinations for Nepal-side lines",
+      "reused_from": "22E-L02; 05B-L02"
+    },
+    {
+      "lead_id": "27B-L21",
+      "url": "https://www.nrb.org.np/forex/",
+      "title": "NRB foreign exchange rates",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NPR/INR peg reference rate FX_INR and NPR/USD by date",
+      "reused_from": "22E-L19"
+    },
+    {
+      "lead_id": "27B-L22",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+      "title": "Monetary Policy FY2025/26",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Statement of the NPR-INR peg regime - basis for treating INR-denominated contract prices as NPR-stable (peg-change is a scenario assumption)",
+      "reused_from": "22E-L21; 17A-L19"
+    },
+    {
+      "lead_id": "27B-L23",
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Currency of settlement and remittance rules for India-Nepal transactions - settlement-currency constraint on contract design",
+      "reused_from": "17A-L14; 27A-L33"
+    },
+    {
+      "lead_id": "27B-L24",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+      "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
+      "publisher": "Government of Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Framework text: permitted trade modes, JSC/JWG mechanism, transmission planning, non-discriminatory access clause wording, duration - the documented framework within which any hypothetical arrangement would sit (27A AR-05)",
+      "reused_from": "27A-L17"
+    },
+    {
+      "lead_id": "27B-L25",
+      "url": "https://kathmandupost.com/national/2024/01/04/nepal-india-ink-10-year-10-000mw-power-trade",
+      "title": "Nepal signs deal with India on long-term power trade (news locator, January 2024)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Locator only for the January 2024 long-term power trade agreement text (27A AR-06); terms must come from the text",
+      "reused_from": "22B-L23; 17A-L09; 27A-L18"
+    },
+    {
+      "lead_id": "27B-L26",
+      "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/01/ISAS-Brief-1091_new.pdf",
+      "title": "Long-term Power Purchase Agreement: A Win-win Deal for Nepal and India (ISAS Brief)",
+      "publisher": "Institute of South Asian Studies, NUS",
+      "source_id": "academic",
+      "contains": "Tier-7 interpretation of the January 2024 agreement; used only as a locator and for the list of contract features to verify",
+      "reused_from": "17A-L11; 27A-L21"
+    },
+    {
+      "lead_id": "27B-L27",
+      "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export",
+      "title": "Full text of SC verdict released on long-term power trade agreement (news locator)",
+      "publisher": "Nepal News",
+      "source_id": null,
+      "contains": "Locator for the Supreme Court of Nepal verdict (Nov 2024) on the ratification route - Nepal-side domestic-ratification constraint",
+      "reused_from": "22B-L24; 27A-L20"
+    },
+    {
+      "lead_id": "27B-L28",
+      "url": "https://lawcommission.gov.np",
+      "title": "Nepal Law Commission - Nepal Treaty Act, 2047 (1990)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Treaty categories requiring parliamentary ratification (natural-resource sharing) - ratification threshold constraint on Nepal side",
+      "reused_from": "27A-L64"
+    },
+    {
+      "lead_id": "27B-L29",
+      "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-parliamentary-affairs",
+      "title": "Constitution of Nepal 2015 (official English translation, MoLJPA)",
+      "publisher": "Ministry of Law, Justice and Parliamentary Affairs, Nepal (hosted by ConstitutionNet)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Treaty ratification article (natural resources and their use) - ratification majority requirement",
+      "reused_from": "27A-L65"
+    },
+    {
+      "lead_id": "27B-L30",
+      "url": "https://thehimalayantimes.com/business/joint-steering-committee-meeting-advances-nepalindia-energy-cooperation",
+      "title": "Joint Steering Committee meeting advances Nepal-India energy cooperation (news locator, July 2026)",
+      "publisher": "The Himalayan Times",
+      "source_id": null,
+      "contains": "Locator for JSC/JWG minutes - the documented bilateral forum where arrangement terms are discussed",
+      "reused_from": "17A-L12; 27A-L22"
+    },
+    {
+      "lead_id": "27B-L31",
+      "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
+      "title": "Nepal, India sign deal to build cross-border transmission lines (news locator, October 2025)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Locator for NEA-POWERGRID JV implementing agreements (Inaruwa-New Purnea; Lamki/Dodhara-Bareilly): ownership shares, cost sharing and tariff route - reference design for the shared-transmission model (27A AR-07)",
+      "reused_from": "22B-L22; 27A-L23"
+    },
+    {
+      "lead_id": "27B-L32",
+      "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
+      "title": "Additional electricity export to Bangladesh blocked as India withholds approval (news locator, June 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Locator for the CEA/NVVN decision on extending Nepal-Bangladesh trade - illustrates the approval-state variable for wheeling arrangements; primary order required",
+      "reused_from": "22B-L25; 22E-L26"
+    },
+    {
+      "lead_id": "27B-L33",
+      "url": "https://renewablewatch.in/2026/09/15/mop-approves-export-of-power-to-nepal/",
+      "title": "MoP approves export of power to Nepal (news locator, September 2026)",
+      "publisher": "Renewable Watch",
+      "source_id": null,
+      "contains": "Locator for MoP/CEA order on India-to-Nepal dry-season supply with hour limits - import leg of the banking/swap model",
+      "reused_from": "22B-L26; 22E-L27"
+    },
+    {
+      "lead_id": "27B-L34",
+      "url": "https://kathmandupost.com/money/2024/11/16/nepal-begins-historic-power-export-to-bangladesh-via-india",
+      "title": "Nepal begins historic power export to Bangladesh via India (news locator, November 2024)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Locator for start of NEA-NVVN-BPDB tripartite deliveries; primary contract and NEA delivery records required"
+    },
+    {
+      "lead_id": "27B-L35",
+      "url": "https://powerline.net.in/2024/10/14/nepal-india-bangladesh-sign-tripartite-power-agreement/",
+      "title": "Nepal, India, Bangladesh sign tripartite power agreement (trade-press locator, October 2024)",
+      "publisher": "Power Line Magazine",
+      "source_id": null,
+      "contains": "Locator for the October 2024 tripartite power sales agreement among NEA, NVVN and BPDB: parties, delivery season window, route, tenor - to verify against the contract"
+    },
+    {
+      "lead_id": "27B-L36",
+      "url": "https://ddnews.gov.in/en/nepal-to-export-40-mw-electricity-to-bangladesh-using-indian-transmission-lines/",
+      "title": "Nepal to export electricity to Bangladesh using Indian transmission lines (DD News)",
+      "publisher": "DD News (Prasar Bharati, India)",
+      "source_id": null,
+      "contains": "Indian public broadcaster report on the tripartite arrangement; locator only, not an official order"
+    },
+    {
+      "lead_id": "27B-L37",
+      "url": "https://thefinancialexpress.com.bd/trade/bangladesh-nepal-india-sign-tripartite-power-trading-deal",
+      "title": "Bangladesh, Nepal, India sign tripartite power trading deal (The Financial Express, Bangladesh)",
+      "publisher": "The Financial Express (Dhaka)",
+      "source_id": null,
+      "contains": "Bangladesh-side news locator for the tripartite agreement; points to BPDB records"
+    },
+    {
+      "lead_id": "27B-L38",
+      "url": "https://www.bpdb.gov.bd",
+      "title": "Bangladesh Power Development Board",
+      "publisher": "Bangladesh Power Development Board",
+      "source_id": "bpdb_bd",
+      "contains": "BPDB annual reports: import sources and purchase cost by source - Bangladesh buyer's outside option P_ALT_BD [URL from general knowledge - unverified]"
+    },
+    {
+      "lead_id": "27B-L39",
+      "url": "https://www.sasec.asia",
+      "title": "South Asia Subregional Economic Cooperation (SASEC) programme site",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "BBIN energy trade and corridor documents; locator for regional wheeling studies",
+      "reused_from": "17C-L12; 27A-L68"
+    },
+    {
+      "lead_id": "27B-L40",
+      "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+      "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India (compilation)",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Transit protocol: routes, points, fees/charges, customs sealing and guarantee requirements - baseline terms against which any hypothetical transit arrangement is compared",
+      "reused_from": "17A-L23; 17C-L08; 27A-L02"
+    },
+    {
+      "lead_id": "27B-L41",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal - trade agreements and transit procedures",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "nepal_trade_portal",
+      "contains": "Nepal-Bangladesh trade and transit agreements and protocols; border procedures",
+      "reused_from": "17C-L07; 27A-L13"
+    },
+    {
+      "lead_id": "27B-L42",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "Dry-port cargo statistics by facility and route - transit volumes V_r in the transit payoff",
+      "reused_from": "17C-L09"
+    },
+    {
+      "lead_id": "27B-L43",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Transit route cost and time analysis - locator for per-route cost parameters c_r (tier 7)",
+      "reused_from": "17C-L14"
+    },
+    {
+      "lead_id": "27B-L44",
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project (IDA) - project document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Ex-ante transit time/cost analysis and corridor design - locator for route cost parameters"
+    },
+    {
+      "lead_id": "27B-L45",
+      "url": "https://www.un.org/sites/un2.un.org/files/apoa_booklet.pdf",
+      "title": "Awaza Programme of Action for Landlocked Developing Countries 2024-2034",
+      "publisher": "United Nations",
+      "source_id": "undesa_ldc",
+      "contains": "Multilateral normative commitments on LLDC transit - context for transit-state obligations (non-binding framing)",
+      "reused_from": "17C-L13"
+    },
+    {
+      "lead_id": "27B-L46",
+      "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+      "title": "Bhutan Country Economic Memorandum (2024)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Bhutan-India hydropower export model (intergovernmental projects, long-term tariffs, debt-financed plants) - structural comparator for contract design; not evidence about Nepal",
+      "reused_from": "17C-L15"
+    }
+  ]
 }

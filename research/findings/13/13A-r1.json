@@ -159,12 +159,14 @@
     {
       "id": "13A-A1",
       "text": "Damage, loss and recovery needs are separate quantities and never summed.",
-      "basis": "assumption (PDNA/DaLA method)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (PDNA/DaLA method)'"
     },
     {
       "id": "13A-A2",
       "text": "13A = historical losses and exposure; 25E = climate damage functions; 25C = cross-border event list. Shared events carry one event_id cross-referenced across files.",
-      "basis": "assumption (coordination rule)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (coordination rule)'"
     },
     {
       "id": "13A-A3",

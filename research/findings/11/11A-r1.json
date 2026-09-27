@@ -99,7 +99,8 @@
     {
       "id": "11A-A2",
       "text": "Doing Business (discontinued) and B-READY dispute-resolution measures are treated as separate, non-comparable series; neither is spliced.",
-      "basis": "assumption (methodology differs: DB used a standardised case in the largest business city; B-READY uses expert consultations and firm surveys on a different scoring framework)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (methodology differs: DB used a standardised case in the largest business city; B-READY uses expert consultations and firm surveys on a different scoring framework)'"
     }
   ],
   "challenges": [

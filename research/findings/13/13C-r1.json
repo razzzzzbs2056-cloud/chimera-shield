@@ -128,12 +128,14 @@
     {
       "id": "13C-A2",
       "text": "25D owns climate finance flows; 13C reports the adaptation subset.",
-      "basis": "assumption (coordination)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (coordination)'"
     },
     {
       "id": "13C-A3",
       "text": "Avoided losses parameterise adaptation effects only; no additive loss series.",
-      "basis": "assumption (double-counting rule with 13A/25E)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (double-counting rule with 13A/25E)'"
     }
   ],
   "challenges": [

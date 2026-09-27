@@ -71,12 +71,14 @@
     {
       "id": "19E-A1",
       "text": "Capacity-based and actual-stock-based days of cover are distinct measures and never substituted for each other.",
-      "basis": "methodology"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodology'"
     },
     {
       "id": "19E-A2",
       "text": "Civilian preparedness scope only (safety note).",
-      "basis": "safety note"
+      "basis": "assumption",
+      "basis_note": "original label: 'safety note'"
     }
   ],
   "challenges": [

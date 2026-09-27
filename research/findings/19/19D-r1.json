@@ -76,12 +76,14 @@
     {
       "id": "19D-A1",
       "text": "Stock (persons abroad) and flow (labour approvals) are never combined without a documented stock-flow method.",
-      "basis": "methodology"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodology'"
     },
     {
       "id": "19D-A2",
       "text": "Evacuation cost is recorded by payer; FEB welfare-fund spending and state-budget spending are kept separate.",
-      "basis": "methodology"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodology'"
     }
   ],
   "challenges": [

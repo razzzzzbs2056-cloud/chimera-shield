@@ -69,7 +69,8 @@
     {
       "id": "18E-A3",
       "text": "Option set is analytical, not prescriptive, and makes no claim about private intentions of any government.",
-      "basis": "CLAUDE.md non-negotiables"
+      "basis": "assumption",
+      "basis_note": "original label: 'CLAUDE.md non-negotiables'"
     }
   ],
   "challenges": [

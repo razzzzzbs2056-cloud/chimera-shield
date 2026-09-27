@@ -1,717 +1,737 @@
 {
- "subagent_id": "08A",
- "task_id": "r1",
- "generated_at": "2026-09-27T00:00:00+00:00",
- "summary": "Round r1 (restricted network). Research design and 24 source leads for Nepal's AI and software export question. Q1: BoP-recorded ICT services exports (NRB BPM6, Nepal FY) and industry-estimated IT exports (survey-based) are defined as separate series and never merged; UNCTADstat (calendar year, derived from NRB) and WTO digitally delivered (modelled) are comparators. The 'unrecorded' share is defined only as a residual after period, coverage (SI vs SJ/SK), channel (freelancer receipts, earnings kept abroad, informal) and gross/net alignment. Q2: segment taxonomy set out; displacement vs growth pending 24A/24C evidence. Q3: workforce design answering 24A's request (NSO NLFS microdata at ISCO-08 4-digit x ISIC, Census 2021 fallback, Online Labour Index and industry freelancer counts kept separate). One WebSearch found only secondary news on industry-estimated IT exports; used as locators only. No values retrieved; all empirical items pending.",
- "findings": [
-  {
-   "claim": "Research design Q1: two ICT-export series are kept strictly separate and never merged. Series S1 'BoP-recorded' = NRB BPM6 services credits, telecommunications/computer/information services (EBOPS SI), Nepal fiscal year, NPR current (USD converted at the NRB period-average rate as a separately documented input). Series S2 'industry-estimated' = survey-based IT-export estimates from industry bodies/independent studies (e.g. IIDS-type study), whatever reference period they state. International series S3 (UNCTADstat ICT / digitally deliverable, calendar year) and S4 (WTO digitally delivered, modelled, calendar year) are comparators only.",
-   "type": "assumption",
-   "source_ids": [],
-   "observation_ids": []
-  },
-  {
-   "claim": "Recording-gap method: gap = S2 - S1 only after aligning (a) period (FY vs calendar vs survey reference year), (b) coverage (S2 may include ITES/BPO and design/marketing that BPM6 classes as other business services SJ or personal/cultural services SK, not SI), (c) channel (freelancer receipts arriving as personal transfers, via foreign wallets/platform balances kept abroad, or via informal hundi are not SI credits), and (d) gross vs net (platform fees, foreign-kept earnings). Only the residual after (a)-(d) is described as 'unrecorded'; any gap beyond tolerance is escalated to 00B, not adjusted.",
-   "type": "assumption",
-   "source_ids": [],
-   "observation_ids": []
-  },
-  {
-   "claim": "Segment taxonomy for Q2 (to be confirmed against S2 composition data): (i) custom software and product engineering; (ii) QA/testing and maintenance; (iii) ITES/BPO: contact centre, data entry/annotation, back-office accounting; (iv) creative: graphic design, video, web design; (v) content/writing/translation; (vi) digital marketing; (vii) data/AI services incl. annotation and model evaluation. Displacement vs growth is assessed per segment from 24A exposure/causal evidence, not asserted in r1.",
-   "type": "assumption",
-   "source_ids": [],
-   "observation_ids": []
-  },
-  {
-   "claim": "Workforce definition for Q3: 'qualified IT workforce' = employed persons in ISCO-08 sub-major groups 25 (ICT professionals) and 35 (ICT technicians) plus ITES occupations listed in 24A, split by employer type (IT firm, non-IT employer, self-employed/freelance). Graduate supply (09B) is a flow, employment a stock; the two are not added.",
-   "type": "assumption",
-   "source_ids": [],
-   "observation_ids": []
-  },
-  {
-   "claim": "Q1/S1: BoP-recorded exports of telecommunications, computer and information services (NRB BPM6 services credits), annual time series FY2015/16 to FY2025/26, with vintage for each year.",
-   "type": "pending",
-   "value": null,
-   "period": "Nepal fiscal years FY2015/16-FY2025/26 (mid-July to mid-July)",
-   "source_ids": [
-    "nrb"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L01",
-    "08A-L02",
-    "08A-L03"
-   ],
-   "note": "Pending download of NRB CME statistical tables. Record also the USD equivalent using NRB average rate as a separate observation.",
-   "unit": "NPR_current_mn",
-   "data_required": "NRB BoP table 'Services: credit' line for telecommunications, computer and information services, each FY, NPR million, plus release date."
-  },
-  {
-   "claim": "Q1/S1: sub-split of the ICT services credit into computer services vs telecommunications vs information services, if NRB compiles it.",
-   "type": "pending",
-   "value": null,
-   "period": "Nepal fiscal years",
-   "source_ids": [
-    "nrb"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L01",
-    "08A-L04"
-   ],
-   "note": "May not be published; if not, request NRB BoP compilation detail (ITRS transaction codes) - requires human-approved contact, not done.",
-   "unit": "NPR_current_mn"
-  },
-  {
-   "claim": "Q1/S1: monthly IT-service receipts series reported by NRB (the series cited in news), with its definition and mapping to the BoP SI line.",
-   "type": "pending",
-   "value": null,
-   "period": "Nepal FY monthly (cumulative)",
-   "source_ids": [
-    "nrb"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L13",
-    "08A-L02"
-   ],
-   "note": "News is a locator only; value must come from the NRB table.",
-   "unit": "NPR_current_mn"
-  },
-  {
-   "claim": "Q1/S2: industry-estimated IT export value (firms plus freelancers), with survey reference period, sample design, and segment/channel composition.",
-   "type": "pending",
-   "value": null,
-   "period": "Survey reference year as stated by the study (to be confirmed; likely calendar year)",
-   "source_ids": [
-    "academic"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L12",
-    "08A-L10",
-    "08A-L11"
-   ],
-   "note": "Kept as a separate series; never substituted for S1.",
-   "unit": "USD_current_mn"
-  },
-  {
-   "claim": "Q1/S3-S4: Nepal exports of ICT services and of digitally deliverable services (UNCTADstat) and digitally delivered services (WTO model), calendar years.",
-   "type": "pending",
-   "value": null,
-   "period": "Calendar years 2015-latest",
-   "source_ids": [
-    "unctadstat",
-    "wto"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L05",
-    "08A-L06"
-   ],
-   "note": "UNCTADstat for Nepal is derived from NRB BoP and so is not independent of S1; WTO values are model estimates.",
-   "unit": "USD_current_mn"
-  },
-  {
-   "claim": "Q1: recorded-vs-unrecorded gap (S2 minus S1 after coverage/period/channel alignment), with a decomposition by cause.",
-   "type": "pending",
-   "value": null,
-   "period": "Common reference period to be constructed",
-   "source_ids": [
-    "nrb",
-    "academic"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L01",
-    "08A-L04",
-    "08A-L07",
-    "08A-L12"
-   ],
-   "note": "Cannot be computed in r1; requires both series and the FX-channel rules.",
-   "unit": "USD_current_mn"
-  },
-  {
-   "claim": "Q2: share of Nepal IT/ITES export employment in automation-prone vs augmentation-prone occupations (ILO WP140 scores weighted by Nepal occupational employment).",
-   "type": "pending",
-   "value": null,
-   "period": "Nepal survey year (FY basis) x ILO index 2025",
-   "source_ids": [
-    "ilostat",
-    "nso_nepal"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L18",
-    "08A-L14",
-    "08A-L15"
-   ],
-   "note": "Joint with 24A; depends on occupation-level employment (next item).",
-   "unit": "percent"
-  },
-  {
-   "claim": "Q2: segment composition of Nepal IT exports (share of software development, ITES/BPO, creative, digital marketing, etc.).",
-   "type": "pending",
-   "value": null,
-   "period": "Survey reference year",
-   "source_ids": [
-    "academic"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L12",
-    "08A-L22"
-   ],
-   "note": "Needed by 24A and 24C; not available from BoP.",
-   "unit": "percent"
-  },
-  {
-   "claim": "Q3: employment in ICT occupations (ISCO-08 25, 35 and listed ITES codes) by 4-digit code, industry (ISIC 61-63, 82) and status in employment.",
-   "type": "pending",
-   "value": null,
-   "period": "Latest completed NLFS (2017/18, FY) and NLFS IV (FY2024/25 onward) when released; Census 2021 as fallback",
-   "source_ids": [
-    "nso_nepal",
-    "ilostat"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L14",
-    "08A-L15",
-    "08A-L16",
-    "08A-L17"
-   ],
-   "note": "Cell sizes at 4-digit may be too small for reliable estimates; report standard errors and aggregate if needed.",
-   "unit": "persons_k"
-  },
-  {
-   "claim": "Q3: number of Nepal-based online freelancers active on major platforms, by occupation category (Online Labour Index supply side) and the industry-study freelancer count, kept separate.",
-   "type": "pending",
-   "value": null,
-   "period": "Calendar months (OLI); survey reference year (industry study)",
-   "source_ids": [
-    "academic"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L22",
-    "08A-L12"
-   ],
-   "note": "Platform registrations overstate active supply; use active-worker definitions.",
-   "unit": "persons_k"
-  },
-  {
-   "claim": "Q3: IT workforce stock in industry-estimated sources (firms and freelancers), kept separate from NSO survey-based employment.",
-   "type": "pending",
-   "value": null,
-   "period": "Survey reference year",
-   "source_ids": [
-    "academic"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L12",
-    "08A-L10"
-   ],
-   "note": "Industry and NSO definitions differ (ITES vs ISCO occupations).",
-   "unit": "persons_k"
-  },
-  {
-   "claim": "Policy context: current FX-retention, tax and registration rules for IT-export income of firms and individual freelancers (Finance Act 2081 and NRB FX directives).",
-   "type": "pending",
-   "value": null,
-   "period": "FY2024/25-FY2026/27",
-   "source_ids": [
-    "nrb",
-    "lawcommission_nepal"
-   ],
-   "observation_ids": [],
-   "lead_ids": [
-    "08A-L04",
-    "08A-L23",
-    "08A-L09"
-   ],
-   "note": "Determines which receipts are captured as SI credits (channel alignment step)."
-  }
- ],
- "data_gaps": [
-  "All empirical values pending: NRB and NSO hosts are blocked in this environment; no document downloaded.",
-  "Exact URL of the industry IT-export study (IIDS or successor) not located; only the institute home page from general knowledge (unverified).",
-  "Whether NRB publishes computer-services detail below the SI aggregate, and how FX dealers code freelancer receipts, is unknown.",
-  "The latest completed Nepal Labour Force Survey in the lead register is 2017/18; NLFS IV (FY2024/25 onward) results not yet located. 4-digit ISCO cells may be too small for reliable estimates.",
-  "No source for Nepal freelancer earnings by platform; Online Labour Index URL from general knowledge (unverified).",
-  "units.py has no unit for freelancer counts per platform or for share-of-segment beyond 'percent'; adequate for r1."
- ],
- "assumptions": [
-  "S1 (BoP-recorded) and S2 (industry-estimated) remain separate series in all outputs.",
-  "FY and calendar-year series are not combined without a documented conversion.",
-  "News articles are locators only, never evidence.",
-  "Segment taxonomy and ISCO crosswalk are working definitions pending the composition data."
- ],
- "challenges": [
-  {
-   "to": "24A",
-   "text": "Response to your request: design for IT/BPO employment by ISCO-08 4-digit and IT-export composition is in specific.ict_export_series.workforce_data_design_for_24A. Note: your finding cites 'NLFS 2022/23'; the lead register shows the latest completed NLFS is 2017/18, with NLSS IV 2022/23 (a living-standards survey, different definitions) and NLFS IV fieldwork from FY2024/25. Please re-label the survey you intend to use."
-  },
-  {
-   "to": "24C",
-   "text": "Candidate export segments for Nepal are listed in specific.segment_outlook (nine segments). BPO/freelance segments cannot be sized from BoP because they may fall under SJ/SK or personal transfers; please size global demand at EBOPS SI, SJ and SK separately."
-  },
-  {
-   "to": "21E",
-   "text": "Agree: NRB BPM6 credits are the recorded value. 08A will report the industry-estimated series only as a separate observation and send any gap beyond tolerance to 00B."
-  },
-  {
-   "to": "00A",
-   "text": "Please add catalog ids for (a) Nepal IT-industry/independent export studies (e.g. IIDS) and (b) the Oxford Internet Institute Online Labour Index, rather than filing them under 'academic'. Allocate a network-enabled run to fetch leads 08A-L01..L03, L12, L14, L22."
-  },
-  {
-   "to": "09B",
-   "text": "Accepted: any services-export productivity assumption will state the ICT graduate flow it requires and be checked against your tertiary_profile; stock (employment) and flow (graduates) will not be added."
-  }
- ],
- "uncertainty": "Very high. No values have been retrieved. Structural uncertainty: the size of unrecorded IT exports depends on channel and coverage definitions that are not yet documented; industry-estimated series are survey-based with undocumented sampling in the leads seen so far; AI effects by segment rest on non-Nepal evidence (24A). Occupational employment estimates at 4-digit ISCO may be statistically unreliable.",
- "specific": {
-  "ict_export_series": {
-   "status": "pending",
-   "series": [
+  "subagent_id": "08A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Research design and 24 source leads for Nepal's AI and software export question. Q1: BoP-recorded ICT services exports (NRB BPM6, Nepal FY) and industry-estimated IT exports (survey-based) are defined as separate series and never merged; UNCTADstat (calendar year, derived from NRB) and WTO digitally delivered (modelled) are comparators. The 'unrecorded' share is defined only as a residual after period, coverage (SI vs SJ/SK), channel (freelancer receipts, earnings kept abroad, informal) and gross/net alignment. Q2: segment taxonomy set out; displacement vs growth pending 24A/24C evidence. Q3: workforce design answering 24A's request (NSO NLFS microdata at ISCO-08 4-digit x ISIC, Census 2021 fallback, Online Labour Index and industry freelancer counts kept separate). One WebSearch found only secondary news on industry-estimated IT exports; used as locators only. No values retrieved; all empirical items pending.",
+  "findings": [
     {
-     "id": "S1_bop_recorded",
-     "definition": "NRB BPM6 services credits: telecommunications, computer and information services (EBOPS SI)",
-     "unit": "NPR_current_mn",
-     "period_basis": "Nepal fiscal year (mid-July)",
-     "source_ids": [
-      "nrb"
-     ],
-     "lead_ids": [
-      "08A-L01",
-      "08A-L02",
-      "08A-L03"
-     ],
-     "status": "pending",
-     "values": []
+      "claim": "Research design Q1: two ICT-export series are kept strictly separate and never merged. Series S1 'BoP-recorded' = NRB BPM6 services credits, telecommunications/computer/information services (EBOPS SI), Nepal fiscal year, NPR current (USD converted at the NRB period-average rate as a separately documented input). Series S2 'industry-estimated' = survey-based IT-export estimates from industry bodies/independent studies (e.g. IIDS-type study), whatever reference period they state. International series S3 (UNCTADstat ICT / digitally deliverable, calendar year) and S4 (WTO digitally delivered, modelled, calendar year) are comparators only.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
     },
     {
-     "id": "S1m_nrb_it_monthly",
-     "definition": "NRB monthly IT-service receipts memo series (definition to be confirmed and mapped to S1)",
-     "unit": "NPR_current_mn",
-     "period_basis": "Nepal FY, monthly cumulative",
-     "source_ids": [
-      "nrb"
-     ],
-     "lead_ids": [
-      "08A-L13",
-      "08A-L02"
-     ],
-     "status": "pending",
-     "values": []
+      "claim": "Recording-gap method: gap = S2 - S1 only after aligning (a) period (FY vs calendar vs survey reference year), (b) coverage (S2 may include ITES/BPO and design/marketing that BPM6 classes as other business services SJ or personal/cultural services SK, not SI), (c) channel (freelancer receipts arriving as personal transfers, via foreign wallets/platform balances kept abroad, or via informal hundi are not SI credits), and (d) gross vs net (platform fees, foreign-kept earnings). Only the residual after (a)-(d) is described as 'unrecorded'; any gap beyond tolerance is escalated to 00B, not adjusted.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
     },
     {
-     "id": "S2_industry_estimated",
-     "definition": "Survey-based IT export estimate (firms + freelancers), industry/independent study",
-     "unit": "USD_current_mn",
-     "period_basis": "study reference year (to be confirmed)",
-     "source_ids": [
-      "academic"
-     ],
-     "lead_ids": [
-      "08A-L12",
-      "08A-L10",
-      "08A-L11"
-     ],
-     "status": "pending",
-     "values": [],
-     "note": "Never merged with S1; S1 and S2 always reported side by side."
+      "claim": "Segment taxonomy for Q2 (to be confirmed against S2 composition data): (i) custom software and product engineering; (ii) QA/testing and maintenance; (iii) ITES/BPO: contact centre, data entry/annotation, back-office accounting; (iv) creative: graphic design, video, web design; (v) content/writing/translation; (vi) digital marketing; (vii) data/AI services incl. annotation and model evaluation. Displacement vs growth is assessed per segment from 24A exposure/causal evidence, not asserted in r1.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
     },
     {
-     "id": "S3_unctad_ict_dds",
-     "definition": "UNCTADstat ICT services and digitally deliverable services exports",
-     "unit": "USD_current_mn",
-     "period_basis": "calendar year",
-     "source_ids": [
-      "unctadstat"
-     ],
-     "lead_ids": [
-      "08A-L05"
-     ],
-     "status": "pending",
-     "values": [],
-     "note": "Derived from NRB BoP; not independent of S1."
+      "claim": "Workforce definition for Q3: 'qualified IT workforce' = employed persons in ISCO-08 sub-major groups 25 (ICT professionals) and 35 (ICT technicians) plus ITES occupations listed in 24A, split by employer type (IT firm, non-IT employer, self-employed/freelance). Graduate supply (09B) is a flow, employment a stock; the two are not added.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
     },
     {
-     "id": "S4_wto_digitally_delivered",
-     "definition": "WTO modelled digitally delivered services exports",
-     "unit": "USD_current_mn",
-     "period_basis": "calendar year",
-     "source_ids": [
-      "wto"
-     ],
-     "lead_ids": [
-      "08A-L06"
-     ],
-     "status": "pending",
-     "values": [],
-     "note": "Model estimate."
+      "claim": "Q1/S1: BoP-recorded exports of telecommunications, computer and information services (NRB BPM6 services credits), annual time series FY2015/16 to FY2025/26, with vintage for each year.",
+      "type": "pending",
+      "value": null,
+      "period": "Nepal fiscal years FY2015/16-FY2025/26 (mid-July to mid-July)",
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L01",
+        "08A-L02",
+        "08A-L03"
+      ],
+      "note": "Pending download of NRB CME statistical tables. Record also the USD equivalent using NRB average rate as a separate observation.",
+      "unit": "NPR_current_mn",
+      "data_required": "NRB BoP table 'Services: credit' line for telecommunications, computer and information services, each FY, NPR million, plus release date."
+    },
+    {
+      "claim": "Q1/S1: sub-split of the ICT services credit into computer services vs telecommunications vs information services, if NRB compiles it.",
+      "type": "pending",
+      "value": null,
+      "period": "Nepal fiscal years",
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L01",
+        "08A-L04"
+      ],
+      "note": "May not be published; if not, request NRB BoP compilation detail (ITRS transaction codes) - requires human-approved contact, not done.",
+      "unit": "NPR_current_mn"
+    },
+    {
+      "claim": "Q1/S1: monthly IT-service receipts series reported by NRB (the series cited in news), with its definition and mapping to the BoP SI line.",
+      "type": "pending",
+      "value": null,
+      "period": "Nepal FY monthly (cumulative)",
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L13",
+        "08A-L02"
+      ],
+      "note": "News is a locator only; value must come from the NRB table.",
+      "unit": "NPR_current_mn"
+    },
+    {
+      "claim": "Q1/S2: industry-estimated IT export value (firms plus freelancers), with survey reference period, sample design, and segment/channel composition.",
+      "type": "pending",
+      "value": null,
+      "period": "Survey reference year as stated by the study (to be confirmed; likely calendar year)",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L12",
+        "08A-L10",
+        "08A-L11"
+      ],
+      "note": "Kept as a separate series; never substituted for S1.",
+      "unit": "USD_current_mn"
+    },
+    {
+      "claim": "Q1/S3-S4: Nepal exports of ICT services and of digitally deliverable services (UNCTADstat) and digitally delivered services (WTO model), calendar years.",
+      "type": "pending",
+      "value": null,
+      "period": "Calendar years 2015-latest",
+      "source_ids": [
+        "unctadstat",
+        "wto"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L05",
+        "08A-L06"
+      ],
+      "note": "UNCTADstat for Nepal is derived from NRB BoP and so is not independent of S1; WTO values are model estimates.",
+      "unit": "USD_current_mn"
+    },
+    {
+      "claim": "Q1: recorded-vs-unrecorded gap (S2 minus S1 after coverage/period/channel alignment), with a decomposition by cause.",
+      "type": "pending",
+      "value": null,
+      "period": "Common reference period to be constructed",
+      "source_ids": [
+        "nrb",
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L01",
+        "08A-L04",
+        "08A-L07",
+        "08A-L12"
+      ],
+      "note": "Cannot be computed in r1; requires both series and the FX-channel rules.",
+      "unit": "USD_current_mn"
+    },
+    {
+      "claim": "Q2: share of Nepal IT/ITES export employment in automation-prone vs augmentation-prone occupations (ILO WP140 scores weighted by Nepal occupational employment).",
+      "type": "pending",
+      "value": null,
+      "period": "Nepal survey year (FY basis) x ILO index 2025",
+      "source_ids": [
+        "ilostat",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L18",
+        "08A-L14",
+        "08A-L15"
+      ],
+      "note": "Joint with 24A; depends on occupation-level employment (next item).",
+      "unit": "percent"
+    },
+    {
+      "claim": "Q2: segment composition of Nepal IT exports (share of software development, ITES/BPO, creative, digital marketing, etc.).",
+      "type": "pending",
+      "value": null,
+      "period": "Survey reference year",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L12",
+        "08A-L22"
+      ],
+      "note": "Needed by 24A and 24C; not available from BoP.",
+      "unit": "percent"
+    },
+    {
+      "claim": "Q3: employment in ICT occupations (ISCO-08 25, 35 and listed ITES codes) by 4-digit code, industry (ISIC 61-63, 82) and status in employment.",
+      "type": "pending",
+      "value": null,
+      "period": "Latest completed NLFS (2017/18, FY) and NLFS IV (FY2024/25 onward) when released; Census 2021 as fallback",
+      "source_ids": [
+        "nso_nepal",
+        "ilostat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L14",
+        "08A-L15",
+        "08A-L16",
+        "08A-L17"
+      ],
+      "note": "Cell sizes at 4-digit may be too small for reliable estimates; report standard errors and aggregate if needed.",
+      "unit": "persons_k"
+    },
+    {
+      "claim": "Q3: number of Nepal-based online freelancers active on major platforms, by occupation category (Online Labour Index supply side) and the industry-study freelancer count, kept separate.",
+      "type": "pending",
+      "value": null,
+      "period": "Calendar months (OLI); survey reference year (industry study)",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L22",
+        "08A-L12"
+      ],
+      "note": "Platform registrations overstate active supply; use active-worker definitions.",
+      "unit": "persons_k"
+    },
+    {
+      "claim": "Q3: IT workforce stock in industry-estimated sources (firms and freelancers), kept separate from NSO survey-based employment.",
+      "type": "pending",
+      "value": null,
+      "period": "Survey reference year",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L12",
+        "08A-L10"
+      ],
+      "note": "Industry and NSO definitions differ (ITES vs ISCO occupations).",
+      "unit": "persons_k"
+    },
+    {
+      "claim": "Policy context: current FX-retention, tax and registration rules for IT-export income of firms and individual freelancers (Finance Act 2081 and NRB FX directives).",
+      "type": "pending",
+      "value": null,
+      "period": "FY2024/25-FY2026/27",
+      "source_ids": [
+        "nrb",
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "08A-L04",
+        "08A-L23",
+        "08A-L09"
+      ],
+      "note": "Determines which receipts are captured as SI credits (channel alignment step)."
     }
-   ],
-   "method": "Tabulate each series separately with vintage; convert NPR to USD only with a documented NRB average rate observation; convert FY to calendar year only via a documented method (e.g. monthly data) and never by averaging adjacent FYs silently.",
-   "workforce_data_design_for_24A": {
-    "status": "pending",
-    "requested_by": "24A",
-    "components": [
-     "Occupation x industry employment: NSO NLFS microdata (2017/18 completed; NLFS IV FY2024/25 onward when released) tabulated at ISCO-08 4-digit for 25xx, 35xx, 2166, 2513, 2643, 4131, 4132, 4222, 4229, 4311, crossed with ISIC Rev.4 61-63 and 82 and status in employment; report sample counts and standard errors (leads 08A-L14, L15).",
-     "Fallback: Census 2021 occupation-by-industry tables at the finest published level (08A-L16); NLSS IV 2022/23 as a cross-check with definitional caveats (08A-L17).",
-     "Freelancers: Online Labour Index supply-side counts and occupation mix for Nepal (08A-L22) and the industry study freelancer count (08A-L12), kept separate.",
-     "IT-export composition: segment and destination composition from the industry export study (08A-L12); if unavailable, a new structured survey of IT firms and freelancers would be required - design only, any fieldwork or contact needs recorded human approval.",
-     "Crosswalk: map industry-study segments to ISCO codes to allow ILO WP140 weighting; document the mapping as an assumption."
-    ]
-   }
-  },
-  "recording_gap_notes": {
-   "status": "pending",
-   "channels": [
-    "Company exports received through banks and coded as computer services: captured in S1.",
-    "Freelancer receipts converted through banks/licensed FX dealers: may be coded as computer services, personal transfers or other; coding practice under NRB FX directives to be established (08A-L04).",
-    "Earnings kept abroad (platform balances, foreign bank/wallet accounts) or repatriated via informal channels: not captured in S1.",
-    "ITES/BPO, design and marketing: may be classed as other business services (SJ) or personal/cultural/recreational (SK) rather than SI; coverage alignment needed before any gap is computed.",
-    "Commercial presence (Mode 3) and Nepal-owned firms abroad: not exports under BPM6 residence rules; industry studies may include them."
-   ],
-   "definitional_references": [
-    "08A-L07",
-    "08A-L08"
-   ],
-   "escalation": "Gap beyond tolerance with unclear cause goes to 00B; no adjustment of NRB figures.",
-   "values": []
-  },
-  "segment_outlook": {
-   "status": "pending",
-   "segments": [
+  ],
+  "data_gaps": [
+    "All empirical values pending: NRB and NSO hosts are blocked in this environment; no document downloaded.",
+    "Exact URL of the industry IT-export study (IIDS or successor) not located; only the institute home page from general knowledge (unverified).",
+    "Whether NRB publishes computer-services detail below the SI aggregate, and how FX dealers code freelancer receipts, is unknown.",
+    "The latest completed Nepal Labour Force Survey in the lead register is 2017/18; NLFS IV (FY2024/25 onward) results not yet located. 4-digit ISCO cells may be too small for reliable estimates.",
+    "No source for Nepal freelancer earnings by platform; Online Labour Index URL from general knowledge (unverified).",
+    "units.py has no unit for freelancer counts per platform or for share-of-segment beyond 'percent'; adequate for r1."
+  ],
+  "assumptions": [
     {
-     "segment": "custom software/product engineering",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
+      "id": "08A-S1",
+      "text": "S1 (BoP-recorded) and S2 (industry-estimated) remain separate series in all outputs.",
+      "basis": "assumption",
+      "basis_note": "normalised from plain string by orchestrator"
     },
     {
-     "segment": "QA/testing and maintenance",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
+      "id": "08A-S2",
+      "text": "FY and calendar-year series are not combined without a documented conversion.",
+      "basis": "assumption",
+      "basis_note": "normalised from plain string by orchestrator"
     },
     {
-     "segment": "ITES/BPO: contact centre",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
+      "id": "08A-S3",
+      "text": "News articles are locators only, never evidence.",
+      "basis": "assumption",
+      "basis_note": "normalised from plain string by orchestrator"
     },
     {
-     "segment": "ITES/BPO: data entry and annotation",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
-    },
-    {
-     "segment": "back-office accounting/bookkeeping",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
-    },
-    {
-     "segment": "graphic/web/video design",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
-    },
-    {
-     "segment": "content writing and translation",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
-    },
-    {
-     "segment": "digital marketing",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
-    },
-    {
-     "segment": "data/AI services (annotation, evaluation, MLOps)",
-     "ai_effect": "pending",
-     "demand_trend": "pending",
-     "evidence_leads": [
-      "08A-L18",
-      "08A-L19",
-      "08A-L20",
-      "08A-L22"
-     ]
+      "id": "08A-S4",
+      "text": "Segment taxonomy and ISCO crosswalk are working definitions pending the composition data.",
+      "basis": "assumption",
+      "basis_note": "normalised from plain string by orchestrator"
     }
-   ],
-   "method": "Combine 24A causal/exposure evidence (automation vs augmentation) with 24C global demand by EBOPS segment; grade evidence per 24A hierarchy; no segment labelled growth or displacement in r1.",
-   "competition_note": "Comparator suppliers (India, Philippines, Bangladesh, Sri Lanka, Pakistan) to be benchmarked with UNCTADstat calendar-year series (08A-L05) - pending."
-  }
- },
- "source_leads": [
-  {
-   "lead_id": "08A-L01",
-   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
-   "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of FY2024/25)",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "BoP services credits by BPM6 category for FY2024/25 (Nepal fiscal year, mid-July to mid-July), NPR and USD; the 'telecommunications, computer and information services' line and any 'other business services' line; check whether NRB publishes a separate 'IT services' memo item.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+  ],
+  "challenges": [
+    {
+      "to": "24A",
+      "text": "Response to your request: design for IT/BPO employment by ISCO-08 4-digit and IT-export composition is in specific.ict_export_series.workforce_data_design_for_24A. Note: your finding cites 'NLFS 2022/23'; the lead register shows the latest completed NLFS is 2017/18, with NLSS IV 2022/23 (a living-standards survey, different definitions) and NLFS IV fieldwork from FY2024/25. Please re-label the survey you intend to use."
+    },
+    {
+      "to": "24C",
+      "text": "Candidate export segments for Nepal are listed in specific.segment_outlook (nine segments). BPO/freelance segments cannot be sized from BoP because they may fall under SJ/SK or personal transfers; please size global demand at EBOPS SI, SJ and SK separately."
+    },
+    {
+      "to": "21E",
+      "text": "Agree: NRB BPM6 credits are the recorded value. 08A will report the industry-estimated series only as a separate observation and send any gap beyond tolerance to 00B."
+    },
+    {
+      "to": "00A",
+      "text": "Please add catalog ids for (a) Nepal IT-industry/independent export studies (e.g. IIDS) and (b) the Oxford Internet Institute Online Labour Index, rather than filing them under 'academic'. Allocate a network-enabled run to fetch leads 08A-L01..L03, L12, L14, L22."
+    },
+    {
+      "to": "09B",
+      "text": "Accepted: any services-export productivity assumption will state the ICT graduate flow it requires and be checked against your tertiary_profile; stock (employment) and flow (graduates) will not be added."
+    }
+  ],
+  "uncertainty": "Very high. No values have been retrieved. Structural uncertainty: the size of unrecorded IT exports depends on channel and coverage definitions that are not yet documented; industry-estimated series are survey-based with undocumented sampling in the leads seen so far; AI effects by segment rest on non-Nepal evidence (24A). Occupational employment estimates at 4-digit ISCO may be statistically unreliable.",
+  "specific": {
+    "ict_export_series": {
+      "status": "pending",
+      "series": [
+        {
+          "id": "S1_bop_recorded",
+          "definition": "NRB BPM6 services credits: telecommunications, computer and information services (EBOPS SI)",
+          "unit": "NPR_current_mn",
+          "period_basis": "Nepal fiscal year (mid-July)",
+          "source_ids": [
+            "nrb"
+          ],
+          "lead_ids": [
+            "08A-L01",
+            "08A-L02",
+            "08A-L03"
+          ],
+          "status": "pending",
+          "values": []
+        },
+        {
+          "id": "S1m_nrb_it_monthly",
+          "definition": "NRB monthly IT-service receipts memo series (definition to be confirmed and mapped to S1)",
+          "unit": "NPR_current_mn",
+          "period_basis": "Nepal FY, monthly cumulative",
+          "source_ids": [
+            "nrb"
+          ],
+          "lead_ids": [
+            "08A-L13",
+            "08A-L02"
+          ],
+          "status": "pending",
+          "values": []
+        },
+        {
+          "id": "S2_industry_estimated",
+          "definition": "Survey-based IT export estimate (firms + freelancers), industry/independent study",
+          "unit": "USD_current_mn",
+          "period_basis": "study reference year (to be confirmed)",
+          "source_ids": [
+            "academic"
+          ],
+          "lead_ids": [
+            "08A-L12",
+            "08A-L10",
+            "08A-L11"
+          ],
+          "status": "pending",
+          "values": [],
+          "note": "Never merged with S1; S1 and S2 always reported side by side."
+        },
+        {
+          "id": "S3_unctad_ict_dds",
+          "definition": "UNCTADstat ICT services and digitally deliverable services exports",
+          "unit": "USD_current_mn",
+          "period_basis": "calendar year",
+          "source_ids": [
+            "unctadstat"
+          ],
+          "lead_ids": [
+            "08A-L05"
+          ],
+          "status": "pending",
+          "values": [],
+          "note": "Derived from NRB BoP; not independent of S1."
+        },
+        {
+          "id": "S4_wto_digitally_delivered",
+          "definition": "WTO modelled digitally delivered services exports",
+          "unit": "USD_current_mn",
+          "period_basis": "calendar year",
+          "source_ids": [
+            "wto"
+          ],
+          "lead_ids": [
+            "08A-L06"
+          ],
+          "status": "pending",
+          "values": [],
+          "note": "Model estimate."
+        }
+      ],
+      "method": "Tabulate each series separately with vintage; convert NPR to USD only with a documented NRB average rate observation; convert FY to calendar year only via a documented method (e.g. monthly data) and never by averaging adjacent FYs silently.",
+      "workforce_data_design_for_24A": {
+        "status": "pending",
+        "requested_by": "24A",
+        "components": [
+          "Occupation x industry employment: NSO NLFS microdata (2017/18 completed; NLFS IV FY2024/25 onward when released) tabulated at ISCO-08 4-digit for 25xx, 35xx, 2166, 2513, 2643, 4131, 4132, 4222, 4229, 4311, crossed with ISIC Rev.4 61-63 and 82 and status in employment; report sample counts and standard errors (leads 08A-L14, L15).",
+          "Fallback: Census 2021 occupation-by-industry tables at the finest published level (08A-L16); NLSS IV 2022/23 as a cross-check with definitional caveats (08A-L17).",
+          "Freelancers: Online Labour Index supply-side counts and occupation mix for Nepal (08A-L22) and the industry study freelancer count (08A-L12), kept separate.",
+          "IT-export composition: segment and destination composition from the industry export study (08A-L12); if unavailable, a new structured survey of IT firms and freelancers would be required - design only, any fieldwork or contact needs recorded human approval.",
+          "Crosswalk: map industry-study segments to ISCO codes to allow ILO WP140 weighting; document the mapping as an assumption."
+        ]
+      }
+    },
+    "recording_gap_notes": {
+      "status": "pending",
+      "channels": [
+        "Company exports received through banks and coded as computer services: captured in S1.",
+        "Freelancer receipts converted through banks/licensed FX dealers: may be coded as computer services, personal transfers or other; coding practice under NRB FX directives to be established (08A-L04).",
+        "Earnings kept abroad (platform balances, foreign bank/wallet accounts) or repatriated via informal channels: not captured in S1.",
+        "ITES/BPO, design and marketing: may be classed as other business services (SJ) or personal/cultural/recreational (SK) rather than SI; coverage alignment needed before any gap is computed.",
+        "Commercial presence (Mode 3) and Nepal-owned firms abroad: not exports under BPM6 residence rules; industry studies may include them."
+      ],
+      "definitional_references": [
+        "08A-L07",
+        "08A-L08"
+      ],
+      "escalation": "Gap beyond tolerance with unclear cause goes to 00B; no adjustment of NRB figures.",
+      "values": []
+    },
+    "segment_outlook": {
+      "status": "pending",
+      "segments": [
+        {
+          "segment": "custom software/product engineering",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "QA/testing and maintenance",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "ITES/BPO: contact centre",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "ITES/BPO: data entry and annotation",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "back-office accounting/bookkeeping",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "graphic/web/video design",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "content writing and translation",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "digital marketing",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        },
+        {
+          "segment": "data/AI services (annotation, evaluation, MLOps)",
+          "ai_effect": "pending",
+          "demand_trend": "pending",
+          "evidence_leads": [
+            "08A-L18",
+            "08A-L19",
+            "08A-L20",
+            "08A-L22"
+          ]
+        }
+      ],
+      "method": "Combine 24A causal/exposure evidence (automation vs augmentation) with 24C global demand by EBOPS segment; grade evidence per 24A hierarchy; no segment labelled growth or displacement in r1.",
+      "competition_note": "Comparator suppliers (India, Philippines, Bangladesh, Sri Lanka, Pakistan) to be benchmarked with UNCTADstat calendar-year series (08A-L05) - pending."
+    }
   },
-  {
-   "lead_id": "08A-L02",
-   "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
-   "title": "NRB Current Macro-Economic and Financial Situation archive",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "Annual and monthly CME releases with BoP statistical tables; source for a multi-year FY time series of ICT-related services credits and for the vintage (revision) history of each year.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L03",
-   "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
-   "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "Preliminary annual FY2025/26 BoP services credits incl. telecommunications/computer/information line; latest vintage.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L04",
-   "url": "https://www.nrb.org.np/departments/fxm/",
-   "title": "NRB Foreign Exchange Management Department",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "Foreign-exchange directives/circulars governing receipt of IT-service export proceeds (company and individual/freelancer channels, foreign-currency account retention, reporting codes used by licensed FX dealers); defines what gets captured in BoP as ICT services versus remittance/other transfers.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L05",
-   "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
-   "title": "UNCTADstat - International trade in digitally deliverable services, value",
-   "publisher": "UNCTAD",
-   "source_id": "unctadstat",
-   "contains": "Nepal exports of digitally deliverable services and ICT services (EBOPS 2010 category SI), calendar year, USD current; comparator economies. Calendar-year basis: must not be mixed with NRB FY series without documented conversion.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L06",
-   "url": "https://www.wto.org/english/res_e/statis_e/gstdh_digital_services_e.htm",
-   "title": "WTO Digitally Delivered Services Trade Dataset",
-   "publisher": "WTO",
-   "source_id": "wto",
-   "contains": "Modelled estimates of digitally delivered services exports by economy and sector incl. Nepal, calendar year; methodology note on imputation for non-reporters (estimate, not recorded BoP).",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L07",
-   "url": "https://www.wto.org/english/res_e/booksp_e/digital_trade_2023_e.pdf",
-   "title": "Handbook on Measuring Digital Trade, Second Edition (IMF, OECD, UNCTAD, WTO, 2023)",
-   "publisher": "IMF/OECD/UNCTAD/WTO",
-   "source_id": "wto",
-   "contains": "Definitions (digitally deliverable vs digitally delivered) and compilation guidance for capturing freelancer / platform-intermediated Mode 1 exports in BoP; basis for the recording-gap method.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L08",
-   "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
-   "title": "Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)",
-   "publisher": "IMF",
-   "source_id": null,
-   "contains": "Classification of computer services (EBOPS SI.2) vs personal transfers vs compensation of employees; residence rule for freelancers working for non-resident clients.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L09",
-   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
-   "title": "WTO Trade Policy Review of Nepal 2025 - Secretariat report WT/TPR/S/478",
-   "publisher": "WTO",
-   "source_id": "wto",
-   "contains": "Services trade chapter: ICT/computer services regime, FX rules on services receipts, any cited official IT-export figures with their sources.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L10",
-   "url": "https://kathmandupost.com/national/2026/02/25/nepal-s-it-exports-near-1-billion-can-the-momentum-be-sustained",
-   "title": "Nepal's IT exports near $1 billion. Can the momentum be sustained? (Kathmandu Post, 25 Feb 2026)",
-   "publisher": "The Kathmandu Post",
-   "source_id": "academic",
-   "contains": "Secondary news. Locator only: identifies which industry body/study produces the industry-estimated IT-export series and the workforce estimate it cites; no value to be taken from it.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
-   "evidence_grade": "news - locator only"
-  },
-  {
-   "lead_id": "08A-L11",
-   "url": "https://katmandujournal.com/2026/02/26/how-big-is-nepals-it-sector-really/",
-   "title": "How big is Nepal's IT sector, really? (Katmandu Journal, 26 Feb 2026)",
-   "publisher": "Katmandu Journal",
-   "source_id": "academic",
-   "contains": "Secondary commentary on the divergence between industry-estimated and officially recorded IT exports; locator for the underlying studies and their methods.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
-   "evidence_grade": "news/commentary - locator only"
-  },
-  {
-   "lead_id": "08A-L12",
-   "url": "https://iids.org.np/",
-   "title": "Institute for Integrated Development Studies (IIDS) - publications (IT sector export study)",
-   "publisher": "Institute for Integrated Development Studies",
-   "source_id": "academic",
-   "contains": "Industry-estimated IT export study (survey of IT firms and freelancers, reference year to be confirmed): estimated export value, firm and freelancer counts, employment, segment composition (software development, ITES/BPO, digital marketing, design), destination markets, payment channels. Exact report URL to be located.",
-   "verification": "URL from general knowledge — unverified",
-   "evidence_grade": "independent study"
-  },
-  {
-   "lead_id": "08A-L13",
-   "url": "https://myrepublica.nagariknetwork.com/index.php/news/nepals-it-service-export-surge-by-2028-percent-in-first-four-months-of-fy-676016dd26393.html",
-   "title": "Nepal's income from IT service exports surges in first four months of current FY (Republica)",
-   "publisher": "Republica",
-   "source_id": "academic",
-   "contains": "Secondary news citing an NRB monthly series on IT-service receipts; locator for the NRB table/line from which a monthly FY series can be compiled.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
-   "evidence_grade": "news - locator only"
-  },
-  {
-   "lead_id": "08A-L14",
-   "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
-   "title": "NSO microdata catalogue (NLFS 2017/18 and other surveys)",
-   "publisher": "National Statistics Office Nepal",
-   "source_id": "nso_nepal",
-   "contains": "NLFS microdata with ISCO-08 occupation and ISIC industry codes (fiscal-year survey). Required: employment by ISCO-08 4-digit (25xx, 35xx, 2166, 2513, 4131, 4132, 4222, 4229, 2643, 4311) crossed with ISIC Rev.4 divisions 61-63 and 82.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L15",
-   "url": "https://www.ilo.org/sites/default/files/2024-11/ToR_FieldEnumerators_NSO.pdf",
-   "title": "Nepal Labour Force Survey (NLFS) 2024/25 - ToR for field enumerators",
-   "publisher": "ILO / NSO Nepal",
-   "source_id": "nso_nepal",
-   "contains": "Confirms the NLFS IV round (FY2024/25 onward) and its questionnaire scope; results would provide the post-2017/18 occupational employment needed by 24A.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L16",
-   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
-   "title": "National Population and Housing Census 2021 - related materials",
-   "publisher": "National Statistics Office Nepal",
-   "source_id": "nso_nepal",
-   "contains": "Census 2021 economic-activity tables by occupation (major/sub-major group) and industry; fallback for IT workforce stock where NLFS cell sizes are small.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L17",
-   "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
-   "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
-   "publisher": "National Statistics Office Nepal",
-   "source_id": "nso_nepal",
-   "contains": "Employment by occupation/industry from the NLSS IV (FY2022/23) as a cross-check; not a labour-force survey - definitions differ.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L18",
-   "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
-   "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure (ILO WP140)",
-   "publisher": "ILO",
-   "source_id": "ilostat",
-   "contains": "Occupation-level GenAI exposure scores (ISCO-08 4-digit) to weight Nepal IT/BPO employment into automation-prone vs augmentation-prone segments (shared with 24A-L01).",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L19",
-   "url": "https://thedocs.worldbank.org/en/doc/9df559d23a6d80b3dfa2c4bc808f3a20-0050062026/original/The-AI-Exposure-of-Export-Linked-Jobs.pdf",
-   "title": "The AI Exposure of Export-Linked Jobs (World Bank, 2026)",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "Export-linked AI exposure by sector/country; used for segment outlook (shared with 24C-L12).",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L20",
-   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099520310212533663",
-   "title": "South Asia Development Update, October 2025: Jobs, AI, and Trade",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "South Asia services-trade and AI job-postings analysis; segment-level demand signals.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L21",
-   "url": "https://unctad.org/publication/least-developed-countries-report-2025",
-   "title": "The Least Developed Countries Report 2025: Are services the new path to structural transformation?",
-   "publisher": "UNCTAD",
-   "source_id": "unctadstat",
-   "contains": "LDC digitally deliverable services analysis; constraints (payments, connectivity, skills); possible Nepal country detail.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  },
-  {
-   "lead_id": "08A-L22",
-   "url": "https://ilabour.oii.ox.ac.uk/online-labour-index/",
-   "title": "Online Labour Index (Oxford Internet Institute iLabour project)",
-   "publisher": "University of Oxford, Oxford Internet Institute",
-   "source_id": "academic",
-   "contains": "Online-freelancer supply by country and occupation category (software/tech, creative/multimedia, clerical/data entry, writing/translation, sales/marketing support, professional services) from platform scraping; Nepal share and composition; calendar-time series.",
-   "verification": "URL from general knowledge — unverified",
-   "evidence_grade": "academic dataset"
-  },
-  {
-   "lead_id": "08A-L23",
-   "url": "https://pioneerlaw.com/resource/key-highlights-of-the-fiscal-budget/",
-   "title": "Key Highlights of the fiscal budget 2081/82 (2024/25) for the ICT sector",
-   "publisher": "Pioneer Law Associates",
-   "source_id": "academic",
-   "contains": "Secondary legal summary of FY2024/25 budget measures for IT exports (tax treatment of IT-export income, FX retention, freelancer registration); locator for the Finance Act 2081 text.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
-   "evidence_grade": "secondary legal summary - locator only"
-  },
-  {
-   "lead_id": "08A-L24",
-   "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
-   "title": "Employment Impact Assessment on Nepal's LDC Graduation (ILO, 2026)",
-   "publisher": "ILO",
-   "source_id": "ilo_research",
-   "contains": "Sectoral employment impacts of LDC graduation; check for ICT/BPO services employment and export-preference loss (services waiver) discussion.",
-   "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
-  }
- ]
+  "source_leads": [
+    {
+      "lead_id": "08A-L01",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of FY2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "BoP services credits by BPM6 category for FY2024/25 (Nepal fiscal year, mid-July to mid-July), NPR and USD; the 'telecommunications, computer and information services' line and any 'other business services' line; check whether NRB publishes a separate 'IT services' memo item.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L02",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "NRB Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual and monthly CME releases with BoP statistical tables; source for a multi-year FY time series of ICT-related services credits and for the vintage (revision) history of each year.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L03",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Preliminary annual FY2025/26 BoP services credits incl. telecommunications/computer/information line; latest vintage.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L04",
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "NRB Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Foreign-exchange directives/circulars governing receipt of IT-service export proceeds (company and individual/freelancer channels, foreign-currency account retention, reporting codes used by licensed FX dealers); defines what gets captured in BoP as ICT services versus remittance/other transfers.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L05",
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "UNCTADstat - International trade in digitally deliverable services, value",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Nepal exports of digitally deliverable services and ICT services (EBOPS 2010 category SI), calendar year, USD current; comparator economies. Calendar-year basis: must not be mixed with NRB FY series without documented conversion.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L06",
+      "url": "https://www.wto.org/english/res_e/statis_e/gstdh_digital_services_e.htm",
+      "title": "WTO Digitally Delivered Services Trade Dataset",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Modelled estimates of digitally delivered services exports by economy and sector incl. Nepal, calendar year; methodology note on imputation for non-reporters (estimate, not recorded BoP).",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L07",
+      "url": "https://www.wto.org/english/res_e/booksp_e/digital_trade_2023_e.pdf",
+      "title": "Handbook on Measuring Digital Trade, Second Edition (IMF, OECD, UNCTAD, WTO, 2023)",
+      "publisher": "IMF/OECD/UNCTAD/WTO",
+      "source_id": "wto",
+      "contains": "Definitions (digitally deliverable vs digitally delivered) and compilation guidance for capturing freelancer / platform-intermediated Mode 1 exports in BoP; basis for the recording-gap method.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L08",
+      "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+      "title": "Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": "Classification of computer services (EBOPS SI.2) vs personal transfers vs compensation of employees; residence rule for freelancers working for non-resident clients.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L09",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "WTO Trade Policy Review of Nepal 2025 - Secretariat report WT/TPR/S/478",
+      "publisher": "WTO",
+      "source_id": "wto",
+      "contains": "Services trade chapter: ICT/computer services regime, FX rules on services receipts, any cited official IT-export figures with their sources.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L10",
+      "url": "https://kathmandupost.com/national/2026/02/25/nepal-s-it-exports-near-1-billion-can-the-momentum-be-sustained",
+      "title": "Nepal's IT exports near $1 billion. Can the momentum be sustained? (Kathmandu Post, 25 Feb 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "Secondary news. Locator only: identifies which industry body/study produces the industry-estimated IT-export series and the workforce estimate it cites; no value to be taken from it.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+      "evidence_grade": "news - locator only"
+    },
+    {
+      "lead_id": "08A-L11",
+      "url": "https://katmandujournal.com/2026/02/26/how-big-is-nepals-it-sector-really/",
+      "title": "How big is Nepal's IT sector, really? (Katmandu Journal, 26 Feb 2026)",
+      "publisher": "Katmandu Journal",
+      "source_id": "academic",
+      "contains": "Secondary commentary on the divergence between industry-estimated and officially recorded IT exports; locator for the underlying studies and their methods.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+      "evidence_grade": "news/commentary - locator only"
+    },
+    {
+      "lead_id": "08A-L12",
+      "url": "https://iids.org.np/",
+      "title": "Institute for Integrated Development Studies (IIDS) - publications (IT sector export study)",
+      "publisher": "Institute for Integrated Development Studies",
+      "source_id": "academic",
+      "contains": "Industry-estimated IT export study (survey of IT firms and freelancers, reference year to be confirmed): estimated export value, firm and freelancer counts, employment, segment composition (software development, ITES/BPO, digital marketing, design), destination markets, payment channels. Exact report URL to be located.",
+      "verification": "URL from general knowledge — unverified",
+      "evidence_grade": "independent study"
+    },
+    {
+      "lead_id": "08A-L13",
+      "url": "https://myrepublica.nagariknetwork.com/index.php/news/nepals-it-service-export-surge-by-2028-percent-in-first-four-months-of-fy-676016dd26393.html",
+      "title": "Nepal's income from IT service exports surges in first four months of current FY (Republica)",
+      "publisher": "Republica",
+      "source_id": "academic",
+      "contains": "Secondary news citing an NRB monthly series on IT-service receipts; locator for the NRB table/line from which a monthly FY series can be compiled.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+      "evidence_grade": "news - locator only"
+    },
+    {
+      "lead_id": "08A-L14",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+      "title": "NSO microdata catalogue (NLFS 2017/18 and other surveys)",
+      "publisher": "National Statistics Office Nepal",
+      "source_id": "nso_nepal",
+      "contains": "NLFS microdata with ISCO-08 occupation and ISIC industry codes (fiscal-year survey). Required: employment by ISCO-08 4-digit (25xx, 35xx, 2166, 2513, 4131, 4132, 4222, 4229, 2643, 4311) crossed with ISIC Rev.4 divisions 61-63 and 82.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L15",
+      "url": "https://www.ilo.org/sites/default/files/2024-11/ToR_FieldEnumerators_NSO.pdf",
+      "title": "Nepal Labour Force Survey (NLFS) 2024/25 - ToR for field enumerators",
+      "publisher": "ILO / NSO Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Confirms the NLFS IV round (FY2024/25 onward) and its questionnaire scope; results would provide the post-2017/18 occupational employment needed by 24A.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L16",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials",
+      "publisher": "National Statistics Office Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Census 2021 economic-activity tables by occupation (major/sub-major group) and industry; fallback for IT workforce stock where NLFS cell sizes are small.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L17",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Employment by occupation/industry from the NLSS IV (FY2022/23) as a cross-check; not a labour-force survey - definitions differ.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L18",
+      "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+      "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure (ILO WP140)",
+      "publisher": "ILO",
+      "source_id": "ilostat",
+      "contains": "Occupation-level GenAI exposure scores (ISCO-08 4-digit) to weight Nepal IT/BPO employment into automation-prone vs augmentation-prone segments (shared with 24A-L01).",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L19",
+      "url": "https://thedocs.worldbank.org/en/doc/9df559d23a6d80b3dfa2c4bc808f3a20-0050062026/original/The-AI-Exposure-of-Export-Linked-Jobs.pdf",
+      "title": "The AI Exposure of Export-Linked Jobs (World Bank, 2026)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Export-linked AI exposure by sector/country; used for segment outlook (shared with 24C-L12).",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L20",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099520310212533663",
+      "title": "South Asia Development Update, October 2025: Jobs, AI, and Trade",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "South Asia services-trade and AI job-postings analysis; segment-level demand signals.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L21",
+      "url": "https://unctad.org/publication/least-developed-countries-report-2025",
+      "title": "The Least Developed Countries Report 2025: Are services the new path to structural transformation?",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "LDC digitally deliverable services analysis; constraints (payments, connectivity, skills); possible Nepal country detail.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    },
+    {
+      "lead_id": "08A-L22",
+      "url": "https://ilabour.oii.ox.ac.uk/online-labour-index/",
+      "title": "Online Labour Index (Oxford Internet Institute iLabour project)",
+      "publisher": "University of Oxford, Oxford Internet Institute",
+      "source_id": "academic",
+      "contains": "Online-freelancer supply by country and occupation category (software/tech, creative/multimedia, clerical/data entry, writing/translation, sales/marketing support, professional services) from platform scraping; Nepal share and composition; calendar-time series.",
+      "verification": "URL from general knowledge — unverified",
+      "evidence_grade": "academic dataset"
+    },
+    {
+      "lead_id": "08A-L23",
+      "url": "https://pioneerlaw.com/resource/key-highlights-of-the-fiscal-budget/",
+      "title": "Key Highlights of the fiscal budget 2081/82 (2024/25) for the ICT sector",
+      "publisher": "Pioneer Law Associates",
+      "source_id": "academic",
+      "contains": "Secondary legal summary of FY2024/25 budget measures for IT exports (tax treatment of IT-export income, FX retention, freelancer registration); locator for the Finance Act 2081 text.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)",
+      "evidence_grade": "secondary legal summary - locator only"
+    },
+    {
+      "lead_id": "08A-L24",
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation (ILO, 2026)",
+      "publisher": "ILO",
+      "source_id": "ilo_research",
+      "contains": "Sectoral employment impacts of LDC graduation; check for ICT/BPO services employment and export-preference loss (services waiver) discussion.",
+      "verification": "search-verified (URL appeared in r1 WebSearch results or existing upstream lead register)"
+    }
+  ]
 }

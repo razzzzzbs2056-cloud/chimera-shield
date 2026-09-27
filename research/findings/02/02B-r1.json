@@ -140,22 +140,26 @@
     {
       "id": "02B-A1",
       "text": "Nepali fiscal year (Shrawan-Ashadh, mid-July to mid-July); monthly profiles use Nepali months, with Ashadh as the final month.",
-      "basis": "assumption (CLAUDE.md rule 6)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (CLAUDE.md rule 6)'"
     },
     {
       "id": "02B-A2",
       "text": "Execution rate is reported on two denominators (original appropriation; mid-term revised estimate) and never a single unlabelled ratio.",
-      "basis": "assumption (methodological transparency)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (methodological transparency)'"
     },
     {
       "id": "02B-A3",
       "text": "FCGO audited consolidated statements take precedence for annual actuals; NRB cash-basis and Economic Survey partial-year figures are recorded as separate observations.",
-      "basis": "assumption (source hierarchy and vintage control)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (source hierarchy and vintage control)'"
     },
     {
       "id": "02B-A4",
       "text": "OAG findings are coded into execution-failure categories from report text; the categorisation scheme is a labelled research construct, not an OAG classification.",
-      "basis": "assumption (method)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (method)'"
     }
   ],
   "challenges": [

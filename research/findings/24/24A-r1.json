@@ -138,17 +138,20 @@
     {
       "id": "24A-A1",
       "text": "Outsourced IT/BPO work in Nepal is represented by the ISCO-08 codes listed in specific.task_exposure_evidence.nepal_occupation_map.",
-      "basis": "assumption pending confirmation by 08A/21E with NLFS 2022/23 data"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption pending confirmation by 08A/21E with NLFS 2022/23 data'"
     },
     {
       "id": "24A-A2",
       "text": "Exposure indices are treated as upper-bound technical potential, not as displacement rates.",
-      "basis": "design choice consistent with ILO WP140 guidance distinguishing automation and augmentation"
+      "basis": "assumption",
+      "basis_note": "original label: 'design choice consistent with ILO WP140 guidance distinguishing automation and augmentation'"
     },
     {
       "id": "24A-A3",
       "text": "Results from high-income labour markets (Denmark, US) are not transferred to Nepal without adjustment for task content and digital access (WP166 approach).",
-      "basis": "methodological"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodological'"
     }
   ],
   "challenges": [

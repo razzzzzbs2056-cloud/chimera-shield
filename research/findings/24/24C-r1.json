@@ -102,7 +102,8 @@
     {
       "id": "24C-A2",
       "text": "Global import demand in Nepal's plausible client markets is the relevant demand measure, not world exports.",
-      "basis": "methodological; requires WTO partner detail"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodological; requires WTO partner detail'"
     }
   ],
   "challenges": [

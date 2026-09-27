@@ -146,22 +146,26 @@
     {
       "id": "02A-A1",
       "text": "All revenue series are on Nepali fiscal years (Shrawan-Ashadh, mid-July to mid-July); calendar-year international series (e.g. WDI) are not mixed without a documented FY mapping.",
-      "basis": "assumption (CLAUDE.md rule 6)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (CLAUDE.md rule 6)'"
     },
     {
       "id": "02A-A2",
       "text": "FCGO audited/consolidated statements are preferred for outturn; Economic Survey figures for the current year (partial-year actuals plus estimates) are recorded as separate, preliminary observations.",
-      "basis": "assumption (source hierarchy and vintage control)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (source hierarchy and vintage control)'"
     },
     {
       "id": "02A-A3",
       "text": "Import-stage revenue is defined as all revenue collected by customs offices (customs duty, VAT on imports, excise on imports, other border levies), reported gross and after sharing.",
-      "basis": "assumption (definition)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (definition)'"
     },
     {
       "id": "02A-A4",
       "text": "Grants are excluded from revenue-composition shares and reported separately.",
-      "basis": "assumption (GFS convention)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (GFS convention)'"
     }
   ],
   "challenges": [

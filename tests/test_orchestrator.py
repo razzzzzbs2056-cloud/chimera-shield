@@ -112,3 +112,12 @@ def test_collect_and_fetch_leads(tmp_path):
 def test_invalid_unit_code_rejected(tmp_path):
     doc = _finding(findings=[{"claim": "x", "type": "pending", "value": None, "unit": "USD"}])
     assert any("unknown unit" in p for p in validate_finding(doc, ObservationStore(tmp_path / "o.jsonl")))
+
+
+def test_assumption_labels_enforced(tmp_path):
+    store = ObservationStore(tmp_path / "o.jsonl")
+    ok = _finding(assumptions=[{"id": "A1", "text": "t", "basis": "assumption"}])
+    assert validate_finding(ok, store) == []
+    bad = _finding(assumptions=["plain string", {"id": "A2", "text": "t", "basis": "design"}])
+    probs = validate_finding(bad, store)
+    assert any("assumption 0" in p for p in probs) and any("E2" in p for p in probs)

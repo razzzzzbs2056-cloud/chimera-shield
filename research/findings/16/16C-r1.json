@@ -46,23 +46,33 @@
   "assumptions": [
     {
       "id": "A-16C-01",
-      "text": "Scenario shock units follow engine SHOCK_UNITS (pct_change = proportional change in level, decimal; pp = decimal percentage-point change in a rate). These are scenario-schema codes, distinct from src/economic_model/units.py unit codes used in finding values; a documented mapping is proposed (challenge to 00C)."
+      "text": "Scenario shock units follow engine SHOCK_UNITS (pct_change = proportional change in level, decimal; pp = decimal percentage-point change in a rate). These are scenario-schema codes, distinct from src/economic_model/units.py unit codes used in finding values; a documented mapping is proposed (challenge to 00C).",
+      "basis": "assumption",
+      "basis_note": "original label: None"
     },
     {
       "id": "A-16C-02",
-      "text": "A compound scenario should apply each causal pathway once; where components share a model variable, the compound's joint magnitude is an evidence question, not the sum, max or first of component magnitudes."
+      "text": "A compound scenario should apply each causal pathway once; where components share a model variable, the compound's joint magnitude is an evidence question, not the sum, max or first of component magnitudes.",
+      "basis": "assumption",
+      "basis_note": "original label: None"
     },
     {
       "id": "A-16C-03",
-      "text": "External flow and price shocks are expressed in foreign-currency terms (USD or INR); NPR effects enter only via the exchange_rate channel."
+      "text": "External flow and price shocks are expressed in foreign-currency terms (USD or INR); NPR effects enter only via the exchange_rate channel.",
+      "basis": "assumption",
+      "basis_note": "original label: None"
     },
     {
       "id": "A-16C-04",
-      "text": "Aggregate_real_growth shocks are residual effects not captured by the scenario's other quantified channels."
+      "text": "Aggregate_real_growth shocks are residual effects not captured by the scenario's other quantified channels.",
+      "basis": "assumption",
+      "basis_note": "original label: None"
     },
     {
       "id": "A-16C-05",
-      "text": "Reported events are neither facts nor scenario inputs until verified; scenarios remain hypothetical stress tests with no probabilities."
+      "text": "Reported events are neither facts nor scenario inputs until verified; scenarios remain hypothetical stress tests with no probabilities.",
+      "basis": "assumption",
+      "basis_note": "original label: None"
     }
   ],
   "challenges": [

@@ -1,0 +1,175 @@
+{
+  "subagent_id": "15A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T16:00:00+00:00",
+  "summary": "Independent statistical and evidence audit of the Division A research package, round r1 (findings 00A-00B and 01A-14C; restricted network, data hosts blocked; no data fetched by 15A). Q1 (does every factual value link to a registered source with period and retrieval metadata?): no Division A finding asserts a fact or estimate. research/sources/observations.jsonl does not exist, so no empirical value in the package is evidenced. Every empirical item is correctly typed pending with value null. The only non-null value is 01C's target-definition assumption, taken from config/model_config.yaml. A digit scan of claims, notes, summaries, specific blocks and assumptions found no empirical magnitudes. The digits present are years, fiscal-year labels, SDG, HS, ISIC and ISCO codes, DOIs, report numbers, voltage classes, age bands, definitional thresholds, lead counts and labelled sensitivity-grid parameters. The one exception is an 08A source-lead title that reproduces a news headline containing a figure: it is a lead title, not a claim, but it breaks the protocol rule that leads carry no numbers. All finding source_ids resolve to the source catalog, and all declared unit codes parse. Some pending items have no unit or no period (details in specific.unit_checks). Q2 (do units, price bases and currencies match wherever values are combined?): at design level they do NOT fully match. Three cross-agent contradictions would produce period-mixing or measure-mixing errors if implemented as written: (i) the 01C FT-03 pass criterion compares 'external debt/GDP' with LIC-DSF thresholds, which apply to the present value of PPG external debt (02C challenge, not yet reflected in 01C); (ii) 03A plans the INR/USD depreciation distribution on Indian-FY (April-March) annual averages from the RBI Handbook, while 01C sensitivity axis SG-04 requires Nepal-FY-aligned quartiles; (iii) there are three different FY-population mappings (01C-A07 geometric mean of adjacent 1 July values; 10C-A4 arithmetic mean; 10C assumption finding a single 1 July t-1 value). Q3 (do accounting identities hold within tolerance?): the only computed artefact, reports/baseline/target_arithmetic.md sections 1-2, reproduces exactly from config/model_config.yaml. No other identity can be tested until observations exist. Platform checks, run by 15A: python -m pytest -q exited 0 with 124 tests passing (the doubled -q from pytest.ini suppresses the summary line); python -m src.cli validate printed 'validation: 0 problems; 0 open source conflicts (kept, not errors)'; all 44 Division A finding files print 'valid' under validate-finding. Separately, 18 Division A files label assumption basis with strings other than 'evidence' or 'assumption', and 08A-08C give assumptions as plain strings. The audit E2 check treats all of these as unlabelled. Overall 15A verdict on the package: INCONSISTENT (cross-agent convention contradictions), and otherwise UNVERIFIED (every empirical input pending).",
+  "findings": [
+    {
+      "claim": "Division A package (00A-14C, round r1) contains no fact or estimate findings; every empirical item is typed pending with value null. The single non-null value is the 01C target-definition assumption taken from config/model_config.yaml.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Audit result recorded as an assumption-type statement about the repository, not an empirical value. Reproduce with the scan described in specific.evidence_checks.method."
+    },
+    {
+      "claim": "Empirical verification of every Division A quantity: requires the observation store (research/sources/observations.jsonl, currently absent) populated by `python -m src.cli leads --fetch` and ingestion in round r2, with raw-file SHA-256 under data/raw/.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "round r2",
+      "source_ids": [],
+      "note": "Data required: retrieved primary documents for all Division A source leads, each value recorded as an Observation with source id, URL, publication date/vintage, retrieval time and raw-file hash."
+    },
+    {
+      "claim": "INCONSISTENT (design level): 01C FT-03 pass criterion ('external debt/GDP stabilises below the DSA threshold') compares a total, face-value external-debt ratio with LIC-DSF thresholds, which are defined on the present value of external public and publicly guaranteed debt. 02C has challenged this and proposed a split into FT-03a/b/c; 01C still lists 02C as 'missing in r1'.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Evidence: research/findings/01/01C-r1.json specific.feasibility_tests FT-03 and challenges[to 00A]; research/findings/02/02C-r1.json challenges[to 01C], assumption 02C-A2, specific.sustainability_thresholds_for_FT03. Recorded as a separate ledger record."
+    },
+    {
+      "claim": "INCONSISTENT (design level): 03A specific.fx_assumption_constraints.method quantifies the historical INR/USD depreciation distribution on the Indian fiscal year (April-March, RBI Handbook annual averages), while 01C SG-04 levels require quartiles of rolling INR/USD depreciation that are Nepal-FY aligned (mid-July to mid-July). Annual Indian-FY averages cannot be re-aggregated to Nepal FY; daily or monthly FBIL/RBI reference rates are required (03A-A2 allows this for monthly series).",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Rule 6 (CLAUDE.md): never mix FY bases without a documented conversion. Rate type (NRB middle rate) is consistent between 01C-P-ESC03 and 03A-A3. A second issue is a base-year splice: headline history uses the observed NRB NPR/USD middle rate, while projections use the peg ratio x INR/USD; the peg-identity residual that 03A will measure must be carried into the base year, or FT-09 will not reproduce USD0."
+    },
+    {
+      "claim": "INCONSISTENT (design level): three different Nepal-FY population conversions exist. 01C-A07 uses the geometric mean of the WPP 1 July values of the two calendar years spanned. 10C-A4 uses the arithmetic mean of 1 July t and 1 July t+1 for FY t/t+1. A 10C assumption finding maps the FY ending mid-July t to the single 1 July t-1 value, which is half a year off the FY midpoint and contradicts 10C-A4.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Numerically the geometric/arithmetic difference is small, but per-capita USD GDP and the working-age paths must use one registered convention. The single-value mapping is a period error."
+    },
+    {
+      "claim": "Cross-division contradiction: 24A (Division B) cites 'NLFS 2022/23' occupational employment. Division A agents 01A, 08A, 10B and 14B record, from their lead registers, that the latest completed NLFS is 2017/18, that NLSS IV 2022/23 is a living-standards survey (not an LFS), and that NLFS IV fieldwork runs from FY2024/25. Which survey release exists is pending retrieval of the NSO release pages.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "FY2017/18, FY2022/23, FY2024/25 survey rounds",
+      "source_ids": ["nso_nepal"],
+      "note": "Data required: NSO survey release listing (NLFS rounds and NLSS IV) with report titles and fieldwork periods. 08A has already challenged 24A; 15A records the contradiction in the ledger."
+    },
+    {
+      "claim": "Assumption-labelling defect: 18 Division A files (02A, 02B, 02C, 05B, 08A, 08B, 08C, 11A, 11B, 11C, 12A, 12B, 12C, 13A, 13B, 13C, 14B, 14C) either give assumption 'basis' values outside {'evidence','assumption'} (for example 'assumption (method)', 'rule', 'design', 'definition', or a code path) or list assumptions as plain strings without id/basis (08A-08C). The audit E2 check (src/auditing/checks.py check_assumptions_labelled) treats all of these as unlabelled.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Fix: set basis to exactly 'assumption' (or 'evidence' with observation ids) and move the qualifier into the text. validate-finding does not check this field, so files still print 'valid'."
+    },
+    {
+      "claim": "15A audit method: automated scans are the floor. Digits in text fields are classified by context (year, FY label, code, DOI, URL, definitional threshold, grid parameter, count of leads) and every residual digit is inspected by hand.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Observation store research/sources/observations.jsonl is absent: zero retrieved observations back the Division A package.",
+    "Raw-file hashes (data/raw/) for every Division A source lead: none exist in r1.",
+    "Pending items without a unit code (52 of 453 Division A pending items; all 8 in 01B, 9 of 11 in 14C, 4 of 7 in 11A, and others) cannot be unit-checked on ingestion until units are assigned.",
+    "Pending items without a period (28 items: 01B, 01C, 02A, 02B, 04A, 04B, 11A, 11B, 11C) cannot be FY/CY-checked until periods are assigned.",
+    "Pending items without source_ids (5 items: 06A, 06B, 11B).",
+    "Source leads flagged as general-knowledge or unverified URLs (229 of 1222 Division A leads) need endpoint verification on first fetch."
+  ],
+  "assumptions": [
+    {"id": "15A-A1", "text": "Repository counts reported by 15A (files, items, leads, tests) are computed from committed files at audit time and are platform-audit results, not empirical economic values; they are reproducible with the commands in specific.", "basis": "assumption"},
+    {"id": "15A-A2", "text": "A design-level contradiction between agents' registered conventions is classed as INCONSISTENT even before any value is computed, because implementing both as written would mix periods or measures (CLAUDE.md rule 6).", "basis": "assumption"},
+    {"id": "15A-A3", "text": "TGT-ARITH-001 is not re-audited: its proposal hash (src/auditing/proposals.target_arithmetic_proposal) is unchanged from the ledger record, so the existing verdicts stand.", "basis": "assumption"}
+  ],
+  "challenges": [
+    {"to": "01C", "text": "FT-03 compares total external debt/GDP with LIC-DSF thresholds, which apply to the PV of PPG external debt. Adopt the FT-03a/b/c split proposed by 02C, or state why not. State the publicly financed share of the financing gap as a labelled assumption. Update input '02C (missing in r1)': 02C-r1.json now exists."},
+    {"to": "01C", "text": "01C-A07 (geometric mean of adjacent 1 July values) differs from 10C-A4 (arithmetic mean). Register one FY-population convention with 00A, and treat the other as a sensitivity."},
+    {"to": "01C", "text": "FT-09 requires project() to reproduce USD0 in the base year. The base-year NPR/USD is the observed NRB middle rate, while projected NPR/USD is peg ratio x INR/USD. State how the peg-identity residual is carried forward, or the base-year splice will break the identity."},
+    {"to": "03A", "text": "Build the INR/USD depreciation distribution from daily or monthly FBIL/RBI reference rates re-aggregated to Nepal FY (per 03A-A2), not from Indian-FY annual averages in the RBI Handbook, so that it matches 01C SG-04. Keep the Indian-FY series only as a labelled cross-check."},
+    {"to": "10C", "text": "Your assumption finding maps the FY ending mid-July t to WPP 1 July t-1. This contradicts 10C-A4 (average of 1 July t and t+1 for FY t/t+1) and is half a year off the FY midpoint. Withdraw or correct it."},
+    {"to": "24A", "text": "You cite 'NLFS 2022/23'. Division A (01A, 08A, 10B, 14B) records the latest completed NLFS as 2017/18, NLSS IV 2022/23 as a non-LFS living-standards survey, and NLFS IV from FY2024/25. Re-label the survey or cite the NSO release that establishes an NLFS 2022/23."},
+    {"to": "08A", "text": "Source-lead title 08A-L10 (index 9) reproduces a news headline containing a figure. Leads must not carry numbers (run protocol step 3). Replace it with a neutral title."},
+    {"to": "02A", "text": "Assumption basis labels must be exactly 'assumption' or 'evidence' (E2). The same applies to 02B, 02C, 05B, 11A, 11B, 11C, 12A, 12B, 12C, 13A, 13B, 13C, 14B and 14C; 08A, 08B and 08C must convert plain-string assumptions into {id, text, basis} objects."},
+    {"to": "00A", "text": "Consider extending validate-finding to reject assumption basis values outside {'evidence','assumption'} and pending items without unit or period, so that defects the auditor finds are caught at submission."}
+  ],
+  "uncertainty": "High. No empirical value in the Division A package has been retrieved, so 15A can audit only design, conventions, labelling and the arithmetic of assumption-only artefacts. Whether any Division A number will be correct is unknown until round r2. The digit scan is heuristic; although residuals were inspected by hand, a number disguised in prose (for example a spelled-out figure) could have been missed. The design contradictions are real in the committed files, but each is fixable before r2 computations.",
+  "specific": {
+    "evidence_checks": {
+      "status": "complete for r1 (design level); empirical lineage pending r2",
+      "question": "Does every factual value link to a registered source with period and retrieval metadata?",
+      "answer": "No factual values are asserted, so there is nothing unlinked. Equally, nothing is evidenced: the observation store is absent.",
+      "method": [
+        "Load every research/findings/{00..14}/*.json; count finding types and flag fact/estimate items without observation_ids and pending items with non-null value.",
+        "Walk all string fields; strip URLs, date stamps, FY labels and identifier patterns; classify every remaining digit by context and inspect residuals by hand.",
+        "Resolve every finding source_id against research/sources/source_catalog.yaml 'sources' keys.",
+        "Run `python -m src.cli validate-finding` on each file."
+      ],
+      "results": {
+        "fact_or_estimate_without_observation": "none (no fact/estimate items exist)",
+        "pending_items_carrying_values": "none",
+        "non_null_values": "one: 01C target-definition assumption (config target, USD_current_tn)",
+        "snippet_numbers_in_claims_summary_specific": "none found in Division A claims, summaries, specific blocks or assumptions",
+        "snippet_numbers_in_lead_metadata": "one: an 08A lead title reproduces a headline figure",
+        "unknown_source_ids": "none",
+        "validate_finding": "all 44 Division A files print 'valid'",
+        "assumption_basis_labels": "non-conforming in 18 files (see findings)",
+        "observation_store": "absent (research/sources/observations.jsonl not present)"
+      },
+      "platform_commands_run_by_15A": {
+        "pytest": "python -m pytest -q -> exit code 0, 124 tests passed (summary line suppressed by addopts -q doubling)",
+        "validate": "python -m src.cli validate -> 'validation: 0 problems; 0 open source conflicts (kept, not errors)'",
+        "audit_verify_before_15_records": "python -m src.cli audit-verify -> 'ledger OK'"
+      }
+    },
+    "unit_checks": {
+      "status": "complete for declared codes; contradictions found in period and measure bases",
+      "question": "Do units, price bases and currencies match wherever values are combined?",
+      "declared_unit_codes": "all 439 declared Division A finding units parse with src/economic_model/units.parse_unit",
+      "missing_units": "52 pending items lack a unit (heaviest: 01B, 14C, 11A)",
+      "missing_periods": "28 pending items lack a period",
+      "fy_cy_contradictions": [
+        {"id": "UC-01", "agents": ["01C", "03A"], "issue": "INR/USD depreciation distribution on Indian FY (03A) vs Nepal-FY aligned quartiles (01C SG-04)", "severity": "calc (period mixing)"},
+        {"id": "UC-02", "agents": ["01C", "10C"], "issue": "Three FY-population mappings (01C-A07 geometric mean; 10C-A4 arithmetic mean; 10C finding single 1 July t-1)", "severity": "calc (period mixing)"},
+        {"id": "UC-03", "agents": ["01C", "02C"], "issue": "FT-03 compares face-value total external debt/GDP with PV-of-PPG-external-debt thresholds", "severity": "calc (measure mismatch)"},
+        {"id": "UC-04", "agents": ["01C", "03A"], "issue": "Base-year splice between observed NRB NPR/USD and projected peg x INR/USD; peg residual not carried", "severity": "condition (to resolve before FT-09)"}
+      ],
+      "consistent_conventions_confirmed": [
+        "NRB middle rate as NPR/USD rate type (01C-P-ESC03, 03A-A3, 05B-A1, 22E-A3)",
+        "NLFS labelling across 01A, 08A, 10B, 14B (latest completed round 2017/18; NLSS IV 2022/23 non-LFS; NLFS IV 2024/25)",
+        "WPP population kept on a calendar-year 1 July basis and not merged with census counts (10C, 01C)",
+        "Stocks at Nepal FY-end with IDS calendar-year stocks kept separate (02C-A3)"
+      ],
+      "open_unit_code_requests_from_division_A": [
+        "NPR per kVA per month and hours per customer (05B)",
+        "PPP international-dollar output per worker (10B; PPP codes now exist in units.py, so recheck)",
+        "per-person-per-day PPP poverty line (14A; a PPP_constYYYY_per_person_per_day pattern now exists in units.py, so recheck)"
+      ]
+    },
+    "identity_checks": {
+      "status": "partial: assumption-only artefacts reproduced; empirical identities pending",
+      "question": "Do accounting identities hold within tolerance?",
+      "reproduced": [
+        {"artefact": "reports/baseline/target_arithmetic.md section 1 (required multiple and CAGR, 5 hypothetical bases x 3 milestones)", "inputs": "config/model_config.yaml target, A-TGT-01, A-TGT-02", "result": "reproduced exactly"},
+        {"artefact": "reports/baseline/target_arithmetic.md section 2 (USD CAGR, implied real CAGR, I/Y at ICOR 3/4/5; 12 rows)", "inputs": "A-TGT-03, A-TGT-04a-d, A-TGT-05", "identity": "(1+USD)=(1+real)(1+deflator)/(1+depreciation); I/Y = ICOR x real growth", "result": "0 mismatches"}
+      ],
+      "pending": [
+        "Expenditure and production GDP identities on NSO tables (01A) - needs observations",
+        "Debt dynamics identity via fiscal.debt_path (02C) - needs observations",
+        "Peg identity NPR/USD = peg ratio x INR/USD residual (03A) - needs daily NRB and FBIL data",
+        "project() base-year reproduction of USD0 (01C FT-09) - needs INP-01, INP-02"
+      ],
+      "note_on_config": "A-TGT-04b-d express NPR/USD depreciation as an independent trend, which 03A-A1 and 01C-A04 reject while the peg holds. 01C-A09 retains them only as hypothetical grid points; reports must keep that label."
+    },
+    "verdict": {
+      "value": "INCONSISTENT",
+      "reasons": [
+        "Design-level contradictions in measure and period bases between 01C and 02C (FT-03), 01C and 03A (INR/USD FY basis) and 01C and 10C (FY-population mapping).",
+        "Otherwise UNVERIFIED: every empirical input is pending and the observation store is absent.",
+        "Assumption labelling fails E2 in 18 files."
+      ],
+      "ledger_subjects": ["DIVA-R1", "DIVA-R1-FT03-DEBT-MEASURE", "DIVA-R1-FX-FY-BASIS", "DIVA-R1-FY-POPULATION", "24A-r1-NLFS-LABEL"]
+    }
+  }
+}

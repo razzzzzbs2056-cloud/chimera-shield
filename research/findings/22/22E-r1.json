@@ -229,7 +229,8 @@
     {
       "id": "22E-A2",
       "text": "Seasons on NEA hydrological calendar in Nepali months (wet = Jestha-Kartik), each month classified as spill, export-marginal or import-marginal.",
-      "basis": "assumption (aligned with 05A/22B)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (aligned with 05A/22B)'"
     },
     {
       "id": "22E-A3",

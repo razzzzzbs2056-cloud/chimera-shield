@@ -1,0 +1,144 @@
+{
+  "subagent_id": "15C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T16:00:00+00:00",
+  "summary": "Independent legal, social and environmental audit of the Division A coverage in 11A and 11C (legal and fiscal-federal framework), 14A-14C (poverty, provincial and group gaps, safeguards and displacement), 13A-13C (disaster losses, cryosphere and ecosystems, resilience and adaptation finance) and 07C (land, food import dependence, provincial food insecurity). Round r1, restricted network; no data fetched by 15C; every legal text and value is pending. Q1 (does the proposal identify every applicable legal requirement?): partly. The Constitution (Schedules 5-9), FITTA, the PPP and Investment Act, the Industrial Enterprises Act, the Arbitration Act, the Civil Procedure Code, IGFA and NNRFC Acts, the LGOA, the Environment Protection Act and Rules, the Forest Act, RTI and disability law, ILO C169 status, UNDRIP and lender safeguard frameworks are all covered as leads. Four gaps remain. First, the land-acquisition statute actually in force is unresolved (11A says secondary sources disagree; 14C lists the Land Acquisition Act 2034 with the 2015 LARR policy). Second, no Division A agent covers labour law or foreign-employment law, although strategies rely on labour and migration. Third, no Division A agent covers electricity or water-resources law, although STR-A and STR-C rely on hydropower, although 11A covers the constitutional natural-resource provisions. Fourth, none of the 14C statutes are yet mapped to STR-A..E. Q2 (are distributional effects reported by income group and province?): the baselines are designed (14A NLSS IV national-line poverty by province with PIP kept separate; 14B seven-province dashboard tagged to the 12 welfare objectives, gender and caste/ethnic gap tables; 07C provincial food insecurity; 10A/09A quintile and province breakdowns). However, no agent designs an incidence method linking a strategy or scenario to income-group or provincial outcomes. The existing SCN-S01..S10 records from Agent 15 already fail L2 on this ground. Q3 (are environmental costs quantified or explicitly flagged?): neither. 13A covers historical disaster losses and exposure, and 13B covers the glacier, forest, protected-area and water baselines. However, Division A has no emissions baseline (GHG appears only in Division B: 22D, 25A, 25E). welfare.py OBJECTIVES contains no environment objective: environment enters only through 'resilience' (disaster loss). Environmental costs of hydropower, roads and industry (forest loss, river-flow alteration, air pollution) are neither quantified nor flagged per strategy. 15C verdict: UNVERIFIED.",
+  "findings": [
+    {
+      "claim": "Land-acquisition statute in force, and the legal status of the 2015 LARR policy: requires the authoritative current text and the amendment history from the Nepal Law Commission.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "as in force at retrieval date",
+      "source_ids": ["lawcommission_nepal"],
+      "note": "Data required: Law Commission statute page and amendment list; 11A and 14C should share one observation set."
+    },
+    {
+      "claim": "Labour, foreign-employment, electricity and water-resources statutes applicable to STR-A..E: not covered by any Division A finding; titles, in-force versions and relevant provisions must be retrieved.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "as in force at retrieval date",
+      "source_ids": ["lawcommission_nepal", "dofe", "erc_nepal", "doe_nepal"],
+      "note": "Data required: Law Commission texts of the labour, foreign-employment, electricity and water-resources acts and the electricity regulatory commission act, with amendment status. Names and years to be confirmed from the texts, not memory."
+    },
+    {
+      "claim": "Distributional incidence of strategies and scenarios by income group (quintile) and province: requires an incidence method linking sector and price shocks to household income sources (NLSS IV income module, including remittances) and provincial production structure.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLSS IV 2022/23 base; Nepal FY projections",
+      "source_ids": ["nso_nepal"],
+      "note": "Data required: NLSS IV income-by-source and consumption by quintile and province (14A), provincial GVA by sector (NSO provincial accounts), and the 14B provincial dashboard."
+    },
+    {
+      "claim": "Environmental cost baseline for strategies: emissions by sector, forest-cover change attributable to infrastructure, river-flow alteration below hydropower, and air-quality burden. No Division A agent owns an emissions baseline.",
+      "type": "pending",
+      "value": null,
+      "unit": "tonnes",
+      "period": "calendar year (inventory) and Nepal FY (projects); conversion to be documented",
+      "source_ids": ["unfccc", "mofe_nepal", "icimod"],
+      "note": "Data required: Nepal national GHG inventory/BTR submissions (UNFCCC), MoFE forest data, and project-level EIA/IEE environmental cost estimates."
+    },
+    {
+      "claim": "Coverage gap: welfare.py OBJECTIVES has no environmental-quality objective. Environmental costs can therefore worsen without triggering tradeoffs() unless mapped to 'resilience' or 'rights_accountability'. Environmental effects need either a dedicated objective or an explicit per-proposal environment flag.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "15C does not edit code; raised to 00 and the human reviewer."
+    },
+    {
+      "claim": "Rights-risk coverage in 14C (FPIC, resettlement, non-titled occupants, grievance, consultation) is designed at instrument level and gated behind recorded human approval and ethics review for any fieldwork. This is adequate as a frame, but it is not yet linked to 06C delay causes or to strategy-level cost and timeline assumptions.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Legal constraint register mapped to STR-A..E (statute x strategy x obligation) - absent.",
+    "Land-acquisition statute in force - unresolved (11A, 14C).",
+    "Labour, foreign-employment, electricity and water-resources law - not covered in Division A.",
+    "Incidence method for income-group and provincial effects - absent.",
+    "Provincial GVA by sector (for production-side provincial incidence) - not requested by any Division A agent.",
+    "Emissions baseline - absent in Division A (Division B 22D/25A/25E only).",
+    "Environmental cost per strategy (quantified or explicitly flagged unquantified) - absent.",
+    "Provincial HDI vintage predates NPHC 2021 (14B) - reference-year mismatch to be flagged."
+  ],
+  "assumptions": [
+    {"id": "15C-A1", "text": "For strategies and scenarios, an environmental cost is acceptable as 'unquantified' only when it is explicitly flagged per channel (emissions, forest, water, air, biodiversity, cross-border); a blanket 'pending' is not a flag.", "basis": "assumption"},
+    {"id": "15C-A2", "text": "Distributional reporting requires both an income-group and a provincial dimension, with survey standard errors; provinces with overlapping confidence intervals are not ranked (consistent with 14A/14B).", "basis": "assumption"},
+    {"id": "15C-A3", "text": "Legal coverage is judged against statutes a strategy's channels would actually engage (land, environment, labour, migration, energy, water, investment, procurement, fiscal federalism), not against an exhaustive legal code.", "basis": "assumption"}
+  ],
+  "challenges": [
+    {"to": "11A", "text": "Resolve the in-force land-acquisition statute jointly with 14C using one observation set. Add labour, foreign-employment, electricity and water-resources statutes to statute_inventory, or state which agent owns them."},
+    {"to": "14A", "text": "Poverty and remittance baselines are designed, but no incidence method exists to translate strategy or scenario shocks into quintile outcomes. Propose one (e.g. income-source exposure by quintile from the NLSS IV income module), or state that it is out of scope and name the owner."},
+    {"to": "14B", "text": "Agreed: no strategy is inclusion-neutral in r1. Also request provincial GVA by sector so the dashboard can carry production-side incidence, and flag the Nepal HDR 2020 provincial HDI reference year against NPHC 2021 denominators."},
+    {"to": "14C", "text": "Map each safeguard obligation to STR-A..E channels (hydropower, roads, airports, industrial zones). Share displacement and FPIC delay causes with 06C as coded variables (as you requested) so that timelines include them."},
+    {"to": "13B", "text": "Ecosystem baselines exist, but no emissions baseline is owned in Division A. Either own a GHG inventory baseline or state the Division B owner (25A/25E/22D) and the handover."},
+    {"to": "13A", "text": "Historical loss and exposure tables are designed. For L3, strategies need a forward environmental-cost flag per channel, which 13A/13B/13C do not provide; please coordinate with 14C and 05."},
+    {"to": "07C", "text": "Provincial food insecurity is designed. Add the distributional side of food-import dependence (net food buyers vs sellers by quintile and province from NLSS IV), which determines who bears import-price shocks."},
+    {"to": "11C", "text": "Strategies that assign delivery to provinces or local levels need the assignment_matrix and capacity_gaps before any provincial-distribution claim; please expose them by function so 15C can check each strategy."},
+    {"to": "00", "text": "welfare.py OBJECTIVES has no environment objective, so tradeoffs() cannot flag environmental losses. Consider adding one, or require proposals to carry environment.unquantified_flag per channel; human reviewer decision."}
+  ],
+  "uncertainty": "High. Legal texts, distributional data and environmental data are all unretrieved. Coverage gaps are identified from committed designs and are certain. Whether the missing statutes impose binding constraints, and how large the distributional and environmental effects are, is unknown until r2.",
+  "specific": {
+    "legal_checks": {
+      "status": "pending (coverage reviewed; no texts retrieved)",
+      "question": "Does the proposal identify every applicable legal requirement?",
+      "answer": "Partly. Constitutional, investment, PPP, arbitration, fiscal-federal, environment, forest, RTI, disability and safeguard instruments are covered as leads. Land acquisition is unresolved; labour, foreign-employment, electricity and water-resources law are uncovered; no statute is mapped to strategies.",
+      "covered_by": {
+        "11A": ["Constitution 2015 (Schedules 5-9, directive principles, property rights)", "FITTA", "PPP and Investment Act", "Industrial Enterprises Act", "Land Acquisition Act (status unresolved)", "Arbitration Act", "National Civil Procedure Code", "contract-enforcement metrics (DB2020 vs B-READY kept separate)"],
+        "11C": ["IGFA Act", "NNRFC Act", "LGOA", "transfer formulae", "capacity gaps"],
+        "14C": ["Environment Protection Act and Rules", "Land Acquisition Act and LARR Policy", "Forest Act", "RTI and disability laws", "ILO C169 (ratification to confirm)", "UNDRIP", "WB ESF, ADB SPS/ESF, AIIB ESF, IFC PS5/PS7"],
+        "02B/06C/11B": ["Public Procurement Act (procurement practice)"],
+        "02C": ["public debt law and NNRFC borrowing limits"]
+      },
+      "gaps": [
+        {"id": "LG-01", "gap": "Land-acquisition statute in force unresolved", "affects": ["STR-A", "STR-C", "06C delivery lags"]},
+        {"id": "LG-02", "gap": "Labour and foreign-employment law not covered", "affects": ["STR-A", "STR-B", "S01", "S06"]},
+        {"id": "LG-03", "gap": "Electricity and water-resources law not covered in Division A", "affects": ["STR-A", "STR-C", "05B/22E"]},
+        {"id": "LG-04", "gap": "No statute-by-strategy mapping", "affects": ["all STR"]}
+      ],
+      "check_L1_outcome_if_run_now": "fail (evidence) for any strategy: no legal_requirements listed"
+    },
+    "distributional_checks": {
+      "status": "pending (baselines designed; incidence absent)",
+      "question": "Are distributional effects reported by income group and province?",
+      "answer": "Baselines by province, and partly by quintile, are designed (14A, 14B, 07C, 09A, 10A). No incidence method links strategies or scenarios to these baselines, so no proposal can yet report effects.",
+      "baselines_designed": [
+        {"owner": "14A", "item": "NLSS IV national-line poverty by province; PIP separate; remittance income share by quintile and province"},
+        {"owner": "14B", "item": "Seven-province dashboard tagged to 12 objectives; gender and caste/ethnic gap tables; no composite ranking"},
+        {"owner": "07C", "item": "Provincial food insecurity (NLSS IV, NDHS 2022)"},
+        {"owner": "09A/10A", "item": "Education and health indicators by quintile and province"},
+        {"owner": "11C", "item": "Fiscal transfers by tier (provincial fiscal incidence)"}
+      ],
+      "missing": ["incidence method (income source x shock channel)", "provincial GVA by sector", "net food buyer/seller status by quintile"],
+      "existing_ledger_evidence": "Agent 15 records for SCN-S01..S10 fail L2, L3 and L4 (no distribution, environment or welfare assessment)",
+      "check_L2_outcome_if_run_now": "fail (evidence)"
+    },
+    "environmental_checks": {
+      "status": "pending (baselines partial; per-strategy costs absent)",
+      "question": "Are environmental costs quantified or explicitly flagged as unquantified?",
+      "answer": "Neither, at strategy level. The hazard and ecosystem baselines are designed (13A, 13B, 13C). No Division A emissions baseline exists, and no per-channel environmental flag is attached to any strategy.",
+      "baselines_designed": [
+        {"owner": "13A", "item": "Historical disaster loss, AAL from published models, exposed assets (hydropower, roads) by basin and province"},
+        {"owner": "13B", "item": "Glacier mass balance, forest and protected-area shares (definitions kept separate), basin water availability referenced to 25A"},
+        {"owner": "13C", "item": "EWS coverage, resilience BCR evidence (one Nepal study; not generalised), adaptation finance subset"},
+        {"owner": "05B", "item": "Electric cooking and transport valued as import substitution; air-quality co-benefit mentioned, not quantified"}
+      ],
+      "missing": ["emissions baseline (Division A)", "forest loss and river-flow alteration per infrastructure programme", "air-quality burden", "environment objective in welfare.py"],
+      "check_L3_outcome_if_run_now": "fail (evidence) for strategies and scenarios"
+    },
+    "verdict": {
+      "value": "UNVERIFIED",
+      "reasons": [
+        "Legal requirements are only partly identified: land acquisition is unresolved; labour, foreign-employment, electricity and water law are uncovered; no mapping to strategies (L1).",
+        "No incidence method exists, so effects by income group and province cannot be reported (L2).",
+        "Environmental costs are neither quantified nor flagged per channel; there is no Division A emissions baseline and no environment objective in welfare.py (L3/L4)."
+      ],
+      "ledger_subjects": ["DIVA-R1", "DIVA-R1-IMPL"]
+    }
+  }
+}

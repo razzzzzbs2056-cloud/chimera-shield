@@ -79,7 +79,8 @@
     {
       "id": "19A-A1",
       "text": "UCDP and ACLED differ in event definitions (UCDP: organised violence with fatality threshold; ACLED: includes demonstrations, strategic developments); values are reported separately.",
-      "basis": "methodology"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodology'"
     },
     {
       "id": "19A-A2",

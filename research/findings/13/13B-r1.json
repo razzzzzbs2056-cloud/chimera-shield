@@ -119,7 +119,8 @@
     {
       "id": "13B-A1",
       "text": "25A projection ranges are referenced, not re-estimated.",
-      "basis": "assumption (coordination)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (coordination)'"
     },
     {
       "id": "13B-A2",

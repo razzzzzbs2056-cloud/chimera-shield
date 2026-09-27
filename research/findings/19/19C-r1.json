@@ -93,7 +93,8 @@
     {
       "id": "19C-A2",
       "text": "Freight shocks enter the model only via trade_costs on imports; they are not added to GDP directly.",
-      "basis": "model convention"
+      "basis": "assumption",
+      "basis_note": "original label: 'model convention'"
     }
   ],
   "challenges": [

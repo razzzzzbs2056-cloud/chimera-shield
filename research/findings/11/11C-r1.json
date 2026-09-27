@@ -77,12 +77,14 @@
     {
       "id": "11C-A1",
       "text": "Budgeted transfers (budget speech) and actual transfers (FCGO CFS) are recorded as separate series and never mixed; all are Nepali fiscal years (mid-July to mid-July).",
-      "basis": "assumption (evidence rule 6)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (evidence rule 6)'"
     },
     {
       "id": "11C-A2",
       "text": "Revenue sharing (VAT, internal excise, royalties) is treated distinctly from grants when summing intergovernmental flows.",
-      "basis": "assumption (IGFA Act structure; to be confirmed on retrieval)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (IGFA Act structure; to be confirmed on retrieval)'"
     }
   ],
   "challenges": [

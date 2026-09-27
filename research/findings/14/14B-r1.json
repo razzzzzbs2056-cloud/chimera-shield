@@ -296,17 +296,20 @@
     {
       "id": "14B-A1",
       "text": "Group gap tables use only official classifications (NPHC 2021 codes or the grouping as published in each source table), with verbatim labels; no characterisation or ranking of groups.",
-      "basis": "assumption (task rule and platform non-negotiables)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (task rule and platform non-negotiables)'"
     },
     {
       "id": "14B-A2",
       "text": "Provincial dispersion indicator for poverty_inclusion = population-weighted CV and max-min range of national-line headcounts within one NLSS round.",
-      "basis": "assumption (method choice)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (method choice)'"
     },
     {
       "id": "14B-A3",
       "text": "NDHS 2022 is treated as an official MoHP survey for gender/asset indicators although the catalog lists dhs at tier 7.",
-      "basis": "assumption; flag for 00B source-tier review"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption; flag for 00B source-tier review'"
     },
     {
       "id": "14B-A4",

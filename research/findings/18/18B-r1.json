@@ -84,7 +84,8 @@
     {
       "id": "18B-A1",
       "text": "Source-country (MOFCOM), host-country (NRB) and approval (DoI/IBN) FDI measures are kept separate.",
-      "basis": "CLAUDE.md evidence rule 4"
+      "basis": "assumption",
+      "basis_note": "original label: 'CLAUDE.md evidence rule 4'"
     },
     {
       "id": "18B-A2",

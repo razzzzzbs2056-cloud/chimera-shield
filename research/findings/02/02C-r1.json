@@ -1,1600 +1,1606 @@
 {
- "subagent_id": "02C",
- "task_id": "r1",
- "generated_at": "2026-09-27T00:00:00+00:00",
- "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used). No values recorded; every empirical item is pending. Q1 (debt stock/composition): primary leads are the PDMO Public Debt Bulletin (FY2024/25 close), PDMO monthly debt statistics (Shrawan and Falgun 2082), MTDS 2024, FCGO Consolidated Financial Statements FY2022/23-FY2023/24, MoF Economic Surveys, the IMF 2026 Article IV/seventh ECF review DSA annex, IMF WEO GGXWDG_NGDP and World Bank IDS. A coverage bridge (PDMO central government -> general government -> DSA PPG -> IDS external) is designed for conflicts C-08/C-09, and every ratio will carry a coverage label. Q2 (debt-stabilising primary balance): parametric method using src/economic_model/fiscal.py with a composite effective rate that folds the foreign-currency share and depreciation into debt_stabilising_primary_balance, verified against debt_path, over a growth x interest x FX x contingent-shock grid tied to 01C, 20C, 20B and config assumptions A-TGT-04a..d. Q3 (contingent liabilities): a 12-item register (guarantees, NEA incl. PPAs, NOC, other SOEs, on-lending, PPP/IBN, subnational, arrears/multi-year commitments, disaster reconstruction, pensions, financial sector, DSA stress parameters) with items to verify. For 01C FT-03/U3: 13 thresholds are identified with documentary sources (LIC-DSF 2018 Guidance Note and 2024 Supplement, located by WebSearch; NNRFC borrowing limits; debt law; MTDS benchmarks; 03A reserve floor; MAC SRDSF for a post-graduation branch), all values pending. FT-03 is challenged because DSA thresholds apply to PV of PPG external debt, not total external debt.",
- "findings": [
-  {
-   "claim": "Q1: Central-government public debt stock, total, FY-end (mid-July), PDMO coverage",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2014/15-FY2024/25 (Nepal FY)",
-   "source_ids": [
-    "pdmo",
-    "mof_nepal"
-   ],
-   "observation_ids": [],
-   "note": "PDMO Public Debt Bulletin / annual reports; record coverage = central government (federal) unless document states otherwise.",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L05",
-    "02C-L06"
-   ]
-  },
-  {
-   "claim": "Q1: Domestic vs external split of central-government debt, FY-end",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2014/15-FY2024/25",
-   "source_ids": [
-    "pdmo"
-   ],
-   "observation_ids": [],
-   "note": "External stock valued at FY-end exchange rates (valuation changes are SFA, not deficit).",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L06",
-    "02C-L08"
-   ]
-  },
-  {
-   "claim": "Q1: Domestic debt by instrument (T-bills, development bonds, citizen savings bonds, foreign employment bonds, other) and by holder (NRB, BFIs, others)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2024/25 and latest month",
-   "source_ids": [
-    "pdmo",
-    "nrb"
-   ],
-   "observation_ids": [],
-   "note": "Holder split needed for rollover/crowding-out analysis (03B).",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L02",
-    "02C-L13"
-   ]
-  },
-  {
-   "claim": "Q1: External debt by creditor (IDA, ADB, IMF, JICA/Japan, China/EXIM, India/EXIM, other bilateral, other multilateral)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2024/25 and mid-March 2026",
-   "source_ids": [
-    "pdmo",
-    "wb_ids"
-   ],
-   "observation_ids": [],
-   "note": "Compare PDMO (FY-end, central gov.) with IDS PPG (calendar-year end) only on the PPG component (C-09).",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L03",
-    "02C-L31"
-   ]
-  },
-  {
-   "claim": "Q1: Concessional share of external debt (by grant-element definition used by PDMO/DSA)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2024/25",
-   "source_ids": [
-    "pdmo",
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "State the concessionality definition (e.g. grant element threshold and discount rate) used by each source; do not compare across definitions.",
-   "lead_ids": [
-    "02C-L04",
-    "02C-L25"
-   ]
-  },
-  {
-   "claim": "Q1: Currency composition of external debt (SDR, USD, JPY, EUR, CNY, INR, other) incl. SDR look-through",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2024/25 and latest month",
-   "source_ids": [
-    "pdmo",
-    "wb_ids"
-   ],
-   "observation_ids": [],
-   "note": "Joint table with 20B (one reconciled table). Supplies foreign_share s and currency weights for epsilon in fiscal.debt_path.",
-   "lead_ids": [
-    "02C-L04",
-    "02C-L03",
-    "02C-L02",
-    "02C-L31"
-   ]
-  },
-  {
-   "claim": "Q1: Central-government debt / nominal GDP (PDMO stock / NSO FY GDP, same vintage)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2014/15-FY2024/25",
-   "source_ids": [
-    "pdmo",
-    "nso_nepal"
-   ],
-   "observation_ids": [],
-   "note": "Denominator must be same-FY nominal GDP of a stated NSO vintage; post-rebasing GDP changes ratios (C-01).",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L06"
-   ]
-  },
-  {
-   "claim": "Q1: General-government gross debt, % GDP (IMF WEO GGXWDG_NGDP)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "WEO year labels (map to Nepal FY per WEO country note)",
-   "source_ids": [
-    "imf_weo"
-   ],
-   "observation_ids": [],
-   "note": "Separate observation; coverage and year-label conventions differ from PDMO (C-08).",
-   "lead_ids": [
-    "02C-L30"
-   ]
-  },
-  {
-   "claim": "Q1: DSA public-debt coverage and ratios (PV and nominal): external PPG and total public debt, % GDP; debt service / revenue and / exports",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2024/25 baseline and DSA projection horizon (Nepal FY)",
-   "source_ids": [
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "Read DSA annex coverage table verbatim (which of: central gov, provinces/locals, SOEs, guarantees, central bank). Coordinate with 20C to avoid duplicate observations.",
-   "lead_ids": [
-    "02C-L25",
-    "02C-L27",
-    "02C-L28"
-   ]
-  },
-  {
-   "claim": "Q1: Total external debt and components (PPG, PNG, IMF credit, short-term), IDS",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "CY2014-CY2024 (calendar year-end)",
-   "source_ids": [
-    "wb_ids"
-   ],
-   "observation_ids": [],
-   "note": "Calendar-year stocks; never combined with FY-end PDMO without documented conversion (rule 6).",
-   "lead_ids": [
-    "02C-L31",
-    "02C-L32"
-   ]
-  },
-  {
-   "claim": "Q1: Effective interest rate, domestic (interest paid on domestic debt in FY t / domestic debt stock at end FY t-1)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2015/16-FY2024/25",
-   "source_ids": [
-    "pdmo",
-    "fcgo"
-   ],
-   "observation_ids": [],
-   "note": "Numerator from FCGO/PDMO interest outturn; denominator PDMO FY-end stock. Input i_d.",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L11",
-    "02C-L12"
-   ]
-  },
-  {
-   "claim": "Q1: Effective interest rate, external (interest paid on external debt / external stock end t-1, in NPR, excluding valuation)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2015/16-FY2024/25",
-   "source_ids": [
-    "pdmo",
-    "fcgo",
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "Input i_f; also record MTDS weighted average interest rate as a separate observation. Service charges/commitment fees classification to be stated.",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L04",
-    "02C-L25"
-   ]
-  },
-  {
-   "claim": "Q1: Debt service (principal and interest) and interest / total revenue",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2014/15-FY2024/25",
-   "source_ids": [
-    "pdmo",
-    "fcgo",
-    "mof_nepal"
-   ],
-   "observation_ids": [],
-   "note": "Revenue denominator from 02A (state gross federal vs post-sharing; excluding grants).",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L11",
-    "02C-L06"
-   ]
-  },
-  {
-   "claim": "Q1: Refinancing-risk indicators: ATM (domestic, external), share maturing within 12 months, fixed/variable share",
-   "type": "pending",
-   "value": null,
-   "unit": "years",
-   "period": "FY2023/24 (MTDS reference)",
-   "source_ids": [
-    "pdmo"
-   ],
-   "observation_ids": [],
-   "note": "MTDS 2024 cost-risk table.",
-   "lead_ids": [
-    "02C-L04"
-   ]
-  },
-  {
-   "claim": "Q1: Subnational (provincial and local) borrowing outstanding and NNRFC internal-borrowing limits",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2019/20-FY2024/25",
-   "source_ids": [
-    "nnrfc",
-    "fcgo"
-   ],
-   "observation_ids": [],
-   "note": "Needed for general-government coverage bridge; CFS consolidates three tiers.",
-   "lead_ids": [
-    "02C-L16",
-    "02C-L17",
-    "02C-L11",
-    "02C-L14"
-   ]
-  },
-  {
-   "claim": "Q2: Debt-stabilising primary balance (pb*) for each growth x interest x FX case in the scenario grid",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY-based projection, horizon per 01C milestones",
-   "source_ids": [
-    "pdmo",
-    "imf_article_iv",
-    "nso_nepal"
-   ],
-   "observation_ids": [],
-   "note": "Computed with fiscal.debt_stabilising_primary_balance using the composite effective rate (see specific.debt_stabilising_primary_balance); all inputs pending; becomes an 'estimate' only once inputs are observations.",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L04",
-    "02C-L25"
-   ]
-  },
-  {
-   "claim": "Q2: Historical primary balance, central government (% GDP), and debt-creating-flows decomposition (pb, r-g, FX valuation, SFA residual)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2014/15-FY2024/25",
-   "source_ids": [
-    "mof_nepal",
-    "fcgo",
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "Residual SFA from identity; DSA annex reports its own decomposition — keep both.",
-   "lead_ids": [
-    "02C-L11",
-    "02C-L06",
-    "02C-L25"
-   ]
-  },
-  {
-   "claim": "Q3: Outstanding government guarantees (explicit), by beneficiary",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2024/25",
-   "source_ids": [
-    "pdmo",
-    "fcgo",
-    "mof_nepal"
-   ],
-   "observation_ids": [],
-   "note": "PDMO bulletin / CFS schedule / Economic Survey; may be absent — then record as data gap (PEFA PI-10).",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L11",
-    "02C-L06",
-    "02C-L36"
-   ]
-  },
-  {
-   "claim": "Q3: Government on-lending and share investment in public enterprises (stock), by enterprise",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2024/25",
-   "source_ids": [
-    "mof_nepal",
-    "fcgo"
-   ],
-   "observation_ids": [],
-   "note": "Asset of government but credit-risk exposure; NEA and NOC separately.",
-   "lead_ids": [
-    "02C-L49",
-    "02C-L06",
-    "02C-L10",
-    "02C-L11"
-   ]
-  },
-  {
-   "claim": "Q3: SOE total liabilities, borrowings and accumulated losses (NEA, NOC, Nepal Airlines, others)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2023/24-FY2024/25",
-   "source_ids": [
-    "mof_nepal",
-    "nea",
-    "noc_nepal",
-    "oag_nepal"
-   ],
-   "observation_ids": [],
-   "note": "MoF public-enterprise status review; NEA/NOC annual reports; OAG audits.",
-   "lead_ids": [
-    "02C-L49",
-    "02C-L19",
-    "02C-L20",
-    "02C-L18"
-   ]
-  },
-  {
-   "claim": "Q3: NEA power-purchase-agreement commitments (take-or-pay, USD-indexed where applicable) as quasi-fiscal exposure",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "latest NEA annual report FY",
-   "source_ids": [
-    "nea",
-    "doe_nepal"
-   ],
-   "observation_ids": [],
-   "note": "Commitment, not debt; enters as contingent SFA only if NEA cannot pay. Coordinate with 05A.",
-   "lead_ids": [
-    "02C-L19",
-    "02C-L24"
-   ]
-  },
-  {
-   "claim": "Q3: PPP/IBN project fiscal commitments (guarantees, VGF, termination payments)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "latest",
-   "source_ids": [
-    "ibn",
-    "mof_nepal"
-   ],
-   "observation_ids": [],
-   "note": "Inventory from 06C (ppp_track_record) plus PDA terms.",
-   "lead_ids": [
-    "02C-L22",
-    "02C-L23",
-    "02C-L24"
-   ]
-  },
-  {
-   "claim": "Q3: Multi-year contract commitments and payment arrears",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2024/25",
-   "source_ids": [
-    "oag_nepal",
-    "wb_npl",
-    "fcgo"
-   ],
-   "observation_ids": [],
-   "note": "Arrears are liabilities not in PDMO debt; multi-year commitments are future spending obligations.",
-   "lead_ids": [
-    "02C-L18",
-    "02C-L33",
-    "02C-L48"
-   ]
-  },
-  {
-   "claim": "Q3: Disaster/reconstruction contingent needs (reference class and 2026 flood damage)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2014/15 (PDNA prices); 2026 event unverified",
-   "source_ids": [
-    "npc_nepal",
-    "ndrrma"
-   ],
-   "observation_ids": [],
-   "note": "PDNA 2015 public-sector recovery need as reference; 2026 Trishuli-basin damage is unverified per 06C.",
-   "lead_ids": [
-    "02C-L21"
-   ]
-  },
-  {
-   "claim": "Q3: Unfunded civil-service pension obligation (implicit liability)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "latest",
-   "source_ids": [
-    "fcgo",
-    "mof_nepal"
-   ],
-   "observation_ids": [],
-   "note": "No actuarial estimate located; likely data gap.",
-   "lead_ids": [
-    "02C-L51",
-    "02C-L49"
-   ]
-  },
-  {
-   "claim": "Q3: DSA contingent-liability coverage and stress-test magnitude used for Nepal",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "2026 DSA",
-   "source_ids": [
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "Read the contingent-liability test parameters (SOE debt, PPP, financial-market default components) actually applied in the Nepal DSA.",
-   "lead_ids": [
-    "02C-L25",
-    "02C-L40",
-    "02C-L43"
-   ]
-  },
-  {
-   "claim": "FT-03: Nepal debt-carrying capacity classification and composite-indicator score in the latest DSA",
-   "type": "pending",
-   "value": null,
-   "unit": "index",
-   "period": "2026 DSA vintage",
-   "source_ids": [
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "Determines which threshold row applies; 20C records the risk rating; 02C records thresholds applied.",
-   "lead_ids": [
-    "02C-L25",
-    "02C-L40",
-    "02C-L45"
-   ]
-  },
-  {
-   "claim": "FT-03: LIC-DSF indicative thresholds applicable to Nepal (PV ext PPG/GDP, PV ext PPG/exports, ext debt service/exports, ext debt service/revenue) and PV total public debt/GDP benchmark",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "Guidance Note 2018 (and 2024 supplement if revised)",
-   "source_ids": [
-    "imf_article_iv",
-    "wb_ids"
-   ],
-   "observation_ids": [],
-   "note": "Transcribe the threshold table from the Guidance Note and the row applied in the Nepal DSA annex; values pending.",
-   "lead_ids": [
-    "02C-L40",
-    "02C-L41",
-    "02C-L42",
-    "02C-L43",
-    "02C-L44",
-    "02C-L25"
-   ]
-  },
-  {
-   "claim": "FT-03: Domestic statutory/policy borrowing limits (NNRFC internal-borrowing ceiling for federal government; budget-speech domestic borrowing; MTDS benchmarks; statutory limits under the debt law)",
-   "type": "pending",
-   "value": null,
-   "unit": "percent",
-   "period": "FY2024/25-FY2026/27",
-   "source_ids": [
-    "nnrfc",
-    "mof_nepal",
-    "pdmo",
-    "lawcommission_nepal"
-   ],
-   "observation_ids": [],
-   "note": "Record each limit with its legal/policy basis and denominator (GDP of which FY/vintage).",
-   "lead_ids": [
-    "02C-L16",
-    "02C-L17",
-    "02C-L15",
-    "02C-L09",
-    "02C-L04",
-    "02C-L47"
-   ]
-  },
-  {
-   "claim": "FT-03: ECF programme quantitative ceilings on net domestic borrowing / new external non-concessional borrowing (as historical programme constraints)",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "ECF 2022-2026 test dates",
-   "source_ids": [
-    "imf_article_iv"
-   ],
-   "observation_ids": [],
-   "note": "MEFP/TMU tables; programme ended with the seventh review — historical reference only, not a forward constraint.",
-   "lead_ids": [
-    "02C-L25",
-    "02C-L26"
-   ]
-  }
- ],
- "data_gaps": [
-  "PDMO FY-end central-government debt stock by domestic instrument/holder and external creditor/currency, FY2014/15-FY2024/25 (Public Debt Bulletin, annual reports).",
-  "Interest and principal outturn by domestic/external source (FCGO CFS, PDMO) to derive effective interest rates i_d, i_f.",
-  "IMF 2026 DSA annex: coverage table, debt-carrying capacity/CI, applicable thresholds, PV ratios, contingent-liability stress parameters.",
-  "LIC-DSF Guidance Note (2018) threshold table and 2024 supplement changes.",
-  "NNRFC annual internal-borrowing limit recommendations and legal text of the public debt law (limits on borrowing/guarantees).",
-  "Explicit guarantee schedule (none located; PEFA PI-10 narrative to confirm whether one is published).",
-  "MoF Annual Status Review of Public Enterprises (latest edition URL not located; general-knowledge lead only) for NEA/NOC liabilities.",
-  "NEA PPA commitment profile (take-or-pay volumes, USD-denominated tariffs) and NOC accumulated losses/bank borrowing.",
-  "Actuarial estimate of unfunded civil-service pension liabilities (no source located).",
-  "Payment arrears and multi-year contract commitment stock (OAG, FCGO, WB NDU Nov 2025).",
-  "Subnational borrowing outstanding by tier (CFS FY2022/23-FY2023/24).",
-  "Nominal GDP (NSO, FY, stated vintage) and exports/revenue denominators matching DSA definitions."
- ],
- "assumptions": [
-  {
-   "id": "02C-A1",
-   "text": "Debt-stabilising primary balance uses the composite effective rate i_eff = (1-s)*i_d + s*[(1+i_f)(1+eps)-1]; substituting i_eff into fiscal.debt_stabilising_primary_balance(d, i_eff, g_n) reproduces the one-period steady state of fiscal.debt_path (algebraic identity, not an empirical claim). A constant stock-flow adjustment sfa adds one-for-one: pb* = d(i_eff-g_n)/(1+g_n) + sfa.",
-   "basis": "assumption (method; identity from src/economic_model/fiscal.py)"
-  },
-  {
-   "id": "02C-A2",
-   "text": "Nominal-face-value debt ratios (PDMO, WEO) and present-value ratios (LIC-DSF) are different quantities; FT-03 threshold tests use PV ratios only when a PV series from the DSA or a documented discounting (DSF discount rate) is available; otherwise the test is reported as not computable rather than approximated.",
-   "basis": "assumption (method)"
-  },
-  {
-   "id": "02C-A3",
-   "text": "Stocks are Nepal-FY-end (mid-July) unless the source is IDS (calendar year-end); ratios use same-FY nominal GDP of one stated NSO vintage.",
-   "basis": "assumption (CLAUDE.md rule 6)"
-  },
-  {
-   "id": "02C-A4",
-   "text": "Depreciation eps in debt dynamics is NPR against the external-debt currency basket, built from the 20B currency table and the NPR-INR peg identity; scenario FX cases reuse config/model_config.yaml A-TGT-04a..d labels rather than new numbers.",
-   "basis": "assumption"
-  },
-  {
-   "id": "02C-A5",
-   "text": "Contingent liabilities enter debt dynamics as sfa shocks (called guarantees, SOE bail-outs, disaster reconstruction) sized from the register once values exist; they are not added to the baseline debt stock.",
-   "basis": "assumption (method)"
-  },
-  {
-   "id": "02C-A6",
-   "text": "Capital spending financed by borrowing is subject to execution shortfall (02B) and does not convert one-for-one to public capital; revenue gains from DRMS measures are not assumed (02A).",
-   "basis": "assumption (per 02A/02B challenges)"
-  },
-  {
-   "id": "02C-A7",
-   "text": "Coverage bridge ordering: PDMO central government -> + provincial/local borrowing -> = general government (compare WEO) -> + guaranteed SOE/other debt -> = PPG public debt (compare DSA coverage table); external subset compared with IDS PPG; IDS PNG, IMF credit (if outside PDMO) and short-term reported as residuals.",
-   "basis": "assumption (method; C-08/C-09 investigation design)"
-  }
- ],
- "challenges": [
-  {
-   "to": "01C",
-   "text": "FT-03 pass criterion 'external debt/GDP stabilises below the DSA threshold' mixes concepts: LIC-DSF thresholds apply to the PRESENT VALUE of external PUBLIC AND PUBLICLY GUARANTEED debt (plus a PV total-public-debt benchmark), not to total external debt; a financing gap (I/Y - S/Y) maps to the current account and to total external liabilities incl. FDI and private debt. Suggest splitting FT-03 into FT-03a (PPG external PV/GDP, PV/exports, debt service/exports, debt service/revenue vs thresholds for Nepal's debt-carrying capacity), FT-03b (PV total public debt/GDP benchmark and domestic NNRFC/statutory borrowing limits), FT-03c (reserve cover, 03A). State the share of the gap assumed publicly financed, as an assumption."
-  },
-  {
-   "to": "01C",
-   "text": "U3 'for the entire horizon' should be tested per debt-carrying-capacity case: thresholds shift if the CI classification changes, and the LIC-DSF itself ceases to apply if Nepal moves to the MAC framework after IDA/PRGT graduation (20C). Treat framework switch as a scenario branch."
-  },
-  {
-   "to": "20C",
-   "text": "Please record (or confirm 02C records) the DSA coverage table, debt-carrying capacity and the threshold row applied, with page/table references, so FT-03 thresholds and the risk rating share one observation set; avoid duplicate observations of the same DSA ratio."
-  },
-  {
-   "to": "20B",
-   "text": "02C needs the reconciled currency-composition table (SDR look-through) with coverage stated as central-government external debt (PDMO) and PPG (IDS), same FY-end date, to parameterise foreign_share and the eps basket."
-  },
-  {
-   "to": "06C",
-   "text": "ppp_track_record should capture, per PDA/PPP project, whether the government provides guarantees, VGF, revenue/PPA backing or termination compensation, so that the contingent-liability register can size PPP exposure."
-  },
-  {
-   "to": "05A",
-   "text": "NEA PPA commitments (take-or-pay, USD-indexed tariffs) and NEA borrowings on-lent by government are fiscal contingent exposures; please share the PPA commitment profile when retrieved."
-  },
-  {
-   "to": "03B",
-   "text": "Bank holdings of government domestic debt and a banking-crisis contingent liability (per LIC-DSF financial-market shock) are needed; share holder split and system size when retrieved."
-  },
-  {
-   "to": "00B",
-   "text": "Add a watch conflict: nominal (face value) public debt ratios (PDMO/WEO) vs PV ratios (DSA) — definitional classification; not reconcilable without the DSF discount rate."
-  }
- ],
- "uncertainty": "High. No primary document was retrieved, so the debt level, composition, effective rates and contingent exposures are all unknown in this round. Structural uncertainties: (i) coverage differences between PDMO, WEO, DSA and IDS (C-08/C-09) can change debt ratios materially and are not reconcilable without the DSA coverage table; (ii) face-value vs present-value measurement matters for concessional debt; (iii) FY-end vs calendar-year-end dates and exchange-rate valuation; (iv) contingent liabilities (NEA PPAs, NOC losses, PPP guarantees, pensions) may be undocumented, so the register may understate exposure; (v) forward interest cost depends on IDA/ADB graduation branches (20C) and the applicable framework (LIC-DSF vs MAC SRDSF); (vi) the 2024 Supplement may have revised guidance used by the 2026 DSA.",
- "specific": {
-  "debt_baseline": {
-   "status": "pending",
-   "definitions": {
-    "central_government_debt_PDMO": "Federal government domestic and external liabilities recorded by PDMO at FY-end (mid-July); coverage to be confirmed from bulletin notes (expected: excludes SOE own-borrowing and subnational debt).",
-    "general_government_gross_debt_WEO": "GFSM-based gross debt of general government (GGXWDG_NGDP); WEO year labels require the WEO country note for FY mapping.",
-    "PPG_debt_DSA": "Coverage stated in the DSA 'coverage of public sector debt' table (central gov, state/local, other elements of general government, off-budget funds, guarantees, central-bank debt borrowed on behalf of gov, non-guaranteed SOE debt) — each tick recorded.",
-    "external_debt_IDS": "Total external debt = PPG long-term + PNG + IMF credit + short-term; calendar year-end, USD.",
-    "effective_interest_rate": "Interest paid in FY t / stock at end FY t-1, separately domestic and external (NPR, excluding valuation changes).",
-    "concessional_share": "Share of external debt meeting the grant-element definition used by the source (state definition)."
-   },
-   "coverage_bridge_PDMO_to_IMF": {
-    "status": "pending",
-    "rows": [
-     {
-      "row": "A",
-      "item": "PDMO central-government debt (domestic + external), FY-end",
-      "source_leads": [
-       "02C-L01",
-       "02C-L05"
+  "subagent_id": "02C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used). No values recorded; every empirical item is pending. Q1 (debt stock/composition): primary leads are the PDMO Public Debt Bulletin (FY2024/25 close), PDMO monthly debt statistics (Shrawan and Falgun 2082), MTDS 2024, FCGO Consolidated Financial Statements FY2022/23-FY2023/24, MoF Economic Surveys, the IMF 2026 Article IV/seventh ECF review DSA annex, IMF WEO GGXWDG_NGDP and World Bank IDS. A coverage bridge (PDMO central government -> general government -> DSA PPG -> IDS external) is designed for conflicts C-08/C-09, and every ratio will carry a coverage label. Q2 (debt-stabilising primary balance): parametric method using src/economic_model/fiscal.py with a composite effective rate that folds the foreign-currency share and depreciation into debt_stabilising_primary_balance, verified against debt_path, over a growth x interest x FX x contingent-shock grid tied to 01C, 20C, 20B and config assumptions A-TGT-04a..d. Q3 (contingent liabilities): a 12-item register (guarantees, NEA incl. PPAs, NOC, other SOEs, on-lending, PPP/IBN, subnational, arrears/multi-year commitments, disaster reconstruction, pensions, financial sector, DSA stress parameters) with items to verify. For 01C FT-03/U3: 13 thresholds are identified with documentary sources (LIC-DSF 2018 Guidance Note and 2024 Supplement, located by WebSearch; NNRFC borrowing limits; debt law; MTDS benchmarks; 03A reserve floor; MAC SRDSF for a post-graduation branch), all values pending. FT-03 is challenged because DSA thresholds apply to PV of PPG external debt, not total external debt.",
+  "findings": [
+    {
+      "claim": "Q1: Central-government public debt stock, total, FY-end (mid-July), PDMO coverage",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2014/15-FY2024/25 (Nepal FY)",
+      "source_ids": [
+        "pdmo",
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "PDMO Public Debt Bulletin / annual reports; record coverage = central government (federal) unless document states otherwise.",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L05",
+        "02C-L06"
       ]
-     },
-     {
-      "row": "B",
-      "item": "+ provincial and local government borrowing",
-      "source_leads": [
-       "02C-L11",
-       "02C-L16"
+    },
+    {
+      "claim": "Q1: Domestic vs external split of central-government debt, FY-end",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2014/15-FY2024/25",
+      "source_ids": [
+        "pdmo"
+      ],
+      "observation_ids": [],
+      "note": "External stock valued at FY-end exchange rates (valuation changes are SFA, not deficit).",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L06",
+        "02C-L08"
       ]
-     },
-     {
-      "row": "C",
-      "item": "= general-government gross debt (A+B); compare IMF WEO GGXWDG_NGDP -> residual = definitional/year-label difference",
-      "source_leads": [
-       "02C-L30"
+    },
+    {
+      "claim": "Q1: Domestic debt by instrument (T-bills, development bonds, citizen savings bonds, foreign employment bonds, other) and by holder (NRB, BFIs, others)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2024/25 and latest month",
+      "source_ids": [
+        "pdmo",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Holder split needed for rollover/crowding-out analysis (03B).",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L02",
+        "02C-L13"
       ]
-     },
-     {
-      "row": "D",
-      "item": "+ guaranteed SOE debt and other guarantees",
-      "source_leads": [
-       "02C-L01",
-       "02C-L11",
-       "02C-L49"
+    },
+    {
+      "claim": "Q1: External debt by creditor (IDA, ADB, IMF, JICA/Japan, China/EXIM, India/EXIM, other bilateral, other multilateral)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2024/25 and mid-March 2026",
+      "source_ids": [
+        "pdmo",
+        "wb_ids"
+      ],
+      "observation_ids": [],
+      "note": "Compare PDMO (FY-end, central gov.) with IDS PPG (calendar-year end) only on the PPG component (C-09).",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L03",
+        "02C-L31"
       ]
-     },
-     {
-      "row": "E",
-      "item": "+ other elements per DSA coverage table (e.g. central-bank borrowing on behalf of gov, non-guaranteed SOE debt if included)",
-      "source_leads": [
-       "02C-L25"
+    },
+    {
+      "claim": "Q1: Concessional share of external debt (by grant-element definition used by PDMO/DSA)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2024/25",
+      "source_ids": [
+        "pdmo",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "State the concessionality definition (e.g. grant element threshold and discount rate) used by each source; do not compare across definitions.",
+      "lead_ids": [
+        "02C-L04",
+        "02C-L25"
       ]
-     },
-     {
-      "row": "F",
-      "item": "= DSA public debt (compare DSA annex stock) -> residual",
-      "source_leads": [
-       "02C-L25"
+    },
+    {
+      "claim": "Q1: Currency composition of external debt (SDR, USD, JPY, EUR, CNY, INR, other) incl. SDR look-through",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2024/25 and latest month",
+      "source_ids": [
+        "pdmo",
+        "wb_ids"
+      ],
+      "observation_ids": [],
+      "note": "Joint table with 20B (one reconciled table). Supplies foreign_share s and currency weights for epsilon in fiscal.debt_path.",
+      "lead_ids": [
+        "02C-L04",
+        "02C-L03",
+        "02C-L02",
+        "02C-L31"
       ]
-     },
-     {
-      "row": "G",
-      "item": "External subset of F vs IDS PPG external (calendar year-end; convert date via FY-end/CY-end stock with NPR/USD at each date) -> residual; IDS PNG, IMF credit and short-term reported separately",
-      "source_leads": [
-       "02C-L31",
-       "02C-L32"
+    },
+    {
+      "claim": "Q1: Central-government debt / nominal GDP (PDMO stock / NSO FY GDP, same vintage)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2014/15-FY2024/25",
+      "source_ids": [
+        "pdmo",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Denominator must be same-FY nominal GDP of a stated NSO vintage; post-rebasing GDP changes ratios (C-01).",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L06"
       ]
-     }
-    ],
-    "conflicts": [
-     "C-08",
-     "C-09"
-    ],
-    "note": "Every ratio will carry an explicit coverage label (A, C, F or G) per 00B's challenge."
-   },
-   "table_fields": [
-    "stock_total",
-    "domestic_by_instrument",
-    "domestic_by_holder",
-    "external_by_creditor",
-    "external_by_currency",
-    "concessional_share",
-    "debt_to_GDP_by_coverage",
-    "effective_rate_domestic",
-    "effective_rate_external",
-    "ATM",
-    "share_maturing_12m",
-    "debt_service",
-    "interest_to_revenue"
-   ],
-   "periods": "FY2014/15-FY2024/25 annual; latest month FY2025/26 (Falgun 2082) as within-year reference",
-   "lead_ids": [
-    "02C-L01",
-    "02C-L02",
-    "02C-L03",
-    "02C-L04",
-    "02C-L05",
-    "02C-L06",
-    "02C-L07",
-    "02C-L08",
-    "02C-L11",
-    "02C-L12",
-    "02C-L13",
-    "02C-L25",
-    "02C-L30",
-    "02C-L31",
-    "02C-L32",
-    "02C-L35",
-    "02C-L34"
-   ]
-  },
-  "debt_stabilising_primary_balance": {
-   "status": "pending",
-   "method": "Parametric. (1) Composite effective rate i_eff = (1-s)*i_d + s*[(1+i_f)(1+eps)-1]. (2) pb* = fiscal.debt_stabilising_primary_balance(d0, i_eff, g_n) + sfa. (3) Verify by running fiscal.debt_path(DebtAssumptions(initial_debt_ratio=d0, foreign_share=s, domestic_rate=i_d, foreign_rate=i_f, nominal_growth=[g_n]*T, primary_balance=[pb*]*T, depreciation=[eps]*T, sfa=[sfa]*T)) and checking d_T = d0. (4) For time-varying paths, report the full debt_path under the proposed primary-balance path instead of a single pb*. (5) Pair with fiscal.interest_burden(d, i_eff, revenue_ratio) for the interest/revenue test.",
-   "inputs": {
-    "d0": "pending — debt/GDP by coverage (A, C or F; state which)",
-    "s": "pending — external share (PDMO/20B)",
-    "i_d": "pending — effective domestic rate (PDMO/FCGO); stressed with 20A global-rate and 03A policy-rate paths",
-    "i_f": "pending — effective external rate; forward path from IDA21/ADF14 terms under 20C graduation branches",
-    "eps": "pending — NPR vs debt-currency basket; cases A-TGT-04a..d (config) and 20B INR/USD paths",
-    "g_n": "pending — nominal NPR GDP growth = (1+g_real)(1+deflator)-1 from 01C trajectories TR-0a, TR-0b and required paths",
-    "sfa": "0 baseline; contingent-liability shocks from contingent_liability_register"
-   },
-   "scenario_grid": {
-    "growth": [
-     "TR-0a (01C historical trend)",
-     "TR-0b (01C regression to mean)",
-     "TR-M-S1 required path (01C)"
-    ],
-    "interest": [
-     "current concessional mix",
-     "blend/IDA gap terms (20C)",
-     "post-graduation mostly non-concessional (20C)",
-     "domestic-rate stress (20A/03A)"
-    ],
-    "fx": [
-     "A-TGT-04a",
-     "A-TGT-04b",
-     "A-TGT-04c",
-     "A-TGT-04d"
-    ],
-    "contingent": [
-     "none",
-     "SOE (NEA/NOC) call",
-     "PPP/PPA call",
-     "disaster (PDNA reference class)",
-     "combined per LIC-DSF contingent-liability stress"
-    ],
-    "coverage": [
-     "A central government",
-     "F DSA public debt"
-    ]
-   },
-   "outputs_per_cell": [
-    "pb_star (percent of GDP)",
-    "historical average primary balance comparison (pending)",
-    "interest/revenue",
-    "PV/threshold test flag (only if PV series available, 02C-A2)"
-   ],
-   "caveats": [
-    "Single-period pb* assumes constant i, g, s; concessional debt has low i_f but eps risk",
-    "Nominal face-value ratios are not comparable with PV thresholds",
-    "Revenue denominator must match 02A definition (excl. grants)"
-   ],
-   "lead_ids": [
-    "02C-L01",
-    "02C-L04",
-    "02C-L25",
-    "02C-L37",
-    "02C-L38",
-    "02C-L40"
-   ]
-  },
-  "contingent_liability_register": {
-   "status": "pending — all items to verify; no values",
-   "items": [
-    {
-     "id": "CL-01",
-     "category": "explicit guarantees",
-     "item": "Government-guaranteed loans (to SOEs/others)",
-     "measure": "outstanding stock, beneficiary, currency",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L01",
-      "02C-L11",
-      "02C-L06",
-      "02C-L47"
-     ]
     },
     {
-     "id": "CL-02",
-     "category": "SOE",
-     "item": "Nepal Electricity Authority: borrowings (incl. government on-lent loans), accumulated losses/profits, PPA take-or-pay commitments",
-     "measure": "liabilities, on-lent balance, PPA commitment profile",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L19",
-      "02C-L49",
-      "02C-L18"
-     ]
+      "claim": "Q1: General-government gross debt, % GDP (IMF WEO GGXWDG_NGDP)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "WEO year labels (map to Nepal FY per WEO country note)",
+      "source_ids": [
+        "imf_weo"
+      ],
+      "observation_ids": [],
+      "note": "Separate observation; coverage and year-label conventions differ from PDMO (C-08).",
+      "lead_ids": [
+        "02C-L30"
+      ]
     },
     {
-     "id": "CL-03",
-     "category": "SOE",
-     "item": "Nepal Oil Corporation: accumulated losses, bank borrowing, price-stabilisation support needs under administered pricing",
-     "measure": "liabilities, losses, fiscal transfers",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L20",
-      "02C-L49",
-      "02C-L18"
-     ]
+      "claim": "Q1: DSA public-debt coverage and ratios (PV and nominal): external PPG and total public debt, % GDP; debt service / revenue and / exports",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2024/25 baseline and DSA projection horizon (Nepal FY)",
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Read DSA annex coverage table verbatim (which of: central gov, provinces/locals, SOEs, guarantees, central bank). Coordinate with 20C to avoid duplicate observations.",
+      "lead_ids": [
+        "02C-L25",
+        "02C-L27",
+        "02C-L28"
+      ]
     },
     {
-     "id": "CL-04",
-     "category": "SOE",
-     "item": "Other public enterprises (e.g. Nepal Airlines, Nepal Food Corporation, others listed in MoF status review): liabilities, losses, unfunded pension/gratuity",
-     "measure": "per-enterprise liabilities",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L49",
-      "02C-L18"
-     ]
+      "claim": "Q1: Total external debt and components (PPG, PNG, IMF credit, short-term), IDS",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "CY2014-CY2024 (calendar year-end)",
+      "source_ids": [
+        "wb_ids"
+      ],
+      "observation_ids": [],
+      "note": "Calendar-year stocks; never combined with FY-end PDMO without documented conversion (rule 6).",
+      "lead_ids": [
+        "02C-L31",
+        "02C-L32"
+      ]
     },
     {
-     "id": "CL-05",
-     "category": "government on-lending and equity",
-     "item": "Government loan and share investment in public enterprises (credit-risk exposure)",
-     "measure": "stock by enterprise",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L10",
-      "02C-L11",
-      "02C-L06"
-     ]
+      "claim": "Q1: Effective interest rate, domestic (interest paid on domestic debt in FY t / domestic debt stock at end FY t-1)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2015/16-FY2024/25",
+      "source_ids": [
+        "pdmo",
+        "fcgo"
+      ],
+      "observation_ids": [],
+      "note": "Numerator from FCGO/PDMO interest outturn; denominator PDMO FY-end stock. Input i_d.",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L11",
+        "02C-L12"
+      ]
     },
     {
-     "id": "CL-06",
-     "category": "PPP / IBN",
-     "item": "PDA/PPP commitments: guarantees, VGF, termination compensation, PPA backing",
-     "measure": "per-project commitments",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L22",
-      "02C-L23",
-      "02C-L24"
-     ],
-     "upstream": "06C ppp_track_record"
+      "claim": "Q1: Effective interest rate, external (interest paid on external debt / external stock end t-1, in NPR, excluding valuation)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2015/16-FY2024/25",
+      "source_ids": [
+        "pdmo",
+        "fcgo",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Input i_f; also record MTDS weighted average interest rate as a separate observation. Service charges/commitment fees classification to be stated.",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L04",
+        "02C-L25"
+      ]
     },
     {
-     "id": "CL-07",
-     "category": "subnational",
-     "item": "Provincial and local borrowing and implicit federal backstop",
-     "measure": "stock by tier vs NNRFC limit",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L11",
-      "02C-L16",
-      "02C-L14"
-     ]
+      "claim": "Q1: Debt service (principal and interest) and interest / total revenue",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2014/15-FY2024/25",
+      "source_ids": [
+        "pdmo",
+        "fcgo",
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Revenue denominator from 02A (state gross federal vs post-sharing; excluding grants).",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L11",
+        "02C-L06"
+      ]
     },
     {
-     "id": "CL-08",
-     "category": "arrears and multi-year commitments",
-     "item": "Payment arrears and multi-year contract liabilities",
-     "measure": "stock",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L18",
-      "02C-L33",
-      "02C-L48"
-     ]
+      "claim": "Q1: Refinancing-risk indicators: ATM (domestic, external), share maturing within 12 months, fixed/variable share",
+      "type": "pending",
+      "value": null,
+      "unit": "years",
+      "period": "FY2023/24 (MTDS reference)",
+      "source_ids": [
+        "pdmo"
+      ],
+      "observation_ids": [],
+      "note": "MTDS 2024 cost-risk table.",
+      "lead_ids": [
+        "02C-L04"
+      ]
     },
     {
-     "id": "CL-09",
-     "category": "disaster / reconstruction",
-     "item": "Reconstruction needs after major disasters (PDNA 2015 reference class; 2026 flood damage unverified per 06C)",
-     "measure": "public-sector recovery needs",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L21"
-     ]
+      "claim": "Q1: Subnational (provincial and local) borrowing outstanding and NNRFC internal-borrowing limits",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2019/20-FY2024/25",
+      "source_ids": [
+        "nnrfc",
+        "fcgo"
+      ],
+      "observation_ids": [],
+      "note": "Needed for general-government coverage bridge; CFS consolidates three tiers.",
+      "lead_ids": [
+        "02C-L16",
+        "02C-L17",
+        "02C-L11",
+        "02C-L14"
+      ]
     },
     {
-     "id": "CL-10",
-     "category": "implicit — pensions",
-     "item": "Unfunded civil-service (non-contributory) pension obligations",
-     "measure": "PV of obligations (actuarial)",
-     "status": "pending; no actuarial source located",
-     "lead_ids": [
-      "02C-L51"
-     ]
+      "claim": "Q2: Debt-stabilising primary balance (pb*) for each growth x interest x FX case in the scenario grid",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY-based projection, horizon per 01C milestones",
+      "source_ids": [
+        "pdmo",
+        "imf_article_iv",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Computed with fiscal.debt_stabilising_primary_balance using the composite effective rate (see specific.debt_stabilising_primary_balance); all inputs pending; becomes an 'estimate' only once inputs are observations.",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L04",
+        "02C-L25"
+      ]
     },
     {
-     "id": "CL-11",
-     "category": "implicit — financial sector",
-     "item": "Banking-system contingent liability (LIC-DSF financial-market shock)",
-     "measure": "per DSA default parameter and 03B system size",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L25",
-      "02C-L40"
-     ],
-     "upstream": "03B"
+      "claim": "Q2: Historical primary balance, central government (% GDP), and debt-creating-flows decomposition (pb, r-g, FX valuation, SFA residual)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2014/15-FY2024/25",
+      "source_ids": [
+        "mof_nepal",
+        "fcgo",
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Residual SFA from identity; DSA annex reports its own decomposition — keep both.",
+      "lead_ids": [
+        "02C-L11",
+        "02C-L06",
+        "02C-L25"
+      ]
     },
     {
-     "id": "CL-12",
-     "category": "DSA treatment",
-     "item": "Contingent-liability stress parameters applied in the Nepal 2026 DSA",
-     "measure": "shock size by component",
-     "status": "pending",
-     "lead_ids": [
-      "02C-L25",
-      "02C-L40",
-      "02C-L43"
-     ]
+      "claim": "Q3: Outstanding government guarantees (explicit), by beneficiary",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2024/25",
+      "source_ids": [
+        "pdmo",
+        "fcgo",
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "PDMO bulletin / CFS schedule / Economic Survey; may be absent — then record as data gap (PEFA PI-10).",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L11",
+        "02C-L06",
+        "02C-L36"
+      ]
+    },
+    {
+      "claim": "Q3: Government on-lending and share investment in public enterprises (stock), by enterprise",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2024/25",
+      "source_ids": [
+        "mof_nepal",
+        "fcgo"
+      ],
+      "observation_ids": [],
+      "note": "Asset of government but credit-risk exposure; NEA and NOC separately.",
+      "lead_ids": [
+        "02C-L49",
+        "02C-L06",
+        "02C-L10",
+        "02C-L11"
+      ]
+    },
+    {
+      "claim": "Q3: SOE total liabilities, borrowings and accumulated losses (NEA, NOC, Nepal Airlines, others)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2023/24-FY2024/25",
+      "source_ids": [
+        "mof_nepal",
+        "nea",
+        "noc_nepal",
+        "oag_nepal"
+      ],
+      "observation_ids": [],
+      "note": "MoF public-enterprise status review; NEA/NOC annual reports; OAG audits.",
+      "lead_ids": [
+        "02C-L49",
+        "02C-L19",
+        "02C-L20",
+        "02C-L18"
+      ]
+    },
+    {
+      "claim": "Q3: NEA power-purchase-agreement commitments (take-or-pay, USD-indexed where applicable) as quasi-fiscal exposure",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "latest NEA annual report FY",
+      "source_ids": [
+        "nea",
+        "doe_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Commitment, not debt; enters as contingent SFA only if NEA cannot pay. Coordinate with 05A.",
+      "lead_ids": [
+        "02C-L19",
+        "02C-L24"
+      ]
+    },
+    {
+      "claim": "Q3: PPP/IBN project fiscal commitments (guarantees, VGF, termination payments)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "latest",
+      "source_ids": [
+        "ibn",
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Inventory from 06C (ppp_track_record) plus PDA terms.",
+      "lead_ids": [
+        "02C-L22",
+        "02C-L23",
+        "02C-L24"
+      ]
+    },
+    {
+      "claim": "Q3: Multi-year contract commitments and payment arrears",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2024/25",
+      "source_ids": [
+        "oag_nepal",
+        "wb_npl",
+        "fcgo"
+      ],
+      "observation_ids": [],
+      "note": "Arrears are liabilities not in PDMO debt; multi-year commitments are future spending obligations.",
+      "lead_ids": [
+        "02C-L18",
+        "02C-L33",
+        "02C-L48"
+      ]
+    },
+    {
+      "claim": "Q3: Disaster/reconstruction contingent needs (reference class and 2026 flood damage)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2014/15 (PDNA prices); 2026 event unverified",
+      "source_ids": [
+        "npc_nepal",
+        "ndrrma"
+      ],
+      "observation_ids": [],
+      "note": "PDNA 2015 public-sector recovery need as reference; 2026 Trishuli-basin damage is unverified per 06C.",
+      "lead_ids": [
+        "02C-L21"
+      ]
+    },
+    {
+      "claim": "Q3: Unfunded civil-service pension obligation (implicit liability)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "latest",
+      "source_ids": [
+        "fcgo",
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "No actuarial estimate located; likely data gap.",
+      "lead_ids": [
+        "02C-L51",
+        "02C-L49"
+      ]
+    },
+    {
+      "claim": "Q3: DSA contingent-liability coverage and stress-test magnitude used for Nepal",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "2026 DSA",
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Read the contingent-liability test parameters (SOE debt, PPP, financial-market default components) actually applied in the Nepal DSA.",
+      "lead_ids": [
+        "02C-L25",
+        "02C-L40",
+        "02C-L43"
+      ]
+    },
+    {
+      "claim": "FT-03: Nepal debt-carrying capacity classification and composite-indicator score in the latest DSA",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "2026 DSA vintage",
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Determines which threshold row applies; 20C records the risk rating; 02C records thresholds applied.",
+      "lead_ids": [
+        "02C-L25",
+        "02C-L40",
+        "02C-L45"
+      ]
+    },
+    {
+      "claim": "FT-03: LIC-DSF indicative thresholds applicable to Nepal (PV ext PPG/GDP, PV ext PPG/exports, ext debt service/exports, ext debt service/revenue) and PV total public debt/GDP benchmark",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Guidance Note 2018 (and 2024 supplement if revised)",
+      "source_ids": [
+        "imf_article_iv",
+        "wb_ids"
+      ],
+      "observation_ids": [],
+      "note": "Transcribe the threshold table from the Guidance Note and the row applied in the Nepal DSA annex; values pending.",
+      "lead_ids": [
+        "02C-L40",
+        "02C-L41",
+        "02C-L42",
+        "02C-L43",
+        "02C-L44",
+        "02C-L25"
+      ]
+    },
+    {
+      "claim": "FT-03: Domestic statutory/policy borrowing limits (NNRFC internal-borrowing ceiling for federal government; budget-speech domestic borrowing; MTDS benchmarks; statutory limits under the debt law)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "FY2024/25-FY2026/27",
+      "source_ids": [
+        "nnrfc",
+        "mof_nepal",
+        "pdmo",
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Record each limit with its legal/policy basis and denominator (GDP of which FY/vintage).",
+      "lead_ids": [
+        "02C-L16",
+        "02C-L17",
+        "02C-L15",
+        "02C-L09",
+        "02C-L04",
+        "02C-L47"
+      ]
+    },
+    {
+      "claim": "FT-03: ECF programme quantitative ceilings on net domestic borrowing / new external non-concessional borrowing (as historical programme constraints)",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "ECF 2022-2026 test dates",
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "MEFP/TMU tables; programme ended with the seventh review — historical reference only, not a forward constraint.",
+      "lead_ids": [
+        "02C-L25",
+        "02C-L26"
+      ]
     }
-   ],
-   "fiscal_risk_reporting_quality": {
-    "status": "pending",
-    "item": "PEFA 2024 PI-10 (fiscal risk reporting) and PI-13 (debt management) scores",
-    "lead_ids": [
-     "02C-L36"
-    ]
-   }
-  },
-  "sustainability_thresholds_for_FT03": {
-   "status": "pending — thresholds identified with documentary source; all values pending",
-   "for": "01C FT-03 / U3",
-   "thresholds": [
+  ],
+  "data_gaps": [
+    "PDMO FY-end central-government debt stock by domestic instrument/holder and external creditor/currency, FY2014/15-FY2024/25 (Public Debt Bulletin, annual reports).",
+    "Interest and principal outturn by domestic/external source (FCGO CFS, PDMO) to derive effective interest rates i_d, i_f.",
+    "IMF 2026 DSA annex: coverage table, debt-carrying capacity/CI, applicable thresholds, PV ratios, contingent-liability stress parameters.",
+    "LIC-DSF Guidance Note (2018) threshold table and 2024 supplement changes.",
+    "NNRFC annual internal-borrowing limit recommendations and legal text of the public debt law (limits on borrowing/guarantees).",
+    "Explicit guarantee schedule (none located; PEFA PI-10 narrative to confirm whether one is published).",
+    "MoF Annual Status Review of Public Enterprises (latest edition URL not located; general-knowledge lead only) for NEA/NOC liabilities.",
+    "NEA PPA commitment profile (take-or-pay volumes, USD-denominated tariffs) and NOC accumulated losses/bank borrowing.",
+    "Actuarial estimate of unfunded civil-service pension liabilities (no source located).",
+    "Payment arrears and multi-year contract commitment stock (OAG, FCGO, WB NDU Nov 2025).",
+    "Subnational borrowing outstanding by tier (CFS FY2022/23-FY2023/24).",
+    "Nominal GDP (NSO, FY, stated vintage) and exports/revenue denominators matching DSA definitions."
+  ],
+  "assumptions": [
     {
-     "id": "TH-01",
-     "indicator": "PV of external PPG debt / GDP",
-     "framework": "LIC-DSF",
-     "depends_on": "debt-carrying capacity (weak/medium/strong)",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L40",
-      "02C-L42",
-      "02C-L43",
-      "02C-L25"
-     ]
+      "id": "02C-A1",
+      "text": "Debt-stabilising primary balance uses the composite effective rate i_eff = (1-s)*i_d + s*[(1+i_f)(1+eps)-1]; substituting i_eff into fiscal.debt_stabilising_primary_balance(d, i_eff, g_n) reproduces the one-period steady state of fiscal.debt_path (algebraic identity, not an empirical claim). A constant stock-flow adjustment sfa adds one-for-one: pb* = d(i_eff-g_n)/(1+g_n) + sfa.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (method; identity from src/economic_model/fiscal.py)'"
     },
     {
-     "id": "TH-02",
-     "indicator": "PV of external PPG debt / exports of goods and services",
-     "framework": "LIC-DSF",
-     "depends_on": "debt-carrying capacity",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L40",
-      "02C-L43",
-      "02C-L25"
-     ]
+      "id": "02C-A2",
+      "text": "Nominal-face-value debt ratios (PDMO, WEO) and present-value ratios (LIC-DSF) are different quantities; FT-03 threshold tests use PV ratios only when a PV series from the DSA or a documented discounting (DSF discount rate) is available; otherwise the test is reported as not computable rather than approximated.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (method)'"
     },
     {
-     "id": "TH-03",
-     "indicator": "External PPG debt service / exports",
-     "framework": "LIC-DSF",
-     "depends_on": "debt-carrying capacity",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L40",
-      "02C-L43",
-      "02C-L25"
-     ]
+      "id": "02C-A3",
+      "text": "Stocks are Nepal-FY-end (mid-July) unless the source is IDS (calendar year-end); ratios use same-FY nominal GDP of one stated NSO vintage.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (CLAUDE.md rule 6)'"
     },
     {
-     "id": "TH-04",
-     "indicator": "External PPG debt service / government revenue (excl. grants)",
-     "framework": "LIC-DSF",
-     "depends_on": "debt-carrying capacity",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L40",
-      "02C-L43",
-      "02C-L25"
-     ]
+      "id": "02C-A4",
+      "text": "Depreciation eps in debt dynamics is NPR against the external-debt currency basket, built from the 20B currency table and the NPR-INR peg identity; scenario FX cases reuse config/model_config.yaml A-TGT-04a..d labels rather than new numbers.",
+      "basis": "assumption"
     },
     {
-     "id": "TH-05",
-     "indicator": "PV of total public debt / GDP (benchmark)",
-     "framework": "LIC-DSF",
-     "depends_on": "debt-carrying capacity",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L40",
-      "02C-L43",
-      "02C-L25"
-     ]
+      "id": "02C-A5",
+      "text": "Contingent liabilities enter debt dynamics as sfa shocks (called guarantees, SOE bail-outs, disaster reconstruction) sized from the register once values exist; they are not added to the baseline debt stock.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (method)'"
     },
     {
-     "id": "TH-06",
-     "indicator": "Debt-carrying capacity classification and composite indicator cut-offs",
-     "framework": "LIC-DSF",
-     "depends_on": "CI (growth, remittances, reserves, world growth, CPIA)",
-     "value": "pending",
-     "unit": "index",
-     "source_leads": [
-      "02C-L40",
-      "02C-L45",
-      "02C-L25"
-     ]
+      "id": "02C-A6",
+      "text": "Capital spending financed by borrowing is subject to execution shortfall (02B) and does not convert one-for-one to public capital; revenue gains from DRMS measures are not assumed (02A).",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (per 02A/02B challenges)'"
     },
     {
-     "id": "TH-07",
-     "indicator": "Federal internal (domestic) borrowing ceiling recommended by NNRFC",
-     "framework": "Nepal statutory (NNRFC Act 2074; IFAA 2074)",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L16",
-      "02C-L17",
-      "02C-L15",
-      "02C-L14"
-     ]
-    },
-    {
-     "id": "TH-08",
-     "indicator": "Provincial/local internal borrowing ceilings (percent of own revenue/transfers)",
-     "framework": "Nepal statutory (NNRFC)",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L16",
-      "02C-L14"
-     ]
-    },
-    {
-     "id": "TH-09",
-     "indicator": "Statutory limits on borrowing/guarantees in the public debt law, if any",
-     "framework": "Nepal statutory (Public Debt Management Act — to verify)",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L47"
-     ]
-    },
-    {
-     "id": "TH-10",
-     "indicator": "MTDS cost-risk benchmarks (e.g. max share maturing within one year, min ATM, FX share ranges)",
-     "framework": "PDMO policy (not statutory)",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L04"
-     ]
-    },
-    {
-     "id": "TH-11",
-     "indicator": "Interest payments / revenue (analytical indicator; no official threshold — report level and trend only)",
-     "framework": "analytical (fiscal.interest_burden)",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L01",
-      "02C-L11"
-     ]
-    },
-    {
-     "id": "TH-12",
-     "indicator": "Reserve cover floor for the peg",
-     "framework": "03A",
-     "value": "pending (03A)",
-     "unit": "months",
-     "source_leads": []
-    },
-    {
-     "id": "TH-13",
-     "indicator": "MAC SRDSF indicators (only in a post-graduation branch)",
-     "framework": "IMF MAC SRDSF",
-     "value": "pending",
-     "unit": "percent",
-     "source_leads": [
-      "02C-L50"
-     ]
+      "id": "02C-A7",
+      "text": "Coverage bridge ordering: PDMO central government -> + provincial/local borrowing -> = general government (compare WEO) -> + guaranteed SOE/other debt -> = PPG public debt (compare DSA coverage table); external subset compared with IDS PPG; IDS PNG, IMF credit (if outside PDMO) and short-term reported as residuals.",
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (method; C-08/C-09 investigation design)'"
     }
-   ],
-   "test_rule": "Breach flags computed per coverage and per debt-carrying-capacity case; PV thresholds tested only against PV series (02C-A2). Programme (ECF) ceilings are historical references, not forward thresholds.",
-   "historical_programme_constraints": {
-    "item": "ECF QPCs on net domestic borrowing and non-concessional external borrowing",
-    "value": "pending",
-    "source_leads": [
-     "02C-L25",
-     "02C-L26"
-    ]
-   }
+  ],
+  "challenges": [
+    {
+      "to": "01C",
+      "text": "FT-03 pass criterion 'external debt/GDP stabilises below the DSA threshold' mixes concepts: LIC-DSF thresholds apply to the PRESENT VALUE of external PUBLIC AND PUBLICLY GUARANTEED debt (plus a PV total-public-debt benchmark), not to total external debt; a financing gap (I/Y - S/Y) maps to the current account and to total external liabilities incl. FDI and private debt. Suggest splitting FT-03 into FT-03a (PPG external PV/GDP, PV/exports, debt service/exports, debt service/revenue vs thresholds for Nepal's debt-carrying capacity), FT-03b (PV total public debt/GDP benchmark and domestic NNRFC/statutory borrowing limits), FT-03c (reserve cover, 03A). State the share of the gap assumed publicly financed, as an assumption."
+    },
+    {
+      "to": "01C",
+      "text": "U3 'for the entire horizon' should be tested per debt-carrying-capacity case: thresholds shift if the CI classification changes, and the LIC-DSF itself ceases to apply if Nepal moves to the MAC framework after IDA/PRGT graduation (20C). Treat framework switch as a scenario branch."
+    },
+    {
+      "to": "20C",
+      "text": "Please record (or confirm 02C records) the DSA coverage table, debt-carrying capacity and the threshold row applied, with page/table references, so FT-03 thresholds and the risk rating share one observation set; avoid duplicate observations of the same DSA ratio."
+    },
+    {
+      "to": "20B",
+      "text": "02C needs the reconciled currency-composition table (SDR look-through) with coverage stated as central-government external debt (PDMO) and PPG (IDS), same FY-end date, to parameterise foreign_share and the eps basket."
+    },
+    {
+      "to": "06C",
+      "text": "ppp_track_record should capture, per PDA/PPP project, whether the government provides guarantees, VGF, revenue/PPA backing or termination compensation, so that the contingent-liability register can size PPP exposure."
+    },
+    {
+      "to": "05A",
+      "text": "NEA PPA commitments (take-or-pay, USD-indexed tariffs) and NEA borrowings on-lent by government are fiscal contingent exposures; please share the PPA commitment profile when retrieved."
+    },
+    {
+      "to": "03B",
+      "text": "Bank holdings of government domestic debt and a banking-crisis contingent liability (per LIC-DSF financial-market shock) are needed; share holder split and system size when retrieved."
+    },
+    {
+      "to": "00B",
+      "text": "Add a watch conflict: nominal (face value) public debt ratios (PDMO/WEO) vs PV ratios (DSA) — definitional classification; not reconcilable without the DSF discount rate."
+    }
+  ],
+  "uncertainty": "High. No primary document was retrieved, so the debt level, composition, effective rates and contingent exposures are all unknown in this round. Structural uncertainties: (i) coverage differences between PDMO, WEO, DSA and IDS (C-08/C-09) can change debt ratios materially and are not reconcilable without the DSA coverage table; (ii) face-value vs present-value measurement matters for concessional debt; (iii) FY-end vs calendar-year-end dates and exchange-rate valuation; (iv) contingent liabilities (NEA PPAs, NOC losses, PPP guarantees, pensions) may be undocumented, so the register may understate exposure; (v) forward interest cost depends on IDA/ADB graduation branches (20C) and the applicable framework (LIC-DSF vs MAC SRDSF); (vi) the 2024 Supplement may have revised guidance used by the 2026 DSA.",
+  "specific": {
+    "debt_baseline": {
+      "status": "pending",
+      "definitions": {
+        "central_government_debt_PDMO": "Federal government domestic and external liabilities recorded by PDMO at FY-end (mid-July); coverage to be confirmed from bulletin notes (expected: excludes SOE own-borrowing and subnational debt).",
+        "general_government_gross_debt_WEO": "GFSM-based gross debt of general government (GGXWDG_NGDP); WEO year labels require the WEO country note for FY mapping.",
+        "PPG_debt_DSA": "Coverage stated in the DSA 'coverage of public sector debt' table (central gov, state/local, other elements of general government, off-budget funds, guarantees, central-bank debt borrowed on behalf of gov, non-guaranteed SOE debt) — each tick recorded.",
+        "external_debt_IDS": "Total external debt = PPG long-term + PNG + IMF credit + short-term; calendar year-end, USD.",
+        "effective_interest_rate": "Interest paid in FY t / stock at end FY t-1, separately domestic and external (NPR, excluding valuation changes).",
+        "concessional_share": "Share of external debt meeting the grant-element definition used by the source (state definition)."
+      },
+      "coverage_bridge_PDMO_to_IMF": {
+        "status": "pending",
+        "rows": [
+          {
+            "row": "A",
+            "item": "PDMO central-government debt (domestic + external), FY-end",
+            "source_leads": [
+              "02C-L01",
+              "02C-L05"
+            ]
+          },
+          {
+            "row": "B",
+            "item": "+ provincial and local government borrowing",
+            "source_leads": [
+              "02C-L11",
+              "02C-L16"
+            ]
+          },
+          {
+            "row": "C",
+            "item": "= general-government gross debt (A+B); compare IMF WEO GGXWDG_NGDP -> residual = definitional/year-label difference",
+            "source_leads": [
+              "02C-L30"
+            ]
+          },
+          {
+            "row": "D",
+            "item": "+ guaranteed SOE debt and other guarantees",
+            "source_leads": [
+              "02C-L01",
+              "02C-L11",
+              "02C-L49"
+            ]
+          },
+          {
+            "row": "E",
+            "item": "+ other elements per DSA coverage table (e.g. central-bank borrowing on behalf of gov, non-guaranteed SOE debt if included)",
+            "source_leads": [
+              "02C-L25"
+            ]
+          },
+          {
+            "row": "F",
+            "item": "= DSA public debt (compare DSA annex stock) -> residual",
+            "source_leads": [
+              "02C-L25"
+            ]
+          },
+          {
+            "row": "G",
+            "item": "External subset of F vs IDS PPG external (calendar year-end; convert date via FY-end/CY-end stock with NPR/USD at each date) -> residual; IDS PNG, IMF credit and short-term reported separately",
+            "source_leads": [
+              "02C-L31",
+              "02C-L32"
+            ]
+          }
+        ],
+        "conflicts": [
+          "C-08",
+          "C-09"
+        ],
+        "note": "Every ratio will carry an explicit coverage label (A, C, F or G) per 00B's challenge."
+      },
+      "table_fields": [
+        "stock_total",
+        "domestic_by_instrument",
+        "domestic_by_holder",
+        "external_by_creditor",
+        "external_by_currency",
+        "concessional_share",
+        "debt_to_GDP_by_coverage",
+        "effective_rate_domestic",
+        "effective_rate_external",
+        "ATM",
+        "share_maturing_12m",
+        "debt_service",
+        "interest_to_revenue"
+      ],
+      "periods": "FY2014/15-FY2024/25 annual; latest month FY2025/26 (Falgun 2082) as within-year reference",
+      "lead_ids": [
+        "02C-L01",
+        "02C-L02",
+        "02C-L03",
+        "02C-L04",
+        "02C-L05",
+        "02C-L06",
+        "02C-L07",
+        "02C-L08",
+        "02C-L11",
+        "02C-L12",
+        "02C-L13",
+        "02C-L25",
+        "02C-L30",
+        "02C-L31",
+        "02C-L32",
+        "02C-L35",
+        "02C-L34"
+      ]
+    },
+    "debt_stabilising_primary_balance": {
+      "status": "pending",
+      "method": "Parametric. (1) Composite effective rate i_eff = (1-s)*i_d + s*[(1+i_f)(1+eps)-1]. (2) pb* = fiscal.debt_stabilising_primary_balance(d0, i_eff, g_n) + sfa. (3) Verify by running fiscal.debt_path(DebtAssumptions(initial_debt_ratio=d0, foreign_share=s, domestic_rate=i_d, foreign_rate=i_f, nominal_growth=[g_n]*T, primary_balance=[pb*]*T, depreciation=[eps]*T, sfa=[sfa]*T)) and checking d_T = d0. (4) For time-varying paths, report the full debt_path under the proposed primary-balance path instead of a single pb*. (5) Pair with fiscal.interest_burden(d, i_eff, revenue_ratio) for the interest/revenue test.",
+      "inputs": {
+        "d0": "pending — debt/GDP by coverage (A, C or F; state which)",
+        "s": "pending — external share (PDMO/20B)",
+        "i_d": "pending — effective domestic rate (PDMO/FCGO); stressed with 20A global-rate and 03A policy-rate paths",
+        "i_f": "pending — effective external rate; forward path from IDA21/ADF14 terms under 20C graduation branches",
+        "eps": "pending — NPR vs debt-currency basket; cases A-TGT-04a..d (config) and 20B INR/USD paths",
+        "g_n": "pending — nominal NPR GDP growth = (1+g_real)(1+deflator)-1 from 01C trajectories TR-0a, TR-0b and required paths",
+        "sfa": "0 baseline; contingent-liability shocks from contingent_liability_register"
+      },
+      "scenario_grid": {
+        "growth": [
+          "TR-0a (01C historical trend)",
+          "TR-0b (01C regression to mean)",
+          "TR-M-S1 required path (01C)"
+        ],
+        "interest": [
+          "current concessional mix",
+          "blend/IDA gap terms (20C)",
+          "post-graduation mostly non-concessional (20C)",
+          "domestic-rate stress (20A/03A)"
+        ],
+        "fx": [
+          "A-TGT-04a",
+          "A-TGT-04b",
+          "A-TGT-04c",
+          "A-TGT-04d"
+        ],
+        "contingent": [
+          "none",
+          "SOE (NEA/NOC) call",
+          "PPP/PPA call",
+          "disaster (PDNA reference class)",
+          "combined per LIC-DSF contingent-liability stress"
+        ],
+        "coverage": [
+          "A central government",
+          "F DSA public debt"
+        ]
+      },
+      "outputs_per_cell": [
+        "pb_star (percent of GDP)",
+        "historical average primary balance comparison (pending)",
+        "interest/revenue",
+        "PV/threshold test flag (only if PV series available, 02C-A2)"
+      ],
+      "caveats": [
+        "Single-period pb* assumes constant i, g, s; concessional debt has low i_f but eps risk",
+        "Nominal face-value ratios are not comparable with PV thresholds",
+        "Revenue denominator must match 02A definition (excl. grants)"
+      ],
+      "lead_ids": [
+        "02C-L01",
+        "02C-L04",
+        "02C-L25",
+        "02C-L37",
+        "02C-L38",
+        "02C-L40"
+      ]
+    },
+    "contingent_liability_register": {
+      "status": "pending — all items to verify; no values",
+      "items": [
+        {
+          "id": "CL-01",
+          "category": "explicit guarantees",
+          "item": "Government-guaranteed loans (to SOEs/others)",
+          "measure": "outstanding stock, beneficiary, currency",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L01",
+            "02C-L11",
+            "02C-L06",
+            "02C-L47"
+          ]
+        },
+        {
+          "id": "CL-02",
+          "category": "SOE",
+          "item": "Nepal Electricity Authority: borrowings (incl. government on-lent loans), accumulated losses/profits, PPA take-or-pay commitments",
+          "measure": "liabilities, on-lent balance, PPA commitment profile",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L19",
+            "02C-L49",
+            "02C-L18"
+          ]
+        },
+        {
+          "id": "CL-03",
+          "category": "SOE",
+          "item": "Nepal Oil Corporation: accumulated losses, bank borrowing, price-stabilisation support needs under administered pricing",
+          "measure": "liabilities, losses, fiscal transfers",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L20",
+            "02C-L49",
+            "02C-L18"
+          ]
+        },
+        {
+          "id": "CL-04",
+          "category": "SOE",
+          "item": "Other public enterprises (e.g. Nepal Airlines, Nepal Food Corporation, others listed in MoF status review): liabilities, losses, unfunded pension/gratuity",
+          "measure": "per-enterprise liabilities",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L49",
+            "02C-L18"
+          ]
+        },
+        {
+          "id": "CL-05",
+          "category": "government on-lending and equity",
+          "item": "Government loan and share investment in public enterprises (credit-risk exposure)",
+          "measure": "stock by enterprise",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L10",
+            "02C-L11",
+            "02C-L06"
+          ]
+        },
+        {
+          "id": "CL-06",
+          "category": "PPP / IBN",
+          "item": "PDA/PPP commitments: guarantees, VGF, termination compensation, PPA backing",
+          "measure": "per-project commitments",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L22",
+            "02C-L23",
+            "02C-L24"
+          ],
+          "upstream": "06C ppp_track_record"
+        },
+        {
+          "id": "CL-07",
+          "category": "subnational",
+          "item": "Provincial and local borrowing and implicit federal backstop",
+          "measure": "stock by tier vs NNRFC limit",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L11",
+            "02C-L16",
+            "02C-L14"
+          ]
+        },
+        {
+          "id": "CL-08",
+          "category": "arrears and multi-year commitments",
+          "item": "Payment arrears and multi-year contract liabilities",
+          "measure": "stock",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L18",
+            "02C-L33",
+            "02C-L48"
+          ]
+        },
+        {
+          "id": "CL-09",
+          "category": "disaster / reconstruction",
+          "item": "Reconstruction needs after major disasters (PDNA 2015 reference class; 2026 flood damage unverified per 06C)",
+          "measure": "public-sector recovery needs",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L21"
+          ]
+        },
+        {
+          "id": "CL-10",
+          "category": "implicit — pensions",
+          "item": "Unfunded civil-service (non-contributory) pension obligations",
+          "measure": "PV of obligations (actuarial)",
+          "status": "pending; no actuarial source located",
+          "lead_ids": [
+            "02C-L51"
+          ]
+        },
+        {
+          "id": "CL-11",
+          "category": "implicit — financial sector",
+          "item": "Banking-system contingent liability (LIC-DSF financial-market shock)",
+          "measure": "per DSA default parameter and 03B system size",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L25",
+            "02C-L40"
+          ],
+          "upstream": "03B"
+        },
+        {
+          "id": "CL-12",
+          "category": "DSA treatment",
+          "item": "Contingent-liability stress parameters applied in the Nepal 2026 DSA",
+          "measure": "shock size by component",
+          "status": "pending",
+          "lead_ids": [
+            "02C-L25",
+            "02C-L40",
+            "02C-L43"
+          ]
+        }
+      ],
+      "fiscal_risk_reporting_quality": {
+        "status": "pending",
+        "item": "PEFA 2024 PI-10 (fiscal risk reporting) and PI-13 (debt management) scores",
+        "lead_ids": [
+          "02C-L36"
+        ]
+      }
+    },
+    "sustainability_thresholds_for_FT03": {
+      "status": "pending — thresholds identified with documentary source; all values pending",
+      "for": "01C FT-03 / U3",
+      "thresholds": [
+        {
+          "id": "TH-01",
+          "indicator": "PV of external PPG debt / GDP",
+          "framework": "LIC-DSF",
+          "depends_on": "debt-carrying capacity (weak/medium/strong)",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L40",
+            "02C-L42",
+            "02C-L43",
+            "02C-L25"
+          ]
+        },
+        {
+          "id": "TH-02",
+          "indicator": "PV of external PPG debt / exports of goods and services",
+          "framework": "LIC-DSF",
+          "depends_on": "debt-carrying capacity",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L40",
+            "02C-L43",
+            "02C-L25"
+          ]
+        },
+        {
+          "id": "TH-03",
+          "indicator": "External PPG debt service / exports",
+          "framework": "LIC-DSF",
+          "depends_on": "debt-carrying capacity",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L40",
+            "02C-L43",
+            "02C-L25"
+          ]
+        },
+        {
+          "id": "TH-04",
+          "indicator": "External PPG debt service / government revenue (excl. grants)",
+          "framework": "LIC-DSF",
+          "depends_on": "debt-carrying capacity",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L40",
+            "02C-L43",
+            "02C-L25"
+          ]
+        },
+        {
+          "id": "TH-05",
+          "indicator": "PV of total public debt / GDP (benchmark)",
+          "framework": "LIC-DSF",
+          "depends_on": "debt-carrying capacity",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L40",
+            "02C-L43",
+            "02C-L25"
+          ]
+        },
+        {
+          "id": "TH-06",
+          "indicator": "Debt-carrying capacity classification and composite indicator cut-offs",
+          "framework": "LIC-DSF",
+          "depends_on": "CI (growth, remittances, reserves, world growth, CPIA)",
+          "value": "pending",
+          "unit": "index",
+          "source_leads": [
+            "02C-L40",
+            "02C-L45",
+            "02C-L25"
+          ]
+        },
+        {
+          "id": "TH-07",
+          "indicator": "Federal internal (domestic) borrowing ceiling recommended by NNRFC",
+          "framework": "Nepal statutory (NNRFC Act 2074; IFAA 2074)",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L16",
+            "02C-L17",
+            "02C-L15",
+            "02C-L14"
+          ]
+        },
+        {
+          "id": "TH-08",
+          "indicator": "Provincial/local internal borrowing ceilings (percent of own revenue/transfers)",
+          "framework": "Nepal statutory (NNRFC)",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L16",
+            "02C-L14"
+          ]
+        },
+        {
+          "id": "TH-09",
+          "indicator": "Statutory limits on borrowing/guarantees in the public debt law, if any",
+          "framework": "Nepal statutory (Public Debt Management Act — to verify)",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L47"
+          ]
+        },
+        {
+          "id": "TH-10",
+          "indicator": "MTDS cost-risk benchmarks (e.g. max share maturing within one year, min ATM, FX share ranges)",
+          "framework": "PDMO policy (not statutory)",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L04"
+          ]
+        },
+        {
+          "id": "TH-11",
+          "indicator": "Interest payments / revenue (analytical indicator; no official threshold — report level and trend only)",
+          "framework": "analytical (fiscal.interest_burden)",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L01",
+            "02C-L11"
+          ]
+        },
+        {
+          "id": "TH-12",
+          "indicator": "Reserve cover floor for the peg",
+          "framework": "03A",
+          "value": "pending (03A)",
+          "unit": "months",
+          "source_leads": []
+        },
+        {
+          "id": "TH-13",
+          "indicator": "MAC SRDSF indicators (only in a post-graduation branch)",
+          "framework": "IMF MAC SRDSF",
+          "value": "pending",
+          "unit": "percent",
+          "source_leads": [
+            "02C-L50"
+          ]
+        }
+      ],
+      "test_rule": "Breach flags computed per coverage and per debt-carrying-capacity case; PV thresholds tested only against PV series (02C-A2). Programme (ECF) ceilings are historical references, not forward thresholds.",
+      "historical_programme_constraints": {
+        "item": "ECF QPCs on net domestic borrowing and non-concessional external borrowing",
+        "value": "pending",
+        "source_leads": [
+          "02C-L25",
+          "02C-L26"
+        ]
+      }
+    },
+    "research_question_status": {
+      "Q1_stock_and_composition": "pending — leads located (PDMO bulletin/monthly/MTDS, FCGO CFS, IMF DSA, IDS, WEO); coverage bridge designed",
+      "Q2_debt_stabilising_pb": "pending — method specified on fiscal.py; inputs pending",
+      "Q3_contingent_liabilities": "pending — 12-item register to verify; guarantee schedule and pension actuarial estimate may not exist (gaps)"
+    },
+    "lead_summary": {
+      "count": 51,
+      "web_search_used": "1 (LIC-DSF Guidance Note)",
+      "general_knowledge_unverified": 5
+    }
   },
-  "research_question_status": {
-   "Q1_stock_and_composition": "pending — leads located (PDMO bulletin/monthly/MTDS, FCGO CFS, IMF DSA, IDS, WEO); coverage bridge designed",
-   "Q2_debt_stabilising_pb": "pending — method specified on fiscal.py; inputs pending",
-   "Q3_contingent_liabilities": "pending — 12-item register to verify; guarantee schedule and pension actuarial estimate may not exist (gaps)"
-  },
-  "lead_summary": {
-   "count": 51,
-   "web_search_used": "1 (LIC-DSF Guidance Note)",
-   "general_knowledge_unverified": 5
-  }
- },
- "source_leads": [
-  {
-   "id": "02C-L01",
-   "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
-   "title": "Public Debt Bulletin (2082-06-21)",
-   "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
-   "source_id": "pdmo",
-   "contains": "PDMO Public Debt Bulletin (dated 2082-06-21 BS): FY2024/25 year-end central-government debt stock, domestic by instrument (T-bills, development bonds, citizen savings bonds, foreign employment bonds) and external by creditor/currency; debt service (principal, interest) by source; coverage statement (central government). Nepal FY (mid-July).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L02",
-   "url": "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
-   "title": "Government Debt Statistics for the month of Shrawan 2082 (mid-August 2025)",
-   "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
-   "source_id": "pdmo",
-   "contains": "PDMO monthly Government Debt Statistics, Shrawan 2082 (mid-August 2025): outstanding domestic and external debt by creditor and currency; FY2025/26 month 1.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L03",
-   "url": "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
-   "title": "Government Debt Statistics for the month of Falgun 2082 (mid-March 2026)",
-   "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
-   "source_id": "pdmo",
-   "contains": "PDMO monthly Government Debt Statistics, Falgun 2082 (mid-March 2026): latest located month-end stock by creditor and currency; within-year FY2025/26 (not a FY-end stock).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L04",
-   "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
-   "title": "Medium-Term Debt Management Strategy report (2024)",
-   "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
-   "source_id": "pdmo",
-   "contains": "PDMO Medium-Term Debt Management Strategy (2024): cost-risk indicators (average interest rate, ATM, share maturing within one year, fixed/variable, FX share by currency), concessional share, strategy targets/benchmarks, and any stated policy ceilings for domestic borrowing.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L05",
-   "url": "https://pdmo.gov.np",
-   "title": "Public Debt Management Office annual report",
-   "publisher": "Public Debt Management Office, Nepal",
-   "source_id": "pdmo",
-   "contains": "PDMO landing page: annual reports and debt-statistics archive for FY-end series FY2014/15 onward; coverage (central government only vs guaranteed debt) to be confirmed.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L06",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
-   "title": "Economic Survey 2023/24 (English)",
-   "publisher": "Ministry of Finance, Nepal",
-   "source_id": "mof_nepal",
-   "contains": "MoF Economic Survey 2023/24 (English): public debt chapter (stock, service, debt/GDP), government investment in and loans to public enterprises, guarantee statement if any; statistical appendix. Nepal FY.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L07",
-   "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
-   "title": "Economic Survey 2081/82 (Nepali)",
-   "publisher": "Ministry of Finance, Nepal",
-   "source_id": "mof_nepal",
-   "contains": "MoF Economic Survey 2081/82 (Nepali): public debt chapter and public-enterprise chapter (FY2080/81 actuals, FY2081/82 partial).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L08",
-   "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
-   "title": "Economic Survey 2082/83 (Nepali)",
-   "publisher": "Ministry of Finance, Nepal",
-   "source_id": "mof_nepal",
-   "contains": "MoF Economic Survey 2082/83 (Nepali): public debt and public-enterprise chapters (FY2081/82 actuals, FY2082/83 partial).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L09",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/Budget%20Translation_2082-2083_nzrwuof.pdf",
-   "title": "Budget Speech of Fiscal Year 2025/26 (2082/83), English translation",
-   "publisher": "Ministry of Finance, Nepal",
-   "source_id": "mof_nepal",
-   "contains": "Budget Speech FY2082/83 (English translation): financing plan (domestic borrowing, foreign loans), stated domestic-borrowing ceiling for the year, principal and interest appropriation.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L10",
-   "url": "https://mof.gov.np/content/1745/statement-of-expenditure-estimates--red-book-2083-84/",
-   "title": "Statement of Expenditure Estimates (Red Book) FY2083/84",
-   "publisher": "Ministry of Finance, Nepal",
-   "source_id": "mof_nepal",
-   "contains": "Red Book FY2083/84: debt-service appropriations (interest, principal) by source; financing-head lines incl. share/loan investment in public enterprises (on-lending).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L11",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
-   "title": "Consolidated Financial Statement (Federal, Province and Local Government) FY2023/24",
-   "publisher": "Financial Comptroller General Office, Nepal",
-   "source_id": null,
-   "contains": "FCGO Consolidated Financial Statement FY2023/24: audited-basis debt-service outturn, financing, government investment (shares and loans) in public enterprises, and any schedule of guarantees/contingent liabilities; three-tier consolidation incl. subnational borrowing.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L12",
-   "url": "https://giwmscdntwo.gov.np/media/pdf_upload/20240725124752_cfs2022-2023_q53t9je.pdf",
-   "title": "Consolidated Financial Statement FY2022/23",
-   "publisher": "Financial Comptroller General Office, Nepal",
-   "source_id": "fcgo",
-   "contains": "FCGO Consolidated Financial Statement FY2022/23: as above for FY2022/23.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L13",
-   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
-   "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
-   "publisher": "Nepal Rastra Bank",
-   "source_id": "nrb",
-   "contains": "NRB Current Macroeconomic and Financial Situation (annual FY2024/25): government finance on cash basis incl. domestic borrowing and outstanding domestic debt; external debt position. Keep separate from PDMO (coverage/timing).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L14",
-   "url": "https://giwmscdnone.gov.np/media/pdf_upload/Intergovernmental%20Fiscal%20Arrangement%20Act,%202074%20(2017)%20English%20Version_y7gnh3i.pdf",
-   "title": "Intergovernmental Fiscal Arrangement Act, 2074 (2017) English Version (PDF)",
-   "publisher": "Government of Nepal (MoF upload on government CDN)",
-   "source_id": "mof_nepal",
-   "contains": "Intergovernmental Fiscal Arrangement Act 2074 (2017), English: legal basis for provincial/local internal borrowing within limits recommended by NNRFC; federal consent requirements for foreign borrowing.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L15",
-   "url": "https://faolex.fao.org/docs/pdf/NEP225903.pdf",
-   "title": "National Natural Resources and Fiscal Commission Act, 2074 (2017)",
-   "publisher": "FAO FAOLEX (copy of GoN Act)",
-   "source_id": null,
-   "contains": "NNRFC Act 2074 (2017): mandate to recommend internal-borrowing limits for federal, provincial and local governments (check exact provision; value set annually in NNRFC recommendation).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L16",
-   "url": "https://nnrfc.gov.np/category/report/",
-   "title": "NNRFC reports (annual reports and recommendations)",
-   "publisher": "National Natural Resources and Fiscal Commission",
-   "source_id": "nnrfc",
-   "contains": "NNRFC reports: annual recommendation of internal-borrowing ceilings (percent-of-GDP for federal; percent-of-revenue for provinces/locals) — the domestic statutory limit to test against.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L17",
-   "url": "https://nnrfc.gov.np/uploads/resources/2024-06-16/Annual_Report_2080_nnrfc1.pdf",
-   "title": "NNRFC Fifth Annual Report 2080 (Nepali)",
-   "publisher": "National Natural Resources and Fiscal Commission",
-   "source_id": "nnrfc",
-   "contains": "NNRFC Fifth Annual Report 2080 (Nepali): borrowing-limit recommendations and their basis for the relevant FY.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L18",
-   "url": "https://oag.gov.np/",
-   "title": "OAGN - Office of the Auditor General (current site)",
-   "publisher": "Office of the Auditor General, Nepal",
-   "source_id": "oag_nepal",
-   "contains": "OAG annual reports: audited arrears, unsettled advances, guarantees, public-enterprise audit findings (NEA, NOC), and multi-year contract liabilities.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L19",
-   "url": "https://www.nea.org.np",
-   "title": "Nepal Electricity Authority - annual reports (plant list, capacity, location, outages)",
-   "publisher": "Nepal Electricity Authority",
-   "source_id": "nea",
-   "contains": "NEA annual reports: balance sheet (borrowings incl. on-lent government loans, accumulated losses/profits), PPA commitments with IPPs (take-or-pay), power-purchase liabilities.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L20",
-   "url": "https://noc.org.np/",
-   "title": "Nepal Oil Corporation (home)",
-   "publisher": "Nepal Oil Corporation",
-   "source_id": "noc_nepal",
-   "contains": "NOC notices and financial statements/annual reports (to locate): accumulated losses, borrowing from banks, government price-stabilisation support; quasi-fiscal liability from administered fuel pricing.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L21",
-   "url": "https://www.npc.gov.np/images/category/PDNA_Volume_A.pdf",
-   "title": "Nepal Earthquake 2015: Post Disaster Needs Assessment, Vol. A: Key Findings",
-   "publisher": "National Planning Commission, Government of Nepal",
-   "source_id": "npc_nepal",
-   "contains": "NPC PDNA 2015 Vol. A: recovery needs by sector with public/private split (NPR, FY2014/15 prices) — reference class for a disaster contingent-liability stress (SFA).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L22",
-   "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
-   "title": "Public Private Partnership and Investment Act, 2019 (2075)",
-   "publisher": "Office of the Investment Board Nepal",
-   "source_id": null,
-   "contains": "PPP and Investment Act 2019: provisions under which government may provide guarantees, viability gap funding, termination payments, or revenue guarantees to PPP/IBN projects.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L23",
-   "url": "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-nepal",
-   "title": "PPP Laws/Concessions Laws - Nepal",
-   "publisher": "World Bank PPP Resource Center",
-   "source_id": null,
-   "contains": "World Bank PPP Resource Center: inventory of Nepal PPP/concession laws for fiscal-commitment management rules.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L24",
-   "url": "https://ibn.gov.np",
-   "title": "Investment Board Nepal",
-   "publisher": "Investment Board Nepal",
-   "source_id": "ibn",
-   "contains": "Investment Board Nepal: list of projects with PDAs (project development agreements) — terms to screen for government guarantees, PPA-backed commitments, termination liabilities.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L25",
-   "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
-   "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_article_iv",
-   "contains": "IMF 2026 Article IV and Seventh ECF Review staff report (CR 2026/127): LIC-DSA annex — coverage of public debt table (central/general government, SOEs, guarantees, central-bank debt), debt-carrying capacity (composite indicator), thresholds and baseline/stress results, contingent-liability stress-test parameters, effective interest rates; programme quantitative performance criteria (e.g. net domestic borrowing ceiling) in MEFP/TMU.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L26",
-   "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A002-en.xml",
-   "title": "Nepal: Staff Report for the 2026 Article IV Consultation and Seventh Review (eLibrary, section A002)",
-   "publisher": "IMF",
-   "source_id": "imf_article_iv",
-   "contains": "IMF eLibrary CR 2026/127 section A002: HTML staff-report tables incl. selected economic indicators, central government operations and financing.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L27",
-   "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
-   "title": "Staff Report for the 2026 Article IV Consultation and Seventh Review (IMF eLibrary, CR 2026/127)",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_article_iv",
-   "contains": "IMF eLibrary CR 2026/127 section A004: further annex/HTML sections (check for DSA annex and TMU).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L28",
-   "url": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
-   "title": "Nepal: Sixth Review under the ECF Arrangement - Staff Report",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_article_iv",
-   "contains": "IMF Sixth ECF Review (Oct 2025): earlier DSA vintage for comparison (vintage conflict tracking).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L29",
-   "url": "https://www.imf.org/en/publications/cr/issues/2023/05/04/nepal-staff-report-for-the-2023-article-iv-consultation-first-and-second-reviews-under-the-533075",
-   "title": "Nepal: Staff Report for the 2023 Article IV Consultation and First and Second Reviews under the ECF",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_article_iv",
-   "contains": "IMF 2023 Article IV and 1st/2nd ECF reviews: earlier DSA vintage and coverage table.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L30",
-   "url": "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NPL",
-   "title": "IMF WEO DataMapper GGXWDG_NGDP, Nepal",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_weo",
-   "contains": "IMF WEO DataMapper GGXWDG_NGDP (general government gross debt, % GDP) Nepal: WEO year-label convention vs Nepal FY (C-08).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L31",
-   "url": "https://www.worldbank.org/en/programs/debt-statistics/ids",
-   "title": "International Debt Statistics — Nepal",
-   "publisher": "World Bank",
-   "source_id": "wb_ids",
-   "contains": "World Bank IDS Nepal: PPG external debt, PNG, IMF credit, short-term; debt service; currency composition of PPG debt; average terms of new commitments; calendar year-end (C-09).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L32",
-   "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
-   "title": "External debt stocks, total (DOD, current US$) - Nepal",
-   "publisher": "World Bank (International Debt Statistics)",
-   "source_id": "wb_ids",
-   "contains": "WDI/IDS DT.DOD.DECT.CD total external debt stocks (calendar year-end); IDS database holds PPG currency-composition and terms series.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L33",
-   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548411112541261",
-   "title": "Nepal Development Update, November 2025: Reforms to Accelerate Public Investment",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "World Bank Nepal Development Update Nov 2025 (public-investment focus): multi-year contract liabilities, project delays — candidate contingent/committed liability item.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L34",
-   "url": "https://documents1.worldbank.org/curated/en/099315004072621459/pdf/IDU-5fbb7a2f-51fb-4e48-aadc-2a447660fbe1.pdf",
-   "title": "Nepal Development Update April 2026: Growth Under Pressure",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "World Bank Nepal Development Update Apr 2026: FY2025/26 half-year fiscal outturn and debt discussion.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L35",
-   "url": "https://www.worldbank.org/en/data/interactive/2026/02/10/nepal-fiscal-dashboard",
-   "title": "Nepal Fiscal Dashboard (2026)",
-   "publisher": "World Bank",
-   "source_id": "wb_npl",
-   "contains": "World Bank Nepal Fiscal Dashboard (2026): trace underlying debt series and FY basis.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L36",
-   "url": "https://www.pefa.gov.np/public/uploads/1752242798-Nepal%20GRPFM%20Assessment-I%20Report.pdf",
-   "title": "Nepal PEFA Assessment, April 2024 (GRPFM Assessment-I report)",
-   "publisher": "Government of Nepal PEFA Secretariat / PEFA",
-   "source_id": "academic",
-   "contains": "Nepal PEFA 2024 (GRPFM Assessment-I): PI-10 fiscal risk reporting (public corporations, subnational, contingent liabilities) and PI-13 debt management scores/narrative.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L37",
-   "url": "https://thedocs.worldbank.org/en/doc/45848f4b32bdefb1317a37feb9aba4c1-0410012026/related/IDA21-Terms-effective-07-01-2026.pdf",
-   "title": "IDA Terms (Effective as of July 1, 2026)",
-   "publisher": "World Bank / IDA",
-   "source_id": "wb_ids",
-   "contains": "IDA21 Terms effective 1 July 2026: lending terms by category (for forward effective foreign rate i_f).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L38",
-   "url": "https://www.adb.org/sites/default/files/institutional-document/993901/concessional-assistance-policy-adf-14-period-policy-paper.pdf",
-   "title": "Concessional Assistance Policy for the ADF 14 Period: Policy Paper",
-   "publisher": "Asian Development Bank",
-   "source_id": "adb_nepal",
-   "contains": "ADB Concessional Assistance Policy ADF 14: terms and grant eligibility by DSA risk (forward i_f; interacts with DSA rating).",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L39",
-   "url": "https://www.adb.org/sites/default/files/institutional-document/1058276/cps-nep-2025-2029.pdf",
-   "title": "Country Partnership Strategy: Nepal, 2025-2029",
-   "publisher": "ADB",
-   "source_id": "adb_nepal",
-   "contains": "ADB Country Partnership Strategy Nepal 2025-2029: debt-sustainability discussion and financing envelope.",
-   "origin": "shared lead register (research/sources/source_leads.json)"
-  },
-  {
-   "id": "02C-L40",
-   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/513741518471205237/guidance-note-on-the-bank-fund-debt-sustainability-framework-for-low-income-countries",
-   "title": "Guidance Note on the Bank-Fund Debt Sustainability Framework for Low Income Countries (2018)",
-   "publisher": "World Bank / IMF",
-   "source_id": "wb_ids",
-   "contains": "Primary documentary source for LIC-DSF indicative thresholds by debt-carrying capacity (weak/medium/strong): PV of external PPG debt/GDP, PV of external PPG debt/exports, external PPG debt service/exports, external PPG debt service/revenue, and the PV of total public debt/GDP benchmark; composite-indicator formula, weights and cut-offs; risk-rating rules; standardised stress tests incl. combined contingent-liability shock.",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L41",
-   "url": "https://www.imf.org/en/Publications/Policy-Papers/Issues/2018/02/14/pp122617guidance-note-on-lic-dsf",
-   "title": "IMF Policy Paper: Guidance Note on the Bank-Fund Debt Sustainability Framework for Low Income Countries (Feb 2018)",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_article_iv",
-   "contains": "IMF-hosted copy of the same Guidance Note (threshold tables; composite indicator; contingent-liability stress defaults).",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L42",
-   "url": "https://www.worldbank.org/content/dam/LIC%20DSF/Site%20File/assets/documentation/pp122617guidance-note-on-lic-dsf.pdf",
-   "title": "pp122617 Guidance Note on LIC DSF (PDF)",
-   "publisher": "World Bank",
-   "source_id": "wb_ids",
-   "contains": "Direct PDF of the 2018 Guidance Note (threshold table).",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L43",
-   "url": "https://www.elibrary.imf.org/view/journals/007/2024/039/article-A001-en.xml",
-   "title": "Supplement to 2018 Guidance Note on the Bank-Fund Debt Sustainability Framework for Low Income Countries (2024)",
-   "publisher": "IMF / World Bank",
-   "source_id": "imf_article_iv",
-   "contains": "2024 supplement: updated guidance (check whether thresholds, composite-indicator cut-offs or contingent-liability defaults were revised; applies to DSAs after its effective date, i.e. the 2026 Nepal DSA).",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L44",
-   "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099080524122521588",
-   "title": "Supplement to 2018 Guidance Note on the LIC-DSF (World Bank copy)",
-   "publisher": "World Bank",
-   "source_id": "wb_ids",
-   "contains": "World Bank copy of the 2024 supplement.",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L45",
-   "url": "https://www.worldbank.org/en/programs/debt-toolkit/dsf",
-   "title": "Debt Sustainability Framework (DSF) — World Bank debt toolkit",
-   "publisher": "World Bank",
-   "source_id": "wb_ids",
-   "contains": "LIC-DSF landing page: template (Excel) and list of published DSAs; composite-indicator calculator (CI cut-offs).",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L46",
-   "url": "https://ieg.worldbankgroup.org/evaluations/world-banks-role-and-use-low-income-country-debt-sustainability-framework/chapter-2-low",
-   "title": "IEG: The World Bank's Role in and Use of the LIC DSF, Chapter 2",
-   "publisher": "World Bank IEG",
-   "source_id": "wb_ids",
-   "contains": "Evaluation of LIC-DSF design and known limitations (PV discounting, remittances in CI, SOE coverage gaps) — methodological caveats only.",
-   "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
-  },
-  {
-   "id": "02C-L47",
-   "url": "https://lawcommission.gov.np",
-   "title": "Public Debt Management Act, 2079 (2022) — to locate on Nepal Law Commission site",
-   "publisher": "Nepal Law Commission",
-   "source_id": "lawcommission_nepal",
-   "contains": "URL from general knowledge — unverified. Statutory framework for government borrowing, guarantees and on-lending; any statutory debt or guarantee ceiling and reporting requirements. Existence, title and year to be verified.",
-   "origin": "general knowledge"
-  },
-  {
-   "id": "02C-L48",
-   "url": "https://lawcommission.gov.np",
-   "title": "Financial Procedures and Fiscal Accountability Act, 2076 (2019) — to locate",
-   "publisher": "Nepal Law Commission",
-   "source_id": "lawcommission_nepal",
-   "contains": "URL from general knowledge — unverified. Rules on multi-year contracts/commitments and fiscal reporting (source of multi-year liability definitions). To be verified.",
-   "origin": "general knowledge"
-  },
-  {
-   "id": "02C-L49",
-   "url": "https://mof.gov.np",
-   "title": "MoF Annual Status Review of Public Enterprises (latest edition) — to locate",
-   "publisher": "Ministry of Finance, Nepal",
-   "source_id": "mof_nepal",
-   "contains": "URL from general knowledge — unverified. Per-enterprise (incl. NEA, NOC, Nepal Airlines, Nepal Telecom, NFC, others): total liabilities, borrowings, government share and loan investment, accumulated profit/loss, unfunded pension/gratuity liabilities, guaranteed debt. Edition/URL to be verified.",
-   "origin": "general knowledge"
-  },
-  {
-   "id": "02C-L50",
-   "url": "https://www.imf.org/en/Publications/Policy-Papers",
-   "title": "IMF Staff Guidance Note on the Sovereign Risk and Debt Sustainability Framework for Market Access Countries (2022) — to locate",
-   "publisher": "International Monetary Fund",
-   "source_id": "imf_article_iv",
-   "contains": "URL from general knowledge — unverified. MAC SRDSF framework: relevant only if Nepal's DSA switches from LIC-DSF to MAC framework (PRGT/IDA graduation scenarios); debt-stabilisation and fan-chart methods. Exact URL to be verified.",
-   "origin": "general knowledge"
-  },
-  {
-   "id": "02C-L51",
-   "url": "https://fcgo.gov.np",
-   "title": "FCGO / Social Security and pension disclosures (Contribution-based Pension Fund; civil service pension outlays) — to locate",
-   "publisher": "Financial Comptroller General Office, Nepal",
-   "source_id": "fcgo",
-   "contains": "URL from general knowledge — unverified. Pension expenditure series and any actuarial estimate of unfunded civil-service pension obligations (implicit liability). To be verified.",
-   "origin": "general knowledge"
-  }
- ]
+  "source_leads": [
+    {
+      "id": "02C-L01",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "PDMO Public Debt Bulletin (dated 2082-06-21 BS): FY2024/25 year-end central-government debt stock, domestic by instrument (T-bills, development bonds, citizen savings bonds, foreign employment bonds) and external by creditor/currency; debt service (principal, interest) by source; coverage statement (central government). Nepal FY (mid-July).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L02",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
+      "title": "Government Debt Statistics for the month of Shrawan 2082 (mid-August 2025)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "PDMO monthly Government Debt Statistics, Shrawan 2082 (mid-August 2025): outstanding domestic and external debt by creditor and currency; FY2025/26 month 1.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L03",
+      "url": "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
+      "title": "Government Debt Statistics for the month of Falgun 2082 (mid-March 2026)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "PDMO monthly Government Debt Statistics, Falgun 2082 (mid-March 2026): latest located month-end stock by creditor and currency; within-year FY2025/26 (not a FY-end stock).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L04",
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "PDMO Medium-Term Debt Management Strategy (2024): cost-risk indicators (average interest rate, ATM, share maturing within one year, fixed/variable, FX share by currency), concessional share, strategy targets/benchmarks, and any stated policy ceilings for domestic borrowing.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L05",
+      "url": "https://pdmo.gov.np",
+      "title": "Public Debt Management Office annual report",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "PDMO landing page: annual reports and debt-statistics archive for FY-end series FY2014/15 onward; coverage (central government only vs guaranteed debt) to be confirmed.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L06",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "MoF Economic Survey 2023/24 (English): public debt chapter (stock, service, debt/GDP), government investment in and loans to public enterprises, guarantee statement if any; statistical appendix. Nepal FY.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L07",
+      "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+      "title": "Economic Survey 2081/82 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "MoF Economic Survey 2081/82 (Nepali): public debt chapter and public-enterprise chapter (FY2080/81 actuals, FY2081/82 partial).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L08",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "MoF Economic Survey 2082/83 (Nepali): public debt and public-enterprise chapters (FY2081/82 actuals, FY2082/83 partial).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L09",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Budget%20Translation_2082-2083_nzrwuof.pdf",
+      "title": "Budget Speech of Fiscal Year 2025/26 (2082/83), English translation",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Budget Speech FY2082/83 (English translation): financing plan (domestic borrowing, foreign loans), stated domestic-borrowing ceiling for the year, principal and interest appropriation.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L10",
+      "url": "https://mof.gov.np/content/1745/statement-of-expenditure-estimates--red-book-2083-84/",
+      "title": "Statement of Expenditure Estimates (Red Book) FY2083/84",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Red Book FY2083/84: debt-service appropriations (interest, principal) by source; financing-head lines incl. share/loan investment in public enterprises (on-lending).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L11",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+      "title": "Consolidated Financial Statement (Federal, Province and Local Government) FY2023/24",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "source_id": null,
+      "contains": "FCGO Consolidated Financial Statement FY2023/24: audited-basis debt-service outturn, financing, government investment (shares and loans) in public enterprises, and any schedule of guarantees/contingent liabilities; three-tier consolidation incl. subnational borrowing.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L12",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/20240725124752_cfs2022-2023_q53t9je.pdf",
+      "title": "Consolidated Financial Statement FY2022/23",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "source_id": "fcgo",
+      "contains": "FCGO Consolidated Financial Statement FY2022/23: as above for FY2022/23.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L13",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB Current Macroeconomic and Financial Situation (annual FY2024/25): government finance on cash basis incl. domestic borrowing and outstanding domestic debt; external debt position. Keep separate from PDMO (coverage/timing).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L14",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Intergovernmental%20Fiscal%20Arrangement%20Act,%202074%20(2017)%20English%20Version_y7gnh3i.pdf",
+      "title": "Intergovernmental Fiscal Arrangement Act, 2074 (2017) English Version (PDF)",
+      "publisher": "Government of Nepal (MoF upload on government CDN)",
+      "source_id": "mof_nepal",
+      "contains": "Intergovernmental Fiscal Arrangement Act 2074 (2017), English: legal basis for provincial/local internal borrowing within limits recommended by NNRFC; federal consent requirements for foreign borrowing.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L15",
+      "url": "https://faolex.fao.org/docs/pdf/NEP225903.pdf",
+      "title": "National Natural Resources and Fiscal Commission Act, 2074 (2017)",
+      "publisher": "FAO FAOLEX (copy of GoN Act)",
+      "source_id": null,
+      "contains": "NNRFC Act 2074 (2017): mandate to recommend internal-borrowing limits for federal, provincial and local governments (check exact provision; value set annually in NNRFC recommendation).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L16",
+      "url": "https://nnrfc.gov.np/category/report/",
+      "title": "NNRFC reports (annual reports and recommendations)",
+      "publisher": "National Natural Resources and Fiscal Commission",
+      "source_id": "nnrfc",
+      "contains": "NNRFC reports: annual recommendation of internal-borrowing ceilings (percent-of-GDP for federal; percent-of-revenue for provinces/locals) — the domestic statutory limit to test against.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L17",
+      "url": "https://nnrfc.gov.np/uploads/resources/2024-06-16/Annual_Report_2080_nnrfc1.pdf",
+      "title": "NNRFC Fifth Annual Report 2080 (Nepali)",
+      "publisher": "National Natural Resources and Fiscal Commission",
+      "source_id": "nnrfc",
+      "contains": "NNRFC Fifth Annual Report 2080 (Nepali): borrowing-limit recommendations and their basis for the relevant FY.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L18",
+      "url": "https://oag.gov.np/",
+      "title": "OAGN - Office of the Auditor General (current site)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": "OAG annual reports: audited arrears, unsettled advances, guarantees, public-enterprise audit findings (NEA, NOC), and multi-year contract liabilities.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L19",
+      "url": "https://www.nea.org.np",
+      "title": "Nepal Electricity Authority - annual reports (plant list, capacity, location, outages)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "NEA annual reports: balance sheet (borrowings incl. on-lent government loans, accumulated losses/profits), PPA commitments with IPPs (take-or-pay), power-purchase liabilities.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L20",
+      "url": "https://noc.org.np/",
+      "title": "Nepal Oil Corporation (home)",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC notices and financial statements/annual reports (to locate): accumulated losses, borrowing from banks, government price-stabilisation support; quasi-fiscal liability from administered fuel pricing.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L21",
+      "url": "https://www.npc.gov.np/images/category/PDNA_Volume_A.pdf",
+      "title": "Nepal Earthquake 2015: Post Disaster Needs Assessment, Vol. A: Key Findings",
+      "publisher": "National Planning Commission, Government of Nepal",
+      "source_id": "npc_nepal",
+      "contains": "NPC PDNA 2015 Vol. A: recovery needs by sector with public/private split (NPR, FY2014/15 prices) — reference class for a disaster contingent-liability stress (SFA).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L22",
+      "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+      "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+      "publisher": "Office of the Investment Board Nepal",
+      "source_id": null,
+      "contains": "PPP and Investment Act 2019: provisions under which government may provide guarantees, viability gap funding, termination payments, or revenue guarantees to PPP/IBN projects.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L23",
+      "url": "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-nepal",
+      "title": "PPP Laws/Concessions Laws - Nepal",
+      "publisher": "World Bank PPP Resource Center",
+      "source_id": null,
+      "contains": "World Bank PPP Resource Center: inventory of Nepal PPP/concession laws for fiscal-commitment management rules.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L24",
+      "url": "https://ibn.gov.np",
+      "title": "Investment Board Nepal",
+      "publisher": "Investment Board Nepal",
+      "source_id": "ibn",
+      "contains": "Investment Board Nepal: list of projects with PDAs (project development agreements) — terms to screen for government guarantees, PPA-backed commitments, termination liabilities.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L25",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "IMF 2026 Article IV and Seventh ECF Review staff report (CR 2026/127): LIC-DSA annex — coverage of public debt table (central/general government, SOEs, guarantees, central-bank debt), debt-carrying capacity (composite indicator), thresholds and baseline/stress results, contingent-liability stress-test parameters, effective interest rates; programme quantitative performance criteria (e.g. net domestic borrowing ceiling) in MEFP/TMU.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L26",
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A002-en.xml",
+      "title": "Nepal: Staff Report for the 2026 Article IV Consultation and Seventh Review (eLibrary, section A002)",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "IMF eLibrary CR 2026/127 section A002: HTML staff-report tables incl. selected economic indicators, central government operations and financing.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L27",
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+      "title": "Staff Report for the 2026 Article IV Consultation and Seventh Review (IMF eLibrary, CR 2026/127)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "IMF eLibrary CR 2026/127 section A004: further annex/HTML sections (check for DSA annex and TMU).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L28",
+      "url": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+      "title": "Nepal: Sixth Review under the ECF Arrangement - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "IMF Sixth ECF Review (Oct 2025): earlier DSA vintage for comparison (vintage conflict tracking).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L29",
+      "url": "https://www.imf.org/en/publications/cr/issues/2023/05/04/nepal-staff-report-for-the-2023-article-iv-consultation-first-and-second-reviews-under-the-533075",
+      "title": "Nepal: Staff Report for the 2023 Article IV Consultation and First and Second Reviews under the ECF",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "IMF 2023 Article IV and 1st/2nd ECF reviews: earlier DSA vintage and coverage table.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L30",
+      "url": "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NPL",
+      "title": "IMF WEO DataMapper GGXWDG_NGDP, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "IMF WEO DataMapper GGXWDG_NGDP (general government gross debt, % GDP) Nepal: WEO year-label convention vs Nepal FY (C-08).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L31",
+      "url": "https://www.worldbank.org/en/programs/debt-statistics/ids",
+      "title": "International Debt Statistics — Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": "World Bank IDS Nepal: PPG external debt, PNG, IMF credit, short-term; debt service; currency composition of PPG debt; average terms of new commitments; calendar year-end (C-09).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L32",
+      "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
+      "title": "External debt stocks, total (DOD, current US$) - Nepal",
+      "publisher": "World Bank (International Debt Statistics)",
+      "source_id": "wb_ids",
+      "contains": "WDI/IDS DT.DOD.DECT.CD total external debt stocks (calendar year-end); IDS database holds PPG currency-composition and terms series.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L33",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548411112541261",
+      "title": "Nepal Development Update, November 2025: Reforms to Accelerate Public Investment",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "World Bank Nepal Development Update Nov 2025 (public-investment focus): multi-year contract liabilities, project delays — candidate contingent/committed liability item.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L34",
+      "url": "https://documents1.worldbank.org/curated/en/099315004072621459/pdf/IDU-5fbb7a2f-51fb-4e48-aadc-2a447660fbe1.pdf",
+      "title": "Nepal Development Update April 2026: Growth Under Pressure",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "World Bank Nepal Development Update Apr 2026: FY2025/26 half-year fiscal outturn and debt discussion.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L35",
+      "url": "https://www.worldbank.org/en/data/interactive/2026/02/10/nepal-fiscal-dashboard",
+      "title": "Nepal Fiscal Dashboard (2026)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "World Bank Nepal Fiscal Dashboard (2026): trace underlying debt series and FY basis.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L36",
+      "url": "https://www.pefa.gov.np/public/uploads/1752242798-Nepal%20GRPFM%20Assessment-I%20Report.pdf",
+      "title": "Nepal PEFA Assessment, April 2024 (GRPFM Assessment-I report)",
+      "publisher": "Government of Nepal PEFA Secretariat / PEFA",
+      "source_id": "academic",
+      "contains": "Nepal PEFA 2024 (GRPFM Assessment-I): PI-10 fiscal risk reporting (public corporations, subnational, contingent liabilities) and PI-13 debt management scores/narrative.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L37",
+      "url": "https://thedocs.worldbank.org/en/doc/45848f4b32bdefb1317a37feb9aba4c1-0410012026/related/IDA21-Terms-effective-07-01-2026.pdf",
+      "title": "IDA Terms (Effective as of July 1, 2026)",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "IDA21 Terms effective 1 July 2026: lending terms by category (for forward effective foreign rate i_f).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L38",
+      "url": "https://www.adb.org/sites/default/files/institutional-document/993901/concessional-assistance-policy-adf-14-period-policy-paper.pdf",
+      "title": "Concessional Assistance Policy for the ADF 14 Period: Policy Paper",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "ADB Concessional Assistance Policy ADF 14: terms and grant eligibility by DSA risk (forward i_f; interacts with DSA rating).",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L39",
+      "url": "https://www.adb.org/sites/default/files/institutional-document/1058276/cps-nep-2025-2029.pdf",
+      "title": "Country Partnership Strategy: Nepal, 2025-2029",
+      "publisher": "ADB",
+      "source_id": "adb_nepal",
+      "contains": "ADB Country Partnership Strategy Nepal 2025-2029: debt-sustainability discussion and financing envelope.",
+      "origin": "shared lead register (research/sources/source_leads.json)"
+    },
+    {
+      "id": "02C-L40",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/513741518471205237/guidance-note-on-the-bank-fund-debt-sustainability-framework-for-low-income-countries",
+      "title": "Guidance Note on the Bank-Fund Debt Sustainability Framework for Low Income Countries (2018)",
+      "publisher": "World Bank / IMF",
+      "source_id": "wb_ids",
+      "contains": "Primary documentary source for LIC-DSF indicative thresholds by debt-carrying capacity (weak/medium/strong): PV of external PPG debt/GDP, PV of external PPG debt/exports, external PPG debt service/exports, external PPG debt service/revenue, and the PV of total public debt/GDP benchmark; composite-indicator formula, weights and cut-offs; risk-rating rules; standardised stress tests incl. combined contingent-liability shock.",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L41",
+      "url": "https://www.imf.org/en/Publications/Policy-Papers/Issues/2018/02/14/pp122617guidance-note-on-lic-dsf",
+      "title": "IMF Policy Paper: Guidance Note on the Bank-Fund Debt Sustainability Framework for Low Income Countries (Feb 2018)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "IMF-hosted copy of the same Guidance Note (threshold tables; composite indicator; contingent-liability stress defaults).",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L42",
+      "url": "https://www.worldbank.org/content/dam/LIC%20DSF/Site%20File/assets/documentation/pp122617guidance-note-on-lic-dsf.pdf",
+      "title": "pp122617 Guidance Note on LIC DSF (PDF)",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": "Direct PDF of the 2018 Guidance Note (threshold table).",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L43",
+      "url": "https://www.elibrary.imf.org/view/journals/007/2024/039/article-A001-en.xml",
+      "title": "Supplement to 2018 Guidance Note on the Bank-Fund Debt Sustainability Framework for Low Income Countries (2024)",
+      "publisher": "IMF / World Bank",
+      "source_id": "imf_article_iv",
+      "contains": "2024 supplement: updated guidance (check whether thresholds, composite-indicator cut-offs or contingent-liability defaults were revised; applies to DSAs after its effective date, i.e. the 2026 Nepal DSA).",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L44",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099080524122521588",
+      "title": "Supplement to 2018 Guidance Note on the LIC-DSF (World Bank copy)",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": "World Bank copy of the 2024 supplement.",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L45",
+      "url": "https://www.worldbank.org/en/programs/debt-toolkit/dsf",
+      "title": "Debt Sustainability Framework (DSF) — World Bank debt toolkit",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": "LIC-DSF landing page: template (Excel) and list of published DSAs; composite-indicator calculator (CI cut-offs).",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L46",
+      "url": "https://ieg.worldbankgroup.org/evaluations/world-banks-role-and-use-low-income-country-debt-sustainability-framework/chapter-2-low",
+      "title": "IEG: The World Bank's Role in and Use of the LIC DSF, Chapter 2",
+      "publisher": "World Bank IEG",
+      "source_id": "wb_ids",
+      "contains": "Evaluation of LIC-DSF design and known limitations (PV discounting, remittances in CI, SOE coverage gaps) — methodological caveats only.",
+      "origin": "WebSearch by 02C r1 (title and URL seen in search results; document not downloaded)"
+    },
+    {
+      "id": "02C-L47",
+      "url": "https://lawcommission.gov.np",
+      "title": "Public Debt Management Act, 2079 (2022) — to locate on Nepal Law Commission site",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "URL from general knowledge — unverified. Statutory framework for government borrowing, guarantees and on-lending; any statutory debt or guarantee ceiling and reporting requirements. Existence, title and year to be verified.",
+      "origin": "general knowledge"
+    },
+    {
+      "id": "02C-L48",
+      "url": "https://lawcommission.gov.np",
+      "title": "Financial Procedures and Fiscal Accountability Act, 2076 (2019) — to locate",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "URL from general knowledge — unverified. Rules on multi-year contracts/commitments and fiscal reporting (source of multi-year liability definitions). To be verified.",
+      "origin": "general knowledge"
+    },
+    {
+      "id": "02C-L49",
+      "url": "https://mof.gov.np",
+      "title": "MoF Annual Status Review of Public Enterprises (latest edition) — to locate",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "URL from general knowledge — unverified. Per-enterprise (incl. NEA, NOC, Nepal Airlines, Nepal Telecom, NFC, others): total liabilities, borrowings, government share and loan investment, accumulated profit/loss, unfunded pension/gratuity liabilities, guaranteed debt. Edition/URL to be verified.",
+      "origin": "general knowledge"
+    },
+    {
+      "id": "02C-L50",
+      "url": "https://www.imf.org/en/Publications/Policy-Papers",
+      "title": "IMF Staff Guidance Note on the Sovereign Risk and Debt Sustainability Framework for Market Access Countries (2022) — to locate",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "URL from general knowledge — unverified. MAC SRDSF framework: relevant only if Nepal's DSA switches from LIC-DSF to MAC framework (PRGT/IDA graduation scenarios); debt-stabilisation and fan-chart methods. Exact URL to be verified.",
+      "origin": "general knowledge"
+    },
+    {
+      "id": "02C-L51",
+      "url": "https://fcgo.gov.np",
+      "title": "FCGO / Social Security and pension disclosures (Contribution-based Pension Fund; civil service pension outlays) — to locate",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "source_id": "fcgo",
+      "contains": "URL from general knowledge — unverified. Pension expenditure series and any actuarial estimate of unfunded civil-service pension obligations (implicit liability). To be verified.",
+      "origin": "general knowledge"
+    }
+  ]
 }

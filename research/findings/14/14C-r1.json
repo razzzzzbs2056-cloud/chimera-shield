@@ -179,22 +179,26 @@
     {
       "id": "14C-A1",
       "text": "MDB frameworks are recorded as requirements only for projects they finance; they are not treated as Nepali law.",
-      "basis": "assumption (definition)"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption (definition)'"
     },
     {
       "id": "14C-A2",
       "text": "Project-affected-household evidence from complainants, NHRC and academic sources is kept as separate values from project self-reporting; differences are explained, not reconciled.",
-      "basis": "CLAUDE.md evidence rule 4"
+      "basis": "assumption",
+      "basis_note": "original label: 'CLAUDE.md evidence rule 4'"
     },
     {
       "id": "14C-A3",
       "text": "Consultation survey is design-only; its outputs are hypothetical until approvals and ethics clearance are recorded.",
-      "basis": "src/orchestrator/approvals.py gated actions"
+      "basis": "assumption",
+      "basis_note": "original label: 'src/orchestrator/approvals.py gated actions'"
     },
     {
       "id": "14C-A4",
       "text": "Group classifications use NPHC 2021 official categories and the legal schedule of indigenous nationalities; no ranking or characterisation of groups.",
-      "basis": "assumption aligned with 14B-A1"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption aligned with 14B-A1'"
     }
   ],
   "challenges": [

@@ -62,7 +62,8 @@
     {
       "id": "24E-A1",
       "text": "A technology is not treated as relevant to Nepal's growth path without G1 or G2 evidence; G3/G4 items are reported as speculative and carry no parameter into the model.",
-      "basis": "task instruction to distinguish proven from speculative"
+      "basis": "assumption",
+      "basis_note": "original label: 'task instruction to distinguish proven from speculative'"
     }
   ],
   "challenges": [

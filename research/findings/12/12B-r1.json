@@ -1,634 +1,635 @@
 {
- "subagent_id": "12B",
- "task_id": "r1",
- "generated_at": "2026-09-27T12:00:00+00:00",
- "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (FDI commitments versus realised inflows), Q2 (approval steps and timelines) and Q3 (repatriation restrictions) are designed but unanswered. Thirty source leads recorded, reused from the shared register and upstream agents (04B, 11A, 16A/16B, 21C, 23E, 26D) plus two portals marked as general-knowledge URLs: NRB FDI survey reports (FY2022/23, FY2023/24), NRB Current Macroeconomic and Financial Situation (BoP), NRB Foreign Investment and Loan Management Bylaw and FXM department, Department of Industry, IBN and the PPP and Investment Act 2019, FITTA 2019 (text and UNCTAD summaries), UNCTAD Investment Policy Monitor and IPR implementation report, India-Nepal BIPPA record and text, InvestNepal treaty downloads, WTO TPR 2025, World Bank CEM 2025, IMF 2026 Article IV, UNCTADstat/WIR and BPM6. Pledges, approvals (DoI and IBN separately), realised BoP inflows, survey stock and UNCTAD calendar-year inflows are kept as separate series and never substituted. India-Nepal BIPPA status is treated as unresolved (26D). No numbers are recorded.",
- "findings": [
-  {
-   "claim": "FDI approvals (Department of Industry): number of projects and committed foreign investment by FY, sector and source country.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2010/11-FY2025/26 (Nepal FY)",
-   "source_ids": [
-    "doind"
-   ],
-   "note": "Series 1 of 4 — approvals. Also project count (unit count). Leads: 12B-L08"
-  },
-  {
-   "claim": "IBN-approved large projects: approved investment and project count by FY.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2017/18-FY2025/26",
-   "source_ids": [
-    "ibn"
-   ],
-   "note": "Series 2 — IBN approvals; must not be summed with DoI approvals without de-duplication. Leads: 12B-L10, L11"
-  },
-  {
-   "claim": "Investment-summit / MoU commitments (pledges) by event and counterpart.",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "2017, 2019, 2024 summits and others",
-   "source_ids": [
-    "ibn"
-   ],
-   "note": "Series 3 — pledges/commitments; non-binding; never treated as inflows. Leads: 12B-L10"
-  },
-  {
-   "claim": "Realised FDI inflows, BoP basis (BPM6 direct investment liabilities, net incurrence).",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2010/11-FY2025/26",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "Series 4 — realised. Also USD with documented exchange rate. Leads: 12B-L03, L04, L05"
-  },
-  {
-   "claim": "FDI stock and flow composition (equity, reinvested earnings, debt) by sector and source country from NRB FDI survey.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2022/23, FY2023/24",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "Survey basis differs from BoP flow basis; keep both. Leads: 12B-L01, L02"
-  },
-  {
-   "claim": "UNCTAD FDI inflows for Nepal (calendar-year labelled).",
-   "type": "pending",
-   "value": null,
-   "unit": "USD_current_mn",
-   "period": "CY2010-CY2025",
-   "source_ids": [
-    "unctadstat"
-   ],
-   "note": "Calendar/FY mapping must be documented; do not mix with NRB FY series. Leads: 12B-L24, L29"
-  },
-  {
-   "claim": "Realisation ratio: realised inflows attributable to approvals, by approval cohort.",
-   "type": "pending",
-   "value": null,
-   "unit": "ratio",
-   "period": "Approval cohorts FY2015/16-FY2022/23",
-   "source_ids": [
-    "doind",
-    "nrb"
-   ],
-   "note": "Estimate only when approvals and NRB-recorded inflows can be matched at project level (NRB FDI recording by approval number); otherwise report aggregate ratio with a warning that the two series are not cohort-matched. Leads: 12B-L01, L06, L08"
-  },
-  {
-   "claim": "Approval steps, responsible authority and statutory time limits (FITTA 2019, PPP and Investment Act 2019, NRB bylaw, company registration, tax registration, post-approval licences).",
-   "type": "pending",
-   "value": null,
-   "unit": "days",
-   "period": "Law in force as of 2026",
-   "source_ids": [
-    "lawcommission_nepal",
-    "doind",
-    "ibn",
-    "nrb"
-   ],
-   "note": "Statutory limits from primary legal text; actual timelines from DoI/IBN records or surveys, labelled separately. Leads: 12B-L06, L11, L12, L13, L14, L16, L27, L28"
-  },
-  {
-   "claim": "Actual elapsed time for FDI approval and inflow recording (median, distribution).",
-   "type": "pending",
-   "value": null,
-   "unit": "days",
-   "period": "Latest available",
-   "source_ids": [
-    "doind",
-    "nrb",
-    "wb_npl"
-   ],
-   "note": "No primary administrative dataset located; State Department ICS is tier-4 qualitative cross-check only. Leads: 12B-L16, L20, L22"
-  },
-  {
-   "claim": "Minimum FDI threshold, automatic-route coverage and negative list (sectors closed to FDI).",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_mn",
-   "period": "Law in force as of 2026",
-   "source_ids": [
-    "lawcommission_nepal",
-    "unctad_iia"
-   ],
-   "note": "Dated amendments recorded individually. Leads: 12B-L12, L13, L14"
-  },
-  {
-   "claim": "Repatriation rules: eligible items (dividends, sale/liquidation proceeds, loan principal and interest, technology/royalty fees), approval authority, documents, tax clearance, time limits.",
-   "type": "pending",
-   "value": null,
-   "unit": "days",
-   "period": "Law and NRB directives in force as of 2026",
-   "source_ids": [
-    "nrb",
-    "lawcommission_nepal"
-   ],
-   "note": "From FITTA 2019 repatriation section, NRB Foreign Investment and Loan Management Bylaw and FXM directives. Leads: 12B-L06, L07, L12, L27"
-  },
-  {
-   "claim": "Repatriation outflows: dividends and income on FDI (primary income debits) in BoP.",
-   "type": "pending",
-   "value": null,
-   "unit": "NPR_current_bn",
-   "period": "FY2015/16-FY2025/26",
-   "source_ids": [
-    "nrb"
-   ],
-   "note": "Leads: 12B-L03, L04"
-  },
-  {
-   "claim": "Treaty-based transfer guarantees by BIPPA partner and their status.",
-   "type": "pending",
-   "value": null,
-   "unit": "count",
-   "period": "As of 2026",
-   "source_ids": [
-    "unctad_iia",
-    "ibn"
-   ],
-   "note": "From 26D register; India-Nepal BIPPA status contested — treated as unresolved. Leads: 12B-L17, L18, L19"
-  },
-  {
-   "claim": "Four separate FDI series (pledges; approvals [DoI and IBN]; realised BoP inflows; FDI survey stock) are maintained and never substituted for one another; ODA is excluded from FDI.",
-   "type": "assumption",
-   "value": null,
-   "note": "Accepts 04B's four-category proposal and 16B EXP-12 challenge; ODA tracked by 04B/Agent 02, not here."
-  },
-  {
-   "claim": "Scenario investor-protection assumptions do not presume treaty coverage for India until the India-Nepal BIPPA status is settled from dated instruments.",
-   "type": "assumption",
-   "value": null,
-   "note": "Accepts 26D challenge."
-  },
-  {
-   "claim": "Approval values are commitments in NPR at the approval date; they are not deflated or converted to realised investment.",
-   "type": "assumption",
-   "value": null,
-   "note": "Definition; conversion to USD, if needed, uses the approval-FY average rate, documented."
-  }
- ],
- "data_gaps": [
-  "Every empirical value: no primary document could be downloaded in r1.",
-  "No administrative dataset of actual approval durations was located; statutory time limits are not evidence of practice.",
-  "Project-level linkage between DoI/IBN approvals and NRB-recorded inflows is not publicly documented; cohort realisation ratios may be infeasible.",
-  "Document-level URLs for DoI FDI statistics, IBN approval records, Foreign Exchange (Regulation) Act and Industrial Enterprises Act 2020 not located.",
-  "India-Nepal BIPPA status unresolved (26D)."
- ],
- "assumptions": [
-  {
-   "id": "12B-A1",
-   "text": "Four-plus series (pledges, DoI approvals, IBN approvals, realised BoP, survey stock, UNCTAD CY) kept separate; ODA excluded.",
-   "basis": "assumption"
-  },
-  {
-   "id": "12B-A2",
-   "text": "No treaty coverage presumed for India in scenarios until BIPPA status resolved.",
-   "basis": "assumption"
-  },
-  {
-   "id": "12B-A3",
-   "text": "BPM6 direct-investment definition is the reference for realised FDI.",
-   "basis": "definition"
-  }
- ],
- "challenges": [
-  {
-   "to": "04B",
-   "text": "Agree the four-category split with one refinement: approvals are split into DoI and IBN sub-series (possible overlap), and UNCTAD calendar-year inflows are a separate fifth series. 12B owns aggregate series; 04B owns China-specific rows drawn from them."
-  },
-  {
-   "to": "00B",
-   "text": "For the FDI commitments-vs-flows conflict, the difference is definitional (gross commitments vs net BoP liabilities incl. reinvested earnings and debt; FY vs CY); record both and classify gap reasons rather than treat as a data error."
-  },
-  {
-   "to": "00A",
-   "text": "Office of Company Registrar and Inland Revenue Department document-level sources for approval-process timelines are needed; ocr_nepal and ird_nepal exist in catalog but no leads were located."
-  }
- ],
- "uncertainty": "High: no value retrieved. Structural uncertainties: (i) approvals, pledges and BoP inflows measure different things and cannot be reconciled without project-level data; (ii) NRB FDI survey and BoP flow series differ in coverage; (iii) FY vs CY between NRB and UNCTAD; (iv) statutory time limits may diverge widely from practice; (v) repatriation practice depends on NRB directives and foreign-exchange conditions that change over time; (vi) India-Nepal BIPPA status contested, affecting protection assumptions for the largest neighbour.",
- "specific": {
-  "fdi_commitment_realisation": {
-   "status": "pending",
-   "series": [
+  "subagent_id": "12B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T12:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (FDI commitments versus realised inflows), Q2 (approval steps and timelines) and Q3 (repatriation restrictions) are designed but unanswered. Thirty source leads recorded, reused from the shared register and upstream agents (04B, 11A, 16A/16B, 21C, 23E, 26D) plus two portals marked as general-knowledge URLs: NRB FDI survey reports (FY2022/23, FY2023/24), NRB Current Macroeconomic and Financial Situation (BoP), NRB Foreign Investment and Loan Management Bylaw and FXM department, Department of Industry, IBN and the PPP and Investment Act 2019, FITTA 2019 (text and UNCTAD summaries), UNCTAD Investment Policy Monitor and IPR implementation report, India-Nepal BIPPA record and text, InvestNepal treaty downloads, WTO TPR 2025, World Bank CEM 2025, IMF 2026 Article IV, UNCTADstat/WIR and BPM6. Pledges, approvals (DoI and IBN separately), realised BoP inflows, survey stock and UNCTAD calendar-year inflows are kept as separate series and never substituted. India-Nepal BIPPA status is treated as unresolved (26D). No numbers are recorded.",
+  "findings": [
     {
-     "id": "S1_pledges",
-     "definition": "Non-binding MoUs/summit commitments",
-     "source": "ibn",
-     "unit": "USD_current_mn",
-     "lead_ids": [
-      "12B-L10"
-     ]
+      "claim": "FDI approvals (Department of Industry): number of projects and committed foreign investment by FY, sector and source country.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2010/11-FY2025/26 (Nepal FY)",
+      "source_ids": [
+        "doind"
+      ],
+      "note": "Series 1 of 4 — approvals. Also project count (unit count). Leads: 12B-L08"
     },
     {
-     "id": "S2a_approvals_doind",
-     "definition": "FDI approved under FITTA by DoI (committed foreign capital)",
-     "source": "doind",
-     "unit": "NPR_current_bn",
-     "lead_ids": [
-      "12B-L08"
-     ]
+      "claim": "IBN-approved large projects: approved investment and project count by FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2017/18-FY2025/26",
+      "source_ids": [
+        "ibn"
+      ],
+      "note": "Series 2 — IBN approvals; must not be summed with DoI approvals without de-duplication. Leads: 12B-L10, L11"
     },
     {
-     "id": "S2b_approvals_ibn",
-     "definition": "Projects approved by IBN under PPP and Investment Act",
-     "source": "ibn",
-     "unit": "NPR_current_bn",
-     "lead_ids": [
-      "12B-L10",
-      "12B-L11"
-     ]
+      "claim": "Investment-summit / MoU commitments (pledges) by event and counterpart.",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "2017, 2019, 2024 summits and others",
+      "source_ids": [
+        "ibn"
+      ],
+      "note": "Series 3 — pledges/commitments; non-binding; never treated as inflows. Leads: 12B-L10"
     },
     {
-     "id": "S3_realised_bop",
-     "definition": "BPM6 direct investment liabilities, net (NRB BoP)",
-     "source": "nrb",
-     "unit": "NPR_current_bn",
-     "lead_ids": [
-      "12B-L03",
-      "12B-L04",
-      "12B-L05"
-     ]
+      "claim": "Realised FDI inflows, BoP basis (BPM6 direct investment liabilities, net incurrence).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2010/11-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "Series 4 — realised. Also USD with documented exchange rate. Leads: 12B-L03, L04, L05"
     },
     {
-     "id": "S4_survey_stock",
-     "definition": "NRB FDI survey stock and composition",
-     "source": "nrb",
-     "unit": "NPR_current_bn",
-     "lead_ids": [
-      "12B-L01",
-      "12B-L02"
-     ]
+      "claim": "FDI stock and flow composition (equity, reinvested earnings, debt) by sector and source country from NRB FDI survey.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2022/23, FY2023/24",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "Survey basis differs from BoP flow basis; keep both. Leads: 12B-L01, L02"
     },
     {
-     "id": "S5_unctad",
-     "definition": "UNCTAD FDI inflows, calendar-year",
-     "source": "unctadstat",
-     "unit": "USD_current_mn",
-     "lead_ids": [
-      "12B-L24",
-      "12B-L29"
-     ]
+      "claim": "UNCTAD FDI inflows for Nepal (calendar-year labelled).",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_mn",
+      "period": "CY2010-CY2025",
+      "source_ids": [
+        "unctadstat"
+      ],
+      "note": "Calendar/FY mapping must be documented; do not mix with NRB FY series. Leads: 12B-L24, L29"
+    },
+    {
+      "claim": "Realisation ratio: realised inflows attributable to approvals, by approval cohort.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "Approval cohorts FY2015/16-FY2022/23",
+      "source_ids": [
+        "doind",
+        "nrb"
+      ],
+      "note": "Estimate only when approvals and NRB-recorded inflows can be matched at project level (NRB FDI recording by approval number); otherwise report aggregate ratio with a warning that the two series are not cohort-matched. Leads: 12B-L01, L06, L08"
+    },
+    {
+      "claim": "Approval steps, responsible authority and statutory time limits (FITTA 2019, PPP and Investment Act 2019, NRB bylaw, company registration, tax registration, post-approval licences).",
+      "type": "pending",
+      "value": null,
+      "unit": "days",
+      "period": "Law in force as of 2026",
+      "source_ids": [
+        "lawcommission_nepal",
+        "doind",
+        "ibn",
+        "nrb"
+      ],
+      "note": "Statutory limits from primary legal text; actual timelines from DoI/IBN records or surveys, labelled separately. Leads: 12B-L06, L11, L12, L13, L14, L16, L27, L28"
+    },
+    {
+      "claim": "Actual elapsed time for FDI approval and inflow recording (median, distribution).",
+      "type": "pending",
+      "value": null,
+      "unit": "days",
+      "period": "Latest available",
+      "source_ids": [
+        "doind",
+        "nrb",
+        "wb_npl"
+      ],
+      "note": "No primary administrative dataset located; State Department ICS is tier-4 qualitative cross-check only. Leads: 12B-L16, L20, L22"
+    },
+    {
+      "claim": "Minimum FDI threshold, automatic-route coverage and negative list (sectors closed to FDI).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Law in force as of 2026",
+      "source_ids": [
+        "lawcommission_nepal",
+        "unctad_iia"
+      ],
+      "note": "Dated amendments recorded individually. Leads: 12B-L12, L13, L14"
+    },
+    {
+      "claim": "Repatriation rules: eligible items (dividends, sale/liquidation proceeds, loan principal and interest, technology/royalty fees), approval authority, documents, tax clearance, time limits.",
+      "type": "pending",
+      "value": null,
+      "unit": "days",
+      "period": "Law and NRB directives in force as of 2026",
+      "source_ids": [
+        "nrb",
+        "lawcommission_nepal"
+      ],
+      "note": "From FITTA 2019 repatriation section, NRB Foreign Investment and Loan Management Bylaw and FXM directives. Leads: 12B-L06, L07, L12, L27"
+    },
+    {
+      "claim": "Repatriation outflows: dividends and income on FDI (primary income debits) in BoP.",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "FY2015/16-FY2025/26",
+      "source_ids": [
+        "nrb"
+      ],
+      "note": "Leads: 12B-L03, L04"
+    },
+    {
+      "claim": "Treaty-based transfer guarantees by BIPPA partner and their status.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "As of 2026",
+      "source_ids": [
+        "unctad_iia",
+        "ibn"
+      ],
+      "note": "From 26D register; India-Nepal BIPPA status contested — treated as unresolved. Leads: 12B-L17, L18, L19"
+    },
+    {
+      "claim": "Four separate FDI series (pledges; approvals [DoI and IBN]; realised BoP inflows; FDI survey stock) are maintained and never substituted for one another; ODA is excluded from FDI.",
+      "type": "assumption",
+      "value": null,
+      "note": "Accepts 04B's four-category proposal and 16B EXP-12 challenge; ODA tracked by 04B/Agent 02, not here."
+    },
+    {
+      "claim": "Scenario investor-protection assumptions do not presume treaty coverage for India until the India-Nepal BIPPA status is settled from dated instruments.",
+      "type": "assumption",
+      "value": null,
+      "note": "Accepts 26D challenge."
+    },
+    {
+      "claim": "Approval values are commitments in NPR at the approval date; they are not deflated or converted to realised investment.",
+      "type": "assumption",
+      "value": null,
+      "note": "Definition; conversion to USD, if needed, uses the approval-FY average rate, documented."
     }
-   ],
-   "comparison_method": "Present S2 and S3 side by side by FY; compute aggregate ratio S3/S2 with explicit caveat; cohort realisation only if project-level linkage exists; reasons for gap classified (not yet disbursed, cancelled, reinvested earnings in S3 without approval, debt instruments, valuation, timing).",
-   "conflict_register": "Feeds 00B FDI commitments-vs-flows conflict entry; both values kept (CLAUDE.md rule 4).",
-   "methodological_issues": [
-    "Approvals are gross commitments; BoP is net and includes reinvested earnings and intercompany debt",
-    "DoI and IBN approvals can overlap",
-    "FY (NRB, DoI) vs calendar year (UNCTAD)",
-    "Exchange-rate effects must be separated in USD series"
-   ]
-  },
-  "approval_process_map": {
-   "status": "pending",
-   "steps_to_populate": [
+  ],
+  "data_gaps": [
+    "Every empirical value: no primary document could be downloaded in r1.",
+    "No administrative dataset of actual approval durations was located; statutory time limits are not evidence of practice.",
+    "Project-level linkage between DoI/IBN approvals and NRB-recorded inflows is not publicly documented; cohort realisation ratios may be infeasible.",
+    "Document-level URLs for DoI FDI statistics, IBN approval records, Foreign Exchange (Regulation) Act and Industrial Enterprises Act 2020 not located.",
+    "India-Nepal BIPPA status unresolved (26D)."
+  ],
+  "assumptions": [
     {
-     "step": "Pre-approval: sector eligibility (negative list), minimum investment threshold",
-     "authority": "DoI / IBN",
-     "legal_basis": "FITTA 2019"
+      "id": "12B-A1",
+      "text": "Four-plus series (pledges, DoI approvals, IBN approvals, realised BoP, survey stock, UNCTAD CY) kept separate; ODA excluded.",
+      "basis": "assumption"
     },
     {
-     "step": "FDI approval (manual or automatic route)",
-     "authority": "DoI (below IBN threshold) / IBN (above)",
-     "legal_basis": "FITTA 2019; PPP and Investment Act 2019"
+      "id": "12B-A2",
+      "text": "No treaty coverage presumed for India in scenarios until BIPPA status resolved.",
+      "basis": "assumption"
     },
     {
-     "step": "Company registration",
-     "authority": "Office of Company Registrar",
-     "legal_basis": "Companies Act"
-    },
-    {
-     "step": "Industry registration",
-     "authority": "DoI / provincial bodies",
-     "legal_basis": "Industrial Enterprises Act 2020"
-    },
-    {
-     "step": "Inward remittance recording / approval",
-     "authority": "NRB FXM",
-     "legal_basis": "NRB Foreign Investment and Loan Management Bylaw"
-    },
-    {
-     "step": "Tax registration (PAN/VAT)",
-     "authority": "Inland Revenue Department",
-     "legal_basis": "Income Tax Act"
-    },
-    {
-     "step": "Sectoral licences, EIA, land, work permits",
-     "authority": "line ministries / DoLE / MoFE",
-     "legal_basis": "sectoral laws"
+      "id": "12B-A3",
+      "text": "BPM6 direct-investment definition is the reference for realised FDI.",
+      "basis": "assumption",
+      "basis_note": "original label: 'definition'"
     }
-   ],
-   "fields_per_step": [
-    "authority",
-    "statutory time limit (days)",
-    "observed time (days) with source",
-    "documents required",
-    "one-stop-service coverage"
-   ],
-   "note": "Step list is a structural template from the named statutes; each row's authority and time limit is to be verified from primary text (pending). No timeline value asserted.",
-   "lead_ids": [
-    "12B-L06",
-    "12B-L07",
-    "12B-L11",
-    "12B-L12",
-    "12B-L13",
-    "12B-L14",
-    "12B-L16",
-    "12B-L20",
-    "12B-L21",
-    "12B-L27",
-    "12B-L28"
-   ]
+  ],
+  "challenges": [
+    {
+      "to": "04B",
+      "text": "Agree the four-category split with one refinement: approvals are split into DoI and IBN sub-series (possible overlap), and UNCTAD calendar-year inflows are a separate fifth series. 12B owns aggregate series; 04B owns China-specific rows drawn from them."
+    },
+    {
+      "to": "00B",
+      "text": "For the FDI commitments-vs-flows conflict, the difference is definitional (gross commitments vs net BoP liabilities incl. reinvested earnings and debt; FY vs CY); record both and classify gap reasons rather than treat as a data error."
+    },
+    {
+      "to": "00A",
+      "text": "Office of Company Registrar and Inland Revenue Department document-level sources for approval-process timelines are needed; ocr_nepal and ird_nepal exist in catalog but no leads were located."
+    }
+  ],
+  "uncertainty": "High: no value retrieved. Structural uncertainties: (i) approvals, pledges and BoP inflows measure different things and cannot be reconciled without project-level data; (ii) NRB FDI survey and BoP flow series differ in coverage; (iii) FY vs CY between NRB and UNCTAD; (iv) statutory time limits may diverge widely from practice; (v) repatriation practice depends on NRB directives and foreign-exchange conditions that change over time; (vi) India-Nepal BIPPA status contested, affecting protection assumptions for the largest neighbour.",
+  "specific": {
+    "fdi_commitment_realisation": {
+      "status": "pending",
+      "series": [
+        {
+          "id": "S1_pledges",
+          "definition": "Non-binding MoUs/summit commitments",
+          "source": "ibn",
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "12B-L10"
+          ]
+        },
+        {
+          "id": "S2a_approvals_doind",
+          "definition": "FDI approved under FITTA by DoI (committed foreign capital)",
+          "source": "doind",
+          "unit": "NPR_current_bn",
+          "lead_ids": [
+            "12B-L08"
+          ]
+        },
+        {
+          "id": "S2b_approvals_ibn",
+          "definition": "Projects approved by IBN under PPP and Investment Act",
+          "source": "ibn",
+          "unit": "NPR_current_bn",
+          "lead_ids": [
+            "12B-L10",
+            "12B-L11"
+          ]
+        },
+        {
+          "id": "S3_realised_bop",
+          "definition": "BPM6 direct investment liabilities, net (NRB BoP)",
+          "source": "nrb",
+          "unit": "NPR_current_bn",
+          "lead_ids": [
+            "12B-L03",
+            "12B-L04",
+            "12B-L05"
+          ]
+        },
+        {
+          "id": "S4_survey_stock",
+          "definition": "NRB FDI survey stock and composition",
+          "source": "nrb",
+          "unit": "NPR_current_bn",
+          "lead_ids": [
+            "12B-L01",
+            "12B-L02"
+          ]
+        },
+        {
+          "id": "S5_unctad",
+          "definition": "UNCTAD FDI inflows, calendar-year",
+          "source": "unctadstat",
+          "unit": "USD_current_mn",
+          "lead_ids": [
+            "12B-L24",
+            "12B-L29"
+          ]
+        }
+      ],
+      "comparison_method": "Present S2 and S3 side by side by FY; compute aggregate ratio S3/S2 with explicit caveat; cohort realisation only if project-level linkage exists; reasons for gap classified (not yet disbursed, cancelled, reinvested earnings in S3 without approval, debt instruments, valuation, timing).",
+      "conflict_register": "Feeds 00B FDI commitments-vs-flows conflict entry; both values kept (CLAUDE.md rule 4).",
+      "methodological_issues": [
+        "Approvals are gross commitments; BoP is net and includes reinvested earnings and intercompany debt",
+        "DoI and IBN approvals can overlap",
+        "FY (NRB, DoI) vs calendar year (UNCTAD)",
+        "Exchange-rate effects must be separated in USD series"
+      ]
+    },
+    "approval_process_map": {
+      "status": "pending",
+      "steps_to_populate": [
+        {
+          "step": "Pre-approval: sector eligibility (negative list), minimum investment threshold",
+          "authority": "DoI / IBN",
+          "legal_basis": "FITTA 2019"
+        },
+        {
+          "step": "FDI approval (manual or automatic route)",
+          "authority": "DoI (below IBN threshold) / IBN (above)",
+          "legal_basis": "FITTA 2019; PPP and Investment Act 2019"
+        },
+        {
+          "step": "Company registration",
+          "authority": "Office of Company Registrar",
+          "legal_basis": "Companies Act"
+        },
+        {
+          "step": "Industry registration",
+          "authority": "DoI / provincial bodies",
+          "legal_basis": "Industrial Enterprises Act 2020"
+        },
+        {
+          "step": "Inward remittance recording / approval",
+          "authority": "NRB FXM",
+          "legal_basis": "NRB Foreign Investment and Loan Management Bylaw"
+        },
+        {
+          "step": "Tax registration (PAN/VAT)",
+          "authority": "Inland Revenue Department",
+          "legal_basis": "Income Tax Act"
+        },
+        {
+          "step": "Sectoral licences, EIA, land, work permits",
+          "authority": "line ministries / DoLE / MoFE",
+          "legal_basis": "sectoral laws"
+        }
+      ],
+      "fields_per_step": [
+        "authority",
+        "statutory time limit (days)",
+        "observed time (days) with source",
+        "documents required",
+        "one-stop-service coverage"
+      ],
+      "note": "Step list is a structural template from the named statutes; each row's authority and time limit is to be verified from primary text (pending). No timeline value asserted.",
+      "lead_ids": [
+        "12B-L06",
+        "12B-L07",
+        "12B-L11",
+        "12B-L12",
+        "12B-L13",
+        "12B-L14",
+        "12B-L16",
+        "12B-L20",
+        "12B-L21",
+        "12B-L27",
+        "12B-L28"
+      ]
+    },
+    "repatriation_rules": {
+      "status": "pending",
+      "items": [
+        "dividends/profits",
+        "sale or liquidation proceeds of shares",
+        "foreign loan principal and interest",
+        "technology transfer / royalty / management fees",
+        "compensation under dispute settlement"
+      ],
+      "fields": [
+        "legal basis (article/section)",
+        "approving authority",
+        "documents and tax clearance",
+        "statutory time limit",
+        "practical restrictions (foreign-exchange availability, NRB directives)",
+        "treaty free-transfer guarantee (per BIPPA partner; India status unresolved)"
+      ],
+      "outflow_series": {
+        "name": "FDI income debits (BoP)",
+        "unit": "NPR_current_bn",
+        "source": "nrb",
+        "lead_ids": [
+          "12B-L03",
+          "12B-L04"
+        ]
+      },
+      "lead_ids": [
+        "12B-L06",
+        "12B-L07",
+        "12B-L12",
+        "12B-L17",
+        "12B-L18",
+        "12B-L19",
+        "12B-L20",
+        "12B-L27"
+      ]
+    },
+    "research_questions": {
+      "Q1_commitments_vs_realised": "pending",
+      "Q2_approval_steps_and_timelines": "pending (process map designed)",
+      "Q3_repatriation_restrictions": "pending (rule table designed)"
+    }
   },
-  "repatriation_rules": {
-   "status": "pending",
-   "items": [
-    "dividends/profits",
-    "sale or liquidation proceeds of shares",
-    "foreign loan principal and interest",
-    "technology transfer / royalty / management fees",
-    "compensation under dispute settlement"
-   ],
-   "fields": [
-    "legal basis (article/section)",
-    "approving authority",
-    "documents and tax clearance",
-    "statutory time limit",
-    "practical restrictions (foreign-exchange availability, NRB directives)",
-    "treaty free-transfer guarantee (per BIPPA partner; India status unresolved)"
-   ],
-   "outflow_series": {
-    "name": "FDI income debits (BoP)",
-    "unit": "NPR_current_bn",
-    "source": "nrb",
-    "lead_ids": [
-     "12B-L03",
-     "12B-L04"
-    ]
-   },
-   "lead_ids": [
-    "12B-L06",
-    "12B-L07",
-    "12B-L12",
-    "12B-L17",
-    "12B-L18",
-    "12B-L19",
-    "12B-L20",
-    "12B-L27"
-   ]
-  },
-  "research_questions": {
-   "Q1_commitments_vs_realised": "pending",
-   "Q2_approval_steps_and_timelines": "pending (process map designed)",
-   "Q3_repatriation_restrictions": "pending (rule table designed)"
-  }
- },
- "source_leads": [
-  {
-   "lead_id": "12B-L01",
-   "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
-   "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "FDI stock and flows (equity, reinvested earnings, loans) by sector and country, FY2023/24; survey coverage and methodology",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L02",
-   "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
-   "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "FDI stock and flows by sector and source country, FY2022/23",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L03",
-   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-da",
-   "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "BoP financial account: FDI (net) inflows FY2024/25 (realised, BoP basis)",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L04",
-   "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
-   "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "BoP financial account FY2025/26: FDI inflows, repatriation-related primary income debits",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L05",
-   "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
-   "title": "Current Macro-Economic and Financial Situation archive",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Archive for FDI (BoP) time series by FY",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L06",
-   "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
-   "title": "NRB Foreign Investment and Loan Management Bylaw",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Procedures for inward capital approval/recording, repatriation of dividends, sale proceeds, loan servicing; required documents",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L07",
-   "url": "https://www.nrb.org.np/departments/fxm/",
-   "title": "Foreign Exchange Management Department",
-   "publisher": "Nepal Rastra Bank",
-   "contains": "Foreign-exchange circulars/directives: FDI inflow recording, repatriation approval, e-filing",
-   "source_id": "nrb"
-  },
-  {
-   "lead_id": "12B-L08",
-   "url": "https://doind.gov.np",
-   "title": "Department of Industry - industrial statistics",
-   "publisher": "Department of Industry, Nepal",
-   "contains": "FDI approvals (projects, committed amount, employment) by sector, country and FY; industrial statistics annual",
-   "source_id": "doind"
-  },
-  {
-   "lead_id": "12B-L09",
-   "url": "https://doind.gov.np/uploads/notices/Notices-20230118130540685.pdf",
-   "title": "Ministry of Industry, Commerce and Supplies / Department of Industry notice (2023)",
-   "publisher": "Department of Industry, Nepal",
-   "contains": "Notice on FDI/treaty matters (content to verify)",
-   "source_id": "doind"
-  },
-  {
-   "lead_id": "12B-L10",
-   "url": "https://ibn.gov.np",
-   "title": "Investment Board Nepal",
-   "publisher": "Investment Board Nepal",
-   "contains": "Large-project (above threshold) approvals, PDAs, investment-summit commitments/MoUs, one-stop service",
-   "source_id": "ibn"
-  },
-  {
-   "lead_id": "12B-L11",
-   "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-3",
-   "title": "Public Private Partnership and Investment Act, 2019 (2075)",
-   "publisher": "Investment Board Nepal",
-   "contains": "IBN mandate, approval thresholds and procedure for large projects",
-   "source_id": "ibn"
-  },
-  {
-   "lead_id": "12B-L12",
-   "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-16881",
-   "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
-   "publisher": "Government of Nepal (copy hosted by DMG)",
-   "contains": "FITTA 2019: approval authority, automatic route, time limits, negative list, repatriation rights, dispute resolution",
-   "source_id": "lawcommission_nepal"
-  },
-  {
-   "lead_id": "12B-L13",
-   "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2",
-   "title": "Nepal - FITTA 2019 (Investment Laws Navigator)",
-   "publisher": "UNCTAD",
-   "contains": "Structured summary of FITTA 2019 provisions; amendment record",
-   "source_id": "unctad_iia"
-  },
-  {
-   "lead_id": "12B-L14",
-   "url": "https://investmentpolicy.unctad.org/investment-policy-monitor/150/nepal",
-   "title": "Investment Policy Monitor - Nepal",
-   "publisher": "UNCTAD",
-   "contains": "Dated investment-policy measures (thresholds, automatic route, negative list changes)",
-   "source_id": "unctad_iia"
-  },
-  {
-   "lead_id": "12B-L15",
-   "url": "https://investmentpolicy.unctad.org/investment-laws/150/nepal",
-   "title": "Investment Laws Navigator - Nepal",
-   "publisher": "UNCTAD",
-   "contains": "List of investment-related laws in force",
-   "source_id": "unctad_iia"
-  },
-  {
-   "lead_id": "12B-L16",
-   "url": "https://investmentpolicy.unctad.org/publications/1223/report-on-the-implementation-of-the-investment-policy-review-of-ne",
-   "title": "Report on the Implementation of the Investment Policy Review of Nepal",
-   "publisher": "UNCTAD",
-   "contains": "Assessment of approval steps, barriers and reform implementation",
-   "source_id": "unctad_iia"
-  },
-  {
-   "lead_id": "12B-L17",
-   "url": "https://investmentpolicy.unctad.org/international-investment-agreements/treaties/bit/1939/india---nepal-bit-2011-",
-   "title": "India - Nepal BIT (2011)",
-   "publisher": "UNCTAD",
-   "contains": "India-Nepal BIPPA record: signature, entry into force, termination status (contested; see 26D)",
-   "source_id": "unctad_iia"
-  },
-  {
-   "lead_id": "12B-L18",
-   "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542",
-   "title": "Nepal-India BIPPA (in Nepali), October 2011",
-   "publisher": "Transnational Dispute Management",
-   "contains": "Treaty text: repatriation/free-transfer clause, expropriation, ISDS",
-   "source_id": "academic"
-  },
-  {
-   "lead_id": "12B-L19",
-   "url": "https://www.investnepal.gov.np/portal/index.php?p1=downloadlist&p2=8",
-   "title": "InvestNepal - Treaties and Agreements downloads",
-   "publisher": "Government of Nepal",
-   "contains": "BIPPA and DTAA texts; list of partners",
-   "source_id": "ibn"
-  },
-  {
-   "lead_id": "12B-L20",
-   "url": "https://www.state.gov/reports/2024-investment-climate-statements/nepal",
-   "title": "2024 Investment Climate Statements: Nepal",
-   "publisher": "US Department of State",
-   "contains": "Tier-4 description of approval process, timelines, repatriation practice and investor complaints (cross-check only)"
-  },
-  {
-   "lead_id": "12B-L21",
-   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
-   "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
-   "publisher": "World Trade Organization",
-   "contains": "Investment regime chapter: FITTA, sectoral restrictions, approval procedures (2025)",
-   "source_id": "wto"
-  },
-  {
-   "lead_id": "12B-L22",
-   "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
-   "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
-   "publisher": "World Bank",
-   "contains": "FDI performance, regulatory barriers, approval-to-realisation gap analysis",
-   "source_id": "wb_npl"
-  },
-  {
-   "lead_id": "12B-L23",
-   "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the",
-   "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
-   "publisher": "IMF",
-   "contains": "BoP tables with FDI projections and historical FDI; structural benchmarks on investment climate",
-   "source_id": "imf_article_iv"
-  },
-  {
-   "lead_id": "12B-L24",
-   "url": "https://unctadstat.unctad.org",
-   "title": "UNCTADstat",
-   "publisher": "UNCTAD",
-   "contains": "FDI inflows and stock, calendar years (World Investment Report annex basis)",
-   "source_id": "unctadstat"
-  },
-  {
-   "lead_id": "12B-L25",
-   "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
-   "title": "Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)",
-   "publisher": "IMF",
-   "contains": "Definition of direct investment (ownership threshold, equity, reinvested earnings, debt instruments) for reconciliation with approvals"
-  },
-  {
-   "lead_id": "12B-L26",
-   "url": "https://www.doingbusiness.org/content/dam/doingBusiness/country/n/nepal/NPL.pdf",
-   "title": "Doing Business 2020 Economy Profile: Nepal",
-   "publisher": "World Bank",
-   "contains": "Business-start and related procedure/time indicators (discontinued series; historical only)",
-   "source_id": "wb_npl"
-  },
-  {
-   "lead_id": "12B-L27",
-   "url": "https://www.lawcommission.gov.np",
-   "title": "Nepal Law Commission - statutes",
-   "publisher": "Nepal Law Commission",
-   "contains": "Foreign Exchange (Regulation) Act, Industrial Enterprises Act 2020, Companies Act, FITTA amendments (document-level URLs to locate)",
-   "source_id": "lawcommission_nepal"
-  },
-  {
-   "lead_id": "12B-L28",
-   "url": "https://www.ibn.gov.np/one-stop-service-center",
-   "title": "IBN One Stop Service Centre",
-   "publisher": "Investment Board Nepal",
-   "contains": "URL from general knowledge — unverified. OSSC service list, statutory time limits per service",
-   "source_id": "ibn"
-  },
-  {
-   "lead_id": "12B-L29",
-   "url": "https://unctad.org/topic/investment/world-investment-report",
-   "title": "World Investment Report (series)",
-   "publisher": "UNCTAD",
-   "contains": "URL from general knowledge — unverified. Annual FDI flows by economy (calendar year) and investment-policy trends",
-   "source_id": "unctadstat"
-  },
-  {
-   "lead_id": "12B-L30",
-   "url": "https://mpra.ub.uni-muenchen.de/100276/1/MPRA_paper_100276.pdf",
-   "title": "Foreign Direct Investment and BIPPA in Nepal (MPRA working paper)",
-   "publisher": "MPRA",
-   "contains": "Tier-7 analysis of BIPPA coverage and FDI; for context only",
-   "source_id": "academic"
-  }
- ]
+  "source_leads": [
+    {
+      "lead_id": "12B-L01",
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "FDI stock and flows (equity, reinvested earnings, loans) by sector and country, FY2023/24; survey coverage and methodology",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L02",
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "FDI stock and flows by sector and source country, FY2022/23",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L03",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-da",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "BoP financial account: FDI (net) inflows FY2024/25 (realised, BoP basis)",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L04",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "BoP financial account FY2025/26: FDI inflows, repatriation-related primary income debits",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L05",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Archive for FDI (BoP) time series by FY",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L06",
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+      "title": "NRB Foreign Investment and Loan Management Bylaw",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Procedures for inward capital approval/recording, repatriation of dividends, sale proceeds, loan servicing; required documents",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L07",
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Foreign-exchange circulars/directives: FDI inflow recording, repatriation approval, e-filing",
+      "source_id": "nrb"
+    },
+    {
+      "lead_id": "12B-L08",
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "contains": "FDI approvals (projects, committed amount, employment) by sector, country and FY; industrial statistics annual",
+      "source_id": "doind"
+    },
+    {
+      "lead_id": "12B-L09",
+      "url": "https://doind.gov.np/uploads/notices/Notices-20230118130540685.pdf",
+      "title": "Ministry of Industry, Commerce and Supplies / Department of Industry notice (2023)",
+      "publisher": "Department of Industry, Nepal",
+      "contains": "Notice on FDI/treaty matters (content to verify)",
+      "source_id": "doind"
+    },
+    {
+      "lead_id": "12B-L10",
+      "url": "https://ibn.gov.np",
+      "title": "Investment Board Nepal",
+      "publisher": "Investment Board Nepal",
+      "contains": "Large-project (above threshold) approvals, PDAs, investment-summit commitments/MoUs, one-stop service",
+      "source_id": "ibn"
+    },
+    {
+      "lead_id": "12B-L11",
+      "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-3",
+      "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+      "publisher": "Investment Board Nepal",
+      "contains": "IBN mandate, approval thresholds and procedure for large projects",
+      "source_id": "ibn"
+    },
+    {
+      "lead_id": "12B-L12",
+      "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-16881",
+      "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
+      "publisher": "Government of Nepal (copy hosted by DMG)",
+      "contains": "FITTA 2019: approval authority, automatic route, time limits, negative list, repatriation rights, dispute resolution",
+      "source_id": "lawcommission_nepal"
+    },
+    {
+      "lead_id": "12B-L13",
+      "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2",
+      "title": "Nepal - FITTA 2019 (Investment Laws Navigator)",
+      "publisher": "UNCTAD",
+      "contains": "Structured summary of FITTA 2019 provisions; amendment record",
+      "source_id": "unctad_iia"
+    },
+    {
+      "lead_id": "12B-L14",
+      "url": "https://investmentpolicy.unctad.org/investment-policy-monitor/150/nepal",
+      "title": "Investment Policy Monitor - Nepal",
+      "publisher": "UNCTAD",
+      "contains": "Dated investment-policy measures (thresholds, automatic route, negative list changes)",
+      "source_id": "unctad_iia"
+    },
+    {
+      "lead_id": "12B-L15",
+      "url": "https://investmentpolicy.unctad.org/investment-laws/150/nepal",
+      "title": "Investment Laws Navigator - Nepal",
+      "publisher": "UNCTAD",
+      "contains": "List of investment-related laws in force",
+      "source_id": "unctad_iia"
+    },
+    {
+      "lead_id": "12B-L16",
+      "url": "https://investmentpolicy.unctad.org/publications/1223/report-on-the-implementation-of-the-investment-policy-review-of-ne",
+      "title": "Report on the Implementation of the Investment Policy Review of Nepal",
+      "publisher": "UNCTAD",
+      "contains": "Assessment of approval steps, barriers and reform implementation",
+      "source_id": "unctad_iia"
+    },
+    {
+      "lead_id": "12B-L17",
+      "url": "https://investmentpolicy.unctad.org/international-investment-agreements/treaties/bit/1939/india---nepal-bit-2011-",
+      "title": "India - Nepal BIT (2011)",
+      "publisher": "UNCTAD",
+      "contains": "India-Nepal BIPPA record: signature, entry into force, termination status (contested; see 26D)",
+      "source_id": "unctad_iia"
+    },
+    {
+      "lead_id": "12B-L18",
+      "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542",
+      "title": "Nepal-India BIPPA (in Nepali), October 2011",
+      "publisher": "Transnational Dispute Management",
+      "contains": "Treaty text: repatriation/free-transfer clause, expropriation, ISDS",
+      "source_id": "academic"
+    },
+    {
+      "lead_id": "12B-L19",
+      "url": "https://www.investnepal.gov.np/portal/index.php?p1=downloadlist&p2=8",
+      "title": "InvestNepal - Treaties and Agreements downloads",
+      "publisher": "Government of Nepal",
+      "contains": "BIPPA and DTAA texts; list of partners",
+      "source_id": "ibn"
+    },
+    {
+      "lead_id": "12B-L20",
+      "url": "https://www.state.gov/reports/2024-investment-climate-statements/nepal",
+      "title": "2024 Investment Climate Statements: Nepal",
+      "publisher": "US Department of State",
+      "contains": "Tier-4 description of approval process, timelines, repatriation practice and investor complaints (cross-check only)"
+    },
+    {
+      "lead_id": "12B-L21",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "contains": "Investment regime chapter: FITTA, sectoral restrictions, approval procedures (2025)",
+      "source_id": "wto"
+    },
+    {
+      "lead_id": "12B-L22",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+      "publisher": "World Bank",
+      "contains": "FDI performance, regulatory barriers, approval-to-realisation gap analysis",
+      "source_id": "wb_npl"
+    },
+    {
+      "lead_id": "12B-L23",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "IMF",
+      "contains": "BoP tables with FDI projections and historical FDI; structural benchmarks on investment climate",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "lead_id": "12B-L24",
+      "url": "https://unctadstat.unctad.org",
+      "title": "UNCTADstat",
+      "publisher": "UNCTAD",
+      "contains": "FDI inflows and stock, calendar years (World Investment Report annex basis)",
+      "source_id": "unctadstat"
+    },
+    {
+      "lead_id": "12B-L25",
+      "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+      "title": "Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)",
+      "publisher": "IMF",
+      "contains": "Definition of direct investment (ownership threshold, equity, reinvested earnings, debt instruments) for reconciliation with approvals"
+    },
+    {
+      "lead_id": "12B-L26",
+      "url": "https://www.doingbusiness.org/content/dam/doingBusiness/country/n/nepal/NPL.pdf",
+      "title": "Doing Business 2020 Economy Profile: Nepal",
+      "publisher": "World Bank",
+      "contains": "Business-start and related procedure/time indicators (discontinued series; historical only)",
+      "source_id": "wb_npl"
+    },
+    {
+      "lead_id": "12B-L27",
+      "url": "https://www.lawcommission.gov.np",
+      "title": "Nepal Law Commission - statutes",
+      "publisher": "Nepal Law Commission",
+      "contains": "Foreign Exchange (Regulation) Act, Industrial Enterprises Act 2020, Companies Act, FITTA amendments (document-level URLs to locate)",
+      "source_id": "lawcommission_nepal"
+    },
+    {
+      "lead_id": "12B-L28",
+      "url": "https://www.ibn.gov.np/one-stop-service-center",
+      "title": "IBN One Stop Service Centre",
+      "publisher": "Investment Board Nepal",
+      "contains": "URL from general knowledge — unverified. OSSC service list, statutory time limits per service",
+      "source_id": "ibn"
+    },
+    {
+      "lead_id": "12B-L29",
+      "url": "https://unctad.org/topic/investment/world-investment-report",
+      "title": "World Investment Report (series)",
+      "publisher": "UNCTAD",
+      "contains": "URL from general knowledge — unverified. Annual FDI flows by economy (calendar year) and investment-policy trends",
+      "source_id": "unctadstat"
+    },
+    {
+      "lead_id": "12B-L30",
+      "url": "https://mpra.ub.uni-muenchen.de/100276/1/MPRA_paper_100276.pdf",
+      "title": "Foreign Direct Investment and BIPPA in Nepal (MPRA working paper)",
+      "publisher": "MPRA",
+      "contains": "Tier-7 analysis of BIPPA coverage and FDI; for context only",
+      "source_id": "academic"
+    }
+  ]
 }

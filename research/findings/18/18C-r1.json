@@ -128,12 +128,14 @@
     {
       "id": "18C-A2",
       "text": "Transition clocks start at the effective UN graduation date, which is itself pending (possible extension).",
-      "basis": "assumption pending CDP/UNGA verification"
+      "basis": "assumption",
+      "basis_note": "original label: 'assumption pending CDP/UNGA verification'"
     },
     {
       "id": "18C-A3",
       "text": "Eurostat/HMRC partner data (calendar year, importer-reported) and Nepal customs (FY, exporter-reported) will differ; both are kept.",
-      "basis": "CLAUDE.md evidence rule 4 and 6"
+      "basis": "assumption",
+      "basis_note": "original label: 'CLAUDE.md evidence rule 4 and 6'"
     }
   ],
   "challenges": [

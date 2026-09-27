@@ -1,0 +1,136 @@
+{
+  "subagent_id": "15B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T16:00:00+00:00",
+  "summary": "Independent financial and implementation audit of the Division A designs that must support financing and delivery checks: 01C (feasibility tests FT-02 to FT-04), 02C (debt, debt-stabilising primary balance, contingent liabilities), 06C (DeliveryConstraints estimation), and 05B with 22E (marginal-GWh value and grid cost). Round r1, restricted network; no data fetched by 15B; every quantity is pending. Q1 (is every investment requirement matched to an identified financing source?): no. No Division A or strategy artefact states an investment requirement with a financing table. config/strategies.yaml defines STR-0 and STR-A..E as theses only; investment, financing and schedule fields do not exist, so audit check F1 cannot run. 01C FT-02 derives required I/Y from ICOR, and FT-03 compares the financing gap with capacity. However, the gap is never split into public and private shares, domestic and external shares, or by instrument, and no annual financing path exists to feed constraints.constrained_delivery(planned_units, financing, c). Q2 (are delivery schedules consistent with historical execution rates?): pending, and the check is under-defined. Three incompatible 'execution rate' concepts exist: physical share of planned work delivered (constraints.py), planned/actual duration (06C) and financial spent/budget against original or revised budgets (02B). The audit schedule check F2 does not say which one it compares. No historical rate is evidenced yet. Q3 (are contingent liabilities disclosed?): the 02C register design (12 categories) is adequate as a frame, but four feeds are missing: PPP guarantee, VGF and termination terms (06C, challenged by 02C); NEA PPA take-or-pay (05A); the NEA cross-subsidy exposure implied if industrial tariffs sit below dry-season import cost (05B and 22E escalations to 15); and cost-overrun financing (06C cost_overrun_distribution does not flow to 02C stock-flow adjustments). 15B verdict: UNVERIFIED (no financing or execution evidence), and CONDITIONAL on closing the missing links listed in specific.",
+  "findings": [
+    {
+      "claim": "Investment requirement vs identified financing for STR-0 and STR-A..E: requires, per strategy, an investment requirement (USD_current_bn and NPR_current_bn by FY) split public/private and domestic/external, matched to named financing sources (02C fiscal space, 03B bank credit, 03C capital market, 20C external).",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_bn",
+      "period": "Nepal FY, base FY to milestone FY",
+      "source_ids": ["mof_nepal", "pdmo", "nrb", "imf_article_iv"],
+      "note": "Data required: strategy financing tables (none exist in config/strategies.yaml); 01C FT-02 I/Y path; 02C fiscal limits; 03B/03C capacity; 20C external flows."
+    },
+    {
+      "claim": "Historical execution rate for the planned-vs-historical schedule check (F2): requires one agreed definition and a series by FY and sector.",
+      "type": "pending",
+      "value": null,
+      "unit": "ratio",
+      "period": "Nepal FY, latest decade available",
+      "source_ids": ["fcgo", "mof_nepal", "oag_nepal", "npc_nepal"],
+      "note": "Data required: 02B capex execution (spent/original and spent/revised budget), 06C physical planned/actual duration and delivered-units panels, and a mapping to DeliveryConstraints.execution_rate."
+    },
+    {
+      "claim": "Contingent-liability stocks and flows (guarantees, NEA incl. PPA take-or-pay, NOC, other SOEs, PPP/IBN terms, subnational, arrears, disaster reconstruction, pensions, financial sector).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_bn",
+      "period": "Nepal FY-end (mid-July)",
+      "source_ids": ["pdmo", "fcgo", "nea", "ibn", "imf_article_iv"],
+      "note": "Data required: 02C register items CL-01..CL-12, with 06C PPP terms and 05A PPA profile supplied."
+    },
+    {
+      "claim": "Missing link: execution_rate has three incompatible definitions (physical share delivered in constraints.py; planned/actual duration in 06C; financial spent/budget in 02B). F2 cannot be applied consistently until one is designated for DeliveryConstraints and the others are reported as cross-checks.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Missing link: constrained_delivery requires an annual financing series per programme, but no Division A design produces one. 02C produces a debt-stabilising primary balance and thresholds, not an annual capital-financing envelope; 03C and 20C are not connected to FT-04.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Missing link: 05B/22E grid investments (dedicated feeders, substations, bulk reinforcement; C_GRID, K_IND) have no financier. If NEA finances them, they are NEA borrowing and belong in the 02C CL-02 register; the NEA cross-subsidy case escalated by 05B and 22E is also absent from 02C.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Independence concern: config/strategies.yaml required_calculations assigns 'Risks and potential unintended consequences' to owner 15B. An auditor authoring strategy content it later audits breaches auditor independence; ownership should move to a non-audit agent, with 15B auditing the result.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "15B does not edit config; raised to the human reviewer and 00."
+    }
+  ],
+  "data_gaps": [
+    "Strategy financing tables (investment requirement by FY, source, instrument, identified or not) for STR-0 and STR-A..E - absent.",
+    "Capex execution history on a single agreed definition (02B financial; 06C physical) - pending.",
+    "Debt paths under strategy financing (02C fiscal.debt_path runs) - pending inputs.",
+    "PPP/IBN contractual support terms (guarantees, VGF, PPA backing, termination compensation) - not yet captured by 06C.",
+    "NEA PPA take-or-pay commitment profile and USD indexation - pending from 05A.",
+    "Maintenance gap (06C) not linked to 01A depreciation or 01C capital requirement."
+  ],
+  "assumptions": [
+    {"id": "15B-A1", "text": "Where no financing table exists, F1 is recorded as failing evidence (investment stated without financing) rather than n/a, because FT-02 already implies an investment requirement.", "basis": "assumption"},
+    {"id": "15B-A2", "text": "Cost overruns are a financing need (stock-flow adjustment in 02C debt dynamics) as well as a unit-cost uplift (06C); counting them only in unit cost understates the financing gap.", "basis": "assumption"},
+    {"id": "15B-A3", "text": "Financial execution (02B) is not physical delivery (06C); neither substitutes for the other in F2.", "basis": "assumption"}
+  ],
+  "challenges": [
+    {"to": "01C", "text": "FT-02/FT-03/FT-04 lack a financing-allocation step. State the public share, domestic/external split and instrument mix of the gap as labelled assumptions, and produce the annual financing series that constrained_delivery requires."},
+    {"to": "02C", "text": "Add to the register: cost-overrun financing (from 06C cost_overrun_distribution) as stock-flow adjustment shocks; NEA-financed grid investment (05B/22E C_GRID); and the NEA cross-subsidy exposure escalated by 05B/22E."},
+    {"to": "06C", "text": "Designate which of your measures maps to DeliveryConstraints.execution_rate (constraints.py defines it as the historical share of planned work delivered, not a duration ratio), and report the 02B financial measure only as a cross-check. Capture PPP guarantee, VGF and termination terms per 02C's challenge."},
+    {"to": "02B", "text": "Report execution against both original and revised budgets (as designed), and state which one the F2 historical_execution_rate should use."},
+    {"to": "05B", "text": "Name the financier of each grid investment in reliability_requirements.grid_investments (NEA balance sheet, government, private, donor), so that 02C can size the contingent exposure."},
+    {"to": "22E", "text": "The domestic column nets out grid cost, but the export column must also net out any transmission investment Nepal finances for export routes; otherwise the comparison favours export."},
+    {"to": "00", "text": "config/strategies.yaml assigns 'Risks and potential unintended consequences' to 15B. This conflicts with auditor independence (CLAUDE.md, Independent audit). Reassign it to a non-audit owner; 15B will audit the result."}
+  ],
+  "uncertainty": "High. No financing, execution or contingent-liability value has been retrieved. The missing links are structural and can be verified from committed designs. How much they matter numerically is unknown until r2. In particular, financing-gap conclusions depend on the public/private split, which no agent has yet stated even as an assumption.",
+  "specific": {
+    "financing_gap_checks": {
+      "status": "pending (design reviewed; no values)",
+      "question": "Is every investment requirement matched to an identified financing source?",
+      "answer": "No. No strategy states an investment requirement with financing, and the FT-02 to FT-04 chain lacks an allocation step and an annual financing series.",
+      "chain_reviewed": [
+        {"step": "Required I/Y", "owner": "01C FT-02 (01A ICOR, investment series)", "status": "designed; inputs pending"},
+        {"step": "Financing gap (I/Y minus national saving/Y, GNDI basis)", "owner": "01C FT-03", "status": "designed; debt-measure mismatch (see 15A UC-03)"},
+        {"step": "Public/private and domestic/external split of the gap", "owner": "none", "status": "MISSING"},
+        {"step": "Fiscal limits and debt path", "owner": "02C", "status": "designed (fiscal.py; 13 thresholds identified); inputs pending"},
+        {"step": "Domestic bank and capital-market capacity", "owner": "03B, 03C", "status": "pending; not wired into an annual envelope"},
+        {"step": "External financing", "owner": "20C (Division B)", "status": "outside Division A; no link specified"},
+        {"step": "Annual financing series into constrained_delivery", "owner": "none", "status": "MISSING"},
+        {"step": "Contingent liabilities as stock-flow shocks", "owner": "02C", "status": "register designed; feeds from 06C, 05A, 05B/22E missing"}
+      ],
+      "check_F1_outcome_if_run_now": "fail (evidence): investment implied without a financing plan",
+      "contingent_liability_feeds_missing": ["06C PPP support terms", "05A NEA PPA take-or-pay", "05B/22E grid investment and NEA cross-subsidy", "06C cost-overrun financing"]
+    },
+    "schedule_realism_checks": {
+      "status": "pending (definition conflict)",
+      "question": "Are delivery schedules consistent with historical execution rates?",
+      "answer": "Cannot be assessed: no planned schedules exist for strategies, no historical rate is evidenced, and 'execution rate' has three incompatible definitions.",
+      "definitions_in_conflict": [
+        {"source": "src/economic_model/constraints.py DeliveryConstraints.execution_rate", "definition": "historical share of planned work delivered, 0..1"},
+        {"source": "06C delivery_lag_distribution", "definition": "planned/actual duration, bounded to [0,1]"},
+        {"source": "02B capex_execution_rate_series", "definition": "financial spent/budget (original and mid-term revised)"}
+      ],
+      "design_strengths": [
+        "06C censoring-aware duration models and reference-class cost overrun",
+        "06C recommendation to pass P50/P75/P90 quantiles as separate stress settings",
+        "02C-A6: borrowed capital subject to execution shortfall, not one-for-one capital"
+      ],
+      "check_F2_outcome_if_run_now": "fail (evidence): historical execution rate not evidenced"
+    },
+    "verdict": {
+      "value": "UNVERIFIED",
+      "reasons": [
+        "No investment requirement is matched to identified financing; strategies carry no financing tables (F1).",
+        "No historical execution rate is evidenced, and the execution-rate concept is inconsistent across 02B, 06C and constraints.py (F2).",
+        "The contingent-liability register is designed, but PPP, PPA, grid and overrun feeds are missing (F3 disclosed as frame only)."
+      ],
+      "conditions_for_upgrade": [
+        "Financing-allocation assumptions stated and annual financing series produced (01C/02C/03C/20C)",
+        "Single execution-rate definition registered and evidenced",
+        "Register feeds from 05A, 05B/22E and 06C connected"
+      ],
+      "ledger_subjects": ["DIVA-R1", "DIVA-R1-IMPL"]
+    }
+  }
+}

@@ -126,7 +126,8 @@
     {
       "id": "18A-A3",
       "text": "Calendar-year US/OECD series are not mixed with Nepal FY DCR series without monthly/quarterly conversion.",
-      "basis": "CLAUDE.md evidence rule 6"
+      "basis": "assumption",
+      "basis_note": "original label: 'CLAUDE.md evidence rule 6'"
     }
   ],
   "challenges": [

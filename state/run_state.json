@@ -1,6 +1,6 @@
 {
   "created_at": "2026-09-27T00:36:38+00:00",
-  "updated_at": "2026-09-27T14:50:29+00:00",
+  "updated_at": "2026-09-27T15:00:24+00:00",
   "tasks": {
     "00A": {
       "status": "done",
@@ -711,16 +711,52 @@
       "output": "research/findings/14/14C-r1.json"
     },
     "15A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T15:00:23+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T15:00:23+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/15/15A-r1.json"
     },
     "15B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T15:00:23+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T15:00:24+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/15/15B-r1.json"
     },
     "15C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T15:00:24+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T15:00:24+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/15/15C-r1.json"
     },
     "16A": {
       "status": "done",

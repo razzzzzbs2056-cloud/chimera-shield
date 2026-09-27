@@ -89,12 +89,14 @@
     {
       "id": "24D-A1",
       "text": "Research is limited to defensive posture; no offensive or vulnerability-specific content is collected.",
-      "basis": "platform rule and task instruction"
+      "basis": "assumption",
+      "basis_note": "original label: 'platform rule and task instruction'"
     },
     {
       "id": "24D-A2",
       "text": "GCI scores are self-reported questionnaire results validated by ITU and are treated as a posture indicator, not a measure of realised security outcomes.",
-      "basis": "methodological"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodological'"
     }
   ],
   "challenges": [

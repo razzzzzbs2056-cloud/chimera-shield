@@ -58,6 +58,11 @@ def validate_finding(doc: dict, store: ObservationStore | None = None) -> list[s
     if not str(doc.get("uncertainty", "")).strip():
         problems.append("uncertainty statement is empty")
     problems += validate_leads(doc.get("source_leads", []))
+    for i, a in enumerate(doc.get("assumptions", []) or []):
+        if not isinstance(a, dict) or not a.get("id") or not a.get("text"):
+            problems.append(f"assumption {i}: must be an object with id and text")
+        elif a.get("basis") not in ("evidence", "assumption"):
+            problems.append(f"assumption {i}: basis must be 'evidence' or 'assumption' (audit check E2)")
     return problems
 
 

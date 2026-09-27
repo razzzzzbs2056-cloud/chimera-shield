@@ -114,12 +114,14 @@
     {
       "id": "24B-A1",
       "text": "Facility archetypes are assessed separately; no pooled 'data-centre requirement' is reported.",
-      "basis": "methodological"
+      "basis": "assumption",
+      "basis_note": "original label: 'methodological'"
     },
     {
       "id": "24B-A2",
       "text": "Only firm (dry-season-available) supply counts toward data-centre feasibility.",
-      "basis": "engineering requirement for continuous loads; to be confirmed with NEA seasonal data"
+      "basis": "assumption",
+      "basis_note": "original label: 'engineering requirement for continuous loads; to be confirmed with NEA seasonal data'"
     }
   ],
   "challenges": [
