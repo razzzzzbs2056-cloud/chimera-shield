@@ -1,0 +1,2673 @@
+{
+  "subagent_id": "01C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T14:38:23+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked). Research design only; no Nepal values are recorded. Q1: every trajectory is specified as src.economic_model.projection.ProjectionAssumptions fields with each input mapped to a pending observation (INP-01..INP-09) or a labelled assumption: two untargeted baselines (TR-0a constant historical trend; TR-0b regression to the mean per Pritchett-Summers), required paths to FY labels 2050, 2060 and 2070 in two shapes (S1 constant; S2 lag-peak-decay parameterised by 06C delivery lags and 01B spell durations) and shock overlays from 16C. Q2: the formula set F1-F13 gives required nominal USD, real, per-capita and labour-productivity growth, implied investment ratio and the valuation share; NPR/USD is derived as peg ratio x INR/USD (03A) and USD price growth is decomposed into US inflation, INR real appreciation and the Nepal-India differential so each component is bounded by its own evidence. Q3: ten sensitivity axes (SG-01..SG-10) with evidence sources. Ten feasibility tests (FT-01..FT-10) and six unattainability conditions (U1-U6) are pre-registered for r2. A USD-conversion convention is proposed for ESC-03 (01C-P-ESC03: NSO FY GDP / NRB same-FY average of daily middle NPR/USD, FY labelled by ending year). The only numbers are a hypothetical illustration computed from config/model_config.yaml assumptions A-TGT-01..07; they are not estimates of Nepal. All empirical items are pending.",
+  "findings": [
+    {
+      "claim": "Q1/Q2 input: base-year nominal GDP at current prices (NPR) for the latest FY with an NSO revised estimate, with release date and revision status",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "Nepal FY (base FY; label = ending calendar year)",
+      "source_ids": [
+        "nso_nepal",
+        "mof_nepal",
+        "wb_wdi",
+        "imf_weo"
+      ],
+      "lead_ids": [
+        "01C-L01",
+        "01C-L02",
+        "01C-L04",
+        "01C-L19",
+        "01C-L23"
+      ],
+      "note": "Data required: NSO National Accounts current-price GDP table for the base FY and prior FY (INP-01)."
+    },
+    {
+      "claim": "Q1/Q2 input: NPR per USD, average of NRB daily middle rates over the same FY as base GDP (convention 01C-P-ESC03), plus NRB-published FY average as a second observation",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_USD",
+      "period": "Nepal FY (16 July to 15 July)",
+      "source_ids": [
+        "nrb",
+        "mof_nepal",
+        "wb_wdi"
+      ],
+      "lead_ids": [
+        "01C-L07",
+        "01C-L08",
+        "01C-L09",
+        "01C-L21"
+      ],
+      "note": "Data required: NRB daily USD buying/selling rates for every business day in the base FY (INP-02)."
+    },
+    {
+      "claim": "Q1/Q3 input: NPR/INR peg ratio and dates of any parity change",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_per_INR",
+      "period": "Nepal FY; event dates",
+      "source_ids": [
+        "nrb"
+      ],
+      "lead_ids": [
+        "01C-L07",
+        "01C-L11",
+        "01C-L12"
+      ],
+      "note": "Data required: NRB INR rates (INP-03)."
+    },
+    {
+      "claim": "Q1/Q3 input: INR per USD history aggregated to Nepal FY averages and long-run rolling depreciation distribution",
+      "type": "pending",
+      "value": null,
+      "unit": "INR_per_USD",
+      "period": "daily; Nepal FY, Indian FY and CY aggregates kept separate",
+      "source_ids": [
+        "rbi",
+        "wb_wdi",
+        "imf_weo"
+      ],
+      "lead_ids": [
+        "01C-L14",
+        "01C-L15",
+        "01C-L16",
+        "01C-L22"
+      ],
+      "note": "Data required: RBI/FBIL reference rates (INP-05)."
+    },
+    {
+      "claim": "Q1/Q3 input: Nepal implicit GDP deflator by FY (spliced across rebasing) and annual growth",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "Nepal FY, earliest to base FY",
+      "source_ids": [
+        "nso_nepal",
+        "mof_nepal",
+        "wb_wdi",
+        "imf_weo"
+      ],
+      "lead_ids": [
+        "01C-L01",
+        "01C-L03",
+        "01C-L20",
+        "01C-L26"
+      ],
+      "note": "Data required: NSO current and constant-price GDP (INP-04)."
+    },
+    {
+      "claim": "Q3 input: India and US GDP deflator growth histories for the USD-price decomposition (F5)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "CY / Indian FY as published",
+      "source_ids": [
+        "imf_weo",
+        "rbi"
+      ],
+      "lead_ids": [
+        "01C-L16",
+        "01C-L26"
+      ],
+      "note": "Data required: WEO NGDP_D for IND and USA (INP-07)."
+    },
+    {
+      "claim": "Q1 input: resident population paths to 2070 by WPP 2024 variant (via 10C), FY-converted",
+      "type": "pending",
+      "value": null,
+      "unit": "persons_mn",
+      "period": "CY 1 July; FY per 01C-A07",
+      "source_ids": [
+        "un_wpp",
+        "nso_nepal"
+      ],
+      "lead_ids": [
+        "01C-L29",
+        "01C-L30",
+        "01C-L31",
+        "01C-L33"
+      ],
+      "note": "Data required: WPP 2024 total population by single year, all variants (INP-06; 10C POP-WPP24-*)."
+    },
+    {
+      "claim": "Q1 answer: nominal USD GDP along each explicit trajectory TR-0a, TR-0b, TR-M-S1/S2 and TR-SHOCK (specified in specific.trajectory_table)",
+      "type": "pending",
+      "value": null,
+      "unit": "USD_current_bn",
+      "period": "FY labels base..2070 (to 2100 for TR-0)",
+      "source_ids": [
+        "nso_nepal",
+        "nrb",
+        "un_wpp",
+        "rbi"
+      ],
+      "note": "Computed in r2 by project() once INP-01..INP-08 are observations."
+    },
+    {
+      "claim": "Q2 answer: required constant real CAGR to reach US$3T by FY labels 2050, 2060 and 2070 under price/FX cases PF-1..PF-5 (formulas F1-F6)",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "base FY to milestone FY",
+      "source_ids": [
+        "nso_nepal",
+        "nrb",
+        "rbi",
+        "imf_weo"
+      ],
+      "note": "Only hypothetical config-based illustrations exist (specific.required_growth_table.hypothetical_illustration)."
+    },
+    {
+      "claim": "Q3 answer: sensitivity of the required real growth and of the TR-0 crossing year to the deflator, INR/USD, peg and base-level axes (SG-01..SG-05)",
+      "type": "pending",
+      "value": null,
+      "unit": "percentage_points",
+      "period": "per milestone",
+      "source_ids": [
+        "nso_nepal",
+        "nrb",
+        "rbi",
+        "imf_weo"
+      ],
+      "note": "Structurally, from F6 the required real CAGR moves one-for-one inversely with USD price growth in log terms; its level requires INP-01..INP-07."
+    },
+    {
+      "claim": "Feasibility tests FT-01..FT-10 and unattainability conditions U1-U6 defined for r2; all pending upstream values (01A, 01B, 02C, 03A-C, 05A, 06C, 10B/10C, 16C)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "maddison",
+        "pwt",
+        "imf_article_iv"
+      ],
+      "lead_ids": [
+        "01C-L36",
+        "01C-L37",
+        "01C-L27"
+      ],
+      "note": "See specific.feasibility_tests and specific.unattainability_conditions."
+    },
+    {
+      "claim": "Target definition used in all trajectories: annual nominal GDP in current US dollars equal to the config target value (US$3T)",
+      "type": "assumption",
+      "value": 3.0,
+      "unit": "USD_current_tn",
+      "period": "milestone FY labels 2050, 2060, 2070",
+      "source_ids": [],
+      "note": "config/model_config.yaml target; 00A-A1."
+    },
+    {
+      "claim": "USD-conversion convention proposal for ESC-03: NSO FY nominal GDP / NRB same-FY average of daily middle NPR/USD rates, FY labelled by ending calendar year (01C-P-ESC03)",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [
+        "nso_nepal",
+        "nrb"
+      ],
+      "note": "Proposal only; registration by 00A and decision by a human reviewer."
+    }
+  ],
+  "data_gaps": [
+    "NSO nominal GDP (current prices) for the base FY and revision status - not downloaded (host blocked) [INP-01]",
+    "NRB daily NPR/USD and NPR/INR rates for the base FY and history - not downloaded [INP-02, INP-03]",
+    "RBI/FBIL INR/USD daily reference rates and annual averages - not downloaded [INP-05]",
+    "NSO implicit GDP deflator, spliced across rebasing (with 01A) - pending [INP-04]",
+    "IMF WEO NGDP_D for India and the United States - not downloaded [INP-07]",
+    "WPP 2024 single-year population by variant (via 10C) and NSO NPHC-2021-based projection (document not located) [INP-06]",
+    "01A historical ICOR and trend real growth; 01B rate-duration envelope - pending upstream [INP-08, INP-09]",
+    "02C fiscal/debt financing limits - no finding file in r1",
+    "16C shock magnitudes (all null); no deflator or exchange-rate shock channel in scenarios",
+    "WDI/WEO year-label mapping for Nepal FY (C-01) - requires WDI metadata and WEO country notes"
+  ],
+  "assumptions": [
+    {
+      "id": "01C-A01",
+      "basis": "assumption",
+      "text": "Trajectories are accounting paths built with src.economic_model.projection.project; they are stress tests and requirement calculations, not forecasts, and carry no probabilities."
+    },
+    {
+      "id": "01C-A02",
+      "basis": "assumption",
+      "text": "Base year = latest Nepal FY with an NSO 'revised' nominal GDP estimate; the latest 'preliminary' FY is a sensitivity (SG-01). Config A-TGT-01 remains a placeholder label until INP-01 is retrieved."
+    },
+    {
+      "id": "01C-A03",
+      "basis": "assumption",
+      "text": "TR-0a real growth = mean spliced real growth over the longest available window, excluding FY2015/16-FY2016/17 (earthquake/blockade) and FY2019/20-FY2020/21 (pandemic) as flagged by 01A; the window choice is reported with alternatives."
+    },
+    {
+      "id": "01C-A03b",
+      "basis": "assumption",
+      "text": "TR-0b applies geometric regression of growth toward a world long-run mean, with mean and half-life taken from 01B / Pritchett-Summers (2014) evidence once retrieved; no parameter value is set in r1."
+    },
+    {
+      "id": "01C-A04",
+      "basis": "assumption",
+      "text": "NPR/USD paths are never an independent trend: 1+d = (1+d_peg)(1+d_INR), with d_peg = 0 while the peg holds and parity changes modelled only as discrete scenario steps (adopts 03A-A1)."
+    },
+    {
+      "id": "01C-A05",
+      "basis": "assumption",
+      "text": "Nepal deflator paths are specified as India deflator growth times a Nepal-India differential, and USD price growth is decomposed into US inflation, INR real appreciation vs USD and NPR real appreciation vs INR (F5), so each component can be bounded by its own evidence."
+    },
+    {
+      "id": "01C-A06",
+      "basis": "assumption",
+      "text": "Shape S2 (lag, peak, decay) is parameterised by 06C delivery-lag quantiles and 01B spell durations; the decay form is geometric toward the TR-0b mean."
+    },
+    {
+      "id": "01C-A07",
+      "basis": "assumption",
+      "text": "FY population = geometric mean of WPP 1 July values of the two calendar years the FY spans (FY t ~ midpoint mid-January t); FY population growth derived from these. Resident concept only (10C rule; C-06)."
+    },
+    {
+      "id": "01C-A08",
+      "basis": "assumption",
+      "text": "Scenario shocks enter trajectories only through Path.shifted on real_growth, deflator_growth or fx_depreciation as implemented in src/scenario_engine/engine.py; population shocks require an engine change and are not applied in r2 unless added."
+    },
+    {
+      "id": "01C-A09",
+      "basis": "assumption",
+      "text": "A-TGT-04 cases in config/model_config.yaml are retained only as hypothetical grid points; evidence-based cases PF-1..PF-5 replace them once INP-03..INP-07 are retrieved."
+    },
+    {
+      "id": "01C-A10",
+      "basis": "assumption",
+      "text": "The order in which unattainability conditions are expected to bind by milestone is a research-sequencing expectation, not a finding."
+    },
+    {
+      "id": "01C-P-ESC03",
+      "basis": "assumption",
+      "text": "PROPOSAL for ESC-03 (to be registered by 00A, decided by a human reviewer): headline USD GDP = NSO FY nominal GDP / NRB same-FY average of daily middle NPR/USD rates, FY labelled by ending calendar year; WDI/WEO/SNAAMA reproduced as separate cross-checks; projected NPR/USD = peg x INR/USD."
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Please register proposal 01C-P-ESC03 (USD-conversion convention) in config/model_config.yaml as a labelled assumption for human decision under ESC-03, and add assumption slots for INR/USD path, peg ratio and the Nepal-India deflator differential so price/FX cases are not expressed as independent NPR depreciation (A-TGT-04a-d conflict with 03A-A1)."
+    },
+    {
+      "to": "00A",
+      "text": "02C finding (fiscal/debt financing limits) is absent from research/findings/02/ in r1; FT-03 cannot be fully specified. Please schedule 02C or confirm which agent supplies debt-stabilising limits."
+    },
+    {
+      "to": "16C",
+      "text": "Only S04-d and S05-d (real_growth) enter the projection; no scenario has a deflator_growth or fx_depreciation shock, so a peg adjustment or INR shock cannot be stress-tested. Please propose (for human review) an fx_depreciation channel (peg step, INR/USD shock) and a deflator_growth channel (oil price pass-through)."
+    },
+    {
+      "to": "01B",
+      "text": "Please deliver the rate-duration upper envelope: for each horizon N from 20 to 50 years, the maximum and upper percentiles of average real GDP and GDP-per-capita growth sustained over N consecutive years, by spell definition, with the landlocked subset (INP-09); FT-01 needs N matched to each milestone."
+    },
+    {
+      "to": "01A",
+      "text": "Please report ICOR by window with dispersion and flag status, and name the window you consider the most defensible trend for real growth (TR-0a), with alternatives."
+    },
+    {
+      "to": "10C",
+      "text": "Please provide single-year WPP 2024 resident totals for all variants so that 01C-A07 FY conversion can be applied; confirm whether WPP's Nepal population is a resident concept consistent with the SNA residency of GDP (C-06/ESC-04)."
+    },
+    {
+      "to": "06C",
+      "text": "Adopted: quantiles P50/P75/P90 of approval_lag_years and execution_rate will be passed as separate stress settings (SG-10, FT-04). Please also supply the physical-unit mapping from investment spending to delivered assets for the public programme."
+    },
+    {
+      "to": "15A",
+      "text": "Please treat FT-09 (base-year identity, peg residual, convention invariance) as a precondition for any VERIFIED verdict on TGT-ARITH trajectories."
+    },
+    {
+      "to": "28E",
+      "text": "Please review the PF-4 (valuation-driven) and PF-5 (peg adjustment) cases for geopolitical plausibility; a milestone reached only under PF-4 will be labelled valuation-dependent."
+    }
+  ],
+  "uncertainty": "All empirical uncertainty is unresolved because no input has been retrieved. Structurally, the required real growth is most sensitive to (i) the base-year USD GDP level, which depends on the USD-conversion convention and NSO vintage (C-01/C-02), (ii) assumed USD price growth, which enters one-for-one in log terms and is itself the product of three uncertain components (US inflation, INR real appreciation, Nepal-India differential) plus the peg, and (iii) the milestone horizon; the hypothetical illustration shows that a half-year label shift alone changes the required USD CAGR noticeably at the 2050 horizon. Feasibility conclusions will additionally depend on the choice of spell definition (01B), ICOR window (01A), delivery quantiles (06C) and population variant (10C); results will be reported across these rather than at a single point, with no probabilities.",
+  "specific": {
+    "trajectory_table": {
+      "status": "pending (specification complete; inputs pending)",
+      "engine": "src.economic_model.projection.ProjectionAssumptions / project / first_year_reaching",
+      "inputs_register": [
+        {
+          "input_id": "INP-01",
+          "variable": "base_nominal_gdp_lcu",
+          "definition": "Nominal GDP at current market prices, NPR, for the base FY (latest FY with an NSO 'revised' estimate; the latest 'preliminary' FY is run as a sensitivity), with release date and revision status",
+          "unit": "NPR_current_mn",
+          "period": "Nepal FY (base FY; label = ending calendar year)",
+          "sources": [
+            "nso_nepal (primary)",
+            "mof_nepal (vintage check)",
+            "wb_wdi NY.GDP.MKTP.CN / imf_weo (cross-check, C-01)"
+          ],
+          "lead_ids": [
+            "01C-L01",
+            "01C-L02",
+            "01C-L04",
+            "01C-L19",
+            "01C-L23"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-01",
+          "status": "pending",
+          "note": "Supplies ProjectionAssumptions.base_nominal_gdp_lcu (converted from NPR_current_mn to units)."
+        },
+        {
+          "input_id": "INP-02",
+          "variable": "base_fx_lcu_per_usd",
+          "definition": "NPR per USD, average of NRB daily middle rates (mean of buying and selling) over the same FY as INP-01 (16 July to 15 July), per proposal 01C-P-ESC03; NRB-published FY average and WDI PA.NUS.FCRF (CY) recorded as separate observations",
+          "unit": "NPR_per_USD",
+          "period": "Nepal FY matching INP-01",
+          "sources": [
+            "nrb (primary)",
+            "mof_nepal",
+            "wb_wdi PA.NUS.FCRF (CY, cross-check)",
+            "adb_nepal"
+          ],
+          "lead_ids": [
+            "01C-L07",
+            "01C-L08",
+            "01C-L09",
+            "01C-L10",
+            "01C-L21",
+            "01C-L47"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-02",
+          "status": "pending"
+        },
+        {
+          "input_id": "INP-03",
+          "variable": "peg_ratio_npr_per_inr",
+          "definition": "Official NPR/INR parity and date of last change; FY-average NPR/INR from NRB daily rates (checks that NPR/USD = peg x INR/USD holds on FY averages within tolerance)",
+          "unit": "NPR_per_INR",
+          "period": "Nepal FY; parity-change dates",
+          "sources": [
+            "nrb"
+          ],
+          "lead_ids": [
+            "01C-L07",
+            "01C-L08",
+            "01C-L11",
+            "01C-L12"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-03",
+          "status": "pending"
+        },
+        {
+          "input_id": "INP-04",
+          "variable": "gdp_deflator_history",
+          "definition": "NSO implicit GDP deflator (nominal/real GDP) by FY for the longest spliced period, with base year and rebasing overlap; annual deflator growth derived",
+          "unit": "index",
+          "period": "Nepal FY, earliest to base FY",
+          "sources": [
+            "nso_nepal",
+            "mof_nepal",
+            "wb_wdi (CN/KN cross-check)",
+            "imf_weo NGDP_D"
+          ],
+          "lead_ids": [
+            "01C-L01",
+            "01C-L03",
+            "01C-L04",
+            "01C-L20",
+            "01C-L26"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-04",
+          "status": "pending",
+          "note": "Owned jointly with 01A (splicing). Used to bound deflator paths, not as a forecast."
+        },
+        {
+          "input_id": "INP-05",
+          "variable": "inr_per_usd_history",
+          "definition": "INR per USD, daily reference rates aggregated to Nepal-FY averages, and Indian-FY/CY annual averages as published; long-run depreciation distribution over rolling 10-, 20- and 30-year windows",
+          "unit": "INR_per_USD",
+          "period": "daily; aggregated to Nepal FY, Indian FY and CY separately",
+          "sources": [
+            "rbi",
+            "wb_wdi PA.NUS.FCRF IND",
+            "imf_weo"
+          ],
+          "lead_ids": [
+            "01C-L14",
+            "01C-L15",
+            "01C-L16",
+            "01C-L22"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-05",
+          "status": "pending"
+        },
+        {
+          "input_id": "INP-06",
+          "variable": "population_paths",
+          "definition": "Resident population by year, WPP 2024 Medium/Low/High/Constant-fertility/Zero-migration and probabilistic 80/95 percent bounds, 1 July reference; NSO NPHC-2021-based projection where it exists; census 2021 resident count as base check",
+          "unit": "persons_mn",
+          "period": "calendar year, 1 July (WPP); converted to FY per 01C-A07",
+          "sources": [
+            "un_wpp",
+            "nso_nepal",
+            "wb_wdi SP.POP.TOTL (cross-check)"
+          ],
+          "lead_ids": [
+            "01C-L29",
+            "01C-L30",
+            "01C-L31",
+            "01C-L32",
+            "01C-L33",
+            "01C-L34"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-06 (supplied by 10C POP-WPP24-*)",
+          "status": "pending"
+        },
+        {
+          "input_id": "INP-07",
+          "variable": "india_and_us_price_paths",
+          "definition": "GDP deflator (and CPI) growth history for India and the United States, for the USD-price decomposition (01C-A05)",
+          "unit": "percent",
+          "period": "CY and Indian FY as published; never mixed without conversion",
+          "sources": [
+            "imf_weo NGDP_D",
+            "rbi DBIE"
+          ],
+          "lead_ids": [
+            "01C-L16",
+            "01C-L26"
+          ],
+          "pending_observation_id": "PENDING-01C-INP-07",
+          "status": "pending"
+        },
+        {
+          "input_id": "INP-08",
+          "variable": "real_growth_history_and_icor",
+          "definition": "Spliced real GDP growth by FY and ICOR by window with dispersion (from 01A)",
+          "unit": "percent / ratio",
+          "period": "Nepal FY",
+          "sources": [
+            "01A outputs (nso_nepal)"
+          ],
+          "lead_ids": [
+            "01C-L01",
+            "01C-L24",
+            "01C-L25"
+          ],
+          "pending_observation_id": "PENDING-01A-growth_accounting_table / PENDING-01A-icor_estimate",
+          "status": "pending"
+        },
+        {
+          "input_id": "INP-09",
+          "variable": "growth_spell_envelope",
+          "definition": "From 01B: for each horizon N (every integer from 20 to 50 years), the maximum and upper percentiles of average annual real GDP growth (total and per capita) sustained over N consecutive years across all economies, by spell definition, with landlocked subset",
+          "unit": "percent",
+          "period": "CY (MPD/PWT); compared with FY-based requirements only as annual averages",
+          "sources": [
+            "maddison",
+            "pwt",
+            "academic"
+          ],
+          "lead_ids": [
+            "01C-L36",
+            "01C-L37",
+            "01C-L38",
+            "01C-L39",
+            "01C-L40",
+            "01C-L41",
+            "01C-L42",
+            "01C-L43"
+          ],
+          "pending_observation_id": "PENDING-01B-growth_spell_statistics",
+          "status": "pending"
+        }
+      ],
+      "price_fx_cases": [
+        {
+          "case_id": "PF-1",
+          "name": "Pure volume (no USD price growth)",
+          "definition": "deflator_growth = fx_depreciation (USD price growth zero); equivalent to config A-TGT-04a/c",
+          "evidence": "none needed; reference case"
+        },
+        {
+          "case_id": "PF-2",
+          "name": "Historical-trend valuation",
+          "definition": "deflator = (1+pi_IN_trend)(1+diff_trend)-1; fx = (1+d_INR_trend)-1, d_peg = 0",
+          "evidence": "INP-04, INP-05, INP-07 (medians of long-run rolling windows)"
+        },
+        {
+          "case_id": "PF-3",
+          "name": "Low valuation",
+          "definition": "India real depreciation vs USD at the upper quartile of historical INR/USD windows; Nepal-India differential at its lower quartile",
+          "evidence": "INP-05, INP-04, INP-07 quartiles"
+        },
+        {
+          "case_id": "PF-4",
+          "name": "High valuation (convergence-driven real appreciation)",
+          "definition": "INR real appreciation vs USD and positive Nepal-India differential at upper quartiles (Balassa-Samuelson / remittance channel)",
+          "evidence": "INP-05, INP-07, IMF WP 2025 on remittances and RER (01C-L48)"
+        },
+        {
+          "case_id": "PF-5",
+          "name": "Peg adjustment",
+          "definition": "PF-2 plus a one-off step in d_peg in a stated year (size from 03A/20B historical parity changes; no size assumed here), with deflator pass-through per 03A",
+          "evidence": "INP-03, 01C-L11, 03A fx_assumption_constraints"
+        }
+      ],
+      "trajectories": [
+        {
+          "trajectory_id": "TR-0a",
+          "name": "Untargeted baseline - constant historical trend",
+          "purpose": "Conservative continuation with no fixed target (model_config target.also_run). Reports the first FY label at which US$3T is reached, or 'not within 2100'.",
+          "solve_for": null,
+          "ProjectionAssumptions": {
+            "base_year": "PENDING (latest FY with NSO revised estimate; A-TGT-01 placeholder until retrieved)",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = mean spliced real growth over the longest window excluding FY2015/16-FY2016/17 and FY2019/20-FY2020/21 shock years; label TR0-g)  [01C-A03; INP-08]",
+            "deflator_growth": "Path(default = (1+pi_IN_trend)(1+diff_trend)-1) where pi_IN_trend is India's long-run GDP-deflator growth and diff_trend the historical Nepal-India deflator differential  [01C-A05; INP-04, INP-07]",
+            "fx_depreciation": "Path(default = (1+d_peg)(1+d_INR_trend)-1 with d_peg = 0 while the peg holds; d_INR_trend = median long-run INR/USD depreciation)  [01C-A04; INP-03, INP-05]",
+            "population_growth": "Path(values = year-by-year growth of POP-WPP24-MED converted to FY)  [01C-A07; INP-06]",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "01C-A03 + PENDING-01A-growth_accounting_table",
+              "deflator_growth": "01C-A05 + PENDING-01C-INP-04/INP-07",
+              "fx_depreciation": "01C-A04 + PENDING-01C-INP-03/INP-05",
+              "population_growth": "PENDING-10C-POP-WPP24-MED"
+            }
+          },
+          "outputs": [
+            "nominal_gdp_usd path",
+            "gdp_per_capita_usd path",
+            "first_year_reaching(3e12)",
+            "untargeted_arrival_year (fractional, constant-rate check)"
+          ]
+        },
+        {
+          "trajectory_id": "TR-0b",
+          "name": "Untargeted baseline - regression to the mean",
+          "purpose": "Same as TR-0a but real growth decays geometrically from the recent trend toward a world long-run mean, per Pritchett-Summers (2014); the decay half-life is a labelled assumption with the evidence source named, to be set from 01B persistence estimates.",
+          "solve_for": null,
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(values = {t: g_world + (TR0-g - g_world) * 0.5**((t-base)/H)} materialised per year; g_world and H from 01B/Pritchett-Summers)  [01C-A03b; INP-08, INP-09]",
+            "deflator_growth": "as TR-0a",
+            "fx_depreciation": "as TR-0a",
+            "population_growth": "as TR-0a",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "01C-A03b + PENDING-01B-growth_spell_statistics"
+            }
+          },
+          "outputs": [
+            "as TR-0a"
+          ]
+        },
+        {
+          "trajectory_id": "TR-2050-S1",
+          "name": "Required path to US$3T by FY label 2050 - constant real growth",
+          "purpose": "Arithmetic requirement, not a forecast: the single constant real growth rate that, with the stated price/FX/population paths, makes nominal USD GDP reach US$3T in FY label 2050 (FY2049/50).",
+          "solve_for": "real_growth.default (closed form: required_growth_table; checked with project() + first_year_reaching)",
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = g_req(2050) solved)",
+            "deflator_growth": "Path per price/FX case PF-1..PF-5 (sensitivity_grid SG-03)",
+            "fx_depreciation": "Path per price/FX case PF-1..PF-5 = (1+d_peg)(1+d_INR)-1 (SG-04, SG-05)",
+            "population_growth": "Path per population variant (SG-08); does not affect the aggregate requirement, only per-capita outputs",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "solved (derived, not an input)",
+              "deflator_growth": "01C-A05 case id",
+              "fx_depreciation": "01C-A04 case id",
+              "population_growth": "PENDING-10C-POP-WPP24-<variant>"
+            }
+          },
+          "outputs": [
+            "g_req",
+            "per-capita growth required",
+            "GDP per capita at target",
+            "I/Y implied per ICOR",
+            "price share of USD growth"
+          ]
+        },
+        {
+          "trajectory_id": "TR-2050-S2",
+          "name": "Required path to US$3T by FY label 2050 - lag, acceleration, decay",
+          "purpose": "Shape consistent with delivery lags and spell evidence: TR-0 trend for L years (reform and project lag from 06C), then peak growth g_peak for D years (01B median spell duration by definition), then geometric decay toward g_world. Solve g_peak. Reports the peak rate AND its duration so FT-01 can compare both with 01B.",
+          "solve_for": "g_peak (scalar root-find on first_year_reaching(project(a), 3e12) == M, bisection)",
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = TR0-g, values = {base+L: g_peak, base+L+D: decay schedule...}) [L from 06C approval_lag P50/P75/P90; D from 01B; 01C-A06]",
+            "deflator_growth": "as TR-*-S1",
+            "fx_depreciation": "as TR-*-S1",
+            "population_growth": "as TR-*-S1",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "01C-A06 + PENDING-06C-delivery_lag_distribution + PENDING-01B-growth_spell_statistics"
+            }
+          },
+          "outputs": [
+            "g_peak",
+            "years at g_peak",
+            "cumulative real multiple",
+            "I/Y path"
+          ]
+        },
+        {
+          "trajectory_id": "TR-2060-S1",
+          "name": "Required path to US$3T by FY label 2060 - constant real growth",
+          "purpose": "Arithmetic requirement, not a forecast: the single constant real growth rate that, with the stated price/FX/population paths, makes nominal USD GDP reach US$3T in FY label 2060 (FY2059/60).",
+          "solve_for": "real_growth.default (closed form: required_growth_table; checked with project() + first_year_reaching)",
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = g_req(2060) solved)",
+            "deflator_growth": "Path per price/FX case PF-1..PF-5 (sensitivity_grid SG-03)",
+            "fx_depreciation": "Path per price/FX case PF-1..PF-5 = (1+d_peg)(1+d_INR)-1 (SG-04, SG-05)",
+            "population_growth": "Path per population variant (SG-08); does not affect the aggregate requirement, only per-capita outputs",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "solved (derived, not an input)",
+              "deflator_growth": "01C-A05 case id",
+              "fx_depreciation": "01C-A04 case id",
+              "population_growth": "PENDING-10C-POP-WPP24-<variant>"
+            }
+          },
+          "outputs": [
+            "g_req",
+            "per-capita growth required",
+            "GDP per capita at target",
+            "I/Y implied per ICOR",
+            "price share of USD growth"
+          ]
+        },
+        {
+          "trajectory_id": "TR-2060-S2",
+          "name": "Required path to US$3T by FY label 2060 - lag, acceleration, decay",
+          "purpose": "Shape consistent with delivery lags and spell evidence: TR-0 trend for L years (reform and project lag from 06C), then peak growth g_peak for D years (01B median spell duration by definition), then geometric decay toward g_world. Solve g_peak. Reports the peak rate AND its duration so FT-01 can compare both with 01B.",
+          "solve_for": "g_peak (scalar root-find on first_year_reaching(project(a), 3e12) == M, bisection)",
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = TR0-g, values = {base+L: g_peak, base+L+D: decay schedule...}) [L from 06C approval_lag P50/P75/P90; D from 01B; 01C-A06]",
+            "deflator_growth": "as TR-*-S1",
+            "fx_depreciation": "as TR-*-S1",
+            "population_growth": "as TR-*-S1",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "01C-A06 + PENDING-06C-delivery_lag_distribution + PENDING-01B-growth_spell_statistics"
+            }
+          },
+          "outputs": [
+            "g_peak",
+            "years at g_peak",
+            "cumulative real multiple",
+            "I/Y path"
+          ]
+        },
+        {
+          "trajectory_id": "TR-2070-S1",
+          "name": "Required path to US$3T by FY label 2070 - constant real growth",
+          "purpose": "Arithmetic requirement, not a forecast: the single constant real growth rate that, with the stated price/FX/population paths, makes nominal USD GDP reach US$3T in FY label 2070 (FY2069/70).",
+          "solve_for": "real_growth.default (closed form: required_growth_table; checked with project() + first_year_reaching)",
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = g_req(2070) solved)",
+            "deflator_growth": "Path per price/FX case PF-1..PF-5 (sensitivity_grid SG-03)",
+            "fx_depreciation": "Path per price/FX case PF-1..PF-5 = (1+d_peg)(1+d_INR)-1 (SG-04, SG-05)",
+            "population_growth": "Path per population variant (SG-08); does not affect the aggregate requirement, only per-capita outputs",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "solved (derived, not an input)",
+              "deflator_growth": "01C-A05 case id",
+              "fx_depreciation": "01C-A04 case id",
+              "population_growth": "PENDING-10C-POP-WPP24-<variant>"
+            }
+          },
+          "outputs": [
+            "g_req",
+            "per-capita growth required",
+            "GDP per capita at target",
+            "I/Y implied per ICOR",
+            "price share of USD growth"
+          ]
+        },
+        {
+          "trajectory_id": "TR-2070-S2",
+          "name": "Required path to US$3T by FY label 2070 - lag, acceleration, decay",
+          "purpose": "Shape consistent with delivery lags and spell evidence: TR-0 trend for L years (reform and project lag from 06C), then peak growth g_peak for D years (01B median spell duration by definition), then geometric decay toward g_world. Solve g_peak. Reports the peak rate AND its duration so FT-01 can compare both with 01B.",
+          "solve_for": "g_peak (scalar root-find on first_year_reaching(project(a), 3e12) == M, bisection)",
+          "ProjectionAssumptions": {
+            "base_year": "as TR-0a",
+            "base_nominal_gdp_lcu": "INP-01",
+            "base_fx_lcu_per_usd": "INP-02",
+            "base_population": "INP-06",
+            "real_growth": "Path(default = TR0-g, values = {base+L: g_peak, base+L+D: decay schedule...}) [L from 06C approval_lag P50/P75/P90; D from 01B; 01C-A06]",
+            "deflator_growth": "as TR-*-S1",
+            "fx_depreciation": "as TR-*-S1",
+            "population_growth": "as TR-*-S1",
+            "period_convention": "fiscal year labelled by ending calendar year",
+            "provenance": {
+              "base_nominal_gdp_lcu": "PENDING-01C-INP-01",
+              "base_fx_lcu_per_usd": "PENDING-01C-INP-02 (convention 01C-P-ESC03)",
+              "base_population": "PENDING-01C-INP-06 (FY-converted per 01C-A07)",
+              "real_growth": "01C-A06 + PENDING-06C-delivery_lag_distribution + PENDING-01B-growth_spell_statistics"
+            }
+          },
+          "outputs": [
+            "g_peak",
+            "years at g_peak",
+            "cumulative real multiple",
+            "I/Y path"
+          ]
+        },
+        {
+          "trajectory_id": "TR-SHOCK",
+          "name": "Shock overlays on TR-0a/b and each TR-M-S1/S2",
+          "purpose": "Apply 16C shock vectors that enter the projection (currently only S04-d and S05-d, variable real_growth, magnitude null) via Path.shifted; report the shift in crossing year and the extra real growth needed to recover the milestone.",
+          "solve_for": "delta crossing year; recovery g_req",
+          "ProjectionAssumptions": {
+            "real_growth": "baseline.real_growth.shifted(S04-d / S05-d magnitudes, PENDING 16C)",
+            "deflator_growth": "no scenario channel exists yet (challenge to 16C)",
+            "fx_depreciation": "no scenario channel exists yet; peg adjustment proposed as discrete shock PF-5",
+            "provenance": {
+              "real_growth": "PENDING-16C-shock_vectors S04-d, S05-d"
+            }
+          },
+          "outputs": [
+            "crossing-year shift",
+            "recovery growth requirement"
+          ]
+        }
+      ],
+      "notes": [
+        "Path is step-hold; time-varying shapes (TR-0b, S2) must be materialised as per-year values.",
+        "Real, deflator and exchange-rate paths are separate Path objects (CLAUDE.md rule 6).",
+        "Milestone years are FY labels (FY2049/50 = 2050) under 01C-P-ESC03."
+      ]
+    },
+    "required_growth_table": {
+      "status": "pending (formulas final; all empirical inputs pending)",
+      "target": {
+        "value": "config target.value_usd (US$3T, current USD, annual)",
+        "assumption_id": "00A-A1 / model_config target"
+      },
+      "notation": {
+        "Y0": "base nominal GDP, NPR (INP-01)",
+        "E0": "base NPR/USD, FY average (INP-02)",
+        "P": "peg ratio NPR/INR (INP-03)",
+        "X": "INR/USD (INP-05)",
+        "b": "base FY label",
+        "M": "milestone FY label",
+        "n": "M - b (years)",
+        "T": "US$3T",
+        "pi": "Nepal GDP deflator growth",
+        "d": "NPR/USD depreciation",
+        "d_peg": "growth of NPR per INR (0 while the peg holds)",
+        "d_INR": "growth of INR per USD",
+        "pi_IN": "India GDP deflator growth",
+        "pi_US": "US GDP deflator growth",
+        "q_IN": "INR real appreciation vs USD = (1+pi_IN)/((1+pi_US)(1+d_INR)) - 1",
+        "q_NP": "Nepal-India inflation differential = (1+pi)/(1+pi_IN) - 1",
+        "N_t": "resident population (INP-06, FY-converted)",
+        "L_t": "employment (10B/10C)"
+      },
+      "formulas": [
+        {
+          "id": "F1",
+          "name": "base USD GDP",
+          "expr": "USD0 = Y0 / E0; peg check: E0 ~ P0 * X0 (FY averages; residual reported against tolerances.source_conflict_rel_tol)"
+        },
+        {
+          "id": "F2",
+          "name": "required multiple",
+          "expr": "m = T / USD0"
+        },
+        {
+          "id": "F3",
+          "name": "required nominal USD CAGR",
+          "expr": "g_usd(M) = m**(1/n) - 1  [growth.required_cagr]"
+        },
+        {
+          "id": "F4",
+          "name": "exchange-rate identity under peg",
+          "expr": "1+d = (1+d_peg)(1+d_INR)  [03A-A1]"
+        },
+        {
+          "id": "F5",
+          "name": "USD price growth",
+          "expr": "1+p = (1+pi)/(1+d) = (1+pi_US)(1+q_IN)(1+q_NP)/(1+d_peg)  [growth.usd_price_growth; decomposition identity follows from F4 and the q definitions]"
+        },
+        {
+          "id": "F6",
+          "name": "required real CAGR",
+          "expr": "g_real(M) = (1+g_usd)(1+d)/(1+pi) - 1 = (1+g_usd)/(1+p) - 1  [growth.implied_real_growth]"
+        },
+        {
+          "id": "F7",
+          "name": "required per-capita real growth",
+          "expr": "g_pc = (1+g_real)/(1+g_N) - 1, g_N = (N_M/N_b)**(1/n) - 1"
+        },
+        {
+          "id": "F8",
+          "name": "GDP per capita at target",
+          "expr": "y_M = T / N_M  [target.required_per_capita]"
+        },
+        {
+          "id": "F9",
+          "name": "implied investment ratio",
+          "expr": "I/Y = ICOR * g_real  [growth.investment_rate_from_icor]"
+        },
+        {
+          "id": "F10",
+          "name": "implied labour-productivity growth",
+          "expr": "g_lp = (1+g_real)/(1+g_L) - 1"
+        },
+        {
+          "id": "F11",
+          "name": "valuation share",
+          "expr": "s_price = ln(1+p)/ln(1+g_usd)"
+        },
+        {
+          "id": "F12",
+          "name": "time-varying paths",
+          "expr": "project(ProjectionAssumptions, M) then first_year_reaching(rows, T); for S2 shapes solve g_peak by bisection on the crossing year"
+        },
+        {
+          "id": "F13",
+          "name": "external financing need",
+          "expr": "CAD/Y = I/Y - S_nat/Y (S_nat from GNDI incl. remittances; 02C/03C/IMF DSA supply limits)"
+        }
+      ],
+      "rows_specification": "One row per (milestone M in 2050/2060/2070) x (price/FX case PF-1..PF-5) x (population variant WPP24 MED/LOW/HIGH/ZM) x (ICOR from 01A windows), with columns g_usd, p, g_real, g_pc, y_M, I/Y, g_lp, s_price; plus the untargeted TR-0a/b arrival years.",
+      "pending_inputs": [
+        {
+          "input": "base-year USD GDP (F1)",
+          "requires": [
+            "INP-01",
+            "INP-02"
+          ],
+          "status": "pending"
+        },
+        {
+          "input": "GDP deflator path (F5, F6)",
+          "requires": [
+            "INP-04",
+            "INP-07"
+          ],
+          "status": "pending"
+        },
+        {
+          "input": "NPR/USD path via NPR/INR peg x INR/USD (F4)",
+          "requires": [
+            "INP-03",
+            "INP-05"
+          ],
+          "status": "pending"
+        },
+        {
+          "input": "population variants (F7, F8)",
+          "requires": [
+            "INP-06 via 10C"
+          ],
+          "status": "pending"
+        },
+        {
+          "input": "ICOR and real growth history (F9, TR-0)",
+          "requires": [
+            "INP-08 via 01A"
+          ],
+          "status": "pending"
+        },
+        {
+          "input": "employment path (F10)",
+          "requires": [
+            "10B participation",
+            "10C working-age resident"
+          ],
+          "status": "pending"
+        },
+        {
+          "input": "national saving and financing limits (F13)",
+          "requires": [
+            "02C (finding not present in r1)",
+            "03B",
+            "03C",
+            "IMF DSA"
+          ],
+          "status": "pending"
+        }
+      ],
+      "lead_ids": [
+        "01C-L01",
+        "01C-L07",
+        "01C-L14",
+        "01C-L26",
+        "01C-L29",
+        "01C-L27"
+      ],
+      "hypothetical_illustration": {
+        "label": "HYPOTHETICAL ILLUSTRATION - computed only from config/model_config.yaml assumptions A-TGT-01 (grid base-year label), A-TGT-02 (hypothetical base grid), A-TGT-03 (illustrative base), A-TGT-04a-d (price/FX cases), A-TGT-05 (ICOR grid), A-TGT-06 (continuation growth), A-TGT-07 (hypothetical populations). NOT estimates of Nepal's GDP, prices, exchange rate or population, and not forecasts. Produced with src.economic_model.target and growth.",
+        "rates": "decimal fractions per year",
+        "required_growth_rows": [
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.2023,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.2023,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.6068,
+            "investment_rate_icor_4": 0.8091,
+            "investment_rate_icor_5": 1.0113,
+            "investment_rate_above_one": true
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.2023,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1794,
+            "price_share_of_log_usd_growth": 0.1044,
+            "investment_rate_icor_3": 0.5381,
+            "investment_rate_icor_4": 0.7175,
+            "investment_rate_icor_5": 0.8968,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.2023,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.2023,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.6068,
+            "investment_rate_icor_4": 0.8091,
+            "investment_rate_icor_5": 1.0113,
+            "investment_rate_above_one": true
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.2023,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.1565,
+            "price_share_of_log_usd_growth": 0.2108,
+            "investment_rate_icor_3": 0.4694,
+            "investment_rate_icor_4": 0.6259,
+            "investment_rate_icor_5": 0.7823,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1406,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1406,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.4219,
+            "investment_rate_icor_4": 0.5625,
+            "investment_rate_icor_5": 0.7031,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1406,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1189,
+            "price_share_of_log_usd_growth": 0.1462,
+            "investment_rate_icor_3": 0.3567,
+            "investment_rate_icor_4": 0.4756,
+            "investment_rate_icor_5": 0.5945,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1406,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1406,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.4219,
+            "investment_rate_icor_4": 0.5625,
+            "investment_rate_icor_5": 0.7031,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1406,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0972,
+            "price_share_of_log_usd_growth": 0.2952,
+            "investment_rate_icor_3": 0.2915,
+            "investment_rate_icor_4": 0.3887,
+            "investment_rate_icor_5": 0.4859,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1078,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1078,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3233,
+            "investment_rate_icor_4": 0.431,
+            "investment_rate_icor_5": 0.5388,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1078,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.0867,
+            "price_share_of_log_usd_growth": 0.1879,
+            "investment_rate_icor_3": 0.26,
+            "investment_rate_icor_4": 0.3466,
+            "investment_rate_icor_5": 0.4333,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1078,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1078,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3233,
+            "investment_rate_icor_4": 0.431,
+            "investment_rate_icor_5": 0.5388,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 30,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1078,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0656,
+            "price_share_of_log_usd_growth": 0.3795,
+            "investment_rate_icor_3": 0.1967,
+            "investment_rate_icor_4": 0.2622,
+            "investment_rate_icor_5": 0.3278,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1885,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1885,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.5655,
+            "investment_rate_icor_4": 0.754,
+            "investment_rate_icor_5": 0.9425,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1885,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1659,
+            "price_share_of_log_usd_growth": 0.1114,
+            "investment_rate_icor_3": 0.4976,
+            "investment_rate_icor_4": 0.6635,
+            "investment_rate_icor_5": 0.8294,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1885,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1885,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.5655,
+            "investment_rate_icor_4": 0.754,
+            "investment_rate_icor_5": 0.9425,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1885,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.1432,
+            "price_share_of_log_usd_growth": 0.2249,
+            "investment_rate_icor_3": 0.4297,
+            "investment_rate_icor_4": 0.5729,
+            "investment_rate_icor_5": 0.7162,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1313,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1313,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3939,
+            "investment_rate_icor_4": 0.5252,
+            "investment_rate_icor_5": 0.6564,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1313,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1097,
+            "price_share_of_log_usd_growth": 0.1559,
+            "investment_rate_icor_3": 0.3292,
+            "investment_rate_icor_4": 0.439,
+            "investment_rate_icor_5": 0.5487,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1313,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1313,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3939,
+            "investment_rate_icor_4": 0.5252,
+            "investment_rate_icor_5": 0.6564,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1313,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0882,
+            "price_share_of_log_usd_growth": 0.3149,
+            "investment_rate_icor_3": 0.2646,
+            "investment_rate_icor_4": 0.3528,
+            "investment_rate_icor_5": 0.441,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1007,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1007,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3021,
+            "investment_rate_icor_4": 0.4028,
+            "investment_rate_icor_5": 0.5035,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1007,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.0797,
+            "price_share_of_log_usd_growth": 0.2004,
+            "investment_rate_icor_3": 0.2392,
+            "investment_rate_icor_4": 0.3189,
+            "investment_rate_icor_5": 0.3987,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1007,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1007,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3021,
+            "investment_rate_icor_4": 0.4028,
+            "investment_rate_icor_5": 0.5035,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 40,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1007,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0588,
+            "price_share_of_log_usd_growth": 0.4048,
+            "investment_rate_icor_3": 0.1763,
+            "investment_rate_icor_4": 0.2351,
+            "investment_rate_icor_5": 0.2938,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1779,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1779,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.5338,
+            "investment_rate_icor_4": 0.7118,
+            "investment_rate_icor_5": 0.8897,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1779,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1555,
+            "price_share_of_log_usd_growth": 0.1174,
+            "investment_rate_icor_3": 0.4665,
+            "investment_rate_icor_4": 0.622,
+            "investment_rate_icor_5": 0.7776,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1779,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1779,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.5338,
+            "investment_rate_icor_4": 0.7118,
+            "investment_rate_icor_5": 0.8897,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1779,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.1331,
+            "price_share_of_log_usd_growth": 0.2372,
+            "investment_rate_icor_3": 0.3992,
+            "investment_rate_icor_4": 0.5323,
+            "investment_rate_icor_5": 0.6654,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1241,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1241,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3723,
+            "investment_rate_icor_4": 0.4964,
+            "investment_rate_icor_5": 0.6205,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1241,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1027,
+            "price_share_of_log_usd_growth": 0.1644,
+            "investment_rate_icor_3": 0.3081,
+            "investment_rate_icor_4": 0.4107,
+            "investment_rate_icor_5": 0.5134,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1241,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1241,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3723,
+            "investment_rate_icor_4": 0.4964,
+            "investment_rate_icor_5": 0.6205,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1241,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0813,
+            "price_share_of_log_usd_growth": 0.332,
+            "investment_rate_icor_3": 0.2438,
+            "investment_rate_icor_4": 0.3251,
+            "investment_rate_icor_5": 0.4064,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.0953,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.0953,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.2858,
+            "investment_rate_icor_4": 0.381,
+            "investment_rate_icor_5": 0.4763,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.0953,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.0744,
+            "price_share_of_log_usd_growth": 0.2114,
+            "investment_rate_icor_3": 0.2232,
+            "investment_rate_icor_4": 0.2976,
+            "investment_rate_icor_5": 0.372,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.0953,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.0953,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.2858,
+            "investment_rate_icor_4": 0.381,
+            "investment_rate_icor_5": 0.4763,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 50,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.0953,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0535,
+            "price_share_of_log_usd_growth": 0.4269,
+            "investment_rate_icor_3": 0.1606,
+            "investment_rate_icor_4": 0.2141,
+            "investment_rate_icor_5": 0.2676,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1694,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1694,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.5082,
+            "investment_rate_icor_4": 0.6776,
+            "investment_rate_icor_5": 0.8469,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1694,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.1471,
+            "price_share_of_log_usd_growth": 0.1229,
+            "investment_rate_icor_3": 0.4413,
+            "investment_rate_icor_4": 0.5885,
+            "investment_rate_icor_5": 0.7356,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1694,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1694,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.5082,
+            "investment_rate_icor_4": 0.6776,
+            "investment_rate_icor_5": 0.8469,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1694,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.1248,
+            "price_share_of_log_usd_growth": 0.2482,
+            "investment_rate_icor_3": 0.3745,
+            "investment_rate_icor_4": 0.4994,
+            "investment_rate_icor_5": 0.6242,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1183,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1183,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3548,
+            "investment_rate_icor_4": 0.473,
+            "investment_rate_icor_5": 0.5913,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1183,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.097,
+            "price_share_of_log_usd_growth": 0.1721,
+            "investment_rate_icor_3": 0.2909,
+            "investment_rate_icor_4": 0.3878,
+            "investment_rate_icor_5": 0.4848,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1183,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1183,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3548,
+            "investment_rate_icor_4": 0.473,
+            "investment_rate_icor_5": 0.5913,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1183,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0757,
+            "price_share_of_log_usd_growth": 0.3475,
+            "investment_rate_icor_3": 0.227,
+            "investment_rate_icor_4": 0.3026,
+            "investment_rate_icor_5": 0.3783,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.0908,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.0908,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.2725,
+            "investment_rate_icor_4": 0.3633,
+            "investment_rate_icor_5": 0.4541,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.0908,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.07,
+            "price_share_of_log_usd_growth": 0.2212,
+            "investment_rate_icor_3": 0.2101,
+            "investment_rate_icor_4": 0.2802,
+            "investment_rate_icor_5": 0.3502,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.0908,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.0908,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.2725,
+            "investment_rate_icor_4": 0.3633,
+            "investment_rate_icor_5": 0.4541,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 60,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.0908,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0493,
+            "price_share_of_log_usd_growth": 0.4468,
+            "investment_rate_icor_3": 0.1478,
+            "investment_rate_icor_4": 0.1971,
+            "investment_rate_icor_5": 0.2463,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.156,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.156,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.468,
+            "investment_rate_icor_4": 0.624,
+            "investment_rate_icor_5": 0.78,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.156,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.134,
+            "price_share_of_log_usd_growth": 0.1327,
+            "investment_rate_icor_3": 0.402,
+            "investment_rate_icor_4": 0.536,
+            "investment_rate_icor_5": 0.6699,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.156,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.156,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.468,
+            "investment_rate_icor_4": 0.624,
+            "investment_rate_icor_5": 0.78,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2050,
+            "years": 25,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.156,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.112,
+            "price_share_of_log_usd_growth": 0.2679,
+            "investment_rate_icor_3": 0.3359,
+            "investment_rate_icor_4": 0.4479,
+            "investment_rate_icor_5": 0.5599,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.1091,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1091,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3273,
+            "investment_rate_icor_4": 0.4364,
+            "investment_rate_icor_5": 0.5455,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.1091,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.088,
+            "price_share_of_log_usd_growth": 0.1857,
+            "investment_rate_icor_3": 0.2639,
+            "investment_rate_icor_4": 0.3519,
+            "investment_rate_icor_5": 0.4399,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.1091,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.1091,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.3273,
+            "investment_rate_icor_4": 0.4364,
+            "investment_rate_icor_5": 0.5455,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2060,
+            "years": 35,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.1091,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0669,
+            "price_share_of_log_usd_growth": 0.3751,
+            "investment_rate_icor_3": 0.2006,
+            "investment_rate_icor_4": 0.2674,
+            "investment_rate_icor_5": 0.3343,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04a",
+            "required_nominal_usd_cagr": 0.0839,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.0839,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.2516,
+            "investment_rate_icor_4": 0.3355,
+            "investment_rate_icor_5": 0.4194,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04b",
+            "required_nominal_usd_cagr": 0.0839,
+            "implied_usd_price_growth": 0.0194,
+            "required_real_cagr": 0.0632,
+            "price_share_of_log_usd_growth": 0.2388,
+            "investment_rate_icor_3": 0.1897,
+            "investment_rate_icor_4": 0.2529,
+            "investment_rate_icor_5": 0.3161,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04c",
+            "required_nominal_usd_cagr": 0.0839,
+            "implied_usd_price_growth": 0.0,
+            "required_real_cagr": 0.0839,
+            "price_share_of_log_usd_growth": 0.0,
+            "investment_rate_icor_3": 0.2516,
+            "investment_rate_icor_4": 0.3355,
+            "investment_rate_icor_5": 0.4194,
+            "investment_rate_above_one": false
+          },
+          {
+            "hypothetical_base_usd_bn": 80,
+            "milestone_label": 2070,
+            "years": 45,
+            "price_fx_case_id": "A-TGT-04d",
+            "required_nominal_usd_cagr": 0.0839,
+            "implied_usd_price_growth": 0.0396,
+            "required_real_cagr": 0.0426,
+            "price_share_of_log_usd_growth": 0.4822,
+            "investment_rate_icor_3": 0.1277,
+            "investment_rate_icor_4": 0.1703,
+            "investment_rate_icor_5": 0.2129,
+            "investment_rate_above_one": false
+          }
+        ],
+        "untargeted_arrival_rows": [
+          {
+            "constant_real_growth": 0.03,
+            "hypothetical_base_usd_bn": 45.0,
+            "arrival_label_A-TGT-04a": 2167.1,
+            "arrival_label_A-TGT-04b": 2111.1,
+            "arrival_label_A-TGT-04c": 2167.1,
+            "arrival_label_A-TGT-04d": 2086.4
+          },
+          {
+            "constant_real_growth": 0.045,
+            "hypothetical_base_usd_bn": 45.0,
+            "arrival_label_A-TGT-04a": 2120.4,
+            "arrival_label_A-TGT-04b": 2091.4,
+            "arrival_label_A-TGT-04c": 2120.4,
+            "arrival_label_A-TGT-04d": 2075.7
+          },
+          {
+            "constant_real_growth": 0.06,
+            "hypothetical_base_usd_bn": 45.0,
+            "arrival_label_A-TGT-04a": 2097.1,
+            "arrival_label_A-TGT-04b": 2079.2,
+            "arrival_label_A-TGT-04c": 2097.1,
+            "arrival_label_A-TGT-04d": 2068.2
+          },
+          {
+            "constant_real_growth": 0.08,
+            "hypothetical_base_usd_bn": 45.0,
+            "arrival_label_A-TGT-04a": 2079.6,
+            "arrival_label_A-TGT-04b": 2068.7,
+            "arrival_label_A-TGT-04c": 2079.6,
+            "arrival_label_A-TGT-04d": 2061.3
+          },
+          {
+            "constant_real_growth": 0.1,
+            "hypothetical_base_usd_bn": 45.0,
+            "arrival_label_A-TGT-04a": 2069.1,
+            "arrival_label_A-TGT-04b": 2061.7,
+            "arrival_label_A-TGT-04c": 2069.1,
+            "arrival_label_A-TGT-04d": 2056.3
+          }
+        ],
+        "half_year_label_shift_rows": [
+          {
+            "price_fx_case_id": "A-TGT-04a",
+            "milestone_label": 2050,
+            "required_usd_cagr_full_label": 0.1829,
+            "required_usd_cagr_if_horizon_half_year_shorter": 0.187,
+            "difference_pp": 0.406
+          },
+          {
+            "price_fx_case_id": "A-TGT-04a",
+            "milestone_label": 2060,
+            "required_usd_cagr_full_label": 0.1275,
+            "required_usd_cagr_if_horizon_half_year_shorter": 0.1294,
+            "difference_pp": 0.196
+          },
+          {
+            "price_fx_case_id": "A-TGT-04a",
+            "milestone_label": 2070,
+            "required_usd_cagr_full_label": 0.0978,
+            "required_usd_cagr_if_horizon_half_year_shorter": 0.099,
+            "difference_pp": 0.115
+          }
+        ],
+        "per_capita_at_target_rows": [
+          {
+            "hypothetical_population_mn": 25,
+            "gdp_per_capita_usd_at_target": 120000.0
+          },
+          {
+            "hypothetical_population_mn": 30,
+            "gdp_per_capita_usd_at_target": 100000.0
+          },
+          {
+            "hypothetical_population_mn": 35,
+            "gdp_per_capita_usd_at_target": 85714.0
+          },
+          {
+            "hypothetical_population_mn": 40,
+            "gdp_per_capita_usd_at_target": 75000.0
+          }
+        ],
+        "reading_notes": [
+          "Rows flagged investment_rate_above_one imply gross investment exceeding GDP under at least one ICOR in the A-TGT-05 grid; such a path is arithmetically defined but physically unattainable without external financing larger than the economy.",
+          "price_share_of_log_usd_growth = ln(1+USD price growth)/ln(1+required USD growth): the part of the required USD growth that the case assigns to prices and exchange rate rather than volume. A high share means the target is met by valuation, not output (welfare.py tracks the difference).",
+          "half_year_label_shift_rows show how much the required USD CAGR moves if the milestone is read half a year earlier (the FY-vs-CY labelling question in ESC-03); USD CAGR is independent of the price/FX case, so one case is shown."
+        ]
+      }
+    },
+    "sensitivity_grid": {
+      "status": "pending (axes defined; values pending retrieval)",
+      "method": "One-at-a-time sweeps of each axis around the PF-2 / WPP24-MED / central-ICOR reference, plus a full factorial of SG-01 x SG-03/04 x milestone (the headline sensitivity asked in Q3). Report d(g_real_req)/d(axis) and the change in TR-0 crossing year. No probabilities are attached (01B-A5).",
+      "axes": [
+        {
+          "axis_id": "SG-01",
+          "axis": "Base-year USD GDP level",
+          "levels": "NSO/NRB-FY convention value; WDI; WEO; UN SNAAMA (each reproduced from its own NPR GDP and FX); preliminary vs revised base FY; config A-TGT-02 hypothetical grid until then",
+          "evidence": [
+            "INP-01",
+            "INP-02"
+          ],
+          "lead_ids": [
+            "01C-L01",
+            "01C-L07",
+            "01C-L18",
+            "01C-L23",
+            "01C-L46"
+          ]
+        },
+        {
+          "axis_id": "SG-02",
+          "axis": "Milestone labelling (FY vs CY)",
+          "levels": "FY label M; CY M via geometric mean of FY M and FY M+1; half-year shift",
+          "evidence": [
+            "01C-P-ESC03",
+            "C-01",
+            "C-02"
+          ],
+          "lead_ids": [
+            "01C-L18",
+            "01C-L23"
+          ]
+        },
+        {
+          "axis_id": "SG-03",
+          "axis": "Nepal GDP deflator growth (pi), decomposed as pi_IN and q_NP",
+          "levels": "historical-window quartiles of pi_IN and q_NP",
+          "evidence": [
+            "INP-04",
+            "INP-07"
+          ],
+          "lead_ids": [
+            "01C-L01",
+            "01C-L13",
+            "01C-L16",
+            "01C-L26",
+            "01C-L48"
+          ]
+        },
+        {
+          "axis_id": "SG-04",
+          "axis": "INR/USD depreciation (d_INR)",
+          "levels": "quartiles of rolling 10/20/30-year INR/USD depreciation (Nepal-FY aligned)",
+          "evidence": [
+            "INP-05"
+          ],
+          "lead_ids": [
+            "01C-L14",
+            "01C-L15",
+            "01C-L16",
+            "01C-L22"
+          ]
+        },
+        {
+          "axis_id": "SG-05",
+          "axis": "Peg ratio (d_peg)",
+          "levels": "peg holds; one discrete parity change in a stated year (sizes from historical NPR/INR changes, 03A/20B)",
+          "evidence": [
+            "INP-03",
+            "03A"
+          ],
+          "lead_ids": [
+            "01C-L07",
+            "01C-L11",
+            "01C-L12"
+          ]
+        },
+        {
+          "axis_id": "SG-06",
+          "axis": "Real growth path shape",
+          "levels": "S1 constant; S2 lag-peak-decay with L at 06C P50/P75/P90 and D at 01B spell-duration quartiles",
+          "evidence": [
+            "06C",
+            "01B"
+          ],
+          "lead_ids": [
+            "01C-L38",
+            "01C-L39",
+            "01C-L40",
+            "01C-L42",
+            "01C-L43"
+          ]
+        },
+        {
+          "axis_id": "SG-07",
+          "axis": "ICOR",
+          "levels": "01A window values (non-flagged windows), comparator values from PWT; config A-TGT-05 retained only as a labelled grid",
+          "evidence": [
+            "INP-08",
+            "01A"
+          ],
+          "lead_ids": [
+            "01C-L25",
+            "01C-L37"
+          ]
+        },
+        {
+          "axis_id": "SG-08",
+          "axis": "Population variant",
+          "levels": "WPP 2024 MED, LOW, HIGH, CF, ZM, probabilistic 80/95 bounds; NSO projection to its horizon; A-TGT-07 as fallback grid",
+          "evidence": [
+            "INP-06",
+            "10C"
+          ],
+          "lead_ids": [
+            "01C-L29",
+            "01C-L30",
+            "01C-L32",
+            "01C-L33"
+          ]
+        },
+        {
+          "axis_id": "SG-09",
+          "axis": "Shock overlays",
+          "levels": "none; S04-d; S05-d; S10 composite (16C)",
+          "evidence": [
+            "16C shock_vectors"
+          ],
+          "lead_ids": []
+        },
+        {
+          "axis_id": "SG-10",
+          "axis": "Delivery execution rate",
+          "levels": "06C P50/P75/P90 execution_rate and approval_lag_years passed as separate stress settings (06C challenge)",
+          "evidence": [
+            "06C"
+          ],
+          "lead_ids": [
+            "01C-L45"
+          ]
+        }
+      ],
+      "headline_outputs_q3": "Elasticity of g_real_req to (a) base USD GDP, (b) USD price growth p (via SG-03/04/05), and (c) the milestone label; and the range of TR-0 crossing years across PF-1..PF-5."
+    },
+    "feasibility_tests": [
+      {
+        "id": "FT-01",
+        "name": "Growth-spell precedent (01B)",
+        "test": "For each TR-M-S1: compare g_real_req and g_pc_req, sustained for n = M - b years, with the 01B rate-duration envelope (INP-09) under each of the three spell definitions and for the landlocked subset. For TR-M-S2: compare (g_peak, D) jointly. Apply Pritchett-Summers persistence evidence.",
+        "pass": "requirement lies at or below the envelope for at least one definition",
+        "fail_flag": "'without historical precedent' if above the maximum for every definition; 'no landlocked precedent' reported separately",
+        "inputs": [
+          "01B growth_spell_statistics",
+          "10C population"
+        ]
+      },
+      {
+        "id": "FT-02",
+        "name": "Investment ratio vs ICOR history (01A)",
+        "test": "I/Y = ICOR x g_real_req using the 01A non-flagged ICOR windows; compare with Nepal's historical GFCF/GDP maximum and the maximum sustained investment share among 01B spells (PWT csh_i).",
+        "pass": "implied I/Y within the maximum sustained comparator investment share at the lowest evidenced ICOR",
+        "fail_flag": "I/Y above comparator maximum at every evidenced ICOR; I/Y above one = arithmetically unattainable",
+        "inputs": [
+          "01A icor_estimate",
+          "01A investment_rate_series",
+          "01B"
+        ]
+      },
+      {
+        "id": "FT-03",
+        "name": "Financing (02C, 03B, 03C, 03A, IMF DSA)",
+        "test": "Financing gap = I/Y - national saving/Y (GNDI basis incl. remittances); compare the implied current-account deficit and external-debt path with IMF DSA thresholds, 02C fiscal limits, 03B bank-credit capacity and 03C primary-issuance capacity (not market capitalisation, per 03C), and with the reserve cover needed to keep the peg (03A).",
+        "pass": "external debt/GDP stabilises below the DSA threshold and reserve cover stays above the 03A floor",
+        "fail_flag": "financing need exceeds all evidenced domestic plus external capacity",
+        "inputs": [
+          "02C (missing in r1)",
+          "03A reserve_cover_series",
+          "03B",
+          "03C",
+          "01C-L27"
+        ]
+      },
+      {
+        "id": "FT-04",
+        "name": "Delivery constraints (06C)",
+        "test": "Translate the public share of implied investment into physical programmes and run constraints.constrained_delivery with 06C P50/P75/P90 approval_lag_years, execution_rate and max_units_per_year; require that delivered capital meets the path's capital requirement.",
+        "pass": "delivered capital >= required capital under P50 settings, with the P90 shortfall reported",
+        "fail_flag": "requirement exceeds delivery even if capacity grows at the fastest evidenced rate",
+        "inputs": [
+          "06C delivery_lag_distribution",
+          "06C cost_overrun_distribution",
+          "05A pipeline_completion_rate"
+        ]
+      },
+      {
+        "id": "FT-05",
+        "name": "Labour supply (10C, 10B, 09A)",
+        "test": "Employment path = resident working-age population (10C variant) x participation x (1 - unemployment) (10B); implied g_lp = (1+g_real)/(1+g_L)-1; compare with the maximum sustained output-per-worker growth among comparators (PWT) and with learning-adjusted human capital (09A LAYS).",
+        "pass": "g_lp within the comparator envelope under the High and Zero-migration variants",
+        "fail_flag": "g_lp above envelope under every population variant",
+        "inputs": [
+          "10C working_age_share_paths",
+          "10B",
+          "09A lays_value"
+        ]
+      },
+      {
+        "id": "FT-06",
+        "name": "Energy and sector value-added consistency (05A, 07A, 08A, 12A)",
+        "test": "Sector growth enters only through value added (sectors.py): sector VA paths from 05A (electricity incl. exports subject to transmission), 07A (agriculture), 08A (ICT services) and 12A (goods exports) must sum to the aggregate g_real path; electricity demand implied by the path must be met by the 05A pipeline at evidenced completion rates.",
+        "pass": "sector VA sum reconciles within identity tolerance without an unexplained residual sector",
+        "fail_flag": "a residual sector must grow faster than any evidenced sector growth",
+        "inputs": [
+          "05A",
+          "07A",
+          "08A",
+          "12A"
+        ]
+      },
+      {
+        "id": "FT-07",
+        "name": "Valuation vs volume and peg consistency (03A)",
+        "test": "Compute s_price (F11). Price/FX paths must satisfy F4 with the peg; q_IN and q_NP beyond their historical upper quartiles are flagged. Any milestone reached only under PF-4 is labelled 'valuation-dependent' and reported with welfare.py indicators.",
+        "pass": "milestone reached under PF-2 without relying on out-of-range valuation",
+        "fail_flag": "milestone reached only by valuation outside evidenced ranges",
+        "inputs": [
+          "03A fx_assumption_constraints",
+          "INP-05",
+          "INP-07"
+        ]
+      },
+      {
+        "id": "FT-08",
+        "name": "Shock robustness (16C)",
+        "test": "Apply S04-d, S05-d and S10 overlays; report crossing-year shift and recovery growth.",
+        "pass": "recovery growth remains within FT-01 envelope",
+        "fail_flag": "a single scenario pushes the requirement beyond FT-01",
+        "inputs": [
+          "16C shock_vectors",
+          "16C overlap_checks"
+        ]
+      },
+      {
+        "id": "FT-09",
+        "name": "Arithmetic integrity and convention invariance",
+        "test": "project() reproduces USD0 exactly in the base year (identity_rel_tol); F1 peg residual within tolerance; milestone crossing identical under FY-average vs CY-aligned conventions, otherwise ESC-03 is triggered.",
+        "pass": "all identities hold; convention does not move a crossing year",
+        "fail_flag": "crossing year depends on convention -> escalate ESC-03 to human reviewer and 15A/28E",
+        "inputs": [
+          "INP-01",
+          "INP-02",
+          "INP-03",
+          "INP-05"
+        ]
+      },
+      {
+        "id": "FT-10",
+        "name": "Trade-offs with the other objectives (welfare.py)",
+        "test": "For each path passing FT-01..FT-09, report the welfare.py objective indicators; a path that meets the GDP milestone by degrading another objective is reported as a trade-off, never optimised away.",
+        "pass": "trade-offs reported",
+        "fail_flag": "n/a (reporting requirement)",
+        "inputs": [
+          "src/economic_model/welfare.py"
+        ]
+      }
+    ],
+    "unattainability_conditions": {
+      "general_rule": "The target is unattainable by milestone M (labelled 'unattainable on current evidence', not a probability) if ANY of U1-U6 holds for every admissible price/FX case PF-1..PF-4 (PF-5 reported separately).",
+      "conditions": [
+        {
+          "id": "U1",
+          "condition": "USD0 * [(1+g_max(n))(1+p_max)]**n < T, where g_max(n) is the maximum real growth sustained for n years in the 01B envelope and p_max the upper-quartile USD price growth (SG-03/04)",
+          "test": "FT-01, FT-07"
+        },
+        {
+          "id": "U2",
+          "condition": "ICOR_min_evidenced x g_real_req(M) exceeds the maximum sustained investment share observed among comparators (or exceeds one)",
+          "test": "FT-02"
+        },
+        {
+          "id": "U3",
+          "condition": "(I/Y - S_nat/Y) implies an external-debt path breaching the DSA threshold or reserve cover below the peg floor, for the entire horizon",
+          "test": "FT-03"
+        },
+        {
+          "id": "U4",
+          "condition": "required capital delivery exceeds constrained_delivery output under 06C P50 settings with capacity growth at its fastest evidenced rate",
+          "test": "FT-04"
+        },
+        {
+          "id": "U5",
+          "condition": "required labour-productivity growth exceeds the comparator envelope under every WPP 2024 variant including Zero-migration",
+          "test": "FT-05"
+        },
+        {
+          "id": "U6",
+          "condition": "sector VA reconciliation requires a residual sector growing faster than any evidenced sector (energy, agriculture, ICT, goods exports)",
+          "test": "FT-06"
+        }
+      ],
+      "by_milestone": [
+        {
+          "milestone": 2050,
+          "n": "2050 - b (b pending)",
+          "binding_first": "U1 and U2 are expected to be tested first because n is shortest; which binds is pending r2 values",
+          "status": "pending"
+        },
+        {
+          "milestone": 2060,
+          "n": "2060 - b",
+          "binding_first": "U1/U2 then U3 (financing accumulates with n)",
+          "status": "pending"
+        },
+        {
+          "milestone": 2070,
+          "n": "2070 - b",
+          "binding_first": "U1 (duration of spell) and U5 (demographic ageing after the 10C dividend window) become relatively more important",
+          "status": "pending"
+        }
+      ],
+      "note": "The 'binding_first' ordering is a research-design expectation for sequencing r2 work, not a result; it is an assumption (01C-A10)."
+    },
+    "usd_conversion_proposal_esc03": {
+      "id": "01C-P-ESC03",
+      "type": "labelled proposal (assumption, not a decision)",
+      "to": "00A (register in config/model_config.yaml via Agent 00; human reviewer decides per ESC-03)",
+      "proposal": {
+        "headline_convention": "USD GDP(FY t) = NSO nominal GDP for FY t (latest NSO release; revision status recorded) / NRB NPR-per-USD average for the same FY t (arithmetic mean of daily NRB middle rates = (buying+selling)/2 over 16 July to 15 July; NRB-published FY average recorded as a second observation). Label FY t by its ending calendar year (FY2049/50 -> 2050), consistent with projection.py period_convention.",
+        "milestone_definition": "'US$3T by M' = first FY label <= M with USD GDP >= T. CY-equivalent crossing (geometric mean of adjacent FY values) reported alongside, never substituted.",
+        "cross_checks": "WDI NY.GDP.MKTP.CD, IMF WEO NGDPD and UN SNAAMA each reproduced from their own NPR GDP and FX (C-02) and kept as separate observations with the reproduction residual.",
+        "projection_fx": "Projected NPR/USD = peg ratio x INR/USD FY averages (03A-A1); d_peg = 0 unless a scenario states a parity change."
+      },
+      "rationale": [
+        "Tier-1 sources for both numerator and denominator (NSO, NRB).",
+        "Numerator and denominator cover the same 12 months; no FY/CY mixing (CLAUDE.md rule 6).",
+        "Matches the engine's period convention, so no conversion step is needed in project().",
+        "Reproducible from daily data (NRB API), independent of third-party vintage."
+      ],
+      "alternatives_considered": [
+        {
+          "option": "WDI/WEO USD GDP as headline",
+          "reason_not_proposed": "tier 2, vintage lag, year-label mapping must be inferred; kept as cross-check"
+        },
+        {
+          "option": "CY-average FX applied to FY GDP",
+          "reason_not_proposed": "mixes periods; violates rule 6"
+        },
+        {
+          "option": "End-of-period FX",
+          "reason_not_proposed": "stock-flow mismatch for a flow aggregate"
+        }
+      ],
+      "escalation_trigger": "If FT-09 shows the convention changes any crossing year, ESC-03 moves from 'watch' to 'open' and goes to the human reviewer with both positions, and to 15A/28E."
+    },
+    "research_question_status": {
+      "Q1": "pending - trajectories fully specified; values need INP-01..INP-08",
+      "Q2": "pending - formulas F1-F13 final; hypothetical config-only illustration provided",
+      "Q3": "pending - axes SG-01..SG-10 defined with evidence sources"
+    },
+    "lead_summary": {
+      "count": 49,
+      "reused_from_shared_register_or_upstream": 48,
+      "constructed_unverified": 1,
+      "web_searches_used_in_r1": 0
+    }
+  },
+  "source_leads": [
+    {
+      "id": "01C-L01",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/National%20Report_bzpm6lk.pdf",
+      "title": "National Accounts Statistics of Nepal 2024/25",
+      "publisher": "National Statistics Office, Nepal",
+      "contains": "Nominal GDP at current prices (NPR) and real GDP at constant prices by Nepal FY; implicit GDP deflator; revision status (preliminary/revised/final) per FY. Primary source for base_nominal_gdp_lcu and the historical deflator path (INP-01, INP-04).",
+      "source_id": "nso_nepal"
+    },
+    {
+      "id": "01C-L02",
+      "url": "https://nsonepal.gov.np",
+      "title": "NSO Nepal - national accounts releases (latest annual release and methodology)",
+      "publisher": "National Statistics Office, Nepal",
+      "contains": "Locator for the latest national-accounts release (to establish the latest FY with a revised vs preliminary estimate, i.e. the base year), time-series Excel tables and any rebasing announcement.",
+      "source_id": "nso_nepal"
+    },
+    {
+      "id": "01C-L03",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1693055240_78.pdf",
+      "title": "CBS national accounts publication (earlier vintage; title to confirm on retrieval)",
+      "publisher": "Central Bureau of Statistics (now NSO), Nepal",
+      "contains": "Earlier-vintage national accounts for the deflator back-series and vintage comparison (C-01, C-03).",
+      "source_id": "nso_nepal"
+    },
+    {
+      "id": "01C-L04",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (FY2025/26)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Statistical appendix: GDP at current and constant prices by FY, GDP deflator, NPR/USD FY averages as reported by MoF; used to cross-check NSO vintage and the NRB FY-average FX (C-01, C-02).",
+      "source_id": "mof_nepal"
+    },
+    {
+      "id": "01C-L05",
+      "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+      "title": "Economic Survey 2081/82 (FY2024/25)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Earlier-vintage macro appendix for revision tracking of base-year GDP and FX averages.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "id": "01C-L06",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "English-language macro appendix (GDP, deflator, exchange rate by FY) for definitions and vintage checks.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "id": "01C-L07",
+      "url": "https://www.nrb.org.np/forex/",
+      "title": "Foreign Exchange Rate (NRB)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Daily NRB reference buying/selling rates for USD and INR (NPR per unit); the NPR/INR peg ratio; the basis for FY-average NPR/USD (INP-02) and the peg parameter (INP-03).",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L08",
+      "url": "https://www.nrb.org.np/api-docs-v1/",
+      "title": "FOREX API Documentation (V1)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Machine-readable daily rates by date range; used to compute FY (16 July - 15 July) and CY averages of NPR/USD and NPR/INR reproducibly.",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L09",
+      "url": "https://www.nrb.org.np/contents/uploads/2022/07/Exchange-rates.xlsx",
+      "title": "Exchange Rate USDNPR (xlsx)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Historical NPR/USD time series for the FX back-series and for checking the NRB-published annual averages against averages computed from daily rates.",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L10",
+      "url": "https://www.nrb.org.np/contents/uploads/2022/08/Exchange-rate-1.xlsx",
+      "title": "Exchange rate time series (xlsx)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Historical exchange-rate workbook (period averages by FY/month; rate type to confirm on retrieval).",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L11",
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB_Working_Paper-NRB-WP-03-Aug_2007_A_Study_of_the_Trends_in_the_Nepalese-Indian_Currency_Exchange_Rate_during_the_Period_of_1932-1960-Nephil_Matangi_Maskay.pdf",
+      "title": "NRB Working Paper No. 3: Trends in the Nepalese-Indian Currency Exchange Rate 1932-1960",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "History of NPR/INR parity changes; evidence base for treating a peg adjustment as a discrete event rather than a trend (axis SG-05).",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L12",
+      "url": "https://www.nrb.org.np/ofg/governors_speech_at_rma_bhutan/",
+      "title": "Monetary Policy and Reserves Management under Pegged Exchange Rate (Governor's speech)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Official statement of the peg rationale and reserve-management framework; qualitative input to the peg-maintenance condition in FT-07.",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L13",
+      "url": "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+      "title": "The Impact of the Indian Monetary Policy and the Official Exchange Rate on Nepalese Monetary Policy",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Transmission of Indian inflation and policy to Nepal under the peg; evidence for the Nepal-India inflation-differential axis (SG-03).",
+      "source_id": "nrb"
+    },
+    {
+      "id": "01C-L14",
+      "url": "https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf",
+      "title": "Handbook of Statistics on Indian Economy - Exchange Rate of the Indian Rupee vis-a-vis major currencies",
+      "publisher": "Reserve Bank of India",
+      "contains": "INR/USD annual averages (Indian FY April-March and/or CY; confirm basis) for the long-run INR/USD depreciation distribution (INP-05, SG-04).",
+      "source_id": "rbi"
+    },
+    {
+      "id": "01C-L15",
+      "url": "https://www.rbi.org.in/scripts/referenceratearchive.aspx",
+      "title": "Reference Rate Archive",
+      "publisher": "Reserve Bank of India",
+      "contains": "Daily INR/USD reference rates (RBI/FBIL) to compute Nepal-FY-aligned INR/USD averages.",
+      "source_id": "rbi"
+    },
+    {
+      "id": "01C-L16",
+      "url": "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+      "title": "Database on Indian Economy - statistics",
+      "publisher": "Reserve Bank of India",
+      "contains": "INR/USD and Indian price indices (WPI, CPI) and national-accounts deflator series for the India leg of the USD-price decomposition (SG-03, SG-04).",
+      "source_id": "rbi"
+    },
+    {
+      "id": "01C-L17",
+      "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR80907599DE5FD164918A49085C9D6270116.PDF",
+      "title": "Monetary Policy Statement / Resolution of the MPC, August 3-5, 2026",
+      "publisher": "Reserve Bank of India",
+      "contains": "India's official inflation target framework and current projections (context for near-term Indian inflation; not a long-run path).",
+      "source_id": "rbi"
+    },
+    {
+      "id": "01C-L18",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CD?format=json&per_page=200",
+      "title": "WDI API: GDP (current US$), Nepal",
+      "publisher": "World Bank",
+      "contains": "Calendar-year-labelled USD GDP for Nepal; cross-check for the C-02 convention comparison (reproduce from NY.GDP.MKTP.CN and PA.NUS.FCRF; year-label mapping from WDI metadata).",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L19",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "title": "WDI API: GDP (current LCU), Nepal",
+      "publisher": "World Bank",
+      "contains": "NPR GDP as carried by WDI; checks the label mapping of Nepal FY to WDI year labels (C-01).",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L20",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.KN?format=json&per_page=200",
+      "title": "WDI NY.GDP.MKTP.KN - GDP (constant LCU), Nepal",
+      "publisher": "World Bank",
+      "contains": "Constant-price GDP for a deflator cross-check (NY.GDP.MKTP.CN / KN) against NSO implicit deflator.",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L21",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate (LCU per US$, period average), Nepal",
+      "publisher": "World Bank",
+      "contains": "CY-average NPR/USD; the FX leg of the WDI USD GDP computation (C-02).",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L22",
+      "url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate (LCU per US$, period average), India",
+      "publisher": "World Bank",
+      "contains": "CY-average INR/USD, cross-check to RBI series. URL constructed by analogy with the Nepal lead (unverified; general knowledge of the WDI API pattern).",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L23",
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD/NPL",
+      "title": "IMF WEO DataMapper: NGDPD, Nepal",
+      "publisher": "IMF",
+      "contains": "WEO nominal GDP in USD for Nepal; third value in C-02; WEO country notes state the fiscal-year basis. Projection years are never used as history.",
+      "source_id": "imf_weo"
+    },
+    {
+      "id": "01C-L24",
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/NPL",
+      "title": "IMF WEO DataMapper - real GDP growth, Nepal",
+      "publisher": "IMF",
+      "contains": "WEO real growth history and medium-term projection; the projection is recorded as IMF's assumption, not evidence, and used only as a comparator for TR-0 (C-03).",
+      "source_id": "imf_weo"
+    },
+    {
+      "id": "01C-L25",
+      "url": "https://www.imf.org/external/datamapper/api/v1/NID_NGDP/NPL",
+      "title": "IMF WEO DataMapper - total investment % of GDP, Nepal",
+      "publisher": "IMF",
+      "contains": "Investment ratio cross-check for FT-02 (01A owns the NSO series).",
+      "source_id": "imf_weo"
+    },
+    {
+      "id": "01C-L26",
+      "url": "https://www.imf.org/external/datamapper/api/v1/",
+      "title": "IMF World Economic Outlook DataMapper API",
+      "publisher": "IMF",
+      "contains": "Indicator endpoints needed for the USD-price decomposition: NGDP_D (GDP deflator) and PCPIPCH for NPL, IND and USA; NGDPD for comparators. Indicator codes to confirm against the API indicator list.",
+      "source_id": "imf_weo"
+    },
+    {
+      "id": "01C-L27",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "IMF",
+      "contains": "Medium-term macro framework (real growth, deflator, USD GDP, investment, saving, current account) on Nepal FY basis; exchange-rate regime assessment; DSA limits relevant to FT-03.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "id": "01C-L28",
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A002-en.xml",
+      "title": "Nepal: Staff Report for the 2026 Article IV Consultation and Seventh Review (eLibrary section)",
+      "publisher": "IMF",
+      "contains": "Same report, HTML sections: selected economic indicators table and external sector assessment (for FT-03 and FT-07).",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "id": "01C-L29",
+      "url": "https://population.un.org/wpp/",
+      "title": "UN World Population Prospects (latest revision)",
+      "publisher": "UN DESA Population Division",
+      "contains": "Nepal total and age-structured population by variant, 1 July reference, to 2100 (INP-06).",
+      "source_id": "un_wpp"
+    },
+    {
+      "id": "01C-L30",
+      "url": "https://www.un.org/development/desa/pd/content/world-population-prospects-2024-dataset",
+      "title": "World Population Prospects 2024: Dataset",
+      "publisher": "UN DESA Population Division",
+      "contains": "Downloadable files for Medium, Low, High, Constant-fertility, Zero-migration and probabilistic variants (10C paths POP-WPP24-*).",
+      "source_id": "un_wpp"
+    },
+    {
+      "id": "01C-L31",
+      "url": "https://population.un.org/wpp/assets/Files/WPP2024_Methodology-Report_Final.pdf",
+      "title": "WPP 2024 Methodology Report",
+      "publisher": "UN DESA Population Division",
+      "contains": "Definitions of variants, migration assumptions and reference date (needed for the FY population conversion 01C-A07 and the resident concept, C-06).",
+      "source_id": "un_wpp"
+    },
+    {
+      "id": "01C-L32",
+      "url": "https://censusnepal.cbs.gov.np/results",
+      "title": "NPHC 2021 results portal",
+      "publisher": "National Statistics Office, Nepal",
+      "contains": "Census 2021 usual-resident population and absent population abroad (separate series); base-year population cross-check (C-06).",
+      "source_id": "nso_nepal"
+    },
+    {
+      "id": "01C-L33",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials",
+      "publisher": "National Statistics Office, Nepal",
+      "contains": "Census thematic reports, possibly including NSO population projections from the NPHC 2021 base (POP-NSO-PROJ; document not yet located by 10C).",
+      "source_id": "nso_nepal"
+    },
+    {
+      "id": "01C-L34",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.TOTL?format=json&per_page=200",
+      "title": "WDI SP.POP.TOTL - Population, total, Nepal",
+      "publisher": "World Bank",
+      "contains": "WPP-based mid-year population, CY; cross-check only.",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L35",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.1564.TO.ZS?format=json&per_page=200",
+      "title": "WDI SP.POP.1564.TO.ZS - Population ages 15-64 (% of total), Nepal",
+      "publisher": "World Bank",
+      "contains": "Working-age share cross-check for FT-05 (10C owns the WPP series).",
+      "source_id": "wb_wdi"
+    },
+    {
+      "id": "01C-L36",
+      "url": "https://doi.org/10.34894/INZBF2",
+      "title": "Maddison Project Database 2023",
+      "publisher": "Groningen Growth and Development Centre",
+      "contains": "Long-run real GDP per capita for all economies; input to 01B spell statistics and the rate-duration upper envelope used in FT-01.",
+      "source_id": "maddison"
+    },
+    {
+      "id": "01C-L37",
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "title": "Penn World Table (latest version)",
+      "publisher": "Groningen Growth and Development Centre",
+      "contains": "rgdpna, pop, emp, csh_i, rnna for comparator investment shares and output per worker (FT-01, FT-02, FT-05).",
+      "source_id": "pwt"
+    },
+    {
+      "id": "01C-L38",
+      "url": "https://www.nber.org/papers/w20573",
+      "title": "Pritchett and Summers (2014) Asiaphoria Meets Regression to the Mean",
+      "publisher": "NBER",
+      "contains": "Persistence of growth rates across decades and regression to the mean; basis for the mean-reverting baseline variant TR-0b and the FT-01 persistence check.",
+      "source_id": "academic"
+    },
+    {
+      "id": "01C-L39",
+      "url": "https://link.springer.com/article/10.1007/s10887-005-4712-0",
+      "title": "Hausmann, Pritchett and Rodrik (2005) Growth Accelerations",
+      "publisher": "Journal of Economic Growth",
+      "contains": "Acceleration episode definition and list (01B definition B).",
+      "source_id": "academic"
+    },
+    {
+      "id": "01C-L40",
+      "url": "https://ideas.repec.org/a/eee/jmacro/v38y2013ipbp151-166.html",
+      "title": "Kar, Pritchett, Raihan and Sen (2013) Looking for a break",
+      "publisher": "Journal of Macroeconomics",
+      "contains": "Structural-break dating of growth regimes (01B definition C).",
+      "source_id": "academic"
+    },
+    {
+      "id": "01C-L41",
+      "url": "https://openknowledge.worldbank.org/bitstream/handle/10986/6507/449860PUB0Box3101OFFICIAL0USE0ONLY1.pdf",
+      "title": "Commission on Growth and Development (2008) The Growth Report",
+      "publisher": "World Bank",
+      "contains": "Sustained-growth case list (25-year definition) and characteristics incl. investment rates (01B definition A)."
+    },
+    {
+      "id": "01C-L42",
+      "url": "https://academic.oup.com/wber/article-abstract/14/2/221/1663667",
+      "title": "Pritchett (2000) Understanding Patterns of Economic Growth: Hills, Plateaus, Mountains, and Plains",
+      "publisher": "World Bank Economic Review",
+      "contains": "Volatility and regime shifts in developing-country growth; motivates path shapes S2/S3 rather than constant rates only.",
+      "source_id": "academic"
+    },
+    {
+      "id": "01C-L43",
+      "url": "https://ideas.repec.org/a/tpr/restat/v90y2008i3p582-587.html",
+      "title": "Jones and Olken (2008) The Anatomy of Start-Stop Growth",
+      "publisher": "Review of Economics and Statistics",
+      "contains": "Growth start/stop episodes; spell-end hazard for FT-01.",
+      "source_id": "academic"
+    },
+    {
+      "id": "01C-L44",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "World Bank (2025) Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum",
+      "publisher": "World Bank",
+      "contains": "Potential-growth and growth-diagnostic analysis for Nepal; comparator for TR-0 trend and for binding-constraint framing (read as analysis, tier 2).",
+      "source_id": "wb_npl"
+    },
+    {
+      "id": "01C-L45",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548411112541261",
+      "title": "Nepal Development Update, November 2025: Reforms to Accelerate Public Investment",
+      "publisher": "World Bank",
+      "contains": "Public investment execution evidence relevant to FT-04 (complements 06C) and near-term outlook.",
+      "source_id": "wb_npl"
+    },
+    {
+      "id": "01C-L46",
+      "url": "https://unstats.un.org/unsd/snaama/",
+      "title": "UN National Accounts Main Aggregates Database - Nepal",
+      "publisher": "UN Statistics Division",
+      "contains": "Fourth USD GDP series (UN conversion rate convention) for the C-02 comparison."
+    },
+    {
+      "id": "01C-L47",
+      "url": "https://kidb.adb.org/",
+      "title": "ADB Key Indicators Database - Nepal national accounts",
+      "publisher": "Asian Development Bank",
+      "contains": "FY-basis national accounts and exchange rates for Nepal; cross-check of FY-average FX.",
+      "source_id": "adb_nepal"
+    },
+    {
+      "id": "01C-L48",
+      "url": "https://www.imf.org/en/publications/wp/issues/2025/06/20/how-do-remittances-affect-the-real-exchange-rate-an-empirical-investigation-567747",
+      "title": "How Do Remittances Affect the Real Exchange Rate? An Empirical Investigation (IMF WP 2025)",
+      "publisher": "IMF",
+      "contains": "Evidence on remittance-driven real appreciation; relevant to the Nepal-India inflation differential axis SG-03 and the valuation-vs-volume test FT-07."
+    },
+    {
+      "id": "01C-L49",
+      "url": "https://www.imf.org/external/pubs/ft/wp/2010/wp10271.pdf",
+      "title": "Magud and Sosa (2010) When and Why Worry About Real Exchange Rate Appreciation?",
+      "publisher": "IMF",
+      "contains": "Growth effects of real appreciation; caution that USD GDP gains from appreciation may coincide with lower tradables growth (FT-07)."
+    }
+  ]
+}
