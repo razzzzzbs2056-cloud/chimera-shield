@@ -1,0 +1,2394 @@
+{
+  "subagent_id": "16B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). For each of the 20 exposure-register entries (EXP-01..EXP-20) the exact primary documents and tables that would measure it were located as source leads (NRB Current Macroeconomic and Financial Situation and FDI survey, NSO NLSS IV and Census 2021, MoLESS/DoFE labour migration reports, Department of Customs trade statistics, PDMO debt statistics, NOC, NEA, CAAN, tourism statistics, FATF/APG, WTO/UN CDP, ICIMOD, BIS, KNOMAD, World Bank IDS). No values were retrieved; all concentration metrics (13 defined, HHI and top-k shares by partner for trade, remittances, migrants, fuel, FDI, debt, tourism, electricity, aviation, essential imports and correspondent banking) are pending. Twelve candidate single points of failure are identified qualitatively (single petroleum supplier and India-only routes, Indian transit ports, northern crossings with China, GCC/Malaysia labour markets, India open-border migration, TIA and Gulf hubs, correspondent banking under FATF monitoring, India as sole electricity market, India-sourced fertiliser/medicines/food, the NPR-INR peg, upstream Tibetan cryosphere hazards, multilateral creditor concentration). Nine new exposure entries are proposed; the register file was not edited.",
+  "findings": [
+    {
+      "claim": "Q1 trade: partner concentration of goods imports and exports (India share, HHI) for the latest complete Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "nrb",
+        "un_comtrade"
+      ],
+      "note": "Customs annual FTS partner tables FY2023/24-FY2024/25 or trade-portal extracts; NRB CME trade-by-country table; mirror data for conflict check."
+    },
+    {
+      "claim": "Q1 remittances: remittances/GDP and corridor shares by sending country.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "nso_nepal",
+        "knomad"
+      ],
+      "note": "NRB personal remittances FY2024/25; NSO nominal GDP same FY; NLSS IV Chapter 16 and microdata; KNOMAD bilateral matrix latest vintage."
+    },
+    {
+      "claim": "Q1 migrants: labour approvals and migrant stock by destination.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe",
+        "nso_nepal",
+        "glmm"
+      ],
+      "note": "DoFE approvals by country FY2022/23-FY2025/26; Census 2021 absentees by destination; GCC host-country counts."
+    },
+    {
+      "claim": "Q1 fuel: petroleum share of imports and supplier/route shares.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "customs_nepal"
+      ],
+      "note": "NOC import volumes by product and supplier; customs HS 27 by partner and customs office."
+    },
+    {
+      "claim": "Q1 FDI: FDI stock by source country.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "doind"
+      ],
+      "note": "NRB FDI survey 2023/24 country table; DoI approvals kept separate."
+    },
+    {
+      "claim": "Q1 debt: external public debt by creditor and currency.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "pdmo",
+        "wb_ids"
+      ],
+      "note": "PDMO Government Debt Statistics creditor and currency tables (latest month), IDS creditor series."
+    },
+    {
+      "claim": "Q1 tourism: arrivals share by origin and travel receipts/GDP.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "tourism_ministry",
+        "nrb"
+      ],
+      "note": "Nepal Tourism Statistics 2024 nationality table (calendar year); NRB travel receipts (FY)."
+    },
+    {
+      "claim": "Q1 electricity: exports/imports by counterparty and season.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "cea_india"
+      ],
+      "note": "NEA annual report energy-balance tables FY2024/25."
+    },
+    {
+      "claim": "Q2 single points of failure: severity of each of SPOF-01..12 is unquantified.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "customs_nepal",
+        "dofe",
+        "caan",
+        "fatf",
+        "nea",
+        "icimod",
+        "pdmo"
+      ],
+      "note": "See specific.single_points_of_failure[].measure_needed."
+    },
+    {
+      "claim": "Concentration is measured by the Herfindahl-Hirschman index of partner shares (0-10000 scale) plus top-1/top-3 shares, computed separately for each source and period basis; values from methodologically different sources (e.g. NLSS vs KNOMAD corridors) are never merged.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Single points of failure are identified where a route, supplier, market, institution or hazard source is (a) concentrated and (b) lacks a short-run substitute; the list is qualitative until quantified.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Remittances by sending country are not (to be verified) published by NRB; only survey (NLSS IV) and modelled (KNOMAD) corridor data were located.",
+    "Latest Department of Customs annual trade book (FY2023/24, FY2024/25) not located as a direct file; only FY2022/23 book and trade portal.",
+    "DoFE yearly progress reports for FY2024/25 and FY2025/26 not located as direct files.",
+    "Port-level split of third-country transit cargo (Kolkata/Haldia vs Visakhapatnam) - requires Nepal Intermodal Transport Development Board or Indian port data; no lead located.",
+    "Seat-capacity data by hub (OAG/IATA) are licensed and not in the catalog.",
+    "Invoicing/settlement currency of trade (INR vs convertible) - no tabulation located.",
+    "Bank-level correspondent-relationship data for Nepal - likely supervisory, not public.",
+    "Location-level capital-stock valuation for EXP-20 - not published.",
+    "Official verification of reported 2026 events (Middle East conflict impacts on Nepali workers, Gulf permit suspension, Rasuwagadhi-Kerung flood, Tatopani closure)."
+  ],
+  "assumptions": [
+    {
+      "id": "16B-A1",
+      "text": "HHI and top-k shares are the standard concentration metrics for all partner dimensions; unit 'index' for HHI, 'percent' for shares.",
+      "basis": "assumption"
+    },
+    {
+      "id": "16B-A2",
+      "text": "A 'glacier/snow-fed' hydropower classification threshold (EXP-07) must be set by 25A as a labelled assumption; 16B does not set it.",
+      "basis": "assumption"
+    },
+    {
+      "id": "16B-A3",
+      "text": "HS-to-ECCN concordance for EXP-19 is an assumption to be documented by 19B; the metric is therefore an estimate, not a fact.",
+      "basis": "assumption"
+    },
+    {
+      "id": "16B-A4",
+      "text": "Register corrections and new entries are proposals only; the register file research/global_exposure/exposure_register.json is not edited in r1.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "23A",
+      "text": "EXP-02 counterparties omit India; DoFE approvals exclude India-bound and irregular migrants. Combine with Census 2021 absentee data and keep flows and stocks separate (proposed EXP-P03)."
+    },
+    {
+      "to": "23C",
+      "text": "EXP-01 corridor shares cannot be sourced from NRB BoP alone; NLSS IV (survey, incl. informal) and KNOMAD (modelled) must be reported as separate values with methodological notes."
+    },
+    {
+      "to": "21D",
+      "text": "EXP-15 owner 21D is not an owner of channel agricultural_output; EXP-16 domestic-production share ignores imported APIs (proposed EXP-P09); food staples lack an entry (proposed EXP-P01)."
+    },
+    {
+      "to": "20D",
+      "text": "EXP-17 uses unit 'ratio' for a count of relationships; split into a count and a percent share. units.py has no count unit - raise with 00A."
+    },
+    {
+      "to": "12B",
+      "text": "EXP-12: NRB realised FDI and DoI/IBN approvals differ methodologically; report both, do not substitute."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog lacks Nepal Intermodal Transport Development Board / Nepal Transit and Warehousing Company, ITC, World Bank Commodity Markets, IATA/OAG; several leads carry source_id null."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: candidate SPOF-03, SPOF-04 and EXP-13 timing may change conclusions of S01, S05, S08 and S10 once 2026 events are verified (leads L34, L47, L48, L52)."
+    },
+    {
+      "to": "28",
+      "text": "Request red-team review of the SPOF list and of the proposed EXP-P01..P09 for omissions (e.g. single-gateway telecom/internet backbone via India/China not yet assessed)."
+    }
+  ],
+  "uncertainty": "High. No concentration metric is quantified in r1. Candidate single points of failure rest on the content description of located documents and on search results, not on retrieved evidence; severity is unknown. Corridor-level remittance concentration will remain uncertain even after retrieval because the available sources measure different concepts (survey receipts vs modelled allocation). Several leads (customs, DoFE) point to older vintages or landing pages; the newest tables may require manual download.",
+  "specific": {
+    "exposure_register_entries": [
+      {
+        "id": "EXP-01",
+        "title": "Remittance dependence and corridor concentration",
+        "channel": "remittances",
+        "owner": "23C",
+        "register_source_ids": [
+          "nrb",
+          "knomad",
+          "nso_nepal"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NRB CME annual/monthly tables: workers' remittances and personal remittances (BoP secondary income), FY2024/25 and history; NSO NLSS IV Chapter 16 remittance by source; NLSS IV microdata by sender country; KNOMAD bilateral matrix (Nepal as recipient)",
+        "measurement_method": "Ratio of personal remittances to nominal GDP on the same Nepal FY basis (NRB numerator, NSO GDP denominator); corridor shares from NLSS IV (survey) and KNOMAD (modelled) kept as separate values",
+        "methodological_issues": "NRB BoP does not (to our knowledge, to be verified) publish remittances by sending country; NLSS captures household receipts incl. informal channels, KNOMAD allocates by migrant stock and income - three different concepts. Personal remittances vs workers' remittances differ in BPM6 coverage.",
+        "suggested_register_changes_not_applied": "Add India explicitly as separate corridor (already listed) and note that corridor shares cannot come from NRB alone; add knomad caveat 'modelled'.",
+        "lead_ids": [
+          "L01",
+          "L02",
+          "L04",
+          "L08",
+          "L09",
+          "L15",
+          "L16",
+          "L17",
+          "L47",
+          "L48",
+          "L73"
+        ]
+      },
+      {
+        "id": "EXP-02",
+        "title": "Migrant workers by destination",
+        "channel": "migrant_employment",
+        "owner": "23A",
+        "register_source_ids": [
+          "dofe",
+          "glmm"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "DoFE labour approvals by destination (Nepal Labour Migration Report 2024, FY2022/23-FY2023/24; DoFE yearly progress reports for later FYs); NPHC 2021 absent population by destination; GLMM host-country nationality tables",
+        "measurement_method": "Flows (approvals per FY) and stocks (census absentees, host-country counts) recorded as separate series; never sum approvals into stock without a documented attrition/return assumption",
+        "methodological_issues": "DoFE approvals exclude India (no permit) and irregular migrants and count renewals separately; census counts absentees reported by households at the census reference date; host-country data have mixed vintages.",
+        "suggested_register_changes_not_applied": "Add 'India' to counterparties (largest open-border corridor, not captured by DoFE). Split metric into 'approvals (flow)' and 'stock' with different units/periods.",
+        "lead_ids": [
+          "L10",
+          "L11",
+          "L12",
+          "L13",
+          "L14",
+          "L48",
+          "L79"
+        ]
+      },
+      {
+        "id": "EXP-03",
+        "title": "Goods trade concentration with India",
+        "channel": "transit_and_logistics",
+        "owner": "04A",
+        "register_source_ids": [
+          "customs_nepal",
+          "tepc"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "Department of Customs annual Foreign Trade Statistics book (partner-country tables) FY2022/23 and later books; Nepal Trade Information Portal partner queries; NRB CME trade-by-India/China/others table; UN Comtrade mirror data (India-reported exports to Nepal)",
+        "measurement_method": "India share = imports from India / total imports and exports to India / total exports, Nepal FY, customs basis; mirror comparison as a conflict check",
+        "methodological_issues": "Customs (FY, CIF imports) vs India-reported exports (Indian FY or calendar year, FOB) differ in valuation, timing and informal trade; electricity exports may or may not be included in customs totals depending on year - verify.",
+        "suggested_register_changes_not_applied": "Owner 04A is domestic; recommend 17A as external co-owner.",
+        "lead_ids": [
+          "L01",
+          "L02",
+          "L18",
+          "L19",
+          "L20",
+          "L21",
+          "L22"
+        ]
+      },
+      {
+        "id": "EXP-04",
+        "title": "Third-country trade transit via Indian ports",
+        "channel": "transit_and_logistics",
+        "owner": "21B",
+        "register_source_ids": [
+          "customs_nepal",
+          "wb_lpi"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "Customs statistics by customs office (Birgunj/ICD, Biratnagar, Bhairahawa, etc.) combined with transit declarations; Treaty of Transit and letters of exchange (designated ports and corridors); World Bank NIRTTP project documents; LPI 2023",
+        "measurement_method": "Third-country imports (non-India origin) entering via southern customs offices = proxy for Indian-port transit; share by port requires transit declaration data (ECTS/NITDB) not yet located",
+        "methodological_issues": "Customs records country of origin, not route; imports of Chinese origin can transit Indian ports or come overland via northern crossings. Port-level split needs Nepal Intermodal Transport Development Board or Indian port data (not located).",
+        "suggested_register_changes_not_applied": "Source list lacks the Nepal Intermodal Transport Development Board / Nepal Transit and Warehousing Company (not in catalog); propose adding.",
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L22",
+          "L23",
+          "L24",
+          "L25",
+          "L80"
+        ]
+      },
+      {
+        "id": "EXP-05",
+        "title": "Petroleum import dependence and supplier",
+        "channel": "fuel_prices",
+        "owner": "22A",
+        "register_source_ids": [
+          "noc_nepal",
+          "customs_nepal"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NOC import and sales volumes by product and FY; customs HS 27 imports by partner; NRB CME major-imports table (petroleum products value); IOC supply agreement documents",
+        "measurement_method": "Petroleum share of imports = HS 27 (petroleum products) value / total imports (Nepal FY); supplier share = volume via IOC / total NOC imports; LPG treated separately",
+        "methodological_issues": "Customs value vs NOC procurement cost differ (pricing formula, timing); some aviation fuel and LPG channels may differ from petrol/diesel supply route.",
+        "suggested_register_changes_not_applied": "Split into liquid fuels vs LPG; add pipeline/depot route as SPOF attribute.",
+        "lead_ids": [
+          "L01",
+          "L18",
+          "L21",
+          "L26",
+          "L27",
+          "L28",
+          "L29",
+          "L48",
+          "L74"
+        ]
+      },
+      {
+        "id": "EXP-06",
+        "title": "Cross-border electricity trade",
+        "channel": "electricity_trade",
+        "owner": "22B",
+        "register_source_ids": [
+          "nea",
+          "cea_india"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NEA annual report energy balance: exports to India and Bangladesh, imports from India, by month/season (FY); CEA India approvals of Nepali projects for cross-border sale",
+        "measurement_method": "GWh exported/imported by counterparty and by wet/dry season; revenue separately in NPR",
+        "methodological_issues": "Bangladesh sales transit Indian grid (trilateral arrangement) - counterparty vs route differ; NEA units in kWh/'units' convert to GWh.",
+        "suggested_register_changes_not_applied": "Add 'route: India grid' attribute for Bangladesh flows.",
+        "lead_ids": [
+          "L30",
+          "L31"
+        ]
+      },
+      {
+        "id": "EXP-07",
+        "title": "Glacier- and snow-fed share of hydropower",
+        "channel": "hydro_generation",
+        "owner": "25A",
+        "register_source_ids": [
+          "icimod",
+          "nea"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NEA annual report generation by plant and river basin; ICIMOD basin hydrology studies; ICIMOD/UNDP glacial lake inventory",
+        "measurement_method": "Capacity (MW) located in basins with significant snow/glacier melt contribution / total capacity; threshold for 'glacier/snow-fed' is an explicit assumption to be set by 25A",
+        "methodological_issues": "No official classification of plants by melt share; requires hydrological-model evidence per basin.",
+        "suggested_register_changes_not_applied": "Unit percent is fine; add the classification threshold as a labelled assumption.",
+        "lead_ids": [
+          "L30",
+          "L32",
+          "L33"
+        ]
+      },
+      {
+        "id": "EXP-08",
+        "title": "Tourism source markets",
+        "channel": "tourism_demand",
+        "owner": "12C",
+        "register_source_ids": [
+          "tourism_ministry",
+          "nrb"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "Nepal Tourism Statistics (calendar year) arrivals by nationality and mode; NRB CME travel receipts (FY)",
+        "measurement_method": "Arrival shares by origin (calendar year); travel receipts / GDP (Nepal FY) - keep as two separate metrics",
+        "methodological_issues": "Calendar year vs FY mismatch; coverage of Indian arrivals by land requires verification; receipts are not split by origin.",
+        "suggested_register_changes_not_applied": "Split into two metrics with explicit period basis.",
+        "lead_ids": [
+          "L01",
+          "L02",
+          "L37",
+          "L38",
+          "L73"
+        ]
+      },
+      {
+        "id": "EXP-09",
+        "title": "Air connectivity through Gulf hubs",
+        "channel": "aviation_connectivity",
+        "owner": "19C",
+        "register_source_ids": [
+          "caan"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "CAAN international airlines list and TIA brief; CAAN air traffic demand study; airline schedules (licensed data, not in catalog)",
+        "measurement_method": "Share of weekly international seats operated by Gulf- and India-hub carriers (seat-capacity basis)",
+        "methodological_issues": "Seat data from OAG/IATA are licensed; CAAN publications may provide flights/seats only in aggregate.",
+        "suggested_register_changes_not_applied": "Add 'single international gateway (TIA)' attribute; consider new SPOF entry.",
+        "lead_ids": [
+          "L39",
+          "L40",
+          "L41",
+          "L48"
+        ]
+      },
+      {
+        "id": "EXP-10",
+        "title": "NPR-INR peg and INR/USD exposure",
+        "channel": "exchange_rate",
+        "owner": "20B",
+        "register_source_ids": [
+          "nrb",
+          "rbi"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NRB monetary policy statement (peg); NRB FXM directives on INR vs convertible-currency payment for imports from India; RBI exchange-control supplement for Nepal; NRB CME tables on convertible-currency purchase/INR",
+        "measurement_method": "Share of merchandise trade settled in INR vs convertible currency (Nepal FY); INR/USD volatility from RBI reference rate",
+        "methodological_issues": "Invoicing currency is not tabulated by customs; settlement currency may be derivable from NRB foreign-exchange tables - to be verified.",
+        "suggested_register_changes_not_applied": "Channel 'exchange_rate' is a projection channel - fine; add rbi series id once retrieved.",
+        "lead_ids": [
+          "L01",
+          "L02",
+          "L05",
+          "L06",
+          "L07",
+          "L47",
+          "L71"
+        ]
+      },
+      {
+        "id": "EXP-11",
+        "title": "External public debt by creditor and currency",
+        "channel": "external_financing",
+        "owner": "20C",
+        "register_source_ids": [
+          "pdmo",
+          "wb_ids"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "PDMO monthly Government Debt Statistics (creditor and currency tables), Public Debt Bulletin, MTDS report; World Bank IDS; IMF 2026 Article IV DSA",
+        "measurement_method": "Creditor shares and currency shares of central-government external debt (PDMO, month-end within Nepal FY); IDS totals as separate calendar-year series",
+        "methodological_issues": "PDMO covers central-government external debt; IDS covers total external debt incl. private and publicly guaranteed; SDR-denominated IDA/IMF debt affects currency composition.",
+        "suggested_register_changes_not_applied": "Add currency (SDR/USD/JPY/CNY) as explicit sub-metric.",
+        "lead_ids": [
+          "L42",
+          "L43",
+          "L44",
+          "L45",
+          "L46",
+          "L47"
+        ]
+      },
+      {
+        "id": "EXP-12",
+        "title": "FDI by source country",
+        "channel": "external_financing",
+        "owner": "12B",
+        "register_source_ids": [
+          "nrb",
+          "doind"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NRB Survey Report on FDI in Nepal 2023/24 and 2022/23 (stock by source country and sector); Department of Industry approvals",
+        "measurement_method": "FDI stock share by source country (end-FY, NRB survey); approvals kept separate",
+        "methodological_issues": "Approved (DoI/IBN) vs realised (NRB) FDI differ widely; round-tripping and ultimate vs immediate investor country.",
+        "suggested_register_changes_not_applied": "Owner 12B domestic; add 18B/18D as external co-owners.",
+        "lead_ids": [
+          "L01",
+          "L49",
+          "L50",
+          "L51"
+        ]
+      },
+      {
+        "id": "EXP-13",
+        "title": "Loss of LDC-specific trade preferences",
+        "channel": "trade_preferences",
+        "owner": "21A",
+        "register_source_ids": [
+          "wto",
+          "undesa_ldc",
+          "eu_trade"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "WTO/EIF trade impacts of LDC graduation (Nepal chapters); ITC Nepal after LDC graduation; UN CDP crisis assessment July 2026; ILO employment impact assessment; WTO tariff data",
+        "measurement_method": "Value of exports entering markets under LDC-only preferences / total goods exports, by market, for the latest FY with customs HS-8 data",
+        "methodological_issues": "Utilisation of preferences vs eligibility; EU/UK transition periods and the possible extension of Nepal's preparatory period change timing.",
+        "suggested_register_changes_not_applied": "Add 'graduation effective date' as a dated event attribute; status of Nepal's extension request pending.",
+        "lead_ids": [
+          "L47",
+          "L52",
+          "L53",
+          "L54",
+          "L55",
+          "L56",
+          "L75"
+        ]
+      },
+      {
+        "id": "EXP-14",
+        "title": "Digital-service exports exposed to AI substitution",
+        "channel": "digital_services_demand",
+        "owner": "08A",
+        "register_source_ids": [
+          "nrb",
+          "unctadstat"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "NRB BoP services lines (telecom/computer/information; other business services); UNCTAD digitally deliverable services; industry surveys (secondary)",
+        "measurement_method": "ICT/BPO exports value (USD, FY) by segment; destination split pending a survey source",
+        "methodological_issues": "Possible misclassification of service receipts as remittances; no official destination breakdown.",
+        "suggested_register_changes_not_applied": "Add 'measurement conflict flag' until NRB and industry figures are reconciled.",
+        "lead_ids": [
+          "L01",
+          "L02",
+          "L03",
+          "L57",
+          "L73"
+        ]
+      },
+      {
+        "id": "EXP-15",
+        "title": "Fertiliser import dependence",
+        "channel": "agricultural_output",
+        "owner": "21D",
+        "register_source_ids": [
+          "customs_nepal",
+          "fao_stat"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "Customs HS 31 imports by partner; FAOSTAT fertiliser use and imports; G2G fertiliser agreement with India (AICL/STCL) documents",
+        "measurement_method": "Imported share of fertiliser use = imports (nutrient tonnes) / use; supplier HHI from customs partner data",
+        "methodological_issues": "Informal cross-border fertiliser flows are unrecorded; FAO nutrient basis vs customs product tonnes.",
+        "suggested_register_changes_not_applied": "Channel agricultural_output owners (07A, 25E) do not include owner 21D; add 21D to channel owners.",
+        "lead_ids": [
+          "L18",
+          "L19",
+          "L20",
+          "L21",
+          "L28",
+          "L29",
+          "L60",
+          "L61"
+        ]
+      },
+      {
+        "id": "EXP-16",
+        "title": "Medicine and medical-supply import dependence",
+        "channel": "transit_and_logistics",
+        "owner": "21D",
+        "register_source_ids": [
+          "customs_nepal",
+          "mohp"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "DDA annual reports (domestic vs imported market share by origin); customs HS 30 imports by partner; Pharmexcil profile (secondary)",
+        "measurement_method": "Imported share of pharmaceutical consumption (value) and India share of imports",
+        "methodological_issues": "Domestic production relies on imported APIs (active ingredients) - 'domestic' share overstates independence; API origin (China/India) must be tracked.",
+        "suggested_register_changes_not_applied": "Channel 'transit_and_logistics' is imperfect; consider an 'essential_supplies' channel or map to 21D explicitly; add API dependence sub-metric.",
+        "lead_ids": [
+          "L18",
+          "L19",
+          "L20",
+          "L21",
+          "L62",
+          "L63"
+        ]
+      },
+      {
+        "id": "EXP-17",
+        "title": "Correspondent banking concentration",
+        "channel": "financial_compliance",
+        "owner": "20D",
+        "register_source_ids": [
+          "nrb",
+          "bis_bank"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "BIS CPMI correspondent banking data for Nepal; NRB Financial Stability Report; NRB FXM circulars; FIU-Nepal newsletter",
+        "measurement_method": "Number of active correspondent relationships and share of USD/INR payment value via top-3 correspondents",
+        "methodological_issues": "BIS data are SWIFT-based and country-level; bank-level concentration requires NRB supervisory data that may not be public.",
+        "suggested_register_changes_not_applied": "Unit 'ratio' for a count is inconsistent - split into a count of relationships (units.py has no count unit; raise with 00A) and a share (percent).",
+        "lead_ids": [
+          "L04",
+          "L06",
+          "L65",
+          "L68",
+          "L69"
+        ]
+      },
+      {
+        "id": "EXP-18",
+        "title": "FATF/APG standing",
+        "channel": "financial_compliance",
+        "owner": "20E",
+        "register_source_ids": [
+          "fatf",
+          "apg"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "FATF Nepal country page and plenary statements (Feb 2025 onward); APG MER 2023 and follow-up report 2025",
+        "measurement_method": "Listing status (categorical) and number of open action-plan items / MER ratings",
+        "methodological_issues": "Categorical status is not an index; encode as an ordinal code with a documented mapping.",
+        "suggested_register_changes_not_applied": "Unit 'index' should be documented as ordinal mapping (e.g. not listed / increased monitoring / call for action).",
+        "lead_ids": [
+          "L04",
+          "L47",
+          "L64",
+          "L65",
+          "L66",
+          "L67",
+          "L68"
+        ]
+      },
+      {
+        "id": "EXP-19",
+        "title": "Imported technology subject to export controls",
+        "channel": "technology_costs",
+        "owner": "19B",
+        "register_source_ids": [
+          "bis_us",
+          "un_comtrade"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "BIS Commerce Country Chart and EAR country groups for Nepal; customs HS 84/85 imports by partner; UN Comtrade mirror",
+        "measurement_method": "Share of ICT capital imports falling under ECCN-controlled categories; requires HS-to-ECCN concordance (assumption)",
+        "methodological_issues": "No official HS-ECCN concordance; controls apply to items/end-users, not to HS lines.",
+        "suggested_register_changes_not_applied": "Mark metric as estimate-type requiring a labelled concordance assumption.",
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L21",
+          "L58",
+          "L59"
+        ]
+      },
+      {
+        "id": "EXP-20",
+        "title": "Transboundary flood exposure",
+        "channel": "infrastructure_damage",
+        "owner": "25C",
+        "register_source_ids": [
+          "ndrrma",
+          "icimod",
+          "thinkhazard"
+        ],
+        "status": "pending",
+        "value": null,
+        "primary_tables": "ICIMOD/UNDP glacial lake inventory; ICIMOD Kyirong-Rasuwa 2026 flood page; BIPAD incident database; ThinkHazard river flood class",
+        "measurement_method": "Capital stock (hydropower plants, roads, customs/border facilities) located in mapped cross-border flood/GLOF zones; requires asset inventory and hazard polygons",
+        "methodological_issues": "Capital-stock valuation of assets is not published at location level; ThinkHazard provides hazard class, not exposure value.",
+        "suggested_register_changes_not_applied": "Add Rasuwagadhi-Kerung and Tatopani-Zhangmu corridors as named assets; link to proposed northern-border entry.",
+        "lead_ids": [
+          "L32",
+          "L34",
+          "L35",
+          "L36"
+        ]
+      }
+    ],
+    "concentration_metrics": [
+      {
+        "id": "CM-01",
+        "dimension": "Goods imports by partner",
+        "metrics": "Herfindahl-Hirschman index = sum of squared partner shares (shares in percent, scale 0-10000), plus top-1 and top-3 shares",
+        "unit": "index; percent",
+        "period_basis": "Nepal FY, customs basis",
+        "exposure_ids": [
+          "EXP-03"
+        ],
+        "source_ids": [
+          "customs_nepal",
+          "un_comtrade"
+        ],
+        "lead_ids": [
+          "L18",
+          "L19",
+          "L20",
+          "L21",
+          "L01"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-02",
+        "dimension": "Goods exports by partner",
+        "metrics": "Herfindahl-Hirschman index = sum of squared partner shares (shares in percent, scale 0-10000), plus top-1 and top-3 shares",
+        "unit": "index; percent",
+        "period_basis": "Nepal FY, customs basis",
+        "exposure_ids": [
+          "EXP-03",
+          "EXP-13"
+        ],
+        "source_ids": [
+          "customs_nepal",
+          "un_comtrade"
+        ],
+        "lead_ids": [
+          "L18",
+          "L19",
+          "L20",
+          "L21"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-03",
+        "dimension": "Remittances by sending country",
+        "metrics": "Herfindahl-Hirschman index = sum of squared partner shares (shares in percent, scale 0-10000), plus top-1 and top-3 shares; computed separately from NLSS IV (survey) and KNOMAD (modelled) - never merged",
+        "unit": "index; percent",
+        "period_basis": "NLSS IV survey year 2022/23; KNOMAD calendar year",
+        "exposure_ids": [
+          "EXP-01"
+        ],
+        "source_ids": [
+          "nso_nepal",
+          "knomad"
+        ],
+        "lead_ids": [
+          "L08",
+          "L09",
+          "L15",
+          "L16",
+          "L17"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": "Two methodologically different estimates; report both."
+      },
+      {
+        "id": "CM-04",
+        "dimension": "Migrant workers by destination",
+        "metrics": "HHI and top-3 shares for (a) DoFE new approvals per FY and (b) census absentee stock",
+        "unit": "index; percent",
+        "period_basis": "(a) Nepal FY; (b) census 2021",
+        "exposure_ids": [
+          "EXP-02"
+        ],
+        "source_ids": [
+          "dofe",
+          "nso_nepal",
+          "glmm"
+        ],
+        "lead_ids": [
+          "L10",
+          "L11",
+          "L12",
+          "L13",
+          "L14"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": "(a) excludes India."
+      },
+      {
+        "id": "CM-05",
+        "dimension": "Petroleum products by supplier and route",
+        "metrics": "Supplier share (IOC vs other) by volume; share of volume by entry route (pipeline vs road tankers by border point)",
+        "unit": "percent",
+        "period_basis": "Nepal FY",
+        "exposure_ids": [
+          "EXP-05"
+        ],
+        "source_ids": [
+          "noc_nepal",
+          "customs_nepal"
+        ],
+        "lead_ids": [
+          "L26",
+          "L27",
+          "L18"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-06",
+        "dimension": "FDI stock by source country",
+        "metrics": "Herfindahl-Hirschman index = sum of squared partner shares (shares in percent, scale 0-10000), plus top-1 and top-3 shares",
+        "unit": "index; percent",
+        "period_basis": "End of Nepal FY (NRB survey)",
+        "exposure_ids": [
+          "EXP-12"
+        ],
+        "source_ids": [
+          "nrb"
+        ],
+        "lead_ids": [
+          "L49",
+          "L50"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-07",
+        "dimension": "External public debt by creditor",
+        "metrics": "Herfindahl-Hirschman index = sum of squared partner shares (shares in percent, scale 0-10000), plus top-1 and top-3 shares across creditors (IDA, ADB, IMF, bilateral)",
+        "unit": "index; percent",
+        "period_basis": "PDMO month-end within Nepal FY",
+        "exposure_ids": [
+          "EXP-11"
+        ],
+        "source_ids": [
+          "pdmo",
+          "wb_ids"
+        ],
+        "lead_ids": [
+          "L42",
+          "L43",
+          "L44",
+          "L46"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-08",
+        "dimension": "External public debt by currency",
+        "metrics": "Currency shares (SDR, USD, JPY, EUR, CNY, INR, other)",
+        "unit": "percent",
+        "period_basis": "PDMO month-end / MTDS",
+        "exposure_ids": [
+          "EXP-11"
+        ],
+        "source_ids": [
+          "pdmo"
+        ],
+        "lead_ids": [
+          "L44",
+          "L45"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-09",
+        "dimension": "Tourist arrivals by origin",
+        "metrics": "Herfindahl-Hirschman index = sum of squared partner shares (shares in percent, scale 0-10000), plus top-1 and top-3 shares",
+        "unit": "index; percent",
+        "period_basis": "Calendar year",
+        "exposure_ids": [
+          "EXP-08"
+        ],
+        "source_ids": [
+          "tourism_ministry"
+        ],
+        "lead_ids": [
+          "L37",
+          "L38"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-10",
+        "dimension": "Electricity trade by counterparty and season",
+        "metrics": "Export and import GWh shares by counterparty; dry-season import share of dry-season supply",
+        "unit": "percent",
+        "period_basis": "Nepal FY, monthly",
+        "exposure_ids": [
+          "EXP-06"
+        ],
+        "source_ids": [
+          "nea"
+        ],
+        "lead_ids": [
+          "L30",
+          "L31"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-11",
+        "dimension": "International seats by hub region",
+        "metrics": "Share of international seats via Gulf hubs, Indian hubs, other; share handled at TIA",
+        "unit": "percent",
+        "period_basis": "Scheduling season",
+        "exposure_ids": [
+          "EXP-09"
+        ],
+        "source_ids": [
+          "caan"
+        ],
+        "lead_ids": [
+          "L39",
+          "L40",
+          "L41"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-12",
+        "dimension": "Essential imports by supplier (fertiliser, medicines, rice/paddy)",
+        "metrics": "India share and HHI by HS group 31, 30, 1006",
+        "unit": "index; percent",
+        "period_basis": "Nepal FY, customs basis",
+        "exposure_ids": [
+          "EXP-15",
+          "EXP-16"
+        ],
+        "source_ids": [
+          "customs_nepal",
+          "mohp",
+          "fao_stat"
+        ],
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L21",
+          "L60",
+          "L62"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      },
+      {
+        "id": "CM-13",
+        "dimension": "Cross-border payments by correspondent",
+        "metrics": "Number of active correspondents; top-3 share of payment value",
+        "unit": "ratio; percent",
+        "period_basis": "Calendar year (BIS CPMI)",
+        "exposure_ids": [
+          "EXP-17"
+        ],
+        "source_ids": [
+          "bis_bank",
+          "nrb"
+        ],
+        "lead_ids": [
+          "L69",
+          "L04"
+        ],
+        "status": "pending",
+        "value": null,
+        "note": ""
+      }
+    ],
+    "single_points_of_failure": [
+      {
+        "id": "SPOF-01",
+        "name": "Single petroleum supplier and India-only supply routes",
+        "type": "supplier/route",
+        "description": "NOC documents describe petroleum imports under a long-term arrangement with Indian Oil Corporation, supplied from Indian depots; NOC holds the import right for petrol and diesel. Supplier, route and importer are each concentrated.",
+        "counterparties": [
+          "India (Indian Oil Corporation)"
+        ],
+        "exposure_ids": [
+          "EXP-05"
+        ],
+        "scenarios": [
+          "S01",
+          "S02",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Supplier share by volume; days of storage cover; share by entry route (pipeline vs road)",
+        "lead_ids": [
+          "L26",
+          "L27",
+          "L18"
+        ]
+      },
+      {
+        "id": "SPOF-02",
+        "name": "Indian seaports and designated transit corridors for third-country trade",
+        "type": "route",
+        "description": "Third-country trade depends on Kolkata/Haldia and Visakhapatnam ports and designated road/rail corridors to Nepal's southern border (Birgunj ICD and others) under the Treaty of Transit.",
+        "counterparties": [
+          "India"
+        ],
+        "exposure_ids": [
+          "EXP-04"
+        ],
+        "scenarios": [
+          "S02",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Share of third-country imports by port and corridor; dwell/transit times; alternative-route capacity",
+        "lead_ids": [
+          "L22",
+          "L23",
+          "L24",
+          "L25",
+          "L80"
+        ]
+      },
+      {
+        "id": "SPOF-03",
+        "name": "Northern land crossings with China (Rasuwagadhi-Kerung, Tatopani-Zhangmu)",
+        "type": "route",
+        "description": "The main northern trade crossings are few and located in high-hazard valleys; ICIMOD reports a 2026 cross-border flood affecting Rasuwagadhi-Kerung, and other search results report closure of Tatopani (unverified).",
+        "counterparties": [
+          "China"
+        ],
+        "exposure_ids": [
+          "EXP-03",
+          "EXP-20"
+        ],
+        "scenarios": [
+          "S02",
+          "S05",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Share of China-origin imports by crossing; closure days per year; reconstruction timeline",
+        "lead_ids": [
+          "L34",
+          "L18",
+          "L36"
+        ]
+      },
+      {
+        "id": "SPOF-04",
+        "name": "Gulf (GCC) and Malaysian labour markets",
+        "type": "labour market",
+        "description": "Labour-approval destinations are concentrated in a few GCC states and Malaysia; a 2026 Middle East conflict and a reported temporary suspension of labour permits for the region (unverified) illustrate simultaneous hit to employment, remittances and aviation.",
+        "counterparties": [
+          "Qatar",
+          "Saudi Arabia",
+          "UAE",
+          "Kuwait",
+          "Malaysia"
+        ],
+        "exposure_ids": [
+          "EXP-01",
+          "EXP-02",
+          "EXP-09"
+        ],
+        "scenarios": [
+          "S01",
+          "S06",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Approvals HHI; remittance corridor shares; stock at risk in conflict-affected states",
+        "lead_ids": [
+          "L12",
+          "L13",
+          "L14",
+          "L47",
+          "L48"
+        ]
+      },
+      {
+        "id": "SPOF-05",
+        "name": "India open-border labour market",
+        "type": "labour market",
+        "description": "Migration to India is unregulated by labour permits and absent from DoFE statistics; a policy or security change at the open border affects a large unmeasured corridor.",
+        "counterparties": [
+          "India"
+        ],
+        "exposure_ids": [
+          "EXP-01",
+          "EXP-02"
+        ],
+        "scenarios": [
+          "S02",
+          "S06"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Census absentee stock in India; NLSS remittance share from India",
+        "lead_ids": [
+          "L08",
+          "L10"
+        ]
+      },
+      {
+        "id": "SPOF-06",
+        "name": "Tribhuvan International Airport and Gulf-hub carriers",
+        "type": "route",
+        "description": "International passenger access concentrates at one main gateway (TIA) and on carriers routing via Gulf and Indian hubs; airspace closures in the Gulf hit tourists and migrant travel together.",
+        "counterparties": [
+          "UAE",
+          "Qatar",
+          "India"
+        ],
+        "exposure_ids": [
+          "EXP-08",
+          "EXP-09"
+        ],
+        "scenarios": [
+          "S01",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Share of international seats at TIA and via Gulf hubs; alternative airport capacity",
+        "lead_ids": [
+          "L39",
+          "L40",
+          "L41"
+        ]
+      },
+      {
+        "id": "SPOF-07",
+        "name": "USD correspondent-banking access under FATF increased monitoring",
+        "type": "financial system",
+        "description": "FATF publications list Nepal under increased monitoring from February 2025 (to be confirmed from retrieved document); de-risking by a small number of USD/INR correspondents could raise remittance and trade-payment costs.",
+        "counterparties": [
+          "USD correspondents",
+          "INR correspondents",
+          "FATF/APG"
+        ],
+        "exposure_ids": [
+          "EXP-17",
+          "EXP-18"
+        ],
+        "scenarios": [
+          "S03",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Active correspondents count; top-3 share; open action items",
+        "lead_ids": [
+          "L64",
+          "L65",
+          "L66",
+          "L67",
+          "L68",
+          "L69",
+          "L04"
+        ]
+      },
+      {
+        "id": "SPOF-08",
+        "name": "India as sole market and transit grid for electricity exports",
+        "type": "market/route",
+        "description": "Electricity exports go to India or through the Indian grid to Bangladesh, and depend on project-by-project approval by the Indian designated authority; dry-season imports come from India.",
+        "counterparties": [
+          "India",
+          "Bangladesh"
+        ],
+        "exposure_ids": [
+          "EXP-06"
+        ],
+        "scenarios": [
+          "S02",
+          "S09"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Export GWh by counterparty; share of approved vs installed export-capable capacity; dry-season import dependence",
+        "lead_ids": [
+          "L30",
+          "L31"
+        ]
+      },
+      {
+        "id": "SPOF-09",
+        "name": "India as dominant supplier of fertiliser, medicines and food staples",
+        "type": "supplier",
+        "description": "Fertiliser supply relies on a government-to-government arrangement with India; medicines and rice/paddy are largely sourced from India; Indian export restrictions (e.g. the 2023 non-basmati rice restriction) transmit directly.",
+        "counterparties": [
+          "India"
+        ],
+        "exposure_ids": [
+          "EXP-15",
+          "EXP-16"
+        ],
+        "scenarios": [
+          "S02",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "India share by HS group; stock cover; frequency of Indian export restrictions",
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L60",
+          "L61",
+          "L62",
+          "L63"
+        ]
+      },
+      {
+        "id": "SPOF-10",
+        "name": "NPR-INR peg as single nominal anchor",
+        "type": "financial system",
+        "description": "The fixed NPR-INR peg transmits INR/USD movements and Indian monetary conditions to Nepal; a disorderly INR move or peg stress is a single-point exposure for prices and debt service in USD/SDR.",
+        "counterparties": [
+          "India"
+        ],
+        "exposure_ids": [
+          "EXP-10",
+          "EXP-11"
+        ],
+        "scenarios": [
+          "S02",
+          "S03",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "INR/USD volatility; share of trade and debt in non-INR currencies",
+        "lead_ids": [
+          "L05",
+          "L06",
+          "L07",
+          "L71"
+        ]
+      },
+      {
+        "id": "SPOF-11",
+        "name": "Upstream cryosphere hazards in Tibet (China) for Koshi and Trishuli basins",
+        "type": "hazard source",
+        "description": "Potentially dangerous glacial lakes in upstream Tibetan catchments can generate floods in Nepal that Nepal cannot monitor alone; hydropower and border infrastructure in these valleys are exposed.",
+        "counterparties": [
+          "China (Tibet)"
+        ],
+        "exposure_ids": [
+          "EXP-07",
+          "EXP-20"
+        ],
+        "scenarios": [
+          "S05",
+          "S10"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Capacity (MW) and assets downstream of listed lakes; early-warning data-sharing arrangements",
+        "lead_ids": [
+          "L32",
+          "L33",
+          "L34",
+          "L36"
+        ]
+      },
+      {
+        "id": "SPOF-12",
+        "name": "Concessional creditor concentration (IDA and ADB)",
+        "type": "institution",
+        "description": "External public debt is dominated by a few multilateral creditors; changes in their allocation or terms (e.g. income-category transitions) affect financing more than market conditions.",
+        "counterparties": [
+          "World Bank IDA",
+          "ADB"
+        ],
+        "exposure_ids": [
+          "EXP-11"
+        ],
+        "scenarios": [
+          "S04",
+          "S08"
+        ],
+        "evidence_status": "qualitative candidate identified from search-located documents; not yet verified from retrieved primary documents",
+        "severity": "pending",
+        "measure_needed": "Creditor HHI; share of new commitments by creditor; terms change triggers",
+        "lead_ids": [
+          "L42",
+          "L44",
+          "L46",
+          "L47"
+        ]
+      }
+    ],
+    "proposed_new_exposure_entries": [
+      {
+        "proposed_id": "EXP-P01",
+        "title": "Food-staple import dependence and Indian export restrictions (rice/paddy, sugar, pulses, edible oil)",
+        "channel": "agricultural_output",
+        "counterparties": [
+          "India"
+        ],
+        "metric": "imported share of consumption; India share of imports; restriction events per year",
+        "unit": "percent",
+        "owner_suggested": "21D",
+        "source_ids": [
+          "customs_nepal",
+          "fao_stat"
+        ],
+        "scenarios": [
+          "S02",
+          "S10"
+        ],
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L21",
+          "L60"
+        ],
+        "rationale": "Not covered by EXP-15/16; Indian export restrictions are a documented transmission path."
+      },
+      {
+        "proposed_id": "EXP-P02",
+        "title": "Northern border crossings with China",
+        "channel": "transit_and_logistics",
+        "counterparties": [
+          "China"
+        ],
+        "metric": "share of China-origin imports by crossing; closure days",
+        "unit": "percent",
+        "owner_suggested": "21B",
+        "source_ids": [
+          "customs_nepal",
+          "icimod"
+        ],
+        "scenarios": [
+          "S02",
+          "S05",
+          "S10"
+        ],
+        "lead_ids": [
+          "L18",
+          "L34"
+        ],
+        "rationale": "EXP-04 covers only Indian ports; the 2026 Rasuwagadhi event (to be verified) shows a separate exposure."
+      },
+      {
+        "proposed_id": "EXP-P03",
+        "title": "India open-border migration and remittances",
+        "channel": "migrant_employment",
+        "counterparties": [
+          "India"
+        ],
+        "metric": "absentee stock in India; remittance share from India",
+        "unit": "persons",
+        "owner_suggested": "17A",
+        "source_ids": [
+          "nso_nepal"
+        ],
+        "scenarios": [
+          "S02",
+          "S06"
+        ],
+        "lead_ids": [
+          "L08",
+          "L10"
+        ],
+        "rationale": "EXP-02 counterparties omit India; DoFE data exclude it."
+      },
+      {
+        "proposed_id": "EXP-P04",
+        "title": "Remittance transfer-channel concentration (licensed remittance companies, banks, informal hundi)",
+        "channel": "financial_compliance",
+        "counterparties": [
+          "remittance service providers",
+          "correspondent banks"
+        ],
+        "metric": "share of formal inflows via top-3 providers; formal vs informal share",
+        "unit": "percent",
+        "owner_suggested": "23C",
+        "source_ids": [
+          "nrb"
+        ],
+        "scenarios": [
+          "S03",
+          "S10"
+        ],
+        "lead_ids": [
+          "L04",
+          "L06"
+        ],
+        "rationale": "Grey-listing and de-risking act on channels, not corridors."
+      },
+      {
+        "proposed_id": "EXP-P05",
+        "title": "Government-to-government labour programmes (Korea EPS, Japan SSW) and policy-contingent corridors",
+        "channel": "migrant_employment",
+        "counterparties": [
+          "Republic of Korea",
+          "Japan"
+        ],
+        "metric": "quota/approvals under G2G schemes",
+        "unit": "persons",
+        "owner_suggested": "23B",
+        "source_ids": [
+          "dofe"
+        ],
+        "scenarios": [
+          "S06"
+        ],
+        "lead_ids": [
+          "L12",
+          "L13"
+        ],
+        "rationale": "Higher-wage corridors governed by bilateral quotas; distinct risk profile from GCC."
+      },
+      {
+        "proposed_id": "EXP-P06",
+        "title": "Grant and concessional aid dependence by donor, incl. LDC-linked support (EIF, LDCF)",
+        "channel": "external_financing",
+        "counterparties": [
+          "bilateral donors",
+          "multilaterals",
+          "climate funds"
+        ],
+        "metric": "grants by donor / total grants; LDC-contingent share",
+        "unit": "percent",
+        "owner_suggested": "26A",
+        "source_ids": [
+          "mof_nepal",
+          "oecd",
+          "gcf"
+        ],
+        "scenarios": [
+          "S04",
+          "S08"
+        ],
+        "lead_ids": [
+          "L78"
+        ],
+        "rationale": "No register entry covers grants; LDC graduation affects LDC-specific finance."
+      },
+      {
+        "proposed_id": "EXP-P07",
+        "title": "External borrowing-cost exposure (variable-rate and non-concessional debt)",
+        "channel": "global_interest_rates",
+        "counterparties": [
+          "multilateral and bilateral creditors"
+        ],
+        "metric": "share of external debt at variable or market-linked rates",
+        "unit": "percent",
+        "owner_suggested": "20A",
+        "source_ids": [
+          "pdmo"
+        ],
+        "scenarios": [
+          "S04",
+          "S10"
+        ],
+        "lead_ids": [
+          "L45"
+        ],
+        "rationale": "The global_interest_rates channel has no register entry."
+      },
+      {
+        "proposed_id": "EXP-P08",
+        "title": "Digital platform and payment-network dependence (cloud, card networks, app stores, freelancing platforms)",
+        "channel": "digital_services_demand",
+        "counterparties": [
+          "United States",
+          "other platform jurisdictions"
+        ],
+        "metric": "share of ICT export receipts via foreign platforms; availability of international payment gateways",
+        "unit": "percent",
+        "owner_suggested": "24C",
+        "source_ids": [
+          "nrb",
+          "academic"
+        ],
+        "scenarios": [
+          "S03",
+          "S07"
+        ],
+        "lead_ids": [
+          "L03"
+        ],
+        "rationale": "Sanctions or de-platforming risk distinct from AI substitution in EXP-14."
+      },
+      {
+        "proposed_id": "EXP-P09",
+        "title": "Active-pharmaceutical-ingredient (API) origin for domestic medicine production",
+        "channel": "transit_and_logistics",
+        "counterparties": [
+          "India",
+          "China"
+        ],
+        "metric": "share of API imports by origin",
+        "unit": "percent",
+        "owner_suggested": "21D",
+        "source_ids": [
+          "customs_nepal",
+          "mohp"
+        ],
+        "scenarios": [
+          "S02",
+          "S03",
+          "S10"
+        ],
+        "lead_ids": [
+          "L18",
+          "L62"
+        ],
+        "rationale": "EXP-16 domestic-production share understates dependence."
+      }
+    ],
+    "lead_summary": {
+      "leads_recorded": 76,
+      "entries_with_leads": 20,
+      "entries_total": 20
+    },
+    "status": "pending"
+  },
+  "source_leads": [
+    {
+      "lead_id": "L01",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual FY2024/25 (mid-July basis) text and statistical tables: balance of payments summary, remittance inflows (NPR and USD), merchandise trade by India/China/other countries, major imports incl. petroleum products, services (travel) receipts, FDI inflow line, gross foreign exchange reserves and import cover",
+      "exposure_ids": [
+        "EXP-01",
+        "EXP-03",
+        "EXP-05",
+        "EXP-08",
+        "EXP-10",
+        "EXP-12",
+        "EXP-14"
+      ]
+    },
+    {
+      "lead_id": "L02",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of monthly/annual CME releases with downloadable statistical tables (Excel/PDF); source for historical series of remittances, BoP, trade by partner group, reserves; FY and month-of-FY basis",
+      "exposure_ids": [
+        "EXP-01",
+        "EXP-03",
+        "EXP-08",
+        "EXP-10",
+        "EXP-14"
+      ]
+    },
+    {
+      "lead_id": "L03",
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2024-25/",
+      "title": "Current Macroeconomic and Financial Situation (nine months of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Nine-month FY2024/25 BoP detail incl. services receipts lines (telecommunications, computer and information services; other business services) needed to bound ICT/BPO exports",
+      "exposure_ids": [
+        "EXP-14"
+      ]
+    },
+    {
+      "lead_id": "L04",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Banking-system risk assessment FY2024/25: external-sector and remittance-channel risks, possible discussion of correspondent/foreign-currency exposures and AML/CFT (grey-list) implications for banks",
+      "exposure_ids": [
+        "EXP-01",
+        "EXP-17",
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L05",
+      "url": "https://www.nrb.org.np/ofg/monetary-policy-in-english-2082-83-full-text/",
+      "title": "Monetary Policy for 2025/26 (2082/83), full text",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Review of FY2024/25 external sector and policy stance for FY2025/26; exchange-rate arrangement (NPR-INR peg) statement; reserve targets",
+      "exposure_ids": [
+        "EXP-10"
+      ]
+    },
+    {
+      "lead_id": "L06",
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Foreign exchange directives/circulars: rules on payment for imports from India in convertible currency vs INR, remittance company licensing; needed to define invoicing-currency exposure",
+      "exposure_ids": [
+        "EXP-10",
+        "EXP-17"
+      ]
+    },
+    {
+      "lead_id": "L07",
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Indian-side exchange control rules for transactions with Nepal (INR settlement, exceptions for convertible-currency payments); legal basis for INR invoicing share",
+      "exposure_ids": [
+        "EXP-10"
+      ]
+    },
+    {
+      "lead_id": "L08",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Chapter 16 Remittance and transfer income: share of households receiving remittances, remittance received by source (within Nepal, India, other countries), survey period July 2022-June 2023",
+      "exposure_ids": [
+        "EXP-01"
+      ]
+    },
+    {
+      "lead_id": "L09",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round (microdata catalogue)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household microdata allowing remittance receipts to be tabulated by sender country (beyond India/other split) with survey weights",
+      "exposure_ids": [
+        "EXP-01"
+      ]
+    },
+    {
+      "lead_id": "L10",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials (incl. thematic report on international migration)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Census 2021 absent population abroad by country/region of destination, sex, age and reason for absence (reference date of census 2021)",
+      "exposure_ids": [
+        "EXP-02"
+      ]
+    },
+    {
+      "lead_id": "L11",
+      "url": "https://data.nsonepal.gov.np/dataset/district-level-household/resource/5576441d-dce1-493e-b715-9b59cf3749fd",
+      "title": "District Level Household - Absent population abroad by age groups and level of education, NPHC 2021",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "District-level absent population abroad tables from NPHC 2021 (machine-readable)",
+      "exposure_ids": [
+        "EXP-02"
+      ]
+    },
+    {
+      "lead_id": "L12",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal%20Labour%20Migration%202024_Final-Version%20for%20Approval%20(1)_peesvxa.pdf",
+      "title": "Nepal Labour Migration Report 2024",
+      "publisher": "Ministry of Labour, Employment and Social Security, Government of Nepal",
+      "source_id": "dofe",
+      "contains": "DoFE labour approvals (new and renewal) by destination country, sex and skill for FY2022/23 and FY2023/24; deaths/injuries abroad; excludes India (no labour permit required)",
+      "exposure_ids": [
+        "EXP-02"
+      ]
+    },
+    {
+      "lead_id": "L13",
+      "url": "https://dofe.gov.np/yearly.aspx",
+      "title": "Yearly Progress Report",
+      "publisher": "Department of Foreign Employment, Nepal",
+      "source_id": "dofe",
+      "contains": "Annual labour-approval counts by destination country (FY basis), needed for FY2024/25 and FY2025/26 updates including any suspension period",
+      "exposure_ids": [
+        "EXP-02"
+      ]
+    },
+    {
+      "lead_id": "L14",
+      "url": "https://gulfmigration.grc.net/",
+      "title": "Gulf Labour Markets, Migration and Population (GLMM) data portal",
+      "publisher": "Gulf Research Center",
+      "source_id": "glmm",
+      "contains": "Demographic and labour-market tables for GCC states, incl. foreign population/workers by nationality where GCC statistical offices or embassies publish it (irregular vintages)",
+      "exposure_ids": [
+        "EXP-02"
+      ]
+    },
+    {
+      "lead_id": "L15",
+      "url": "https://www.knomad.org/data/remittances",
+      "title": "Remittances and Migration data",
+      "publisher": "KNOMAD / World Bank",
+      "source_id": "knomad",
+      "contains": "Inward remittances by country and Bilateral Remittance Matrix (modelled allocation by migrant stock and incomes; calendar year; latest vintage to be confirmed)",
+      "exposure_ids": [
+        "EXP-01"
+      ]
+    },
+    {
+      "lead_id": "L16",
+      "url": "https://data360.worldbank.org/en/indicator/WB_KNOMAD_BRE",
+      "title": "Bilateral Remittance Estimates using Migrant Stocks (WB_KNOMAD_BRE)",
+      "publisher": "World Bank Data360",
+      "source_id": "knomad",
+      "contains": "Machine-readable bilateral remittance estimates (corridor level) for Nepal as recipient; calendar year",
+      "exposure_ids": [
+        "EXP-01"
+      ]
+    },
+    {
+      "lead_id": "L17",
+      "url": "https://documents1.worldbank.org/curated/en/099939108162412268/pdf/IDU16ac5f9f71eb2214b69182441e56964b688f2.pdf",
+      "title": "Notes on Bilateral Remittance Flows",
+      "publisher": "World Bank",
+      "source_id": "knomad",
+      "contains": "Methodology of the bilateral remittance matrix and its known limitations (needed to reconcile KNOMAD corridors with NLSS and DoFE)",
+      "exposure_ids": [
+        "EXP-01"
+      ]
+    },
+    {
+      "lead_id": "L18",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "FY2022/23 imports/exports by partner country, HS chapter and commodity, and customs office (e.g. Birgunj, Biratnagar, Bhairahawa, Tatopani, Rasuwa); petroleum (HS 27), fertiliser (HS 31), pharmaceuticals (HS 30), ICT goods (HS 84/85)",
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-04",
+        "EXP-05",
+        "EXP-15",
+        "EXP-16",
+        "EXP-19"
+      ]
+    },
+    {
+      "lead_id": "L19",
+      "url": "https://customs.gov.np/content/43/annual-foreign-trade-statistics-book-2079-80/",
+      "title": "Annual Foreign Trade Statistics Book 2079-80 (landing page)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Landing page for annual trade statistics books; later FY books (2080/81, 2081/82) and monthly FTS releases expected on the same site",
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-15",
+        "EXP-16"
+      ]
+    },
+    {
+      "lead_id": "L20",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Ministry of Industry, Commerce and Supplies, Nepal",
+      "source_id": null,
+      "contains": "HS-level import/export queries by partner and period; transit procedures; used for FY2023/24-FY2025/26 partner shares where books are not yet published",
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-04",
+        "EXP-15",
+        "EXP-16",
+        "EXP-19"
+      ]
+    },
+    {
+      "lead_id": "L21",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus",
+      "publisher": "United Nations Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror trade data (partner-reported exports to Nepal, calendar year, HS 6-digit), e.g. India/China exports of HS 2710, 31, 30, 8471, 8517, 8542 to Nepal, for reconciling with Nepal customs FY data",
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-05",
+        "EXP-15",
+        "EXP-16",
+        "EXP-19"
+      ]
+    },
+    {
+      "lead_id": "L22",
+      "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+      "title": "Commerce Wing Brief",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "Indian-side description of the Treaty of Trade and Treaty of Transit, designated transit ports and corridors, ICDs and cross-border rail links",
+      "exposure_ids": [
+        "EXP-03",
+        "EXP-04"
+      ]
+    },
+    {
+      "lead_id": "L23",
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project (IDA credit) - project document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Corridor description (Kolkata/Haldia-Raxaul/Birgunj; Visakhapatnam), dwell/transit time diagnostics and baseline indicators for third-country trade",
+      "exposure_ids": [
+        "EXP-04"
+      ]
+    },
+    {
+      "lead_id": "L24",
+      "url": "https://lpi.worldbank.org",
+      "title": "Logistics Performance Index",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "LPI 2023 scores and components for Nepal and comparators (survey-based; calendar year of survey)",
+      "exposure_ids": [
+        "EXP-04"
+      ]
+    },
+    {
+      "lead_id": "L25",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Independent analysis of transit volumes, routes and bottlenecks through Indian ports (tier 7; secondary check only)",
+      "exposure_ids": [
+        "EXP-04"
+      ]
+    },
+    {
+      "lead_id": "L26",
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Import and sales volumes by product (petrol, diesel, kerosene, ATF, LPG) by FY/month; supplier arrangement with Indian Oil Corporation",
+      "exposure_ids": [
+        "EXP-05"
+      ]
+    },
+    {
+      "lead_id": "L27",
+      "url": "https://noc.org.np/publication",
+      "title": "Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC annual reports and supply agreement notes (term of IOC agreement, supply points, pipeline and depot storage)",
+      "exposure_ids": [
+        "EXP-05"
+      ]
+    },
+    {
+      "lead_id": "L28",
+      "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-May-2026.pdf",
+      "title": "Commodity Markets Pink Sheet, May 2026",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Monthly international prices: crude oil (Brent, Dubai, WTI), LNG, urea/DAP fertiliser, rice; calendar months",
+      "exposure_ids": [
+        "EXP-05",
+        "EXP-15"
+      ]
+    },
+    {
+      "lead_id": "L29",
+      "url": "https://data.imf.org/en/datasets/IMF.RES:PCPS",
+      "title": "Primary Commodity Price System (PCPS)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "Monthly commodity price series and indices incl. energy and fertilisers; country-specific commodity price indices",
+      "exposure_ids": [
+        "EXP-05",
+        "EXP-15"
+      ]
+    },
+    {
+      "lead_id": "L30",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Annual (FY) energy balance: generation by plant/basin, imports from and exports to India and Bangladesh (energy units and revenue), seasonal profile, installed capacity by river basin",
+      "exposure_ids": [
+        "EXP-06",
+        "EXP-07"
+      ]
+    },
+    {
+      "lead_id": "L31",
+      "url": "https://cea.nic.in",
+      "title": "Central Electricity Authority (India)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Designated Authority approvals for cross-border electricity import from Nepal by project; Procedure for approval and facilitating import/export of electricity",
+      "exposure_ids": [
+        "EXP-06"
+      ]
+    },
+    {
+      "lead_id": "L32",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali river basins of Nepal, the Tibet Autonomous Region of China and India",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": "Glacial lake inventory and ranked list of potentially dangerous glacial lakes by basin and country (2020 release); input for GLOF exposure of hydropower and border infrastructure",
+      "exposure_ids": [
+        "EXP-07",
+        "EXP-20"
+      ]
+    },
+    {
+      "lead_id": "L33",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level risk evidence for hydropower (snow/glacier melt contribution, hazard exposure); pointer to underlying ICIMOD publications",
+      "exposure_ids": [
+        "EXP-07"
+      ]
+    },
+    {
+      "lead_id": "L34",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "ICIMOD account of the 2026 Kyirong-Rasuwa cross-border flood/debris event; damage to Rasuwagadhi-Kerung border infrastructure and hydropower in the Trishuli/Bhote Koshi corridor",
+      "exposure_ids": [
+        "EXP-20"
+      ]
+    },
+    {
+      "lead_id": "L35",
+      "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+      "title": "ThinkHazard - Nepal - River flood",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Hazard-level classification for river flood at national and sub-national level (qualitative class, not exposure value)",
+      "exposure_ids": [
+        "EXP-20"
+      ]
+    },
+    {
+      "lead_id": "L36",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Incident database: flood/GLOF/landslide events with location, date, losses (deaths, houses, infrastructure) for mapping capital stock in cross-border hazard zones",
+      "exposure_ids": [
+        "EXP-20"
+      ]
+    },
+    {
+      "lead_id": "L37",
+      "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+      "title": "Nepal Tourism Statistics 2024",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": "Calendar-year 2024 international arrivals by nationality, mode (air/land), purpose, length of stay; foreign-exchange earnings from tourism",
+      "exposure_ids": [
+        "EXP-08"
+      ]
+    },
+    {
+      "lead_id": "L38",
+      "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
+      "title": "Nepal Tourism Statistics 2023",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": "Calendar-year 2023 arrivals by nationality and entry point; historical series tables",
+      "exposure_ids": [
+        "EXP-08"
+      ]
+    },
+    {
+      "lead_id": "L39",
+      "url": "https://caanepal.gov.np/air-transports/international",
+      "title": "International Airlines",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "List of foreign and Nepali carriers operating international services, with routes/hubs (basis for share of seats via Gulf and Indian hubs)",
+      "exposure_ids": [
+        "EXP-09"
+      ]
+    },
+    {
+      "lead_id": "L40",
+      "url": "https://caanepal.gov.np/storage/app/media/TRIBHUVAN%20INTERNATIONAL%20AIRPORT-New.pdf",
+      "title": "Tribhuvan International Airport - Brief Description",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "TIA facilities, airlines, weekly flights/seat capacity and design capacity; basis for single-gateway assessment",
+      "exposure_ids": [
+        "EXP-09"
+      ]
+    },
+    {
+      "lead_id": "L41",
+      "url": "https://caanepal.gov.np/storage/app/media/uploaded-files/Nepal%20Air%20Traffic%20Demand.pdf",
+      "title": "Capacity Development of CAAN - Nepal Air Traffic Demand",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "Air traffic demand study: international passenger traffic by route/market (vintage to be confirmed)",
+      "exposure_ids": [
+        "EXP-09"
+      ]
+    },
+    {
+      "lead_id": "L42",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
+      "title": "Government Debt Statistics for the month of Shrawan 2082 (mid-August 2025)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by creditor (IDA, ADB, IMF, JICA, bilateral) and by currency at mid-August 2025; FY2025/26 month 1",
+      "exposure_ids": [
+        "EXP-11"
+      ]
+    },
+    {
+      "lead_id": "L43",
+      "url": "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
+      "title": "Government Debt Statistics for the month of Falgun 2082 (mid-March 2026)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by creditor and currency at mid-March 2026",
+      "exposure_ids": [
+        "EXP-11"
+      ]
+    },
+    {
+      "lead_id": "L44",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Public debt bulletin: external debt composition, debt service, creditor and currency structure, FY2024/25 close",
+      "exposure_ids": [
+        "EXP-11"
+      ]
+    },
+    {
+      "lead_id": "L45",
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Cost-risk indicators: currency composition (SDR, USD, JPY, EUR, CNY), fixed vs variable rate share, refinancing and FX risk",
+      "exposure_ids": [
+        "EXP-11"
+      ]
+    },
+    {
+      "lead_id": "L46",
+      "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
+      "title": "External debt stocks, total (DOD, current US$) - Nepal",
+      "publisher": "World Bank (International Debt Statistics)",
+      "source_id": "wb_ids",
+      "contains": "IDS external debt stocks, calendar-year end; IDS database also holds creditor-level (multilateral/bilateral) and currency-composition series",
+      "exposure_ids": [
+        "EXP-11"
+      ]
+    },
+    {
+      "lead_id": "L47",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Staff report incl. joint WB-IMF debt sustainability analysis, BoP and remittance projections, external vulnerability discussion (Middle East conflict, LDC graduation, FATF listing)",
+      "exposure_ids": [
+        "EXP-01",
+        "EXP-10",
+        "EXP-11",
+        "EXP-13",
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L48",
+      "url": "https://www.worldbank.org/en/country/nepal/publication/nepaldevelopmentupdate",
+      "title": "Nepal Development Update (April 2026)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Macro update with transmission of the 2026 Middle East conflict (commodity prices, remittances, aviation, tourism) to Nepal",
+      "exposure_ids": [
+        "EXP-01",
+        "EXP-02",
+        "EXP-05",
+        "EXP-09"
+      ]
+    },
+    {
+      "lead_id": "L49",
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock and flows by source country and by sector at end-FY2023/24; approved vs actual FDI comparison",
+      "exposure_ids": [
+        "EXP-12"
+      ]
+    },
+    {
+      "lead_id": "L50",
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock by source country and sector at end-FY2022/23 (prior vintage for trend)",
+      "exposure_ids": [
+        "EXP-12"
+      ]
+    },
+    {
+      "lead_id": "L51",
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "source_id": "doind",
+      "contains": "Approved FDI commitments by country and sector (approval basis - differs methodologically from NRB realised FDI)",
+      "exposure_ids": [
+        "EXP-12"
+      ]
+    },
+    {
+      "lead_id": "L52",
+      "url": "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+      "title": "Crisis Assessment: Nepal (July 2026)",
+      "publisher": "UN Committee for Development Policy / UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "CDP assessment under the Crisis Response Process of Nepal's request to extend the LDC preparatory period; preference-erosion and macro context",
+      "exposure_ids": [
+        "EXP-13"
+      ]
+    },
+    {
+      "lead_id": "L53",
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation.pdf",
+      "title": "Trade impacts of LDC graduation",
+      "publisher": "World Trade Organization / EIF",
+      "source_id": "wto",
+      "contains": "Estimated tariff and export changes from loss of LDC-specific preferences by graduating country and market, incl. Nepal",
+      "exposure_ids": [
+        "EXP-13"
+      ]
+    },
+    {
+      "lead_id": "L54",
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
+      "publisher": "World Trade Organization / EIF",
+      "source_id": "wto",
+      "contains": "Country-specific market-access analysis incl. Nepal product/market lines losing LDC-only preferences (EU EBA, UK DCTS, Canada, others)",
+      "exposure_ids": [
+        "EXP-13"
+      ]
+    },
+    {
+      "lead_id": "L55",
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Sectoral employment exposure to preference loss (apparel, carpets, etc.) by sex and formality",
+      "exposure_ids": [
+        "EXP-13"
+      ]
+    },
+    {
+      "lead_id": "L56",
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports",
+      "publisher": "International Trade Centre",
+      "source_id": null,
+      "contains": "Product-market preference-margin analysis and export diversification options for Nepal post-graduation",
+      "exposure_ids": [
+        "EXP-13"
+      ]
+    },
+    {
+      "lead_id": "L57",
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "International trade in digitally deliverable services, value",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Annual (calendar-year) digitally deliverable services exports by economy incl. Nepal; no destination breakdown",
+      "exposure_ids": [
+        "EXP-14"
+      ]
+    },
+    {
+      "lead_id": "L58",
+      "url": "https://www.bis.gov/ear/title-15/subtitle-b/chapter-vii/subchapter-c/part-738/supplement-no-1-part-738-commerce-country",
+      "title": "Supplement No. 1 to Part 738 - Commerce Country Chart",
+      "publisher": "US Bureau of Industry and Security",
+      "source_id": "bis_us",
+      "contains": "License requirements by reason for control for Nepal as destination; with EAR Part 740 country groups",
+      "exposure_ids": [
+        "EXP-19"
+      ]
+    },
+    {
+      "lead_id": "L59",
+      "url": "https://www.trade.gov/country-commercial-guides/nepal-us-export-controls",
+      "title": "Nepal - U.S. Export Controls (Country Commercial Guide)",
+      "publisher": "US International Trade Administration",
+      "source_id": "bis_us",
+      "contains": "Summary of how EAR applies to exports to Nepal",
+      "exposure_ids": [
+        "EXP-19"
+      ]
+    },
+    {
+      "lead_id": "L60",
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "Food and Agriculture Organization",
+      "source_id": "fao_stat",
+      "contains": "Inputs/Fertilizers by nutrient (production, import, use) and Food Balances for cereals incl. rice; calendar year",
+      "exposure_ids": [
+        "EXP-15"
+      ]
+    },
+    {
+      "lead_id": "L61",
+      "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+      "title": "Nepal signs deal with India to procure chemical fertiliser",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News report on the government-to-government fertiliser MoU with India; pointer to MoALD / Agriculture Inputs Company primary documents (secondary, tier 7)",
+      "exposure_ids": [
+        "EXP-15"
+      ]
+    },
+    {
+      "lead_id": "L62",
+      "url": "https://dda.gov.np/",
+      "title": "Department of Drug Administration",
+      "publisher": "Department of Drug Administration, Ministry of Health and Population, Nepal",
+      "source_id": "mohp",
+      "contains": "Registered domestic manufacturers and imported products; DDA annual reports/bulletins with domestic vs imported market share of medicines by origin",
+      "exposure_ids": [
+        "EXP-16"
+      ]
+    },
+    {
+      "lead_id": "L63",
+      "url": "https://pharmexcil.com/uploads/countryreports/Nepal.pdf",
+      "title": "Regulatory and Market Profile of Nepal",
+      "publisher": "Pharmaceuticals Export Promotion Council of India",
+      "source_id": null,
+      "contains": "Indian export-promotion council profile of Nepal's pharmaceutical market and regulation (supplier-side view; secondary check)",
+      "exposure_ids": [
+        "EXP-16"
+      ]
+    },
+    {
+      "lead_id": "L64",
+      "url": "https://www.fatf-gafi.org/en/countries/detail/Nepal.html",
+      "title": "Nepal - country page",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Current FATF listing status of Nepal and links to MER, follow-up reports and plenary statements",
+      "exposure_ids": [
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L65",
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2025.html",
+      "title": "Jurisdictions under Increased Monitoring - 21 February 2025",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Plenary statement listing jurisdictions under increased monitoring and Nepal's action-plan items",
+      "exposure_ids": [
+        "EXP-17",
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L66",
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-mer-2023.html",
+      "title": "Anti-money laundering and counter-terrorist financing measures - Nepal, Mutual Evaluation Report 2023",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Technical compliance and effectiveness ratings, recommended actions",
+      "exposure_ids": [
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L67",
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-APG-FUR-2025.html",
+      "title": "Nepal: APG follow-up report 2025",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Re-rating decisions on technical compliance since the 2023 MER",
+      "exposure_ids": [
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L68",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/05/FIU-Nepal-Newsletter-May-2025-%E2%80%93-Issue-IV.pdf",
+      "title": "FIU-Nepal Newsletter, Issue IV (Jan-Dec 2024)",
+      "publisher": "Financial Intelligence Unit, Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FIU activity statistics (STR/TTR) and grey-list response measures; calendar year 2024",
+      "exposure_ids": [
+        "EXP-17",
+        "EXP-18"
+      ]
+    },
+    {
+      "lead_id": "L69",
+      "url": "https://data.bis.org",
+      "title": "BIS Data Portal - CPMI correspondent banking data",
+      "publisher": "Bank for International Settlements",
+      "source_id": "bis_bank",
+      "contains": "CPMI correspondent banking indicators by country (number of active correspondents, counterparty countries, value/volume of SWIFT messages); calendar year",
+      "exposure_ids": [
+        "EXP-17"
+      ]
+    },
+    {
+      "lead_id": "L71",
+      "url": "https://www.rbi.org.in",
+      "title": "Reserve Bank of India - monetary policy statements and Database on Indian Economy",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "RBI policy repo rate, INR/USD reference rate, Indian inflation; monthly, Indian FY April-March",
+      "exposure_ids": [
+        "EXP-10"
+      ]
+    },
+    {
+      "lead_id": "L73",
+      "url": "https://api.worldbank.org/v2/",
+      "title": "World Development Indicators API",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Cross-country series (personal remittances received % GDP, ICT service exports, international tourism receipts); calendar year",
+      "exposure_ids": [
+        "EXP-01",
+        "EXP-08",
+        "EXP-14"
+      ]
+    },
+    {
+      "lead_id": "L74",
+      "url": "https://www.iea.org",
+      "title": "IEA Oil Market Report and World Energy Outlook",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Oil supply/demand balances and price scenarios; battery and solar cost trends",
+      "exposure_ids": [
+        "EXP-05"
+      ]
+    },
+    {
+      "lead_id": "L75",
+      "url": "https://ttd.wto.org",
+      "title": "WTO Tariff and Trade Data",
+      "publisher": "World Trade Organization",
+      "source_id": "wto_tariff",
+      "contains": "MFN and preferential tariffs applied by partner markets to Nepal's export lines (HS 6-digit)",
+      "exposure_ids": [
+        "EXP-13"
+      ]
+    },
+    {
+      "lead_id": "L78",
+      "url": "https://www.greenclimate.fund",
+      "title": "Green Climate Fund project portfolio",
+      "publisher": "Green Climate Fund",
+      "source_id": "gcf",
+      "contains": "Approved projects and disbursements for Nepal by entity",
+      "exposure_ids": []
+    },
+    {
+      "lead_id": "L79",
+      "url": "https://ucdp.uu.se",
+      "title": "Uppsala Conflict Data Program",
+      "publisher": "Uppsala University",
+      "source_id": "ucdp",
+      "contains": "Georeferenced conflict events in migrant destination and transit regions (calendar year)",
+      "exposure_ids": [
+        "EXP-02"
+      ]
+    },
+    {
+      "lead_id": "L80",
+      "url": "https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport",
+      "title": "Review of Maritime Transport",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "Freight rates, port and chokepoint disruption analysis (annual)",
+      "exposure_ids": [
+        "EXP-04"
+      ]
+    }
+  ]
+}

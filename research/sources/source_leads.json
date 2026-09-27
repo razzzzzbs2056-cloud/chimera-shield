@@ -1,0 +1,2677 @@
+{
+  "updated_at": "2026-09-27T00:36:40+00:00",
+  "leads": [
+    {
+      "url": "http://www.dorw.gov.np/downloadfile/Land-Acquisition-Act_2034_English.pdf",
+      "title": "Land Acquisition Act, 2034 (1977)",
+      "publisher": "Department of Railways, Government of Nepal",
+      "source_id": null,
+      "contains": [
+        "English text of the Land Acquisition Act 1977: compulsory and negotiated acquisition, public-purpose and organisational-purpose acquisition, notification, compensation determination procedures."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://academic.oup.com/qje/article-abstract/110/3/641/1859236",
+      "title": "Young (1995) The Tyranny of Numbers: Confronting the Statistical Realities of the East Asian Growth Experience, QJE 110(3):641-680, doi:10.2307/2946695",
+      "publisher": "Oxford University Press",
+      "source_id": "academic",
+      "contains": [
+        "Growth accounting of East Asian NIEs showing factor accumulation (investment, participation, education) share of growth; informs whether savings/investment preconditions transfer"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://academic.oup.com/qje/article-abstract/128/1/165/1839808",
+      "title": "Rodrik (2013) Unconditional Convergence in Manufacturing, QJE 128(1):165-204, doi:10.1093/qje/qjs047",
+      "publisher": "Oxford University Press",
+      "source_id": "academic",
+      "contains": [
+        "Evidence that formal manufacturing converges unconditionally; relevance to whether an export-manufacturing escalator is available to Nepal"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://academic.oup.com/wber/article-abstract/12/3/419/1632238",
+      "title": "Bloom and Williamson (1998) Demographic Transitions and Economic Miracles in Emerging Asia, World Bank Economic Review 12(3):419-455",
+      "publisher": "Oxford University Press / World Bank",
+      "source_id": "academic",
+      "contains": [
+        "Contribution of working-age population growth to East Asian growth; framework for Nepal's demographic dividend under large out-migration"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://academic.oup.com/wber/article-abstract/14/2/221/1663667",
+      "title": "Pritchett (2000) Understanding Patterns of Economic Growth: Searching for Hills among Plateaus, Mountains, and Plains, World Bank Economic Review 14(2):221-250",
+      "publisher": "Oxford University Press / World Bank",
+      "source_id": "academic",
+      "contains": [
+        "Typology of developing-country growth paths (instability, breaks) motivating spell-based rather than trend-based analysis"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+      "title": "Limao and Venables (2001) Infrastructure, Geographical Disadvantage, Transport Costs, and Trade, World Bank Economic Review 15(3):451-479",
+      "publisher": "Oxford University Press / World Bank",
+      "source_id": "academic",
+      "contains": [
+        "Transport cost penalty of landlockedness and the role of own and transit-country infrastructure; elasticity of trade to trade costs"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/",
+      "title": "World Development Indicators API",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Cross-country series (personal remittances received % GDP, ICT service exports, international tourism receipts); calendar year"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&per_page=200",
+      "title": "WDI API: Personal remittances received (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Series BX.TRF.PWKR.DT.GD.ZS — personal remittances (personal transfers + compensation of employees) over calendar-year GDP (C-05)."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CD?format=json&per_page=200",
+      "title": "WDI API: GDP (current US$), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Series NY.GDP.MKTP.CD, annual; cross-check for derived USD GDP (P2-07).",
+        "Series NY.GDP.MKTP.CD; USD conversion convention (C-02)."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "title": "WDI API: GDP (current LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Series NY.GDP.MKTP.CN, annual; cross-check for NSO nominal GDP. Year-labelling convention for Nepal's fiscal year must be read from WDI country metadata. Needed for P2-07.",
+        "Series NY.GDP.MKTP.CN; compare year labels with NSO FY labels (C-01). Country metadata needed for national-accounts reference period."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate (LCU per US$, period average), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Series PA.NUS.FCRF, annual calendar-year period average; compare with NRB fiscal-year averages (P2-03).",
+        "Series PA.NUS.FCRF calendar-year average (C-02, C-18)."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.TOTL?format=json&per_page=200",
+      "title": "WDI API: Population, total, Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Series SP.POP.TOTL; derived from UN WPP, mid-year (C-06)."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://asiafoundation.org/wp-content/uploads/2020/10/Assignment-of-Functions-Across-Levels-of-Government-in-Nepal_Summary-Brief.pdf",
+      "title": "Assignment of Functions Across Levels of Government in Nepal - Summary Brief",
+      "publisher": "The Asia Foundation",
+      "source_id": null,
+      "contains": [
+        "Analysis of functional overlaps and gaps across the three tiers, and the status of the unbundling exercise."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": [
+        "Incident database: flood/GLOF/landslide events with location, date, losses (deaths, houses, infrastructure) for mapping capital stock in cross-border hazard zones"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://bolpatra.gov.np/egp/",
+      "title": "PPMO / Bolpatra national e-GP system",
+      "publisher": "Public Procurement Monitoring Office",
+      "source_id": "ppmo",
+      "contains": [
+        "Live e-GP portal: active buyers and bidders, bid notices, running/closed/cancelled bids; point-in-time counts only."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://bpp.worldbank.org/content/dam/sites/data/bpp/cntrypdf/BI-2023-Nepal-PPP.pdf",
+      "title": "Benchmarking Infrastructure 2023 in Nepal: survey question analysis",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": [
+        "Question-level assessment of Nepal's PPP regulatory framework (preparation, procurement, contract management, unsolicited proposals) for the 2023 benchmarking round."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://caanepal.gov.np/air-transports/international",
+      "title": "International Airlines",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": [
+        "List of foreign and Nepali carriers operating international services, with routes/hubs (basis for share of seats via Gulf and Indian hubs)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://caanepal.gov.np/storage/app/media/TRIBHUVAN%20INTERNATIONAL%20AIRPORT-New.pdf",
+      "title": "Tribhuvan International Airport - Brief Description",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": [
+        "TIA facilities, airlines, weekly flights/seat capacity and design capacity; basis for single-gateway assessment"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://caanepal.gov.np/storage/app/media/uploaded-files/Nepal%20Air%20Traffic%20Demand.pdf",
+      "title": "Capacity Development of CAAN - Nepal Air Traffic Demand",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": [
+        "Air traffic demand study: international passenger traffic by route/market (vintage to be confirmed)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://cea.nic.in",
+      "title": "Central Electricity Authority (India)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": [
+        "Designated Authority approvals for cross-border electricity import from Nepal by project; Procedure for approval and facilitating import/export of electricity"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ciaa.gov.np/page/7",
+      "title": "Commission for the Investigation of Abuse of Authority (official site)",
+      "publisher": "CIAA",
+      "source_id": "ciaa",
+      "contains": [
+        "Official CIAA site: annual reports (BS fiscal years) with complaints received and settled, cases filed at Special Court, amounts claimed, conviction outcomes."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade — Nepal and partner-reported trade",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": [
+        "Mirror trade data for C-10.",
+        "Mirror trade data (partner-reported exports to Nepal, calendar year, HS 6-digit), e.g. India/China exports of HS 2710, 31, 30, 8471, 8517, 8542 to Nepal, for reconciling with Nepal customs FY data"
+      ],
+      "found_by": [
+        "00B",
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-and-parliamentary",
+      "title": "Constitution of Nepal 2015 (official English translation by MoLJPA)",
+      "publisher": "ConstitutionNet (International IDEA) hosting Ministry of Law, Justice and Parliamentary Affairs translation",
+      "source_id": null,
+      "contains": [
+        "Official English translation of the Constitution; to be used alongside the Nepali text for article-level citation of economic-policy, federal-finance and natural-resource provisions."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://customs.gov.np/content/43/annual-foreign-trade-statistics-book-2079-80/",
+      "title": "Annual Foreign Trade Statistics Book 2079-80 (landing page)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": [
+        "Landing page for annual trade statistics books; later FY books (2080/81, 2081/82) and monthly FTS releases expected on the same site"
+      ],
+      "found_by": [
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data.bis.org",
+      "title": "BIS Data Portal - CPMI correspondent banking data",
+      "publisher": "Bank for International Settlements",
+      "source_id": "bis_bank",
+      "contains": [
+        "CPMI correspondent banking indicators by country (number of active correspondents, counterparty countries, value/volume of SWIFT messages); calendar year"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data.imf.org/en/datasets/IMF.RES:PCPS",
+      "title": "Primary Commodity Price System (PCPS)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": [
+        "Monthly commodity price series and indices incl. energy and fertilisers; country-specific commodity price indices"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": [
+        "Chapter 16 Remittance and transfer income: share of households receiving remittances, remittance received by source (within Nepal, India, other countries), survey period July 2022-June 2023"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data.nsonepal.gov.np/dataset/district-level-household/resource/5576441d-dce1-493e-b715-9b59cf3749fd",
+      "title": "District Level Household - Absent population abroad by age groups and level of education, NPHC 2021",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": [
+        "District-level absent population abroad tables from NPHC 2021 (machine-readable)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data.open-contracting.org/en/publication/36",
+      "title": "Nepal: Public Procurement Monitoring Office (PPMO) - OCP Data Registry",
+      "publisher": "Open Contracting Partnership",
+      "source_id": "ppmo",
+      "contains": [
+        "OCDS-format procurement data published from Nepal's e-GP (bolpatra) with coverage dates, fields and data-quality checks; potential source for competition metrics (bids per tender, single-bid share)."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
+      "title": "External debt stocks, total (DOD, current US$) - Nepal",
+      "publisher": "World Bank (International Debt Statistics)",
+      "source_id": "wb_ids",
+      "contains": [
+        "IDS external debt stocks, calendar-year end; IDS database also holds creditor-level (multilateral/bilateral) and currency-composition series"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://data360.worldbank.org/en/indicator/WB_KNOMAD_BRE",
+      "title": "Bilateral Remittance Estimates using Migrant Stocks (WB_KNOMAD_BRE)",
+      "publisher": "World Bank Data360",
+      "source_id": "knomad",
+      "contains": [
+        "Machine-readable bilateral remittance estimates (corridor level) for Nepal as recipient; calendar year"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://databank.worldbank.org/source/world-development-indicators",
+      "title": "World Development Indicators (DataBank)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": [
+        "Series for Nepal and comparators: NY.GDP.PCAP.KD (GDP per capita constant US$), NY.GDP.PCAP.PP.KD (PPP constant), NE.GDI.TOTL.ZS (gross capital formation % GDP), NY.GNS.ICTR.ZS (gross savings % GDP), NY.GDS.TOTL.ZS (gross domestic savings % GDP), NE.EXP.GNFS.ZS (exports % GDP), TX.VAL.MANF.ZS.UN (manufactures % merchandise exports), BX.TRF.PWKR.DT.GD.ZS (personal remittances % GDP), SP.POP.DPND (age dependency ratio), EG.USE.ELEC.KH.PC (electricity use per capita), NV.IND.MANF.ZS (manufacturing value added % GDP); retrieve via API https://api.worldbank.org/v2/country/<ISO3>/indicator/<code>?format=json"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://dda.gov.np/",
+      "title": "Department of Drug Administration",
+      "publisher": "Department of Drug Administration, Ministry of Health and Population, Nepal",
+      "source_id": "mohp",
+      "contains": [
+        "Registered domestic manufacturers and imported products; DDA annual reports/bulletins with domestic vs imported market share of medicines by origin"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://demo.mof.gov.np/uploads/document/file/1724825318_Budget%20Speech%202024_25%20English%20FV.pdf",
+      "title": "Budget Speech of Fiscal Year 2024/25, English",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": [
+        "Budgeted intergovernmental transfers for FY2081/82."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-1688107036.pdf",
+      "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
+      "publisher": "Department of Mines and Geology, Government of Nepal",
+      "source_id": null,
+      "contains": [
+        "English text of FITTA 2019: definition of foreign investor (incl. non-resident Nepalis), approval authorities (Department of Industry vs IBN), negative list schedule, repatriation, technology transfer agreements, dispute settlement."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/975081468244550798",
+      "title": "World Bank (1993) The East Asian Miracle: Economic Growth and Public Policy, Vol. 1 main report",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": [
+        "Policy and precondition analysis for high-performing Asian economies (savings, education, export push, macro stability)"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "World Bank (2025) Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum 2025",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Nepal growth performance since the mid-1990s, growth decomposition, potential-growth projections, binding constraints and regional benchmarks; primary Nepal-side comparison document (also relevant to 01A)"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099061323212528595/pdf/P1753760c2676705e0bfbe07b0aabcfe966.pdf",
+      "title": "Nepal Fiscal Federalism Update, June 2023",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Review of intergovernmental transfers, subnational revenue and spending, budget execution by tier, and implementation gaps since the 2019 FCNA."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+      "title": "World Bank (2024) Bhutan Country Economic Memorandum: Maximizing Bhutan's Potential for Economic Diversification and Structural Transformation",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": [
+        "Landlocked Himalayan comparator: hydropower-export-led growth, its employment limits, and diversification constraints; closest structural analogue for Nepal's hydropower-export route"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099939108162412268/pdf/IDU16ac5f9f71eb2214b69182441e56964b688f2.pdf",
+      "title": "Notes on Bilateral Remittance Flows",
+      "publisher": "World Bank",
+      "source_id": "knomad",
+      "contains": [
+        "Methodology of the bilateral remittance matrix and its known limitations (needed to reconcile KNOMAD corridors with NLSS and DoFE)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/290721625210540609/pdf/Federalism-and-Public-Expenditure-for-Human-Development-in-Nepal-An-Emerging-Agenda.pdf",
+      "title": "Federalism and Public Expenditure for Human Development in Nepal: An Emerging Agenda",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Spending on health and education by tier before and after federalisation; functional assignment in social sectors."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project (IDA credit) - project document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Corridor description (Kolkata/Haldia-Raxaul/Birgunj; Visakhapatnam), dwell/transit time diagnostics and baseline indicators for third-country trade"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/483831467998500044/pdf/97606-WP-Nepal-PEFA-Report-Box391479B-PUBLIC.pdf",
+      "title": "Nepal PEFA report (earlier assessment)",
+      "publisher": "World Bank / PEFA",
+      "source_id": null,
+      "contains": [
+        "Earlier PEFA indicator scores for trend comparison (framework version differs from 2016 framework)."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/503181593615554741/pdf/Nepal-Capacity-Needs-Assessment-for-the-Transition-to-Federalism.pdf",
+      "title": "Nepal Capacity Needs Assessment for the Transition to Federalism (FCNA), July 2019",
+      "publisher": "Government of Nepal / World Bank / UNDP",
+      "source_id": "wb_npl",
+      "contains": [
+        "Institutional, organisational and systems capacity gaps of federal, provincial and a sample of local governments (staffing, PFM, planning, procurement, IT)."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/660951593338600841/pdf/Nepal-Updated-Matrix-of-Doing-Business-Reform-Recommendations.pdf",
+      "title": "Updated Matrix of Doing Business Reform Recommendations, Nepal (Dec 2019)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Reform recommendations by DB topic incl. enforcing contracts and resolving insolvency; identifies legal/regulatory gaps as of Dec 2019."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/966981520367373513/pdf/123958-SCD-nepal-CountryDiagnostic-10.pdf",
+      "title": "World Bank (2018) Nepal Systematic Country Diagnostic: A New Approach to a Federal Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Constraints to growth and inclusion under federalism; institutional and fiscal-federal preconditions"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://dofe.gov.np/yearly.aspx",
+      "title": "Yearly Progress Report",
+      "publisher": "Department of Foreign Employment, Nepal",
+      "source_id": "dofe",
+      "contains": [
+        "Annual labour-approval counts by destination country (FY basis), needed for FY2024/25 and FY2025/26 updates including any suspension period"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://doi.org/10.34894/FABVLR",
+      "title": "PWT 11.0 Dataverse record, doi:10.34894/FABVLR",
+      "publisher": "DataverseNL / GGDC",
+      "source_id": "pwt",
+      "contains": [
+        "Persistent-identifier copy of PWT 11.0 data files (xlsx/dta) for hashed download"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://doi.org/10.34894/INZBF2",
+      "title": "Maddison Project Database 2023 (DataverseNL persistent dataset record, doi:10.34894/INZBF2)",
+      "publisher": "DataverseNL / GGDC",
+      "source_id": "maddison",
+      "contains": [
+        "Persistent-identifier copy of MPD 2023 files; use for hashed raw download and vintage record"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "source_id": "doind",
+      "contains": [
+        "Approved FDI commitments by country and sector (approval basis - differs methodologically from NRB realised FDI)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://doind.gov.np/detail/5c6a4832-321c-40b9-8b54-a0f4e94edce0",
+      "title": "The Industrial Enterprises Act, 2076 (2020)",
+      "publisher": "Department of Industry, Government of Nepal",
+      "source_id": null,
+      "contains": [
+        "English text of the Industrial Enterprises Act 2020: industry registration, Schedule-1 prior permission, federal/provincial registration split, incentives and facilities."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://faolex.fao.org/docs/pdf/NEP225903.pdf",
+      "title": "National Natural Resources and Fiscal Commission Act, 2074 (2017)",
+      "publisher": "FAO FAOLEX (copy of GoN Act)",
+      "source_id": null,
+      "contains": [
+        "NNRFC Act: commission mandate and criteria for revenue-sharing, equalisation and conditional grant recommendations, internal borrowing limits and natural-resource royalty distribution."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://faolex.fao.org/docs/pdf/NEP229027.pdf",
+      "title": "The Public Procurement Regulation, 2064 (2007)",
+      "publisher": "FAO FAOLEX (copy of GoN regulation)",
+      "source_id": null,
+      "contains": [
+        "English text of Public Procurement Regulation 2007: procedural rules, thresholds (as of copy vintage), e-bidding rules."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://faolex.fao.org/docs/pdf/nep6227.pdf",
+      "title": "Land Acquisition Act, 2034 (1977) (FAOLEX copy)",
+      "publisher": "FAO FAOLEX",
+      "source_id": null,
+      "contains": [
+        "Second copy of the Land Acquisition Act 1977 text for amendment/version check."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://forumfed.org/wp-content/uploads/2021/11/The-Pivotal-Role-of-The-National-Natural-Resources-and-Fiscal-Commission-in-Nepals-Intergovernmental-Fiscal-System-FINAL.pdf",
+      "title": "The Pivotal Role of the NNRFC in Nepal's Intergovernmental Fiscal System",
+      "publisher": "Forum of Federations",
+      "source_id": null,
+      "contains": [
+        "Independent analysis of NNRFC formula design and implementation (academic/independent tier)."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": [
+        "FY2022/23 imports/exports by partner country, HS chapter and commodity, and customs office (e.g. Birgunj, Biratnagar, Bhairahawa, Tatopani, Rasuwa); petroleum (HS 27), fertiliser (HS 31), pharmaceuticals (HS 30), ICT goods (HS 84/85)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Budget%20Translation_2082-2083_nzrwuof.pdf",
+      "title": "Budget Speech of Fiscal Year 2025/26 (2082/83), English translation",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": [
+        "Budgeted fiscal transfers to provinces and local levels for FY2082/83 by grant type and revenue sharing."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+      "title": "Consolidated Financial Statement (Federal, Province and Local Government) FY2023/24",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "source_id": null,
+      "contains": [
+        "Actual (outturn) intergovernmental transfers by grant type, provincial and local revenue and expenditure, consolidated with elimination of intergovernmental transactions, FY2023/24."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Intergovernmental%20Fiscal%20Arrangement%20Act,%202074%20(2017)%20English%20Version_y7gnh3i.pdf",
+      "title": "Intergovernmental Fiscal Arrangement Act, 2074 (2017) English Version (PDF)",
+      "publisher": "Government of Nepal (MoF upload on government CDN)",
+      "source_id": "mof_nepal",
+      "contains": [
+        "Direct PDF of the IGFA Act English version; same content as MoF page."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal%20Labour%20Migration%202024_Final-Version%20for%20Approval%20(1)_peesvxa.pdf",
+      "title": "Nepal Labour Migration Report 2024",
+      "publisher": "Ministry of Labour, Employment and Social Security, Government of Nepal",
+      "source_id": "dofe",
+      "contains": [
+        "DoFE labour approvals (new and renewal) by destination country, sex and skill for FY2022/23 and FY2023/24; deaths/injuries abroad; excludes India (no labour permit required)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
+      "title": "Government Debt Statistics for the month of Falgun 2082 (mid-March 2026)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": [
+        "Outstanding external debt by creditor and currency at mid-March 2026"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": [
+        "Cost-risk indicators: currency composition (SDR, USD, JPY, EUR, CNY), fixed vs variable rate share, refinancing and FX risk"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
+      "title": "Government Debt Statistics for the month of Shrawan 2082 (mid-August 2025)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": [
+        "Outstanding external debt by creditor (IDA, ADB, IMF, JICA, bilateral) and by currency at mid-August 2025; FY2025/26 month 1"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": [
+        "Public debt bulletin: external debt composition, debt service, creditor and currency structure, FY2024/25 close"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://gulfmigration.grc.net/",
+      "title": "Gulf Labour Markets, Migration and Population (GLMM) data portal",
+      "publisher": "Gulf Research Center",
+      "source_id": "glmm",
+      "contains": [
+        "Demographic and labour-market tables for GCC states, incl. foreign population/workers by nationality where GCC statistical offices or embassies publish it (irregular vintages)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ibn.gov.np/ibn-faq/details/what-are-the-key-acts-laws-governing-land-acquisition-in-nepal-8691",
+      "title": "IBN FAQ: key acts and laws governing land acquisition in Nepal",
+      "publisher": "Office of the Investment Board Nepal",
+      "source_id": null,
+      "contains": [
+        "IBN's list of statutes governing land acquisition for investment projects; to establish which land acquisition statute is currently in force (conflicting secondary claims about a 2076/2019 Act)."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+      "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+      "publisher": "Office of the Investment Board Nepal",
+      "source_id": null,
+      "contains": [
+        "Full English text of the PPP and Investment Act 2019: project modalities, IBN mandate as PPP agency and investment promotion agency, approval thresholds, land provisions, dispute resolution and incentives."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": [
+        "Independent analysis of transit volumes, routes and bottlenecks through Indian ports (tier 7; secondary check only)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ideas.repec.org/a/bla/econpa/v33y2014i4p339-361.html",
+      "title": "Paudel (2014) Economic Growth in Developing Countries: Is Landlockedness Destiny?, Economic Papers 33(4):339-361 (ANU working paper https://crawford.anu.edu.au/sites/default/files/2025-03/acde_wp_econ_2014_01.pdf)",
+      "publisher": "Economic Society of Australia / Wiley",
+      "source_id": "academic",
+      "contains": [
+        "Growth-regression estimate of the landlocked penalty and its sensitivity; role of governance, openness and coordinated transit infrastructure among LLDCs"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ideas.repec.org/a/eee/jmacro/v38y2013ipbp151-166.html",
+      "title": "Kar, Pritchett, Raihan and Sen (2013) Looking for a break: Identifying transitions in growth regimes, Journal of Macroeconomics 38:151-166, doi:10.1016/j.jmacro.2013.09.022",
+      "publisher": "Elsevier",
+      "source_id": "academic",
+      "contains": [
+        "Combined statistical-filter method for dating growth-regime transitions; method to apply to MPD/PWT for Nepal and comparators"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ideas.repec.org/a/tpr/restat/v90y2008i3p582-587.html",
+      "title": "Jones and Olken (2008) The Anatomy of Start-Stop Growth, Review of Economics and Statistics 90(3):582-587",
+      "publisher": "MIT Press",
+      "source_id": "academic",
+      "contains": [
+        "Asymmetry between growth accelerations (trade expansion) and collapses (investment fall, price instability); correlates at spell boundaries"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ilostat.ilo.org",
+      "title": "ILOSTAT — Nepal labour force indicators",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": [
+        "Survey-based vs modelled estimates (C-07)."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2075-",
+      "title": "Nepal - FITTA 2019 (Investment Laws Navigator)",
+      "publisher": "UNCTAD Investment Policy Hub",
+      "source_id": null,
+      "contains": [
+        "UNCTAD's structured coding of FITTA 2019 provisions (entry, treatment, protection, dispute settlement); cross-check of provisions and amendment status."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://journals.sagepub.com/doi/10.1177/016001799761012334",
+      "title": "Gallup, Sachs and Mellinger (1999) Geography and Economic Development, International Regional Science Review 22(2):179-232",
+      "publisher": "SAGE",
+      "source_id": "academic",
+      "contains": [
+        "Effects of coastal/navigable-river access, climate and disease on income and growth; landlockedness penalty"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+      "title": "Nepal signs deal with India to procure chemical fertiliser",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": [
+        "News report on the government-to-government fertiliser MoU with India; pointer to MoALD / Agriculture Inputs Company primary documents (secondary, tier 7)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+      "title": "Constitution of Nepal (Nepali authoritative text)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": [
+        "Authoritative Nepali text of the Constitution of Nepal (2072 BS / 2015) as amended: Part 4 directive principles and state policies (economic policy), Part 5 structure of state and distribution of state power incl. financial powers and revenue distribution, Parts on the NNRFC, CIAA and Auditor General, and Schedules 5-9 (exclusive and concurrent powers of federal, province and local levels). Needed for constitutional_constraints."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://lawcommission.gov.np/content/13456/civil-code-procedure-2074/",
+      "title": "Muluki Civil Procedure Code, 2074 (National Civil Procedure Code 2017)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": [
+        "Nepali text of the National Civil Procedure Code 2017, incl. time standards for court events relevant to contract enforcement."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali river basins of Nepal, the Tibet Autonomous Region of China and India",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": [
+        "Glacial lake inventory and ranked list of potentially dangerous glacial lakes by basin and country (2020 release); input for GLOF exposure of hydropower and border infrastructure"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s10887-005-4712-0",
+      "title": "Hausmann, Pritchett and Rodrik (2005) Growth Accelerations, Journal of Economic Growth 10(4):303-329, doi:10.1007/s10887-005-4712-0",
+      "publisher": "Springer",
+      "source_id": "academic",
+      "contains": [
+        "Filter-based definition of growth accelerations (magnitude, post-acceleration growth floor, minimum duration, income-level condition), list of episodes since the 1950s, and correlates (investment, trade, real exchange rate, political change); NBER WP w10566 at https://www.nber.org/papers/w10566"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s10887-015-9122-3",
+      "title": "Rodrik (2016) Premature Deindustrialization, Journal of Economic Growth 21:1-33, doi:10.1007/s10887-015-9122-3",
+      "publisher": "Springer",
+      "source_id": "academic",
+      "contains": [
+        "Downward shift of the manufacturing share-income relationship for late developers; key reason why the East Asian manufacturing route may not transfer"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1023/B:JOEG.0000031425.72248.85",
+      "title": "Rodrik, Subramanian and Trebbi (2004) Institutions Rule, Journal of Economic Growth 9:131-165, doi:10.1023/B:JOEG.0000031425.72248.85",
+      "publisher": "Springer",
+      "source_id": "academic",
+      "contains": [
+        "Relative roles of institutions, geography and integration in income levels"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://lpi.worldbank.org",
+      "title": "Logistics Performance Index",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": [
+        "LPI 2023 scores and components for Nepal and comparators (survey-based; calendar year of survey)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://lpr.adb.org/sites/default/files/resource/657/nepal-local-governance-act.pdf",
+      "title": "Local Government Operation Act 2074 (English)",
+      "publisher": "ADB Law and Policy Reform (copy)",
+      "source_id": null,
+      "contains": [
+        "Functions, duties and powers of local governments, local planning and budgeting, local revenue powers, judicial committee, administrative structure."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials (incl. thematic report on international migration)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": [
+        "Census 2021 absent population abroad by country/region of destination, sex, age and reason for absence (reference date of census 2021)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round (microdata catalogue)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": [
+        "Household microdata allowing remittance receipts to be tabulated by sender country (beyond India/other split) with survey weights"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://mof.gov.np",
+      "title": "Economic Survey (latest fiscal year) and budget outturn",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": [
+        "Catalog landing page (endpoint unverified). Target: capital expenditure budgeted vs executed by fiscal year; macro summary tables. Needed for P3-07 (capex execution constraint)."
+      ],
+      "found_by": [
+        "00A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://mof.gov.np/content/576/intergovernmental-fiscal-arrangement-act--2074--2017--english/",
+      "title": "Intergovernmental Fiscal Arrangement Act, 2074 (2017) English Version",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": [
+        "Statutory revenue assignment (taxes and royalties by tier), revenue-sharing arrangements (VAT, excise, natural-resource royalties) via the federal divisible fund, grant types (fiscal equalisation, conditional, complementary, special), borrowing provisions and budget timelines."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Ministry of Industry, Commerce and Supplies, Nepal",
+      "source_id": null,
+      "contains": [
+        "HS-level import/export queries by partner and period; transit procedures; used for FY2023/24-FY2025/26 partner shares where books are not yet published"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://nnrfc.gov.np/category/report/",
+      "title": "NNRFC reports (annual reports and recommendations)",
+      "publisher": "National Natural Resources and Fiscal Commission",
+      "source_id": "nnrfc",
+      "contains": [
+        "Annual reports (first to sixth, BS 2076-2081) and annual recommendations: equalisation-grant formula components (minimum, formula-based, performance-based), indicator weights, revenue-sharing ratios, royalty distribution and borrowing ceilings per province/local level."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://nnrfc.gov.np/uploads/resources/2024-06-16/Annual_Report_2080_nnrfc1.pdf",
+      "title": "NNRFC Fifth Annual Report 2080 (Nepali)",
+      "publisher": "National Natural Resources and Fiscal Commission",
+      "source_id": "nnrfc",
+      "contains": [
+        "Fifth annual report: recommended grant allocations and formulae for FY2080/81, implementation status of previous recommendations."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": [
+        "Import and sales volumes by product (petrol, diesel, kerosene, ATF, LPG) by FY/month; supplier arrangement with Indian Oil Corporation"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://noc.org.np/publication",
+      "title": "Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": [
+        "NOC annual reports and supply agreement notes (term of IOC agreement, supply points, pipeline and depot storage)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://nsonepal.gov.np",
+      "title": "National Accounts of Nepal (latest annual release) — NSO landing page",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": [
+        "Catalog landing page (endpoint unverified). Target document: annual National Accounts release with nominal GDP at current prices (NPR), GDP at constant prices, implicit GDP deflator, GVA by industry at basic prices, GFCF; fiscal-year basis; revision status (preliminary/revised/final) and constant-price base year. Needed for task P2-02.",
+        "Catalog landing page (endpoint unverified). Target: Census 2021 total and absent population, reference date, enumeration concept; NSO population projection report by variant. Needed for task P2-04.",
+        "Catalog landing page (unverified). Needed for C-01, C-03, C-04: FY reference period, revision status, constant-price base year and rebasing notes."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://nyaspubs.onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-6632.2010.05921.x",
+      "title": "Stern (2011) The role of energy in economic growth, Annals of the New York Academy of Sciences 1219:26-51, doi:10.1111/j.1749-6632.2010.05921.x",
+      "publisher": "Wiley / NYAS",
+      "source_id": "academic",
+      "contains": [
+        "Theory and evidence on energy as a binding constraint when scarce; relevance to Nepal's hydropower endowment and electricity-access precondition"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://oag.gov.np/",
+      "title": "OAGN - Office of the Auditor General (current site)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": [
+        "Current OAG site; location of the 62nd Annual Report 2082 (covering FY2080/81) and any English summary."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://oag.gov.np/site_uploads/bg1-Some%20sections%20of%20Annual%20Report%202078%20English%20Version..pdf",
+      "title": "The Auditor General's Fifty-Eighth Annual Report 2021 (2078), selected sections, English",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": [
+        "English sections of the 58th annual report (FY2076/77 audit): irregularity breakdown by category and tier, cumulative arrears table."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://old.fcgo.gov.np/reporttype/1",
+      "title": "Consolidated Financial Statements - FCGO (index)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "source_id": null,
+      "contains": [
+        "Index of annual CFS reports from FY2018/19 onward for transfer outturn series."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://old.oag.gov.np/menu-category/926/en",
+      "title": "Auditor General Nepal - Annual Report (index)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": [
+        "Index of OAG annual reports by BS year incl. English executive summaries: audited amounts, irregularities (to be recovered, to be regularised, advances), cumulative outstanding irregularities and arrears by federal, provincial and local tiers."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://old.oag.gov.np/uploads/files/fkr-executive_summary%20English.pdf",
+      "title": "Unofficial Translation: The Auditor General's Fifty-fifth Annual Report 2018 - executive summary",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": [
+        "Executive summary of the 55th report (FY2073/74 audit): irregularities and arrears; earlier point for trend."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://old.oag.gov.np/uploads/files/jKj-Executive%20Summary%20English%202071.pdf",
+      "title": "(Unofficial Translation) Fifty-Second Annual Report - executive summary",
+      "publisher": "Office of the Auditor General, Nepal",
+      "source_id": "oag_nepal",
+      "contains": [
+        "Executive summary of the 52nd report (FY2069/70 audit): pre-federal baseline for irregularities and arrears."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/rode.12389",
+      "title": "Paudel (2018) Export performance of developing countries: Does landlockedness matter?, Review of Development Economics",
+      "publisher": "Wiley",
+      "source_id": "academic",
+      "contains": [
+        "Export-performance penalty for landlocked developing countries; bears on export-share precondition"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/joes.12618",
+      "title": "Bolt, J. and van Zanden, J.L. (2024/2025) Maddison-style estimates of the evolution of the world economy: A new 2023 update, Journal of Economic Surveys, doi:10.1111/joes.12618",
+      "publisher": "Wiley / Journal of Economic Surveys",
+      "source_id": "academic",
+      "contains": [
+        "Documentation of MPD 2023 methodology: PPP benchmark, splicing of historical series, country coverage; needed to document comparability limits for Nepal and comparators"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://openknowledge.worldbank.org/bitstream/handle/10986/6507/449860PUB0Box3101OFFICIAL0USE0ONLY1.pdf",
+      "title": "Commission on Growth and Development (2008) The Growth Report: Strategies for Sustained Growth and Inclusive Development",
+      "publisher": "World Bank on behalf of the Commission on Growth and Development",
+      "source_id": null,
+      "contains": [
+        "Definition and list of sustained high-growth economies (25+ year spells), common characteristics (openness, macro stability, high saving/investment, market allocation, committed and capable government); primary source for comparator set and precondition list"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://pdmo.gov.np",
+      "title": "Public Debt Management Office annual report",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": [
+        "Catalog landing page (endpoint unverified). Target: central government domestic and external debt stock by creditor and currency, fiscal year end. Needed for P2-06.",
+        "Catalog landing page (unverified). Debt coverage and FY-end stock (C-08, C-09)."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://pharmexcil.com/uploads/countryreports/Nepal.pdf",
+      "title": "Regulatory and Market Profile of Nepal",
+      "publisher": "Pharmaceuticals Export Promotion Council of India",
+      "source_id": null,
+      "contains": [
+        "Indian export-promotion council profile of Nepal's pharmaceutical market and regulation (supplier-side view; secondary check)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://pip.worldbank.org",
+      "title": "Poverty and Inequality Platform — Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_pip",
+      "contains": [
+        "International-line poverty and PPP vintage (C-12)."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://plgsp.gov.np/node/1042",
+      "title": "PLGSP Annual Progress Report FY2024-25",
+      "publisher": "Ministry of Federal Affairs and General Administration / PLGSP",
+      "source_id": null,
+      "contains": [
+        "Provincial and Local Governance Support Programme progress incl. LISA completion and capacity-development results for FY2024/25."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://plgsp.gov.np/node/609",
+      "title": "Local Government Institutional Capacity Self-Assessment (LISA) Guideline 2078 (Revision)",
+      "publisher": "Ministry of Federal Affairs and General Administration / PLGSP",
+      "source_id": null,
+      "contains": [
+        "LISA indicator framework (governance, administration, planning and budgeting, financial management, service delivery, etc.) and scoring rules; results published by MoFAGA per local government."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+      "title": "Crisis Assessment: Nepal (July 2026)",
+      "publisher": "UN Committee for Development Policy / UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": [
+        "CDP assessment under the Crisis Response Process of Nepal's request to extend the LDC preparatory period; preference-erosion and macro context"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://population.un.org/wpp/",
+      "title": "UN World Population Prospects (latest revision)",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": [
+        "Nepal total and working-age population by projection variant to 2070+, mid-year reference (P2-04, P3-04).",
+        "Mid-year estimates and variant projections; methodology on census adjustment (C-06).",
+        "Population by age for destination countries (ageing and labour-demand projections), calendar year"
+      ],
+      "found_by": [
+        "00A",
+        "00B",
+        "16A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ppmo.gov.np/content/7397/7397-public-procurement-act-2063/",
+      "title": "Public Procurement Act, 2063 (English, with amendments)",
+      "publisher": "Public Procurement Monitoring Office",
+      "source_id": "ppmo",
+      "contains": [
+        "Legal thresholds for procurement methods, e-procurement mandate, user-committee and direct-procurement exceptions, complaint review."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ppmo.gov.np/index.php?_route_=reports/annual_reports",
+      "title": "PPMO Annual Reports",
+      "publisher": "Public Procurement Monitoring Office",
+      "source_id": "ppmo",
+      "contains": [
+        "PPMO annual reports by fiscal year: procurement volume by method (open competitive bidding, sealed quotation, direct procurement, user committees), e-GP usage, number of bids per tender, complaints."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-nepal",
+      "title": "PPP Laws/Concessions Laws - Nepal",
+      "publisher": "World Bank PPP Resource Center",
+      "source_id": null,
+      "contains": [
+        "Inventory of Nepal's PPP and concession-related laws and regulations."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://supremecourt.gov.np/web/assets/downloads/Supreme%20Court%20Booklet-2080.pdf",
+      "title": "Supreme Court Booklet 2080",
+      "publisher": "Supreme Court of Nepal",
+      "source_id": "supremecourt_nepal",
+      "contains": [
+        "Supreme Court information booklet (BS 2080) with institutional overview and summary case statistics for the reporting year."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://supremecourt.gov.np/web/assets/downloads/strategic/4th%20strategic%20plan%20of%20judiciary.pdf",
+      "title": "Fourth Five-Year Strategic Plan of Judiciary",
+      "publisher": "Supreme Court of Nepal",
+      "source_id": "supremecourt_nepal",
+      "contains": [
+        "Judiciary's fourth strategic plan: baseline caseload/backlog problem statement, case-management and time-standard targets; the fifth plan document still to be located."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/6364c306d685203c859c60a075df5c3a-0540012026/original/B-READY-MH-2026.pdf",
+      "title": "B-READY Methodology Handbook, Third Edition",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": [
+        "Methodology for B-READY Dispute Resolution topic (expert consultations and firm-level surveys); needed to document non-comparability with Doing Business Enforcing Contracts."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-May-2026.pdf",
+      "title": "Commodity Markets Pink Sheet, May 2026",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": [
+        "Monthly international prices: crude oil (Brent, Dubai, WTI), LNG, urea/DAP fertiliser, rice; calendar months"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+      "title": "ThinkHazard - Nepal - River flood",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": [
+        "Hazard-level classification for river flood at national and sub-national level (qualitative class, not exposure value)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+      "title": "Nepal Tourism Statistics 2024",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": [
+        "Calendar-year 2024 international arrivals by nationality, mode (air/land), purpose, length of stay; foreign-exchange earnings from tourism"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
+      "title": "Nepal Tourism Statistics 2023",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": [
+        "Calendar-year 2023 arrivals by nationality and entry point; historical series tables"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ttd.wto.org",
+      "title": "WTO Tariff and Trade Data",
+      "publisher": "World Trade Organization",
+      "source_id": "wto_tariff",
+      "contains": [
+        "MFN and preferential tariffs applied by partner markets to Nepal's export lines (HS 6-digit)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://ucdp.uu.se",
+      "title": "Uppsala Conflict Data Program",
+      "publisher": "Uppsala University",
+      "source_id": "ucdp",
+      "contains": [
+        "Georeferenced conflict events in migrant destination and transit regions (calendar year)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports",
+      "publisher": "International Trade Centre",
+      "source_id": null,
+      "contains": [
+        "Product-market preference-margin analysis and export diversification options for Nepal post-graduation"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport",
+      "title": "Review of Maritime Transport",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": [
+        "Freight rates, port and chokepoint disruption analysis (annual)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "International trade in digitally deliverable services, value",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": [
+        "Annual (calendar-year) digitally deliverable services exports by economy incl. Nepal; no destination breakdown"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/publication/28933/main-report.pdf",
+      "title": "ADB, DFID and ILO (2009) Nepal: Critical Development Constraints (Country Diagnostics Studies)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": [
+        "Growth-diagnostics identification of Nepal's binding constraints (infrastructure, governance, labour relations, etc.) circa FY2007/08; baseline for which preconditions were historically missing"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/publication/806946/fiscal-decentralization-nepal-transition-federalism.pdf",
+      "title": "Strengthening Fiscal Decentralization in Nepal's Transition to Federalism",
+      "publisher": "Asian Development Bank",
+      "source_id": null,
+      "contains": [
+        "Expenditure and revenue assignment, transfer system design, and subnational PFM capacity."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20130954",
+      "title": "Feenstra, Inklaar and Timmer (2015) The Next Generation of the Penn World Table, American Economic Review 105(10), doi:10.1257/aer.20130954",
+      "publisher": "American Economic Association",
+      "source_id": "academic",
+      "contains": [
+        "Methodology of rgdpo vs rgdpe vs rgdpna, capital stock and TFP construction; defines which PWT series are appropriate for growth over time vs level comparisons"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.91.5.1369",
+      "title": "Acemoglu, Johnson and Robinson (2001) The Colonial Origins of Comparative Development, AER 91(5):1369-1401, doi:10.1257/aer.91.5.1369",
+      "publisher": "American Economic Association",
+      "source_id": "academic",
+      "contains": [
+        "Institutions-and-income identification; note non-applicability of the colonial-settlement instrument to never-colonised Nepal"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.bis.gov/ear/title-15/subtitle-b/chapter-vii/subchapter-c/part-738/supplement-no-1-part-738-commerce-country",
+      "title": "Supplement No. 1 to Part 738 - Commerce Country Chart",
+      "publisher": "US Bureau of Industry and Security",
+      "source_id": "bis_us",
+      "contains": [
+        "License requirements by reason for control for Nepal as destination; with EAR Part 740 country groups"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.constituteproject.org/constitution/Nepal_2015.pdf",
+      "title": "Nepal 2015 Constitution (Constitute Project)",
+      "publisher": "Constitute Project",
+      "source_id": null,
+      "contains": [
+        "English text of the 2015 Constitution with amendments up to the stated PDF vintage; secondary cross-check of article numbering only."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.doingbusiness.org/content/dam/doingBusiness/country/n/nepal/NPL.pdf",
+      "title": "Doing Business 2020 Economy Profile: Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Enforcing Contracts indicator for Kathmandu: time (days), cost (percent of claim), quality of judicial processes index, DB2020 vintage (data as of May 2019). Discontinued series; methodology issues noted by World Bank in 2021."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/002/2025/326/article-A001-en.xml",
+      "title": "IMF (2025) Botswana: Selected Issues, IMF Country Report 2025/326",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": [
+        "Landlocked long-spell comparator: diamond-led growth, institutions, and current diversification challenges"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/024/2010/001/article-A005-en.xml",
+      "title": "Johnson, Ostry and Subramanian (2010) Prospects for Sustained Growth in Africa: Benchmarking the Constraints, IMF Staff Papers 57(1)",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": [
+        "Benchmarking initial conditions (institutions, openness, education, macro stability, health, conflict) of sustained growers at the start of their spells; template for benchmarking Nepal's current conditions"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "Food and Agriculture Organization",
+      "source_id": "fao_stat",
+      "contains": [
+        "Inputs/Fertilizers by nutrient (production, import, use) and Food Balances for cereals incl. rice; calendar year"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/countries/detail/Nepal.html",
+      "title": "Nepal - country page",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": [
+        "Current FATF listing status of Nepal and links to MER, follow-up reports and plenary statements"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2025.html",
+      "title": "Jurisdictions under Increased Monitoring - 21 February 2025",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": [
+        "Plenary statement listing jurisdictions under increased monitoring and Nepal's action-plan items"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-APG-FUR-2025.html",
+      "title": "Nepal: APG follow-up report 2025",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": [
+        "Re-rating decisions on technical compliance since the 2023 MER"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-mer-2023.html",
+      "title": "Anti-money laundering and counter-terrorist financing measures - Nepal, Mutual Evaluation Report 2023",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": [
+        "Technical compliance and effectiveness ratings, recommended actions"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.federalreserve.gov",
+      "title": "Federal Reserve Board - FOMC statements and H.15 selected interest rates",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": [
+        "Federal funds target range and US Treasury yields (daily/monthly, calendar basis)"
+      ],
+      "found_by": [
+        "16A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.greenclimate.fund",
+      "title": "Green Climate Fund project portfolio",
+      "publisher": "Green Climate Fund",
+      "source_id": "gcf",
+      "contains": [
+        "Approved projects and disbursements for Nepal by entity"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": [
+        "Basin-level risk evidence for hydropower (snow/glacier melt contribution, hazard exposure); pointer to underlying ICIMOD publications"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": [
+        "ICIMOD account of the 2026 Kyirong-Rasuwa cross-border flood/debris event; damage to Rasuwagadhi-Kerung border infrastructure and hydropower in the Trishuli/Bhote Koshi corridor"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.iea.org",
+      "title": "IEA Oil Market Report and World Energy Outlook",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": [
+        "Oil supply/demand balances and price scenarios; battery and solar cost trends"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": [
+        "Sectoral employment exposure to preference loss (apparel, carpets, etc.) by sex and formality"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/-/media/Files/Publications/DP/2020/English/DPLTEREA.ashx",
+      "title": "IMF (2020) Departmental Paper including The Experience of Rwanda (landlocked growth case)",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": [
+        "Case material on a landlocked low-income economy with sustained growth; institutions and public investment preconditions (verify exact title/series on retrieval)"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": [
+        "Staff report incl. joint WB-IMF debt sustainability analysis, BoP and remittance projections, external vulnerability discussion (Middle East conflict, LDC graduation, FATF listing)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/wp/issues/2025/06/20/how-do-remittances-affect-the-real-exchange-rate-an-empirical-investigation-567747",
+      "title": "How Do Remittances Affect the Real Exchange Rate? An Empirical Investigation, IMF Working Paper 2025/122",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": [
+        "Remittance-REER relationship by exchange-rate regime (fixed vs flexible); Nepal pegs to the Indian rupee, so the fixed-regime results are the relevant ones"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/",
+      "title": "IMF World Economic Outlook DataMapper API",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": [
+        "Partner-country real GDP growth, inflation and current-account projections (India, China, GCC, Malaysia, US, EU); calendar year except India (FY) - check WEO country notes"
+      ],
+      "found_by": [
+        "16A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NPL",
+      "title": "IMF WEO DataMapper GGXWDG_NGDP, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": [
+        "General government gross debt % of GDP; coverage vs PDMO central-government debt (C-08)."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD/NPL",
+      "title": "IMF WEO DataMapper: NGDPD, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": [
+        "WEO nominal GDP in USD; mixes outturns and projections — the estimates-start year must be recorded per vintage (P2-07).",
+        "WEO nominal USD GDP; outturn vs projection boundary per vintage (C-02, C-03)."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/external/pubs/ft/bop/2007/pdf/bpm6.pdf",
+      "title": "Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)",
+      "publisher": "International Monetary Fund",
+      "source_id": null,
+      "contains": [
+        "Standard definitions of personal transfers, compensation of employees and personal remittances; basis for classifying C-05 as definitional."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.imf.org/external/pubs/ft/wp/2010/wp10271.pdf",
+      "title": "Magud and Sosa (2010) When and Why Worry About Real Exchange Rate Appreciation? The Missing Link Between Dutch Disease and Growth, IMF WP/10/271",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": [
+        "Evidence on whether inflow-driven real appreciation (incl. remittances) reduces tradables and growth; relevant to remittance-financed Nepal versus export-led comparators"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+      "title": "Commerce Wing Brief",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": [
+        "Indian-side description of the Treaty of Trade and Treaty of Transit, designated transit ports and corridors, ICDs and cross-border rail links"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.knomad.org/data/remittances",
+      "title": "Remittances and Migration data",
+      "publisher": "KNOMAD / World Bank",
+      "source_id": "knomad",
+      "contains": [
+        "Inward remittances by country and Bilateral Remittance Matrix (modelled allocation by migrant stock and incomes; calendar year; latest vintage to be confirmed)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nber.org/papers/w16919",
+      "title": "Eichengreen, Park and Shin (2011/2012) When Fast Growing Economies Slow Down: International Evidence and Implications for China, NBER WP 16919; Asian Economic Papers 11(1)",
+      "publisher": "NBER / MIT Press",
+      "source_id": "academic",
+      "contains": [
+        "Income levels and conditions at which fast-growth spells end; used as failure conditions for long high-growth trajectories"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nber.org/papers/w20573",
+      "title": "Pritchett and Summers (2014) Asiaphoria Meets Regression to the Mean, NBER Working Paper 20573",
+      "publisher": "National Bureau of Economic Research",
+      "source_id": "academic",
+      "contains": [
+        "Evidence on low persistence of cross-country growth rates and regression to the mean; base rates for how often super-rapid growth persists over decade-plus horizons; essential for calibrating the untargeted and target trajectories (feeds 01C)"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": [
+        "Annual (FY) energy balance: generation by plant/basin, imports from and exports to India and Bangladesh (energy units and revenue), seasonal profile, installed capacity by river basin"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.newyorkconvention.org/media/uploads/pdf/6/1/614_arbitration-act-2055-1999.pdf",
+      "title": "Arbitration Act, 2055 (1999)",
+      "publisher": "New York Convention Guide (hosting official English translation)",
+      "source_id": null,
+      "contains": [
+        "English text of the Arbitration Act 1999: arbitral procedure, court role, recognition and enforcement of foreign awards."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np",
+      "title": "NRB exchange-rate statistics and Current Macroeconomic and Financial Situation",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Catalog landing page (endpoint unverified). Target: NPR/USD reference rates (buying/selling) daily or monthly, enabling fiscal-year and calendar-year period averages; BoP tables (workers' remittances, current account, reserves, FDI). Needed for P2-03 and P2-05.",
+        "Catalog landing page (unverified). Workers' remittances and BoP presentation (BPM edition), FX reference rates (C-05, C-13, C-18)."
+      ],
+      "found_by": [
+        "00A",
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Archive of monthly/annual CME releases with downloadable statistical tables (Excel/PDF); source for historical series of remittances, BoP, trade by partner group, reserves; FY and month-of-FY basis"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "FDI stock by source country and sector at end-FY2022/23 (prior vintage for trend)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/05/FIU-Nepal-Newsletter-May-2025-%E2%80%93-Issue-IV.pdf",
+      "title": "FIU-Nepal Newsletter, Issue IV (Jan-Dec 2024)",
+      "publisher": "Financial Intelligence Unit, Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "FIU activity statistics (STR/TTR) and grey-list response measures; calendar year 2024"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Annual FY2024/25 (mid-July basis) text and statistical tables: balance of payments summary, remittance inflows (NPR and USD), merchandise trade by India/China/other countries, major imports incl. petroleum products, services (travel) receipts, FDI inflow line, gross foreign exchange reserves and import cover"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Banking-system risk assessment FY2024/25: external-sector and remittance-channel risks, possible discussion of correspondent/foreign-currency exposures and AML/CFT (grey-list) implications for banks"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Foreign exchange directives/circulars: rules on payment for imports from India in convertible currency vs INR, remittance company licensing; needed to define invoicing-currency exposure"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/ofg/monetary-policy-in-english-2082-83-full-text/",
+      "title": "Monetary Policy for 2025/26 (2082/83), full text",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Review of FY2024/25 external sector and policy stance for FY2025/26; exchange-rate arrangement (NPR-INR peg) statement; reserve targets"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2024-25/",
+      "title": "Current Macroeconomic and Financial Situation (nine months of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "Nine-month FY2024/25 BoP detail incl. services receipts lines (telecommunications, computer and information services; other business services) needed to bound ICT/BPO exports"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": [
+        "FDI stock and flows by source country and by sector at end-FY2023/24; approved vs actual FDI comparison"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.pefa.org/node/5238",
+      "title": "Nepal Gandaki Province SNG PEFA 2025",
+      "publisher": "PEFA Secretariat",
+      "source_id": null,
+      "contains": [
+        "Subnational PEFA for Gandaki Province incl. procurement indicator and data systems."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.pefa.org/sites/pefa/files/2024-04/NP-Apr24-GRPFM-Public%20with%20PEFA%20Check_0.pdf",
+      "title": "Nepal PEFA assessment (April 2024 publication, cut-off end-2022)",
+      "publisher": "PEFA Secretariat",
+      "source_id": null,
+      "contains": [
+        "PEFA scores incl. PI-24 procurement (monitoring, methods, public access, complaints), PI-26 internal audit, PI-30 external audit, PI-31 legislative scrutiny; comparison to the 2015 assessment."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rbi.org.in",
+      "title": "Reserve Bank of India - monetary policy statements and Database on Indian Economy",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": [
+        "RBI policy repo rate, INR/USD reference rate, Indian inflation; monthly, Indian FY April-March"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": [
+        "Indian-side exchange control rules for transactions with Nepal (INR settlement, exceptions for convertible-currency payments); legal basis for INR invoicing share"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/blog/penn-world-table-version-11-0-is-published?lang=en",
+      "title": "Penn World Table version 11.0 is published (release note)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": [
+        "Release date and list of methodological changes in PWT 11.0 versus 10.01 (ICP 2021 PPPs, extension to 2023, change in China series); needed to document vintage differences"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/",
+      "title": "Maddison Project Database (latest)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "maddison",
+      "contains": [
+        "Long-run GDP per capita for identifying sustained high-growth spells in comparator economies (P3-03)."
+      ],
+      "found_by": [
+        "00A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
+      "title": "Maddison Project Database 2023 (MPD 2023), release page",
+      "publisher": "Groningen Growth and Development Centre, University of Groningen",
+      "source_id": "maddison",
+      "contains": [
+        "Country-year panel of real GDP per capita (2011 international dollars, cgdppc/rgdpnapc-type fields) and population, long-run to 2022; primary panel for identifying 25+ year high-growth spells and starting income levels; download the xlsx/dta files and record the version string"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "title": "Penn World Table (latest version)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": [
+        "Capital stock, TFP and labour share for Nepal and comparators (P3-02).",
+        "Country-year panel 1950-2023: rgdpo, rgdpe, rgdpna, pop, emp, hc (human capital index), rnna (capital stock), ctfp/rtfpna (TFP), csh_i (investment share), csh_x (export share), labsh; PPPs benchmarked to ICP 2021; primary source for investment and export shares within spells and for growth accounting of comparators"
+      ],
+      "found_by": [
+        "00A",
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt1001?lang=en",
+      "title": "PWT 10.01 (earlier release)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": [
+        "Prior vintage (ICP 2017 PPP base) for sensitivity check of spell identification to PPP revisions"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0304387811000836",
+      "title": "Berg, Ostry and Zettelmeyer (2012) What Makes Growth Sustained?, Journal of Development Economics 98(2):149-166 (IMF WP/08/59 at https://www.imf.org/external/pubs/ft/wp/2008/wp0859.pdf)",
+      "publisher": "Elsevier / IMF",
+      "source_id": "academic",
+      "contains": [
+        "Structural-break identification of growth spells for a large country panel; survival (duration) analysis of spell length against income equality, institutions, export orientation, manufacturing export share, FDI openness, exchange-rate overvaluation, macro stability"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.supremecourt.gov.np/web/yearlyreps",
+      "title": "Supreme Court of Nepal - annual reports (yearly reports page)",
+      "publisher": "Supreme Court of Nepal",
+      "source_id": "supremecourt_nepal",
+      "contains": [
+        "Index of judiciary annual reports (Supreme Court, High Courts, District Courts) by fiscal year (BS), incl. FY2080/81 and FY2081/82; contains caseload, disposals and pending cases by court tier and age of case."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/10168737.2019.1666291",
+      "title": "Workers' Remittances and the Dutch Disease: Evidence From South Asian Countries, International Economic Journal 33(4) (2019)",
+      "publisher": "Taylor & Francis",
+      "source_id": "academic",
+      "contains": [
+        "South Asian panel evidence (incl. Nepal) on remittance-induced real appreciation and tradable-sector effects"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/14649880310001660201",
+      "title": "Faye, McArthur, Sachs and Snow (2004) The Challenges Facing Landlocked Developing Countries, Journal of Human Development 5(1):31-68",
+      "publisher": "Taylor & Francis",
+      "source_id": "academic",
+      "contains": [
+        "Four channels of transit-neighbour dependence (infrastructure, political relations, peace/stability, administrative practices); direct framework for Nepal's dependence on India (and prospectively China) transit"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.trade.gov/country-commercial-guides/nepal-us-export-controls",
+      "title": "Nepal - U.S. Export Controls (Country Commercial Guide)",
+      "publisher": "US International Trade Administration",
+      "source_id": "bis_us",
+      "contains": [
+        "Summary of how EAR applies to exports to Nepal"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.transparency.org/en/cpi/2025",
+      "title": "Corruption Perceptions Index 2025 (full dataset and methodology)",
+      "publisher": "Transparency International",
+      "source_id": "ti_cpi",
+      "contains": [
+        "Global CPI 2025 dataset (2012 onward comparable scores) and technical methodology document."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.transparency.org/en/cpi/2025/index/npl",
+      "title": "Corruption Perceptions Index 2025 - Nepal",
+      "publisher": "Transparency International",
+      "source_id": "ti_cpi",
+      "contains": [
+        "Nepal CPI 2025 score, rank, standard error and underlying source scores; with the CPI 2025 full dataset and methodology note."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.un.org/ohrlls/sites/www.un.org.ohrlls/files/lldcs_publications/dev-costs-of-landlockedness.pdf",
+      "title": "The Development Economics of Landlockedness (UN-OHRLLS publication)",
+      "publisher": "UN Office of the High Representative for LDCs, LLDCs and SIDS",
+      "source_id": null,
+      "contains": [
+        "Estimates and discussion of the development costs of being landlocked; trade-cost and growth channels"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.un.org/securitycouncil/sanctions/information",
+      "title": "UN Security Council consolidated sanctions list",
+      "publisher": "United Nations",
+      "source_id": "un_sanctions",
+      "contains": [
+        "Consolidated list and regime information for sanctions screening"
+      ],
+      "found_by": [
+        "16A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.un.org/sites/un2.un.org/files/apoa_booklet.pdf",
+      "title": "Awaza Programme of Action for Landlocked Developing Countries 2024-2034 (UNGA A/RES/79/233)",
+      "publisher": "United Nations",
+      "source_id": null,
+      "contains": [
+        "Current multilateral framework for LLDC transit, trade facilitation, structural transformation; context for which transit constraints are policy-addressable"
+      ],
+      "found_by": [
+        "01B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.undp.org/nepal/publications/functional-analysis-and-assignment-government-consolidated-report",
+      "title": "Functional Analysis and Assignment of Government: Consolidated Report",
+      "publisher": "UNDP Nepal",
+      "source_id": null,
+      "contains": [
+        "Functional analysis mapping constitutional Schedules 5-9 into detailed functions per tier (unbundling follow-up)."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/content/dam/sites/govindicators/doc/The%20Worldwide%20Governance%20Indicators%202025%20Methodology%20Revision.pdf",
+      "title": "The Worldwide Governance Indicators 2025 Methodology Revision",
+      "publisher": "World Bank",
+      "source_id": "wb_wgi",
+      "contains": [
+        "Description of the December 2025 WGI methodology revision: source screening, indicator mapping, aggregation model allowing global averages to vary, absolute 0-100 scale; implications for comparability with pre-2025 vintages."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/en/businessready/reports",
+      "title": "Business Ready (B-READY) reports",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "B-READY 2024 and 2025 reports and economy data incl. Dispute Resolution topic (regulatory framework, public services, operational efficiency pillars); need to confirm whether Nepal is in the 2024 and/or 2025 sample and its Dispute Resolution scores."
+      ],
+      "found_by": [
+        "11A"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/en/country/nepal/publication/nepaldevelopmentupdate",
+      "title": "Nepal Development Update (April 2026)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": [
+        "Macro update with transmission of the 2026 Middle East conflict (commodity prices, remittances, aviation, tourism) to Nepal"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/en/news/press-release/2024/05/13/nepal-fiscal-federalism-progressing-at-a-moderate-pace-further-reforms-needed-to-strengthen-outcomes",
+      "title": "Press release: Nepal fiscal federalism progressing at a moderate pace (2024 update)",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": [
+        "Pointer to the 2024 Fiscal Federalism Update report (full report to be located)."
+      ],
+      "found_by": [
+        "11C"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/en/programs/debt-statistics/ids",
+      "title": "International Debt Statistics — Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": [
+        "Total external debt incl. private non-guaranteed and IMF credit (C-09)."
+      ],
+      "found_by": [
+        "00B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/en/publication/worldwide-governance-indicators/documentation",
+      "title": "WGI Documentation",
+      "publisher": "World Bank",
+      "source_id": "wb_wgi",
+      "contains": [
+        "Source list and documentation for WGI vintages, needed to record which sources cover Nepal."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.worldbank.org/en/publication/worldwide-governance-indicators/interactive-data-access",
+      "title": "WGI Interactive Data Access",
+      "publisher": "World Bank",
+      "source_id": "wb_wgi",
+      "contains": [
+        "WGI 2025 update for Nepal: six dimensions (VA, PV, GE, RQ, RL, CC), revised 0-100 absolute scale with historical recalculation back to 1996, standard errors and number of sources per year."
+      ],
+      "found_by": [
+        "11B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation.pdf",
+      "title": "Trade impacts of LDC graduation",
+      "publisher": "World Trade Organization / EIF",
+      "source_id": "wto",
+      "contains": [
+        "Estimated tariff and export changes from loss of LDC-specific preferences by graduating country and market, incl. Nepal"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    },
+    {
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
+      "publisher": "World Trade Organization / EIF",
+      "source_id": "wto",
+      "contains": [
+        "Country-specific market-access analysis incl. Nepal product/market lines losing LDC-only preferences (EU EBA, UK DCTS, Canada, others)"
+      ],
+      "found_by": [
+        "16A",
+        "16B"
+      ],
+      "status": "not_fetched"
+    }
+  ]
+}

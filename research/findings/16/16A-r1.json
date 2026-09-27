@@ -1,0 +1,2635 @@
+{
+  "subagent_id": "16A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): 41 external variables that the shared model needs (derived from the 17 non-projection transmission channels in src/geopolitical_model/channels.py, the 20-entry exposure register and the 50 subagent specifications of Agents 17-26) are each assigned to a primary supplying subagent, supporting subagents and a domestic counterpart, and mapped to primary source ids in the source catalog (tier-1 Nepal official first). Every one of the 50 Division-B subagents 17A-26E has at least one assigned variable. Document-level source leads were located by web search for the variables with identifiable primary tables; no values were retrieved, so every empirical item is pending. Key coordination risks: fiscal-year vs calendar-year mixing (NRB, DoFE, customs, PDMO on Nepal FY; KNOMAD, WDI, IDS, UNCTAD, tourism arrivals, BIS on calendar year), coverage gaps (DoFE excludes India-bound migrants; NRB may under-record ICT exports), and three 2026 developments reported in search results that bear on scenarios S01, S05 and S08 and must be verified from primary documents before use.",
+  "findings": [
+    {
+      "claim": "External-variable list for the shared model: 41 variables mapped to channels and model variables (see specific.global_task_list). This is a research-design output, not an empirical value.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Primary-source assignment per variable follows the catalog hierarchy (Nepal official > IMF/WB/ADB > UN > foreign governments > energy authorities > ICIMOD/climate > academic); see specific.source_assignments.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "All empirical external inputs (remittances, migrant stocks, trade shares, fuel prices, debt composition, FDI by source, tourism arrivals, electricity trade, interest rates, exchange rates) remain unretrieved in r1.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "dofe",
+        "customs_nepal",
+        "pdmo",
+        "wb_ids",
+        "knomad",
+        "tourism_ministry",
+        "nea",
+        "fed",
+        "rbi",
+        "imf_weo"
+      ],
+      "note": "Requires `python -m src.cli leads --fetch` for the lead URLs listed in source_leads, then extraction and ingest-csv in r2."
+    },
+    {
+      "claim": "Monthly or quarterly versions of every calendar-year international series (commodity prices, policy rates, INR/USD, partner GDP) are needed to re-aggregate to Nepal FY (mid-July to mid-July); annual calendar-year values cannot be used directly.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_weo",
+        "fed",
+        "rbi",
+        "wb_wdi"
+      ],
+      "note": "Monthly series from IMF PCPS, Fed H.15, RBI DBIE; quarterly partner GDP where available."
+    },
+    {
+      "claim": "Three 2026 developments surfaced by search that may alter scenario status: (a) a Middle East conflict from early 2026 affecting Gulf labour markets, aviation and remittances (World Bank Nepal Development Update April 2026, IMF 2026 Article IV); (b) Nepal's request under the UN CDP Crisis Response Process to extend the LDC preparatory period (CDP Crisis Assessment July 2026); (c) an August 2026 cross-border debris flood at Rasuwagadhi-Kerung (ICIMOD). None is yet recorded as an observation.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl",
+        "imf_article_iv",
+        "undesa_ldc",
+        "icimod"
+      ],
+      "note": "Retrieve leads L47, L48, L52, L34 and record dated event observations before any scenario use."
+    }
+  ],
+  "data_gaps": [
+    "No document-level lead yet for: RBI/Fed monthly series extraction formats, UN DESA International Migrant Stock (not in source catalog), GCC host-country statistics by nationality beyond GLMM, IATA/OAG seat data (not in catalog, likely licensed), China customs data on trade with Nepal, MoF Development Cooperation Report (grants/ODA by donor).",
+    "Variables X33, X35, X36, X37, X39, X40 have no located primary lead in r1; supplying agents must locate them.",
+    "Engine coverage: only aggregate_real_growth, domestic_prices and exchange_rate have projection_variable in channels.py; the other external variables can only be carried as structured qualitative transmission records until modules exist.",
+    "Source catalog lacks ids for: World Bank Commodity Markets (Pink Sheet), ILO reports (as opposed to ILOSTAT), ITC, UN DESA migrant stock, IATA/OAG, Indian DGFT notifications, China GACC customs."
+  ],
+  "assumptions": [
+    {
+      "id": "16A-A1",
+      "text": "The list of external variables is derived from channels.py model_variables, the exposure register and the Agent 17-26 specifications; variables required only by domestic agents are out of scope for 16A.",
+      "basis": "assumption"
+    },
+    {
+      "id": "16A-A2",
+      "text": "Where a channel has several owners, the Division-B subagent with the matching research focus is designated primary supplier; domestic owners in channels.py are recorded as domestic counterparts that convert the input into model form.",
+      "basis": "assumption"
+    },
+    {
+      "id": "16A-A3",
+      "text": "Calendar-year international series enter the model only after documented conversion to Nepal FY using monthly/quarterly data; annual-to-FY interpolation is a fallback that must be labelled as an estimate method.",
+      "basis": "assumption"
+    },
+    {
+      "id": "16A-A4",
+      "text": "News articles and secondary platforms (e.g. CEIC, Trading Economics, newspapers) are used only to find primary documents and are never cited for values.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "channels.py owner lists omit several Division-B suppliers (e.g. remittances channel lacks 19D; fuel_prices lacks 21D; tourism_demand lacks 19C; external_financing lacks 25D/26E). Suggest reconciling owners with specific.global_task_list; 16A does not edit platform code."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog lacks ids for World Bank Commodity Markets (Pink Sheet), ITC, ILO reports, UN DESA International Migrant Stock, China customs (GACC) and Indian DGFT notifications; leads citing them carry source_id null until catalogued."
+    },
+    {
+      "to": "23A",
+      "text": "DoFE labour approvals exclude India-bound migrants and irregular migration; migrant stock by destination must combine DoFE flows with Census 2021 absentee data and host-country statistics, keeping each value separate."
+    },
+    {
+      "to": "21E",
+      "text": "Tourism arrivals by nationality are calendar-year; NRB travel receipts are Nepal FY. Do not compute receipts per arrival or shares across the two bases without conversion. Also verify coverage of Indian land arrivals in arrival statistics."
+    },
+    {
+      "to": "24C",
+      "text": "Reported disagreement between NRB-recorded ICT/BPO service receipts and industry claims (payments possibly recorded as remittances). Keep both, document classification rules (BPM6 services vs secondary income) and escalate to 00B if the gap exceeds tolerance."
+    },
+    {
+      "to": "20C",
+      "text": "PDMO reports central-government external debt on Nepal FY/monthly; World Bank IDS reports total external debt (public and private) on calendar-year end. Reconcile coverage before comparing."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: search results indicate 2026 developments (Middle East conflict, LDC-graduation extension request, Rasuwagadhi-Kerung flood) that may change the status or calibration of S01, S05, S08 and S10. Pending verification from leads L34, L47, L48, L52."
+    },
+    {
+      "to": "28",
+      "text": "Escalation for red-team review: the same 2026 developments and the variable-to-agent assignment should be tested for missing channels (e.g. food-staple export restrictions, northern border closure, remittance-channel concentration), which 16B proposes as new exposure entries."
+    }
+  ],
+  "uncertainty": "High. No external variable has a retrieved observation in r1; the assignment table is a research design whose completeness depends on the channel registry, which itself lacks engine support for most channels. Lead URLs were identified by web search and some may have moved or be incomplete (e.g. the latest customs annual book and DoFE yearly reports were not located as direct files). The 2026 developments are reported only in search results and secondary sources and must be treated as unverified.",
+  "specific": {
+    "global_task_list": [
+      {
+        "var_id": "X01",
+        "external_variable": "Remittance inflows (personal remittances / secondary income)",
+        "channel": "remittances",
+        "model_variables": [
+          "secondary_income",
+          "household_consumption",
+          "imports",
+          "fx_reserves",
+          "poverty"
+        ],
+        "primary_agents": [
+          "23C"
+        ],
+        "supporting_agents": [
+          "19D",
+          "20B"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-01"
+        ],
+        "scenarios": [
+          "S01",
+          "S04",
+          "S06",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X02",
+        "external_variable": "Remittance corridor shares by sending country",
+        "channel": "remittances",
+        "model_variables": [
+          "secondary_income"
+        ],
+        "primary_agents": [
+          "23C"
+        ],
+        "supporting_agents": [
+          "23A",
+          "23B",
+          "17A"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-01"
+        ],
+        "scenarios": [
+          "S01",
+          "S06"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X03",
+        "external_variable": "Nepali migrant stock and new labour approvals by destination (incl. India open-border migration)",
+        "channel": "migrant_employment",
+        "model_variables": [
+          "migrant_stock",
+          "remittances",
+          "domestic_labour_supply"
+        ],
+        "primary_agents": [
+          "23A",
+          "23B"
+        ],
+        "supporting_agents": [
+          "17A",
+          "23D",
+          "19D"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-02"
+        ],
+        "scenarios": [
+          "S01",
+          "S06",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X04",
+        "external_variable": "Destination labour demand, wages and migration policy (GCC, Malaysia, Korea, Japan, Europe, Australia)",
+        "channel": "migrant_employment",
+        "model_variables": [
+          "migrant_stock",
+          "remittances"
+        ],
+        "primary_agents": [
+          "23A",
+          "23B"
+        ],
+        "supporting_agents": [
+          "23D",
+          "18D",
+          "18C"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [
+          "EXP-02"
+        ],
+        "scenarios": [
+          "S06"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X05",
+        "external_variable": "Safety of Nepali workers, evacuation needs and conflict events in destination/transit regions",
+        "channel": "migrant_employment",
+        "model_variables": [
+          "migrant_stock",
+          "remittances"
+        ],
+        "primary_agents": [
+          "19D",
+          "19A"
+        ],
+        "supporting_agents": [
+          "23A"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [
+          "EXP-02",
+          "EXP-09"
+        ],
+        "scenarios": [
+          "S01",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X06",
+        "external_variable": "International petroleum and LPG prices",
+        "channel": "fuel_prices",
+        "model_variables": [
+          "imports",
+          "cpi",
+          "fiscal_revenue",
+          "current_account"
+        ],
+        "primary_agents": [
+          "22A"
+        ],
+        "supporting_agents": [
+          "19C"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-05"
+        ],
+        "scenarios": [
+          "S01",
+          "S04",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X07",
+        "external_variable": "Petroleum supply arrangement, volumes and supplier concentration",
+        "channel": "fuel_prices",
+        "model_variables": [
+          "imports",
+          "essential_supplies"
+        ],
+        "primary_agents": [
+          "22A",
+          "21D"
+        ],
+        "supporting_agents": [
+          "17A",
+          "19E"
+        ],
+        "domestic_counterparts": [
+          "04A"
+        ],
+        "exposure_ids": [
+          "EXP-05"
+        ],
+        "scenarios": [
+          "S01",
+          "S02",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X08",
+        "external_variable": "Transit costs, times and route availability (Indian ports, corridors, northern crossings)",
+        "channel": "transit_and_logistics",
+        "model_variables": [
+          "imports",
+          "exports",
+          "trade_costs",
+          "essential_supplies"
+        ],
+        "primary_agents": [
+          "21B"
+        ],
+        "supporting_agents": [
+          "19C",
+          "17A",
+          "17B",
+          "17D"
+        ],
+        "domestic_counterparts": [
+          "04A"
+        ],
+        "exposure_ids": [
+          "EXP-04"
+        ],
+        "scenarios": [
+          "S02",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X09",
+        "external_variable": "Indian trade and export-restriction policy (food, fertiliser, medicines, fuel)",
+        "channel": "transit_and_logistics",
+        "model_variables": [
+          "imports",
+          "essential_supplies",
+          "food_prices"
+        ],
+        "primary_agents": [
+          "17A",
+          "21D"
+        ],
+        "supporting_agents": [
+          "17D"
+        ],
+        "domestic_counterparts": [
+          "04A",
+          "07A"
+        ],
+        "exposure_ids": [
+          "EXP-03",
+          "EXP-15",
+          "EXP-16"
+        ],
+        "scenarios": [
+          "S02",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X10",
+        "external_variable": "China trade, connectivity and northern border operations",
+        "channel": "transit_and_logistics",
+        "model_variables": [
+          "imports",
+          "exports",
+          "trade_costs"
+        ],
+        "primary_agents": [
+          "17B",
+          "18B"
+        ],
+        "supporting_agents": [
+          "21B",
+          "25C"
+        ],
+        "domestic_counterparts": [
+          "04A"
+        ],
+        "exposure_ids": [
+          "EXP-03",
+          "EXP-20"
+        ],
+        "scenarios": [
+          "S02",
+          "S03",
+          "S05"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X11",
+        "external_variable": "Partner-country demand for Nepal's goods exports",
+        "channel": "external_demand_goods",
+        "model_variables": [
+          "goods_exports"
+        ],
+        "primary_agents": [
+          "17A",
+          "18A",
+          "18C"
+        ],
+        "supporting_agents": [
+          "21C",
+          "18D"
+        ],
+        "domestic_counterparts": [
+          "12A"
+        ],
+        "exposure_ids": [
+          "EXP-03"
+        ],
+        "scenarios": [
+          "S04"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X12",
+        "external_variable": "Trade preferences and tariffs facing Nepal (incl. LDC graduation timing)",
+        "channel": "trade_preferences",
+        "model_variables": [
+          "goods_exports",
+          "export_prices"
+        ],
+        "primary_agents": [
+          "21A",
+          "26C"
+        ],
+        "supporting_agents": [
+          "26B",
+          "18C"
+        ],
+        "domestic_counterparts": [
+          "12A"
+        ],
+        "exposure_ids": [
+          "EXP-13"
+        ],
+        "scenarios": [
+          "S08"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X13",
+        "external_variable": "International tourism demand by source market",
+        "channel": "tourism_demand",
+        "model_variables": [
+          "services_exports",
+          "employment_services"
+        ],
+        "primary_agents": [
+          "21E"
+        ],
+        "supporting_agents": [
+          "17A",
+          "17B",
+          "18A",
+          "18D"
+        ],
+        "domestic_counterparts": [
+          "12C"
+        ],
+        "exposure_ids": [
+          "EXP-08"
+        ],
+        "scenarios": [
+          "S01",
+          "S04",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X14",
+        "external_variable": "Air connectivity (routes, hubs, airspace, aviation restrictions)",
+        "channel": "aviation_connectivity",
+        "model_variables": [
+          "tourism_demand",
+          "migrant_travel"
+        ],
+        "primary_agents": [
+          "19C"
+        ],
+        "supporting_agents": [
+          "18D"
+        ],
+        "domestic_counterparts": [
+          "12C"
+        ],
+        "exposure_ids": [
+          "EXP-09"
+        ],
+        "scenarios": [
+          "S01",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X15",
+        "external_variable": "Demand for digitally delivered services and AI substitution",
+        "channel": "digital_services_demand",
+        "model_variables": [
+          "services_exports",
+          "employment_ict"
+        ],
+        "primary_agents": [
+          "24A",
+          "24C"
+        ],
+        "supporting_agents": [
+          "21E",
+          "18A"
+        ],
+        "domestic_counterparts": [
+          "08A"
+        ],
+        "exposure_ids": [
+          "EXP-14"
+        ],
+        "scenarios": [
+          "S07"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X16",
+        "external_variable": "Cross-border electricity prices, market access and transmission",
+        "channel": "electricity_trade",
+        "model_variables": [
+          "electricity_exports",
+          "nea_revenue",
+          "electricity_imports"
+        ],
+        "primary_agents": [
+          "22B",
+          "17C"
+        ],
+        "supporting_agents": [
+          "22E",
+          "17D"
+        ],
+        "domestic_counterparts": [
+          "05A"
+        ],
+        "exposure_ids": [
+          "EXP-06"
+        ],
+        "scenarios": [
+          "S02",
+          "S05",
+          "S09"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X17",
+        "external_variable": "Hydrology and cryosphere change affecting generation",
+        "channel": "hydro_generation",
+        "model_variables": [
+          "electricity_generation",
+          "electricity_imports"
+        ],
+        "primary_agents": [
+          "25A",
+          "22D"
+        ],
+        "supporting_agents": [
+          "25B"
+        ],
+        "domestic_counterparts": [
+          "05A"
+        ],
+        "exposure_ids": [
+          "EXP-07"
+        ],
+        "scenarios": [
+          "S05",
+          "S09"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X18",
+        "external_variable": "Transboundary flood/GLOF hazard and infrastructure damage",
+        "channel": "infrastructure_damage",
+        "model_variables": [
+          "capital_stock",
+          "reconstruction_investment",
+          "fiscal_spending"
+        ],
+        "primary_agents": [
+          "25C"
+        ],
+        "supporting_agents": [
+          "17E",
+          "25B",
+          "19E"
+        ],
+        "domestic_counterparts": [
+          "13A"
+        ],
+        "exposure_ids": [
+          "EXP-20"
+        ],
+        "scenarios": [
+          "S05",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X19",
+        "external_variable": "Climate impacts on agricultural output",
+        "channel": "agricultural_output",
+        "model_variables": [
+          "agriculture_gva",
+          "food_imports",
+          "food_prices"
+        ],
+        "primary_agents": [
+          "25E"
+        ],
+        "supporting_agents": [
+          "25A",
+          "21D"
+        ],
+        "domestic_counterparts": [
+          "07A"
+        ],
+        "exposure_ids": [
+          "EXP-15"
+        ],
+        "scenarios": [
+          "S05",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X20",
+        "external_variable": "Global and Indian interest rates",
+        "channel": "global_interest_rates",
+        "model_variables": [
+          "external_borrowing_cost",
+          "domestic_interest_rates"
+        ],
+        "primary_agents": [
+          "20A"
+        ],
+        "supporting_agents": [
+          "18A",
+          "17A"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [],
+        "scenarios": [
+          "S04",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X21",
+        "external_variable": "INR/USD exchange rate and invoicing-currency structure under the NPR-INR peg",
+        "channel": "exchange_rate",
+        "model_variables": [
+          "fx_depreciation"
+        ],
+        "primary_agents": [
+          "20B"
+        ],
+        "supporting_agents": [
+          "17A"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-10"
+        ],
+        "scenarios": [
+          "S02",
+          "S03",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X22",
+        "external_variable": "External public debt, concessional terms and creditor/currency composition",
+        "channel": "external_financing",
+        "model_variables": [
+          "external_borrowing",
+          "grants"
+        ],
+        "primary_agents": [
+          "20C",
+          "26A"
+        ],
+        "supporting_agents": [
+          "18D",
+          "18B"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-11"
+        ],
+        "scenarios": [
+          "S04",
+          "S08",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X23",
+        "external_variable": "FDI inflows and stock by source; investment-treaty conditions",
+        "channel": "external_financing",
+        "model_variables": [
+          "fdi"
+        ],
+        "primary_agents": [
+          "18B",
+          "18D",
+          "23E"
+        ],
+        "supporting_agents": [
+          "26D",
+          "20D"
+        ],
+        "domestic_counterparts": [
+          "12B"
+        ],
+        "exposure_ids": [
+          "EXP-12"
+        ],
+        "scenarios": [
+          "S03",
+          "S04"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X24",
+        "external_variable": "Grants, ODA and climate finance access (incl. LDC-linked support)",
+        "channel": "external_financing",
+        "model_variables": [
+          "grants"
+        ],
+        "primary_agents": [
+          "26A",
+          "25D",
+          "26E"
+        ],
+        "supporting_agents": [
+          "26C"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [],
+        "scenarios": [
+          "S08"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X25",
+        "external_variable": "Correspondent banking access and cross-border payment costs",
+        "channel": "financial_compliance",
+        "model_variables": [
+          "cross_border_payment_costs",
+          "remittance_channel_formality"
+        ],
+        "primary_agents": [
+          "20D"
+        ],
+        "supporting_agents": [
+          "20E"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-17"
+        ],
+        "scenarios": [
+          "S03",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X26",
+        "external_variable": "FATF/APG standing and AML/CFT action items",
+        "channel": "financial_compliance",
+        "model_variables": [
+          "cross_border_payment_costs",
+          "remittance_channel_formality"
+        ],
+        "primary_agents": [
+          "20E"
+        ],
+        "supporting_agents": [
+          "26D"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [
+          "EXP-18"
+        ],
+        "scenarios": [
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X27",
+        "external_variable": "Export controls and technology-access restrictions",
+        "channel": "technology_costs",
+        "model_variables": [
+          "capital_goods_prices",
+          "tfp"
+        ],
+        "primary_agents": [
+          "19B",
+          "24B"
+        ],
+        "supporting_agents": [
+          "18A",
+          "18B",
+          "18E"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [
+          "EXP-19"
+        ],
+        "scenarios": [
+          "S03"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X28",
+        "external_variable": "Sanctions regimes relevant to Nepal's counterparties",
+        "channel": "financial_compliance",
+        "model_variables": [
+          "cross_border_payment_costs"
+        ],
+        "primary_agents": [
+          "19B",
+          "26D"
+        ],
+        "supporting_agents": [
+          "18E"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [],
+        "scenarios": [
+          "S03",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X29",
+        "external_variable": "Essential-import dependence (fertiliser, medicines, food staples)",
+        "channel": "agricultural_output",
+        "model_variables": [
+          "food_imports",
+          "food_prices",
+          "essential_supplies"
+        ],
+        "primary_agents": [
+          "21D"
+        ],
+        "supporting_agents": [
+          "17A",
+          "22A",
+          "19E"
+        ],
+        "domestic_counterparts": [
+          "07A"
+        ],
+        "exposure_ids": [
+          "EXP-15",
+          "EXP-16"
+        ],
+        "scenarios": [
+          "S02",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X30",
+        "external_variable": "Regional institutional arrangements (SAARC, BIMSTEC, BBIN, bilateral treaties) - operational vs announced",
+        "channel": "transit_and_logistics",
+        "model_variables": [
+          "trade_costs",
+          "electricity_exports"
+        ],
+        "primary_agents": [
+          "17D"
+        ],
+        "supporting_agents": [
+          "17C",
+          "26B"
+        ],
+        "domestic_counterparts": [
+          "04A"
+        ],
+        "exposure_ids": [
+          "EXP-04",
+          "EXP-06"
+        ],
+        "scenarios": [
+          "S02",
+          "S09"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X31",
+        "external_variable": "Maritime chokepoints and cargo insurance affecting Indian-port transit",
+        "channel": "transit_and_logistics",
+        "model_variables": [
+          "trade_costs"
+        ],
+        "primary_agents": [
+          "19C"
+        ],
+        "supporting_agents": [
+          "21B",
+          "19A"
+        ],
+        "domestic_counterparts": [
+          "04A"
+        ],
+        "exposure_ids": [
+          "EXP-04"
+        ],
+        "scenarios": [
+          "S01",
+          "S10"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X32",
+        "external_variable": "Energy-transition technology costs (solar, batteries, critical minerals)",
+        "channel": "technology_costs",
+        "model_variables": [
+          "capital_goods_prices"
+        ],
+        "primary_agents": [
+          "22C"
+        ],
+        "supporting_agents": [
+          "24B"
+        ],
+        "domestic_counterparts": [
+          "05A"
+        ],
+        "exposure_ids": [],
+        "scenarios": [
+          "S09"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X33",
+        "external_variable": "Global manufacturing relocation and supply-chain diversification",
+        "channel": "external_demand_goods",
+        "model_variables": [
+          "goods_exports"
+        ],
+        "primary_agents": [
+          "21C"
+        ],
+        "supporting_agents": [
+          "18E",
+          "18B"
+        ],
+        "domestic_counterparts": [
+          "12A"
+        ],
+        "exposure_ids": [],
+        "scenarios": [
+          "S03"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X34",
+        "external_variable": "Demographic ageing and foreign-labour demand in destination countries",
+        "channel": "migrant_employment",
+        "model_variables": [
+          "migrant_stock"
+        ],
+        "primary_agents": [
+          "23D"
+        ],
+        "supporting_agents": [
+          "23B"
+        ],
+        "domestic_counterparts": [
+          "03A"
+        ],
+        "exposure_ids": [
+          "EXP-02"
+        ],
+        "scenarios": [
+          "S06"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X35",
+        "external_variable": "Diaspora investment and knowledge-transfer flows",
+        "channel": "external_financing",
+        "model_variables": [
+          "fdi"
+        ],
+        "primary_agents": [
+          "23E"
+        ],
+        "supporting_agents": [
+          "20D"
+        ],
+        "domestic_counterparts": [
+          "12B"
+        ],
+        "exposure_ids": [
+          "EXP-12"
+        ],
+        "scenarios": [],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X36",
+        "external_variable": "Cyber and critical digital infrastructure risks (defensive)",
+        "channel": "digital_services_demand",
+        "model_variables": [
+          "services_exports"
+        ],
+        "primary_agents": [
+          "24D"
+        ],
+        "supporting_agents": [
+          "24C"
+        ],
+        "domestic_counterparts": [
+          "08A"
+        ],
+        "exposure_ids": [],
+        "scenarios": [
+          "S03"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X37",
+        "external_variable": "Emerging technologies with proven applications relevant to Nepal",
+        "channel": "technology_costs",
+        "model_variables": [
+          "tfp"
+        ],
+        "primary_agents": [
+          "24E"
+        ],
+        "supporting_agents": [
+          "24A"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [],
+        "scenarios": [],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X38",
+        "external_variable": "Transboundary water agreements and data sharing",
+        "channel": "hydro_generation",
+        "model_variables": [
+          "electricity_generation"
+        ],
+        "primary_agents": [
+          "25B"
+        ],
+        "supporting_agents": [
+          "17E"
+        ],
+        "domestic_counterparts": [
+          "05A"
+        ],
+        "exposure_ids": [
+          "EXP-07",
+          "EXP-20"
+        ],
+        "scenarios": [
+          "S05"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X39",
+        "external_variable": "Strategic competition and economic coercion risk",
+        "channel": "transit_and_logistics",
+        "model_variables": [
+          "trade_costs",
+          "fdi"
+        ],
+        "primary_agents": [
+          "18E"
+        ],
+        "supporting_agents": [
+          "18A",
+          "18B"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [],
+        "scenarios": [
+          "S02",
+          "S03"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X40",
+        "external_variable": "Technical-assistance and research partnerships",
+        "channel": "external_financing",
+        "model_variables": [
+          "grants"
+        ],
+        "primary_agents": [
+          "26E"
+        ],
+        "supporting_agents": [
+          "26A"
+        ],
+        "domestic_counterparts": [],
+        "exposure_ids": [],
+        "scenarios": [],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      },
+      {
+        "var_id": "X41",
+        "external_variable": "Chinese outward finance and global capital flows",
+        "channel": "external_financing",
+        "model_variables": [
+          "fdi",
+          "external_borrowing"
+        ],
+        "primary_agents": [
+          "18B"
+        ],
+        "supporting_agents": [
+          "20C"
+        ],
+        "domestic_counterparts": [
+          "12B"
+        ],
+        "exposure_ids": [
+          "EXP-11",
+          "EXP-12"
+        ],
+        "scenarios": [
+          "S03"
+        ],
+        "status": "pending",
+        "deliverable": "sourced time series or dated event record, labelled fact/estimate with observation ids, converted to Nepal FY where it enters the model"
+      }
+    ],
+    "source_assignments": [
+      {
+        "var_id": "X01",
+        "primary_source_ids": [
+          "nrb"
+        ],
+        "secondary_source_ids": [
+          "knomad",
+          "wb_wdi",
+          "imf_article_iv"
+        ],
+        "period_basis": "NRB: Nepal FY (mid-July), monthly cumulative; KNOMAD/WDI: calendar year",
+        "lead_ids": [
+          "L01",
+          "L02",
+          "L15",
+          "L47",
+          "L48",
+          "L73"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X02",
+        "primary_source_ids": [
+          "nso_nepal"
+        ],
+        "secondary_source_ids": [
+          "knomad",
+          "nrb"
+        ],
+        "period_basis": "NLSS IV: survey year July 2022-June 2023; KNOMAD matrix: calendar year, modelled",
+        "lead_ids": [
+          "L08",
+          "L09",
+          "L15",
+          "L16",
+          "L17"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X03",
+        "primary_source_ids": [
+          "dofe",
+          "nso_nepal"
+        ],
+        "secondary_source_ids": [
+          "glmm",
+          "ilostat",
+          "iom"
+        ],
+        "period_basis": "DoFE: Nepal FY; Census 2021: reference date of census; GLMM: host-country vintages (mixed)",
+        "lead_ids": [
+          "L10",
+          "L11",
+          "L12",
+          "L13",
+          "L14"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X04",
+        "primary_source_ids": [
+          "ilostat",
+          "glmm"
+        ],
+        "secondary_source_ids": [
+          "un_wpp",
+          "oecd"
+        ],
+        "period_basis": "Calendar year (host statistics); policy events dated",
+        "lead_ids": [
+          "L14",
+          "L77"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X05",
+        "primary_source_ids": [
+          "mofa_nepal",
+          "dofe"
+        ],
+        "secondary_source_ids": [
+          "iom",
+          "ucdp",
+          "acled"
+        ],
+        "period_basis": "Event-dated; aggregate to Nepal FY for model",
+        "lead_ids": [
+          "L12",
+          "L13",
+          "L48",
+          "L79"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X06",
+        "primary_source_ids": [
+          "iea"
+        ],
+        "secondary_source_ids": [
+          "imf_weo",
+          "noc_nepal"
+        ],
+        "period_basis": "Monthly calendar; average to Nepal FY (Shrawan-Asar) before use",
+        "lead_ids": [
+          "L28",
+          "L29",
+          "L74"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X07",
+        "primary_source_ids": [
+          "noc_nepal",
+          "customs_nepal"
+        ],
+        "secondary_source_ids": [
+          "un_comtrade"
+        ],
+        "period_basis": "Nepal FY",
+        "lead_ids": [
+          "L18",
+          "L21",
+          "L26",
+          "L27"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X08",
+        "primary_source_ids": [
+          "customs_nepal",
+          "wb_lpi"
+        ],
+        "secondary_source_ids": [
+          "unctad_rmt",
+          "mea_india",
+          "academic"
+        ],
+        "period_basis": "Mixed: LPI survey year; customs FY; freight monthly",
+        "lead_ids": [
+          "L20",
+          "L22",
+          "L23",
+          "L24",
+          "L25",
+          "L80"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X09",
+        "primary_source_ids": [
+          "customs_nepal",
+          "mea_india"
+        ],
+        "secondary_source_ids": [
+          "un_comtrade"
+        ],
+        "period_basis": "Event-dated policy; customs Nepal FY",
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L21",
+          "L22"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X10",
+        "primary_source_ids": [
+          "customs_nepal",
+          "mofcom"
+        ],
+        "secondary_source_ids": [
+          "un_comtrade",
+          "icimod"
+        ],
+        "period_basis": "Customs Nepal FY; China customs calendar year",
+        "lead_ids": [
+          "L18",
+          "L21",
+          "L34"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X11",
+        "primary_source_ids": [
+          "imf_weo"
+        ],
+        "secondary_source_ids": [
+          "un_comtrade",
+          "customs_nepal"
+        ],
+        "period_basis": "Calendar year (India FY per WEO notes); convert to Nepal FY",
+        "lead_ids": [
+          "L72",
+          "L21"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X12",
+        "primary_source_ids": [
+          "wto",
+          "undesa_ldc"
+        ],
+        "secondary_source_ids": [
+          "wto_tariff",
+          "eu_trade",
+          "uk_trade"
+        ],
+        "period_basis": "Tariff schedules by calendar year; graduation date event-dated",
+        "lead_ids": [
+          "L52",
+          "L53",
+          "L54",
+          "L55",
+          "L56",
+          "L75"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X13",
+        "primary_source_ids": [
+          "tourism_ministry",
+          "nrb"
+        ],
+        "secondary_source_ids": [
+          "unwto",
+          "wb_wdi"
+        ],
+        "period_basis": "Arrivals: calendar year; NRB travel receipts: Nepal FY - do not mix",
+        "lead_ids": [
+          "L01",
+          "L37",
+          "L38",
+          "L73"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X14",
+        "primary_source_ids": [
+          "caan"
+        ],
+        "secondary_source_ids": [
+          "academic"
+        ],
+        "period_basis": "Schedules by season; CAAN reports FY/CY to be confirmed",
+        "lead_ids": [
+          "L39",
+          "L40",
+          "L41"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X15",
+        "primary_source_ids": [
+          "nrb",
+          "unctadstat"
+        ],
+        "secondary_source_ids": [
+          "oecd",
+          "academic"
+        ],
+        "period_basis": "NRB BoP: Nepal FY; UNCTAD: calendar year",
+        "lead_ids": [
+          "L01",
+          "L03",
+          "L57",
+          "L73"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X16",
+        "primary_source_ids": [
+          "nea",
+          "cea_india"
+        ],
+        "secondary_source_ids": [
+          "iea"
+        ],
+        "period_basis": "NEA: Nepal FY; Indian exchange prices: daily/monthly, Indian FY",
+        "lead_ids": [
+          "L30",
+          "L31"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X17",
+        "primary_source_ids": [
+          "icimod",
+          "dhm"
+        ],
+        "secondary_source_ids": [
+          "ipcc",
+          "nea"
+        ],
+        "period_basis": "Hydrological year / calendar; generation Nepal FY",
+        "lead_ids": [
+          "L30",
+          "L32",
+          "L33"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X18",
+        "primary_source_ids": [
+          "ndrrma",
+          "icimod"
+        ],
+        "secondary_source_ids": [
+          "thinkhazard",
+          "em_dat"
+        ],
+        "period_basis": "Event-dated; aggregate to Nepal FY",
+        "lead_ids": [
+          "L32",
+          "L34",
+          "L35",
+          "L36"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X19",
+        "primary_source_ids": [
+          "fao_stat",
+          "icimod"
+        ],
+        "secondary_source_ids": [
+          "ipcc"
+        ],
+        "period_basis": "Crop year / calendar; convert to Nepal FY",
+        "lead_ids": [
+          "L60"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X20",
+        "primary_source_ids": [
+          "fed",
+          "rbi"
+        ],
+        "secondary_source_ids": [
+          "imf_weo"
+        ],
+        "period_basis": "Daily/monthly; average to Nepal FY",
+        "lead_ids": [
+          "L70",
+          "L71"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X21",
+        "primary_source_ids": [
+          "nrb",
+          "rbi"
+        ],
+        "secondary_source_ids": [
+          "imf_article_iv"
+        ],
+        "period_basis": "Daily/monthly; average to Nepal FY",
+        "lead_ids": [
+          "L05",
+          "L06",
+          "L07",
+          "L71"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X22",
+        "primary_source_ids": [
+          "pdmo",
+          "wb_ids"
+        ],
+        "secondary_source_ids": [
+          "imf_article_iv",
+          "adb_nepal",
+          "aiib"
+        ],
+        "period_basis": "PDMO: Nepal FY and monthly; IDS: calendar-year end",
+        "lead_ids": [
+          "L42",
+          "L43",
+          "L44",
+          "L45",
+          "L46",
+          "L47"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X23",
+        "primary_source_ids": [
+          "nrb"
+        ],
+        "secondary_source_ids": [
+          "doind",
+          "ibn",
+          "unctad_iia"
+        ],
+        "period_basis": "NRB survey: end-FY stock; DoI approvals: FY commitments",
+        "lead_ids": [
+          "L49",
+          "L50",
+          "L51"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X24",
+        "primary_source_ids": [
+          "mof_nepal",
+          "gcf"
+        ],
+        "secondary_source_ids": [
+          "oecd",
+          "gef"
+        ],
+        "period_basis": "MoF: Nepal FY; OECD/GCF: calendar year",
+        "lead_ids": [
+          "L78"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X25",
+        "primary_source_ids": [
+          "nrb",
+          "bis_bank"
+        ],
+        "secondary_source_ids": [
+          "fatf"
+        ],
+        "period_basis": "BIS CPMI: calendar year; NRB: FY",
+        "lead_ids": [
+          "L04",
+          "L06",
+          "L68",
+          "L69"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X26",
+        "primary_source_ids": [
+          "fatf",
+          "apg"
+        ],
+        "secondary_source_ids": [
+          "nrb"
+        ],
+        "period_basis": "Event-dated (plenary cycles)",
+        "lead_ids": [
+          "L64",
+          "L65",
+          "L66",
+          "L67",
+          "L68"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X27",
+        "primary_source_ids": [
+          "bis_us"
+        ],
+        "secondary_source_ids": [
+          "un_comtrade",
+          "eu_sanctions"
+        ],
+        "period_basis": "Regulation-dated; imports by calendar/FY",
+        "lead_ids": [
+          "L21",
+          "L58",
+          "L59"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X28",
+        "primary_source_ids": [
+          "un_sanctions",
+          "ofac"
+        ],
+        "secondary_source_ids": [
+          "eu_sanctions"
+        ],
+        "period_basis": "Event-dated",
+        "lead_ids": [
+          "L76"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X29",
+        "primary_source_ids": [
+          "customs_nepal",
+          "fao_stat",
+          "mohp"
+        ],
+        "secondary_source_ids": [
+          "un_comtrade"
+        ],
+        "period_basis": "Customs: Nepal FY; FAO: calendar year",
+        "lead_ids": [
+          "L18",
+          "L20",
+          "L21",
+          "L60",
+          "L61",
+          "L62",
+          "L63"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X30",
+        "primary_source_ids": [
+          "saarc",
+          "bimstec",
+          "mofa_nepal"
+        ],
+        "secondary_source_ids": [
+          "mea_india"
+        ],
+        "period_basis": "Document-dated",
+        "lead_ids": [
+          "L22"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X31",
+        "primary_source_ids": [
+          "unctad_rmt"
+        ],
+        "secondary_source_ids": [
+          "academic"
+        ],
+        "period_basis": "Event-dated; freight indices weekly/monthly",
+        "lead_ids": [
+          "L80"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X32",
+        "primary_source_ids": [
+          "iea",
+          "irena"
+        ],
+        "secondary_source_ids": [],
+        "period_basis": "Calendar year",
+        "lead_ids": [
+          "L74"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X33",
+        "primary_source_ids": [
+          "unctadstat",
+          "oecd"
+        ],
+        "secondary_source_ids": [
+          "academic"
+        ],
+        "period_basis": "Calendar year",
+        "lead_ids": [],
+        "status": "pending - no document lead located in r1; supplying agent to locate",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X34",
+        "primary_source_ids": [
+          "un_wpp"
+        ],
+        "secondary_source_ids": [
+          "ilostat"
+        ],
+        "period_basis": "Calendar year projections",
+        "lead_ids": [
+          "L77"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X35",
+        "primary_source_ids": [
+          "nrb",
+          "sebon"
+        ],
+        "secondary_source_ids": [
+          "academic"
+        ],
+        "period_basis": "Nepal FY",
+        "lead_ids": [],
+        "status": "pending - no document lead located in r1; supplying agent to locate",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X36",
+        "primary_source_ids": [
+          "itu"
+        ],
+        "secondary_source_ids": [
+          "academic"
+        ],
+        "period_basis": "Calendar year",
+        "lead_ids": [],
+        "status": "pending - no document lead located in r1; supplying agent to locate",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X37",
+        "primary_source_ids": [
+          "academic"
+        ],
+        "secondary_source_ids": [],
+        "period_basis": "Publication-dated",
+        "lead_ids": [],
+        "status": "pending - no document lead located in r1; supplying agent to locate",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X38",
+        "primary_source_ids": [
+          "mofa_nepal",
+          "icimod"
+        ],
+        "secondary_source_ids": [
+          "academic"
+        ],
+        "period_basis": "Document-dated",
+        "lead_ids": [
+          "L32"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X39",
+        "primary_source_ids": [
+          "academic"
+        ],
+        "secondary_source_ids": [
+          "mofa_nepal"
+        ],
+        "period_basis": "Event-dated; qualitative",
+        "lead_ids": [],
+        "status": "pending - no document lead located in r1; supplying agent to locate",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X40",
+        "primary_source_ids": [
+          "mof_nepal"
+        ],
+        "secondary_source_ids": [
+          "oecd"
+        ],
+        "period_basis": "Nepal FY",
+        "lead_ids": [],
+        "status": "pending - no document lead located in r1; supplying agent to locate",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      },
+      {
+        "var_id": "X41",
+        "primary_source_ids": [
+          "mofcom",
+          "wb_ids"
+        ],
+        "secondary_source_ids": [
+          "aiib"
+        ],
+        "period_basis": "Calendar year",
+        "lead_ids": [
+          "L46"
+        ],
+        "status": "pending",
+        "verification": "supplying agent retrieves primary document, stores raw bytes with SHA-256, records Observation; conflicts between primary and secondary kept and explained (find_conflicts)"
+      }
+    ],
+    "coverage_check": {
+      "subagents_covered": 50,
+      "subagents_without_assignment": [],
+      "method": "every 17A-26E appears as primary or supporting agent for at least one variable"
+    },
+    "lead_summary": {
+      "leads_recorded": 79,
+      "variables_with_leads": 35,
+      "variables_without_leads": [
+        "X33",
+        "X35",
+        "X36",
+        "X37",
+        "X39",
+        "X40"
+      ]
+    },
+    "status": "pending"
+  },
+  "source_leads": [
+    {
+      "lead_id": "L01",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (based on annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual FY2024/25 (mid-July basis) text and statistical tables: balance of payments summary, remittance inflows (NPR and USD), merchandise trade by India/China/other countries, major imports incl. petroleum products, services (travel) receipts, FDI inflow line, gross foreign exchange reserves and import cover"
+    },
+    {
+      "lead_id": "L02",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of monthly/annual CME releases with downloadable statistical tables (Excel/PDF); source for historical series of remittances, BoP, trade by partner group, reserves; FY and month-of-FY basis"
+    },
+    {
+      "lead_id": "L03",
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2024-25/",
+      "title": "Current Macroeconomic and Financial Situation (nine months of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Nine-month FY2024/25 BoP detail incl. services receipts lines (telecommunications, computer and information services; other business services) needed to bound ICT/BPO exports"
+    },
+    {
+      "lead_id": "L04",
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Banking-system risk assessment FY2024/25: external-sector and remittance-channel risks, possible discussion of correspondent/foreign-currency exposures and AML/CFT (grey-list) implications for banks"
+    },
+    {
+      "lead_id": "L05",
+      "url": "https://www.nrb.org.np/ofg/monetary-policy-in-english-2082-83-full-text/",
+      "title": "Monetary Policy for 2025/26 (2082/83), full text",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Review of FY2024/25 external sector and policy stance for FY2025/26; exchange-rate arrangement (NPR-INR peg) statement; reserve targets"
+    },
+    {
+      "lead_id": "L06",
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Foreign exchange directives/circulars: rules on payment for imports from India in convertible currency vs INR, remittance company licensing; needed to define invoicing-currency exposure"
+    },
+    {
+      "lead_id": "L07",
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Indian-side exchange control rules for transactions with Nepal (INR settlement, exceptions for convertible-currency payments); legal basis for INR invoicing share"
+    },
+    {
+      "lead_id": "L08",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Chapter 16 Remittance and transfer income: share of households receiving remittances, remittance received by source (within Nepal, India, other countries), survey period July 2022-June 2023"
+    },
+    {
+      "lead_id": "L09",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round (microdata catalogue)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household microdata allowing remittance receipts to be tabulated by sender country (beyond India/other split) with survey weights"
+    },
+    {
+      "lead_id": "L10",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials (incl. thematic report on international migration)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Census 2021 absent population abroad by country/region of destination, sex, age and reason for absence (reference date of census 2021)"
+    },
+    {
+      "lead_id": "L11",
+      "url": "https://data.nsonepal.gov.np/dataset/district-level-household/resource/5576441d-dce1-493e-b715-9b59cf3749fd",
+      "title": "District Level Household - Absent population abroad by age groups and level of education, NPHC 2021",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "District-level absent population abroad tables from NPHC 2021 (machine-readable)"
+    },
+    {
+      "lead_id": "L12",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal%20Labour%20Migration%202024_Final-Version%20for%20Approval%20(1)_peesvxa.pdf",
+      "title": "Nepal Labour Migration Report 2024",
+      "publisher": "Ministry of Labour, Employment and Social Security, Government of Nepal",
+      "source_id": "dofe",
+      "contains": "DoFE labour approvals (new and renewal) by destination country, sex and skill for FY2022/23 and FY2023/24; deaths/injuries abroad; excludes India (no labour permit required)"
+    },
+    {
+      "lead_id": "L13",
+      "url": "https://dofe.gov.np/yearly.aspx",
+      "title": "Yearly Progress Report",
+      "publisher": "Department of Foreign Employment, Nepal",
+      "source_id": "dofe",
+      "contains": "Annual labour-approval counts by destination country (FY basis), needed for FY2024/25 and FY2025/26 updates including any suspension period"
+    },
+    {
+      "lead_id": "L14",
+      "url": "https://gulfmigration.grc.net/",
+      "title": "Gulf Labour Markets, Migration and Population (GLMM) data portal",
+      "publisher": "Gulf Research Center",
+      "source_id": "glmm",
+      "contains": "Demographic and labour-market tables for GCC states, incl. foreign population/workers by nationality where GCC statistical offices or embassies publish it (irregular vintages)"
+    },
+    {
+      "lead_id": "L15",
+      "url": "https://www.knomad.org/data/remittances",
+      "title": "Remittances and Migration data",
+      "publisher": "KNOMAD / World Bank",
+      "source_id": "knomad",
+      "contains": "Inward remittances by country and Bilateral Remittance Matrix (modelled allocation by migrant stock and incomes; calendar year; latest vintage to be confirmed)"
+    },
+    {
+      "lead_id": "L16",
+      "url": "https://data360.worldbank.org/en/indicator/WB_KNOMAD_BRE",
+      "title": "Bilateral Remittance Estimates using Migrant Stocks (WB_KNOMAD_BRE)",
+      "publisher": "World Bank Data360",
+      "source_id": "knomad",
+      "contains": "Machine-readable bilateral remittance estimates (corridor level) for Nepal as recipient; calendar year"
+    },
+    {
+      "lead_id": "L17",
+      "url": "https://documents1.worldbank.org/curated/en/099939108162412268/pdf/IDU16ac5f9f71eb2214b69182441e56964b688f2.pdf",
+      "title": "Notes on Bilateral Remittance Flows",
+      "publisher": "World Bank",
+      "source_id": "knomad",
+      "contains": "Methodology of the bilateral remittance matrix and its known limitations (needed to reconcile KNOMAD corridors with NLSS and DoFE)"
+    },
+    {
+      "lead_id": "L18",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "FY2022/23 imports/exports by partner country, HS chapter and commodity, and customs office (e.g. Birgunj, Biratnagar, Bhairahawa, Tatopani, Rasuwa); petroleum (HS 27), fertiliser (HS 31), pharmaceuticals (HS 30), ICT goods (HS 84/85)"
+    },
+    {
+      "lead_id": "L20",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Ministry of Industry, Commerce and Supplies, Nepal",
+      "source_id": null,
+      "contains": "HS-level import/export queries by partner and period; transit procedures; used for FY2023/24-FY2025/26 partner shares where books are not yet published"
+    },
+    {
+      "lead_id": "L21",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus",
+      "publisher": "United Nations Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror trade data (partner-reported exports to Nepal, calendar year, HS 6-digit), e.g. India/China exports of HS 2710, 31, 30, 8471, 8517, 8542 to Nepal, for reconciling with Nepal customs FY data"
+    },
+    {
+      "lead_id": "L22",
+      "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+      "title": "Commerce Wing Brief",
+      "publisher": "Embassy of India, Kathmandu",
+      "source_id": "mea_india",
+      "contains": "Indian-side description of the Treaty of Trade and Treaty of Transit, designated transit ports and corridors, ICDs and cross-border rail links"
+    },
+    {
+      "lead_id": "L23",
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project (IDA credit) - project document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Corridor description (Kolkata/Haldia-Raxaul/Birgunj; Visakhapatnam), dwell/transit time diagnostics and baseline indicators for third-country trade"
+    },
+    {
+      "lead_id": "L24",
+      "url": "https://lpi.worldbank.org",
+      "title": "Logistics Performance Index",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "LPI 2023 scores and components for Nepal and comparators (survey-based; calendar year of survey)"
+    },
+    {
+      "lead_id": "L25",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Independent analysis of transit volumes, routes and bottlenecks through Indian ports (tier 7; secondary check only)"
+    },
+    {
+      "lead_id": "L26",
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Import and sales volumes by product (petrol, diesel, kerosene, ATF, LPG) by FY/month; supplier arrangement with Indian Oil Corporation"
+    },
+    {
+      "lead_id": "L27",
+      "url": "https://noc.org.np/publication",
+      "title": "Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC annual reports and supply agreement notes (term of IOC agreement, supply points, pipeline and depot storage)"
+    },
+    {
+      "lead_id": "L28",
+      "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-May-2026.pdf",
+      "title": "Commodity Markets Pink Sheet, May 2026",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Monthly international prices: crude oil (Brent, Dubai, WTI), LNG, urea/DAP fertiliser, rice; calendar months"
+    },
+    {
+      "lead_id": "L29",
+      "url": "https://data.imf.org/en/datasets/IMF.RES:PCPS",
+      "title": "Primary Commodity Price System (PCPS)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "Monthly commodity price series and indices incl. energy and fertilisers; country-specific commodity price indices"
+    },
+    {
+      "lead_id": "L30",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Annual (FY) energy balance: generation by plant/basin, imports from and exports to India and Bangladesh (energy units and revenue), seasonal profile, installed capacity by river basin"
+    },
+    {
+      "lead_id": "L31",
+      "url": "https://cea.nic.in",
+      "title": "Central Electricity Authority (India)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Designated Authority approvals for cross-border electricity import from Nepal by project; Procedure for approval and facilitating import/export of electricity"
+    },
+    {
+      "lead_id": "L32",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali river basins of Nepal, the Tibet Autonomous Region of China and India",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": "Glacial lake inventory and ranked list of potentially dangerous glacial lakes by basin and country (2020 release); input for GLOF exposure of hydropower and border infrastructure"
+    },
+    {
+      "lead_id": "L33",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level risk evidence for hydropower (snow/glacier melt contribution, hazard exposure); pointer to underlying ICIMOD publications"
+    },
+    {
+      "lead_id": "L34",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "ICIMOD account of the 2026 Kyirong-Rasuwa cross-border flood/debris event; damage to Rasuwagadhi-Kerung border infrastructure and hydropower in the Trishuli/Bhote Koshi corridor"
+    },
+    {
+      "lead_id": "L35",
+      "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+      "title": "ThinkHazard - Nepal - River flood",
+      "publisher": "GFDRR / World Bank",
+      "source_id": "thinkhazard",
+      "contains": "Hazard-level classification for river flood at national and sub-national level (qualitative class, not exposure value)"
+    },
+    {
+      "lead_id": "L36",
+      "url": "https://bipad.gov.np",
+      "title": "BIPAD Portal",
+      "publisher": "National Disaster Risk Reduction and Management Authority, Nepal",
+      "source_id": "ndrrma",
+      "contains": "Incident database: flood/GLOF/landslide events with location, date, losses (deaths, houses, infrastructure) for mapping capital stock in cross-border hazard zones"
+    },
+    {
+      "lead_id": "L37",
+      "url": "https://tourism.gov.np/content/83/nepal-tourism-statistics-2024/",
+      "title": "Nepal Tourism Statistics 2024",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": "Calendar-year 2024 international arrivals by nationality, mode (air/land), purpose, length of stay; foreign-exchange earnings from tourism"
+    },
+    {
+      "lead_id": "L38",
+      "url": "https://trade.ntb.gov.np/wp-content/uploads/2024/06/Nepal-Tourism-Statistic_2023-final.pdf",
+      "title": "Nepal Tourism Statistics 2023",
+      "publisher": "Ministry of Culture, Tourism and Civil Aviation, Nepal",
+      "source_id": "tourism_ministry",
+      "contains": "Calendar-year 2023 arrivals by nationality and entry point; historical series tables"
+    },
+    {
+      "lead_id": "L39",
+      "url": "https://caanepal.gov.np/air-transports/international",
+      "title": "International Airlines",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "List of foreign and Nepali carriers operating international services, with routes/hubs (basis for share of seats via Gulf and Indian hubs)"
+    },
+    {
+      "lead_id": "L40",
+      "url": "https://caanepal.gov.np/storage/app/media/TRIBHUVAN%20INTERNATIONAL%20AIRPORT-New.pdf",
+      "title": "Tribhuvan International Airport - Brief Description",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "TIA facilities, airlines, weekly flights/seat capacity and design capacity; basis for single-gateway assessment"
+    },
+    {
+      "lead_id": "L41",
+      "url": "https://caanepal.gov.np/storage/app/media/uploaded-files/Nepal%20Air%20Traffic%20Demand.pdf",
+      "title": "Capacity Development of CAAN - Nepal Air Traffic Demand",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "Air traffic demand study: international passenger traffic by route/market (vintage to be confirmed)"
+    },
+    {
+      "lead_id": "L42",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
+      "title": "Government Debt Statistics for the month of Shrawan 2082 (mid-August 2025)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by creditor (IDA, ADB, IMF, JICA, bilateral) and by currency at mid-August 2025; FY2025/26 month 1"
+    },
+    {
+      "lead_id": "L43",
+      "url": "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
+      "title": "Government Debt Statistics for the month of Falgun 2082 (mid-March 2026)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by creditor and currency at mid-March 2026"
+    },
+    {
+      "lead_id": "L44",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Public debt bulletin: external debt composition, debt service, creditor and currency structure, FY2024/25 close"
+    },
+    {
+      "lead_id": "L45",
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Cost-risk indicators: currency composition (SDR, USD, JPY, EUR, CNY), fixed vs variable rate share, refinancing and FX risk"
+    },
+    {
+      "lead_id": "L46",
+      "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
+      "title": "External debt stocks, total (DOD, current US$) - Nepal",
+      "publisher": "World Bank (International Debt Statistics)",
+      "source_id": "wb_ids",
+      "contains": "IDS external debt stocks, calendar-year end; IDS database also holds creditor-level (multilateral/bilateral) and currency-composition series"
+    },
+    {
+      "lead_id": "L47",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Staff report incl. joint WB-IMF debt sustainability analysis, BoP and remittance projections, external vulnerability discussion (Middle East conflict, LDC graduation, FATF listing)"
+    },
+    {
+      "lead_id": "L48",
+      "url": "https://www.worldbank.org/en/country/nepal/publication/nepaldevelopmentupdate",
+      "title": "Nepal Development Update (April 2026)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Macro update with transmission of the 2026 Middle East conflict (commodity prices, remittances, aviation, tourism) to Nepal"
+    },
+    {
+      "lead_id": "L49",
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock and flows by source country and by sector at end-FY2023/24; approved vs actual FDI comparison"
+    },
+    {
+      "lead_id": "L50",
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock by source country and sector at end-FY2022/23 (prior vintage for trend)"
+    },
+    {
+      "lead_id": "L51",
+      "url": "https://doind.gov.np",
+      "title": "Department of Industry - industrial statistics",
+      "publisher": "Department of Industry, Nepal",
+      "source_id": "doind",
+      "contains": "Approved FDI commitments by country and sector (approval basis - differs methodologically from NRB realised FDI)"
+    },
+    {
+      "lead_id": "L52",
+      "url": "https://policy.desa.un.org/sites/default/files/2026-07/nepal-cdp-crisis-assessment.pdf",
+      "title": "Crisis Assessment: Nepal (July 2026)",
+      "publisher": "UN Committee for Development Policy / UN DESA",
+      "source_id": "undesa_ldc",
+      "contains": "CDP assessment under the Crisis Response Process of Nepal's request to extend the LDC preparatory period; preference-erosion and macro context"
+    },
+    {
+      "lead_id": "L53",
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation.pdf",
+      "title": "Trade impacts of LDC graduation",
+      "publisher": "World Trade Organization / EIF",
+      "source_id": "wto",
+      "contains": "Estimated tariff and export changes from loss of LDC-specific preferences by graduating country and market, incl. Nepal"
+    },
+    {
+      "lead_id": "L54",
+      "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+      "title": "Trade impacts of LDC graduation: Insights from country-specific market access analyses",
+      "publisher": "World Trade Organization / EIF",
+      "source_id": "wto",
+      "contains": "Country-specific market-access analysis incl. Nepal product/market lines losing LDC-only preferences (EU EBA, UK DCTS, Canada, others)"
+    },
+    {
+      "lead_id": "L55",
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Sectoral employment exposure to preference loss (apparel, carpets, etc.) by sex and formality"
+    },
+    {
+      "lead_id": "L56",
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports",
+      "publisher": "International Trade Centre",
+      "source_id": null,
+      "contains": "Product-market preference-margin analysis and export diversification options for Nepal post-graduation"
+    },
+    {
+      "lead_id": "L57",
+      "url": "https://unctadstat.unctad.org/datacentre/reportInfo/US.DigitallyDeliverableServices",
+      "title": "International trade in digitally deliverable services, value",
+      "publisher": "UNCTAD",
+      "source_id": "unctadstat",
+      "contains": "Annual (calendar-year) digitally deliverable services exports by economy incl. Nepal; no destination breakdown"
+    },
+    {
+      "lead_id": "L58",
+      "url": "https://www.bis.gov/ear/title-15/subtitle-b/chapter-vii/subchapter-c/part-738/supplement-no-1-part-738-commerce-country",
+      "title": "Supplement No. 1 to Part 738 - Commerce Country Chart",
+      "publisher": "US Bureau of Industry and Security",
+      "source_id": "bis_us",
+      "contains": "License requirements by reason for control for Nepal as destination; with EAR Part 740 country groups"
+    },
+    {
+      "lead_id": "L59",
+      "url": "https://www.trade.gov/country-commercial-guides/nepal-us-export-controls",
+      "title": "Nepal - U.S. Export Controls (Country Commercial Guide)",
+      "publisher": "US International Trade Administration",
+      "source_id": "bis_us",
+      "contains": "Summary of how EAR applies to exports to Nepal"
+    },
+    {
+      "lead_id": "L60",
+      "url": "https://www.fao.org/faostat",
+      "title": "FAOSTAT",
+      "publisher": "Food and Agriculture Organization",
+      "source_id": "fao_stat",
+      "contains": "Inputs/Fertilizers by nutrient (production, import, use) and Food Balances for cereals incl. rice; calendar year"
+    },
+    {
+      "lead_id": "L61",
+      "url": "https://kathmandupost.com/money/2022/02/28/nepal-signs-deal-with-india-to-procure-chemical-fertiliser",
+      "title": "Nepal signs deal with India to procure chemical fertiliser",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News report on the government-to-government fertiliser MoU with India; pointer to MoALD / Agriculture Inputs Company primary documents (secondary, tier 7)"
+    },
+    {
+      "lead_id": "L62",
+      "url": "https://dda.gov.np/",
+      "title": "Department of Drug Administration",
+      "publisher": "Department of Drug Administration, Ministry of Health and Population, Nepal",
+      "source_id": "mohp",
+      "contains": "Registered domestic manufacturers and imported products; DDA annual reports/bulletins with domestic vs imported market share of medicines by origin"
+    },
+    {
+      "lead_id": "L63",
+      "url": "https://pharmexcil.com/uploads/countryreports/Nepal.pdf",
+      "title": "Regulatory and Market Profile of Nepal",
+      "publisher": "Pharmaceuticals Export Promotion Council of India",
+      "source_id": null,
+      "contains": "Indian export-promotion council profile of Nepal's pharmaceutical market and regulation (supplier-side view; secondary check)"
+    },
+    {
+      "lead_id": "L64",
+      "url": "https://www.fatf-gafi.org/en/countries/detail/Nepal.html",
+      "title": "Nepal - country page",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Current FATF listing status of Nepal and links to MER, follow-up reports and plenary statements"
+    },
+    {
+      "lead_id": "L65",
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2025.html",
+      "title": "Jurisdictions under Increased Monitoring - 21 February 2025",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Plenary statement listing jurisdictions under increased monitoring and Nepal's action-plan items"
+    },
+    {
+      "lead_id": "L66",
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-mer-2023.html",
+      "title": "Anti-money laundering and counter-terrorist financing measures - Nepal, Mutual Evaluation Report 2023",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Technical compliance and effectiveness ratings, recommended actions"
+    },
+    {
+      "lead_id": "L67",
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-APG-FUR-2025.html",
+      "title": "Nepal: APG follow-up report 2025",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Re-rating decisions on technical compliance since the 2023 MER"
+    },
+    {
+      "lead_id": "L68",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/05/FIU-Nepal-Newsletter-May-2025-%E2%80%93-Issue-IV.pdf",
+      "title": "FIU-Nepal Newsletter, Issue IV (Jan-Dec 2024)",
+      "publisher": "Financial Intelligence Unit, Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FIU activity statistics (STR/TTR) and grey-list response measures; calendar year 2024"
+    },
+    {
+      "lead_id": "L69",
+      "url": "https://data.bis.org",
+      "title": "BIS Data Portal - CPMI correspondent banking data",
+      "publisher": "Bank for International Settlements",
+      "source_id": "bis_bank",
+      "contains": "CPMI correspondent banking indicators by country (number of active correspondents, counterparty countries, value/volume of SWIFT messages); calendar year"
+    },
+    {
+      "lead_id": "L70",
+      "url": "https://www.federalreserve.gov",
+      "title": "Federal Reserve Board - FOMC statements and H.15 selected interest rates",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "Federal funds target range and US Treasury yields (daily/monthly, calendar basis)"
+    },
+    {
+      "lead_id": "L71",
+      "url": "https://www.rbi.org.in",
+      "title": "Reserve Bank of India - monetary policy statements and Database on Indian Economy",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "RBI policy repo rate, INR/USD reference rate, Indian inflation; monthly, Indian FY April-March"
+    },
+    {
+      "lead_id": "L72",
+      "url": "https://www.imf.org/external/datamapper/api/v1/",
+      "title": "IMF World Economic Outlook DataMapper API",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "Partner-country real GDP growth, inflation and current-account projections (India, China, GCC, Malaysia, US, EU); calendar year except India (FY) - check WEO country notes"
+    },
+    {
+      "lead_id": "L73",
+      "url": "https://api.worldbank.org/v2/",
+      "title": "World Development Indicators API",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Cross-country series (personal remittances received % GDP, ICT service exports, international tourism receipts); calendar year"
+    },
+    {
+      "lead_id": "L74",
+      "url": "https://www.iea.org",
+      "title": "IEA Oil Market Report and World Energy Outlook",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Oil supply/demand balances and price scenarios; battery and solar cost trends"
+    },
+    {
+      "lead_id": "L75",
+      "url": "https://ttd.wto.org",
+      "title": "WTO Tariff and Trade Data",
+      "publisher": "World Trade Organization",
+      "source_id": "wto_tariff",
+      "contains": "MFN and preferential tariffs applied by partner markets to Nepal's export lines (HS 6-digit)"
+    },
+    {
+      "lead_id": "L76",
+      "url": "https://www.un.org/securitycouncil/sanctions/information",
+      "title": "UN Security Council consolidated sanctions list",
+      "publisher": "United Nations",
+      "source_id": "un_sanctions",
+      "contains": "Consolidated list and regime information for sanctions screening"
+    },
+    {
+      "lead_id": "L77",
+      "url": "https://population.un.org/wpp/",
+      "title": "World Population Prospects",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Population by age for destination countries (ageing and labour-demand projections), calendar year"
+    },
+    {
+      "lead_id": "L78",
+      "url": "https://www.greenclimate.fund",
+      "title": "Green Climate Fund project portfolio",
+      "publisher": "Green Climate Fund",
+      "source_id": "gcf",
+      "contains": "Approved projects and disbursements for Nepal by entity"
+    },
+    {
+      "lead_id": "L79",
+      "url": "https://ucdp.uu.se",
+      "title": "Uppsala Conflict Data Program",
+      "publisher": "Uppsala University",
+      "source_id": "ucdp",
+      "contains": "Georeferenced conflict events in migrant destination and transit regions (calendar year)"
+    },
+    {
+      "lead_id": "L80",
+      "url": "https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport",
+      "title": "Review of Maritime Transport",
+      "publisher": "UNCTAD",
+      "source_id": "unctad_rmt",
+      "contains": "Freight rates, port and chokepoint disruption analysis (annual)"
+    }
+  ]
+}
