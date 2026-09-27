@@ -1,0 +1,926 @@
+{
+ "subagent_id": "05C",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 (manufacturing share of GDP and employment, trend), Q2 (sectors with revealed comparative advantage) and Q3 (landed-cost disadvantage of landlocked logistics) are designed but unanswered. Primary documents located: NSO national accounts and microdata catalogue (Census 2021, NLFS 2017/18, Census of Manufacturing Establishments), MoF Economic Surveys, WDI API, ILOSTAT, customs Foreign Trade Statistics and Nepal Trade Portal, UN Comtrade, UNCTADstat, ITC Trade Map, WTO TPR (2025), LPI 2023, World Bank and ADB transit-corridor project documents, NITDB and ESCAP dry-port material, UNCTAD RMT 2025, and landlockedness literature. Designed: (i) a manufacturing profile (ISIC C) with base-year splicing and separate real/deflator effects; (ii) a Balassa RCA table on mirror data with 3-year windows and flags for preference dependence, tariff arbitrage and electricity intensity (link to 05B); (iii) a landed-cost decomposition per TEU plus time cost against coastal and landlocked comparators. Reported 2026 logistics and market-access changes are unverified pointers only.",
+ "findings": [
+  {
+   "claim": "Manufacturing (ISIC section C) GVA share of GDP at current basic prices, FY2000/01-FY2025/26.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal",
+    "mof_nepal",
+    "wb_wdi"
+   ],
+   "note": "NSO national accounts; WDI NV.IND.MANF.ZS as cross-check (calendar-labelled; conversion must be documented). Splice across base-year revisions with the method recorded. Leads: 05C-L01, 05C-L02, 05C-L03, 05C-L04, 05C-L05",
+   "period": "FY2000/01-FY2025/26 (Nepal FY)",
+   "unit": "percent"
+  },
+  {
+   "claim": "Manufacturing real GVA growth (constant prices) and share at constant prices.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "note": "Keep real growth and deflator effects separate (CLAUDE.md rule 6). Leads: 05C-L01, 05C-L04",
+   "period": "FY2000/01-FY2025/26",
+   "unit": "percent"
+  },
+  {
+   "claim": "Manufacturing GVA level, current prices.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "note": "Feeds src/economic_model/sectors.py value-added path. Leads: 05C-L01",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "NPR_current_bn"
+  },
+  {
+   "claim": "Manufacturing employment level and share of total employment (NLFS 2017/18; Census 2021; ILOSTAT modelled).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal",
+    "ilostat"
+   ],
+   "note": "Definitions differ (usual vs current status, main vs any job, age cut-offs); keep all values with notes. Leads: 05C-L06, 05C-L07, 05C-L08",
+   "period": "2017/18 (NLFS), 2021 (Census), ILOSTAT annual",
+   "unit": "persons_k"
+  },
+  {
+   "claim": "Census of Manufacturing Establishments: establishments, persons engaged, gross output, value added by ISIC 2-digit division.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "note": "Formal establishments with a size threshold; not comparable with national-accounts GVA without reconciliation. Leads: 05C-L07",
+   "period": "CME 2018/19 (latest round to verify)",
+   "unit": "count"
+  },
+  {
+   "claim": "Manufacturing labour productivity (GVA per worker) relative to economy-wide average.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "note": "Estimate only after GVA and employment are observations for matched periods. Leads: 05C-L01, 05C-L06, 05C-L07",
+   "period": "2017/18 and 2021",
+   "unit": "ratio"
+  },
+  {
+   "claim": "Merchandise exports by HS 4/6-digit, Nepal-reported, FY2015/16-FY2025/26.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "customs_nepal",
+    "tepc"
+   ],
+   "note": "Customs FTS books and Nepal Trade Portal queries. Leads: 05C-L10, 05C-L11, 05C-L12, 05C-L13",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "NPR_current_bn"
+  },
+  {
+   "claim": "Partner-reported (mirror) imports from Nepal and world exports by HS 6-digit, calendar 2015-2025.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_comtrade",
+    "itc_trademap",
+    "unctadstat"
+   ],
+   "note": "Mirror data used for RCA denominator consistency; CIF/FOB and timing differences documented. Leads: 05C-L14, 05C-L15, 05C-L16, 05C-L18",
+   "period": "CY2015-CY2025",
+   "unit": "USD_current_mn"
+  },
+  {
+   "claim": "Balassa RCA index by HS 4-digit product, 3-year averages, and list of products with RCA > 1 persisting over two consecutive windows.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_comtrade",
+    "unctadstat",
+    "itc_trademap"
+   ],
+   "note": "Method in specific.rca_table; UNCTADstat/WITS published RCA as cross-check. Leads: 05C-L14, 05C-L15, 05C-L16, 05C-L17, 05C-L18",
+   "period": "CY2015-2017, 2018-2020, 2021-2023, 2023-2025",
+   "unit": "index"
+  },
+  {
+   "claim": "Share of RCA products whose exports depend on tariff preferences (LDC/SAFTA margins) or tariff arbitrage (inputs imported at low tariff, minimal processing, re-export to India).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wto_tariff",
+    "wto",
+    "customs_nepal"
+   ],
+   "note": "Requires preference margins and domestic value-added share; flags RCA that would not survive LDC graduation or rules-of-origin tightening. Leads: 05C-L19, 05C-L20, 05C-L21, 05C-L22, 05C-L10",
+   "period": "latest 3-year window",
+   "unit": "percent"
+  },
+  {
+   "claim": "World Bank LPI 2023 overall and component scores for Nepal and comparators (Bangladesh, Bhutan, Laos, Rwanda, Uganda, India).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_lpi"
+   ],
+   "note": "Survey-based; perception measure, not cost; component 'international shipments' and KPI dwell times used. Leads: 05C-L23, 05C-L24",
+   "period": "LPI 2023 (and 2018, 2016 editions)",
+   "unit": "index"
+  },
+  {
+   "claim": "Landed-cost components for a standard container: ocean freight to Kolkata/Haldia and Visakhapatnam; port handling; rail/road transit to Birgunj/Biratnagar ICDs; border/customs; inland to plant.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_npl",
+    "adb_nepal",
+    "nitdb",
+    "unctad_rmt"
+   ],
+   "note": "Project documents give baseline vintages; current tariffs from NITDB and Indian port schedules. Comparator: coastal gateway to inland city in Bangladesh and India. Leads: 05C-L25, 05C-L26, 05C-L27, 05C-L28, 05C-L29, 05C-L34",
+   "period": "latest available year (2023-2026)",
+   "unit": "USD_per_TEU"
+  },
+  {
+   "claim": "Transit and dwell time door-to-door (import and export) and its ad valorem time-cost equivalent.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_lpi",
+    "wb_npl"
+   ],
+   "note": "Time cost converted using a per-day ad valorem rate from the literature (assumption to be registered). Leads: 05C-L24, 05C-L25, 05C-L27",
+   "period": "latest available year",
+   "unit": "days"
+  },
+  {
+   "claim": "Industrial electricity tariff and supply reliability (outage hours/losses reported by manufacturing firms).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "NEA tariff schedule; Enterprise Survey obstacles (URL unverified). Shared with 05A/05B. Leads: 05C-L43, 05C-L40",
+   "period": "FY2024/25-FY2025/26",
+   "unit": "NPR_per_kWh"
+  },
+  {
+   "claim": "Reported 2026 changes to landlocked logistics: Kolkata-Biratnagar rail cargo service and Indian ECTS amendment; Indian import-side measures on Nepali exports.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mea_india",
+    "customs_nepal"
+   ],
+   "note": "UNVERIFIED media pointers; primary notifications required before any cost change is modelled. Leads: 05C-L32, 05C-L33",
+   "period": "calendar 2026"
+  },
+  {
+   "claim": "Manufacturing is defined as ISIC Rev.4 section C throughout; electricity (section D) and mining/construction are excluded.",
+   "type": "assumption"
+  },
+  {
+   "claim": "RCA uses the Balassa index on mirror-plus-reported data with 3-year averaging; RCA is a descriptive indicator of export specialisation, not evidence of cost competitiveness.",
+   "type": "assumption",
+   "note": "RCA can be inflated by preferences, tariff arbitrage and re-exports; flagged per product."
+  },
+  {
+   "claim": "Landlocked cost disadvantage is the difference between Nepal's door-to-door landed cost and a coastal comparator's cost for the same cargo and origin port, expressed per TEU and as ad valorem equivalent; it excludes tariffs.",
+   "type": "assumption"
+  }
+ ],
+ "data_gaps": [
+  "Every empirical value: no primary document could be downloaded in r1.",
+  "Document-level NSO endpoints for national accounts, NLFS and the Census of Manufacturing Establishments are unverified.",
+  "Customs FTS books FY2023/24-FY2025/26 not located (only FY2022/23 book).",
+  "Current per-TEU freight, handling and transit tariffs on India-Nepal corridors: only project-document baselines of older vintage located; current NITDB/Indian port tariffs needed.",
+  "Domestic value-added share by export product (to test tariff-arbitrage RCA) - no source located.",
+  "Enterprise Survey, WITS and CEPII BACI URLs are from general knowledge (unverified); Comtrade bulk access may need an API key."
+ ],
+ "assumptions": [
+  {
+   "id": "05C-A1",
+   "text": "Manufacturing = ISIC Rev.4 section C.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05C-A2",
+   "text": "RCA computed on calendar-year mirror data; Nepal FY customs data used as check, not mixed.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05C-A3",
+   "text": "Landed-cost disadvantage excludes tariffs and is measured relative to named comparators.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05C-A4",
+   "text": "A per-day ad valorem time-cost rate will be taken from peer-reviewed literature and registered in config/model_config.yaml as an assumption (not yet chosen).",
+   "basis": "assumption"
+  },
+  {
+   "id": "05C-A5",
+   "text": "Media reports are pointers only, never evidence.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "00A",
+   "text": "Enterprise Surveys, WITS and CEPII BACI are not in the source catalog; propose adding (tier 2/2/7). Comtrade bulk access may require an API key - access decision needed before r2."
+  },
+  {
+   "to": "05B",
+   "text": "Hand-off: the RCA table carries an electricity-intensity flag; 05B should supply the electricity-intensity classification by HS/ISIC so the export-vs-domestic-use comparison targets sectors with plausible RCA, not hypothetical ones."
+  },
+  {
+   "to": "19C",
+   "text": "Ocean-freight shocks (Hormuz/Red Sea) enter the landed-cost model through the ocean leg only; please confirm 19C will publish freight indices on a gateway-port basis (Kolkata/Visakhapatnam)."
+  },
+  {
+   "to": "21A",
+   "text": "RCA products flagged as preference-dependent should be cross-checked against 21A's list of lines losing LDC preferences."
+  },
+  {
+   "to": "15",
+   "text": "Escalation: if reported 2026 changes (Kolkata-Biratnagar rail service; Indian import-side measures; transit-treaty review) are verified, landed-cost and export-access baselines change for S02/S03."
+  }
+ ],
+ "uncertainty": "High: no value retrieved. Structural uncertainties: (i) NSO base-year revisions break manufacturing share series; (ii) employment definitions differ across NLFS, Census and ILOSTAT; (iii) Nepal-reported vs mirror trade differ (CIF/FOB, timing, informal India trade); (iv) RCA may reflect preferences or tariff arbitrage rather than competitiveness; (v) logistics cost data are project-baseline vintages and may not reflect current tariffs or 2026 route changes; (vi) time-cost conversion depends on a literature parameter.",
+ "specific": {
+  "manufacturing_profile": {
+   "status": "pending",
+   "indicators": [
+    {
+     "name": "mfg_gva_share_current",
+     "unit": "percent",
+     "period": "FY2000/01-FY2025/26",
+     "sources": [
+      "nso_nepal",
+      "mof_nepal",
+      "wb_wdi"
+     ],
+     "lead_ids": [
+      "05C-L01",
+      "05C-L02",
+      "05C-L03",
+      "05C-L04",
+      "05C-L05"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "mfg_gva_real_growth",
+     "unit": "percent",
+     "period": "FY2000/01-FY2025/26",
+     "sources": [
+      "nso_nepal"
+     ],
+     "lead_ids": [
+      "05C-L01",
+      "05C-L04"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "mfg_gva_level",
+     "unit": "NPR_current_bn",
+     "period": "FY2015/16-FY2025/26",
+     "sources": [
+      "nso_nepal"
+     ],
+     "lead_ids": [
+      "05C-L01"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "mfg_employment",
+     "unit": "persons_k",
+     "period": "NLFS 2017/18; Census 2021; ILOSTAT",
+     "sources": [
+      "nso_nepal",
+      "ilostat"
+     ],
+     "lead_ids": [
+      "05C-L06",
+      "05C-L07",
+      "05C-L08",
+      "05C-L09"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "mfg_employment_share",
+     "unit": "percent",
+     "period": "as above",
+     "sources": [
+      "nso_nepal",
+      "ilostat"
+     ],
+     "lead_ids": [
+      "05C-L06",
+      "05C-L07",
+      "05C-L08"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "mfg_structure_by_isic2",
+     "unit": "percent",
+     "period": "CME latest round",
+     "sources": [
+      "nso_nepal"
+     ],
+     "lead_ids": [
+      "05C-L07"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "relative_labour_productivity",
+     "unit": "ratio",
+     "period": "2017/18, 2021",
+     "sources": [
+      "nso_nepal"
+     ],
+     "lead_ids": [
+      "05C-L01",
+      "05C-L06",
+      "05C-L07"
+     ],
+     "status": "pending"
+    },
+    {
+     "name": "registered_industries",
+     "unit": "count",
+     "period": "FY2015/16-FY2025/26",
+     "sources": [
+      "doind"
+     ],
+     "lead_ids": [
+      "05C-L41"
+     ],
+     "status": "pending"
+    }
+   ],
+   "trend_method": "Level and share series spliced across NSO base-year revisions (overlap-ratio splice, documented); trend compared with Rodrik (2016) share-income benchmark and comparators (Bangladesh, Bhutan, Laos, Rwanda) from WDI - descriptive only",
+   "methodological_issues": [
+    "Base-year rebasing breaks in NSO series",
+    "Nepal FY vs WDI calendar labelling",
+    "Employment definitions differ between NLFS, Census and ILOSTAT modelled estimates",
+    "Informal manufacturing (household/cottage) under-covered in CME"
+   ]
+  },
+  "rca_table": {
+   "status": "pending",
+   "method": "Balassa RCA_ij = (x_ij / X_i) / (x_wj / X_w); i = Nepal, j = HS 4-digit product, w = world; symmetric RCA = (RCA-1)/(RCA+1) also reported",
+   "data": "Nepal exports: partner-reported mirror imports (Comtrade/BACI) as primary, Nepal customs (FY) as check; world exports: Comtrade/BACI; calendar years",
+   "windows": [
+    "CY2015-2017",
+    "CY2018-2020",
+    "CY2021-2023",
+    "CY2023-2025"
+   ],
+   "classification": "HS2017 with concordance to HS2022; SITC Rev.3 via UNCTADstat for cross-check",
+   "columns": [
+    "hs4",
+    "description",
+    "export_value_USD_current_mn (window average)",
+    "share_of_nepal_exports_percent",
+    "rca_index",
+    "symmetric_rca",
+    "persistent (RCA>1 in consecutive windows)",
+    "main_destination_share_percent",
+    "preference_dependence_flag",
+    "tariff_arbitrage_flag (imported-input share / minimal-processing)",
+    "electricity_intensity_flag (link 05B)",
+    "source_observation_ids"
+   ],
+   "rows": [],
+   "rows_status": "pending - no trade data retrieved; product names are not pre-listed to avoid unsourced claims",
+   "robustness": [
+    "mirror vs reported data",
+    "window choice",
+    "exclusion of electricity (HS 2716) and re-exports",
+    "UNCTADstat/WITS published RCA comparison"
+   ],
+   "sources": [
+    "un_comtrade",
+    "unctadstat",
+    "itc_trademap",
+    "customs_nepal",
+    "wto_tariff"
+   ],
+   "lead_ids": [
+    "05C-L10",
+    "05C-L11",
+    "05C-L12",
+    "05C-L13",
+    "05C-L14",
+    "05C-L15",
+    "05C-L16",
+    "05C-L17",
+    "05C-L18",
+    "05C-L19",
+    "05C-L20",
+    "05C-L21",
+    "05C-L22"
+   ]
+  },
+  "cost_disadvantage_estimates": {
+   "status": "pending",
+   "definition": "Landed-cost disadvantage = Nepal door-to-door cost (gateway port -> Nepal ICD -> plant) minus coastal comparator cost for the same cargo, plus time cost; per TEU and ad valorem equivalent (percent of cargo value)",
+   "components": [
+    {
+     "component": "ocean freight to Indian gateway (Kolkata/Haldia, Visakhapatnam)",
+     "unit": "USD_per_TEU",
+     "sources": [
+      "unctad_rmt"
+     ],
+     "lead_ids": [
+      "05C-L34"
+     ],
+     "status": "pending"
+    },
+    {
+     "component": "port handling and transit documentation (ECTS, bonds)",
+     "unit": "USD_per_TEU",
+     "sources": [
+      "wb_npl",
+      "tepc"
+     ],
+     "lead_ids": [
+      "05C-L25",
+      "05C-L31"
+     ],
+     "status": "pending"
+    },
+    {
+     "component": "rail/road transit to Birgunj/Biratnagar/other ICDs",
+     "unit": "USD_per_TEU",
+     "sources": [
+      "nitdb",
+      "wb_npl",
+      "adb_nepal"
+     ],
+     "lead_ids": [
+      "05C-L25",
+      "05C-L26",
+      "05C-L28",
+      "05C-L29",
+      "05C-L30"
+     ],
+     "status": "pending"
+    },
+    {
+     "component": "border and customs clearance at ICD",
+     "unit": "USD_per_TEU",
+     "sources": [
+      "nitdb",
+      "customs_nepal"
+     ],
+     "lead_ids": [
+      "05C-L29",
+      "05C-L11"
+     ],
+     "status": "pending"
+    },
+    {
+     "component": "inland haulage ICD to plant",
+     "unit": "USD_per_TEU",
+     "sources": [
+      "wb_npl"
+     ],
+     "lead_ids": [
+      "05C-L25"
+     ],
+     "status": "pending"
+    },
+    {
+     "component": "door-to-door time and delay variance",
+     "unit": "days",
+     "sources": [
+      "wb_lpi",
+      "wb_npl"
+     ],
+     "lead_ids": [
+      "05C-L24",
+      "05C-L25",
+      "05C-L27"
+     ],
+     "status": "pending"
+    },
+    {
+     "component": "time cost ad valorem equivalent",
+     "unit": "percent",
+     "method": "days x per-day ad valorem rate (literature value, registered as assumption)",
+     "status": "pending"
+    },
+    {
+     "component": "inventory/buffer-stock cost from delay variance",
+     "unit": "percent",
+     "status": "pending"
+    }
+   ],
+   "comparators": [
+    "Chattogram -> Dhaka (Bangladesh)",
+    "Kolkata -> Kolkata hinterland (India, same gateway)",
+    "Bhutan via Kolkata (landlocked peer)"
+   ],
+   "decomposition_reference": "Limao and Venables (2001): own-infrastructure vs transit-country vs distance",
+   "scenario_hooks": [
+    "Kolkata-Biratnagar rail service and ECTS amendment (reported 2026, unverified)",
+    "transit-treaty review (reported Sep 2026, unverified)",
+    "Hormuz/Red Sea freight shocks (19C)"
+   ],
+   "sources": [
+    "wb_npl",
+    "adb_nepal",
+    "nitdb",
+    "wb_lpi",
+    "unctad_rmt",
+    "academic"
+   ],
+   "lead_ids": [
+    "05C-L23",
+    "05C-L24",
+    "05C-L25",
+    "05C-L26",
+    "05C-L27",
+    "05C-L28",
+    "05C-L29",
+    "05C-L30",
+    "05C-L31",
+    "05C-L32",
+    "05C-L34",
+    "05C-L35",
+    "05C-L36",
+    "05C-L37",
+    "05C-L38"
+   ]
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "05C-L01",
+   "url": "https://nsonepal.gov.np",
+   "title": "National Accounts of Nepal (NSO landing page)",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Annual national accounts: GVA by ISIC section incl. C (manufacturing) at current and constant prices, Nepal FY; base-year and revision notes. Document-level endpoint unverified (same as 00A/00B lead)."
+  },
+  {
+   "lead_id": "05C-L02",
+   "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+   "title": "Economic Survey 2081/82 (FY2024/25)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Industry chapter and statistical appendix: manufacturing GVA share and growth, industrial capacity utilisation, registered industries, export composition"
+  },
+  {
+   "lead_id": "05C-L03",
+   "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+   "title": "Economic Survey 2082/83 (FY2025/26)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "As above for FY2025/26 (preliminary)"
+  },
+  {
+   "lead_id": "05C-L04",
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+   "title": "Economic Survey 2023/24 (English)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Historical appendix tables for manufacturing GVA and industrial production"
+  },
+  {
+   "lead_id": "05C-L05",
+   "url": "https://api.worldbank.org/v2/",
+   "title": "World Development Indicators API",
+   "publisher": "World Bank",
+   "source_id": "wb_wdi",
+   "contains": "Series NV.IND.MANF.ZS (manufacturing value added, % of GDP), NV.IND.MANF.KD.ZG, SL.IND.EMPL.ZS for Nepal and comparators; WDI year labelling of Nepal FY to be read from country metadata"
+  },
+  {
+   "lead_id": "05C-L06",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+   "title": "National Population and Housing Census 2021 - related materials",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Census 2021 economically active population by industry (ISIC section C) - employment level and share"
+  },
+  {
+   "lead_id": "05C-L07",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+   "title": "NSO microdata catalogue (NLFS 2017/18, Census of Manufacturing Establishments, National Economic Census 2018)",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "NLFS III 2017/18 employment by industry (formal/informal); Census of Manufacturing Establishments (establishments, persons engaged, gross output, intermediate consumption, value added by ISIC 2-digit); Economic Census 2018 establishments and persons engaged. URL from general knowledge - unverified. (catalogue root; study ids to locate)"
+  },
+  {
+   "lead_id": "05C-L08",
+   "url": "https://ilostat.ilo.org",
+   "title": "ILOSTAT - Nepal labour force indicators",
+   "publisher": "International Labour Organization",
+   "source_id": "ilostat",
+   "contains": "Employment by economic activity (ISIC Rev.4 section C) - survey-based vs modelled estimates; distinguish"
+  },
+  {
+   "lead_id": "05C-L09",
+   "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+   "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+   "publisher": "International Labour Organization",
+   "source_id": null,
+   "contains": "Sectoral employment in export manufacturing (apparel, carpets etc.) by sex and formality"
+  },
+  {
+   "lead_id": "05C-L10",
+   "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+   "title": "Nepal Foreign Trade Statistics FY2022/23 (2079/80)",
+   "publisher": "Department of Customs, Nepal",
+   "source_id": "customs_nepal",
+   "contains": "Exports and imports by HS chapter/commodity, partner and customs office, Nepal FY2022/23 - reporter-side data for RCA"
+  },
+  {
+   "lead_id": "05C-L11",
+   "url": "https://customs.gov.np",
+   "title": "Department of Customs (portal)",
+   "publisher": "Department of Customs, Nepal",
+   "source_id": "customs_nepal",
+   "contains": "Later FTS books (FY2023/24-FY2025/26) and monthly releases"
+  },
+  {
+   "lead_id": "05C-L12",
+   "url": "https://nepaltradeportal.gov.np/",
+   "title": "Nepal Trade Information Portal",
+   "publisher": "Ministry of Industry, Commerce and Supplies, Nepal",
+   "source_id": null,
+   "contains": "HS-level export queries by partner and period for FY2023/24-FY2025/26; transit procedures documentation"
+  },
+  {
+   "lead_id": "05C-L13",
+   "url": "https://tepc.gov.np",
+   "title": "Trade and Export Promotion Centre",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Export statistics by product and destination; export-strategy sector lists"
+  },
+  {
+   "lead_id": "05C-L14",
+   "url": "https://comtradeplus.un.org",
+   "title": "UN Comtrade",
+   "publisher": "UN Statistics Division",
+   "source_id": "un_comtrade",
+   "contains": "World exports by HS 6-digit (denominator of RCA) and partner-reported imports from Nepal (mirror data), calendar year, HS2017/HS2022"
+  },
+  {
+   "lead_id": "05C-L15",
+   "url": "https://unctadstat.unctad.org",
+   "title": "UNCTADstat",
+   "publisher": "UNCTAD",
+   "source_id": "unctadstat",
+   "contains": "Merchandise trade by SITC/product group and revealed comparative advantage indices by economy; export concentration and diversification indices; calendar year"
+  },
+  {
+   "lead_id": "05C-L16",
+   "url": "https://www.trademap.org",
+   "title": "ITC Trade Map",
+   "publisher": "International Trade Centre",
+   "source_id": "itc_trademap",
+   "contains": "Mirror trade statistics by HS 4/6-digit; export growth and market shares for Nepal's products"
+  },
+  {
+   "lead_id": "05C-L17",
+   "url": "https://wits.worldbank.org",
+   "title": "World Integrated Trade Solution (WITS)",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Trade indicators including RCA by product and partner for Nepal. URL from general knowledge - unverified."
+  },
+  {
+   "lead_id": "05C-L18",
+   "url": "https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37",
+   "title": "CEPII BACI harmonised trade database",
+   "publisher": "CEPII",
+   "source_id": "academic",
+   "contains": "Reconciled bilateral HS 6-digit trade flows (reporter/partner harmonised) - robustness check for mirror-based RCA. URL from general knowledge - unverified."
+  },
+  {
+   "lead_id": "05C-L19",
+   "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+   "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+   "publisher": "World Trade Organization",
+   "source_id": "wto",
+   "contains": "Manufacturing sector chapter, export structure, tariff regime, transit and trade facilitation"
+  },
+  {
+   "lead_id": "05C-L20",
+   "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+   "title": "Nepal after LDC Graduation: New avenues for exports",
+   "publisher": "International Trade Centre",
+   "source_id": null,
+   "contains": "Product-level export potential and diversification options - comparator to own RCA ranking"
+  },
+  {
+   "lead_id": "05C-L21",
+   "url": "https://www.wto.org/english/res_e/booksp_e/trade_impacts_of_ldc_graduation_insights.pdf",
+   "title": "Trade impacts of LDC graduation: country-specific market access analyses",
+   "publisher": "WTO / EIF",
+   "source_id": "wto",
+   "contains": "Nepal product lines losing LDC-specific preferences - flags RCA sectors dependent on preferences"
+  },
+  {
+   "lead_id": "05C-L22",
+   "url": "https://ttd.wto.org",
+   "title": "WTO Tariff and Trade Data",
+   "publisher": "World Trade Organization",
+   "source_id": "wto_tariff",
+   "contains": "Tariffs faced by Nepal's export lines (separates RCA from preference-driven flows)"
+  },
+  {
+   "lead_id": "05C-L23",
+   "url": "https://lpi.worldbank.org",
+   "title": "Logistics Performance Index",
+   "publisher": "World Bank",
+   "source_id": "wb_lpi",
+   "contains": "LPI 2023 overall and component scores for Nepal and comparators; earlier editions for trend (survey-based)"
+  },
+  {
+   "lead_id": "05C-L24",
+   "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+   "title": "Connecting to Compete 2023 (LPI 2023 report)",
+   "publisher": "World Bank",
+   "source_id": "wb_lpi",
+   "contains": "LPI 2023 scores and KPI-based dwell/delay indicators by country"
+  },
+  {
+   "lead_id": "05C-L25",
+   "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+   "title": "Nepal-India Regional Trade and Transport Project - project document",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Corridor diagnostics Kolkata/Haldia-Raxaul/Birgunj and Visakhapatnam: dwell and transit times, logistics cost baselines for third-country trade (project vintage)"
+  },
+  {
+   "lead_id": "05C-L26",
+   "url": "https://www.adb.org/sites/default/files/linked-documents/44143-01-nep-oth.pdf",
+   "title": "Subregional Transport Enhancement Project (RRP NEP 44143) linked document",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Transit corridor logistics costs via Indian ports (vintage to confirm)"
+  },
+  {
+   "lead_id": "05C-L27",
+   "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+   "title": "An Analysis of Nepal's Transit through India",
+   "publisher": "ICRIER",
+   "source_id": "academic",
+   "contains": "Transit volumes, routes, costs and bottlenecks via Indian ports (tier 7; secondary check)"
+  },
+  {
+   "lead_id": "05C-L28",
+   "url": "https://www.unescap.org/sites/default/files/6.%20Nepal.pdf",
+   "title": "Dry Ports Development in Nepal",
+   "publisher": "UN ESCAP (Government of Nepal presentation)",
+   "source_id": "nitdb",
+   "contains": "Dry ports/ICDs, gateway ports and rail/road linkages"
+  },
+  {
+   "lead_id": "05C-L29",
+   "url": "https://nitdb.gov.np",
+   "title": "Nepal Intermodal Transport Development Board",
+   "publisher": "Nepal Intermodal Transport Development Board",
+   "source_id": "nitdb",
+   "contains": "Dry-port cargo statistics by facility; tariff schedules for ICD handling"
+  },
+  {
+   "lead_id": "05C-L30",
+   "url": "https://www.indembkathmandu.gov.in/commerce-wing-brief",
+   "title": "Commerce Wing Brief",
+   "publisher": "Embassy of India, Kathmandu",
+   "source_id": "mea_india",
+   "contains": "Designated transit ports, corridors, ICDs and cross-border rail links"
+  },
+  {
+   "lead_id": "05C-L31",
+   "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+   "title": "Treaty of Trade, Treaty of Transit and related agreements (Nepal-India)",
+   "publisher": "Trade and Export Promotion Centre, Nepal",
+   "source_id": "tepc",
+   "contains": "Transit procedures that generate fixed landed-cost components (bonds, documentation, routing rules)"
+  },
+  {
+   "lead_id": "05C-L32",
+   "url": "https://kathmandupost.com/money/2026/07/18/historic-kolkata-biratnagar-rail-cargo-service-begins-transit-costs-set-to-fall",
+   "title": "Kolkata-Biratnagar rail cargo service begins (July 2026)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "New rail route and Indian ECTS amendment; pointer to primary notifications. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05C-L33",
+   "url": "https://kathmandupost.com/money/2026/09/20/nepal-lost-rs10-billion-in-india-s-import-squeeze-new-delhi-seeks-investigation-before-easing-curbs",
+   "title": "India import-side measures affecting Nepali exports (Sep 2026)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Pointer to DGTR/DGFT notifications affecting Nepal's manufactured exports (market-access risk for RCA sectors). Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05C-L34",
+   "url": "https://unctad.org/system/files/official-document/rmt2025_en.pdf",
+   "title": "Review of Maritime Transport 2025",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_rmt",
+   "contains": "Freight rate indices and port performance (India gateway ports) - ocean leg of landed cost"
+  },
+  {
+   "lead_id": "05C-L35",
+   "url": "https://www.un.org/ohrlls/sites/www.un.org.ohrlls/files/lldcs_publications/dev-costs-of-landlockedness.pdf",
+   "title": "The Development Economics of Landlockedness",
+   "publisher": "UN-OHRLLS",
+   "source_id": null,
+   "contains": "Cross-country estimates of trade-cost and growth penalties of landlockedness; method comparator"
+  },
+  {
+   "lead_id": "05C-L36",
+   "url": "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+   "title": "Limao and Venables (2001) Infrastructure, Geographical Disadvantage, Transport Costs, and Trade",
+   "publisher": "Oxford University Press / World Bank",
+   "source_id": "academic",
+   "contains": "Method for separating own-infrastructure, transit-country and distance components of transport cost"
+  },
+  {
+   "lead_id": "05C-L37",
+   "url": "https://www.tandfonline.com/doi/abs/10.1080/14649880310001660201",
+   "title": "Faye, McArthur, Sachs and Snow (2004) The Challenges Facing Landlocked Developing Countries",
+   "publisher": "Taylor & Francis",
+   "source_id": "academic",
+   "contains": "Framework of transit-neighbour dependence channels"
+  },
+  {
+   "lead_id": "05C-L38",
+   "url": "https://onlinelibrary.wiley.com/doi/10.1111/rode.12389",
+   "title": "Paudel (2018) Export performance of developing countries: Does landlockedness matter?",
+   "publisher": "Wiley",
+   "source_id": "academic",
+   "contains": "Export-performance penalty for landlocked developing countries"
+  },
+  {
+   "lead_id": "05C-L39",
+   "url": "https://link.springer.com/article/10.1007/s10887-015-9122-3",
+   "title": "Rodrik (2016) Premature Deindustrialization",
+   "publisher": "Springer",
+   "source_id": "academic",
+   "contains": "Benchmark manufacturing share-income relationship for trend interpretation"
+  },
+  {
+   "lead_id": "05C-L40",
+   "url": "https://www.enterprisesurveys.org",
+   "title": "World Bank Enterprise Surveys (Nepal)",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Firm-level obstacles: electricity outages and losses, transport, customs time, access to finance; manufacturing subsample. URL from general knowledge - unverified."
+  },
+  {
+   "lead_id": "05C-L41",
+   "url": "https://doind.gov.np",
+   "title": "Department of Industry - industrial statistics",
+   "publisher": "Department of Industry, Nepal",
+   "source_id": "doind",
+   "contains": "Registered industries by category, size and province; FDI approvals by sector (approval basis)"
+  },
+  {
+   "lead_id": "05C-L42",
+   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+   "title": "Current Macroeconomic and Financial Situation (annual data FY2024/25)",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Major exports by commodity (NPR), FY2024/25; manufacturing capacity-utilisation survey references"
+  },
+  {
+   "lead_id": "05C-L43",
+   "url": "https://www.nea.org.np/annual_report",
+   "title": "NEA Annual Reports",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "Industrial electricity sales and tariff schedule (energy input cost for landed/production cost comparison; shared with 05A/05B)"
+  },
+  {
+   "lead_id": "05C-L44",
+   "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+   "title": "Bhutan Country Economic Memorandum (World Bank 2024)",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Landlocked Himalayan comparator for manufacturing diversification and logistics costs"
+  }
+ ]
+}
