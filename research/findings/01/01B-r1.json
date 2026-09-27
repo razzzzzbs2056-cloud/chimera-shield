@@ -1,0 +1,576 @@
+{
+  "subagent_id": "01B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): research design and source leads only; no empirical values recorded. Q1 (which economies sustained high growth for 25+ years and from what starting income) will be answered by applying three spell definitions (Growth Report 2008; Hausmann-Pritchett-Rodrik 2005 accelerations; Berg-Ostry-Zettelmeyer 2012 / Kar et al. 2013 structural breaks) to Maddison Project Database 2023 (doi:10.34894/INZBF2) and Penn World Table 11.0 (doi:10.34894/FABVLR), with WDI for investment, saving and export shares. Q2 (preconditions) is framed from the growth-spell literature: openness and export orientation, macro stability, high saving and investment, credible policy continuity, equality, demographic transition. Q3 (transferability) is assessed qualitatively: sea access is structurally absent in Nepal and the East Asian coastal manufacturing-export model does not transfer directly; landlocked precedents (Botswana, Bhutan, Rwanda, Ethiopia, Laos) relied on mineral rents, hydropower exports to a neighbour or public-investment-led strategies; premature deindustrialisation and remittance-driven real appreciation under the INR peg further weaken the manufacturing route; institutions and savings transfer partly; energy and demographics differ in kind. All quantitative items are pending retrieval; regression-to-the-mean evidence (Pritchett-Summers 2014) must be used to bound long-horizon trajectories in 01C.",
+  "findings": [
+    {
+      "claim": "Q1: Identification of economies that sustained high real per-capita (and total) GDP growth for 25+ years, with spell start/end dates and starting income level",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "maddison",
+        "pwt",
+        "academic"
+      ],
+      "note": "Requires MPD 2023 country-year GDP per capita and population (doi:10.34894/INZBF2) and PWT 11.0 rgdpna/pop (doi:10.34894/FABVLR). Apply (a) the Growth Report 25-year high-growth definition, (b) Hausmann-Pritchett-Rodrik acceleration filter, (c) Berg-Ostry-Zettelmeyer / Kar-Pritchett-Raihan-Sen structural-break dating. Report starting income in both MPD 2011 int$ and PWT 2021 PPP$ with vintage labels."
+    },
+    {
+      "claim": "Q1: The Growth Report (2008) list of sustained high-growth economies and its exact threshold definition",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "Retrieve The Growth Report PDF (openknowledge.worldbank.org handle 10986/6507) and transcribe the list and the growth threshold from the report text. Secondary summaries (not retrieved evidence) name Botswana, Brazil, China, Hong Kong SAR, Indonesia, Japan, Korea, Malaysia, Malta, Oman, Singapore, Taiwan Province of China and Thailand; treat as a provisional screening list only until verified."
+    },
+    {
+      "claim": "Q1: Growth-spell duration statistics (distribution of spell lengths, survival probabilities by duration, hazard of spell ending by income level)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "maddison",
+        "pwt",
+        "academic"
+      ],
+      "note": "Compute from MPD 2023/PWT 11.0 using the three identification methods; compare with published duration results in Berg-Ostry-Zettelmeyer (2012), Eichengreen-Park-Shin (2012) and persistence results in Pritchett-Summers (2014 NBER w20573)."
+    },
+    {
+      "claim": "Q2: Investment (gross capital formation) and saving rates during and at the start of each sustained spell",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wdi",
+        "pwt"
+      ],
+      "note": "WDI NE.GDI.TOTL.ZS, NY.GNS.ICTR.ZS, NY.GDS.TOTL.ZS (from 1960 where available) and PWT 11.0 csh_i. Note that PWT csh_i is at current PPPs and differs conceptually from WDI national-price shares; keep both."
+    },
+    {
+      "claim": "Q2: Export shares and export composition (manufactures share) during sustained spells",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wdi",
+        "pwt"
+      ],
+      "note": "WDI NE.EXP.GNFS.ZS, TX.VAL.MANF.ZS.UN; PWT 11.0 csh_x. Record separately for landlocked vs coastal comparators."
+    },
+    {
+      "claim": "Q2: Initial-condition benchmarks (institutions, education, demographics, energy access) at spell start for comparators",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wdi",
+        "pwt",
+        "wb_wgi",
+        "academic"
+      ],
+      "note": "PWT hc (human capital index), WDI SP.POP.DPND and SP.POP.1564.TO.ZS, EG.USE.ELEC.KH.PC / EG.ELC.ACCS.ZS; institutional indicators follow Johnson-Ostry-Subramanian (2010) benchmarking method. WGI only begins in 1996, so earlier spell starts require alternative historical institutional measures (e.g. Polity/V-Dem) — flag as data gap."
+    },
+    {
+      "claim": "Q2 (qualitative, lead-based): the literature identifies openness/export orientation, macroeconomic stability, high saving and investment, market allocation and a committed capable state (Growth Report 2008); income equality, democratic institutions, manufactured-export orientation and avoidance of overvaluation for spell duration (Berg-Ostry-Zettelmeyer 2012); trade expansion at accelerations (Jones-Olken 2008); demographic transition (Bloom-Williamson 1998); and factor accumulation as the dominant proximate source in East Asia (Young 1995) as recurring accompaniments of sustained growth",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "Characterisation of paper conclusions taken from abstracts/search results, not yet retrieved; to be confirmed against full texts in r2 and upgraded to cited observations. No magnitudes are asserted."
+    },
+    {
+      "claim": "Q3: Nepal's current values for each precondition (investment, saving, export share, manufacturing share, remittances, dependency ratio, electricity use, human capital) against comparator values at spell start",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wdi",
+        "pwt",
+        "nrb",
+        "nso_nepal",
+        "wb_npl"
+      ],
+      "note": "Needs WDI/PWT series for NPL plus Nepal official series (NSO national accounts, NRB BoP) on a fiscal-year basis (mid-July). WDI Nepal series are labelled by calendar year but are compiled from fiscal-year national accounts — document the conversion before comparing."
+    },
+    {
+      "claim": "Q3 (qualitative): sea access is structurally absent for Nepal, as for Botswana, Bhutan, Laos, Rwanda and Ethiopia among candidate comparators, whereas nearly all East Asian sustained growers had direct sea access; the landlocked literature (Faye et al. 2004; Limao-Venables 2001; Gallup-Sachs-Mellinger 1999; Paudel 2014) indicates the penalty operates through transit-neighbour dependence and trade costs, and that governance, openness and coordinated transit infrastructure moderate it",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "Geographic status is definitional; channel characterisation is from paper abstracts pending full-text retrieval. Size of the penalty is pending (no magnitude asserted)."
+    },
+    {
+      "claim": "Q3: Magnitude of the landlocked growth/trade penalty applicable to Nepal",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "Retrieve Limao-Venables (2001), Paudel (2014, 2018), UN-OHRLLS 'Development Economics of Landlockedness'; extract coefficient estimates with specification, sample and period. Complement with World Bank LPI and trade-cost data (Agent 07/22 domain)."
+    }
+  ],
+  "data_gaps": [
+    "MPD 2023 full panel (GDP per capita, population) — not downloaded (data host blocked)",
+    "PWT 11.0 full panel incl. csh_i, csh_x, hc, rnna, rtfpna — not downloaded",
+    "WDI series NY.GDP.PCAP.KD, NE.GDI.TOTL.ZS, NY.GNS.ICTR.ZS, NY.GDS.TOTL.ZS, NE.EXP.GNFS.ZS, TX.VAL.MANF.ZS.UN, BX.TRF.PWKR.DT.GD.ZS, SP.POP.DPND, EG.USE.ELEC.KH.PC for all comparators — not downloaded",
+    "Full texts of Growth Report 2008, HPR 2005, BOZ 2012, Pritchett-Summers 2014, Eichengreen-Park-Shin 2012 to transcribe definitions, thresholds and episode lists",
+    "Historical institutional quality measures for spell starts before 1996 (WGI coverage begins 1996)",
+    "Nepal fiscal-year to calendar-year conversion for comparisons with calendar-year international panels",
+    "Estimates of landlocked penalty magnitudes (Limao-Venables 2001; Paudel 2014; UN-OHRLLS)"
+  ],
+  "assumptions": [
+    {
+      "id": "01B-A1",
+      "text": "A 'sustained high-growth spell' is analysed under three alternative definitions (Growth Report 25-year threshold; HPR acceleration filter; structural-break dating) and results are reported for each; no single definition is privileged.",
+      "basis": "assumption"
+    },
+    {
+      "id": "01B-A2",
+      "text": "Comparator set is stratified: (i) Growth Report sustained growers; (ii) landlocked sustained or near-sustained growers (Botswana, Bhutan, Laos, Rwanda, Ethiopia, Uganda, with Burkina Faso and landlocked Central Asian economies as sensitivity cases); (iii) South Asian neighbours (India, Bangladesh, Sri Lanka) and Nepal's own history; (iv) remittance-dependent economies (e.g. Philippines, Tajikistan, Kyrgyz Republic). Final membership is determined by the Q1 computation, not by this list.",
+      "basis": "assumption"
+    },
+    {
+      "id": "01B-A3",
+      "text": "Growth is measured as real GDP per capita at constant prices (MPD cgdppc/rgdpnapc, PWT rgdpna/pop, WDI NY.GDP.PCAP.KD). Nominal USD and exchange-rate effects are excluded from spell identification and handled separately by 01A/01C for the US$3T arithmetic.",
+      "basis": "assumption"
+    },
+    {
+      "id": "01B-A4",
+      "text": "Transferability is judged per precondition on three dimensions: (a) is it present in Nepal, (b) is it policy-addressable within a 25-45 year horizon, (c) is there any landlocked precedent where it was achieved or substituted. These are qualitative judgements until r2 data are retrieved.",
+      "basis": "assumption"
+    },
+    {
+      "id": "01B-A5",
+      "text": "Historical base rates for spell persistence are descriptive, not probabilities for Nepal; consistent with CLAUDE.md, no probability of attaining any trajectory is assigned.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "01A",
+      "text": "Growth accounting for Nepal should be run on the same PWT 11.0 vintage (and ICP 2021 PPP base) used for comparators so that TFP and capital-deepening comparisons are like-for-like; fiscal-to-calendar-year conversion must be documented."
+    },
+    {
+      "to": "01C",
+      "text": "Required-growth trajectories for 2050/2060/2070 should be compared against the empirical distribution of spell durations and the regression-to-the-mean evidence (Pritchett-Summers 2014) before being presented; trajectories exceeding any historical precedent in duration should be flagged as without precedent."
+    },
+    {
+      "to": "07A",
+      "text": "Landlocked transit-cost and logistics data (LPI, transit times via Kolkata/Visakhapatnam and prospective China routes) are needed to quantify the sea-access precondition; please supply the corresponding observations when available."
+    },
+    {
+      "to": "05A",
+      "text": "The energy precondition for Nepal differs from East Asian comparators (hydropower endowment, seasonal deficit, export dependence on India's grid); comparison with Bhutan's hydropower-led model requires Nepal electricity-balance and export data."
+    }
+  ],
+  "uncertainty": "High. No data have been retrieved in r1, so the comparator set, spell statistics and precondition benchmarks are all pending. Spell identification is known to be sensitive to the definition used, to PPP vintage (ICP 2011/2017/2021 bases in MPD vs PWT) and to data revisions, so results will be reported under multiple definitions and vintages. Transferability judgements are qualitative and based on paper abstracts pending full-text reading; the small number of landlocked, non-resource sustained growers makes inference about Nepal from precedent inherently weak. Historical base rates are descriptive and are not probabilities for Nepal.",
+  "specific": {
+    "comparator_set": {
+      "status": "pending",
+      "method": "Screen all MPD 2023 / PWT 11.0 economies with the three spell definitions (01B-A1); stratify per 01B-A2; record for each: spell start/end years, starting real GDP per capita (MPD 2011 int$ and PWT 2021 PPP$), landlocked flag, population size class, resource-export dependence, remittance dependence.",
+      "provisional_screening_list": {
+        "growth_report_candidates_unverified": [
+          "Botswana",
+          "Brazil",
+          "China",
+          "Hong Kong SAR",
+          "Indonesia",
+          "Japan",
+          "Korea",
+          "Malaysia",
+          "Malta",
+          "Oman",
+          "Singapore",
+          "Taiwan Province of China",
+          "Thailand"
+        ],
+        "landlocked_candidates": [
+          "Botswana",
+          "Bhutan",
+          "Lao PDR",
+          "Rwanda",
+          "Ethiopia",
+          "Uganda",
+          "Burkina Faso",
+          "Kazakhstan",
+          "Uzbekistan"
+        ],
+        "regional_and_structural_peers": [
+          "India",
+          "Bangladesh",
+          "Sri Lanka",
+          "Viet Nam",
+          "Cambodia",
+          "Philippines",
+          "Tajikistan",
+          "Kyrgyz Republic"
+        ]
+      },
+      "lead_urls": [
+        "https://openknowledge.worldbank.org/bitstream/handle/10986/6507/449860PUB0Box3101OFFICIAL0USE0ONLY1.pdf",
+        "https://doi.org/10.34894/INZBF2",
+        "https://doi.org/10.34894/FABVLR"
+      ]
+    },
+    "growth_spell_statistics": {
+      "status": "pending",
+      "data_required": [
+        "MPD 2023 GDP per capita and population, all countries, 1950-2022",
+        "PWT 11.0 rgdpna, pop, csh_i, csh_x, hc, rnna, rtfpna, 1950-2023",
+        "WDI NY.GDP.PCAP.KD, NE.GDI.TOTL.ZS, NY.GNS.ICTR.ZS, NE.EXP.GNFS.ZS, TX.VAL.MANF.ZS.UN, BX.TRF.PWKR.DT.GD.ZS, SP.POP.DPND, EG.USE.ELEC.KH.PC, 1960-latest"
+      ],
+      "method": "For each definition: count of spells, distribution of durations, Kaplan-Meier survival of spells by duration, spell-end hazard by income level (cf. Eichengreen-Park-Shin), mean/median investment and export shares within spells, and share of spells occurring in landlocked economies. Sensitivity: PWT 11.0 vs 10.01 vintage and MPD vs PWT, keeping both where they disagree (find_conflicts).",
+      "published_benchmarks_to_reproduce": [
+        "Hausmann-Pritchett-Rodrik 2005 episode list",
+        "Berg-Ostry-Zettelmeyer 2012 spell durations",
+        "Pritchett-Summers 2014 persistence correlations"
+      ],
+      "lead_urls": [
+        "https://link.springer.com/article/10.1007/s10887-005-4712-0",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0304387811000836",
+        "https://www.nber.org/papers/w20573",
+        "https://www.nber.org/papers/w16919",
+        "https://ideas.repec.org/a/eee/jmacro/v38y2013ipbp151-166.html"
+      ]
+    },
+    "transferability_assessment": {
+      "status": "pending (qualitative framework complete; quantitative benchmarks pending)",
+      "by_precondition": {
+        "sea_access": {
+          "nepal_status": "structurally absent (landlocked between India and China); cannot be changed by policy, only mitigated via transit agreements, multimodal corridors, dry ports and trade facilitation",
+          "transfers": "No. East Asian coastal export-platform model does not transfer directly. Relevant precedents are landlocked: Botswana (mineral rents, not manufactured exports), Bhutan (hydropower exports to a single neighbour), Rwanda/Ethiopia (public-investment-led, services and air logistics). Literature leads: Faye et al. 2004; Limao-Venables 2001; Gallup-Sachs-Mellinger 1999; Paudel 2014/2018; UN-OHRLLS; Awaza PoA.",
+          "open_question": "Size of the penalty and whether it is moderated enough by governance and transit infrastructure to allow a 25+ year spell without mineral rents."
+        },
+        "institutions": {
+          "nepal_status": "pending (WGI and other indicators to be retrieved); federal transition since 2015 constitution; political instability history",
+          "transfers": "Partly. Literature (Rodrik-Subramanian-Trebbi 2004; Johnson-Ostry-Subramanian 2010) suggests broad institutional quality at spell start was often weak among sustained growers, so weak initial institutions are not by themselves disqualifying; what mattered is credibility and continuity of growth-oriented policy (Growth Report). The Acemoglu-Johnson-Robinson colonial-origins identification does not apply to never-colonised Nepal.",
+          "open_question": "Whether frequent government turnover is compatible with the policy continuity observed in long spells."
+        },
+        "savings_investment": {
+          "nepal_status": "pending (WDI/NRB/NSO series); national saving is substantially augmented by remittance inflows, unlike domestic-saving-driven East Asian cases",
+          "transfers": "Partly. High investment accompanied essentially all long spells (Young 1995; World Bank 1993) but Nepal's financing mix (remittances, public capital spending execution) differs; remittance-induced real appreciation under the INR peg (Magud-Sosa 2010; IMF WP 2025/122; South Asia panel 2019) may weaken tradables.",
+          "open_question": "Whether remittance-financed saving translates into productive domestic investment at comparable rates."
+        },
+        "export_orientation_and_manufacturing": {
+          "nepal_status": "pending (WDI export and manufacturing shares)",
+          "transfers": "Weakly. Manufacturing-led export escalators (Rodrik 2013) are harder for late developers (Rodrik 2016 premature deindustrialisation) and harder still for landlocked producers facing transit costs. Services exports (IT, tourism) and electricity exports are alternative routes with fewer precedents for 25+ year spells.",
+          "open_question": "Existence of any 25+ year spell driven mainly by services or electricity exports."
+        },
+        "energy": {
+          "nepal_status": "hydropower resource endowment; seasonal deficits; export access depends on India's cross-border electricity rules (Agent 05)",
+          "transfers": "Different in kind. East Asian growers were largely energy importers via sea; Nepal's constraint is grid, storage and cross-border market access rather than resource scarcity. Bhutan is the closest analogue (World Bank Bhutan CEM 2024), which also shows limited employment creation from hydropower. Stern 2011 frames energy as binding when scarce.",
+          "open_question": "Whether hydropower can be a growth driver beyond enclave rents."
+        },
+        "demographics": {
+          "nepal_status": "pending (dependency ratio, working-age share); large labour out-migration reduces the domestic working-age dividend while raising remittances",
+          "transfers": "Partly. Bloom-Williamson 1998 dividend mechanism requires domestic employment of the working-age bulge; with high emigration the dividend accrues partly abroad.",
+          "open_question": "Size and timing of Nepal's remaining demographic window given migration (Agent 09/10 inputs)."
+        }
+      },
+      "lead_urls": [
+        "https://www.tandfonline.com/doi/abs/10.1080/14649880310001660201",
+        "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+        "https://ideas.repec.org/a/bla/econpa/v33y2014i4p339-361.html",
+        "https://link.springer.com/article/10.1007/s10887-015-9122-3",
+        "https://academic.oup.com/wber/article-abstract/12/3/419/1632238",
+        "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+        "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
+      "title": "Maddison Project Database 2023 (MPD 2023), release page",
+      "publisher": "Groningen Growth and Development Centre, University of Groningen",
+      "source_id": "maddison",
+      "contains": "Country-year panel of real GDP per capita (2011 international dollars, cgdppc/rgdpnapc-type fields) and population, long-run to 2022; primary panel for identifying 25+ year high-growth spells and starting income levels; download the xlsx/dta files and record the version string"
+    },
+    {
+      "url": "https://doi.org/10.34894/INZBF2",
+      "title": "Maddison Project Database 2023 (DataverseNL persistent dataset record, doi:10.34894/INZBF2)",
+      "publisher": "DataverseNL / GGDC",
+      "source_id": "maddison",
+      "contains": "Persistent-identifier copy of MPD 2023 files; use for hashed raw download and vintage record"
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/joes.12618",
+      "title": "Bolt, J. and van Zanden, J.L. (2024/2025) Maddison-style estimates of the evolution of the world economy: A new 2023 update, Journal of Economic Surveys, doi:10.1111/joes.12618",
+      "publisher": "Wiley / Journal of Economic Surveys",
+      "source_id": "academic",
+      "contains": "Documentation of MPD 2023 methodology: PPP benchmark, splicing of historical series, country coverage; needed to document comparability limits for Nepal and comparators"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "title": "Penn World Table version 11.0 (PWT 11.0)",
+      "publisher": "Groningen Growth and Development Centre, University of Groningen",
+      "source_id": "pwt",
+      "contains": "Country-year panel 1950-2023: rgdpo, rgdpe, rgdpna, pop, emp, hc (human capital index), rnna (capital stock), ctfp/rtfpna (TFP), csh_i (investment share), csh_x (export share), labsh; PPPs benchmarked to ICP 2021; primary source for investment and export shares within spells and for growth accounting of comparators"
+    },
+    {
+      "url": "https://doi.org/10.34894/FABVLR",
+      "title": "PWT 11.0 Dataverse record, doi:10.34894/FABVLR",
+      "publisher": "DataverseNL / GGDC",
+      "source_id": "pwt",
+      "contains": "Persistent-identifier copy of PWT 11.0 data files (xlsx/dta) for hashed download"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/blog/penn-world-table-version-11-0-is-published?lang=en",
+      "title": "Penn World Table version 11.0 is published (release note)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": "Release date and list of methodological changes in PWT 11.0 versus 10.01 (ICP 2021 PPPs, extension to 2023, change in China series); needed to document vintage differences"
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt1001?lang=en",
+      "title": "PWT 10.01 (earlier release)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": "Prior vintage (ICP 2017 PPP base) for sensitivity check of spell identification to PPP revisions"
+    },
+    {
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20130954",
+      "title": "Feenstra, Inklaar and Timmer (2015) The Next Generation of the Penn World Table, American Economic Review 105(10), doi:10.1257/aer.20130954",
+      "publisher": "American Economic Association",
+      "source_id": "academic",
+      "contains": "Methodology of rgdpo vs rgdpe vs rgdpna, capital stock and TFP construction; defines which PWT series are appropriate for growth over time vs level comparisons"
+    },
+    {
+      "url": "https://databank.worldbank.org/source/world-development-indicators",
+      "title": "World Development Indicators (DataBank)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series for Nepal and comparators: NY.GDP.PCAP.KD (GDP per capita constant US$), NY.GDP.PCAP.PP.KD (PPP constant), NE.GDI.TOTL.ZS (gross capital formation % GDP), NY.GNS.ICTR.ZS (gross savings % GDP), NY.GDS.TOTL.ZS (gross domestic savings % GDP), NE.EXP.GNFS.ZS (exports % GDP), TX.VAL.MANF.ZS.UN (manufactures % merchandise exports), BX.TRF.PWKR.DT.GD.ZS (personal remittances % GDP), SP.POP.DPND (age dependency ratio), EG.USE.ELEC.KH.PC (electricity use per capita), NV.IND.MANF.ZS (manufacturing value added % GDP); retrieve via API https://api.worldbank.org/v2/country/<ISO3>/indicator/<code>?format=json"
+    },
+    {
+      "url": "https://openknowledge.worldbank.org/bitstream/handle/10986/6507/449860PUB0Box3101OFFICIAL0USE0ONLY1.pdf",
+      "title": "Commission on Growth and Development (2008) The Growth Report: Strategies for Sustained Growth and Inclusive Development",
+      "publisher": "World Bank on behalf of the Commission on Growth and Development",
+      "source_id": null,
+      "contains": "Definition and list of sustained high-growth economies (25+ year spells), common characteristics (openness, macro stability, high saving/investment, market allocation, committed and capable government); primary source for comparator set and precondition list"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s10887-005-4712-0",
+      "title": "Hausmann, Pritchett and Rodrik (2005) Growth Accelerations, Journal of Economic Growth 10(4):303-329, doi:10.1007/s10887-005-4712-0",
+      "publisher": "Springer",
+      "source_id": "academic",
+      "contains": "Filter-based definition of growth accelerations (magnitude, post-acceleration growth floor, minimum duration, income-level condition), list of episodes since the 1950s, and correlates (investment, trade, real exchange rate, political change); NBER WP w10566 at https://www.nber.org/papers/w10566"
+    },
+    {
+      "url": "https://www.nber.org/papers/w20573",
+      "title": "Pritchett and Summers (2014) Asiaphoria Meets Regression to the Mean, NBER Working Paper 20573",
+      "publisher": "National Bureau of Economic Research",
+      "source_id": "academic",
+      "contains": "Evidence on low persistence of cross-country growth rates and regression to the mean; base rates for how often super-rapid growth persists over decade-plus horizons; essential for calibrating the untargeted and target trajectories (feeds 01C)"
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0304387811000836",
+      "title": "Berg, Ostry and Zettelmeyer (2012) What Makes Growth Sustained?, Journal of Development Economics 98(2):149-166 (IMF WP/08/59 at https://www.imf.org/external/pubs/ft/wp/2008/wp0859.pdf)",
+      "publisher": "Elsevier / IMF",
+      "source_id": "academic",
+      "contains": "Structural-break identification of growth spells for a large country panel; survival (duration) analysis of spell length against income equality, institutions, export orientation, manufacturing export share, FDI openness, exchange-rate overvaluation, macro stability"
+    },
+    {
+      "url": "https://ideas.repec.org/a/eee/jmacro/v38y2013ipbp151-166.html",
+      "title": "Kar, Pritchett, Raihan and Sen (2013) Looking for a break: Identifying transitions in growth regimes, Journal of Macroeconomics 38:151-166, doi:10.1016/j.jmacro.2013.09.022",
+      "publisher": "Elsevier",
+      "source_id": "academic",
+      "contains": "Combined statistical-filter method for dating growth-regime transitions; method to apply to MPD/PWT for Nepal and comparators"
+    },
+    {
+      "url": "https://academic.oup.com/wber/article-abstract/14/2/221/1663667",
+      "title": "Pritchett (2000) Understanding Patterns of Economic Growth: Searching for Hills among Plateaus, Mountains, and Plains, World Bank Economic Review 14(2):221-250",
+      "publisher": "Oxford University Press / World Bank",
+      "source_id": "academic",
+      "contains": "Typology of developing-country growth paths (instability, breaks) motivating spell-based rather than trend-based analysis"
+    },
+    {
+      "url": "https://ideas.repec.org/a/tpr/restat/v90y2008i3p582-587.html",
+      "title": "Jones and Olken (2008) The Anatomy of Start-Stop Growth, Review of Economics and Statistics 90(3):582-587",
+      "publisher": "MIT Press",
+      "source_id": "academic",
+      "contains": "Asymmetry between growth accelerations (trade expansion) and collapses (investment fall, price instability); correlates at spell boundaries"
+    },
+    {
+      "url": "https://www.nber.org/papers/w16919",
+      "title": "Eichengreen, Park and Shin (2011/2012) When Fast Growing Economies Slow Down: International Evidence and Implications for China, NBER WP 16919; Asian Economic Papers 11(1)",
+      "publisher": "NBER / MIT Press",
+      "source_id": "academic",
+      "contains": "Income levels and conditions at which fast-growth spells end; used as failure conditions for long high-growth trajectories"
+    },
+    {
+      "url": "https://academic.oup.com/qje/article-abstract/110/3/641/1859236",
+      "title": "Young (1995) The Tyranny of Numbers: Confronting the Statistical Realities of the East Asian Growth Experience, QJE 110(3):641-680, doi:10.2307/2946695",
+      "publisher": "Oxford University Press",
+      "source_id": "academic",
+      "contains": "Growth accounting of East Asian NIEs showing factor accumulation (investment, participation, education) share of growth; informs whether savings/investment preconditions transfer"
+    },
+    {
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/975081468244550798",
+      "title": "World Bank (1993) The East Asian Miracle: Economic Growth and Public Policy, Vol. 1 main report",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Policy and precondition analysis for high-performing Asian economies (savings, education, export push, macro stability)"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/024/2010/001/article-A005-en.xml",
+      "title": "Johnson, Ostry and Subramanian (2010) Prospects for Sustained Growth in Africa: Benchmarking the Constraints, IMF Staff Papers 57(1)",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": "Benchmarking initial conditions (institutions, openness, education, macro stability, health, conflict) of sustained growers at the start of their spells; template for benchmarking Nepal's current conditions"
+    },
+    {
+      "url": "https://academic.oup.com/qje/article-abstract/128/1/165/1839808",
+      "title": "Rodrik (2013) Unconditional Convergence in Manufacturing, QJE 128(1):165-204, doi:10.1093/qje/qjs047",
+      "publisher": "Oxford University Press",
+      "source_id": "academic",
+      "contains": "Evidence that formal manufacturing converges unconditionally; relevance to whether an export-manufacturing escalator is available to Nepal"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s10887-015-9122-3",
+      "title": "Rodrik (2016) Premature Deindustrialization, Journal of Economic Growth 21:1-33, doi:10.1007/s10887-015-9122-3",
+      "publisher": "Springer",
+      "source_id": "academic",
+      "contains": "Downward shift of the manufacturing share-income relationship for late developers; key reason why the East Asian manufacturing route may not transfer"
+    },
+    {
+      "url": "https://academic.oup.com/wber/article-abstract/12/3/419/1632238",
+      "title": "Bloom and Williamson (1998) Demographic Transitions and Economic Miracles in Emerging Asia, World Bank Economic Review 12(3):419-455",
+      "publisher": "Oxford University Press / World Bank",
+      "source_id": "academic",
+      "contains": "Contribution of working-age population growth to East Asian growth; framework for Nepal's demographic dividend under large out-migration"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1023/B:JOEG.0000031425.72248.85",
+      "title": "Rodrik, Subramanian and Trebbi (2004) Institutions Rule, Journal of Economic Growth 9:131-165, doi:10.1023/B:JOEG.0000031425.72248.85",
+      "publisher": "Springer",
+      "source_id": "academic",
+      "contains": "Relative roles of institutions, geography and integration in income levels"
+    },
+    {
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.91.5.1369",
+      "title": "Acemoglu, Johnson and Robinson (2001) The Colonial Origins of Comparative Development, AER 91(5):1369-1401, doi:10.1257/aer.91.5.1369",
+      "publisher": "American Economic Association",
+      "source_id": "academic",
+      "contains": "Institutions-and-income identification; note non-applicability of the colonial-settlement instrument to never-colonised Nepal"
+    },
+    {
+      "url": "https://journals.sagepub.com/doi/10.1177/016001799761012334",
+      "title": "Gallup, Sachs and Mellinger (1999) Geography and Economic Development, International Regional Science Review 22(2):179-232",
+      "publisher": "SAGE",
+      "source_id": "academic",
+      "contains": "Effects of coastal/navigable-river access, climate and disease on income and growth; landlockedness penalty"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/14649880310001660201",
+      "title": "Faye, McArthur, Sachs and Snow (2004) The Challenges Facing Landlocked Developing Countries, Journal of Human Development 5(1):31-68",
+      "publisher": "Taylor & Francis",
+      "source_id": "academic",
+      "contains": "Four channels of transit-neighbour dependence (infrastructure, political relations, peace/stability, administrative practices); direct framework for Nepal's dependence on India (and prospectively China) transit"
+    },
+    {
+      "url": "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+      "title": "Limao and Venables (2001) Infrastructure, Geographical Disadvantage, Transport Costs, and Trade, World Bank Economic Review 15(3):451-479",
+      "publisher": "Oxford University Press / World Bank",
+      "source_id": "academic",
+      "contains": "Transport cost penalty of landlockedness and the role of own and transit-country infrastructure; elasticity of trade to trade costs"
+    },
+    {
+      "url": "https://ideas.repec.org/a/bla/econpa/v33y2014i4p339-361.html",
+      "title": "Paudel (2014) Economic Growth in Developing Countries: Is Landlockedness Destiny?, Economic Papers 33(4):339-361 (ANU working paper https://crawford.anu.edu.au/sites/default/files/2025-03/acde_wp_econ_2014_01.pdf)",
+      "publisher": "Economic Society of Australia / Wiley",
+      "source_id": "academic",
+      "contains": "Growth-regression estimate of the landlocked penalty and its sensitivity; role of governance, openness and coordinated transit infrastructure among LLDCs"
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/rode.12389",
+      "title": "Paudel (2018) Export performance of developing countries: Does landlockedness matter?, Review of Development Economics",
+      "publisher": "Wiley",
+      "source_id": "academic",
+      "contains": "Export-performance penalty for landlocked developing countries; bears on export-share precondition"
+    },
+    {
+      "url": "https://www.un.org/ohrlls/sites/www.un.org.ohrlls/files/lldcs_publications/dev-costs-of-landlockedness.pdf",
+      "title": "The Development Economics of Landlockedness (UN-OHRLLS publication)",
+      "publisher": "UN Office of the High Representative for LDCs, LLDCs and SIDS",
+      "source_id": null,
+      "contains": "Estimates and discussion of the development costs of being landlocked; trade-cost and growth channels"
+    },
+    {
+      "url": "https://www.un.org/sites/un2.un.org/files/apoa_booklet.pdf",
+      "title": "Awaza Programme of Action for Landlocked Developing Countries 2024-2034 (UNGA A/RES/79/233)",
+      "publisher": "United Nations",
+      "source_id": null,
+      "contains": "Current multilateral framework for LLDC transit, trade facilitation, structural transformation; context for which transit constraints are policy-addressable"
+    },
+    {
+      "url": "https://nyaspubs.onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-6632.2010.05921.x",
+      "title": "Stern (2011) The role of energy in economic growth, Annals of the New York Academy of Sciences 1219:26-51, doi:10.1111/j.1749-6632.2010.05921.x",
+      "publisher": "Wiley / NYAS",
+      "source_id": "academic",
+      "contains": "Theory and evidence on energy as a binding constraint when scarce; relevance to Nepal's hydropower endowment and electricity-access precondition"
+    },
+    {
+      "url": "https://www.imf.org/external/pubs/ft/wp/2010/wp10271.pdf",
+      "title": "Magud and Sosa (2010) When and Why Worry About Real Exchange Rate Appreciation? The Missing Link Between Dutch Disease and Growth, IMF WP/10/271",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": "Evidence on whether inflow-driven real appreciation (incl. remittances) reduces tradables and growth; relevant to remittance-financed Nepal versus export-led comparators"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/wp/issues/2025/06/20/how-do-remittances-affect-the-real-exchange-rate-an-empirical-investigation-567747",
+      "title": "How Do Remittances Affect the Real Exchange Rate? An Empirical Investigation, IMF Working Paper 2025/122",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": "Remittance-REER relationship by exchange-rate regime (fixed vs flexible); Nepal pegs to the Indian rupee, so the fixed-regime results are the relevant ones"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/10168737.2019.1666291",
+      "title": "Workers' Remittances and the Dutch Disease: Evidence From South Asian Countries, International Economic Journal 33(4) (2019)",
+      "publisher": "Taylor & Francis",
+      "source_id": "academic",
+      "contains": "South Asian panel evidence (incl. Nepal) on remittance-induced real appreciation and tradable-sector effects"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "World Bank (2025) Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum 2025",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Nepal growth performance since the mid-1990s, growth decomposition, potential-growth projections, binding constraints and regional benchmarks; primary Nepal-side comparison document (also relevant to 01A)"
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/publication/28933/main-report.pdf",
+      "title": "ADB, DFID and ILO (2009) Nepal: Critical Development Constraints (Country Diagnostics Studies)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Growth-diagnostics identification of Nepal's binding constraints (infrastructure, governance, labour relations, etc.) circa FY2007/08; baseline for which preconditions were historically missing"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/966981520367373513/pdf/123958-SCD-nepal-CountryDiagnostic-10.pdf",
+      "title": "World Bank (2018) Nepal Systematic Country Diagnostic: A New Approach to a Federal Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Constraints to growth and inclusion under federalism; institutional and fiscal-federal preconditions"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+      "title": "World Bank (2024) Bhutan Country Economic Memorandum: Maximizing Bhutan's Potential for Economic Diversification and Structural Transformation",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Landlocked Himalayan comparator: hydropower-export-led growth, its employment limits, and diversification constraints; closest structural analogue for Nepal's hydropower-export route"
+    },
+    {
+      "url": "https://www.imf.org/-/media/Files/Publications/DP/2020/English/DPLTEREA.ashx",
+      "title": "IMF (2020) Departmental Paper including The Experience of Rwanda (landlocked growth case)",
+      "publisher": "IMF",
+      "source_id": null,
+      "contains": "Case material on a landlocked low-income economy with sustained growth; institutions and public investment preconditions (verify exact title/series on retrieval)"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/002/2025/326/article-A001-en.xml",
+      "title": "IMF (2025) Botswana: Selected Issues, IMF Country Report 2025/326",
+      "publisher": "IMF",
+      "source_id": "imf_article_iv",
+      "contains": "Landlocked long-spell comparator: diamond-led growth, institutions, and current diversification challenges"
+    }
+  ]
+}

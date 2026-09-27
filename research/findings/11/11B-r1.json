@@ -1,0 +1,283 @@
+{
+  "subagent_id": "11B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): primary sources located for audit irregularities and arrears (OAG annual reports and English executive summaries for the 52nd, 55th, 58th and the 62nd report), procurement practice (Public Procurement Act 2063 and Regulation 2064, PPMO annual reports, bolpatra e-GP, OCDS publication in the Open Contracting data registry, PEFA assessments incl. the 2022-cut-off national and a Gandaki subnational assessment), anti-corruption enforcement (CIAA annual reports) and perception indices (WGI 2025 with revised methodology; TI CPI 2025 dataset). No document could be downloaded and search-snippet figures were not used, so every quantitative item is pending. Key methodological constraints are already identifiable: WGI was revised in December 2025 (new 0-100 absolute scale, historical recalculation) so pre-2025 vintages must not be mixed with the new series; OAG coverage changed with federalisation, creating a break in irregularity and arrears series; CPI is comparable only from 2012.",
+  "findings": [
+    {
+      "claim": "Irregularities reported by the Auditor General by category (to be recovered, to be regularised, evidence not produced, advances) and tier, over successive annual reports",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oag_nepal"
+      ],
+      "note": "OAG annual reports 52nd to 62nd (audit years FY2069/70 to FY2080/81): irregularity amounts by category and by federal/provincial/local tier, and as share of audited amount. Unit NPR_current_bn. Leads: old.oag.gov.np menu-category/926; executive summaries.",
+      "unit": "NPR_current_bn",
+      "period": "FY2069/70-FY2080/81"
+    },
+    {
+      "claim": "Cumulative outstanding irregularities and arrears (beruju) reported by the Auditor General",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oag_nepal"
+      ],
+      "note": "Arrears table in each annual report: cumulative unsettled amount, settled during year, newly added. Note methodological breaks when the report added provincial and local tiers after federalisation.",
+      "unit": "NPR_current_bn",
+      "period": "FY2069/70-FY2080/81"
+    },
+    {
+      "claim": "Share of procurement value and contracts awarded via e-GP and via open competitive methods",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ppmo"
+      ],
+      "note": "PPMO annual reports and OCDS data: value and count by procurement method; e-GP coverage by tier; user-committee and direct procurement shares. Leads: PPMO annual reports page; OCP registry publication 36.",
+      "unit": "percent"
+    },
+    {
+      "claim": "Competition intensity: average bids per tender and single-bid share",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ppmo"
+      ],
+      "note": "Computed from OCDS bid data (when retrievable) or PPMO report tables; state coverage (which entities publish).",
+      "unit": "ratio"
+    },
+    {
+      "claim": "WGI six dimensions for Nepal, 1996 onward, 2025 methodology",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_wgi"
+      ],
+      "note": "Download WGI 2025 dataset: Nepal scores (0-100 absolute scale) with standard errors and number of sources; do not compare with pre-revision vintages' percentile ranks or -2.5..2.5 estimates without flagging the break.",
+      "unit": "index",
+      "period": "1996-2024 (calendar)"
+    },
+    {
+      "claim": "CPI score and standard error for Nepal, 2012 onward",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ti_cpi"
+      ],
+      "note": "CPI 2025 full dataset: scores 2012-2025 (comparable since 2012 methodology), standard error, number of sources. Calendar year of publication differs from underlying survey years.",
+      "unit": "index",
+      "period": "2012-2025 (calendar)"
+    },
+    {
+      "claim": "CIAA complaints, cases filed and case outcomes",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ciaa"
+      ],
+      "note": "CIAA annual reports (BS fiscal years): complaints received/settled, cases filed at Special Court, amounts claimed, conviction rate as reported by Special Court. Counts of cases need a unit code not present in units.py."
+    },
+    {
+      "claim": "PEFA procurement and audit indicator scores 2015 vs 2022",
+      "type": "pending",
+      "value": null,
+      "source_ids": [],
+      "note": "PEFA reports: PI-24, PI-26, PI-30, PI-31 letter scores; framework version differences between assessments to be noted."
+    }
+  ],
+  "data_gaps": [
+    "OAG annual reports (Nepali full text and English summaries) 52nd-62nd: irregularity and arrears tables - download blocked.",
+    "PPMO annual reports: procurement by method and e-GP share - download blocked.",
+    "OCDS bulk data from Nepal e-GP (coverage period and completeness unknown) - download blocked.",
+    "CIAA annual reports - not located as direct PDF links; site access blocked.",
+    "WGI 2025 dataset and CPI 2025 dataset - download blocked.",
+    "PEFA 2022-cut-off report scores - download blocked."
+  ],
+  "assumptions": [
+    {
+      "id": "11B-A1",
+      "text": "Perception indices (WGI, CPI) are recorded as perception measures of governance, not as measured corruption or procurement outcomes, and are not used as model drivers without a documented transmission channel.",
+      "basis": "assumption"
+    },
+    {
+      "id": "11B-A2",
+      "text": "OAG 'irregularity' (beruju) is an audit-observation category, not a measure of proven corruption; amounts to be regularised include documentation failures.",
+      "basis": "assumption (definition to be confirmed from OAG report glossary)"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "15",
+      "text": "Any strategy claim citing a governance-index trend must specify WGI vintage; the December 2025 revision recalculated history and changed the scale, so older published figures are not comparable."
+    },
+    {
+      "to": "11C",
+      "text": "OAG irregularities by provincial and local tier should be linked to 11C's local capacity-gap evidence (LISA, FCNA) rather than treated separately."
+    }
+  ],
+  "uncertainty": "High: no values retrieved in r1. Structural uncertainties: (i) OAG irregularity totals depend on audit coverage, which expanded after federalisation, so trends conflate coverage and behaviour; (ii) e-GP share may measure tender notices rather than contract value, and user-committee procurement lies largely outside e-GP; (iii) WGI and CPI are perception-based with wide standard errors, and WGI changed methodology in December 2025; (iv) Nepali fiscal years (mid-July) for OAG/PPMO/CIAA versus calendar years for WGI/CPI.",
+  "specific": {
+    "audit_irregularities_trend": {
+      "status": "pending",
+      "method": "Tabulate irregularities by category and tier and cumulative arrears from each OAG annual report (BS fiscal year of audit), flag the federalisation coverage break, express also as share of audited expenditure.",
+      "leads": [
+        "https://old.oag.gov.np/menu-category/926/en",
+        "https://oag.gov.np/",
+        "https://oag.gov.np/site_uploads/bg1-Some%20sections%20of%20Annual%20Report%202078%20English%20Version..pdf",
+        "https://old.oag.gov.np/uploads/files/fkr-executive_summary%20English.pdf",
+        "https://old.oag.gov.np/uploads/files/jKj-Executive%20Summary%20English%202071.pdf"
+      ]
+    },
+    "procurement_competition": {
+      "status": "pending",
+      "method": "Procurement value and count by method and channel (e-GP vs other) from PPMO annual reports; bids per tender and single-bid share from OCDS data; legal thresholds from PPA 2063/PPR 2064; PEFA PI-24 as qualitative cross-check.",
+      "leads": [
+        "https://ppmo.gov.np/index.php?_route_=reports/annual_reports",
+        "https://data.open-contracting.org/en/publication/36",
+        "https://ppmo.gov.np/content/7397/7397-public-procurement-act-2063/",
+        "https://www.pefa.org/sites/pefa/files/2024-04/NP-Apr24-GRPFM-Public%20with%20PEFA%20Check_0.pdf"
+      ]
+    },
+    "governance_indicators": {
+      "status": "pending",
+      "method": "WGI 2025 (six dimensions, 0-100 absolute scale, with standard errors) and CPI 2012-2025 (with standard errors) for Nepal; methodology caveats: perception-based, overlapping underlying sources between WGI and CPI, WGI 2025 revision break, CPI calendar vs survey years.",
+      "leads": [
+        "https://www.worldbank.org/en/publication/worldwide-governance-indicators/interactive-data-access",
+        "https://www.worldbank.org/content/dam/sites/govindicators/doc/The%20Worldwide%20Governance%20Indicators%202025%20Methodology%20Revision.pdf",
+        "https://www.transparency.org/en/cpi/2025/index/npl",
+        "https://www.transparency.org/en/cpi/2025"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://old.oag.gov.np/menu-category/926/en",
+      "title": "Auditor General Nepal - Annual Report (index)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Index of OAG annual reports by BS year incl. English executive summaries: audited amounts, irregularities (to be recovered, to be regularised, advances), cumulative outstanding irregularities and arrears by federal, provincial and local tiers.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://oag.gov.np/",
+      "title": "OAGN - Office of the Auditor General (current site)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Current OAG site; location of the 62nd Annual Report 2082 (covering FY2080/81) and any English summary.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://oag.gov.np/site_uploads/bg1-Some%20sections%20of%20Annual%20Report%202078%20English%20Version..pdf",
+      "title": "The Auditor General's Fifty-Eighth Annual Report 2021 (2078), selected sections, English",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "English sections of the 58th annual report (FY2076/77 audit): irregularity breakdown by category and tier, cumulative arrears table.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://old.oag.gov.np/uploads/files/fkr-executive_summary%20English.pdf",
+      "title": "Unofficial Translation: The Auditor General's Fifty-fifth Annual Report 2018 - executive summary",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Executive summary of the 55th report (FY2073/74 audit): irregularities and arrears; earlier point for trend.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://old.oag.gov.np/uploads/files/jKj-Executive%20Summary%20English%202071.pdf",
+      "title": "(Unofficial Translation) Fifty-Second Annual Report - executive summary",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Executive summary of the 52nd report (FY2069/70 audit): pre-federal baseline for irregularities and arrears.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://ppmo.gov.np/index.php?_route_=reports/annual_reports",
+      "title": "PPMO Annual Reports",
+      "publisher": "Public Procurement Monitoring Office",
+      "contains": "PPMO annual reports by fiscal year: procurement volume by method (open competitive bidding, sealed quotation, direct procurement, user committees), e-GP usage, number of bids per tender, complaints.",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://ppmo.gov.np/content/7397/7397-public-procurement-act-2063/",
+      "title": "Public Procurement Act, 2063 (English, with amendments)",
+      "publisher": "Public Procurement Monitoring Office",
+      "contains": "Legal thresholds for procurement methods, e-procurement mandate, user-committee and direct-procurement exceptions, complaint review.",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://faolex.fao.org/docs/pdf/NEP229027.pdf",
+      "title": "The Public Procurement Regulation, 2064 (2007)",
+      "publisher": "FAO FAOLEX (copy of GoN regulation)",
+      "contains": "English text of Public Procurement Regulation 2007: procedural rules, thresholds (as of copy vintage), e-bidding rules."
+    },
+    {
+      "url": "https://data.open-contracting.org/en/publication/36",
+      "title": "Nepal: Public Procurement Monitoring Office (PPMO) - OCP Data Registry",
+      "publisher": "Open Contracting Partnership",
+      "contains": "OCDS-format procurement data published from Nepal's e-GP (bolpatra) with coverage dates, fields and data-quality checks; potential source for competition metrics (bids per tender, single-bid share).",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://bolpatra.gov.np/egp/",
+      "title": "PPMO / Bolpatra national e-GP system",
+      "publisher": "Public Procurement Monitoring Office",
+      "contains": "Live e-GP portal: active buyers and bidders, bid notices, running/closed/cancelled bids; point-in-time counts only.",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://www.pefa.org/sites/pefa/files/2024-04/NP-Apr24-GRPFM-Public%20with%20PEFA%20Check_0.pdf",
+      "title": "Nepal PEFA assessment (April 2024 publication, cut-off end-2022)",
+      "publisher": "PEFA Secretariat",
+      "contains": "PEFA scores incl. PI-24 procurement (monitoring, methods, public access, complaints), PI-26 internal audit, PI-30 external audit, PI-31 legislative scrutiny; comparison to the 2015 assessment."
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/483831467998500044/pdf/97606-WP-Nepal-PEFA-Report-Box391479B-PUBLIC.pdf",
+      "title": "Nepal PEFA report (earlier assessment)",
+      "publisher": "World Bank / PEFA",
+      "contains": "Earlier PEFA indicator scores for trend comparison (framework version differs from 2016 framework)."
+    },
+    {
+      "url": "https://www.pefa.org/node/5238",
+      "title": "Nepal Gandaki Province SNG PEFA 2025",
+      "publisher": "PEFA Secretariat",
+      "contains": "Subnational PEFA for Gandaki Province incl. procurement indicator and data systems."
+    },
+    {
+      "url": "https://ciaa.gov.np/page/7",
+      "title": "Commission for the Investigation of Abuse of Authority (official site)",
+      "publisher": "CIAA",
+      "contains": "Official CIAA site: annual reports (BS fiscal years) with complaints received and settled, cases filed at Special Court, amounts claimed, conviction outcomes.",
+      "source_id": "ciaa"
+    },
+    {
+      "url": "https://www.worldbank.org/en/publication/worldwide-governance-indicators/interactive-data-access",
+      "title": "WGI Interactive Data Access",
+      "publisher": "World Bank",
+      "contains": "WGI 2025 update for Nepal: six dimensions (VA, PV, GE, RQ, RL, CC), revised 0-100 absolute scale with historical recalculation back to 1996, standard errors and number of sources per year.",
+      "source_id": "wb_wgi"
+    },
+    {
+      "url": "https://www.worldbank.org/content/dam/sites/govindicators/doc/The%20Worldwide%20Governance%20Indicators%202025%20Methodology%20Revision.pdf",
+      "title": "The Worldwide Governance Indicators 2025 Methodology Revision",
+      "publisher": "World Bank",
+      "contains": "Description of the December 2025 WGI methodology revision: source screening, indicator mapping, aggregation model allowing global averages to vary, absolute 0-100 scale; implications for comparability with pre-2025 vintages.",
+      "source_id": "wb_wgi"
+    },
+    {
+      "url": "https://www.worldbank.org/en/publication/worldwide-governance-indicators/documentation",
+      "title": "WGI Documentation",
+      "publisher": "World Bank",
+      "contains": "Source list and documentation for WGI vintages, needed to record which sources cover Nepal.",
+      "source_id": "wb_wgi"
+    },
+    {
+      "url": "https://www.transparency.org/en/cpi/2025/index/npl",
+      "title": "Corruption Perceptions Index 2025 - Nepal",
+      "publisher": "Transparency International",
+      "contains": "Nepal CPI 2025 score, rank, standard error and underlying source scores; with the CPI 2025 full dataset and methodology note.",
+      "source_id": "ti_cpi"
+    },
+    {
+      "url": "https://www.transparency.org/en/cpi/2025",
+      "title": "Corruption Perceptions Index 2025 (full dataset and methodology)",
+      "publisher": "Transparency International",
+      "contains": "Global CPI 2025 dataset (2012 onward comparable scores) and technical methodology document.",
+      "source_id": "ti_cpi"
+    }
+  ]
+}

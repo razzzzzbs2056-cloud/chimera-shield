@@ -1,0 +1,307 @@
+{
+  "subagent_id": "11A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): primary documents located for Nepal's constitutional economic, fiscal-federal and natural-resource provisions (Constitution 2015, Nepali text and MoLJPA English translation), the key investment statutes (FITTA 2019, PPP and Investment Act 2019, Industrial Enterprises Act 2020, Land Acquisition Act 1977, Arbitration Act 1999, National Civil Procedure Code 2017) and contract-enforcement evidence (Doing Business 2020 Nepal profile, B-READY reports and methodology, judiciary annual reports and strategic plans). No document could be downloaded, so every empirical item (contract-enforcement time and cost, court backlog) is pending. Qualitatively, the leads show that investment entry is split between the Department of Industry and the Investment Board by project size under FITTA, PPPs are channelled through IBN under the 2019 Act, and fiscal and resource powers are divided across Schedules 5-9 of the Constitution; the currently applicable land-acquisition statute must be confirmed because secondary sources disagree.",
+  "findings": [
+    {
+      "claim": "Constitutional provisions governing economic policy, federal finance and natural resources (article-level map)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "note": "Requires retrieval of the authoritative Nepali text and official English translation; extract directive principles on economy, financial powers of each tier, revenue-source distribution, NNRFC mandate, natural-resource benefit sharing, property rights, and Schedules 5-9. Leads: lawcommission.gov.np content/13437; ConstitutionNet MoLJPA translation."
+    },
+    {
+      "claim": "Time to resolve a commercial dispute through first-instance court (Kathmandu), Doing Business 2020",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "DB2020 Nepal economy profile Enforcing Contracts table: time in days (units.py has no 'days' code; convert to years with documented factor or add unit). Data vintage May 2019 (calendar). Lead: doingbusiness.org NPL.pdf.",
+      "period": "2019"
+    },
+    {
+      "claim": "Cost of enforcing a contract as share of claim value, Doing Business 2020",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "DB2020 Enforcing Contracts: cost (% of claim) split into attorney, court and enforcement fees.",
+      "unit": "percent",
+      "period": "2019"
+    },
+    {
+      "claim": "Quality of judicial processes index, Doing Business 2020",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "DB2020 Enforcing Contracts: quality of judicial processes index (scale as defined in DB2020 methodology).",
+      "unit": "index",
+      "period": "2019"
+    },
+    {
+      "claim": "B-READY Dispute Resolution scores for Nepal",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "Confirm Nepal coverage in B-READY 2024/2025; extract Dispute Resolution pillar scores (0-100). Not comparable to DB series.",
+      "unit": "index"
+    },
+    {
+      "claim": "Court caseload, disposals and pending cases by tier and by age (Supreme Court, High Courts, District Courts)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "supremecourt_nepal"
+      ],
+      "note": "Judiciary annual reports FY2076/77 to FY2081/82 (BS fiscal years, mid-July): total caseload, disposals, carried-over cases, cases pending over two and over five years; commercial-bench data if separately reported. Lead: supremecourt.gov.np/web/yearlyreps.",
+      "period": "FY2076/77-FY2081/82"
+    },
+    {
+      "claim": "Statute inventory: FDI, technology transfer, PPP, industrial registration, land acquisition, arbitration, civil procedure — current text and amendment status",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "note": "Retrieve each Act and its latest amendment from lawcommission.gov.np; record date of authentication and amending Acts. Land acquisition statute in force is unresolved (see data_gaps)."
+    },
+    {
+      "claim": "Legal-constraint register will treat statute text on lawcommission.gov.np (Nepali) as authoritative over English translations when they differ.",
+      "type": "assumption",
+      "value": null,
+      "note": "Methodological rule; English translations are unofficial except where MoLJPA-issued."
+    }
+  ],
+  "data_gaps": [
+    "Doing Business 2020 Enforcing Contracts time, cost and judicial-quality index for Nepal (NPL.pdf) - download blocked.",
+    "Judiciary annual reports FY2076/77-FY2081/82: caseload, disposals, pending cases by tier and age (supremecourt.gov.np yearlyreps) - download blocked.",
+    "Judiciary fifth (current) strategic plan document - not yet located as a primary PDF.",
+    "Whether a Land Acquisition Act 2076 (2019) was enacted or the 1977 Act (as amended) remains in force - secondary sources conflict; need lawcommission.gov.np prevailing-law list.",
+    "Latest amendment status of FITTA 2019 and PPP and Investment Act 2019 (incl. any ordinance-based amendments) - need Nepal Gazette / Law Commission consolidated texts.",
+    "B-READY coverage of Nepal and Dispute Resolution scores.",
+    "Unit code for durations in days is absent from src/economic_model/units.py."
+  ],
+  "assumptions": [
+    {
+      "id": "11A-A1",
+      "text": "Nepali statute text on lawcommission.gov.np is authoritative; English translations used only for reference.",
+      "basis": "assumption"
+    },
+    {
+      "id": "11A-A2",
+      "text": "Doing Business (discontinued) and B-READY dispute-resolution measures are treated as separate, non-comparable series; neither is spliced.",
+      "basis": "assumption (methodology differs: DB used a standardised case in the largest business city; B-READY uses expert consultations and firm surveys on a different scoring framework)"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "11C",
+      "text": "Assignment matrix should cite constitutional Schedules 5-9 directly from the authoritative text used by 11A, so both registers share one article-level mapping."
+    },
+    {
+      "to": "02",
+      "text": "Any strategy relying on large land-intensive FDI/PPP projects must reference the land-acquisition statute actually in force; its status is unresolved in r1."
+    }
+  ],
+  "uncertainty": "High: no primary document was retrievable in r1, so no empirical value is recorded. Main qualitative uncertainty is statutory currency (amendments and whether a newer land acquisition law replaced the 1977 Act). Contract-enforcement metrics exist only in a discontinued series (DB2020, data vintage 2019) and a methodologically different successor (B-READY), so time-series comparison is not possible. Court statistics use Nepali fiscal years (mid-July) and count caseload including carried-over cases, which must be distinguished from new filings.",
+  "specific": {
+    "constitutional_constraints": {
+      "status": "pending",
+      "method": "Article-level extraction from the authoritative Nepali text with MoLJPA English translation: directive principles on economic policy; financial powers and revenue-source distribution by tier; NNRFC mandate on revenue sharing, grants, borrowing limits and natural-resource benefit sharing; property rights and acquisition for public purpose; Schedules 5-9 exclusive and concurrent powers. Each constraint entry will cite article/schedule and observation id of the retrieved text.",
+      "leads": [
+        "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+        "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-and-parliamentary"
+      ]
+    },
+    "enforcement_metrics": {
+      "status": "pending",
+      "method": "DB2020 Enforcing Contracts (time, cost, judicial-quality index; vintage 2019) kept separate from B-READY Dispute Resolution scores; court backlog from judiciary annual reports by BS fiscal year and tier, incl. age-of-case breakdown.",
+      "leads": [
+        "https://www.doingbusiness.org/content/dam/doingBusiness/country/n/nepal/NPL.pdf",
+        "https://www.worldbank.org/en/businessready/reports",
+        "https://www.supremecourt.gov.np/web/yearlyreps",
+        "https://supremecourt.gov.np/web/assets/downloads/Supreme%20Court%20Booklet-2080.pdf"
+      ]
+    },
+    "statute_inventory": {
+      "status": "pending (texts located, not retrieved)",
+      "items": [
+        {
+          "statute": "Foreign Investment and Technology Transfer Act 2019 (2075)",
+          "domain": "FDI entry, approval, repatriation, technology transfer",
+          "lead": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-1688107036.pdf"
+        },
+        {
+          "statute": "Public Private Partnership and Investment Act 2019 (2075)",
+          "domain": "PPP modalities, IBN mandate, large-project approval",
+          "lead": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf"
+        },
+        {
+          "statute": "Industrial Enterprises Act 2076 (2020)",
+          "domain": "industry registration and incentives, federal/provincial registration split",
+          "lead": "https://doind.gov.np/detail/5c6a4832-321c-40b9-8b54-a0f4e94edce0"
+        },
+        {
+          "statute": "Land Acquisition Act 2034 (1977) - status of any successor Act unresolved",
+          "domain": "compulsory/negotiated acquisition, compensation",
+          "lead": "http://www.dorw.gov.np/downloadfile/Land-Acquisition-Act_2034_English.pdf"
+        },
+        {
+          "statute": "Arbitration Act 2055 (1999)",
+          "domain": "commercial arbitration, enforcement of foreign awards",
+          "lead": "https://www.newyorkconvention.org/media/uploads/pdf/6/1/614_arbitration-act-2055-1999.pdf"
+        },
+        {
+          "statute": "National Civil Procedure Code 2074 (2017)",
+          "domain": "civil litigation procedure and time standards",
+          "lead": "https://lawcommission.gov.np/content/13456/civil-code-procedure-2074/"
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+      "title": "Constitution of Nepal (Nepali authoritative text)",
+      "publisher": "Nepal Law Commission",
+      "contains": "Authoritative Nepali text of the Constitution of Nepal (2072 BS / 2015) as amended: Part 4 directive principles and state policies (economic policy), Part 5 structure of state and distribution of state power incl. financial powers and revenue distribution, Parts on the NNRFC, CIAA and Auditor General, and Schedules 5-9 (exclusive and concurrent powers of federal, province and local levels). Needed for constitutional_constraints.",
+      "source_id": "lawcommission_nepal"
+    },
+    {
+      "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-and-parliamentary",
+      "title": "Constitution of Nepal 2015 (official English translation by MoLJPA)",
+      "publisher": "ConstitutionNet (International IDEA) hosting Ministry of Law, Justice and Parliamentary Affairs translation",
+      "contains": "Official English translation of the Constitution; to be used alongside the Nepali text for article-level citation of economic-policy, federal-finance and natural-resource provisions."
+    },
+    {
+      "url": "https://www.constituteproject.org/constitution/Nepal_2015.pdf",
+      "title": "Nepal 2015 Constitution (Constitute Project)",
+      "publisher": "Constitute Project",
+      "contains": "English text of the 2015 Constitution with amendments up to the stated PDF vintage; secondary cross-check of article numbering only."
+    },
+    {
+      "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+      "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+      "publisher": "Office of the Investment Board Nepal",
+      "contains": "Full English text of the PPP and Investment Act 2019: project modalities, IBN mandate as PPP agency and investment promotion agency, approval thresholds, land provisions, dispute resolution and incentives."
+    },
+    {
+      "url": "https://dmgnepal.gov.np/uploads/documents/the-foreign-investment-and-technology-transfer-act-2019-2075pdf-9958-911-1688107036.pdf",
+      "title": "The Foreign Investment and Technology Transfer Act, 2019 (2075)",
+      "publisher": "Department of Mines and Geology, Government of Nepal",
+      "contains": "English text of FITTA 2019: definition of foreign investor (incl. non-resident Nepalis), approval authorities (Department of Industry vs IBN), negative list schedule, repatriation, technology transfer agreements, dispute settlement."
+    },
+    {
+      "url": "https://investmentpolicy.unctad.org/investment-laws/laws/313/nepal-foreign-investment-and-technology-transfer-act-2019-2075-",
+      "title": "Nepal - FITTA 2019 (Investment Laws Navigator)",
+      "publisher": "UNCTAD Investment Policy Hub",
+      "contains": "UNCTAD's structured coding of FITTA 2019 provisions (entry, treatment, protection, dispute settlement); cross-check of provisions and amendment status."
+    },
+    {
+      "url": "https://doind.gov.np/detail/5c6a4832-321c-40b9-8b54-a0f4e94edce0",
+      "title": "The Industrial Enterprises Act, 2076 (2020)",
+      "publisher": "Department of Industry, Government of Nepal",
+      "contains": "English text of the Industrial Enterprises Act 2020: industry registration, Schedule-1 prior permission, federal/provincial registration split, incentives and facilities."
+    },
+    {
+      "url": "http://www.dorw.gov.np/downloadfile/Land-Acquisition-Act_2034_English.pdf",
+      "title": "Land Acquisition Act, 2034 (1977)",
+      "publisher": "Department of Railways, Government of Nepal",
+      "contains": "English text of the Land Acquisition Act 1977: compulsory and negotiated acquisition, public-purpose and organisational-purpose acquisition, notification, compensation determination procedures."
+    },
+    {
+      "url": "https://faolex.fao.org/docs/pdf/nep6227.pdf",
+      "title": "Land Acquisition Act, 2034 (1977) (FAOLEX copy)",
+      "publisher": "FAO FAOLEX",
+      "contains": "Second copy of the Land Acquisition Act 1977 text for amendment/version check."
+    },
+    {
+      "url": "https://ibn.gov.np/ibn-faq/details/what-are-the-key-acts-laws-governing-land-acquisition-in-nepal-8691",
+      "title": "IBN FAQ: key acts and laws governing land acquisition in Nepal",
+      "publisher": "Office of the Investment Board Nepal",
+      "contains": "IBN's list of statutes governing land acquisition for investment projects; to establish which land acquisition statute is currently in force (conflicting secondary claims about a 2076/2019 Act)."
+    },
+    {
+      "url": "https://www.newyorkconvention.org/media/uploads/pdf/6/1/614_arbitration-act-2055-1999.pdf",
+      "title": "Arbitration Act, 2055 (1999)",
+      "publisher": "New York Convention Guide (hosting official English translation)",
+      "contains": "English text of the Arbitration Act 1999: arbitral procedure, court role, recognition and enforcement of foreign awards."
+    },
+    {
+      "url": "https://lawcommission.gov.np/content/13456/civil-code-procedure-2074/",
+      "title": "Muluki Civil Procedure Code, 2074 (National Civil Procedure Code 2017)",
+      "publisher": "Nepal Law Commission",
+      "contains": "Nepali text of the National Civil Procedure Code 2017, incl. time standards for court events relevant to contract enforcement.",
+      "source_id": "lawcommission_nepal"
+    },
+    {
+      "url": "https://www.supremecourt.gov.np/web/yearlyreps",
+      "title": "Supreme Court of Nepal - annual reports (yearly reports page)",
+      "publisher": "Supreme Court of Nepal",
+      "contains": "Index of judiciary annual reports (Supreme Court, High Courts, District Courts) by fiscal year (BS), incl. FY2080/81 and FY2081/82; contains caseload, disposals and pending cases by court tier and age of case.",
+      "source_id": "supremecourt_nepal"
+    },
+    {
+      "url": "https://supremecourt.gov.np/web/assets/downloads/Supreme%20Court%20Booklet-2080.pdf",
+      "title": "Supreme Court Booklet 2080",
+      "publisher": "Supreme Court of Nepal",
+      "contains": "Supreme Court information booklet (BS 2080) with institutional overview and summary case statistics for the reporting year.",
+      "source_id": "supremecourt_nepal"
+    },
+    {
+      "url": "https://supremecourt.gov.np/web/assets/downloads/strategic/4th%20strategic%20plan%20of%20judiciary.pdf",
+      "title": "Fourth Five-Year Strategic Plan of Judiciary",
+      "publisher": "Supreme Court of Nepal",
+      "contains": "Judiciary's fourth strategic plan: baseline caseload/backlog problem statement, case-management and time-standard targets; the fifth plan document still to be located.",
+      "source_id": "supremecourt_nepal"
+    },
+    {
+      "url": "https://www.doingbusiness.org/content/dam/doingBusiness/country/n/nepal/NPL.pdf",
+      "title": "Doing Business 2020 Economy Profile: Nepal",
+      "publisher": "World Bank",
+      "contains": "Enforcing Contracts indicator for Kathmandu: time (days), cost (percent of claim), quality of judicial processes index, DB2020 vintage (data as of May 2019). Discontinued series; methodology issues noted by World Bank in 2021.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://www.worldbank.org/en/businessready/reports",
+      "title": "Business Ready (B-READY) reports",
+      "publisher": "World Bank",
+      "contains": "B-READY 2024 and 2025 reports and economy data incl. Dispute Resolution topic (regulatory framework, public services, operational efficiency pillars); need to confirm whether Nepal is in the 2024 and/or 2025 sample and its Dispute Resolution scores.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/6364c306d685203c859c60a075df5c3a-0540012026/original/B-READY-MH-2026.pdf",
+      "title": "B-READY Methodology Handbook, Third Edition",
+      "publisher": "World Bank",
+      "contains": "Methodology for B-READY Dispute Resolution topic (expert consultations and firm-level surveys); needed to document non-comparability with Doing Business Enforcing Contracts."
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/660951593338600841/pdf/Nepal-Updated-Matrix-of-Doing-Business-Reform-Recommendations.pdf",
+      "title": "Updated Matrix of Doing Business Reform Recommendations, Nepal (Dec 2019)",
+      "publisher": "World Bank",
+      "contains": "Reform recommendations by DB topic incl. enforcing contracts and resolving insolvency; identifies legal/regulatory gaps as of Dec 2019.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-nepal",
+      "title": "PPP Laws/Concessions Laws - Nepal",
+      "publisher": "World Bank PPP Resource Center",
+      "contains": "Inventory of Nepal's PPP and concession-related laws and regulations."
+    },
+    {
+      "url": "https://bpp.worldbank.org/content/dam/sites/data/bpp/cntrypdf/BI-2023-Nepal-PPP.pdf",
+      "title": "Benchmarking Infrastructure 2023 in Nepal: survey question analysis",
+      "publisher": "World Bank",
+      "contains": "Question-level assessment of Nepal's PPP regulatory framework (preparation, procurement, contract management, unsolicited proposals) for the 2023 benchmarking round."
+    }
+  ]
+}

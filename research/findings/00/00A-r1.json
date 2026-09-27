@@ -1,0 +1,1527 @@
+{
+  "subagent_id": "00A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:30:10+00:00",
+  "summary": "Decomposition of the US$3T question into 13 research questions (RQ-01..RQ-13): seven are arithmetic-critical (base nominal GDP in NPR, matching NPR/USD averages, deflator history, real growth history, population, defensible FX/deflator paths, FY/CY reconciliation) and six concern feasibility (investment/ICOR, external and fiscal room, historical growth-spell frequency, binding constraints, and the conditions synthesis). A dependency-ordered task set (P1-00 .. P7-01) is given per roadmap phase with hard/soft edges and one objective acceptance criterion per task. The minimal path to close the US$3T ARITHMETIC runs only through Phase 2 data tasks and Phase 3 tasks P3-01..P3-07; the catalog graph currently delays it behind the full global wave (01C in batch 15), which is flagged for human review. All empirical inputs remain PENDING: data hosts were unreachable in round r1 and no values are reported.",
+  "findings": [
+    {
+      "claim": "The US$3T arithmetic reduces to the identity nominal USD GDP = nominal NPR GDP / NPR-per-USD, projected with separate real-growth, deflator and exchange-rate paths; it can be evaluated once RQ-01..RQ-06 and RQ-09 are answered, independently of the feasibility questions RQ-08 and RQ-10..RQ-13.",
+      "type": "assumption",
+      "note": "Decomposition design choice consistent with CLAUDE.md rule 6 and config/model_config.yaml conventions."
+    },
+    {
+      "claim": "Base-year nominal GDP (NPR, current prices), its fiscal year and revision status",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "note": "Required: NSO National Accounts latest release; data host unreachable in r1. Owner 01A/01C; task P2-02."
+    },
+    {
+      "claim": "NPR/USD fiscal-year and calendar-year period averages matching the base year",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "wb_wdi"
+      ],
+      "note": "Required: NRB exchange-rate statistics; WDI PA.NUS.FCRF as cross-check. Task P2-03."
+    },
+    {
+      "claim": "Base population and projection variants",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal",
+        "un_wpp"
+      ],
+      "note": "Required: Census 2021 national report, NSO projections, UN WPP latest revision. Task P2-04."
+    },
+    {
+      "claim": "The catalog dependency graph places 01C (US$3T arithmetic owner) in batch 15 of 18 in state/plan.md, although the arithmetic's inputs are Phase-2 data tasks; the minimal path P2-01 -> P2-02/03/04/07 -> P2-08 -> P2-09 -> P2-10 -> P3-01..P3-07 has no dependency on the global research wave.",
+      "type": "assumption",
+      "note": "Structural observation from config/subagents.json and state/plan.md (platform records, no empirical value). Proposed remedy requires a catalog change and human review; not made here."
+    },
+    {
+      "claim": "Every task in specific.task_list is closed by an objective, checkable criterion in specific.acceptance_criteria (a command, ledger state, identity check or recomputation).",
+      "type": "assumption"
+    }
+  ],
+  "data_gaps": [
+    "All 26 baseline requirements in reports/baseline/baseline_report.md (no values retrieved in r1).",
+    "Exposure register EXP-01..EXP-20 (all pending).",
+    "28 scenario shock magnitudes (reports/baseline/data_gaps.md section 4).",
+    "Constant-price base year and rebasing/back-cast method of NSO national accounts (needed for consistent real-growth history).",
+    "Research-question-level evidence for RQ-08, RQ-10..RQ-12 (PWT, Maddison, NEA, MoF/OAG, PDMO).",
+    "Observation store research/sources/observations.jsonl does not yet exist."
+  ],
+  "assumptions": [
+    {
+      "id": "00A-A1",
+      "text": "The US$3T target is annual nominal GDP in current US dollars (config/model_config.yaml target.measure); per-capita and PPP measures are reported separately and never substituted.",
+      "basis": "assumption"
+    },
+    {
+      "id": "00A-A2",
+      "text": "Arithmetic and feasibility are decomposed separately: the arithmetic can be closed and audited before feasibility evidence exists; feasibility statements require both.",
+      "basis": "assumption"
+    },
+    {
+      "id": "00A-A3",
+      "text": "'Minimal' task set = the smallest set of tasks whose outputs are inputs to the phase deliverable in docs/implementation/roadmap_status.md; subagents not on that set still run per state/plan.md but do not gate the phase.",
+      "basis": "assumption"
+    },
+    {
+      "id": "00A-A4",
+      "text": "Data-only task variants (P2-02, P2-03, P2-04, P2-06) are proposals; until the catalog is changed with human review, they execute within the existing subagents' schedules.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "01C",
+      "text": "Record explicitly which FX average (FY vs CY) is paired with which GDP period in every USD conversion; the headline target year crossing depends on it (see 00B-r1 C-01/C-02)."
+    },
+    {
+      "to": "01A",
+      "text": "State the constant-price base year and whether the real series is spliced across rebasings; unspliced series break RQ-04."
+    },
+    {
+      "to": "10C",
+      "text": "Keep census de jure/absent-population concepts separate from WPP mid-year estimates; do not merge them into one population path."
+    },
+    {
+      "to": "15A",
+      "text": "Please treat AC-P2-02 identity checks and AC-P3-06 reproduction as preconditions for any VERIFIED verdict on TGT-ARITH."
+    }
+  ],
+  "uncertainty": "The decomposition is structural and carries no empirical values, so its main uncertainty is completeness: feasibility questions may surface further constraints (e.g. land, urbanisation, institutional capacity) that add tasks in later rounds. Scheduling uncertainty is large: whether the arithmetic closes early depends on a human decision about catalog data-only variants and on network access to NSO/NRB hosts. No source leads could be fetched in r1; all lead URLs are catalog-level and unverified.",
+  "specific": {
+    "research_questions_before_US3T_evaluation": [
+      {
+        "id": "RQ-01",
+        "question": "What is the latest official nominal GDP at current prices in NPR, for which fiscal year, and with what revision status and constant-price base year?",
+        "class": "arithmetic-critical",
+        "owner": "01A/01C",
+        "status": "pending",
+        "data_required": "NSO National Accounts annual release (latest), all FYs FY2000/01-latest"
+      },
+      {
+        "id": "RQ-02",
+        "question": "What NPR/USD period average (FY and CY) applies to that GDP period, and how is it computed?",
+        "class": "arithmetic-critical",
+        "owner": "03A",
+        "status": "pending",
+        "data_required": "NRB daily/monthly reference rates"
+      },
+      {
+        "id": "RQ-03",
+        "question": "What is the history of the implicit GDP deflator and how does it relate to CPI and Indian inflation under the peg?",
+        "class": "arithmetic-critical",
+        "owner": "01C/03A",
+        "status": "pending",
+        "data_required": "NSO deflator series; NRB CPI; Indian official price indices"
+      },
+      {
+        "id": "RQ-04",
+        "question": "What is the history and volatility of real GDP growth on a consistent base?",
+        "class": "arithmetic-critical",
+        "owner": "01A",
+        "status": "pending",
+        "data_required": "NSO constant-price GDP incl. back-cast across rebasings"
+      },
+      {
+        "id": "RQ-05",
+        "question": "What is the base population and its projection by variant (needed for per-capita interpretation and labour supply)?",
+        "class": "arithmetic-critical",
+        "owner": "10C",
+        "status": "pending",
+        "data_required": "Census 2021; NSO projections; UN WPP variants"
+      },
+      {
+        "id": "RQ-06",
+        "question": "What long-run NPR/USD and deflator paths are defensible given the NPR-INR peg and INR/USD history?",
+        "class": "arithmetic-critical",
+        "owner": "03A/20B",
+        "status": "pending",
+        "data_required": "NRB/RBI exchange-rate history; peg documentation"
+      },
+      {
+        "id": "RQ-07",
+        "question": "What real growth is required to reach US$3T by 2050/2060/2070 under each price/FX case on the verified base?",
+        "class": "arithmetic output",
+        "owner": "01C",
+        "status": "pending (framework exists; base inputs pending)"
+      },
+      {
+        "id": "RQ-08",
+        "question": "What investment rate, ICOR and labour-input growth would the required real growth imply, versus history?",
+        "class": "feasibility",
+        "owner": "01A/10B/10C",
+        "status": "pending"
+      },
+      {
+        "id": "RQ-09",
+        "question": "How are fiscal-year and calendar-year series reconciled, and do official and international cross-check series agree after reconciliation?",
+        "class": "arithmetic-critical (method)",
+        "owner": "00B/01C/15A",
+        "status": "protocol defined in 00B-r1; data pending"
+      },
+      {
+        "id": "RQ-10",
+        "question": "What external-financing, fiscal and debt room exists (remittances, BoP, reserves, public debt)?",
+        "class": "feasibility",
+        "owner": "23C/03A/02C",
+        "status": "pending"
+      },
+      {
+        "id": "RQ-11",
+        "question": "How often have comparable economies sustained the required growth for the required duration, and under which preconditions?",
+        "class": "feasibility",
+        "owner": "01B",
+        "status": "pending"
+      },
+      {
+        "id": "RQ-12",
+        "question": "Which physical and institutional constraints bind (electricity, capex execution, logistics, climate damage)?",
+        "class": "feasibility",
+        "owner": "05A/02B/06A/25E",
+        "status": "pending"
+      },
+      {
+        "id": "RQ-13",
+        "question": "Under which explicit conditions is US$3T attainable or unattainable by each milestone, and at what cost to the other 11 objectives?",
+        "class": "feasibility synthesis",
+        "owner": "01C, audited by 15/28",
+        "status": "pending"
+      }
+    ],
+    "task_list": [
+      {
+        "task_id": "P1-00",
+        "phase": "1 System architecture",
+        "owner": "00",
+        "title": "Architecture, catalog, schemas, audit workflow",
+        "outputs": [
+          "config/catalog.yaml",
+          "generated agents/specs",
+          "tests"
+        ],
+        "depends_on": [],
+        "acceptance_criteria": [
+          "AC-P1-00"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "note": "Reported Done in docs/implementation/roadmap_status.md; retained as root node only."
+      },
+      {
+        "task_id": "P2-01",
+        "phase": "2 Verified baseline",
+        "owner": "00 (with human-approved network access)",
+        "title": "Fetch all recorded source leads when data hosts are reachable",
+        "outputs": [
+          "data/raw/* with SHA-256",
+          "fetch log"
+        ],
+        "depends_on": [
+          "P1-00"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-01"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "note": "Blocked in round r1: data hosts unreachable. Command: python -m src.cli leads --fetch."
+      },
+      {
+        "task_id": "P2-02",
+        "phase": "2 Verified baseline",
+        "owner": "01A (data-only variant)",
+        "title": "Ingest NSO national accounts: nominal GDP (NPR, current), constant-price GDP, implicit deflator, GVA by industry, GFCF — fiscal-year series with revision status and base year",
+        "outputs": [
+          "observations: gdp_nominal_lcu, real_gdp_growth, gdp_deflator_growth, gfcf_share, sector VA shares"
+        ],
+        "depends_on": [
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-02"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-01",
+          "RQ-03",
+          "RQ-04"
+        ]
+      },
+      {
+        "task_id": "P2-03",
+        "phase": "2 Verified baseline",
+        "owner": "03A (data-only variant)",
+        "title": "Ingest NRB NPR/USD reference rates and compute fiscal-year AND calendar-year period averages as separate observations",
+        "outputs": [
+          "observations: fx_npr_usd (FY average), fx_npr_usd (CY average)"
+        ],
+        "depends_on": [
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-03"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-02"
+        ]
+      },
+      {
+        "task_id": "P2-04",
+        "phase": "2 Verified baseline",
+        "owner": "10C (data-only variant)",
+        "title": "Ingest Census 2021 population (incl. absent population), NSO projections and UN WPP variants",
+        "outputs": [
+          "observations: population by source, variant, reference date"
+        ],
+        "depends_on": [
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-04"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-05"
+        ]
+      },
+      {
+        "task_id": "P2-05",
+        "phase": "2 Verified baseline",
+        "owner": "23C, 03A, 12B",
+        "title": "Ingest NRB balance of payments: remittances, current account, reserves, FDI",
+        "outputs": [
+          "observations: remittances_share, current_account_share, reserves_import_months, fdi_net_inflows_share"
+        ],
+        "depends_on": [
+          "P2-01",
+          "P2-02"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-05"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-10"
+        ]
+      },
+      {
+        "task_id": "P2-06",
+        "phase": "2 Verified baseline",
+        "owner": "02C (data-only variant)",
+        "title": "Ingest PDMO public debt stock and composition",
+        "outputs": [
+          "observations: gov_gross_debt_share, external_debt_stock"
+        ],
+        "depends_on": [
+          "P2-01",
+          "P2-02"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-06"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-10"
+        ]
+      },
+      {
+        "task_id": "P2-07",
+        "phase": "2 Verified baseline",
+        "owner": "00",
+        "title": "Retrieve international cross-check series (WDI, IMF WEO) via baseline --online and run find_conflicts",
+        "outputs": [
+          "observations for cross-check series",
+          "conflict list"
+        ],
+        "depends_on": [
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-07"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-09"
+        ]
+      },
+      {
+        "task_id": "P2-08",
+        "phase": "2 Verified baseline",
+        "owner": "00B",
+        "title": "Investigate every conflict (definitional / vintage / coverage / methodological) and record resolution or escalation",
+        "outputs": [
+          "research/findings/00/00B-r2.json conflict_register"
+        ],
+        "depends_on": [
+          "P2-02",
+          "P2-03",
+          "P2-04",
+          "P2-07"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-08"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-09"
+        ]
+      },
+      {
+        "task_id": "P2-09",
+        "phase": "2 Verified baseline",
+        "owner": "15A",
+        "title": "Verify base-year inputs (nominal GDP NPR, FX, population, deflator) and mark observations verified",
+        "outputs": [
+          "audit ledger entries",
+          "observation status verified"
+        ],
+        "depends_on": [
+          "P2-08"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-09"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true
+      },
+      {
+        "task_id": "P2-10",
+        "phase": "2 Verified baseline",
+        "owner": "00",
+        "title": "Set base_year block in config/model_config.yaml from verified observations (versioned)",
+        "outputs": [
+          "config/model_config.yaml base_year with observation ids"
+        ],
+        "depends_on": [
+          "P2-09"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-10"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true
+      },
+      {
+        "task_id": "P2-11",
+        "phase": "2 Verified baseline",
+        "owner": "owners per register (23C, 23A, 04A, 21B, 22A, 22B, 25A, 12C, 19C, 20B, 20C, 12B, 21A, 08A, 21D, 20D, 20E, 19B, 25C)",
+        "title": "Populate exposure register EXP-01..EXP-20",
+        "outputs": [
+          "research/global_exposure register rows with observation ids"
+        ],
+        "depends_on": [
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P2-11"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-10"
+        ]
+      },
+      {
+        "task_id": "P3-01",
+        "phase": "3 Economic model",
+        "owner": "01C, reviewed by 15A",
+        "title": "Document the fiscal-year to calendar-year conversion rule and the USD conversion convention for the headline target",
+        "outputs": [
+          "docs/methodology note or finding field",
+          "assumption id in register"
+        ],
+        "depends_on": [
+          "P2-08"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-01"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-09"
+        ]
+      },
+      {
+        "task_id": "P3-02",
+        "phase": "3 Economic model",
+        "owner": "03A with 20B",
+        "title": "Long-run NPR/USD path assumptions consistent with the NPR-INR peg and INR/USD history",
+        "outputs": [
+          "labelled FX-path assumptions replacing A-TGT-04 grid cases or justifying them"
+        ],
+        "depends_on": [
+          "P2-03",
+          "P2-07"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-02"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-06"
+        ]
+      },
+      {
+        "task_id": "P3-03",
+        "phase": "3 Economic model",
+        "owner": "01C",
+        "title": "Deflator path assumptions grounded in NSO deflator history and Indian inflation transmission",
+        "outputs": [
+          "labelled deflator-path assumptions"
+        ],
+        "depends_on": [
+          "P2-02",
+          "P3-02"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-03"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-03",
+          "RQ-06"
+        ]
+      },
+      {
+        "task_id": "P3-04",
+        "phase": "3 Economic model",
+        "owner": "10C",
+        "title": "Population and working-age projections by variant to 2070; dividend window",
+        "outputs": [
+          "population paths by variant"
+        ],
+        "depends_on": [
+          "P2-04"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-04"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-05",
+          "RQ-08"
+        ]
+      },
+      {
+        "task_id": "P3-05",
+        "phase": "3 Economic model",
+        "owner": "01C",
+        "title": "Required real-growth arithmetic for US$3T at 2050/2060/2070 on the verified base, per price/FX case",
+        "outputs": [
+          "target arithmetic tables; TGT-ARITH re-submission"
+        ],
+        "depends_on": [
+          "P2-10",
+          "P3-01",
+          "P3-02",
+          "P3-03",
+          "P3-04"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-05"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "answers_research_questions": [
+          "RQ-07"
+        ]
+      },
+      {
+        "task_id": "P3-06",
+        "phase": "3 Economic model",
+        "owner": "28E",
+        "title": "Independent reproduction of the required-growth arithmetic",
+        "outputs": [
+          "reproduction report"
+        ],
+        "depends_on": [
+          "P3-05"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-06"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true
+      },
+      {
+        "task_id": "P3-07",
+        "phase": "3 Economic model",
+        "owner": "15A, 28A",
+        "title": "Audit TGT-ARITH on verified base (currently UNVERIFIED in ledger)",
+        "outputs": [
+          "ledger entries by 15 and 28"
+        ],
+        "depends_on": [
+          "P3-06"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-07"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": true,
+        "note": "This closes the US$3T ARITHMETIC. The FEASIBILITY question additionally needs P3-08..P3-12."
+      },
+      {
+        "task_id": "P3-08",
+        "phase": "3 Economic model",
+        "owner": "01A",
+        "title": "Growth accounting: capital, labour, TFP decomposition; investment rate and ICOR",
+        "outputs": [
+          "decomposition table",
+          "ICOR range replacing A-TGT-05 or justifying it"
+        ],
+        "depends_on": [
+          "P2-02",
+          "P3-04"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-08"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-08"
+        ],
+        "note": "Catalog makes 01A depend on 10B/10C, which depend on 23A-E; only the labour-input series from 10B is actually needed."
+      },
+      {
+        "task_id": "P3-09",
+        "phase": "3 Economic model",
+        "owner": "01B",
+        "title": "Frequency and preconditions of sustained high-growth spells in comparable economies",
+        "outputs": [
+          "spell list with sources; precondition matrix"
+        ],
+        "depends_on": [
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-09"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-11"
+        ]
+      },
+      {
+        "task_id": "P3-10",
+        "phase": "3 Economic model",
+        "owner": "05A, 02B, 02C, 25E/13A",
+        "title": "Binding-constraint evidence: electricity balance, capex execution, debt room, climate damage",
+        "outputs": [
+          "constraint parameters with observation ids"
+        ],
+        "depends_on": [
+          "P2-05",
+          "P2-06",
+          "P2-11"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-10"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-12"
+        ]
+      },
+      {
+        "task_id": "P3-11",
+        "phase": "3 Economic model",
+        "owner": "01C",
+        "title": "Feasibility envelope: compare required real growth to historical record, spell frequency and constraints; state conditions under which US$3T is unattainable",
+        "outputs": [
+          "feasibility statement with conditions; no probabilities without evidence"
+        ],
+        "depends_on": [
+          "P3-07",
+          "P3-08",
+          "P3-09",
+          "P3-10"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-11"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "answers_research_questions": [
+          "RQ-13"
+        ]
+      },
+      {
+        "task_id": "P3-12",
+        "phase": "3 Economic model",
+        "owner": "15A, 15B, 28B, 28E",
+        "title": "Audit feasibility envelope",
+        "outputs": [
+          "ledger entries"
+        ],
+        "depends_on": [
+          "P3-11"
+        ],
+        "acceptance_criteria": [
+          "AC-P3-12"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P4-01",
+        "phase": "4 Global model",
+        "owner": "16A, 16B",
+        "title": "External variable map and dependency concentrations",
+        "outputs": [
+          "16A/16B findings"
+        ],
+        "depends_on": [
+          "P1-00"
+        ],
+        "acceptance_criteria": [
+          "AC-P4-01"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P4-02",
+        "phase": "4 Global model",
+        "owner": "20B, 23A, 23C, 21A, 22A, 22B, 25A, 26C",
+        "title": "Minimal external-channel evidence set (FX/INR, migration, remittances, LDC graduation, fuel, power trade, cryosphere, graduation date)",
+        "outputs": [
+          "findings with observation ids"
+        ],
+        "depends_on": [
+          "P4-01",
+          "P2-01"
+        ],
+        "acceptance_criteria": [
+          "AC-P4-02"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P4-03",
+        "phase": "4 Global model",
+        "owner": "16C",
+        "title": "Map each external channel to model variables; no double counting",
+        "outputs": [
+          "16C finding"
+        ],
+        "depends_on": [
+          "P4-02"
+        ],
+        "acceptance_criteria": [
+          "AC-P4-03"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P4-04",
+        "phase": "4 Global model",
+        "owner": "28A, 28C",
+        "title": "Audit external sourcing and channel mapping",
+        "outputs": [
+          "ledger entries"
+        ],
+        "depends_on": [
+          "P4-03"
+        ],
+        "acceptance_criteria": [
+          "AC-P4-04"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P5-01",
+        "phase": "5 Strategies",
+        "owner": "01C",
+        "title": "STR-0 conservative continuation run on verified base",
+        "outputs": [
+          "strategy output"
+        ],
+        "depends_on": [
+          "P3-11"
+        ],
+        "acceptance_criteria": [
+          "AC-P5-01"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P5-02",
+        "phase": "5 Strategies",
+        "owner": "sector owners per config/strategies.yaml",
+        "title": "STR-A..E sector value-added paths entering GDP only through value added",
+        "outputs": [
+          "strategy outputs"
+        ],
+        "depends_on": [
+          "P3-11",
+          "P4-03"
+        ],
+        "acceptance_criteria": [
+          "AC-P5-02"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P5-03",
+        "phase": "5 Strategies",
+        "owner": "00 with 14A/14B",
+        "title": "Welfare trade-off report across all 12 objectives for each strategy",
+        "outputs": [
+          "reports/strategies trade-off tables"
+        ],
+        "depends_on": [
+          "P5-01",
+          "P5-02"
+        ],
+        "acceptance_criteria": [
+          "AC-P5-03"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P5-04",
+        "phase": "5 Strategies",
+        "owner": "15A, 15B, 15C, 28B, 28D",
+        "title": "Audit strategies",
+        "outputs": [
+          "ledger entries"
+        ],
+        "depends_on": [
+          "P5-03"
+        ],
+        "acceptance_criteria": [
+          "AC-P5-04"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P6-01",
+        "phase": "6 Crisis simulation",
+        "owner": "shock owners per reports/baseline/data_gaps.md section 4",
+        "title": "Evidence-based magnitudes for 28 pending shocks S01-a..S10-a",
+        "outputs": [
+          "scenario YAML magnitudes with observation ids"
+        ],
+        "depends_on": [
+          "P4-02",
+          "P2-10"
+        ],
+        "acceptance_criteria": [
+          "AC-P6-01"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P6-02",
+        "phase": "6 Crisis simulation",
+        "owner": "00",
+        "title": "Run 10 scenarios + compound on calibrated model",
+        "outputs": [
+          "scenario outputs"
+        ],
+        "depends_on": [
+          "P6-01",
+          "P3-11"
+        ],
+        "acceptance_criteria": [
+          "AC-P6-02"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P6-03",
+        "phase": "6 Crisis simulation",
+        "owner": "15A, 28C",
+        "title": "Re-audit scenarios (currently UNVERIFIED)",
+        "outputs": [
+          "ledger entries"
+        ],
+        "depends_on": [
+          "P6-02"
+        ],
+        "acceptance_criteria": [
+          "AC-P6-03"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false
+      },
+      {
+        "task_id": "P7-01",
+        "phase": "7 Implementation plans",
+        "owner": "00 with 27E, 15B",
+        "title": "90-day / 1-year / 5-year research-grade plans for strategies audited VERIFIED or CONDITIONAL only",
+        "outputs": [
+          "reports/strategies plans"
+        ],
+        "depends_on": [
+          "P5-04",
+          "P6-03"
+        ],
+        "acceptance_criteria": [
+          "AC-P7-01"
+        ],
+        "status": "pending",
+        "on_minimal_path_to_US3T_arithmetic": false,
+        "note": "Any action outside the repository requires a recorded human approval (src/orchestrator/approvals.py)."
+      }
+    ],
+    "dependency_edges": {
+      "edges": [
+        {
+          "from": "P1-00",
+          "to": "P2-01",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-02",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-03",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-04",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-05",
+          "type": "hard"
+        },
+        {
+          "from": "P2-02",
+          "to": "P2-05",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-06",
+          "type": "hard"
+        },
+        {
+          "from": "P2-02",
+          "to": "P2-06",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-07",
+          "type": "hard"
+        },
+        {
+          "from": "P2-02",
+          "to": "P2-08",
+          "type": "hard"
+        },
+        {
+          "from": "P2-03",
+          "to": "P2-08",
+          "type": "hard"
+        },
+        {
+          "from": "P2-04",
+          "to": "P2-08",
+          "type": "hard"
+        },
+        {
+          "from": "P2-07",
+          "to": "P2-08",
+          "type": "hard"
+        },
+        {
+          "from": "P2-08",
+          "to": "P2-09",
+          "type": "hard"
+        },
+        {
+          "from": "P2-09",
+          "to": "P2-10",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P2-11",
+          "type": "hard"
+        },
+        {
+          "from": "P2-08",
+          "to": "P3-01",
+          "type": "hard"
+        },
+        {
+          "from": "P2-03",
+          "to": "P3-02",
+          "type": "hard"
+        },
+        {
+          "from": "P2-07",
+          "to": "P3-02",
+          "type": "hard"
+        },
+        {
+          "from": "P2-02",
+          "to": "P3-03",
+          "type": "hard"
+        },
+        {
+          "from": "P3-02",
+          "to": "P3-03",
+          "type": "hard"
+        },
+        {
+          "from": "P2-04",
+          "to": "P3-04",
+          "type": "hard"
+        },
+        {
+          "from": "P2-10",
+          "to": "P3-05",
+          "type": "hard"
+        },
+        {
+          "from": "P3-01",
+          "to": "P3-05",
+          "type": "hard"
+        },
+        {
+          "from": "P3-02",
+          "to": "P3-05",
+          "type": "hard"
+        },
+        {
+          "from": "P3-03",
+          "to": "P3-05",
+          "type": "hard"
+        },
+        {
+          "from": "P3-04",
+          "to": "P3-05",
+          "type": "hard"
+        },
+        {
+          "from": "P3-05",
+          "to": "P3-06",
+          "type": "hard"
+        },
+        {
+          "from": "P3-06",
+          "to": "P3-07",
+          "type": "hard"
+        },
+        {
+          "from": "P2-02",
+          "to": "P3-08",
+          "type": "hard"
+        },
+        {
+          "from": "P3-04",
+          "to": "P3-08",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P3-09",
+          "type": "hard"
+        },
+        {
+          "from": "P2-05",
+          "to": "P3-10",
+          "type": "hard"
+        },
+        {
+          "from": "P2-06",
+          "to": "P3-10",
+          "type": "hard"
+        },
+        {
+          "from": "P2-11",
+          "to": "P3-10",
+          "type": "hard"
+        },
+        {
+          "from": "P3-07",
+          "to": "P3-11",
+          "type": "hard"
+        },
+        {
+          "from": "P3-08",
+          "to": "P3-11",
+          "type": "hard"
+        },
+        {
+          "from": "P3-09",
+          "to": "P3-11",
+          "type": "hard"
+        },
+        {
+          "from": "P3-10",
+          "to": "P3-11",
+          "type": "hard"
+        },
+        {
+          "from": "P3-11",
+          "to": "P3-12",
+          "type": "hard"
+        },
+        {
+          "from": "P1-00",
+          "to": "P4-01",
+          "type": "hard"
+        },
+        {
+          "from": "P4-01",
+          "to": "P4-02",
+          "type": "hard"
+        },
+        {
+          "from": "P2-01",
+          "to": "P4-02",
+          "type": "hard"
+        },
+        {
+          "from": "P4-02",
+          "to": "P4-03",
+          "type": "hard"
+        },
+        {
+          "from": "P4-03",
+          "to": "P4-04",
+          "type": "hard"
+        },
+        {
+          "from": "P3-11",
+          "to": "P5-01",
+          "type": "hard"
+        },
+        {
+          "from": "P3-11",
+          "to": "P5-02",
+          "type": "hard"
+        },
+        {
+          "from": "P4-03",
+          "to": "P5-02",
+          "type": "hard"
+        },
+        {
+          "from": "P5-01",
+          "to": "P5-03",
+          "type": "hard"
+        },
+        {
+          "from": "P5-02",
+          "to": "P5-03",
+          "type": "hard"
+        },
+        {
+          "from": "P5-03",
+          "to": "P5-04",
+          "type": "hard"
+        },
+        {
+          "from": "P4-02",
+          "to": "P6-01",
+          "type": "hard"
+        },
+        {
+          "from": "P2-10",
+          "to": "P6-01",
+          "type": "hard"
+        },
+        {
+          "from": "P6-01",
+          "to": "P6-02",
+          "type": "hard"
+        },
+        {
+          "from": "P3-11",
+          "to": "P6-02",
+          "type": "hard"
+        },
+        {
+          "from": "P6-02",
+          "to": "P6-03",
+          "type": "hard"
+        },
+        {
+          "from": "P5-04",
+          "to": "P7-01",
+          "type": "hard"
+        },
+        {
+          "from": "P6-03",
+          "to": "P7-01",
+          "type": "hard"
+        },
+        {
+          "from": "P3-09",
+          "to": "P3-05",
+          "type": "soft",
+          "reason": "arithmetic does not need spell evidence, but results are only interpretable against it"
+        },
+        {
+          "from": "P4-02",
+          "to": "P3-02",
+          "type": "soft",
+          "reason": "20B INR/USD evidence informs the NPR/USD path via the peg"
+        },
+        {
+          "from": "P2-11",
+          "to": "P6-01",
+          "type": "hard",
+          "reason": "shock magnitudes scale exposures in the register"
+        }
+      ],
+      "minimal_path_to_arithmetic": [
+        "P2-01",
+        "P2-02",
+        "P2-03",
+        "P2-04",
+        "P2-07",
+        "P2-08",
+        "P2-09",
+        "P2-10",
+        "P3-01",
+        "P3-02",
+        "P3-03",
+        "P3-04",
+        "P3-05",
+        "P3-06",
+        "P3-07"
+      ],
+      "catalog_bottlenecks": [
+        {
+          "subagent": "01C",
+          "catalog_depends_on": "01A,01B,03A,05A,06C,07A,08A,09A,10C,12A,16C",
+          "issue": "The core US$3T arithmetic (P3-05) is gated behind the whole global wave via 16C and 03A->20A-E, although it only needs verified base-year GDP, FX, deflator, population and documented path assumptions.",
+          "proposal": "Human reviewer to decide whether to add data-only / arithmetic-only task variants in config/catalog.yaml so P2-02..P3-07 can close before batch 15. Not edited in this round."
+        },
+        {
+          "subagent": "01A",
+          "catalog_depends_on": "10B,10C",
+          "issue": "10B/10C depend on 23A-E, pushing national-accounts ingestion to batch 10.",
+          "proposal": "Allow a data-only 01A task (P2-02) with no upstream dependency."
+        },
+        {
+          "subagent": "03A",
+          "catalog_depends_on": "20A-20E",
+          "issue": "NRB exchange-rate ingestion (P2-03) does not require global research.",
+          "proposal": "Data-only 03A task."
+        },
+        {
+          "subagent": "10C",
+          "catalog_depends_on": "23A-23E",
+          "issue": "Census/WPP ingestion does not require migration research; the absent-population question does.",
+          "proposal": "Split: ingestion (P2-04) first, absent-population interpretation after 23A."
+        }
+      ]
+    },
+    "acceptance_criteria": [
+      {
+        "id": "AC-P1-00",
+        "criterion": "pytest passes and `python -m src.cli validate` and `generate --check` exit 0",
+        "test": "commands"
+      },
+      {
+        "id": "AC-P2-01",
+        "criterion": "Every lead in research/sources/source_leads.json has either a raw file in data/raw with SHA-256 recorded, or a logged failure with HTTP status/error; zero leads silently skipped",
+        "test": "leads fetch log vs leads list"
+      },
+      {
+        "id": "AC-P2-02",
+        "criterion": "Observations exist for nominal GDP (NPR current), constant-price GDP and implicit deflator for every fiscal year from FY2000/01 to the latest published FY, each carrying data_vintage, revision status and constant-price base year; GDP at purchasers' prices equals GVA at basic prices plus net product taxes within tolerances.published_accounts_rel_tol for each year, or the residual is reported",
+        "test": "ObservationStore query + identity check"
+      },
+      {
+        "id": "AC-P2-03",
+        "criterion": "FY and CY period-average NPR/USD are separate observations with the averaging method (daily/monthly, buying/selling/mid) stated; the FY average reproduces from the underlying monthly/daily raw file",
+        "test": "recomputation from raw file"
+      },
+      {
+        "id": "AC-P2-04",
+        "criterion": "Census 2021 total population, absent population, enumeration concept and reference date recorded; NSO projection and every UN WPP variant recorded as separate observations with vintage",
+        "test": "ObservationStore query"
+      },
+      {
+        "id": "AC-P2-05",
+        "criterion": "Each BoP item has its BPM edition and item definition recorded (e.g. workers' remittances vs personal remittances); ratios to GDP use a same-period (FY) denominator from P2-02",
+        "test": "metadata check"
+      },
+      {
+        "id": "AC-P2-06",
+        "criterion": "Debt stock recorded with institutional coverage (central government / general government / guaranteed) stated, fiscal year end date, currency",
+        "test": "metadata check"
+      },
+      {
+        "id": "AC-P2-07",
+        "criterion": "All cross-check series in reports/baseline/baseline_report.md are retrieved or logged as failed; find_conflicts has been run and its output passed to 00B",
+        "test": "baseline report 'Retrieval attempts that failed' table empty or explained"
+      },
+      {
+        "id": "AC-P2-08",
+        "criterion": "Every conflict returned by find_conflicts has a conflict_register entry with a classification, both values' observation ids, and either a documented reconciliation bridge or an escalation",
+        "test": "00B finding validates; count of register entries >= count of conflicts"
+      },
+      {
+        "id": "AC-P2-09",
+        "criterion": "15A ledger entries exist for each base-year input with verdict VERIFIED or CONDITIONAL; observation status set to verified with verified_by",
+        "test": "audit ledger"
+      },
+      {
+        "id": "AC-P2-10",
+        "criterion": "config/model_config.yaml base_year.status is no longer PENDING and each value cites observation ids that are status verified; change is a separate commit",
+        "test": "git diff + validate"
+      },
+      {
+        "id": "AC-P2-11",
+        "criterion": "EXP-01..EXP-20 each either cite observation ids or remain pending with exact data required; none carries an unsourced value",
+        "test": "python -m src.cli validate"
+      },
+      {
+        "id": "AC-P3-01",
+        "criterion": "Conversion rule states: how FY GDP is mapped to CY (or not), which FX average is paired with which GDP period, and is registered as a labelled assumption with id; 15A has not returned INCONSISTENT",
+        "test": "assumption register + ledger"
+      },
+      {
+        "id": "AC-P3-02",
+        "criterion": "Every NPR/USD path is a labelled assumption referencing observation ids for INR/USD history and the peg; no path is presented as a forecast",
+        "test": "register check"
+      },
+      {
+        "id": "AC-P3-03",
+        "criterion": "Deflator paths are labelled assumptions; real growth, deflator and FX enter separately in the projection",
+        "test": "code path check in src/economic_model"
+      },
+      {
+        "id": "AC-P3-04",
+        "criterion": "Population paths exist for each WPP variant and NSO variant used; source and vintage for each",
+        "test": "ObservationStore + finding"
+      },
+      {
+        "id": "AC-P3-05",
+        "criterion": "Required real growth to US$3T is tabulated for 2050/2060/2070 for every price/FX case on the verified base; hypothetical grid (A-TGT-02/03) is no longer used for headline numbers",
+        "test": "report + register"
+      },
+      {
+        "id": "AC-P3-06",
+        "criterion": "28E reproduces every tabulated value within tolerances.identity_rel_tol from the same inputs",
+        "test": "28E finding"
+      },
+      {
+        "id": "AC-P3-07",
+        "criterion": "TGT-ARITH ledger entries by 15 and 28 no longer list pending base inputs under E4",
+        "test": "audit ledger"
+      },
+      {
+        "id": "AC-P3-08",
+        "criterion": "Decomposition cites NSO and PWT observations; ICOR range derived from observed investment and growth, or explicitly retained as assumption",
+        "test": "finding validation"
+      },
+      {
+        "id": "AC-P3-09",
+        "criterion": "Each growth spell cites Maddison/PWT observations; spell definition (length, growth threshold) is stated as an assumption before data are examined",
+        "test": "finding validation"
+      },
+      {
+        "id": "AC-P3-10",
+        "criterion": "Each constraint has an observation-backed parameter or a pending item with exact data required",
+        "test": "finding validation"
+      },
+      {
+        "id": "AC-P3-11",
+        "criterion": "Feasibility statement lists explicit conditions (growth, price, FX, population, investment, energy, fiscal) and the conditions under which the target is unattainable; no probability without evidence; trade-offs vs the other 11 objectives stated",
+        "test": "15A/28B review"
+      },
+      {
+        "id": "AC-P3-12",
+        "criterion": "Both auditors have ledger entries; any INCONSISTENT verdict blocks P5",
+        "test": "audit ledger"
+      },
+      {
+        "id": "AC-P4-01",
+        "criterion": "Every external model variable has an owner and a primary source id",
+        "test": "16A finding"
+      },
+      {
+        "id": "AC-P4-02",
+        "criterion": "Each listed subagent finding validates and cites observation ids or pending items",
+        "test": "validate-finding"
+      },
+      {
+        "id": "AC-P4-03",
+        "criterion": "Each shock maps to exactly one model variable path; compound scenarios apply each channel once",
+        "test": "16C finding + 28C"
+      },
+      {
+        "id": "AC-P4-04",
+        "criterion": "28A confirms source independence for corroborated claims",
+        "test": "ledger"
+      },
+      {
+        "id": "AC-P5-01",
+        "criterion": "STR-0 output uses the verified base and documented assumptions only",
+        "test": "run log"
+      },
+      {
+        "id": "AC-P5-02",
+        "criterion": "Sector growth enters GDP only via value added (src/economic_model/sectors.py); VA sums to GDP at basic prices within tolerance",
+        "test": "15A identity check"
+      },
+      {
+        "id": "AC-P5-03",
+        "criterion": "All 12 objectives reported for each strategy; no ranking or endorsement",
+        "test": "report check"
+      },
+      {
+        "id": "AC-P5-04",
+        "criterion": "Audit records reproduced verbatim in strategy reports",
+        "test": "report vs ledger diff"
+      },
+      {
+        "id": "AC-P6-01",
+        "criterion": "Each of the 28 shocks has an evidence-backed magnitude with observation ids or remains pending; no probabilities assigned",
+        "test": "scenario validation"
+      },
+      {
+        "id": "AC-P6-02",
+        "criterion": "Scenario outputs reproducible from config + scenarios with recorded engine_version",
+        "test": "28E reproduction"
+      },
+      {
+        "id": "AC-P6-03",
+        "criterion": "No scenario remains UNVERIFIED solely because of pending magnitudes that have since been retrieved",
+        "test": "ledger"
+      },
+      {
+        "id": "AC-P7-01",
+        "criterion": "Plans exist only for strategies with VERIFIED/CONDITIONAL verdicts; every external step lists the human approval required",
+        "test": "report + approvals check"
+      }
+    ],
+    "status": "pending — structure complete; every task status pending; empirical inputs await retrieval (round r2)"
+  },
+  "source_leads": [
+    {
+      "url": "https://nsonepal.gov.np",
+      "title": "National Accounts of Nepal (latest annual release) — NSO landing page",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Catalog landing page (endpoint unverified). Target document: annual National Accounts release with nominal GDP at current prices (NPR), GDP at constant prices, implicit GDP deflator, GVA by industry at basic prices, GFCF; fiscal-year basis; revision status (preliminary/revised/final) and constant-price base year. Needed for task P2-02."
+    },
+    {
+      "url": "https://nsonepal.gov.np",
+      "title": "National Population and Housing Census 2021 — national report and population projections",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Catalog landing page (endpoint unverified). Target: Census 2021 total and absent population, reference date, enumeration concept; NSO population projection report by variant. Needed for task P2-04."
+    },
+    {
+      "url": "https://www.nrb.org.np",
+      "title": "NRB exchange-rate statistics and Current Macroeconomic and Financial Situation",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Catalog landing page (endpoint unverified). Target: NPR/USD reference rates (buying/selling) daily or monthly, enabling fiscal-year and calendar-year period averages; BoP tables (workers' remittances, current account, reserves, FDI). Needed for P2-03 and P2-05."
+    },
+    {
+      "url": "https://pdmo.gov.np",
+      "title": "Public Debt Management Office annual report",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "Catalog landing page (endpoint unverified). Target: central government domestic and external debt stock by creditor and currency, fiscal year end. Needed for P2-06."
+    },
+    {
+      "url": "https://mof.gov.np",
+      "title": "Economic Survey (latest fiscal year) and budget outturn",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Catalog landing page (endpoint unverified). Target: capital expenditure budgeted vs executed by fiscal year; macro summary tables. Needed for P3-07 (capex execution constraint)."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CN?format=json&per_page=200",
+      "title": "WDI API: GDP (current LCU), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series NY.GDP.MKTP.CN, annual; cross-check for NSO nominal GDP. Year-labelling convention for Nepal's fiscal year must be read from WDI country metadata. Needed for P2-07."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/NY.GDP.MKTP.CD?format=json&per_page=200",
+      "title": "WDI API: GDP (current US$), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series NY.GDP.MKTP.CD, annual; cross-check for derived USD GDP (P2-07)."
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate (LCU per US$, period average), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Series PA.NUS.FCRF, annual calendar-year period average; compare with NRB fiscal-year averages (P2-03)."
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD/NPL",
+      "title": "IMF WEO DataMapper: NGDPD, Nepal",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "WEO nominal GDP in USD; mixes outturns and projections — the estimates-start year must be recorded per vintage (P2-07)."
+    },
+    {
+      "url": "https://population.un.org/wpp/",
+      "title": "UN World Population Prospects (latest revision)",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Nepal total and working-age population by projection variant to 2070+, mid-year reference (P2-04, P3-04)."
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "title": "Penn World Table (latest version)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": "Capital stock, TFP and labour share for Nepal and comparators (P3-02)."
+    },
+    {
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/",
+      "title": "Maddison Project Database (latest)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "maddison",
+      "contains": "Long-run GDP per capita for identifying sustained high-growth spells in comparator economies (P3-03)."
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "subagent_id": "11C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): primary sources located for assignment of functions and revenues across Nepal's three tiers (Constitution Schedules 5-9, Intergovernmental Fiscal Arrangement Act 2017, NNRFC Act 2017, Local Government Operation Act 2017, UNDP and Asia Foundation functional-assignment analyses), for transfer volumes and formulae (budget speeches FY2081/82 and FY2082/83, FCGO consolidated financial statements for outturn, NNRFC annual reports and recommendations) and for local capacity gaps (Federalism Capacity Needs Assessment 2019, World Bank Fiscal Federalism Updates, MoFAGA LISA framework and PLGSP progress reports). Nothing could be downloaded and snippet figures were not used, so all quantities are pending. Structural points to verify from texts: transfers comprise four grant types plus revenue sharing, NNRFC recommends equalisation formulae and revenue-sharing, and the unbundling of concurrent functions remains incomplete according to several leads.",
+  "findings": [
+    {
+      "claim": "Expenditure and revenue assignment across federal, provincial and local tiers",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "lawcommission_nepal",
+        "mof_nepal"
+      ],
+      "note": "Constitution Schedules 5-9 (exclusive and concurrent powers), IGFA Act 2017 (tax and non-tax revenue assignment and sharing), Local Government Operation Act 2017; detailed unbundling per UNDP/TAF functional-assignment reports. Leads retrieved text required for article-level citation."
+    },
+    {
+      "claim": "Intergovernmental transfers by grant type (equalisation, conditional, complementary, special) and revenue sharing, budgeted vs actual",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal"
+      ],
+      "note": "Budget speeches FY2078/79-FY2082/83 (budget) and FCGO Consolidated Financial Statements FY2018/19-FY2023/24 (outturn), by tier and grant type. Budget vs outturn must not be mixed.",
+      "unit": "NPR_current_bn",
+      "period": "FY2018/19-FY2082/83"
+    },
+    {
+      "claim": "NNRFC equalisation-grant formula components and weights, and revenue-sharing ratios",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nnrfc"
+      ],
+      "note": "NNRFC annual reports and recommendations: indicator list and weights (e.g. expenditure need, revenue capacity, HDI, infrastructure, socio-economic indicators as stated in the reports), minimum/formula/performance split, VAT and excise sharing ratios, royalty distribution.",
+      "unit": "percent"
+    },
+    {
+      "claim": "Share of NNRFC recommendations implemented by the federal budget",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nnrfc"
+      ],
+      "note": "NNRFC annual reports' implementation-status tables, compared with budget allocations.",
+      "unit": "percent"
+    },
+    {
+      "claim": "Documented local-level capacity gaps (staffing, PFM, planning, procurement, service delivery)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl"
+      ],
+      "note": "FCNA 2019 sample findings; World Bank Fiscal Federalism Updates 2023/2024; LISA scores by domain from MoFAGA; OAG local-level irregularities (cross-reference 11B)."
+    },
+    {
+      "claim": "Subnational budget execution rates (capital spending) by tier",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal"
+      ],
+      "note": "FCGO CFS and World Bank Fiscal Federalism Update: budget vs actual by tier.",
+      "unit": "percent"
+    }
+  ],
+  "data_gaps": [
+    "Budgeted transfers by grant type and tier FY2078/79-FY2082/83 (MoF budget speeches, Red Book) - download blocked.",
+    "Actual transfers and subnational revenue/expenditure FY2018/19-FY2023/24 (FCGO CFS) - download blocked.",
+    "NNRFC formula weights and revenue-sharing ratios for each year (Nepali annual reports) - download blocked; English versions not confirmed.",
+    "LISA scores by local government and domain (MoFAGA portal) - not located as downloadable dataset.",
+    "Full text of the World Bank 2024 Fiscal Federalism Update - not yet located.",
+    "Status of the revised unbundling (functional-assignment) report by OPMCM - primary document not located."
+  ],
+  "assumptions": [
+    {
+      "id": "11C-A1",
+      "text": "Budgeted transfers (budget speech) and actual transfers (FCGO CFS) are recorded as separate series and never mixed; all are Nepali fiscal years (mid-July to mid-July).",
+      "basis": "assumption (evidence rule 6)"
+    },
+    {
+      "id": "11C-A2",
+      "text": "Revenue sharing (VAT, internal excise, royalties) is treated distinctly from grants when summing intergovernmental flows.",
+      "basis": "assumption (IGFA Act structure; to be confirmed on retrieval)"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "11A",
+      "text": "Share one article-level constitutional mapping for Schedules 5-9 so the assignment matrix and constitutional constraints are consistent."
+    },
+    {
+      "to": "02",
+      "text": "Strategies assigning delivery to provinces or local levels must check assignment_matrix and capacity_gaps (pending) before assuming implementation capacity."
+    }
+  ],
+  "uncertainty": "High: no values retrieved in r1. Key uncertainties: (i) budget vs outturn gaps in transfers; (ii) formula weights change year to year through NNRFC recommendations, so any single-year formula is not representative; (iii) capacity assessments (FCNA sample, LISA self-assessment) differ in method, sample and period and are not directly comparable; LISA is self-reported; (iv) the functional unbundling is not finalised, so overlaps in concurrent powers remain a qualitative constraint.",
+  "specific": {
+    "assignment_matrix": {
+      "status": "pending",
+      "method": "Matrix of functions (rows) by tier (federal/province/local, exclusive vs concurrent) from Constitution Schedules 5-9, plus revenue assignment from IGFA Act 2017 and LGOA 2017; annotate overlaps from UNDP/TAF functional-assignment analyses.",
+      "leads": [
+        "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+        "https://mof.gov.np/content/576/intergovernmental-fiscal-arrangement-act--2074--2017--english/",
+        "https://lpr.adb.org/sites/default/files/resource/657/nepal-local-governance-act.pdf",
+        "https://www.undp.org/nepal/publications/functional-analysis-and-assignment-government-consolidated-report",
+        "https://asiafoundation.org/wp-content/uploads/2020/10/Assignment-of-Functions-Across-Levels-of-Government-in-Nepal_Summary-Brief.pdf"
+      ]
+    },
+    "transfer_flows": {
+      "status": "pending",
+      "method": "Budgeted (budget speech) and actual (FCGO CFS) transfers by grant type and tier, NPR_current_bn, Nepali fiscal years; NNRFC formula components and weights by year; revenue-sharing flows separately.",
+      "leads": [
+        "https://giwmscdnone.gov.np/media/pdf_upload/Budget%20Translation_2082-2083_nzrwuof.pdf",
+        "https://demo.mof.gov.np/uploads/document/file/1724825318_Budget%20Speech%202024_25%20English%20FV.pdf",
+        "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+        "https://old.fcgo.gov.np/reporttype/1",
+        "https://nnrfc.gov.np/category/report/",
+        "https://nnrfc.gov.np/uploads/resources/2024-06-16/Annual_Report_2080_nnrfc1.pdf"
+      ]
+    },
+    "capacity_gaps": {
+      "status": "pending",
+      "method": "Qualitative and quantitative gap inventory by domain (staffing, PFM, planning, procurement, IT, service delivery) from FCNA 2019 and World Bank Fiscal Federalism Updates; LISA domain scores; cross-reference OAG local irregularities (11B).",
+      "leads": [
+        "https://documents1.worldbank.org/curated/en/503181593615554741/pdf/Nepal-Capacity-Needs-Assessment-for-the-Transition-to-Federalism.pdf",
+        "https://documents1.worldbank.org/curated/en/099061323212528595/pdf/P1753760c2676705e0bfbe07b0aabcfe966.pdf",
+        "https://plgsp.gov.np/node/609",
+        "https://plgsp.gov.np/node/1042"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://mof.gov.np/content/576/intergovernmental-fiscal-arrangement-act--2074--2017--english/",
+      "title": "Intergovernmental Fiscal Arrangement Act, 2074 (2017) English Version",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Statutory revenue assignment (taxes and royalties by tier), revenue-sharing arrangements (VAT, excise, natural-resource royalties) via the federal divisible fund, grant types (fiscal equalisation, conditional, complementary, special), borrowing provisions and budget timelines.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Intergovernmental%20Fiscal%20Arrangement%20Act,%202074%20(2017)%20English%20Version_y7gnh3i.pdf",
+      "title": "Intergovernmental Fiscal Arrangement Act, 2074 (2017) English Version (PDF)",
+      "publisher": "Government of Nepal (MoF upload on government CDN)",
+      "contains": "Direct PDF of the IGFA Act English version; same content as MoF page.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://faolex.fao.org/docs/pdf/NEP225903.pdf",
+      "title": "National Natural Resources and Fiscal Commission Act, 2074 (2017)",
+      "publisher": "FAO FAOLEX (copy of GoN Act)",
+      "contains": "NNRFC Act: commission mandate and criteria for revenue-sharing, equalisation and conditional grant recommendations, internal borrowing limits and natural-resource royalty distribution."
+    },
+    {
+      "url": "https://nnrfc.gov.np/category/report/",
+      "title": "NNRFC reports (annual reports and recommendations)",
+      "publisher": "National Natural Resources and Fiscal Commission",
+      "contains": "Annual reports (first to sixth, BS 2076-2081) and annual recommendations: equalisation-grant formula components (minimum, formula-based, performance-based), indicator weights, revenue-sharing ratios, royalty distribution and borrowing ceilings per province/local level.",
+      "source_id": "nnrfc"
+    },
+    {
+      "url": "https://nnrfc.gov.np/uploads/resources/2024-06-16/Annual_Report_2080_nnrfc1.pdf",
+      "title": "NNRFC Fifth Annual Report 2080 (Nepali)",
+      "publisher": "National Natural Resources and Fiscal Commission",
+      "contains": "Fifth annual report: recommended grant allocations and formulae for FY2080/81, implementation status of previous recommendations.",
+      "source_id": "nnrfc"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Budget%20Translation_2082-2083_nzrwuof.pdf",
+      "title": "Budget Speech of Fiscal Year 2025/26 (2082/83), English translation",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Budgeted fiscal transfers to provinces and local levels for FY2082/83 by grant type and revenue sharing.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://demo.mof.gov.np/uploads/document/file/1724825318_Budget%20Speech%202024_25%20English%20FV.pdf",
+      "title": "Budget Speech of Fiscal Year 2024/25, English",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Budgeted intergovernmental transfers for FY2081/82.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+      "title": "Consolidated Financial Statement (Federal, Province and Local Government) FY2023/24",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Actual (outturn) intergovernmental transfers by grant type, provincial and local revenue and expenditure, consolidated with elimination of intergovernmental transactions, FY2023/24."
+    },
+    {
+      "url": "https://old.fcgo.gov.np/reporttype/1",
+      "title": "Consolidated Financial Statements - FCGO (index)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Index of annual CFS reports from FY2018/19 onward for transfer outturn series."
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099061323212528595/pdf/P1753760c2676705e0bfbe07b0aabcfe966.pdf",
+      "title": "Nepal Fiscal Federalism Update, June 2023",
+      "publisher": "World Bank",
+      "contains": "Review of intergovernmental transfers, subnational revenue and spending, budget execution by tier, and implementation gaps since the 2019 FCNA.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://www.worldbank.org/en/news/press-release/2024/05/13/nepal-fiscal-federalism-progressing-at-a-moderate-pace-further-reforms-needed-to-strengthen-outcomes",
+      "title": "Press release: Nepal fiscal federalism progressing at a moderate pace (2024 update)",
+      "publisher": "World Bank",
+      "contains": "Pointer to the 2024 Fiscal Federalism Update report (full report to be located)."
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/503181593615554741/pdf/Nepal-Capacity-Needs-Assessment-for-the-Transition-to-Federalism.pdf",
+      "title": "Nepal Capacity Needs Assessment for the Transition to Federalism (FCNA), July 2019",
+      "publisher": "Government of Nepal / World Bank / UNDP",
+      "contains": "Institutional, organisational and systems capacity gaps of federal, provincial and a sample of local governments (staffing, PFM, planning, procurement, IT).",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/290721625210540609/pdf/Federalism-and-Public-Expenditure-for-Human-Development-in-Nepal-An-Emerging-Agenda.pdf",
+      "title": "Federalism and Public Expenditure for Human Development in Nepal: An Emerging Agenda",
+      "publisher": "World Bank",
+      "contains": "Spending on health and education by tier before and after federalisation; functional assignment in social sectors.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://lpr.adb.org/sites/default/files/resource/657/nepal-local-governance-act.pdf",
+      "title": "Local Government Operation Act 2074 (English)",
+      "publisher": "ADB Law and Policy Reform (copy)",
+      "contains": "Functions, duties and powers of local governments, local planning and budgeting, local revenue powers, judicial committee, administrative structure."
+    },
+    {
+      "url": "https://www.undp.org/nepal/publications/functional-analysis-and-assignment-government-consolidated-report",
+      "title": "Functional Analysis and Assignment of Government: Consolidated Report",
+      "publisher": "UNDP Nepal",
+      "contains": "Functional analysis mapping constitutional Schedules 5-9 into detailed functions per tier (unbundling follow-up)."
+    },
+    {
+      "url": "https://asiafoundation.org/wp-content/uploads/2020/10/Assignment-of-Functions-Across-Levels-of-Government-in-Nepal_Summary-Brief.pdf",
+      "title": "Assignment of Functions Across Levels of Government in Nepal - Summary Brief",
+      "publisher": "The Asia Foundation",
+      "contains": "Analysis of functional overlaps and gaps across the three tiers, and the status of the unbundling exercise."
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/publication/806946/fiscal-decentralization-nepal-transition-federalism.pdf",
+      "title": "Strengthening Fiscal Decentralization in Nepal's Transition to Federalism",
+      "publisher": "Asian Development Bank",
+      "contains": "Expenditure and revenue assignment, transfer system design, and subnational PFM capacity."
+    },
+    {
+      "url": "https://plgsp.gov.np/node/609",
+      "title": "Local Government Institutional Capacity Self-Assessment (LISA) Guideline 2078 (Revision)",
+      "publisher": "Ministry of Federal Affairs and General Administration / PLGSP",
+      "contains": "LISA indicator framework (governance, administration, planning and budgeting, financial management, service delivery, etc.) and scoring rules; results published by MoFAGA per local government."
+    },
+    {
+      "url": "https://plgsp.gov.np/node/1042",
+      "title": "PLGSP Annual Progress Report FY2024-25",
+      "publisher": "Ministry of Federal Affairs and General Administration / PLGSP",
+      "contains": "Provincial and Local Governance Support Programme progress incl. LISA completion and capacity-development results for FY2024/25."
+    },
+    {
+      "url": "https://forumfed.org/wp-content/uploads/2021/11/The-Pivotal-Role-of-The-National-Natural-Resources-and-Fiscal-Commission-in-Nepals-Intergovernmental-Fiscal-System-FINAL.pdf",
+      "title": "The Pivotal Role of the NNRFC in Nepal's Intergovernmental Fiscal System",
+      "publisher": "Forum of Federations",
+      "contains": "Independent analysis of NNRFC formula design and implementation (academic/independent tier)."
+    }
+  ]
+}
