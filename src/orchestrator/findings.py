@@ -51,6 +51,35 @@ def validate_finding(doc: dict, store: ObservationStore | None = None) -> list[s
             problems.append(f"finding {i}: pending finding carries a value")
     if not str(doc.get("uncertainty", "")).strip():
         problems.append("uncertainty statement is empty")
+    problems += validate_leads(doc.get("source_leads", []))
+    return problems
+
+
+LEAD_FIELDS = ("url", "title", "publisher", "contains")
+LEAD_FORBIDDEN = ("value", "values", "figure", "number")
+
+
+def validate_leads(leads: list) -> list[str]:
+    """Source leads point to primary documents to download later.
+
+    A lead records *where* evidence is, never the evidence itself: numeric
+    values seen in search snippets are not retrieved evidence and are refused.
+    """
+    problems = []
+    if not isinstance(leads, list):
+        return ["source_leads must be a list"]
+    for i, lead in enumerate(leads):
+        if not isinstance(lead, dict):
+            problems.append(f"lead {i}: must be an object")
+            continue
+        for f in LEAD_FIELDS:
+            if not str(lead.get(f, "")).strip():
+                problems.append(f"lead {i}: missing {f}")
+        if not str(lead.get("url", "")).startswith(("http://", "https://")):
+            problems.append(f"lead {i}: url must be http(s)")
+        bad = [f for f in LEAD_FORBIDDEN if f in lead]
+        if bad:
+            problems.append(f"lead {i}: leads must not carry values ({bad}); retrieve the document instead")
     return problems
 
 

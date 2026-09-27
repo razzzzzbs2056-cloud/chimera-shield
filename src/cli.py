@@ -216,6 +216,16 @@ def cmd_validate_finding(args) -> int:
     return 1 if problems else 0
 
 
+def cmd_leads(args) -> int:
+    from src.research.leads import collect_leads, fetch_leads
+    data = fetch_leads() if args.fetch else collect_leads()
+    counts = {}
+    for lead in data["leads"]:
+        counts[lead["status"]] = counts.get(lead["status"], 0) + 1
+    print(f"{len(data['leads'])} source leads: {counts}")
+    return 0
+
+
 def cmd_first_run(args) -> int:
     steps = [
         ("generate", lambda: cmd_generate(argparse.Namespace(check=False))),
@@ -255,6 +265,7 @@ def main(argv: list[str] | None = None) -> int:
         p = sp.add_parser(name); p.add_argument("id"); p.set_defaults(fn=fn)
     c = sp.add_parser("complete"); c.add_argument("id"); c.add_argument("file"); c.set_defaults(fn=cmd_complete)
     v = sp.add_parser("validate-finding"); v.add_argument("file"); v.set_defaults(fn=cmd_validate_finding)
+    ld = sp.add_parser("leads"); ld.add_argument("--fetch", action="store_true"); ld.set_defaults(fn=cmd_leads)
     f = sp.add_parser("first-run"); f.add_argument("--offline", action="store_true"); f.set_defaults(fn=cmd_first_run)
     args = ap.parse_args(argv)
     return args.fn(args)

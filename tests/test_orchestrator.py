@@ -78,3 +78,32 @@ def test_fact_without_evidence_rejected(tmp_path):
 def test_missing_specific_field_rejected(tmp_path):
     assert any("opportunity_cost_table" in p
                for p in validate_finding(_finding(specific={}), ObservationStore(tmp_path / "o.jsonl")))
+
+
+def test_source_leads_validated(tmp_path):
+    store = ObservationStore(tmp_path / "o.jsonl")
+    good = {"url": "https://example.invalid/r.pdf", "title": "T", "publisher": "P", "contains": "table 1"}
+    assert validate_finding(_finding(source_leads=[good]), store) == []
+    bad = dict(good, value=5.0)
+    assert any("must not carry values" in p for p in validate_finding(_finding(source_leads=[bad]), store))
+    assert any("url" in p for p in validate_finding(_finding(source_leads=[dict(good, url="ftp://x")]), store))
+
+
+def test_collect_and_fetch_leads(tmp_path):
+    import json
+    from src.data.ingest import DataUnavailable
+    from src.research.leads import collect_leads, fetch_leads
+    d = tmp_path / "findings" / "05"
+    d.mkdir(parents=True)
+    lead = {"url": "https://example.invalid/r.pdf", "title": "T", "publisher": "P", "contains": "table 1"}
+    (d / "05A-t.json").write_text(json.dumps(_finding(subagent_id="05A", source_leads=[lead])))
+    (d / "05C-t.json").write_text(json.dumps(_finding(subagent_id="05C", source_leads=[lead])))
+    out = tmp_path / "leads.json"
+    data = collect_leads(tmp_path / "findings", out)
+    assert len(data["leads"]) == 1 and data["leads"][0]["found_by"] == ["05A", "05C"]
+
+    def blocked(url):
+        raise DataUnavailable("blocked")
+    assert fetch_leads(out, getter=blocked)["leads"][0]["status"] == "unavailable"
+    ok = fetch_leads(out, getter=lambda url: b"%PDF", data_dir=tmp_path / "data", root=tmp_path)
+    assert ok["leads"][0]["status"] == "fetched" and ok["leads"][0]["raw_sha256"]
