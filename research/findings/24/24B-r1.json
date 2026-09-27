@@ -108,7 +108,7 @@
     "Seismic design requirements (Nepal National Building Code) for Tier III facilities not located.",
     "Semiconductor supply and export-control documents (X27) not located in r1; 19B holds primary responsibility.",
     "Peer-reviewed data-centre water-use review (Lei, Lu, Shehabi, Masanet 2025, Resources, Conservation and Recycling) identified by citation only; URL not located.",
-    "units.py lacks TWh, Mbit/s and USD_per_kWh units; values will be stored as GWh and pending unit additions."
+    "units.py has GWh and NPR_per_kWh/USD_per_kWh but no TWh or bandwidth (Mbit/s) unit; IEA values will be stored as GWh; bandwidth needs a unit addition."
   ],
   "assumptions": [
     {
@@ -133,7 +133,7 @@
     },
     {
       "to": "00A",
-      "text": "Add unit codes for TWh (or accept GWh), Mbit/s and tariff units (USD_per_kWh / NPR_per_kWh); add catalog ids for Nepal Telecommunications Authority and Electricity Regulatory Commission."
+      "text": "Add a bandwidth unit code (Mbit/s or Gbit/s); IEA TWh values will be stored as GWh; add catalog ids for Nepal Telecommunications Authority and Electricity Regulatory Commission."
     },
     {
       "to": "28",
