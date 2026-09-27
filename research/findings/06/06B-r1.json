@@ -1,0 +1,460 @@
+{
+ "subagent_id": "06B",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked). All empirical items are PENDING. Q1 is designed as a two-definition comparison: the administrative urban share from Census 2021 by local-level type (post-2017 restructuring, which classifies extensive rural areas as municipal) versus a functional grid-based share from GHSL Degree of Urbanisation (with WorldPop cross-check), plus the UN WUP/WDI series with the 2017 definitional break flagged. Q2 builds a service-gap table (piped water, sanitation, solid waste; scheme functionality) by municipality type from Census 2021 household tables, NDHS 2022, JMP and NWASH, keeping census counts, survey estimates and JMP modelled ladders separate. Q3 measures 2011-2021 secondary-city growth on harmonised boundaries (2011 VDC to 2017 local-level concordance) and flags hazard exposure with 13A. Solid-waste coverage lacks any located municipal-level source. 21 source leads (11 reused from the shared register or catalog, 10 new general-knowledge URLs flagged unverified).",
+ "findings": [
+  {
+   "claim": "Q1: Urban population share under the current (post-2017) administrative classification: population of metropolitan, sub-metropolitan and municipalities as share of total, Census 2021.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "note": "Census 2021 by local-level type. Administrative definition since 2017 restructuring classifies large rural areas inside municipal boundaries as 'urban'. Leads: 06B-L01, 06B-L02",
+   "period": "Census 2021 (enumeration Nov-Dec 2021; Nepal FY2078/79)",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q1: Urban population share under a functional definition (GHSL Degree of Urbanisation: urban centres + urban clusters) applied to 2020/2025 epochs.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "note": "Grid-based; not comparable with administrative share; report both. Leads: 06B-L08, 06B-L21",
+   "period": "GHSL epochs 2020, 2025 (calendar)",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q1: Urban share series from UN WUP / WDI (national definition, calendar year) for trend and to document the 2017 definitional break.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "un_wpp",
+    "wb_wdi"
+   ],
+   "note": "WUP adopts national definitions; the post-2017 reclassification creates a structural break; do not interpret as migration. Leads: 06B-L05, 06B-L07",
+   "period": "1990-latest (calendar)",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q2: Household access to piped water on premises, improved sanitation (toilet type) and waste disposal method by local-level type (metro/sub-metro/municipality/rural municipality).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal",
+    "dhs"
+   ],
+   "note": "Census 2021 household tables; NDHS 2022 by residence as cross-check (NDHS 'urban' uses municipal classification). Leads: 06B-L01, 06B-L02, 06B-L09, 06B-L10",
+   "period": "Census 2021; NDHS 2022",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q2: JMP service ladders (safely managed/basic) for water and sanitation, urban vs rural.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "note": "JMP modelled from surveys; calendar year; do not mix with census counts. Leads: 06B-L11",
+   "period": "2000-latest (calendar)",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q2: Functionality of water supply schemes and municipal solid waste collection coverage by local level.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "note": "NWASH inventory and DWSSM reports; solid waste collection coverage requires a municipal survey (none located). Leads: 06B-L12, 06B-L13",
+   "period": "latest available",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q2: Municipal capital investment need and fiscal capacity for urban services (investment plan cost vs own revenue and transfers).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nnrfc",
+    "adb_nepal",
+    "aiib"
+   ],
+   "note": "Link to 11C (fiscal federalism). Leads: 06B-L14, 06B-L15, 06B-L16, 06B-L19",
+   "period": "latest",
+   "unit": "NPR_current_mn"
+  },
+  {
+   "claim": "Q3: Population growth 2011-2021 of secondary cities (sub-metropolitan and major municipalities outside Kathmandu Valley) on harmonised boundaries.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "note": "Requires concordance of 2011 VDCs/municipalities to 2017 local levels; report both administrative and functional (GHSL/WorldPop) growth. Leads: 06B-L01, 06B-L04, 06B-L08, 06B-L21",
+   "period": "2011-2021 census interval",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q3: Hazard exposure (flood/landslide class) of the fastest-growing secondary cities.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "thinkhazard"
+   ],
+   "note": "Overlay with 13A. Leads: 06B-L20",
+   "period": "latest",
+   "unit": "count"
+  },
+  {
+   "claim": "06B-A1: Growth is annualised as compound annual rate over the census interval using exact enumeration dates.",
+   "type": "assumption",
+   "value": null,
+   "note": "Method assumption; no value."
+  },
+  {
+   "claim": "06B-A2: 'Secondary city' = sub-metropolitan cities and municipalities with a functional urban centre outside the Kathmandu Valley; list fixed after functional delineation.",
+   "type": "assumption",
+   "value": null,
+   "note": "Definition assumption for r2."
+  }
+ ],
+ "data_gaps": [
+  "Census 2021 household amenities tables by local level (download blocked).",
+  "Concordance of 2011 VDC/municipal units to 2017 local levels (NSO or academic; none located).",
+  "Municipal solid waste collection coverage survey (no lead).",
+  "GHSL Degree of Urbanisation applied to Nepal local-level boundaries (to compute; requires local-level boundary shapefile from Survey Department/NSO).",
+  "Municipal infrastructure investment plans and costs (DUDBC/ADB/AIIB project documents)."
+ ],
+ "assumptions": [
+  {
+   "id": "06B-A1",
+   "text": "Compound annual growth on exact census dates.",
+   "basis": "assumption"
+  },
+  {
+   "id": "06B-A2",
+   "text": "Secondary city definition as stated in findings.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "10C",
+   "text": "Demographic projections that use the administrative urban share inherit the 2017 reclassification break; please carry both administrative and functional urban shares or document which is used."
+  },
+  {
+   "to": "11C",
+   "text": "Municipal service gaps must be matched to local-level fiscal capacity; please share the transfer and own-source revenue series by local-level type so 06B does not re-extract them."
+  },
+  {
+   "to": "13A",
+   "text": "Secondary-city hazard exposure uses the same ThinkHazard/BIPAD overlay; request a single shared overlay run with population by local level."
+  }
+ ],
+ "uncertainty": "No values in r1. Largest uncertainty is definitional: the administrative urban share and a functional share can differ greatly for Nepal because of post-2017 municipal boundaries; growth rates depend on boundary harmonisation; service coverage differs by source type (census self-report, survey, JMP modelled, NWASH inventory). Solid waste coverage is currently unmeasurable from located sources.",
+ "specific": {
+  "urbanisation_profile": {
+   "status": "pending",
+   "definitions": [
+    {
+     "definition": "administrative (Census 2021 by local-level type)",
+     "unit": "percent",
+     "lead_ids": [
+      "06B-L01",
+      "06B-L02"
+     ]
+    },
+    {
+     "definition": "functional (GHSL Degree of Urbanisation; WorldPop cross-check)",
+     "unit": "percent",
+     "lead_ids": [
+      "06B-L08",
+      "06B-L21"
+     ]
+    },
+    {
+     "definition": "UN WUP / WDI national-definition series",
+     "unit": "percent",
+     "lead_ids": [
+      "06B-L05",
+      "06B-L07"
+     ],
+     "note": "2017 structural break"
+    }
+   ],
+   "method": "report both; never splice; period Census 2021 vs calendar-year international series"
+  },
+  "service_gap_table": {
+   "status": "pending",
+   "rows": [
+    "metropolitan",
+    "sub-metropolitan",
+    "municipality",
+    "rural municipality"
+   ],
+   "columns": [
+    {
+     "service": "piped water on premises",
+     "unit": "percent",
+     "lead_ids": [
+      "06B-L01",
+      "06B-L09"
+     ]
+    },
+    {
+     "service": "improved/safely managed sanitation",
+     "unit": "percent",
+     "lead_ids": [
+      "06B-L01",
+      "06B-L09",
+      "06B-L11"
+     ]
+    },
+    {
+     "service": "solid waste collection",
+     "unit": "percent",
+     "lead_ids": [],
+     "note": "no source located"
+    },
+    {
+     "service": "water scheme functionality",
+     "unit": "percent",
+     "lead_ids": [
+      "06B-L12",
+      "06B-L13"
+     ]
+    },
+    {
+     "service": "investment need vs fiscal capacity",
+     "unit": "NPR_current_mn",
+     "lead_ids": [
+      "06B-L14",
+      "06B-L15",
+      "06B-L16",
+      "06B-L19"
+     ]
+    }
+   ]
+  },
+  "secondary_city_growth": {
+   "status": "pending",
+   "method": "2011-2021 compound growth on harmonised boundaries; functional-area growth from GHSL/WorldPop; hazard flag via 13A overlay",
+   "unit": "percent",
+   "lead_ids": [
+    "06B-L01",
+    "06B-L04",
+    "06B-L08",
+    "06B-L20",
+    "06B-L21"
+   ]
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "06B-L01",
+   "url": "https://censusnepal.cbs.gov.np/results",
+   "title": "NPHC 2021 results portal",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Census 2021 population and households by local level (metropolitan, sub-metropolitan, municipality, rural municipality), province and district; household amenities tables. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (10C,14B)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L02",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+   "title": "National Population and Housing Census 2021 - related materials (thematic reports)",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Thematic reports incl. urbanisation/housing and household amenities (drinking water source, toilet type, cooking fuel, lighting) by local-level type; census questionnaire and definitions. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L03",
+   "url": "https://www.democracyresource.org/wp-content/uploads/2021/07/Nepal-Population-and-Housing-Census-2021_28January2022-1.pdf",
+   "title": "Nepal Population and Housing Census 2021 (preliminary report copy)",
+   "publisher": "Democracy Resource Center Nepal (hosting NSO document)",
+   "source_id": "academic",
+   "contains": "Mirror of preliminary census 2021 report; use only to locate tables; final results from NSO take precedence. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L04",
+   "url": "https://nsonepal.gov.np",
+   "title": "NSO - Census 2011 National Report and Village Development Committee/Municipality tables",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Census 2011 population by VDC/municipality for 2011-2021 growth after boundary harmonisation. Specific document path URL from general knowledge — unverified",
+   "provenance": "catalog + general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L05",
+   "url": "https://population.un.org/wup/",
+   "title": "World Urbanization Prospects (latest revision)",
+   "publisher": "UN DESA Population Division",
+   "source_id": null,
+   "contains": "Urban population share (national definition) and urban agglomeration series for Nepal (calendar year, national definition). Separate from WPP; catalog has no wup id. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L06",
+   "url": "https://population.un.org/wpp/",
+   "title": "UN World Population Prospects (latest revision)",
+   "publisher": "UN DESA Population Division",
+   "source_id": "un_wpp",
+   "contains": "National population totals for denominators and projection consistency (calendar year). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L07",
+   "url": "https://api.worldbank.org/v2/country/NPL/indicator/SP.URB.TOTL.IN.ZS?format=json&per_page=200",
+   "title": "WDI API: Urban population (% of total population), Nepal",
+   "publisher": "World Bank",
+   "source_id": "wb_wdi",
+   "contains": "WDI urban share (derived from UN WUP, national definition), calendar year. Endpoint pattern follows register leads for other WDI series; this indicator URL URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L08",
+   "url": "https://ghsl.jrc.ec.europa.eu/",
+   "title": "Global Human Settlement Layer - Degree of Urbanisation (GHS-SMOD, GHS-POP, GHS-UCDB)",
+   "publisher": "European Commission Joint Research Centre",
+   "source_id": null,
+   "contains": "Functional (grid-based) urban classification: urban centres, urban clusters, rural grid cells, by epoch; applied to Nepal local-level boundaries. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L09",
+   "url": "https://dhsprogram.com/publications/publication-FR379-DHS-Final-Reports.cfm",
+   "title": "Nepal Demographic and Health Survey 2022 - Final Report",
+   "publisher": "ICF / MoHP Nepal",
+   "source_id": "dhs",
+   "contains": "Household drinking water, sanitation and handwashing by urban/rural (NDHS urban = municipalities) and province. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L10",
+   "url": "https://www.statcompiler.com",
+   "title": "DHS STATcompiler",
+   "publisher": "ICF",
+   "source_id": "dhs",
+   "contains": "NDHS indicators by residence and province, 2001-2022, for trends. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L11",
+   "url": "https://washdata.org/data/household",
+   "title": "WHO/UNICEF JMP household WASH estimates",
+   "publisher": "WHO/UNICEF Joint Monitoring Programme",
+   "source_id": null,
+   "contains": "Safely managed / basic water and sanitation service ladders, urban vs rural, Nepal (calendar year). URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L12",
+   "url": "https://www.nwash.gov.np",
+   "title": "National WASH Management Information System (NWASH)",
+   "publisher": "Ministry of Water Supply / DWSSM, Nepal",
+   "source_id": null,
+   "contains": "Water supply scheme inventory and functionality by local level; coverage by local-level type. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L13",
+   "url": "https://www.dwssm.gov.np",
+   "title": "Department of Water Supply and Sewerage Management, Nepal",
+   "publisher": "DWSSM, Nepal",
+   "source_id": null,
+   "contains": "Sector status reports, urban water supply and sewerage coverage, scheme lists incl. Melamchi-dependent Kathmandu Valley service. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L14",
+   "url": "https://www.dudbc.gov.np",
+   "title": "Department of Urban Development and Building Construction, Nepal",
+   "publisher": "DUDBC, Nepal",
+   "source_id": null,
+   "contains": "National Urban Development Strategy (NUDS 2017), urban infrastructure investment plans, new town projects. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L15",
+   "url": "https://www.aiib.org/en/projects/details/2017/special-fund/Nepal-Urban-Infrastructure-Investment-Project.html",
+   "title": "Nepal: Urban Infrastructure Investment Project (Project Preparation Special Fund)",
+   "publisher": "AIIB",
+   "source_id": "aiib",
+   "contains": "Project preparation document with municipal infrastructure baseline for participating municipalities. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (26A)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L16",
+   "url": "https://www.adb.org/sites/default/files/linked-documents/cps-nep-2025-2029-ld.pdf",
+   "title": "Annex 7 to CPS Nepal 2025-2029 (list of linked documents)",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Index to urban sector assessment summary for CPS 2025-2029 (urban water, sanitation, solid waste). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L17",
+   "url": "https://documents1.worldbank.org/curated/en/503181593615554741/pdf/Nepal-Capacity-Needs-Assessment-for-the-Transition-to-Federalism.pdf",
+   "title": "Nepal Capacity Needs Assessment for the Transition to Federalism",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Municipal capacity (staffing, engineering, planning) by local-level type - relevant to service delivery gaps. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L18",
+   "url": "https://lpr.adb.org/sites/default/files/resource/657/nepal-local-governance-act.pdf",
+   "title": "Local Government Operation Act 2074 (English)",
+   "publisher": "Government of Nepal (ADB law portal copy)",
+   "source_id": null,
+   "contains": "Legal responsibilities of municipalities for water, sanitation, solid waste, local roads and urban planning. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L19",
+   "url": "https://nnrfc.gov.np",
+   "title": "National Natural Resources and Fiscal Commission",
+   "publisher": "NNRFC, Nepal",
+   "source_id": "nnrfc",
+   "contains": "Fiscal equalisation grant formula incl. infrastructure/service indicators by local level. Catalog URL URL from general knowledge — unverified",
+   "provenance": "catalog",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L20",
+   "url": "https://thinkhazard.org/en/report/175-nepal/FL",
+   "title": "ThinkHazard - Nepal - River flood",
+   "publisher": "GFDRR",
+   "source_id": "thinkhazard",
+   "contains": "Flood hazard classes to flag hazard exposure of fast-growing secondary cities (with 13A). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06B-L21",
+   "url": "https://www.worldpop.org",
+   "title": "WorldPop gridded population (Nepal)",
+   "publisher": "WorldPop, University of Southampton",
+   "source_id": null,
+   "contains": "Gridded population by year for functional-area delineation and growth cross-check against census. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  }
+ ]
+}

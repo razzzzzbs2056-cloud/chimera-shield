@@ -1,0 +1,651 @@
+{
+ "subagent_id": "06A",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used for 06C). All empirical items are PENDING. Q1 (strategic road network length and condition) depends on Department of Roads SSRN statistics (lead, general-knowledge URL) with ADB/World Bank transport assessments as cross-checks; local roads are kept separate because of post-2017 jurisdiction changes. Q2 (door-to-port time and cost to Kolkata/Haldia and Visakhapatnam) is set up as an inland-leg decomposition aligned with 05C and 21B, using NIRTTP project documents, ICRIER, NITDB dry-port data and LPI (survey-based; kept separate from transaction-based times). Q3 (railway links) is set up as a stage register for six links, populated only from official sources; the reported 2026 Kolkata-Biratnagar rail cargo start is an unverified press pointer. The reported 2026 flood damage to Trishuli-basin infrastructure (Rasuwagadhi-Kerung corridor) is recorded as an unverified event without numbers. 24 source leads (16 reused from the shared register, 8 new general-knowledge URLs flagged unverified).",
+ "findings": [
+  {
+   "claim": "Q1: Strategic Road Network (SRN) length by pavement type (blacktopped, gravel, earthen) and by province, latest SSRN edition and prior editions (trend).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_npl",
+    "adb_nepal"
+   ],
+   "note": "DoR SSRN statistics are the primary source; ADB/WB transport assessments as cross-check. Lengths are recorded in kilometres in the source; units.py has no length unit code, so values will be stored per link-class and flagged (see data_gaps); the finding unit here is the count of SRN links/highways until a length unit exists. Leads: 06A-L01, 06A-L10, 06A-L11",
+   "period": "latest SSRN edition (Nepal FY) and earlier editions",
+   "unit": "count"
+  },
+  {
+   "claim": "Q1: SRN condition distribution (good/fair/poor/bad share of network length) and measurement method (IRI survey vs visual).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "adb_nepal",
+    "wb_npl"
+   ],
+   "note": "Record condition method and survey year; do not splice IRI-based and visual classes. Leads: 06A-L01, 06A-L10",
+   "period": "latest SSRN edition",
+   "unit": "percent"
+  },
+  {
+   "claim": "Q1: Local road network (provincial and local-level roads) length and surface type after federalisation.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_npl"
+   ],
+   "note": "Local roads moved to provincial/local jurisdiction after 2017; inventories (DoLI, provincial ministries) have separate definitions; keep separate from SRN. Leads: 06A-L02",
+   "period": "latest available",
+   "unit": "count"
+  },
+  {
+   "claim": "Q1: Bridge inventory on SRN (count, condition, bridges under construction/stalled).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [],
+   "note": "DoR bridge statistics; stalled bridge contracts link to 06C lag distribution. Leads: 06A-L01",
+   "period": "latest SSRN edition",
+   "unit": "count"
+  },
+  {
+   "claim": "Q1: Share of SRN links in high landslide/flood hazard classes and annual count of road-blockage incidents on SRN.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "thinkhazard",
+    "ndrrma"
+   ],
+   "note": "GIS overlay of DoR SRN layer with ThinkHazard and BIPAD incidents; method shared with 13A (exposed_assets). Leads: 06A-L01, 06A-L21, 06A-L23",
+   "period": "latest; incidents FY2015/16 onward",
+   "unit": "count"
+  },
+  {
+   "claim": "Q2: Door-to-port transit time, Kolkata/Haldia to Birgunj ICD (rail) and to Biratnagar (road; rail since reported 2026 service), import TEU.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_npl",
+    "nitdb",
+    "academic"
+   ],
+   "note": "Transaction-based measures (time-release, NIRTTP monitoring) kept separate from LPI survey-based measures. Leads: 06A-L08, 06A-L09, 06A-L13, 06A-L04, 06A-L16",
+   "period": "latest available survey year; state calendar vs Nepal FY",
+   "unit": "days"
+  },
+  {
+   "claim": "Q2: Door-to-port transport cost per TEU on Kolkata/Haldia routes (inland leg: port handling, rail/road haulage, transit documentation, border clearance).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_npl",
+    "nitdb",
+    "academic"
+   ],
+   "note": "Component definitions follow 05C cost_disadvantage_estimates; ocean leg owned by 21B/05C. Leads: 06A-L08, 06A-L13, 06A-L04",
+   "period": "latest available",
+   "unit": "USD_per_TEU"
+  },
+  {
+   "claim": "Q2: Door-to-port time and cost via Visakhapatnam (rail to Birgunj ICD).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "academic",
+    "nitdb"
+   ],
+   "note": "Legal basis: letter of exchange to Treaty of Transit (to retrieve). Leads: 06A-L13, 06A-L14, 06A-L04",
+   "period": "latest available",
+   "unit": "USD_per_TEU"
+  },
+  {
+   "claim": "Q2: Dry-port/ICD throughput by facility (TEU and trucks), Nepal FY series.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nitdb"
+   ],
+   "note": "NITDB annual reports; distinguish rail-borne vs road-borne TEU. Leads: 06A-L04, 06A-L05",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "count"
+  },
+  {
+   "claim": "Q2: LPI overall score and components for Nepal by edition, and whether Nepal has 2023 KPI (dwell-time) data.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "wb_lpi"
+   ],
+   "note": "LPI 2023 changed methodology; editions are not strictly comparable; survey-based. Leads: 06A-L06, 06A-L07",
+   "period": "LPI editions 2007-2023 (calendar year)",
+   "unit": "index"
+  },
+  {
+   "claim": "Q3: Status of announced railway links (Jaynagar-Kurtha-Bijalpura, Jogbani-Biratnagar, Raxaul-Kathmandu, Kerung-Kathmandu, East-West Electric Railway, Kolkata-Biratnagar freight service): stage (concept / feasibility / DPR / financing / construction / operational), financier, last official status date.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "pib_india",
+    "mofa_nepal"
+   ],
+   "note": "Official status only from DoRW, MoPIT, PIB/MEA, MoFA; press items recorded as unverified pointers. Leads: 06A-L03, 06A-L15, 06A-L16, 06A-L17",
+   "period": "as of latest official document",
+   "unit": "count"
+  },
+  {
+   "claim": "Aviation: airport capacity and utilisation for TIA, Gautam Buddha (Bhairahawa) and Pokhara International airports (passengers and cargo movements).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "caan"
+   ],
+   "note": "CAAN Civil Aviation Report; cross-check tourism ministry. Leads: 06A-L18",
+   "period": "FY2018/19-FY2025/26",
+   "unit": "count"
+  },
+  {
+   "claim": "Reported 2026 flood damage to Trishuli-basin transport infrastructure (Rasuwagadhi-Kerung corridor, Pasang Lhamu/Galchhi-Rasuwagadhi road, bridges): UNVERIFIED event; extent, dates and closure duration to be confirmed from DoR, BIPAD, customs border-point data and ICIMOD.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "icimod",
+    "ndrrma",
+    "customs_nepal"
+   ],
+   "note": "No numbers recorded. Not to be used as a scenario calibration point until confirmed by primary records. Leads: 06A-L22, 06A-L23, 06A-L19",
+   "period": "2026 (calendar); FY2082/83-FY2083/84 (Nepal FY)"
+  },
+  {
+   "claim": "06A-A1: Door-to-port measures use a reference shipment of one import TEU from an East Asian hub to Birgunj ICD, consistent with 21B and 05C.",
+   "type": "assumption",
+   "value": null,
+   "note": "Assumption for comparability; no value."
+  },
+  {
+   "claim": "06A-A2: Physical network values (lengths) will be stored as observations with source units recorded in metadata until a length unit code is added to units.py.",
+   "type": "assumption",
+   "value": null,
+   "note": "Platform limitation; see challenge to 00A."
+  }
+ ],
+ "data_gaps": [
+  "DoR SSRN statistics (all editions) - road length by pavement type, province, condition method; no register lead existed before r1.",
+  "Transaction-based time-release study for Birgunj/Biratnagar (none located; 04A also reports gap).",
+  "Per-TEU inland haulage and handling tariffs (rail container operator tariffs, trucking rates) by route and year.",
+  "NITDB annual throughput by ICD, rail vs road.",
+  "Official status documents for Raxaul-Kathmandu and Kerung-Kathmandu railways (DPR/feasibility dates).",
+  "Length unit (km) is absent from src/economic_model/units.py; road/rail length observations cannot be typed yet.",
+  "Primary records (DoR, BIPAD, customs) of the reported 2026 Trishuli-basin flood damage."
+ ],
+ "assumptions": [
+  {
+   "id": "06A-A1",
+   "text": "Reference shipment: one import TEU East Asian hub -> Birgunj ICD, shared with 21B/05C.",
+   "basis": "assumption"
+  },
+  {
+   "id": "06A-A2",
+   "text": "Lengths stored with source units in metadata until units.py supports length.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "00A",
+   "text": "units.py lacks a length unit (km); road, rail and transmission-line lengths (06A, 05A, 13A) cannot be recorded with a valid unit code. Request a 'km' unit in a new 'length' dimension via the catalog/config owners."
+  },
+  {
+   "to": "21B",
+   "text": "Route cost ownership: 06A records the inland (port-to-ICD) leg and physical constraints; 21B owns the route matrix incl. ocean leg. Please reference 06A-L08/L13 components rather than re-deriving them to avoid double counting."
+  },
+  {
+   "to": "13A",
+   "text": "Lead 06A-L01 (DoR SSRN) supplies the 'Department of Roads SRN layer (no lead yet)' needed in 13A exposed_assets; GIS layer availability still to confirm."
+  },
+  {
+   "to": "05C",
+   "text": "The Kolkata-Biratnagar rail service (reported July 2026) should remain a scenario hook, not a baseline change, until confirmed by NITDB/customs traffic records."
+  }
+ ],
+ "uncertainty": "Entirely unquantified in r1. Main uncertainties: (i) road condition data vintage and method (IRI vs visual) may differ between DoR and donor assessments; (ii) door-to-port costs vary strongly by season, direction (import vs empty return) and mode, and survey-based LPI measures are not comparable with transaction data; (iii) rail project status changes with bilateral announcements that are frequently not followed by financing; (iv) 2026 flood damage in the Trishuli basin is unverified.",
+ "specific": {
+  "network_baseline": {
+   "status": "pending",
+   "components": [
+    {
+     "item": "SRN length by surface type and province",
+     "unit_note": "kilometres in source; stored with metadata until length unit exists",
+     "lead_ids": [
+      "06A-L01"
+     ]
+    },
+    {
+     "item": "SRN condition distribution",
+     "unit": "percent",
+     "method": "share of length by condition class; record IRI thresholds or visual method",
+     "lead_ids": [
+      "06A-L01",
+      "06A-L10"
+     ]
+    },
+    {
+     "item": "local/provincial roads",
+     "unit_note": "kilometres",
+     "lead_ids": [
+      "06A-L02"
+     ]
+    },
+    {
+     "item": "bridges",
+     "unit": "count",
+     "lead_ids": [
+      "06A-L01"
+     ]
+    },
+    {
+     "item": "hazard exposure of SRN links",
+     "unit": "count",
+     "method": "overlay with ThinkHazard and BIPAD incidents (with 13A)",
+     "lead_ids": [
+      "06A-L21",
+      "06A-L23"
+     ]
+    },
+    {
+     "item": "airports: capacity and traffic",
+     "unit": "count",
+     "lead_ids": [
+      "06A-L18"
+     ]
+    },
+    {
+     "item": "ICD/dry ports: throughput",
+     "unit": "count",
+     "lead_ids": [
+      "06A-L04",
+      "06A-L05"
+     ]
+    }
+   ],
+   "period": "latest editions, Nepal FY"
+  },
+  "trade_cost_estimates": {
+   "status": "pending",
+   "reference_shipment": "import TEU, East Asian hub -> Birgunj ICD",
+   "routes": [
+    {
+     "route": "Kolkata/Haldia - rail - Birgunj ICD",
+     "time_unit": "days",
+     "cost_unit": "USD_per_TEU",
+     "lead_ids": [
+      "06A-L08",
+      "06A-L09",
+      "06A-L13"
+     ],
+     "status": "pending"
+    },
+    {
+     "route": "Kolkata/Haldia - road - Biratnagar/Birgunj",
+     "time_unit": "days",
+     "cost_unit": "USD_per_TEU",
+     "lead_ids": [
+      "06A-L08",
+      "06A-L13"
+     ],
+     "status": "pending"
+    },
+    {
+     "route": "Kolkata - rail - Biratnagar (reported 2026 service, unverified)",
+     "lead_ids": [
+      "06A-L16",
+      "06A-L15"
+     ],
+     "status": "pending"
+    },
+    {
+     "route": "Visakhapatnam - rail - Birgunj ICD",
+     "time_unit": "days",
+     "cost_unit": "USD_per_TEU",
+     "lead_ids": [
+      "06A-L13",
+      "06A-L14"
+     ],
+     "status": "pending"
+    }
+   ],
+   "components": [
+    "port handling",
+    "transit documentation/ECTS and bonds",
+    "rail or road haulage",
+    "border and ICD clearance",
+    "inland haulage ICD to consignee",
+    "time and variance of time"
+   ],
+   "survey_measures": {
+    "indicator": "LPI overall and components",
+    "unit": "index",
+    "lead_ids": [
+     "06A-L06",
+     "06A-L07"
+    ],
+    "note": "survey-based; not combined with transaction data"
+   },
+   "method": "inland-leg decomposition consistent with 05C cost_disadvantage_estimates and 21B route_cost_comparison; calendar-year international data converted to Nepal FY only where it enters the model"
+  },
+  "rail_project_status": {
+   "status": "pending",
+   "stage_scale": [
+    "concept",
+    "feasibility",
+    "DPR",
+    "financing agreed",
+    "construction",
+    "operational"
+   ],
+   "links": [
+    {
+     "link": "Jaynagar-Kurtha-Bijalpura",
+     "lead_ids": [
+      "06A-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "link": "Jogbani-Biratnagar (and Kolkata-Biratnagar freight)",
+     "lead_ids": [
+      "06A-L03",
+      "06A-L15",
+      "06A-L16"
+     ],
+     "status": "pending"
+    },
+    {
+     "link": "Raxaul-Kathmandu",
+     "lead_ids": [
+      "06A-L03"
+     ],
+     "status": "pending"
+    },
+    {
+     "link": "Kerung-Kathmandu",
+     "lead_ids": [
+      "06A-L03",
+      "06A-L17"
+     ],
+     "status": "pending"
+    },
+    {
+     "link": "East-West Electric Railway",
+     "lead_ids": [
+      "06A-L03",
+      "06A-L02"
+     ],
+     "status": "pending"
+    },
+    {
+     "link": "Birgunj ICD rail connection (operational baseline)",
+     "lead_ids": [
+      "06A-L04",
+      "06A-L08"
+     ],
+     "status": "pending"
+    }
+   ],
+   "rule": "stage recorded only from official documents (DoRW, MoPIT, PIB/MEA, MoFA); press reports recorded as unverified pointers; feeds 06C approval-lag records"
+  },
+  "unverified_events": [
+   {
+    "event": "Reported 2026 flood damage to Trishuli-basin (Bhote Koshi-Trishuli, Rasuwagadhi-Kerung) transport infrastructure",
+    "status": "unverified",
+    "numbers": "none recorded",
+    "lead_ids": [
+     "06A-L22",
+     "06A-L23",
+     "06A-L19"
+    ]
+   }
+  ]
+ },
+ "source_leads": [
+  {
+   "lead_id": "06A-L01",
+   "url": "https://dor.gov.np",
+   "title": "Department of Roads, Nepal - publications (Statistics of Strategic Road Network, SSRN; Road Network Data)",
+   "publisher": "Department of Roads, Ministry of Physical Infrastructure and Transport, Nepal",
+   "source_id": null,
+   "contains": "SSRN statistics: strategic road network length by pavement type (blacktop, gravel, earthen), by province and highway/feeder class; condition classes (good/fair/poor/bad by IRI or visual survey); bridge inventory; editions by Nepal FY. Catalog lacks a dor_nepal id. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L02",
+   "url": "https://www.mopit.gov.np",
+   "title": "Ministry of Physical Infrastructure and Transport, Nepal - annual progress and national pride project status",
+   "publisher": "Ministry of Physical Infrastructure and Transport, Nepal",
+   "source_id": null,
+   "contains": "Annual progress reports for roads, railways, national pride transport projects (Mid-Hill, Postal/Hulaki, Kathmandu-Terai Expressway, Kaligandaki corridor), budget vs physical progress, Nepal FY. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L03",
+   "url": "https://dorw.gov.np",
+   "title": "Department of Railways, Nepal - project status (East-West railway, Jaynagar-Kurtha-Bijalpura, Raxaul-Kathmandu, Kerung-Kathmandu)",
+   "publisher": "Department of Railways, Nepal",
+   "source_id": null,
+   "contains": "Rail project status: alignment, DPR/feasibility stage, financier, track constructed and operational sections, traffic on Jaynagar-Kurtha. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L04",
+   "url": "https://nitdb.gov.np",
+   "title": "Nepal Intermodal Transport Development Board",
+   "publisher": "Nepal Intermodal Transport Development Board",
+   "source_id": "nitdb",
+   "contains": "ICD/dry-port throughput (TEU, wagons, trucks) for Birgunj ICD, Biratnagar, Bhairahawa, Kakarbhitta, Tatopani, Rasuwagadhi (Timure), Chobhar; annual reports, Nepal FY. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (found_by 17B,17C,19C,04A,04B,05C,04C)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L05",
+   "url": "https://www.unescap.org/sites/default/files/6.%20Nepal.pdf",
+   "title": "Dry Ports Development in Nepal",
+   "publisher": "UNESCAP / NITDB",
+   "source_id": "nitdb",
+   "contains": "Dry-port inventory, designated ports under the Intergovernmental Agreement on Dry Ports, operating model and capacity; date of presentation to verify. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (19C,04A,05C)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L06",
+   "url": "https://lpi.worldbank.org",
+   "title": "Logistics Performance Index",
+   "publisher": "World Bank",
+   "source_id": "wb_lpi",
+   "contains": "LPI overall and six components by edition (2007-2018, 2023); 2023 KPI (dwell time, big-data) coverage of Nepal to verify. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L07",
+   "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+   "title": "Connecting to Compete 2023 (LPI 2023)",
+   "publisher": "World Bank",
+   "source_id": "wb_lpi",
+   "contains": "LPI 2023 methodology changes vs 2018 (score comparability), country table. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L08",
+   "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+   "title": "Nepal-India Regional Trade and Transport Project (NIRTTP) - project document",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Corridor baseline door-to-port time and cost Kolkata/Haldia-Birgunj/Biratnagar, border dwell times, results framework indicators (appraisal year per document). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (16A,16B,21B,04A,05C)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L09",
+   "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P144335",
+   "title": "NIRTTP project page (ISRs, ICR, restructurings)",
+   "publisher": "World Bank",
+   "source_id": "wb_npl",
+   "contains": "Implementation Status Reports and Implementation Completion Report with updated corridor time/cost indicators vs baseline. URL from general knowledge — unverified",
+   "provenance": "general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L10",
+   "url": "https://www.adb.org/sites/default/files/linked-documents/44143-01-nep-oth.pdf",
+   "title": "Subregional Transport Enhancement Project (RRP NEP 44143) - linked document",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Transport sector assessment for Nepal, SASEC corridor road condition and traffic, trade facilitation baseline. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (19C,05C,04C)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L11",
+   "url": "https://www.adb.org/countries/nepal",
+   "title": "ADB Nepal country page and project documents (SASEC road, Kathmandu-Terai, transport sector assessments)",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Transport sector assessments linked to CPS 2025-2029 and SASEC projects; road asset management data. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L12",
+   "url": "https://www.adb.org/sites/default/files/linked-documents/cps-nep-2025-2029-ld.pdf",
+   "title": "Annex 7 to CPS Nepal 2025-2029 (list of linked documents)",
+   "publisher": "Asian Development Bank",
+   "source_id": "adb_nepal",
+   "contains": "Index to sector assessment summaries incl. transport and urban for CPS 2025-2029. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L13",
+   "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+   "title": "An Analysis of Nepal's Transit through India",
+   "publisher": "ICRIER",
+   "source_id": "academic",
+   "contains": "Transit procedures, time and cost components on Kolkata/Haldia and Visakhapatnam routes; survey period to verify. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L14",
+   "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+   "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India",
+   "publisher": "TEPC Nepal",
+   "source_id": "tepc",
+   "contains": "Legal basis of transit routes, designated ports and rail access (incl. letters of exchange). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L15",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2189629",
+   "title": "India, Nepal Ink Deal to Boost Rail Trade Connectivity",
+   "publisher": "Press Information Bureau, Government of India",
+   "source_id": "pib_india",
+   "contains": "Rail transit instrument (date on release), routes covered (e.g. Jogbani-Biratnagar); status of rail freight access. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (17A,04A,04C,27A)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L16",
+   "url": "https://kathmandupost.com/money/2026/07/18/historic-kolkata-biratnagar-rail-cargo-service-begins-transit-costs-set-to-fall",
+   "title": "Historic Kolkata-Biratnagar rail cargo service begins",
+   "publisher": "The Kathmandu Post",
+   "source_id": "academic",
+   "contains": "Press report (July 2026) of start of Kolkata-Biratnagar rail cargo; event unverified until confirmed by NITDB/customs/Indian Railways records. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (19C,04A,05C,04C,16C)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L17",
+   "url": "https://mofa.gov.np/content/641/framework-for-belt-and-road-cooperation-between/",
+   "title": "Framework for Belt and Road Cooperation between Nepal and China",
+   "publisher": "Ministry of Foreign Affairs, Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "BRI framework (Dec 2024) incl. any reference to Kerung-Kathmandu railway feasibility and cross-border roads. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L18",
+   "url": "https://caanepal.gov.np",
+   "title": "Civil Aviation Authority of Nepal - Civil Aviation Report and airport statistics",
+   "publisher": "Civil Aviation Authority of Nepal",
+   "source_id": "caan",
+   "contains": "Airport inventory, passenger and cargo movements by airport (TIA, GBIA Bhairahawa, Pokhara International), Nepal FY; international route counts. Root URL from register lead caanepal.gov.np/air-transports/international; report path URL from general knowledge — unverified",
+   "provenance": "register + general knowledge",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L19",
+   "url": "https://customs.gov.np",
+   "title": "Department of Customs - foreign trade statistics by customs office",
+   "publisher": "Department of Customs, Nepal",
+   "source_id": "customs_nepal",
+   "contains": "Import/export value and quantity by customs point (Birgunj, Biratnagar, Bhairahawa, Tatopani, Rasuwa), Nepal FY and monthly; used to allocate traffic by corridor. Catalog URL URL from general knowledge — unverified",
+   "provenance": "catalog",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L20",
+   "url": "https://unctad.org/system/files/official-document/rmt2025_en.pdf",
+   "title": "Review of Maritime Transport 2025",
+   "publisher": "UNCTAD",
+   "source_id": "unctad_rmt",
+   "contains": "Ocean freight rate indices to South Asian gateways (for the ocean leg of door-to-port costs; owned by 21B/05C). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L21",
+   "url": "https://thinkhazard.org/en/report/175-nepal/LS",
+   "title": "ThinkHazard - Nepal - Landslide",
+   "publisher": "GFDRR",
+   "source_id": "thinkhazard",
+   "contains": "Landslide hazard class by district for overlay with SRN (exposure of road links, shared with 13A exposed_assets). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L22",
+   "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+   "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+   "publisher": "ICIMOD",
+   "source_id": "icimod",
+   "contains": "Event note on 2026 flood in the Bhote Koshi-Trishuli corridor (Rasuwagadhi-Kerung); affected road/border infrastructure to be confirmed from DoR/BIPAD records; no values taken. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register (17B,17E,21B)",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L23",
+   "url": "https://bipad.gov.np",
+   "title": "BIPAD Portal",
+   "publisher": "NDRRMA, Nepal",
+   "source_id": "ndrrma",
+   "contains": "Incident records incl. road blockages and bridge damage by date and location (for disruption frequency on SRN links). reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  },
+  {
+   "lead_id": "06A-L24",
+   "url": "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+   "title": "Limao and Venables (2001) Infrastructure, Geographical Disadvantage, Transport Costs, and Trade",
+   "publisher": "World Bank Economic Review",
+   "source_id": "academic",
+   "contains": "Method for decomposing landlocked transport cost into own vs transit-country infrastructure. reused from shared lead register (research/sources/source_leads.json)",
+   "provenance": "register",
+   "status": "not_fetched"
+  }
+ ]
+}
