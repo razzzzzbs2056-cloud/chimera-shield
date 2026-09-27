@@ -37,9 +37,22 @@ class ElectricityBalance:
         return self.losses_gwh / supply if supply else 0.0
 
 
+REGIMES = {
+    "export_unconstrained": "marginal GWh can be exported; opportunity cost of domestic use = export netback",
+    "spill": "export limit binding and surplus would be spilled; opportunity cost of domestic use = 0",
+    "importing": "system is importing; marginal domestic use is met by imports at landed cost",
+}
+
+
 @dataclass(frozen=True)
 class MarginalUseComparison:
-    """Value per marginal GWh, in one money unit per GWh."""
+    """Value per *marginal* GWh, in one money unit per GWh.
+
+    `domestic_value_added_per_gwh` must be a marginal (not average) value
+    added for the industry that would absorb the GWh. Capital cost of new
+    industry enters as an annualised charge per GWh. `regime` selects what
+    the domestic use displaces (see REGIMES).
+    """
 
     export_price_per_gwh: float
     export_transmission_cost_per_gwh: float
@@ -47,25 +60,49 @@ class MarginalUseComparison:
     domestic_tariff_per_gwh: float  # what the industry pays the utility
     domestic_grid_cost_per_gwh: float  # incremental distribution/reliability cost
     unit: str
+    regime: str = "export_unconstrained"
+    export_loss_factor: float = 0.0  # share of energy lost before the export metering point
+    annualised_capital_cost_per_gwh: float = 0.0  # new industrial capacity, per GWh consumed
+    import_landed_cost_per_gwh: float | None = None  # required in the "importing" regime
+
+    def __post_init__(self) -> None:
+        if self.regime not in REGIMES:
+            raise ValueError(f"regime must be one of {sorted(REGIMES)}")
+        if not 0.0 <= self.export_loss_factor < 1.0:
+            raise ValueError("export_loss_factor must be in [0, 1)")
+        if self.regime == "importing" and self.import_landed_cost_per_gwh is None:
+            raise ValueError("importing regime needs import_landed_cost_per_gwh")
 
     def export_net_value(self) -> float:
-        return self.export_price_per_gwh - self.export_transmission_cost_per_gwh
+        return self.export_price_per_gwh * (1.0 - self.export_loss_factor) - self.export_transmission_cost_per_gwh
+
+    def opportunity_cost(self) -> float:
+        """Value forgone by using the marginal GWh domestically."""
+        if self.regime == "spill":
+            return 0.0
+        if self.regime == "importing":
+            return float(self.import_landed_cost_per_gwh)
+        return self.export_net_value()
 
     def domestic_net_value(self) -> float:
         # National VA already includes the utility's revenue from the tariff (it is
-        # the industry's intermediate cost but the utility's output). Grid cost is
-        # a real resource cost.
-        return self.domestic_value_added_per_gwh + self.domestic_tariff_per_gwh - self.domestic_grid_cost_per_gwh
+        # the industry's intermediate cost but the utility's output). Grid cost and
+        # the annualised capital cost of new industry are real resource costs.
+        return (self.domestic_value_added_per_gwh + self.domestic_tariff_per_gwh
+                - self.domestic_grid_cost_per_gwh - self.annualised_capital_cost_per_gwh)
 
     def summary(self) -> dict:
-        e, d = self.export_net_value(), self.domestic_net_value()
+        e, d, oc = self.export_net_value(), self.domestic_net_value(), self.opportunity_cost()
         return {
+            "regime": self.regime,
             "export_net_value_per_gwh": e,
+            "opportunity_cost_per_gwh": oc,
             "domestic_net_value_per_gwh": d,
             "difference_domestic_minus_export": d - e,
+            "difference_domestic_minus_opportunity_cost": d - oc,
             "unit": self.unit,
             "caveat": (
-                "Static comparison; ignores demand constraints, seasonal mismatch, "
-                "capital costs of new industry and foreign-exchange effects."
+                "Static comparison; ignores demand constraints, approval-limited market access "
+                "and foreign-exchange effects. Use marginal, not average, value added."
             ),
         }

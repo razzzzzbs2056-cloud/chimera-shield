@@ -69,3 +69,16 @@ def test_welfare_tradeoffs_reported_separately_from_gdp():
     assert "fiscal_financial" in a.unassessed()
     with pytest.raises(ValueError):
         ObjectiveAssessment("bad", {"gdp_only": "+"})
+
+
+def test_marginal_use_regimes():
+    base = dict(export_price_per_gwh=10, export_transmission_cost_per_gwh=1, domestic_value_added_per_gwh=20,
+                domestic_tariff_per_gwh=8, domestic_grid_cost_per_gwh=3, unit="NPR_per_GWh")
+    spill = MarginalUseComparison(**base, regime="spill")
+    assert spill.opportunity_cost() == 0.0
+    lossy = MarginalUseComparison(**base, export_loss_factor=0.1, annualised_capital_cost_per_gwh=5)
+    assert lossy.export_net_value() == pytest.approx(8.0) and lossy.domestic_net_value() == pytest.approx(20)
+    with pytest.raises(ValueError):
+        MarginalUseComparison(**base, regime="importing")
+    imp = MarginalUseComparison(**base, regime="importing", import_landed_cost_per_gwh=12)
+    assert imp.summary()["difference_domestic_minus_opportunity_cost"] == pytest.approx(25 - 12)

@@ -1,0 +1,838 @@
+{
+  "subagent_id": "22E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked; one web search used). The research question (which use of a marginal GWh - export or domestic industry - yields more national value added) is PENDING: no price, tariff, cost or value-added parameter was retrieved. Designed: a seasonal opportunity-cost table in NPR_per_MWh that classifies each Nepali month (and, where needed, time block) into three regimes - wet-season spill (export limit binding: opportunity cost zero), export-marginal (opportunity cost = realised export netback), and dry-season import-marginal (opportunity cost = landed import cost). The domestic column is industrial value added per GWh net of annualised capital cost of new industry, plus the tariff paid to the utility, minus incremental grid cost and losses, consistent with energy.MarginalUseComparison. Export value uses NEA realised border netback by route (per 22B), with IEX prices as upper reference; INR converted at the NRB NPR/INR peg rate for the same month. Leads: ERC tariff order (located by search), NEA annual/system reports, IEX and CERC price data, CERC cross-border regulations, CEA approval pages, NRB exchange rates, NSO Census of Manufacturing Establishments.",
+  "findings": [
+    {
+      "claim": "Realised export netback per MWh at the Nepal border, by market route (IEX exchange sale via NVVN, bilateral, Nepal-Bangladesh trilateral) and by Nepali month / season.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "cerc_india"
+      ],
+      "lead_ids": [
+        "22E-L03",
+        "22E-L05",
+        "22E-L11",
+        "22E-L28"
+      ],
+      "note": "Compute from NEA annual report export revenue (NPR) / export energy (kWh converted to MWh) by route and month; cross-check against CERC cross-border section. Per 22B challenge, this (not the IEX clearing price) is the export value.",
+      "period": "Nepal FY2021/22-FY2025/26, monthly",
+      "unit": "NPR_per_MWh"
+    },
+    {
+      "claim": "IEX DAM / G-DAM / RTM clearing prices by Nepali month and wet/dry season (upper reference for export value) in INR per MWh.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "iex_india",
+        "cerc_india"
+      ],
+      "lead_ids": [
+        "22E-L07",
+        "22E-L08",
+        "22E-L10",
+        "22E-L12"
+      ],
+      "note": "Taken from 22B regional_price_profile once retrieved; not re-derived here. Indian FY and calendar months re-aggregated to Nepali months.",
+      "period": "Apr 2022-Sep 2026, monthly",
+      "unit": "INR_per_MWh"
+    },
+    {
+      "claim": "Deductions from exchange price to Nepal-border netback: exchange transaction fee, NVVN trading margin, Indian transmission charges and losses applicable to cross-border schedules, Nepal-side wheeling to the border point, deviation-settlement exposure.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "cerc_india",
+        "nea"
+      ],
+      "lead_ids": [
+        "22E-L13",
+        "22E-L14",
+        "22E-L18",
+        "22E-L03"
+      ],
+      "note": "From CERC CBTE Regulations 2019 and amendments, NVVN terms and NEA accounts; each component recorded separately with its regulatory vintage.",
+      "period": "as in force 2026",
+      "unit": "INR_per_MWh"
+    },
+    {
+      "claim": "Import landed cost per MWh from India in dry-season months (exchange price plus charges, and bilateral/G2G contract prices), by month.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "iex_india"
+      ],
+      "lead_ids": [
+        "22E-L03",
+        "22E-L05",
+        "22E-L09",
+        "22E-L27"
+      ],
+      "note": "From NEA annual report import cost (NPR) / import energy by route and month; HP-DAM as evening-peak ceiling reference. This is the opportunity cost of an extra domestic GWh in import-marginal months.",
+      "period": "Nepal FY2021/22-FY2025/26, monthly",
+      "unit": "NPR_per_MWh"
+    },
+    {
+      "claim": "Industrial consumer tariff: energy charge and demand charge by supply voltage (LV/MV/HV), with any time-of-day or seasonal differentiation, and the realised average industrial tariff (industrial revenue / industrial GWh).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "erc_nepal",
+        "nea"
+      ],
+      "lead_ids": [
+        "22E-L01",
+        "22E-L02",
+        "22E-L06",
+        "22E-L03",
+        "22E-L04"
+      ],
+      "note": "ERC tariff order (vintage to verify) for the schedule; NEA annual report for realised average. Demand charges are converted to per-MWh only with a stated load factor (assumption A4), reported separately from energy charges.",
+      "period": "tariff order in force FY2082/83 (2025/26) and FY2083/84 (2026/27); realised FY2021/22-FY2025/26",
+      "unit": "NPR_per_kWh"
+    },
+    {
+      "claim": "Incremental grid cost and technical loss factor for delivering one additional MWh to an industrial consumer (distribution/sub-transmission cost, losses at MV/HV, reliability cost of dedicated feeders).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "erc_nepal"
+      ],
+      "lead_ids": [
+        "22E-L04",
+        "22E-L03",
+        "22E-L02"
+      ],
+      "note": "NEA distribution loss by voltage/centre and cost-of-service data; ERC tariff-order cost-of-service annexes if published. Losses enter as a gross-up of energy required at the busbar, not as a price.",
+      "period": "Nepal FY2024/25-FY2025/26",
+      "unit": "NPR_per_MWh"
+    },
+    {
+      "claim": "Manufacturing value added per GWh of electricity consumed, by ISIC 2-digit industry (average ratio), current prices.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "lead_ids": [
+        "22E-L22",
+        "22E-L23",
+        "22E-L24",
+        "22E-L25"
+      ],
+      "note": "Census of Manufacturing Establishments: VA / electricity consumed (kWh -> GWh); electricity expenditure / kWh as a check on the tariff actually paid. Average VA/GWh is NOT the marginal VA attributable to electricity (see caveats).",
+      "period": "latest census round (Nepal FY label to record)",
+      "unit": "NPR_per_GWh"
+    },
+    {
+      "claim": "Capital cost and annualised capital charge per GWh/year of new electricity-intensive industrial capacity (cement, steel re-rolling/ferro-alloys, data centres, electrolytic hydrogen/ammonia), and its utilisation in dry season.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "lead_ids": [
+        "22E-L22",
+        "22E-L29"
+      ],
+      "note": "No Nepal-specific primary source located in r1. Requires project appraisal documents (IBN/DoInd approvals), or international cost references (IEA) with an explicit transfer assumption; coordinate with 05B and 24B.",
+      "period": "2026 prices",
+      "unit": "NPR_per_GWh"
+    },
+    {
+      "claim": "Hours/months in which the cross-border transfer limit or CEA-approved quantum binds in the wet season, and the energy spilled (GWh) as a result.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "cea_india"
+      ],
+      "lead_ids": [
+        "22E-L05",
+        "22E-L15",
+        "22E-L16",
+        "22E-L17",
+        "22E-L26"
+      ],
+      "note": "From NEA system-operation reports and 05A seasonal_profile / transmission_bottlenecks; CEA approval orders for approved MW. Determines whether the marginal wet-season GWh has export value or zero value (spill).",
+      "period": "Nepal FY2023/24-FY2025/26, monthly",
+      "unit": "GWh"
+    },
+    {
+      "claim": "NPR/INR conversion rate (peg) and NPR/USD rate for each period used.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "lead_ids": [
+        "22E-L19",
+        "22E-L20",
+        "22E-L21"
+      ],
+      "note": "NRB daily reference rates via forex page / API; use the middle of buying and selling rates, averaged over the same months as the price data; regime statement from NRB monetary policy.",
+      "period": "daily, Apr 2022-Sep 2026",
+      "unit": "NPR_per_INR"
+    },
+    {
+      "claim": "The comparison is made per marginal MWh delivered at the generator busbar in Nepal; the generation cost of that MWh is the same under both uses and cancels out, so it is excluded from both columns.",
+      "type": "assumption",
+      "source_ids": [],
+      "assumption_id": "22E-A1"
+    },
+    {
+      "claim": "Seasons follow the NEA hydrological calendar on Nepali months as agreed by 05A/22B (wet = Jestha-Kartik, dry = remaining months); each month is additionally classified into a regime: spill (export constrained), export-marginal, or import-marginal.",
+      "type": "assumption",
+      "source_ids": [],
+      "assumption_id": "22E-A2"
+    },
+    {
+      "claim": "INR amounts are converted to NPR at the NRB reference rate for the same month (middle rate); USD comparisons use NRB NPR/USD for the same month. No annual-to-annual conversion across fiscal and calendar years.",
+      "type": "assumption",
+      "source_ids": [],
+      "assumption_id": "22E-A3"
+    },
+    {
+      "claim": "Demand charges are converted to an equivalent per-MWh charge only through an explicitly stated industrial load factor, reported as a sensitivity range, never a single default.",
+      "type": "assumption",
+      "source_ids": [],
+      "assumption_id": "22E-A4"
+    },
+    {
+      "claim": "The domestic column is evaluated for new (incremental) industrial demand; existing industry's use is already in the baseline and is not re-valued.",
+      "type": "assumption",
+      "source_ids": [],
+      "assumption_id": "22E-A5"
+    }
+  ],
+  "data_gaps": [
+    "All parameters of the table (export netback, import cost, industrial tariff, grid cost, loss factor, VA/GWh, capital charge, export limit, exchange rates) - no document downloaded in r1.",
+    "ERC tariff order vintage: the order located by search is labelled 2078; the order in force for FY2082/83 and FY2083/84 must be confirmed from erc.gov.np.",
+    "NVVN trading margin and exact Indian transmission charges/losses for Nepal cross-border schedules - regulatory text located, applied values not.",
+    "Capital cost of new electricity-intensive industry in Nepal: no primary source located; needs IBN/DoInd project documents or an explicitly labelled international reference (with 05B, 24B).",
+    "Marginal (as opposed to average) value added attributable to electricity: no Nepal study located; method relies on bounds.",
+    "Block-level (hourly/15-minute) Nepal export/import schedules needed for the dry-season off-peak regime; NEA monthly data may be insufficient.",
+    "Spill (energy not evacuated) records by month - availability in NEA publications unconfirmed (shared gap with 05A).",
+    "WECS and NVVN are not in the source catalog (proposed to 00A)."
+  ],
+  "assumptions": [
+    {
+      "id": "22E-A1",
+      "text": "Comparison per marginal MWh at the Nepal generator busbar; generation cost identical under both uses and excluded.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22E-A2",
+      "text": "Seasons on NEA hydrological calendar in Nepali months (wet = Jestha-Kartik), each month classified as spill, export-marginal or import-marginal.",
+      "basis": "assumption (aligned with 05A/22B)"
+    },
+    {
+      "id": "22E-A3",
+      "text": "INR -> NPR at NRB middle reference rate for the same month; no cross fiscal/calendar-year annual conversion.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22E-A4",
+      "text": "Demand charges converted to per-MWh only via a stated load-factor range.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22E-A5",
+      "text": "Domestic column evaluates new incremental industrial demand only.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "energy.MarginalUseComparison lacks (i) a seasonal regime (spill / export-marginal / import-marginal) with import landed cost as the dry-season opportunity cost, (ii) a loss factor, and (iii) a capital-charge deduction for new industry; its domestic_value_added_per_gwh invites use of average VA/GWh, which overstates marginal value. Proposing these fields before r2 computation. Also propose adding WECS (tier 1) and NVVN (tier 5) to the source catalog. Note: units.py already has INR_per_MWh / NPR_per_kWh price codes, which resolves part of 22B's units challenge."
+    },
+    {
+      "to": "22B",
+      "text": "Please deliver the export netback decomposition separately (exchange price, exchange fee, NVVN margin, Indian transmission charges/losses, Nepal-side wheeling) by route and Nepali month, plus import landed cost by month and HP-DAM evening-peak prices; 22E will not re-derive them."
+    },
+    {
+      "to": "05A",
+      "text": "22E needs monthly spill GWh and the months/hours in which the export limit (min of transfer limit and CEA quantum) binds, to classify regimes; monthly averages mask block-level switching between export and import."
+    },
+    {
+      "to": "05B",
+      "text": "Please supply electricity intensity (GWh per NPR of VA) and plausible new electricity-intensive industries with capital cost per unit capacity, so the domestic column is evaluated for industries that could actually locate in Nepal (consistent with 05C RCA flags)."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: if verified, NEA realised export netback below the domestic tariff margin, or import costs above the industrial tariff in dry months, would change strategy conclusions on electricity-led industrialisation (STR proposals) and S05/S09 assumptions; the r2 table must be audited before use."
+    },
+    {
+      "to": "28",
+      "text": "Red-team note: both the export column (CEA approvals) and the dry-season domestic supply (India-to-Nepal approvals with hour limits) depend on Indian approvals; the domestic-use case is not independent of India in the dry season."
+    }
+  ],
+  "uncertainty": "High: nothing retrieved. Structural uncertainties: (i) the sign of the domestic-minus-export difference plausibly changes by regime and season, so any annual average answer is misleading; (ii) average VA/GWh is an upper bound on the domestic column and the marginal value may be much lower once capital and labour opportunity costs are deducted; (iii) export netback depends on approval-limited access and regulated charges that can change discretely; (iv) exchange-price regimes (CERC price caps, 2026 fuel-price conditions) make short price histories unrepresentative; (v) the NPR/INR peg makes INR conversion simple but a peg change is a scenario stress, not a forecast. No probabilities are assigned.",
+  "specific": {
+    "opportunity_cost_table": {
+      "status": "pending",
+      "question": "Under documented prices and costs, which use of a marginal GWh yields more national value added?",
+      "answer_status": "pending - no parameter retrieved in r1; table design only. No default numbers are carried.",
+      "common_unit": "NPR_per_MWh (current prices); inputs recorded in native units (INR_per_MWh, NPR_per_kWh, NPR_per_GWh) and converted with NPR_per_INR from NRB for the same month",
+      "evaluation_point": "one additional MWh available at the Nepal generator busbar (22E-A1)",
+      "model_link": "src/economic_model/energy.py MarginalUseComparison (export_net_value, domestic_net_value); extensions proposed in challenge to 00A",
+      "parameters": [
+        {
+          "id": "P_EXP",
+          "name": "export realised price at Nepal border (netback) by route",
+          "unit": "NPR_per_MWh",
+          "native_unit": "NPR_per_MWh (NEA) / INR_per_MWh (CERC)",
+          "maps_to": "export_price_per_gwh",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L03",
+            "22E-L05",
+            "22E-L11",
+            "22E-L28"
+          ]
+        },
+        {
+          "id": "P_IEX",
+          "name": "IEX DAM/G-DAM/RTM price (upper reference only)",
+          "unit": "INR_per_MWh",
+          "maps_to": "sensitivity on export_price_per_gwh",
+          "status": "pending",
+          "source_agent": "22B",
+          "lead_ids": [
+            "22E-L07",
+            "22E-L08",
+            "22E-L10",
+            "22E-L12"
+          ]
+        },
+        {
+          "id": "C_TRD",
+          "name": "exchange fee + NVVN trading margin",
+          "unit": "INR_per_MWh",
+          "maps_to": "export_transmission_cost_per_gwh (part)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L18",
+            "22E-L13"
+          ]
+        },
+        {
+          "id": "C_TX_IN",
+          "name": "Indian transmission charges and losses on cross-border schedules",
+          "unit": "INR_per_MWh",
+          "maps_to": "export_transmission_cost_per_gwh (part)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L13",
+            "22E-L14"
+          ]
+        },
+        {
+          "id": "C_TX_NP",
+          "name": "Nepal-side transmission/wheeling cost and losses from busbar to border",
+          "unit": "NPR_per_MWh",
+          "maps_to": "export_transmission_cost_per_gwh (part)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L03"
+          ]
+        },
+        {
+          "id": "P_IMP",
+          "name": "landed import cost from India (dry season)",
+          "unit": "NPR_per_MWh",
+          "maps_to": "opportunity cost in import-marginal months (not in current class)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L03",
+            "22E-L05",
+            "22E-L09",
+            "22E-L27"
+          ]
+        },
+        {
+          "id": "T_IND",
+          "name": "industrial tariff (energy charge; demand charge via load factor A4)",
+          "unit": "NPR_per_kWh",
+          "maps_to": "domestic_tariff_per_gwh",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L01",
+            "22E-L02",
+            "22E-L06",
+            "22E-L03"
+          ]
+        },
+        {
+          "id": "C_GRID",
+          "name": "incremental distribution/sub-transmission cost to serve industry",
+          "unit": "NPR_per_MWh",
+          "maps_to": "domestic_grid_cost_per_gwh",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L04",
+            "22E-L02"
+          ]
+        },
+        {
+          "id": "LF_DOM",
+          "name": "technical loss factor busbar-to-industrial meter",
+          "unit": "ratio",
+          "maps_to": "gross-up of energy (not in current class)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L04",
+            "22E-L03"
+          ]
+        },
+        {
+          "id": "VA_IND",
+          "name": "industrial value added per GWh by ISIC 2-digit (average)",
+          "unit": "NPR_per_GWh",
+          "maps_to": "domestic_value_added_per_gwh (upper bound)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L22",
+            "22E-L23",
+            "22E-L24",
+            "22E-L25"
+          ]
+        },
+        {
+          "id": "K_IND",
+          "name": "annualised capital charge of new industrial capacity per GWh/year consumed",
+          "unit": "NPR_per_GWh",
+          "maps_to": "deduction from domestic_value_added_per_gwh (not in current class)",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L29"
+          ]
+        },
+        {
+          "id": "Q_CAP",
+          "name": "wet-season export limit (min of line transfer limit and CEA-approved quantum) and spill",
+          "unit": "GWh",
+          "maps_to": "regime classification",
+          "status": "pending",
+          "source_agent": "05A / 22B",
+          "lead_ids": [
+            "22E-L05",
+            "22E-L15",
+            "22E-L16",
+            "22E-L17",
+            "22E-L26"
+          ]
+        },
+        {
+          "id": "FX_INR",
+          "name": "NPR per INR (peg)",
+          "unit": "NPR_per_INR",
+          "maps_to": "currency conversion",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L19",
+            "22E-L20",
+            "22E-L21"
+          ]
+        },
+        {
+          "id": "FX_USD",
+          "name": "NPR per USD (for USD_per_MWh presentation)",
+          "unit": "NPR_per_USD",
+          "maps_to": "presentation only",
+          "status": "pending",
+          "lead_ids": [
+            "22E-L19",
+            "22E-L20"
+          ]
+        }
+      ],
+      "formulas": {
+        "export_net_value": "P_EXP - (C_TRD + C_TX_IN) * FX_INR - C_TX_NP   [if P_EXP is already the NEA border netback, C_TRD and C_TX_IN are already netted and must not be deducted twice]",
+        "domestic_net_value": "(VA_IND - K_IND) + T_IND * 1000 - C_GRID, scaled by (1 - LF_DOM) for energy actually delivered   [T_IND converted NPR_per_kWh -> NPR_per_MWh]",
+        "opportunity_cost_of_domestic_use": "spill regime: 0; export-marginal regime: export_net_value; import-marginal regime: P_IMP + Nepal-side delivery cost",
+        "net_gain_domestic_minus_alternative": "domestic_net_value - opportunity_cost_of_domestic_use (by month, then aggregated to season and Nepal FY with GWh weights)"
+      },
+      "rows": [
+        {
+          "season": "wet (Jestha-Kartik)",
+          "regime": "spill: export limit binding (Q_CAP), surplus beyond limit",
+          "export_net_value_NPR_per_MWh": {
+            "status": "pending",
+            "note": "marginal export value is zero once the limit binds"
+          },
+          "domestic_net_value_NPR_per_MWh": {
+            "status": "pending"
+          },
+          "opportunity_cost_NPR_per_MWh": {
+            "status": "pending",
+            "rule": "zero"
+          },
+          "difference": {
+            "status": "pending"
+          },
+          "binding_caveats": [
+            "industrial demand must exist in wet season only or tolerate dry-season curtailment",
+            "capital idle in dry season unless supplied by imports"
+          ]
+        },
+        {
+          "season": "wet (Jestha-Kartik)",
+          "regime": "export-marginal: export limit not binding",
+          "export_net_value_NPR_per_MWh": {
+            "status": "pending"
+          },
+          "domestic_net_value_NPR_per_MWh": {
+            "status": "pending"
+          },
+          "opportunity_cost_NPR_per_MWh": {
+            "status": "pending",
+            "rule": "export_net_value"
+          },
+          "difference": {
+            "status": "pending"
+          },
+          "binding_caveats": [
+            "approval-limited access: CEA quantum and validity",
+            "exchange price volatility and CERC price caps"
+          ]
+        },
+        {
+          "season": "dry (Mangsir-Baisakh)",
+          "regime": "import-marginal: Nepal imports from India",
+          "export_net_value_NPR_per_MWh": {
+            "status": "not applicable",
+            "note": "no marginal export in import months; any export in off-peak hours treated at block level"
+          },
+          "domestic_net_value_NPR_per_MWh": {
+            "status": "pending"
+          },
+          "opportunity_cost_NPR_per_MWh": {
+            "status": "pending",
+            "rule": "P_IMP + delivery cost"
+          },
+          "difference": {
+            "status": "pending"
+          },
+          "binding_caveats": [
+            "import access is itself approval-limited (hour limits)",
+            "evening-peak import price (HP-DAM) may exceed industrial tariff: subsidy implied"
+          ]
+        },
+        {
+          "season": "dry (Mangsir-Baisakh)",
+          "regime": "domestic surplus hours (off-peak / solar hours) with exports",
+          "export_net_value_NPR_per_MWh": {
+            "status": "pending"
+          },
+          "domestic_net_value_NPR_per_MWh": {
+            "status": "pending"
+          },
+          "opportunity_cost_NPR_per_MWh": {
+            "status": "pending",
+            "rule": "export_net_value for those blocks"
+          },
+          "difference": {
+            "status": "pending"
+          },
+          "binding_caveats": [
+            "requires block-level (15-minute/hourly) data, not monthly averages"
+          ]
+        }
+      ],
+      "presentation_variants": [
+        "NPR_per_MWh (primary)",
+        "INR_per_MWh",
+        "USD_per_MWh"
+      ],
+      "sensitivities": [
+        "P_IEX in place of P_EXP (upper bound)",
+        "G-DAM vs DAM",
+        "load factor range for demand charges",
+        "K_IND with and without new-industry capital",
+        "peg-change stress on FX_INR (scenario only, not forecast)"
+      ],
+      "caveats": [
+        "Demand constraint: domestic value exists only if electricity-intensive industry with plausible comparative advantage (05C RCA table) actually locates in Nepal; average VA/GWh is not marginal VA.",
+        "Electricity is one input among many; attributing all of an industry's VA to the GWh overstates the domestic column. The average VA/GWh is an upper bound; the lower bound is the tariff margin over opportunity cost.",
+        "Capital cost of new industry (K_IND) and the opportunity cost of that capital and labour must be deducted; otherwise the domestic column ignores resources that would earn returns elsewhere.",
+        "Seasonal mismatch: industry needs year-round supply; wet-season surplus value to industry depends on dry-season supply from imports at P_IMP, which may exceed the industrial tariff.",
+        "Approval-limited market access: export value exists only for the CEA-approved quantum within its validity; renewal risk is discrete and political (reported 2026 decisions unverified).",
+        "Foreign exchange: export earnings are INR (convertible under the peg); domestic industry may earn foreign exchange (exports) or save it (import substitution) - FX effects are reported separately, not added to VA.",
+        "Static per-MWh comparison; ignores dynamic effects (learning, employment, fiscal revenue) which are reported under the other welfare objectives, not added here."
+      ],
+      "lead_ids": [
+        "22E-L01",
+        "22E-L02",
+        "22E-L03",
+        "22E-L04",
+        "22E-L05",
+        "22E-L06",
+        "22E-L07",
+        "22E-L08",
+        "22E-L09",
+        "22E-L10",
+        "22E-L11",
+        "22E-L12",
+        "22E-L13",
+        "22E-L14",
+        "22E-L15",
+        "22E-L16",
+        "22E-L17",
+        "22E-L18",
+        "22E-L19",
+        "22E-L20",
+        "22E-L21",
+        "22E-L22",
+        "22E-L23",
+        "22E-L24",
+        "22E-L25",
+        "22E-L26",
+        "22E-L27",
+        "22E-L28",
+        "22E-L29"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "22E-L01",
+      "url": "https://erc.gov.np/act/tariff-order-full-detailed-tariff/nepal-electricity-authoritys-electricity-consumer",
+      "title": "Nepal Electricity Authority's electricity consumer tariff rate (tariff order, full detailed tariff)",
+      "publisher": "Electricity Regulatory Commission, Nepal",
+      "source_id": "erc_nepal",
+      "contains": "ERC consumer tariff order for NEA: industrial tariff categories by supply voltage (LV/MV/HV), demand charge (per kVA per month) and energy charge (per kWh), time-of-day and seasonal differentiation if any, dedicated/trunk-line surcharges; order year (Nepali FY label) to record. Located by r1 web search; order vintage (2078 order vs later revisions for FY2082/83) to verify."
+    },
+    {
+      "lead_id": "22E-L02",
+      "url": "https://www.erc.gov.np",
+      "title": "Electricity Regulatory Commission, Nepal",
+      "publisher": "Electricity Regulatory Commission, Nepal",
+      "source_id": "erc_nepal",
+      "contains": "Index of tariff orders (retail consumer tariff by year), PPA rate approvals (NEA purchase rate from IPPs by season - marginal generation cost reference), bulk-supply and export-related decisions, ERC annual reports. URL from general knowledge - unverified."
+    },
+    {
+      "lead_id": "22E-L03",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Nepal FY energy balance with monthly tables: exports to India/Bangladesh and imports from India by route/market (kWh 'units' and NPR revenue/cost) - basis for realised export netback and import cost by season; energy sold by consumer category (industrial GWh and NPR revenue) - realised average industrial tariff; system losses; spill/energy not evacuated if reported; average PPA purchase cost."
+    },
+    {
+      "lead_id": "22E-L04",
+      "url": "https://www.nea.org.np/admin/assets/uploads/annual_publications/NEA_DCSD_Maganize_2082.pdf",
+      "title": "NEA Distribution and Consumer Services Directorate publication 2082",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "FY2081/82 consumer-side sales by category (industrial by voltage level), distribution losses by distribution centre - basis for delivered-GWh loss factor and grid cost of serving industry (to verify)."
+    },
+    {
+      "lead_id": "22E-L05",
+      "url": "https://www.nea.org.np/report",
+      "title": "NEA reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "System operation / power trade reports: monthly/daily export and import schedules, hours when cross-border transfer limit or approved quantum binds, spill records - determines which seasonal regime (spill, export-marginal, import-marginal) applies."
+    },
+    {
+      "lead_id": "22E-L06",
+      "url": "https://www.nea.org.np",
+      "title": "NEA home page (tariff schedule notices)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Published consumer tariff schedule and notices on industrial tariff changes, dedicated-feeder charges and dry-season supply restrictions for industry (load-shedding/curtailment notices). URL from general knowledge - unverified."
+    },
+    {
+      "lead_id": "22E-L07",
+      "url": "https://www.iexindia.com/market-data/day-ahead-market/area-prices",
+      "title": "Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "DAM area clearing prices (INR/MWh) by 15-minute block and bidding area - upper reference for export value; re-aggregated to Nepali months and wet/dry seasons (shared with 22B)."
+    },
+    {
+      "lead_id": "22E-L08",
+      "url": "https://www.iexindia.com/market-data/green-day-ahead-market/area-prices",
+      "title": "Green Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "G-DAM prices (INR/MWh) by block - sensitivity if Nepali hydro is sold as green power."
+    },
+    {
+      "lead_id": "22E-L09",
+      "url": "https://www.iexindia.com/market-data/high-price-day-ahead-market/area-prices",
+      "title": "High-Price Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "HP-DAM prices (INR/MWh) - reference for dry-season evening-peak import cost ceiling."
+    },
+    {
+      "lead_id": "22E-L10",
+      "url": "https://www.iexindia.com/market-data/intra-day-ahead-contingency/trade-summary-details",
+      "title": "Intra-day / contingency / RTM trade summary",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "RTM/TAM prices - sensitivity for export sales outside DAM."
+    },
+    {
+      "lead_id": "22E-L11",
+      "url": "https://cercind.gov.in/report_MM.html",
+      "title": "CERC market monitoring reports index",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Monthly short-term market reports with Excel data: exchange prices by segment, bilateral trader prices, cross-border transactions with Nepal (Indian FY, April-March) - cross-check of NEA realised prices and volumes."
+    },
+    {
+      "lead_id": "22E-L12",
+      "url": "https://www.cercind.gov.in/2024/market_monitoring/Annual%20Report%202023-24.pdf",
+      "title": "CERC Annual Report on Short-term Power Market 2023-24",
+      "publisher": "CERC Economics Division",
+      "source_id": "cerc_india",
+      "contains": "Indian FY2023-24 monthly exchange prices by segment and cross-border trade with Nepal - seasonal price baseline."
+    },
+    {
+      "lead_id": "22E-L13",
+      "url": "https://www.cercind.gov.in/2019/regulation/CBTE-Regulations2019.pdf",
+      "title": "CERC (Cross Border Trade of Electricity) Regulations, 2019",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Rules on transmission charges and losses applicable to cross-border transactions, scheduling, deviation settlement and exchange participation - components that convert an exchange price into a Nepal-border netback."
+    },
+    {
+      "lead_id": "22E-L14",
+      "url": "http://www.cercind.gov.in/regulations/COnsolidatedCBTE_Second_amendment.pdf",
+      "title": "CERC CBTE Regulations 2019 consolidated incl. First and Second Amendments",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": "cerc_india",
+      "contains": "Current consolidated text of charges and conditions for cross-border trade (to compare with 2019 original)."
+    },
+    {
+      "lead_id": "22E-L15",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "Import/Export (Cross Border) of Electricity - Designated Authority",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Approval orders for Nepali projects/entities to sell in Indian markets (approved MW, validity) and for India-to-Nepal supply - approved quantum caps the export column and defines approval-limited market access."
+    },
+    {
+      "lead_id": "22E-L16",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity 2018",
+      "publisher": "Ministry of Power / Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Eligibility and ownership conditions on exporting generators - determines which marginal GWh are exportable at all."
+    },
+    {
+      "lead_id": "22E-L17",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+      "title": "Designated Authority procedure for cross-border electricity (2021)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Approval procedure and validity periods - basis for approval-renewal risk on export revenue."
+    },
+    {
+      "lead_id": "22E-L18",
+      "url": "https://nvvn.co.in",
+      "title": "NTPC Vidyut Vyapar Nigam (NVVN)",
+      "publisher": "NTPC Vidyut Vyapar Nigam Ltd",
+      "source_id": null,
+      "contains": "Nodal trading agency for cross-border trade: trading margin, Nepal-Bangladesh trilateral arrangement - deduction from exchange price in export netback. URL from general knowledge - unverified. Not in source catalog."
+    },
+    {
+      "lead_id": "22E-L19",
+      "url": "https://www.nrb.org.np/forex/",
+      "title": "NRB foreign exchange rates",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Daily NRB reference buying/selling rates for INR (fixed under the peg) and USD with date-range export - NPR_per_INR and NPR_per_USD conversion for each period."
+    },
+    {
+      "lead_id": "22E-L20",
+      "url": "https://www.nrb.org.np/api-docs-v1/",
+      "title": "NRB exchange-rate API",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Machine-readable daily NPR/INR and NPR/USD rates for a date range (monthly and Nepal-FY averages)."
+    },
+    {
+      "lead_id": "22E-L21",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+      "title": "Monetary Policy FY2025/26",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Statement of the exchange-rate regime (NPR-INR peg) in force; needed to document the conversion basis and peg-change sensitivity."
+    },
+    {
+      "lead_id": "22E-L22",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog",
+      "title": "NSO microdata catalogue",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Census of Manufacturing Establishments: gross output, intermediate consumption, value added and electricity consumption/expenditure by ISIC 2-digit - value added per GWh by industry (average, not marginal)."
+    },
+    {
+      "lead_id": "22E-L23",
+      "url": "https://nsonepal.gov.np",
+      "title": "NSO national accounts",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "GVA by ISIC section incl. manufacturing and electricity (section D) at current prices, Nepal FY; deflators - to put industrial VA per GWh on the same price basis as export revenue."
+    },
+    {
+      "lead_id": "22E-L24",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey FY2082/83",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Energy and industry chapters: electricity consumption by sector, industrial capacity utilisation, electricity trade (Nepal FY; mid-FY cut-off to verify)."
+    },
+    {
+      "lead_id": "22E-L25",
+      "url": "https://www.wecs.gov.np",
+      "title": "Water and Energy Commission Secretariat",
+      "publisher": "Water and Energy Commission Secretariat, Nepal",
+      "source_id": null,
+      "contains": "Energy synopsis / sectoral energy balance: industrial final energy use by fuel (electricity vs imported fuels) - cross-check of industrial GWh and scope for fuel substitution. URL from general knowledge - unverified. Not in source catalog."
+    },
+    {
+      "lead_id": "22E-L26",
+      "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
+      "title": "Additional electricity export to Bangladesh blocked as India withholds approval (June 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Pointer to CEA/NVVN decision on the Nepal-Bangladesh trilateral quantum - approval-limited access. Secondary media pointer only (not a primary source); use solely to locate the underlying official document."
+    },
+    {
+      "lead_id": "22E-L27",
+      "url": "https://renewablewatch.in/2026/09/15/mop-approves-export-of-power-to-nepal/",
+      "title": "MoP approves export of power to Nepal (Sep 2026)",
+      "publisher": "Renewable Watch",
+      "source_id": null,
+      "contains": "Pointer to MoP/CEA order for India-to-Nepal supply for the coming dry season with hour limits - import-marginal regime and import-access cap. Secondary media pointer only (not a primary source); use solely to locate the underlying official document."
+    },
+    {
+      "lead_id": "22E-L28",
+      "url": "https://www.spotlightnepal.com/2026/07/24/nepal-earns-npr-2932-billion-electricity-exports/",
+      "title": "Nepal electricity export earnings FY2025/26",
+      "publisher": "Spotlight Nepal",
+      "source_id": null,
+      "contains": "Pointer to the NEA release on FY2025/26 export energy and revenue (for realised export netback). Secondary media pointer only (not a primary source); use solely to locate the underlying official document."
+    },
+    {
+      "lead_id": "22E-L29",
+      "url": "https://kathmandupost.com/national/2026/04/27/nepal-wants-to-become-a-data-centre-hub-it-has-no-rules-for-how",
+      "title": "Nepal wants to become a data-centre hub; it has no rules for how (April 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Pointer on missing tariff category for data centres (a candidate domestic electricity-intensive use, shared with 24B). Secondary media pointer only (not a primary source); use solely to locate the underlying official document."
+    }
+  ],
+  "web_searches_used": 1
+}

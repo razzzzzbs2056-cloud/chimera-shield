@@ -2,7 +2,7 @@
   "subagent_id": "01A",
   "task_id": "r1",
   "generated_at": "2026-09-27T00:00:00+00:00",
-  "summary": "Round r1 (restricted network; data hosts blocked). Research design only; no empirical values recorded. Q1 (growth accounting): Cobb-Douglas log-difference decomposition via src.economic_model.growth.growth_accounting into capital, quality-adjusted labour (employment x Mincerian human-capital index) and a TFP residual, by FY sub-period, with capital stock from perpetual inventory (growth.capital_path) on spliced NSO constant-price GFCF, steady-state initial stock and a labelled depreciation grid; capital share from 1 - labour share under three alternatives (PWT labsh, ILO SDG 10.4.1, fixed grid) because NSO compensation of employees omits self-employed income. Q2: investment rate as GFCF/GDP and GCF/GDP at current prices by FY from the same NSO release, and gross ICOR by window (inverse of investment_rate_from_icor), with unstable windows (earthquake, pandemic) flagged; results to be compared with model assumption A-TGT-05. Q3: sector GVA shares (ProductionAccounts.sector_shares) and employment shares at survey benchmark FYs, with a shift-share productivity decomposition; constant-price series spliced across the FY2000/01 -> FY2010/11 NSO rebasing by overlap-ratio splice. All computations on Nepal FY basis; WDI, ILO modelled, IMF and PWT series are cross-checks only. 26 source leads (7 located by one WebSearch in r1 or shared search-verified leads, the rest shared catalog leads or general-knowledge URLs marked unverified).",
+  "summary": "Round r1 (restricted network; data hosts blocked). Research design only; no empirical values recorded. Q1 (growth accounting): Cobb-Douglas log-difference decomposition via src.economic_model.growth.growth_accounting into capital, quality-adjusted labour (employment x Mincerian human-capital index) and a TFP residual, by FY sub-period, with capital stock from perpetual inventory (growth.capital_path) on spliced NSO constant-price GFCF, steady-state initial stock and a labelled depreciation grid; capital share from 1 - labour share under three alternatives (PWT labsh, ILO SDG 10.4.1, fixed grid) because NSO compensation of employees omits self-employed income. Q2: investment rate as GFCF/GDP and GCF/GDP at current prices by FY from the same NSO release, and gross ICOR by window (inverse of investment_rate_from_icor), with unstable windows (earthquake, pandemic) flagged; results to be compared with model assumption A-TGT-05. Q3: sector GVA shares (ProductionAccounts.sector_shares) and employment shares at survey benchmark FYs, with a shift-share productivity decomposition; constant-price series spliced across the FY2000/01 -> FY2010/11 NSO rebasing by overlap-ratio splice. All computations on Nepal FY basis; WDI, ILO modelled, IMF and PWT series are cross-checks only. 26 source leads: 5 located by the single r1 WebSearch (NSO National Accounts Statistics 2024/25, an earlier CBS national-accounts PDF, three WDI investment series), 12 shared leads from source_leads.json/upstream findings, 9 general-knowledge URLs marked unverified.",
   "findings": [
     {
       "claim": "Q1: Real GDP (NPR, constant FY2010/11 prices) by fiscal year for the longest available series, with a spliced back-series across the FY2000/01 -> FY2010/11 rebasing",
@@ -304,7 +304,7 @@
         "3. Labour: L_t employment per 01A-A05; h_t per 01A-A06; g_hL = g_L + g_h.",
         "4. Output: g_Y_t = ln(Y_t/Y_{t-1}); sub-period averages of all growth rates.",
         "5. Decompose: growth_accounting(g_output=g_Y, g_capital=g_K, g_labour=g_hL, capital_share=alpha) per sub-period and per alpha/delta variant; labour contribution further split (1-alpha)g_L and (1-alpha)g_h.",
-        "6. Per-worker version: g_y = alpha*g_(K/L) + (1-alpha)*g_h + TFP (same function with g_labour = g_h - 0? i.e. apply to per-worker rates with capital_share alpha) for comparison with 01B comparators.",
+        "6. Per-worker version for comparison with 01B comparators: call growth_accounting(g_output=g_Y-g_L, g_capital=g_K-g_L, g_labour=g_h, capital_share=alpha), giving capital deepening, human-capital and TFP contributions to output-per-worker growth (TFP identical to step 5).",
         "7. Cross-check with PWT 11.0 rgdpna, rnna, emp, hc, labsh, rtfpna (calendar-year labels; compare trends, not year-matched levels) and APO Productivity Databook; register discrepancies with 00B."
       ],
       "sensitivity": [
@@ -658,7 +658,7 @@
       "url": "https://unstats.un.org/unsd/snaama/",
       "title": "UN National Accounts Main Aggregates Database - Nepal",
       "publisher": "United Nations Statistics Division",
-      "source_id": "academic",
+      "source_id": null,
       "contains": "Long-run GDP by expenditure (incl. GFCF) and value added by ISIC groupings at constant 2015 USD and current NPR, calendar-year converted; long back-series usable for initial capital stock investment history, with UNSD FY-to-CY conversion documented. URL from general knowledge — unverified."
     },
     {
