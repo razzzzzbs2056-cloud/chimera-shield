@@ -18,7 +18,7 @@ PPP:     ``PPP_const{YEAR}[_{SCALE}]`` — international dollars at constant PPP
 Rates:   ``NPR_per_USD``, ``NPR_per_INR``, ``INR_per_USD``
 Prices:  ``{CUR}_per_{kWh|MWh|GWh|tonne|litre|barrel|person|TEU}`` (current prices)
 Other:   ``percent``, ``percentage_points``, ``ratio``, ``index``, ``persons``, ``persons_mn``,
-         ``persons_k``, ``GWh``, ``MWh``, ``kWh``, ``MW``, ``m3_per_s``, ``tonnes``, ``hectares``, ``km2``, ``tonnes_per_hectare``, ``m_we_per_year``, ``days``, ``months``, ``years``, ``count``
+         ``persons_k``, ``GWh``, ``MWh``, ``kWh``, ``MW``, ``m3_per_s``, ``tonnes``, ``Mbit_per_s``, ``Gbit_per_s``, ``hectares``, ``km2``, ``tonnes_per_hectare``, ``m_we_per_year``, ``days``, ``months``, ``years``, ``count``
 """
 
 from __future__ import annotations
@@ -58,6 +58,8 @@ _SIMPLE = {
     "kWh": ("energy", 1e-6),
     "m3_per_s": ("discharge", 1.0),
     "tonnes": ("mass", 1.0),
+    "Mbit_per_s": ("bandwidth", 1.0),
+    "Gbit_per_s": ("bandwidth", 1e3),
     "hectares": ("area", 1.0),
     "km2": ("area", 100.0),
     "m_we_per_year": ("mass_balance", 1.0),  # glacier mass balance, metres water equivalent per year

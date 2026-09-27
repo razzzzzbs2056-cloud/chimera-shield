@@ -56,6 +56,9 @@ sources:
   nepal_trade_portal: {tier: 1, institution: Nepal Trade Information Portal, url: "https://nepaltradeportal.gov.np", covers: [tariffs, SPS and trade procedures], endpoint_status: unverified}
   opmcm_nepal: {tier: 1, institution: Office of the Prime Minister and Council of Ministers, Nepal, url: "https://opmcm.gov.np", covers: [allocation of business rules, cabinet decisions], endpoint_status: unverified}
   moewri_nepal: {tier: 1, institution: Ministry of Energy, Water Resources and Irrigation, Nepal, url: "https://moewri.gov.np", covers: [energy and water policy, power trade], endpoint_status: unverified}
+  mocit_nepal: {tier: 1, institution: Ministry of Communication and Information Technology, Nepal, url: "https://mocit.gov.np", covers: [ICT and cyber policy], endpoint_status: unverified}
+  ocr_nepal: {tier: 1, institution: Office of the Company Registrar, Nepal, url: "https://ocr.gov.np", covers: [company registrations], endpoint_status: unverified}
+  ird_nepal: {tier: 1, institution: Inland Revenue Department, Nepal, url: "https://ird.gov.np", covers: [domestic tax collection, annual reports], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
   supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}
@@ -154,4 +157,5 @@ sources:
   aiddata: {tier: 7, institution: AidData (William & Mary), url: "https://www.aiddata.org", covers: [Chinese development finance dataset], endpoint_status: unverified}
   amis_nepal: {tier: 1, institution: Aid Management Information System, MoF Nepal, url: "https://amis.mof.gov.np", covers: [development cooperation disbursements], endpoint_status: unverified}
   nist: {tier: 4, institution: US NIST (Cybersecurity Framework), url: "https://www.nist.gov/cyberframework", covers: [defensive cybersecurity standards], endpoint_status: unverified}
+  online_labour_index: {tier: 7, institution: Online Labour Index (Oxford Internet Institute / ILO), url: "https://onlinelabourobservatory.org", covers: [online freelance labour demand and supply], endpoint_status: unverified}
   academic: {tier: 7, institution: Peer-reviewed literature (cite each paper individually as its own source record), url: null, covers: [any], endpoint_status: not_applicable}

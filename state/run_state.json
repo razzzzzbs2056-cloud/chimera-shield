@@ -1,6 +1,6 @@
 {
   "created_at": "2026-09-27T00:36:38+00:00",
-  "updated_at": "2026-09-27T00:54:02+00:00",
+  "updated_at": "2026-09-27T01:00:17+00:00",
   "tasks": {
     "00A": {
       "status": "done",
@@ -39,8 +39,20 @@
       "history": []
     },
     "01A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:13+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:13+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/01/01A-r1.json"
     },
     "01B": {
       "status": "done",
@@ -179,8 +191,20 @@
       "output": "research/findings/04/04B-r1.json"
     },
     "04C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:13+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:13+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/04/04C-r1.json"
     },
     "05A": {
       "status": "done",
@@ -231,28 +255,100 @@
       "history": []
     },
     "07A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:13+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:13+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/07/07A-r1.json"
     },
     "07B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:14+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:14+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/07/07B-r1.json"
     },
     "07C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:14+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:14+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/07/07C-r1.json"
     },
     "08A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:14+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:14+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/08/08A-r1.json"
     },
     "08B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:15+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:15+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/08/08B-r1.json"
     },
     "08C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:15+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:15+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/08/08C-r1.json"
     },
     "09A": {
       "status": "done",
@@ -411,20 +507,68 @@
       "history": []
     },
     "13A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:15+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:15+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/13/13A-r1.json"
     },
     "13B": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:16+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:16+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/13/13B-r1.json"
     },
     "13C": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:16+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:16+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/13/13C-r1.json"
     },
     "14A": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:16+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:16+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/14/14A-r1.json"
     },
     "14B": {
       "status": "pending",
@@ -947,8 +1091,20 @@
       "output": "research/findings/22/22D-r1.json"
     },
     "22E": {
-      "status": "pending",
-      "history": []
+      "status": "done",
+      "history": [
+        {
+          "at": "2026-09-27T01:00:17+00:00",
+          "status": "in_progress",
+          "note": ""
+        },
+        {
+          "at": "2026-09-27T01:00:17+00:00",
+          "status": "done",
+          "note": ""
+        }
+      ],
+      "output": "research/findings/22/22E-r1.json"
     },
     "23A": {
       "status": "done",
