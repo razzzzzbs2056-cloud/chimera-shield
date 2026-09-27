@@ -277,7 +277,7 @@
    "text": "Zero-migration vs Medium difference for Nepal should be read together with destination-demand scenarios; a demand shock changes Nepal's resident working-age path, not only remittances."
   }
  ],
- "uncertainty": "High for r1: no values retrieved. Structural uncertainty sits in (i) the absentee concept - the census/WPP gap may be mostly definitional rather than coverage, and its size is unknown; (ii) WPP's migration assumption for Nepal, which dominates the resident working-age path and could shift the dividend-window closing year materially between Medium and Zero-migration; (iii) fertility, where TFR near or below replacement makes Low/Constant-fertility divergence grow after 2040; (iv) the NSO projection horizon, likely shorter than 2070, so post-horizon paths rest on WPP alone. Three lead URLs are from general knowledge and unverified.",
+ "uncertainty": "High for r1: no values retrieved. Structural uncertainty sits in (i) the absentee concept - the census/WPP gap may be mostly definitional rather than coverage, and its size is unknown; (ii) WPP's migration assumption for Nepal, which dominates the resident working-age path and could shift the dividend-window closing year materially between Medium and Zero-migration; (iii) fertility: the spread between Low, Medium and Constant-fertility paths widens with the horizon and its size for Nepal is unknown until ingested; (iv) the NSO projection horizon, likely shorter than 2070, so post-horizon paths rest on WPP alone. Three lead URLs are from general knowledge and unverified.",
  "source_leads": [
   {
    "lead_id": "10C-L01",

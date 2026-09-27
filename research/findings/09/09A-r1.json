@@ -1,0 +1,448 @@
+{
+  "subagent_id": "09A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00Z",
+  "summary": "Round r1 (restricted network). Located the latest ERO National Assessment of Student Achievement main report (2023 cycle) and UIS NADA metadata for NASA grades 3, 5 and 8, plus ERO/DoE/ACER/ADB analyses (search-verified URLs). World Bank HCI/LAYS and WDI completion series, UIS SDG 4 data and CEHRD Flash reports are recorded as leads from general knowledge (unverified). Census 2021 and PWT hc are reused from existing leads. No values retrieved; every empirical item is pending. Key methodological points: NASA scale scores are not necessarily comparable across cycles; survey-based completion, administrative gross-intake ratios and census attainment measure different things and are kept separate; academic years use BS labels distinct from both Nepal FY and calendar year.",
+  "findings": [
+    {
+      "claim": "Q1: NASA grade-level learning results - mean scale scores and share of students at each proficiency level (below basic/basic/proficient/advanced) by grade (3, 5, 8, 10) and subject (Nepali, English, Mathematics, Science), latest and prior cycles.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NASA cycles 2011-2023 (assessment years to be confirmed; school-year basis)",
+      "source_ids": [
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: NASA main reports by cycle (09A-L01 latest; earlier cycles via ERO, 09A-L02/L03 metadata). Scale scores are only comparable across cycles if equated; check before building a trend."
+    },
+    {
+      "claim": "Q1: NASA learning gaps by province, sex, school type (community vs institutional), location and ethnicity/caste.",
+      "type": "pending",
+      "value": null,
+      "unit": "percentage_points",
+      "period": "latest NASA cycle",
+      "source_ids": [
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: disaggregation tables in 09A-L01; gap = difference in mean score or in share at/above proficient."
+    },
+    {
+      "claim": "Q1: SDG 4.1.1 minimum proficiency in reading and mathematics (end of primary, end of lower secondary) as reported to UIS.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest reported year (calendar year label in UIS)",
+      "source_ids": [
+        "unesco_uis"
+      ],
+      "observation_ids": [],
+      "note": "Required: UIS SDG 4.1.1 series for Nepal (09A-L13); record which national assessment UIS mapped and its year."
+    },
+    {
+      "claim": "Q1: Harmonised test score (HLO) for Nepal used in the Human Capital Index.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "HCI editions 2018, 2020 and later if published",
+      "source_ids": [
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: HD.HCI.HLOS or HCI country brief (09A-L10, L11). Record which assessment source the HLO is built from."
+    },
+    {
+      "claim": "Q2: Completion rates (primary, lower secondary, upper secondary) by sex - household-survey basis.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest survey year (e.g. NLSS IV 2022/23, MICS 2019 - to confirm on retrieval)",
+      "source_ids": [
+        "unesco_uis",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: UIS SDG 4.1.2 completion rates by sex/location/wealth (09A-L13)."
+    },
+    {
+      "claim": "Q2: Completion proxies (gross intake ratio to last grade) by sex - administrative basis.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "calendar-year label in WDI; underlying Nepal academic year",
+      "source_ids": [
+        "wb_wdi",
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: SE.PRM.CMPT.ZS / SE.SEC.CMPT.LO.ZS (09A-L12) and Flash reports (09A-L14). Keep separate from survey completion; gross ratios can exceed 100 percent."
+    },
+    {
+      "claim": "Q2: Completion / survival to grade 8 and grade 10/12 by province (7 provinces) and sex; SEE pass/grade distribution by province.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "academic year 2080 BS / 2081 BS (to confirm)",
+      "source_ids": [
+        "moest",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: Flash II reports (09A-L14) survival and promotion tables; Census 2021 attainment by province and sex (09A-L16) as the population-based cross-check."
+    },
+    {
+      "claim": "Q3: Learning-adjusted years of schooling (LAYS) for Nepal, with expected years of school and HLO components.",
+      "type": "pending",
+      "value": null,
+      "unit": "years",
+      "period": "HCI editions 2018, 2020 and later (calendar-year labels)",
+      "source_ids": [
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: HD.HCI.LAYS (09A-L09) or HCI country brief (09A-L11)."
+    },
+    {
+      "claim": "Q3: Human Capital Index (overall) for Nepal, total and by sex.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "HCI editions 2018, 2020 and later",
+      "source_ids": [
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: HD.HCI.OVRL, .FE, .MA (09A-L10)."
+    },
+    {
+      "claim": "Q3 cross-check: PWT human-capital index hc for Nepal (years-of-schooling based, no quality adjustment).",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "PWT latest version, calendar years",
+      "source_ids": [
+        "pwt"
+      ],
+      "observation_ids": [],
+      "note": "Required: PWT hc series (09A-L17); used for model input comparisons, not a substitute for LAYS."
+    },
+    {
+      "claim": "Teaching quality: share of trained/qualified teachers and pupil-teacher ratios by level and province.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest Flash report academic year",
+      "source_ids": [
+        "moest",
+        "unesco_uis"
+      ],
+      "observation_ids": [],
+      "note": "Required: Flash I/II teacher tables (09A-L14), UIS teacher indicators (09A-L13)."
+    },
+    {
+      "claim": "Learning and completion enter the human-capital stock as a quality-adjusted schooling measure (LAYS-style: years x HLO/benchmark), not as enrolment.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Method choice for the shared model; enrolment alone overstates skill accumulation where learning is low."
+    },
+    {
+      "claim": "Academic years are reported in Bikram Sambat (BS) and do not match either the Nepal fiscal year or the calendar year; each value will carry its BS label and a documented Gregorian mapping.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Period-labelling rule; WDI/UIS assign calendar-year labels to school years."
+    }
+  ],
+  "data_gaps": [
+    "NASA results by grade/subject/province for the latest cycles (2019-2023): main reports not retrieved; exact grades and years of each cycle to be confirmed.",
+    "Official cohort completion rates by province and sex: not confirmed as published by MoEST/CEHRD; may require Flash survival tables or Census/NLSS microdata tabulation.",
+    "LAYS and HCI for Nepal: edition vintages and whether a post-2020 edition exists are unconfirmed.",
+    "Teacher content knowledge / classroom-observation evidence (teaching quality beyond qualifications): no Nepal-specific primary source located yet."
+  ],
+  "assumptions": [
+    {
+      "id": "09A-A1",
+      "text": "LAYS (quality-adjusted schooling) is the preferred human-capital stock measure for Agent 01/08; PWT hc is a quantity-only cross-check.",
+      "basis": "assumption"
+    },
+    {
+      "id": "09A-A2",
+      "text": "BS academic-year labels are preserved and mapped to Gregorian years with a documented rule; not converted to Nepal FY.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "01",
+      "text": "If the growth model uses PWT hc or mean years of schooling as the human-capital input, it will overstate effective human capital where learning is low; carry LAYS alongside and document which one drives TFP/labour-quality assumptions."
+    },
+    {
+      "to": "23",
+      "text": "Education-selective emigration (students and skilled workers) changes the resident human-capital stock; 23A/23D outflow parameters should be split by education level so 09 can net them from the domestic stock."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. NASA cycles differ in grades, subjects and possibly scaling, so trends may not be identifiable; HCI's harmonised test score may rest on a different assessment than NASA; completion measures differ by construction. Several lead URLs are from general knowledge and unverified.",
+  "source_leads": [
+    {
+      "lead_id": "09A-L01",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/NASA%2010%20REport%20for%20press%20dec%2029_jfzz7ya.pdf",
+      "title": "National Assessment of Student Achievement 2023 - Main Report",
+      "publisher": "Education Review Office (ERO), Government of Nepal",
+      "source_id": "moest",
+      "contains": "Most recent NASA main report (2023 cycle); file name suggests grade 10 - grade(s), subjects (expected Mathematics, Nepali, English, Science), mean scale scores, proficiency-level distributions and disaggregation by province, sex, school type and ethnicity to be confirmed on retrieval. Nepal FY / academic-year basis.",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L02",
+      "url": "http://nada.uis.unesco.org/nada/en/index.php/catalogue/101",
+      "title": "Nepal - National Assessment of Student Achievement - Grade 8 - Overview (UIS NADA catalogue)",
+      "publisher": "UNESCO Institute for Statistics",
+      "source_id": "unesco_uis",
+      "contains": "Metadata (study year, sampling, subjects, instruments) and possibly microdata access for NASA grade 8; used to confirm assessment years and comparability of scales across cycles",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L03",
+      "url": "http://nada-backend.uis.unesco.org/nada/en/index.php/catalogue/102",
+      "title": "Nepal - National Assessment of Student Achievement - Grade 3 and Grade 5 - Overview (UIS NADA catalogue)",
+      "publisher": "UNESCO Institute for Statistics",
+      "source_id": "unesco_uis",
+      "contains": "Metadata for NASA grade 3 and grade 5 cycles (foundational literacy/numeracy); sampling design and reporting scales",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L04",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/_ERO_Journal_final_for_ctp_qexvkpz.pdf",
+      "title": "Nepalese Journal of Educational Assessment (ERO)",
+      "publisher": "Education Review Office, Government of Nepal",
+      "source_id": "moest",
+      "contains": "ERO journal articles analysing NASA results (trends, equity gaps, determinants); secondary analysis within the official publisher",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L05",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Journal_NJEA_2(1)_2017_6dgik11_6d0otlx.pdf",
+      "title": "Nepalese Journal of Educational Assessment, Vol 2(1), 2017",
+      "publisher": "Education Review Office, Government of Nepal",
+      "source_id": "moest",
+      "contains": "Earlier ERO journal issue; NASA methodology and earlier-cycle analyses for trend comparability",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L06",
+      "url": "https://www.doe.gov.np/assets/uploads/files/632761d93738aa7abd6159bc9f642c33.pdf",
+      "title": "A Study on Factors of Student Learning Achievements (Department of Education)",
+      "publisher": "Department of Education, Government of Nepal (now CEHRD)",
+      "source_id": "moest",
+      "contains": "Determinants of learning achievement (teacher, school, household factors); teaching-quality evidence",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L07",
+      "url": "https://research.acer.edu.au/cgi/viewcontent.cgi?article=1026&context=ar_misc",
+      "title": "Integrating the findings from the National Assessment of Student Achievement (ACER)",
+      "publisher": "Australian Council for Educational Research",
+      "source_id": "academic",
+      "contains": "Synthesis of NASA findings for policy; methodological notes on scaling and comparability across grades and cycles",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L08",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/49424-001-ssa.pdf",
+      "title": "Summary Sector Assessment: Education (ADB project 49424-001)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "ADB sector assessment of Nepal school education: learning outcomes, completion, equity and teacher issues as cited from NASA/Flash; date to confirm on retrieval",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L09",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/HD.HCI.LAYS?format=json",
+      "title": "WDI/HCI API - Learning-adjusted years of schooling, Nepal (series HD.HCI.LAYS)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "LAYS for Nepal by HCI edition (2018, 2020, later if any); series code to be confirmed on retrieval. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L10",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/HD.HCI.OVRL?format=json",
+      "title": "WDI/HCI API - Human Capital Index, Nepal (series HD.HCI.OVRL; components HD.HCI.EYRS, HD.HCI.HLOS)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "HCI overall, expected years of school, harmonised test scores by edition; HLO is built from international/regional assessments and may not use NASA. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L11",
+      "url": "https://www.worldbank.org/en/publication/human-capital",
+      "title": "Human Capital Project - Human Capital Index publications and country briefs",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "HCI methodology note and Nepal country brief (edition-specific HCI, LAYS, HTS); edition comparability caveats. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L12",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SE.PRM.CMPT.ZS?format=json",
+      "title": "WDI API - Primary completion rate (gross intake ratio to last grade), Nepal (SE.PRM.CMPT.ZS; also SE.SEC.CMPT.LO.ZS for lower secondary, .FE/.MA by sex)",
+      "publisher": "World Bank / UIS",
+      "source_id": "wb_wdi",
+      "contains": "Calendar-year-labelled completion proxies (gross intake to last grade) by sex; not a cohort completion rate. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L13",
+      "url": "https://data.uis.unesco.org",
+      "title": "UIS Data Browser - SDG 4 indicators for Nepal (completion rate 4.1.2, proportion achieving minimum proficiency 4.1.1, out-of-school rates)",
+      "publisher": "UNESCO Institute for Statistics",
+      "source_id": "unesco_uis",
+      "contains": "Household-survey-based completion rates (primary, lower and upper secondary) by sex, location and wealth; SDG 4.1.1 minimum proficiency where reported. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L14",
+      "url": "https://cehrd.gov.np",
+      "title": "Center for Education and Human Resource Development - Flash I / Flash II reports (EMIS)",
+      "publisher": "CEHRD, Ministry of Education, Science and Technology",
+      "source_id": "moest",
+      "contains": "Administrative school statistics by academic year (Nepali BS year): enrolment, GER/NER, survival and promotion/repetition/dropout rates by grade, province, district and sex; teacher numbers and qualifications. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L15",
+      "url": "https://moest.gov.np",
+      "title": "Ministry of Education, Science and Technology - School Education Sector Plan (SESP 2022/23-2031/32) and education statistics",
+      "publisher": "MoEST, Government of Nepal",
+      "source_id": "moest",
+      "contains": "Sector plan results framework (baseline and target completion and learning indicators), policy definitions. Catalog endpoint. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09A-L16",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Census 2021 literacy and educational attainment by age, sex, province and local level; allows attainment/completion by province and sex from population data (reference date of census 2021); thematic reports on education to be located in the same catalogue",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L17",
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "title": "Penn World Table (latest version)",
+      "publisher": "Groningen Growth and Development Centre",
+      "source_id": "pwt",
+      "contains": "Variable hc (human capital index based on years of schooling and returns to education) for Nepal - quantity-only human-capital stock used as model input alongside quality-adjusted LAYS",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09A-L18",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Education chapter of the Economic Survey (expected: enrolment, literacy, SEE results, education budget by FY); chapter content to confirm on retrieval",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    }
+  ],
+  "specific": {
+    "learning_outcomes_table": {
+      "status": "pending",
+      "value": null,
+      "structure": {
+        "rows": "grade (3, 5, 8, 10) x subject (Nepali, English, Mathematics, Science) x assessment cycle",
+        "columns": [
+          "mean_scale_score (index)",
+          "share_below_basic (percent)",
+          "share_proficient_or_above (percent)",
+          "gap_by_sex (percentage_points)",
+          "gap_community_vs_institutional (percentage_points)",
+          "gap_by_province (percentage_points)"
+        ]
+      },
+      "international_comparators": [
+        "SDG 4.1.1 minimum proficiency (UIS)",
+        "HCI harmonised test score"
+      ],
+      "method": "Extract NASA tables per cycle; do not trend scale scores unless the report documents equating/linking; report HLO separately as an internationally harmonised proxy.",
+      "lead_ids": [
+        "09A-L01",
+        "09A-L02",
+        "09A-L03",
+        "09A-L04",
+        "09A-L05",
+        "09A-L06",
+        "09A-L07",
+        "09A-L08",
+        "09A-L13",
+        "09A-L10"
+      ]
+    },
+    "completion_by_group": {
+      "status": "pending",
+      "value": null,
+      "levels": [
+        "primary (grade 5)",
+        "basic (grade 8)",
+        "secondary (grade 10 / SEE)",
+        "higher secondary (grade 12)"
+      ],
+      "disaggregation": [
+        "sex",
+        "province (7)",
+        "urban/rural",
+        "wealth quintile (survey basis)",
+        "caste/ethnicity where published"
+      ],
+      "series": [
+        {
+          "basis": "household survey completion rate (SDG 4.1.2)",
+          "lead_ids": [
+            "09A-L13"
+          ]
+        },
+        {
+          "basis": "administrative gross intake to last grade / survival (Flash, WDI)",
+          "lead_ids": [
+            "09A-L12",
+            "09A-L14"
+          ]
+        },
+        {
+          "basis": "census attainment by age cohort (Census 2021)",
+          "lead_ids": [
+            "09A-L16"
+          ]
+        }
+      ],
+      "unit": "percent",
+      "method": "Keep the three bases separate; reconcile differences (numerators: completers vs entrants to last grade; denominators: age cohort vs official-age population) via find_conflicts."
+    },
+    "lays_value": {
+      "status": "pending",
+      "value": null,
+      "unit": "years",
+      "components": {
+        "expected_years_of_school": "years",
+        "harmonised_test_score": "index",
+        "hci_overall": "index"
+      },
+      "editions": [
+        "HCI 2018",
+        "HCI 2020",
+        "later edition if published"
+      ],
+      "method": "Retrieve HD.HCI.LAYS and components; if unavailable for the latest year, compute LAYS = EYS x (HLO / HCI benchmark score, benchmark taken from the retrieved HCI methodology note) only with retrieved EYS and HLO and label as estimate citing both observations.",
+      "lead_ids": [
+        "09A-L09",
+        "09A-L10",
+        "09A-L11"
+      ]
+    }
+  }
+}

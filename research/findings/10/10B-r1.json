@@ -1,0 +1,594 @@
+{
+ "subagent_id": "10B",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network). No values retrieved; all empirical items pending. Benchmark labour indicators come from NLFS 2017/18 (19th ICLS concept), with NLSS IV 2022/23 as a non-LFS intermediate point and NLFS 2024/25 (fieldwork confirmed by an NSO/ILO ToR and 2026 news; report not located) as the future base; ILOSTAT harmonised and modelled series are cross-checks only (C-07). Output per worker by sector is defined as NSO GVA by industry over survey employment by industry on the same FY and NA vintage. Social-protection coverage is split into non-contributory allowances (DoNIDCR/MoF), the contributory SSF, public-service pensions, ILO SDG 1.3.1 and NLSS IV household receipt. Seventeen leads: four search-verified, nine shared, four general-knowledge URLs marked unverified.",
+ "findings": [
+  {
+   "claim": "Q1: Labour force participation rate, employment-to-population ratio and unemployment rate (15+), by sex, from NLFS 2017/18.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Required: NLFS 2017/18 report tables (10B-L01, 10B-L02).",
+   "unit": "percent",
+   "period": "FY2017/18 survey year",
+   "lead_ids": [
+    "10B-L01",
+    "10B-L02"
+   ]
+  },
+  {
+   "claim": "Q1: Composite labour underutilisation (LU4) and time-related underemployment, NLFS 2017/18.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Same report; 19th ICLS measures.",
+   "unit": "percent",
+   "period": "FY2017/18",
+   "lead_ids": [
+    "10B-L02"
+   ]
+  },
+  {
+   "claim": "Q1: Informal employment rate (share of employed in informal employment, incl. agriculture and excluding agriculture) and informal-sector employment share, NLFS 2017/18.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal",
+    "ilostat"
+   ],
+   "observation_ids": [],
+   "note": "Keep NSO national definition and ILOSTAT harmonised SDG 8.3.1 as separate observations.",
+   "unit": "percent",
+   "period": "FY2017/18",
+   "lead_ids": [
+    "10B-L02",
+    "10B-L06"
+   ]
+  },
+  {
+   "claim": "Q1: Participation and unemployment from NLSS IV 2022/23.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "NLSS IV is a living-standards survey, not an LFS; reference period and question sequence differ; not directly comparable to NLFS - record as separate series.",
+   "unit": "percent",
+   "period": "FY2022/23",
+   "lead_ids": [
+    "10B-L03",
+    "10B-L09"
+   ]
+  },
+  {
+   "claim": "Q1: NLFS 2024/25 headline indicators.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Survey reported as under way/recent (10B-L04, 10B-L05); report not located. Will supersede 2017/18 as base.",
+   "unit": "percent",
+   "period": "FY2024/25 (to confirm)",
+   "lead_ids": [
+    "10B-L04",
+    "10B-L05"
+   ]
+  },
+  {
+   "claim": "Q1: ILO modelled estimates (ILOEST) of LFPR and unemployment for years without surveys.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ilostat"
+   ],
+   "observation_ids": [],
+   "note": "Model estimates, calendar-year; used only to fill gaps as labelled estimates, never as survey facts (C-07).",
+   "unit": "percent",
+   "period": "calendar years",
+   "lead_ids": [
+    "10B-L06"
+   ]
+  },
+  {
+   "claim": "Q2: Output per worker by sector (agriculture; industry incl. manufacturing, construction; services sub-sectors) = NSO GVA by industry / NLFS employment by industry, FY2017/18.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Numerator: NA GVA at constant and current prices for FY2017/18 (vintage matters after rebasing); denominator: NLFS 2017/18 employment by NSIC section. Both FY.",
+   "unit": "NPR_per_person",
+   "period": "FY2017/18",
+   "lead_ids": [
+    "10B-L07",
+    "10B-L02"
+   ]
+  },
+  {
+   "claim": "Q2: Output per worker by sector for FY2022/23 using NLSS IV employment and for FY2024/25 using NLFS 2024/25 when released.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "Denominator concept differs by survey; report both and flag break.",
+   "unit": "NPR_per_person",
+   "period": "FY2022/23; FY2024/25",
+   "lead_ids": [
+    "10B-L03",
+    "10B-L04",
+    "10B-L07"
+   ]
+  },
+  {
+   "claim": "Q2: Aggregate output per worker (SDG 8.2.1) from ILOSTAT, constant 2021 PPP international dollars.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ilostat"
+   ],
+   "observation_ids": [],
+   "note": "Cross-check; calendar-year, modelled employment. Unit code for PPP dollars not in units.py - store as index or request unit addition (see challenge to 01C).",
+   "unit": "index",
+   "period": "calendar years",
+   "lead_ids": [
+    "10B-L06"
+   ]
+  },
+  {
+   "claim": "Q3: Contributory social-security coverage - SSF contributors and employers; share of employees with employer pension/social-security contributions (NLFS).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mof_nepal",
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "SSF administrative data (10B-L12) and NLFS 2017/18 employee benefit tables.",
+   "unit": "percent",
+   "period": "FY basis",
+   "lead_ids": [
+    "10B-L12",
+    "10B-L02"
+   ]
+  },
+  {
+   "claim": "Q3: Non-contributory social security allowance beneficiaries by category and total outlay.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "mof_nepal"
+   ],
+   "observation_ids": [],
+   "note": "DoNIDCR and Economic Survey tables (10B-L11, 10B-L13).",
+   "unit": "persons",
+   "period": "FY2024/25-FY2025/26",
+   "lead_ids": [
+    "10B-L11",
+    "10B-L13"
+   ]
+  },
+  {
+   "claim": "Q3: SDG 1.3.1 population covered by at least one social-protection benefit, and by function.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "ilostat"
+   ],
+   "observation_ids": [],
+   "note": "ILO WSPDB (10B-L14, 10B-L15); calendar reference year per indicator.",
+   "unit": "percent",
+   "period": "as published",
+   "lead_ids": [
+    "10B-L14",
+    "10B-L15"
+   ]
+  },
+  {
+   "claim": "Q3: Share of households receiving any social transfer (NLSS IV).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nso_nepal"
+   ],
+   "observation_ids": [],
+   "note": "NLSS IV transfer chapter.",
+   "unit": "percent",
+   "period": "FY2022/23",
+   "lead_ids": [
+    "10B-L03"
+   ]
+  },
+  {
+   "claim": "NLFS rounds are the benchmark for labour indicators. NLFS 2017/18 applies the 19th ICLS work concept (own-use production excluded from employment); NLFS 2008 is not comparable without re-tabulation. This is to be confirmed from the 2017/18 methodology chapter (10B-L02).",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Output per worker is computed only with numerator and denominator on the same FY and the same NA vintage; no splicing across NA rebasings without a documented back-cast (from 01A).",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  },
+  {
+   "claim": "Workers abroad are excluded from domestic employment denominators (they are outside the NLFS resident frame); remittance income is not treated as domestic output.",
+   "type": "assumption",
+   "value": null,
+   "source_ids": [],
+   "observation_ids": []
+  }
+ ],
+ "data_gaps": [
+  "NLFS 2024/25 report and release date not located.",
+  "No LFS between FY2017/18 and FY2024/25; NLSS IV labour module differs in design, so trend comparisons carry a concept break.",
+  "NA GVA vintage for FY2017/18 after the latest rebasing not confirmed (depends on 01A).",
+  "SSF and DoNIDCR administrative series not located as downloadable tables (landing pages only, unverified).",
+  "Wages: no regular official wage series by sector located; NLFS earnings tables only.",
+  "Informality by province and sector cross-tab for FY2022/23 onward requires NLSS IV microdata access."
+ ],
+ "assumptions": [
+  {
+   "id": "10B-A1",
+   "text": "NLFS is the benchmark for labour indicators; NLSS IV and ILO modelled series are separate observations and are not spliced with NLFS.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10B-A2",
+   "text": "Sectoral output per worker uses identical FY and NA vintage for numerator and denominator; industry mapping documented.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10B-A3",
+   "text": "Migrant workers abroad are outside domestic employment; they are handled by 23A/10C as a separate stock.",
+   "basis": "assumption"
+  },
+  {
+   "id": "10B-A4",
+   "text": "Labour-input paths beyond survey years (participation, unemployment) are labelled assumptions for 01A, varied in sensitivity analysis.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "01A",
+   "text": "Labour input for growth accounting should use NLFS employment (19th ICLS) with 10C resident working-age paths, not WPP working-age totals; PWT emp is a cross-check only."
+  },
+  {
+   "to": "00B",
+   "text": "C-07 accepted; add a concept-break flag between NLFS 2017/18, NLSS IV 2022/23 and NLFS 2024/25."
+  },
+  {
+   "to": "01C",
+   "text": "units.py has no code for PPP international dollars; ILO SDG 8.2.1 output per worker cannot be stored in its native unit. Request a unit addition via Agent 00 rather than mislabelling."
+  },
+  {
+   "to": "23C",
+   "text": "Accepted: NLSS IV provincial receipt shares with standard errors; 10B will use the same NLSS IV observation set for social-transfer receipt to avoid double ingestion."
+  }
+ ],
+ "uncertainty": "High for r1. Main uncertainties: (i) the concept break between NLFS 2017/18, NLSS IV and NLFS 2024/25 may exceed true change in unemployment/participation; (ii) informality measurement depends on the definition (NSO national vs ILO harmonised); (iii) sectoral productivity is sensitive to NA vintage and to the classification of own-account agricultural workers; (iv) social-protection coverage mixes administrative counts (possible duplicates across schemes) and survey receipt. Four lead URLs are general knowledge and unverified.",
+ "source_leads": [
+  {
+   "lead_id": "10B-L01",
+   "url": "https://data.nsonepal.gov.np/dataset/nepal-labour-force-survey-2018/resource/9f5e1585-2af7-4257-bb6b-59073b1da34f",
+   "title": "Nepal Labour Force Survey 2017/18 - NSO open data resource",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "NLFS III 2017/18 (survey period within FY2017/18): labour force participation, employment-to-population, unemployment and labour underutilisation (LU1-LU4) by sex, age, province, urban/rural; informal employment and informal-sector employment; employment by industry (NSIC) and occupation; social-security coverage of employees; first round on the 19th ICLS work concept",
+   "url_status": "search-verified (WebSearch result, 2026-09-27)"
+  },
+  {
+   "lead_id": "10B-L02",
+   "url": "https://cbs.gov.np/wp-content/upLoads/2019/05/Nepal-Labour-Force-Survey-2017_18-Report.pdf",
+   "title": "Report on the Nepal Labour Force Survey 2017/18",
+   "publisher": "Central Bureau of Statistics (now NSO), Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Full NLFS 2017/18 report: methodology chapter (19th ICLS definitions, reference week, sample), tables for LFPR, unemployment, informality, employment by industry, earnings, social-security entitlements",
+   "url_status": "search-verified (WebSearch result, 2026-09-27)"
+  },
+  {
+   "lead_id": "10B-L03",
+   "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+   "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Labour/employment chapter: participation, unemployment (incl. youth), working days of wage earners, employment by sector; social transfers received; survey period July 2022-June 2023 (FY2022/23). Not an LFS - concepts to be compared with NLFS",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L04",
+   "url": "https://www.ilo.org/sites/default/files/2024-11/ToR_FieldEnumerators_NSO.pdf",
+   "title": "Nepal Labour Force Survey (NLFS) 2024/25 - ToR for field enumerators",
+   "publisher": "National Statistics Office Nepal / ILO",
+   "source_id": "nso_nepal",
+   "contains": "Confirms a fourth NLFS round (2024/25) and its fieldwork design; locator for the forthcoming NLFS 2024/25 report",
+   "url_status": "search-verified (WebSearch result, 2026-09-27)"
+  },
+  {
+   "lead_id": "10B-L05",
+   "url": "https://kathmandupost.com/national/2026/04/14/labour-force-survey-underway-to-update-nepal-s-unemployment-data",
+   "title": "Yearlong labour force survey ongoing in Nepal (news, 14 April 2026)",
+   "publisher": "The Kathmandu Post",
+   "source_id": "academic",
+   "contains": "News locator on status/timing of the ongoing NLFS round; not evidence of any value",
+   "url_status": "search-verified (WebSearch result, 2026-09-27)"
+  },
+  {
+   "lead_id": "10B-L06",
+   "url": "https://ilostat.ilo.org",
+   "title": "ILOSTAT - Nepal labour force indicators",
+   "publisher": "International Labour Organization",
+   "source_id": "ilostat",
+   "contains": "Harmonised survey-based series from NLFS 2008 and 2017/18 and ILO modelled estimates (ILOEST) by year: LFPR, unemployment, informal employment rate (SDG 8.3.1), output per worker (SDG 8.2.1), employment by economic activity; calendar-year labels (C-07)",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L07",
+   "url": "https://nsonepal.gov.np",
+   "title": "National Accounts of Nepal (latest annual release) - NSO landing page",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "GVA by industry at basic prices, current and constant prices, fiscal-year basis; numerator of output per worker by sector",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L08",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+   "title": "NPHC 2021 related materials (economic activity tables)",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Census 2021 usually economically active population by industry and occupation - alternative employment denominator at census date (usual-activity concept, differs from NLFS current activity)",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L09",
+   "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+   "title": "NLSS IV 2022/23 microdata catalogue",
+   "publisher": "National Statistics Office, Nepal",
+   "source_id": "nso_nepal",
+   "contains": "Microdata to tabulate employment by industry and informality proxies with survey weights for FY2022/23",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L10",
+   "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+   "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+   "publisher": "International Labour Organization",
+   "source_id": "ilostat",
+   "contains": "Sectoral employment by sex and formality for preference-dependent sectors; secondary tabulation of NLFS - trace to primary",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L11",
+   "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+   "title": "Economic Survey 2082/83 (Nepali)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Chapters on labour/employment and social security: social security allowance beneficiaries and outlays by category, SSF contributors, FY basis",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L12",
+   "url": "https://ssf.gov.np",
+   "title": "Social Security Fund Nepal",
+   "publisher": "Social Security Fund, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Contributory scheme (Social Security Act 2017): enrolled employers, contributors, schemes and benefit payments; FY basis",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10B-L13",
+   "url": "https://donidcr.gov.np",
+   "title": "Department of National ID and Civil Registration - social security allowance",
+   "publisher": "Department of National ID and Civil Registration, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Non-contributory social security allowance beneficiaries by category (senior citizens, single women, disability, child grant, endangered ethnic groups) and local level; FY basis",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10B-L14",
+   "url": "https://www.social-protection.org/gimi/WSPDB.action",
+   "title": "ILO World Social Protection Database / dashboards",
+   "publisher": "International Labour Organization",
+   "source_id": "ilostat",
+   "contains": "SDG 1.3.1 effective coverage by function (old age, children, disability, unemployment, maternity, employment injury) for Nepal; reference year per indicator",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10B-L15",
+   "url": "https://www.ilo.org/publications/flagship-reports/world-social-protection-report-2024-26",
+   "title": "ILO World Social Protection Report 2024-26",
+   "publisher": "International Labour Organization",
+   "source_id": "ilostat",
+   "contains": "Methodology for SDG 1.3.1 and country annex tables incl. Nepal",
+   "url_status": "URL from general knowledge — unverified"
+  },
+  {
+   "lead_id": "10B-L16",
+   "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+   "title": "Penn World Table (latest version)",
+   "publisher": "Groningen Growth and Development Centre",
+   "source_id": "pwt",
+   "contains": "emp, hc and rgdpna for Nepal - aggregate output per worker cross-check (secondary)",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  },
+  {
+   "lead_id": "10B-L17",
+   "url": "https://kathmandupost.com/columns/2024/07/15/data-cooking-in-government-surveys",
+   "title": "Opinion: Data cooking in government surveys",
+   "publisher": "The Kathmandu Post",
+   "source_id": "academic",
+   "contains": "Critique of NLSS IV data quality - methodological issue to check before using NLSS IV labour indicators",
+   "url_status": "shared lead in research/sources/source_leads.json"
+  }
+ ],
+ "specific": {
+  "labour_market_baseline": {
+   "status": "pending",
+   "value": null,
+   "indicators": [
+    "LFPR 15+ by sex",
+    "employment-to-population ratio",
+    "unemployment rate (15+, 15-24)",
+    "LU2/LU3/LU4",
+    "informal employment rate (total and non-agricultural)",
+    "informal-sector share",
+    "employment by status (wage, own-account, contributing family)",
+    "employment by NSIC section"
+   ],
+   "sources_by_round": [
+    {
+     "round": "NLFS 2017/18",
+     "period": "FY2017/18",
+     "role": "benchmark base (19th ICLS)",
+     "lead_ids": [
+      "10B-L01",
+      "10B-L02"
+     ],
+     "status": "pending"
+    },
+    {
+     "round": "NLSS IV 2022/23",
+     "period": "FY2022/23",
+     "role": "intermediate point, non-LFS; comparability flag",
+     "lead_ids": [
+      "10B-L03",
+      "10B-L09",
+      "10B-L17"
+     ],
+     "status": "pending"
+    },
+    {
+     "round": "NLFS 2024/25",
+     "period": "FY2024/25 (to confirm)",
+     "role": "new base when published",
+     "lead_ids": [
+      "10B-L04",
+      "10B-L05"
+     ],
+     "status": "pending - report not located"
+    },
+    {
+     "round": "ILOSTAT harmonised / ILOEST",
+     "period": "calendar year",
+     "role": "cross-check and gap fill (labelled estimates)",
+     "lead_ids": [
+      "10B-L06"
+     ],
+     "status": "pending"
+    }
+   ],
+   "units": "percent; persons_k for levels",
+   "method": "Ingest published tables as observations with survey period and concept tags; compute nothing across rounds without a concept-comparability note."
+  },
+  "productivity_by_sector": {
+   "status": "pending",
+   "value": null,
+   "unit": "NPR_per_person",
+   "definition": "GVA at basic prices by industry (NSO NA, constant and current prices, FY) / employed persons by industry (NLFS/NLSS, same FY).",
+   "sectors": [
+    "agriculture, forestry, fishing",
+    "mining and quarrying",
+    "manufacturing",
+    "electricity, gas, water",
+    "construction",
+    "wholesale and retail trade",
+    "transport and storage",
+    "accommodation and food",
+    "information and communication",
+    "financial and insurance",
+    "real estate, professional, administrative",
+    "public administration, education, health",
+    "other services"
+   ],
+   "years": [
+    "FY2017/18",
+    "FY2022/23",
+    "FY2024/25"
+   ],
+   "outputs": [
+    "level by sector",
+    "relative productivity (sector / economy-wide)",
+    "within-sector vs structural-change decomposition (shift-share) between survey years"
+   ],
+   "known_issues": [
+    "NA rebasing changes GVA levels; use one vintage",
+    "NSIC mapping between NA and survey classification",
+    "informal/own-account agricultural employment inflates agricultural denominators"
+   ],
+   "lead_ids": [
+    "10B-L07",
+    "10B-L02",
+    "10B-L03",
+    "10B-L06",
+    "10B-L16"
+   ]
+  },
+  "sp_coverage": {
+   "status": "pending",
+   "value": null,
+   "unit": "percent",
+   "components": [
+    {
+     "scheme": "Social security allowance (non-contributory)",
+     "measure": "beneficiaries by category; outlay; coverage of eligible population",
+     "lead_ids": [
+      "10B-L13",
+      "10B-L11"
+     ],
+     "status": "pending"
+    },
+    {
+     "scheme": "Social Security Fund (contributory, Social Security Act 2017)",
+     "measure": "contributors, employers, benefits paid; share of wage employees covered",
+     "lead_ids": [
+      "10B-L12",
+      "10B-L11"
+     ],
+     "status": "pending"
+    },
+    {
+     "scheme": "Public-service pensions (civil service, army, police, teachers)",
+     "measure": "pensioners and outlay",
+     "lead_ids": [
+      "10B-L11"
+     ],
+     "status": "pending"
+    },
+    {
+     "scheme": "SDG 1.3.1 effective coverage by function",
+     "measure": "percent of relevant population",
+     "lead_ids": [
+      "10B-L14",
+      "10B-L15"
+     ],
+     "status": "pending"
+    },
+    {
+     "scheme": "Household receipt of social transfers",
+     "measure": "percent of households (NLSS IV)",
+     "lead_ids": [
+      "10B-L03"
+     ],
+     "status": "pending"
+    }
+   ],
+   "method": "Administrative counts (FY) and survey coverage (FY2022/23) kept separate; ILO SDG 1.3.1 recorded with its reference year; denominators from 10C census/WPP paths labelled by source."
+  }
+ }
+}

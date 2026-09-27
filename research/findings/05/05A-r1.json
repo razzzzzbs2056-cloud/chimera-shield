@@ -1,0 +1,918 @@
+{
+ "subagent_id": "05A",
+ "task_id": "r1",
+ "generated_at": "2026-09-27T12:00:00+00:00",
+ "summary": "Round r1 (restricted network; data hosts blocked; one web search used). All empirical items are PENDING. Q1 (installed capacity, annual generation, wet/dry gap), Q2 (pipeline by status and historical completion rate) and Q3 (transmission corridors constraining evacuation and export) are designed but unanswered. Primary documents located: NEA annual reports and directorate publications (energy balance, monthly tables, capacity and transmission lists), DoED licence registers, MoF Economic Surveys FY2024/25 and FY2025/26, NRB and customs electricity trade tables (HS 2716), CEA cross-border approval page, 2018 guidelines and 2021 procedure, CEA National Electricity Plan (Transmission), CERC monthly/annual market reports and IEX price pages. Designed: (i) an INPS electricity balance per Nepal FY implemented with src.economic_model.energy.ElectricityBalance, with an explicit residual; (ii) a monthly seasonal profile on Nepali months aligned with 22B price seasons; (iii) a licence-cohort survival (Kaplan-Meier) completion-rate method with cancellations as failures; (iv) a transmission bottleneck register separating thermal rating, operational transfer limit and CEA-approved trading quantum. Reported 2026 events (Kyirong-Rasuwa flood, Indian approval decisions) are unverified and flagged.",
+ "findings": [
+  {
+   "claim": "Installed grid-connected capacity by owner (NEA, NEA subsidiaries, IPPs) and type (ROR, PROR, storage, solar, thermal/diesel), end of FY2024/25 and FY2025/26.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "doe_nepal",
+    "mof_nepal"
+   ],
+   "note": "Need NEA annual report capacity table and DoED operating-project register; keep both if they differ (NEA counts INPS-connected plants; DoED counts licensed operating projects incl. isolated). Leads: 05A-L01, 05A-L04, 05A-L11, 05A-L12",
+   "period": "end FY2024/25; end FY2025/26 (Nepal FY, mid-July)",
+   "unit": "MW"
+  },
+  {
+   "claim": "Annual generation by owner (NEA own, NEA subsidiaries, IPPs), FY2015/16-FY2025/26.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "NEA reports energy in kWh/MWh ('units'); convert to GWh with factor recorded. Leads: 05A-L01",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "Electricity imports from India (by line/market segment where available), FY2015/16-FY2025/26.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "customs_nepal",
+    "cerc_india"
+   ],
+   "note": "NEA energy balance; cross-check customs HS 2716 quantity and CERC cross-border volumes (Indian FY April-March - requires monthly re-aggregation to Nepal FY). Leads: 05A-L01, 05A-L14, 05A-L22",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "Electricity exports to India and Bangladesh, FY2015/16-FY2025/26.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "customs_nepal",
+    "cerc_india",
+    "nrb"
+   ],
+   "note": "NEA energy balance; cross-checks as above; NRB export value (NPR) for value side. Leads: 05A-L01, 05A-L13, 05A-L14, 05A-L22, 05A-L23",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "Domestic energy sold by consumer category (domestic, industrial, commercial, irrigation, other).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "NEA annual report / DCSD tables; industrial share feeds 05B. Leads: 05A-L01, 05A-L03",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "System losses (transmission + distribution; technical vs non-technical where reported) and loss rate.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "Loss definition must be recorded (NEA reports losses as share of energy available in INPS, net or gross of exports - to verify). Leads: 05A-L01, 05A-L03",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "percent"
+  },
+  {
+   "claim": "Balance closure residual: generation + imports - (sales + exports + losses) per FY; attributed to own use, unaccounted energy or definitional differences.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "Computed with src.economic_model.energy.ElectricityBalance once components are observations. Leads: 05A-L01",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "Monthly generation, imports and exports (INPS), FY2024/25 and FY2025/26, for the wet/dry season gap.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "cerc_india"
+   ],
+   "note": "NEA annual report monthly energy table / system-operation reports; CERC monthly cross-border volumes as cross-check. Leads: 05A-L01, 05A-L02, 05A-L22",
+   "period": "monthly, Nepali months, FY2024/25-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "Annual peak demand of INPS and dry-season available capacity (dry-season deficit covered by imports).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "Available capacity in the driest month differs from nameplate for ROR plants; need NEA monthly peak and available capacity. Leads: 05A-L01, 05A-L02",
+   "period": "FY2020/21-FY2025/26",
+   "unit": "MW"
+  },
+  {
+   "claim": "Energy spilled (generated potential not evacuated or not sold) due to transmission or market constraints, by month.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea"
+   ],
+   "note": "If NEA publishes spill estimates; otherwise PENDING with request to NEA system operation. Methodology of estimation must be recorded. Leads: 05A-L02, 05A-L01",
+   "period": "FY2022/23-FY2025/26",
+   "unit": "GWh"
+  },
+  {
+   "claim": "Pipeline by status: survey licence, generation (construction) licence, connection agreement, PPA signed, financial close, under construction; capacity and count.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "doe_nepal",
+    "nea",
+    "ibn"
+   ],
+   "note": "DoED licence registers; NEA PPA list; IBN project list; ERC PPA approvals. Search located media reports of FY2025/26 licence issuance (pointers only). Leads: 05A-L04, 05A-L05, 05A-L06, 05A-L09, 05A-L10, 05A-L01",
+   "period": "latest DoED/NEA register (2026)",
+   "unit": "MW"
+  },
+  {
+   "claim": "Historical licence-to-commissioning completion rate by licence cohort (share of generation-licensed MW commissioned within k years of licence issue) and RCOD slippage distribution.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "doe_nepal",
+    "nea"
+   ],
+   "note": "Needs project-level DoED records (licence date, RCOD, capacity) matched to NEA commissioning dates. Method in specific.pipeline_completion_rate. Leads: 05A-L04, 05A-L01, 05A-L07",
+   "period": "licence cohorts FY2009/10-FY2020/21, observed to FY2025/26",
+   "unit": "ratio"
+  },
+  {
+   "claim": "Licences cancelled, surrendered or expired by year (denominator correction for completion rate).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "doe_nepal"
+   ],
+   "note": "DoED/MoEWRI decisions; media pointer on dormant-licence cancellation policy. Leads: 05A-L04, 05A-L07",
+   "period": "FY2015/16-FY2025/26",
+   "unit": "count"
+  },
+  {
+   "claim": "Committed capacity additions by year (projects under construction with financial close and connection agreement), FY2026/27-FY2030/31.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "doe_nepal",
+    "ibn"
+   ],
+   "note": "Estimate labelled only after completion-rate hazard is estimated from cohort data; no pipeline total is taken at face value. Leads: 05A-L01, 05A-L04, 05A-L09, 05A-L31",
+   "period": "FY2026/27-FY2030/31",
+   "unit": "MW"
+  },
+  {
+   "claim": "Existing cross-border interconnections with India: line, voltage, circuits, thermal rating, operational transfer limit (N-1) and approved trading quantum.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "cea_india"
+   ],
+   "note": "Three different capacity notions must be kept separate (thermal rating vs operational limit vs CEA-approved quantum). Leads: 05A-L01, 05A-L19, 05A-L20, 05A-L15, 05A-L16",
+   "period": "2026",
+   "unit": "MW"
+  },
+  {
+   "claim": "Planned/under-construction cross-border lines (incl. Butwal-Gorakhpur, Inaruwa-New Purnea, Lamki/Dodhara-Bareilly) with expected completion dates.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "cea_india"
+   ],
+   "note": "CEA NEP Vol II and NEA; media pointer for Oct 2025 JV agreements. Line names to verify against primary documents. Leads: 05A-L19, 05A-L20, 05A-L21, 05A-L26, 05A-L01",
+   "period": "2026-2035",
+   "unit": "MW"
+  },
+  {
+   "claim": "Internal corridor constraints: transfer capacity vs connected/licensed generation per corridor and substation (Koshi, Tamakoshi-Kathmandu, Marsyangdi, Kaligandaki, Trishuli, Karnali, Mahakali corridors; Hetauda-Dhalkebar-Inaruwa backbone).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "nea",
+    "doe_nepal"
+   ],
+   "note": "Corridor names are candidate labels from general knowledge; to be replaced with NEA transmission directorate nomenclature. Leads: 05A-L01, 05A-L29, 05A-L04",
+   "period": "2026",
+   "unit": "MW"
+  },
+  {
+   "claim": "CEA Designated Authority approved export quantum by Nepali project and validity dates; share of export-capable capacity lacking approval.",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "cea_india"
+   ],
+   "note": "CEA page list of approvals; a market-access constraint distinct from physical transmission. Leads: 05A-L15, 05A-L16, 05A-L17, 05A-L18",
+   "period": "2021-2026",
+   "unit": "MW"
+  },
+  {
+   "claim": "Reported 2026 events affecting evacuation/trade: Kyirong-Rasuwa flood damage to Trishuli/Bhote Koshi corridor; withheld Indian approval for additional Bangladesh trade; India-to-Nepal supply approval with hour limits (Sep-Dec 2026).",
+   "type": "pending",
+   "value": null,
+   "source_ids": [
+    "icimod",
+    "cea_india",
+    "mop_india"
+   ],
+   "note": "UNVERIFIED - only media and an unretrievable ICIMOD page. Must not enter scenarios until primary orders/assessments are retrieved. Leads: 05A-L32, 05A-L27, 05A-L28",
+   "period": "calendar 2026"
+  },
+  {
+   "claim": "Electricity balance identity used: generation + imports = domestic consumption (sales) + exports + losses + own use/residual, all in GWh per Nepal FY, INPS scope only (off-grid and captive excluded and reported separately).",
+   "type": "assumption",
+   "note": "Implements src/economic_model/energy.py ElectricityBalance; residual reported, never forced to zero."
+  },
+  {
+   "claim": "Wet season defined on Nepali months as Jestha-Kartik (approximately mid-May to mid-November) and dry season as Mangsir-Baisakh, for alignment with NEA monthly tables; alternative definitions tested for sensitivity.",
+   "type": "assumption",
+   "note": "Season boundaries are a modelling choice to be confirmed against NEA's own convention; coordinated with 22B price seasons."
+  },
+  {
+   "claim": "Pipeline MW is not treated as future capacity; only completion-rate-weighted cohorts enter capacity paths, with climate (25A/22D) and market-access (25B) constraints as separate scenario parameters.",
+   "type": "assumption",
+   "note": "Avoids the common practice of equating licensed MW with expected supply."
+  }
+ ],
+ "data_gaps": [
+  "Every empirical value: no primary document could be downloaded in r1.",
+  "DoED historical licence registers including cancelled/expired licences (needed for unbiased completion rates) - availability unknown.",
+  "Project-level commissioning dates matched to licence records (NEA/DoED).",
+  "NEA monthly generation by plant and plant type (also requested by 22D); may need a data request to NEA system operation.",
+  "Spill/energy-not-evacuated estimates and their method.",
+  "Operational transfer limits (N-1) of cross-border lines - may exist only in joint technical team minutes (CEA PSPA-II).",
+  "ERC Nepal is not in the source catalog; its URL is from general knowledge.",
+  "Final (not draft) CEA National Electricity Plan Vol II."
+ ],
+ "assumptions": [
+  {
+   "id": "05A-A1",
+   "text": "Balance scope is INPS grid; off-grid and captive generation reported separately.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05A-A2",
+   "text": "Season definition on Nepali months (wet = Jestha-Kartik); sensitivity to alternatives.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05A-A3",
+   "text": "Completion rates estimated by licence cohort with cancellations as failures and right-censoring for open cohorts.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05A-A4",
+   "text": "Three capacity notions for cross-border lines are never merged: thermal rating, operational transfer limit, approved trading quantum.",
+   "basis": "assumption"
+  },
+  {
+   "id": "05A-A5",
+   "text": "Media reports are pointers to primary documents only, never evidence.",
+   "basis": "assumption"
+  }
+ ],
+ "challenges": [
+  {
+   "to": "22B",
+   "text": "Accepted: energy will be stored in GWh with explicit kWh conversion and Nepal FY. Proposed shared season basis: Nepali months (wet = Jestha-Kartik); 22B should re-aggregate IEX 15-minute prices to the same months."
+  },
+  {
+   "to": "22D",
+   "text": "NEA monthly generation by plant type is not confirmed to be published at plant level; 05A will request it from NEA (pending). Until then the flow-to-generation mapping should use plant-type aggregates."
+  },
+  {
+   "to": "25A",
+   "text": "Accepted: dry-season flow ranges (PR-05/PR-07) will enter as scenario sensitivities on the seasonal profile, not as a point path."
+  },
+  {
+   "to": "25B",
+   "text": "Accepted: the Indian 2018 guidelines' eligibility conditions and CEA approved quantum are modelled as a binding market-access constraint in the transmission register, separate from physical capacity."
+  },
+  {
+   "to": "00A",
+   "text": "Propose adding ERC Nepal (Electricity Regulatory Commission) as a tier-1 catalog source; and confirm document-level endpoints for doed.gov.np licence registers."
+  },
+  {
+   "to": "05B",
+   "text": "Hand-off: the export-vs-domestic comparison must use the seasonal surplus (wet-season spill/export) rather than annual averages; industrial demand in the dry season competes with imports, not exports."
+  },
+  {
+   "to": "15",
+   "text": "Escalation: if reported 2026 events (Kyirong-Rasuwa damage to Trishuli corridor; Indian approval decisions) are verified, generation and export baselines in S05/S09 change."
+  },
+  {
+   "to": "28",
+   "text": "Red-team note: India is the sole physical and regulatory export route and a dry-season supplier; approval decisions with hour limits are a two-way dependence to review."
+  }
+ ],
+ "uncertainty": "High: no value retrieved. Structural uncertainties once data arrive: (i) NEA, customs and CERC trade volumes differ by metering point and period basis; (ii) IPP 'generation' is energy purchased at interconnection, not gross output; (iii) loss-rate base definitions vary; (iv) completion rates depend on whether cancelled licences are recorded; (v) cross-border 'capacity' has three distinct meanings; (vi) climate-driven dry-season flows and 2026 hazard events may shift the seasonal profile beyond historical ranges.",
+ "specific": {
+  "electricity_balance": {
+   "status": "pending",
+   "identity": "generation + imports = domestic_sales + exports + losses + own_use_residual (GWh)",
+   "implementation": "src.economic_model.energy.ElectricityBalance (IdentityCheck, rel_tol configurable); loss_rate = losses / (generation + imports)",
+   "period_basis": "Nepal FY (mid-July to mid-July); FY2015/16-FY2025/26. Indian-FY (April-March) CERC/CEA series only via monthly re-aggregation.",
+   "scope": "INPS (grid) only; captive/off-grid/solar-rooftop net metering reported separately if data exist",
+   "components": {
+    "generation": {
+     "unit": "GWh",
+     "split": [
+      "NEA own",
+      "NEA subsidiaries",
+      "IPPs"
+     ],
+     "sources": [
+      "nea"
+     ],
+     "lead_ids": [
+      "05A-L01",
+      "05A-L11",
+      "05A-L12"
+     ],
+     "status": "pending"
+    },
+    "imports": {
+     "unit": "GWh",
+     "split": [
+      "by cross-border line/segment where reported"
+     ],
+     "sources": [
+      "nea",
+      "customs_nepal",
+      "cerc_india"
+     ],
+     "lead_ids": [
+      "05A-L01",
+      "05A-L14",
+      "05A-L22"
+     ],
+     "status": "pending"
+    },
+    "domestic_sales": {
+     "unit": "GWh",
+     "split": [
+      "domestic",
+      "industrial",
+      "commercial",
+      "irrigation",
+      "other"
+     ],
+     "sources": [
+      "nea"
+     ],
+     "lead_ids": [
+      "05A-L01",
+      "05A-L03"
+     ],
+     "status": "pending"
+    },
+    "exports": {
+     "unit": "GWh",
+     "split": [
+      "India bilateral/exchange",
+      "Bangladesh"
+     ],
+     "sources": [
+      "nea",
+      "customs_nepal",
+      "cerc_india",
+      "nrb"
+     ],
+     "lead_ids": [
+      "05A-L01",
+      "05A-L13",
+      "05A-L14",
+      "05A-L22",
+      "05A-L23"
+     ],
+     "status": "pending"
+    },
+    "losses": {
+     "unit": "GWh",
+     "definition_issue": "NEA loss percentage base (net energy available vs gross incl. exports) to be recorded from report text",
+     "sources": [
+      "nea"
+     ],
+     "lead_ids": [
+      "05A-L01",
+      "05A-L03"
+     ],
+     "status": "pending"
+    },
+    "own_use_residual": {
+     "unit": "GWh",
+     "method": "closing residual; flagged if > tolerance and escalated to 00B",
+     "status": "pending"
+    }
+   },
+   "unit_conversion": "NEA 'units' = kWh; GWh = kWh x 1e-6 (units.py _ENERGY_SCALE)",
+   "known_methodological_issues": [
+    "NEA vs customs vs CERC trade volume differences (metering point, period basis, deviation settlement energy)",
+    "IPP generation reported as NEA purchase (energy delivered at interconnection) not gross generation",
+    "FY vs Indian FY mismatch"
+   ],
+   "consumers": [
+    "05B",
+    "22E",
+    "06",
+    "15"
+   ]
+  },
+  "seasonal_profile": {
+   "status": "pending",
+   "variables": [
+    "monthly generation by plant type (ROR, PROR, storage, solar)",
+    "monthly imports",
+    "monthly exports",
+    "monthly peak demand",
+    "monthly available capacity",
+    "monthly spill"
+   ],
+   "unit": "GWh (energy), MW (peak/available capacity)",
+   "period": "Nepali months, FY2020/21-FY2025/26",
+   "metrics": {
+    "wet_dry_gap": "(wet-season generation - dry-season generation) / annual generation; and dry-season net imports GWh",
+    "dry_season_deficit": "max(0, domestic demand - domestic generation) per month",
+    "wet_season_surplus": "max(0, domestic generation - domestic demand) per month, split into exported vs spilled"
+   },
+   "season_definition": "wet = Jestha-Kartik; dry = Mangsir-Baisakh (assumption, sensitivity tested)",
+   "sources": [
+    "nea",
+    "cerc_india",
+    "dhm"
+   ],
+   "lead_ids": [
+    "05A-L01",
+    "05A-L02",
+    "05A-L22",
+    "05A-L34"
+   ],
+   "links": {
+    "22B": "price seasons aligned to the same monthly basis",
+    "22D": "monthly generation by plant needed for flow-generation mapping (availability pending)",
+    "25A": "dry-season flow ranges enter as scenario sensitivities"
+   }
+  },
+  "pipeline_completion_rate": {
+   "status": "pending",
+   "definition": "Share of generation-licensed capacity (MW) in licence cohort c that reaches commercial operation within k years of licence issue; reported as a survival (Kaplan-Meier) curve with right-censoring for cohorts still within their RCOD window",
+   "unit": "ratio",
+   "method": [
+    "Build project-level panel from DoED generation-licence register (project, capacity, licence date, RCOD, cancellation) matched to NEA commissioning dates",
+    "Kaplan-Meier survival of 'not yet commissioned' by MW and by count; hazard by cohort, size class, ownership, basin, PPA status (take-or-pay vs other)",
+    "Cancelled/expired licences treated as failures, not censored",
+    "RCOD slippage distribution = actual COD - RCOD (years)",
+    "Apply cohort hazards to current under-construction and licensed stock to derive completion-weighted capacity paths; no point forecast, ranges only"
+   ],
+   "status_categories": [
+    "survey licence",
+    "generation licence (construction)",
+    "connection agreement",
+    "PPA signed",
+    "financial close",
+    "under construction",
+    "commissioned",
+    "cancelled/expired"
+   ],
+   "sources": [
+    "doe_nepal",
+    "nea",
+    "ibn"
+   ],
+   "lead_ids": [
+    "05A-L04",
+    "05A-L01",
+    "05A-L05",
+    "05A-L06",
+    "05A-L07",
+    "05A-L08",
+    "05A-L09",
+    "05A-L10",
+    "05A-L31"
+   ],
+   "data_risk": "DoED historical registers may only list current licences; cancelled licences may be missing, biasing completion rates upward"
+  },
+  "transmission_bottlenecks": {
+   "status": "pending",
+   "register_fields": [
+    "corridor_or_line",
+    "type (internal corridor / cross-border)",
+    "voltage",
+    "circuits",
+    "thermal_rating_MW",
+    "operational_transfer_limit_MW",
+    "approved_trading_quantum_MW (cross-border)",
+    "connected_generation_MW",
+    "licensed_generation_seeking_connection_MW",
+    "commissioning_or_expected_date",
+    "status",
+    "hazard_exposure (22D/25C)",
+    "source_observation_ids"
+   ],
+   "candidate_entries": [
+    {
+     "id": "TB-01",
+     "corridor": "Dhalkebar-Muzaffarpur cross-border line",
+     "type": "cross-border",
+     "status": "pending"
+    },
+    {
+     "id": "TB-02",
+     "corridor": "Other existing lower-voltage cross-border radial links (e.g. Kataiya-Kusaha, Raxaul-Parwanipur, Tanakpur-Mahendranagar)",
+     "type": "cross-border",
+     "status": "pending"
+    },
+    {
+     "id": "TB-03",
+     "corridor": "Butwal-Gorakhpur (planned)",
+     "type": "cross-border",
+     "status": "pending"
+    },
+    {
+     "id": "TB-04",
+     "corridor": "Inaruwa-New Purnea (planned, JV agreement reported Oct 2025)",
+     "type": "cross-border",
+     "status": "pending"
+    },
+    {
+     "id": "TB-05",
+     "corridor": "Lamki (Dodhara)-Bareilly (planned, JV agreement reported Oct 2025)",
+     "type": "cross-border",
+     "status": "pending"
+    },
+    {
+     "id": "TB-06",
+     "corridor": "Rasuwagadhi-Kerung (Nepal-China, proposed; exposed to reported 2026 Kyirong-Rasuwa event)",
+     "type": "cross-border",
+     "status": "pending"
+    },
+    {
+     "id": "TB-07",
+     "corridor": "Koshi corridor",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-08",
+     "corridor": "Tamakoshi/Khimti-Kathmandu corridor",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-09",
+     "corridor": "Marsyangdi corridor",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-10",
+     "corridor": "Kaligandaki corridor",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-11",
+     "corridor": "Trishuli corridor",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-12",
+     "corridor": "Hetauda-Dhalkebar-Inaruwa east-west backbone",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-13",
+     "corridor": "Karnali/Mahakali (far-west) corridors",
+     "type": "internal",
+     "status": "pending"
+    },
+    {
+     "id": "TB-14",
+     "corridor": "MCC-funded transmission lines (MCA-Nepal)",
+     "type": "internal",
+     "status": "pending"
+    }
+   ],
+   "note": "Corridor names are candidate labels (general knowledge and media pointers) to be replaced by NEA/CEA nomenclature; no capacity values recorded in r1.",
+   "bottleneck_test": "A corridor is binding if connected + committed generation (completion-weighted) exceeds operational transfer limit in any wet-season month, or if CEA-approved quantum < exportable surplus.",
+   "sources": [
+    "nea",
+    "cea_india",
+    "mop_india",
+    "doe_nepal"
+   ],
+   "lead_ids": [
+    "05A-L01",
+    "05A-L15",
+    "05A-L16",
+    "05A-L17",
+    "05A-L18",
+    "05A-L19",
+    "05A-L20",
+    "05A-L21",
+    "05A-L25",
+    "05A-L26",
+    "05A-L27",
+    "05A-L28",
+    "05A-L29",
+    "05A-L32"
+   ]
+  }
+ },
+ "source_leads": [
+  {
+   "lead_id": "05A-L01",
+   "url": "https://www.nea.org.np/annual_report",
+   "title": "NEA Annual Reports (index)",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "Annual Nepal-FY energy balance: generation by NEA plants, NEA subsidiaries and IPPs; imports from India; exports to India/Bangladesh; energy sold by consumer category; system losses; installed capacity by plant and type (ROR/PROR/storage/solar/thermal); monthly generation/import/export tables; peak demand; transmission line and substation lists (existing, under construction, planned); PPA status. Needed editions FY2015/16-FY2025/26."
+  },
+  {
+   "lead_id": "05A-L02",
+   "url": "https://www.nea.org.np/report",
+   "title": "NEA reports (publication subcommittee)",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "System operation / power trade reports; possible monthly and daily load-dispatch data and spill (energy not evacuated) records"
+  },
+  {
+   "lead_id": "05A-L03",
+   "url": "https://www.nea.org.np/admin/assets/uploads/annual_publications/NEA_DCSD_Maganize_2082.pdf",
+   "title": "NEA Distribution and Consumer Services Directorate publication FY2081/82 (2024/25)",
+   "publisher": "Nepal Electricity Authority",
+   "source_id": "nea",
+   "contains": "FY2081/82 consumer-side energy sales by category, distribution losses by distribution centre, import/export energy and revenue (to verify)"
+  },
+  {
+   "lead_id": "05A-L04",
+   "url": "https://doed.gov.np",
+   "title": "Department of Electricity Development (licence registers)",
+   "publisher": "Department of Electricity Development, Nepal",
+   "source_id": "doe_nepal",
+   "contains": "Registers of survey licences, generation (construction) licences, operating projects with capacity, licence issue date, required commercial operation date (RCOD) and status; source for pipeline by status and for licence-cohort completion rates. Catalog URL; document-level endpoints unverified."
+  },
+  {
+   "lead_id": "05A-L05",
+   "url": "https://www.spotlightnepal.com/2026/07/21/99-hydropower-projects-granted-survey-licenses-one-year/",
+   "title": "Hydropower survey licences granted in one year (New Spotlight, July 2026)",
+   "publisher": "New Spotlight Magazine",
+   "source_id": null,
+   "contains": "Report of DoED survey-licence issuance during FY2025/26 and cumulative generation licences/under-construction totals. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05A-L06",
+   "url": "https://english.nepalnews.com/s/business/10-hydropower-projects-granted-construction-licenses-in-first-quarter-of-current-fy/",
+   "title": "Hydropower projects granted construction licences in first quarter of current FY (Nepal News)",
+   "publisher": "Nepal News",
+   "source_id": null,
+   "contains": "List of projects receiving DoED generation (construction) licences in one quarter; pointer to DoED notices. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05A-L07",
+   "url": "https://kathmandupost.com/national/2022/08/01/ministry-mulls-scrapping-licences-of-hydel-projects-that-have-failed-to-start-construction-for-long",
+   "title": "Ministry mulls scrapping licences of hydel projects that failed to start construction (Kathmandu Post, Aug 2022)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Licence-hoarding and RCOD slippage issue; pointer to MoEWRI/DoED decisions on cancellation of dormant licences - relevant to completion-rate denominators. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05A-L08",
+   "url": "https://www.mondaq.com/oil-gas-electricity/1834774/hydropower-project-registration-in-nepal-notes-for-developers-and-lenders-2026",
+   "title": "Hydropower project registration in Nepal: notes for developers and lenders (2026)",
+   "publisher": "Mondaq (law-firm commentary)",
+   "source_id": "academic",
+   "contains": "Licensing stages (survey licence, generation licence, connection agreement, PPA, financial close) and their legal basis; used to define pipeline status categories. Tier 7 interpretation only."
+  },
+  {
+   "lead_id": "05A-L09",
+   "url": "https://ibn.gov.np",
+   "title": "Investment Board Nepal",
+   "publisher": "Investment Board Nepal",
+   "source_id": "ibn",
+   "contains": "Large (IBN-mandated) hydropower project list with status (PDA signed, under construction) and export-oriented projects"
+  },
+  {
+   "lead_id": "05A-L10",
+   "url": "https://www.erc.gov.np",
+   "title": "Electricity Regulatory Commission, Nepal",
+   "publisher": "Electricity Regulatory Commission, Nepal",
+   "source_id": null,
+   "contains": "PPA rate approvals, tariff orders, annual reports with licence/PPA counts. URL from general knowledge - unverified. Not in source catalog - proposed to 00A."
+  },
+  {
+   "lead_id": "05A-L11",
+   "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+   "title": "Economic Survey 2081/82 (FY2024/25)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "Energy chapter and statistical appendix: installed capacity, generation, imports/exports, transmission line length, electricity access; mid-FY data - check period cut-off"
+  },
+  {
+   "lead_id": "05A-L12",
+   "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+   "title": "Economic Survey 2082/83 (FY2025/26)",
+   "publisher": "Ministry of Finance, Nepal",
+   "source_id": "mof_nepal",
+   "contains": "As above for FY2025/26 (first eight months typical cut-off, to verify)"
+  },
+  {
+   "lead_id": "05A-L13",
+   "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+   "title": "Current Macroeconomic and Financial Situation (annual data FY2024/25)",
+   "publisher": "Nepal Rastra Bank",
+   "source_id": "nrb",
+   "contains": "Electricity export and import values (NPR) in merchandise trade tables, FY2024/25 - value cross-check for NEA energy trade"
+  },
+  {
+   "lead_id": "05A-L14",
+   "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+   "title": "Nepal Foreign Trade Statistics FY2022/23 (2079/80)",
+   "publisher": "Department of Customs, Nepal",
+   "source_id": "customs_nepal",
+   "contains": "HS 2716 (electrical energy) import and export quantity (kWh/MWh) and value by partner, FY2022/23 - cross-check of NEA trade volumes"
+  },
+  {
+   "lead_id": "05A-L15",
+   "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+   "title": "Import/Export (Cross Border) of Electricity - CEA page",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Designated Authority approvals for Nepali projects (project, approved MW, validity, market segment); determines exportable quantum independent of physical line capacity"
+  },
+  {
+   "lead_id": "05A-L16",
+   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+   "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity (Feb 2021)",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Approval criteria, validity, market segments open to cross-border sellers"
+  },
+  {
+   "lead_id": "05A-L17",
+   "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+   "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
+   "publisher": "Ministry of Power, India (hosted by CEA)",
+   "source_id": "cea_india",
+   "contains": "Eligibility/ownership conditions on generators selling into India (binding constraint per 25B challenge)"
+  },
+  {
+   "lead_id": "05A-L18",
+   "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
+   "title": "Guidelines for Import/Export (Cross Border) of Electricity 2018 - MoP page",
+   "publisher": "Ministry of Power, India",
+   "source_id": "mop_india",
+   "contains": "Links to later amendments; establishes currently applicable text"
+  },
+  {
+   "lead_id": "05A-L19",
+   "url": "https://cea.nic.in/wp-content/uploads/psp___a_i/2024/01/Draft_NEP_Vol_II.pdf",
+   "title": "National Electricity Plan Vol II: Transmission (draft)",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Existing and planned India-Nepal interconnections by voltage, circuit and capacity; 2022-27 plan and 2027-32 perspective (draft; final to locate)"
+  },
+  {
+   "lead_id": "05A-L20",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2064751",
+   "title": "National Electricity Plan (Transmission) launched",
+   "publisher": "Press Information Bureau, Government of India",
+   "source_id": "mop_india",
+   "contains": "Pointer to final NEP Transmission document and cross-border totals"
+  },
+  {
+   "lead_id": "05A-L21",
+   "url": "https://cea.nic.in/power-system-planning-appraisal-ii-division/?lang=en",
+   "title": "Power System Planning and Appraisal-II Division",
+   "publisher": "Central Electricity Authority, India",
+   "source_id": "cea_india",
+   "contains": "Joint technical team minutes and cross-border link studies with Nepal"
+  },
+  {
+   "lead_id": "05A-L22",
+   "url": "https://cercind.gov.in/report_MM.html",
+   "title": "CERC Monthly Report on Short-term Transactions of Electricity (index)",
+   "publisher": "Central Electricity Regulatory Commission, India",
+   "source_id": "cerc_india",
+   "contains": "Cross-border transaction volumes with Nepal by month (Indian FY, April-March) - cross-check of NEA monthly export/import"
+  },
+  {
+   "lead_id": "05A-L23",
+   "url": "https://www.cercind.gov.in/2024/market_monitoring/Annual%20Report%202023-24.pdf",
+   "title": "Annual Report on Short-Term Power Market in India 2023-24",
+   "publisher": "CERC Economics Division",
+   "source_id": "cerc_india",
+   "contains": "Indian FY2023-24 cross-border trade with Nepal/Bhutan/Bangladesh"
+  },
+  {
+   "lead_id": "05A-L24",
+   "url": "https://www.iexindia.com/market-data/day-ahead-market/area-prices",
+   "title": "IEX Day Ahead Market - Area Prices",
+   "publisher": "Indian Energy Exchange",
+   "source_id": "iex_india",
+   "contains": "DAM area prices by 15-minute block (INR/MWh) - aligns seasonal export value with 05A seasonal surplus (shared with 22B)"
+  },
+  {
+   "lead_id": "05A-L25",
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+   "title": "Nepal-India Agreement on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
+   "publisher": "Government of Nepal",
+   "source_id": "mofa_nepal",
+   "contains": "Legal basis for cross-border interconnections and non-discriminatory access"
+  },
+  {
+   "lead_id": "05A-L26",
+   "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
+   "title": "Nepal, India sign deal to build two cross-border transmission lines (Oct 2025)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Inaruwa-New Purnea and Lamki(Dodhara)-Bareilly JV agreements; pointer to NEA/POWERGRID documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05A-L27",
+   "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
+   "title": "Additional electricity export to Bangladesh blocked as India withholds approval (June 2026)",
+   "publisher": "The Kathmandu Post",
+   "source_id": null,
+   "contains": "Pointer to CEA/NVVN decision on Nepal-Bangladesh trilateral quantum. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05A-L28",
+   "url": "https://renewablewatch.in/2026/09/15/mop-approves-export-of-power-to-nepal/",
+   "title": "MoP approves export of power to Nepal (Sep 2026)",
+   "publisher": "Renewable Watch",
+   "source_id": null,
+   "contains": "Pointer to MoP/CEA order for India-to-Nepal supply Sep-Dec 2026 over named lines with hour limits - dry-season import dependence. Secondary media pointer only (not a primary source); use solely to locate the underlying official document. Never evidence."
+  },
+  {
+   "lead_id": "05A-L29",
+   "url": "https://np.usembassy.gov/wp-content/uploads/sites/27/2025/11/251127_GPN-9.3.pdf",
+   "title": "MCA-Nepal General Procurement Notice (Nov 2025)",
+   "publisher": "MCA-Nepal via U.S. Embassy Nepal",
+   "source_id": null,
+   "contains": "Electricity Transmission Project scope (lines and substations) and procurement timeline - internal corridor pipeline"
+  },
+  {
+   "lead_id": "05A-L30",
+   "url": "https://www.aiib.org/en/projects/details/2019/approved/Nepal-Power-Distribution-System-Upgrade-and-Expansion-Project.html",
+   "title": "Nepal: Power Distribution System Upgrade and Expansion Project",
+   "publisher": "AIIB",
+   "source_id": "aiib",
+   "contains": "Distribution investment scope and status (loss-reduction component)"
+  },
+  {
+   "lead_id": "05A-L31",
+   "url": "https://www.aiib.org/en/projects/details/2019/approved/Nepal-Upper-Trishuli-1-Hydropower-Project.html",
+   "title": "Nepal: Upper Trishuli-1 Hydropower Project",
+   "publisher": "AIIB",
+   "source_id": "aiib",
+   "contains": "Pipeline project status; financial close and commissioning dates for completion-rate case study"
+  },
+  {
+   "lead_id": "05A-L32",
+   "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+   "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+   "publisher": "ICIMOD",
+   "source_id": "icimod",
+   "contains": "Reported 2026 damage to hydropower in Trishuli/Bhote Koshi corridor - outage channel for generation and transmission register (UNVERIFIED)"
+  },
+  {
+   "lead_id": "05A-L33",
+   "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+   "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+   "publisher": "ICIMOD",
+   "source_id": "icimod",
+   "contains": "Hazard exposure of plants and corridors by basin (for 22D/25A linkage)"
+  },
+  {
+   "lead_id": "05A-L34",
+   "url": "https://www.dhm.gov.np",
+   "title": "Department of Hydrology and Meteorology, Nepal",
+   "publisher": "Department of Hydrology and Meteorology, Nepal",
+   "source_id": "dhm",
+   "contains": "Monthly discharge series for flow-generation relationship (seasonal profile validation)"
+  },
+  {
+   "lead_id": "05A-L35",
+   "url": "https://documents1.worldbank.org/curated/en/099090324133081117/pdf/P17506315b75e20e218bca1eb1a1ed7c34d.pdf",
+   "title": "Bhutan Country Economic Memorandum (World Bank 2024)",
+   "publisher": "World Bank",
+   "source_id": null,
+   "contains": "Comparator: hydropower-export economy, seasonal import dependence and pipeline delays"
+  }
+ ]
+}

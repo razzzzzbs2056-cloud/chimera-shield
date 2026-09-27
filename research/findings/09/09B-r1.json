@@ -1,0 +1,428 @@
+{
+  "subagent_id": "09B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00Z",
+  "summary": "Round r1 (restricted network). Leads recorded for higher education (UGC EMIS), TVET (CTEVT, skill testing), tertiary GER and R&D intensity (WDI/UIS), employer-reported skill gaps (World Bank Enterprise Surveys, NLFS) and demand-side skills evidence (World Bank SADU Oct 2025, existing lead). Most education-specific URLs are from general knowledge and unverified; the ADB education sector assessment is search-verified. No values retrieved; all empirical items pending. Key methodological points: GERD vs budget appropriation, UGC faculty vs ISCED-F classification, and seats vs certified completions for TVET.",
+  "findings": [
+    {
+      "claim": "Q1: Tertiary gross enrolment ratio by sex.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest UIS/WDI year (calendar-year label)",
+      "source_ids": [
+        "unesco_uis",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: SE.TER.ENRR(.FE/.MA) (09B-L04) or UIS (09B-L06)."
+    },
+    {
+      "claim": "Q1: Higher-education enrolment by faculty/field, level and sex (national, by province).",
+      "type": "pending",
+      "value": null,
+      "unit": "persons",
+      "period": "academic year 2080/81 BS or latest UGC EMIS report",
+      "source_ids": [
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: UGC EMIS Report on Higher Education (09B-L01)."
+    },
+    {
+      "claim": "Q1: Tertiary graduates by field (STEM share, ISCED-F broad fields) and sex.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest UGC/UIS year",
+      "source_ids": [
+        "moest",
+        "unesco_uis"
+      ],
+      "observation_ids": [],
+      "note": "Required: UGC graduate tables (09B-L01), UIS graduates by field (09B-L06). Keep UGC (national faculty classification) and UIS (ISCED-F) separate; mapping required."
+    },
+    {
+      "claim": "Q1: TVET capacity - approved annual seats and enrolment in CTEVT long-term programmes (TSLC, diploma) and short-term trainees; skill-test (NSTB) candidates and pass counts.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "latest CTEVT annual report (Nepal FY / academic year)",
+      "source_ids": [
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: CTEVT annual report/programme statistics (09B-L02)."
+    },
+    {
+      "claim": "Q1: Share of upper-secondary students in technical/vocational streams (incl. technical stream in community schools).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest year",
+      "source_ids": [
+        "unesco_uis",
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: UIS TVET participation (09B-L06), CEHRD Flash (see 09A-L14)."
+    },
+    {
+      "claim": "Q2: Gross domestic expenditure on R&D (GERD) as share of GDP; researchers per million.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest reported year; basis (FY vs calendar) to confirm",
+      "source_ids": [
+        "unesco_uis",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "Required: GB.XPD.RSDV.GD.ZS (09B-L05), UIS R&D (09B-L06), UNESCO Science Report (09B-L12). If no national R&D survey exists, record that fact rather than proxy."
+    },
+    {
+      "claim": "Q2: Government budget allocation to science/technology and research institutions (NAST, UGC research grants).",
+      "type": "pending",
+      "value": null,
+      "unit": "NPR_current_mn",
+      "period": "FY2081/82-FY2083/84",
+      "source_ids": [
+        "mof_nepal",
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: budget Red Book / Economic Survey (09B-L13). Budget appropriation is not GERD; label as proxy."
+    },
+    {
+      "claim": "Q3: Employer-reported skill gaps - share of firms citing inadequately educated workforce as a major constraint; share offering formal training.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest Enterprise Survey round for Nepal",
+      "source_ids": [
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: Enterprise Surveys Nepal profile (09B-L07)."
+    },
+    {
+      "claim": "Q3: Skills demanded in online job postings and AI-exposure of white-collar occupations in Nepal.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "2024-2025 (SADU Oct 2025)",
+      "source_ids": [
+        "wb_npl"
+      ],
+      "observation_ids": [],
+      "note": "Required: 09B-L10; consistent with 24A-L11."
+    },
+    {
+      "claim": "Q3: Graduate labour-market outcomes - unemployment/underutilisation by education level; occupation-education mismatch.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "NLFS latest round (survey year)",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS report tables (09B-L08)."
+    },
+    {
+      "claim": "GERD and budget allocations are different concepts; budget appropriations for science will not be used as a GERD estimate.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Definition per Frascati Manual (OECD); recorded to prevent substitution."
+    },
+    {
+      "claim": "TVET capacity is measured as annual training seats/completions plus skill-test certifications; not all trainees are certified and not all certified workers trained formally.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Method choice for the talent-flow model."
+    }
+  ],
+  "data_gaps": [
+    "UGC EMIS higher-education report (latest academic year): URL for the specific report not located.",
+    "CTEVT seat and enrolment statistics by trade: specific report URL not located.",
+    "R&D expenditure: it is unconfirmed whether Nepal has ever conducted a Frascati-compliant R&D survey; GERD may be unavailable.",
+    "Enterprise Survey workforce module: latest Nepal round year and URL unconfirmed.",
+    "NLFS: whether a round after NLFS III (2017/18) has been published is unconfirmed."
+  ],
+  "assumptions": [
+    {
+      "id": "09B-A1",
+      "text": "GERD (Frascati) is not proxied by science budget appropriations.",
+      "basis": "assumption"
+    },
+    {
+      "id": "09B-A2",
+      "text": "TVET capacity = seats and certified completions, both reported, never merged.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "24",
+      "text": "24A AI-exposure analysis of IT/BPO should be paired with 09B supply-side counts of ICT/engineering graduates; exposure without graduate supply numbers cannot assess the export-services pathway."
+    },
+    {
+      "to": "08",
+      "text": "Any productivity-growth assumption for services exports should state the skilled-labour supply it requires (graduates by field per year), to be checked against 09B tertiary_profile once retrieved."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Most leads for UGC, CTEVT, UIS, WDI and Enterprise Surveys are from general knowledge and unverified. R&D data may not exist for Nepal. Field classifications differ between national and international sources.",
+  "source_leads": [
+    {
+      "lead_id": "09B-L01",
+      "url": "https://www.ugcnepal.edu.np",
+      "title": "University Grants Commission Nepal - Education Management Information System: Report on Higher Education (annual)",
+      "publisher": "University Grants Commission, Nepal",
+      "source_id": "moest",
+      "contains": "Higher-education enrolment and graduates by university, faculty/field (science & technology, management, education, humanities, law, engineering, medicine, agriculture etc.), level, sex and province; campus counts by type. Academic year (BS). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L02",
+      "url": "https://ctevt.org.np",
+      "title": "Council for Technical Education and Vocational Training - annual reports and programme/seat statistics",
+      "publisher": "CTEVT, Nepal",
+      "source_id": "moest",
+      "contains": "Approved seats and enrolment in TSLC/diploma programmes by trade, provider type (constituent, partnership, affiliated) and province; short-course trainees; skill-test results (National Skill Testing Board). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L03",
+      "url": "https://moest.gov.np",
+      "title": "MoEST - Education statistics, TVET policy (TVET Policy 2012 and successors), National Vocational Qualifications Framework, Science, Technology and Innovation Policy",
+      "publisher": "MoEST, Government of Nepal",
+      "source_id": "moest",
+      "contains": "Policy documents and any consolidated education statistics; STI policy statements on R&D spending. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L04",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/SE.TER.ENRR?format=json",
+      "title": "WDI API - Gross enrolment ratio, tertiary (SE.TER.ENRR; .FE/.MA by sex)",
+      "publisher": "World Bank / UIS",
+      "source_id": "wb_wdi",
+      "contains": "Tertiary GER by sex, calendar-year label. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L05",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/GB.XPD.RSDV.GD.ZS?format=json",
+      "title": "WDI API - Research and development expenditure (% of GDP) (GB.XPD.RSDV.GD.ZS)",
+      "publisher": "World Bank / UIS",
+      "source_id": "wb_wdi",
+      "contains": "GERD/GDP for Nepal if any year reported (may be missing); researchers per million (SP.POP.SCIE.RD.P6). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L06",
+      "url": "https://data.uis.unesco.org",
+      "title": "UIS Data Browser - tertiary enrolment and graduates by field (ISCED-F), TVET participation, R&D (GERD, researchers)",
+      "publisher": "UNESCO Institute for Statistics",
+      "source_id": "unesco_uis",
+      "contains": "Tertiary graduates by broad field and sex; share of TVET in upper secondary; GERD by sector of performance and source of funds; outbound mobile tertiary students (see 09C). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L07",
+      "url": "https://www.enterprisesurveys.org/en/data/exploreeconomies",
+      "title": "World Bank Enterprise Surveys - Nepal economy profile (latest survey round) - Workforce module",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Share of firms identifying inadequately educated workforce as a major constraint; firms offering formal training; by firm size and sector; survey year to confirm (Nepal rounds). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L08",
+      "url": "https://nsonepal.gov.np",
+      "title": "Nepal Labour Force Survey (NLFS) - latest round report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Employment by education level and occupation (ISCO), vocational training received, unemployment/underutilisation of graduates; survey-year basis (NLFS III 2017/18; any later round to confirm). Catalog landing page. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L09",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Educational attainment including tertiary and technical qualifications by age, sex and province (stock of graduates); field of study if tabulated",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09B-L10",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099520310212533663",
+      "title": "South Asia Development Update, October 2025: Jobs, AI, and Trade",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Online job-postings analysis (skills demanded, white-collar/business services) and AI exposure by country incl. Nepal - demand-side skill-gap evidence",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09B-L11",
+      "url": "https://www.ilo.org/sites/default/files/2026-03/Nepal%20LDC%20Graduation%20Employment%20Impacts%20Report.pdf",
+      "title": "Employment Impact Assessment on Nepal's LDC Graduation",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Sectoral employment exposure by sex and formality; any skill-related findings for export sectors",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09B-L12",
+      "url": "https://www.unesco.org/reports/science/2021/en",
+      "title": "UNESCO Science Report 2021 (South Asia chapter)",
+      "publisher": "UNESCO",
+      "source_id": "unesco_uis",
+      "contains": "Narrative and tables on Nepal's R&D spending, researchers, publications and STI policy; data years as reported. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09B-L13",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Education/science-technology chapter: higher-education and TVET statistics and budget by FY; content to confirm",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09B-L14",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/49424-001-ssa.pdf",
+      "title": "Summary Sector Assessment: Education (ADB project 49424-001)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Sector assessment including TVET/higher-education constraints and labour-market relevance as documented by ADB",
+      "verification": "search-verified URL (Agent 09 single WebSearch, 2026-09-27); content not retrieved"
+    }
+  ],
+  "specific": {
+    "tertiary_profile": {
+      "status": "pending",
+      "value": null,
+      "metrics": [
+        {
+          "metric": "tertiary_GER",
+          "unit": "percent",
+          "by": [
+            "sex"
+          ]
+        },
+        {
+          "metric": "enrolment_by_field",
+          "unit": "persons",
+          "by": [
+            "faculty",
+            "level",
+            "sex",
+            "province"
+          ]
+        },
+        {
+          "metric": "graduates_by_field",
+          "unit": "persons",
+          "by": [
+            "field",
+            "sex"
+          ]
+        },
+        {
+          "metric": "STEM_share_of_graduates",
+          "unit": "percent"
+        },
+        {
+          "metric": "graduate_unemployment",
+          "unit": "percent"
+        }
+      ],
+      "sources": {
+        "national": "UGC EMIS (09B-L01)",
+        "international": "UIS/WDI (09B-L04, L06)",
+        "stock": "Census 2021 (09B-L09)",
+        "outcomes": "NLFS (09B-L08)"
+      },
+      "method": "Keep UGC faculty classification and ISCED-F separate; map with a documented concordance; academic years in BS.",
+      "lead_ids": [
+        "09B-L01",
+        "09B-L04",
+        "09B-L06",
+        "09B-L08",
+        "09B-L09"
+      ]
+    },
+    "tvet_capacity": {
+      "status": "pending",
+      "value": null,
+      "metrics": [
+        {
+          "metric": "CTEVT_long_term_seats",
+          "unit": "count"
+        },
+        {
+          "metric": "CTEVT_enrolment",
+          "unit": "persons"
+        },
+        {
+          "metric": "short_term_trainees",
+          "unit": "persons"
+        },
+        {
+          "metric": "skill_test_candidates_and_passes",
+          "unit": "count"
+        },
+        {
+          "metric": "TVET_share_upper_secondary",
+          "unit": "percent"
+        }
+      ],
+      "disaggregation": [
+        "trade/sector",
+        "provider type",
+        "province",
+        "sex"
+      ],
+      "method": "Extract from CTEVT annual reports; compare with outbound labour-migration demand by occupation from 09C/23A to estimate the supply gap.",
+      "lead_ids": [
+        "09B-L02",
+        "09B-L03",
+        "09B-L06",
+        "09B-L14"
+      ]
+    },
+    "rnd_intensity": {
+      "status": "pending",
+      "value": null,
+      "unit": "percent",
+      "metrics": [
+        {
+          "metric": "GERD_percent_GDP",
+          "unit": "percent"
+        },
+        {
+          "metric": "researchers_per_million",
+          "unit": "count"
+        },
+        {
+          "metric": "science_budget_appropriation",
+          "unit": "NPR_current_mn",
+          "note": "proxy only, not GERD"
+        }
+      ],
+      "method": "Use UIS/WDI GERD if reported; state explicitly if Nepal has no R&D survey; do not impute.",
+      "lead_ids": [
+        "09B-L05",
+        "09B-L06",
+        "09B-L12",
+        "09B-L13"
+      ]
+    }
+  }
+}

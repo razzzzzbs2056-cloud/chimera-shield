@@ -1,0 +1,478 @@
+{
+  "subagent_id": "09C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00Z",
+  "summary": "Round r1 (restricted network). Leads reuse upstream Agent 23 sources (MoLESS Labour Migration Report 2024, DoFE yearly reports, Census 2021 migration materials, OECD IMO 2025, destination student-visa and skilled-route policy texts, IOM MGI 2024) and add general-knowledge (unverified) leads for OECD DIOC, UIS outbound students, MoEST study-abroad NOCs, NLFS return module, CTEVT/NSTB RPL and World Bank EVENT evaluations. No values retrieved; all empirical items pending. Key points: DoFE skill categories describe jobs not certified skills; high-skill emigration has stock, flow and intention measures that are not interchangeable; no evaluated knowledge-transfer programme has been retrieved yet.",
+  "findings": [
+    {
+      "claim": "Q1: Labour approvals by skill level (skilled / semi-skilled / unskilled) and by occupation, FY2022/23-FY2025/26.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Nepal FY (mid-July)",
+      "source_ids": [
+        "dofe"
+      ],
+      "observation_ids": [],
+      "note": "Required: MoLESS Labour Migration Report 2024 skill tables (09C-L01); DoFE yearly reports (09C-L02). Skill level is declared at approval and reflects the job offered, not certified competence."
+    },
+    {
+      "claim": "Q1: Share of returnee migrants reporting skills/training acquired abroad, and share whose skills are certified (RPL/skill test) after return.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest survey year",
+      "source_ids": [
+        "nso_nepal",
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS return-migrant module (09C-L14); NSTB/CTEVT RPL counts (09C-L15); IOM MGI assessment (09C-L12). No Nepal survey with a skills-acquired-abroad question is yet confirmed."
+    },
+    {
+      "claim": "Q1: Returnee employment outcomes - occupation and sector on return relative to occupation abroad.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "latest survey year",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLFS microdata tabulation (09C-L14)."
+    },
+    {
+      "claim": "Q2: Tertiary-educated emigration rate (share of Nepal-born tertiary-educated population living in OECD countries).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "DIOC census round (2015/16 or later)",
+      "source_ids": [
+        "oecd"
+      ],
+      "observation_ids": [],
+      "note": "Required: DIOC (09C-L05)."
+    },
+    {
+      "claim": "Q2: Outbound internationally mobile tertiary students from Nepal, by destination; outbound mobility ratio.",
+      "type": "pending",
+      "value": null,
+      "unit": "persons",
+      "period": "latest UIS year (calendar-year label)",
+      "source_ids": [
+        "unesco_uis"
+      ],
+      "observation_ids": [],
+      "note": "Required: UIS (09C-L06)."
+    },
+    {
+      "claim": "Q2: MoEST No Objection Letters issued for foreign study, by destination and FY.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Nepal FY",
+      "source_ids": [
+        "moest"
+      ],
+      "observation_ids": [],
+      "note": "Required: MoEST NOC statistics (09C-L07). NOCs are not departures; keep separate from UIS and destination visa data."
+    },
+    {
+      "claim": "Q2: Destination-side student visa grants and inflows of Nepali nationals (Australia, Canada, UK, Japan, OECD total).",
+      "type": "pending",
+      "value": null,
+      "unit": "persons",
+      "period": "destination programme/calendar years",
+      "source_ids": [
+        "oecd",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Required: OECD IMO 2025 annex (09C-L04); Home Affairs (09C-L08); IRCC (09C-L09); UK and Japan sources (09C-L10, L11)."
+    },
+    {
+      "claim": "Q2: Absent population abroad for study and for work, by education level (Census 2021).",
+      "type": "pending",
+      "value": null,
+      "unit": "persons",
+      "period": "census reference date 2021",
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: Census 2021 migration thematic report/tables (09C-L03). Includes India; complements DoFE flow data (23A challenge)."
+    },
+    {
+      "claim": "Q2: Emigration of health professionals (doctors, nurses) from Nepal.",
+      "type": "pending",
+      "value": null,
+      "unit": "persons",
+      "period": "latest available",
+      "source_ids": [
+        "oecd"
+      ],
+      "observation_ids": [],
+      "note": "Required: OECD IMO 2025 health-migration chapter (09C-L04); Nepal Nursing Council / Nepal Medical Council verification-letter counts (no URL located)."
+    },
+    {
+      "claim": "Q3: Knowledge-transfer and return/reintegration programmes with published evaluations (design, outcome measured, effect, evaluation method).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "programme periods as reported",
+      "source_ids": [
+        "wb_npl",
+        "iom",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Required: World Bank EVENT ICRs/impact evaluations (09C-L16); IOM MGI (09C-L12); any evaluated NRN knowledge-transfer or returnee-entrepreneurship programme. No evaluation retrieved yet; programmes without an evaluation will be listed as 'unevaluated', not scored."
+    },
+    {
+      "claim": "DoFE skill classification (skilled/semi-skilled/unskilled) describes the destination job category and is not a measure of certified qualifications.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Definition caution for interpreting labour-permit skill composition."
+    },
+    {
+      "claim": "High-skill emigration is measured by at least three non-equivalent series (stock-based DIOC, flow-based student/visa counts, intention-based NOCs); none is used as a substitute for another.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": [],
+      "note": "Measurement design; conflicts will be recorded via find_conflicts."
+    }
+  ],
+  "data_gaps": [
+    "No Nepal survey confirmed to ask returnees about skills acquired abroad and certification; required: survey module with question text and sample.",
+    "MoEST NOC statistics page not located; required: NOCs by destination and FY.",
+    "DIOC latest round for Nepal-born by education unconfirmed.",
+    "Health-professional emigration: no Nepal Nursing/Medical Council statistics located.",
+    "Evaluations of diaspora knowledge-transfer programmes: none located."
+  ],
+  "assumptions": [
+    {
+      "id": "09C-A1",
+      "text": "DoFE skill categories are job categories, not qualifications.",
+      "basis": "assumption"
+    },
+    {
+      "id": "09C-A2",
+      "text": "Brain-drain series (stock, flow, intention) are reported separately and not converted into each other.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "23",
+      "text": "Accept 23A challenge: 09C will use Census 2021 absentee stock (includes India) for population accounting and DoFE approvals only for Gulf/Malaysia/other permit-based flows. Request 23A tabulate DoFE approvals by skill category alongside destination so 09C can reuse one extraction."
+    },
+    {
+      "to": "23",
+      "text": "Accept 23D challenge: outward labour-supply parameters will be linked to WPP working-age projections; 09 requests 23D publish the WPP extraction by age/sex so education-cohort splits can be applied."
+    },
+    {
+      "to": "15",
+      "text": "Any strategy claiming returnee skills raise domestic productivity should be audited against 09C skill_acquisition_evidence; no evaluated evidence has been retrieved yet."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Returnee skill and certification evidence may not exist in official surveys; high-skill emigration measures differ in concept and coverage; several URLs are from general knowledge and unverified. Student-visa policy changes in 2025-2026 (Canada cap, UK, Australia) make recent flows non-representative of trend.",
+  "source_leads": [
+    {
+      "lead_id": "09C-L01",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal%20Labour%20Migration%202024_Final-Version%20for%20Approval%20(1)_peesvxa.pdf",
+      "title": "Nepal Labour Migration Report 2024",
+      "publisher": "Ministry of Labour, Employment and Social Security, Government of Nepal",
+      "source_id": "dofe",
+      "contains": "DoFE labour approvals by destination, sex and skill level (skilled / semi-skilled / unskilled, where tabulated) for FY2022/23 and FY2023/24; returnee/reintegration programme descriptions; excludes India",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L02",
+      "url": "https://dofe.gov.np/yearly.aspx",
+      "title": "DoFE Yearly Progress Report",
+      "publisher": "Department of Foreign Employment, Nepal",
+      "source_id": "dofe",
+      "contains": "Annual labour approvals by destination and, where available, by skill level/occupation for FY2024/25 and FY2025/26",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L03",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials (incl. international migration thematic report)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Absent population abroad by reason (study, work), age, sex and education level if tabulated - stock of students and educated emigrants at census date; returnee counts if collected",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L04",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+      "title": "International Migration Outlook 2025",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Statistical annex: inflows of Nepali nationals to OECD countries, international students by nationality; health-professional migration chapter",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L05",
+      "url": "https://www.oecd.org/en/data/datasets/database-on-immigrants-in-oecd-and-non-oecd-countries.html",
+      "title": "Database on Immigrants in OECD and non-OECD Countries (DIOC) - emigration rates by education level",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Nepal-born emigrants in OECD countries by educational attainment; tertiary-educated emigration rate (census round 2015/16 or later). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09C-L06",
+      "url": "https://data.uis.unesco.org",
+      "title": "UIS Data Browser - outbound internationally mobile tertiary students from Nepal, outbound mobility ratio, by destination",
+      "publisher": "UNESCO Institute for Statistics",
+      "source_id": "unesco_uis",
+      "contains": "Outbound mobile students by host country (calendar-year label). URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09C-L07",
+      "url": "https://moest.gov.np",
+      "title": "MoEST - No Objection Letter (NOC) statistics for study abroad",
+      "publisher": "MoEST, Government of Nepal",
+      "source_id": "moest",
+      "contains": "Count of NOCs issued for foreign study by destination country and Nepal FY; NOC is an intention/permit measure, not actual departures. Specific statistics page unlocated. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09C-L08",
+      "url": "https://www.homeaffairs.gov.au/research-and-statistics/statistics/visa-statistics/study",
+      "title": "Student visa program statistics and Simplified Student Visa Framework evidence levels",
+      "publisher": "Australian Department of Home Affairs",
+      "source_id": "academic",
+      "contains": "Student visa grants by citizenship (Nepal) and programme year; destination-side student flows",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L09",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/transition-binders/deputy-minister-2026/international-student-program.html",
+      "title": "IRCC Deputy Minister Transition Binder 2026 - International Student Program",
+      "publisher": "Immigration, Refugees and Citizenship Canada",
+      "source_id": "academic",
+      "contains": "Study-permit cap for 2026 and allocation method; policy constraint on Nepali student outflows",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L10",
+      "url": "https://assets.publishing.service.gov.uk/media/6821aec3f16c0654b19060ac/restoring-control-over-the-immigration-system-white-paper.pdf",
+      "title": "Restoring control over the immigration system (Immigration White Paper, May 2025)",
+      "publisher": "UK Home Office",
+      "source_id": "uk_trade",
+      "contains": "Skilled Worker thresholds, Graduate route duration, care-worker route - destination-side constraints on high-skill and care-worker emigration",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L11",
+      "url": "https://www.moj.go.jp/isa/content/930004452.pdf",
+      "title": "Initiatives to Accept Foreign Nationals (Specified Skilled Worker / Employment for Skill Development)",
+      "publisher": "Immigration Services Agency of Japan",
+      "source_id": "academic",
+      "contains": "SSW skill-test-based entry and skill-development framework; relevant to skills acquired and certified abroad; residents by status and nationality",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L12",
+      "url": "https://nepal.iom.int/sites/g/files/tmzbdl1116/files/documents/2025-05/pub2024-088-el-mgi-nepal-second-profile.pdf",
+      "title": "Migration Governance Indicators - Nepal, Second Profile 2024",
+      "publisher": "International Organization for Migration",
+      "source_id": "iom",
+      "contains": "Assessment of return/reintegration policy, skills recognition of returnees and diaspora engagement mechanisms",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L13",
+      "url": "https://gsp.cgdev.org/legalpathway/employment-permit-system-eps/",
+      "title": "Employment Permit System (EPS) - Global Skill Partnerships",
+      "publisher": "Center for Global Development",
+      "source_id": "academic",
+      "contains": "Korea EPS design (EPS-TOPIK, sector allocation); secondary description of skill pathways for Nepali workers",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    },
+    {
+      "lead_id": "09C-L14",
+      "url": "https://nsonepal.gov.np",
+      "title": "Nepal Labour Force Survey (latest round) - migration and return module",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Returnee migrants (persons who worked abroad), their current employment status and occupation; skills training received. Catalog landing page. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09C-L15",
+      "url": "https://ctevt.org.np",
+      "title": "CTEVT / National Skill Testing Board - recognition of prior learning (RPL) and skill testing of returnee migrants",
+      "publisher": "CTEVT, Nepal",
+      "source_id": "moest",
+      "contains": "Counts of skill tests/RPL certifications for returnees by occupation and year, if published. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09C-L16",
+      "url": "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=NP",
+      "title": "World Bank projects in Nepal - project documents (incl. Enhanced Vocational Education and Training (EVENT) I/II implementation completion reports and impact evaluations)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "ICRs and impact-evaluation references for TVET/skills projects with returnee or aspiring-migrant components. URL from general knowledge — unverified",
+      "verification": "URL from general knowledge — unverified"
+    },
+    {
+      "lead_id": "09C-L17",
+      "url": "https://documents1.worldbank.org/curated/en/099939108162412268/pdf/IDU16ac5f9f71eb2214b69182441e56964b688f2.pdf",
+      "title": "Notes on Bilateral Remittance Flows",
+      "publisher": "World Bank",
+      "source_id": "knomad",
+      "contains": "Methodology of migrant-stock allocation; context only for reconciling diaspora stock sources",
+      "verification": "existing lead in research/sources/source_leads.json (found by another agent); content not retrieved"
+    }
+  ],
+  "specific": {
+    "skill_acquisition_evidence": {
+      "status": "pending",
+      "value": null,
+      "questions": [
+        "skill level of outbound workers (DoFE category)",
+        "skills acquired abroad (self-reported)",
+        "certification on return (RPL/NSTB)",
+        "occupational upgrading on return"
+      ],
+      "metrics": [
+        {
+          "metric": "approvals_by_skill_level",
+          "unit": "count",
+          "period": "FY2022/23-FY2025/26"
+        },
+        {
+          "metric": "returnees_reporting_skills_acquired",
+          "unit": "percent"
+        },
+        {
+          "metric": "returnees_certified",
+          "unit": "count"
+        },
+        {
+          "metric": "returnee_occupational_upgrading",
+          "unit": "percent"
+        }
+      ],
+      "method": "Tabulate DoFE skill categories per FY; extract returnee module from NLFS/other surveys; RPL counts from CTEVT/NSTB; destination skill-test regimes (Japan SSW, Korea EPS) as context.",
+      "lead_ids": [
+        "09C-L01",
+        "09C-L02",
+        "09C-L11",
+        "09C-L12",
+        "09C-L13",
+        "09C-L14",
+        "09C-L15"
+      ]
+    },
+    "brain_drain_indicators": {
+      "status": "pending",
+      "value": null,
+      "series": [
+        {
+          "basis": "stock, education-specific (DIOC tertiary emigration rate)",
+          "unit": "percent",
+          "lead_ids": [
+            "09C-L05"
+          ]
+        },
+        {
+          "basis": "stock, census absentees by reason/education (Census 2021)",
+          "unit": "persons",
+          "lead_ids": [
+            "09C-L03"
+          ]
+        },
+        {
+          "basis": "flow, outbound mobile students (UIS)",
+          "unit": "persons",
+          "lead_ids": [
+            "09C-L06"
+          ]
+        },
+        {
+          "basis": "intention, MoEST NOCs",
+          "unit": "count",
+          "lead_ids": [
+            "09C-L07"
+          ]
+        },
+        {
+          "basis": "destination visa/inflow data (OECD, Australia, Canada, UK, Japan)",
+          "unit": "persons",
+          "lead_ids": [
+            "09C-L04",
+            "09C-L08",
+            "09C-L09",
+            "09C-L10",
+            "09C-L11"
+          ]
+        },
+        {
+          "basis": "health professionals",
+          "unit": "persons",
+          "lead_ids": [
+            "09C-L04"
+          ]
+        }
+      ],
+      "method": "Report each series separately with period and basis; derive net human-capital outflow for the shared model only after education-level splits are retrieved.",
+      "consumers": [
+        "01",
+        "08",
+        "15"
+      ]
+    },
+    "programme_evaluations": {
+      "status": "pending",
+      "value": null,
+      "inventory_fields": [
+        "programme",
+        "implementer",
+        "period",
+        "target group (returnees, aspiring migrants, diaspora professionals)",
+        "intervention",
+        "evaluation method (RCT, quasi-experimental, process)",
+        "outcome",
+        "source lead"
+      ],
+      "candidates": [
+        {
+          "programme": "Enhanced Vocational Education and Training (EVENT) I/II",
+          "implementer": "Government of Nepal / World Bank",
+          "evaluation_status": "impact evaluation reported to exist - to verify",
+          "lead_ids": [
+            "09C-L16"
+          ]
+        },
+        {
+          "programme": "Returnee reintegration and RPL for returnees",
+          "implementer": "MoLESS / CTEVT-NSTB",
+          "evaluation_status": "unknown",
+          "lead_ids": [
+            "09C-L12",
+            "09C-L15"
+          ]
+        },
+        {
+          "programme": "NRN/diaspora knowledge-transfer initiatives",
+          "implementer": "NRNA and others",
+          "evaluation_status": "no evaluation located",
+          "lead_ids": [
+            "09C-L12"
+          ]
+        }
+      ],
+      "method": "Include only programmes with a retrievable evaluation document as 'evaluated'; list others as unevaluated without scoring."
+    }
+  }
+}
