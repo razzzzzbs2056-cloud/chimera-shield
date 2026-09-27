@@ -1,0 +1,421 @@
+{
+  "subagent_id": "18C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). (1) Post-graduation preferences: the EU replaced Regulation (EU) No 978/2012 with Regulation (EU) 2026/1395 (reported to apply from 1 January 2027), so Nepal's EBA exit and any GSP+ application will fall under the new text; UK DCTS moves LDC graduates from Comprehensive to Enhanced Preferences after a transition period, with Bhutan as precedent. Transition length, GSP+ vulnerability and convention criteria and the Nepal graduation date (reported as November 2026, with a UN CDP request to extend the preparatory period noted by 16A) must be read from primary texts. (2) Regulatory exposure: CBAM (definitive period from 2026), EUDR (delayed to end-2026), Forced Labour Regulation (applies later) and CSDDD as amended by Omnibus I (Directive (EU) 2026/470) were located; product-level mapping to Nepal's EU export basket requires customs/Comtrade data. No values retrieved; all empirical items pending.",
+  "findings": [
+    {
+      "claim": "Nepal's effective date of UN LDC graduation and whether the preparatory period is extended under the CDP crisis response process.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "undesa_ldc"
+      ],
+      "note": "Governs start of EU EBA and UK Comprehensive transition clocks; retrieve UNGA resolution and CDP 2026 decision (16A leads L47/L48)."
+    },
+    {
+      "claim": "EU: legal transition period and end date of EBA for Nepal under Regulation (EU) 2026/1395 (and transitional provisions from 978/2012), and resulting tariff treatment (standard GSP vs GSP+).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "eu_trade"
+      ],
+      "note": "Read graduation/transition articles and Annex I of 18C-L01; compare with 978/2012 (L02)."
+    },
+    {
+      "claim": "EU GSP+ eligibility for Nepal: vulnerability criteria (import-share and concentration tests), list of required conventions and Nepal's ratification/reporting status for each.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "eu_trade",
+        "ohchr",
+        "ilostat"
+      ],
+      "note": "Criteria from 18C-L01 annexes; ratification status from UN Treaty Collection and ILO NORMLEX (not yet leads)."
+    },
+    {
+      "claim": "Tariff differential for Nepal's main EU export lines (carpets, apparel, pashmina/textiles, tea, others) between EBA, GSP+, standard GSP and MFN.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "eu_trade",
+        "itc_trademap",
+        "wto_tariff"
+      ],
+      "note": "Annex III of 18C-L01, EU TARIC/Access2Markets; ITC study L18 for comparison.",
+      "unit": "percent",
+      "period": "tariff schedule in force 2027"
+    },
+    {
+      "claim": "UK: transition period and date Nepal moves from DCTS Comprehensive to Enhanced Preferences, eligibility under the vulnerability test, and rules-of-origin changes.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "uk_trade"
+      ],
+      "note": "18C-L07, L08 (Bhutan precedent), L09, L10, L11."
+    },
+    {
+      "claim": "Nepal's exports to the EU and UK by HS product and their share of total exports (Nepal customs FY and Eurostat/HMRC calendar year).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "un_comtrade"
+      ],
+      "note": "Required to weight preference losses and regulatory exposure; keep FY vs calendar year separate.",
+      "unit": "USD_current_mn",
+      "period": "Nepal FY 2020/21-2024/25; calendar 2020-2025"
+    },
+    {
+      "claim": "CBAM exposure: value of Nepal exports to the EU in CBAM Annex I CN codes.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "eu_trade",
+        "customs_nepal"
+      ],
+      "note": "Map Annex I of 18C-L12 to Nepal's EU exports; expected to be small but must be measured, not assumed.",
+      "unit": "USD_current_mn",
+      "period": "calendar 2023-2025"
+    },
+    {
+      "claim": "EUDR exposure: Nepal EU exports in EUDR commodity scope (e.g. coffee, wood products, leather) and application dates for large vs micro/small operators.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "eu_trade",
+        "customs_nepal"
+      ],
+      "note": "18C-L15; HS mapping from EUDR Annex I."
+    },
+    {
+      "claim": "Forced Labour Regulation and CSDDD (as amended) pass-through to Nepali suppliers: application dates, company thresholds and sectors at elevated risk (e.g. carpets, garments, bricks in supply chains).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "eu_trade",
+        "ilostat"
+      ],
+      "note": "18C-L14, L16, L17; ILO/US DoL child and forced labour evidence for Nepal sectors (not yet leads)."
+    },
+    {
+      "claim": "Graduation-related preference changes are modelled as legal events with dated effect on applied tariffs, separate from regulatory (CBAM/EUDR/FLR/CSDDD) compliance costs, which are modelled as non-tariff trade costs.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Where search results report dates for EU/UK instruments, those dates are treated as unverified until the Official Journal / legislation.gov.uk text is retrieved.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "UK DCTS legal instrument (Trade Preference Scheme (EU Exit) Regulations as amended) on legislation.gov.uk not located as a direct lead.",
+    "EU CBAM amending regulation(s) of 2025 (simplification) text not located as a direct lead.",
+    "EUDR amending Regulation (EU) 2025/2650 OJ text not located (only Commission news).",
+    "Directive (EU) 2026/470 OJ URL not located directly.",
+    "No lead for Nepal's ratification status of GSP+ conventions (UN Treaty Collection, ILO NORMLEX).",
+    "No Nepal-specific study of CBAM/EUDR/FLR exposure located.",
+    "Web search budget exhausted during r1; remaining leads to be located in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "18C-A1",
+      "text": "Preference-regime changes (tariffs) and regulatory compliance costs (non-tariff) are modelled separately.",
+      "basis": "assumption"
+    },
+    {
+      "id": "18C-A2",
+      "text": "Transition clocks start at the effective UN graduation date, which is itself pending (possible extension).",
+      "basis": "assumption pending CDP/UNGA verification"
+    },
+    {
+      "id": "18C-A3",
+      "text": "Eurostat/HMRC partner data (calendar year, importer-reported) and Nepal customs (FY, exporter-reported) will differ; both are kept.",
+      "basis": "CLAUDE.md evidence rule 4 and 6"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "21A",
+      "text": "EU EBA exit now falls under Regulation (EU) 2026/1395, not 978/2012; preference-loss estimates based on the old regulation's GSP+ criteria must be re-checked against the new text."
+    },
+    {
+      "to": "26C",
+      "text": "S08 LDC-graduation timing depends on the CDP extension request; EU and UK transition end dates move with it - do not hard-code a graduation year."
+    },
+    {
+      "to": "16A",
+      "text": "Add regulatory non-tariff measures (CBAM, EUDR, FLR, CSDDD) as an external variable or sub-variable of X12 with 18C as primary supplier; currently only tariff preferences are listed."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: if the new EU GSP changes GSP+ eligibility conditions for LDC graduates, the S08 conclusion on EU market access may change; flag for audit once the text is retrieved."
+    }
+  ],
+  "uncertainty": "High. Legal texts were located but not downloaded; dates and rules come from search snippets and are unverified. Nepal's graduation date itself is uncertain because of the reported CDP extension request. Product-level exposure cannot be assessed until trade data are retrieved.",
+  "specific": {
+    "post_graduation_preferences": {
+      "status": "pending",
+      "method": "For EU and UK record: legal instrument, current Nepal tier, transition length and end date (conditional on graduation date), post-transition tier options with eligibility tests, and tariff differentials for Nepal's top export lines.",
+      "eu": {
+        "current": "EBA (pending verification)",
+        "instrument": "Regulation (EU) 2026/1395 from 2027 (reported)",
+        "post_transition_options": [
+          "GSP+ (application, conventions)",
+          "standard GSP",
+          "MFN if not eligible"
+        ],
+        "status": "pending",
+        "leads": [
+          "18C-L01",
+          "18C-L02",
+          "18C-L03",
+          "18C-L04",
+          "18C-L05",
+          "18C-L06"
+        ]
+      },
+      "uk": {
+        "current": "DCTS Comprehensive Preferences (pending verification)",
+        "post_transition_options": [
+          "Enhanced Preferences (vulnerability test)",
+          "Standard Preferences"
+        ],
+        "status": "pending",
+        "leads": [
+          "18C-L07",
+          "18C-L08",
+          "18C-L09",
+          "18C-L10",
+          "18C-L11"
+        ]
+      },
+      "graduation_date_dependency": {
+        "status": "pending",
+        "leads": [
+          "18C-L21"
+        ],
+        "note": "CDP extension request (see 16A)"
+      },
+      "secondary_studies": [
+        "18C-L18",
+        "18C-L19"
+      ]
+    },
+    "regulatory_exposure": {
+      "status": "pending",
+      "method": "Map each regulation's product scope (CN/HS codes) and application dates to Nepal's EU export basket by HS6; classify exposure as direct (goods in scope) or pass-through (buyer due diligence).",
+      "regulations": [
+        {
+          "name": "CBAM (Regulation (EU) 2023/956)",
+          "exposure_type": "direct, goods in Annex I",
+          "status": "pending",
+          "leads": [
+            "18C-L12",
+            "18C-L13"
+          ]
+        },
+        {
+          "name": "EUDR (Regulation (EU) 2023/1115 as amended)",
+          "exposure_type": "direct, commodities in scope",
+          "status": "pending",
+          "leads": [
+            "18C-L15"
+          ]
+        },
+        {
+          "name": "Forced Labour Regulation (Regulation (EU) 2024/3015)",
+          "exposure_type": "all products; sector risk",
+          "status": "pending",
+          "leads": [
+            "18C-L14"
+          ]
+        },
+        {
+          "name": "CSDDD (Directive (EU) 2024/1760 as amended by Directive (EU) 2026/470)",
+          "exposure_type": "pass-through via EU buyers",
+          "status": "pending",
+          "leads": [
+            "18C-L16",
+            "18C-L17"
+          ]
+        }
+      ],
+      "context_leads": [
+        "18C-L20"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "18C-L01",
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1395/oj/eng",
+      "title": "Regulation (EU) 2026/1395 applying a generalised scheme of tariff preferences and repealing Regulation (EU) No 978/2012",
+      "publisher": "Publications Office of the EU (EUR-Lex)",
+      "source_id": "eu_trade",
+      "contains": "Full legal text of the new EU GSP applying from 1 Jan 2027: EBA exit/transition rules for LDC graduates, GSP+ vulnerability criteria and convention list (Annex), standard GSP, graduation/safeguards, Annex I beneficiary list, Annex III products"
+    },
+    {
+      "lead_id": "18C-L02",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=CELEX:32012R0978",
+      "title": "Summary of Regulation (EU) No 978/2012 (GSP)",
+      "publisher": "EUR-Lex",
+      "source_id": "eu_trade",
+      "contains": "Rules in force until 31 Dec 2026, incl. EBA transition period after UN LDC graduation"
+    },
+    {
+      "lead_id": "18C-L03",
+      "url": "https://policy.trade.ec.europa.eu/development-and-sustainability/generalised-scheme-preferences/questions-answers-new-eu-generalised-scheme-preferences_en",
+      "title": "Questions & Answers on the new EU Generalised Scheme of Preferences",
+      "publisher": "European Commission, DG Trade",
+      "source_id": "eu_trade",
+      "contains": "Commission explanation of changes for graduating LDCs, GSP+ application procedure and timing"
+    },
+    {
+      "lead_id": "18C-L04",
+      "url": "https://trade.ec.europa.eu/access-to-markets/en/news/eus-renewed-gsp-scheme-key-updates-2027",
+      "title": "The EU's renewed GSP scheme: Key updates for 2027",
+      "publisher": "European Commission, Access2Markets",
+      "source_id": "eu_trade",
+      "contains": "Summary of 2027 GSP changes relevant to exporters"
+    },
+    {
+      "lead_id": "18C-L05",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/22/trade-council-signs-off-reinforced-rules-on-trade-preferences-for-developing-countries/",
+      "title": "Trade: Council signs off reinforced rules on trade preferences for developing countries (22 May 2026)",
+      "publisher": "Council of the EU",
+      "source_id": "eu_trade",
+      "contains": "Adoption date and headline content of the new GSP regulation"
+    },
+    {
+      "lead_id": "18C-L06",
+      "url": "https://www.europarl.europa.eu/thinktank/en/document/EPRS_ATA(2026)785711",
+      "title": "A new generalised scheme of preferences (EPRS At a Glance, 2026)",
+      "publisher": "European Parliament Research Service",
+      "source_id": "eu_trade",
+      "contains": "Negotiated changes incl. LDC-graduate treatment and GSP+ conditions"
+    },
+    {
+      "lead_id": "18C-L07",
+      "url": "https://assets.publishing.service.gov.uk/media/65b8a634b5cb6e000d8bb73a/Preference_tiers_under_the_Developing_Countries_Trading_Scheme__DCTS_.pdf",
+      "title": "Preference tiers under the Developing Countries Trading Scheme (DCTS)",
+      "publisher": "UK Government (DBT)",
+      "source_id": "uk_trade",
+      "contains": "Comprehensive / Enhanced / Standard tier definitions, economic vulnerability test, transition period after LDC graduation"
+    },
+    {
+      "lead_id": "18C-L08",
+      "url": "https://www.gov.uk/government/publications/preference-tier-graduation-bhutan/preference-tier-graduation-bhutan",
+      "title": "Preference Tier Graduation: Bhutan",
+      "publisher": "UK Government",
+      "source_id": "uk_trade",
+      "contains": "Worked precedent of an LDC graduate moving from Comprehensive to Enhanced Preferences after transition - template for Nepal"
+    },
+    {
+      "lead_id": "18C-L09",
+      "url": "https://www.gov.uk/government/collections/trading-with-developing-nations",
+      "title": "Developing Countries Trading Scheme (DCTS) collection",
+      "publisher": "UK Government",
+      "source_id": "uk_trade",
+      "contains": "Collection of DCTS guidance, tariff tables and the legal instruments (Trade Preference Scheme regulations)"
+    },
+    {
+      "lead_id": "18C-L10",
+      "url": "https://www.gov.uk/government/publications/rules-of-origin-under-the-developing-countries-trading-scheme-dcts-are-improving/rules-of-origin-under-the-developing-countries-trading-scheme-dcts-are-improving-july-2025",
+      "title": "Updates to rules of origin under the DCTS (July 2025)",
+      "publisher": "UK Government",
+      "source_id": "uk_trade",
+      "contains": "Rules of origin differences between Comprehensive and Enhanced tiers (relevant to apparel/textile cumulation)"
+    },
+    {
+      "lead_id": "18C-L11",
+      "url": "https://researchbriefings.files.parliament.uk/documents/CBP-9994/CBP-9994.pdf",
+      "title": "Developing Countries Trading Scheme (House of Commons Library CBP-9994)",
+      "publisher": "UK Parliament",
+      "source_id": "uk_trade",
+      "contains": "Legislative basis and tier rules of the DCTS"
+    },
+    {
+      "lead_id": "18C-L12",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj/eng",
+      "title": "Regulation (EU) 2023/956 establishing a carbon border adjustment mechanism (CBAM)",
+      "publisher": "EUR-Lex",
+      "source_id": "eu_trade",
+      "contains": "Annex I CBAM goods by CN code (iron and steel, aluminium, cement, fertilisers, hydrogen, electricity), definitive period from 2026, de minimis rules"
+    },
+    {
+      "lead_id": "18C-L13",
+      "url": "https://trade.ec.europa.eu/access-to-markets/en/news/start-definitive-period-cbam-eu",
+      "title": "Start of the definitive period of the CBAM in the EU",
+      "publisher": "European Commission, Access2Markets",
+      "source_id": "eu_trade",
+      "contains": "Definitive-period obligations and simplifications as amended"
+    },
+    {
+      "lead_id": "18C-L14",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32024R3015",
+      "title": "Regulation (EU) 2024/3015 prohibiting products made with forced labour",
+      "publisher": "EUR-Lex",
+      "source_id": "eu_trade",
+      "contains": "Scope (all products), application date, risk database and investigation procedure"
+    },
+    {
+      "lead_id": "18C-L15",
+      "url": "https://trade.ec.europa.eu/access-to-markets/en/news/delay-until-december-2026-and-other-developments-implementation-eudr-regulation",
+      "title": "Delay until December 2026 and other developments in the implementation of the EUDR",
+      "publisher": "European Commission, Access2Markets",
+      "source_id": "eu_trade",
+      "contains": "EUDR (Regulation (EU) 2023/1115 as amended by 2025/2650) application dates; commodity scope (coffee, cattle/leather, wood, rubber etc.)"
+    },
+    {
+      "lead_id": "18C-L16",
+      "url": "https://www.europarl.europa.eu/legislative-train/package-simplification-business/file-first-omnibus-package-on-sustainability-proposal-amending-csrd-and-csddd",
+      "title": "Omnibus I - simplification of CSRD and CSDDD (Legislative Train)",
+      "publisher": "European Parliament",
+      "source_id": "eu_trade",
+      "contains": "Procedure and final text reference for Directive (EU) 2026/470 amending the CSDDD (Directive (EU) 2024/1760): company thresholds, transposition and application dates"
+    },
+    {
+      "lead_id": "18C-L17",
+      "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en",
+      "title": "Corporate sustainability due diligence",
+      "publisher": "European Commission",
+      "source_id": "eu_trade",
+      "contains": "CSDDD scope as amended; value-chain obligations that pass through to non-EU suppliers"
+    },
+    {
+      "lead_id": "18C-L18",
+      "url": "https://umbraco.exportpotential.intracen.org/media/jqrl0bu3/nepal-after-ldc-graduation_202204.pdf",
+      "title": "Nepal after LDC Graduation: New avenues for exports (2022)",
+      "publisher": "International Trade Centre",
+      "source_id": "itc_trademap",
+      "contains": "Product-level estimates of preference margin changes in EU/UK and other markets after graduation, by product"
+    },
+    {
+      "lead_id": "18C-L19",
+      "url": "https://sawtee.org/publications/LDC_graduation_study_Sep_2022.pdf",
+      "title": "Nepal's graduation from the LDC category (Sept 2022)",
+      "publisher": "SAWTEE",
+      "source_id": "academic",
+      "contains": "Analysis of trade-preference losses and GSP+ eligibility for Nepal"
+    },
+    {
+      "lead_id": "18C-L20",
+      "url": "https://www.eeas.europa.eu/delegations/nepal/nepal-launches-national-pashmina-sector-export-strategy-increase-exports-usd-75-million-euro-687_en?s=237",
+      "title": "Nepal launches National Pashmina Sector Export Strategy (EU Delegation)",
+      "publisher": "EEAS / EU Delegation to Nepal",
+      "source_id": "eu_trade",
+      "contains": "EU-supported sector export strategy; context for pashmina/textile exposure to EU due-diligence rules"
+    },
+    {
+      "lead_id": "18C-L21",
+      "url": "https://www.un.org/ohrlls/sites/www.un.org.ohrlls/files/10624.pdf",
+      "title": "UN-OHRLLS document on Nepal LDC graduation",
+      "publisher": "UN OHRLLS",
+      "source_id": "undesa_ldc",
+      "contains": "Graduation timetable and support measures; check against later CDP decisions on extension"
+    }
+  ]
+}

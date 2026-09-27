@@ -40,7 +40,7 @@
         "mof_nepal"
       ],
       "note": "Retrieve MoFA press releases (19D-L02..L07) and Foreign Employment Board annual reports/budget lines; no FEB report lead was located in r1 (search budget exhausted).",
-      "unit": "NPR",
+      "unit": "NPR_current_mn",
       "period": "event dates; cost in Nepal FY"
     },
     {

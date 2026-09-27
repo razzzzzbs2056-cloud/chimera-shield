@@ -1,0 +1,480 @@
+{
+  "subagent_id": "22A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Question: Nepal's petroleum import bill as a share of total imports and its price sensitivity. No value was retrieved; the share and the sensitivity are PENDING. Primary documents were located: NRB Current Macroeconomic and Financial Situation releases (FY2024/25 annual and FY2025/26 monthly cumulative, major-imports table), Department of Customs Foreign Trade Statistics (HS 27 by product and partner), Nepal Oil Corporation import/sales, pricing-period profit-and-loss and publications pages, and international price series (World Bank Pink Sheet and CMO, IMF PCPS, IEA Oil Market Report, EIA STEO). Method designed: share = HS 27 (or NRB 'petroleum products') import value / total merchandise imports, Nepal FY; sensitivity decomposed into (i) international benchmark to IOC invoice price (via NOC pricing-period sheets), (ii) invoice price to import bill (price x volume, with a volume elasticity), (iii) NPR/INR/USD exchange-rate effect, and (iv) invoice price to retail price (automatic pricing formula, taxes and discretionary overrides). Search results indicate a 2026 Middle East oil supply shock (IEA OMR July and September 2026, NRB FY2025/26 releases); it is unverified and flagged to Agents 15 and 28 because it bears on S01, S04 and S10.",
+  "findings": [
+    {
+      "claim": "Petroleum products import value and share of total merchandise imports, FY2024/25 (and FY2015/16-FY2024/25 history).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "customs_nepal"
+      ],
+      "note": "Need NRB CME major-imports table (petroleum products, NPR) and total imports, plus customs HS 27 totals; keep both values and reconcile (NRB BoP-adjusted vs customs basis).",
+      "period": "FY2024/25",
+      "unit": "percent"
+    },
+    {
+      "claim": "Petroleum products import value and share, FY2025/26 (latest cumulative months) - captures the 2026 price shock.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "customs_nepal"
+      ],
+      "note": "NRB CME ten/eleven/twelve-month FY2025/26 releases; customs monthly FTS.",
+      "period": "FY2025/26",
+      "unit": "percent"
+    },
+    {
+      "claim": "Import volumes by product (petrol, diesel, kerosene, ATF, LPG) and NOC import cost, by FY.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "customs_nepal"
+      ],
+      "note": "NOC import-and-sales tables (kl, tonnes; NPR); customs HS 2710/2711 quantity and value.",
+      "period": "FY2015/16-FY2025/26"
+    },
+    {
+      "claim": "Supplier and route concentration of petroleum supply (IOC share; pipeline vs road tanker by entry point).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal"
+      ],
+      "note": "NOC annual report / supply agreement; feeds 16B CM-05 and SPOF-01.",
+      "period": "FY2024/25",
+      "unit": "percent"
+    },
+    {
+      "claim": "Automatic pricing formula: components (IOC invoice price, customs duty, excise, infrastructure/pollution levies, VAT, NOC margin, other funds) and revision frequency; history of suspensions or overrides.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal"
+      ],
+      "note": "NOC pricing directives and pricing-period profit-and-loss sheets; the formula text itself is the evidence required. Media reports (leads L19, L20) indicate periods when automatic adjustment was suspended - verify from NOC decisions."
+    },
+    {
+      "claim": "Pass-through coefficient from international benchmark (Brent / Singapore products) to IOC invoice price to Nepal, and to Nepal retail price.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "wb_pinksheet",
+        "iea"
+      ],
+      "note": "Regress NOC per-period invoice prices on benchmark prices converted at the same-period INR/USD; retail prices on invoice prices; requires the NOC time series of per-period cost sheets.",
+      "period": "2016-2026 pricing periods"
+    },
+    {
+      "claim": "Sensitivity of the FY petroleum import bill to a benchmark crude price change (NPR per USD/bbl, and percent of total imports).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "noc_nepal",
+        "nrb",
+        "wb_pinksheet"
+      ],
+      "note": "Computed only after pass-through and volume elasticity are estimated from retrieved data; will be labelled estimate with observation ids.",
+      "period": "FY basis",
+      "unit": "NPR_current_bn"
+    },
+    {
+      "claim": "International crude and product price path, monthly 2019-2026 and forecast 2026-2027, re-aggregated to Nepal FY.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_pinksheet",
+        "imf_weo",
+        "iea"
+      ],
+      "note": "Monthly Pink Sheet historical Excel, IMF PCPS; IEA OMR/World Bank CMO for forecast ranges; EIA STEO as alternative."
+    },
+    {
+      "claim": "2026 oil-market disruption (Middle East / US-Iran impasse) - dating, magnitude and duration as recorded by IEA OMR and World Bank CMO.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "iea",
+        "wb_pinksheet"
+      ],
+      "note": "Retrieve OMR July and September 2026 and CMO April 2026; record as dated event observations before any scenario use."
+    },
+    {
+      "claim": "Petroleum share of imports is defined on Nepal FY (mid-July) using the numerator and denominator from the same publisher and same basis; the NRB and customs bases are reported separately and never mixed.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Calendar-month international prices are re-aggregated to Nepal FY by averaging the twelve months from mid-July (approximated by August-July or July-June with the choice documented) before entering the model.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "LPG and ATF are treated as separate products from petrol/diesel/kerosene because their invoice-price revision cycle and benchmark (e.g. Saudi CP for LPG) differ; the benchmark mapping is to be confirmed from NOC documents.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "All empirical values (import value, share, volumes, pricing components, pass-through) - no primary document could be downloaded in r1.",
+    "Department of Customs FTS books for FY2023/24, FY2024/25 and FY2025/26 not yet located (only FY2022/23 book lead and a secondary media pointer).",
+    "NOC time series of per-pricing-period IOC invoice prices: availability of back history on noc.org.np/fortnightly unknown.",
+    "IOC export price formula to Nepal (benchmark, premium, freight components) - not public to our knowledge; may be available only in NOC board documents or IOC-NOC agreement.",
+    "Singapore product benchmarks (MOPS) are licensed (Platts); the IEA OMR subscription tables may also be licensed. Public proxies: Pink Sheet crude, EIA product spot prices.",
+    "Storage/stockholding days of cover by product (NOC) - not located.",
+    "Web search budget was exhausted before searches for NOC annual report PDFs and customs FY2024/25 FTS could be completed."
+  ],
+  "assumptions": [
+    {
+      "id": "22A-A1",
+      "text": "Share of imports uses Nepal FY and a single publisher per ratio (NRB or customs); both reported with methodological notes.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22A-A2",
+      "text": "Import-bill sensitivity is decomposed into price pass-through, volume response and exchange rate; the three effects are kept separate (CLAUDE.md rule 6).",
+      "basis": "assumption"
+    },
+    {
+      "id": "22A-A3",
+      "text": "NPR/INR peg is treated as fixed for pass-through estimation; NPR/USD movements therefore follow INR/USD. To be checked against NRB exchange-rate series.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22A-A4",
+      "text": "Media reports are used only as pointers to official decisions, never as evidence.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-05 methodological note should add that retail pass-through is discretionary (automatic pricing has reportedly been suspended at times - leads L19/L20, to be verified from NOC); NOC losses/fund drawdowns then become a fiscal channel rather than a CPI channel. Suggest a fiscal-contingent-liability attribute for EXP-05."
+    },
+    {
+      "to": "16A",
+      "text": "X06 source assignment should add wb_pinksheet (now in catalog) and name the product benchmark issue: IOC invoices are reportedly linked to Singapore product prices (MOPS, licensed), not crude; a crude-only series will misstate pass-through, especially during diesel-crack spikes reported in 2026."
+    },
+    {
+      "to": "00A",
+      "text": "EIA (US Energy Information Administration) STEO is not in the source catalog; propose adding as tier 4. Kathmandu Post and other media have no catalog id; propose a 'media_pointer' class that can never back a fact."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: search results (IEA OMR July/September 2026; NRB FY2025/26 releases) indicate a major 2026 oil price shock tied to Middle East disruption. If verified, it changes the baseline for S01, S04 and S10 (import bill, reserves, CPI, NOC finances)."
+    },
+    {
+      "to": "28",
+      "text": "Escalation for red-team: the 2026 oil shock plus single-supplier (IOC) dependence may be a joint geopolitical exposure; please review whether scenario S10 assumes supplier continuity during a regional supply disruption."
+    }
+  ],
+  "uncertainty": "High: no value retrieved. Structural uncertainties once data arrive: (i) NRB vs customs coverage and valuation basis for petroleum imports; (ii) IOC invoice formula is not public, so pass-through must be estimated empirically and may vary by product and period; (iii) discretionary suspension of automatic pricing breaks the retail pass-through relation; (iv) the 2026 price shock may place current values outside the historical range used for estimation, so linear sensitivities may understate effects.",
+  "specific": {
+    "fuel_import_sensitivity": {
+      "status": "pending",
+      "question": "Petroleum import bill as share of total imports, and its price sensitivity",
+      "components": {
+        "import_share": {
+          "status": "pending",
+          "definition": "petroleum products import value / total merchandise imports, Nepal FY",
+          "unit": "percent",
+          "period_basis": "Nepal FY (mid-July); FY2015/16-FY2025/26",
+          "sources": [
+            "nrb",
+            "customs_nepal"
+          ],
+          "lead_ids": [
+            "22A-L01",
+            "22A-L02",
+            "22A-L03",
+            "22A-L04",
+            "22A-L05",
+            "22A-L21"
+          ]
+        },
+        "volumes_by_product": {
+          "status": "pending",
+          "unit": "kilolitres / tonnes (no code in units.py - see challenge 00A in 22B)",
+          "sources": [
+            "noc_nepal",
+            "customs_nepal"
+          ],
+          "lead_ids": [
+            "22A-L05",
+            "22A-L06"
+          ]
+        },
+        "pricing_formula": {
+          "status": "pending",
+          "content_required": "NOC automatic pricing system rules: invoice price basis, tax and levy stack, margin, revision frequency, override/suspension record",
+          "sources": [
+            "noc_nepal"
+          ],
+          "lead_ids": [
+            "22A-L07",
+            "22A-L08",
+            "22A-L09",
+            "22A-L19",
+            "22A-L20"
+          ]
+        },
+        "pass_through_benchmark_to_invoice": {
+          "status": "pending",
+          "method": "time-series regression of NOC per-period invoice price on benchmark price x INR/USD, by product",
+          "unit": "ratio",
+          "lead_ids": [
+            "22A-L07",
+            "22A-L13",
+            "22A-L17"
+          ]
+        },
+        "pass_through_invoice_to_retail": {
+          "status": "pending",
+          "method": "per-period comparison of invoice and retail prices with override periods flagged",
+          "unit": "ratio",
+          "lead_ids": [
+            "22A-L07",
+            "22A-L09"
+          ]
+        },
+        "import_bill_elasticity_to_crude": {
+          "status": "pending",
+          "method": "d(import bill)/d(benchmark) = volume x pass-through x FX, plus estimated volume elasticity; reported as NPR bn per USD/bbl and as percentage-point change in import share",
+          "unit": "NPR_current_bn",
+          "lead_ids": [
+            "22A-L01",
+            "22A-L06",
+            "22A-L07",
+            "22A-L13"
+          ]
+        },
+        "international_price_path": {
+          "status": "pending",
+          "series": "Pink Sheet monthly Brent/Dubai/average crude; IMF PCPS APSP; IEA OMR and World Bank CMO forecast narratives; EIA STEO",
+          "period_basis": "calendar months, re-aggregated to Nepal FY",
+          "sources": [
+            "wb_pinksheet",
+            "imf_weo",
+            "iea"
+          ],
+          "lead_ids": [
+            "22A-L10",
+            "22A-L11",
+            "22A-L12",
+            "22A-L13",
+            "22A-L14",
+            "22A-L15",
+            "22A-L16",
+            "22A-L17",
+            "22A-L18"
+          ]
+        },
+        "supplier_route_concentration": {
+          "status": "pending",
+          "links_to": "16B CM-05, SPOF-01",
+          "sources": [
+            "noc_nepal"
+          ],
+          "lead_ids": [
+            "22A-L06",
+            "22A-L08"
+          ]
+        }
+      },
+      "model_variables": [
+        "imports",
+        "cpi",
+        "fiscal_revenue",
+        "current_account"
+      ],
+      "scenarios": [
+        "S01",
+        "S04",
+        "S10"
+      ],
+      "consumers": [
+        "05",
+        "16",
+        "28",
+        "19C",
+        "03A"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "22A-L01",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (annual data 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 (mid-July basis) major-imports table incl. petroleum products value and total merchandise imports; international crude price reference line; same as 16A L01"
+    },
+    {
+      "lead_id": "22A-L02",
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-ten-months-data-of-2025-26/",
+      "title": "Current Macroeconomic and Financial Situation (ten months data of FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 ten-month cumulative (to mid-May 2026) major imports incl. petroleum products and total imports; text on international Brent price change during the 2026 oil shock"
+    },
+    {
+      "lead_id": "22A-L03",
+      "url": "https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-nine-months-data-of-2025-26/",
+      "title": "Current Macroeconomic and Financial Situation (nine months data of FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 nine-month cumulative (to mid-April 2026) major imports incl. petroleum products; monthly profile when differenced with other releases"
+    },
+    {
+      "lead_id": "22A-L04",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macro-Economic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Archive of monthly CME releases (Excel/PDF tables) to build a monthly/FY history of petroleum import value and total imports, FY2010/11 onward"
+    },
+    {
+      "lead_id": "22A-L05",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics FY2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "HS chapter 27 (mineral fuels) import value and quantity by HS code (petrol, diesel, kerosene, ATF, LPG, coal) and partner country, FY2022/23; total imports; same as 16A L18. Later books (FY2023/24, FY2024/25) to be located on customs.gov.np"
+    },
+    {
+      "lead_id": "22A-L06",
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC import and sales volumes (kilolitres / tonnes) and values by product and month/FY; same as 16A L26"
+    },
+    {
+      "lead_id": "22A-L07",
+      "url": "https://noc.org.np/fortnightly",
+      "title": "15 days Profit And Loss",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Per-pricing-period cost build-up and profit/loss per litre/cylinder by product under the automatic pricing system: IOC invoice price, taxes/levies, margins, retail price - core input for pass-through"
+    },
+    {
+      "lead_id": "22A-L08",
+      "url": "https://noc.org.np/publication",
+      "title": "Publications",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC annual reports and pricing directives (automatic pricing system rules, tax/levy components, stabilisation/infrastructure funds), IOC supply agreement notes; same as 16A L27"
+    },
+    {
+      "lead_id": "22A-L09",
+      "url": "https://noc.org.np/",
+      "title": "Nepal Oil Corporation home page",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "Current notified retail prices and price-revision notices by date (petrol, diesel, kerosene, ATF, LPG)"
+    },
+    {
+      "lead_id": "22A-L10",
+      "url": "https://www.iea.org/reports/oil-market-report-september-2026",
+      "title": "Oil Market Report - September 2026",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Global oil demand/supply balance, refinery runs, inventories, benchmark crude and product price discussion (Dated Brent, diesel cracks, Singapore margins) for Aug-Sep 2026 amid Middle East disruption; calendar months"
+    },
+    {
+      "lead_id": "22A-L11",
+      "url": "https://www.iea.org/reports/oil-market-report-july-2026",
+      "title": "Oil Market Report - July 2026",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "As L10 for the July 2026 edition; allows tracking of revisions between editions"
+    },
+    {
+      "lead_id": "22A-L12",
+      "url": "https://www.iea.org/data-and-statistics/data-product/oil-market-report-omr",
+      "title": "Oil Market Report (OMR) data product",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Subscription OMR tables (product prices incl. Singapore gasoil/gasoline); access status to be checked - may be licensed"
+    },
+    {
+      "lead_id": "22A-L13",
+      "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/world-bank-commodities-price-data-the-pink-sheet",
+      "title": "World Bank Commodities Price Data (The Pink Sheet) landing page",
+      "publisher": "World Bank",
+      "source_id": "wb_pinksheet",
+      "contains": "Links to the monthly Pink Sheet PDFs and CMO historical data Excel (monthly Brent, Dubai, WTI, average crude, natural gas, LNG Japan, coal) back to 1960; calendar months"
+    },
+    {
+      "lead_id": "22A-L14",
+      "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-May-2026.pdf",
+      "title": "Commodity Markets Pink Sheet, May 2026",
+      "publisher": "World Bank",
+      "source_id": "wb_pinksheet",
+      "contains": "Monthly crude oil and LNG prices to April 2026; same as 16A L28"
+    },
+    {
+      "lead_id": "22A-L15",
+      "url": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/related/CMO-Pink-Sheet-January-2026.pdf",
+      "title": "Commodity Markets Pink Sheet, January 2026",
+      "publisher": "World Bank",
+      "source_id": "wb_pinksheet",
+      "contains": "Pre-shock monthly crude oil prices (to December 2025) for the baseline period"
+    },
+    {
+      "lead_id": "22A-L16",
+      "url": "https://thedocs.worldbank.org/en/doc/f3138644a1e8e2bb631399ae11d6c408-0050012026/original/CMO-April-2026.pdf",
+      "title": "Commodity Markets Outlook, April 2026",
+      "publisher": "World Bank",
+      "source_id": "wb_pinksheet",
+      "contains": "Annual crude oil price forecasts for 2026-2027 and risk scenarios; energy price outlook narrative"
+    },
+    {
+      "lead_id": "22A-L17",
+      "url": "https://www.imf.org/en/research/commodity-prices",
+      "title": "IMF Primary Commodity Prices (PCPS)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_weo",
+      "contains": "Monthly APSP crude price and petroleum index; cross-check of Pink Sheet (different averaging)"
+    },
+    {
+      "lead_id": "22A-L18",
+      "url": "https://www.eia.gov/outlooks/steo/",
+      "title": "Short-Term Energy Outlook",
+      "publisher": "US Energy Information Administration",
+      "source_id": null,
+      "contains": "Monthly Brent forecast path and historical monthly Brent; alternative projection to IEA/World Bank (US government, source not in catalog)"
+    },
+    {
+      "lead_id": "22A-L19",
+      "url": "https://kathmandupost.com/money/2023/07/17/nepal-oil-revives-auto-pricing-of-fuel",
+      "title": "Nepal Oil revives auto pricing of fuel",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Report on reinstatement of the automatic pricing system in July 2023; pointer to the NOC board decision. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22A-L20",
+      "url": "https://kathmandupost.com/money/2023/11/21/no-review-on-fuel-prices-as-auto-pricing-fails",
+      "title": "No review on fuel prices as auto pricing fails",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Report on a suspension/override of automatic pricing; evidence that pass-through is discretionary in practice. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22A-L21",
+      "url": "https://www.spotlightnepal.com/2026/06/28/nepal-imports-petroleum-products-exceed-total-exports/",
+      "title": "Nepal Imports of Petroleum Products Exceed Total Exports",
+      "publisher": "New Spotlight Magazine",
+      "source_id": null,
+      "contains": "Report on FY2025/26 customs data for petroleum imports vs total exports; pointer to Department of Customs release. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    }
+  ]
+}

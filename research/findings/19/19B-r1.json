@@ -39,7 +39,7 @@
         "eu_sanctions"
       ],
       "note": "Requires Nepal customs partner tables (FY) for Iran and Russia and NRB payment-system guidance; no Nepal-specific lead located in r1.",
-      "unit": "USD",
+      "unit": "USD_current_mn",
       "period": "Nepal FY2023/24-FY2025/26"
     },
     {

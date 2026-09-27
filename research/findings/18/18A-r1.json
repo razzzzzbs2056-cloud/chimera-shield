@@ -1,0 +1,403 @@
+{
+  "subagent_id": "18A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Primary documents were located for (1) US trade preferences available to Nepal: the Nepal Trade Preference Program (TFTEA Section 915, Proclamation 9555, USTR annual implementation reports, OTEXA product list), the lapsed US GSP (CRS RL33663) and the 2025 reciprocal-tariff executive orders that now overlay MFN treatment; and (2) US development cooperation: the 2022 USAID-Nepal DOAG, the 2025 pause/termination of USAID awards, the MCC Nepal Compact (MCA-Nepal procurement notice, OIG financial audit) and OECD CRS / ForeignAssistance.gov series. Search results report that the NTPP authorisation ended at the close of calendar 2025 without renewal and that the MCC Compact was allowed to continue in 2025; both are unverified until the statute, proclamation and MCC/US Embassy primary records are retrieved. No values retrieved; every empirical item is pending.",
+  "findings": [
+    {
+      "claim": "Legal status and end date of the Nepal Trade Preference Program (whether TFTEA s.915 authority terminated on its statutory sunset and whether any extension was enacted after 2025).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ustr"
+      ],
+      "note": "Retrieve L01 (sunset clause), L02, L04, L05; check congress.gov for any 2026 reauthorisation bill. Search results (secondary, L13) report lapse at end of 2025 - unverified."
+    },
+    {
+      "claim": "NTPP utilisation: US imports from Nepal claimed under NTPP and share of total US imports from Nepal, by calendar year.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ustr"
+      ],
+      "note": "USTR annual NTPP report tables (L04) and USITC DataWeb by special programme indicator; calendar year - convert to Nepal FY only via monthly data.",
+      "unit": "USD_current_mn",
+      "period": "calendar years 2017-2025"
+    },
+    {
+      "claim": "US GSP status for Nepal: authorisation lapse date, any 2025-2026 renewal legislation, and whether duties paid during the lapse would be refunded retroactively.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ustr"
+      ],
+      "note": "CRS RL33663 (L08) and congress.gov bill texts; historical GSP-claimed imports from Nepal from USITC DataWeb."
+    },
+    {
+      "claim": "Tariff rate applied to Nepal-origin goods under the 2025 reciprocal-tariff executive orders (baseline or Annex I rate), with product-scope exemptions, and interaction with NTPP/GSP.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "ustr"
+      ],
+      "note": "Retrieve Annex I of L10 and L11 and scope annex of L12; record effective dates; verify whether later court rulings or orders modified them.",
+      "unit": "percent",
+      "period": "2025-2026, by effective date"
+    },
+    {
+      "claim": "USAID DOAG (May 2022) commitment, obligated and disbursed amounts to date, and status of each development objective after the 2025 pause and award terminations.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oecd",
+        "mof_nepal"
+      ],
+      "note": "L14 for headline commitment; MoF Development Cooperation Report (see 18D) and AMIS for disbursement by Nepal FY; OECD CRS (L21) for calendar-year disbursements; ForeignAssistance.gov via L22.",
+      "unit": "USD_current_mn",
+      "period": "Nepal FY 2021/22-2025/26 and calendar 2022-2025"
+    },
+    {
+      "claim": "MCC Nepal Compact: total MCC grant, Government of Nepal contribution, amounts disbursed to date, compact end date after the March 2026 amendment, and status of Electricity Transmission and Road Maintenance projects.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oecd"
+      ],
+      "note": "L18 (audited expenditure Apr 2024-Mar 2025), L19 (funding envelope), MCC compact amendment text (not yet located), L20; OECD CRS donor code for MCC.",
+      "unit": "USD_current_mn",
+      "period": "compact term; audit periods Apr-Mar"
+    },
+    {
+      "claim": "US ODA gross disbursements to Nepal by year and sector (OECD CRS), compared with MoF DCR records of US disbursements.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oecd",
+        "mof_nepal"
+      ],
+      "note": "CRS (calendar year, donor-reported) vs DCR/AMIS (Nepal FY, recipient-reported) differ methodologically; keep both.",
+      "unit": "USD_current_mn",
+      "period": "calendar 2015-2024 (CRS); Nepal FY 2015/16-2024/25 (DCR)"
+    },
+    {
+      "claim": "US monetary-policy spillover to Nepal (Fed policy rate path affecting external borrowing cost and INR/USD, hence NPR/USD via the peg).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fed",
+        "rbi"
+      ],
+      "note": "Supporting role for X20 (16A); monthly Fed H.15 and RBI series owned by 20A. No value recorded here."
+    },
+    {
+      "claim": "Preference analysis treats NTPP, GSP and reciprocal tariffs as three distinct legal layers; the applied US duty on a Nepali product is determined by all three together with the HTSUS MFN rate, and each is recorded separately with its effective date.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "US development-cooperation stages are defined as: commitment (agreement signed) > obligation (US funds obligated) > disbursement (funds paid out) > expenditure (audited). Only disbursement enters the model (grants channel); the other stages are context.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "No inference is made about future US policy intentions; scenarios use documented legal status only, with alternative states (renewed / lapsed) as labelled scenario assumptions.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "MCC Compact amendment of March 2026 text not located as a primary document.",
+    "ForeignAssistance.gov country series for Nepal not located directly (only a secondary aggregator).",
+    "USITC DataWeb extraction for imports under special programme indicator for Nepal not yet planned as a lead.",
+    "No primary MoF notice located for the 2025 USAID award terminations; secondary press only.",
+    "Status of 2025 reciprocal tariffs after any 2026 legal challenges is not established."
+  ],
+  "assumptions": [
+    {
+      "id": "18A-A1",
+      "text": "NTPP, GSP and reciprocal tariffs are recorded as separate legal layers with effective dates.",
+      "basis": "assumption"
+    },
+    {
+      "id": "18A-A2",
+      "text": "Commitment, obligation, disbursement and expenditure are kept as distinct stages; only disbursement enters model grants.",
+      "basis": "assumption"
+    },
+    {
+      "id": "18A-A3",
+      "text": "Calendar-year US/OECD series are not mixed with Nepal FY DCR series without monthly/quarterly conversion.",
+      "basis": "CLAUDE.md evidence rule 6"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X12 (trade preferences) lists 18C as support but not 18A; US NTPP/GSP lapse and 2025 reciprocal tariffs should be added as a US layer, with 18A as supporting agent."
+    },
+    {
+      "to": "21A",
+      "text": "Preference-erosion analysis for the US market must treat NTPP expiry and US GSP lapse as events independent of LDC graduation; do not attribute them to graduation."
+    },
+    {
+      "to": "20C",
+      "text": "MCC Compact is a grant; ensure it is not counted in external debt; DCR and CRS record it differently (recipient FY vs donor calendar year)."
+    },
+    {
+      "to": "28",
+      "text": "Request red-team review of scenario treatment of US aid volatility (2025 pause/terminations) as a precedent for S08/S10 stress tests."
+    }
+  ],
+  "uncertainty": "High. No primary document was downloaded; the lapse of NTPP, the continuation of the MCC Compact and the termination of USAID awards are reported by search snippets and secondary press only. US trade measures changed frequently in 2025-2026 and may have been modified after the latest located documents.",
+  "specific": {
+    "preference_status": {
+      "status": "pending",
+      "method": "Record each US preference layer as a dated legal-status record (authority, start, statutory end, renewal status, product coverage) plus annual utilisation from USTR/USITC; overlay 2025 reciprocal tariff rates by effective date.",
+      "layers": [
+        {
+          "programme": "Nepal Trade Preference Program (TFTEA s.915)",
+          "status": "pending",
+          "reported_state_unverified": "reported lapsed at end of calendar 2025; extension requested by Nepal",
+          "leads": [
+            "18A-L01",
+            "18A-L02",
+            "18A-L04",
+            "18A-L05",
+            "18A-L13"
+          ]
+        },
+        {
+          "programme": "US GSP (Title V, Trade Act of 1974)",
+          "status": "pending",
+          "reported_state_unverified": "authorisation lapsed end of calendar 2020; renewal bills pending",
+          "leads": [
+            "18A-L08",
+            "18A-L09"
+          ]
+        },
+        {
+          "programme": "Reciprocal tariffs (IEEPA executive orders 2025)",
+          "status": "pending",
+          "reported_state_unverified": "rate applicable to Nepal not yet read from annex",
+          "leads": [
+            "18A-L10",
+            "18A-L11",
+            "18A-L12"
+          ]
+        }
+      ],
+      "period_basis": "calendar year (US); convert via monthly USITC data for Nepal FY"
+    },
+    "cooperation_flows": {
+      "status": "pending",
+      "method": "For each instrument record commitment, obligation, disbursement and audited expenditure separately with period basis; reconcile OECD CRS (donor, calendar year) with MoF DCR/AMIS (recipient, Nepal FY) and keep both.",
+      "instruments": [
+        {
+          "instrument": "USAID-Nepal DOAG (2022)",
+          "stage": "pending (reported paused/partly terminated 2025, unverified)",
+          "leads": [
+            "18A-L14",
+            "18A-L15",
+            "18A-L16",
+            "18A-L21",
+            "18A-L22"
+          ]
+        },
+        {
+          "instrument": "MCC Nepal Compact",
+          "stage": "pending (reported continuing; amended March 2026, unverified)",
+          "leads": [
+            "18A-L17",
+            "18A-L18",
+            "18A-L19",
+            "18A-L20"
+          ]
+        },
+        {
+          "instrument": "Other US agencies (State, USDA etc.) via CRS",
+          "stage": "pending",
+          "leads": [
+            "18A-L21"
+          ]
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "18A-L01",
+      "url": "https://www.congress.gov/bill/114th-congress/house-bill/644/text/pl",
+      "title": "Text - H.R.644 - Trade Facilitation and Trade Enforcement Act of 2015 (Public Law 114-125)",
+      "publisher": "US Congress / Library of Congress",
+      "source_id": "ustr",
+      "contains": "Statutory text incl. Section 915 (Trade preferences for Nepal; 19 U.S.C. 4454): eligibility criteria, eligible-article rules, rules of origin, and the termination (sunset) clause of the Nepal preference programme"
+    },
+    {
+      "lead_id": "18A-L02",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2016-12-20/pdf/2016-30738.pdf",
+      "title": "Proclamation 9555: To Implement the Nepal Preference Program and for Other Purposes (Federal Register, 20 Dec 2016)",
+      "publisher": "Office of the Federal Register / Executive Office of the President",
+      "source_id": "ustr",
+      "contains": "Presidential proclamation designating Nepal and the eligible HTSUS subheadings (Annex), effective date of NTPP preferences"
+    },
+    {
+      "lead_id": "18A-L03",
+      "url": "https://www.federalregister.gov/documents/2016/03/28/2016-06926/trade-preferences-for-nepal-request-for-public-comments-on-review-of-nepals-country-eligibility",
+      "title": "Trade Preferences for Nepal: Request for Public Comments on Review of Nepal's Country Eligibility (2016)",
+      "publisher": "USTR via Federal Register",
+      "source_id": "ustr",
+      "contains": "USTR eligibility review notice: statutory eligibility criteria applied to Nepal and annual review procedure"
+    },
+    {
+      "lead_id": "18A-L04",
+      "url": "https://ustr.gov/sites/default/files/2024%20Nepal%20TPP%20Report%20to%20Congress%20Final.pdf",
+      "title": "2024 USTR Annual Report to Congress on the Implementation of the Nepal Trade Preference Program",
+      "publisher": "Office of the US Trade Representative",
+      "source_id": "ustr",
+      "contains": "Annual NTPP implementation report: US imports from Nepal under NTPP and total US imports from Nepal (calendar year 2023), utilisation by product, eligibility review status"
+    },
+    {
+      "lead_id": "18A-L05",
+      "url": "https://trade.gov/otexa-nepal-trade-preference-program",
+      "title": "OTEXA: Nepal Trade Preference Program",
+      "publisher": "US Department of Commerce, International Trade Administration (OTEXA)",
+      "source_id": null,
+      "contains": "Programme description, list of eligible textile/apparel/travel-goods HTS lines, programme end date and import data links"
+    },
+    {
+      "lead_id": "18A-L06",
+      "url": "https://www.usitc.gov/secretary/fed_reg_notices/332/332_558_notice04152016sgl.pdf",
+      "title": "USITC notice of investigation 332-558 (2016) on Nepal preference programme eligible articles",
+      "publisher": "US International Trade Commission",
+      "source_id": null,
+      "contains": "Scope of USITC advice on import sensitivity of articles proposed for Nepal duty-free treatment"
+    },
+    {
+      "lead_id": "18A-L07",
+      "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2023/may/joint-statement-6th-us-nepal-trade-and-investment-framework-agreement-council-meeting",
+      "title": "Joint Statement on the 6th U.S.-Nepal TIFA Council Meeting (May 2023)",
+      "publisher": "Office of the US Trade Representative",
+      "source_id": "ustr",
+      "contains": "Bilateral TIFA agenda incl. NTPP utilisation, GSP, labour and investment issues"
+    },
+    {
+      "lead_id": "18A-L08",
+      "url": "https://www.congress.gov/crs-product/RL33663",
+      "title": "Generalized System of Preferences (GSP): Overview and Issues for Congress (CRS RL33663)",
+      "publisher": "Congressional Research Service",
+      "source_id": null,
+      "contains": "Legal status of US GSP authorisation lapse (expiry end of calendar 2020), renewal bills, retroactivity history"
+    },
+    {
+      "lead_id": "18A-L09",
+      "url": "https://ustr.gov/sites/default/files/Nepal%20GSP%20handout%20August%202012%20final%20version.pdf",
+      "title": "Nepal and the U.S. Generalized System of Preferences (GSP) Program (handout, Aug 2012)",
+      "publisher": "Office of the US Trade Representative",
+      "source_id": "ustr",
+      "contains": "Historic GSP-LDC eligibility and GSP-claimed imports from Nepal (period of the handout); background only"
+    },
+    {
+      "lead_id": "18A-L10",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/",
+      "title": "Executive Order: Regulating Imports with a Reciprocal Tariff ... (April 2025) and Annex I",
+      "publisher": "The White House",
+      "source_id": null,
+      "contains": "Baseline additional ad valorem duty on all partners and Annex I country-specific rates (check whether Nepal is listed)"
+    },
+    {
+      "lead_id": "18A-L11",
+      "url": "https://www.federalregister.gov/documents/2025/08/06/2025-15010/further-modifying-the-reciprocal-tariff-rates",
+      "title": "Further Modifying the Reciprocal Tariff Rates (Federal Register, 6 Aug 2025)",
+      "publisher": "Office of the Federal Register / The White House",
+      "source_id": null,
+      "contains": "Revised country-specific reciprocal tariff annex in force from August 2025 (rate applicable to Nepal, if listed)"
+    },
+    {
+      "lead_id": "18A-L12",
+      "url": "https://whitehouse.gov/presidential-actions/2025/09/modifying-the-scope-of-reciprocal-tariffs-and-establishing-procedures-for-implementing-trade-and-security-agreements",
+      "title": "Modifying the Scope of Reciprocal Tariffs and Establishing Procedures for Implementing Trade and Security Agreements (Sept 2025)",
+      "publisher": "The White House",
+      "source_id": null,
+      "contains": "Product-scope exemptions to reciprocal tariffs (relevant to Nepal's export basket) and agreement procedures"
+    },
+    {
+      "lead_id": "18A-L13",
+      "url": "https://kathmandupost.com/money/2026/01/05/us-trade-preference-for-nepal-expires-but-exports-unlikely-to-be-hit-hard-say-experts",
+      "title": "US trade preference for Nepal expires, but exports unlikely to be hit hard, say experts (5 Jan 2026)",
+      "publisher": "The Kathmandu Post (secondary, tier 7)",
+      "source_id": "academic",
+      "contains": "Secondary report of NTPP lapse at end of 2025 and Nepal's extension request; use only to locate primary documents"
+    },
+    {
+      "lead_id": "18A-L14",
+      "url": "https://np.usembassy.gov/news-05052022/",
+      "title": "Nepal and the United States Sign New 5-year Development Assistance Agreement (May 2022)",
+      "publisher": "U.S. Embassy in Nepal",
+      "source_id": null,
+      "contains": "USAID-Nepal Development Objective Agreement (DOAG) 2022: headline commitment over the agreement period and objectives"
+    },
+    {
+      "lead_id": "18A-L15",
+      "url": "https://kathmandupost.com/national/2025/03/12/in-nepal-us-pulls-the-plug-on-aid-projects-worth-rs46-12-billion",
+      "title": "In Nepal, US pulls the plug on aid projects (12 Mar 2025)",
+      "publisher": "The Kathmandu Post (secondary, tier 7)",
+      "source_id": "academic",
+      "contains": "Secondary report of termination of USAID awards in Nepal in 2025; locate the underlying MoF/USAID notices"
+    },
+    {
+      "lead_id": "18A-L16",
+      "url": "https://kathmandupost.com/national/2025/01/28/trump-s-aid-freeze-hits-four-usaid-projects-in-nepal",
+      "title": "Trump's aid freeze hits four USAID projects in Nepal (28 Jan 2025)",
+      "publisher": "The Kathmandu Post (secondary, tier 7)",
+      "source_id": "academic",
+      "contains": "Secondary report of the January 2025 pause of on-budget USAID direct-financing projects"
+    },
+    {
+      "lead_id": "18A-L17",
+      "url": "https://kathmandupost.com/national/2025/07/26/us-pulls-mcc-nepal-compact-back-from-the-brink",
+      "title": "US pulls MCC Nepal Compact back from the brink (26 Jul 2025)",
+      "publisher": "The Kathmandu Post (secondary, tier 7)",
+      "source_id": "academic",
+      "contains": "Secondary report of the US decision on continuation of the MCC Nepal Compact in 2025"
+    },
+    {
+      "lead_id": "18A-L18",
+      "url": "https://www.oversight.gov/reports/other/financial-audit-mcc-resources-managed-millennium-challenge-account-nepal-under-0",
+      "title": "Financial Audit of the MCC Resources Managed by MCA-Nepal, 1 Apr 2024 - 31 Mar 2025",
+      "publisher": "USAID Office of Inspector General / Oversight.gov",
+      "source_id": null,
+      "contains": "Audited MCC Compact expenditures/disbursements for the period Apr 2024 - Mar 2025 (US fiscal/audit period, not Nepal FY)"
+    },
+    {
+      "lead_id": "18A-L19",
+      "url": "https://np.usembassy.gov/wp-content/uploads/sites/27/2025/11/251127_GPN-9.3.pdf",
+      "title": "Millennium Challenge Account Nepal (MCA-Nepal) General Procurement Notice (Nov 2025)",
+      "publisher": "MCA-Nepal via U.S. Embassy in Nepal",
+      "source_id": null,
+      "contains": "Compact funding envelope (MCC and Government of Nepal contributions), projects (Electricity Transmission, Road Maintenance) and procurement plan Dec 2025 - Nov 2026"
+    },
+    {
+      "lead_id": "18A-L20",
+      "url": "https://www.state.gov/policy-issues/millennium-challenge-corporation/",
+      "title": "Millennium Challenge Corporation - U.S. Department of State",
+      "publisher": "U.S. Department of State",
+      "source_id": null,
+      "contains": "Current institutional status of MCC and compact portfolio after 2025 restructuring"
+    },
+    {
+      "lead_id": "18A-L21",
+      "url": "https://data-explorer.oecd.org/vis?lc=en&df%5Bds%5D=DcdDisseminateFinalDMZ&df%5Bid%5D=DSD_CRS%40DF_CRS&df%5Bag%5D=OECD.DCD.FSD&dq=DAC..1000.100._T._T.D.Q._T..&lom=LASTNPERIODS&lo=5&to%5BTIME_PERIOD%5D=false",
+      "title": "OECD Data Explorer - CRS: Creditor Reporting System (flows)",
+      "publisher": "OECD Development Co-operation Directorate",
+      "source_id": "oecd",
+      "contains": "Project-level ODA commitments and gross disbursements by donor (filter donor = United States, incl. MCC; recipient = Nepal), calendar years"
+    },
+    {
+      "lead_id": "18A-L22",
+      "url": "https://usafacts.org/answers/how-much-foreign-aid-does-the-us-provide/countries/nepal/",
+      "title": "How much foreign aid does the US provide to Nepal?",
+      "publisher": "USAFacts (secondary, derived from ForeignAssistance.gov)",
+      "source_id": "academic",
+      "contains": "Secondary aggregation of US obligations/disbursements to Nepal by US fiscal year; use to locate ForeignAssistance.gov series"
+    }
+  ]
+}

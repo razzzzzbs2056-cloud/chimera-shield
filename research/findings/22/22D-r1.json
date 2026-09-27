@@ -1,0 +1,285 @@
+{
+  "subagent_id": "22D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Question: what run-of-river output variability is projected under climate scenarios. PENDING: no projection or observation retrieved. Leads: ICIMOD basin-scale hydropower risk work, glacial lake inventory and the 2026 Kyirong-Rasuwa flood account (all located by 16A search), NEA annual reports for observed generation by plant; IPCC AR6 WGII (Ch.10, CCP5), IPCC SROCC Ch.2, ICIMOD HIMAP 2019 and a peer-reviewed runoff projection study are recorded as general-knowledge URLs to be verified on fetch because the r1 web-search budget was exhausted before 22D searches. Method designed: translate projected changes in basin runoff (annual total, monsoon vs dry-season flow, low-flow percentiles, timing of peak water) into run-of-river generation using observed flow-generation relationships per plant (DHM discharge + NEA generation), separately for snow/glacier-fed and rain-fed basins, near term (to mid-century) and late century, and under at least two emission scenarios. Hazard exposure (GLOF, debris flows, sediment) is reported as a separate outage/damage channel, not mixed into flow variability.",
+  "findings": [
+    {
+      "claim": "Projected change in annual and seasonal (monsoon, dry-season) runoff for Nepal's main basins (Koshi, Gandaki, Karnali, Mahakali) by period and emission scenario.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "ipcc"
+      ],
+      "note": "HIMAP 2019 / HI-WISE 2023 chapters, IPCC AR6 WGII Ch.10 and CCP5, basin studies; record each model ensemble range with scenario (RCP/SSP), baseline period and projection period.",
+      "period": "2021-2050 and 2071-2100 vs baseline"
+    },
+    {
+      "claim": "Projected change in dry-season low flows and in inter-annual variability (e.g. coefficient of variation of annual flow), which drive run-of-river firm energy.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "dhm"
+      ],
+      "note": "Basin-scale ICIMOD studies; DHM station records for baseline variability."
+    },
+    {
+      "claim": "Timing of 'peak water' from glacier melt in Nepal's basins and implication for dry-season flow after the peak.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "ipcc"
+      ],
+      "note": "HIMAP, SROCC Ch.2, AR6 CCP5; academic studies (e.g. lead L08)."
+    },
+    {
+      "claim": "Observed inter-annual and seasonal variability of run-of-river generation (NEA plants), FY2010/11 onward.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea"
+      ],
+      "note": "NEA annual reports monthly generation by plant; compute monsoon/dry ratio and year-to-year variation per plant and system.",
+      "period": "FY2010/11-FY2024/25"
+    },
+    {
+      "claim": "Share of generation capacity in snow/glacier-fed basins (links to 16B EXP-07, owned by 25A).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "icimod"
+      ],
+      "note": "NEA plant list by river + ICIMOD basin melt-contribution; threshold to be set by 25A as labelled assumption."
+    },
+    {
+      "claim": "Climate-related hazard outages: GLOF/debris-flow/sediment events affecting hydropower (including the August 2026 Kyirong-Rasuwa event).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "ndrrma"
+      ],
+      "note": "ICIMOD event account (lead L03), BIPAD portal; record as dated events with plants affected and outage duration - separate from flow variability."
+    },
+    {
+      "claim": "Run-of-river output variability is modelled as generation = f(flow) per plant with capacity and minimum environmental flow constraints; projections of flow are not converted into generation without plant-level observed relationships.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Projection ranges from different studies (ICIMOD, IPCC-assessed literature, individual papers) are reported separately with scenario, model ensemble and baseline period; they are not averaged.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "All projection and observation values - no document downloaded in r1.",
+    "Web-search budget exhausted before 22D-specific searches; leads L04-L09 are general-knowledge URLs flagged for verification on fetch; HI-WISE 2023 and basin-specific studies still need exact document URLs.",
+    "DHM station discharge series may require a formal data request rather than download.",
+    "Plant-level hydrological design data (design discharge, flow-duration curves) from DoED/NEA not located.",
+    "World Bank Nepal CCDR (climate and development report) hydropower chapter not located.",
+    "No unit code for discharge (m3/s) or for runoff depth (mm) in units.py; percent change will be used where possible."
+  ],
+  "assumptions": [
+    {
+      "id": "22D-A1",
+      "text": "Variability is reported as ranges (min-max across models/scenarios) of percent change relative to a stated baseline; no probability is assigned.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22D-A2",
+      "text": "Near-term (to mid-century) projections are prioritised because they overlap the strategy horizon; late-century projections are context.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22D-A3",
+      "text": "Flow-driven variability and hazard-driven outages are kept as separate channels in the model.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "25A",
+      "text": "Coordinate on the snow/glacier-fed classification threshold (EXP-07) and on a common basin list and baseline period so 22D and 25A projections are comparable."
+    },
+    {
+      "to": "05A",
+      "text": "Please provide (or confirm availability of) NEA monthly generation by plant and plant type (ROR/PROR/storage); 22D needs it to convert flow projections into generation variability."
+    },
+    {
+      "to": "00A",
+      "text": "units.py has no code for discharge (m3/s) or runoff depth (mm); consider adding if flow observations are to be stored."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: the August 2026 Kyirong-Rasuwa event (ICIMOD, unverified) may affect generation and export assumptions in S05 and S09."
+    }
+  ],
+  "uncertainty": "Very high: nothing retrieved. Projection uncertainty is dominated by precipitation (monsoon) projections, which diverge across climate models in sign as well as magnitude for the Himalaya; melt-driven flow increases are generally considered better constrained than precipitation changes but depend on glacier volume estimates. Conversion to generation adds plant-specific uncertainty and sediment/hazard effects that are not captured by flow projections.",
+  "specific": {
+    "generation_variability_ranges": {
+      "status": "pending",
+      "question": "Run-of-river output variability projected under climate scenarios",
+      "dimensions": {
+        "basins": [
+          "Koshi",
+          "Gandaki",
+          "Karnali",
+          "Mahakali"
+        ],
+        "periods": [
+          "baseline (to be set, e.g. 1981-2010 or per study)",
+          "near term to mid-century",
+          "late century"
+        ],
+        "scenarios": [
+          "low emission (RCP2.6/SSP1-2.6)",
+          "high emission (RCP8.5/SSP5-8.5) - intermediate as available"
+        ],
+        "metrics": [
+          "annual runoff change (percent)",
+          "monsoon and dry-season flow change (percent)",
+          "dry-season low-flow percentile change",
+          "inter-annual variability change",
+          "peak-water timing",
+          "implied ROR generation change by season (percent)"
+        ]
+      },
+      "inputs": {
+        "runoff_projections": {
+          "status": "pending",
+          "lead_ids": [
+            "22D-L01",
+            "22D-L04",
+            "22D-L05",
+            "22D-L06",
+            "22D-L07",
+            "22D-L08"
+          ]
+        },
+        "observed_flows": {
+          "status": "pending",
+          "lead_ids": [
+            "22D-L09"
+          ]
+        },
+        "observed_generation": {
+          "status": "pending",
+          "lead_ids": [
+            "22D-L10"
+          ],
+          "from": "05A"
+        },
+        "hazard_events": {
+          "status": "pending",
+          "lead_ids": [
+            "22D-L02",
+            "22D-L03"
+          ],
+          "separate_channel": true
+        }
+      },
+      "unit": "percent",
+      "model_variables": [
+        "electricity_generation",
+        "electricity_imports"
+      ],
+      "scenarios": [
+        "S05",
+        "S09"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "22D-L01",
+      "url": "https://www.icimod.org/event/cryosphere-water-risks/generation-of-evidence-and-knowledge-on-the-basin-scale-climate-and-environmental-risks-to-the-hydropower-sector-in-nepal/",
+      "title": "Basin-scale climate and environmental risks to the hydropower sector in Nepal",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Basin-level evidence on climate risks to hydropower (melt contribution, hazard exposure) and pointers to underlying ICIMOD studies; same as 16A L33"
+    },
+    {
+      "lead_id": "22D-L02",
+      "url": "https://lib.icimod.org/record/34905",
+      "title": "Inventory of glacial lakes and potentially dangerous glacial lakes in the Koshi, Gandaki and Karnali basins",
+      "publisher": "ICIMOD and UNDP",
+      "source_id": "icimod",
+      "contains": "Glacial lake inventory and ranked potentially dangerous lakes by basin (2020); GLOF exposure of hydropower; same as 16A L32"
+    },
+    {
+      "lead_id": "22D-L03",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "2026 cross-border flood/debris event; damage to hydropower in the Trishuli/Bhote Koshi corridor; same as 16A L34"
+    },
+    {
+      "lead_id": "22D-L04",
+      "url": "https://lib.icimod.org/",
+      "title": "ICIMOD HimalDoc library",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Search point for HI-WISE 2023 (Water, Ice, Society and Ecosystems in the HKH) and basin runoff projection studies (Koshi, Gandaki, Karnali, Mahakali)",
+      "note": "URL recorded from general knowledge after the r1 search budget was exhausted; not located by search in r1 and unverified - confirm on fetch"
+    },
+    {
+      "lead_id": "22D-L05",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-92288-1",
+      "title": "The Hindu Kush Himalaya Assessment (HIMAP, 2019)",
+      "publisher": "ICIMOD / Springer (open access)",
+      "source_id": "icimod",
+      "contains": "Chapters on cryosphere change and water resources: projected changes in glacier melt, snowmelt, total runoff and seasonality for Indus, Ganges, Brahmaputra upper basins under RCP scenarios",
+      "note": "URL recorded from general knowledge after the r1 search budget was exhausted; not located by search in r1 and unverified - confirm on fetch"
+    },
+    {
+      "lead_id": "22D-L06",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/",
+      "title": "IPCC AR6 Working Group II: Impacts, Adaptation and Vulnerability (2022)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Chapter 10 (Asia) and Cross-Chapter Paper 5 (Mountains): projected Himalayan streamflow, peak-water timing, hydropower impacts, with confidence statements",
+      "note": "URL recorded from general knowledge after the r1 search budget was exhausted; not located by search in r1 and unverified - confirm on fetch"
+    },
+    {
+      "lead_id": "22D-L07",
+      "url": "https://www.ipcc.ch/srocc/",
+      "title": "IPCC Special Report on the Ocean and Cryosphere in a Changing Climate (2019)",
+      "publisher": "IPCC",
+      "source_id": "ipcc",
+      "contains": "Chapter 2 (High Mountain Areas): glacier mass loss projections and runoff/peak-water changes for High Mountain Asia",
+      "note": "URL recorded from general knowledge after the r1 search budget was exhausted; not located by search in r1 and unverified - confirm on fetch"
+    },
+    {
+      "lead_id": "22D-L08",
+      "url": "https://doi.org/10.1038/nclimate2237",
+      "title": "Lutz et al. (2014) Consistent increase in High Asia's runoff due to increasing glacier melt and precipitation, Nature Climate Change",
+      "publisher": "Nature Climate Change (peer-reviewed)",
+      "source_id": "academic",
+      "contains": "Projected runoff composition and total runoff to 2050 for upper Ganges and other basins under RCP4.5/8.5; academic tier",
+      "note": "URL recorded from general knowledge after the r1 search budget was exhausted; not located by search in r1 and unverified - confirm on fetch"
+    },
+    {
+      "lead_id": "22D-L09",
+      "url": "https://www.dhm.gov.np",
+      "title": "Department of Hydrology and Meteorology, Nepal",
+      "publisher": "Department of Hydrology and Meteorology, Nepal",
+      "source_id": "dhm",
+      "contains": "Observed daily/monthly discharge at hydrometric stations (Koshi, Gandaki, Karnali basins); climate normals; data-request procedure for station series",
+      "note": "URL recorded from general knowledge after the r1 search budget was exhausted; not located by search in r1 and unverified - confirm on fetch"
+    },
+    {
+      "lead_id": "22D-L10",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Monthly generation by plant and basin, installed capacity by type (ROR, PROR, storage), dry-season spill and shortfall; base for observed generation variability"
+    }
+  ]
+}

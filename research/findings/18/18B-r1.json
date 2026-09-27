@@ -1,0 +1,195 @@
+{
+  "subagent_id": "18B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). The question is how Chinese outward lending and investment trends affect Nepal's financing options. Research design: compare (a) Chinese official outward FDI to Nepal (MOFCOM OFDI bulletin, host-country NRB FDI survey and DoI/IBN approvals), (b) Chinese official lending to Nepal (World Bank IDS creditor lines, PDMO debt statistics, MoF DCR) and (b') independent project-level datasets (AidData, academic hidden-debt literature), and (c) the policy framework (BRI Framework for Cooperation, grant-versus-loan terms). The session web-search budget was exhausted before China-specific searches ran; only Nepal MoF/PDMO documents located for other subagents and catalog endpoints are recorded as leads. No values retrieved; all empirical items pending.",
+  "findings": [
+    {
+      "claim": "Chinese outward FDI flows and stock in Nepal by year (MOFCOM/NBS/SAFE bulletin) versus NRB-recorded FDI from China and DoI/IBN approvals from Chinese investors.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofcom",
+        "nrb",
+        "ibn",
+        "doind"
+      ],
+      "note": "Three methodologies (source-country BoP, host-country survey, approvals) must be reported separately; MOFCOM is calendar year, NRB is Nepal FY.",
+      "unit": "USD_current_mn",
+      "period": "calendar 2015-2024; Nepal FY 2015/16-2024/25"
+    },
+    {
+      "claim": "Chinese official lending to Nepal: disbursed and outstanding PPG debt owed to China (bilateral and China EXIM), terms (interest, maturity, grace) and share of external debt.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_ids",
+        "pdmo",
+        "mof_nepal"
+      ],
+      "note": "IDS creditor tables (calendar year) and PDMO/MTDS (Nepal FY); leads 18B-L02, L05.",
+      "unit": "USD_current_mn",
+      "period": "calendar 2010-2024; Nepal FY"
+    },
+    {
+      "claim": "China grants and loans committed vs disbursed to Nepal per MoF Development Cooperation Reports.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal"
+      ],
+      "note": "Leads 18B-L03, L04; DCR tables by development partner.",
+      "unit": "USD_current_mn",
+      "period": "Nepal FY 2022/23-2024/25"
+    },
+    {
+      "claim": "Global trend in Chinese overseas development lending (commitments by year and region; shift from project lending to rescue lending/grants) from independent datasets.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "AidData Global Chinese Development Finance dataset and peer-reviewed work on Chinese overseas lending (e.g. Horn, Reinhart and Trebesch on China's overseas lending) - documents not located in r1 (search budget exhausted); citations to be verified."
+    },
+    {
+      "claim": "Documented terms of the Nepal-China BRI Framework for Cooperation and any project-level financing agreements (grant vs loan modality).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "mofcom"
+      ],
+      "note": "Primary MoFA Nepal / MOFCOM texts not located in r1; required: signed framework text, date, and any financing annex."
+    },
+    {
+      "claim": "Nepal's financing options are affected through three channels: volume/terms of Chinese official credit, Chinese FDI in hydropower/infrastructure/manufacturing, and Chinese grant aid; each is recorded separately and enters the model only via external_financing (X22) or FDI variables.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "No statement is made about Chinese government intentions; only documented agreements, disbursements and published datasets are used.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Session WebSearch budget was exhausted before searches for this subagent could be run; Crossref/doi.org are blocked by the egress proxy. Leads marked 'catalog endpoint' are the unverified catalog URLs in research/sources/source_catalog.yaml, not search-located documents.",
+    "MOFCOM OFDI Statistical Bulletin document URL not located.",
+    "AidData Chinese development finance dataset and Nepal records not located.",
+    "Nepal-China BRI Framework for Cooperation text not located.",
+    "China GACC customs data on trade with Nepal lacks a catalog id (raised by 16A).",
+    "Peer-reviewed references on Chinese overseas lending not bibliographically verified."
+  ],
+  "assumptions": [
+    {
+      "id": "18B-A1",
+      "text": "Source-country (MOFCOM), host-country (NRB) and approval (DoI/IBN) FDI measures are kept separate.",
+      "basis": "CLAUDE.md evidence rule 4"
+    },
+    {
+      "id": "18B-A2",
+      "text": "Chinese lending affects Nepal through external_financing; FDI affects investment; grants affect fiscal grants - no double counting.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X22 lists 18B only as support; Chinese lending trend data (IDS creditor lines, AidData) should be explicitly assigned to 18B as supplier of the China creditor sub-series."
+    },
+    {
+      "to": "00A",
+      "text": "Source catalog lacks an AidData id; add it (tier 7, independent dataset) so Chinese project-level finance leads can carry a source_id."
+    },
+    {
+      "to": "20C",
+      "text": "Reconcile PDMO China creditor lines with World Bank IDS; differences in coverage (SOE/guaranteed debt) and period basis must be documented, not averaged."
+    }
+  ],
+  "uncertainty": "Very high. No China-specific primary document was located in r1 because the search budget was exhausted; catalog endpoints are unverified. Chinese lending data are known to have coverage gaps in official statistics, so independent datasets will be needed and will disagree with official ones.",
+  "specific": {
+    "financing_trend_notes": {
+      "status": "pending",
+      "method": "Build three parallel series (OFDI to Nepal: MOFCOM vs NRB vs DoI/IBN; official lending: IDS vs PDMO vs AidData; grants: DCR) with period basis stated; describe global Chinese lending trend from AidData/peer-reviewed sources; map to Nepal financing options (concessional debt, FDI, grants).",
+      "notes": [
+        {
+          "topic": "Chinese OFDI to Nepal",
+          "status": "pending",
+          "leads": [
+            "18B-L01"
+          ]
+        },
+        {
+          "topic": "Chinese official lending to Nepal",
+          "status": "pending",
+          "leads": [
+            "18B-L02",
+            "18B-L05"
+          ]
+        },
+        {
+          "topic": "China grants/loans in Nepal DCR",
+          "status": "pending",
+          "leads": [
+            "18B-L03",
+            "18B-L04"
+          ]
+        },
+        {
+          "topic": "Global Chinese overseas lending trend",
+          "status": "pending",
+          "leads": [],
+          "required": "AidData dataset and peer-reviewed literature, to be located in r2"
+        },
+        {
+          "topic": "BRI Framework for Cooperation terms",
+          "status": "pending",
+          "leads": [],
+          "required": "signed text from MoFA Nepal or MOFCOM"
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "18B-L01",
+      "url": "https://english.mofcom.gov.cn",
+      "title": "Ministry of Commerce of the PRC - English portal (catalog endpoint)",
+      "publisher": "MOFCOM",
+      "source_id": "mofcom",
+      "contains": "Catalog endpoint, not search-verified: locate the annual Statistical Bulletin of China's Outward Foreign Direct Investment (MOFCOM/NBS/SAFE) - OFDI flows and stocks by host economy incl. Nepal, calendar years"
+    },
+    {
+      "lead_id": "18B-L02",
+      "url": "https://www.worldbank.org/en/programs/debt-statistics/ids",
+      "title": "World Bank International Debt Statistics (catalog endpoint)",
+      "publisher": "World Bank",
+      "source_id": "wb_ids",
+      "contains": "Catalog endpoint, not search-verified: Nepal external PPG debt stock, disbursements and debt service by creditor (China bilateral line), calendar years"
+    },
+    {
+      "lead_id": "18B-L03",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Final%20DCR%202024-25_26-03-2026_d06ntku.pdf",
+      "title": "Development Cooperation Report 2024/25",
+      "publisher": "Ministry of Finance, Government of Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Recipient-reported commitments and disbursements by development partner incl. China (grants/loans), Nepal FY 2024/25"
+    },
+    {
+      "lead_id": "18B-L04",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/DCR%20Report%202022_23_pt2fped.pdf",
+      "title": "Development Cooperation Report 2022/23",
+      "publisher": "Ministry of Finance, Government of Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Recipient-reported disbursements by development partner incl. China, Nepal FY 2022/23"
+    },
+    {
+      "lead_id": "18B-L05",
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "Public external debt composition by creditor and currency (incl. bilateral China/EXIM), Nepal FY"
+    }
+  ]
+}

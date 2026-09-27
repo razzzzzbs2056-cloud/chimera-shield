@@ -51,7 +51,7 @@
         "nitdb"
       ],
       "note": "Requires freight-forwarder or NITDB tariff data per TEU Kolkata-Birgunj, and LPI 2023 timeliness indicators.",
-      "unit": "USD",
+      "unit": "USD_current",
       "period": "calendar 2023-2026"
     },
     {

@@ -1,0 +1,189 @@
+{
+  "subagent_id": "18E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Research design for a structured review of the small-state hedging literature (definitions, measurement, economic outcomes) and an option set for Nepal. The session web-search budget was exhausted and doi.org/Crossref are blocked, so no document was located or verified in r1; candidate references are listed in specific.literature_review as unverified bibliographic leads (authors, year, title, venue from general knowledge, flagged for verification) and are not cited as evidence. The option set is a labelled set of analytical alternatives for scenario design, not recommendations and not an assessment of any government's intentions.",
+  "findings": [
+    {
+      "claim": "What peer-reviewed studies find on economic outcomes (trade, FDI, aid, borrowing terms, growth volatility) associated with hedging versus alignment by small states.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "Requires located and verified peer-reviewed articles with stated samples, periods and identification strategies; none retrieved in r1."
+    },
+    {
+      "claim": "Documented cases of economic coercion affecting small states (trade restrictions, border/transit disruptions, sanctions) and measured economic effects, incl. Nepal's 2015-16 border disruption.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic",
+        "nrb",
+        "customs_nepal"
+      ],
+      "note": "Requires peer-reviewed or official quantification; Nepal episode via NRB/customs monthly data (owned with 17A/21B)."
+    },
+    {
+      "claim": "Nepal-specific literature on foreign-policy balancing between India and China and on its economic effects.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "note": "Locate peer-reviewed Nepal studies in r2; policy commentary is tier 7 and must be separated from empirical work."
+    },
+    {
+      "claim": "Hedging is defined for this review as a set of mixed signals combining engagement and insurance toward competing powers while avoiding exclusive alignment; alternative definitions in the literature will be recorded and compared, not merged.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Economic outcomes are only attributed to hedging where a study presents an identification strategy; correlational or case-narrative evidence is labelled as such.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "The option set is an analytical list for stress-testing (inputs to Agent 28 and scenario design), not advice to or a ranking of any government, party or leader.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Session WebSearch budget was exhausted before searches for this subagent could be run; Crossref/doi.org are blocked by the egress proxy. Leads marked 'catalog endpoint' are the unverified catalog URLs in research/sources/source_catalog.yaml, not search-located documents.",
+    "No peer-reviewed article on small-state hedging was located or verified in r1.",
+    "No quantitative dataset on economic coercion episodes (e.g. sanctions/coercion databases) located.",
+    "No Nepal-specific empirical study of foreign-policy balancing and economic outcomes located."
+  ],
+  "assumptions": [
+    {
+      "id": "18E-A1",
+      "text": "Hedging definition follows the engagement-plus-insurance family of definitions; alternatives recorded separately.",
+      "basis": "assumption"
+    },
+    {
+      "id": "18E-A2",
+      "text": "Only studies with explicit identification strategies support causal claims.",
+      "basis": "assumption"
+    },
+    {
+      "id": "18E-A3",
+      "text": "Option set is analytical, not prescriptive, and makes no claim about private intentions of any government.",
+      "basis": "CLAUDE.md non-negotiables"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Enable Crossref/doi.org access or a bibliographic database for r2; academic source leads cannot be verified in the restricted network and the catalog 'academic' entry has no URL."
+    },
+    {
+      "to": "28",
+      "text": "Request red-team review of the option set for omitted options and for implicit normative bias toward any partner."
+    },
+    {
+      "to": "16A",
+      "text": "No external variable in the 41-variable list captures coercion/disruption risk as a policy state; consider a dated-event variable feeding S02/S05 transit shocks."
+    }
+  ],
+  "uncertainty": "Very high. No literature was retrieved or verified; the candidate reference list may contain bibliographic errors and is not evidence. The literature is expected to be largely qualitative with limited causal evidence on economic outcomes.",
+  "specific": {
+    "literature_review": {
+      "status": "pending",
+      "method": "Structured review: (1) define hedging and alternatives; (2) extract for each study: sample, period, outcome variables, method, finding direction (no numbers until retrieved); (3) separate empirical from conceptual work; (4) Nepal-specific subsection.",
+      "search_protocol_r2": [
+        "small state hedging economic outcomes",
+        "hedging strategy Southeast Asia China United States",
+        "Nepal India China balancing economy",
+        "economic coercion small states trade effects"
+      ],
+      "candidate_references_unverified": [
+        {
+          "ref": "Kuik Cheng-Chwee (2008), 'The Essence of Hedging: Malaysia and Singapore's Response to a Rising China', Contemporary Southeast Asia",
+          "type": "conceptual/case",
+          "status": "unverified - verify bibliographic details and URL in r2"
+        },
+        {
+          "ref": "Goh, Evelyn (2005), 'Meeting the China Challenge: The U.S. in Southeast Asian Regional Security Strategies', East-West Center Washington, Policy Studies",
+          "type": "conceptual/case",
+          "status": "unverified"
+        },
+        {
+          "ref": "Lim, Darren J. and Cooper, Zack (2015), 'Reassessing Hedging: The Logic of Alignment in East Asia', Security Studies",
+          "type": "conceptual",
+          "status": "unverified"
+        },
+        {
+          "ref": "Ciorciari, John D. and Haacke, Juergen (2019), special issue on hedging, International Relations of the Asia-Pacific",
+          "type": "conceptual/review",
+          "status": "unverified"
+        },
+        {
+          "ref": "Horn, Sebastian; Reinhart, Carmen; Trebesch, Christoph (2021), 'China's Overseas Lending', Journal of International Economics",
+          "type": "empirical (financing channel; shared with 18B)",
+          "status": "unverified"
+        }
+      ],
+      "leads": []
+    },
+    "option_set": {
+      "status": "assumption (analytical design, no empirical content)",
+      "note": "Options are stress-test alternatives for scenarios; not recommendations; no probabilities assigned.",
+      "options": [
+        {
+          "id": "OPT-1",
+          "label": "Diversified engagement (status-quo balancing)",
+          "description": "Parallel economic engagement with India, China, US, EU, Japan and others without exclusive commitments",
+          "transmission_channels": [
+            "external_financing",
+            "trade_preferences",
+            "transit_and_logistics"
+          ],
+          "evidence_status": "pending"
+        },
+        {
+          "id": "OPT-2",
+          "label": "Multilateral anchoring",
+          "description": "Prioritise MDB/UN-system financing and rules-based trade frameworks to reduce bilateral exposure",
+          "transmission_channels": [
+            "external_financing",
+            "trade_preferences"
+          ],
+          "evidence_status": "pending"
+        },
+        {
+          "id": "OPT-3",
+          "label": "Connectivity redundancy",
+          "description": "Invest in alternative transit/trade/energy routes to reduce single-point-of-failure exposure (links to 16B SPOF list)",
+          "transmission_channels": [
+            "transit_and_logistics",
+            "electricity_trade"
+          ],
+          "evidence_status": "pending"
+        },
+        {
+          "id": "OPT-4",
+          "label": "Closer economic alignment with one neighbour",
+          "description": "Deeper integration with a single major neighbour; analysed as a stress-test alternative only",
+          "transmission_channels": [
+            "transit_and_logistics",
+            "external_demand_goods",
+            "external_financing"
+          ],
+          "evidence_status": "pending"
+        },
+        {
+          "id": "OPT-5",
+          "label": "Labour-market diversification",
+          "description": "Broaden G2G labour agreements (Korea EPS, Japan SSW, Europe) to reduce GCC/Malaysia concentration",
+          "transmission_channels": [
+            "migrant_employment"
+          ],
+          "evidence_status": "pending"
+        }
+      ],
+      "trade_off_note": "Each option to be assessed against all 12 welfare objectives (src/economic_model/welfare.py), not GDP alone, once evidence is retrieved."
+    }
+  },
+  "source_leads": []
+}

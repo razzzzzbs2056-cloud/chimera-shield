@@ -1,0 +1,291 @@
+{
+  "subagent_id": "22C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Question: how solar-plus-storage cost trends affect the value of Nepal's hydropower exports. PENDING: no cost value was retrieved. Primary documents located: IRENA Renewable Power Generation Costs in 2025 (executive summary, July 2026) and in 2024 (full report with country series incl. India), IEA Batteries and Secure Energy Transitions (2024), World Bank CMO April 2026 (metals). Method designed: Nepal's hydro exports compete in India against the marginal new firm supply in each time block. The competitiveness trend is defined as the gap between (a) Nepal's delivered export cost/price (from 22B/22E/05A: levelised hydro cost + cross-border transmission + trading margins) and (b) the Indian cost of firm solar-plus-storage (India-specific LCOE for solar plus storage sized for evening peak and dry-season supply), tracked over time. Qualitative expectation to be tested, not asserted: falling storage costs erode the value of midday and monsoon run-of-river exports first and of dispatchable/peaking and dry-season storage hydro last; the value of Nepal's exports therefore depends on project type and season rather than on a single average price.",
+  "findings": [
+    {
+      "claim": "India-specific LCOE of utility solar PV, history 2010-2025.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "irena"
+      ],
+      "note": "IRENA RPGC country data (India); calendar year; USD/MWh (unit code pending in units.py).",
+      "period": "2010-2025"
+    },
+    {
+      "claim": "Installed cost of utility-scale battery storage (4-hour) and its trend, and projections to 2030/2035.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "irena",
+        "iea"
+      ],
+      "note": "IRENA RPGC 2025; IEA Batteries report; keep both values and note differing system boundaries (pack vs installed system).",
+      "period": "2010-2035"
+    },
+    {
+      "claim": "Firm (round-the-clock / peak-shifted) solar-plus-storage LCOE ranges and projections, preferably India-specific.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "irena",
+        "iea"
+      ],
+      "note": "IRENA 2026 firm-power report (primary not yet located; media leads L09/L10 point to it); IEA comparison with new coal in India."
+    },
+    {
+      "claim": "Levelised cost of new hydropower in Nepal and India (IRENA hydropower cost database) for comparison.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "irena",
+        "nea"
+      ],
+      "note": "IRENA RPGC hydropower chapter; Nepal project-level costs from NEA/IBN/DoED (05A, 12x)."
+    },
+    {
+      "claim": "Indian discovered tariffs for solar-plus-storage / FDRE / peak-supply tenders (SECI, NTPC, NHPC).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [],
+      "note": "Primary tender result documents not located in r1 (search budget exhausted); SECI/NHPC/NTPC not in catalog - see challenge to 00A."
+    },
+    {
+      "claim": "Critical-mineral and metal prices relevant to storage and transmission (lithium, nickel, copper, aluminium).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_pinksheet",
+        "iea"
+      ],
+      "note": "World Bank CMO/Pink Sheet (copper, aluminium, nickel); IEA critical minerals outlook for lithium (lead not yet located)."
+    },
+    {
+      "claim": "Competitiveness gap time series: Nepal delivered hydro export cost vs India firm solar-plus-storage cost, by season and time block.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "irena",
+        "iea",
+        "nea"
+      ],
+      "note": "Computed only after 22B netback, 05A/22E hydro costs and IRENA/IEA India costs are retrieved; will be labelled estimate."
+    },
+    {
+      "claim": "The relevant comparator for Nepali exports is the marginal new firm supply in India in the same time block and season, not average Indian generation cost or average exchange price.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Global IRENA/IEA cost figures are not substituted for India-specific values; where only global values exist they are reported as such and labelled.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "All cost values - no documents downloaded in r1.",
+    "India-specific solar-plus-storage tender results (SECI FDRE/peak tenders) - not located.",
+    "IRENA 2026 firm-renewables report primary URL - not located (media pointers only).",
+    "IEA critical minerals outlook and IEA WEO 2025 technology cost tables - not located.",
+    "Nepal-side delivered export cost depends on 22B (netback) and 22E/05A (hydro LCOE) outputs not yet available.",
+    "units.py lacks USD per MWh / USD per kWh codes."
+  ],
+  "assumptions": [
+    {
+      "id": "22C-A1",
+      "text": "Competitiveness is assessed separately for (i) run-of-river monsoon energy, (ii) peaking run-of-river (PROR) evening energy, (iii) storage hydro dry-season energy.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22C-A2",
+      "text": "Cost projections from IRENA/IEA are treated as scenario ranges, not forecasts; no probability is attached.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22C-A3",
+      "text": "USD cost values are converted at the same-period exchange rate and kept in current prices with the vintage stated; no mixing of real and nominal cost series.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Add catalog ids for SECI, NTPC/NHPC tender results and for the IEA critical minerals outlook if separate; add unit-price codes (USD_current_per_MWh, USD_current_per_kWh) to units.py."
+    },
+    {
+      "to": "22E",
+      "text": "Opportunity-cost of exporting vs domestic use should be computed by season and time block; an annual-average export price overstates the value of monsoon run-of-river exports if midday solar depresses Indian prices."
+    },
+    {
+      "to": "16A",
+      "text": "X32 lists only capital_goods_prices as model variable; technology costs also enter electricity_exports value (via Indian price formation). Suggest adding electricity_exports/nea_revenue to X32 model_variables."
+    },
+    {
+      "to": "28",
+      "text": "Red-team point: the value of the Long-Term Power Trade Agreement for Nepal may decline faster than its term if Indian storage costs fall as projected; scenario S09 (and export-led strategies) should be stress-tested against a low-storage-cost path."
+    }
+  ],
+  "uncertainty": "High: nothing retrieved. Structural uncertainty: storage-cost projections have repeatedly been revised; India-specific firm-power costs depend on tender design; the link from Indian technology cost to the price Nepal receives runs through Indian market rules and bilateral negotiation, so cost trends bound but do not determine Nepal's export value. Direction of effect by project type is a hypothesis to be tested, not a finding.",
+  "specific": {
+    "competitiveness_trend": {
+      "status": "pending",
+      "question": "How solar-plus-storage cost trends affect the value of Nepal's hydropower exports",
+      "definition": "gap_t = Nepal delivered export cost/price at Indian border (by season/time block) - India firm solar-plus-storage LCOE (same block), tracked over time and under IRENA/IEA projection ranges",
+      "inputs": {
+        "india_solar_lcoe": {
+          "status": "pending",
+          "lead_ids": [
+            "22C-L01",
+            "22C-L02",
+            "22C-L03"
+          ]
+        },
+        "storage_installed_cost": {
+          "status": "pending",
+          "lead_ids": [
+            "22C-L01",
+            "22C-L02",
+            "22C-L05",
+            "22C-L06"
+          ]
+        },
+        "firm_solar_plus_storage_lcoe": {
+          "status": "pending",
+          "lead_ids": [
+            "22C-L01",
+            "22C-L04",
+            "22C-L09",
+            "22C-L10"
+          ]
+        },
+        "critical_minerals_and_metals": {
+          "status": "pending",
+          "lead_ids": [
+            "22C-L07",
+            "22C-L08"
+          ]
+        },
+        "indian_realised_green_prices": {
+          "status": "pending",
+          "lead_ids": [
+            "22C-L11"
+          ],
+          "from": "22B"
+        },
+        "nepal_delivered_hydro_cost": {
+          "status": "pending",
+          "from": [
+            "05A",
+            "22E",
+            "22B"
+          ]
+        }
+      },
+      "segments": [
+        "monsoon run-of-river",
+        "peaking run-of-river evening",
+        "storage hydro dry season"
+      ],
+      "period_basis": "calendar year (IRENA/IEA); converted to Nepal FY only where it enters the model",
+      "model_variables": [
+        "capital_goods_prices",
+        "electricity_exports"
+      ],
+      "scenarios": [
+        "S09"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "22C-L01",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2026/Jul/IRENA_TEC_RPGC_2025_Executive_summary_2026.pdf",
+      "title": "Renewable Power Generation Costs in 2025 - Executive summary",
+      "publisher": "IRENA",
+      "source_id": "irena",
+      "contains": "2025 global and country (incl. India) LCOE for utility solar PV, onshore wind, hydropower; installed cost of utility-scale battery storage; firm solar-plus-storage LCOE ranges and projections to 2030/2035; calendar year 2025"
+    },
+    {
+      "lead_id": "22C-L02",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_TEC_RPGC_in_2024_2025.pdf",
+      "title": "Renewable Power Generation Costs in 2024 (full report)",
+      "publisher": "IRENA",
+      "source_id": "irena",
+      "contains": "Time series 2010-2024 of LCOE, installed costs and capacity factors by technology and country incl. India and hydropower; battery storage cost chapter"
+    },
+    {
+      "lead_id": "22C-L03",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_TEC_RPGC_in_2024_Summary_2025.pdf",
+      "title": "Renewable Power Generation Costs in 2024 - Summary",
+      "publisher": "IRENA",
+      "source_id": "irena",
+      "contains": "Summary tables for 2024 costs"
+    },
+    {
+      "lead_id": "22C-L04",
+      "url": "https://www.irena.org/Publications",
+      "title": "IRENA Publications",
+      "publisher": "IRENA",
+      "source_id": "irena",
+      "contains": "Locate full RPGC 2025 report and data annex, and IRENA's 2026 round-the-clock/firm renewable power report"
+    },
+    {
+      "lead_id": "22C-L05",
+      "url": "https://iea.blob.core.windows.net/assets/cb39c1bf-d2b3-446d-8c35-aae6b1f3a4a0/BatteriesandSecureEnergyTransitions.pdf",
+      "title": "Batteries and Secure Energy Transitions (WEO Special Report, 2024)",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Battery pack and utility-scale storage cost history and projections to 2030; comparison of solar-plus-storage vs new coal in India and other markets; critical mineral supply for batteries"
+    },
+    {
+      "lead_id": "22C-L06",
+      "url": "https://www.iea.org/reports/batteries-and-secure-energy-transitions/executive-summary",
+      "title": "Batteries and Secure Energy Transitions - Executive summary",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Headline findings on storage cost trajectory and competitiveness (web version)"
+    },
+    {
+      "lead_id": "22C-L07",
+      "url": "https://www.iea.org/reports/batteries-and-secure-energy-transitions/outlook-for-battery-demand-and-supply",
+      "title": "Batteries and Secure Energy Transitions - Outlook for battery demand and supply",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Battery demand/supply and manufacturing concentration by country; critical minerals"
+    },
+    {
+      "lead_id": "22C-L08",
+      "url": "https://thedocs.worldbank.org/en/doc/f3138644a1e8e2bb631399ae11d6c408-0050012026/original/CMO-April-2026.pdf",
+      "title": "Commodity Markets Outlook, April 2026",
+      "publisher": "World Bank",
+      "source_id": "wb_pinksheet",
+      "contains": "Metals price outlook (copper, aluminium, nickel) relevant to transmission and battery costs; energy price outlook"
+    },
+    {
+      "lead_id": "22C-L09",
+      "url": "https://www.pv-magazine.com/2026/05/06/firm-solar-and-storage-costs-fall-to-54-mwh-says-irena/",
+      "title": "Firm solar and storage costs - IRENA report coverage",
+      "publisher": "pv magazine",
+      "source_id": null,
+      "contains": "Coverage of an IRENA May 2026 report on firm (round-the-clock) solar-plus-storage costs; pointer to the IRENA primary report. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22C-L10",
+      "url": "https://www.energy-storage.news/irena-renewables-with-storage-cost-competitive-with-fossil-fuels-for-round-the-clock-power/",
+      "title": "IRENA: renewables with storage cost-competitive for round-the-clock power",
+      "publisher": "Energy-Storage.News",
+      "source_id": null,
+      "contains": "Coverage of the same IRENA 2026 report; pointer only. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22C-L11",
+      "url": "https://www.iexindia.com/market-data/green-day-ahead-market/area-prices",
+      "title": "Green Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "Market value of green power in India by block - links technology costs to realised prices (shared with 22B)"
+    }
+  ]
+}

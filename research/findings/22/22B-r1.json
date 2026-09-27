@@ -1,0 +1,533 @@
+{
+  "subagent_id": "22B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (Indian power-exchange price levels and seasonal patterns relevant to Nepal's exports) and Q2 (existing and planned cross-border transmission capacity) are both PENDING: no value was retrieved. Primary documents located: IEX market-data pages (DAM, HP-DAM, G-DAM, RTM; 15-minute blocks, INR/MWh, exportable), CERC market-monitoring monthly and annual short-term market reports (Excel data), CEA Designated Authority cross-border page, MoP 2018 guidelines and 2021 DA procedure, CEA National Electricity Plan Vol II (Transmission), and NEA annual reports. Method designed: monthly and time-of-day price profile from IEX DAM/RTM/G-DAM (Indian FY April-March) re-aggregated to Nepal FY and to Nepal wet (monsoon) vs dry seasons; capacity recorded line by line with separate thermal rating, operational transfer limit, and approved trading quantum (these differ). Market access is governed by time-limited Indian approvals; search results report 2026 approval events (India-to-Nepal supply approval for Sep-Dec 2026; withheld approval for extending Nepal-Bangladesh trade) - to be verified from CEA/MoP orders.",
+  "findings": [
+    {
+      "claim": "IEX DAM monthly average and time-of-day (block) clearing prices, April 2022-latest, and the relevant bidding-area price for Nepal-border delivery.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "iex_india"
+      ],
+      "note": "Export 15-minute DAM area prices from IEX market-data pages; aggregate to month, to Nepal FY and to wet (approx. June-October) and dry seasons.",
+      "period": "Apr 2022-Sep 2026",
+      "unit": "INR_current"
+    },
+    {
+      "claim": "Seasonal pattern: price differential between Nepal's surplus (monsoon) months and deficit (dry-season) months, and solar-hours vs evening-peak block differential.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "iex_india"
+      ],
+      "note": "Derived from the same IEX series; also CERC monthly reports as cross-check.",
+      "period": "Apr 2022-Sep 2026"
+    },
+    {
+      "claim": "G-DAM and HP-DAM price levels relative to DAM (value of hydro as 'green' and peak supply).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "iex_india"
+      ],
+      "note": "IEX G-DAM and HP-DAM area price exports; eligibility of Nepali plants for G-DAM to be verified in CEA/CERC rules."
+    },
+    {
+      "claim": "NEA realised export price and import cost by market route (exchange sale, bilateral, Bangladesh trilateral) by FY.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea"
+      ],
+      "note": "NEA annual report energy balance (units in kWh/'units' - convert to GWh) and revenue (NPR); compare with IEX prices for the same months to measure realisation discount (transmission charges, trading margins, losses).",
+      "period": "FY2021/22-FY2025/26"
+    },
+    {
+      "claim": "Existing cross-border lines India-Nepal: list, voltage, circuits, thermal capacity, operational transfer limit, commissioning date.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nea",
+        "cea_india"
+      ],
+      "note": "CEA NEP Vol II (final), NEA annual report transmission chapter; keep NEA and CEA figures separate if they differ.",
+      "period": "as of 2026"
+    },
+    {
+      "claim": "Planned/under-construction lines (e.g. New Butwal-Gorakhpur; Inaruwa-New Purnea; Lamki/Dodhara-Bareilly; upgrades of Dhalkebar-Muzaffarpur): capacity, schedule, JV ownership, status.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "cea_india",
+        "nea"
+      ],
+      "note": "CEA NEP Vol II perspective plan, NEA/POWERGRID JV documents (Oct 2025), Joint Steering Committee minutes; media leads L22 only as pointers.",
+      "period": "2026-2035"
+    },
+    {
+      "claim": "Approved trading quantum: MW approved by the Indian Designated Authority for Nepali projects on Indian exchanges and for bilateral/trilateral sales, with validity periods; and India-to-Nepal supply approvals.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "cea_india"
+      ],
+      "note": "CEA DA approval orders (lead L12); record each approval as a dated observation with MW and validity.",
+      "period": "2021-2026",
+      "unit": "MW"
+    },
+    {
+      "claim": "Long-Term Power Trade Agreement (2024) terms and implementation status; Nepal Supreme Court verdict (Nov 2024) on ratification.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "supremecourt_nepal"
+      ],
+      "note": "Official text from MoEWRI/MoFA and the Supreme Court full text; media leads L23-L24 are pointers only."
+    },
+    {
+      "claim": "Nepal wet/dry seasons are defined on the NEA hydrological calendar (to be taken from NEA annual report) rather than calendar quarters; Indian FY (April-March) data are re-aggregated month by month to Nepal FY (mid-July).",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Exchange prices are an upper-bound reference for Nepal's export realisation; NEA net realisation is reported separately and the gap is not assumed but measured.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "All empirical values (prices, capacities, approved MW, NEA trade volumes/revenue) - no document downloaded in r1.",
+    "Final (not draft) CEA NEP Vol II Transmission document URL not yet located; PIB release is a pointer.",
+    "CEA Designated Authority approval orders list: page located, individual orders not enumerated.",
+    "Amendments to the 2018 cross-border guidelines (reported second amendment; conditions on generator ownership) - texts not located.",
+    "Transmission and trading charges (NVVN/PTC margins, ISTS/cross-border transmission charges) needed to convert exchange prices into Nepal-border netback - not located.",
+    "Bangladesh trilateral agreement text and tariff - not located.",
+    "Bhutan comparator (Bhutan's hydropower export tariffs) for regional context - not located.",
+    "units.py has no code for a unit price (INR/MWh, NPR/kWh) or for energy in kWh/MWh; see challenge to 00A."
+  ],
+  "assumptions": [
+    {
+      "id": "22B-A1",
+      "text": "Capacity is recorded as three distinct quantities per line: thermal rating, operational transfer limit (N-1 / system-study limit), and approved commercial quantum; only the last constrains trade in the short run.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22B-A2",
+      "text": "IEX DAM is the principal price reference; RTM, G-DAM and HP-DAM are reported as sensitivities.",
+      "basis": "assumption"
+    },
+    {
+      "id": "22B-A3",
+      "text": "Indian FY and calendar-month data are re-aggregated to Nepal FY using monthly data only; no annual-to-annual splicing.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "units.py lacks unit-price codes (e.g. INR_current_per_MWh, NPR_current_per_kWh) and energy codes other than GWh; exchange-price and tariff observations cannot be recorded with a valid unit. Please add. CERC (cercind.gov.in), India Ministry of Power (powermin.gov.in) and PIB are not in the source catalog; propose tier 4/5 entries."
+    },
+    {
+      "to": "16A",
+      "text": "L31 describes CEA approvals as 'import from Nepal' only; the DA also approves India-to-Nepal supply (dry-season imports), which is the other half of X16. Add imports-from-India approval as a separate item."
+    },
+    {
+      "to": "16B",
+      "text": "EXP-06: add approval-renewal risk (time-limited DA approvals, reported 2026 withholding of Bangladesh trade extension - unverified) as a single point of failure for export market access, distinct from physical line capacity; and add dry-season import dependence on the same lines."
+    },
+    {
+      "to": "05A",
+      "text": "NEA energy trade figures are in kWh ('units'); please record GWh with explicit conversion and state Nepal FY. Coordinate on wet/dry season definition so 22B price seasons align with 05A generation seasons."
+    },
+    {
+      "to": "22E",
+      "text": "Opportunity-cost work should use NEA realised netback by route, not IEX clearing prices, as the export value; the IEX series is an upper reference."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: reported 2026 Indian approval decisions (Bangladesh trade extension withheld; India-to-Nepal supply approval with hour limits) may change S02/S05/S09 assumptions on market access once verified."
+    }
+  ],
+  "uncertainty": "High: nothing retrieved. Main structural uncertainties: (i) netback from IEX price to Nepal border is unknown (charges, margins, losses); (ii) exchange prices are volatile and regime-dependent (price caps set by CERC, 2026 fuel shock), so a short history may not represent future export value; (iii) commercial access depends on renewable approvals and Indian policy on generator ownership, which is a discrete political risk rather than a continuous variable; (iv) planned line dates historically slip - completion dates must be recorded as announced vs actual.",
+  "specific": {
+    "regional_price_profile": {
+      "status": "pending",
+      "question": "Indian power-exchange price levels and seasonal patterns relevant to Nepal's exports",
+      "series": [
+        {
+          "name": "IEX DAM area/MCP prices",
+          "granularity": "15-minute blocks, April 2022 onward",
+          "unit": "INR per MWh (no units.py code yet)",
+          "lead_ids": [
+            "22B-L01",
+            "22B-L02"
+          ],
+          "status": "pending"
+        },
+        {
+          "name": "IEX G-DAM prices",
+          "lead_ids": [
+            "22B-L05"
+          ],
+          "status": "pending"
+        },
+        {
+          "name": "IEX HP-DAM prices",
+          "lead_ids": [
+            "22B-L03",
+            "22B-L04"
+          ],
+          "status": "pending"
+        },
+        {
+          "name": "IEX RTM/TAM summaries",
+          "lead_ids": [
+            "22B-L06"
+          ],
+          "status": "pending"
+        },
+        {
+          "name": "CERC monthly/annual short-term market reports (cross-check, pre-2022 history, bilateral trader prices)",
+          "lead_ids": [
+            "22B-L07",
+            "22B-L08",
+            "22B-L09",
+            "22B-L10",
+            "22B-L11"
+          ],
+          "status": "pending"
+        },
+        {
+          "name": "NEA realised export price and import cost by route",
+          "lead_ids": [
+            "22B-L19",
+            "22B-L20",
+            "22B-L28"
+          ],
+          "status": "pending"
+        }
+      ],
+      "outputs_planned": [
+        "monthly mean and percentile prices by Nepal FY",
+        "wet-season vs dry-season mean price",
+        "solar-hours vs evening-peak block differential",
+        "NEA realisation relative to IEX"
+      ],
+      "period_basis": "Indian FY and calendar months re-aggregated to Nepal FY and NEA seasons",
+      "method_notes": "CERC price caps and market-coupling reforms are regime breaks to flag; INR converted to NPR at NRB fixed rate with period stated"
+    },
+    "cross_border_capacity": {
+      "status": "pending",
+      "question": "Existing and planned cross-border transmission capacity",
+      "existing_lines": {
+        "status": "pending",
+        "fields_required": [
+          "line",
+          "voltage",
+          "circuits",
+          "thermal_MW",
+          "transfer_limit_MW",
+          "commissioned"
+        ],
+        "examples_to_verify": [
+          "Dhalkebar-Muzaffarpur",
+          "Tanakpur-Mahendranagar",
+          "lower-voltage radial links"
+        ],
+        "lead_ids": [
+          "22B-L16",
+          "22B-L18",
+          "22B-L19"
+        ]
+      },
+      "planned_lines": {
+        "status": "pending",
+        "examples_to_verify": [
+          "New Butwal-Gorakhpur",
+          "Inaruwa-New Purnea",
+          "Lamki (Dodhara)-Bareilly"
+        ],
+        "fields_required": [
+          "capacity",
+          "owner/JV",
+          "financing",
+          "scheduled_vs_actual_date"
+        ],
+        "lead_ids": [
+          "22B-L16",
+          "22B-L17",
+          "22B-L22"
+        ]
+      },
+      "approved_commercial_quantum": {
+        "status": "pending",
+        "content": "MW approved by Indian DA for Nepali exports (exchange, bilateral, trilateral) and for India-to-Nepal supply, with validity windows",
+        "unit": "MW",
+        "lead_ids": [
+          "22B-L12",
+          "22B-L13",
+          "22B-L14",
+          "22B-L15",
+          "22B-L25",
+          "22B-L26"
+        ]
+      },
+      "policy_framework": {
+        "status": "pending",
+        "documents": [
+          "MoP Guidelines 2018 and amendments",
+          "CEA DA Procedure 2021",
+          "Nepal-India Long-Term Power Trade Agreement 2024",
+          "Supreme Court of Nepal verdict Nov 2024"
+        ],
+        "lead_ids": [
+          "22B-L13",
+          "22B-L14",
+          "22B-L15",
+          "22B-L23",
+          "22B-L24",
+          "22B-L27"
+        ]
+      },
+      "model_variables": [
+        "electricity_exports",
+        "nea_revenue",
+        "electricity_imports"
+      ],
+      "scenarios": [
+        "S02",
+        "S05",
+        "S09"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "22B-L01",
+      "url": "https://www.iexindia.com/market-data/day-ahead-market/area-prices",
+      "title": "Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "DAM area clearing prices by bidding area (INR/MWh), 15-minute blocks from April 2022, exportable by delivery period - basis for seasonal and time-of-day profile"
+    },
+    {
+      "lead_id": "22B-L02",
+      "url": "https://www.iexindia.com/market-data/day-ahead-market/market-snapshot",
+      "title": "Day Ahead Market - Market Snapshot",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "DAM market clearing price (MCP) and cleared volume by block/day, exportable (INR/MWh, MWh)"
+    },
+    {
+      "lead_id": "22B-L03",
+      "url": "https://www.iexindia.com/market-data/high-price-day-ahead-market/area-prices",
+      "title": "High Price Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "HP-DAM prices for high-cost generation (INR/MWh); relevant to peak-hour value of storage hydro"
+    },
+    {
+      "lead_id": "22B-L04",
+      "url": "https://www.iexindia.com/market-data/high-price-day-ahead-market/market-snapshot",
+      "title": "High Price Day Ahead Market - Market Snapshot",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "HP-DAM cleared volumes and prices by block"
+    },
+    {
+      "lead_id": "22B-L05",
+      "url": "https://www.iexindia.com/market-data/green-day-ahead-market/area-prices",
+      "title": "Green Day Ahead Market - Area Prices",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "G-DAM prices for renewable/hydro power (INR/MWh); segment relevant if Nepali hydro qualifies as green"
+    },
+    {
+      "lead_id": "22B-L06",
+      "url": "https://www.iexindia.com/market-data/intra-day-ahead-contingency/trade-summary-details",
+      "title": "Intra Day, Day Ahead Contingency and Term-Ahead trade summary",
+      "publisher": "Indian Energy Exchange",
+      "source_id": "iex_india",
+      "contains": "RTM/intra-day/TAM trade summaries; contract-type price comparison"
+    },
+    {
+      "lead_id": "22B-L07",
+      "url": "https://cercind.gov.in/report_MM.html",
+      "title": "Monthly Report on Short-term Transactions of Electricity (index)",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": null,
+      "contains": "Index of CERC monthly market-monitoring reports with Excel data: power exchange prices and volumes (IEX, PXIL, HPX) by segment, bilateral trader prices, cross-border transactions section"
+    },
+    {
+      "lead_id": "22B-L08",
+      "url": "https://cercind.gov.in/2025/market_monitoring/MMC%20Report_short%20term%20market_Oct%202025.pdf",
+      "title": "Monthly Report on Short-term Transactions of Electricity in India, October 2025",
+      "publisher": "CERC Market Monitoring Cell",
+      "source_id": null,
+      "contains": "October 2025 monthly exchange prices by segment and time block; trading-licensee prices; post-monsoon month"
+    },
+    {
+      "lead_id": "22B-L09",
+      "url": "https://www.cercind.gov.in/2025/market_monitoring/MMC%20Report%20on%20Short%20term%20market%20for%20June%202025.pdf",
+      "title": "Monthly Report on Short-term Transactions of Electricity in India, June 2025",
+      "publisher": "CERC Market Monitoring Cell",
+      "source_id": null,
+      "contains": "June 2025 monthly exchange prices and volumes; early-monsoon month (Nepal export season)"
+    },
+    {
+      "lead_id": "22B-L10",
+      "url": "https://www.cercind.gov.in/2024/market_monitoring/Annual%20Report%202023-24.pdf",
+      "title": "Annual Report on Short-Term Power Market in India: 2023-24",
+      "publisher": "CERC Economics Division",
+      "source_id": null,
+      "contains": "Indian FY2023-24 (April-March) annual and monthly exchange price levels by segment, price-duration, cross-border trade with Nepal/Bhutan/Bangladesh"
+    },
+    {
+      "lead_id": "22B-L11",
+      "url": "https://cercind.gov.in/2023/market_monitoring/Annual%20Report%202022-23.pdf",
+      "title": "Annual Report on Short-Term Power Market in India: 2022-23",
+      "publisher": "CERC Economics Division",
+      "source_id": null,
+      "contains": "Indian FY2022-23 annual short-term market report; as L10"
+    },
+    {
+      "lead_id": "22B-L12",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "Import/Export (Cross Border) of Electricity",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Designated Authority page: approvals of Nepali projects/entities for cross-border sale on Indian markets, approval orders and validity periods, related procedures"
+    },
+    {
+      "lead_id": "22B-L13",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Guidelines_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018",
+      "publisher": "Ministry of Power, India (hosted by CEA)",
+      "source_id": "cea_india",
+      "contains": "Rules for cross-border trade incl. eligibility, ownership conditions for exporting generators, market-participation conditions"
+    },
+    {
+      "lead_id": "22B-L14",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+      "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority (26 Feb 2021)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Approval procedure, required documents, validity of approvals; basis for approval-renewal risk"
+    },
+    {
+      "lead_id": "22B-L15",
+      "url": "https://powermin.gov.in/en/content/guidelines-importexport-cross-border-electricity-2018",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity - 2018 (MoP page)",
+      "publisher": "Ministry of Power, India",
+      "source_id": null,
+      "contains": "MoP page with guidelines and amendments (to locate amendment texts)"
+    },
+    {
+      "lead_id": "22B-L16",
+      "url": "https://cea.nic.in/wp-content/uploads/psp___a_i/2024/01/Draft_NEP_Vol_II.pdf",
+      "title": "National Electricity Plan Volume II: Transmission (draft)",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Existing and planned cross-border interconnections India-Nepal by voltage, circuit and capacity; 2022-27 plan and 2027-32 perspective; draft version - final version to be located"
+    },
+    {
+      "lead_id": "22B-L17",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2064751",
+      "title": "National Electricity Plan (Transmission) launched",
+      "publisher": "Press Information Bureau, Government of India",
+      "source_id": null,
+      "contains": "Launch of final NEP (Transmission); pointer to final document and cross-border totals"
+    },
+    {
+      "lead_id": "22B-L18",
+      "url": "https://cea.nic.in/power-system-planning-appraisal-ii-division/?lang=en",
+      "title": "Power System Planning and Appraisal-II Division",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Division responsible for cross-border link planning with Nepal and Bhutan; joint technical team minutes and studies"
+    },
+    {
+      "lead_id": "22B-L19",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Annual (Nepal FY) energy balance: exports to India (by market/route) and Bangladesh, imports from India, by month; revenue and cost in NPR; cross-border line inventory; same as 16A L30"
+    },
+    {
+      "lead_id": "22B-L20",
+      "url": "https://www.nea.org.np/admin/assets/uploads/annual_publications/NEA_DCSD_Maganize_2082.pdf",
+      "title": "NEA Distribution and Consumer Services Directorate publication, FY2081/82 (2024/25)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "FY2081/82 (2024/25) directorate report; may include import/export energy and revenue and consumer-side balance"
+    },
+    {
+      "lead_id": "22B-L21",
+      "url": "https://www.nea.org.np/report",
+      "title": "NEA reports (publication subcommittee)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Other NEA reports incl. system operation / power trade reports"
+    },
+    {
+      "lead_id": "22B-L22",
+      "url": "https://kathmandupost.com/money/2025/10/29/nepal-india-sign-deal-to-build-two-400kv-transmission-lines",
+      "title": "Nepal, India sign deal to build two transmission lines",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Oct 2025 NEA-POWERGRID JV agreements for Inaruwa-New Purnea and Lamki (Dodhara)-Bareilly lines; pointer to NEA/POWERGRID documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22B-L23",
+      "url": "https://kathmandupost.com/national/2024/01/04/nepal-india-ink-10-year-10-000mw-power-trade",
+      "title": "Nepal signs deal with India on long-term power trade",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "Jan 2024 Long-Term Power Trade Agreement signing; pointer to MoEWRI text. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22B-L24",
+      "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export-to-india/",
+      "title": "Full text of SC verdict released on long-term power trade agreement",
+      "publisher": "Nepal News",
+      "source_id": null,
+      "contains": "Supreme Court of Nepal verdict (Nov 2024) on ratification of the LTPTA; pointer to supremecourt_nepal document. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22B-L25",
+      "url": "https://kathmandupost.com/national/2026/06/14/additional-20-mw-electricity-export-to-bangladesh-blocked-as-india-withholds-approval",
+      "title": "Additional electricity export to Bangladesh blocked as India withholds approval",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "June 2026 report on Indian approval for Nepal-Bangladesh trilateral trade expansion withheld; pointer to CEA/NVVN documents. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22B-L26",
+      "url": "https://renewablewatch.in/2026/09/15/mop-approves-export-of-power-to-nepal/",
+      "title": "MoP approves export of power to Nepal",
+      "publisher": "Renewable Watch",
+      "source_id": null,
+      "contains": "Sep 2026 report on Indian MoP approval for India-to-Nepal supply (Sep-Dec 2026) over named cross-border lines with hours-per-day limit; pointer to MoP/CEA order. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    },
+    {
+      "lead_id": "22B-L27",
+      "url": "https://sasec.asia/index.php?enews=86&nid=1240&page=news&url=imp-exp-procedure-ind",
+      "title": "India's Ministry of Power clears way for cross-border electricity trade",
+      "publisher": "SASEC (ADB-supported programme)",
+      "source_id": null,
+      "contains": "Summary of the 2018/2021 cross-border procedure; pointer only"
+    },
+    {
+      "lead_id": "22B-L28",
+      "url": "https://www.spotlightnepal.com/2026/07/24/nepal-earns-npr-2932-billion-electricity-exports/",
+      "title": "Nepal earns from electricity exports in FY2025/26",
+      "publisher": "New Spotlight Magazine",
+      "source_id": null,
+      "contains": "FY2025/26 NEA export energy and revenue as reported by NEA; pointer to NEA release. Secondary media pointer only (not a primary source); use solely to locate the underlying official decision/document"
+    }
+  ]
+}
