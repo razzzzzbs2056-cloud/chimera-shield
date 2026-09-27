@@ -11,7 +11,7 @@
       ],
       "observation_ids": [],
       "note": "Required: NRB FESB issue/allotment notices (23E-L01) and PDMO outstanding debt by instrument (23E-L03), Nepal FY.",
-      "unit": "npr_million",
+      "unit": "NPR_current_mn",
       "period": "FY2010/11-FY2025/26"
     },
     {
@@ -24,7 +24,7 @@
       ],
       "observation_ids": [],
       "note": "Required: NRB FDI survey tables if NRN category exists (23E-L06, 23E-L07); DoI approvals by NRN status; NRB deposit data by account type.",
-      "unit": "npr_million",
+      "unit": "NPR_current_mn",
       "period": "Nepal FY"
     },
     {

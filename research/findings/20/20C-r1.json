@@ -1,0 +1,365 @@
+{
+  "subagent_id": "20C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (latest IMF-WB DSA risk of debt distress) and Q2 (how concessional terms change with IDA/ADF graduation) are pending. The latest DSA vintage located is the joint LIC DSA in the 2026 Article IV / seventh (final) ECF review staff report, completed by the IMF Board in June 2026 (eLibrary and country-report page leads); the rating must be read from that annex and is not asserted here. Graduation rules located: IDA21 Terms effective July 2026, IDA Financial Products Overview (April 2026, FY2027 operational cutoff), IDA20 mid-term review on graduation prospects, IDA18 graduation-policy review, IDA borrowing-country list; ADB Concessional Assistance Policy for ADF 14 (2025-2028), ADB allocation and lending-rates pages, Operations Manual A1. PDMO bulletin/MTDS and IDS supply current terms. Method: map Nepal's category and GNI-per-capita distance to cutoffs, then compute grant elements of each term set as conditional paths.",
+  "findings": [
+    {
+      "claim": "Q1: Nepal's external and overall risk of debt distress in the latest joint IMF-World Bank LIC DSA, with debt-carrying capacity classification and vintage.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "Latest located vintage: DSA annex of the 2026 Article IV / seventh ECF review staff report (Board completion June 2026). Record the ratings verbatim with the document date; compare with the sixth-review (2025) vintage. Press-release snippets did not state the rating; no rating is asserted here.",
+      "period": "DSA vintage 2026 (projections on Nepal FY basis)"
+    },
+    {
+      "claim": "Q1: DSA thresholds, baseline debt burden indicators and the most extreme stress-test breach.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv"
+      ],
+      "observation_ids": [],
+      "note": "DSA annex tables (external PPG debt PV/GDP, PV/exports, debt service/exports, debt service/revenue; total public debt PV/GDP).",
+      "unit": "percent",
+      "period": "Nepal FY projections"
+    },
+    {
+      "claim": "Q2: Nepal's current IDA category (IDA-only, gap or blend) and ADB group (A, B or C), dated.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_ids",
+        "adb_nepal"
+      ],
+      "observation_ids": [],
+      "note": "IDA Borrowing Countries page (current FY) and ADB classification page; record with retrieval date."
+    },
+    {
+      "claim": "Q2: IDA operational cutoff (World Bank FY2027) versus Nepal's GNI per capita (Atlas), and years above/below cutoff.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_ids",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "IDA Financial Products Overview (April 2026) and IDA21 Terms; Nepal GNI per capita Atlas from WDI (NY.GNP.PCAP.CD).",
+      "unit": "USD_current",
+      "period": "World Bank FY2027; calendar-year GNI"
+    },
+    {
+      "claim": "Q2: IDA terms by category (regular, blend, gap; grant share by DSA risk) and ADB ADF 14 grant/COL terms; concessionality (grant element) of each.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_ids",
+        "adb_nepal"
+      ],
+      "observation_ids": [],
+      "note": "IDA21 Terms effective July 2026; ADB CAP ADF 14 policy paper and lending-rates page. Grant element computed with IMF/WB discount rate convention (estimate method)."
+    },
+    {
+      "claim": "Q2: Average terms (interest, maturity, grace, grant element) of Nepal's new external commitments and outstanding debt.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "pdmo",
+        "wb_ids"
+      ],
+      "observation_ids": [],
+      "note": "PDMO debt bulletin and MTDS; IDS average terms of new commitments (calendar year).",
+      "unit": "percent",
+      "period": "Nepal FY (PDMO), calendar (IDS)"
+    },
+    {
+      "claim": "Graduation mechanics (from policy documents, to be verified on retrieval): IDA graduation requires both income above the operational cutoff for a sustained period and IBRD creditworthiness, typically passing through gap/blend terms; ADB reclassification from group A to B depends on GNI per capita and creditworthiness. Hardening of terms is therefore gradual and conditional; LDC graduation (UN) does not itself change IDA or ADB eligibility.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Policy-design statement; exact criteria and transition periods to be taken from the IDA21 and ADF 14 documents."
+    },
+    {
+      "claim": "Concessionality outlook scenarios will be expressed as term paths (share of new borrowing on IDA-regular, blend, ADB COL, OCR, bilateral/commercial) conditional on stated GNI-per-capita paths, not as forecasts of graduation dates.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "The DSA annex tables must be retrieved from the staff report; the press releases do not carry the rating.",
+    "Current ADB group classification for Nepal needs a dated ADB document (country partnership strategy or ADF allocation list); not yet located as a direct file.",
+    "Bilateral creditor terms (JICA, EXIM China, EXIM India lines of credit) are not covered by the leads; PDMO creditor tables are the planned source.",
+    "IDA21 country allocation for Nepal (performance-based allocation) not located.",
+    "The session web-search budget was exhausted before all planned searches ran; some leads below were reused from 16A/16B and some document-level leads remain unlocated (listed individually).",
+    "No lead URL was downloaded in r1 (data hosts blocked); all values await `python -m src.cli leads --fetch`, extraction and ingest in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "20C-A1",
+      "text": "The DSA used is the most recent published joint IMF-WB LIC DSA at retrieval; if a newer World Bank-only or IMF vintage appears, both are kept with dates.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20C-A2",
+      "text": "Grant element is computed with the discount-rate convention stated in the IMF/WB debt-limits policy in force at retrieval; the convention is recorded with each estimate.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20C-A3",
+      "text": "LDC graduation is treated as institutionally separate from IDA/ADB eligibility; any indirect effects (e.g. on donor grant allocations) are flagged for 26A, not assumed.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "02C",
+      "text": "Conflict C-08/C-09: DSA debt coverage (public and publicly guaranteed, general government) differs from PDMO central-government debt; the DSA ratios cannot be compared with PDMO-based ratios without a coverage bridge."
+    },
+    {
+      "to": "16A",
+      "text": "X22 lists 20C and 26A as joint primary suppliers; propose 20C supplies DSA ratings and terms, 26A supplies donor/creditor relations, to avoid duplicate observations."
+    },
+    {
+      "to": "28",
+      "text": "Escalation: if the retrieved DSA rating or a reclassification of Nepal's IDA/ADB status differs from what S04/S08/S10 assume, the scenario financing assumptions must be re-audited."
+    }
+  ],
+  "uncertainty": "High. No rating, cutoff or term has been retrieved. DSA ratings depend on the vintage and on the debt-carrying-capacity classification, which can change between reviews. Graduation timing depends on GNI-per-capita (Atlas, calendar year) paths and creditworthiness judgments that are not rule-based.",
+  "specific": {
+    "dsa_status": {
+      "status": "pending",
+      "required_fields": [
+        "external_risk_of_debt_distress",
+        "overall_risk_of_debt_distress",
+        "debt_carrying_capacity",
+        "dsa_vintage_date",
+        "document",
+        "thresholds_and_breaches",
+        "heat_map"
+      ],
+      "latest_vintage_lead": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "comparison_vintage_lead": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+      "method": "Read DSA annex verbatim; record ratings as dated facts (observations) with page/table references; record breaches by indicator; note coverage of public debt used.",
+      "conflict_register_links": [
+        "C-08",
+        "C-09"
+      ],
+      "fiscal_year_note": "DSA projections are on Nepal FY; IDS stocks are calendar year-end."
+    },
+    "concessionality_outlook": {
+      "status": "pending",
+      "current_classification": {
+        "ida_category": "pending",
+        "adb_group": "pending",
+        "lead_urls": [
+          "https://ida.worldbank.org/en/about/borrowing-countries",
+          "https://www.adb.org/what-we-do/funds/adf/allocation-adf-resources"
+        ]
+      },
+      "eligibility_criteria": {
+        "status": "pending",
+        "items": [
+          "IDA operational cutoff FY2027 (GNI per capita, Atlas)",
+          "IDA gap/blend rules and IBRD creditworthiness",
+          "IDA grant eligibility by DSA risk",
+          "ADB group A/B/C criteria and graduation policy",
+          "ADF 14 grant eligibility by DSA risk"
+        ],
+        "lead_urls": [
+          "https://thedocs.worldbank.org/en/doc/74b666ec80119259f29b625cd3f04556-0340012024/original/IDA-financial-products-overview.pdf",
+          "https://thedocs.worldbank.org/en/doc/45848f4b32bdefb1317a37feb9aba4c1-0410012026/related/IDA21-Terms-effective-07-01-2026.pdf",
+          "https://documents1.worldbank.org/curated/en/605191468191042391/pdf/103835-BR-Box394865B-OUO-9-IDA-SecM2016-0060.pdf",
+          "https://www.adb.org/sites/default/files/institutional-document/993901/concessional-assistance-policy-adf-14-period-policy-paper.pdf",
+          "https://www.adb.org/sites/default/files/page/30786/files/oma1.pdf"
+        ]
+      },
+      "terms_by_category": {
+        "status": "pending",
+        "categories": [
+          "IDA regular",
+          "IDA blend/gap",
+          "IDA shorter-maturity",
+          "IBRD",
+          "ADB COL",
+          "ADB regular OCR",
+          "ADF grant"
+        ],
+        "fields": [
+          "maturity_years",
+          "grace_years",
+          "interest_or_service_charge_percent",
+          "grant_element_percent (estimate)"
+        ],
+        "lead_urls": [
+          "https://thedocs.worldbank.org/en/doc/45848f4b32bdefb1317a37feb9aba4c1-0410012026/related/IDA21-Terms-effective-07-01-2026.pdf",
+          "https://www.adb.org/what-we-do/public-sector-financing/lending-policies-rates"
+        ]
+      },
+      "transition_path_design": "Conditional term paths: for each GNI-per-capita path supplied by 03 (in USD, Atlas, calendar), determine years above IDA cutoff and ADB thresholds, apply gap/blend/graduation rules from the documents, and compute the weighted average grant element and interest cost of new borrowing. Output is conditional, not a graduation forecast.",
+      "gni_distance_to_cutoff": "pending (requires WDI NY.GNP.PCAP.CD for Nepal and the FY2027 cutoff)",
+      "scenarios": [
+        "S04",
+        "S08",
+        "S10"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF Arrangement - Press Release; Staff Report; Staff Supplement; Statement by the Executive Director",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Staff report with the joint IMF-World Bank LIC DSA annex: external and overall risk of debt distress ratings, debt-carrying capacity classification, thresholds, baseline and stress tests (Nepal FY)"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+      "title": "Nepal: Staff Report for the 2026 Article IV Consultation and Seventh Review under the ECF (IMF eLibrary)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "HTML version of the staff report; DSA annex text and tables"
+    },
+    {
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1nplea2026001-source-pdf.pdf",
+      "title": "IMF Country Report on Nepal (2026) - PDF",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "2026 Nepal country report PDF; identity (staff report vs selected issues) and report number to be confirmed on retrieval"
+    },
+    {
+      "url": "https://www.imf.org/en/news/articles/2026/06/08/pr26188-nepal-imf-exec-board-concludes-2026-article-iv-consult-completes-seventh-review-ecf",
+      "title": "IMF Executive Board Concludes the 2026 Article IV Consultation with Nepal and Completes the Seventh Review under the ECF (Press Release No. 26/188)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Board assessment June 2026 incl. debt-sustainability language; completion of final ECF review"
+    },
+    {
+      "url": "https://www.imf.org/en/news/articles/2026/02/20/pr26058-nepal-imf-reaches-sla-on-7th-review-under-ecf-and-concludes-2026-aiv-consultation",
+      "title": "Nepal: IMF Reaches Staff-level Agreement on the Seventh Review under the ECF (Press Release No. 26/058)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Staff-level assessment February 2026"
+    },
+    {
+      "url": "https://www.imf.org/en/news/articles/2026/05/06/imf-pr-26141-nepal-imf-executive-board-approves-ext-of-ecf-arrang",
+      "title": "IMF Executive Board Approves Extension of the ECF Arrangement with Nepal (Press Release No. 26/141)",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Extension of the ECF arrangement period (May 2026)"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2025/10/06/nepal-sixth-review-under-the-extended-credit-facility-arrangement-press-release-staff-570974",
+      "title": "Nepal: Sixth Review under the ECF Arrangement - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Previous DSA vintage (2025) for comparison of risk ratings across vintages"
+    },
+    {
+      "url": "https://ida.worldbank.org/en/about/borrowing-countries",
+      "title": "IDA Borrowing Countries",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "Current IDA eligibility list and category (IDA-only, gap, blend) by country; Nepal's category for the current fiscal year"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/45848f4b32bdefb1317a37feb9aba4c1-0410012026/related/IDA21-Terms-effective-07-01-2026.pdf",
+      "title": "IDA Terms (Effective as of July 1, 2026)",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "IDA21 lending terms by category (regular, blend, gap, shorter-maturity loans, grants per DSA risk): maturity, grace, service charge, interest; effective World Bank FY2027"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/e4625f9763f77ba4568dedd76546581d-0410012024/related/IDA-Terms-effective-04-01-2025.pdf",
+      "title": "IDA Terms (Effective as of April 1, 2025)",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "IDA20 terms for comparison with IDA21"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/74b666ec80119259f29b625cd3f04556-0340012024/original/IDA-financial-products-overview.pdf",
+      "title": "IDA Financial Products Overview (updated 8 April 2026)",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "Operational cutoff for FY2027, category definitions, link between DSA risk rating and grant/credit allocation"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099012624123036908/pdf/BOSIB1cd951f870011b87d1243b7b5be036.pdf",
+      "title": "IDA20 Mid-Term Review: IDA Access, Terms and Graduation Prospects",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "Graduation framework, projected graduation candidates, transition support and terms hardening path"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/605191468191042391/pdf/103835-BR-Box394865B-OUO-9-IDA-SecM2016-0060.pdf",
+      "title": "IDA18 Review of IDA's Graduation Policy",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "Graduation criteria (income above cutoff and IBRD creditworthiness), transition arrangements"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/287661468782159368/pdf/264980IDA0eligibility035.pdf",
+      "title": "IDA Eligibility, Terms and Graduation Policies",
+      "publisher": "World Bank / IDA",
+      "source_id": "wb_ids",
+      "contains": "Foundational definitions of eligibility, blend status and graduation"
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/institutional-document/993901/concessional-assistance-policy-adf-14-period-policy-paper.pdf",
+      "title": "Concessional Assistance Policy for the ADF 14 Period: Policy Paper",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "ADF 14 (2025-2028) allocation framework, grant eligibility by DSA risk, concessional OCR lending (COL) terms, country groups A/B/C and graduation provisions"
+    },
+    {
+      "url": "https://www.adb.org/what-we-do/funds/adf/allocation-adf-resources",
+      "title": "Allocation of Concessional Resources",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Country classification and allocation rules page; current group of Nepal"
+    },
+    {
+      "url": "https://www.adb.org/what-we-do/public-sector-financing/lending-policies-rates",
+      "title": "Public Sector Financing: Lending Policies and Rates",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "COL and regular OCR lending terms (maturity, grace, rates, pricing groups)"
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/page/30786/files/oma1.pdf",
+      "title": "ADB Operations Manual Section A1 (issued 4 September 2013)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Classification and graduation of developing member countries (content to be confirmed on retrieval)"
+    },
+    {
+      "url": "https://www.adb.org/sites/default/files/institutional-document/185397/concessional-assistance-policy.pdf",
+      "title": "Concessional Assistance Policy (May 2016)",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Earlier policy; transition rules for group reclassification"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Draft%20Public%20debt%20bulletin_Final1%20refurbished%202082-6-21_v9kxpih.pdf",
+      "title": "Public Debt Bulletin (2082-06-21)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "External debt by creditor and terms, debt service, FY2024/25 close"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Cost-risk indicators: average interest rate and maturity of external debt, concessional share"
+    },
+    {
+      "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
+      "title": "External debt stocks, total (DOD, current US$) - Nepal",
+      "publisher": "World Bank (International Debt Statistics)",
+      "source_id": "wb_ids",
+      "contains": "IDS stocks and average terms of new commitments (interest, maturity, grace, grant element), calendar year"
+    }
+  ]
+}

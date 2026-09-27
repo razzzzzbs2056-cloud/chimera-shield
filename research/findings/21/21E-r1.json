@@ -12,8 +12,8 @@
         "nrb"
       ],
       "observation_ids": [],
-      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. NRB BoP services table.",
-      "unit": "usd_million; percent",
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. NRB BoP services table. Also expressed as percent of total.",
+      "unit": "USD_current_mn",
       "period": "Nepal FY"
     },
     {
@@ -25,7 +25,7 @@
       ],
       "observation_ids": [],
       "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. NRB CME archive tables by FY.",
-      "unit": "percent_per_year",
+      "unit": "percent",
       "period": "Nepal FY"
     },
     {
@@ -38,7 +38,7 @@
       ],
       "observation_ids": [],
       "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Calendar-year UNCTAD vs Nepal-FY NRB: compare only after conversion; keep both values.",
-      "unit": "usd_million",
+      "unit": "USD_current_mn",
       "period": "calendar year (UNCTAD)"
     },
     {

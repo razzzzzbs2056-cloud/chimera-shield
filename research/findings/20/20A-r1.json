@@ -1,0 +1,473 @@
+{
+  "subagent_id": "20A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (how Fed and RBI policy rates transmit to Nepal's interest rates and liquidity) is answered only at the level of research design; all empirical items are pending. Primary leads located: the latest FOMC statement (16 September 2026), its implementation note and Summary of Economic Projections, H.15; the RBI MPC resolution and minutes for August 2026 and the June 2026 Monetary Policy Statement, DBIE; the NRB Monetary Policy archive (FY2026/27 document not yet located as a direct file), the FY2025/26 Monetary Policy and its mid-term review, the August 2026 CME release with interbank-rate tables, and NRB research on pass-through, the bank-lending channel, Indian monetary spillovers and interbank volatility. Working hypothesis (assumption, untested): the RBI channel runs mainly via the peg and INR/USD, the Fed channel mainly via INR/USD, remittance-source economies and USD debt service; domestic liquidity (remittances, government balances) is expected to dominate NRB interbank rates. Search-surfaced secondary reports were internally inconsistent on the FY2026/27 NRB policy-rate level, so only the NRB document can be used.",
+  "findings": [
+    {
+      "claim": "Q1: Current and historical US policy rate (federal funds target range and effective rate), dated by decision.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fed"
+      ],
+      "observation_ids": [],
+      "note": "Fed statements 2026 (latest located: 16 September 2026), H.15 monthly effective federal funds rate; calendar basis, re-aggregate monthly to Nepal FY.",
+      "unit": "percent",
+      "period": "calendar monthly; latest decision 2026-09-16"
+    },
+    {
+      "claim": "Q1: Current and historical RBI policy repo rate and LAF corridor (SDF, MSF), dated by decision.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "rbi"
+      ],
+      "observation_ids": [],
+      "note": "RBI MPC resolutions June 2026 and August 2026; DBIE repo and weighted average call rate monthly; Indian FY April-March to be converted to Nepal FY via monthly data.",
+      "unit": "percent",
+      "period": "monthly; latest decision August 2026 (Indian FY2026-27)"
+    },
+    {
+      "claim": "Q1: NRB policy rate and corridor (SDF floor, SLF/bank-rate ceiling) for FY2026/27 and history since FY2016/17.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "NRB Monetary Policy FY2026/27 document (direct PDF not located; archive lead given) plus each annual MP and mid-term review. Secondary news items surfaced in search gave mutually inconsistent descriptions of the FY2026/27 policy-rate level; the value must come from the NRB document itself.",
+      "unit": "percent",
+      "period": "Nepal FY2016/17-FY2026/27"
+    },
+    {
+      "claim": "Q1: Weighted average interbank rate (monthly) and its position within the NRB corridor.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "CME monthly tables (latest located: August 2026 release, first month of FY2026/27) and historical CME annual statistical tables; mid-month Nepali calendar basis.",
+      "unit": "percent",
+      "period": "Nepal FY monthly, FY2016/17 onward"
+    },
+    {
+      "claim": "Q1: Empirical pass-through from Fed and RBI rates to NRB interbank, T-bill, deposit and lending rates.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Extract estimates and methods from NRB WP 61, Interest Rate Pass-Through in Nepal, Indian monetary policy spillover article, WP 49; record each estimate as an observation with its sample period and method. No coefficient is reported here."
+    },
+    {
+      "claim": "Transmission design: under the NPR-INR peg with an open current account towards India, the working hypothesis is that Indian policy rates affect Nepal mainly through (i) the peg and INR/USD, (ii) relative returns influencing informal and formal cross-border flows, and (iii) Indian demand; the Fed affects Nepal mainly indirectly via INR/USD, Gulf/Malaysia labour demand and remittances, and USD-denominated debt service rather than through direct capital-account arbitrage, given Nepal's capital controls. To be tested against the pass-through literature above.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Hypothesis only; evidence pending."
+    },
+    {
+      "claim": "Nepal's domestic interest rates are expected to be dominated by domestic liquidity (remittance inflows, government cash balances at NRB, credit demand) in the short run; external rate signals are a secondary, lagged channel. This must be tested (e.g. interbank rate regressed on liquidity indicators and RBI rate changes) before use in the model.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Model entry: foreign policy rates enter the shared model only as exogenous monthly paths re-aggregated to Nepal FY averages; no rate path is a forecast. Scenario paths (S04, S10) will be stated as labelled assumptions anchored on the latest dated primary decision.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Direct PDF of NRB Monetary Policy for FY2026/27 (2083/84) not located; need its corridor table (policy rate, SDF rate, SLF/bank rate), CRR/SLR and targets.",
+    "Monthly NRB weighted average interbank rate series FY2016/17-FY2026/27 in machine-readable form (CME tables or NRB database) not located as a single file.",
+    "RBI DBIE extraction format (series codes for repo rate and weighted average call money rate) to be confirmed on access.",
+    "No located study estimates a direct Fed-to-Nepal interest-rate pass-through; this may need an original estimate (labelled `estimate` with method) in r2.",
+    "The session web-search budget was exhausted before all planned searches ran; some leads below were reused from 16A/16B and some document-level leads remain unlocated (listed individually).",
+    "No lead URL was downloaded in r1 (data hosts blocked); all values await `python -m src.cli leads --fetch`, extraction and ingest in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "20A-A1",
+      "text": "Monthly foreign rate series are averaged over Nepal FY months (mid-July to mid-July) using day-weighting; the Nepali-calendar mid-month boundaries are approximated by Gregorian mid-month and the approximation is documented.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20A-A2",
+      "text": "Policy-rate paths for scenarios are stress settings, not forecasts; the FOMC SEP median is recorded as an FOMC participant projection (observation), never as a platform forecast.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20A-A3",
+      "text": "Transmission hypothesis (peg/INR channel for RBI; indirect channels for Fed) is a research hypothesis to be tested, not a finding.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "03",
+      "text": "Agent 03 should not treat NRB interbank rates as driven by foreign policy rates without a tested link; domestic liquidity (remittance inflows, government deposits at NRB) should be modelled first, with external rates as an exogenous secondary channel."
+    },
+    {
+      "to": "16A",
+      "text": "X20 (global and Indian interest rates) is assigned to 20A with no exposure-register id; suggest linking it to EXP-10 (NPR-INR peg) and EXP-11 (external debt) because the Fed channel runs through USD debt service and INR/USD."
+    },
+    {
+      "to": "00B",
+      "text": "Watch item: secondary reports disagree about the NRB FY2026/27 policy-rate level; not an inter-source conflict yet because no primary value has been retrieved. Resolve from the NRB Monetary Policy FY2026/27 document before any use."
+    }
+  ],
+  "uncertainty": "High. No rate has been retrieved; the transmission mechanism is stated as an untested hypothesis. The NRB FY2026/27 policy document has not been located as a direct file. Existing NRB pass-through studies cover different samples and methods and may not capture the post-2017 corridor regime or recent regime changes. External rates are calendar/Indian-FY monthly series and require documented conversion to Nepal FY.",
+  "specific": {
+    "rate_transmission_evidence": {
+      "status": "pending",
+      "question": "How do Fed and RBI policy rates transmit to Nepal's interest rates and liquidity?",
+      "series_required": [
+        {
+          "series": "fed_funds_target_range_and_effective_rate",
+          "source_id": "fed",
+          "frequency": "daily/monthly",
+          "basis": "calendar",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+            "https://www.federalreserve.gov/releases/h15/",
+            "https://www.federalreserve.gov/newsevents/pressreleases/2026-press-fomc.htm"
+          ]
+        },
+        {
+          "series": "fomc_sep_median_policy_path",
+          "source_id": "fed",
+          "frequency": "quarterly SEP",
+          "basis": "calendar year-end",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm"
+          ]
+        },
+        {
+          "series": "rbi_repo_sdf_msf",
+          "source_id": "rbi",
+          "frequency": "by decision / monthly",
+          "basis": "Indian FY April-March",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR80907599DE5FD164918A49085C9D6270116.PDF",
+            "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR3855508EB4A59FF46F9B57BBA200AA250B8.PDF",
+            "https://www.rbi.org.in/scripts/annualpolicy.aspx"
+          ]
+        },
+        {
+          "series": "india_weighted_average_call_rate",
+          "source_id": "rbi",
+          "frequency": "monthly",
+          "basis": "calendar months",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6"
+          ]
+        },
+        {
+          "series": "nrb_policy_rate_and_corridor",
+          "source_id": "nrb",
+          "frequency": "annual MP and mid-term review",
+          "basis": "Nepal FY",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/category/monetary-policy/monetary-policy-english/",
+            "https://www.nrb.org.np/red/monetary-policy-in-english-2025-26-full-text/",
+            "https://www.nrb.org.np/contents/uploads/2026/02/MP-Mid-Term-Review-2082-83.pdf"
+          ]
+        },
+        {
+          "series": "nrb_weighted_average_interbank_rate",
+          "source_id": "nrb",
+          "frequency": "monthly",
+          "basis": "Nepal FY, mid-month",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+            "https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf"
+          ]
+        },
+        {
+          "series": "nrb_tbill_deposit_lending_rates",
+          "source_id": "nrb",
+          "frequency": "monthly",
+          "basis": "Nepal FY",
+          "unit": "percent",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf"
+          ]
+        },
+        {
+          "series": "nrb_liquidity_operations",
+          "source_id": "nrb",
+          "frequency": "daily/monthly",
+          "basis": "Nepal FY",
+          "unit": "NPR_current_mn",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/category/reports/summary-sheet-of-monetary-operation/"
+          ]
+        }
+      ],
+      "literature_evidence": {
+        "status": "pending",
+        "method": "Extract estimated pass-through coefficients, lags, samples and identification from each study; record as observations (source_id academic/nrb) with study metadata; do not pool across methods.",
+        "lead_urls": [
+          "https://www.nrb.org.np/contents/uploads/2025/08/nrb-wp-61-2025-08.pdf",
+          "https://www.nrb.org.np/red/interest-rate-pass-through-in-nepal/",
+          "https://www.nrb.org.np/contents/uploads/2023/01/vol25-2_art3.pdf",
+          "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+          "https://www.nrb.org.np/red/vol23-1_art3/",
+          "https://www.nrb.org.np/red/nrb-wp-49-assessing-the-effectiveness-of-operating-target-of-monetary-policy-in-nepal-nanda-kumar-dhakal-and-mitra-prasad-timsina/"
+        ]
+      },
+      "channels_hypothesised": [
+        {
+          "channel": "RBI rate -> INR/USD and Indian demand -> Nepal prices and trade (via NPR-INR peg)",
+          "evidence_status": "pending"
+        },
+        {
+          "channel": "RBI/Indian money-market rates -> relative returns -> cross-border (incl. informal) flows -> NRB liquidity",
+          "evidence_status": "pending"
+        },
+        {
+          "channel": "Fed rate -> USD strength/INR/USD -> NPR/USD -> import prices and USD debt service",
+          "evidence_status": "pending"
+        },
+        {
+          "channel": "Fed/global rates -> Gulf and Malaysia activity -> remittances -> NRB liquidity and interbank rate",
+          "evidence_status": "pending"
+        },
+        {
+          "channel": "Domestic: remittance inflows and government balances at NRB -> interbank rate within corridor",
+          "evidence_status": "pending"
+        }
+      ],
+      "planned_method": "r2: (1) build monthly panel FY2016/17-FY2026/27 of Fed, RBI, India call, NRB corridor and interbank rates plus NRB liquidity and remittance series; (2) event study around RBI and Fed decisions; (3) local projections of NRB interbank and lending rates on RBI and Fed changes controlling for domestic liquidity; (4) compare with published NRB estimates; label outputs `estimate` with method.",
+      "model_parameters_for_agent_03": {
+        "status": "pending",
+        "parameters": [
+          "external_rate_path_usd (calendar monthly, converted to Nepal FY)",
+          "external_rate_path_inr (monthly, converted to Nepal FY)",
+          "passthrough_rbi_to_nrb_interbank (estimate, pending)",
+          "passthrough_to_lending_rate (estimate, pending)"
+        ]
+      },
+      "scenarios": [
+        "S04",
+        "S10"
+      ],
+      "fiscal_year_note": "Fed series calendar; RBI decisions dated, Indian data April-March; NRB Nepal FY mid-July to mid-July with Nepali-calendar mid-month dates."
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "title": "Federal Reserve issues FOMC statement (16 September 2026)",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "FOMC policy decision and federal funds target range effective 17 September 2026; most recent FOMC statement located as of 2026-09-27 (calendar-year basis, event date)"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a1.htm",
+      "title": "Implementation Note issued September 16, 2026",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "Administered rates (IORB, ON RRP offering rate, discount rate) set with the September 2026 decision"
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "title": "FOMC Summary of Economic Projections, 16 September 2026 (accessible version)",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "Participants' projected appropriate federal funds rate path (median and dispersion) for calendar years 2026 onward and longer run; basis for a US policy-rate path"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/2026-press-fomc.htm",
+      "title": "2026 FOMC Press Releases",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "All 2026 FOMC statements and implementation notes; builds the dated sequence of target-range decisions for 2026"
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "title": "FOMC meeting calendars and information",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "Meeting dates, statements, minutes and projection materials by year; historical target-range decisions"
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm",
+      "title": "Minutes of the FOMC, July 28-29, 2026",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "Committee discussion of inflation, geopolitical risks and policy path at the July 2026 meeting"
+    },
+    {
+      "url": "https://www.federalreserve.gov/releases/h15/",
+      "title": "Selected Interest Rates (Daily) - H.15",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "source_id": "fed",
+      "contains": "Effective federal funds rate and Treasury constant-maturity yields, daily/monthly series; monthly data needed to re-aggregate to Nepal FY"
+    },
+    {
+      "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR80907599DE5FD164918A49085C9D6270116.PDF",
+      "title": "Monetary Policy Statement / Resolution of the Monetary Policy Committee, August 3-5, 2026",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Policy repo rate, SDF, MSF and Bank Rate decided at the August 2026 MPC meeting; inflation projections for Indian FY2026-27 (April-March)"
+    },
+    {
+      "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR3855508EB4A59FF46F9B57BBA200AA250B8.PDF",
+      "title": "Monetary Policy Statement, 2026-27 (June 5, 2026)",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Policy repo rate and LAF corridor decided in June 2026; growth and inflation projections for Indian FY2026-27"
+    },
+    {
+      "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR9257E0CB4D769F24658B0AB41428CA46F97.PDF",
+      "title": "Minutes of the Monetary Policy Committee Meeting, August 3-5, 2026 (released August 19, 2026)",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "MPC member statements and votes for the August 2026 decision"
+    },
+    {
+      "url": "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+      "title": "Monetary Policy (statements archive)",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Archive of bi-monthly monetary policy statements; dated history of repo rate changes for building the Indian policy-rate series"
+    },
+    {
+      "url": "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+      "title": "Database on Indian Economy - statistics",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Time series of policy rates, weighted average call money rate and INR reference rates (daily/monthly; Indian FY April-March)"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/monetary-policy/monetary-policy-english/",
+      "title": "Monetary Policy in English - archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual Monetary Policy documents incl. Monetary Policy for FY2026/27 (2083/84) (direct PDF not yet located); policy rate, interest-rate corridor (SDF rate, bank rate/SLF), CRR and SLR settings by Nepal FY"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/monetary-policy-in-english-2025-26-full-text/",
+      "title": "Monetary Policy (In English) 2025/26 (Full Text)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2025/26 (2082/83) corridor settings, operating target, review of FY2024/25 liquidity and interest rates"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary-policy-in-english-2025_26.pdf",
+      "title": "Monetary Policy for 2025/26 (English PDF)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Same as full text; PDF version for hashing"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/02/MP-Mid-Term-Review-2082-83.pdf",
+      "title": "Mid-Term Review of Monetary Policy 2082/83 (FY2025/26)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Mid-year changes to corridor rates and liquidity instruments in FY2025/26; first-half interbank and lending-rate developments"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Macroeconomic_Report_July_2026.pdf",
+      "title": "Macroeconomic Report, July 2026",
+      "publisher": "Nepal Rastra Bank, Economic Research Department",
+      "source_id": "nrb",
+      "contains": "Recent macro-financial conditions and interest rates around the start of FY2026/27 (month and FY basis to be confirmed)"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "First-month FY2026/27 monetary tables: weighted average interbank rate, T-bill rates, deposit and lending rates, liquidity operations (Nepal FY, mid-month basis)"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/reports/summary-sheet-of-monetary-operation/",
+      "title": "Summary Sheet of Monetary Operation - archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Daily/periodic open market operations and SDF/SLF usage; liquidity injection/absorption series"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2020/08/CMEs-Annual-Tables-2076.77-.Final-File-2077.05.08.pdf",
+      "title": "Statistical Tables 2019/20 (CME annual tables)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical monthly interbank rate and structure-of-interest-rates tables for FY2019/20 and earlier; template for a long NRB interbank series"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/nrb-wp-61-2025-08.pdf",
+      "title": "NRB Working Paper No. 61 (August 2025): Do bank lending rates respond to monetary policy shocks in developing countries? Evidence from Nepal",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Estimated response of bank lending rates to NRB policy shocks since the move to interest-rate targeting in FY2017/18; method and identification"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/interest-rate-pass-through-in-nepal/",
+      "title": "Interest Rate Pass-Through in Nepal",
+      "publisher": "Nepal Rastra Bank (NRB Economic Review)",
+      "source_id": "nrb",
+      "contains": "Pass-through estimates from policy/interbank rates to deposit and lending rates"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2023/01/vol25-2_art3.pdf",
+      "title": "The Bank Lending Channel of Monetary Policy in Nepal",
+      "publisher": "Nepal Rastra Bank (NRB Economic Review vol. 25 no. 2)",
+      "source_id": "nrb",
+      "contains": "Bank-level evidence on the lending channel"
+    },
+    {
+      "url": "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+      "title": "The Impact of the Indian Monetary Policy and the Official Exchange Rate on Nepalese Monetary Policy",
+      "publisher": "Nepal Rastra Bank (NRB Economic Review)",
+      "source_id": "nrb",
+      "contains": "Econometric evidence on spillover from Indian monetary aggregates and the official exchange rate to Nepal's monetary base; structural-break analysis"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/vol23-1_art3/",
+      "title": "Examining Volatility of Interbank Rate in Nepal",
+      "publisher": "Nepal Rastra Bank (NRB Economic Review vol. 23 no. 1)",
+      "source_id": "nrb",
+      "contains": "Determinants of interbank-rate volatility incl. liquidity, remittance and government-balance effects"
+    },
+    {
+      "url": "https://www.nrb.org.np/red/nrb-wp-49-assessing-the-effectiveness-of-operating-target-of-monetary-policy-in-nepal-nanda-kumar-dhakal-and-mitra-prasad-timsina/",
+      "title": "NRB Working Paper No. 49 (March 2020): Assessing the Effectiveness of Operating Target of Monetary Policy in Nepal",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Whether the interbank rate tracks the corridor; operating-target effectiveness"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/06/nrb-wp-62-2026-06.pdf",
+      "title": "NRB Working Paper No. 62 (June 2026)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Recent NRB monetary research on Nepal; topic to be confirmed on retrieval (surfaced in a transmission search)"
+    },
+    {
+      "url": "https://www.nrb.org.np/ofg/governors_speech_at_rma_bhutan/",
+      "title": "Monetary Policy and Reserves Management under Pegged Exchange Rate (Governor's speech at RMA Bhutan)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB's own description of policy constraints under the NPR-INR peg; qualitative"
+    }
+  ]
+}

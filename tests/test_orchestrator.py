@@ -107,3 +107,8 @@ def test_collect_and_fetch_leads(tmp_path):
     assert fetch_leads(out, getter=blocked)["leads"][0]["status"] == "unavailable"
     ok = fetch_leads(out, getter=lambda url: b"%PDF", data_dir=tmp_path / "data", root=tmp_path)
     assert ok["leads"][0]["status"] == "fetched" and ok["leads"][0]["raw_sha256"]
+
+
+def test_invalid_unit_code_rejected(tmp_path):
+    doc = _finding(findings=[{"claim": "x", "type": "pending", "value": None, "unit": "USD"}])
+    assert any("unknown unit" in p for p in validate_finding(doc, ObservationStore(tmp_path / "o.jsonl")))

@@ -108,6 +108,9 @@ sources:
   cea_india: {tier: 5, institution: Central Electricity Authority, India, url: "https://cea.nic.in", covers: [Indian power sector, cross-border trade guidelines], endpoint_status: unverified}
 
   iex_india: {tier: 5, institution: Indian Energy Exchange, url: "https://www.iexindia.com", covers: [power exchange prices and volumes], endpoint_status: unverified}
+  cerc_india: {tier: 5, institution: Central Electricity Regulatory Commission, India, url: "https://cercind.gov.in", covers: [short-term power market reports], endpoint_status: unverified}
+  mop_india: {tier: 4, institution: Ministry of Power, India, url: "https://powermin.gov.in", covers: [cross-border electricity trade guidelines], endpoint_status: unverified}
+  eia_us: {tier: 5, institution: US Energy Information Administration, url: "https://www.eia.gov", covers: [oil market outlooks], endpoint_status: unverified}
   # ---------------- Tier 6: climate and hazard science ----------------
   icimod: {tier: 6, institution: ICIMOD, url: "https://www.icimod.org", covers: [cryosphere, HKH assessment, river basins], endpoint_status: unverified}
   ipcc: {tier: 6, institution: IPCC, url: "https://www.ipcc.ch", covers: [climate assessments], endpoint_status: unverified}
@@ -122,4 +125,6 @@ sources:
   glmm: {tier: 7, institution: Gulf Labour Markets, Migration and Population programme, url: "https://gulfmigration.grc.net", covers: [Gulf labour market statistics], endpoint_status: unverified}
   dhs: {tier: 7, institution: The DHS Program (Nepal DHS), url: "https://dhsprogram.com", covers: [health and nutrition surveys], endpoint_status: unverified}
   ti_cpi: {tier: 7, institution: Transparency International CPI, url: "https://www.transparency.org/en/cpi", covers: [perception index], endpoint_status: unverified}
+  aiddata: {tier: 7, institution: AidData (William & Mary), url: "https://www.aiddata.org", covers: [Chinese development finance dataset], endpoint_status: unverified}
+  amis_nepal: {tier: 1, institution: Aid Management Information System, MoF Nepal, url: "https://amis.mof.gov.np", covers: [development cooperation disbursements], endpoint_status: unverified}
   academic: {tier: 7, institution: Peer-reviewed literature (cite each paper individually as its own source record), url: null, covers: [any], endpoint_status: not_applicable}

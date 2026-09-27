@@ -1,0 +1,262 @@
+{
+  "subagent_id": "20E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (Nepal's current FATF/APG status and remaining action items) is pending: status must be established from a dated primary statement, and none has been retrieved. The most recent dated FATF plenary statement located is 'Jurisdictions under Increased Monitoring - 19 June 2026'; the February 2026 and 21 February 2025 statements, the FATF Nepal country page, the black-and-grey-lists page, the 2023 APG Mutual Evaluation Report and the 2025 APG follow-up report were also located, plus the IMF 2026 staff report and NRB FSR Issue 17 for reform-progress context. Any later FATF plenary (after June 2026) must be checked at retrieval. Action-plan themes surfaced by search are recorded only as unverified items to be replaced by verbatim text.",
+  "findings": [
+    {
+      "claim": "Q1: Nepal's current FATF status (listed under increased monitoring or not) as of the most recent plenary, with the date of the statement.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fatf"
+      ],
+      "observation_ids": [],
+      "note": "Must be established from a dated primary FATF statement. Most recent statement located: 19 June 2026; the FATF country page and the high-risk index must be checked at retrieval for any later plenary outcome. Search-engine summaries are not used as evidence of status."
+    },
+    {
+      "claim": "Q1: Date Nepal entered increased monitoring and the full text of its action plan.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fatf"
+      ],
+      "observation_ids": [],
+      "note": "FATF statement of 21 February 2025 (listing to be verified from the document) and each subsequent statement."
+    },
+    {
+      "claim": "Q1: Remaining FATF action-plan items for Nepal and those reported as completed or largely addressed, per the latest statement.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fatf"
+      ],
+      "observation_ids": [],
+      "note": "Copy the Nepal paragraph verbatim from the 19 June 2026 statement; compare with February 2026 to identify changes; record as dated text observations.",
+      "period": "plenary 2026-06"
+    },
+    {
+      "claim": "Q1: APG 2023 MER technical-compliance and effectiveness ratings and 2025 follow-up re-ratings.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "apg"
+      ],
+      "observation_ids": [],
+      "note": "Nepal MER 2023 ratings tables; APG FUR 2025 re-rating table; record each rating as a categorical observation.",
+      "unit": "count"
+    },
+    {
+      "claim": "Exit from increased monitoring normally requires completing or largely completing all action-plan items, followed by an FATF on-site visit and a plenary decision; timing is therefore not predictable and no exit date or probability is assigned.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Procedural description to be verified from the FATF black-and-grey-lists page."
+    },
+    {
+      "claim": "Search-snippet paraphrases of Nepal's action-plan themes (risk understanding; risk-based supervision of banks, cooperatives, casinos, DPMS and real estate; action against illegal MVTS/hundi; ML investigation capacity and prosecutions; confiscation of proceeds) are listed in specific.action_items only as items to verify verbatim; they are not facts.",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Unverified; must be replaced by verbatim text from the dated statement."
+    }
+  ],
+  "data_gaps": [
+    "APG website (apgml.org) Nepal pages and APG annual-meeting outcomes for 2025-2026 not located as direct leads (search budget exhausted).",
+    "No located document gives a timetable for Nepal's action-plan deadlines; FATF statements often reference deadlines that must be read from the text.",
+    "Whether any FATF plenary after 19 June 2026 has occurred and changed Nepal's status must be checked on retrieval of the FATF index page.",
+    "The session web-search budget was exhausted before all planned searches ran; some leads below were reused from 16A/16B and some document-level leads remain unlocated (listed individually).",
+    "No lead URL was downloaded in r1 (data hosts blocked); all values await `python -m src.cli leads --fetch`, extraction and ingest in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "20E-A1",
+      "text": "Listing status is taken only from the latest dated FATF plenary statement at retrieval time; news reports, the NRB or government statements are secondary and used only to locate the statement.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20E-A2",
+      "text": "No probability or date of exit from increased monitoring is assigned; scenario S10 treats continued listing and de-listing as alternative stress settings.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-18 should be updated from the latest dated FATF statement at retrieval, not from the February 2025 statement alone; lead L65 in 16B should be supplemented with the February 2026 and June 2026 statements."
+    },
+    {
+      "to": "20D",
+      "text": "Supply of dated listing events: February 2025 (listing, to be verified) and June 2026 (latest located statement); de-risking tests should use these dates."
+    },
+    {
+      "to": "28",
+      "text": "Red-team item: a change in Nepal's FATF status at a plenary after June 2026 would alter S03/S10 correspondent-banking and remittance-channel assumptions; re-check before audit."
+    }
+  ],
+  "uncertainty": "High on current status timing: FATF status can change at each plenary; the last located statement is from June 2026 and a later plenary outcome, if any, is not captured. Action-item texts are unverified until retrieved verbatim. MER ratings are fixed at the 2023 assessment date except where re-rated by follow-up reports.",
+  "specific": {
+    "fatf_status": {
+      "status": "pending",
+      "listing_category": "pending (to be read from dated FATF statement)",
+      "as_of_statement": {
+        "title": "Jurisdictions under Increased Monitoring - 19 June 2026",
+        "url": "https://www.fatf-gafi.org/content/fatf-gafi/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-june-2026.html",
+        "retrieved": false
+      },
+      "listing_date": {
+        "status": "pending",
+        "candidate_statement": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2025.html"
+      },
+      "later_plenary_check": {
+        "status": "pending",
+        "lead_url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions.html"
+      },
+      "apg_mer": {
+        "year": "2023",
+        "status": "pending",
+        "fields": [
+          "technical_compliance_ratings",
+          "effectiveness_ratings",
+          "priority_recommended_actions"
+        ],
+        "lead_url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-mer-2023.html"
+      },
+      "apg_follow_up": {
+        "year": "2025",
+        "status": "pending",
+        "fields": [
+          "re_ratings",
+          "follow_up_category"
+        ],
+        "lead_url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-APG-FUR-2025.html"
+      },
+      "exposure_register_link": "EXP-18",
+      "related_variable": "X26",
+      "scenarios": [
+        "S10"
+      ]
+    },
+    "action_items": {
+      "status": "pending",
+      "source_to_quote": "Nepal paragraph of the 19 June 2026 FATF statement, compared with the 13 February 2026 statement",
+      "items_to_verify_verbatim": [
+        {
+          "theme": "understanding of key ML/TF risks",
+          "status": "unverified",
+          "completion_status": "pending"
+        },
+        {
+          "theme": "risk-based supervision of commercial banks, higher-risk cooperatives, casinos, DPMS and real estate",
+          "status": "unverified",
+          "completion_status": "pending"
+        },
+        {
+          "theme": "identification and sanctioning of illegal MVTS/hundi providers",
+          "status": "unverified",
+          "completion_status": "pending"
+        },
+        {
+          "theme": "capacity and coordination of competent authorities for ML investigations",
+          "status": "unverified",
+          "completion_status": "pending"
+        },
+        {
+          "theme": "increase in ML investigations and prosecutions",
+          "status": "unverified",
+          "completion_status": "pending"
+        },
+        {
+          "theme": "identifying, tracing, restraining, seizing and confiscating proceeds and instrumentalities of crime",
+          "status": "unverified",
+          "completion_status": "pending"
+        }
+      ],
+      "method": "Replace each theme with verbatim action-item text from the dated statement; mark items the FATF describes as completed/largely addressed; map items to MER immediate outcomes and to financial-sector channels (remittance/hundi, correspondent banking) for 20D and 23C."
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.fatf-gafi.org/content/fatf-gafi/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-june-2026.html",
+      "title": "Jurisdictions under Increased Monitoring - 19 June 2026",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Most recent dated FATF plenary statement located (as of 2026-09-27): list of jurisdictions under increased monitoring and each jurisdiction's remaining action-plan items, incl. Nepal if listed"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2026.html",
+      "title": "Jurisdictions under Increased Monitoring - 13 February 2026",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Previous plenary statement; Nepal entry and action items for comparison of progress"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2025.html",
+      "title": "Jurisdictions under Increased Monitoring - 21 February 2025",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Statement at which Nepal's listing and high-level political commitment/action plan are recorded (listing date to be verified from the document)"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/countries/detail/Nepal.html",
+      "title": "Nepal - country page",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Current listing status and links to MER, follow-up reports and statements"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html",
+      "title": "Black and grey lists",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Current lists and explanation of increased-monitoring process and exit (on-site visit) procedure"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions.html",
+      "title": "High-risk and other monitored jurisdictions",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Index of all plenary statements; used to confirm whether any statement later than June 2026 exists at retrieval"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-mer-2023.html",
+      "title": "Anti-money laundering and counter-terrorist financing measures - Nepal, Mutual Evaluation Report 2023",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Technical compliance ratings (R.1-R.40), effectiveness ratings (IO.1-IO.11), key findings and recommended actions"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Nepal-APG-FUR-2025.html",
+      "title": "Nepal: APG follow-up report 2025",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Technical-compliance re-ratings since the 2023 MER and follow-up status"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Mutualevaluationofnepal.html",
+      "title": "Mutual Evaluation of Nepal (earlier round)",
+      "publisher": "APG / FATF",
+      "source_id": "apg",
+      "contains": "Previous-round MER for historical comparison"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/en/countries/global-network/asia-pacific-group-on-money-laundering--apg-.html",
+      "title": "Asia/Pacific Group on Money Laundering (APG) - FATF global network page",
+      "publisher": "FATF",
+      "source_id": "apg",
+      "contains": "APG membership and links to APG mutual evaluation and follow-up publications"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "Staff assessment of AML/CFT reforms and FATF action-plan progress; structural benchmarks related to AML/CFT if any"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB view of AML/CFT supervision and FATF listing implications for banks and cooperatives"
+    }
+  ]
+}

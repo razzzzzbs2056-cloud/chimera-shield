@@ -16,8 +16,8 @@
         "nitdb"
       ],
       "observation_ids": [],
-      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Time-release studies and NIRTTP results framework; NITDB ICD statistics; ICRIER route analysis. Bangladeshi route data not yet located.",
-      "unit": "usd_per_teu; days"
+      "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2. Time-release studies and NIRTTP results framework; NITDB ICD statistics; ICRIER route analysis. Bangladeshi route data not yet located. Also measured in days (transit time).",
+      "unit": "USD_per_TEU"
     },
     {
       "claim": "Legal/operational status of each route: designated ports and modes under the India-Nepal Treaty of Transit and letters of exchange, and any Nepal-Bangladesh transit arrangement for Mongla/Chattogram (incl. transit through Indian territory at Kakarbhitta-Phulbari-Banglabandha or rail via Rohanpur-Singhabad).",
@@ -52,7 +52,7 @@
       ],
       "observation_ids": [],
       "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2.",
-      "unit": "index_score",
+      "unit": "index",
       "period": "LPI 2023 (survey calendar year)"
     },
     {

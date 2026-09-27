@@ -1,0 +1,385 @@
+{
+  "subagent_id": "20B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (USD vs INR share of imports and external debt) and Q2 (long-run INR/USD and implications for NPR/USD) are pending. Leads located: NRB forex page and API, NRB historical exchange-rate workbooks, NRB WP 3 on pre-peg history, NRB FXM directives and the RBI Nepal/Bhutan exchange-control supplement (define which India trade is INR-settled), NRB CME annual FY2024/25 and August 2026 release (reserves by currency, trade by India/others), RBI reference rate archive, DBIE and Handbook tables for long-run INR/USD, PDMO monthly debt statistics and MTDS 2024 (external debt by currency), and IDS/WDI cross-check series. No primary tabulation of the invoicing currency of Nepal's imports was located; a proxy method is proposed. Identity recorded as an assumption: with an unchanged peg, NPR/USD follows INR/USD scaled by the peg ratio; reconciliation of rate types (buying/selling/middle, average/end-period) and bases (Nepal FY, Indian FY, calendar) is required (conflict C-18).",
+  "findings": [
+    {
+      "claim": "Q1: Share of Nepal's merchandise imports invoiced/settled in USD (convertible currency) versus INR, latest Nepal FY and trend.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "customs_nepal"
+      ],
+      "observation_ids": [],
+      "note": "No published tabulation of invoice or settlement currency located. Proxy options: NRB BoP/CME split of imports from India (typically INR-settled) vs other countries, adjusted for convertible-currency payments to India permitted under NRB FXM directives and the RBI Nepal/Bhutan exchange-control supplement; or NRB LC/foreign-exchange payment records by currency (supervisory, may not be public).",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q1: Currency composition of Nepal's external public debt (SDR, USD, JPY, EUR, CNY, INR, other).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "pdmo",
+        "wb_ids"
+      ],
+      "observation_ids": [],
+      "note": "PDMO monthly Government Debt Statistics (mid-August 2025, mid-March 2026) and MTDS 2024; IDS currency-composition series (calendar year-end). SDR-denominated debt must be looked through to the SDR basket to estimate effective USD exposure; that look-through is an estimate method, not a fact.",
+      "unit": "percent",
+      "period": "Nepal FY month-end (PDMO); calendar year-end (IDS)"
+    },
+    {
+      "claim": "Q1: Currency composition of gross foreign-exchange reserves (convertible vs INR).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "NRB CME reserves table (FY2024/25 annual; August 2026 release).",
+      "unit": "percent",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q2: Long-run INR/USD path (annual average and end-period), from the Bretton Woods era to 2026.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "rbi"
+      ],
+      "observation_ids": [],
+      "note": "RBI Handbook table, FAQ 1945-1971, Reference Rate Archive, DBIE; FBIL after July 2018 (FBIL not in catalog).",
+      "unit": "INR_per_USD",
+      "period": "Indian FY and calendar months"
+    },
+    {
+      "claim": "Q2: Long-run NPR/USD and NPR/INR paths, including dates of each peg realignment.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "wb_wdi"
+      ],
+      "observation_ids": [],
+      "note": "NRB forex API and historical xlsx files; NRB WP 3 for pre-peg history; WDI PA.NUS.FCRF as a cross-check (calendar average; conflict register C-18).",
+      "unit": "NPR_per_USD",
+      "period": "daily/monthly, converted to Nepal FY"
+    },
+    {
+      "claim": "Under an unchanged NPR-INR peg, NPR/USD equals the peg ratio times INR/USD; so the NPR/USD path is determined by INR/USD plus the probability-free scenario of peg realignment. The implied NPR/USD from RBI INR/USD and the NRB peg must be reconciled with NRB's published NPR/USD (differences can arise from buying/selling vs middle rates, timing of fixing and averaging).",
+      "type": "assumption",
+      "source_ids": [],
+      "note": "Identity under an assumed unchanged peg; stated as an assumption, not a forecast."
+    },
+    {
+      "claim": "Long-run INR/USD movement is treated as the main driver of NPR depreciation against the USD; any scenario path is a stress setting anchored on historical dispersion computed in r2, not a forecast.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Invoice/settlement currency of Nepal's imports and exports: no public NRB or customs tabulation located; NRB foreign-exchange payment data by currency may be supervisory.",
+    "FBIL (Financial Benchmarks India) reference rates after July 2018 are not in the source catalog; DBIE may suffice.",
+    "IMF AREAER entry for Nepal (de jure and de facto arrangement classification) not located as a lead in r1 (search budget exhausted).",
+    "Dated record of each NPR-INR peg realignment from an NRB primary document not yet located.",
+    "The session web-search budget was exhausted before all planned searches ran; some leads below were reused from 16A/16B and some document-level leads remain unlocated (listed individually).",
+    "No lead URL was downloaded in r1 (data hosts blocked); all values await `python -m src.cli leads --fetch`, extraction and ingest in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "20B-A1",
+      "text": "Imports from India are provisionally treated as INR-settled except for categories NRB/RBI rules allow or require to be paid in convertible currency; this proxy is an estimate method to be replaced by direct currency data if obtainable.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20B-A2",
+      "text": "SDR-denominated debt is decomposed using the SDR basket weights in force at each valuation date (IMF), labelled as estimate.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20B-A3",
+      "text": "The peg is held unchanged in the baseline; realignment is a scenario setting (S02, S03, S10), not a forecast.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-10 (NPR-INR peg) metrics should distinguish invoicing currency, settlement currency and currency of debt; 16B's data gap on invoicing currency is confirmed and a proxy method is proposed here."
+    },
+    {
+      "to": "03",
+      "text": "Agent 03 exchange-rate module should take INR/USD as the exogenous driver and the peg ratio as a parameter; NPR/USD should not be projected independently while the peg holds. Rate type and FY conversion must match NRB conventions (C-18)."
+    },
+    {
+      "to": "20C",
+      "text": "External-debt currency composition (PDMO, IDS) serves both 20B and 20C; use one reconciled currency table with coverage (central government vs PPG vs total) stated (C-09)."
+    }
+  ],
+  "uncertainty": "High. No value retrieved. Invoicing-currency shares may be unobtainable from public sources and would then remain an estimate based on a proxy. Rate series differ by type (buying/selling/middle), averaging and fiscal basis, which can create apparent discrepancies unrelated to economics.",
+  "specific": {
+    "currency_exposure_table": {
+      "status": "pending",
+      "rows": [
+        {
+          "item": "merchandise imports by settlement currency (INR / USD-convertible)",
+          "unit": "percent",
+          "basis": "Nepal FY",
+          "status": "pending",
+          "method": "Direct NRB data if obtainable; else proxy from India vs other-country trade split adjusted by convertible-currency rules",
+          "lead_urls": [
+            "https://www.nrb.org.np/departments/fxm/",
+            "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+            "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf"
+          ]
+        },
+        {
+          "item": "merchandise exports by settlement currency",
+          "unit": "percent",
+          "basis": "Nepal FY",
+          "status": "pending",
+          "method": "as above",
+          "lead_urls": [
+            "https://www.nrb.org.np/departments/fxm/"
+          ]
+        },
+        {
+          "item": "external public debt by currency (SDR, USD, JPY, EUR, CNY, INR, other)",
+          "unit": "percent",
+          "basis": "Nepal FY month-end",
+          "status": "pending",
+          "method": "PDMO tables; SDR look-through labelled estimate",
+          "lead_urls": [
+            "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
+            "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
+            "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf"
+          ]
+        },
+        {
+          "item": "PPG external debt by currency (IDS)",
+          "unit": "percent",
+          "basis": "calendar year-end",
+          "status": "pending",
+          "method": "IDS currency-composition series; kept separate from PDMO (C-09)",
+          "lead_urls": [
+            "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP"
+          ]
+        },
+        {
+          "item": "gross FX reserves by currency (convertible vs INR)",
+          "unit": "percent",
+          "basis": "Nepal FY",
+          "status": "pending",
+          "method": "NRB CME reserves table",
+          "lead_urls": [
+            "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf"
+          ]
+        },
+        {
+          "item": "remittance inflows by currency of receipt",
+          "unit": "percent",
+          "basis": "Nepal FY",
+          "status": "pending",
+          "method": "Not located; coordinate with 23C",
+          "lead_urls": []
+        }
+      ]
+    },
+    "long_run_fx_history": {
+      "status": "pending",
+      "series": [
+        {
+          "pair": "INR_per_USD",
+          "source_id": "rbi",
+          "coverage_target": "1945-46 to 2026",
+          "frequency": "annual (Indian FY) and monthly",
+          "rate_type": "RBI reference / FBIL; average and end-period recorded separately",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=1877",
+            "https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf",
+            "https://www.rbi.org.in/scripts/referenceratearchive.aspx",
+            "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6"
+          ]
+        },
+        {
+          "pair": "NPR_per_INR",
+          "source_id": "nrb",
+          "coverage_target": "pre-peg era to 2026, with dated realignments",
+          "frequency": "event-dated and daily",
+          "rate_type": "NRB fixed buying/selling",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/forex/",
+            "https://www.nrb.org.np/contents/uploads/2019/12/NRB_Working_Paper-NRB-WP-03-Aug_2007_A_Study_of_the_Trends_in_the_Nepalese-Indian_Currency_Exchange_Rate_during_the_Period_of_1932-1960-Nephil_Matangi_Maskay.pdf"
+          ]
+        },
+        {
+          "pair": "NPR_per_USD",
+          "source_id": "nrb",
+          "coverage_target": "as long as NRB series allow, to 2026",
+          "frequency": "daily/monthly, converted to Nepal FY",
+          "rate_type": "NRB buying/selling; middle computed",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/api-docs-v1/",
+            "https://www.nrb.org.np/contents/uploads/2022/08/Exchange-rate-1.xlsx",
+            "https://www.nrb.org.np/contents/uploads/2022/07/Exchange-rates.xlsx"
+          ]
+        },
+        {
+          "pair": "NPR_per_USD (WDI cross-check)",
+          "source_id": "wb_wdi",
+          "coverage_target": "WDI span",
+          "frequency": "calendar-year average",
+          "rate_type": "official period average",
+          "status": "pending",
+          "lead_urls": [
+            "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200"
+          ]
+        }
+      ],
+      "implication_for_npr_usd": {
+        "status": "pending",
+        "method": "Compute implied NPR/USD = peg ratio x INR/USD; compare with NRB NPR/USD; report long-run average depreciation rates and volatility by decade for INR/USD (estimate, with method) once series are ingested; scenario paths are labelled stress settings.",
+        "dependencies": [
+          "INR_per_USD",
+          "NPR_per_INR",
+          "NPR_per_USD"
+        ]
+      },
+      "conflict_register_link": "C-18 (fx_npr_usd: NRB vs WDI vs IMF IFS; rate type, average vs end-period, FY vs CY)",
+      "fiscal_year_note": "NRB Nepal FY mid-July; RBI tables Indian FY April-March; WDI calendar year."
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://www.nrb.org.np/forex/",
+      "title": "Foreign Exchange Rate",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Daily NRB reference buying/selling rates for USD and INR (fixed) and other currencies; export function for date ranges"
+    },
+    {
+      "url": "https://www.nrb.org.np/api-docs-v1/",
+      "title": "FOREX API Documentation (V1)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "API endpoint returning NRB exchange rates for a date range; route for machine-readable daily NPR/USD and NPR/INR"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2022/08/Exchange-rate-1.xlsx",
+      "title": "Exchange rate time series (xlsx)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical NPR exchange-rate time series; periods and rate type (buying/selling/middle, average/end-period) to be confirmed"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2022/07/Exchange-rates.xlsx",
+      "title": "Exchange Rate USDNPR (xlsx)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Historical NPR/USD series; period coverage and rate type to be confirmed"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB_Working_Paper-NRB-WP-03-Aug_2007_A_Study_of_the_Trends_in_the_Nepalese-Indian_Currency_Exchange_Rate_during_the_Period_of_1932-1960-Nephil_Matangi_Maskay.pdf",
+      "title": "NRB Working Paper No. 3 (August 2007): A Study of the Trends in the Nepalese-Indian Currency Exchange Rate during 1932-1960",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Pre-peg history of the NPR-INR rate; context for the long-run peg history"
+    },
+    {
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Foreign-exchange directives: rules for paying for imports from India in convertible currency vs INR; defines invoicing/settlement-currency categories"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation (annual data 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FY2024/25 BoP, trade with India vs other countries, gross reserves by currency holding (convertible vs INR) and import cover; exchange-rate movement table"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Latest exchange-rate movement and reserves by currency for early FY2026/27"
+    },
+    {
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Indian-side rules on INR settlement of trade with Nepal and permitted convertible-currency payments; legal basis for INR-invoiced share"
+    },
+    {
+      "url": "https://www.rbi.org.in/scripts/referenceratearchive.aspx",
+      "title": "Reference Rate Archive",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Daily RBI reference rate INR/USD up to July 2018 (thereafter FBIL); daily series for long-run INR/USD"
+    },
+    {
+      "url": "https://dbie.rbi.org.in/DBIE/statistics.rbi?action=RL&f=30&sd=6",
+      "title": "Database on Indian Economy - exchange rate statistics",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Monthly/annual average and end-period INR per USD; Indian FY April-March and calendar months"
+    },
+    {
+      "url": "https://www.rbi.org.in/upload/Publications/PDFs/56514.pdf",
+      "title": "Handbook of Statistics on Indian Economy - Table: Exchange Rate of the Indian Rupee vis-a-vis the SDR, US Dollar, Pound Sterling, D. Mark/Euro and Japanese Yen",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Annual (Indian FY) average and end-year INR/USD over a long historical span"
+    },
+    {
+      "url": "https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=1877",
+      "title": "Exchange Rate 1945-1971 (FAQ)",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "Historical INR/USD for 1945-46 to 1970-71 (Bretton Woods era)"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/82%20sharwan1_brhntvd.pdf",
+      "title": "Government Debt Statistics for the month of Shrawan 2082 (mid-August 2025)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by currency (SDR, USD, JPY, EUR, CNY, other) and creditor at mid-August 2025"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/files/Falgun%20(1)_njxxw9p.pdf",
+      "title": "Government Debt Statistics for the month of Falgun 2082 (mid-March 2026)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding external debt by currency and creditor at mid-March 2026"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/files/MTEF%20Data_MTDS%20Report_Final-1%202024_sgwmrih.pdf",
+      "title": "Medium-Term Debt Management Strategy report (2024)",
+      "publisher": "Public Debt Management Office, Ministry of Finance, Nepal",
+      "source_id": "pdmo",
+      "contains": "Currency composition of external debt and FX-risk indicators; SDR basket look-through"
+    },
+    {
+      "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.CD?locations=NP",
+      "title": "External debt stocks, total (DOD, current US$) - Nepal",
+      "publisher": "World Bank (International Debt Statistics)",
+      "source_id": "wb_ids",
+      "contains": "IDS external debt stocks, calendar year-end; IDS database holds currency-composition-of-PPG-debt series (USD, SDR, JPY, EUR, multiple currencies)"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/PA.NUS.FCRF?format=json&per_page=200",
+      "title": "WDI API: Official exchange rate (LCU per US$, period average), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "PA.NUS.FCRF calendar-year average NPR/USD; comparison series for NRB (conflict C-18)"
+    }
+  ]
+}

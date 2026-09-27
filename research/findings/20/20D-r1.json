@@ -1,0 +1,218 @@
+{
+  "subagent_id": "20D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Q1 (how many correspondent relationships Nepali banks rely on and how concentrated) is pending. The public source is the CPMI correspondent banking dataset on the BIS Data Portal (country level, calendar year); bank-level nostro data are expected to be supervisory at NRB and may not be public. Supporting leads: NRB Financial Stability Report Issue 17 (FY2024/25), NRB FXM directives, the IMF 2026 staff report and the dated FATF June 2026 statement for de-risking context. The latest CPMI correspondent banking data report was not located as a direct file (search budget exhausted). Metric design: count of active correspondents and counterparty countries, HHI and top-k shares by counterparty country and currency, with trend around the FATF listing date supplied by 20E.",
+  "findings": [
+    {
+      "claim": "Q1: Number of active correspondent banking relationships of Nepal-based banks and number of counterparty countries, latest year and trend.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "bis_bank"
+      ],
+      "observation_ids": [],
+      "note": "CPMI correspondent banking data on the BIS Data Portal (country-level; calendar year). The latest CPMI correspondent banking data report was not located as a direct file in r1.",
+      "unit": "count",
+      "period": "calendar year"
+    },
+    {
+      "claim": "Q1: Concentration of correspondent relationships and message value/volume by counterparty country (top-1/top-3 shares, HHI).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "bis_bank"
+      ],
+      "observation_ids": [],
+      "note": "CPMI data by counterparty country if published at that granularity; otherwise aggregate only.",
+      "unit": "index",
+      "period": "calendar year"
+    },
+    {
+      "claim": "Q1: Bank-level nostro relationships and settlement concentration by currency (USD, EUR, INR, others) and correspondent bank.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Likely supervisory (NRB Bank Supervision) and not public; NRB FSR Issue 17 may carry aggregated discussion. If not public, remains pending with a request specification for NRB.",
+      "unit": "count"
+    },
+    {
+      "claim": "Q1: Evidence of correspondent de-risking (terminations, restrictions) since Nepal's FATF listing.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "imf_article_iv",
+        "bis_bank"
+      ],
+      "observation_ids": [],
+      "note": "NRB FSR, IMF 2026 staff report, CPMI time series; dated FATF listing from 20E."
+    },
+    {
+      "claim": "Concentration metrics follow 16B-A1: HHI (index) and top-k shares (percent) by counterparty country and settlement currency, each source and period basis kept separate.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Working hypothesis: USD clearing for Nepal depends on a small number of global correspondent banks, and INR settlement runs through Indian banks; both are single-point-of-failure candidates (16B SPOF on correspondent banking). To be tested with CPMI data; no concentration is asserted.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "CPMI correspondent banking data report (latest edition) direct URL not located; BIS Data Portal dataset code for correspondent banking to be confirmed.",
+    "Bank-level nostro/correspondent data for Nepal are likely supervisory; a request specification to NRB would require human approval under src/orchestrator/approvals.py.",
+    "No located public data on cost of cross-border payments specific to Nepal corridors beyond remittance-price data (World Bank Remittance Prices Worldwide not in catalog).",
+    "The session web-search budget was exhausted before all planned searches ran; some leads below were reused from 16A/16B and some document-level leads remain unlocated (listed individually).",
+    "No lead URL was downloaded in r1 (data hosts blocked); all values await `python -m src.cli leads --fetch`, extraction and ingest in r2."
+  ],
+  "assumptions": [
+    {
+      "id": "20D-A1",
+      "text": "CPMI country-level counts measure relationships as seen in SWIFT messaging; non-SWIFT channels (e.g. Indian domestic systems for INR settlement) may be undercounted; this coverage limit is recorded with every value.",
+      "basis": "assumption"
+    },
+    {
+      "id": "20D-A2",
+      "text": "Contact with NRB or banks for non-public data is out of scope without recorded human approval.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "EXP-17 metric should specify SWIFT-based CPMI coverage and the INR settlement channel separately; INR clearing through Indian banks may not appear in CPMI counts."
+    },
+    {
+      "to": "20E",
+      "text": "Provide the dated FATF listing and any de-listing timeline so 20D can test de-risking around those dates."
+    },
+    {
+      "to": "16A",
+      "text": "X23 and X35 list 20D as supporting for FDI and diaspora flows; 20D has no capital-flow leads in r1; propose 18B/23E remain sole suppliers and 20D only covers bank-intermediated cross-border channels."
+    }
+  ],
+  "uncertainty": "High. No value retrieved; the principal public dataset is country-aggregate and SWIFT-based, which may miss INR settlement channels; bank-level concentration may never be publicly observable, in which case the item stays pending or becomes a labelled assumption for scenario S03/S10.",
+  "specific": {
+    "correspondent_exposure": {
+      "status": "pending",
+      "metrics": [
+        {
+          "metric": "active_correspondents_count",
+          "unit": "count",
+          "basis": "calendar year",
+          "source_id": "bis_bank",
+          "status": "pending",
+          "lead_urls": [
+            "https://data.bis.org"
+          ]
+        },
+        {
+          "metric": "counterparty_countries_count",
+          "unit": "count",
+          "basis": "calendar year",
+          "source_id": "bis_bank",
+          "status": "pending",
+          "lead_urls": [
+            "https://data.bis.org"
+          ]
+        },
+        {
+          "metric": "message_value_and_volume_trend",
+          "unit": "index",
+          "basis": "calendar year",
+          "source_id": "bis_bank",
+          "status": "pending",
+          "lead_urls": [
+            "https://data.bis.org"
+          ]
+        },
+        {
+          "metric": "concentration_hhi_by_counterparty_country",
+          "unit": "index",
+          "basis": "calendar year",
+          "source_id": "bis_bank",
+          "status": "pending",
+          "lead_urls": [
+            "https://data.bis.org"
+          ]
+        },
+        {
+          "metric": "nostro_concentration_by_currency_and_bank",
+          "unit": "percent",
+          "basis": "Nepal FY",
+          "source_id": "nrb",
+          "status": "pending (likely non-public)",
+          "lead_urls": [
+            "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf"
+          ]
+        },
+        {
+          "metric": "de_risking_events_since_fatf_listing",
+          "unit": "count",
+          "basis": "event-dated",
+          "source_id": "nrb",
+          "status": "pending",
+          "lead_urls": [
+            "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+            "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691"
+          ]
+        }
+      ],
+      "exposure_register_link": "EXP-17",
+      "related_variable": "X25",
+      "scenarios": [
+        "S03",
+        "S10"
+      ],
+      "method": "Retrieve CPMI series for Nepal and peer comparators; compute trend and concentration; overlay FATF listing dates from 20E; extract NRB FSR discussion verbatim."
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://data.bis.org",
+      "title": "BIS Data Portal - CPMI correspondent banking data",
+      "publisher": "Bank for International Settlements",
+      "source_id": "bis_bank",
+      "contains": "CPMI correspondent banking indicators by country: number of active correspondents, number of counterparty countries, value and volume of SWIFT MT103/MT202 messages; calendar year"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/07/Financial-Stability-Report-Issue-17.pdf",
+      "title": "Financial Stability Report, Fiscal Year 2024/25, Issue 17",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Banking-sector risk assessment; possible discussion of correspondent relationships, nostro concentration, foreign-currency exposures and effects of the FATF listing on banks"
+    },
+    {
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Directives on nostro accounts, remittance companies and cross-border payment channels"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "External vulnerability and financial-sector discussion incl. FATF listing implications for correspondent banking and remittance channels"
+    },
+    {
+      "url": "https://www.fatf-gafi.org/content/fatf-gafi/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-june-2026.html",
+      "title": "Jurisdictions under Increased Monitoring - 19 June 2026",
+      "publisher": "FATF",
+      "source_id": "fatf",
+      "contains": "Dated FATF statement relevant to correspondent de-risking pressure on Nepali banks"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2026/08/Current-Macroeconomic-and-Financial-Situation-English-1.pdf",
+      "title": "Current Macroeconomic and Financial Situation (English), release of August 2026",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Remittance and BoP flows through the banking system; context for payment-channel dependence"
+    }
+  ]
+}

@@ -59,3 +59,11 @@ def test_unknown_unit_rejected():
 def test_sum_quantities():
     s = sum_quantities([Quantity(1, "USD_current_bn"), Quantity(2000, "USD_current_mn")], "USD_current_bn")
     assert s.value == pytest.approx(3.0)
+
+
+def test_unit_prices_convert_across_energy_scales():
+    q = Quantity(5000.0, "INR_per_MWh")
+    assert q.to("INR_per_kWh").value == pytest.approx(5.0)
+    with pytest.raises(UnitError):
+        q.to("NPR_per_kWh")
+    assert Quantity(1.0, "GWh").to("MWh").value == pytest.approx(1000.0)

@@ -1,0 +1,328 @@
+{
+  "subagent_id": "24D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network, defensive scope only). Benchmark design set out: ITU Global Cybersecurity Index pillars, national CERT mandate, sector incident-reporting obligations, data protection/breach notification, critical digital infrastructure resilience and reference standards (NIST CSF 2.0, ISO/IEC 27001/27035), with South Asian comparators. Only 8 document leads were located (ITU DataHub, ITU Facts and Figures 2025, NTA IT Policy 2023, National ICT Policy 2015, NITC/GIDC, secondary news) because the session's web-search budget was exhausted and itu.int/nist.gov are blocked; 11 key primary documents (incl. the GCI 2024 report and Nepal's National Cyber Security Policy 2080) are listed as unlocated with the exact data required. All empirical items pending.",
+  "findings": [
+    {
+      "claim": "Scope: defensive cybersecurity only - legal frameworks, incident-reporting and response capacity, standards adoption, critical digital infrastructure resilience and data protection. No offensive capability, vulnerability or targeting information is researched or recorded.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Benchmark design: Nepal's defensive posture is compared on (a) ITU GCI pillars (international, self-reported with ITU validation), (b) presence and mandate of a national CERT/CSIRT and sector CERTs, (c) incident-reporting obligations by sector (telecom, finance, government, energy), (d) data-protection law and breach-notification duty, (e) adoption of reference standards (NIST CSF 2.0, ISO/IEC 27001/27035), against South Asian comparators (India, Bangladesh, Sri Lanka, Bhutan) and LDC peers.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Nepal ITU Global Cybersecurity Index result (tier and pillar scores) for the 2024 edition and earlier editions, with comparators.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "GCI editions 2017, 2018, 2020, 2024 (calendar year of questionnaire)",
+      "source_ids": [
+        "itu"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24D-L01",
+        "24D-L02"
+      ],
+      "note": "GCI report not located as a lead in r1 (search budget exhausted; itu.int blocked). Editions use different methods and scales - do not compare scores across editions without the methodology note."
+    },
+    {
+      "claim": "Existence, legal basis and mandate of Nepal's national cyber security centre / CERT, and sectoral incident-reporting obligations (telecom, banking/payments, government data centre).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Status as of 2026",
+      "source_ids": [
+        "lawcommission_nepal",
+        "nrb"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24D-L04",
+        "24D-L05",
+        "24D-L06"
+      ],
+      "note": "Requires primary texts: National Cyber Security Policy 2080, NTA byelaw/IT policy, NRB guidelines. Only the NTA IT Policy (hosted copy) and ICT Policy 2015 located."
+    },
+    {
+      "claim": "Nepal data-protection legal framework and breach-notification requirement.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Status as of 2026",
+      "source_ids": [
+        "lawcommission_nepal"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24D-L07"
+      ],
+      "note": "Individual Privacy Act 2075 and any data-protection bill; not located in r1."
+    },
+    {
+      "claim": "Number of ISO/IEC 27001 certified organisations in Nepal and comparators.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Calendar year (ISO Survey)",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [],
+      "note": "ISO Survey not located; catalog lacks an ISO id."
+    }
+  ],
+  "data_gaps": [
+    "ITU GCI 2024 report and Nepal profile not located. The session-wide WebSearch budget was exhausted during this round; data-source hosts and reference hosts (itu.int, nist.gov, wikipedia.org, arxiv.org) returned EGRESS_BLOCKED to WebFetch.",
+    "Primary texts of Nepal's National Cyber Security Policy 2080, Individual Privacy Act 2075, Electronic Transactions Act 2063, NTA cyber byelaw and NRB cyber guidelines not located (see specific.defensive_posture_benchmarks.unlocated_documents).",
+    "No incident statistics for Nepal located (national CERT reports).",
+    "Catalog lacks ids for NIST, ISO, FIRST, Council of Europe and Nepal Telecommunications Authority."
+  ],
+  "assumptions": [
+    {
+      "id": "24D-A1",
+      "text": "Research is limited to defensive posture; no offensive or vulnerability-specific content is collected.",
+      "basis": "platform rule and task instruction"
+    },
+    {
+      "id": "24D-A2",
+      "text": "GCI scores are self-reported questionnaire results validated by ITU and are treated as a posture indicator, not a measure of realised security outcomes.",
+      "basis": "methodological"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X36 is mapped to channel digital_services_demand only; cyber incidents also affect payments (remittance channel) and critical infrastructure (energy, aviation). Consider mapping X36 to additional channels."
+    },
+    {
+      "to": "16B",
+      "text": "Supports your note to 28: the single-gateway telecom/internet backbone via India/China should be a proposed exposure entry; 24D will supply defensive-resilience evidence once route data (NTA) are located."
+    },
+    {
+      "to": "00A",
+      "text": "Search budget exhausted; allocate searches or a network-enabled run for 24D in r2. Add catalog ids for nta_nepal, nist, iso, first, coe."
+    },
+    {
+      "to": "28",
+      "text": "Red-team: GCI tier changes across editions reflect method changes as well as policy changes; audit any claim of 'improvement' against the methodology notes."
+    }
+  ],
+  "uncertainty": "Very high. Most primary documents were not located in r1; titles of Nepal instruments and standards in unlocated_documents are from domain knowledge and unverified. GCI is self-reported and methods differ by edition. No incident data.",
+  "specific": {
+    "defensive_posture_benchmarks": {
+      "status": "pending",
+      "question": "What defensive standards and incident-reporting frameworks are relevant to Nepal?",
+      "answer_r1": "Partially answered at design level, pending on evidence. Relevant frameworks are identified by type: the ITU GCI five-pillar benchmark; reference defensive standards (NIST CSF 2.0, ISO/IEC 27001 and 27035, FIRST CSIRT Services Framework); Nepal's own instruments (National Cyber Security Policy 2080, Electronic Transactions Act 2063, Individual Privacy Act 2075, NTA and NRB sector rules); and comparator incident-reporting regimes (EU NIS2, India CERT-In directions). Most primary documents were NOT located as URLs in r1 and are listed under unlocated_documents with the exact data required; titles are recorded from domain knowledge and must be verified.",
+      "benchmark_dimensions": [
+        {
+          "dimension": "ITU GCI pillars",
+          "status": "pending",
+          "lead_ids": [
+            "24D-L01",
+            "24D-L02"
+          ]
+        },
+        {
+          "dimension": "national CERT/CSIRT existence and mandate",
+          "status": "pending",
+          "lead_ids": [
+            "24D-L05"
+          ]
+        },
+        {
+          "dimension": "sector incident-reporting obligations (telecom, finance, government, energy)",
+          "status": "pending",
+          "lead_ids": [
+            "24D-L04"
+          ]
+        },
+        {
+          "dimension": "data protection and breach notification",
+          "status": "pending",
+          "lead_ids": [
+            "24D-L07"
+          ]
+        },
+        {
+          "dimension": "critical digital infrastructure resilience (GIDC, international gateways, data centres)",
+          "status": "pending",
+          "lead_ids": [
+            "24D-L06",
+            "24D-L07"
+          ]
+        },
+        {
+          "dimension": "standards adoption (NIST CSF 2.0, ISO/IEC 27001)",
+          "status": "pending",
+          "lead_ids": []
+        }
+      ],
+      "unlocated_documents": [
+        {
+          "document": "ITU Global Cybersecurity Index 2024 (fifth edition) report and Nepal country profile",
+          "candidate_source_id": "itu",
+          "data_required": "GCI tier/score overall and by the five pillars (legal, technical, organisational, capacity development, cooperation) for Nepal and South Asian comparators; edition year and questionnaire reference period",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "ITU GCI methodology/questionnaire documentation",
+          "candidate_source_id": "itu",
+          "data_required": "Indicator definitions; self-reported vs validated evidence; comparability across editions (2017, 2018, 2020, 2024 methods differ)",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "NIST Cybersecurity Framework 2.0 (NIST CSWP 29, 2024)",
+          "candidate_source_id": "academic",
+          "data_required": "Govern/Identify/Protect/Detect/Respond/Recover functions; basis for a defensive capability checklist",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "ISO/IEC 27001:2022 and ISO/IEC 27035 (incident management)",
+          "candidate_source_id": "academic",
+          "data_required": "Information-security management and incident-management standards; certification counts in Nepal (ISO Survey)",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "FIRST CSIRT Services Framework and ITU national CIRT assessment/establishment guidance",
+          "candidate_source_id": "itu",
+          "data_required": "Reference model for national CERT capability",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "Nepal National Cyber Security Policy 2080 (2023)",
+          "candidate_source_id": "lawcommission_nepal",
+          "data_required": "Institutional mandate (national cyber security centre), incident-reporting duties, critical infrastructure designation",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "Nepal Electronic Transactions Act 2063 (2008) and the Individual Privacy Act 2075 (2018)",
+          "candidate_source_id": "lawcommission_nepal",
+          "data_required": "Legal basis for cyber offences, data protection and breach handling",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "NTA Cyber Security Byelaw (telecom licensees) and NRB IT/cyber-resilience guidelines for banks and payment providers",
+          "candidate_source_id": "nrb",
+          "data_required": "Sector incident-reporting timelines and audit requirements (telecom and finance)",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "Nepal national CERT (npCERT or government CERT) establishment documents and annual incident statistics",
+          "candidate_source_id": null,
+          "data_required": "Existence, mandate, FIRST/APCERT membership and incident counts",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "Comparator incident-reporting regimes: EU NIS2 Directive; India CERT-In Directions (2022)",
+          "candidate_source_id": null,
+          "data_required": "Reporting deadlines and scope used as benchmarks; India regime relevant because of cross-border connectivity dependence",
+          "status": "unlocated - verify title and locate URL in r2"
+        },
+        {
+          "document": "Council of Europe Budapest Convention signature/ratification list",
+          "candidate_source_id": null,
+          "data_required": "Whether Nepal is party or observer - cooperation pillar",
+          "status": "unlocated - verify title and locate URL in r2"
+        }
+      ],
+      "comparators": [
+        "India",
+        "Bangladesh",
+        "Sri Lanka",
+        "Bhutan",
+        "LDC group median"
+      ],
+      "scope_note": "defensive only",
+      "feeds": {
+        "external_variable": "X36 (16A)",
+        "model_variables": [
+          "services_exports"
+        ],
+        "scenario": "S03",
+        "supporting": "24C"
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "24D-L01",
+      "url": "https://datahub.itu.int/indicators/",
+      "title": "ITU DataHub - Indicator catalogue",
+      "publisher": "International Telecommunication Union",
+      "source_id": "itu",
+      "contains": "Catalogue of ITU indicators incl. the 'trust' and governance domain; used to identify the Global Cybersecurity Index (GCI) indicator code, pillar sub-indicators and editions available for Nepal and comparators.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24D-L02",
+      "url": "https://datahub.itu.int/about/",
+      "title": "ITU DataHub - About",
+      "publisher": "International Telecommunication Union",
+      "source_id": "itu",
+      "contains": "Coverage and data-collection method of ITU DataHub (questionnaires to national administrations); needed to interpret self-reported vs verified status of cyber indicators.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24D-L03",
+      "url": "https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/",
+      "title": "ITU Measuring Digital Development: Facts and Figures 2025",
+      "publisher": "International Telecommunication Union",
+      "source_id": "itu",
+      "contains": "Connectivity context (internet use, affordability, 5G coverage) by income group and LDCs, calendar 2025; defines the attack surface growth context, not cyber posture itself.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24D-L04",
+      "url": "https://dig.watch/resource/the-it-policy-of-the-nepal-telecommunications-authority-nta-2080-2023",
+      "title": "The IT Policy of the Nepal Telecommunications Authority (NTA), 2080 (2023)",
+      "publisher": "Digital Watch Observatory (repository of NTA document)",
+      "source_id": null,
+      "contains": "Nepal telecom regulator IT policy text; check provisions on information security, incident handling and reporting obligations for licensees. Primary copy to be retrieved from nta.gov.np.",
+      "evidence_grade": "policy_document"
+    },
+    {
+      "lead_id": "24D-L05",
+      "url": "https://dhulikhelmun.gov.np/sites/dhulikhelmun.gov.np/files/documents/ICT%20policy%20Nepal.pdf",
+      "title": "National Information and Communication Technology Policy, 2015 (Nepal) - hosted copy",
+      "publisher": "Government of Nepal (hosted copy)",
+      "source_id": null,
+      "contains": "Policy section on cyber security measures and institutional arrangements (e.g. national CERT intentions); baseline for tracking later cyber policy.",
+      "evidence_grade": "policy_document"
+    },
+    {
+      "lead_id": "24D-L06",
+      "url": "https://nitc.gov.np/aboutus/introduction",
+      "title": "National Information Technology Center - Introduction",
+      "publisher": "National Information Technology Center, Government of Nepal",
+      "source_id": null,
+      "contains": "Operator of the Government Integrated Data Center and government cloud - a critical digital infrastructure asset; locator for its security and disaster-recovery arrangements.",
+      "evidence_grade": "official"
+    },
+    {
+      "lead_id": "24D-L07",
+      "url": "https://kathmandupost.com/national/2026/04/27/nepal-wants-to-become-a-data-centre-hub-it-has-no-rules-for-how",
+      "title": "Nepal wants to become a data centre hub. It has no rules for how (Kathmandu Post, 27 Apr 2026)",
+      "publisher": "Kathmandu Post",
+      "source_id": null,
+      "contains": "Secondary report on absence of data-centre rules incl. data protection/localisation; locator only.",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24D-L08",
+      "url": "https://arxiv.org/pdf/2607.14782",
+      "title": "Global Index on Responsible AI: 2026 Report (arXiv)",
+      "publisher": "arXiv",
+      "source_id": "academic",
+      "contains": "Country governance indicators on responsible AI incl. data protection dimensions; check Nepal coverage and method. Not a cybersecurity benchmark; lower grade.",
+      "evidence_grade": "preprint"
+    }
+  ]
+}

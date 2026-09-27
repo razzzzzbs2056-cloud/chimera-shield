@@ -1,0 +1,386 @@
+{
+  "subagent_id": "17B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). The session's web-search budget was exhausted during 17A and every data/reference host tested (mofa.gov.np, bimstec.org, tadb.unescap.org, wikipedia) is blocked, so no China-specific document-level URL could be located; ten leads are recorded (MoFA Nepal, MOFCOM, Nepal customs and its FY2022/23 trade book, NTIP agreement register, NITDB, UN Comtrade mirror data, World Bank CEM 2025, and ICIMOD's 2026 Kyirong-Rasuwa flood note). Q1 (Chinese policies governing Tibet-Nepal border trade and connectivity): six watchlist areas are defined (transit transport agreement and protocol, BRI framework(s), cross-border railway study, northern border-port operations, China's LDC tariff treatment and post-graduation fate, TAR border-trade rules); instruments are named as documents to locate and all statuses are pending. Q2 (status of connectivity frameworks): a six-row status table is set up with evidence requirements; no status is asserted. No numbers are recorded.",
+  "findings": [
+    {
+      "claim": "Q1: Chinese and bilateral instruments governing Tibet-Nepal border trade and connectivity are listed in specific.policy_watchlist; texts not retrieved and statuses unassigned.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "mofcom"
+      ],
+      "note": "Requires document-level URLs from MoFA Nepal, MOFCOM, Chinese MFA and TAR authorities; locate in r2 when search/network is available."
+    },
+    {
+      "claim": "Q2: Documented status of each bilateral connectivity framework (transit transport, BRI, Trans-Himalayan network, railway, border ports, power) is pending.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofa_nepal",
+        "nitdb",
+        "customs_nepal"
+      ],
+      "note": "See specific.connectivity_status.frameworks[].evidence_needed."
+    },
+    {
+      "claim": "Nepal trade with China by customs office (northern points vs overseas/other routes) for FY2022/23 onward.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal"
+      ],
+      "note": "Customs FY trade books and monthly office-level statistics (17B-L03, L04)."
+    },
+    {
+      "claim": "China-reported trade with Nepal (mirror data), calendar year, to compare with Nepal customs.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "un_comtrade"
+      ],
+      "note": "Comtrade reporter China, partner Nepal, HS2, latest years; differences due to CIF/FOB, timing, transit attribution and FY-vs-CY must be documented, not netted."
+    },
+    {
+      "claim": "Dates and duration of 2026 northern border-crossing disruption linked to the Kyirong-Rasuwa flood.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "icimod",
+        "customs_nepal"
+      ],
+      "note": "ICIMOD note (17B-L07) establishes the event; closure/reopening dates require customs or MoFA notices. Relevant to S05/S10; escalate to 15/28 once verified."
+    },
+    {
+      "claim": "China's tariff treatment of Nepal's exports and conditions after LDC graduation.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mofcom"
+      ],
+      "note": "Announcement text and coverage; coordinate with 26B/undesa_ldc on graduation timing."
+    },
+    {
+      "claim": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Announced connectivity projects are carried in scenarios only as options conditional on implementing records; they contribute no capacity to baseline transit or trade until evidenced.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No document-level lead for any Nepal-China agreement text (transit transport agreement/protocol, BRI framework(s), railway study agreements) - search budget exhausted and hosts blocked.",
+    "China customs (GACC) data on trade with Nepal - not in source catalog (see 16A).",
+    "TAR border-trade regulations and border-port operating notices.",
+    "Closure/reopening records for northern crossings, including 2026 events.",
+    "MOFCOM/Customs Tariff Commission announcement on LDC zero-tariff treatment and applicability after graduation.",
+    "Project-level status (financing, construction) for BRI-listed projects in Nepal (MoF/IBN)."
+  ],
+  "assumptions": [
+    {
+      "id": "17B-A1",
+      "text": "Status classes used throughout Agent 17 r1: OPERATIONAL (in force and evidenced in use by an implementing record), IN_FORCE_NOT_EVIDENCED_IN_USE, SIGNED_NOT_IN_FORCE (awaiting ratification or implementing instruments), AGREED_IN_PRINCIPLE_OR_ANNOUNCED (joint statement, minutes or press release only), PROPOSED (study, DPR or negotiation), LAPSED_OR_STALLED. A status is assigned only from a retrieved primary document (treaty text, gazette/notification, ratification record, implementing-agency record); news items only locate documents.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17B-A2",
+      "text": "Northern-route capacity enters scenarios only via evidenced operating status; announced projects are options, not baseline.",
+      "basis": "assumption"
+    },
+    {
+      "id": "17B-A3",
+      "text": "Chinese statistics are calendar-year; Nepal customs are Nepal FY; mirror comparisons use monthly data where available.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "00A",
+      "text": "Source catalog lacks ids for China's Ministry of Foreign Affairs, General Administration of Customs (GACC) and Customs Tariff Commission; add them before r2 so 17B leads can carry catalog ids."
+    },
+    {
+      "to": "16A",
+      "text": "X10 combines trade, connectivity and border operations; suggest splitting into (a) border-point operating status/disruption events and (b) announced connectivity projects, because they carry different evidence standards (operating record vs announcement)."
+    },
+    {
+      "to": "21B",
+      "text": "Treat northern-route transit capacity as zero-by-default in baseline transit modelling until 17B supplies an operating record; announced routes are scenario options only."
+    }
+  ],
+  "uncertainty": "Very high for r1: no China-specific primary document was located or retrieved. The instrument list itself is provisional (named from domain knowledge, flagged for verification) and could omit newer instruments signed in 2025-2026. Border trade values and disruption durations are unknown.",
+  "specific": {
+    "policy_watchlist": {
+      "status": "pending",
+      "method": "Dated register of Chinese and bilateral instruments with status per 17B-A1 once primary texts are retrieved; border-trade effect measured from Nepal customs office-level data and China mirror data.",
+      "entries": [
+        {
+          "item": "Nepal-China agreement on transit transport and its implementing protocol (access to Chinese seaports and land ports)",
+          "domain": "transit",
+          "status": "pending",
+          "provisional_class": null,
+          "note": "Instrument named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "leads": [
+            "17B-L01",
+            "17B-L05"
+          ],
+          "data_required": "Text of agreement and protocol; dates of signature and entry into force; any record of cargo moving under it (NITDB/customs)",
+          "variables": [
+            "X08",
+            "X10"
+          ]
+        },
+        {
+          "item": "Belt and Road cooperation framework(s) between Nepal and China and project lists attached to them",
+          "domain": "connectivity/investment",
+          "status": "pending",
+          "provisional_class": null,
+          "note": "Instrument named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "leads": [
+            "17B-L01",
+            "17B-L02"
+          ],
+          "data_required": "Framework texts; list of projects and their stage (study, DPR, financing agreement, construction, completed) from MoF/IBN/MoFA records",
+          "variables": [
+            "X10"
+          ]
+        },
+        {
+          "item": "Cross-border railway (Kerung-Kathmandu) study stage",
+          "domain": "connectivity",
+          "status": "pending",
+          "provisional_class": null,
+          "note": "Instrument named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "leads": [
+            "17B-L01"
+          ],
+          "data_required": "Official record of study agreements and completion of feasibility work; no construction status can be claimed without an implementing record",
+          "variables": [
+            "X10"
+          ]
+        },
+        {
+          "item": "Operating status of northern border ports (Rasuwagadhi-Kerung, Tatopani-Zhangmu and other designated crossings): openings, closures, hours",
+          "domain": "border operations",
+          "status": "pending",
+          "provisional_class": null,
+          "note": "2026 Kyirong-Rasuwa flood documented by ICIMOD (lead 17B-L07); closure dates and reopening must come from customs/MoFA/Chinese authorities",
+          "leads": [
+            "17B-L03",
+            "17B-L07",
+            "17B-L04"
+          ],
+          "data_required": "Dated closure/reopening notices; monthly trade by customs office Nepal FY2022/23-FY2025/26",
+          "variables": [
+            "X10",
+            "X18"
+          ]
+        },
+        {
+          "item": "China tariff treatment for Nepal as an LDC (duty-free coverage) and its fate after LDC graduation",
+          "domain": "trade preferences",
+          "status": "pending",
+          "provisional_class": null,
+          "note": "Instrument named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "leads": [
+            "17B-L02"
+          ],
+          "data_required": "MOFCOM/Customs Tariff Commission announcement text; effective date; product coverage; eligibility conditions post-graduation",
+          "variables": [
+            "X11"
+          ]
+        },
+        {
+          "item": "Tibet Autonomous Region border-trade rules (border residents' trade, border trade markets)",
+          "domain": "border trade",
+          "status": "pending",
+          "provisional_class": null,
+          "note": "Instrument named from general domain knowledge as a document to locate; no lead located in r1 (web-search budget exhausted, data hosts blocked); existence, title and date must be verified from the primary text.",
+          "leads": [
+            "17B-L02"
+          ],
+          "data_required": "TAR/Chinese customs regulations on border trade with Nepal; border trade statistics",
+          "variables": [
+            "X10"
+          ]
+        }
+      ]
+    },
+    "connectivity_status": {
+      "status": "pending",
+      "question": "Q2 What is the documented status of bilateral connectivity frameworks?",
+      "method": "For each framework: record signature date, entry-into-force/implementation record and project stage using the status classes in 17B-A1; a joint statement alone yields at most AGREED_IN_PRINCIPLE_OR_ANNOUNCED.",
+      "frameworks": [
+        {
+          "framework": "Transit transport agreement and protocol",
+          "status_class": "pending",
+          "evidence_needed": "text + cargo movement record",
+          "leads": [
+            "17B-L01",
+            "17B-L05",
+            "17B-L10"
+          ]
+        },
+        {
+          "framework": "Belt and Road cooperation framework(s)",
+          "status_class": "pending",
+          "evidence_needed": "framework text + project-level financing/construction records",
+          "leads": [
+            "17B-L01",
+            "17B-L02",
+            "17B-L09"
+          ]
+        },
+        {
+          "framework": "Trans-Himalayan connectivity network (road, rail, power, communications components)",
+          "status_class": "pending",
+          "evidence_needed": "joint statements establishing announcement; component-level implementing records",
+          "leads": [
+            "17B-L01"
+          ]
+        },
+        {
+          "framework": "Cross-border railway",
+          "status_class": "pending",
+          "evidence_needed": "study agreement and study completion records",
+          "leads": [
+            "17B-L01"
+          ]
+        },
+        {
+          "framework": "Northern border ports and roads (Kerung-Rasuwagadhi, Tatopani-Zhangmu, others)",
+          "status_class": "pending",
+          "evidence_needed": "operating notices; customs trade by office",
+          "leads": [
+            "17B-L03",
+            "17B-L04",
+            "17B-L07"
+          ]
+        },
+        {
+          "framework": "Cross-border power transmission with China",
+          "status_class": "pending",
+          "evidence_needed": "agreement/study records (none located)",
+          "leads": []
+        }
+      ]
+    },
+    "supporting_variables": {
+      "X08": {
+        "role": "supporting",
+        "contribution": "Northern transit route availability",
+        "status": "pending",
+        "leads": [
+          "17B-L01",
+          "17B-L05",
+          "17B-L10"
+        ]
+      },
+      "X10": {
+        "role": "primary",
+        "contribution": "China trade, connectivity and northern border operations",
+        "status": "pending",
+        "leads": [
+          "17B-L01",
+          "17B-L02",
+          "17B-L03",
+          "17B-L04",
+          "17B-L07",
+          "17B-L08"
+        ]
+      },
+      "X13": {
+        "role": "supporting",
+        "contribution": "Chinese outbound-travel policy affecting arrivals (no lead)",
+        "status": "pending",
+        "leads": []
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "17B-L01",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - bilateral relations (China) and treaty/joint-statement archive",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Landing page only (document-level URL not located in r1): Nepal-China joint statements, press releases on agreements signed during high-level visits, bilateral mechanism meetings; Nepal-side status source for transit, BRI and connectivity instruments"
+    },
+    {
+      "lead_id": "17B-L02",
+      "url": "https://english.mofcom.gov.cn",
+      "title": "Ministry of Commerce, PRC - trade and investment policy releases",
+      "publisher": "Ministry of Commerce, People's Republic of China",
+      "source_id": "mofcom",
+      "contains": "Landing page only: China-side announcements on tariff treatment for LDCs, border trade and economic cooperation with Nepal; document-level URLs to locate"
+    },
+    {
+      "lead_id": "17B-L03",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs, Nepal - trade statistics by customs office",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Landing page: trade by partner and by customs office (northern points such as Rasuwa and Tatopani offices), monthly/annual, Nepal FY; needed to measure border-point throughput and closures"
+    },
+    {
+      "lead_id": "17B-L04",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Annual trade book FY2022/23: trade with China by HS chapter and by customs office; baseline for northern border trade (located earlier by 16B)"
+    },
+    {
+      "lead_id": "17B-L05",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Trade and Export Promotion Centre / MoICS, Nepal",
+      "source_id": "tepc",
+      "contains": "Portal with trade agreements register, border-point procedures and trade statistics; locate China agreements (transit transport, border trade) in the agreement register"
+    },
+    {
+      "lead_id": "17B-L06",
+      "url": "https://nepaltradeportal.gov.np/trade-agreement?p_p_id=utilportlet_WAR_tepc&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_utilportlet_WAR_tepc_param=getDetail&id=306",
+      "title": "Trade Agreement detail page (NTIP, id=306)",
+      "publisher": "Nepal Trade Information Portal",
+      "source_id": "tepc",
+      "contains": "Agreement detail page surfaced in a search for India trade treaty texts; confirms the register's detail-page format; the register must be browsed for China entries"
+    },
+    {
+      "lead_id": "17B-L07",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Event note on the 2026 cross-border flood at the Kerung/Kyirong-Rasuwagadhi corridor: hazard mechanism, affected infrastructure; needed for border-crossing disruption record (date, duration)"
+    },
+    {
+      "lead_id": "17B-L08",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus - China-reported trade with Nepal",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "China-reported (mirror) exports to and imports from Nepal by HS, calendar year; compare with Nepal customs (FY) and document CIF/FOB and timing differences"
+    },
+    {
+      "lead_id": "17B-L09",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "CEM (located earlier by another agent); to check for chapters on trade connectivity and northern corridors; interpretation only"
+    },
+    {
+      "lead_id": "17B-L10",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "Landing page: dry ports and ICDs incl. any northern facilities; cargo statistics by facility (to verify northern coverage)"
+    }
+  ]
+}

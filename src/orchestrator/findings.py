@@ -5,6 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from src.common import CONFIG_DIR, load_json
+from src.economic_model.units import UnitError, parse_unit
 from src.research.observations import ObservationStore
 
 FINDING_TYPES = {"fact", "estimate", "assumption", "pending"}
@@ -47,6 +48,11 @@ def validate_finding(doc: dict, store: ObservationStore | None = None) -> list[s
                     problems.append(f"finding {i}: observation {oid} not in store")
             if fnd.get("value") is not None and not fnd.get("unit"):
                 problems.append(f"finding {i}: value without unit")
+        if fnd.get("unit"):
+            try:
+                parse_unit(fnd["unit"])
+            except UnitError as exc:
+                problems.append(f"finding {i}: {exc} (see src/economic_model/units.py)")
         if t == "pending" and fnd.get("value") is not None:
             problems.append(f"finding {i}: pending finding carries a value")
     if not str(doc.get("uncertainty", "")).strip():

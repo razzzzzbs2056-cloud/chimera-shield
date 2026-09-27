@@ -30,7 +30,7 @@
       ],
       "observation_ids": [],
       "note": "Requires `python -m src.cli leads --fetch` for the listed lead URLs, extraction of the named tables and ingest as observations in r2.",
-      "unit": "usd_million",
+      "unit": "USD_current_mn",
       "period": "calendar year (UNCTAD) / Nepal FY (NRB, DoI) - keep separate"
     },
     {

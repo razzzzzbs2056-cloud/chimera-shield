@@ -14,8 +14,9 @@ Money:   ``{CUR}_{BASIS}[_{SCALE}]``
          SCALE = k | mn | bn | tn | crore | arba   (omitted = units)
          e.g. ``NPR_current_mn``, ``USD_current_bn``, ``NPR_const2010_mn``
 Rates:   ``NPR_per_USD``, ``NPR_per_INR``, ``INR_per_USD``
-Other:   ``percent``, ``ratio``, ``index``, ``persons``, ``persons_mn``,
-         ``persons_k``, ``GWh``, ``MW``, ``days``, ``months``, ``years``, ``count``
+Prices:  ``{CUR}_per_{kWh|MWh|GWh|tonne|litre|barrel|person|TEU}`` (current prices)
+Other:   ``percent``, ``percentage_points``, ``ratio``, ``index``, ``persons``, ``persons_mn``,
+         ``persons_k``, ``GWh``, ``MWh``, ``kWh``, ``MW``, ``m3_per_s``, ``tonnes``, ``days``, ``months``, ``years``, ``count``
 """
 
 from __future__ import annotations
@@ -36,15 +37,22 @@ CURRENCIES = {"NPR", "USD", "INR"}
 
 _MONEY_RE = re.compile(r"^(NPR|USD|INR)_(current|const\d{4})(?:_(k|mn|bn|tn|crore|arba))?$")
 _RATE_RE = re.compile(r"^(NPR|USD|INR)_per_(NPR|USD|INR)$")
+_PRICE_RE = re.compile(r"^(NPR|USD|INR)_per_(kWh|MWh|GWh|tonne|litre|barrel|person|TEU)$")
+_ENERGY_SCALE = {"kWh": 1e-6, "MWh": 1e-3, "GWh": 1.0}
 
 _SIMPLE = {
     "percent": ("percent", 1.0),
+    "percentage_points": ("percentage_points", 1.0),
     "ratio": ("ratio", 1.0),
     "index": ("index", 1.0),
     "persons": ("persons", 1.0),
     "persons_k": ("persons", 1e3),
     "persons_mn": ("persons", 1e6),
     "GWh": ("energy", 1.0),
+    "MWh": ("energy", 1e-3),
+    "kWh": ("energy", 1e-6),
+    "m3_per_s": ("discharge", 1.0),
+    "tonnes": ("mass", 1.0),
     "MW": ("power", 1.0),
     "months": ("time", 1.0 / 12.0),
     "years": ("time", 1.0),
@@ -83,6 +91,12 @@ def parse_unit(code: str) -> Unit:
         if m.group(1) == m.group(2):
             raise UnitError(f"degenerate exchange-rate unit {code!r}")
         return Unit(code, "fx_rate", 1.0, numerator=m.group(1), denominator=m.group(2))
+    m = _PRICE_RE.match(code)
+    if m:
+        # current-price unit price, e.g. INR_per_MWh; comparable across energy scales
+        per = m.group(2)
+        return Unit(code, f"price_per_{'energy' if per in _ENERGY_SCALE else per}",
+                    1.0 / _ENERGY_SCALE.get(per, 1.0), m.group(1), "current")
     if code in _SIMPLE:
         dim, scale = _SIMPLE[code]
         return Unit(code, dim, scale)
