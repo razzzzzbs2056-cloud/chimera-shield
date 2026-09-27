@@ -1,0 +1,291 @@
+{
+  "summary": "Round r1 (restricted network). Located primary sources for labour approvals by destination (MoLESS Nepal Labour Migration Report 2024 covering FY2022/23-FY2023/24; DoFE yearly progress reports for later FYs), GCC host-country stocks (GLMM database), and Census 2021 absentee stocks (the only official source that includes India). No values retrieved; destination concentration (HHI, top-k shares, GCC+Malaysia share) and sector/skill composition are pending. Two 2026 disruptions are flagged for verification from official texts: the DoFE suspension of labour approvals for Gulf/Middle East destinations from March 2026 with later partial resumption, and the Malaysia FWCMS recruitment-agency dispute (August-September 2026).",
+  "findings": [
+    {
+      "claim": "Q1: Labour approvals by destination (each GCC state and Malaysia), new vs re-entry, latest four Nepal FYs.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe"
+      ],
+      "observation_ids": [],
+      "note": "Required: DoFE country-wise approval counts FY2022/23-FY2025/26 (23A-L01, 23A-L02).",
+      "unit": "count",
+      "period": "FY2022/23-FY2025/26 (Nepal fiscal year, mid-July)"
+    },
+    {
+      "claim": "Q1: Destination concentration of labour approvals (HHI 0-10000; top-1 and top-3 shares; GCC+Malaysia share).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe"
+      ],
+      "observation_ids": [],
+      "note": "Computed from the counts above once ingested.",
+      "unit": "index",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q1: Sector / skill composition of approvals by destination.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe",
+        "glmm"
+      ],
+      "observation_ids": [],
+      "note": "Required: DoFE skill-level or occupation tabulation by country (if published in Labour Migration Report 2024); GLMM host-country employment by sector and nationality group. If DoFE does not tabulate sector by country, record as data gap.",
+      "unit": "percent",
+      "period": "Nepal FY / host-country calendar year"
+    },
+    {
+      "claim": "Q1: Migrant stock by destination including India (Census 2021 absentees) and GCC host-country counts of Nepali nationals.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal",
+        "glmm"
+      ],
+      "observation_ids": [],
+      "note": "Required: Census 2021 absent population by country (23A-L06); GLMM tables (23A-L04). Stock, not flow; different reference dates.",
+      "unit": "count",
+      "period": "Census 2021 reference date; host-country vintages"
+    },
+    {
+      "claim": "Q1 context: Effect of the 2026 suspension of approvals for Gulf/Middle East destinations on FY2025/26 approvals.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe"
+      ],
+      "observation_ids": [],
+      "note": "Required: official decision text (dates, destinations covered, re-entry vs new) and DoFE monthly approvals for FY2025/26. News leads 23A-L07/L08/L09 only locate the event.",
+      "unit": "count",
+      "period": "FY2025/26"
+    },
+    {
+      "claim": "Q1 context: Effect of Malaysia's 2026 FWCMS agency-listing dispute on approvals to Malaysia.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "dofe"
+      ],
+      "observation_ids": [],
+      "note": "Required: DoFE/MoLESS notice and Malaysian Ministry of Human Resources statement; monthly approvals to Malaysia.",
+      "unit": "count",
+      "period": "FY2025/26-FY2026/27"
+    },
+    {
+      "claim": "Labour approvals (flows) and absentee/host-country counts (stocks) are separate series and are never summed or converted without a documented attrition/return assumption.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Concentration is measured by HHI (unit index, 0-10000) and top-k shares (unit percent), computed separately for new approvals and re-entry approvals, following 16B-A1.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "DoFE country-wise approval tables for FY2024/25 and FY2025/26 not located as direct files (only the yearly-report archive page).",
+    "Sector/occupation of approvals by destination may not be published by DoFE; GLMM sector tables cover nationality groups rather than Nepal specifically for most GCC states.",
+    "India-bound migration is not captured by DoFE; only Census 2021 stock and NLSS IV household data exist.",
+    "Irregular migration via third countries (e.g. through India) is unrecorded in DoFE data.",
+    "Wage levels by destination and occupation: no official Nepal source located; host-country wage tables (e.g. GASTAT labour force survey for Saudi Arabia) not yet located as leads because the search budget was exhausted.",
+    "Official decision texts for the 2026 suspension and resumption were not located; only news reports."
+  ],
+  "assumptions": [
+    {
+      "id": "23A-A1",
+      "text": "Nepal fiscal year (mid-July to mid-July) is the basis for DoFE series; host-country series remain on their native calendar/census basis and are not converted.",
+      "basis": "assumption"
+    },
+    {
+      "id": "23A-A2",
+      "text": "Re-entry (renewal) approvals are reported separately because they reflect continued employment rather than new outflows.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "Agree with 16B challenge on EXP-02: India must be added as a stock-only counterparty; propose that EXP-02 value be defined as two metrics (flow HHI from DoFE, stock HHI from Census 2021) rather than one."
+    },
+    {
+      "to": "09",
+      "text": "Labour-supply parameters using DoFE approvals as 'emigration' will undercount India-bound and irregular migrants; use Census 2021 absentee stock for population accounting."
+    },
+    {
+      "to": "28",
+      "text": "The 2026 Gulf approval suspension and Malaysia agency dispute are candidate stress events for S01/S05-type scenarios; request red-team check once official texts are retrieved."
+    }
+  ],
+  "uncertainty": "High. No destination or sector values were retrieved in r1. The main structural uncertainty is coverage: DoFE excludes India and irregular migration, and GCC host-country data have mixed vintages and rarely break out Nepali nationals. 2026 disruptions are known only from news reports and are unverified.",
+  "source_leads": [
+    {
+      "lead_id": "23A-L01",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Nepal%20Labour%20Migration%202024_Final-Version%20for%20Approval%20(1)_peesvxa.pdf",
+      "title": "Nepal Labour Migration Report 2024",
+      "publisher": "Ministry of Labour, Employment and Social Security, Government of Nepal",
+      "source_id": "dofe",
+      "contains": "DoFE labour approvals (new entry and re-entry/renewal) by destination country, sex and, where tabulated, skill level/occupation group for Nepal FY2022/23 and FY2023/24 (mid-July basis); excludes India-bound migrants (no permit required)"
+    },
+    {
+      "lead_id": "23A-L02",
+      "url": "https://dofe.gov.np/yearly.aspx",
+      "title": "DoFE Yearly Progress Report archive",
+      "publisher": "Department of Foreign Employment, Nepal",
+      "source_id": "dofe",
+      "contains": "Annual labour-approval counts by destination country for later fiscal years (FY2024/25, FY2025/26), needed to cover the March-April 2026 Gulf/Middle East approval suspension and partial resumption"
+    },
+    {
+      "lead_id": "23A-L03",
+      "url": "https://www.scribd.com/document/850247409/Document-2024071711480",
+      "title": "Countrywise Labour Approval Report FY2080/81 (secondary copy of DoFE table)",
+      "publisher": "Department of Foreign Employment (re-hosted on Scribd)",
+      "source_id": "dofe",
+      "contains": "Country-wise labour approval table for FY2080/81 (2023/24). Secondary re-hosting: use only to locate the official DoFE original; do not ingest from this host"
+    },
+    {
+      "lead_id": "23A-L04",
+      "url": "https://gulfmigration.grc.net/glmm-database/demographic-and-economic-module/",
+      "title": "GLMM database - demographic and economic module",
+      "publisher": "Gulf Research Center, Gulf Labour Markets, Migration and Population programme",
+      "source_id": "glmm",
+      "contains": "GCC host-country tables: population and employed persons by nationality group and, where published by national statistics offices or embassies, Nepali nationals by country; mixed vintages, calendar-year or census reference dates"
+    },
+    {
+      "lead_id": "23A-L05",
+      "url": "https://gulfmigration.grc.net/publications/",
+      "title": "GLMM publications (explanatory notes and fact sheets)",
+      "publisher": "Gulf Research Center, GLMM",
+      "source_id": "glmm",
+      "contains": "Explanatory notes on labour-market segmentation, sectoral composition of foreign employment and legal framework per GCC state"
+    },
+    {
+      "lead_id": "23A-L06",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/124/related-materials",
+      "title": "National Population and Housing Census 2021 - related materials (incl. international migration thematic report)",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Census 2021 absent population abroad by destination country, sex, age and reason for absence (stock at census reference date) - needed to add India and to contrast flows with stocks"
+    },
+    {
+      "lead_id": "23A-L07",
+      "url": "https://kathmandupost.com/national/2026/03/18/over-2-000-nepali-denied-labour-permits-daily-as-tensions-persist-in-west-asia",
+      "title": "Kathmandu Post report on labour permits denied amid West Asia tensions (news, 18 March 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "News report of the DoFE suspension of labour approvals for Gulf/Middle East destinations from March 2026; lead to locate the official Government of Nepal / MoLESS decision text. Not evidence of magnitudes"
+    },
+    {
+      "lead_id": "23A-L08",
+      "url": "https://reviewnepal.com/business/nepal-resumes-re-entry-labour-permits-for-seven-countries-restrictions-persist-for-israel-and-lebanon.html",
+      "title": "Nepal resumes re-entry labour permits for seven countries (news)",
+      "publisher": "Review Nepal",
+      "source_id": "academic",
+      "contains": "News report on partial resumption of labour approvals (which destinations resumed, which remained suspended) in 2026; lead to the official Cabinet/MoLESS decision"
+    },
+    {
+      "lead_id": "23A-L09",
+      "url": "https://kathmandupost.com/national/2026/09/26/gulf-job-opportunities-are-narrowing-for-nepalis",
+      "title": "Gulf job opportunities are narrowing for Nepalis (news)",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "Reporting on post-suspension Gulf demand for Nepali workers (September 2026); lead to DoFE monthly approval data"
+    },
+    {
+      "lead_id": "23A-L10",
+      "url": "https://kathmandupost.com/money/2026/09/13/malaysia-labour-row-puts-nepali-jobs-at-risk",
+      "title": "Malaysia labour row puts Nepali jobs at risk (news)",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "Malaysia FWCMS recruitment-agency listing dispute (August-September 2026) and DoFE halt on demand-letter pre-approval via listed agencies; lead to official MoLESS/DoFE notice and Malaysian MOHR statement"
+    },
+    {
+      "lead_id": "23A-L11",
+      "url": "https://www.ilo.org/media/441711/download",
+      "title": "Labour Market Trends Analysis and Labour Migration from South Asia to GCC countries",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Sectoral composition of South Asian (incl. Nepali) employment in GCC states and demand drivers; vintage to be confirmed on retrieval"
+    },
+    {
+      "lead_id": "23A-L12",
+      "url": "https://www.ilo.org/sites/default/files/2025-11/GB355-INS-16-7-Saudi%20Arabia-EN.pdf",
+      "title": "ILO Governing Body 355th Session GB.355/INS/16/7 - Article 26 complaint concerning Saudi Arabia",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Official record of the complaint on migrant-worker protections in Saudi Arabia (November 2025); protection-regime evidence for the main destination"
+    }
+  ],
+  "specific": {
+    "destination_concentration": {
+      "status": "pending",
+      "value": null,
+      "metric_definitions": [
+        {
+          "metric": "hhi_labour_approvals_by_destination",
+          "unit": "index",
+          "scale": "0-10000",
+          "basis": "DoFE labour approvals (new + re-entry reported separately and combined) per Nepal FY"
+        },
+        {
+          "metric": "top1_top3_share_labour_approvals",
+          "unit": "percent",
+          "basis": "same as above"
+        },
+        {
+          "metric": "gcc_plus_malaysia_share_of_approvals",
+          "unit": "percent",
+          "basis": "same as above; GCC = Saudi Arabia, UAE, Qatar, Kuwait, Oman, Bahrain"
+        },
+        {
+          "metric": "sector_or_skill_distribution_by_destination",
+          "unit": "percent",
+          "basis": "DoFE skill/occupation tabulation where published; otherwise pending"
+        },
+        {
+          "metric": "stock_share_by_destination_incl_india",
+          "unit": "percent",
+          "basis": "Census 2021 absentees (stock); never merged with DoFE flows"
+        }
+      ],
+      "destinations_to_cover": [
+        "Saudi Arabia",
+        "United Arab Emirates",
+        "Qatar",
+        "Kuwait",
+        "Oman",
+        "Bahrain",
+        "Malaysia",
+        "India (stock only; not in DoFE)",
+        "Other (Japan, Republic of Korea, Romania, Croatia, others as tabulated)"
+      ],
+      "periods_required": [
+        "FY2022/23",
+        "FY2023/24",
+        "FY2024/25",
+        "FY2025/26 (mid-July basis; flag March-April 2026 suspension months)"
+      ],
+      "method": "Download DoFE tables (23A-L01, 23A-L02), ingest counts by country and FY via ingest-csv, compute shares and HHI separately for new approvals and re-entry; add GLMM host-country stocks (23A-L04) and Census 2021 absentees (23A-L06) as separate stock series; document vintages and fiscal vs calendar basis.",
+      "lead_ids": [
+        "23A-L01",
+        "23A-L02",
+        "23A-L04",
+        "23A-L05",
+        "23A-L06",
+        "23A-L11"
+      ],
+      "exposure_register_link": "EXP-02 (owner 23A); proposed EXP-P03 (India open-border stock) from 16B",
+      "shock_context_pending_verification": "2026 Gulf/Middle East approval suspension and partial resumption; 2026 Malaysia FWCMS agency dispute. Dates and scope to be verified from official texts (23A-L07, 23A-L08, 23A-L10 are news leads only)."
+    }
+  },
+  "subagent_id": "23A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00"
+}

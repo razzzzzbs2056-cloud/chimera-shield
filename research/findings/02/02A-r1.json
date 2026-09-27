@@ -1,0 +1,441 @@
+{
+  "subagent_id": "02A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): primary documents located for Nepal's federal revenue composition (MoF Economic Surveys 2022/23 English, 2023/24 English, 2081/82 and 2082/83 Nepali; Budget Speech FY2082/83; Domestic Revenue Mobilization Strategy FY2024/25-2028/29), outturn on an accounting basis (FCGO Consolidated Financial Statements FY2022/23 and FY2023/24; FCGO RMIS), cash-basis government finance (NRB Current Macroeconomic and Financial Situation, annual 2024/25), import-stage revenue (Department of Customs Foreign Trade Statistics), external assessments (IMF 2026 Article IV and ECF reviews, World Bank PER and Nepal Fiscal Dashboard, WDI tax/GDP) and incidence inputs (NLSS-IV, WB tax-progressivity method papers). No file could be downloaded and snippet figures were not used, so every empirical item is pending. Qualitatively: revenue must be measured on both gross-federal and post-sharing bases; import-stage dependence requires separating customs-collected VAT and excise from IRD-collected domestic taxes; no Nepal VAT-gap estimate or confirmed fiscal-incidence study was located in r1.",
+  "findings": [
+    {
+      "claim": "Q1: Federal revenue by tax head (income tax, VAT, customs/import duty, excise, other tax, non-tax revenue; grants shown separately), annual actuals",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "fcgo",
+        "nrb"
+      ],
+      "note": "Economic Survey statistical appendix (2022/23 English, 2081/82 and 2082/83 Nepali) and FCGO CFS FY2022/23-FY2023/24 revenue tables. Record gross federal collection and post-sharing retained revenue separately. Nepali FY (mid-July).",
+      "unit": "NPR_current_bn",
+      "period": "FY2014/15-FY2081/82"
+    },
+    {
+      "claim": "Q1: Tax revenue and total revenue as % of nominal GDP (fiscal-year GDP), annual",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "imf_article_iv",
+        "wb_wdi"
+      ],
+      "note": "Compute from revenue by head and NSO fiscal-year nominal GDP (same vintage). Keep MoF, IMF and WDI ratios as separate observations; check GDP vintage/rebasing and whether WDI labels FY by ending calendar year.",
+      "unit": "percent",
+      "period": "FY2014/15-FY2081/82"
+    },
+    {
+      "claim": "Q1: Trend in revenue composition (shares of each head in tax revenue) since federalisation",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "fcgo"
+      ],
+      "note": "Derived from the revenue-by-head series once observed; state break at FY2017/18-FY2018/19 when revenue sharing with provinces and local levels began.",
+      "unit": "percent",
+      "period": "FY2014/15-FY2081/82"
+    },
+    {
+      "claim": "Q2: Revenue collected at the import stage (customs duty, VAT on imports, excise on imports, other border levies) as share of federal tax revenue",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "fcgo",
+        "mof_nepal"
+      ],
+      "note": "Department of Customs annual reports / Foreign Trade Statistics revenue tables by head and FCGO RMIS by collecting office. Requires customs-collected VAT and excise separate from IRD-collected domestic VAT/excise.",
+      "unit": "percent",
+      "period": "FY2018/19-FY2081/82"
+    },
+    {
+      "claim": "Q2: Elasticity/sensitivity of total revenue to merchandise import value",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "customs_nepal",
+        "nrb",
+        "imf_article_iv"
+      ],
+      "note": "Regression of import-stage revenue on import value (NPR, customs basis) with NRB import series; IMF staff reports may contain a published elasticity. Method only in r1.",
+      "unit": "ratio",
+      "period": "FY2010/11-FY2081/82"
+    },
+    {
+      "claim": "Q2: VAT gap (compliance and policy gap) estimates for Nepal",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "imf_article_iv",
+        "mof_nepal",
+        "academic"
+      ],
+      "note": "No published Nepal RA-GAP estimate located in r1. Check DRMS 2081 annexes, IMF Article IV/Selected Issues and TADAT report. If none exists, gap estimation requires sectoral value added (NSO) and VAT collections by sector (IRD); record as pending, do not estimate.",
+      "unit": "percent"
+    },
+    {
+      "claim": "Q2: C-efficiency of VAT (VAT revenue / (standard rate x final consumption))",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "nso_nepal",
+        "academic"
+      ],
+      "note": "Computable from VAT revenue (MoF/FCGO), statutory standard rate (Finance Act) and NSO final consumption expenditure (FY basis). Academic series (NPPR) kept separate as cross-check.",
+      "unit": "ratio",
+      "period": "FY2000/01-FY2081/82"
+    },
+    {
+      "claim": "Q3: Documented distributional incidence of VAT, excise, customs duty and income tax by consumption quintile",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "wb_npl",
+        "nso_nepal",
+        "academic"
+      ],
+      "note": "No Nepal CEQ/fiscal-incidence study confirmed in r1. Candidate sources: World Bank P177543 'Taxes, Spending and Equity' (country scope unverified), PRWP 10460 (method), ActionAid Fair Tax Monitoring 2021 (independent). Primary modelling input: NLSS-IV 2022/23 consumption microdata.",
+      "unit": "percent",
+      "period": "2022/23"
+    },
+    {
+      "claim": "Q3: Tax expenditures (revenue forgone) by tax and beneficiary type",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "imf_article_iv"
+      ],
+      "note": "IMF 2026 Article IV references publication of a tax expenditure report; exact MoF document not yet located. Need tax expenditure report tables by tax head and provision.",
+      "unit": "NPR_current_bn"
+    },
+    {
+      "claim": "Import-stage revenue share will be measured on a gross-collection basis (before VAT/excise sharing with sub-national governments) and reported alongside the retained-federal basis.",
+      "type": "assumption",
+      "value": null,
+      "note": "Methodological choice; the two bases differ because IGFA Act shares VAT and domestic excise with provinces and local levels."
+    },
+    {
+      "claim": "No VAT-gap or incidence number will be produced by 02A in r2 unless a primary published estimate or the required microdata/sectoral data are retrieved.",
+      "type": "assumption",
+      "value": null,
+      "note": "Evidence rule 2; avoids substituting a modelled guess."
+    }
+  ],
+  "data_gaps": [
+    "Revenue by tax head, FY2014/15-FY2081/82, from Economic Survey appendix and FCGO CFS (downloads blocked).",
+    "Economic Survey 2024/25 (2081/82) English edition URL not located; Nepali edition located.",
+    "Department of Customs annual report / Foreign Trade Statistics for FY2080/81 and FY2081/82 (revenue by head at border) not located; only FY2079/80 edition located.",
+    "Inland Revenue Department annual reports (domestic VAT, excise, income tax by source; taxpayer registration and filing) not located - search budget exhausted in r1.",
+    "MoF Tax Expenditure Report (referenced by IMF 2026 Article IV) - document not located.",
+    "Any published VAT gap (RA-GAP or consumption-based) for Nepal - none located.",
+    "Nepal-specific fiscal incidence (CEQ) study - none confirmed; WB P177543 country scope unverified.",
+    "NLSS-IV 2022/23 household consumption microdata (NSO microdata catalogue access) for incidence modelling.",
+    "TADAT performance assessment report for Nepal IRD - publication status unknown.",
+    "Nominal GDP (fiscal-year, current vintage) denominator from NSO/Agent 01 for revenue-to-GDP ratios."
+  ],
+  "assumptions": [
+    {
+      "id": "02A-A1",
+      "text": "All revenue series are on Nepali fiscal years (Shrawan-Ashadh, mid-July to mid-July); calendar-year international series (e.g. WDI) are not mixed without a documented FY mapping.",
+      "basis": "assumption (CLAUDE.md rule 6)"
+    },
+    {
+      "id": "02A-A2",
+      "text": "FCGO audited/consolidated statements are preferred for outturn; Economic Survey figures for the current year (partial-year actuals plus estimates) are recorded as separate, preliminary observations.",
+      "basis": "assumption (source hierarchy and vintage control)"
+    },
+    {
+      "id": "02A-A3",
+      "text": "Import-stage revenue is defined as all revenue collected by customs offices (customs duty, VAT on imports, excise on imports, other border levies), reported gross and after sharing.",
+      "basis": "assumption (definition)"
+    },
+    {
+      "id": "02A-A4",
+      "text": "Grants are excluded from revenue-composition shares and reported separately.",
+      "basis": "assumption (GFS convention)"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "01",
+      "text": "Revenue-to-GDP ratios need a single fiscal-year nominal GDP series with stated NSO vintage/base year; please confirm which vintage the baseline uses so 02A, IMF and WDI ratios can be reconciled."
+    },
+    {
+      "to": "11C",
+      "text": "Revenue-sharing rules (VAT and domestic excise under the IGFA Act, and NNRFC recommendations) determine federal retained revenue; 02A will use 11C's statutory mapping - please confirm article/section references when retrieved."
+    },
+    {
+      "to": "02C",
+      "text": "Debt-sustainability simulations must not assume revenue gains from DRMS measures until the measure-level costing in the DRMS and IMF reports is retrieved; revenue path should also be stressed for import compression, given import-stage dependence."
+    },
+    {
+      "to": "15",
+      "text": "Circulating press and search-snippet figures on customs share of revenue and capital-budget execution are not retrieved evidence and should not be accepted in any strategy claim until matched to FCGO/Customs primary tables."
+    }
+  ],
+  "uncertainty": "High: no primary document was retrieved in r1, so no empirical value is recorded. Known methodological risks: (i) gross vs post-sharing federal revenue; (ii) MoF, FCGO and NRB (cash basis) presentations differ in coverage and timing; (iii) current-year Economic Survey values are partial-year estimates; (iv) GDP rebasing/vintage changes alter revenue/GDP ratios; (v) WDI and IMF may label fiscal years differently from MoF; (vi) customs-collected VAT and excise must be separated from domestic collections to measure import dependence; (vii) incidence results depend on consumption-survey microdata and shifting assumptions.",
+  "specific": {
+    "revenue_composition_table": {
+      "status": "pending",
+      "method": "Table of federal revenue by head (income tax, VAT split import-stage/domestic, customs duty, excise split import/domestic, other taxes, non-tax revenue; grants separate), FY2014/15-FY2081/82, NPR_current_bn and percent of FY nominal GDP; gross collection and post-sharing retained columns; each cell cites an observation id. Primary: Economic Survey appendix; cross-check FCGO CFS and NRB cash-basis table; IMF staff-report table kept as separate observation.",
+      "unit": "NPR_current_bn",
+      "period": "FY2014/15-FY2081/82 (Nepali fiscal years)",
+      "leads": [
+        "https://mof.gov.np/content/299/my-slug2/",
+        "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+        "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+        "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+        "https://giwmscdntwo.gov.np/media/pdf_upload/20240725124752_cfs2022-2023_q53t9je.pdf",
+        "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+        "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+        "https://www.imf.org/en/Publications/CR/Issues/2025/10/06/Nepal-Sixth-Review-Under-the-Extended-Credit-Facility-Arrangement-Press-Release-Staff-570974",
+        "https://www.worldbank.org/en/data/interactive/2026/02/10/nepal-fiscal-dashboard",
+        "https://data.worldbank.org/indicator/GC.TAX.TOTL.GD.ZS?locations=NP"
+      ]
+    },
+    "import_tax_dependence": {
+      "status": "pending",
+      "method": "(a) share of import-stage revenue in federal tax revenue, gross and after sharing; (b) elasticity of import-stage revenue to NPR import value; (c) VAT C-efficiency and any published VAT gap (RA-GAP method if a primary estimate exists). Stress-test note for 02C: revenue path under import compression.",
+      "unit": "percent",
+      "period": "FY2018/19-FY2081/82",
+      "leads": [
+        "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+        "https://customs.gov.np",
+        "https://newrmis.fcgo.gov.np/",
+        "https://giwmscdnone.gov.np/media/pdf_upload/1728205045_DRMS%20Final%20Report%20English%202081.05.18_t2q2ro1.pdf",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+        "https://www.imf.org/-/media/files/news/seminars/2017/oap-adb-seminar-in-manila-2017/fadimf-tnm-1704-the-ragap-model-and-methodology-for-vat-gap-estimation.pdf",
+        "https://www.nppr.org.np/index.php/journal/article/view/94"
+      ]
+    },
+    "distributional_notes": {
+      "status": "pending",
+      "method": "Literature and data review of incidence of VAT, excise, customs duty and personal income tax by consumption quintile; if no Nepal incidence study exists, specify the NLSS-IV microdata-based CEQ-type method (statutory incidence, full forward shifting of indirect taxes as labelled assumption) for r2 without producing numbers. Tax expenditures (exemptions, reduced rates) documented from MoF tax expenditure report once located.",
+      "leads": [
+        "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+        "https://documents1.worldbank.org/curated/en/099726205302311330/pdf/IDU0e90c180f02d440491b0964408160c39c8678.pdf",
+        "https://documents1.worldbank.org/curated/en/099012926144522097/pdf/P177543-925650c7-f01b-499f-9e42-300e539a24a8.pdf",
+        "https://nepal.actionaid.org/sites/nepal/files/publications/Fair%20Tax%20Monitoring%20Report%20-%20AAN.pdf",
+        "https://giwmscdnone.gov.np/media/pdf_upload/1728205045_DRMS%20Final%20Report%20English%202081.05.18_t2q2ro1.pdf",
+        "https://www.tadat.org/en/assessments/performance-assessment-reports.html",
+        "https://bakertilly.com.np/storage/download/1750310698_Tax_Fact_2025-2026.pdf",
+        "https://giwmscdnone.gov.np/media/pdf_upload/Intergovernmental%20Fiscal%20Arrangement%20Act,%202074%20(2017)%20English%20Version_y7gnh3i.pdf"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Public finance chapter and statistical appendix: federal revenue by head (income tax, VAT, customs/import duty, excise, other taxes, non-tax revenue, grants), revenue-to-GDP ratios, trend over preceding fiscal years; FY2023/24 figures are first-eight-month actuals plus estimates. Nepali fiscal years (mid-July).",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+      "title": "Economic Survey 2081/82 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Revenue by head and revenue/GDP for FY2080/81 actuals and FY2081/82 partial-year; statistical appendix tables on federal revenue mobilisation. English edition to be located.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Latest revenue-by-head series incl. FY2081/82 actuals; source for the most recent trend point.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/299/my-slug2/",
+      "title": "Economic Survey 2022/23 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Earlier vintage revenue-by-head appendix tables; use to check revisions between survey vintages.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Budget%20Translation_2082-2083_nzrwuof.pdf",
+      "title": "Budget Speech FY2025/26 (2082/83), English translation",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Revenue estimates and tax-policy changes for FY2082/83 (rates, exemptions); budget targets, not outturn.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/1728205045_DRMS%20Final%20Report%20English%202081.05.18_t2q2ro1.pdf",
+      "title": "Domestic Revenue Mobilization Strategy FY2024/25-2028/29 (English, 2081)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Medium-term revenue diagnostic: revenue composition, tax effort/gap discussion, VAT and customs policy issues, tax-expenditure reporting commitment, and costed reform measures by tax head.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Domestic%20Revenue%20Mobilization%20Strategy_lwkoqcu.pdf",
+      "title": "Domestic Revenue Mobilization Strategy (earlier edition)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Earlier revenue strategy; baseline diagnostics for comparison with the 2081 strategy.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+      "title": "Consolidated Financial Statement (Federal, Province and Local Government) FY2023/24",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Audited-basis consolidated revenue by economic classification for all three tiers incl. revenue sharing and transfers; needed to separate gross federal collection from revenue retained after sharing.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/20240725124752_cfs2022-2023_q53t9je.pdf",
+      "title": "Consolidated Financial Statement FY2022/23",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Same tables for FY2022/23.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://newrmis.fcgo.gov.np/",
+      "title": "Revenue Management Information System (RMIS)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Revenue collection by revenue code and collecting office (IRD vs customs offices), near-real-time; source for import-stage vs domestic-stage split.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation (annual data 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Government finance table: revenue by head (cash basis) for FY2024/25 and FY2023/24; note NRB fiscal position is on a cash/treasury basis and differs from MoF/FCGO presentations.",
+      "source_id": "nrb"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics FY2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "contains": "Imports by HS/partner and revenue collected at customs points (customs duty, VAT on imports, excise on imports, other levies) by customs office; import-stage revenue series.",
+      "source_id": "customs_nepal"
+    },
+    {
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "contains": "Annual reports and Foreign Trade Statistics for FY2080/81 and FY2081/82 (to be located): revenue by head collected at the border.",
+      "source_id": "customs_nepal"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF (Country Report)",
+      "publisher": "International Monetary Fund",
+      "contains": "Selected fiscal indicators table (revenue, tax revenue by type, grants, % of GDP, fiscal-year basis), DRMS implementation and revenue-measure discussion, tax expenditure report reference; possibly Selected Issues annex.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.elibrary.imf.org/view/journals/002/2026/127/article-A004-en.xml",
+      "title": "Staff Report for the 2026 Article IV Consultation and Seventh Review (IMF eLibrary, CR 2026/127)",
+      "publisher": "International Monetary Fund",
+      "contains": "Staff report text and statistical tables (general/central government operations).",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.imf.org/en/Publications/CR/Issues/2025/10/06/Nepal-Sixth-Review-Under-the-Extended-Credit-Facility-Arrangement-Press-Release-Staff-570974",
+      "title": "Nepal: Sixth Review under the ECF (Country Report 2025/285)",
+      "publisher": "International Monetary Fund",
+      "contains": "Central government operations table and revenue projections, programme structural benchmarks on revenue.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2023/05/04/nepal-staff-report-for-the-2023-article-iv-consultation-first-and-second-reviews-under-the-533075",
+      "title": "Nepal: Staff Report for the 2023 Article IV Consultation and First and Second Reviews under the ECF",
+      "publisher": "International Monetary Fund",
+      "contains": "Earlier vintage fiscal tables and revenue analysis; check revisions.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.imf.org/-/media/files/news/seminars/2017/oap-adb-seminar-in-manila-2017/fadimf-tnm-1704-the-ragap-model-and-methodology-for-vat-gap-estimation.pdf",
+      "title": "The RA-GAP Model and Methodology for VAT Gap Estimation (2017 seminar)",
+      "publisher": "International Monetary Fund",
+      "contains": "Methodology only (no Nepal values): production-side potential-VAT model; defines compliance vs policy gap for 02A VAT-gap design.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.worldbank.org/en/data/interactive/2026/02/10/nepal-fiscal-dashboard",
+      "title": "Nepal Fiscal Dashboard (2026)",
+      "publisher": "World Bank",
+      "contains": "Interactive series of revenue by source, expenditure and intergovernmental transfers by tier; check underlying source (FCGO/MoF) and fiscal-year basis.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://data.worldbank.org/indicator/GC.TAX.TOTL.GD.ZS?locations=NP",
+      "title": "WDI GC.TAX.TOTL.GD.ZS Tax revenue (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "contains": "Tax/GDP series (central government, IMF GFS-based); verify fiscal- vs calendar-year labelling before comparison with MoF data.",
+      "source_id": "wb_wdi"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099835012032119520/pdf/P17208601e4d9102009d990f176775b9f18.pdf",
+      "title": "Fiscal Policy for Sustainable Development: Nepal Public Expenditure Review",
+      "publisher": "World Bank",
+      "contains": "Revenue-side diagnostics incl. tax structure, import-based revenue dependence and tax expenditures (vintage c. FY2018/19-2019/20).",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099726205302311330/pdf/IDU0e90c180f02d440491b0964408160c39c8678.pdf",
+      "title": "Policy Research Working Paper 10460: Measuring Tax Progressivity in Low-Income Countries",
+      "publisher": "World Bank",
+      "contains": "Methodology for consumption-tax progressivity using household consumption microdata; check whether Nepal is included.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099012926144522097/pdf/P177543-925650c7-f01b-499f-9e42-300e539a24a8.pdf",
+      "title": "Taxes, Spending and Equity (World Bank, project P177543)",
+      "publisher": "World Bank",
+      "contains": "Fiscal incidence (CEQ-type) analysis; Nepal coverage NOT confirmed in r1 - verify country scope before use.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "contains": "Household consumption by quintile and item; input for VAT/excise incidence modelling (microdata needed from NSO microdata catalogue).",
+      "source_id": "nso_nepal"
+    },
+    {
+      "url": "https://www.tadat.org/en/assessments/performance-assessment-reports.html",
+      "title": "TADAT Performance Assessment Reports (index)",
+      "publisher": "TADAT Secretariat",
+      "contains": "Nepal IRD TADAT performance assessment (if published): compliance-management indicators incl. registration, filing, payment and arrears.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/Intergovernmental%20Fiscal%20Arrangement%20Act,%202074%20(2017)%20English%20Version_y7gnh3i.pdf",
+      "title": "Intergovernmental Fiscal Arrangement Act 2074 (2017), English",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Statutory rules for sharing VAT and domestic excise with provinces and local levels; defines gross vs retained federal revenue.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://www.nppr.org.np/index.php/journal/article/view/94",
+      "title": "Value-added tax design and performance in Nepal (Nepal Public Policy Review)",
+      "publisher": "Nepal Public Policy Review",
+      "contains": "C-efficiency series and VAT design analysis; academic tier, cross-check against MoF/IMF.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://nepal.actionaid.org/sites/nepal/files/publications/Fair%20Tax%20Monitoring%20Report%20-%20AAN.pdf",
+      "title": "Independent Fair Tax Monitoring Report Nepal 2021",
+      "publisher": "ActionAid Nepal",
+      "contains": "Qualitative and quantitative assessment of tax progressivity, exemptions and burden on low-income households; independent tier.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://bakertilly.com.np/storage/download/1750310698_Tax_Fact_2025-2026.pdf",
+      "title": "Nepal Tax Fact 2025/26 (2082/83)",
+      "publisher": "Baker Tilly Nepal",
+      "contains": "Secondary compilation of statutory tax rates and thresholds for FY2082/83; verify against Finance Act before use.",
+      "source_id": "academic"
+    }
+  ]
+}

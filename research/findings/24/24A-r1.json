@@ -1,0 +1,476 @@
+{
+  "subagent_id": "24A",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Located 19 primary and locator documents on generative-AI exposure of outsourced IT/BPO tasks: ILO occupational exposure indices (WP140 2025, WP166 2026 with World Bank), a peer-reviewed task-exposure study (Science 2024), causal deployment studies in outsourced customer support (QJE 2025) and online freelancing (Management Science 2025), counter-evidence of small labour-market effects (NBER 2025), and World Bank South Asia and export-linked-jobs analyses. No values were retrieved; every empirical item is pending. Key methodological point: exposure indices measure technical potential, deployment studies measure per-worker productivity or demand shifts, and administrative studies measure earnings/hours - they answer different questions and must not be averaged. Nepal-specific occupational weights depend on 08A.",
+  "findings": [
+    {
+      "claim": "Research design: 'outsourced IT/BPO tasks' is operationalised as the ISCO-08 occupations that dominate Nepal's IT-services and BPO exports and online freelancing (software developers 251x, web and multimedia developers 2513, ICT operations/user-support technicians 351x, contact-centre and client-information workers 4222/4229, data entry 4132, keyboard operators 4131, graphic designers 2166, translators 2643, bookkeeping/accounting clerks 4311). The occupation list itself must be confirmed against Nepal evidence from 08A/21E (Nepal LFS 2022/23 occupation codes and any IT-export survey).",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Evidence hierarchy for this question: (1) causal field or administrative studies of deployed GenAI in outsourced work (24A-L06, L08, L09) rank above (2) task-exposure indices (L01, L03, L05), which measure technical potential, not realised displacement; (3) job-postings studies (L11) measure labour demand, not employment; (4) preprints and news are graded lowest and news is used only to locate primary documents.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "GenAI exposure scores (ILO WP140 refined index, mean score and gradient) for each IT/BPO ISCO-08 occupation listed in the design assumption, split into automation-prone vs augmentation-prone exposure.",
+      "type": "pending",
+      "value": null,
+      "unit": "index",
+      "period": "2025 publication; underlying survey 2024 (calendar year)",
+      "source_ids": [
+        "ilostat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L01",
+        "24A-L02"
+      ],
+      "note": "Requires download of WP140 annex/occupation score file. No values recorded in r1."
+    },
+    {
+      "claim": "Share of Nepal employment in each GenAI exposure gradient, unadjusted (WP140) and adjusted for digital access (WP166), and Nepal's position relative to South Asian comparators (India, Bangladesh, Sri Lanka, Philippines as BPO comparator).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Nepal labour-force survey year used by ILO (to be confirmed; NLFS 2022/23 is fiscal-year based)",
+      "source_ids": [
+        "ilostat"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L01",
+        "24A-L03",
+        "24A-L15"
+      ],
+      "note": "Requires WP166 country annex; check whether Nepal is in the sample. If not, re-weight WP140 scores with Nepal NLFS 2022/23 occupational employment (NSO) - pending 08A input."
+    },
+    {
+      "claim": "Causal effect of GenAI assistance on productivity (issues resolved per hour), quality and attrition of outsourced customer-support agents, overall and for least-experienced agents.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Study period as reported in QJE paper (calendar months, pre-2023 roll-out)",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L06",
+        "24A-L07"
+      ],
+      "note": "Requires retrieval of QJE article tables. Interpretation: augmentation (productivity per worker) can reduce labour demand per unit of output if client demand is inelastic - effect on offshore headcount is not identified by this study."
+    },
+    {
+      "claim": "Change in online-freelancing job posts for automation-prone clusters (writing, coding, image creation) relative to manual-intensive clusters after ChatGPT/image-generator release.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Calendar months 2022-2023",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L08"
+      ],
+      "note": "Requires retrieval of Management Science article tables; platform-level global demand, not Nepal-specific supply."
+    },
+    {
+      "claim": "Estimated effects of AI chatbot adoption on earnings and hours in exposed occupations (Denmark), used as the low-effect bound of the evidence range.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "2023-2024 (calendar year)",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L09"
+      ],
+      "note": "Requires retrieval of NBER WP 33777 tables; external validity to offshore BPO is limited (high-income, domestic labour market)."
+    },
+    {
+      "claim": "Change in South Asian (and, if reported, Nepal) white-collar and business-services job postings and posted wages after ChatGPT release, relative to other occupations.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "Calendar months 2021-2025",
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L11",
+        "24A-L12"
+      ],
+      "note": "Requires SADU October 2025 chapter and its background paper. Job postings are a demand signal and over-represent formal urban employers."
+    },
+    {
+      "claim": "World Bank 2026 estimates of AI exposure of export-linked and outsourced jobs in developing economies (incl. any reported change in outsourcing flows in 2025) and whether Nepal is covered.",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "2025-2026",
+      "source_ids": [],
+      "observation_ids": [],
+      "lead_ids": [
+        "24A-L10",
+        "24A-L16",
+        "24A-L17"
+      ],
+      "note": "The August 2026 World Bank publication is known only via news reports (L16, L17); the primary report must be located and retrieved before any value is used. Candidate primary: L10."
+    }
+  ],
+  "data_gaps": [
+    "Primary World Bank report (August 2026) on AI and outsourcing to developing countries not located; only news reports (24A-L16, L17). The session-wide WebSearch budget was exhausted during this round; data-source hosts and reference hosts (itu.int, nist.gov, wikipedia.org, arxiv.org) returned EGRESS_BLOCKED to WebFetch.",
+    "No located study measures GenAI effects on Nepal's IT/BPO firms or freelancers directly; Nepal coverage in ILO WP166 and the World Bank export-linked-jobs paper is unconfirmed.",
+    "Nepal IT/BPO export composition by service type and occupation (needed to weight exposure) - no Nepal primary source located in r1 (NRB BoP does not separate BPO; any IT-export survey must be located by 08A/24C).",
+    "SOC-ISCO crosswalk file (US BLS) not yet located as a lead.",
+    "Source catalog has no id for ILO research publications (as distinct from ILOSTAT) or for the World Bank regional reports; leads carry source_id null."
+  ],
+  "assumptions": [
+    {
+      "id": "24A-A1",
+      "text": "Outsourced IT/BPO work in Nepal is represented by the ISCO-08 codes listed in specific.task_exposure_evidence.nepal_occupation_map.",
+      "basis": "assumption pending confirmation by 08A/21E with NLFS 2022/23 data"
+    },
+    {
+      "id": "24A-A2",
+      "text": "Exposure indices are treated as upper-bound technical potential, not as displacement rates.",
+      "basis": "design choice consistent with ILO WP140 guidance distinguishing automation and augmentation"
+    },
+    {
+      "id": "24A-A3",
+      "text": "Results from high-income labour markets (Denmark, US) are not transferred to Nepal without adjustment for task content and digital access (WP166 approach).",
+      "basis": "methodological"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "X15 bundles two different quantities (global demand for digitally delivered services, and AI substitution of Nepal-supplied tasks). Split into X15a (demand, 24C) and X15b (substitution/exposure, 24A) so the S07 shock is not double-counted."
+    },
+    {
+      "to": "08A",
+      "text": "Please supply Nepal IT/BPO and freelance employment by ISCO-08 4-digit (NLFS 2022/23, fiscal year) and any IT-export composition survey; 24A cannot weight exposure without it."
+    },
+    {
+      "to": "28",
+      "text": "S07-a uses unit 'pct_change', which is not a unit code in src/economic_model/units.py; either add it or restate as 'percent'. Also request red-team review of the risk that S07 is calibrated only from high-exposure index results while causal studies show smaller realised effects."
+    },
+    {
+      "to": "00A",
+      "text": "WebSearch budget for this session was exhausted mid-round; 24D and 24E leads are incomplete. Please allocate search budget or a network-enabled run for r2. Also add catalog ids for ILO research publications and World Bank regional/thematic reports."
+    },
+    {
+      "to": "15",
+      "text": "Escalation: news reports of an August 2026 World Bank finding on declining outsourcing to developing countries could change the S07 conclusion if confirmed from the primary document; treat as unverified until retrieved."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. The literature uses incompatible estimands (technical exposure, per-worker productivity, platform demand, earnings), most causal evidence comes from single firms, single platforms or high-income countries, the period since GenAI release is short, and the evidence base is changing fast (2025-2026 papers). Nepal coverage in the main indices is unconfirmed. Some leads are preprints or news locators and are graded accordingly.",
+  "specific": {
+    "task_exposure_evidence": {
+      "status": "pending",
+      "question": "What does peer-reviewed evidence show about AI exposure of outsourced IT/BPO tasks?",
+      "answer_r1": "Pending. Primary documents located (19 leads). No values retrieved. The evidence base splits into (a) technical-exposure indices (ILO WP140/WP166, Eloundou et al. Science 2024) which consistently identify clerical, contact-centre, data-entry, writing and coding tasks as the most exposed, and (b) causal deployment studies with divergent results: large per-worker productivity effects in an outsourced customer-support setting (QJE 2025), falls in freelance job posts in writing/coding/image clusters (Management Science 2025), but near-null earnings/hours effects in Danish administrative data (NBER 2025). These are qualitative characterisations of study designs; magnitudes must be retrieved.",
+      "method": "Map Nepal IT/BPO occupations to ISCO-08 (and SOC via BLS crosswalk for Eloundou); extract exposure scores and causal estimates; report ranges keeping each study's estimand separate (exposure potential vs productivity per worker vs labour-demand change vs earnings); weight by Nepal employment in each occupation from NLFS 2022/23 once 08A supplies it.",
+      "evidence_classes": [
+        {
+          "class": "task_exposure_index",
+          "studies": [
+            "ILO WP140 (2025)",
+            "ILO/WB WP166 (2026)",
+            "Eloundou et al. Science (2024)"
+          ],
+          "estimand": "technical potential of GenAI to perform task content",
+          "proven_vs_speculative": "measurement of potential; not observed displacement",
+          "lead_ids": [
+            "24A-L01",
+            "24A-L02",
+            "24A-L03",
+            "24A-L05"
+          ],
+          "status": "pending"
+        },
+        {
+          "class": "causal_deployment_outsourced_support",
+          "studies": [
+            "Brynjolfsson, Li, Raymond QJE (2025)"
+          ],
+          "estimand": "per-agent productivity and quality under GenAI assistance",
+          "proven_vs_speculative": "proven deployment in a single firm",
+          "lead_ids": [
+            "24A-L06",
+            "24A-L07"
+          ],
+          "status": "pending"
+        },
+        {
+          "class": "platform_labour_demand",
+          "studies": [
+            "Demirci, Hannane, Zhu Management Science (2025)",
+            "arXiv 2608.26089 (preprint)"
+          ],
+          "estimand": "change in freelance job posts by task cluster",
+          "proven_vs_speculative": "observed demand shift on one platform",
+          "lead_ids": [
+            "24A-L08",
+            "24A-L19"
+          ],
+          "status": "pending"
+        },
+        {
+          "class": "administrative_labour_outcomes",
+          "studies": [
+            "Humlum and Vestergaard NBER WP 33777 (2025)",
+            "arXiv 2509.15510 (preprint)"
+          ],
+          "estimand": "earnings and hours effects of adoption",
+          "proven_vs_speculative": "observed short-run outcomes, high-income setting",
+          "lead_ids": [
+            "24A-L09",
+            "24A-L18"
+          ],
+          "status": "pending"
+        },
+        {
+          "class": "regional_job_postings_and_export_exposure",
+          "studies": [
+            "World Bank SADU Oct 2025",
+            "World Bank AI Exposure of Export-Linked Jobs (2026)",
+            "World Bank Aug 2026 outsourcing report (primary not located)"
+          ],
+          "estimand": "postings, wages and export-linked exposure in South Asia/developing economies",
+          "proven_vs_speculative": "observed postings; exposure is potential",
+          "lead_ids": [
+            "24A-L10",
+            "24A-L11",
+            "24A-L12",
+            "24A-L16",
+            "24A-L17"
+          ],
+          "status": "pending"
+        }
+      ],
+      "nepal_occupation_map": {
+        "status": "pending",
+        "isco08_codes": [
+          "2511",
+          "2512",
+          "2513",
+          "2514",
+          "2519",
+          "2166",
+          "2643",
+          "3511",
+          "3512",
+          "3513",
+          "3514",
+          "4131",
+          "4132",
+          "4222",
+          "4229",
+          "4311"
+        ],
+        "requires": "NSO NLFS 2022/23 employment by ISCO-08 4-digit, and a Nepal IT/BPO export composition source (from 08A/21E)"
+      },
+      "feeds": {
+        "model_variables": [
+          "services_exports",
+          "employment_ict"
+        ],
+        "channel": "digital_services_demand",
+        "exposure_ids": [
+          "EXP-14"
+        ],
+        "scenario": "S07",
+        "external_variable": "X15 (16A)"
+      }
+    },
+    "technology_shock_parameters": {
+      "status": "pending",
+      "parameter": "S07-a ict_services_exports shock magnitude",
+      "proven": "none retrieved",
+      "speculative": "scenario magnitude remains null until the study ranges above are retrieved; no probability assigned"
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "24A-L01",
+      "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+      "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure (ILO Working Paper 140)",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Task-level GenAI exposure scores for ISCO-08 occupations (refined 2025 method: worker survey plus expert Delphi validation plus LLM scoring), aggregated to 4-digit occupations and exposure gradients; employment shares in each gradient by country income group and sex, ILOSTAT-based employment weights (calendar-year survey data). Needed: scores for ISCO codes typical of IT/BPO work (e.g. 2511-2519 software, 3511-3514 ICT technicians, 4222 contact-centre information clerks, 4132 data entry, 4131 typists).",
+      "evidence_grade": "peer_reviewed_equivalent: institutional working paper"
+    },
+    {
+      "lead_id": "24A-L02",
+      "url": "https://www.ilo.org/sites/default/files/2025-05/Research%20brief_GenAI%202025%20Update.pdf",
+      "title": "ILO Research Brief: Generative AI and jobs - a 2025 update (May 2025)",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Summary of the WP140 results: shares of global employment by exposure gradient, by income group and by sex; distinction between automation-prone and augmentation-prone exposure; occupational groups with highest exposure (clerical support).",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L03",
+      "url": "https://www.ilo.org/sites/default/files/2026-03/wp166_web.pdf",
+      "title": "Disruption without Dividend? How the Digital Divide and Task Differences Split GenAI's Global Impact (ILO Working Paper 166, Gmyrek, Viollaz and Winkler, 2026; ILO-World Bank background paper for WDR 2026)",
+      "publisher": "International Labour Organization / World Bank",
+      "source_id": null,
+      "contains": "Country-level GenAI exposure adjusted for country-specific task content and digital access (internet use at work), by occupation and country; check whether Nepal is in the country sample and which survey year (Nepal LFS 2017/18 or 2022/23 would be fiscal-year based) is used.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L04",
+      "url": "https://www.ilo.org/resource/news/new-ilo%E2%80%93world-bank-paper-highlights-uneven-global-impact-generative-ai-jobs",
+      "title": "New ILO-World Bank paper highlights uneven global impact of generative AI on jobs (news release, 2026)",
+      "publisher": "International Labour Organization",
+      "source_id": null,
+      "contains": "Locator for WP166; describes coverage and main qualitative conclusions (disruption may precede productivity gains in developing economies).",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24A-L05",
+      "url": "https://www.science.org/doi/10.1126/science.adj0998",
+      "title": "Eloundou, Manning, Mishkin, Rock (2024) GPTs are GPTs: Labor market impact potential of LLMs. Science",
+      "publisher": "Science (AAAS)",
+      "source_id": "academic",
+      "contains": "US O*NET task-level LLM exposure measures (E0/E1/E2 rubric, human and model-rated), aggregated to SOC occupations; crosswalk needed SOC->ISCO-08 to apply to Nepal IT/BPO occupations. Data period: O*NET release used in paper (2023).",
+      "evidence_grade": "peer_reviewed"
+    },
+    {
+      "lead_id": "24A-L06",
+      "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+      "title": "Brynjolfsson, Li, Raymond (2025) Generative AI at Work. Quarterly Journal of Economics 140(2)",
+      "publisher": "Oxford University Press / QJE",
+      "source_id": "academic",
+      "contains": "Causal (staggered roll-out) estimates of a GenAI assistant's effect on customer-support agent productivity (resolutions per hour), quality, customer sentiment and attrition, by agent tenure and skill; setting is an outsourced customer-support operation (verify agent locations from the paper's data section).",
+      "evidence_grade": "peer_reviewed"
+    },
+    {
+      "lead_id": "24A-L07",
+      "url": "https://www.nber.org/system/files/working_papers/w31161/w31161.pdf",
+      "title": "Generative AI at Work (NBER Working Paper 31161)",
+      "publisher": "National Bureau of Economic Research",
+      "source_id": "academic",
+      "contains": "Working-paper version of lead 24A-L06 with appendix tables on heterogeneity and firm setting.",
+      "evidence_grade": "working_paper"
+    },
+    {
+      "lead_id": "24A-L08",
+      "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2024.05420",
+      "title": "Demirci, Hannane, Zhu (2025) Who Is AI Replacing? The Impact of Generative AI on Online Freelancing Platforms. Management Science 71(10)",
+      "publisher": "INFORMS",
+      "source_id": "academic",
+      "contains": "Difference-in-differences estimates of change in job posts on a large online freelancing platform after ChatGPT and image-generation releases, by job cluster (writing, coding, image creation vs manual-intensive); calendar months 2022-2023. Directly relevant to Nepal's online freelancers.",
+      "evidence_grade": "peer_reviewed"
+    },
+    {
+      "lead_id": "24A-L09",
+      "url": "https://www.nber.org/system/files/working_papers/w33777/w33777.pdf",
+      "title": "Humlum and Vestergaard (2025) Large Language Models, Small Labor Market Effects (NBER WP 33777)",
+      "publisher": "National Bureau of Economic Research",
+      "source_id": "academic",
+      "contains": "Danish linked adoption-survey and administrative data: effects of AI chatbot adoption on earnings and recorded hours by occupation (incl. exposed occupations such as customer support, software developers, accountants), 2023-2024. Counter-evidence to large displacement estimates; high-income setting.",
+      "evidence_grade": "working_paper"
+    },
+    {
+      "lead_id": "24A-L10",
+      "url": "https://thedocs.worldbank.org/en/doc/9df559d23a6d80b3dfa2c4bc808f3a20-0050062026/original/The-AI-Exposure-of-Export-Linked-Jobs.pdf",
+      "title": "The AI Exposure of Export-Linked Jobs (World Bank, 2026)",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Exposure of export-linked (incl. services-export and outsourcing) employment to AI by country and occupation; check Nepal coverage and whether results for developing-country outsourcing occupations are reported separately.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L11",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099520310212533663",
+      "title": "South Asia Development Update, October 2025: Jobs, AI, and Trade",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "South Asia chapter on AI exposure and complementarity by country (Nepal should be included), online job-postings analysis of white-collar and business-services postings and wages before/after ChatGPT (calendar months 2021-2025), AI-skill demand shares.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L12",
+      "url": "https://blogs.worldbank.org/en/endpovertyinsouthasia/labor-market-implications-of-ai-adoption-in-south-asia-in-five-c",
+      "title": "Is AI adoption impacting job markets in South Asia? (World Bank blog)",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Summary of SADU job-postings method and results; locator for underlying background paper and data.",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24A-L13",
+      "url": "https://thedocs.worldbank.org/en/doc/1e4e52502104a331fb42cba0d4afa995-0050062026/original/WDR2026-Concept-Note.pdf",
+      "title": "World Development Report 2026: Artificial Intelligence for Development - Concept Note",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Framework and planned background papers on AI and jobs in developing countries; locator for the full WDR 2026 once published.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L14",
+      "url": "https://data360.worldbank.org/en/atlas/artificial-intelligence/",
+      "title": "Atlas of Global Development: Inequalities in Use of and Exposure to Artificial Intelligence",
+      "publisher": "World Bank Data360",
+      "source_id": null,
+      "contains": "Country-level AI use and exposure indicators; check Nepal availability, indicator definitions and vintage.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L15",
+      "url": "https://openknowledge.worldbank.org/entities/publication/f3137b32-f70f-4b88-bc61-5eeaf12303ec/full",
+      "title": "Buffer or Bottleneck? Employment Exposure to Generative AI and the Digital Divide in Latin America",
+      "publisher": "World Bank",
+      "source_id": null,
+      "contains": "Method for adjusting ILO exposure by digital-access constraints; useful as methodological comparator for Nepal.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24A-L16",
+      "url": "https://www.business-standard.com/economy/news/ai-begins-to-chip-away-at-india-s-outsourcing-edge-says-world-bank-126080401560_1.html",
+      "title": "AI begins to chip away at India's outsourcing edge, says World Bank (Business Standard, August 2026)",
+      "publisher": "Business Standard",
+      "source_id": null,
+      "contains": "News report of an August 2026 World Bank publication on AI and outsourcing to developing countries; used ONLY to locate the underlying World Bank report (title and URL still to be found). Not evidence.",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24A-L17",
+      "url": "https://mb.com.ph/2026/08/04/world-bank-ai-can-power-philippine-growthbut-bpo-faces-disruption",
+      "title": "World Bank: AI can power Philippine growth - but BPO faces disruption (Manila Bulletin, 4 Aug 2026)",
+      "publisher": "Manila Bulletin",
+      "source_id": null,
+      "contains": "News report of a World Bank Philippines publication on AI exposure of the BPO industry; locator only for the underlying World Bank report.",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24A-L18",
+      "url": "https://arxiv.org/pdf/2509.15510",
+      "title": "The (Short-Term) Effects of Large Language Models on Unemployment and Earnings (arXiv preprint, 2025)",
+      "publisher": "arXiv",
+      "source_id": "academic",
+      "contains": "Preprint estimates of LLM exposure effects on unemployment and earnings; not peer-reviewed - grade accordingly.",
+      "evidence_grade": "preprint"
+    },
+    {
+      "lead_id": "24A-L19",
+      "url": "https://arxiv.org/pdf/2608.26089",
+      "title": "From Producing to Validating: How AI Is Deskilling Freelancers (arXiv preprint, 2026)",
+      "publisher": "arXiv",
+      "source_id": "academic",
+      "contains": "Preprint on task change among online freelancers after GenAI; not peer-reviewed.",
+      "evidence_grade": "preprint"
+    }
+  ]
+}

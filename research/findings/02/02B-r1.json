@@ -1,0 +1,524 @@
+{
+  "subagent_id": "02B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network): primary documents located for capital budget vs actual (MoF Red Books FY2079/80, FY2082/83, FY2083/84; Economic Surveys 2023/24 English, 2081/82 and 2082/83 Nepali; FCGO Consolidated Financial Statements and monthly expenditure reports; NRB monthly Current Macroeconomic and Financial Situation), for within-year timing (FCGO monthly reports, NRB monthly releases), for execution diagnostics (World Bank Capital Expenditure Bottlenecks Analysis October 2025, Nepal Development Updates November 2025 and April 2026, Public Expenditure Review; IMF 2026 Article IV with PIMA action plan; PEFA 2024 national and Gandaki 2025) and for audit findings (OAG annual reports incl. 62nd report on FY2080/81, English summaries of 52nd, 55th, 58th; PPMO annual reports and OCDS data). No file could be downloaded and snippet figures were not used, so every quantitative item is pending. Key design points: execution rates must be computed against both original and mid-term-revised capital budgets; federal and consolidated three-tier capex must be separated; NRB (cash basis) and FCGO series are kept as separate observations.",
+  "findings": [
+    {
+      "claim": "Q1: Federal capital expenditure, original appropriation vs revised (mid-term review) estimate vs actual, by fiscal year",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "fcgo"
+      ],
+      "note": "Red Book original capital appropriation; MoF mid-term review revised estimate; FCGO CFS / Economic Survey actual. Execution rate computed against BOTH original and revised denominators.",
+      "unit": "NPR_current_bn",
+      "period": "FY2014/15-FY2081/82"
+    },
+    {
+      "claim": "Q1: Capital budget execution rate (actual / original appropriation and actual / revised estimate), federal",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal",
+        "fcgo",
+        "wb_npl",
+        "imf_article_iv"
+      ],
+      "note": "Derived from the above; World Bank NDU/Bottlenecks and IMF series kept as separate observations with their stated denominator and coverage.",
+      "unit": "percent",
+      "period": "FY2014/15-FY2081/82"
+    },
+    {
+      "claim": "Q1: Capital execution rate by tier (federal, provincial, local) and consolidated",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fcgo",
+        "wb_npl"
+      ],
+      "note": "FCGO CFS three-tier tables FY2018/19 onward; WB Capital Expenditure Bottlenecks Analysis (Oct 2025).",
+      "unit": "percent",
+      "period": "FY2018/19-FY2081/82"
+    },
+    {
+      "claim": "Q1: Public capital expenditure as % of fiscal-year nominal GDP, all tiers",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fcgo",
+        "wb_npl",
+        "nso_nepal"
+      ],
+      "note": "Consolidated capex from FCGO; GDP from NSO/Agent 01 (same vintage).",
+      "unit": "percent",
+      "period": "FY2018/19-FY2081/82"
+    },
+    {
+      "claim": "Q2: Monthly (Nepali month) cumulative federal capital expenditure profile, share spent in final month (Ashadh) and final trimester",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fcgo",
+        "nrb",
+        "wb_npl"
+      ],
+      "note": "FCGO monthly expenditure reports and NRB monthly CMEFS releases; Ashadh share = (12-month cumulative - 11-month cumulative)/12-month cumulative. Record NRB (cash basis) and FCGO separately.",
+      "unit": "percent",
+      "period": "FY2014/15-FY2081/82"
+    },
+    {
+      "claim": "Q2: Share of annual capital expenditure spent in the last fortnight of Ashadh",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "fcgo",
+        "oag_nepal",
+        "wb_npl"
+      ],
+      "note": "Requires daily/fortnightly FCGO data or OAG/WB reporting of end-year payments; may not be publicly available.",
+      "unit": "percent"
+    },
+    {
+      "claim": "Q3: Main execution failures identified in OAG annual reports (categories and frequency)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oag_nepal"
+      ],
+      "note": "Structured coding of OAG annual reports (52nd, 55th, 58th, 62nd and latest) chapters on project/contract audits: e.g. weak project preparation, land acquisition and clearance delays, contract variations and time extensions, mobilisation advances unsettled, year-end payments without work completion. Categories to be confirmed from text; counts pending.",
+      "unit": "count"
+    },
+    {
+      "claim": "Q3: OAG irregularities and arrears related to capital projects",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oag_nepal"
+      ],
+      "note": "Coordinate with 11B (irregularities/arrears series); 02B extracts only the capital/project-related subset.",
+      "unit": "NPR_current_bn",
+      "period": "FY2070/71-FY2080/81"
+    },
+    {
+      "claim": "Q3: PEFA indicator scores relevant to execution (PI-1, PI-2, PI-11, PI-16, PI-21, PI-24, PI-30)",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic",
+        "wb_npl"
+      ],
+      "note": "2024 national PEFA (data FY2019/20-FY2021/22), earlier PEFA, and Gandaki SNG PEFA 2025; scores are letter grades - record as categorical, not numeric.",
+      "unit": "index"
+    },
+    {
+      "claim": "Execution rate will be reported against both original appropriation and revised (mid-term review) estimate, because mid-year downward revision of capital budgets is a recurring practice and changes the ratio materially.",
+      "type": "assumption",
+      "value": null,
+      "note": "Methodological choice; source of each denominator cited."
+    },
+    {
+      "claim": "Capital expenditure follows the FCGO chart-of-accounts capital classification; capital grants to sub-national governments recorded as federal transfers are excluded from federal capex and counted at the spending tier in consolidated figures.",
+      "type": "assumption",
+      "value": null,
+      "note": "Avoids double counting across tiers; must be checked against FCGO CFS consolidation notes."
+    }
+  ],
+  "data_gaps": [
+    "Capital budget (original, revised) vs actual by fiscal year FY2014/15-FY2081/82 from Red Books, Economic Survey and FCGO CFS (downloads blocked).",
+    "MoF mid-term budget review documents (revised capital estimates) - not yet located as primary PDFs; only press pointer.",
+    "FCGO monthly expenditure reports by Nepali month (or NRB monthly releases) for each fiscal year - downloads blocked.",
+    "Daily/fortnightly end-of-year (Ashadh) payment data - public availability uncertain.",
+    "OAG 62nd Annual Report full text (and 63rd, if issued) - URL on oag.gov.np not pinned; English version availability unknown.",
+    "IMF PIMA report for Nepal - not located (only handbook and references in IMF 2026 Article IV).",
+    "Title/scope of World Bank document P505226 (June 2025) unverified.",
+    "FCGO CFS FY2024/25 PDF URL not pinned (index located).",
+    "Search budget exhausted in r1; remaining targeted searches (IRD/Customs/MoF mid-term review) deferred to r2."
+  ],
+  "assumptions": [
+    {
+      "id": "02B-A1",
+      "text": "Nepali fiscal year (Shrawan-Ashadh, mid-July to mid-July); monthly profiles use Nepali months, with Ashadh as the final month.",
+      "basis": "assumption (CLAUDE.md rule 6)"
+    },
+    {
+      "id": "02B-A2",
+      "text": "Execution rate is reported on two denominators (original appropriation; mid-term revised estimate) and never a single unlabelled ratio.",
+      "basis": "assumption (methodological transparency)"
+    },
+    {
+      "id": "02B-A3",
+      "text": "FCGO audited consolidated statements take precedence for annual actuals; NRB cash-basis and Economic Survey partial-year figures are recorded as separate observations.",
+      "basis": "assumption (source hierarchy and vintage control)"
+    },
+    {
+      "id": "02B-A4",
+      "text": "OAG findings are coded into execution-failure categories from report text; the categorisation scheme is a labelled research construct, not an OAG classification.",
+      "basis": "assumption (method)"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "11B",
+      "text": "OAG irregularities and arrears series: 02B needs the capital-project subset; please record OAG chapter/table references when retrieved so both registers share one extraction."
+    },
+    {
+      "to": "11C",
+      "text": "Consolidated capex execution depends on how conditional/capital grants to provinces and local levels are recorded; please confirm grant types and their FCGO classification."
+    },
+    {
+      "to": "02C",
+      "text": "Debt simulations should treat planned capital spending as subject to execution shortfall (to be parameterised from the pending execution series), and should not assume that borrowing-financed capex converts to public capital one-for-one."
+    },
+    {
+      "to": "15",
+      "text": "Capex execution figures circulating in press/WB summaries use differing denominators (original vs revised) and coverage (federal vs three tiers); any strategy claim should state both."
+    }
+  ],
+  "uncertainty": "High: no primary document retrieved in r1; no empirical value recorded. Known methodological risks: (i) denominator choice (original vs revised budget) changes execution rates materially; (ii) federal vs three-tier coverage and treatment of intergovernmental capital grants; (iii) FCGO provisional vs audited figures and NRB cash basis differ; (iv) end-year spending may reflect payments/advances not matched by physical progress (to be tested via OAG findings); (v) PEFA scores are categorical and refer to a fixed data period; (vi) the September 2025 unrest and political transition affect FY2025/26 execution and should be treated as a break, not trend.",
+  "specific": {
+    "capex_execution_rate_series": {
+      "status": "pending",
+      "method": "Annual series FY2014/15-FY2081/82: original capital appropriation (Red Book), revised estimate (mid-term review), actual (FCGO CFS; Economic Survey cross-check); execution rate on both denominators; federal and consolidated three-tier; capex as % of FY nominal GDP. World Bank and IMF published rates recorded separately with their definitions.",
+      "unit": "percent",
+      "period": "FY2014/15-FY2081/82 (Nepali fiscal years)",
+      "leads": [
+        "https://mof.gov.np/content/81/expenditure-estimates--red-books--2079-80/",
+        "https://mof.gov.np/content/1527/expenditure-estimates--red-book--208-83/",
+        "https://mof.gov.np/content/1745/statement-of-expenditure-estimates--red-book-2083-84/",
+        "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+        "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+        "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+        "https://giwmscdntwo.gov.np/media/pdf_upload/20240725124752_cfs2022-2023_q53t9je.pdf",
+        "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+        "https://old.fcgo.gov.np/reporttype/1",
+        "https://documents1.worldbank.org/curated/en/099011526010021304/pdf/P507000-a1fb9a28-4888-400c-9dd9-0705326e7d7e.pdf",
+        "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548411112541261",
+        "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+        "https://www.worldbank.org/en/data/interactive/2026/02/10/nepal-fiscal-dashboard",
+        "https://english.ratopati.com/story/48038/the-budget-is-always-reduced-during-the-semi-annual-review-which-finance-minister-reduced-how-much"
+      ]
+    },
+    "execution_timing_profile": {
+      "status": "pending",
+      "method": "Cumulative capital expenditure by Nepali month for each FY from FCGO monthly reports and NRB monthly CMEFS releases; metrics: share spent in Ashadh, in final trimester (Chaitra-Ashadh), and first-half share; if available, last-fortnight share. Compare with PEFA PI-21 (in-year predictability).",
+      "unit": "percent",
+      "period": "FY2014/15-FY2081/82",
+      "leads": [
+        "https://fcgo.gov.np/",
+        "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+        "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+        "https://documents1.worldbank.org/curated/en/099011526010021304/pdf/P507000-a1fb9a28-4888-400c-9dd9-0705326e7d7e.pdf",
+        "https://documents1.worldbank.org/curated/en/099835012032119520/pdf/P17208601e4d9102009d990f176775b9f18.pdf",
+        "https://www.pefa.gov.np/public/uploads/1752242798-Nepal%20GRPFM%20Assessment-I%20Report.pdf",
+        "https://old.fcgo.gov.np/storage/uploads/publications/20210908152258_Unofficial%20Translation%20of%20Chart%20of%20Account.pdf"
+      ]
+    },
+    "audit_findings_summary": {
+      "status": "pending",
+      "method": "Structured coding of OAG annual reports (52nd, 55th, 58th, 62nd, latest) into execution-failure categories (project readiness, land/forest clearance, procurement and contract management, variations/time extensions, unsettled advances, year-end payments), each with report/chapter reference; triangulated with WB Capital Expenditure Bottlenecks Analysis, PEFA PI-11/PI-24/PI-30, PPMO annual reports and OCDS contract data. Irregularity amounts pending (shared with 11B).",
+      "leads": [
+        "https://old.oag.gov.np/menu-category/926/en",
+        "https://oag.gov.np/",
+        "https://oag.gov.np/site_uploads/bg1-Some%20sections%20of%20Annual%20Report%202078%20English%20Version..pdf",
+        "https://old.oag.gov.np/uploads/files/fkr-executive_summary%20English.pdf",
+        "https://old.oag.gov.np/uploads/files/jKj-Executive%20Summary%20English%202071.pdf",
+        "https://documents1.worldbank.org/curated/en/099011526010021304/pdf/P507000-a1fb9a28-4888-400c-9dd9-0705326e7d7e.pdf",
+        "https://www.pefa.gov.np/public/uploads/1752242798-Nepal%20GRPFM%20Assessment-I%20Report.pdf",
+        "https://www.pefa.org/node/5030",
+        "https://documents1.worldbank.org/curated/en/483831467998500044/pdf/97606-WP-Nepal-PEFA-Report-Box391479B-PUBLIC.pdf",
+        "https://www.pefa.org/node/5238",
+        "https://ppmo.gov.np/index.php?_route_=reports/annual_reports",
+        "https://ppmo.gov.np/content/7397/7397-public-procurement-act-2063/",
+        "https://data.open-contracting.org/en/publication/36",
+        "https://internationalbudget.org/wp-content/uploads/Nepal-Budget-Credibility-and-the-Sustainable-Development-Goals.pdf",
+        "https://www.imf.org/en/Publications/CR/Issues/2025/10/06/Nepal-Sixth-Review-Under-the-Extended-Credit-Facility-Arrangement-Press-Release-Staff-570974",
+        "https://www.imf.org/-/media/files/publications/books/2022/english/pimaea.pdf",
+        "https://documents1.worldbank.org/curated/en/099061125140036081/pdf/P505226-fc21ecf1-2eeb-4930-9795-37b8d6f3cbdd.pdf"
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "url": "https://mof.gov.np/content/81/expenditure-estimates--red-books--2079-80/",
+      "title": "Statement of Expenditure Estimates (Red Book) FY2079/80",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Budget-head-level appropriations split recurrent/capital/financing, plus prior-year actuals and revised estimates columns (Nepali).",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/1527/expenditure-estimates--red-book--208-83/",
+      "title": "Statement of Expenditure Estimates (Red Book) FY2082/83",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Original capital appropriations by ministry/budget head for FY2082/83; prior-year revised estimate and actual columns give capex budget vs actual for FY2080/81-FY2081/82.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/1745/statement-of-expenditure-estimates--red-book-2083-84/",
+      "title": "Statement of Expenditure Estimates (Red Book) FY2083/84",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Latest Red Book; prior-year columns for FY2082/83 revised estimate and FY2081/82 actual capital expenditure.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/MOF_Economic%20Survey%20ENG%202023-24%20book%20Final_for%20WEB_miwtpw0.pdf",
+      "title": "Economic Survey 2023/24 (English)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Public expenditure chapter and appendix: federal recurrent/capital/financing budget vs actual by fiscal year, capital expenditure as % of allocation; partial-year current FY.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/1520/economic-survey-2081-82/",
+      "title": "Economic Survey 2081/82 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Capital budget vs actual series updated to FY2080/81.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Capital budget vs actual series updated to FY2081/82.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://www.mof.gov.np/content/1523/budget-speech-2082-83/",
+      "title": "Budget Speech 2082/83 (Nepali)",
+      "publisher": "Ministry of Finance, Nepal",
+      "contains": "Appropriation totals and statements on prior-year execution; budget targets only.",
+      "source_id": "mof_nepal"
+    },
+    {
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/20240725124752_cfs2022-2023_q53t9je.pdf",
+      "title": "Consolidated Financial Statement FY2022/23",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Consolidated three-tier expenditure by economic classification (capital code series), budget vs actual; federal, provincial and local breakdown.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/CFS%202023.24_no3anlm.pdf",
+      "title": "Consolidated Financial Statement FY2023/24",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Same for FY2023/24.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://old.fcgo.gov.np/storage/uploads/reportpublication/2025-01-27/20250127145826_2021.pdf",
+      "title": "Consolidated Financial Statement (earlier year, FCGO upload 2025-01-27)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Earlier-year consolidated statement; period to be confirmed on retrieval.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://old.fcgo.gov.np/reporttype/1",
+      "title": "FCGO Consolidated Financial Statements (index)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Index of CFS by fiscal year incl. FY2024/25 statement (submitted to Auditor General).",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://fcgo.gov.np/",
+      "title": "FCGO portal (monthly/periodic expenditure reports)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Monthly federal expenditure reports by economic classification: source for cumulative capital spending by Nepali month, esp. Ashadh (final month).",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://old.fcgo.gov.np/storage/uploads/publications/20210908152258_Unofficial%20Translation%20of%20Chart%20of%20Account.pdf",
+      "title": "Integrated Financial Code, Classification and Explanation 2074 (Chart of Accounts, unofficial translation)",
+      "publisher": "Financial Comptroller General Office, Nepal",
+      "contains": "Definition of capital expenditure codes (e.g. the capital-expenditure code series), used to align capex definition across MoF, FCGO and WB/IMF.",
+      "source_id": "fcgo"
+    },
+    {
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation (annual data 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Government expenditure (recurrent, capital, financial) on cash basis for FY2024/25 vs FY2023/24.",
+      "source_id": "nrb"
+    },
+    {
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "NRB Current Macroeconomic and Financial Situation (archive)",
+      "publisher": "Nepal Rastra Bank",
+      "contains": "Monthly releases (1-month to 12-month data) with cumulative government capital expenditure, giving a within-year timing profile by fiscal year.",
+      "source_id": "nrb"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099011526010021304/pdf/P507000-a1fb9a28-4888-400c-9dd9-0705326e7d7e.pdf",
+      "title": "Nepal Capital Expenditure Bottlenecks Analysis (October 2025)",
+      "publisher": "World Bank",
+      "contains": "Capex execution rates by fiscal year and tier, within-year timing, and bottleneck diagnosis (planning, land acquisition, forest clearance, procurement, contract management, cash management).",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548411112541261",
+      "title": "Nepal Development Update, November 2025: Reforms to Accelerate Public Investment",
+      "publisher": "World Bank",
+      "contains": "Special focus on public investment: capex/GDP by tier, execution rates FY2019/20 onward, reform recommendations.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://thedocs.worldbank.org/en/doc/374767f32c6346c1e0cce6ce09aa4f28-0310012025/original/November-2025-NDU-presentation-Final.pdf",
+      "title": "Nepal Development Update November 2025 presentation",
+      "publisher": "World Bank",
+      "contains": "Slides with capex execution and timing charts (source tables must be traced to FCGO/MoF).",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099315004072621459/pdf/IDU-5fbb7a2f-51fb-4e48-aadc-2a447660fbe1.pdf",
+      "title": "Nepal Development Update April 2026: Growth Under Pressure",
+      "publisher": "World Bank",
+      "contains": "Half-year FY2025/26 fiscal outturn incl. capital spending.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099835012032119520/pdf/P17208601e4d9102009d990f176775b9f18.pdf",
+      "title": "Fiscal Policy for Sustainable Development: Nepal Public Expenditure Review",
+      "publisher": "World Bank",
+      "contains": "Expenditure efficiency, capital budget execution and end-year bunching analysis (vintage c. FY2019/20).",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/776741468054553856/nepal-public-expenditure-review",
+      "title": "Nepal - Public Expenditure Review (earlier)",
+      "publisher": "World Bank",
+      "contains": "Pre-federal PER; historical execution and efficiency baseline.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099061125140036081/pdf/P505226-fc21ecf1-2eeb-4930-9795-37b8d6f3cbdd.pdf",
+      "title": "World Bank document P505226 (June 2025)",
+      "publisher": "World Bank",
+      "contains": "Title and scope unverified in r1 (search returned untitled PDF); possibly relevant to PFM/public investment - confirm before use.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://www.pefa.gov.np/public/uploads/1752242798-Nepal%20GRPFM%20Assessment-I%20Report.pdf",
+      "title": "Nepal PEFA Assessment, April 2024 (GRPFM Assessment-I report)",
+      "publisher": "Government of Nepal PEFA Secretariat / PEFA",
+      "contains": "PI-1/PI-2 aggregate and compositional expenditure outturn scores, PI-11 public investment management, PI-21 in-year allocation predictability, PI-24 procurement, PI-30 external audit; data period FY2019/20-FY2021/22.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://www.pefa.org/node/5030",
+      "title": "Nepal 2024 PEFA (pefa.org record)",
+      "publisher": "PEFA Secretariat",
+      "contains": "Record/landing page for the 2024 national PEFA.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/483831467998500044/pdf/97606-WP-Nepal-PEFA-Report-Box391479B-PUBLIC.pdf",
+      "title": "Nepal PEFA report (earlier assessment)",
+      "publisher": "World Bank / PEFA",
+      "contains": "Earlier PEFA scores for comparison (methodology differs: PEFA 2011 vs 2016 framework).",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://www.pefa.org/node/5238",
+      "title": "Gandaki Province Sub-national PEFA 2025",
+      "publisher": "PEFA Secretariat",
+      "contains": "Provincial budget credibility and capital execution indicators.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://internationalbudget.org/wp-content/uploads/Nepal-Budget-Credibility-and-the-Sustainable-Development-Goals.pdf",
+      "title": "Nepal: Budget Credibility and the Sustainable Development Goals",
+      "publisher": "International Budget Partnership",
+      "contains": "Budget vs actual deviations by sector and explanations; independent tier.",
+      "source_id": "academic"
+    },
+    {
+      "url": "https://old.oag.gov.np/menu-category/926/en",
+      "title": "Auditor General Nepal - Annual Reports (index)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Annual reports by fiscal year: irregularities, arrears, and chapters on capital project and contract management failures.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://oag.gov.np/",
+      "title": "OAG current site (62nd Annual Report, FY2080/81)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "62nd Annual Report (audit of FY2080/81): irregularities by tier, unsettled arrears, project-level findings (cost/time overruns, advances not settled, contract variations).",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://oag.gov.np/site_uploads/bg1-Some%20sections%20of%20Annual%20Report%202078%20English%20Version..pdf",
+      "title": "Auditor General's 58th Annual Report 2021 (2078), selected sections in English",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "English sections incl. findings on project execution and budget management.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://old.oag.gov.np/uploads/files/fkr-executive_summary%20English.pdf",
+      "title": "Auditor General's 55th Annual Report 2018 - executive summary (unofficial translation)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Executive summary incl. year-end spending and project-delay findings.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://old.oag.gov.np/uploads/files/jKj-Executive%20Summary%20English%202071.pdf",
+      "title": "Auditor General's 52nd Annual Report - executive summary (unofficial translation)",
+      "publisher": "Office of the Auditor General, Nepal",
+      "contains": "Pre-federal baseline of audit findings.",
+      "source_id": "oag_nepal"
+    },
+    {
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF",
+      "publisher": "International Monetary Fund",
+      "contains": "Capex execution discussion, PIMA action plan, National Project Bank guidelines, budget realism and MTFF; central government operations table.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.imf.org/en/Publications/CR/Issues/2025/10/06/Nepal-Sixth-Review-Under-the-Extended-Credit-Facility-Arrangement-Press-Release-Staff-570974",
+      "title": "Nepal: Sixth Review under the ECF (CR 2025/285)",
+      "publisher": "International Monetary Fund",
+      "contains": "Structural benchmarks on public investment management and capital spending.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://www.imf.org/-/media/files/publications/books/2022/english/pimaea.pdf",
+      "title": "PIMA Handbook, 1st edition (2022)",
+      "publisher": "International Monetary Fund",
+      "contains": "Method only: 15-institution PIMA framework; Nepal PIMA report itself not located in r1.",
+      "source_id": "imf_article_iv"
+    },
+    {
+      "url": "https://ppmo.gov.np/index.php?_route_=reports/annual_reports",
+      "title": "PPMO Annual Reports",
+      "publisher": "Public Procurement Monitoring Office, Nepal",
+      "contains": "Procurement volumes, methods, e-GP usage, bid challenges and contract delays.",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://ppmo.gov.np/content/7397/7397-public-procurement-act-2063/",
+      "title": "Public Procurement Act 2063 (English, with amendments)",
+      "publisher": "Public Procurement Monitoring Office, Nepal",
+      "contains": "Legal procurement rules affecting timing (e.g. lowest-bid rule, contract variation provisions).",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://data.open-contracting.org/en/publication/36",
+      "title": "Nepal PPMO - Open Contracting Data Registry",
+      "publisher": "Open Contracting Partnership",
+      "contains": "OCDS contract-level data: award dates, contract values, completion; enables project-level delay analysis.",
+      "source_id": "ppmo"
+    },
+    {
+      "url": "https://www.worldbank.org/en/data/interactive/2026/02/10/nepal-fiscal-dashboard",
+      "title": "Nepal Fiscal Dashboard (2026)",
+      "publisher": "World Bank",
+      "contains": "Interactive expenditure series by tier; trace underlying source and FY basis.",
+      "source_id": "wb_npl"
+    },
+    {
+      "url": "https://english.ratopati.com/story/48038/the-budget-is-always-reduced-during-the-semi-annual-review-which-finance-minister-reduced-how-much",
+      "title": "News report on mid-term budget review reductions (Ratopati)",
+      "publisher": "Ratopati (press)",
+      "contains": "Secondary pointer only (no values used): indicates MoF mid-year review revises capital estimates downward; locate the MoF mid-term budget review document itself.",
+      "source_id": "academic"
+    }
+  ]
+}

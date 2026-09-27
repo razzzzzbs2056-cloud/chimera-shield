@@ -1,0 +1,359 @@
+{
+  "summary": "Round r1 (restricted network). Three methodologically distinct sources were located and are kept separate: (1) NRB BoP remittance series (FY basis, workers' and personal remittances) for the remittances/GDP ratio with NSO nominal GDP; (2) NLSS IV 2022/23 statistical report and microdata for household receipt shares by province and remittances by source (survey, includes informal channels); (3) KNOMAD/World Bank bilateral remittance matrix (modelled corridors, calendar year). NRB is not confirmed to publish remittances by sending country; a secondary source attributes a Gulf share to NRB and must be traced to an original NRB document before use. All values pending. A published critique of NLSS IV data quality is flagged for investigation.",
+  "findings": [
+    {
+      "claim": "Q1: Personal remittances and workers' remittances, FY2024/25 and FY2025/26 (NPR and USD), and ratio to nominal GDP on the same Nepal FY basis.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NRB CME annual tables (23C-L01, 23C-L02); NSO nominal GDP for the same FY (from 16A/NSO national accounts).",
+      "unit": "percent",
+      "period": "FY2024/25, FY2025/26 (mid-July)"
+    },
+    {
+      "claim": "Q1: Remittance inflows by source corridor - survey basis (NLSS IV, India / other countries and by country from microdata).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV remittance chapter tables and weighted microdata tabulation (23C-L03, 23C-L04).",
+      "unit": "percent",
+      "period": "NLSS IV survey period 2022/23"
+    },
+    {
+      "claim": "Q1: Remittance inflows by source corridor - modelled basis (KNOMAD bilateral matrix, Nepal as recipient).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "knomad"
+      ],
+      "observation_ids": [],
+      "note": "Required: latest BRE vintage (23C-L05, 23C-L06) with methodology note (23C-L07).",
+      "unit": "percent",
+      "period": "calendar year (vintage to confirm)"
+    },
+    {
+      "claim": "Q1: Any NRB-published estimate of remittances by source region (Gulf, Malaysia, India, other).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb"
+      ],
+      "observation_ids": [],
+      "note": "Required: original NRB document; secondary mention located only (23C-L13 and news); do not use until traced.",
+      "unit": "percent",
+      "period": "to be confirmed"
+    },
+    {
+      "claim": "Q2: Share of households receiving remittances, by province (seven provinces) and urban/rural.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV remittance chapter tables by province (23C-L03) or microdata tabulation (23C-L04), with standard errors.",
+      "unit": "percent",
+      "period": "NLSS IV 2022/23"
+    },
+    {
+      "claim": "Q2: Remittance share of household income / consumption by province and quintile.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nso_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NLSS IV income-source tables or microdata.",
+      "unit": "percent",
+      "period": "NLSS IV 2022/23"
+    },
+    {
+      "claim": "Remittances/GDP uses the NRB numerator and NSO nominal GDP for the same Nepal fiscal year; calendar-year WDI ratios are cross-checks only and are not mixed with FY data.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "NLSS (survey, includes informal channels and domestic transfers), KNOMAD (modelled) and any NRB source-region split (formal channels) are three different concepts and are reported side by side; conflicts are documented via find_conflicts, never averaged.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "NRB remittances by sending country: not confirmed as published; required document is an NRB table or survey of remittance by source country with period.",
+    "Informal (hundi) remittance volume: no official estimate located.",
+    "NLSS IV data-quality concerns (23C-L15) require comparison with NLSS III and Census 2021 before use.",
+    "Province-level remittance receipts after 2022/23 (no annual survey).",
+    "KNOMAD latest vintage and whether updates continued after KNOMAD's wind-down need confirmation on retrieval."
+  ],
+  "assumptions": [
+    {
+      "id": "23C-A1",
+      "text": "Personal remittances (BPM6) is the headline concept for remittances/GDP; workers' remittances is reported alongside.",
+      "basis": "assumption"
+    },
+    {
+      "id": "23C-A2",
+      "text": "Household receipt share uses NLSS IV definitions (any member receiving remittances in the reference year).",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16B",
+      "text": "Accept 16B challenge: EXP-01 corridor shares will be three separate values (NLSS survey, KNOMAD modelled, NRB formal-channel if located). The EXP-01 value field should hold remittances/GDP only."
+    },
+    {
+      "to": "10",
+      "text": "Consumption and poverty parameters sensitive to remittances must use NLSS IV provincial receipt shares with standard errors once retrieved; national averages hide provincial dependence."
+    },
+    {
+      "to": "00B",
+      "text": "Potential conflict: NLSS IV remittance incidence vs earlier NLSS and Census-based migration incidence; public critique of NLSS IV data exists. Escalate if values diverge beyond tolerance after retrieval."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Corridor shares are conceptually uncertain because official formal-channel data by source country may not exist; survey and modelled values measure different things. Household receipt shares depend on NLSS IV, whose data quality has been publicly questioned.",
+  "source_leads": [
+    {
+      "lead_id": "23C-L01",
+      "url": "https://www.nrb.org.np/contents/uploads/2025/08/Current-Macroeconomic-and-Financial-Situation-English-Based-on-Annual-data-of-2024.25.pdf",
+      "title": "Current Macroeconomic and Financial Situation of Nepal (annual data of 2024/25)",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Annual FY2024/25 remittance inflows (NPR and USD, workers' vs personal remittances in BoP secondary income) and BoP tables; mid-July fiscal-year basis"
+    },
+    {
+      "lead_id": "23C-L02",
+      "url": "https://www.nrb.org.np/category/current-macroeconomic-situation/",
+      "title": "Current Macroeconomic and Financial Situation archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Monthly and annual CME releases with Excel tables: remittance series history, month-of-FY; FY2025/26 annual release expected August 2026"
+    },
+    {
+      "lead_id": "23C-L03",
+      "url": "https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf",
+      "title": "Nepal Living Standards Survey IV 2022/23 Statistical Report",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Chapter on remittance and transfer income: share of households receiving remittances (national, urban/rural, province), remittance receipts by source (within Nepal, India, other countries), use of remittances; survey period 2022/23"
+    },
+    {
+      "lead_id": "23C-L04",
+      "url": "https://microdata.nsonepal.gov.np/index.php/catalog/149",
+      "title": "Nepal Living Standards Survey 2022-2023, Fourth round - microdata catalogue",
+      "publisher": "National Statistics Office, Nepal",
+      "source_id": "nso_nepal",
+      "contains": "Household microdata to tabulate receipt shares by province and remittance by sender country with survey weights"
+    },
+    {
+      "lead_id": "23C-L05",
+      "url": "https://www.knomad.org/data/remittances",
+      "title": "Remittances and Migration data (KNOMAD)",
+      "publisher": "World Bank / KNOMAD",
+      "source_id": "knomad",
+      "contains": "Inward remittance series and Bilateral Remittance Matrix (modelled corridor allocation by migrant stock and incomes; calendar year)"
+    },
+    {
+      "lead_id": "23C-L06",
+      "url": "https://data360.worldbank.org/en/indicator/WB_KNOMAD_BRE",
+      "title": "Bilateral Remittance Estimates using Migrant Stocks (WB_KNOMAD_BRE)",
+      "publisher": "World Bank Data360",
+      "source_id": "knomad",
+      "contains": "Machine-readable corridor-level bilateral remittance estimates, Nepal as recipient; calendar year"
+    },
+    {
+      "lead_id": "23C-L07",
+      "url": "https://documents1.worldbank.org/curated/en/099939108162412268/pdf/IDU16ac5f9f71eb2214b69182441e56964b688f2.pdf",
+      "title": "Notes on Bilateral Remittance Flows",
+      "publisher": "World Bank",
+      "source_id": "knomad",
+      "contains": "Methodology and limitations of the bilateral remittance matrix"
+    },
+    {
+      "lead_id": "23C-L08",
+      "url": "https://documents1.worldbank.org/curated/en/099714008132436612/pdf/IDU1a9cf73b51fcad1425a1a0dd1cc8f2f3331ce.pdf",
+      "title": "Migration and Development Brief 40 (June 2024)",
+      "publisher": "World Bank / KNOMAD",
+      "source_id": "knomad",
+      "contains": "Regional and country remittance estimates for calendar 2023 and outlook; remittance cost indicators"
+    },
+    {
+      "lead_id": "23C-L09",
+      "url": "https://api.worldbank.org/v2/country/NPL/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json",
+      "title": "WDI personal remittances received (% of GDP), Nepal",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Calendar-year remittances/GDP ratio for cross-check only (differs in period basis from NRB FY series)"
+    },
+    {
+      "lead_id": "23C-L10",
+      "url": "https://mof.gov.np/content/1738/economic-survey-2082-83/",
+      "title": "Economic Survey 2082/83",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Chapter on external sector and foreign employment: remittance inflows and labour approvals for the first months of the FY; Nepali-language page"
+    },
+    {
+      "lead_id": "23C-L11",
+      "url": "https://www.imf.org/en/publications/cr/issues/2026/06/08/nepal-2026-article-iv-consultation-and-seventh-review-under-the-extended-credit-facility-576691",
+      "title": "Nepal: 2026 Article IV Consultation and Seventh Review under the ECF - Staff Report",
+      "publisher": "International Monetary Fund",
+      "source_id": "imf_article_iv",
+      "contains": "BoP and remittance projections, external-vulnerability discussion including the 2026 Middle East conflict"
+    },
+    {
+      "lead_id": "23C-L12",
+      "url": "https://www.nrb.org.np/red/nrb-wp-53-impact-of-remittances-rohan-and-mira/",
+      "title": "NRB Working Paper No. 53 - Impact of remittances",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Research on household/economic effects of remittances (2021); methodology reference"
+    },
+    {
+      "lead_id": "23C-L13",
+      "url": "https://migrantmoney.uncdf.org/wp-content/uploads/2023/02/Nepal-Country-Assessments.pdf",
+      "title": "Nepal Country Assessment (Migrant Money)",
+      "publisher": "UNCDF",
+      "source_id": "academic",
+      "contains": "Remittance channels, formal vs informal (hundi) use and digital remittance ecosystem; possible reference to NRB source-country estimates to be traced to the original NRB document"
+    },
+    {
+      "lead_id": "23C-L14",
+      "url": "https://www.nepjol.info/index.php/DSAJ/article/view/84892",
+      "title": "Changing Remittance Patterns in Nepal: Evidence from NLSS III and IV",
+      "publisher": "Dhaulagiri Journal of Sociology and Anthropology",
+      "source_id": "academic",
+      "contains": "Comparison of NLSS III (2010/11) and NLSS IV (2022/23) remittance incidence and sources; secondary - cite NLSS primary"
+    },
+    {
+      "lead_id": "23C-L15",
+      "url": "https://kathmandupost.com/columns/2024/07/15/data-cooking-in-government-surveys",
+      "title": "Opinion: Data cooking in government surveys",
+      "publisher": "The Kathmandu Post",
+      "source_id": "academic",
+      "contains": "Critique of NLSS IV data quality; methodological issue to investigate before using NLSS IV household receipt shares"
+    }
+  ],
+  "specific": {
+    "remittance_baseline": {
+      "status": "pending",
+      "value": null,
+      "metrics": [
+        {
+          "metric": "personal_remittances",
+          "unit": "npr_million / usd_million",
+          "period": "FY2024/25, FY2025/26"
+        },
+        {
+          "metric": "workers_remittances",
+          "unit": "npr_million / usd_million",
+          "period": "same"
+        },
+        {
+          "metric": "remittances_to_gdp",
+          "unit": "percent",
+          "period": "same FY basis; GDP from NSO"
+        }
+      ],
+      "method": "Ingest NRB CME annual tables; divide by NSO nominal GDP for the same FY; report USD using NRB FY-average rate; cross-check with WDI calendar-year ratio without mixing.",
+      "lead_ids": [
+        "23C-L01",
+        "23C-L02",
+        "23C-L09",
+        "23C-L10",
+        "23C-L11"
+      ]
+    },
+    "corridor_shares": {
+      "status": "pending",
+      "value": null,
+      "series": [
+        {
+          "basis": "survey (NLSS IV 2022/23)",
+          "coverage": "includes informal channels and domestic transfers",
+          "lead_ids": [
+            "23C-L03",
+            "23C-L04"
+          ]
+        },
+        {
+          "basis": "modelled (KNOMAD bilateral matrix, calendar year)",
+          "coverage": "allocation by migrant stocks and incomes",
+          "lead_ids": [
+            "23C-L05",
+            "23C-L06",
+            "23C-L07"
+          ]
+        },
+        {
+          "basis": "formal-channel (NRB, if published)",
+          "coverage": "to be confirmed",
+          "lead_ids": [
+            "23C-L01",
+            "23C-L13"
+          ]
+        }
+      ],
+      "corridors": [
+        "India",
+        "Saudi Arabia",
+        "Qatar",
+        "UAE",
+        "Kuwait",
+        "Oman",
+        "Bahrain",
+        "Malaysia",
+        "Republic of Korea",
+        "Japan",
+        "USA",
+        "UK",
+        "Australia",
+        "other"
+      ],
+      "metrics": [
+        "share by corridor (percent)",
+        "HHI (index)",
+        "GCC+Malaysia share (percent)"
+      ],
+      "method": "Compute shares per source separately; record conflicts with methodological notes."
+    },
+    "household_dependence": {
+      "status": "pending",
+      "value": null,
+      "metrics": [
+        {
+          "metric": "households_receiving_remittances_share",
+          "unit": "percent",
+          "disaggregation": "national, 7 provinces, urban/rural, consumption quintile"
+        },
+        {
+          "metric": "remittance_share_of_household_income",
+          "unit": "percent",
+          "disaggregation": "same"
+        }
+      ],
+      "period": "NLSS IV 2022/23 (survey fieldwork July 2022 - June 2023)",
+      "method": "NLSS IV report tables, then weighted microdata tabulation with standard errors; compare with NLSS III for trend with documented definitional changes.",
+      "lead_ids": [
+        "23C-L03",
+        "23C-L04",
+        "23C-L14",
+        "23C-L15"
+      ]
+    }
+  },
+  "subagent_id": "23C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00"
+}

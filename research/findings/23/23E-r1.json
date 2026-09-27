@@ -1,0 +1,311 @@
+{
+  "summary": "Round r1 (restricted network). Inventory of seven diaspora instruments: Foreign Employment Saving Bond (NRB archive and PDMO debt statistics as primary records), NRN foreign-currency accounts, NRN direct investment under the NRN Act, NRN access to the government-securities secondary market (FY2082/83 budget), a diaspora/offshore NPR bond reported in the FY2083/84 budget, NRN quotas in equity issues, and knowledge/return programmes. No uptake values were recorded; uptake is pending retrieval of NRB issue results and PDMO outstanding-debt tables. NRN investment is not confirmed to be separately identified in NRB FDI surveys.",
+  "findings": [
+    {
+      "claim": "Q1: FESB issues since inception: issue size, amount subscribed, subscription rate, outstanding stock.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "pdmo"
+      ],
+      "observation_ids": [],
+      "note": "Required: NRB FESB issue/allotment notices (23E-L01) and PDMO outstanding debt by instrument (23E-L03), Nepal FY.",
+      "unit": "npr_million",
+      "period": "FY2010/11-FY2025/26"
+    },
+    {
+      "claim": "Q1: NRN-attributed FDI (approved and realised) and NRN foreign-currency deposit stock.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "nrb",
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: NRB FDI survey tables if NRN category exists (23E-L06, 23E-L07); DoI approvals by NRN status; NRB deposit data by account type.",
+      "unit": "npr_million",
+      "period": "Nepal FY"
+    },
+    {
+      "claim": "Q1: Status of diaspora bond / offshore NPR bond and NRN secondary-market access announced in FY2082/83 and FY2083/84 budgets.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "mof_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Required: official budget speech texts and any subsequent NRB/MoF implementing directive.",
+      "period": "FY2082/83-FY2083/84"
+    },
+    {
+      "claim": "Q1: Academic/independent evidence on reasons for low diaspora-instrument uptake.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "academic"
+      ],
+      "observation_ids": [],
+      "note": "Required: retrieval of 23E-L11 and peer-reviewed studies; barriers (awareness, purchase channels, relative returns) are hypotheses until retrieved."
+    },
+    {
+      "claim": "Diaspora investment is distinguished from remittances for consumption: only flows into financial instruments or equity are counted as diaspora investment.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "NRN-specific FDI and deposit data may not be published separately.",
+    "No primary documentation on diaspora bond design (FY2083/84) located beyond secondary budget highlights.",
+    "NRNA investment pledges vs realised investment: no audited source located.",
+    "SEBON NRN quota rules not yet located as a specific document."
+  ],
+  "assumptions": [
+    {
+      "id": "23E-A1",
+      "text": "Instrument uptake is measured in NPR on a Nepal FY basis from NRB/PDMO records; USD conversions use NRB FY-average rates.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "16A",
+      "text": "Exposure register could add a diaspora-capital entry (low uptake means low dependence but also unused financing capacity); proposal only."
+    },
+    {
+      "to": "28",
+      "text": "Strategies relying on diaspora bonds as a financing source should be treated as UNVERIFIED until FESB historical uptake is retrieved."
+    }
+  ],
+  "uncertainty": "High. Uptake of all instruments is unquantified in r1. Instrument status for FY2082/83-FY2083/84 budget announcements rests on secondary summaries; implementation is unverified.",
+  "source_leads": [
+    {
+      "lead_id": "23E-L01",
+      "url": "https://www.nrb.org.np/category/public-debt-operations/foreign-employment-saving-bonds/",
+      "title": "Foreign Employment Saving Bonds archive",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Issue notices for Foreign Employment Saving Bonds (issue size, coupon, tenor, eligibility) by issue; allotment/subscription results where posted"
+    },
+    {
+      "lead_id": "23E-L02",
+      "url": "https://www.nrb.org.np/contents/uploads/2022/05/FESB-Client-End-User-Guide.pdf",
+      "title": "FESB Client End-User Guide",
+      "publisher": "Nepal Rastra Bank, Monetary Management Department",
+      "source_id": "nrb",
+      "contains": "Purchase procedure and channels for Foreign Employment Saving Bonds (operational barrier evidence)"
+    },
+    {
+      "lead_id": "23E-L03",
+      "url": "https://pdmo.gov.np",
+      "title": "Public Debt Management Office - debt statistics",
+      "publisher": "Public Debt Management Office, Nepal",
+      "source_id": "pdmo",
+      "contains": "Outstanding domestic debt by instrument including Foreign Employment Saving Bonds (monthly/annual, FY basis)"
+    },
+    {
+      "lead_id": "23E-L04",
+      "url": "https://www.immigration.gov.np/upload/e66443e81e8cc9c4fa5c099a1fb1bb87/files/Non-Resident-Nepalese-Act-2064.pdf",
+      "title": "Non-Resident Nepali Act, 2064",
+      "publisher": "Government of Nepal (hosted by Department of Immigration)",
+      "source_id": "lawcommission_nepal",
+      "contains": "Legal basis for NRN investment, foreign-currency accounts and repatriation rights; amendments to be checked against Nepal Law Commission"
+    },
+    {
+      "lead_id": "23E-L05",
+      "url": "https://www.nrb.org.np/contents/uploads/2019/12/NRB-Foreign-Investment-and-Loan-Management-Bylaw_English-2.pdf",
+      "title": "NRB Foreign Investment and Loan Management Bylaw",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Rules for NRN/foreign investment inflow approval and repatriation; later amendments (2024) to be located"
+    },
+    {
+      "lead_id": "23E-L06",
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock and inflows by source country and sector; check whether NRN investment is separately identified"
+    },
+    {
+      "lead_id": "23E-L07",
+      "url": "https://www.nrb.org.np/contents/uploads/2024/08/Survey-Report-on-Foreign-Direct-Investment-2022-23.pdf",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2022/23",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Prior-year FDI survey for comparison"
+    },
+    {
+      "lead_id": "23E-L08",
+      "url": "https://en.ican.org.np/_browsable/file/resouces/Federal_Budget_2082_83_Highlights_V6.pdf",
+      "title": "Highlights of Federal Budget of Nepal FY2082/83 (2025/26)",
+      "publisher": "Institute of Chartered Accountants of Nepal",
+      "source_id": "academic",
+      "contains": "Budget provisions on NRN access to government-securities secondary market; lead to official MoF budget speech"
+    },
+    {
+      "lead_id": "23E-L09",
+      "url": "https://en.ican.org.np/_browsable/file/resouces/Federal_Budget_2083_84_Highlights_V1.pdf",
+      "title": "Highlights of Federal Budget of Nepal FY2083/84 (2026/27)",
+      "publisher": "Institute of Chartered Accountants of Nepal",
+      "source_id": "academic",
+      "contains": "Budget 'alternative finance' provisions reportedly including a diaspora bond and offshore NPR bond; lead to official MoF budget speech"
+    },
+    {
+      "lead_id": "23E-L10",
+      "url": "https://mof.gov.np",
+      "title": "Ministry of Finance - budget speeches and Economic Survey",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Official budget speech texts FY2082/83 and FY2083/84 (diaspora instruments) and Economic Survey chapters"
+    },
+    {
+      "lead_id": "23E-L11",
+      "url": "https://nepaleconomicforum.org/14261-2/",
+      "title": "Nepal Foreign Employment Saving Bonds uptake analysis",
+      "publisher": "Nepal Economic Forum",
+      "source_id": "academic",
+      "contains": "Analysis of FESB uptake history and barriers; secondary - trace figures to NRB/PDMO"
+    },
+    {
+      "lead_id": "23E-L12",
+      "url": "https://www.sebon.gov.np",
+      "title": "Securities Board of Nepal",
+      "publisher": "Securities Board of Nepal",
+      "source_id": "sebon",
+      "contains": "Rules on NRN participation in IPOs and secondary equity market; reserved NRN quotas in public issues"
+    },
+    {
+      "lead_id": "23E-L13",
+      "url": "https://ibn.gov.np",
+      "title": "Investment Board Nepal",
+      "publisher": "Investment Board Nepal",
+      "source_id": "ibn",
+      "contains": "Investment summit commitments and project pipeline including NRN-promoted projects"
+    },
+    {
+      "lead_id": "23E-L14",
+      "url": "https://english.ratopati.com/story/64764/nrna-welcomes-inclusion-of-nrn-issues-in-budget",
+      "title": "NRNA welcomes government budget policies for diaspora and migrant workers (news)",
+      "publisher": "Ratopati",
+      "source_id": "academic",
+      "contains": "Non-Resident Nepali Association response to budget diaspora measures; lead only"
+    },
+    {
+      "lead_id": "23E-L15",
+      "url": "https://nepal.iom.int/sites/g/files/tmzbdl1116/files/documents/2025-05/pub2024-088-el-mgi-nepal-second-profile.pdf",
+      "title": "Migration Governance Indicators - Nepal, Second Profile 2024",
+      "publisher": "International Organization for Migration",
+      "source_id": "iom",
+      "contains": "Diaspora engagement and return/reintegration policy assessment"
+    }
+  ],
+  "specific": {
+    "instrument_inventory": {
+      "status": "pending",
+      "value": null,
+      "instruments": [
+        {
+          "id": "DI-01",
+          "name": "Foreign Employment Saving Bond (FESB)",
+          "type": "government savings bond for migrant workers, NRNs and recent returnees",
+          "administrator": "NRB on behalf of Government of Nepal",
+          "status_reported": "issued since 2010 (to verify)",
+          "uptake_metric_required": "issue size, subscription amount per issue, outstanding stock",
+          "uptake_value": null,
+          "lead_ids": "23E-L01, 23E-L02, 23E-L03, 23E-L11",
+          "verification_status": "pending"
+        },
+        {
+          "id": "DI-02",
+          "name": "NRN foreign-currency accounts",
+          "type": "bank deposit",
+          "administrator": "NRB / BFIs",
+          "status_reported": "in force (NRN Act; NRB directives)",
+          "uptake_metric_required": "deposit stock (not known to be published)",
+          "uptake_value": null,
+          "lead_ids": "23E-L04, 23E-L05",
+          "verification_status": "pending"
+        },
+        {
+          "id": "DI-03",
+          "name": "NRN direct investment (NRN Act route / FITTA route)",
+          "type": "equity FDI",
+          "administrator": "DoI / NRB",
+          "status_reported": "in force",
+          "uptake_metric_required": "NRN-attributable FDI approvals and realised stock",
+          "uptake_value": null,
+          "lead_ids": "23E-L04, 23E-L05, 23E-L06, 23E-L07",
+          "verification_status": "pending"
+        },
+        {
+          "id": "DI-04",
+          "name": "NRN access to government-securities secondary market",
+          "type": "debt securities",
+          "administrator": "MoF / NRB",
+          "status_reported": "announced in budget FY2082/83 (implementation to verify)",
+          "uptake_metric_required": "holdings by NRNs",
+          "uptake_value": null,
+          "lead_ids": "23E-L08, 23E-L10",
+          "verification_status": "pending"
+        },
+        {
+          "id": "DI-05",
+          "name": "Diaspora bond / offshore NPR bond",
+          "type": "sovereign bond",
+          "administrator": "MoF",
+          "status_reported": "announced in budget FY2083/84 (to verify)",
+          "uptake_metric_required": "issue status",
+          "uptake_value": null,
+          "lead_ids": "23E-L09, 23E-L10",
+          "verification_status": "pending"
+        },
+        {
+          "id": "DI-06",
+          "name": "NRN quotas in public equity issues",
+          "type": "equity (IPO allotment)",
+          "administrator": "SEBON",
+          "status_reported": "in force (to verify)",
+          "uptake_metric_required": "subscription by NRNs",
+          "uptake_value": null,
+          "lead_ids": "23E-L12",
+          "verification_status": "pending"
+        },
+        {
+          "id": "DI-07",
+          "name": "Knowledge/skills transfer and return-migrant reintegration programmes",
+          "type": "non-financial",
+          "administrator": "MoLESS / NRNA / IOM",
+          "status_reported": "various",
+          "uptake_metric_required": "participation and outcomes",
+          "uptake_value": null,
+          "lead_ids": "23E-L14, 23E-L15",
+          "verification_status": "pending"
+        }
+      ],
+      "method": "Retrieve NRB/PDMO/MoF primary records; record issue-level uptake as observations; compare with secondary analyses and document any conflicts.",
+      "lead_ids": [
+        "23E-L01",
+        "23E-L02",
+        "23E-L03",
+        "23E-L04",
+        "23E-L05",
+        "23E-L06",
+        "23E-L07",
+        "23E-L08",
+        "23E-L09",
+        "23E-L10",
+        "23E-L11",
+        "23E-L12",
+        "23E-L13",
+        "23E-L14",
+        "23E-L15"
+      ]
+    }
+  },
+  "subagent_id": "23E",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00"
+}

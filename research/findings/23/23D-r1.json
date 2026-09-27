@@ -1,0 +1,353 @@
+{
+  "summary": "Round r1 (restricted network). Located UN WPP 2024 data, dataset documentation and methodology report as the single source for destination ageing indicators, plus OECD IMO 2025 (health/care workforce migration) and Japan's acceptance framework as demand-side policy evidence. All demographic values are pending. Key methodological issue: WPP totals for GCC states include non-national migrants, so working-age projections there reflect migration assumptions rather than native ageing; native vs non-native split must come from GLMM/national sources.",
+  "findings": [
+    {
+      "claim": "Q1: Projected old-age dependency ratio and working-age population change 2025-2050 for each major destination (GCC six, Malaysia, Japan, Korea, Australia, UK, Canada, India).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "un_wpp"
+      ],
+      "observation_ids": [],
+      "note": "Required: WPP 2024 medium variant, population by age for listed countries, 2025, 2030, 2040, 2050 (plus low/high variants).",
+      "unit": "percent",
+      "period": "calendar year (1 July reference)"
+    },
+    {
+      "claim": "Q1: Native (national) working-age trajectory for GCC states separated from migrant stock.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "glmm",
+        "un_wpp"
+      ],
+      "observation_ids": [],
+      "note": "Required: GLMM national/non-national population by age; WPP net-migration assumption per GCC state (methodology report).",
+      "unit": "count",
+      "period": "calendar year"
+    },
+    {
+      "claim": "Q1: Translation of ageing into foreign-labour demand by sector (care, construction, manufacturing, agriculture).",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oecd",
+        "un_wpp"
+      ],
+      "observation_ids": [],
+      "note": "Required: destination labour-demand projections or policy caps (Japan SSW caps, Korea EPS quotas, OECD health-workforce chapter). No elasticity is assumed without evidence.",
+      "period": "calendar year"
+    },
+    {
+      "claim": "Ageing raises structural demand for foreign labour mainly in high-income East Asian and European destinations; for GCC states demand is driven by economic diversification and localisation policy rather than native ageing. This is a working hypothesis to be tested against WPP and policy data, not a finding.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "WPP 2024 medium variant is the reference; low and high variants are reported as the uncertainty band.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No official destination-level projections of foreign-labour demand by sector were located (only policy caps).",
+    "GCC native/non-native age structures are published irregularly and with mixed vintages.",
+    "A WPP revision after 2024 (if released) not verified; confirm latest vintage on retrieval."
+  ],
+  "assumptions": [
+    {
+      "id": "23D-A1",
+      "text": "Destination list follows 23A DoFE destinations plus India and main education destinations; revised once 23A concentration values are retrieved.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "09",
+      "text": "Nepal's own WPP projections imply a closing demographic window; outward labour supply parameters should be linked to Nepal's working-age projection rather than held constant."
+    },
+    {
+      "to": "28",
+      "text": "Scenarios assuming sustained GCC demand should test localisation (23B PC-01) against the ageing-driven East Asian demand shift."
+    }
+  ],
+  "uncertainty": "High. No projections retrieved. WPP migration assumptions dominate GCC projections, and the link from ageing to foreign-labour demand is policy-mediated and not directly measurable from demographic data.",
+  "source_leads": [
+    {
+      "lead_id": "23D-L01",
+      "url": "https://population.un.org/wpp/",
+      "title": "World Population Prospects 2024 - data portal and downloads",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Population by single year of age and sex, 1950-2100, medium and alternative variants, for Saudi Arabia, UAE, Qatar, Kuwait, Oman, Bahrain, Malaysia, Japan, Republic of Korea, Australia, UK, Canada, India, Nepal; calendar year (1 July)"
+    },
+    {
+      "lead_id": "23D-L02",
+      "url": "https://www.un.org/development/desa/pd/content/world-population-prospects-2024-dataset",
+      "title": "World Population Prospects 2024: Dataset",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Description and download links of standard Excel/CSV projection files (population by age, dependency ratios, net migration assumptions)"
+    },
+    {
+      "lead_id": "23D-L03",
+      "url": "https://population.un.org/wpp/assets/Files/WPP2024_Methodology-Report_Final.pdf",
+      "title": "WPP 2024 Methodology Report (UN DESA/POP/2024/DC/NO.10)",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Projection methods, including treatment of international migration assumptions - critical for GCC states whose populations are migration-driven"
+    },
+    {
+      "lead_id": "23D-L04",
+      "url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+      "title": "World Population Prospects 2024: Summary of Results",
+      "publisher": "UN DESA Population Division",
+      "source_id": "un_wpp",
+      "contains": "Headline findings on countries past peak population, ultra-low fertility and ageing"
+    },
+    {
+      "lead_id": "23D-L05",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+      "title": "International Migration Outlook 2025",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Special chapter on international migration of health professionals; temporary labour migration trends; relevant to care-sector demand in ageing destinations"
+    },
+    {
+      "lead_id": "23D-L06",
+      "url": "https://www.moj.go.jp/isa/content/930004452.pdf",
+      "title": "Initiatives to Accept Foreign Nationals",
+      "publisher": "Immigration Services Agency of Japan",
+      "source_id": "academic",
+      "contains": "Japan's foreign-worker acceptance framework and field-specific caps (demand-side policy response to ageing)"
+    },
+    {
+      "lead_id": "23D-L07",
+      "url": "https://gulfmigration.grc.net/glmm-database/demographic-and-economic-module/",
+      "title": "GLMM database - demographic and economic module",
+      "publisher": "Gulf Research Center, Gulf Labour Markets, Migration and Population programme",
+      "source_id": "glmm",
+      "contains": "GCC national/non-national population split and age structure where available (WPP totals for GCC states embed migrant stock)"
+    }
+  ],
+  "specific": {
+    "destination_demand_outlook": {
+      "status": "pending",
+      "value": null,
+      "destinations": [
+        {
+          "country": "Saudi Arabia",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "diversification/localisation-driven; native population young",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "United Arab Emirates",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "migration-driven population; demand tied to growth",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Qatar",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "post-World Cup construction normalisation",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Kuwait",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "localisation policy",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Oman",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "localisation policy",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Bahrain",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "localisation policy",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Malaysia",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "manufacturing/plantation demand; freeze policy",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Japan",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "ageing-driven, care and industry fields (SSW)",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Republic of Korea",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "ageing and ultra-low fertility; EPS quota",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Australia",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "care and skilled; student pathway",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "United Kingdom",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "care demand vs. restrictive policy",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "Canada",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "ageing; temporary-resident reduction policy",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        },
+        {
+          "country": "India",
+          "indicators": [
+            "old_age_dependency_ratio (percent)",
+            "working_age_population_15_64 change (percent)",
+            "median age"
+          ],
+          "horizon": "2025-2050",
+          "variant": "medium (+low/high)",
+          "demand_mechanism_hypothesis": "open-border; own labour surplus",
+          "lead_ids": [
+            "23D-L01",
+            "23D-L02"
+          ]
+        }
+      ],
+      "method": "Ingest WPP 2024 files, compute indicators per destination; separate GCC native/non-native using GLMM; combine with 23B policy caps qualitatively; no quantitative demand elasticity without evidence.",
+      "lead_ids": [
+        "23D-L01",
+        "23D-L02",
+        "23D-L03",
+        "23D-L04",
+        "23D-L05",
+        "23D-L06",
+        "23D-L07"
+      ]
+    }
+  },
+  "subagent_id": "23D",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00"
+}

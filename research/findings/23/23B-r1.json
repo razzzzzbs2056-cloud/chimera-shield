@@ -1,0 +1,354 @@
+{
+  "summary": "Round r1 (restricted network). Built a policy change register of eleven destination and origin policy items (Saudi localisation and kafala reform, other GCC labour rules, Malaysia foreign-worker freeze and FWCMS agency dispute, Korea EPS quota, Japan SSW/Employment for Skill Development, UK White Paper, Australia student-visa evidence level, Canada study-permit cap, OECD catalogue, Nepal's 2026 Gulf approval suspension). Each entry points to primary or near-primary leads (government press agencies, OECD IMO 2025, IOM MGI, ILO GB documents). No quota or cap levels are recorded; all are pending retrieval of primary texts. Several items are currently evidenced only by secondary/news sources and are flagged unverified.",
+  "findings": [
+    {
+      "claim": "Q1: Scheduled or proposed quota/visa changes in GCC destinations (Saudi localisation, kafala reforms, wage protection) and their effective dates.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "glmm",
+        "iom"
+      ],
+      "observation_ids": [],
+      "note": "Required: primary legal texts (GLMM legal module, Saudi MHRSD decisions via SPA) with effective dates and occupational scope.",
+      "period": "calendar year 2025-2027"
+    },
+    {
+      "claim": "Q1: Malaysia foreign-worker freeze and FWCMS agency-listing rules affecting Nepal.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "iom"
+      ],
+      "observation_ids": [],
+      "note": "Required: Malaysian Ministry of Human Resources / Home Ministry notices; Nepal MoLESS/DoFE notices (2026).",
+      "period": "calendar 2026"
+    },
+    {
+      "claim": "Q1: Korea E-9 quota 2026 and Nepal allocation; Japan SSW acceptance caps.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oecd"
+      ],
+      "observation_ids": [],
+      "note": "Required: Korea MOEL quota decision; Japan Cabinet decision on SSW caps by field.",
+      "unit": "count",
+      "period": "calendar 2026"
+    },
+    {
+      "claim": "Q1: OECD student and skilled-worker pathway changes (UK, Australia, Canada) and implementation dates.",
+      "type": "pending",
+      "value": null,
+      "source_ids": [
+        "oecd"
+      ],
+      "observation_ids": [],
+      "note": "Required: UK Statements of Changes to Immigration Rules; Australian Home Affairs evidence-level listing; IRCC cap allocation notice.",
+      "period": "calendar 2025-2027"
+    },
+    {
+      "claim": "A policy change is recorded as 'scheduled' only when a primary legal or official text gives an effective date; otherwise 'proposed' or 'reported'.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Impact on Nepal is assessed only through measured flows of Nepali workers or students to the affected destination (from 23A or destination statistics); no elasticity is assumed in r1.",
+      "type": "assumption",
+      "value": null,
+      "source_ids": [],
+      "observation_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Primary texts for Malaysia's 2026 freeze and FWCMS listing not located (news only).",
+    "Korea MOEL 2026 EPS quota decision not located as a primary document (portal root only).",
+    "Australian Home Affairs evidence-level list URL to be confirmed on retrieval.",
+    "Kuwait, Oman, Bahrain, UAE, Qatar individual primary legal texts not individually located; GLMM legal module used as the index.",
+    "Student-visa grants to Nepali nationals by destination (flow data) not yet located; OECD IMO annex gives aggregated data only.",
+    "No official Nepal document on the 2026 Gulf approval suspension located."
+  ],
+  "assumptions": [
+    {
+      "id": "23B-A1",
+      "text": "Policies are dated on the destination's calendar-year basis; linkage to Nepal FY flows is documented per entry.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "23A",
+      "text": "Register entries PC-04 and PC-11 require DoFE monthly approvals for FY2025/26 to separate policy effects from conflict effects."
+    },
+    {
+      "to": "16A",
+      "text": "Exposure register lacks an entry for education-migration pathways (student visas to Australia, UK, Canada, Japan), which also drive remittances and outflows of skilled young people; propose adding one."
+    },
+    {
+      "to": "28",
+      "text": "Simultaneous tightening in OECD student routes and GCC localisation could remove substitution options; request red-team review."
+    }
+  ],
+  "uncertainty": "High. Register contents rest on located documents whose text has not been retrieved; several entries are evidenced only by news or secondary sources. Quota levels, effective dates and Nepali shares are pending.",
+  "source_leads": [
+    {
+      "lead_id": "23B-L01",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+      "title": "International Migration Outlook 2025",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Chapter 'Recent developments in migration policy' (policy changes by OECD country, 2024-2025) and statistical annex on temporary labour and student migration flows by nationality, calendar year"
+    },
+    {
+      "lead_id": "23B-L02",
+      "url": "https://www.oecd.org/en/publications/2025/11/international-migration-outlook-2025_355ae9fd/full-report/recent-developments-in-migration-policy_e3826f20.html",
+      "title": "International Migration Outlook 2025 - Recent developments in migration policy (web chapter)",
+      "publisher": "OECD",
+      "source_id": "oecd",
+      "contains": "Country-by-country register of migration policy changes; source for policy_change_register entries on OECD destinations"
+    },
+    {
+      "lead_id": "23B-L03",
+      "url": "https://nepal.iom.int/sites/g/files/tmzbdl1116/files/documents/2025-05/pub2024-088-el-mgi-nepal-second-profile.pdf",
+      "title": "Migration Governance Indicators - Nepal, Second Profile 2024",
+      "publisher": "International Organization for Migration",
+      "source_id": "iom",
+      "contains": "Assessment of Nepal's migration governance, bilateral labour agreements and origin-side policy framework"
+    },
+    {
+      "lead_id": "23B-L04",
+      "url": "https://assets.publishing.service.gov.uk/media/6821aec3f16c0654b19060ac/restoring-control-over-the-immigration-system-white-paper.pdf",
+      "title": "Restoring control over the immigration system (Immigration White Paper, May 2025)",
+      "publisher": "UK Home Office",
+      "source_id": "uk_trade",
+      "contains": "Primary text of UK proposals: Skilled Worker skill threshold, Graduate route duration, international student levy, care-worker route; implementation dates per subsequent Statements of Changes"
+    },
+    {
+      "lead_id": "23B-L05",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/transition-binders/deputy-minister-2026/international-student-program.html",
+      "title": "IRCC Deputy Minister Transition Binder 2026 - International Student Program",
+      "publisher": "Immigration, Refugees and Citizenship Canada",
+      "source_id": "academic",
+      "contains": "Official description of the study-permit cap for 2026 and temporary-resident reduction objective; allocation method"
+    },
+    {
+      "lead_id": "23B-L06",
+      "url": "https://www.moj.go.jp/isa/content/930004452.pdf",
+      "title": "Initiatives to Accept Foreign Nationals (Specified Skilled Worker / Employment for Skill Development)",
+      "publisher": "Immigration Services Agency of Japan",
+      "source_id": "academic",
+      "contains": "Japan's SSW framework and the transition from Technical Intern Training to the Employment for Skill Development system; acceptance caps by field"
+    },
+    {
+      "lead_id": "23B-L07",
+      "url": "https://migrationnetwork.un.org/policy-repository/memorandum-cooperation-between-ministry-justice-ministry-foreign-affairs-0",
+      "title": "Memorandum of Cooperation Japan-Nepal on Specified Skilled Worker (2019)",
+      "publisher": "UN Network on Migration policy repository",
+      "source_id": "iom",
+      "contains": "Text of the Japan-Nepal SSW Memorandum of Cooperation"
+    },
+    {
+      "lead_id": "23B-L08",
+      "url": "https://www.spa.gov.sa/en/N2250338",
+      "title": "Human Resources Ministry issues major localization decisions for professions (SPA)",
+      "publisher": "Saudi Press Agency (Ministry of Human Resources and Social Development)",
+      "source_id": "academic",
+      "contains": "Official announcement of Saudization (Nitaqat) localisation decisions by profession; effective dates"
+    },
+    {
+      "lead_id": "23B-L09",
+      "url": "https://www.spa.gov.sa/en/w2481165",
+      "title": "Human Resources Ministry announces new Saudization measures for engineering and procurement professions",
+      "publisher": "Saudi Press Agency",
+      "source_id": "academic",
+      "contains": "Official announcement of profession-specific localisation rates and effective dates (late 2025 / early 2026)"
+    },
+    {
+      "lead_id": "23B-L10",
+      "url": "https://www.migrationpolicy.org/article/gulf-region-gcc-migration-kafala-reforms",
+      "title": "As the Gulf Region Seeks a Pivot, Reforms to Its Immigration Policies Remain a Work in Progress",
+      "publisher": "Migration Policy Institute",
+      "source_id": "academic",
+      "contains": "Comparative review of kafala reforms across GCC states; lead to primary legal texts (GLMM legal module)"
+    },
+    {
+      "lead_id": "23B-L11",
+      "url": "https://www.ilo.org/sites/default/files/2025-11/GB355-INS-16-7-Saudi%20Arabia-EN.pdf",
+      "title": "ILO GB.355/INS/16/7 - Article 26 complaint concerning Saudi Arabia",
+      "publisher": "International Labour Organization",
+      "source_id": "ilostat",
+      "contains": "Official record on migrant-worker protection and labour reforms in Saudi Arabia"
+    },
+    {
+      "lead_id": "23B-L12",
+      "url": "https://www.thestar.com.my/news/nation/2026/09/24/malaysia-nepal-to-streamline-labour-recruitment-curb-worker-exploitation",
+      "title": "Malaysia, Nepal to streamline labour recruitment (news)",
+      "publisher": "The Star (Malaysia)",
+      "source_id": "academic",
+      "contains": "Report of ministerial discussions (September 2026) on the recruitment mechanism; lead to Malaysian MOHR / Nepal MoLESS official statements"
+    },
+    {
+      "lead_id": "23B-L13",
+      "url": "https://hr.asia/workforce-management/malaysia-extend-freeze-on-new-foreign-worker-applications/",
+      "title": "Malaysia extend freeze on new foreign worker applications (news)",
+      "publisher": "HR Asia",
+      "source_id": "academic",
+      "contains": "Report on Malaysia's freeze on new foreign-worker applications; lead to MOHR/Home Ministry official notice and sector exemptions"
+    },
+    {
+      "lead_id": "23B-L14",
+      "url": "https://www.eps.go.kr",
+      "title": "Employment Permit System portal",
+      "publisher": "Ministry of Employment and Labor, Republic of Korea / HRD Korea",
+      "source_id": "academic",
+      "contains": "Annual E-9 foreign-worker quota decisions by sector and sending-country allocation (calendar year); primary source for Korea policy entries"
+    },
+    {
+      "lead_id": "23B-L15",
+      "url": "https://www.homeaffairs.gov.au/research-and-statistics/statistics/visa-statistics/study",
+      "title": "Student visa program statistics and Simplified Student Visa Framework evidence levels",
+      "publisher": "Australian Department of Home Affairs",
+      "source_id": "academic",
+      "contains": "Official evidence-level (assessment level) listings by country and education provider; source to verify the reported January 2026 change for Nepal (URL root to be confirmed on retrieval)"
+    },
+    {
+      "lead_id": "23B-L16",
+      "url": "https://gulfmigration.grc.net/glmm-database/",
+      "title": "GLMM database - legal module",
+      "publisher": "Gulf Research Center, GLMM",
+      "source_id": "glmm",
+      "contains": "Primary legal texts (labour laws, residency, wage protection, domestic-worker laws) for GCC states"
+    }
+  ],
+  "specific": {
+    "policy_change_register": {
+      "status": "pending",
+      "value": null,
+      "entries": [
+        {
+          "id": "PC-01",
+          "destination": "Saudi Arabia",
+          "policy": "Nitaqat / Saudization profession-localisation decisions (2025-2026) and Qiwa contract-documentation rule",
+          "status_reported": "in force / phased",
+          "expected_channel": "reduces demand for foreign workers in listed occupations; low direct exposure for predominantly low-skill Nepali workforce - to be tested",
+          "lead_ids": "23B-L08, 23B-L09",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-02",
+          "destination": "Saudi Arabia",
+          "policy": "Sponsorship (kafala) reform and labour-mobility rules; ILO Article 26 complaint",
+          "status_reported": "reported implemented 2025; under ILO review",
+          "expected_channel": "worker mobility and protection; affects wage and abuse risk",
+          "lead_ids": "23B-L10, 23B-L11, 23B-L16",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-03",
+          "destination": "Qatar / Kuwait / UAE / Oman / Bahrain",
+          "policy": "Labour law, minimum wage, wage protection and domestic-worker rules",
+          "status_reported": "various",
+          "expected_channel": "protection and cost of hiring",
+          "lead_ids": "23B-L10, 23B-L16",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-04",
+          "destination": "Malaysia",
+          "policy": "Freeze on new foreign-worker applications and FWCMS recruitment-agency listing (2026); bilateral recruitment mechanism talks",
+          "status_reported": "in force / under negotiation",
+          "expected_channel": "direct constraint on Nepal's second-largest DoFE corridor (to be verified with 23A data)",
+          "lead_ids": "23B-L12, 23B-L13, 23A-L10",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-05",
+          "destination": "Republic of Korea",
+          "policy": "Annual E-9 EPS quota decision for 2026 and sector allocation",
+          "status_reported": "decided (calendar 2026)",
+          "expected_channel": "regulates Nepal EPS outflow",
+          "lead_ids": "23B-L14",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-06",
+          "destination": "Japan",
+          "policy": "Specified Skilled Worker expansion and replacement of Technical Intern Training by Employment for Skill Development system",
+          "status_reported": "scheduled",
+          "expected_channel": "potential growth corridor; language/skill test requirements",
+          "lead_ids": "23B-L06, 23B-L07",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-07",
+          "destination": "United Kingdom",
+          "policy": "Immigration White Paper: higher Skilled Worker threshold, shorter Graduate route, closure of overseas care-worker recruitment, student levy",
+          "status_reported": "proposed/partly implemented; Graduate route change scheduled from January 2027 per secondary reports",
+          "expected_channel": "reduces care-worker and student-to-work pathways used by Nepali migrants",
+          "lead_ids": "23B-L04",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-08",
+          "destination": "Australia",
+          "policy": "Student visa evidence-level reclassification of Nepal (reported January 2026) and broader student caps",
+          "status_reported": "reported in force",
+          "expected_channel": "raises cost and refusal risk for Nepali students (a large education corridor)",
+          "lead_ids": "23B-L15",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-09",
+          "destination": "Canada",
+          "policy": "Study-permit cap for 2026 and temporary-resident reduction target",
+          "status_reported": "in force",
+          "expected_channel": "reduces student pathway",
+          "lead_ids": "23B-L05",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-10",
+          "destination": "OECD countries (general)",
+          "policy": "Policy changes catalogued in International Migration Outlook 2025",
+          "status_reported": "various",
+          "expected_channel": "screening list for other destinations (e.g. Romania, Croatia, Poland, Portugal)",
+          "lead_ids": "23B-L01, 23B-L02",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        },
+        {
+          "id": "PC-11",
+          "destination": "Nepal (origin)",
+          "policy": "2026 suspension and partial resumption of approvals for Gulf/Middle East destinations",
+          "status_reported": "reported 2026",
+          "expected_channel": "origin-side restriction; verify from official decision",
+          "lead_ids": "23A-L07, 23A-L08",
+          "verification_status": "pending - primary text not yet retrieved",
+          "quantified_impact": null
+        }
+      ],
+      "fields_to_populate_in_r2": [
+        "legal instrument and date",
+        "effective date",
+        "scope (occupations/sectors/nationalities)",
+        "quota or cap level (from primary text)",
+        "Nepali share of affected flow (from 23A DoFE data or destination statistics)"
+      ],
+      "method": "Retrieve primary legal/policy texts; record effective dates and scope as observations; link each change to the relevant DoFE destination flow (23A) or student-visa flow; classify as scheduled, proposed or in force; no impact magnitude without retrieved data."
+    }
+  },
+  "subagent_id": "23B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00"
+}

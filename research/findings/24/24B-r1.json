@@ -1,0 +1,409 @@
+{
+  "subagent_id": "24B",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network). Located 19 leads on data-centre power and connectivity requirements (IEA Energy and AI 2025 and its 2026 update, Masanet et al. Science 2020, Uptime Institute 2025 survey) and on Nepal's supply side (NEA Annual Report FY2024/25, ITU DataHub bandwidth, NTA IT policy 2023, NITC/GIDC). No values retrieved; all empirical items pending. Design: assess three facility archetypes separately and test Nepal's firm dry-season power, transmission and international route diversity rather than monsoon surplus. News reports indicate Nepal lacks a data-centre regulatory framework; unverified.",
+  "findings": [
+    {
+      "claim": "Research design: data-centre requirements are assessed for three archetypes separately, because requirements differ by orders of magnitude and must not be pooled: (a) enterprise/colocation facility serving domestic demand, (b) regional colocation/cloud edge serving South Asia, (c) hyperscale or AI-training campus. For each: IT load and facility power (MW), annual energy (GWh), required firmness (dry-season supply, redundancy), PUE, cooling water, international bandwidth and route diversity, latency to demand centres, seismic design and grid-connection lead time.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Hydropower surplus in Nepal is seasonal (monsoon); a data centre needs firm year-round supply. Any 'spill energy' figure cannot be equated with available firm capacity without dry-season balance, storage and import data. This is a methodological constraint, not an empirical claim.",
+      "type": "assumption",
+      "source_ids": [],
+      "observation_ids": []
+    },
+    {
+      "claim": "Global data-centre electricity consumption (TWh, latest historical year) and IEA projections to 2030/2035 by case, and AI-focused share.",
+      "type": "pending",
+      "value": null,
+      "unit": "GWh",
+      "period": "Calendar years 2024-2035 (IEA); publication April 2025 and 2026 update",
+      "source_ids": [
+        "iea"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24B-L01",
+        "24B-L02",
+        "24B-L04",
+        "24B-L05",
+        "24B-L06",
+        "24B-L07"
+      ],
+      "note": "Record in GWh (units.py has no TWh). Keep IEA 2025 and 2026 vintages separately and compare with Masanet et al. 2020 bottom-up series."
+    },
+    {
+      "claim": "Typical facility power (MW) and PUE by archetype (enterprise, colocation, hyperscale, AI campus).",
+      "type": "pending",
+      "value": null,
+      "unit": "MW",
+      "period": "Calendar 2024-2025",
+      "source_ids": [
+        "iea",
+        "academic"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24B-L02",
+        "24B-L08"
+      ],
+      "note": "IEA chapter and Uptime survey; Uptime is an industry survey (lower grade). PUE unit: ratio."
+    },
+    {
+      "claim": "Nepal installed capacity, peak demand, wet- and dry-season energy balance, exports/imports and spilled/curtailed energy.",
+      "type": "pending",
+      "value": null,
+      "unit": "MW",
+      "period": "FY2024/25 (Nepal fiscal year, mid-July)",
+      "source_ids": [
+        "nea"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24B-L10"
+      ],
+      "note": "Requires NEA Annual Report FY2024/25; secondary figures in news (L15, L16) must not be used. Coordinate with 05A/22C."
+    },
+    {
+      "claim": "Nepal international internet bandwidth (lit and used), and number/diversity of international routes (India and China).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "Calendar year (ITU); latest available",
+      "source_ids": [
+        "itu"
+      ],
+      "observation_ids": [],
+      "lead_ids": [
+        "24B-L11",
+        "24B-L12",
+        "24B-L13",
+        "24B-L14"
+      ],
+      "note": "ITU DataHub; route diversity requires NTA reports (not located in r1). Units.py lacks a bandwidth unit (Mbit/s) - raise with 00A."
+    },
+    {
+      "claim": "Nepal regulatory status for data centres (licensing, power tariff category, data-localisation rules, government cloud).",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "2026",
+      "source_ids": [],
+      "observation_ids": [],
+      "lead_ids": [
+        "24B-L15",
+        "24B-L17",
+        "24B-L19"
+      ],
+      "note": "Only secondary news located; primary MoIC/NTA/ERC documents needed."
+    }
+  ],
+  "data_gaps": [
+    "NTA annual report / MIS on international gateways, route diversity and transit capacity not located. The session-wide WebSearch budget was exhausted during this round; data-source hosts and reference hosts (itu.int, nist.gov, wikipedia.org, arxiv.org) returned EGRESS_BLOCKED to WebFetch.",
+    "Electricity Regulatory Commission tariff schedule for data-centre-type loads not located.",
+    "Seismic design requirements (Nepal National Building Code) for Tier III facilities not located.",
+    "Semiconductor supply and export-control documents (X27) not located in r1; 19B holds primary responsibility.",
+    "Peer-reviewed data-centre water-use review (Lei, Lu, Shehabi, Masanet 2025, Resources, Conservation and Recycling) identified by citation only; URL not located.",
+    "units.py lacks TWh, Mbit/s and USD_per_kWh units; values will be stored as GWh and pending unit additions."
+  ],
+  "assumptions": [
+    {
+      "id": "24B-A1",
+      "text": "Facility archetypes are assessed separately; no pooled 'data-centre requirement' is reported.",
+      "basis": "methodological"
+    },
+    {
+      "id": "24B-A2",
+      "text": "Only firm (dry-season-available) supply counts toward data-centre feasibility.",
+      "basis": "engineering requirement for continuous loads; to be confirmed with NEA seasonal data"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "22C",
+      "text": "Coordinate on X32: IEA data-centre demand projections affect regional electricity demand and hence Nepal's India/Bangladesh export market; keep the two effects distinct."
+    },
+    {
+      "to": "05A",
+      "text": "Please provide NEA FY2024/25 seasonal balance and curtailment data; 24B will not use news-reported spill figures."
+    },
+    {
+      "to": "00A",
+      "text": "Add unit codes for TWh (or accept GWh), Mbit/s and tariff units (USD_per_kWh / NPR_per_kWh); add catalog ids for Nepal Telecommunications Authority and Electricity Regulatory Commission."
+    },
+    {
+      "to": "28",
+      "text": "Red-team: data-centre-hub narratives in Nepal media rely on monsoon surplus; check any strategy that assumes data-centre exports against dry-season firmness and route-diversity constraints."
+    }
+  ],
+  "uncertainty": "High. No values retrieved. Global demand projections vary strongly across IEA cases and vintages and across bottom-up academic estimates; Nepal supply-side data are FY-based while international series are calendar year; regulatory status is known only from news. Nepal feasibility cannot be assessed in r1.",
+  "specific": {
+    "data_centre_requirements": {
+      "status": "pending",
+      "question": "What power and connectivity do data centres require, and could Nepal meet them?",
+      "answer_r1": "Pending. Requirements (power, firmness, PUE, bandwidth) are to be taken from IEA Energy and AI (2025, 2026 update) with Masanet et al. (Science 2020) as methodological comparator and Uptime 2025 as industry survey; Nepal supply side from NEA Annual Report FY2024/25 and ITU bandwidth data. Whether Nepal could meet them cannot be answered in r1: it depends on dry-season firm supply, transmission, international route diversity and a regulatory framework, none of which has retrieved data. Secondary sources suggest no data-centre framework exists (unverified).",
+      "archetypes": [
+        {
+          "archetype": "enterprise_colocation_domestic",
+          "power_requirement": "pending",
+          "bandwidth_requirement": "pending",
+          "status": "pending",
+          "lead_ids": [
+            "24B-L02",
+            "24B-L08"
+          ]
+        },
+        {
+          "archetype": "regional_colocation_cloud_edge",
+          "power_requirement": "pending",
+          "bandwidth_requirement": "pending",
+          "status": "pending",
+          "lead_ids": [
+            "24B-L02",
+            "24B-L03",
+            "24B-L08"
+          ]
+        },
+        {
+          "archetype": "hyperscale_or_AI_campus",
+          "power_requirement": "pending",
+          "bandwidth_requirement": "pending",
+          "status": "pending",
+          "lead_ids": [
+            "24B-L01",
+            "24B-L02",
+            "24B-L03",
+            "24B-L05",
+            "24B-L09"
+          ]
+        }
+      ],
+      "nepal_supply_side": {
+        "power": {
+          "status": "pending",
+          "lead_ids": [
+            "24B-L10"
+          ],
+          "period_basis": "Nepal FY"
+        },
+        "connectivity": {
+          "status": "pending",
+          "lead_ids": [
+            "24B-L11",
+            "24B-L12",
+            "24B-L13",
+            "24B-L14"
+          ],
+          "period_basis": "calendar year"
+        },
+        "regulation": {
+          "status": "pending",
+          "lead_ids": [
+            "24B-L15",
+            "24B-L17",
+            "24B-L19"
+          ]
+        }
+      },
+      "feasibility_test": {
+        "status": "pending",
+        "method": "For each archetype compare required firm MW and GWh with NEA dry-season surplus and transmission headroom; compare required international capacity/route diversity with ITU/NTA data; list binding constraint(s). No conclusion until data retrieved."
+      },
+      "proven_vs_speculative": {
+        "proven": "Data-centre energy intensity and PUE are measured quantities (IEA, Uptime, peer-reviewed).",
+        "speculative": "AI-campus demand projections are scenario-dependent (IEA cases); Nepal hosting potential is unevidenced."
+      },
+      "feeds": {
+        "external_variables": [
+          "X27 (export controls/technology access, supporting 19B)",
+          "X32 (technology costs, supporting 22C)"
+        ],
+        "model_variables": [
+          "capital_goods_prices",
+          "tfp"
+        ],
+        "scenarios": [
+          "S03",
+          "S09"
+        ]
+      }
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "24B-L01",
+      "url": "https://www.iea.org/reports/energy-and-ai/executive-summary",
+      "title": "Energy and AI - Executive summary (IEA, April 2025)",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Global data-centre electricity consumption (TWh) for the latest historical year and scenario projections to 2030 and 2035 (Base Case and sensitivity cases), share of global electricity demand, AI-focused vs conventional data centres; calendar-year basis.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24B-L02",
+      "url": "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+      "title": "Energy and AI - Energy demand from AI (chapter)",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Data-centre electricity demand by region and by equipment type (servers, cooling, storage, network), typical facility sizes (MW) for hyperscale and AI training campuses, efficiency (PUE) assumptions; calendar years.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24B-L03",
+      "url": "https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai",
+      "title": "Energy and AI - Energy supply for AI (chapter)",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Generation mix meeting data-centre demand by fuel (renewables, gas, nuclear), grid-connection lead times and siting constraints; relevant to whether hydropower-rich, grid-constrained systems can host data centres.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24B-L04",
+      "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+      "title": "Key Questions on Energy and AI - Executive summary (IEA)",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Updated IEA answers on data-centre demand, bottlenecks (grid, equipment) and siting; check vintage relative to Energy and AI.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24B-L05",
+      "url": "https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions",
+      "title": "Data centre electricity use surged in 2025, even with tightening bottlenecks (IEA news, 2026)",
+      "publisher": "International Energy Agency",
+      "source_id": "iea",
+      "contains": "Most recent IEA estimate of calendar-2025 data-centre electricity use and growth; revised projections; locator for the underlying 2026 report.",
+      "evidence_grade": "institutional"
+    },
+    {
+      "lead_id": "24B-L06",
+      "url": "https://www.science.org/doi/abs/10.1126/science.aba3758",
+      "title": "Masanet, Shehabi, Lei, Smith, Koomey (2020) Recalibrating global data center energy-use estimates. Science 367",
+      "publisher": "Science (AAAS)",
+      "source_id": "academic",
+      "contains": "Bottom-up estimates of global data-centre energy use (2010-2018), drivers and efficiency trends; methodological comparator to IEA estimates.",
+      "evidence_grade": "peer_reviewed"
+    },
+    {
+      "lead_id": "24B-L07",
+      "url": "https://datacenters.lbl.gov/sites/default/files/Masanet_et_al_Science_2020.full_.pdf",
+      "title": "Recalibrating global data center energy-use estimates (full text PDF, LBNL host)",
+      "publisher": "Lawrence Berkeley National Laboratory",
+      "source_id": "academic",
+      "contains": "Full text and supplementary method for lead 24B-L06.",
+      "evidence_grade": "peer_reviewed"
+    },
+    {
+      "lead_id": "24B-L08",
+      "url": "https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf",
+      "title": "Uptime Institute Global Data Center Survey 2025",
+      "publisher": "Uptime Institute",
+      "source_id": null,
+      "contains": "Operator survey: average PUE by facility type, rack power density, outage frequency and causes, water-use reporting, staffing; calendar 2025. Industry survey, not peer-reviewed.",
+      "evidence_grade": "industry_survey"
+    },
+    {
+      "lead_id": "24B-L09",
+      "url": "https://arxiv.org/pdf/2604.06198",
+      "title": "Concentrated siting of AI data centers drives regional power-system stress under rising global compute demand (arXiv preprint, 2026)",
+      "publisher": "arXiv",
+      "source_id": "academic",
+      "contains": "Preprint on regional grid stress from AI data-centre siting; comparator for small-grid hosting constraints. Not peer-reviewed.",
+      "evidence_grade": "preprint"
+    },
+    {
+      "lead_id": "24B-L10",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "Nepal Electricity Authority Annual Reports (incl. FY2024/25)",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "Installed capacity (MW), system peak demand (MW) and date, energy generated/imported/exported (GWh), seasonal (wet/dry) balance, spilled or curtailed energy if reported, tariffs, transmission bottlenecks; Nepal fiscal year (mid-July).",
+      "evidence_grade": "official"
+    },
+    {
+      "lead_id": "24B-L11",
+      "url": "https://datahub.itu.int/data/?i=19255",
+      "title": "ITU DataHub - Lit/equipped international bandwidth capacity",
+      "publisher": "International Telecommunication Union",
+      "source_id": "itu",
+      "contains": "International bandwidth capacity (Mbit/s) by country incl. Nepal and comparators; calendar year.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24B-L12",
+      "url": "https://datahub.itu.int/data/?e=NPL&c=701&i=13067",
+      "title": "ITU DataHub - Nepal data explorer",
+      "publisher": "International Telecommunication Union",
+      "source_id": "itu",
+      "contains": "Nepal ICT indicators (international bandwidth usage, fixed broadband, mobile coverage); calendar year; check indicator code definitions.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24B-L13",
+      "url": "https://www.itu.int/itu-d/reports/statistics/facts-figures-for-ldc/",
+      "title": "ITU Facts and Figures: Focus on Least Developed Countries",
+      "publisher": "International Telecommunication Union",
+      "source_id": "itu",
+      "contains": "LDC-group connectivity, affordability and quality indicators; comparator for Nepal.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24B-L14",
+      "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=NP",
+      "title": "Individuals using the Internet (% of population) - Nepal (WDI IT.NET.USER.ZS)",
+      "publisher": "World Bank",
+      "source_id": "wb_wdi",
+      "contains": "Nepal internet use series (ITU-sourced), calendar year.",
+      "evidence_grade": "official_international"
+    },
+    {
+      "lead_id": "24B-L15",
+      "url": "https://kathmandupost.com/national/2026/04/27/nepal-wants-to-become-a-data-centre-hub-it-has-no-rules-for-how",
+      "title": "Nepal wants to become a data centre hub. It has no rules for how (Kathmandu Post, 27 Apr 2026)",
+      "publisher": "Kathmandu Post",
+      "source_id": null,
+      "contains": "Secondary report on absence of a data-centre regulatory framework in Nepal (licensing, power tariff category, data localisation); locator for any government directive or draft policy. Not evidence.",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24B-L16",
+      "url": "https://nepalitimes.com/how-feasible-for-nepal-to-get-on-data-centre-bandwagon",
+      "title": "How feasible for Nepal to get on data centre bandwagon? (Nepali Times)",
+      "publisher": "Nepali Times",
+      "source_id": null,
+      "contains": "Secondary discussion of hydropower surplus, tariffs, cooling advantage and seismic risk; all quantitative claims must be verified against NEA/ERC primary documents. Not evidence.",
+      "evidence_grade": "secondary_locator"
+    },
+    {
+      "lead_id": "24B-L17",
+      "url": "https://dig.watch/resource/the-it-policy-of-the-nepal-telecommunications-authority-nta-2080-2023",
+      "title": "The IT Policy of the Nepal Telecommunications Authority (NTA), 2080 (2023)",
+      "publisher": "Digital Watch Observatory (repository of NTA document)",
+      "source_id": null,
+      "contains": "Text of NTA IT policy (2023); check provisions on data centres, hosting and connectivity. Primary copy should be retrieved from nta.gov.np.",
+      "evidence_grade": "policy_document"
+    },
+    {
+      "lead_id": "24B-L18",
+      "url": "https://www.computer.org/csdl/magazine/co/2026/01/11321031/2cTQGR2afNS",
+      "title": "Building AI in Nepal: The Critical Role of Data Centers (IEEE Computer, 2026)",
+      "publisher": "IEEE Computer Society",
+      "source_id": "academic",
+      "contains": "Magazine article on Nepal data-centre requirements; check whether peer-reviewed and whether it cites primary data.",
+      "evidence_grade": "magazine"
+    },
+    {
+      "lead_id": "24B-L19",
+      "url": "https://nitc.gov.np/aboutus/introduction",
+      "title": "National Information Technology Center - Introduction (operator of the Government Integrated Data Center)",
+      "publisher": "National Information Technology Center, Government of Nepal",
+      "source_id": null,
+      "contains": "Description of GIDC and government cloud; locator for capacity, tier and disaster-recovery site information.",
+      "evidence_grade": "official"
+    }
+  ]
+}
