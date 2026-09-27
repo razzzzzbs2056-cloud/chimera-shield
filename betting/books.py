@@ -33,6 +33,12 @@ RETAIL_BOOKS = {
     "sport888": "888sport",
     "paddypower": "Paddy Power",
     "skybet": "Sky Bet",
+    "sportsbet": "Sportsbet",
+    "tab": "TAB",
+    "ladbrokes_au": "Ladbrokes (AU)",
+    "neds": "Neds",
+    "pointsbetau": "PointsBet (AU)",
+    "betr_au": "Betr",
 }
 
 ALL_BOOKS = {**SHARP_BOOKS, **RETAIL_BOOKS}
@@ -50,6 +56,8 @@ SPORTS = {
     "soccer_uefa_champs_league": "Champions League",
     "soccer_spain_la_liga": "La Liga",
     "soccer_usa_mls": "MLS",
+    "rugbyleague_nrl": "NRL",
+    "aussierules_afl": "AFL",
     "mma_mixed_martial_arts": "MMA",
     "tennis_atp_us_open": "ATP US Open",
 }

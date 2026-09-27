@@ -4,8 +4,10 @@ from __future__ import annotations
 from .base import Agent, Desk
 
 # Home advantage in Elo points and K-factor per sport family.
-HOME_ADV = {"americanfootball": 48, "basketball": 70, "baseball": 24, "icehockey": 33, "soccer": 60}
-K_FACTOR = {"americanfootball": 20, "basketball": 18, "baseball": 6, "icehockey": 8, "soccer": 20}
+HOME_ADV = {"americanfootball": 48, "basketball": 70, "baseball": 24, "icehockey": 33, "soccer": 60,
+            "rugbyleague": 45, "aussierules": 50}
+K_FACTOR = {"americanfootball": 20, "basketball": 18, "baseball": 6, "icehockey": 8, "soccer": 20,
+            "rugbyleague": 24, "aussierules": 24}
 
 
 def family(sport: str) -> str:
