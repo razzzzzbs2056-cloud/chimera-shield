@@ -49,6 +49,11 @@ sources:
   nepse: {tier: 1, institution: Nepal Stock Exchange, url: "https://www.nepalstock.com", covers: [market capitalisation, listings, turnover], endpoint_status: unverified}
   epf_nepal: {tier: 1, institution: Employees Provident Fund, Nepal, url: "https://epfnepal.com.np", covers: [contractual savings], endpoint_status: unverified}
   erc_nepal: {tier: 1, institution: Electricity Regulatory Commission, Nepal, url: "https://erc.gov.np", covers: [tariffs, PPA approvals], endpoint_status: unverified}
+  dwri_nepal: {tier: 1, institution: Department of Water Resources and Irrigation, Nepal, url: "https://dwri.gov.np", covers: [irrigated area, irrigation systems], endpoint_status: unverified}
+  dls_nepal: {tier: 1, institution: Department of Livestock Services, Nepal, url: "https://dls.gov.np", covers: [livestock and fisheries statistics], endpoint_status: unverified}
+  moics_nepal: {tier: 1, institution: Ministry of Industry, Commerce and Supplies, Nepal, url: "https://moics.gov.np", covers: [trade and industry policy], endpoint_status: unverified}
+  ntcdb_nepal: {tier: 1, institution: National Tea and Coffee Development Board, Nepal, url: "https://teacoffee.gov.np", covers: [tea and coffee production and exports], endpoint_status: unverified}
+  nepal_trade_portal: {tier: 1, institution: Nepal Trade Information Portal, url: "https://nepaltradeportal.gov.np", covers: [tariffs, SPS and trade procedures], endpoint_status: unverified}
   sebon: {tier: 1, institution: Securities Board of Nepal, url: "https://sebon.gov.np", covers: [capital market statistics], endpoint_status: unverified}
   lawcommission_nepal: {tier: 1, institution: Nepal Law Commission, url: "https://lawcommission.gov.np", covers: [constitution, statutes], endpoint_status: unverified}
   supremecourt_nepal: {tier: 1, institution: Supreme Court of Nepal, url: "https://supremecourt.gov.np", covers: [judicial statistics], endpoint_status: unverified}
@@ -99,6 +104,8 @@ sources:
   cif: {tier: 3, institution: Climate Investment Funds, url: "https://www.cif.org", covers: [projects by country], endpoint_status: unverified}
   unfccc: {tier: 3, institution: UNFCCC, url: "https://unfccc.int", covers: [NDCs, NAPs, national communications], endpoint_status: unverified}
   ilo_research: {tier: 3, institution: ILO research publications, url: "https://www.ilo.org/research", covers: [working papers incl. AI exposure], endpoint_status: unverified}
+  wfp: {tier: 3, institution: World Food Programme (incl. NeKSAP food security monitoring), url: "https://www.wfp.org/countries/nepal", covers: [food security indicators], endpoint_status: unverified}
+  ipc: {tier: 3, institution: Integrated Food Security Phase Classification, url: "https://www.ipcinfo.org", covers: [acute food insecurity analyses], endpoint_status: unverified}
   bimstec: {tier: 3, institution: BIMSTEC Secretariat, url: "https://bimstec.org", covers: [regional agreements], endpoint_status: unverified}
 
   # ---------------- Tier 4: foreign governments and central banks ----------------

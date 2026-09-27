@@ -1,0 +1,1782 @@
+{
+  "subagent_id": "04C",
+  "task_id": "r1",
+  "generated_at": "2026-09-27T00:00:00+00:00",
+  "summary": "Round r1 (restricted network; data hosts blocked; one WebSearch used, which located only third-party copies of superseded Allocation of Business Rules). 73 source leads recorded, almost all reused verbatim from 04A, 04B, 17A-17E, 11A and the shared lead register, plus the Allocation of Business Rules copies and four portals marked 'URL from general knowledge - unverified'. Q1 (which Nepali institution owns each cross-border agreement) is set up as a 17-row responsibility matrix; every candidate owner is a to-verify hypothesis pending the current Allocation of Business Rules and each agreement's designation of implementing authorities. Q2 (where opportunities with one neighbour interact with commitments to the other) is set up as a 10-item conflict map of documented structural interactions to verify from clause text (e.g. eligibility clauses in Indian cross-border electricity rules, rules of origin, third-country goods, transit exclusivity, gauge standards, airspace entry, currency settlement, basin treaty scope, financing terms); no statement is made about any government's intentions. Q3 (measurable effects of existing agreements) is a 10-row documented-effects register listing the evaluation studies to retrieve; no Nepal-specific ex-post econometric evaluation of the India or China agreements was located. The neighbour-dependency register combines the 5 India rows (04A) and 4 China rows (04B) and adds one water-treaty row. All empirical items pending; no numbers recorded. This work does not represent any government.",
+  "findings": [
+    {
+      "claim": "Q1: Nepali lead and co-responsible institutions for each cross-border agreement with India, China and regional bodies (17 instruments in specific.responsibility_matrix).",
+      "type": "pending",
+      "value": null,
+      "period": "current Allocation of Business Rules as at retrieval (2026)",
+      "source_ids": [
+        "mofa_nepal",
+        "npc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Requires the current Government of Nepal (Allocation of Business) Rules (04C-L04; superseded copies 04C-L02, L03 only as locators), the Nepal Treaty Act (04C-L09), the constitutional treaty-ratification provision (04C-L07, L08) and each agreement text's implementing-authority clause."
+    },
+    {
+      "claim": "Q1b: Count of cross-border instruments whose Nepali implementing authority is unclear or shared across ministries.",
+      "type": "pending",
+      "value": null,
+      "unit": "count",
+      "period": "2026",
+      "source_ids": [
+        "mofa_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Derived from the verified matrix; not computable before retrieval."
+    },
+    {
+      "claim": "Q2: Documented structural interactions between commitments to India and opportunities with China (and vice versa) - 10 items CM-01..CM-10 in specific.conflict_map, each to be confirmed or rejected from clause text.",
+      "type": "pending",
+      "value": null,
+      "period": "instruments in force as at 2026",
+      "source_ids": [
+        "mofa_nepal",
+        "tepc",
+        "cea_india",
+        "mofcom"
+      ],
+      "observation_ids": [],
+      "note": "An item is recorded as a conflict only if a retrieved clause or official record establishes it; otherwise it is closed as 'no conflict documented'."
+    },
+    {
+      "claim": "Q3: Measurable economic effects of existing India-Nepal and China-Nepal agreements documented in evaluation studies (trade, transit time/cost, power trade, water benefits, peg transmission).",
+      "type": "pending",
+      "value": null,
+      "unit": "percent",
+      "period": "study-specific; Nepal FY vs calendar year to be recorded per study",
+      "source_ids": [
+        "wb_npl",
+        "academic",
+        "nrb",
+        "npc_nepal"
+      ],
+      "observation_ids": [],
+      "note": "Register in specific.documented_effects; no Nepal-specific ex-post evaluation of the Treaty of Trade or China transit protocol located in r1; World Bank NIRTTP completion report not located."
+    },
+    {
+      "claim": "Method: responsibility is assigned from the Allocation of Business Rules first and the agreement's implementing-authority clause second; where they differ both are recorded and the difference flagged, not resolved by judgement.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: the conflict map records only structural interactions evidenced by texts, official records or implementation data; it does not attribute motives or predict any government's conduct.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "Method: ex-ante assessments (e.g. of the long-term power trade agreement) are kept separate from ex-post evaluations and never used as documented effects.",
+      "type": "assumption",
+      "source_ids": []
+    },
+    {
+      "claim": "This analysis is independent research; it does not state or represent the position of the Government of Nepal, India or China.",
+      "type": "assumption",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "Current Government of Nepal (Allocation of Business) Rules (2074 BS with amendments) from an official host; only third-party copies of the 2064 and 2072 versions located.",
+    "Nepal Treaty Act 2047 official text and record of which cross-border instruments were ratified by Parliament.",
+    "Supreme Court verdict text on the ratification route of the long-term power trade agreement (news locator only).",
+    "Nepal-China transit transport agreement and protocol texts and any cargo movement record (also 04B gap).",
+    "Eligibility clauses of Indian cross-border electricity rules as currently amended, and the CEA approval list with developer identity.",
+    "Feasibility/DPR documents stating gauge and standards for India-Nepal and China-Nepal cross-border rail.",
+    "Air-route/entry-point arrangements affecting international flights to Nepal's airports (no document-level lead).",
+    "World Bank NIRTTP Implementation Completion and Results Report; ADB completion report for RRP NEP 44143.",
+    "Nepal-specific ex-post evaluation of the Treaty of Trade revisions and of China LDC zero-tariff utilisation (none located).",
+    "NPC evaluation reports on cross-border projects (portal only)."
+  ],
+  "assumptions": [
+    {
+      "id": "04C-A1",
+      "text": "Candidate institutions in the responsibility matrix are retrieval hypotheses from general domain knowledge, not findings.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04C-A2",
+      "text": "Agreement status classes follow 17B-A1/17D-A1; 04C records ownership, not status.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04C-A3",
+      "text": "A conflict-map item is closed 'not documented' if the retrieved texts contain no relevant clause; absence of evidence is recorded explicitly.",
+      "basis": "assumption"
+    },
+    {
+      "id": "04C-A4",
+      "text": "Documented effects use each study's own period basis (Nepal FY or calendar year); no conversion without a documented method.",
+      "basis": "assumption"
+    }
+  ],
+  "challenges": [
+    {
+      "to": "04A",
+      "text": "04A agreement_inventory omits the water instruments (Mahakali, Kosi, Gandak) and the Nepal-India BIPPA; 04C adds them to the responsibility matrix from 25B/26D leads - please include or cross-reference in 04A r2."
+    },
+    {
+      "to": "04B",
+      "text": "04B and 04A both map dependencies to EXP-03 (India partner share and China origin share). The combined register keeps them as separate rows; please confirm 16B should hold one exposure with partner, origin and route components rather than two."
+    },
+    {
+      "to": "17B",
+      "text": "CM-01 (eligibility clauses in Indian cross-border electricity rules vs Chinese-developed/financed plants) sits between 17A and 17B; please record the clause verification in one place (17A power_trade_rules) and reference it from 17B."
+    },
+    {
+      "to": "00A",
+      "text": "Add catalog ids for OPMCM (Allocation of Business Rules), MoICS, MoEWRI, Supreme Court decision texts and CAAN route documents; 04C leads use null or nearest ids."
+    },
+    {
+      "to": "22B",
+      "text": "The ratification route of the long-term power trade agreement (Supreme Court verdict) affects whether contracted volumes can be treated as legally settled; 22B holds the news lead - please retrieve the verdict from the Supreme Court host in r2."
+    }
+  ],
+  "uncertainty": "Very high for r1: no document retrieved. Candidate institutional owners are hypotheses; allocation of business has changed across versions (2064, 2072, 2074 BS) and may have been amended since. Conflict-map items may prove to have no clause-level basis. Evaluation literature on Nepal's bilateral agreements appears thin and heterogeneous; effects may remain pending beyond r2. Instruments signed in 2025-2026 are known only from news locators.",
+  "specific": {
+    "responsibility_matrix": {
+      "status": "pending",
+      "question": "Q1 Which domestic institutions hold responsibility for each cross-border agreement?",
+      "method": "For each instrument: (1) lead Nepali ministry per current Allocation of Business Rules; (2) implementing authority named in text; (3) co-responsible agencies; (4) joint mechanism and last meeting record; (5) ratification route under the Constitution/Treaty Act. Differences between (1) and (2) are flagged. Status per row: to_verify until texts retrieved.",
+      "primary_leads": [
+        "04C-L04",
+        "04C-L02",
+        "04C-L03",
+        "04C-L07",
+        "04C-L08",
+        "04C-L07"
+      ],
+      "rows": [
+        {
+          "agreement": "Treaty of Trade (Nepal-India) and protocol",
+          "counterparty": "India",
+          "domain": "goods trade",
+          "nepal_lead_institution": {
+            "candidate": "Ministry of Industry, Commerce and Supplies (MoICS)",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Foreign Affairs",
+              "Ministry of Finance / Department of Customs",
+              "TEPC"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Inter-Governmental Committee / Sub-Committee (IGC/IGSC) on trade, transit and unauthorised trade",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L05",
+            "04C-L22",
+            "04C-L24",
+            "04C-L31"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Treaty of Transit (1999) with protocol, memorandum, letters of exchange and rail-services agreement",
+          "counterparty": "India",
+          "domain": "transit",
+          "nepal_lead_institution": {
+            "candidate": "MoICS",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Physical Infrastructure and Transport",
+              "NITDB",
+              "Department of Customs",
+              "Ministry of Foreign Affairs"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "IGC/IGSC; rail-services implementing arrangements",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L05",
+            "04C-L18",
+            "04C-L23",
+            "04C-L24",
+            "04C-L32"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Revised Agreement of Co-operation to Control Unauthorized Trade",
+          "counterparty": "India",
+          "domain": "border administration",
+          "nepal_lead_institution": {
+            "candidate": "MoICS / Ministry of Finance (Department of Customs) - to verify which is designated",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Home Affairs (border security agencies)",
+              "Department of Customs"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "IGC/IGSC",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L19",
+            "04C-L25",
+            "04C-L31"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Power Trade Agreement (2014)",
+          "counterparty": "India",
+          "domain": "power trade",
+          "nepal_lead_institution": {
+            "candidate": "Ministry of Energy, Water Resources and Irrigation (MoEWRI)",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Nepal Electricity Authority",
+              "Ministry of Foreign Affairs",
+              "Investment Board Nepal (for PDA projects)"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Joint Working Group / Joint Steering Committee on power",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L06",
+            "04C-L16",
+            "04C-L26"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Long-term power trade agreement (reported January 2024)",
+          "counterparty": "India",
+          "domain": "power trade",
+          "nepal_lead_institution": {
+            "candidate": "MoEWRI",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Nepal Electricity Authority"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "JSC/JWG on power",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L16",
+            "04C-L27",
+            "04C-L38"
+          ],
+          "note": "Nepal-side ratification route was litigated per a news locator (Supreme Court verdict); verdict text must be retrieved; the news item is not evidence of holding."
+        },
+        {
+          "agreement": "Indian cross-border electricity instruments (MoP Guidelines 2018, CEA DA Procedure, CERC CBTE Regulations)",
+          "counterparty": "India (unilateral Indian instruments)",
+          "domain": "power market access",
+          "nepal_lead_institution": {
+            "candidate": "Not a bilateral agreement - Nepali counterpart interface expected via MoEWRI/NEA; to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "NEA",
+              "Nepali IPPs via NEA"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "None (Indian domestic regulation); interface through JSC/JWG",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L28",
+            "04C-L29",
+            "04C-L30"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Mahakali Treaty (1996) and Pancheshwar Development Authority",
+          "counterparty": "India",
+          "domain": "water and hydropower",
+          "nepal_lead_institution": {
+            "candidate": "MoEWRI",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Foreign Affairs",
+              "Water and Energy Commission Secretariat"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Mahakali River Commission; Pancheshwar Development Authority",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L01",
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L06",
+            "04C-L35"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Kosi agreement (as revised)",
+          "counterparty": "India",
+          "domain": "water, flood control, irrigation",
+          "nepal_lead_institution": {
+            "candidate": "MoEWRI",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Department of Water Resources and Irrigation",
+              "Ministry of Home Affairs (flood response)"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Joint committees on Kosi and Gandak",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L06",
+            "04C-L36"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Gandak Irrigation and Power Project agreement (as amended)",
+          "counterparty": "India",
+          "domain": "water, irrigation, power",
+          "nepal_lead_institution": {
+            "candidate": "MoEWRI",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Department of Water Resources and Irrigation"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Joint committees on Kosi and Gandak",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L06",
+            "04C-L37"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Petroleum supply arrangement NOC-IOC and pipeline agreements",
+          "counterparty": "India (state-owned enterprise counterparties)",
+          "domain": "fuel supply",
+          "nepal_lead_institution": {
+            "candidate": "Ministry of Industry, Commerce and Supplies (NOC line ministry) - to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Nepal Oil Corporation"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Company-level contracts; any G2G oversight mechanism to verify",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L17",
+            "04C-L41"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Exchange-control/INR settlement arrangements",
+          "counterparty": "India",
+          "domain": "currency and payments",
+          "nepal_lead_institution": {
+            "candidate": "Nepal Rastra Bank",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Finance"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Central bank channels (to verify)",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L15",
+            "04C-L43"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Nepal-India BIPPA (2011)",
+          "counterparty": "India",
+          "domain": "investment protection",
+          "nepal_lead_institution": {
+            "candidate": "Ministry of Industry, Commerce and Supplies / Ministry of Finance - to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Department of Industry",
+              "Investment Board Nepal"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "None identified",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L12",
+            "04C-L13"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Framework for Belt and Road Cooperation (December 2024)",
+          "counterparty": "China",
+          "domain": "infrastructure and financing",
+          "nepal_lead_institution": {
+            "candidate": "Ministry of Foreign Affairs (signatory/custodian) - with MoF for financing; to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Finance (IECCD)",
+              "National Planning Commission",
+              "Investment Board Nepal",
+              "sector ministries per project"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Implementation mechanism named in framework - to extract from text",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L14",
+            "04C-L20",
+            "04C-L44",
+            "04C-L45"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Transit transport agreement and protocol (Nepal-China)",
+          "counterparty": "China",
+          "domain": "transit",
+          "nepal_lead_institution": {
+            "candidate": "MoICS",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Ministry of Physical Infrastructure and Transport",
+              "Department of Customs",
+              "NITDB"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Joint mechanism named in protocol - to extract",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L18",
+            "04C-L48"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "China zero-tariff treatment for LDCs (unilateral) and any bilateral trade arrangements",
+          "counterparty": "China",
+          "domain": "goods trade",
+          "nepal_lead_institution": {
+            "candidate": "MoICS / TEPC - to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "Department of Customs (certificates of origin)",
+              "NPC (LDC graduation transition)"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Trade/economic joint commission (if any) - to verify",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L21",
+            "04C-L50",
+            "04C-L51"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Border ports and crossing arrangements (northern border)",
+          "counterparty": "China",
+          "domain": "border administration",
+          "nepal_lead_institution": {
+            "candidate": "Ministry of Home Affairs / MoICS / Department of Customs - to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "NITDB",
+              "Department of Immigration"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "Border port management arrangements - to verify",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L18",
+            "04C-L19",
+            "04C-L52"
+          ],
+          "note": "Candidate institutions are working hypotheses from general domain knowledge, named only to direct retrieval; the matrix row is valid only after the allocation rules and the text are retrieved."
+        },
+        {
+          "agreement": "Regional instruments: SAFTA, SAARC energy framework, BIMSTEC grid MoU, BBIN/SASEC",
+          "counterparty": "India plus regional partners",
+          "domain": "regional trade and energy",
+          "nepal_lead_institution": {
+            "candidate": "MoICS (SAFTA), MoEWRI (energy), MoFA (organisation-level) - to verify",
+            "status": "to_verify",
+            "basis_required": "Allocation of Business Rules (current version) plus the agreement text's designation of implementing authority"
+          },
+          "co_responsible_and_implementing_bodies": {
+            "candidates": [
+              "NPC",
+              "MoF"
+            ],
+            "status": "to_verify"
+          },
+          "joint_mechanism": {
+            "name_in_text": "SAARC/BIMSTEC ministerial and senior-officials meetings",
+            "status": "pending",
+            "evidence_required": "mechanism clause in text and most recent meeting minutes/record"
+          },
+          "ratification_route": {
+            "status": "pending",
+            "evidence_required": "whether the instrument fell under the constitutional/Treaty Act categories requiring parliamentary ratification, and the record of ratification or of the decision that none was required"
+          },
+          "leads": [
+            "04C-L02",
+            "04C-L03",
+            "04C-L04",
+            "04C-L55",
+            "04C-L56",
+            "04C-L57"
+          ],
+          "note": "Joint with 17D agreement_status_table; this row records only the Nepali owner, status from 17D."
+        }
+      ]
+    },
+    "conflict_map": {
+      "status": "pending",
+      "question": "Q2 Where do opportunities with one neighbour conflict with commitments to the other?",
+      "method": "Each item states a structural interaction to be confirmed from clause text or official records; outcome per item: DOCUMENTED_CONFLICT, DOCUMENTED_COMPLEMENTARITY, NO_CLAUSE_FOUND or PENDING. No statement about intentions of any government.",
+      "items": [
+        {
+          "id": "CM-01",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "power market access",
+          "interaction": "Whether Indian cross-border electricity rules condition approval of imports from Nepali generators on the ownership, developer or financing origin of the plant (including participation of entities from countries without a bilateral power arrangement with India), which would bear on Chinese-built or Chinese-financed hydropower in Nepal.",
+          "type": "potential eligibility constraint - to verify from clause text",
+          "evidence_required": "Exact clauses of MoP Guidelines 2018 (as amended), CEA DA Procedure and CERC CBTE Regulations on eligibility; CEA approvals list by project with developer identity; any NEA/IBN record of export ineligibility",
+          "status": "pending",
+          "leads": [
+            "04C-L28",
+            "04C-L29",
+            "04C-L30",
+            "04C-L27",
+            "04C-L16",
+            "04C-L10"
+          ]
+        },
+        {
+          "id": "CM-02",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "rules of origin",
+          "interaction": "Whether Treaty of Trade preferential access into India requires Nepali content/value-addition or change-in-tariff criteria that limit use of Chinese-origin inputs in exports to India; and whether China's LDC zero-tariff origin rules limit use of Indian-origin inputs.",
+          "type": "structural rules-of-origin interaction",
+          "evidence_required": "Rules-of-origin clauses and protocol of the Treaty of Trade; China's LDC zero-tariff origin rules; customs certificate-of-origin procedures",
+          "status": "pending",
+          "leads": [
+            "04C-L22",
+            "04C-L50",
+            "04C-L51",
+            "04C-L19"
+          ]
+        },
+        {
+          "id": "CM-03",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "re-export and unauthorised trade",
+          "interaction": "Whether provisions on third-country goods in the India-Nepal unauthorised-trade agreement constrain onward movement into India of goods imported from China through northern ports, and how this shapes the scale of northern-route imports.",
+          "type": "structural enforcement interaction",
+          "evidence_required": "Clauses on third-country goods and re-export in the revised agreement; IGC records of issues raised",
+          "status": "pending",
+          "leads": [
+            "04C-L25",
+            "04C-L31",
+            "04C-L24"
+          ]
+        },
+        {
+          "id": "CM-04",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "transit routes",
+          "interaction": "Complementarity or substitution between the Treaty of Transit (India ports/corridors) and the Nepal-China transit transport protocol (access via Chinese ports and dry ports): whether either text contains exclusivity, most-favoured or reciprocity clauses, and the documented operational use of the northern transit route.",
+          "type": "route substitution - operational record to verify",
+          "evidence_required": "Both transit texts; any cargo movement records under the China protocol; customs office-level trade",
+          "status": "pending",
+          "leads": [
+            "04C-L23",
+            "04C-L48",
+            "04C-L48",
+            "04C-L18",
+            "04C-L19"
+          ]
+        },
+        {
+          "id": "CM-05",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "rail and road standards",
+          "interaction": "Whether cross-border rail projects with India and the proposed cross-border railway with China are specified on different track gauges or technical standards, which would affect network integration and the domestic investment programme.",
+          "type": "technical standards interaction - to verify from feasibility/DPR documents",
+          "evidence_required": "Feasibility study or DPR records for India-Nepal and China-Nepal rail projects stating gauge and standards",
+          "status": "pending",
+          "leads": [
+            "04C-L32",
+            "04C-L44",
+            "04C-L20"
+          ]
+        },
+        {
+          "id": "CM-06",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "air connectivity",
+          "interaction": "Whether international flight operations at airports in Nepal (including those financed or built with Chinese participation) depend on air-route and entry-point arrangements involving Indian airspace; documented status of such arrangements.",
+          "type": "airspace access dependency - to verify",
+          "evidence_required": "CAAN/ICAO route documentation and bilateral records on entry points; airport operating statistics",
+          "status": "pending",
+          "leads": [
+            "04C-L54",
+            "04C-L01"
+          ]
+        },
+        {
+          "id": "CM-07",
+          "neighbours": [
+            "India",
+            "China"
+          ],
+          "domain": "currency and payments",
+          "interaction": "Nepal settles India trade in INR under the peg and exchange-control framework while China trade is settled in convertible currency (to verify); the INR/convertible split shapes reserve composition and the cost of diversifying imports northward.",
+          "type": "structural payments interaction",
+          "evidence_required": "NRB rules and data on currency composition of payments by partner; RBI supplement",
+          "status": "pending",
+          "leads": [
+            "04C-L15",
+            "04C-L43",
+            "04C-L42"
+          ]
+        },
+        {
+          "id": "CM-08",
+          "neighbours": [
+            "India",
+            "China"
+          ],
+          "domain": "water and hydropower basins",
+          "interaction": "Whether provisions of the Mahakali, Kosi and Gandak instruments (water use, prior consultation, benefit sharing) apply to projects on the same basins developed with other partners, including Chinese developers or financiers.",
+          "type": "treaty scope interaction - to verify",
+          "evidence_required": "Treaty clauses on water use and third-party projects; project list by basin and developer (DoED/IBN)",
+          "status": "pending",
+          "leads": [
+            "04C-L35",
+            "04C-L36",
+            "04C-L37",
+            "04C-L10"
+          ]
+        },
+        {
+          "id": "CM-09",
+          "neighbours": [
+            "China",
+            "India"
+          ],
+          "domain": "infrastructure financing and debt",
+          "interaction": "Financing modality in the BRI framework (grant vs loan vs commercial) and its interaction with Nepal's debt strategy and with parallel Indian lines of credit/grants for connectivity projects on overlapping corridors.",
+          "type": "fiscal/financing interaction",
+          "evidence_required": "BRI framework financing clause; DCR commitments and disbursements by India and China; MTDS limits",
+          "status": "pending",
+          "leads": [
+            "04C-L44",
+            "04C-L14",
+            "04C-L47"
+          ]
+        },
+        {
+          "id": "CM-10",
+          "neighbours": [
+            "India"
+          ],
+          "domain": "trade policy space",
+          "interaction": "Reported 2026 Indian import-side measures on Nepali goods and the reported September 2026 treaty review: interaction with Nepal's export diversification (including northward) and with Treaty of Trade safeguard/consultation clauses.",
+          "type": "news-located development - primary verification required",
+          "evidence_required": "Indian primary notifications; IGSC minutes; Treaty of Trade safeguard and consultation clauses",
+          "status": "pending",
+          "leads": [
+            "04C-L39",
+            "04C-L40",
+            "04C-L22"
+          ]
+        }
+      ]
+    },
+    "documented_effects": {
+      "status": "pending",
+      "question": "Q3 What measurable economic effects of existing agreements are documented?",
+      "method": "For each study record: agreement, outcome, period (FY/calendar), method and identification, estimate with observation id, and whether ex-ante or ex-post. Conflicting estimates are kept side by side (00B). News claims are never effects.",
+      "register": [
+        {
+          "agreement": "Treaty of Trade (India)",
+          "effect_sought": "Change in Nepal exports/imports with India attributable to treaty preferences and revisions; preference utilisation",
+          "unit": "percent",
+          "method_required": "Before/after with controls or gravity model; identify revision years from text",
+          "candidate_studies": [
+            "04C-L58",
+            "04C-L61",
+            "04C-L71"
+          ],
+          "status": "pending - no Nepal-specific ex-post evaluation located in r1"
+        },
+        {
+          "agreement": "Treaty of Transit and rail-services agreement (India)",
+          "effect_sought": "Transit time and cost changes for third-country cargo; modal shift to rail",
+          "unit": "days",
+          "method_required": "Project results frameworks and completion reports; time-release or corridor studies",
+          "candidate_studies": [
+            "04C-L62",
+            "04C-L60",
+            "04C-L70",
+            "04C-L63"
+          ],
+          "status": "pending"
+        },
+        {
+          "agreement": "Nepal-India Regional Trade and Transport Project (World Bank)",
+          "effect_sought": "Measured outcomes vs appraisal baselines (clearance time, dwell time)",
+          "unit": "days",
+          "method_required": "Implementation Completion and Results Report (not yet located)",
+          "candidate_studies": [
+            "04C-L60"
+          ],
+          "status": "pending - ICR not located"
+        },
+        {
+          "agreement": "Power Trade Agreement 2014 and long-term power trade agreement",
+          "effect_sought": "Realised electricity exports/imports and revenue by segment; approved vs realised capacity",
+          "unit": "GWh",
+          "method_required": "NEA energy balance by FY; CEA approvals; ex-ante studies kept separate from ex-post",
+          "candidate_studies": [
+            "04C-L16",
+            "04C-L27",
+            "04C-L64"
+          ],
+          "status": "pending"
+        },
+        {
+          "agreement": "Mahakali, Kosi and Gandak water instruments",
+          "effect_sought": "Documented irrigation/power benefits and losses to Nepal; implementation delay effects",
+          "unit": "index",
+          "method_required": "Case studies; record whether quantitative or qualitative; no aggregation across studies",
+          "candidate_studies": [
+            "04C-L65",
+            "04C-L66",
+            "04C-L67",
+            "04C-L68"
+          ],
+          "status": "pending"
+        },
+        {
+          "agreement": "INR peg and exchange-control arrangements",
+          "effect_sought": "Transmission of Indian monetary policy and INR/USD to Nepal prices and interest rates",
+          "unit": "ratio",
+          "method_required": "NRB econometric study; record specification and period",
+          "candidate_studies": [
+            "04C-L42"
+          ],
+          "status": "pending"
+        },
+        {
+          "agreement": "Nepal-China transit protocol and northern border ports",
+          "effect_sought": "Northern-route trade volumes and disruption effects",
+          "unit": "percent",
+          "method_required": "Customs office-level trade by FY; disruption event records",
+          "candidate_studies": [
+            "04C-L72",
+            "04C-L52",
+            "04C-L19"
+          ],
+          "status": "pending - no evaluation study located"
+        },
+        {
+          "agreement": "BRI framework (2024)",
+          "effect_sought": "Project-level financing and implementation outcomes",
+          "unit": "count",
+          "method_required": "Project status records; too recent for ex-post effect studies",
+          "candidate_studies": [
+            "04C-L44",
+            "04C-L14",
+            "04C-L46"
+          ],
+          "status": "pending - effects not yet evaluable; record as such"
+        },
+        {
+          "agreement": "China LDC zero-tariff treatment",
+          "effect_sought": "Utilisation of zero-tariff lines by Nepali exporters",
+          "unit": "percent",
+          "method_required": "Preference utilisation data (China customs) - no catalog id",
+          "candidate_studies": [
+            "04C-L50",
+            "04C-L51",
+            "04C-L59"
+          ],
+          "status": "pending"
+        },
+        {
+          "agreement": "SAFTA and regional instruments",
+          "effect_sought": "Incremental effect beyond bilateral preferences",
+          "unit": "percent",
+          "method_required": "See 17D documented_effects",
+          "candidate_studies": [
+            "04C-L55",
+            "04C-L58"
+          ],
+          "status": "pending - delegated to 17D"
+        }
+      ]
+    },
+    "neighbour_dependency_register": {
+      "status": "pending",
+      "note": "Agent 04 deliverable; combines 04A (India) and 04B (China) rows and adds a water-treaty row; each row links to its responsibility-matrix row and conflict-map items.",
+      "rows": [
+        {
+          "dependency": "Goods trade partner concentration (India)",
+          "neighbour": "India",
+          "exposure_id": "EXP-03",
+          "variable": "X09",
+          "status": "pending",
+          "from": "04A",
+          "responsible_institution_row": "Treaty of Trade (Nepal-India) and protocol",
+          "conflict_links": [
+            "CM-02",
+            "CM-10"
+          ],
+          "domestic_policy_implication": "Trade-policy options bounded by treaty terms; magnitude pending"
+        },
+        {
+          "dependency": "China as import origin (via any route)",
+          "neighbour": "China",
+          "exposure_id": "EXP-03",
+          "variable": "X10",
+          "status": "pending",
+          "from": "04B",
+          "responsible_institution_row": "China zero-tariff treatment for LDCs (unilateral) and any bilateral trade arrangements",
+          "conflict_links": [
+            "CM-02",
+            "CM-03"
+          ],
+          "domestic_policy_implication": "Origin share is distinct from route share; Chinese-origin goods may enter via India ports"
+        },
+        {
+          "dependency": "Transit route dependence on India (ports, corridors)",
+          "neighbour": "India",
+          "exposure_id": "EXP-04",
+          "variable": "X08",
+          "status": "pending",
+          "from": "04A",
+          "responsible_institution_row": "Treaty of Transit (1999) with protocol, memorandum, letters of exchange and rail-services agreement",
+          "conflict_links": [
+            "CM-04",
+            "CM-05"
+          ],
+          "domestic_policy_implication": "Logistics investment conditional on transit terms"
+        },
+        {
+          "dependency": "Northern border trade route (capacity and disruption exposure)",
+          "neighbour": "China",
+          "exposure_id": "EXP-20",
+          "variable": "X10",
+          "status": "pending",
+          "from": "04B",
+          "responsible_institution_row": "Transit transport agreement and protocol (Nepal-China)",
+          "conflict_links": [
+            "CM-04",
+            "CM-05"
+          ],
+          "domestic_policy_implication": "Route diversification value depends on operational record and hazard exposure"
+        },
+        {
+          "dependency": "Petroleum supply via India",
+          "neighbour": "India",
+          "exposure_id": "EXP-05",
+          "variable": "X07",
+          "status": "pending",
+          "from": "04A",
+          "responsible_institution_row": "Petroleum supply arrangement NOC-IOC and pipeline agreements",
+          "conflict_links": [],
+          "domestic_policy_implication": "Single-supplier structure shapes storage and pricing policy"
+        },
+        {
+          "dependency": "Electricity export market access in India",
+          "neighbour": "India",
+          "exposure_id": null,
+          "variable": "X16",
+          "status": "pending",
+          "from": "04A",
+          "responsible_institution_row": "Power Trade Agreement (2014)",
+          "conflict_links": [
+            "CM-01"
+          ],
+          "domestic_policy_implication": "Export revenue modelled as conditional on approvals"
+        },
+        {
+          "dependency": "Currency peg and INR settlement",
+          "neighbour": "India",
+          "exposure_id": null,
+          "variable": "pending mapping (20B)",
+          "status": "pending",
+          "from": "04A",
+          "responsible_institution_row": "Exchange-control/INR settlement arrangements",
+          "conflict_links": [
+            "CM-07"
+          ],
+          "domestic_policy_implication": "Limits independent exchange-rate and interest-rate policy"
+        },
+        {
+          "dependency": "China FDI and ODA financing for infrastructure",
+          "neighbour": "China",
+          "exposure_id": null,
+          "variable": "pending mapping (18B)",
+          "status": "pending",
+          "from": "04B",
+          "responsible_institution_row": "Framework for Belt and Road Cooperation (December 2024)",
+          "conflict_links": [
+            "CM-01",
+            "CM-09"
+          ],
+          "domestic_policy_implication": "Financing terms interact with debt strategy and with export eligibility of financed plants"
+        },
+        {
+          "dependency": "China tariff preferences for Nepal exports",
+          "neighbour": "China",
+          "exposure_id": null,
+          "variable": "pending mapping (21A)",
+          "status": "pending",
+          "from": "04B",
+          "responsible_institution_row": "China zero-tariff treatment for LDCs (unilateral) and any bilateral trade arrangements",
+          "conflict_links": [
+            "CM-02"
+          ],
+          "domestic_policy_implication": "Preference continuity after LDC graduation to verify"
+        },
+        {
+          "dependency": "Transboundary rivers governed by India-Nepal water instruments",
+          "neighbour": "India",
+          "exposure_id": null,
+          "variable": "pending mapping (25B)",
+          "status": "pending",
+          "from": "04C (new, from 17E/25B leads)",
+          "responsible_institution_row": "Mahakali Treaty (1996) and Pancheshwar Development Authority",
+          "conflict_links": [
+            "CM-08"
+          ],
+          "domestic_policy_implication": "Basin development options conditioned by treaty provisions; to verify"
+        }
+      ]
+    }
+  },
+  "source_leads": [
+    {
+      "lead_id": "04C-L01",
+      "url": "https://mofa.gov.np",
+      "title": "Ministry of Foreign Affairs, Nepal - treaties, bilateral relations and joint statements",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Treaty/joint-statement archive for India and China; mandate description of MoFA in treaty negotiation and custody (reused from 17B/17E/04B)"
+    },
+    {
+      "lead_id": "04C-L02",
+      "url": "https://www.scribd.com/document/383434464/government-of-nepal-allocation-of-business-rules-2064-2008-pdf",
+      "title": "Government of Nepal (Allocation of Business) Rules, 2064 (2008) - third-party copy",
+      "publisher": "Government of Nepal (copy hosted on Scribd)",
+      "source_id": null,
+      "contains": "Superseded allocation of business across ministries; historical baseline for which ministry held trade, transit, water-resources and foreign-affairs business; located by the r1 WebSearch of this task; non-authoritative host - use only to locate the official gazette text"
+    },
+    {
+      "lead_id": "04C-L03",
+      "url": "https://www.slideshare.net/BhimUpadhyaya/govt-of-nepal-rules-for-allocation-of-business-of-ministries-paush-14th-2072",
+      "title": "Government of Nepal Rules for Allocation of Business of Ministries (Paush 2072) - third-party copy",
+      "publisher": "Government of Nepal (copy hosted on SlideShare)",
+      "source_id": null,
+      "contains": "Allocation of business version dated 2072 BS; located by the r1 WebSearch; non-authoritative host - locator only"
+    },
+    {
+      "lead_id": "04C-L04",
+      "url": "https://www.opmcm.gov.np",
+      "title": "Office of the Prime Minister and Council of Ministers - Government of Nepal (Allocation of Business) Rules, current version and amendments",
+      "publisher": "Office of the Prime Minister and Council of Ministers, Nepal",
+      "source_id": null,
+      "contains": "Current Allocation of Business Rules (2074 BS and later amendments) assigning cross-border trade, transit, energy, water, aviation and foreign-aid business to ministries; primary basis for the responsibility matrix. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "04C-L05",
+      "url": "https://moics.gov.np",
+      "title": "Ministry of Industry, Commerce and Supplies, Nepal - trade and transit treaties, IGC/IGSC",
+      "publisher": "Ministry of Industry, Commerce and Supplies, Nepal",
+      "source_id": null,
+      "contains": "Ministry-level pages on bilateral trade/transit treaties with India and China, Inter-Governmental Committee/Sub-Committee meetings, transit arrangements. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "04C-L06",
+      "url": "https://moewri.gov.np/content/65/agreement-nepal-india-on-the-gandak-irrigation-and-power-project-1959/",
+      "title": "Agreement (Nepal-India) on the Gandak Irrigation and Power Project, 1959",
+      "publisher": "Ministry of Energy, Water Resources and Irrigation, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "MoEWRI-hosted treaty text; evidence that MoEWRI holds water-resources agreements (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L07",
+      "url": "https://lawcommission.gov.np/content/13437/nepal-s-constitution/",
+      "title": "Constitution of Nepal (Nepali authoritative text)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Constitutional provision on ratification, accession, acceptance or approval of treaties and the categories requiring parliamentary majority (article number to be recorded from text) (reused from 11A)"
+    },
+    {
+      "lead_id": "04C-L08",
+      "url": "https://constitutionnet.org/vl/item/constitution-nepal-2015-official-english-translation-ministry-law-justice-and-parliamentary",
+      "title": "Constitution of Nepal 2015 (official English translation by MoLJPA)",
+      "publisher": "Ministry of Law, Justice and Parliamentary Affairs, Nepal (via ConstitutionNet)",
+      "source_id": null,
+      "contains": "English text of treaty-ratification provision and natural-resource sharing provisions (reused from 11A)"
+    },
+    {
+      "lead_id": "04C-L09",
+      "url": "https://lawcommission.gov.np",
+      "title": "Nepal Treaty Act, 2047 (1990)",
+      "publisher": "Nepal Law Commission",
+      "source_id": "lawcommission_nepal",
+      "contains": "Procedure for treaty negotiation, signature, ratification and domestic legal effect; role of MoFA and line ministries. URL from general knowledge — unverified."
+    },
+    {
+      "lead_id": "04C-L10",
+      "url": "https://ibn.gov.np",
+      "title": "Investment Board Nepal",
+      "publisher": "Investment Board Nepal",
+      "source_id": "ibn",
+      "contains": "Project development agreements for large export-oriented hydropower and cross-border projects; IBN mandate under PPP and Investment Act 2019 (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L11",
+      "url": "https://ibn.gov.np/uploads/documents/public-private-partnership-and-investment-act-ppp-and-investment-act-2019pdf-1483-330-1657605913.pdf",
+      "title": "Public Private Partnership and Investment Act, 2019 (2075)",
+      "publisher": "Investment Board Nepal",
+      "source_id": "ibn",
+      "contains": "Statutory mandate of IBN for large projects incl. foreign-financed infrastructure (reused from 11A)"
+    },
+    {
+      "lead_id": "04C-L12",
+      "url": "https://www.investnepal.gov.np/portal/index.php?p1=downloadlist&p2=8",
+      "title": "InvestNepal - Treaties and Agreements downloads",
+      "publisher": "Department of Industry / Government of Nepal",
+      "source_id": "doind",
+      "contains": "BIPPA and DTAA texts with India and China; custodian ministry per document (reused from 04B/26D)"
+    },
+    {
+      "lead_id": "04C-L13",
+      "url": "https://www.transnational-dispute-management.com/legal-and-regulatory-detail.asp?key=6542",
+      "title": "Nepal-India BIPPA (in Nepali), October 2011",
+      "publisher": "Transnational Dispute Management (copy)",
+      "source_id": null,
+      "contains": "Nepal-India investment promotion and protection agreement text; ratification/entry-into-force status to verify (reused from 26D)"
+    },
+    {
+      "lead_id": "04C-L14",
+      "url": "https://giwmscdntwo.gov.np/media/pdf_upload/Final%20DCR%202024-25_26-03-2026_d06ntku.pdf",
+      "title": "Development Cooperation Report 2024/25",
+      "publisher": "Ministry of Finance, Nepal",
+      "source_id": "mof_nepal",
+      "contains": "Institutional responsibility for foreign-aid agreements (IECCD, MoF), disbursements by India and China by FY; project list (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L15",
+      "url": "https://www.nrb.org.np/departments/fxm/",
+      "title": "Foreign Exchange Management Department",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "NRB mandate over INR/convertible-currency exchange rules and settlement arrangements (reused from 20B)"
+    },
+    {
+      "lead_id": "04C-L16",
+      "url": "https://www.nea.org.np/annual_report",
+      "title": "NEA Annual Reports",
+      "publisher": "Nepal Electricity Authority",
+      "source_id": "nea",
+      "contains": "NEA role as counterparty in power trade, cross-border line ownership, export/import energy balance by FY (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L17",
+      "url": "https://noc.org.np/import",
+      "title": "Import and Sales",
+      "publisher": "Nepal Oil Corporation",
+      "source_id": "noc_nepal",
+      "contains": "NOC as counterparty to petroleum supply arrangement with IOC; import records (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L18",
+      "url": "https://nitdb.gov.np",
+      "title": "Nepal Intermodal Transport Development Board",
+      "publisher": "Nepal Intermodal Transport Development Board",
+      "source_id": "nitdb",
+      "contains": "NITDB mandate over ICDs/dry ports on India and China borders; operations reports (reused from 04A/04B)"
+    },
+    {
+      "lead_id": "04C-L19",
+      "url": "https://customs.gov.np",
+      "title": "Department of Customs (portal)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Customs implementation of treaty preferences, rules of origin certification, office-level trade (reused from 04A/04B)"
+    },
+    {
+      "lead_id": "04C-L20",
+      "url": "https://npc.gov.np",
+      "title": "National Planning Commission, Nepal - periodic plans, monitoring and evaluation reports",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Periodic plan chapters on international trade/connectivity; NPC evaluation studies of projects (candidate for documented-effects evidence) (reused from 25C/25E)"
+    },
+    {
+      "lead_id": "04C-L21",
+      "url": "https://npc.gov.np/content/6480/ldc-graduationsmooth-transition-strategy/",
+      "title": "LDC Graduation Smooth Transition Strategy",
+      "publisher": "National Planning Commission, Nepal",
+      "source_id": "npc_nepal",
+      "contains": "Institutional assignments for trade-preference transition incl. India and China preferences (reused from 26C)"
+    },
+    {
+      "lead_id": "04C-L22",
+      "url": "https://tepc.gov.np/tradeagreement/Treaty%20of%20Trade.pdf",
+      "title": "Treaty of Trade between the Government of Nepal and the Government of India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Treaty text: preference, rules of origin, safeguard, review and IGC provisions; responsible authorities named in text (reused from 04A/17A)"
+    },
+    {
+      "lead_id": "04C-L23",
+      "url": "https://tepc.gov.np/pages/treaty-of-transit-1999-india",
+      "title": "Treaty of Transit, 1999 - India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Transit treaty, protocol and memorandum; routes/ports; review mechanism (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L24",
+      "url": "https://www.tepc.gov.np/tradeagreement/Treaty%20of%20Trade%20and%20Transit%20Final.pdf",
+      "title": "Treaty of Trade, Treaty of Transit and Trade Related Agreements between Nepal and India",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Compilation of treaty, transit, unauthorised-trade and rail-services texts with amendments (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L25",
+      "url": "https://www.commerce.gov.in/wp-content/uploads/2020/02/Unauthorized_Trade_Nepal.pdf",
+      "title": "Revised Agreement of Co-operation between Government of India and Government of Nepal to Control Unauthorized Trade",
+      "publisher": "Department of Commerce, India",
+      "source_id": "mea_india",
+      "contains": "Provisions on third-country goods and re-export; enforcement authorities (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L26",
+      "url": "https://giwmscdnone.gov.np/media/pdf_upload/02%20pta-english-21-oct-2014_0qqrgcc.pdf",
+      "title": "Agreement between the Government of Nepal and the Government of India on Electric Power Trade, Cross-Border Transmission Interconnection and Grid Connectivity (2014)",
+      "publisher": "Government of Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "PTA text: JWG/JSC mechanism, authorised entities, market-access provisions (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L27",
+      "url": "https://cea.nic.in/import-export-cross-border-of-electricity/?lang=en",
+      "title": "Import/Export (Cross Border) of Electricity - CEA page",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Designated-authority approvals list by project; approval criteria (reused from 04A/17A)"
+    },
+    {
+      "lead_id": "04C-L28",
+      "url": "https://powermin.gov.in/sites/default/files/uploads/Guidelines_for_ImportExport_Cross%20Border_of_Electricity_2018.pdf",
+      "title": "Guidelines for Import/Export (Cross Border) of Electricity 2018",
+      "publisher": "Ministry of Power, India",
+      "source_id": "cea_india",
+      "contains": "Eligibility and approval clauses for import of electricity from generators in neighbouring countries, incl. any clauses on ownership/financing of the generating entity - to be read from text (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L29",
+      "url": "https://cea.nic.in/wp-content/uploads/2021/02/Final_DA_Procedure_26022021.pdf",
+      "title": "Procedure for Approval and Facilitating Import/Export (Cross Border) of Electricity by the Designated Authority",
+      "publisher": "Central Electricity Authority, India",
+      "source_id": "cea_india",
+      "contains": "Procedural requirements and documents for approval of cross-border trade by Nepali generators (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L30",
+      "url": "http://www.cercind.gov.in/regulations/COnsolidatedCBTE_Second_amendment.pdf",
+      "title": "CERC CBTE Regulations 2019 consolidated incl. First and Second Amendments",
+      "publisher": "Central Electricity Regulatory Commission, India",
+      "source_id": null,
+      "contains": "Market-access rules for cross-border participants on Indian power exchanges (reused from 17A)"
+    },
+    {
+      "lead_id": "04C-L31",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2092280",
+      "title": "India-Nepal Inter-Governmental Committee meeting on trade, transit and cooperation to control unauthorised trade",
+      "publisher": "Press Information Bureau, India",
+      "source_id": "mea_india",
+      "contains": "IGC composition and lead ministries on each side; agenda items (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L32",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2189629",
+      "title": "India, Nepal Ink Deal to Boost Rail Trade Connectivity",
+      "publisher": "Press Information Bureau, India",
+      "source_id": "mea_india",
+      "contains": "Signatory institutions for rail-transit amendment (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L33",
+      "url": "https://www.mea.gov.in/bilateral-documents?dtl%2F27407%2FIndiaNepal_Joint_Statement_during_the_State_visit_of_Prime_Minister_of_Nepal_to_India",
+      "title": "India-Nepal Joint Statement during the State visit of Prime Minister of Nepal to India",
+      "publisher": "Ministry of External Affairs, India",
+      "source_id": "mea_india",
+      "contains": "List of instruments exchanged and implementing agencies (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L34",
+      "url": "https://mofa.gov.np/content/112/joint-press-meet-between-the-prime-ministers/",
+      "title": "Joint Press Meet between the Prime Ministers of Nepal and India - Statement",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Nepal-side statement of agreements concluded (reused from 04A/17E)"
+    },
+    {
+      "lead_id": "04C-L35",
+      "url": "https://www.jalshakti-dowr.gov.in/static/uploads/2024/02/MAHAKALI_TREATY_19961.pdf",
+      "title": "Mahakali Treaty 1996 (Treaty concerning the Integrated Development of the Mahakali River)",
+      "publisher": "Department of Water Resources, Ministry of Jal Shakti, India",
+      "source_id": "mofa_nepal",
+      "contains": "Treaty text: Pancheshwar Development Authority, commission, water and power entitlements, clauses on use of river waters (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L36",
+      "url": "https://faolex.fao.org/docs/pdf/bi203689.pdf",
+      "title": "Revised Agreement between HMG Nepal and the Government of India on the Kosi Project",
+      "publisher": "FAO FAOLEX (copy)",
+      "source_id": "mofa_nepal",
+      "contains": "Kosi agreement as amended; implementing authorities (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L37",
+      "url": "https://www.commonlii.org/in/other/treaties/INTSer/1959/18.html",
+      "title": "Agreement between HMG Nepal and GoI on the Gandak Irrigation and Power Project",
+      "publisher": "CommonLII (copy)",
+      "source_id": "mofa_nepal",
+      "contains": "Gandak agreement text (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L38",
+      "url": "https://english.nepalnews.com/s/business/full-text-of-sc-verdict-released-clears-way-for-10000-mw-power-export-to-india/",
+      "title": "Full text of SC verdict released on long-term power trade agreement",
+      "publisher": "Nepal News",
+      "source_id": null,
+      "contains": "News locator for Supreme Court verdict on whether the long-term power trade agreement required parliamentary ratification; the verdict text itself must be retrieved from the Supreme Court (reused from 22B)"
+    },
+    {
+      "lead_id": "04C-L39",
+      "url": "https://kathmandupost.com/money/2026/09/23/nepal-india-agree-to-review-treaty-amid-widening-trade-deficit",
+      "title": "Nepal, India agree to review treaty amid widening trade deficit",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only (September 2026): treaty review mechanism and participating ministries; primary IGSC minutes required (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L40",
+      "url": "https://kathmandupost.com/money/2026/09/20/nepal-lost-rs10-billion-in-india-s-import-squeeze-new-delhi-seeks-investigation-before-easing-cur",
+      "title": "Nepal exporters affected by India's import squeeze (September 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only: reported 2026 import-side measures and their stated rationale; Indian primary notifications required (reused from 04A); no values taken"
+    },
+    {
+      "lead_id": "04C-L41",
+      "url": "https://iocl.com/NewsDetails/49412",
+      "title": "IndianOil news release - IOCL-NOC agreement on petroleum infrastructure in Nepal",
+      "publisher": "Indian Oil Corporation",
+      "source_id": null,
+      "contains": "Counterparties and scope of petroleum infrastructure agreements (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L42",
+      "url": "https://www.nrb.org.np/er-article/the-impact-of-the-indian-monetary-policy-and-the-official-exchange-rate-of-nepalese-monetary-policy/",
+      "title": "The Impact of the Indian Monetary Policy and the Official Exchange Rate on Nepalese Monetary Policy",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "Evaluation of peg transmission (documented-effects candidate) (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L43",
+      "url": "https://www.rbi.org.in/upload/ECM/pdfs/supplement.pdf",
+      "title": "Supplement: Exchange Control Regulations Applicable to Nepal and Bhutan",
+      "publisher": "Reserve Bank of India",
+      "source_id": "rbi",
+      "contains": "INR settlement rules for Nepal trade (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L44",
+      "url": "https://mofa.gov.np/content/641/framework-for-belt-and-road-cooperation-between/",
+      "title": "Framework for Belt and Road Cooperation between the Government of Nepal and the Government of the People's Republic of China",
+      "publisher": "Ministry of Foreign Affairs, Nepal",
+      "source_id": "mofa_nepal",
+      "contains": "Framework text: implementing agencies, financing modalities clause, validity (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L45",
+      "url": "https://english.www.gov.cn/news/202412/06/content_WS67524b7fc6d0868f4e8edb5b.html",
+      "title": "China, Nepal sign framework agreement to promote Belt and Road cooperation",
+      "publisher": "State Council of the PRC",
+      "source_id": "mofcom",
+      "contains": "China-side description of the framework and signatories (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L46",
+      "url": "https://thediplomat.com/2024/12/nepal-and-china-identify-10-projects-for-execution-under-bri/",
+      "title": "Nepal and China identify projects for execution under BRI",
+      "publisher": "The Diplomat",
+      "source_id": "academic",
+      "contains": "Secondary report of project list under the framework; to be checked against MoF/MoFA list (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L47",
+      "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/12/ISAS-Brief-1188-2.pdf",
+      "title": "ISAS Brief 1188 (December 2024) on the Nepal-China BRI framework",
+      "publisher": "Institute of South Asian Studies, NUS",
+      "source_id": "academic",
+      "contains": "Analysis of framework terms and neighbour interactions (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L48",
+      "url": "https://nepaltradeportal.gov.np/trade-agreement?p_p_id=utilportlet_WAR_tepc&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_utilportlet_WAR_tepc_param=getDetail&id=306",
+      "title": "Trade Agreement detail page (NTIP, id=306)",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "NTIP agreement register entry (China-related agreement; identity to verify) (reused from 17B)"
+    },
+    {
+      "lead_id": "04C-L49",
+      "url": "https://nepaltradeportal.gov.np/",
+      "title": "Nepal Trade Information Portal",
+      "publisher": "Trade and Export Promotion Centre, Nepal",
+      "source_id": "tepc",
+      "contains": "Register of Nepal's bilateral/regional trade and transit agreements incl. Nepal-China transit transport agreement and protocol; responsible ministry per agreement (reused from 04A/04B/17D)"
+    },
+    {
+      "lead_id": "04C-L50",
+      "url": "https://english.www.gov.cn/news/202409/12/content_WS66e2db52c6d0868f4e8eae7b.html",
+      "title": "China announces zero-tariff treatment for least developed countries",
+      "publisher": "State Council of the PRC",
+      "source_id": "mofcom",
+      "contains": "Scope of China's zero-tariff treatment for LDCs incl. Nepal; rules-of-origin requirements (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L51",
+      "url": "https://wto.mofcom.gov.cn/meetingsandstatements/art/2025/art_187fc8210edf49fb9cddf9dab06a6fce.html",
+      "title": "China expands zero-tariff policy for least developed countries",
+      "publisher": "MOFCOM WTO Affairs",
+      "source_id": "mofcom",
+      "contains": "Expansion of zero-tariff treatment; eligibility after LDC graduation (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L52",
+      "url": "https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/",
+      "title": "Kyirong-Rasuwa Flood 2026: Nepal-China cryosphere risk",
+      "publisher": "ICIMOD",
+      "source_id": "icimod",
+      "contains": "Northern crossing disruption (2026) - hazard context for northern route (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L53",
+      "url": "https://www.nrb.org.np/red/survey-report-on-foreign-direct-investment-2023-24/",
+      "title": "Survey Report on Foreign Direct Investment in Nepal 2023/24",
+      "publisher": "Nepal Rastra Bank",
+      "source_id": "nrb",
+      "contains": "FDI stock/flows by source country incl. India and China (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L54",
+      "url": "https://caanepal.gov.np/air-transports/international",
+      "title": "International Airlines",
+      "publisher": "Civil Aviation Authority of Nepal",
+      "source_id": "caan",
+      "contains": "International air services operating to Nepal's airports; entry to air-route/entry-point arrangements to be located (reused from 04B)"
+    },
+    {
+      "lead_id": "04C-L55",
+      "url": "https://www.saarc-sec.org",
+      "title": "SAARC Secretariat - agreements, conventions and ratification status",
+      "publisher": "SAARC Secretariat",
+      "source_id": "saarc",
+      "contains": "SAFTA and energy framework status; Nepal focal ministries (reused from 17D)"
+    },
+    {
+      "lead_id": "04C-L56",
+      "url": "https://bimstec.org",
+      "title": "BIMSTEC Secretariat - Charter, agreements, MoUs and summit declarations",
+      "publisher": "BIMSTEC Secretariat",
+      "source_id": "bimstec",
+      "contains": "BIMSTEC grid interconnection MoU and Nepal lead ministry (reused from 17D)"
+    },
+    {
+      "lead_id": "04C-L57",
+      "url": "https://www.sasec.asia",
+      "title": "South Asia Subregional Economic Cooperation (SASEC) programme site",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "SASEC/BBIN project records and Nepal nodal agencies (reused from 17C/17D)"
+    },
+    {
+      "lead_id": "04C-L58",
+      "url": "https://www.wto.org/english/news_e/news_docs/s478_e.pdf",
+      "title": "Trade Policy Review: Nepal - Report by the Secretariat (WT/TPR/S/478)",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Institutional framework for trade policy (ministries, committees), inventory of bilateral agreements and their implementation, and assessments of effects (reused from 04A/04B)"
+    },
+    {
+      "lead_id": "04C-L59",
+      "url": "https://www.wto.org/english/res_e/booksp_e/ldc_graduation_pocket_e.pdf",
+      "title": "Trade impacts of LDC graduation: Matters related to the WTO agreements",
+      "publisher": "World Trade Organization",
+      "source_id": "wto",
+      "contains": "Interaction of LDC-specific preferences (incl. China zero-tariff) with graduation (reused from 21A)"
+    },
+    {
+      "lead_id": "04C-L60",
+      "url": "https://documents1.worldbank.org/curated/en/310481475747761064/pdf/ITM00267-P144335-10-04-2016-1475616471200.pdf",
+      "title": "Nepal-India Regional Trade and Transport Project - project appraisal document",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Baseline trade-facilitation indicators and results framework; implementation completion report to be located for measured effects (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L61",
+      "url": "https://documents1.worldbank.org/curated/en/099032125103030263/pdf/P179761-430153ad-672c-4418-89c5-ef3740c65113.pdf",
+      "title": "Unlocking Nepal's Growth Potential: Nepal Country Economic Memorandum (2025)",
+      "publisher": "World Bank",
+      "source_id": "wb_npl",
+      "contains": "Chapters on trade costs, connectivity and energy trade with neighbours; any quantified effects of existing arrangements (reused from 04A/04B)"
+    },
+    {
+      "lead_id": "04C-L62",
+      "url": "https://icrier.org/publications/an-analysis-of-nepals-transit-through-india/",
+      "title": "An Analysis of Nepal's Transit through India",
+      "publisher": "ICRIER",
+      "source_id": "academic",
+      "contains": "Evaluation of transit arrangements: time/cost effects of transit treaty provisions (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L63",
+      "url": "https://lpi.worldbank.org/sites/default/files/2023-04/LPI_2023_report.pdf",
+      "title": "Connecting to Compete 2023: Trade Logistics in an Uncertain Global Economy (LPI 2023)",
+      "publisher": "World Bank",
+      "source_id": "wb_lpi",
+      "contains": "Logistics performance context (not an agreement evaluation) (reused from 04A)"
+    },
+    {
+      "lead_id": "04C-L64",
+      "url": "https://www.isas.nus.edu.sg/wp-content/uploads/2024/01/ISAS-Brief-1091_new.pdf",
+      "title": "Long-term Power Purchase Agreement: A Win-win Deal for Nepal and India (ISAS Brief)",
+      "publisher": "Institute of South Asian Studies, NUS",
+      "source_id": "academic",
+      "contains": "Ex-ante assessment of the long-term power trade agreement (not ex-post evidence) (reused from 17A)"
+    },
+    {
+      "lead_id": "04C-L65",
+      "url": "https://isetnepal.org.np/issue-brief-status-and-implementation-of-transboundary-river-agreements-on-the-kosi-river-in-nepal/",
+      "title": "Status and Implementation of Transboundary River Agreements on the Kosi River in Nepal",
+      "publisher": "ISET-Nepal",
+      "source_id": "academic",
+      "contains": "Documented implementation outcomes of the Kosi agreement (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L66",
+      "url": "https://isetnepal.org.np/wp-content/uploads/2018/12/Gandak-River-Agreement_Final-press-copy_15-Dec-2017-2-.pdf",
+      "title": "Dixit, Benefits and Burden: A case study of Gandak River Agreement",
+      "publisher": "ISET-Nepal",
+      "source_id": "academic",
+      "contains": "Case study of benefit distribution under the Gandak agreement (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L67",
+      "url": "https://www.researchgate.net/publication/342148937_Mahakali_Treaty_delay_in_implementation_and_resulting_impacts_from_Nepal's_perspective",
+      "title": "Mahakali Treaty: delay in implementation and resulting impacts from Nepal's perspective",
+      "publisher": "ResearchGate (academic paper)",
+      "source_id": "academic",
+      "contains": "Documented effects of implementation delay (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L68",
+      "url": "https://jvs-nwp.org.np/wp-content/uploads/2021/04/Troubled-transboundary-cooperation-in-South-Asia.pdf",
+      "title": "Troubled transboundary cooperation in South Asia: Indo-Nepal Gandak and Mahakali",
+      "publisher": "Jalsrot Vikas Sanstha / Nepal Water Partnership",
+      "source_id": "academic",
+      "contains": "Comparative assessment of water agreements (reused from 25B)"
+    },
+    {
+      "lead_id": "04C-L69",
+      "url": "https://academic.oup.com/wber/article-abstract/15/3/451/1657652",
+      "title": "Limao and Venables (2001) Infrastructure, Geographical Disadvantage, Transport Costs, and Trade",
+      "publisher": "World Bank Economic Review",
+      "source_id": "academic",
+      "contains": "Method reference for landlocked transit-cost effects (not Nepal-specific evidence) (reused from 17D)"
+    },
+    {
+      "lead_id": "04C-L70",
+      "url": "https://www.adb.org/sites/default/files/linked-documents/44143-01-nep-oth.pdf",
+      "title": "Subregional Transport Enhancement Project (RRP NEP 44143) - linked document",
+      "publisher": "Asian Development Bank",
+      "source_id": "adb_nepal",
+      "contains": "Economic analysis of cross-border transport investment; completion/evaluation report to be located (reused from 19C)"
+    },
+    {
+      "lead_id": "04C-L71",
+      "url": "https://comtradeplus.un.org",
+      "title": "UN Comtrade Plus",
+      "publisher": "UN Statistics Division",
+      "source_id": "un_comtrade",
+      "contains": "Mirror trade India/China-reported with Nepal for before/after comparisons (reused from 04A/04B)"
+    },
+    {
+      "lead_id": "04C-L72",
+      "url": "https://giwmscdnone.gov.np/media/files/Annual%20Foreign%20Trade%20%20Statistics%20Book%202079-80_570y4ss.pdf",
+      "title": "Nepal Foreign Trade Statistics, Fiscal Year 2022/23 (2079/80)",
+      "publisher": "Department of Customs, Nepal",
+      "source_id": "customs_nepal",
+      "contains": "Trade by partner and customs office - outcome series for effect studies (reused from 04A/04B)"
+    },
+    {
+      "lead_id": "04C-L73",
+      "url": "https://kathmandupost.com/money/2026/07/18/historic-kolkata-biratnagar-rail-cargo-service-begins-transit-costs-set-to-fall",
+      "title": "Kolkata-Biratnagar rail cargo service begins (July 2026)",
+      "publisher": "The Kathmandu Post",
+      "source_id": null,
+      "contains": "News locator only: start of rail cargo under amended transit arrangements; effects claims not used (reused from 04A)"
+    }
+  ]
+}
