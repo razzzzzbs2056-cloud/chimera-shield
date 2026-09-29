@@ -5,6 +5,8 @@
     python -m betting.sim run soccer_esp_cro_2026-09-29 --scenario "Yamal out"
     python -m betting.sim run mlb_bos_nyy_2026-09-29 --scenarios        # every what-if side by side
     python -m betting.sim run soccer_esp_cro_2026-09-29 --actual 2-0     # grade the model vs reality
+    python -m betting.sim desk mlb_bos_nyy_2026-09-29 [--research]        # full agent team
+    python -m betting.sim agents                                          # who's on the team
 """
 from __future__ import annotations
 
@@ -139,6 +141,14 @@ def main(argv=None):
     p = argparse.ArgumentParser(prog="betting.sim", description="Monte Carlo game simulator")
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("list")
+    sub.add_parser("agents")
+    d = sub.add_parser("desk", help="run the full agent team on a game")
+    d.add_argument("game")
+    d.add_argument("--n", type=int, default=20000)
+    d.add_argument("--research", action="store_true", help="Claude + web search refresh first")
+    d.add_argument("--min-edge", type=float, default=0.03)
+    d.add_argument("--bankroll", type=float)
+    d.add_argument("--actual", help="real final score, to grade the model")
     r = sub.add_parser("run")
     r.add_argument("game")
     r.add_argument("--n", type=int, default=20000)
@@ -155,6 +165,31 @@ def main(argv=None):
             print(f"{f.stem:34} {g['title']}")
             for s in g.get("scenarios", []):
                 print(f"    - {s['name']}: {s['about']}")
+        return
+
+    if args.cmd == "agents":
+        from .agents import SimDirector
+        for a in SimDirector(research=False).roster():
+            print(f"{a['name']:12} {a['role']}")
+        return
+
+    if args.cmd == "desk":
+        from ..ledger import DEFAULT_DB, Ledger
+        from .agents import SimDirector
+        import os
+        director = SimDirector(research=True if args.research else None, min_edge=args.min_edge,
+                               actual=args.actual, bankroll=args.bankroll)
+        desk = director.run(load_game(args.game), n=args.n,
+                            ledger=Ledger(os.getenv("BETTING_DB", str(DEFAULT_DB))))
+        print("\n".join(desk.log), "\n")
+        print(desk.briefing)
+        if desk.review:
+            rv = desk.review
+            print(f"\nREVIEW vs actual {rv['actual']}: Brier {rv['brier']:.3f}"
+                  + (f" | season Brier {rv['season_brier']:.3f} over {rv['season_predictions']} predictions"
+                     if "season_brier" in rv else ""))
+            for m, p, o in rv["predictions"]:
+                print(f"  {m:14} model {pct(p)}  happened: {'yes' if o else 'no'}")
         return
 
     game = load_game(args.game)

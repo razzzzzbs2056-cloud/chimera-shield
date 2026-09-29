@@ -88,3 +88,20 @@ python -m betting.sim run soccer_esp_cro_2026-09-29 --actual 2-0  # how likely w
 
 Scenarios are data, not code: `set`, `mul`, `replace`, `remove` a player or rate, or `state` to start
 from a live game situation (score, inning or minute, outs, bases, red cards).
+
+### The simulation agent team
+
+`python -m betting.sim desk <game> [--research] [--actual A-B]` runs a lead agent (`SimDirector`)
+over nine sub-agents:
+
+| Agent | Job |
+|---|---|
+| Research | Optional. Claude with live web search pulls confirmed lineups, injuries, weather and prices, and returns edits in the game-file format. Only edits that validate are applied. Needs `ANTHROPIC_API_KEY`; model set by `BETTING_RESEARCH_MODEL`, default `claude-opus-5`, with server-side refusal fallback. |
+| Stats | Turns raw season lines (`"season": {...}`) into per-PA or per-match rates, regressed toward league average. |
+| Scout | Platoon edges, top power bats, pitcher profiles, park, styles, head-to-head and news. |
+| Scenarios | Adds standard what-ifs: best player out, starter early exit, weather, early goals. |
+| Simulator | Base case plus every scenario. |
+| Market | Model vs bookmaker prices for moneyline, totals, 1X2, BTTS, scorers and props. |
+| RiskManager | Quarter-Kelly stakes, 2% max per bet, 5% max per game. |
+| Reporter | The briefing. |
+| Reviewer | After the game, grades the probabilities (Brier score) and keeps a running record in the ledger. |
