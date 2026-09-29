@@ -28,6 +28,12 @@ The desk lives in `betting/`. Everything runs from the CLI with the standard lib
 - `python -m betting convert -110` — odds converter
 - `python -m betting books | sports | agents`
 
+## Simulating a game
+
+- `python -m betting.sim list`, then `python -m betting.sim run <game> [--scenarios | --scenario NAME | --actual A-B]`.
+- To add a game, copy a file in `betting/sim/games/`, fill real stats (note sources and which rates
+  are estimated), and add what-if scenarios. Quote results as probabilities, never as "X will score".
+
 ## How to read results
 
 - **CLV (closing line value)** is the best early signal: consistently beating the close means

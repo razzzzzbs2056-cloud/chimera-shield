@@ -66,3 +66,25 @@ With the backend running (`make backend`):
 - **New agent:** subclass `betting.agents.base.Agent`, implement `run(desk)`, and insert it into
   `HeadTrader.pipeline`. Examples: player props, weather or injury feeds, a line-move alert agent.
 - **Claude Code skill:** `.claude/skills/betting-desk/SKILL.md` teaches Claude Code the daily loop.
+
+## Game simulator
+
+`betting/sim/` plays a game thousands of times and turns the results into probabilities for
+every market, including player props. Each game lives in `betting/sim/games/<id>.json`: team and
+player stats, where each number came from, market prices, match context, and named what-if scenarios.
+
+```bash
+python -m betting.sim list                                        # games + scenarios
+python -m betting.sim run mlb_bos_nyy_2026-09-29                  # full report
+python -m betting.sim run mlb_bos_nyy_2026-09-29 --scenarios      # every what-if side by side
+python -m betting.sim run soccer_esp_cro_2026-09-29 --scenario "Yamal out"
+python -m betting.sim run soccer_esp_cro_2026-09-29 --actual 2-0  # how likely was what really happened
+```
+
+| Engine | How it plays a game | Calibration (league-average teams) |
+|---|---|---|
+| Baseball | Every plate appearance: batter vs pitcher rates (log5), platoon splits, park and weather HR factors, times through the order, starter leash and early hook, bullpen roles, baserunning, errors, steals and wild pitches, postseason extras | 4.4 runs per team, home team wins 53.3%, 54% no run in the 1st inning, 10% extra innings |
+| Soccer | Every minute: attack vs defence strength, goal rate rising through the match, stoppage time, trailing team pushing, red cards, substitutions, goals credited to players on the pitch | 2.7 goals per match, 28.7% draws |
+
+Scenarios are data, not code: `set`, `mul`, `replace`, `remove` a player or rate, or `state` to start
+from a live game situation (score, inning or minute, outs, bases, red cards).

@@ -1,0 +1,93 @@
+{
+  "sport": "baseball",
+  "title": "AL Wild Card Game 1: Boston Red Sox @ New York Yankees",
+  "date": "2026-09-29",
+  "venue": "Yankee Stadium, 8:00 p.m. ET",
+  "postseason": true,
+  "park": {"hr_L": 1.15, "hr_R": 1.04, "note": "Short right-field porch boosts left-handed power"},
+  "weather": {"hr_mult": 0.97, "note": "Late-September night air suppresses carry slightly"},
+  "market": {
+    "moneyline": {"away": 2.29, "home": 1.641},
+    "total": {"line": 6.5},
+    "source": "Opening prices: BOS +129 / NYY -156, total 6.5 (SI, Covers)"
+  },
+  "context": [
+    "Yankees won the 2026 season series 7-6; Red Sox went 2-4 at Yankee Stadium, outscored 34-15.",
+    "Red Sox hit .199 as a team against the Yankees in 2026.",
+    "Schlittler vs BOS in 2026: 4 starts, 24.1 IP, 0.74 ERA, 27 K.",
+    "Tolle vs NYY in 2026: 13 IP, 0.69 ERA, 18 K.",
+    "Bullpens: BOS 1st in MLB reliever ERA (2.99) and relief FIP; NYY 2nd (3.15).",
+    "Closers: Aroldis Chapman (BOS, 1.92 ERA, 35 SV, ~33% K); David Bednar (NYY, 2.50 ERA, 35 SV).",
+    "Aaron Judge (calf) took 4 live-BP at-bats Monday; played only 54 games in 2026 (18 HR).",
+    "Yankees 2026: .235 AVG, 223 HR (2nd in MLB), 739 runs, .409 SLG."
+  ],
+  "home": {
+    "name": "New York Yankees",
+    "starter": {
+      "name": "Cam Schlittler", "throws": "R", "bf_mean": 24, "bf_sd": 3, "hook_runs": 5,
+      "rates": {"k": 0.314, "bb": 0.066, "1b": 0.116, "2b": 0.037, "3b": 0.003, "hr": 0.020},
+      "source": "2026: 1.95 ERA, 193.2 IP, 239 K, 42 BB, 15 HR over 33 GS (~761 BF est.)"
+    },
+    "bullpen": {
+      "closer": {"throws": "R", "rates": {"k": 0.300, "bb": 0.085, "1b": 0.120, "2b": 0.035, "3b": 0.003, "hr": 0.020}, "note": "Bednar"},
+      "high": {"throws": "R", "rates": {"k": 0.275, "bb": 0.085, "1b": 0.125, "2b": 0.037, "3b": 0.003, "hr": 0.022}},
+      "rest": {"throws": "R", "rates": {"k": 0.240, "bb": 0.092, "1b": 0.135, "2b": 0.041, "3b": 0.003, "hr": 0.027}}
+    },
+    "lineup": [
+      {"name": "Trent Grisham", "bats": "L", "k": 0.24, "bb": 0.12, "1b": 0.105, "2b": 0.035, "3b": 0.003, "hr": 0.038, "source": "projected lineup; rates estimated"},
+      {"name": "Aaron Judge", "bats": "R", "k": 0.27, "bb": 0.16, "1b": 0.115, "2b": 0.040, "3b": 0.002, "hr": 0.068, "source": "18 HR in 54 G (2026); returning from calf injury"},
+      {"name": "Ben Rice", "bats": "L", "k": 0.21, "bb": 0.11, "1b": 0.105, "2b": 0.043, "3b": 0.002, "hr": 0.057, "source": "34 HR, 79 RBI, 113 H (2026)"},
+      {"name": "Cody Bellinger", "bats": "L", "k": 0.15, "bb": 0.09, "1b": 0.145, "2b": 0.048, "3b": 0.004, "hr": 0.035, "source": ".254, .766 OPS mid-season (2026)"},
+      {"name": "Jazz Chisholm Jr.", "bats": "L", "k": 0.27, "bb": 0.09, "1b": 0.120, "2b": 0.040, "3b": 0.006, "hr": 0.038, "source": "19 HR, 55 RBI (2026)"},
+      {"name": "Giancarlo Stanton", "bats": "R", "k": 0.31, "bb": 0.09, "1b": 0.100, "2b": 0.040, "3b": 0.000, "hr": 0.060, "source": "projected; rates estimated"},
+      {"name": "Austin Wells", "bats": "L", "k": 0.23, "bb": 0.08, "1b": 0.105, "2b": 0.043, "3b": 0.002, "hr": 0.038, "source": "projected; rates estimated"},
+      {"name": "Ryan McMahon", "bats": "L", "k": 0.28, "bb": 0.10, "1b": 0.110, "2b": 0.040, "3b": 0.003, "hr": 0.030, "source": "projected; rates estimated"},
+      {"name": "Anthony Volpe", "bats": "R", "k": 0.23, "bb": 0.075, "1b": 0.120, "2b": 0.045, "3b": 0.005, "hr": 0.030, "source": "projected; rates estimated"}
+    ]
+  },
+  "away": {
+    "name": "Boston Red Sox",
+    "starter": {
+      "name": "Payton Tolle", "throws": "L", "bf_mean": 21, "bf_sd": 3, "hook_runs": 4,
+      "rates": {"k": 0.295, "bb": 0.078, "1b": 0.121, "2b": 0.041, "3b": 0.005, "hr": 0.029},
+      "source": "2026: 9-6, 3.03 ERA, 171 K, 40 BB, 1.10 WHIP, .222 opp AVG (~580 BF est.; HR rate estimated)"
+    },
+    "bullpen": {
+      "closer": {"throws": "L", "rates": {"k": 0.330, "bb": 0.090, "1b": 0.110, "2b": 0.030, "3b": 0.002, "hr": 0.016}, "note": "Chapman"},
+      "high": {"throws": "R", "rates": {"k": 0.285, "bb": 0.080, "1b": 0.120, "2b": 0.035, "3b": 0.003, "hr": 0.019}, "note": "Whitlock + setup"},
+      "rest": {"throws": "R", "rates": {"k": 0.245, "bb": 0.088, "1b": 0.132, "2b": 0.040, "3b": 0.003, "hr": 0.024}}
+    },
+    "lineup": [
+      {"name": "Roman Anthony", "bats": "L", "k": 0.25, "bb": 0.13, "1b": 0.140, "2b": 0.055, "3b": 0.004, "hr": 0.031, "source": ".268, 13 HR, 47 RBI; .326 wOBA / .341 xwOBA (2026)"},
+      {"name": "Ceddanne Rafaela", "bats": "R", "k": 0.24, "bb": 0.05, "1b": 0.145, "2b": 0.050, "3b": 0.006, "hr": 0.025, "source": "rates estimated"},
+      {"name": "Wilyer Abreu", "bats": "L", "k": 0.25, "bb": 0.095, "1b": 0.120, "2b": 0.048, "3b": 0.003, "hr": 0.043, "source": ".249, 24 HR, 76 RBI (2026)"},
+      {"name": "Willson Contreras", "bats": "R", "k": 0.22, "bb": 0.11, "1b": 0.140, "2b": 0.050, "3b": 0.002, "hr": 0.046, "source": ".276, 27 HR, 81 RBI (2026)"},
+      {"name": "Adley Rutschman", "bats": "S", "k": 0.17, "bb": 0.11, "1b": 0.135, "2b": 0.045, "3b": 0.002, "hr": 0.030, "source": "rates estimated"},
+      {"name": "Caleb Durbin", "bats": "R", "k": 0.13, "bb": 0.08, "1b": 0.160, "2b": 0.045, "3b": 0.003, "hr": 0.022, "source": "rates estimated"},
+      {"name": "Jarren Duran", "bats": "L", "k": 0.22, "bb": 0.08, "1b": 0.140, "2b": 0.055, "3b": 0.012, "hr": 0.031, "source": "20 HR, 69 RBI (2026)"},
+      {"name": "Trevor Story", "bats": "R", "k": 0.26, "bb": 0.06, "1b": 0.135, "2b": 0.045, "3b": 0.003, "hr": 0.033, "source": "rates estimated"},
+      {"name": "Nick Sogard", "bats": "S", "k": 0.18, "bb": 0.08, "1b": 0.160, "2b": 0.035, "3b": 0.003, "hr": 0.010, "source": "rates estimated"}
+    ]
+  },
+  "scenarios": [
+    {"name": "Judge scratched", "about": "Judge's calf keeps him out; bench bat replaces him",
+     "ops": [{"op": "replace", "path": "home.lineup", "out": "Aaron Judge",
+              "in": {"name": "Bench bat", "bats": "R", "k": 0.25, "bb": 0.08, "1b": 0.13, "2b": 0.04, "3b": 0.003, "hr": 0.025}}]},
+    {"name": "Judge rusty", "about": "Judge plays but at 85% of his usual quality after the layoff",
+     "ops": [{"op": "set", "path": "home.lineup.Aaron Judge.hr", "value": 0.055},
+             {"op": "set", "path": "home.lineup.Aaron Judge.k", "value": 0.30},
+             {"op": "set", "path": "home.lineup.Aaron Judge.bb", "value": 0.13}]},
+    {"name": "Short Tolle leash", "about": "Boston goes to the pen after ~2 times through the order",
+     "ops": [{"op": "set", "path": "away.starter.bf_mean", "value": 16}]},
+    {"name": "Schlittler deep", "about": "Schlittler is dominant and goes ~7 innings",
+     "ops": [{"op": "set", "path": "home.starter.bf_mean", "value": 27}]},
+    {"name": "Wind blowing out", "about": "Warm night, ball carrying: +15% HR",
+     "ops": [{"op": "set", "path": "weather.hr_mult", "value": 1.15}]},
+    {"name": "Tied after 6", "about": "Live: 2-2 going to the top of the 7th, both starters out",
+     "ops": [{"op": "state", "value": {"inning": 7, "half": 0, "outs": 0, "bases": [0, 0, 0], "score": [2, 2],
+              "spot": [4, 4], "pitching": [{"pitcher": "high"}, {"pitcher": "high"}]}}]},
+    {"name": "Yankees up 3-0 after 5", "about": "Live: NYY lead 3-0, top 6th, Schlittler still in",
+     "ops": [{"op": "state", "value": {"inning": 6, "half": 0, "outs": 0, "bases": [0, 0, 0], "score": [0, 3],
+              "spot": [0, 3], "pitching": [{"pitcher": "high"}, {"pitcher": "starter", "bf": 17, "runs": 0}]}}]}
+  ]
+}
