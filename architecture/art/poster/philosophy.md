@@ -1,0 +1,13 @@
+# Luminous Taxonomy
+
+**A visual philosophy of patient observation**
+
+Luminous Taxonomy treats light as a specimen. A surface is never decorated; it is catalogued. The work borrows the grave composure of the nineteenth-century natural-history plate and the clean silence of the instrument panel, and joins them in a single dark field where a small number of marks do all of the speaking. Everything that appears has been measured, repeated and set in its place, and the viewer is invited to believe that nothing here is accidental.
+
+Form arrives through accumulation. One perfect shape, repeated hundreds of times and varying by a single quantity, builds a texture that no single mark could carry. The eye first reads a gradient, then a rhythm, then, drawing closer, the individual members of the population, each one slightly different from its neighbour and each one exact. Scale is deliberate: a single monumental plate, a smaller series of siblings beside it, and a calibration scale that names the alphabet from which every mark is drawn. This is a meticulously crafted system, the product of countless hours of refinement, in which no element is allowed to exist without a counterpart that explains it.
+
+Colour is rationed. A near-black ground the colour of deep patina, one warm light, one oxidised metal, one cool trace of verdigris for the finest lines. Brightness is the only language of quantity, so that more is always brighter and less is always quieter. Nothing is gradient for its own sake; every tonal shift is data made visible. The palette is limited so that restraint can be felt as confidence, and the result is the work of someone at the very top of their craft, who knows precisely how little is needed.
+
+Typography is clinical and sparse: a thin technical sans for annotation, a monospaced face for every number, and one elegant display voice used once, as a quiet signature. Text never explains; it labels, dates and registers, the way a curator's hand annotates a specimen sheet. Rulers, tick marks and crop corners frame the field as an instrument frames a reading. Margins are generous and absolute, nothing touches the edge, nothing overlaps, and every alignment is the result of painstaking attention to a grid that the viewer feels but is never shown.
+
+The paradox is the point. An analytical language, all measurement and repetition, is used to hold something that is not analytical at all: the way light feels when it falls through a wall. The piece should read as proof that the ephemeral can be studied, mapped and understood through careful attention, and it should reward the viewer who stays.
