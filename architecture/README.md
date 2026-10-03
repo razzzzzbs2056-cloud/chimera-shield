@@ -8,6 +8,7 @@ Agents, skills, data and tools for designing and engineering buildings, kept sep
 | Skills (`bld-*`) | `.claude/skills/` |
 | Design brief: *The Chimera Pavilion* | `design-brief.md` |
 | Reference data (12 CSVs) | `data/` |
+| Art: philosophy + interactive concept page | `art/` (live page: https://claude.ai/artifact/LzZ4CjjUCeCNzjWLxutW8m) |
 | Calculators (beam sizing, embodied carbon) | `tools/quickcheck.py` |
 | Tests | `tests/` (`python -m pytest -q architecture/tests`) |
 
