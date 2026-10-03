@@ -126,3 +126,9 @@ This project is Codespaces-ready. After opening in Codespaces:
 ## 📄 License
 
 MIT
+
+---
+
+## 🤖 Agent Team
+
+Project subagents live in `.claude/agents/` (lead, architect, backend, frontend, designer, security, detection scientist, QA, reviewer). Start the lead with `claude --agent chimera-lead`. Architecture, design system and scientific plan: [`docs/chimera/06-system-design.md`](docs/chimera/06-system-design.md).
