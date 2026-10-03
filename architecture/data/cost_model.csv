@@ -1,0 +1,12 @@
+element,cost_share_pct_low,cost_share_pct_high,relative_index_note,rate_input_local_currency_per_unit,unit
+Substructure,6,12,higher on poor ground,,m2 footprint
+Frame and floors,15,25,timber hybrid ~ steel +/-10%; concrete often lowest in cost not carbon,,m2 GFA
+Roof,4,8,lattice canopy premium,,m2 roof
+External envelope,12,22,glazing and bespoke cladding drive spread,,m2 facade
+Internal walls and finishes,6,10,,,m2 GFA
+Services (MEP),20,32,assembly/public usage high,,m2 GFA
+Fit-out and FF&E,4,12,,,m2 GFA
+External works,3,6,,,m2 site
+Preliminaries,10,15,,,% of works
+Design fees,8,13,,,% of works
+Contingency (concept),10,20,narrows with design maturity,,% of works

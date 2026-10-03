@@ -1,0 +1,8 @@
+element,limit,condition
+Floor beam total,L/250,quasi-permanent incl. creep (EC5/EC2 typical)
+Floor beam after finishes (live),L/350,protecting brittle finishes; L/500 if brittle partitions
+Cantilever,L/125,total
+Roof purlin,L/200,
+Floor vibration (timber),f1 > 8 Hz and unit-point-load deflection limits,verify per EN 1995-1-1 7.3 or equivalent
+Lateral drift (wind),H/500,serviceability; project-specific
+Inter-storey drift (seismic),per code (about 0.01-0.025 h),depends on class

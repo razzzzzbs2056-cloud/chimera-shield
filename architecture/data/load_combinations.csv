@@ -1,0 +1,11 @@
+standard,limit_state,combination,notes
+Eurocode (EN 1990 6.10),ULS persistent,1.35G + 1.5Q_leading + 1.5*psi0*Q_other,Use 6.10a/b variant if national annex allows
+Eurocode,ULS wind lead,1.35G + 1.5W + 1.5*psi0*Q,
+Eurocode,ULS accidental,G + Ad + psi1*Q,Robustness and fire
+Eurocode,SLS characteristic,G + Q,Irreversible limit states
+Eurocode,SLS quasi-permanent,G + psi2*Q,Long-term deflection and creep
+ASCE 7 LRFD,Strength,1.2D + 1.6L + 0.5(Lr or S or R),
+ASCE 7 LRFD,Strength wind,1.2D + 1.0W + L + 0.5(Lr or S or R),
+ASCE 7 LRFD,Strength seismic,1.2D + 1.0E + L + 0.2S,E includes vertical component
+ASCE 7 LRFD,Uplift,0.9D + 1.0W,
+ASCE 7 ASD,Service,D + L,

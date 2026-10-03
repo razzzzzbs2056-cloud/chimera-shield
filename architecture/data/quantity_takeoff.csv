@@ -1,0 +1,9 @@
+element,material,quantity,unit,note
+Foundation raft,Concrete C30/37,675,m3,1500 m2 footprint x 0.45 m
+Reinforcement (raft and core),Reinforcing steel B500,78000,kg,about 70 kg/m3 of raft+core concrete
+Core walls and slabs,Concrete C40/50,420,m3,two cores plus transfer slab
+Floor deck CLT 150 mm,CLT 5-ply,630,m3,4200 m2 x 0.15 m; conservative: ignores double-height void
+Glulam beams and columns,Glulam GL24h,300,m3,8 m grid primary and secondary beams
+Steel nodes and roof ties,Structural steel S355,42000,kg,lattice nodes and tension ties
+Facade glass (12 mm total pane thickness),Float glass,39000,kg,1300 m2 x 30 kg/m2; frame and spacer excluded
+Copper sheet cladding,Copper sheet,2370,kg,380 m2 x 0.7 mm x 8900 kg/m3

@@ -1,0 +1,110 @@
+<!doctype html><meta charset="utf-8"><title>Perforated Light</title>
+<style>
+@font-face{font-family:Italiana;src:url(fonts/Italiana-Regular.ttf)}
+@font-face{font-family:Jura;src:url(fonts/Jura-Light.ttf)}
+@font-face{font-family:DMMono;src:url(fonts/DMMono-Regular.ttf)}
+html,body{margin:0;background:#0b1210}
+svg{display:block}
+</style>
+<div id="root"></div>
+<script>
+// ---- same seeded model as pavilion-concept.html ----
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function makeNoise(seed){var r=mulberry32(seed),N=64,g=new Float32Array(N*N),i;for(i=0;i<g.length;i++)g[i]=r();
+ var sm=function(t){return t*t*(3-2*t)};var v=function(a,b){return g[(b&63)*N+(a&63)]};
+ return function(x,y){var xi=Math.floor(x),yi=Math.floor(y),u=sm(x-xi),w=sm(y-yi);
+ return(v(xi,yi)*(1-u)+v(xi+1,yi)*u)*(1-w)+(v(xi,yi+1)*(1-u)+v(xi+1,yi+1)*u)*w}}
+var COLS=48,ROWS=17,SEED=1618,OPEN=0.64,SCALE=0.14;
+var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+function facade(az,alt){
+  var noise=makeNoise(SEED),rnd=mulberry32(SEED*7919+1),a=az*Math.PI/180,h=alt*Math.PI/180;
+  var inc=Math.max(0,Math.cos(h)*Math.cos(a)),cells=[],sum=0;
+  for(var j=0;j<ROWS;j++){var ym=ROWS-1-j+0.5;
+    for(var i=0;i<COLS;i++){
+      var n=noise(i*SCALE+3.1,ym*SCALE+7.7);
+      var e=Math.min(1,inc*(0.85+0.3*ym/ROWS)*(0.7+0.6*n));
+      var f=OPEN-0.55*e+(rnd()-0.5)*0.06; if(ym<3.5)f+=0.28*(1-ym/3.5);
+      f=clamp(f,0.05,0.78); cells.push({i:i,k:ROWS-1-j,f:f}); sum+=f;}}
+  return{cells:cells,mean:sum/cells.length};
+}
+var W=1800,H=2600,INK='#9fb3ab',COP='#c9774b',AMB='#f0c987',VER='#4fa593',BG='#0b1210';
+var out=[];
+function t(x,y,s,txt,o){o=o||{};out.push('<text x="'+x+'" y="'+y+'" font-family="'+(o.f||'DMMono')+'" font-size="'+s+'" fill="'+(o.c||INK)+'" text-anchor="'+(o.a||'start')+'" letter-spacing="'+(o.ls||0)+'" opacity="'+(o.op===undefined?1:o.op)+'">'+txt+'</text>')}
+function l(x1,y1,x2,y2,c,w,op,d){out.push('<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+w+'" opacity="'+op+'"'+(d?' stroke-dasharray="'+d+'"':'')+'/>')}
+function plate(x0,y0,cell,d){ // ground at left, west at top
+  d.cells.forEach(function(c){var r=cell*Math.sqrt(c.f/Math.PI);
+    out.push('<circle cx="'+(x0+(c.k+0.5)*cell).toFixed(2)+'" cy="'+(y0+(c.i+0.5)*cell).toFixed(2)+'" r="'+r.toFixed(2)+'" fill="'+AMB+'" fill-opacity="'+(0.3+0.7*c.f/0.78).toFixed(3)+'"/>')});
+}
+var roman=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+var sun=function(az){return 14+50*Math.pow(Math.cos(az/85*Math.PI/2),2)};
+var R=120, LM=120, RM=W-120;
+
+out.push('<rect width="'+W+'" height="'+H+'" fill="'+BG+'"/>');
+// header
+t(LM,150,15,'PLATE I',{c:COP,ls:4}); t(W/2,150,15,'SOLAR PERFORATION',{a:'middle',ls:6,f:'Jura'}); t(RM,150,15,'CP-01',{a:'end',c:COP,ls:4});
+l(LM,182,RM,182,VER,1,0.5);
+
+// ---- main plate ----
+var MX=LM, MY=290, MC=40, main=facade(0,64);
+plate(MX,MY,MC,main);
+var MW=ROWS*MC, MH=COLS*MC;
+out.push('<rect x="'+(MX-14)+'" y="'+(MY-14)+'" width="'+(MW+28)+'" height="'+(MH+28)+'" fill="none" stroke="'+COP+'" stroke-width="1" opacity="0.7"/>');
+for(var g=1;g<6;g++) l(MX-14,MY+g*8*MC,MX+MW+14,MY+g*8*MC,VER,1,0.18);
+for(var h=1;h<4;h++) l(MX+h*4*MC,MY-14,MX+h*4*MC,MY+MH+14,VER,1,0.18);
+// eye-level
+l(MX+3.5*MC,MY-14,MX+3.5*MC,MY+MH+36,COP,1.2,0.9,'3 5');
+t(MX+3.5*MC,MY+MH+60,13,'EYE LEVEL 3.5 m',{a:'middle',c:COP,ls:2});
+// rulers: right side metres along the facade, top: height
+for(var m=0;m<=48;m+=8){var y=MY+m*MC; l(MX+MW+14,y,MX+MW+30,y,INK,1,0.9); t(MX+MW+42,y+5,13,m+' m',{ls:1});}
+for(var q=0;q<=48;q+=2){var yy=MY+q*MC; if(q%8)l(MX+MW+14,yy,MX+MW+22,yy,INK,1,0.5);}
+for(var hh=0;hh<=16;hh+=4){var xx=MX+hh*MC; l(xx,MY-14,xx,MY-30,INK,1,0.9); t(xx,MY-42,13,hh+' m',{a:'middle',ls:1});}
+t(MX,MY+MH+96,13,'NOON · AZ 0° · ALT 64° · OPEN '+Math.round(main.mean*100)+'%',{ls:2});
+
+// ---- sun path ----
+var SX=920, SW=760, SY=280, HZ=720;
+t(SX,SY+4,13,'SUN PATH · ILLUSTRATIVE',{c:COP,ls:3});
+l(SX,HZ,SX+SW,HZ,INK,1,0.8);
+var px=function(az){return SX+40+(az+80)/160*(SW-80)}, py=function(al){return HZ-al*6.4};
+var pts=[];for(var a=-80;a<=80;a+=2)pts.push(px(a).toFixed(1)+','+py(sun(a)).toFixed(1));
+out.push('<polyline points="'+pts.join(' ')+'" fill="none" stroke="'+VER+'" stroke-width="1.2" opacity="0.8"/>');
+[-80,-40,0,40,80].forEach(function(a){l(px(a),HZ,px(a),HZ+14,INK,1,0.9);t(px(a),HZ+38,13,(a>0?'+':a<0?'−':'')+Math.abs(a)+'°',{a:'middle',ls:1})});
+t(SX+SW,HZ+66,12,'AZIMUTH FROM SOUTH',{a:'end',ls:3,op:0.7});
+out.push('<circle cx="'+px(0)+'" cy="'+py(64)+'" r="13" fill="none" stroke="'+AMB+'" stroke-width="1.2"/><circle cx="'+px(0)+'" cy="'+py(64)+'" r="4" fill="'+AMB+'"/>');
+var series=[];
+for(var k=0;k<12;k++){var az=-75+k*150/11,al=sun(az);series.push({az:az,al:al,d:facade(az,al)});
+  l(px(az),py(al),px(az),HZ,VER,1,0.22);
+  out.push('<circle cx="'+px(az).toFixed(1)+'" cy="'+py(al).toFixed(1)+'" r="5.5" fill="'+COP+'"/>');
+  t(px(az),py(al)-18,13,roman[k],{a:'middle',c:AMB,ls:1});}
+
+// ---- series ----
+var PC=6, PW=ROWS*PC, PH=COLS*PC, GX=(SW-10-6*PW)/5, P0=880;
+t(SX,P0-34,13,'TIME SERIES · 12 STATES',{c:COP,ls:3});
+series.forEach(function(s,k){var col=k%6,row=Math.floor(k/6),x=SX+5+col*(PW+GX),y=P0+row*(PH+120);
+  plate(x,y,PC,s.d);
+  out.push('<rect x="'+(x-5)+'" y="'+(y-5)+'" width="'+(PW+10)+'" height="'+(PH+10)+'" fill="none" stroke="'+COP+'" stroke-width="0.8" opacity="0.6"/>');
+  t(x,y+PH+30,13,roman[k],{c:AMB,ls:2});
+  t(x,y+PH+50,11,'AZ '+(s.az>=0?'+':'−')+Math.abs(Math.round(s.az))+'° · '+Math.round(s.al)+'°',{ls:0});
+  t(x,y+PH+68,11,'OPEN '+Math.round(s.d.mean*100)+'%',{c:INK,op:0.75});
+});
+
+// ---- aperture scale ----
+var CY=1790, CS=40;
+t(SX,CY-54,13,'APERTURE SCALE · SHARE OF CELL OPEN',{c:COP,ls:3});
+for(var n=0;n<12;n++){var f=0.05+n*(0.78-0.05)/11,cx=SX+CS/2+n*((SW-CS)/11),r=CS*Math.sqrt(f/Math.PI);
+  out.push('<rect x="'+(cx-CS/2)+'" y="'+(CY-CS/2)+'" width="'+CS+'" height="'+CS+'" fill="none" stroke="'+VER+'" stroke-width="0.8" opacity="0.4"/>');
+  out.push('<circle cx="'+cx.toFixed(1)+'" cy="'+CY+'" r="'+r.toFixed(2)+'" fill="'+AMB+'" fill-opacity="'+(0.3+0.7*f/0.78).toFixed(3)+'"/>');
+  t(cx,CY+CS/2+30,12,Math.round(f*100)+'',{a:'middle',ls:0});}
+
+// ---- title ----
+t(SX-2,2100,118,'Perforated',{f:'Italiana',c:AMB});
+t(SX-2,2216,118,'Light',{f:'Italiana',c:AMB});
+t(SX+SW,2216,13,'A WALL THAT LEARNS THE SUN',{a:'end',f:'Jura',ls:5,c:INK});
+
+// ---- footer ----
+l(LM,2400,RM,2400,VER,1,0.5);
+t(LM,2448,13,'CHIMERA PAVILION · SOUTH FAÇADE UNROLLED · 48 × 17 m · 1 m CELL',{ls:2});
+t(RM,2448,13,'SEED 1618 · n = 816 PER PLATE · TOY MODEL, NOT A SIMULATION',{a:'end',ls:2,c:COP});
+
+document.getElementById('root').innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">'+out.join('')+'</svg>';
+document.fonts.ready.then(function(){document.body.setAttribute('data-ready','1')});
+</script>
