@@ -1,0 +1,13 @@
+item,value_range,unit,basis_note
+Heating load (well-insulated new build),20-45,W/m2,climate dependent; Passivhaus <=10 W/m2 heating demand
+Cooling load (offices/public),40-100,W/m2,glazing and gains dependent
+Ventilation (offices),8-12,L/s per person,or 1-2 L/s.m2 plus occupancy
+Ventilation (assembly),10-15,L/s per person,high density
+Lighting power density,5-9,W/m2,LED target
+Small power,10-25,W/m2,
+Domestic hot water (public),5-15,L per person per day,
+Lift: 1 per,~1500-2500,m2 GFA served,traffic analysis required
+Riser area (services),1.5-3.0,% of GFA,coordinate early
+Plant room area,3-6,% of GFA,lower with heat-pump + decentralised AHUs
+"Typical floor-to-floor (office, exposed services)",3.8-4.2,m,structure 0.6-0.8 + services zone 0.4-0.6 + clear height 2.7-3.0
+Typical floor-to-floor (assembly hall),5.0-7.0,m,

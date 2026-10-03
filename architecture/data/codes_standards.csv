@@ -1,0 +1,17 @@
+domain,standard,scope,jurisdiction
+Loads,ASCE/SEI 7,minimum design loads (dead live wind snow seismic),USA
+Loads,EN 1990 / EN 1991,basis of design and actions,Europe
+Building code,International Building Code (IBC),occupancy fire egress structural,USA (model)
+Building code,National Building Code of Canada,all building,Canada
+Building code,UK Building Regulations (Approved Docs A-Q),structure fire access energy,England
+Concrete,ACI 318 / EN 1992,design of concrete,USA / Europe
+Steel,AISC 360 / EN 1993,design of steel,USA / Europe
+Timber,NDS and AWC SDPWS / EN 1995,design of timber,USA / Europe
+Seismic,ASCE 7 ch.11-23 / EN 1998,earthquake design,USA / Europe
+Fire,NFPA 101 / NFPA 13 / EN 1991-1-2,life safety and sprinklers,USA / Europe
+Accessibility,ADA Standards / ISO 21542 / Approved Doc M,access,USA / intl / England
+Energy,ASHRAE 90.1 / EN ISO 52000 family,energy performance,USA / Europe
+Carbon,EN 15978 / EN 15804 / ISO 14040,whole-life carbon and EPD method,Europe / intl
+Daylight,EN 17037 / LEED IEQ,daylight provision,Europe / USA
+Comfort,ASHRAE 55 / EN 16798,thermal comfort,USA / Europe
+Sustainability,LEED / BREEAM / Passivhaus / LBC,certification,intl

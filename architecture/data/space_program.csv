@@ -1,0 +1,13 @@
+space,count,area_each_m2,area_total_m2,floor,occupancy_people,note
+Main hall (flexible),1,600,600,L0-L1 double height,400,column-free span with timber lattice
+Foyer / atrium / cafe,1,420,420,L0,200,open to stair and daylight
+Exhibition gallery,2,240,480,L1,120,controlled daylight
+Workshop / maker studios,4,90,360,L0,60,loading access
+Learning rooms,4,70,280,L2,120,
+Library / reading terrace,1,260,260,L2,60,
+Offices / admin,1,160,160,L2,16,
+Back of house + storage,1,230,230,L0,10,
+Toilets (all floors),6,28,168,L0-L2,,accessible toilet on every floor
+Plant / risers,1,230,230,roof/L0,0,about 5 percent of GFA
+Circulation (stairs lifts corridors),1,1000,1000,all,,about 21 percent of GFA
+Roof terrace + garden,1,420,420,L3,150,not in GFA count
