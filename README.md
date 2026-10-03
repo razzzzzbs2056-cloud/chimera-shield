@@ -132,3 +132,14 @@ MIT
 ## 🤖 Agent Team
 
 Project subagents live in `.claude/agents/` (lead, architect, backend, frontend, designer, security, detection scientist, QA, reviewer). Start the lead with `claude --agent chimera-lead`. Architecture, design system and scientific plan: [`docs/chimera/06-system-design.md`](docs/chimera/06-system-design.md).
+
+### Choosing a model (including open-source)
+
+ChimeraShield defaults to Anthropic but runs on any open-weight model served through an OpenAI-compatible API:
+
+```env
+LLM_PROVIDER=ollama          # or vllm, llamacpp, lmstudio, tgi, sglang, huggingface, openrouter, together, groq, fireworks, openai_compat
+LLM_MODEL=qwen2.5:7b
+```
+
+`GET /api/models?role=triage|escalation|guard|classifier` lists a curated catalog (`backend/llm/catalog.py`). It's a starting list, not every model; any model your server exposes works. Project skills are in `.claude/skills/`. Run tests with `make test`.
