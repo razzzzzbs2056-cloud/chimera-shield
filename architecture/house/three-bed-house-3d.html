@@ -1,0 +1,374 @@
+<title>Garden House 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+  /* Layout concept: an architect's presentation board. The model fills the board; the brief, room schedule and design notes sit beside and below it like pinned sheets. */
+  :root {
+    --bg: #EDEBE6; --surface: #F7F6F2; --ink: #1E2421; --muted: #5E6661; --line: #C9C6BD;
+    --accent: #3F6B57; --warm: #B5713F; --hi: #EFE5D3;
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #121614; --surface: #1A201D; --ink: #E6EAE7; --muted: #9AA59F; --line: #2F3833; --accent: #7FBF9F; --warm: #E0A070; --hi: #2E281F; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #121614; --surface: #1A201D; --ink: #E6EAE7; --muted: #9AA59F; --line: #2F3833; --accent: #7FBF9F; --warm: #E0A070; --hi: #2E281F; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--f-body); padding-inline: 16px; padding-block: 24px 64px; margin: 0; }
+  main { max-width: 1240px; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.06; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 { font-size: 1.02rem; font-weight: 800; }
+  p { margin: 0; max-width: 68ch; }
+  .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .note { border-left: 3px solid var(--warm); padding-left: 12px; max-width: 74ch; }
+  .tab { font-variant-numeric: tabular-nums; }
+  section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .stage { grid-template-columns: 1fr; } }
+  .viewport { position: relative; border: 1px solid var(--line); background: var(--surface); min-width: 0; }
+  .viewport canvas { display: block; width: 100%; touch-action: none; }
+  #tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 12px/1.4 var(--f-mono); padding: 6px 8px; max-width: 250px; }
+  #fallback { padding: 32px; color: var(--muted); }
+  .hud { position: absolute; left: 10px; bottom: 8px; font: 11px var(--f-mono); color: var(--muted); pointer-events: none; }
+  .tray { border: 1px solid var(--line); background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .tray fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .tray legend { padding: 0; margin-bottom: 4px; }
+  .chk { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { font: 600 13px var(--f-body); padding: 7px 11px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+  button:hover, button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .rng { display: flex; flex-direction: column; gap: 2px; }
+  .rng .row { display: flex; justify-content: space-between; gap: 8px; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+  .facts div { border: 1px solid var(--line); background: var(--surface); padding: 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .facts b { font: 800 1.35rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+  .facts small { color: var(--muted); font-size: 12.5px; }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .two { grid-template-columns: 1fr; } }
+  .panel { border: 1px solid var(--line); background: var(--surface); padding: 14px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { font-weight: 600; border-bottom: 0; }
+  .sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; border: 1px solid var(--line); vertical-align: -1px; }
+  ul.notes { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:14px">
+    <span class="label">Concept house · 3 bedrooms · 2 bathrooms + powder room · 150 m²</span>
+    <h1>The Garden House</h1>
+    <p>A single-storey family home that splits quiet from lively: three bedrooms along the street side, one open living, dining and kitchen space opening onto a covered terrace and the garden. Lift the roof, slice through the walls like a plan drawing, and move the sun.</p>
+    <p class="note">Concept design on an assumed flat site with the garden facing the sun. Not for construction: a real house needs a survey, local planning and building code checks, and a licensed designer or architect.</p>
+  </header>
+
+  <section aria-labelledby="t-m">
+    <h2 id="t-m">Model</h2>
+    <div class="stage">
+      <div class="viewport" id="vp">
+        <div id="fallback" hidden>The 3D view needs WebGL and the three.js library. The plan schedule below still works.</div>
+        <div id="tip" hidden></div>
+        <div class="hud" id="hud">Drag to orbit · scroll to zoom · right-drag to pan · hover for details</div>
+      </div>
+      <div class="tray">
+        <fieldset><legend class="label">Show</legend>
+          <label class="chk"><input type="checkbox" id="ly-roof" checked> Roof</label>
+          <label class="chk"><input type="checkbox" id="ly-furn" checked> Furniture</label>
+          <label class="chk"><input type="checkbox" id="ly-labels"> Room labels</label>
+          <label class="chk"><input type="checkbox" id="ly-site" checked> Garden and paths</label>
+        </fieldset>
+        <fieldset><legend class="label">View</legend>
+          <div class="btns"><button data-view="persp" aria-pressed="true">3D</button><button data-view="plan">Plan</button><button data-view="street">Street</button><button data-view="garden">Garden</button><button data-view="inside">Inside</button></div>
+        </fieldset>
+        <div class="rng"><div class="row"><label class="label" for="cut">Plan cut height</label><span class="label tab" id="cut-v"></span></div><input id="cut" type="range" min="0.3" max="6" step="0.1" value="6"></div>
+        <div class="rng"><div class="row"><label class="label" for="saz">Sun direction</label><span class="label tab" id="saz-v"></span></div><input id="saz" type="range" min="-90" max="90" value="-30"></div>
+        <div class="rng"><div class="row"><label class="label" for="salt">Sun height</label><span class="label tab" id="salt-v"></span></div><input id="salt" type="range" min="5" max="80" value="35"></div>
+        <div class="btns"><button id="spin" aria-pressed="false">Turn slowly</button></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div><span class="label">Internal area</span><b id="f-gfa">150 m²</b><small>15.0 × 10.0 m footprint</small></div>
+      <div><span class="label">Bedrooms</span><b>3</b><small>main suite with ensuite and walk-in robe</small></div>
+      <div><span class="label">Bathrooms</span><b>2 + WC</b><small>family bath, ensuite, powder room</small></div>
+      <div><span class="label">Living, dining, kitchen</span><b id="f-living"></b><small>open plan facing the garden</small></div>
+      <div><span class="label">Covered terrace</span><b>25 m²</b><small>8.4 × 3.0 m, shades summer sun</small></div>
+      <div><span class="label">Ceiling / roof</span><b>2.7 m · 25°</b><small>gable roof, 0.6 m eaves</small></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-s">
+    <h2 id="t-s">Rooms and design notes</h2>
+    <div class="two">
+      <div class="panel"><h3>Room schedule</h3><div style="overflow-x:auto"><table id="sched"></table></div></div>
+      <div class="panel">
+        <h3>Why it is laid out this way</h3>
+        <ul class="notes">
+          <li><b>Quiet and lively zones.</b> Children's bedrooms and the family bath sit on the street side; the main suite has its own corner off the hallway, away from the living room.</li>
+          <li><b>Sun to the living space.</b> Living, dining and family rooms face the garden, assumed to face the sun (south in the northern hemisphere, north in the southern). Bedrooms do not need the strongest sun.</li>
+          <li><b>Terrace as a sunshade.</b> The 3 m covered terrace blocks high summer sun and lets low winter sun reach deep into the living room. Move the sun height to see it.</li>
+          <li><b>Kitchen at the centre.</b> The kitchen sees the family nook, the dining table and the garden; the pantry and laundry are a few steps away.</li>
+          <li><b>Wet areas grouped.</b> Bath, laundry, powder room and kitchen cluster on one side and the ensuite sits back to back with the hallway, which shortens plumbing runs.</li>
+          <li><b>Arrival.</b> The front door opens into an entry hall with a powder room for guests, and a direct view through the living space to the garden.</li>
+          <li><b>Cross ventilation.</b> Openings on opposite walls of the living space let breezes pass through.</li>
+          <li><b>Accessibility.</b> Single level, 0.82 m doors to bedrooms and bath, and a level threshold to the terrace make it workable at every age.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ---------- PLAN-START: room rectangles in metres, x east 0..15, y from street (0) to garden (10) ---------- */
+var ROOMS = [
+  { name: 'Bedroom 2', x0: 0, y0: 0, x1: 3.6, y1: 3.8, floor: 'carpet', zone: 'bed' },
+  { name: 'Bedroom 3', x0: 3.6, y0: 0, x1: 7.2, y1: 3.8, floor: 'carpet', zone: 'bed' },
+  { name: 'Bathroom', x0: 7.2, y0: 0, x1: 9.8, y1: 2.4, floor: 'tile', zone: 'wet' },
+  { name: 'Laundry', x0: 7.2, y0: 2.4, x1: 9.8, y1: 3.8, floor: 'tile', zone: 'wet' },
+  { name: 'Entry', x0: 9.8, y0: 0, x1: 12, y1: 3.8, floor: 'timber', zone: 'circ' },
+  { name: 'Powder room', x0: 12, y0: 0, x1: 13.5, y1: 1.8, floor: 'tile', zone: 'wet' },
+  { name: 'Pantry', x0: 13.5, y0: 0, x1: 15, y1: 1.8, floor: 'tile', zone: 'serv' },
+  { name: 'Hallway', x0: 0, y0: 3.8, x1: 6.6, y1: 5, floor: 'timber', zone: 'circ' },
+  { name: 'Main bedroom', x0: 0, y0: 5, x1: 4.2, y1: 10, floor: 'carpet', zone: 'bed' },
+  { name: 'Ensuite', x0: 4.2, y0: 5, x1: 6.6, y1: 7.4, floor: 'tile', zone: 'wet' },
+  { name: 'Walk-in robe', x0: 4.2, y0: 7.4, x1: 6.6, y1: 10, floor: 'carpet', zone: 'serv' },
+  { name: 'Kitchen', x0: 12, y0: 1.8, x1: 15, y1: 5, floor: 'tile', zone: 'live' },
+  { name: 'Living and dining', x0: 6.6, y0: 3.8, x1: 12, y1: 10, floor: 'timber', zone: 'live' },
+  { name: 'Family nook', x0: 12, y0: 5, x1: 15, y1: 10, floor: 'timber', zone: 'live' }
+];
+var TERRACE = { x0: 6.6, y0: 10, x1: 15, y1: 13 };
+/* ---------- PLAN-END ---------- */
+</script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  var area = function (r) { return (r.x1 - r.x0) * (r.y1 - r.y0); };
+  var ZONE = { bed: ['Bedrooms', '#c9b7d6'], wet: ['Bath and laundry', '#a9cbd6'], live: ['Living', '#e3c08f'], circ: ['Circulation', '#d9d4c7'], serv: ['Storage', '#c8d1b8'] };
+
+  // schedule
+  var total = 0, rows = ROOMS.map(function (r) { total += area(r); return '<tr><td><span class="sw" style="background:' + ZONE[r.zone][1] + '"></span>' + r.name + '</td><td class="tab">' + (r.x1 - r.x0).toFixed(1) + ' × ' + (r.y1 - r.y0).toFixed(1) + ' m</td><td class="n">' + area(r).toFixed(1) + '</td></tr>'; });
+  $('sched').innerHTML = '<thead><tr><th>Room</th><th>Size</th><th class="n">m²</th></tr></thead><tbody>' + rows.join('') +
+    '<tr class="total"><td>Total internal</td><td></td><td class="n">' + total.toFixed(1) + '</td></tr><tr><td>Covered terrace (outdoor)</td><td class="tab">8.4 × 3.0 m</td><td class="n">' + area(TERRACE).toFixed(1) + '</td></tr></tbody>';
+  $('f-gfa').textContent = Math.round(total) + ' m²';
+  $('f-living').textContent = Math.round(ROOMS.filter(function (r) { return r.zone === 'live'; }).reduce(function (s, r) { return s + area(r); }, 0)) + ' m²';
+
+  if (!window.THREE || !THREE.OrbitControls || !(function () { try { var c = document.createElement('canvas'); return !!(c.getContext('webgl') || c.getContext('experimental-webgl')); } catch (e) { return false; } })()) {
+    $('fallback').hidden = false; $('hud').hidden = true; return;
+  }
+
+  var H = 2.7, TE = 0.3, TI = 0.12, PITCH = 25 * Math.PI / 180, EAVE = 0.6;
+  var vp = $('vp'), renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.localClippingEnabled = true;
+  vp.insertBefore(renderer.domElement, vp.firstChild);
+  var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(40, 1.6, 0.1, 800);
+  var controls = new THREE.OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.495;
+  scene.add(new THREE.HemisphereLight(0xe6eeff, 0x7a6a55, 0.6));
+  var sun = new THREE.DirectionalLight(0xfff0d8, 1.0); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+  var sc = sun.shadow.camera; sc.left = -16; sc.right = 16; sc.top = 16; sc.bottom = -16; sc.near = 1; sc.far = 120; sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02;
+  scene.add(sun); scene.add(sun.target);
+  var cut = new THREE.Plane(new THREE.Vector3(0, -1, 0), 6);
+  var P3 = function (x, y, z) { return new THREE.Vector3(x - 7.5, z, y - 5); }; // plan (x, y) and height z → three
+
+  var M = {}, mat = function (k, c, o) { M[k] = new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.85, clippingPlanes: [cut] }, o || {})); return M[k]; };
+  mat('ext', 0xeae6dc); mat('int', 0xf4f2ec); mat('slab', 0xa9a49a); mat('roof', 0x4b524f, { roughness: 0.6, metalness: 0.3 });
+  mat('glass', 0x9fc8d0, { transparent: true, opacity: 0.28, roughness: 0.05, depthWrite: false }); mat('frame', 0x2f3532, { roughness: 0.5 });
+  mat('timber', 0xc49a6c); mat('carpet', 0xb9b1a6); mat('tile', 0xdfe2df); mat('deck', 0x9c7552);
+  mat('grass', 0x7f9a62, { roughness: 1 }); mat('path', 0xc2bcae); mat('door', 0x3c4a43);
+  mat('fab', 0x7d8a95); mat('bed', 0xf0ece4); mat('wood', 0x8a6446); mat('white', 0xf7f7f5); mat('steel', 0x9aa0a3, { metalness: 0.5, roughness: 0.35 });
+  mat('plant', 0x4f7a43); mat('trunk', 0x6b4d36); mat('post', 0x5c4633);
+
+  var groups = { roof: new THREE.Group(), furn: new THREE.Group(), labels: new THREE.Group(), site: new THREE.Group(), house: new THREE.Group() };
+  Object.keys(groups).forEach(function (k) { scene.add(groups[k]); });
+  groups.labels.visible = false;
+  var pick = [];
+  function box(group, w, h, d, m, pos, info, noCast) {
+    var o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.copy(pos); o.castShadow = !noCast; o.receiveShadow = true;
+    if (info) { o.userData.info = info; pick.push(o); } group.add(o); return o;
+  }
+
+  // site
+  var g = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), M.grass); g.rotation.x = -Math.PI / 2; g.position.y = -0.02; g.receiveShadow = true; groups.site.add(g);
+  box(groups.site, 1.4, 0.04, 6, M.path, P3(10.9, -3.2, 0.0), { t: 'Front path', d: 'From the street to the front door' }, true);
+  box(groups.site, 30, 0.04, 6, M.path, P3(7.5, -9, 0.0), null, true); // street verge
+  [[-3, 14], [18, 15], [19, 3], [-2.5, 9]].forEach(function (t) {
+    box(groups.site, 0.25, 2.2, 0.25, M.trunk, P3(t[0], t[1], 1.1));
+    var c = new THREE.Mesh(new THREE.SphereGeometry(1.6, 16, 12), M.plant); c.position.copy(P3(t[0], t[1], 3.3)); c.castShadow = true; groups.site.add(c);
+  });
+
+  // slab and room floors
+  box(groups.house, 15 + 0.2, 0.25, 10 + 0.2, M.slab, P3(7.5, 5, -0.125), null);
+  var FLOORM = { carpet: M.carpet, tile: M.tile, timber: M.timber };
+  ROOMS.forEach(function (r) {
+    box(groups.house, r.x1 - r.x0, 0.02, r.y1 - r.y0, FLOORM[r.floor], P3((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, 0.01),
+        { t: r.name, d: area(r).toFixed(1) + ' m² · ' + (r.x1 - r.x0).toFixed(1) + ' × ' + (r.y1 - r.y0).toFixed(1) + ' m · ' + r.floor + ' floor' }, true);
+  });
+  box(groups.house, 8.4, 0.12, 3, M.deck, P3(10.8, 11.5, -0.06), { t: 'Covered terrace', d: area(TERRACE).toFixed(1) + ' m² timber deck, level with the living floor' });
+
+  // walls with openings: [x1, y1, x2, y2, thickness, exterior, openings[{at, w, sill, head, kind}]]
+  // 'door' = opening only, 'glass' = full-height glazing, 'window' = glazed with sill, 'front' = front door leaf
+  var W = [
+    [0, 0, 15, 0, TE, 1, [{ at: 1.8, w: 1.8, sill: 0.9, head: 2.2, kind: 'window' }, { at: 5.4, w: 1.8, sill: 0.9, head: 2.2, kind: 'window' }, { at: 8.5, w: 0.9, sill: 1.5, head: 2.2, kind: 'window' }, { at: 10.9, w: 1.0, sill: 0, head: 2.2, kind: 'front' }, { at: 12.75, w: 0.6, sill: 1.5, head: 2.2, kind: 'window' }]],
+    [0, 10, 15, 10, TE, 1, [{ at: 2.1, w: 2.0, sill: 0.6, head: 2.3, kind: 'window' }, { at: 9.3, w: 4.4, sill: 0, head: 2.4, kind: 'glass' }, { at: 13.5, w: 2.4, sill: 0, head: 2.4, kind: 'glass' }]],
+    [0, 0, 0, 10, TE, 1, [{ at: 1.9, w: 1.2, sill: 0.9, head: 2.2, kind: 'window' }, { at: 7.5, w: 1.5, sill: 0.9, head: 2.2, kind: 'window' }]],
+    [15, 0, 15, 10, TE, 1, [{ at: 3.4, w: 1.8, sill: 1.05, head: 2.2, kind: 'window' }, { at: 7.5, w: 2.0, sill: 0.6, head: 2.3, kind: 'window' }]],
+    [0, 3.8, 7.2, 3.8, TI, 0, [{ at: 3.0, w: 0.82, kind: 'door' }, { at: 4.4, w: 0.82, kind: 'door' }]],
+    [7.2, 3.8, 9.8, 3.8, TI, 0, [{ at: 8.5, w: 0.82, kind: 'door' }]],
+    [3.6, 0, 3.6, 3.8, TI, 0, []], [7.2, 0, 7.2, 3.8, TI, 0, []], [7.2, 2.4, 9.8, 2.4, TI, 0, []],
+    [9.8, 0, 9.8, 3.8, TI, 0, [{ at: 1.2, w: 0.82, kind: 'door' }]],
+    [12, 0, 12, 3.8, TI, 0, [{ at: 0.9, w: 0.72, kind: 'door' }]],
+    [13.5, 0, 13.5, 1.8, TI, 0, []], [12, 1.8, 13.5, 1.8, TI, 0, []],
+    [13.5, 1.8, 15, 1.8, TI, 0, [{ at: 14.25, w: 0.72, kind: 'door' }]],
+    [0, 5, 6.6, 5, TI, 0, [{ at: 3.4, w: 0.82, kind: 'door' }]],
+    [4.2, 5, 4.2, 10, TI, 0, [{ at: 6.2, w: 0.72, kind: 'door' }, { at: 8.6, w: 0.9, kind: 'door' }]],
+    [4.2, 7.4, 6.6, 7.4, TI, 0, []], [6.6, 5, 6.6, 10, TI, 0, []]
+  ];
+  W.forEach(function (w) {
+    var hz = w[1] === w[3], a0 = hz ? w[0] : w[1], a1 = hz ? w[2] : w[3], t = w[4], m = w[5] ? M.ext : M.int, fixed = hz ? w[1] : w[0];
+    var info = { t: w[5] ? 'External wall' : 'Internal wall', d: (w[5] ? '300 mm insulated cavity wall' : '120 mm stud wall') + ', ' + H + ' m high' };
+    var piece = function (s, e, z0, z1, mm, inf, th) {
+      if (e - s < 1e-3 || z1 - z0 < 1e-3) return;
+      var len = e - s, mid = (s + e) / 2, tt = th || t;
+      var pos = hz ? P3(mid, fixed, (z0 + z1) / 2) : P3(fixed, mid, (z0 + z1) / 2);
+      box(groups.house, hz ? len : tt, z1 - z0, hz ? tt : len, mm, pos, inf);
+    };
+    var ops = w[6].slice().sort(function (p, q) { return p.at - q.at; }), cur = a0;
+    ops.forEach(function (o) {
+      var s = o.at - o.w / 2, e = o.at + o.w / 2, sill = o.sill || 0, head = o.head || 2.1;
+      piece(cur, s, 0, H, m, info);
+      piece(s, e, 0, sill, m, info);
+      piece(s, e, head, H, m, info);
+      if (o.kind === 'window' || o.kind === 'glass') {
+        var gi = { t: o.kind === 'glass' ? 'Glazed sliding doors' : 'Window', d: o.w.toFixed(2) + ' m wide · ' + (head - sill).toFixed(2) + ' m high' + (o.kind === 'glass' ? ' · level threshold to terrace' : ' · double glazed') };
+        piece(s, e, sill, head, M.glass, gi, 0.024);                     // double-glazed unit, thin
+        var fr = 0.05, ft = 0.07;                                         // frame members 50 mm face, 70 mm deep
+        piece(s, s + fr, sill, head, M.frame, null, ft); piece(e - fr, e, sill, head, M.frame, null, ft); piece(s, e, head - fr, head, M.frame, null, ft);
+        if (sill > 0) piece(s, e, sill, sill + fr, M.frame, null, ft); else piece(o.at - fr / 2, o.at + fr / 2, sill, head, M.frame, null, ft);
+      }
+      if (o.kind === 'front') {
+        // door leaf along the wall, hinged at its west jamb, swung 35 degrees into the entry
+        var leaf = box(groups.house, o.w, head, 0.05, M.door, P3(s, fixed, head / 2), { t: 'Front door', d: '1.0 m wide solid timber door, opens into the entry' });
+        leaf.geometry.translate(o.w / 2, 0, 0); leaf.rotation.y = -0.6;
+      }
+      cur = e;
+    });
+    piece(cur, a1, 0, H, m, info);
+  });
+
+  // gable roof, ridge east-west at y = 5
+  var span = 5 + EAVE, rise = span * Math.tan(PITCH), slope = span / Math.cos(PITCH), L = 15 + 2 * EAVE;
+  [-1, 1].forEach(function (sgn) {
+    var r = box(groups.roof, L, 0.12, slope, M.roof, P3(7.5, 5 + sgn * span / 2, H + rise / 2), { t: 'Roof', d: '25° gable, insulated, 0.6 m eaves · ridge ' + (H + rise).toFixed(2) + ' m above floor' });
+    r.rotation.x = sgn * PITCH;
+  });
+  [0, 15].forEach(function (gx) { // gable end walls
+    var sh = new THREE.Shape(); sh.moveTo(-5 - TE / 2, 0); sh.lineTo(5 + TE / 2, 0); sh.lineTo(0, (5 + TE / 2) * Math.tan(PITCH)); sh.closePath();
+    var gm = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: TE, bevelEnabled: false }), M.ext);
+    gm.rotation.y = Math.PI / 2; gm.position.copy(P3(gx - TE / 2, 5, H)); gm.castShadow = gm.receiveShadow = true; groups.roof.add(gm);
+  });
+  // ceiling: faces down only, so it closes the rooms when seen from inside and disappears from above
+  var ceil = new THREE.Mesh(new THREE.PlaneGeometry(15, 10), mat('ceil', 0xf2f0ea, { emissive: 0x8d8a84, roughness: 1 })); ceil.rotation.x = Math.PI / 2; ceil.position.copy(P3(7.5, 5, H)); groups.roof.add(ceil);
+  // terrace roof (skillion) on posts
+  box(groups.roof, 8.4 + 0.4, 0.1, 3.4, M.roof, P3(10.8, 11.6, H - 0.05), { t: 'Terrace roof', d: 'Skillion roof over the 3.0 m deep terrace · blocks high summer sun, admits low winter sun' });
+  [6.8, 10.8, 14.8].forEach(function (px) { box(groups.house, 0.12, H - 0.1, 0.12, M.post, P3(px, 12.9, (H - 0.1) / 2), { t: 'Terrace post', d: '120 × 120 mm timber post' }); });
+
+  // furniture (simple, to scale)
+  var F = groups.furn;
+  function bed(x, y, w, l, rot, label) { var o = box(F, w, 0.5, l, M.bed, P3(x, y, 0.25), { t: label, d: (w * 1000).toFixed(0) + ' × ' + (l * 1000).toFixed(0) + ' mm' }); o.rotation.y = rot || 0; var hb = box(F, w, 1.0, 0.08, M.wood, P3(x, y - l / 2, 0.5), null); hb.rotation.y = rot || 0; }
+  bed(1.8, 1.4, 1.37, 1.9, 0, 'Double bed'); bed(5.4, 1.4, 1.37, 1.9, 0, 'Double bed');
+  box(F, 1.8, 2.2, 0.6, M.wood, P3(1.8, 3.45, 1.1), { t: 'Wardrobe', d: '1.8 m built-in robe' }); box(F, 1.8, 2.2, 0.6, M.wood, P3(5.4, 3.45, 1.1), { t: 'Wardrobe', d: '1.8 m built-in robe' });
+  bed(2.1, 8.0, 1.53, 2.03, 0, 'Queen bed'); box(F, 1.53, 1.1, 0.08, M.wood, P3(2.1, 6.98, 0.55), null);
+  box(F, 0.5, 0.5, 0.45, M.wood, P3(1.0, 6.8, 0.25), { t: 'Bedside table', d: '' }); box(F, 0.5, 0.5, 0.45, M.wood, P3(3.2, 6.8, 0.25), null);
+  box(F, 0.5, 2.2, 2.4, M.wood, P3(6.3, 8.7, 1.1), { t: 'Robe shelving', d: 'Walk-in robe, hanging and shelves' });
+  // wet areas
+  box(F, 1.2, 0.85, 0.5, M.white, P3(8.5, 0.4, 0.43), { t: 'Vanity', d: '1.2 m double basin' }); box(F, 1.7, 0.55, 0.75, M.white, P3(8.45, 1.95, 0.28), { t: 'Bath', d: '1.7 m bath' });
+  box(F, 0.4, 0.4, 0.65, M.white, P3(7.55, 1.2, 0.2), { t: 'Toilet', d: '' });
+  box(F, 2.4, 0.9, 0.6, M.white, P3(8.5, 3.45, 0.45), { t: 'Laundry bench', d: 'Tub, washer and dryer under bench' });
+  box(F, 0.9, 0.05, 0.9, M.tile, P3(5.95, 5.65, 0.03), { t: 'Shower', d: '0.9 × 0.9 m walk-in shower' }); box(F, 0.02, 2.0, 0.9, M.glass, P3(5.5, 5.65, 1.0), null);
+  box(F, 1.0, 0.85, 0.5, M.white, P3(5.6, 7.1, 0.43), { t: 'Vanity', d: 'Ensuite basin' }); box(F, 0.4, 0.4, 0.65, M.white, P3(4.55, 6.6, 0.2), { t: 'Toilet', d: '' });
+  box(F, 0.4, 0.4, 0.65, M.white, P3(12.35, 0.45, 0.2), { t: 'Toilet', d: 'Powder room' }); box(F, 0.3, 2.0, 1.4, M.wood, P3(14.85, 0.9, 1.0), { t: 'Pantry shelves', d: '' });
+  // kitchen: L-shaped bench, tall units, island
+  box(F, 0.65, 0.9, 3.2, M.white, P3(14.62, 3.4, 0.45), { t: 'Kitchen bench', d: 'Sink under the window, cooktop, dishwasher · 900 mm high' });
+  box(F, 1.8, 2.2, 0.65, M.wood, P3(12.95, 2.15, 1.1), { t: 'Tall units', d: 'Fridge, oven tower, storage' });
+  box(F, 2.4, 0.9, 1.0, M.white, P3(13.0, 4.6, 0.45), { t: 'Island bench', d: '2.4 × 1.0 m with seating to the family nook' });
+  box(F, 2.4, 0.04, 1.06, M.steel, P3(13.0, 4.6, 0.92), null);
+  // living and dining
+  box(F, 2.4, 0.75, 1.0, M.wood, P3(10.2, 6.6, 0.375), { t: 'Dining table', d: '2.4 × 1.0 m, seats 8' });
+  [[9.3, 5.85], [10.2, 5.85], [11.1, 5.85], [9.3, 7.35], [10.2, 7.35], [11.1, 7.35]].forEach(function (c) { box(F, 0.45, 0.45, 0.45, M.fab, P3(c[0], c[1], 0.225), null); });
+  box(F, 2.6, 0.75, 0.95, M.fab, P3(8.0, 8.6, 0.375), { t: 'Sofa', d: '2.6 m three-seater facing the garden' }); box(F, 0.9, 0.75, 1.8, M.fab, P3(7.15, 7.7, 0.375), null);
+  box(F, 1.2, 0.4, 0.6, M.wood, P3(8.4, 7.4, 0.2), { t: 'Coffee table', d: '' });
+  box(F, 2.2, 0.75, 0.9, M.fab, P3(13.6, 8.8, 0.375), { t: 'Family sofa', d: 'Reading and play corner' });
+  box(F, 1.6, 0.75, 0.9, M.wood, P3(11.0, 11.5, 0.375), { t: 'Outdoor table', d: 'On the covered terrace' });
+
+  // labels (canvas sprites)
+  ROOMS.forEach(function (r) {
+    var cv = document.createElement('canvas'); cv.width = 512; cv.height = 160; var x = cv.getContext('2d');
+    x.fillStyle = 'rgba(30,36,33,0.86)'; x.fillRect(0, 0, 512, 160); x.fillStyle = '#ffffff'; x.textAlign = 'center';
+    x.font = '600 52px "IBM Plex Sans", sans-serif'; x.fillText(r.name, 256, 72); x.font = '400 40px "IBM Plex Mono", monospace'; x.fillText(area(r).toFixed(1) + ' m²', 256, 128);
+    var s = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false }));
+    var w = Math.min(2.6, Math.max(1.4, (r.x1 - r.x0) * 0.7)); s.scale.set(w, w * 160 / 512, 1); s.position.copy(P3((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, H + 0.4)); s.renderOrder = 10; groups.labels.add(s);
+  });
+
+  // UI wiring
+  function bind(id, grp) { $(id).addEventListener('change', function (e) { groups[grp].visible = e.target.checked; }); }
+  bind('ly-roof', 'roof'); bind('ly-furn', 'furn'); bind('ly-labels', 'labels'); bind('ly-site', 'site');
+  function setCut() { var v = +$('cut').value; cut.constant = v; $('cut-v').textContent = v >= 6 ? 'off' : v.toFixed(1) + ' m'; }
+  $('cut').addEventListener('input', setCut); setCut();
+  function setSun() {
+    var az = +$('saz').value * Math.PI / 180, al = +$('salt').value * Math.PI / 180;
+    // garden side (+y in plan) faces the sun at azimuth 0
+    sun.position.set(-Math.sin(az) * Math.cos(al) * 50, Math.sin(al) * 50, Math.cos(az) * Math.cos(al) * 50); sun.target.position.set(0, 0, 0);
+    sun.intensity = 0.35 + 0.8 * Math.sin(al);
+    $('saz-v').textContent = +$('saz').value === 0 ? 'facing garden' : Math.abs(+$('saz').value) + '° ' + (+$('saz').value < 0 ? 'east' : 'west');
+    $('salt-v').textContent = $('salt').value + '°';
+  }
+  ['saz', 'salt'].forEach(function (id) { $(id).addEventListener('input', setSun); }); setSun();
+  // every view sets the whole state, so switching views never inherits a cut or hidden roof
+  var EXT = { roof: true, cut: 6, labels: false };
+  var VIEWS = { persp: [[17, 14, 19], [0, 1.2, 0], EXT], plan: [[0, 30, 0.01], [0, 0, 0], { roof: false, cut: 1.2, labels: true, sun: [0, 72] }],
+                street: [[2, 2.2, -20], [0, 2, 0], EXT], garden: [[-3, 2.4, 20], [0, 1.6, 0], EXT], inside: [[-0.4, 1.6, 4.5], [5.5, 1.1, -1.6], EXT] };
+  function view(k) {
+    var v = VIEWS[k]; camera.position.set(v[0][0], v[0][1], v[0][2]); controls.target.set(v[1][0], v[1][1], v[1][2]); controls.update();
+    if (v[2]) {
+      if ('roof' in v[2]) { $('ly-roof').checked = v[2].roof; groups.roof.visible = v[2].roof; }
+      if ('cut' in v[2]) { $('cut').value = v[2].cut; setCut(); }
+      if ('labels' in v[2]) { $('ly-labels').checked = v[2].labels; groups.labels.visible = v[2].labels; }
+      if (v[2].sun) { $('saz').value = v[2].sun[0]; $('salt').value = v[2].sun[1]; setSun(); }
+    }
+    document.querySelectorAll('[data-view]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === k); });
+  }
+  document.querySelectorAll('[data-view]').forEach(function (b) { b.addEventListener('click', function () { view(b.getAttribute('data-view')); }); });
+  view('persp');
+
+  var ray = new THREE.Raycaster(), mouse = new THREE.Vector2(), tip = $('tip');
+  renderer.domElement.addEventListener('pointermove', function (e) {
+    var r = renderer.domElement.getBoundingClientRect(); mouse.x = (e.clientX - r.left) / r.width * 2 - 1; mouse.y = -(e.clientY - r.top) / r.height * 2 + 1;
+    ray.setFromCamera(mouse, camera);
+    var vis = pick.filter(function (m) { var o = m; while (o) { if (!o.visible) return false; o = o.parent; } return true; });
+    var hits = ray.intersectObjects(vis, false).filter(function (h) { return cut.distanceToPoint(h.point) >= 0; });
+    if (hits.length) { var inf = hits[0].object.userData.info; tip.innerHTML = '<b>' + inf.t + '</b>' + (inf.d ? '<br>' + inf.d : ''); tip.hidden = false;
+      tip.style.left = Math.min(e.clientX - r.left + 14, r.width - 260) + 'px'; tip.style.top = Math.min(e.clientY - r.top + 14, r.height - 70) + 'px'; }
+    else tip.hidden = true;
+  });
+  renderer.domElement.addEventListener('pointerleave', function () { tip.hidden = true; });
+
+  function theme() { scene.background = new THREE.Color(css('--surface') || '#F7F6F2'); }
+  theme(); if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', theme);
+  new MutationObserver(theme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  function size() { var w = vp.clientWidth, h = Math.round(Math.min(Math.max(w * 0.6, 320), window.innerHeight * 0.78)); renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  window.addEventListener('resize', size); size();
+  var spinning = false, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('spin').addEventListener('click', function () { spinning = !spinning; controls.autoRotate = spinning && !reduce; controls.autoRotateSpeed = 0.7; this.setAttribute('aria-pressed', spinning); this.textContent = spinning ? 'Stop' : 'Turn slowly'; });
+  (function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+  window.__house = { rooms: ROOMS.length, total: total, pick: pick.length };
+})();
+</script>
