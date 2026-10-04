@@ -1,0 +1,489 @@
+<title>Chimera Pavilion 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+  /* Layout concept: a model table. The 3D model is the centrepiece with its controls beside it like a model-maker's tool tray; the business case follows as the client's ledger. */
+  :root {
+    --bg: #E8EAE6; --surface: #F3F4F1; --ink: #14201D; --muted: #55645F; --line: #B9C0BA;
+    --copper: #9A4E29; --patina: #23695D; --hi: #F6E7C9; --good: #2F6B3A; --bad: #9A2E25;
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #0F1614; --surface: #17211E; --ink: #E4E9E5; --muted: #8FA09A; --line: #2D3B37; --copper: #E08A5C; --patina: #58B8A5; --hi: #3a2c1c; --good: #6FCF84; --bad: #F08A7E; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #0F1614; --surface: #17211E; --ink: #E4E9E5; --muted: #8FA09A; --line: #2D3B37; --copper: #E08A5C; --patina: #58B8A5; --hi: #3a2c1c; --good: #6FCF84; --bad: #F08A7E; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--f-body); padding-inline: 16px; padding-block: 24px 64px; margin: 0; }
+  main { max-width: 1240px; margin-inline: auto; display: flex; flex-direction: column; gap: 44px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.06; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.8rem); font-weight: 800; letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.4rem, 3.4vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 { font-size: 1.05rem; font-weight: 800; }
+  p { margin: 0; max-width: 68ch; }
+  .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .note { border-left: 3px solid var(--copper); padding-left: 12px; max-width: 74ch; }
+  .tab { font-variant-numeric: tabular-nums; }
+  section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .stage { grid-template-columns: 1fr; } }
+  .viewport { position: relative; border: 1px solid var(--line); background: var(--surface); min-width: 0; }
+  .viewport canvas { display: block; width: 100%; touch-action: none; }
+  #tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 12px/1.4 var(--f-mono); padding: 6px 8px; max-width: 260px; }
+  #fallback { padding: 32px; color: var(--muted); }
+  .hud { position: absolute; left: 10px; bottom: 8px; font: 11px var(--f-mono); color: var(--muted); pointer-events: none; }
+  .tray { border: 1px solid var(--line); background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .tray fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .tray legend { padding: 0; margin-bottom: 4px; }
+  .chk { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .chk i { width: 12px; height: 12px; display: inline-block; border: 1px solid var(--line); }
+  .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { font: 600 13px var(--f-body); padding: 7px 11px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+  button:hover, button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .rng { display: flex; flex-direction: column; gap: 2px; }
+  .rng .row { display: flex; justify-content: space-between; gap: 8px; }
+  input[type=range] { width: 100%; accent-color: var(--copper); }
+  :focus-visible { outline: 2px solid var(--patina); outline-offset: 2px; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .facts div { border: 1px solid var(--line); background: var(--surface); padding: 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .facts b { font: 800 1.35rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+  .facts small { color: var(--muted); font-size: 12.5px; }
+
+  .ledger { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .ledger { grid-template-columns: 1fr; } }
+  .inputs { border: 1px solid var(--line); background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .inputs h3 { margin-top: 4px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px 14px; }
+  .fld { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .fld label { font-size: 13px; color: var(--muted); }
+  .fld input, .fld select { font: 500 14px var(--f-mono); padding: 7px 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); width: 100%; }
+  .results { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .kpi { border: 1px solid var(--line); background: var(--surface); padding: 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .kpi b { font: 800 1.5rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+  .kpi small { color: var(--muted); font-size: 12.5px; }
+  .pos { color: var(--good); } .neg { color: var(--bad); }
+  .panel { border: 1px solid var(--line); background: var(--surface); padding: 14px; min-width: 0; }
+  .bars { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+  .bar { display: grid; grid-template-columns: minmax(96px, 150px) 1fr 84px; gap: 10px; align-items: center; font-size: 13px; }
+  .bar .track { height: 12px; background: var(--bg); border: 1px solid var(--line); position: relative; }
+  .bar .fill { position: absolute; top: 0; bottom: 0; background: var(--copper); }
+  .bar .v { text-align: right; font: 500 12.5px var(--f-mono); }
+  .torn .fill.lo { background: var(--patina); } .torn .mid { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--ink); left: 50%; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+  .tablewrap table { min-width: 680px; }
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:14px">
+    <span class="label">Chimera Pavilion · 3D model and business case · concept stage</span>
+    <h1>The pavilion,<br>in the round</h1>
+    <p>A stone heart, a timber skeleton and a copper veil, built from the same geometry as the coordination IFC. Turn layers on and off, cut a section, move the sun to watch the veil's perforated shadows cross the hall, and test whether the building can pay its way.</p>
+    <p class="note">Concept stage. Site, soils and code are not yet known, and all money inputs are editable examples, not a cost estimate. Not for construction.</p>
+  </header>
+
+  <section aria-labelledby="t-3d">
+    <h2 id="t-3d">Model</h2>
+    <div class="stage">
+      <div class="viewport" id="vp">
+        <div id="fallback" hidden>The 3D view needs WebGL and the three.js library. The rest of the page still works.</div>
+        <div id="tip" hidden></div>
+        <div class="hud" id="hud">Drag to orbit · scroll to zoom · right-drag to pan · hover for details</div>
+      </div>
+      <div class="tray">
+        <fieldset><legend class="label">Layers</legend><div id="layers"></div></fieldset>
+        <fieldset><legend class="label">View</legend>
+          <div class="btns"><button data-view="persp" aria-pressed="true">3D</button><button data-view="plan">Plan</button><button data-view="south">South</button><button data-view="hall">Inside hall</button></div>
+        </fieldset>
+        <div class="rng"><div class="row"><label class="label" for="cut">Section cut (east → west)</label><span class="label tab" id="cut-v"></span></div><input id="cut" type="range" min="0" max="48" step="0.5" value="48"></div>
+        <div class="rng"><div class="row"><label class="label" for="exp">Exploded floors</label><span class="label tab" id="exp-v"></span></div><input id="exp" type="range" min="0" max="8" step="0.5" value="0"></div>
+        <div class="rng"><div class="row"><label class="label" for="saz">Sun direction</label><span class="label tab" id="saz-v"></span></div><input id="saz" type="range" min="-90" max="90" value="-25"></div>
+        <div class="rng"><div class="row"><label class="label" for="salt">Sun height</label><span class="label tab" id="salt-v"></span></div><input id="salt" type="range" min="5" max="80" value="38"></div>
+        <div class="btns"><button id="spin" aria-pressed="false">Turn slowly</button></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div><span class="label">Footprint</span><b>48 × 32 m</b><small>8 m grid, 6 × 4 bays</small></div>
+      <div><span class="label">Floor area (model)</span><b>3,456 m²</b><small>program asks 4,188 m² (CR-001)</small></div>
+      <div><span class="label">Hall</span><b>24 × 24 m</b><small>column-free, glulam diagrid at +9.7 m</small></div>
+      <div><span class="label">Levels</span><b>0 / 5.5 / 9.7 / 13.9</b><small>canopy to +17.0 m</small></div>
+      <div><span class="label">Fundamental period</span><b>0.12 s</b><small>stiff cores; OpenSeesPy-verified</small></div>
+      <div><span class="label">Torsion fix</span><b>CR-003</b><small>two south lateral elements (toggle layer)</small></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-money">
+    <h2 id="t-money">Can it pay its way?</h2>
+    <p>A civic pavilion rarely repays its construction from income alone. The useful questions are whether it covers its running costs, how large a capital grant it needs, and which design decisions move the numbers most. Change any input; everything updates.</p>
+    <div class="ledger">
+      <div class="inputs" id="inputs"></div>
+      <div class="results">
+        <div class="kpis">
+          <div class="kpi"><span class="label">Capital cost</span><b id="k-capex">–</b><small id="k-capex-s"></small></div>
+          <div class="kpi"><span class="label">Operating surplus / year</span><b id="k-noi">–</b><small>income minus running costs, year 1</small></div>
+          <div class="kpi"><span class="label">Net present value</span><b id="k-npv">–</b><small id="k-npv-s"></small></div>
+          <div class="kpi"><span class="label">Payback / IRR</span><b id="k-pb">–</b><small id="k-irr"></small></div>
+        </div>
+        <div class="panel"><h3>Income by source, year 1</h3><div class="bars" id="mix"></div></div>
+        <div class="panel"><h3>What moves the NPV most</h3><p class="label" style="margin-top:4px">each input ±20 %, others held · floor area changes cost and energy only, so adjust income lines with it</p><div class="bars torn" id="torn"></div></div>
+        <div class="panel"><h3>Capital grant to break even</h3><p id="grant" style="margin-top:6px"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-lev">
+    <h2 id="t-lev">Design decisions that move the money</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Design decision</th><th>Effect on income or cost</th><th>Where it shows here</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td>Column-free 24 m hall</td><td>Lets the hall host concerts, markets, dinners and exhibitions: the largest income line. Costs a long-span roof.</td><td>Hall hire days and rate</td><td>Judgment; test with local venue market data</td></tr>
+        <tr><td>Program vs geometry (CR-001)</td><td>Floor area sets both build cost and rentable space; closing the 732 m² gap changes capex and income together.</td><td>Floor area input</td><td>IFC model: 3,456 m² vs 4,188 m²</td></tr>
+        <tr><td>South lateral elements (CR-003)</td><td>Adds capital cost; protects against torsional damage, downtime and insurability after an earthquake.</td><td>Capex toggle</td><td>Seismic screening, report §8</td></tr>
+        <tr><td>Roof terrace and pergola</td><td>Evening events and café overflow; needs load allowance and waterproofing.</td><td>Terrace events</td><td>Judgment</td></tr>
+        <tr><td>Passive design + PV</td><td>Lowers energy bills for decades; the copper veil cuts solar gain (toy model only until simulated).</td><td>Energy cost and PV</td><td>Toy model; needs EnergyPlus</td></tr>
+        <tr><td>Timber and copper durability</td><td>Low maintenance if kept dry and accessible; exposed timber outdoors costs more to keep.</td><td>Maintenance %</td><td>Precedents: Multihalle, Metropol Parasol</td></tr>
+        <tr><td>Standardised nodes and panels</td><td>Repetition lowers fabrication cost of the diagrid and veil.</td><td>Build cost per m²</td><td>Precedents: Sydney Opera House, Nervi</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</main>
+
+<script>
+/* ---------- FINANCE-START (pure functions, tested in architecture/tests) ---------- */
+function financeModel(p) {
+  var capex = p.area * p.costPerM2 * (1 + p.softPct / 100) + (p.cr003 ? p.cr003Cost : 0) + p.land;
+  var income = {
+    'Hall hire': p.hallDays * p.hallRate,
+    'Café (net margin)': p.cafeSales * p.cafeMargin / 100,
+    'Maker studios': p.members * p.memberFee,
+    'Classes': p.classSeats * p.classPrice,
+    'Exhibitions': p.visitors * p.ticket,
+    'Terrace events': p.terraceEvents * p.terraceRate,
+    'PV savings': p.pvKwp * p.pvYield * p.elecPrice
+  };
+  var revenue = 0; for (var k in income) revenue += income[k];
+  var opex = p.staff * p.staffCost + p.area * p.energyPerM2 + capex * (p.maintPct + p.insurPct) / 100;
+  var noi = revenue - opex;
+  function npvAt(r) {
+    var v = -(capex - p.grant);
+    for (var t = 1; t <= p.years; t++) v += noi * Math.pow(1 + p.escal / 100, t - 1) / Math.pow(1 + r, t);
+    return v;
+  }
+  var npv = npvAt(p.discount / 100);
+  var irr = null, lo = -0.99, hi = 1.0;
+  if (npvAt(lo) > 0 && npvAt(hi) < 0) {
+    for (var i = 0; i < 200; i++) { var mid = (lo + hi) / 2; if (npvAt(mid) > 0) lo = mid; else hi = mid; }
+    irr = (lo + hi) / 2;
+  }
+  var payback = null, cum = -(capex - p.grant);
+  if (cum >= 0) payback = 0;
+  for (var y = 1; y <= 100 && cum < 0; y++) { cum += noi * Math.pow(1 + p.escal / 100, y - 1); if (cum >= 0) payback = y; }
+  // NPV is linear in the grant, so the grant that makes NPV zero is (current grant - NPV), within [0, capex]
+  var grantNeeded = Math.max(0, p.grant - npv);
+  return { capex: capex, income: income, revenue: revenue, opex: opex, noi: noi, npv: npv, irr: irr, payback: payback,
+           grantToBreakEven: Math.min(capex, grantNeeded) };
+}
+function tornado(p, keys) {
+  var base = financeModel(p).npv, out = [];
+  keys.forEach(function (k) {
+    var a = Object.assign({}, p), b = Object.assign({}, p);
+    a[k] = p[k] * 0.8; b[k] = p[k] * 1.2;
+    out.push({ key: k, low: financeModel(a).npv - base, high: financeModel(b).npv - base });
+  });
+  return out.sort(function (x, y) { return Math.max(Math.abs(y.low), Math.abs(y.high)) - Math.max(Math.abs(x.low), Math.abs(x.high)); });
+}
+/* ---------- FINANCE-END ---------- */
+</script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+
+  /* ================= BUSINESS CASE ================= */
+  var FIELDS = [
+    ['Capital', [
+      ['area', 'Floor area, m²', 3456, 1], ['costPerM2', 'Build cost per m²', 4000, 50], ['softPct', 'Fees and contingency, %', 25, 1],
+      ['cr003', 'Include CR-003 south elements', 1, 'bool'], ['cr003Cost', 'CR-003 cost', 600000, 10000], ['land', 'Land', 0, 10000], ['grant', 'Capital grant', 0, 50000]]],
+    ['Income per year', [
+      ['hallDays', 'Hall hire days', 150, 1], ['hallRate', 'Hall rate per day', 2500, 50], ['cafeSales', 'Café sales', 450000, 5000],
+      ['cafeMargin', 'Café net margin, %', 12, 1], ['members', 'Maker members', 120, 1], ['memberFee', 'Membership per year', 600, 10],
+      ['classSeats', 'Class seats sold per year', 2400, 10], ['classPrice', 'Price per seat', 25, 1], ['visitors', 'Exhibition visitors', 30000, 500],
+      ['ticket', 'Ticket price', 6, 0.5], ['terraceEvents', 'Terrace events', 40, 1], ['terraceRate', 'Rate per terrace event', 3000, 50],
+      ['pvKwp', 'PV size, kWp', 150, 5], ['pvYield', 'PV yield, kWh/kWp', 1000, 10], ['elecPrice', 'Electricity price per kWh', 0.2, 0.01]]],
+    ['Running costs per year', [
+      ['staff', 'Staff, full-time equivalent', 6, 0.5], ['staffCost', 'Cost per FTE', 55000, 1000], ['energyPerM2', 'Energy per m²', 15, 1],
+      ['maintPct', 'Maintenance, % of capital', 1.2, 0.1], ['insurPct', 'Insurance, % of capital', 0.4, 0.05]]],
+    ['Finance', [['discount', 'Discount rate, %', 5, 0.25], ['escal', 'Net income growth, % per year', 2, 0.25], ['years', 'Horizon, years', 30, 1]]]
+  ];
+  var LABEL = {}; var P = {};
+  var html = '<p class="note" style="font-size:13.5px">Example inputs in a neutral currency. Replace every value with local quotes, market data and the client\'s plan before drawing conclusions.</p>';
+  FIELDS.forEach(function (g) {
+    html += '<h3>' + g[0] + '</h3><div class="grid2">';
+    g[1].forEach(function (f) {
+      LABEL[f[0]] = f[1]; P[f[0]] = f[2];
+      html += f[3] === 'bool'
+        ? '<div class="fld"><label for="f-' + f[0] + '">' + f[1] + '</label><select id="f-' + f[0] + '"><option value="1" selected>Yes</option><option value="0">No</option></select></div>'
+        : '<div class="fld"><label for="f-' + f[0] + '">' + f[1] + '</label><input id="f-' + f[0] + '" type="number" inputmode="decimal" step="' + f[3] + '" value="' + f[2] + '"></div>';
+    });
+    html += '</div>';
+  });
+  $('inputs').innerHTML = html;
+  var fmt = function (v) { var a = Math.abs(v), s = v < 0 ? '−' : ''; return s + (a >= 1e6 ? (a / 1e6).toFixed(2) + 'M' : a >= 1e3 ? Math.round(a / 1e3) + 'k' : Math.round(a)); };
+  function update() {
+    Object.keys(P).forEach(function (k) { var el = $('f-' + k); var v = parseFloat(el.value); P[k] = isFinite(v) ? v : 0; });
+    var r = financeModel(P);
+    $('k-capex').textContent = fmt(r.capex);
+    $('k-capex-s').textContent = fmt(r.capex / Math.max(P.area, 1)) + ' per m² all-in';
+    var noi = $('k-noi'); noi.textContent = fmt(r.noi); noi.className = r.noi >= 0 ? 'pos' : 'neg';
+    var npv = $('k-npv'); npv.textContent = fmt(r.npv); npv.className = r.npv >= 0 ? 'pos' : 'neg';
+    $('k-npv-s').textContent = P.years + ' years at ' + P.discount + ' %, after grant';
+    $('k-pb').textContent = r.payback ? r.payback + ' yrs' : 'none';
+    $('k-irr').textContent = r.irr === null ? 'IRR not defined (never pays back)' : 'IRR ' + (r.irr * 100).toFixed(1) + ' %';
+    var inc = Object.keys(r.income).map(function (k) { return [k, r.income[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
+    var mx = Math.max.apply(null, inc.map(function (x) { return x[1]; }).concat([1]));
+    $('mix').innerHTML = inc.map(function (x) { return '<div class="bar"><span>' + x[0] + '</span><div class="track"><div class="fill" style="left:0;width:' + (Math.max(0, x[1]) / mx * 100) + '%"></div></div><span class="v tab">' + fmt(x[1]) + '</span></div>'; }).join('') +
+      '<div class="bar"><span><b>Running costs</b></span><div class="track"><div class="fill" style="left:0;width:' + Math.min(100, r.opex / mx * 100) + '%;background:var(--muted)"></div></div><span class="v tab">' + fmt(-r.opex) + '</span></div>';
+    var keys = ['costPerM2', 'hallDays', 'hallRate', 'staff', 'area', 'visitors', 'cafeSales', 'discount', 'energyPerM2', 'members'];
+    var t = tornado(P, keys).slice(0, 8);
+    var span = Math.max.apply(null, t.map(function (x) { return Math.max(Math.abs(x.low), Math.abs(x.high)); }).concat([1]));
+    $('torn').innerHTML = t.map(function (x) {
+      var seg = function (v, cls) { var w = Math.abs(v) / span * 50; return '<div class="fill ' + cls + '" style="' + (v < 0 ? 'right:50%' : 'left:50%') + ';width:' + w + '%"></div>'; };
+      return '<div class="bar"><span>' + LABEL[x.key] + '</span><div class="track"><div class="mid"></div>' + seg(x.low, 'lo') + seg(x.high, 'hi') + '</div><span class="v tab">±' + fmt(Math.max(Math.abs(x.low), Math.abs(x.high))) + '</span></div>';
+    }).join('') + '<p class="label" style="margin-top:6px">green bar: input −20 % · copper bar: input +20 %</p>';
+    $('grant').innerHTML = r.noi <= 0
+      ? 'Running costs exceed income by <b>' + fmt(-r.noi) + '</b> a year, so no capital grant makes this break even: the operating model or the program needs to change first.'
+      : 'With these inputs, a capital grant of about <b>' + fmt(r.grantToBreakEven) + '</b> (' + Math.round(r.grantToBreakEven / r.capex * 100) + ' % of capital cost) brings the NPV to zero. The rest is repaid by operating surpluses.';
+  }
+  $('inputs').addEventListener('input', update); $('inputs').addEventListener('change', update);
+  update();
+
+  /* ================= 3D MODEL ================= */
+  var GEO = { grid: 8, X: 48, Y: 32, levels: [0, 5.5, 9.7, 13.9], hall: [8, 32, 8, 32], cores: [[0, 8, 0, 8], [40, 48, 0, 8]],
+              clt: 0.15, col: 0.4, joist: [0.24, 0.68], girder: [0.32, 0.88], canopyTop: 17.0, cr003: [[4, 28], [44, 28]] };
+  if (!window.THREE || !THREE.OrbitControls || !(function () { try { var c = document.createElement('canvas'); return !!(c.getContext('webgl') || c.getContext('experimental-webgl')); } catch (e) { return false; } })()) {
+    $('fallback').hidden = false; $('hud').hidden = true; return;
+  }
+  var vp = $('vp'), renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.localClippingEnabled = true;
+  vp.insertBefore(renderer.domElement, vp.firstChild);
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(38, 1.6, 0.5, 1200);
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.target.set(0, 6, 0); controls.maxPolarAngle = Math.PI * 0.495;
+  var hemi = new THREE.HemisphereLight(0xdfe8ff, 0x6b5a45, 0.55); scene.add(hemi);
+  var sun = new THREE.DirectionalLight(0xfff1dc, 1.0); sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048); var sc = sun.shadow.camera; sc.left = -45; sc.right = 45; sc.top = 45; sc.bottom = -45; sc.near = 1; sc.far = 220; sun.shadow.bias = -0.0005;
+  scene.add(sun); scene.add(sun.target);
+  var clip = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 24);
+  var P3 = function (x, y, z) { return new THREE.Vector3(x - GEO.X / 2, z, y - GEO.Y / 2); }; // brief coords (x east, y south, z up) → three
+
+  var MAT = {};
+  function mat(name, color, o) {
+    o = o || {}; var m = new THREE.MeshStandardMaterial(Object.assign({ color: color, roughness: 0.85, metalness: 0, clippingPlanes: [clip] }, o));
+    MAT[name] = m; return m;
+  }
+  mat('concrete', 0xb9b3a7); mat('glulam', 0xc99a62, { roughness: 0.7 }); mat('clt', 0xdcb787, { roughness: 0.75 });
+  mat('earth', 0x9b7a58, { roughness: 0.95 }); mat('steel', 0x4a4f52, { metalness: 0.6, roughness: 0.4 });
+  mat('glass', 0x9fc6c8, { transparent: true, opacity: 0.25, roughness: 0.05, metalness: 0.1, depthWrite: false });
+  mat('ground', 0x9aa596, { roughness: 1 }); mat('cr003', 0xd0573a, { roughness: 0.6, emissive: 0x3a0f05 });
+  mat('terrace', 0x7f8f6a, { roughness: 0.95 });
+
+  var layers = {}, pickables = [];
+  function layer(key, label, swatch, on) { var g = new THREE.Group(); g.name = key; g.visible = on; scene.add(g); layers[key] = { g: g, label: label, swatch: swatch }; return g; }
+  function add(group, geom, material, pos, info, opts) {
+    var m = new THREE.Mesh(geom, material); m.position.copy(pos); m.castShadow = !(opts && opts.noShadow); m.receiveShadow = true;
+    if (info) { m.userData.info = info; pickables.push(m); }
+    group.add(m); return m;
+  }
+  var box = function (w, h, d) { return new THREE.BoxGeometry(w, h, d); };
+
+  var L = {
+    site: layer('site', 'Site', '#9aa596', true), plinth: layer('plinth', 'Earth and brick plinth', '#9b7a58', true),
+    cores: layer('cores', 'Concrete cores', '#b9b3a7', true), frame: layer('frame', 'Glulam columns and beams', '#c99a62', true),
+    floors: layer('floors', 'CLT floors and terrace', '#dcb787', true), roof: layer('roof', 'Hall diagrid roof', '#c99a62', true),
+    canopy: layer('canopy', 'Terrace pergola', '#c99a62', true), glass: layer('glass', 'Glazing', '#9fc6c8', true),
+    veil: layer('veil', 'Copper veil', '#b06238', true), cr003: layer('cr003', 'CR-003 south elements (proposed)', '#d0573a', false)
+  };
+  // levels groups for explode
+  var levelGroups = [];
+
+  // site
+  var ground = add(L.site, new THREE.PlaneGeometry(900, 900), MAT.ground, new THREE.Vector3(0, -0.01, 0), null, { noShadow: true });
+  ground.rotation.x = -Math.PI / 2; ground.castShadow = false;
+  var hallFloor = add(L.site, box(24, 0.2, 24), MAT.concrete, P3(20, 20, -0.1), { t: 'Hall floor', d: '24 × 24 m, polished concrete on ground slab' });
+
+  // plinth: 1.2 m earth/brick walls 0.45 thick on north, east, west and on the south of both wings
+  [[0, 0, 48, 0], [0, 0, 0, 32], [48, 0, 48, 32], [0, 32, 8, 32], [32, 32, 48, 32]].forEach(function (s) {
+    var len = Math.hypot(s[2] - s[0], s[3] - s[1]), horiz = s[1] === s[3];
+    add(L.plinth, box(horiz ? len : 0.45, 1.2, horiz ? 0.45 : len), MAT.earth, P3((s[0] + s[2]) / 2, (s[1] + s[3]) / 2, 0.6),
+        { t: 'Plinth', d: 'Rammed earth and brick, 1.2 m high, 0.45 m thick · thermal mass' });
+  });
+
+  // cores
+  GEO.cores.forEach(function (c, i) {
+    var h = GEO.levels[3];
+    add(L.cores, box(8, h, 8), MAT.concrete, P3((c[0] + c[1]) / 2, (c[2] + c[3]) / 2, h / 2),
+        { t: 'Core ' + (i + 1), d: '8 × 8 m reinforced-concrete box, 0.4 m walls, C40/50 · stairs, lift, risers · resists all lateral load' });
+  });
+
+  // columns (same rule as bim/make_ifc.py)
+  function inHallOpen(x, y) { return GEO.hall[0] < x && x < GEO.hall[1] && y > GEO.hall[2]; }
+  function inCore(x, y) { return GEO.cores.some(function (c) { return c[0] <= x && x <= c[1] && c[2] <= y && y <= c[3]; }); }
+  var nCol = 0;
+  for (var gx = 0; gx <= GEO.X; gx += GEO.grid) for (var gy = 0; gy <= GEO.Y; gy += GEO.grid) {
+    if (inCore(gx, gy) || (GEO.hall[0] < gx && gx < GEO.hall[1] && GEO.hall[2] < gy && gy < GEO.hall[3])) continue;
+    var top = inHallOpen(gx, gy) ? GEO.levels[2] : GEO.levels[3];
+    add(L.frame, box(GEO.col, top, GEO.col), MAT.glulam, P3(gx, gy, top / 2),
+        { t: 'Glulam column ' + gx + ',' + gy, d: '0.40 × 0.40 m placeholder, ' + top.toFixed(1) + ' m tall' + (top === GEO.levels[2] ? ' · hall wall column, L/i ≈ 84: check buckling' : '') });
+    nCol++;
+  }
+
+  // floors (U-shaped slab with hall void) + beams, per level group so they can explode
+  var slabShape = new THREE.Shape();
+  [[0, 0], [48, 0], [48, 32], [32, 32], [32, 8], [8, 8], [8, 32], [0, 32]].forEach(function (p, i) { var x = p[0] - 24, z = p[1] - 16; if (i) slabShape.lineTo(x, -z); else slabShape.moveTo(x, -z); });
+  for (var li = 1; li <= 3; li++) {
+    var z = GEO.levels[li], g = new THREE.Group(); g.userData.baseLevel = li; L.floors.add(g); levelGroups.push(g);
+    var geom = new THREE.ExtrudeGeometry(slabShape, { depth: GEO.clt, bevelEnabled: false });
+    var s = new THREE.Mesh(geom, li === 3 ? MAT.terrace : MAT.clt); s.rotation.x = -Math.PI / 2; s.position.y = z - GEO.clt;
+    s.castShadow = s.receiveShadow = true;
+    s.userData.info = li === 3 ? { t: 'Roof terrace (+13.9 m)', d: 'CLT 150 mm deck with planting and paving · 420 m² usable · events and café overflow' }
+                               : { t: 'CLT floor L' + li + ' (+' + z + ' m)', d: '150 mm 5-ply CLT, 960 m² (hall void removed) · U-shaped diaphragm: see report F2' };
+    pickables.push(s); g.add(s);
+    // joists (y-span) and girders (x-span) as one merged look: draw joists only for clarity
+    for (var jx = 0; jx <= 48; jx += 4) for (var y0 = 0; y0 < 32; y0 += 8) {
+      var ym = y0 + 4;
+      if (inHallOpen(jx, ym) || GEO.cores.some(function (c) { return c[0] < jx && jx < c[1] && c[2] < ym && ym < c[3]; })) continue;
+      var b = new THREE.Mesh(box(GEO.joist[0], GEO.joist[1], 8), MAT.glulam); b.position.copy(P3(jx, ym, z - GEO.clt - GEO.joist[1] / 2));
+      b.castShadow = b.receiveShadow = true; b.userData.info = { t: 'Glulam joist', d: 'GL24h 240 × 680 mm, 8 m span at 4 m · L/424 incl. shear (CalculiX-verified)' }; pickables.push(b); g.add(b);
+    }
+  }
+  // floor-to-level explode: frame and cores stay, floor groups lift
+
+  // hall diagrid roof: u,v over 24 x 24 m, rise 1.8 m above +9.7
+  var N = 12, rise = 1.8, base = GEO.levels[2] + 0.2, nodes = [];
+  for (var a = 0; a <= N; a++) { nodes[a] = []; for (var c2 = 0; c2 <= N; c2++) {
+    var u = a / N * 2 - 1, v = c2 / N * 2 - 1;
+    nodes[a][c2] = P3(8 + a / N * 24, 8 + c2 / N * 24, base + rise * Math.cos(Math.PI * u / 2) * Math.cos(Math.PI * v / 2));
+  } }
+  function rib(p, q, r, matl, info, group) {
+    var d = new THREE.Vector3().subVectors(q, p), len = d.length();
+    var m = new THREE.Mesh(new THREE.BoxGeometry(r, r * 1.6, len), matl);
+    m.position.copy(p).add(q).multiplyScalar(0.5); m.lookAt(q); m.castShadow = m.receiveShadow = true;
+    if (info) { m.userData.info = info; pickables.push(m); }
+    group.add(m);
+  }
+  var ribInfo = { t: 'Diagrid rib', d: 'Curved glulam rib on steel nodes · 24 × 24 m hall roof · form-finding still to do (precedents: Multihalle, Pompidou-Metz)' };
+  for (a = 0; a < N; a++) for (c2 = 0; c2 < N; c2++) {
+    rib(nodes[a][c2], nodes[a + 1][c2 + 1], 0.22, MAT.glulam, ribInfo, L.roof);
+    rib(nodes[a + 1][c2], nodes[a][c2 + 1], 0.22, MAT.glulam, ribInfo, L.roof);
+  }
+  var nodeGeo = new THREE.SphereGeometry(0.18, 10, 8);
+  for (a = 0; a <= N; a++) for (c2 = 0; c2 <= N; c2++) if ((a + c2) % 2 === 0) add(L.roof, nodeGeo, MAT.steel, nodes[a][c2], { t: 'Steel node', d: 'S355 cast or fabricated node · standardise node types to control cost' });
+  // roof glazing over the diagrid
+  var rg = new THREE.Mesh(new THREE.PlaneGeometry(24, 24), MAT.glass); rg.rotation.x = -Math.PI / 2; rg.position.copy(P3(20, 20, base + rise + 0.25)); L.glass.add(rg);
+
+  // pergola over north strip of terrace: light lattice 13.9 → 17.0
+  for (var px = 0; px <= 48; px += 4) { rib(P3(px, 0.5, GEO.levels[3]), P3(px, 4, GEO.canopyTop), 0.14, MAT.glulam, { t: 'Pergola rib', d: 'Glulam lattice pergola over the terrace, to +17.0 m' }, L.canopy); rib(P3(px, 4, GEO.canopyTop), P3(px, 7.5, GEO.levels[3]), 0.14, MAT.glulam, null, L.canopy); }
+  rib(P3(0, 4, GEO.canopyTop), P3(48, 4, GEO.canopyTop), 0.16, MAT.glulam, null, L.canopy);
+
+  // glazing: hall south wall, and storey glazing on the wings
+  add(L.glass, box(24, GEO.levels[2], 0.05), MAT.glass, P3(20, 32, GEO.levels[2] / 2), { t: 'Hall south glazing', d: '24 × 9.7 m glazed wall behind the veil · needs drift-tolerant framing (report §14)' }, { noShadow: true });
+  // entry cantilever
+  add(L.floors, box(16, 0.35, 4), MAT.clt, P3(24, 34, 5.0), { t: 'Entry cantilever', d: '16 × 4 m canopy · long-term creep design required (precedent: Fallingwater)' });
+
+  // copper veil: same seeded rule as the concept sheet
+  function mulberry32(s) { return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function makeNoise(seed) { var r = mulberry32(seed), n = 64, gg = new Float32Array(n * n); for (var i = 0; i < gg.length; i++) gg[i] = r(); var sm = function (t) { return t * t * (3 - 2 * t); }; var vv = function (a, b) { return gg[(b & 63) * n + (a & 63)]; }; return function (x, y) { var xi = Math.floor(x), yi = Math.floor(y), uu = sm(x - xi), ww = sm(y - yi); return (vv(xi, yi) * (1 - uu) + vv(xi + 1, yi) * uu) * (1 - ww) + (vv(xi, yi + 1) * (1 - uu) + vv(xi + 1, yi + 1) * uu) * ww; }; }
+  var CELL = 24, COLS = 48, ROWS = 17, cv = document.createElement('canvas'); cv.width = COLS * CELL; cv.height = ROWS * CELL;
+  (function paintVeil() {
+    var x = cv.getContext('2d'), noise = makeNoise(1618), rnd = mulberry32(1618 * 7919 + 1), inc = Math.cos(48 * Math.PI / 180);
+    var gr = x.createLinearGradient(0, 0, 0, cv.height); gr.addColorStop(0, '#b8693f'); gr.addColorStop(0.5, '#93694a'); gr.addColorStop(1, '#5e8c7c');
+    x.fillStyle = gr; x.fillRect(0, 0, cv.width, cv.height);
+    x.globalCompositeOperation = 'destination-out';
+    for (var j = 0; j < ROWS; j++) { var ym = ROWS - 1 - j + 0.5; for (var i = 0; i < COLS; i++) {
+      var nn = noise(i * 0.14 + 3.1, ym * 0.14 + 7.7), e = Math.min(1, inc * (0.85 + 0.3 * ym / ROWS) * (0.7 + 0.6 * nn));
+      var f = 0.64 - 0.55 * e + (rnd() - 0.5) * 0.06; if (ym < 3.5) f += 0.28 * (1 - ym / 3.5); f = Math.max(0.05, Math.min(0.78, f));
+      x.beginPath(); x.arc((i + 0.5) * CELL, (j + 0.5) * CELL, CELL * Math.sqrt(f / Math.PI), 0, 6.2832); x.fill();
+    } }
+  })();
+  var tex = new THREE.CanvasTexture(cv); tex.anisotropy = 4;
+  var veilMat = new THREE.MeshStandardMaterial({ map: tex, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide, metalness: 0.55, roughness: 0.45, clippingPlanes: [clip] });
+  var veil = new THREE.Mesh(new THREE.PlaneGeometry(48, 17), veilMat); veil.position.copy(P3(24, 32.8, 8.5));
+  veil.castShadow = true; veil.receiveShadow = true;
+  veil.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: 0.5 });
+  veil.userData.info = { t: 'Copper veil', d: '48 × 17 m, 816 apertures from the seeded sun rule (seed 1618) · patinates to green · casts dappled light into the hall' };
+  pickables.push(veil); L.veil.add(veil);
+
+  // CR-003 proposed south elements: 4 x 4 m walls in the wings
+  GEO.cr003.forEach(function (p, i) {
+    add(L.cr003, box(4, GEO.levels[3], 0.4), MAT.cr003, P3(p[0], p[1], GEO.levels[3] / 2),
+        { t: 'CR-003 element ' + (i + 1) + ' (proposed)', d: 'Lateral element ≈ 0.5 × core stiffness · removes torsion: e/B 24 % → 1 %, edge amplification 1.34 → 0.99' });
+    add(L.cr003, box(0.4, GEO.levels[3], 4), MAT.cr003, P3(p[0], p[1], GEO.levels[3] / 2), null);
+  });
+
+  // layer UI
+  $('layers').innerHTML = Object.keys(layers).map(function (k) { var l = layers[k]; return '<label class="chk"><input type="checkbox" id="ly-' + k + '"' + (l.g.visible ? ' checked' : '') + '><i style="background:' + l.swatch + '"></i>' + l.label + '</label>'; }).join('');
+  Object.keys(layers).forEach(function (k) { $('ly-' + k).addEventListener('change', function (e) { layers[k].g.visible = e.target.checked; }); });
+
+  // sun
+  function setSun() {
+    var az = +$('saz').value * Math.PI / 180, al = +$('salt').value * Math.PI / 180;
+    var dir = new THREE.Vector3(-Math.sin(az) * Math.cos(al), Math.sin(al), Math.cos(az) * Math.cos(al));
+    sun.position.copy(dir.multiplyScalar(90)).add(new THREE.Vector3(0, 0, 0)); sun.target.position.set(0, 0, 0);
+    sun.intensity = 0.35 + 0.75 * Math.sin(al);
+    $('saz-v').textContent = +$('saz').value === 0 ? 'south' : (+$('saz').value < 0 ? 'east ' : 'west ') + Math.abs(+$('saz').value) + '°';
+    $('salt-v').textContent = $('salt').value + '°';
+  }
+  ['saz', 'salt'].forEach(function (id) { $(id).addEventListener('input', setSun); }); setSun();
+  // section cut keeps x <= cut (brief coords)
+  function setCut() { var c = +$('cut').value; clip.constant = c - 24; $('cut-v').textContent = c >= 48 ? 'off' : 'x = ' + c + ' m'; }
+  $('cut').addEventListener('input', setCut); setCut();
+  function setExp() { var e = +$('exp').value; levelGroups.forEach(function (g) { g.position.y = e * g.userData.baseLevel; }); $('exp-v').textContent = e ? e + ' m' : 'off'; }
+  $('exp').addEventListener('input', setExp); setExp();
+
+  // views
+  var VIEWS = { persp: [[52, 34, 62], [0, 6, 0]], plan: [[0, 95, 0.01], [0, 0, 0]], south: [[0, 9, 78], [0, 8, 0]], hall: [[-2, 2.2, 10], [-3, 6, -6]] };
+  function view(k) { var v = VIEWS[k]; camera.position.set(v[0][0], v[0][1], v[0][2]); controls.target.set(v[1][0], v[1][1], v[1][2]); controls.update();
+    document.querySelectorAll('[data-view]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === k); }); }
+  document.querySelectorAll('[data-view]').forEach(function (b) { b.addEventListener('click', function () { view(b.getAttribute('data-view')); }); });
+  view('persp');
+
+  // hover details
+  var ray = new THREE.Raycaster(), mouse = new THREE.Vector2(), tip = $('tip');
+  renderer.domElement.addEventListener('pointermove', function (e) {
+    var r = renderer.domElement.getBoundingClientRect(); mouse.x = (e.clientX - r.left) / r.width * 2 - 1; mouse.y = -(e.clientY - r.top) / r.height * 2 + 1;
+    ray.setFromCamera(mouse, camera);
+    var hits = ray.intersectObjects(pickables.filter(function (m) { var o = m; while (o) { if (!o.visible) return false; o = o.parent; } return true; }), false)
+      .filter(function (h) { return clip.distanceToPoint(h.point) >= 0; });
+    if (hits.length) { var inf = hits[0].object.userData.info; tip.innerHTML = '<b>' + inf.t + '</b><br>' + inf.d; tip.hidden = false;
+      var x = e.clientX - r.left + 14, y = e.clientY - r.top + 14; tip.style.left = Math.min(x, r.width - 270) + 'px'; tip.style.top = Math.min(y, r.height - 80) + 'px'; }
+    else tip.hidden = true;
+  });
+  renderer.domElement.addEventListener('pointerleave', function () { tip.hidden = true; });
+
+  // theme + size
+  function theme() { scene.background = new THREE.Color(css('--surface') || '#F3F4F1'); }
+  theme();
+  if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', theme);
+  new MutationObserver(theme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  function size() { var w = vp.clientWidth, h = Math.round(Math.min(Math.max(w * 0.62, 320), window.innerHeight * 0.78)); renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  window.addEventListener('resize', size); size();
+
+  var spinning = false, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('spin').addEventListener('click', function () { spinning = !spinning; controls.autoRotate = spinning && !reduce; controls.autoRotateSpeed = 0.6; this.setAttribute('aria-pressed', spinning); this.textContent = spinning ? 'Stop' : 'Turn slowly'; });
+  (function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+  window.__pavilion = { columns: nCol, pickables: pickables.length, layers: Object.keys(layers) };
+})();
+</script>
