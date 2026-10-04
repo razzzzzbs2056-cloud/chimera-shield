@@ -54,5 +54,15 @@ def build() -> Path:
     return out
 
 
+def build_gallery() -> Path:
+    """Houses gallery: same CSV, so cards and atlas never disagree."""
+    rows = load()
+    html = (HERE / "houses-gallery.template.html").read_text()
+    out = HERE / "houses-gallery.html"
+    out.write_text(html.replace("/*__DATA__*/[]", json.dumps(rows, ensure_ascii=False).replace("</", "<\\/")))
+    return out
+
+
 if __name__ == "__main__":
     print(build(), len(load()), "precedents")
+    print(build_gallery())

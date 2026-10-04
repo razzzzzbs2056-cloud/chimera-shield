@@ -34,3 +34,14 @@ def test_built_page_embeds_all_entries():
     out = build_atlas.build()
     html = out.read_text()
     assert "/*__DATA__*/" not in html and html.count('"lesson_for_pavilion"') == len(build_atlas.load())
+
+
+def test_gallery_houses_exist_in_library_and_have_builders():
+    import re
+    out = build_atlas.build_gallery()
+    html = out.read_text()
+    ids_in_csv = {r["id"] for r in build_atlas.load()}
+    houses = re.findall(r"\{ id: '([a-z0-9-]+)', notice:", html)
+    builders = set(re.findall(r"\n    '([a-z0-9-]+)': function \(g\)", html))
+    assert len(houses) == 12 and set(houses) <= ids_in_csv
+    assert set(houses) == builders

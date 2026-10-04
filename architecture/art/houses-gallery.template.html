@@ -1,0 +1,349 @@
+<title>Houses in 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+  /* Layout concept: a museum room. The house list is the wall label rail on the left, the model sits on its plinth in the middle, and the curator's card explains it. */
+  :root {
+    --bg: #ECEAE5; --surface: #F7F6F2; --ink: #1D2220; --muted: #5E6661; --line: #CAC6BD;
+    --accent: #8A3B2E; --hi: #F1E8D7;
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #111412; --surface: #191E1B; --ink: #E7EBE8; --muted: #9BA5A0; --line: #2F3732; --accent: #E59A86; --hi: #2E281F; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #111412; --surface: #191E1B; --ink: #E7EBE8; --muted: #9BA5A0; --line: #2F3732; --accent: #E59A86; --hi: #2E281F; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--f-body); padding-inline: 16px; padding-block: 24px 64px; margin: 0; }
+  main { max-width: 1280px; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.06; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 { font-size: 1.25rem; font-weight: 800; }
+  p { margin: 0; max-width: 68ch; }
+  .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .note { border-left: 3px solid var(--accent); padding-left: 12px; max-width: 74ch; }
+  section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .room { display: grid; grid-template-columns: 220px minmax(0, 1fr) 300px; gap: 14px; align-items: start; }
+  @media (max-width: 1100px) { .room { grid-template-columns: minmax(0, 1fr) 300px; } .rail { grid-column: 1 / -1; } }
+  @media (max-width: 760px) { .room { grid-template-columns: 1fr; } }
+  .rail { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  @media (max-width: 1100px) { .rail { flex-direction: row; flex-wrap: wrap; } }
+  .rail button { text-align: left; font: 500 14px var(--f-body); padding: 8px 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; gap: 10px; }
+  .rail button span { font: 12px var(--f-mono); color: var(--muted); }
+  .rail button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .rail button[aria-pressed="true"] span { color: var(--bg); }
+  .viewport { position: relative; border: 1px solid var(--line); background: var(--surface); min-width: 0; }
+  .viewport canvas { display: block; width: 100%; touch-action: none; }
+  #fallback { padding: 32px; color: var(--muted); }
+  .hud { position: absolute; left: 10px; bottom: 8px; font: 11px var(--f-mono); color: var(--muted); pointer-events: none; }
+  .vbtns { position: absolute; right: 8px; top: 8px; display: flex; gap: 6px; }
+  .vbtns button, .btn { font: 600 12.5px var(--f-body); padding: 6px 10px; border: 1px solid var(--ink); background: var(--surface); color: var(--ink); cursor: pointer; }
+  .vbtns button:hover, .vbtns button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .card { border: 1px solid var(--line); background: var(--surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .card dl { margin: 0; display: grid; grid-template-columns: 82px 1fr; gap: 4px 10px; font-size: 14px; }
+  .card dt { color: var(--muted); font-size: 12.5px; }
+  .card dd { margin: 0; min-width: 0; }
+  .lesson { background: var(--hi); padding: 10px 12px; font-size: 14px; }
+  .lesson span { display: block; font: 11px var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+  .notice { font-size: 14px; }
+  .index { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+  .index a { display: flex; flex-direction: column; gap: 4px; padding: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; min-width: 0; }
+  .index a:hover { border-color: var(--ink); }
+  .index a b { font-family: var(--f-display); font-size: 1.05rem; }
+  .index a small { color: var(--muted); }
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:14px">
+    <span class="label">Precedent gallery · <span id="n-houses"></span> houses in 3D · 1567 to 2005</span>
+    <h1>Houses that changed architecture</h1>
+    <p>Twelve homes, from Palladio's Villa Rotonda to Nishizawa's Moriyama House, modelled in the round. Each stands with a 1.75 m figure for scale, and each card ends with the lesson our own designs took from it.</p>
+    <p class="note">Interpretive massing models from general knowledge: forms and proportions are recognisable, dimensions are approximate, and details are simplified. Not measured drawings. Facts on the cards should be verified before citing.</p>
+  </header>
+
+  <section aria-labelledby="t-g">
+    <h2 id="t-g">Gallery</h2>
+    <div class="room">
+      <div class="rail" id="rail" role="group" aria-label="Choose a house"></div>
+      <div class="viewport" id="vp">
+        <div id="fallback" hidden>The 3D view needs WebGL and the three.js library. The cards and index still work.</div>
+        <div class="vbtns"><button id="tour" aria-pressed="false">Tour all</button><button id="spin" aria-pressed="false">Turn</button></div>
+        <div class="hud">Drag to orbit · scroll to zoom · right-drag to pan</div>
+      </div>
+      <article class="card" id="card" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-i">
+    <h2 id="t-i">Everything in this project</h2>
+    <div class="index">
+      <a href="https://claude.ai/artifact/1v1kqhF6DAvrzD8DCEoMtq" target="_blank" rel="noopener"><span class="label">3D house</span><b>The Lantern House</b><small>3 storeys, 3 bedrooms, built from these precedents</small></a>
+      <a href="https://claude.ai/artifact/BoSYoze2aNs1XeM1DRRFeg" target="_blank" rel="noopener"><span class="label">3D house</span><b>The Garden House</b><small>Single storey, 3 bedrooms, 150 m²</small></a>
+      <a href="https://claude.ai/artifact/Hy7KFGYW2YJqSus9ifdmqy" target="_blank" rel="noopener"><span class="label">3D + business case</span><b>Chimera Pavilion model</b><small>Layers, section, sun, NPV and IRR</small></a>
+      <a href="https://claude.ai/artifact/LzZ4CjjUCeCNzjWLxutW8m" target="_blank" rel="noopener"><span class="label">Concept sheet</span><b>Chimera Pavilion</b><small>Generative façade, plan, section, lattice</small></a>
+      <a href="https://claude.ai/artifact/9SZzsYiHdoWwEv8ZCHmmqH" target="_blank" rel="noopener"><span class="label">Library</span><b>Precedent Atlas</b><small id="atlas-n">Landmark buildings with lessons</small></a>
+    </div>
+  </section>
+</main>
+
+<script>
+var PRECEDENTS = /*__DATA__*/[];
+</script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  var byId = {}; PRECEDENTS.forEach(function (p) { byId[p.id] = p; });
+
+  /* Each entry: id in world-precedents.csv, what to notice, and a builder using simple solids (metres, y up, ground at 0). */
+  var HOUSES = [
+    { id: 'villa-rotonda', notice: 'Four identical temple porticoes, one per side, around a square block crowned by a low dome: the same house from every direction.' },
+    { id: 'robie-house', notice: 'Long, low roofs that cantilever far past the walls, so the house seems to hug the ground of the prairie.' },
+    { id: 'schroder-house', notice: 'Walls are free planes and lines of primary colour; the upper floor opens up when its sliding walls are pushed back.' },
+    { id: 'villa-savoye', notice: 'A white box lifted on thin columns, a continuous ribbon window, and a roof garden screened by curved walls.' },
+    { id: 'villa-muller', notice: 'A plain white cube outside; inside, rooms sit at different levels (the Raumplan), hinted at by the irregular windows.' },
+    { id: 'maison-de-verre', notice: 'A three-storey wall of glass block glowing between an older building above and the courtyard below.' },
+    { id: 'melnikov-house', notice: 'Two interlocking cylinders whose walls are a honeycomb of hexagonal openings.' },
+    { id: 'fallingwater', notice: 'Concrete terraces cantilever out over the waterfall from a tall stone core.' },
+    { id: 'eames-house', notice: 'Off-the-shelf steel frames filled with glass and coloured panels, in two boxes around a courtyard.' },
+    { id: 'glass-house', notice: 'A glass box on a low plinth; only the brick cylinder (the bathroom and fireplace) is solid.' },
+    { id: 'farnsworth-house', notice: 'A white steel frame lifted above the flood plain, with a separate floating terrace and steps.' },
+    { id: 'moriyama-house', notice: 'Not one building but a cluster of white boxes, with small gardens between them.' }
+  ];
+  $('n-houses').textContent = HOUSES.length;
+  $('atlas-n').textContent = PRECEDENTS.length + ' landmark buildings with lessons';
+
+  // rail + card (work without WebGL)
+  $('rail').innerHTML = HOUSES.map(function (h, i) { var p = byId[h.id]; return '<button data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + p.name.replace(/ \(.*\)/, '') + '<span>' + p.year.replace('begun ', '') + '</span></button>'; }).join('');
+  function card(i) {
+    var h = HOUSES[i], p = byId[h.id];
+    $('card').innerHTML = '<span class="label">' + p.place + ' · ' + p.year + '</span><h3>' + p.name + '</h3>' +
+      '<dl><dt>Designers</dt><dd>' + p.designers + '</dd><dt>Structure</dt><dd>' + p.structure + '</dd><dt>Materials</dt><dd>' + p.materials + '</dd><dt>Light, climate</dt><dd>' + p.climate_light + '</dd></dl>' +
+      '<p class="notice"><b>What to notice.</b> ' + h.notice + '</p><p class="notice"><b>Why it mattered.</b> ' + p.innovation + '</p>' +
+      '<div class="lesson"><span>Lesson we used</span>' + p.lesson_for_pavilion.replace(/^House: /, '') + '</div>';
+  }
+  card(0);
+
+  var webgl = (function () { try { var c = document.createElement('canvas'); return !!(c.getContext('webgl') || c.getContext('experimental-webgl')); } catch (e) { return false; } })();
+  var current = 0, select = function (i) { current = i; card(i); document.querySelectorAll('#rail button').forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-i') === i); }); };
+  document.querySelectorAll('#rail button').forEach(function (b) { b.addEventListener('click', function () { stopTour(); show(+b.getAttribute('data-i')); }); });
+  var show = function (i) { select(i); }, stopTour = function () {};
+  if (!window.THREE || !THREE.OrbitControls || !webgl) { $('fallback').hidden = false; return; }
+
+  var vp = $('vp'), renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  vp.insertBefore(renderer.domElement, vp.firstChild);
+  var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(36, 1.5, 0.1, 2000);
+  var controls = new THREE.OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49;
+  scene.add(new THREE.HemisphereLight(0xe8eefc, 0x6f6252, 0.62));
+  var sun = new THREE.DirectionalLight(0xfff1dc, 1.05); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.03; scene.add(sun); scene.add(sun.target);
+  var ground = new THREE.Mesh(new THREE.CircleGeometry(400, 64), new THREE.MeshStandardMaterial({ color: 0x8aa06e, roughness: 1 })); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+
+  var M = {}; function mat(k, c, o) { M[k] = new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.8 }, o || {})); }
+  mat('white', 0xf3f1ea); mat('render', 0xe9e2d1); mat('cream', 0xe8dcc0); mat('glass', 0x9cc4cf, { transparent: true, opacity: 0.35, roughness: 0.05, metalness: 0.1 });
+  mat('dark', 0x2b2f2e, { roughness: 0.5 }); mat('steel', 0x222424, { roughness: 0.45, metalness: 0.4 }); mat('brick', 0x8a4a35); mat('roman', 0x9a6b4e);
+  mat('roof', 0x5e5a52); mat('terra', 0xa8553a); mat('stone', 0xa49783); mat('ochre', 0xd8b882); mat('water', 0x5f97b5, { roughness: 0.15, metalness: 0.1 });
+  mat('rock', 0x6e6a60); mat('red', 0xc0392b); mat('yellow', 0xe2b41b); mat('blue', 0x2a5ca8); mat('grey', 0x9aa0a0); mat('timber', 0xa77a4f); mat('green', 0x4f7a43);
+  mat('person', 0x37474f); mat('ribbon', 0x3c4f5a, { roughness: 0.15, metalness: 0.3 });
+  function hexTex() { var c = document.createElement('canvas'); c.width = 512; c.height = 512; var x = c.getContext('2d'); x.fillStyle = '#e7dccb'; x.fillRect(0, 0, 512, 512); x.fillStyle = '#2b2f2e';
+    for (var r = 0; r < 8; r++) for (var q = 0; q < 8; q++) { var cx = q * 64 + (r % 2) * 32 + 32, cy = r * 64 + 32; if ((r * 7 + q * 3) % 5 === 0) continue; x.beginPath(); for (var k = 0; k < 6; k++) { var a = Math.PI / 6 + k * Math.PI / 3; x.lineTo(cx + 18 * Math.cos(a), cy + 18 * Math.sin(a)); } x.closePath(); x.fill(); }
+    var t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; }
+  function blockTex() { var c = document.createElement('canvas'); c.width = 256; c.height = 256; var x = c.getContext('2d'); x.fillStyle = '#9fb5b8'; x.fillRect(0, 0, 256, 256);
+    for (var i = 0; i < 8; i++) for (var j = 0; j < 8; j++) { var g = x.createRadialGradient(i * 32 + 16, j * 32 + 16, 2, i * 32 + 16, j * 32 + 16, 18); g.addColorStop(0, '#f4fbfb'); g.addColorStop(1, '#c6d7d9'); x.fillStyle = g; x.fillRect(i * 32 + 2, j * 32 + 2, 28, 28); }
+    var t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; }
+  M.hex = new THREE.MeshStandardMaterial({ map: hexTex(), roughness: 0.9 });
+  M.block = new THREE.MeshStandardMaterial({ map: blockTex(), roughness: 0.6, emissive: 0x222a2b });
+
+  var model = null;
+  function G() { return new THREE.Group(); }
+  function B(g, w, h, d, m, x, y, z, ry) { var o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y + h / 2, z); if (ry) o.rotation.y = ry; o.castShadow = o.receiveShadow = true; g.add(o); return o; }
+  function CYL(g, r, h, m, x, y, z, seg, rt) { var o = new THREE.Mesh(new THREE.CylinderGeometry(rt || r, r, h, seg || 32), m); o.position.set(x, y + h / 2, z); o.castShadow = o.receiveShadow = true; g.add(o); return o; }
+  function person(g, x, z) { CYL(g, 0.22, 1.5, M.person, x, 0, z, 12); var s = new THREE.Mesh(new THREE.SphereGeometry(0.13, 12, 10), M.person); s.position.set(x, 1.62, z); s.castShadow = true; g.add(s); }
+  function prism(g, w, h, d, m, x, y, z, ry) { // triangular pediment, ridge along z
+    var sh = new THREE.Shape(); sh.moveTo(-w / 2, 0); sh.lineTo(w / 2, 0); sh.lineTo(0, h); sh.closePath();
+    var o = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: d, bevelEnabled: false }), m); o.geometry.translate(0, 0, -d / 2); o.position.set(x, y, z); o.rotation.y = ry || 0; o.castShadow = o.receiveShadow = true; g.add(o); return o; }
+  function band(g, w, h, d, x, y, z, ry) { return B(g, w, h, d, M.ribbon, x, y, z, ry); }
+  function ctx(o) { o.userData.context = true; return o; }   // context (water, trees) is left out of camera framing
+
+  var BUILD = {
+    'villa-rotonda': function (g) {
+      B(g, 24, 1.6, 24, M.stone, 0, 0, 0);                   // podium
+      B(g, 22, 11, 22, M.cream, 0, 1.6, 0);                   // block
+      for (var k = 0; k < 4; k++) {
+        var ang = k * Math.PI / 2, s = new THREE.Group(); s.rotation.y = ang; g.add(s);
+        B(s, 14, 1.6, 6, M.stone, 0, 0, 14);                   // steps platform
+        for (var c = 0; c < 6; c++) CYL(s, 0.45, 7.5, M.white, -5 + c * 2, 1.6, 14.5, 16);
+        B(s, 12, 1.2, 4.6, M.white, 0, 9.1, 13.4);            // entablature
+        prism(s, 12.4, 2.6, 4.6, M.white, 0, 10.3, 13.4, 0);
+        B(s, 8, 1.6, 6, M.stone, 0, 0, 19.5);                  // stairs down
+        for (var w = -1; w <= 1; w += 2) B(s, 1.2, 2, 0.1, M.dark, w * 7.5, 4, 11.05);
+      }
+      B(g, 24, 0.6, 24, M.white, 0, 12.6, 0);                  // cornice
+      var roof = new THREE.Mesh(new THREE.ConeGeometry(15.5, 3.2, 4), M.terra); roof.rotation.y = Math.PI / 4; roof.position.y = 13.2 + 1.6; roof.castShadow = true; g.add(roof);
+      CYL(g, 5.2, 2.2, M.cream, 0, 14.6, 0, 40); var dome = new THREE.Mesh(new THREE.SphereGeometry(5.2, 40, 16, 0, Math.PI * 2, 0, Math.PI / 2), M.terra); dome.position.y = 16.8; dome.castShadow = true; g.add(dome);
+      CYL(g, 0.8, 1.6, M.white, 0, 21.8, 0, 16);
+      person(g, 3, 23);
+    },
+    'robie-house': function (g) {
+      B(g, 46, 1.2, 12, M.roman, 0, 0, 0);
+      B(g, 34, 3.2, 10, M.roman, 2, 1.2, 0); band(g, 30, 1.2, 10.2, 2, 2.8, 0);
+      B(g, 54, 0.45, 15, M.roof, 2, 4.4, 0);                   // main hipped roof as a low slab with long overhangs
+      B(g, 50, 0.5, 12, M.roof, 2, 4.85, 0);
+      B(g, 16, 3.0, 9, M.roman, 6, 5.35, 0); band(g, 14, 1.0, 9.2, 6, 6.6, 0);
+      B(g, 24, 0.4, 13, M.roof, 6, 8.35, 0);
+      B(g, 2, 7.5, 2, M.roman, -4, 4, 0);                       // chimney core
+      B(g, 10, 1.4, 14, M.roman, -18, 0, 0); B(g, 14, 0.9, 4, M.roman, 10, 1.2, 7);
+      person(g, -8, 10);
+    },
+    'schroder-house': function (g) {
+      B(g, 9.5, 0.3, 8, M.grey, 0, 0, 0);
+      B(g, 8.5, 2.8, 7, M.white, 0, 0.3, 0); B(g, 8.6, 0.25, 7.2, M.white, 0, 3.1, 0); B(g, 8.0, 2.6, 6.4, M.white, 0.2, 3.35, -0.2);
+      B(g, 9.6, 0.25, 7.8, M.white, 0.4, 5.95, 0.2);              // roof plane overhanging
+      band(g, 3.2, 1.6, 0.1, -2.2, 3.9, 3.0); band(g, 0.1, 1.6, 2.8, 4.2, 3.9, 1.0); band(g, 2.6, 1.8, 0.1, 2.2, 0.8, 3.55);
+      B(g, 0.1, 2.8, 2.6, M.grey, -4.3, 0.3, 1.6); B(g, 3.0, 2.6, 0.12, M.grey, -2.6, 3.35, 3.2);
+      B(g, 0.14, 6.2, 0.14, M.red, 4.4, 0, 3.6); B(g, 4.4, 0.16, 0.16, M.red, 2.2, 3.05, 3.65);
+      B(g, 0.14, 3.0, 0.14, M.yellow, -4.6, 0, -2.4); B(g, 3.2, 0.16, 0.16, M.blue, -2.8, 2.95, 3.7); B(g, 0.12, 0.12, 4.2, M.dark, 4.5, 4.9, 1.2);
+      B(g, 2.6, 0.12, 1.4, M.white, 2.6, 3.1, 4.2);                // balcony plane
+      person(g, -1, 6);
+    },
+    'villa-savoye': function (g) {
+      for (var i = -2; i <= 2; i++) for (var j = -2; j <= 2; j++) { if (Math.abs(i) < 2 && Math.abs(j) < 2 && !(i === 0 && j === 0)) continue; CYL(g, 0.18, 3.2, M.white, i * 4.5, 0, j * 4.2, 16); }
+      var sh = new THREE.Shape(); sh.moveTo(-7.5, -6); sh.lineTo(7.5, -6); sh.lineTo(7.5, 2); sh.absarc(0, 2, 7.5, 0, Math.PI, false); sh.lineTo(-7.5, -6);
+      var gl = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: 3.0, bevelEnabled: false }), M.glass); gl.rotation.x = -Math.PI / 2; gl.position.set(0, 0, -1); g.add(gl);
+      B(g, 21, 3.2, 19.5, M.white, 0, 3.2, 0);
+      band(g, 21.3, 1.3, 19.8, 0, 4.3, 0);                          // ribbon window all round (shown as a glass band)
+      B(g, 21.2, 0.25, 19.7, M.white, 0, 6.4, 0);
+      var curve = new THREE.Mesh(new THREE.CylinderGeometry(4.5, 4.5, 2.6, 40, 1, true, 0, Math.PI * 1.2), new THREE.MeshStandardMaterial({ color: 0xe9ddd2, roughness: 0.8, side: THREE.DoubleSide }));
+      curve.position.set(-3, 6.65 + 1.3, -3); curve.castShadow = true; g.add(curve);
+      var curve2 = curve.clone(); curve2.scale.set(0.6, 1, 0.6); curve2.position.set(4, 7.95, -5); curve2.rotation.y = 2; g.add(curve2);
+      B(g, 1.2, 1.6, 9, M.white, 5.5, 3.2, 3); // ramp hint
+      person(g, 4, 12);
+    },
+    'villa-muller': function (g) {
+      B(g, 16, 4, 14, M.render, 0, 0, 0); B(g, 15, 5.5, 13, M.render, -0.5, 4, 0.5);
+      B(g, 9, 1.0, 13.2, M.render, 3.5, 9.5, 0.5); B(g, 6, 2.6, 6, M.render, -4, 9.5, 1.5);
+      B(g, 4, 2.6, 0.3, M.render, 3.5, 10.5, 7.0);                   // roof-terrace frame
+      [[-5, 1.5, 7.05, 3, 1.4], [0.5, 5.3, 7.05, 1.4, 1.4], [3.5, 5.3, 7.05, 1.4, 1.4], [-4, 6.8, 7.05, 2.2, 0.8], [5.5, 1.5, 7.05, 1.0, 1.8], [-1.8, 2.2, 7.05, 0.8, 0.8]].forEach(function (w) { B(g, w[3], w[4], 0.1, M.dark, w[0], w[1], w[2]); });
+      B(g, 3, 0.25, 2.4, M.render, 5, 3.5, 8.2);                       // entrance canopy
+      person(g, 2, 10);
+    },
+    'maison-de-verre': function (g) {
+      B(g, 22, 6, 4, M.stone, 0, 0, -10); B(g, 6, 14, 18, M.stone, -14, 0, 0); B(g, 6, 14, 18, M.stone, 14, 0, 0);   // courtyard walls
+      B(g, 18, 9.6, 10, M.block, 0, 0, 0);                              // glass-block volume
+      var front = B(g, 18, 9.6, 0.15, M.block, 0, 0, 5.05); front.material = M.block.clone(); front.material.map = front.material.map.clone(); front.material.map.repeat.set(9, 5); front.material.map.needsUpdate = true;
+      for (var i = -8; i <= 8; i += 4) B(g, 0.18, 9.6, 0.25, M.steel, i, 0, 5.2);
+      B(g, 22, 5, 14, M.stone, 0, 9.6, -2);                             // apartment above (the house was built under it)
+      for (var r = 0; r < 2; r++) for (var c = 0; c < 6; c++) B(g, 1.2, 1.6, 0.1, M.dark, -8 + c * 3.2, 10.4 + r * 2.2, 5.05);
+      person(g, 3, 9);
+    },
+    'melnikov-house': function (g) {
+      var m = M.hex.clone(); m.map = M.hex.map.clone(); m.map.repeat.set(5, 3); m.map.needsUpdate = true;
+      CYL(g, 5.6, 9.5, m, -2, 0, -1.5, 48); CYL(g, 5.6, 8.0, m, 2.6, 0, 2.2, 48);
+      CYL(g, 5.7, 0.4, M.render, -2, 9.5, -1.5, 48); CYL(g, 5.7, 0.4, M.render, 2.6, 8.0, 2.2, 48);
+      B(g, 6.0, 4.5, 0.3, M.glass, 2.6, 3.0, 7.75);                     // tall front window
+      person(g, 6, 10);
+    },
+    'fallingwater': function (g) {
+      // rock, stream and falls
+      B(g, 40, 3, 18, M.rock, 0, 0, -6); B(g, 40, 0.4, 14, M.water, 0, 0, 10);
+      B(g, 22, 3.0, 0.3, M.water, -2, 0, 2.7); B(g, 30, 0.3, 4, M.water, 0, 2.7, 1);
+      // stone core and chimney
+      B(g, 3.2, 14, 3.6, M.stone, -4, 0, -6); B(g, 12, 4, 7, M.stone, -2, 3, -7);
+      // stacked cantilevered terraces (light ochre concrete) with glazing behind
+      B(g, 22, 0.9, 9, M.ochre, 0, 4.2, -1.5); band(g, 14, 2.6, 6, -1, 5.1, -4);
+      B(g, 14, 2.6, 0.2, M.dark, -1, 5.1, -1.1);
+      B(g, 20, 0.9, 7, M.ochre, 4, 8.0, -3.8, 0.0); B(g, 11, 0.9, 6, M.ochre, -7, 8.0, -6, 0); band(g, 10, 2.6, 5, 0, 8.9, -6);
+      B(g, 10, 0.8, 6, M.ochre, 1, 11.6, -7); band(g, 6, 2.2, 4.5, 0, 12.4, -7.5);
+      B(g, 2.0, 0.8, 8, M.ochre, 13, 8.0, -4); person(g, 6, 2.6);
+    },
+    'eames-house': function (g) {
+      function box(x, len) {
+        B(g, len, 0.25, 6.1, M.white, x, 5.15, 0); B(g, len, 0.25, 6.1, M.white, x, 0, 0);
+        for (var i = 0; i <= len / 2.25; i++) { var px = x - len / 2 + i * 2.25; B(g, 0.12, 5.2, 0.12, M.steel, px, 0, 3.05); B(g, 0.12, 5.2, 0.12, M.steel, px, 0, -3.05); }
+        var colors = [M.glass, M.red, M.glass, M.white, M.blue, M.glass, M.glass, M.dark, M.glass];
+        for (var j = 0; j < Math.floor(len / 2.25); j++) for (var k = 0; k < 2; k++) {
+          var m = colors[(j * 3 + k * 5 + Math.round(x)) % colors.length]; B(g, 2.1, 2.45, 0.06, m, x - len / 2 + j * 2.25 + 1.125, 0.25 + k * 2.45, 3.05);
+        }
+        B(g, 0.06, 4.9, 6.0, M.glass, x - len / 2, 0.25, 0); B(g, 0.06, 4.9, 6.0, M.white, x + len / 2, 0.25, 0);
+        B(g, len, 4.9, 0.06, M.white, x, 0.25, -3.0);
+      }
+      box(-9, 18); box(10.5, 13.5);
+      B(g, 6, 0.08, 6, M.timber, 2.5, 0, 0);                              // courtyard
+      for (var t = 0; t < 8; t++) { ctx(CYL(g, 0.18, 7, M.timber, -16 + t * 4.6, 0, -6.5, 10)); var c = ctx(new THREE.Mesh(new THREE.SphereGeometry(1.6, 12, 10), M.green)); c.position.set(-16 + t * 4.6, 7.6, -6.5); c.castShadow = true; g.add(c); }
+      person(g, 2.5, 4.5);
+    },
+    'glass-house': function (g) {
+      B(g, 17.5, 0.35, 10.3, M.roman, 0, 0, 0);
+      B(g, 17, 0.25, 9.8, M.steel, 0, 3.2, 0);
+      [[-8.5, -4.9], [8.5, -4.9], [-8.5, 4.9], [8.5, 4.9], [-2.8, -4.9], [2.8, -4.9], [-2.8, 4.9], [2.8, 4.9], [-8.5, 0], [8.5, 0]].forEach(function (p) { B(g, 0.2, 2.85, 0.2, M.steel, p[0], 0.35, p[1]); });
+      B(g, 17, 2.85, 9.8, M.glass, 0, 0.35, 0);   // clear glass: the point of this house
+      CYL(g, 1.6, 4.4, M.brick, -3.2, 0.35, -1.6, 32);
+      B(g, 2.0, 0.85, 0.9, M.dark, 2, 0.35, 1.5);                        // cabinet
+      person(g, 5, 7);
+    },
+    'farnsworth-house': function (g) {
+      var y0 = 1.6;
+      B(g, 23.5, 0.35, 8.8, M.white, 0, y0, 0); B(g, 23.5, 0.35, 8.8, M.white, 0, y0 + 3.3, 0);
+      B(g, 17, 2.95, 8.4, M.glass, 2.5, y0 + 0.35, 0);
+      for (var i = 0; i < 4; i++) { B(g, 0.22, y0 + 3.65, 0.22, M.white, -11.0 + i * 7.3, 0, 4.55); B(g, 0.22, y0 + 3.65, 0.22, M.white, -11.0 + i * 7.3, 0, -4.55); }
+      B(g, 16.8, 0.3, 6.7, M.white, -9, 0.9, 6.5);                          // terrace
+      for (var k = 0; k < 3; k++) B(g, 0.22, 0.9, 0.22, M.white, -16 + k * 6.5, 0, 9.7);
+      for (var s = 0; s < 4; s++) B(g, 4, 0.22, 0.6, M.white, -2, s * 0.4, 9.9 + s * 0.6 - 1.8);
+      B(g, 4, 0.22, 2.0, M.white, -5, 1.2, 4.0);
+      ctx(B(g, 40, 0.3, 8, M.water, 0, 0, 22));                                    // river reminder of floods
+      for (var t = 0; t < 6; t++) { ctx(CYL(g, 0.3, 8, M.timber, -26 + t * 9, 0, -12, 10)); var c = ctx(new THREE.Mesh(new THREE.SphereGeometry(3.2, 12, 10), M.green)); c.position.set(-26 + t * 9, 9.5, -12); c.castShadow = true; g.add(c); }
+      person(g, -6, 12);
+    },
+    'moriyama-house': function (g) {
+      B(g, 30, 0.1, 22, M.grey, 0, 0, 0);
+      [[-10, -6, 4, 3, 5, 2], [-4, -7, 6, 6, 4, 1], [4, -6, 5, 3.2, 6, 1], [11, -6, 4, 9, 4, 3], [-11, 3, 3, 6, 3, 2],
+       [-5, 2, 5, 3, 5, 1], [2, 2, 3.5, 6, 3.5, 2], [9, 2, 5, 3, 3, 1], [-8, 8, 4, 3, 3, 1], [6, 8, 6, 6, 3, 2]].forEach(function (b, i) {
+        B(g, b[2], b[3], b[4], M.white, b[0], 0, b[1]);
+        for (var f = 0; f < b[5]; f++) B(g, Math.min(b[2] * 0.6, 2.2), 1.6, 0.06, M.glass, b[0] + (i % 2 ? 0.4 : -0.4), 0.6 + f * 3, b[1] + b[4] / 2 + 0.03);
+      });
+      [[-1, -1], [7, -1], [-8, -1], [0, 8]].forEach(function (p) { CYL(g, 0.1, 3, M.timber, p[0], 0, p[1], 8); var c = new THREE.Mesh(new THREE.SphereGeometry(1.2, 10, 8), M.green); c.position.set(p[0], 3.5, p[1]); c.castShadow = true; g.add(c); });
+      person(g, 0, 12);
+    }
+  };
+
+  function fit(obj) {
+    var bb = new THREE.Box3();
+    obj.children.forEach(function (o) { if (!o.userData.context) bb.expandByObject(o); });
+    var size = bb.getSize(new THREE.Vector3()), c = bb.getCenter(new THREE.Vector3()), rad = size.length() / 2;
+    var vfov = camera.fov * Math.PI / 180, hfov = 2 * Math.atan(Math.tan(vfov / 2) * camera.aspect);
+    var dist = rad / Math.sin(Math.min(vfov, hfov) / 2) * 1.02;
+    var dir = new THREE.Vector3(0.62, 0.42, 0.66).normalize();
+    camera.position.copy(c).addScaledVector(dir, dist); controls.target.copy(c); controls.update();
+    var s = sun.shadow.camera, ext = Math.max(size.x, size.z) * 0.9 + 6; s.left = -ext; s.right = ext; s.top = ext; s.bottom = -ext; s.near = 1; s.far = ext * 8; s.updateProjectionMatrix();
+    sun.position.set(c.x - ext * 1.2, ext * 2.2, c.z + ext * 1.6); sun.target.position.copy(c);
+  }
+  show = function (i) {
+    select(i);
+    if (model) { scene.remove(model); model.traverse(function (o) { if (o.geometry) o.geometry.dispose(); }); }
+    model = G(); BUILD[HOUSES[i].id](model); scene.add(model); fit(model);
+  };
+  var timer = null;
+  stopTour = function () { if (timer) { clearInterval(timer); timer = null; $('tour').setAttribute('aria-pressed', 'false'); $('tour').textContent = 'Tour all'; } };
+  $('tour').addEventListener('click', function () {
+    if (timer) { stopTour(); return; }
+    this.setAttribute('aria-pressed', 'true'); this.textContent = 'Stop tour';
+    timer = setInterval(function () { show((current + 1) % HOUSES.length); }, 6000);
+  });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('spin').addEventListener('click', function () { controls.autoRotate = !controls.autoRotate && !reduce; controls.autoRotateSpeed = 0.8; this.setAttribute('aria-pressed', controls.autoRotate); });
+  function theme() { scene.background = new THREE.Color(css('--surface') || '#F7F6F2'); }
+  theme(); if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', theme);
+  new MutationObserver(theme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  function size() { var w = vp.clientWidth, h = Math.round(Math.min(Math.max(w * 0.7, 320), window.innerHeight * 0.75)); renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  window.addEventListener('resize', size); size();
+  show(0);
+  (function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+  window.__gallery = { houses: HOUSES.length, built: Object.keys(BUILD).length, show: show };
+})();
+</script>
