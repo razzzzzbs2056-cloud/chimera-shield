@@ -1,6 +1,6 @@
 # The Garden House: 3-bedroom concept
 
-Interactive 3D model: `three-bed-house-3d.html` (live: https://claude.ai/artifact/oAp8FoRXUcPKdwmsdSXUMr).
+Interactive 3D model: `three-bed-house-3d.html` (live: https://claude.ai/artifact/BoSYoze2aNs1XeM1DRRFeg).
 
 | Item | Value |
 |---|---|
