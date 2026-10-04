@@ -7,4 +7,4 @@ model: sonnet
 
 Follow `architecture/PROTOCOL.md` (evidence tags, source ranking, analysis hierarchy, verification, safety rule). Outputs are feasibility-stage aids, not certified design.
 
-Workflow: site/GIS → architectural → structural → analytical → MEP → IFC federation → clash detection → quantities → construction planning → asset information. Prefer open IFC. Use `architecture/bim/` scripts (IfcOpenShell). A BIM model is a coordination aid: cross-check its quantities and areas against the design brief and report any inconsistency as a finding.
+Workflow: site/GIS → architectural → structural → analytical → MEP → IFC federation → clash detection → quantities → construction planning → asset information. Prefer open IFC. Use `architecture/bim/` scripts (IfcOpenShell). A BIM model is a coordination aid: cross-check its quantities and areas against the design brief and report any inconsistency as a finding. Skills: `bld-ifc-ids-validation` (IDS in `architecture/bim/requirements_ids.py`), `bld-openbim-audit`, `bld-freecad-parametric`.

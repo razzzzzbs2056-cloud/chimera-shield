@@ -48,7 +48,7 @@ N ↑  8 m grid, 6 x 4 bays
 
 **Design loads** (`data/live_loads.csv`, Eurocode style, EN 1990 6.10): dead 1.7 kPa (150 mm CLT 0.7 + screed/finishes/services 1.0); live 4.0 kPa (assembly); factored 1.35G + 1.5Q.
 
-**Primary beam pre-size** *(tool)*: span 8 m, 4 m tributary → w_ULS 33.2 kN/m, M = 265 kNm; f_m,d = 0.8·24/1.25 = 15.4 MPa; required depth 657 mm → **GL24h 240 × 680 mm**; SLS deflection 16.8 mm = **L/476** (limit L/300 used by the tool; project limit L/350 after finishes per `data/deflection_limits.csv`).
+**Primary beam pre-size** *(tool)*: span 8 m, 4 m tributary → w_ULS 33.2 kN/m, M = 265 kNm; f_m,d = 0.8·24/1.25 = 15.4 MPa; required depth 657 mm → **GL24h 240 × 680 mm**; SLS deflection 16.8 mm = **L/476** (limit L/300 used by the tool; project limit L/350 after finishes per `data/deflection_limits.csv`). **Including shear deformation** (timber G ≈ 650 MPa) the deflection is 18.9 mm = **L/424** by Timoshenko and 18.6 mm by orthotropic CalculiX FE (`models/calculix_beam/run_beam.py`): still within L/350.
 
 **Fire (indicative hand check).** 60 min, char 0.65 mm/min → 39 mm per exposed face; residual 162 × 641 mm on three-sided exposure; reduced fire load ≈ 0.49 of ULS; capacity with k_fi·f_m,k ≈ 306 kNm vs ≈ 130 kNm demand → passes with margin at this level of approximation. Detailed char and connection fire design remain open.
 

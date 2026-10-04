@@ -16,6 +16,8 @@ Agents, skills, data and tools for designing and engineering buildings, kept sep
 | Seismic screening (hand model + OpenSeesPy check), take-off reconciliation | `calculations/` |
 | IFC4 coordination model + audit (IfcOpenShell) | `bim/` |
 | Tool cards, data sources, failure precedents | `references/` |
+| Stack check, pinned environment, system tool notes | `scripts/check_stack.py`, `env/` |
+| FE example (Gmsh + CalculiX), optimisation (pymoo), IDS rules | `models/`, `calculations/optimise_lateral.py`, `bim/requirements_ids.py` |
 | Tests | `tests/` (`python -m pytest -q architecture/tests`) |
 
 Start with `claude --agent bld-director`.

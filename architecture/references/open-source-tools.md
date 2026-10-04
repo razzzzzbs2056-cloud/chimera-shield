@@ -16,5 +16,17 @@ Chosen because they fit the problem, not because they are free. Every result fro
 | NumPy / SciPy / SymPy / pandas / NetworkX | Hand-check models, eigen, optimisation, Monte Carlo, data, load-path graphs | Arrays, equations | You own all physics | Unit tests, closed forms | None beyond the user's model | Yes for design use |
 | Optimisation (SciPy, pymoo, scikit-optimize) | Weight, carbon, grid, façade, energy, cost optimisation | Objectives, constraints | Constraints include all safety margins | Re-check optimum against code and hand calcs | Optimisers exploit model errors | Yes |
 
+## Additions and status (verified by `scripts/check_stack.py` and tests, 2026-10)
+
+| Tool | Status here | Working example | Result |
+|---|---|---|---|
+| OpenSeesPy 3.7.1.2 | installed | `calculations/seismic_screen.py` | periods within 0.1 % of hand model |
+| IfcOpenShell 0.9.0 | installed | `bim/make_ifc.py` | volumes = analytic; caught units and orientation bugs |
+| IfcTester 0.9.0 (IDS) | installed | `bim/requirements_ids.py` | 5/5 specs pass; bare column correctly fails |
+| Gmsh 4.15.2 + CalculiX 2.21 | installed | `models/calculix_beam/run_beam.py` | FE within 0.3 % (iso) / 1.3 % (timber) of Timoshenko |
+| pymoo 0.6.2 | installed | `calculations/optimise_lateral.py` | GA optimum = brute-force grid within 0.002 |
+| QGIS, FreeCAD, Code_Aster, EnergyPlus, Radiance | not installed | workflows in skills | no results may be cited |
+| Member code checks | **no mature open-source tool** | skill `bld-member-design-checks` | custom tested scripts + engineer sign-off |
+
 ## Data sources (prefer jurisdiction-specific and authoritative)
 Seismic: national seismic hazard model and code maps; USGS (USA, global catalogues); PEER NGA ground-motion databases for records. Terrain and earth observation: national mapping agencies; Copernicus; NASA/USGS elevation products. Geology: national geological surveys. Base maps: OpenStreetMap (indicative only). Failure lessons: post-earthquake reconnaissance reports (e.g. EERI, national bodies) and official inquiry reports.

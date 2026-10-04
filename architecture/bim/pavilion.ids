@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>Chimera Pavilion structural coordination model</title>
+        <description>Minimum data needed before the model feeds analysis, quantities and fire review</description>
+    </info>
+    <specifications>
+        <specification name="IFCCOLUMN has material, is load-bearing, has fire rating, sits in a storey" ifcVersion="IFC4">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOLUMN</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <partOf relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" cardinality="required">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                </partOf>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_ColumnCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>TRUE</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_ColumnCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" />
+            </requirements>
+        </specification>
+        <specification name="IFCBEAM has material, is load-bearing, has fire rating, sits in a storey" ifcVersion="IFC4">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBEAM</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <partOf relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" cardinality="required">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                </partOf>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_BeamCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>TRUE</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_BeamCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" />
+            </requirements>
+        </specification>
+        <specification name="IFCSLAB has material, is load-bearing, has fire rating, sits in a storey" ifcVersion="IFC4">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSLAB</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <partOf relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" cardinality="required">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                </partOf>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_SlabCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>TRUE</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_SlabCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" />
+            </requirements>
+        </specification>
+        <specification name="IFCWALL has material, is load-bearing, has fire rating, sits in a storey" ifcVersion="IFC4">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <partOf relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" cardinality="required">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                </partOf>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>TRUE</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" />
+            </requirements>
+        </specification>
+        <specification name="Storeys follow the level naming of the design brief" ifcVersion="IFC4">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="L0" />
+                            <xs:enumeration value="L1" />
+                            <xs:enumeration value="L2" />
+                            <xs:enumeration value="L3 Roof terrace" />
+                        </xs:restriction>
+                    </value>
+                </attribute>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

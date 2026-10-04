@@ -16,6 +16,7 @@ import ifcopenshell.api.context
 import ifcopenshell.api.geometry
 import ifcopenshell.api.material
 import ifcopenshell.api.project
+import ifcopenshell.api.pset
 import ifcopenshell.api.root
 import ifcopenshell.api.spatial
 import ifcopenshell.api.unit
@@ -75,8 +76,13 @@ def build(path: Path) -> dict:
     mats = {k: ifcopenshell.api.material.add_material(m, name=k, category=c) for k, c in
             (("Glulam GL24h", "wood"), ("CLT 5-ply", "wood"), ("Concrete C40/50", "concrete"), ("Concrete C30/37", "concrete"))}
 
+    psets = {"IfcColumn": "Pset_ColumnCommon", "IfcBeam": "Pset_BeamCommon", "IfcSlab": "Pset_SlabCommon", "IfcWall": "Pset_WallCommon"}
+
     def place(el, storey, rep, mat, mtx):
         ifcopenshell.api.spatial.assign_container(m, products=[el], relating_structure=storey)
+        ps = ifcopenshell.api.pset.add_pset(m, product=el, name=psets[el.is_a()])
+        # FireRating is a placeholder until the fire strategy exists (report section 16): UNKNOWN is the honest value
+        ifcopenshell.api.pset.edit_pset(m, pset=ps, properties={"LoadBearing": True, "FireRating": "UNKNOWN - fire strategy pending"})
         ifcopenshell.api.geometry.assign_representation(m, product=el, representation=rep)
         ifcopenshell.api.geometry.edit_object_placement(m, product=el, matrix=mtx)
         ifcopenshell.api.material.assign_material(m, products=[el], material=mats[mat])

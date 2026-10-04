@@ -322,3 +322,14 @@ Licensed architect and structural engineer of record in the jurisdiction; geotec
 
 ---
 *Change records: `reports/CR-001-area-reconciliation.md`, `reports/CR-002-takeoff-and-carbon.md`, `reports/CR-003-south-lateral-elements.md`. Template: `reports/change-record-template.md`.*
+
+---
+
+## Addendum A (2026-10-04): open-source stack examples
+
+All results reproducible with `python -m pytest -q architecture/tests` (32 tests across the repo).
+
+- **IDS** (`bim/requirements_ids.py`, IfcTester): the first run showed no element declared `LoadBearing` or `FireRating`. The model now carries both; `FireRating` is honestly `UNKNOWN - fire strategy pending`. 5/5 specifications pass; a bare column fails as it should. **SIMULATION (verified)**
+- **Gmsh + CalculiX** (`models/calculix_beam/run_beam.py`): joist deflection, isotropic FE 17.07 mm vs Timoshenko 17.12 mm; orthotropic timber FE 18.63 mm vs 18.88 mm; equilibrium exact. Shear deformation adds ~12 % in timber → joist at L/424, still within L/350. Knife-edge supports add 3.5 mm of local crushing: a bearing-perpendicular-to-grain check is required at supports (§26). **SIMULATION (verified)**
+- **pymoo** (`calculations/optimise_lateral.py`): minimum south lateral elements for e/B ≤ 0.05, edge amplification ≤ 1.10, Ω ≥ 1.20 (ASSUMED limits) are ~0.29 × core stiffness at the south edge; brute-force grid agrees. The optimum has zero margin on e/B, so **CR-003 keeps 0.5 × core at y = 28 m** (amp 1.008, e/B 0.011, Ω 1.38). **CALCULATION + JUDGMENT**
+- **Gap confirmed:** no open-source tool performs code member checks; see skill `bld-member-design-checks`.
