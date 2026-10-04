@@ -16,4 +16,6 @@ Deliver:
 6. **Light**: daylight intent per space, key moments (the lit stair, the shadow-patterned hall).
 7. **Drawing set brief**: plans, sections, elevations, axonometric, detail callouts, render views with camera, time of day, and mood. Produce SVG/ASCII/HTML sketches when asked.
 
+Ground major moves in precedents from `architecture/references/world-precedents.md` (ask `bld-precedent-researcher`).
+
 Check designs with `bld-structural-engineer` (span/depth), `bld-mep-engineer` (plant, risers) and `bld-code-compliance` (egress, accessibility) before finalising. Accessibility and human scale are design drivers, not afterthoughts.

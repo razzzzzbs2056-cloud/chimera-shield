@@ -1,0 +1,199 @@
+<title>Precedent Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout concept: a library drawer. A timeline strip indexes the collection; cards are catalogue entries, each ending in its lesson for the pavilion. */
+  :root {
+    --bg: #E8EAE6; --surface: #F3F4F1; --ink: #14201D; --muted: #55645F; --line: #B9C0BA;
+    --copper: #9A4E29; --patina: #23695D; --hi: #F6E7C9;
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #0F1614; --surface: #17211E; --ink: #E4E9E5; --muted: #8FA09A; --line: #2D3B37; --copper: #E08A5C; --patina: #58B8A5; --hi: #3a2c1c; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #0F1614; --surface: #17211E; --ink: #E4E9E5; --muted: #8FA09A; --line: #2D3B37; --copper: #E08A5C; --patina: #58B8A5; --hi: #3a2c1c; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--f-body); padding-inline: 16px; padding-block: 24px 64px; margin: 0; }
+  main { max-width: 1180px; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.08; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 { font-size: 1.12rem; font-weight: 800; }
+  p { margin: 0; max-width: 68ch; }
+  .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .note { border-left: 3px solid var(--copper); padding-left: 12px; max-width: 72ch; }
+  section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+  .principles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .principles div { background: var(--surface); border: 1px solid var(--line); padding: 14px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .principles b { font-family: var(--f-display); font-size: 1.02rem; }
+  .principles small { color: var(--muted); font-size: 13px; }
+
+  .tl-wrap { border: 1px solid var(--line); background: var(--surface); padding: 12px; overflow-x: auto; }
+  .tl-wrap svg { display: block; width: 100%; min-width: 640px; height: auto; color: var(--ink); }
+  .tl-wrap text { font-family: var(--f-mono); font-size: 11px; fill: currentColor; }
+  .tl-dot { cursor: pointer; }
+  .tl-dot:hover circle, .tl-dot:focus circle { stroke: var(--ink); stroke-width: 2; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip { font: 500 13px var(--f-body); padding: 7px 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  input[type=search] { font: 400 14px var(--f-body); padding: 8px 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-width: 0; flex: 1 1 220px; }
+  select { font: 500 13px var(--f-body); padding: 7px 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+  :focus-visible { outline: 2px solid var(--patina); outline-offset: 2px; }
+  .count { font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; scroll-margin-top: 16px; }
+  .card.flash { outline: 2px solid var(--copper); }
+  .card .meta { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+  .card dl { margin: 0; display: grid; grid-template-columns: 92px 1fr; gap: 4px 10px; font-size: 13.5px; }
+  .card dt { color: var(--muted); font-size: 12px; padding-top: 1px; }
+  .card dd { margin: 0; min-width: 0; }
+  .lesson { background: var(--hi); padding: 10px 12px; font-size: 14px; }
+  .lesson span { display: block; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--copper); margin-bottom: 2px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { font-family: var(--f-mono); font-size: 11px; padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); }
+  .empty { padding: 24px; border: 1px dashed var(--line); color: var(--muted); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+  .tablewrap table { min-width: 640px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:14px">
+    <span class="label">Chimera Pavilion · reference library · <span id="n-total"></span> buildings</span>
+    <h1>Precedent Atlas</h1>
+    <p>Landmark buildings from the Pantheon to today's timber towers, read for one purpose: what each can teach the design of a timber, earth and copper community pavilion.</p>
+    <p class="note">Compiled from general architectural knowledge. Dates, designers and claims are unverified for citation; check monographs and engineering papers before quoting.</p>
+  </header>
+
+  <section aria-labelledby="t-p">
+    <h2 id="t-p">Seven principles the best buildings share</h2>
+    <div class="principles">
+      <div><span class="label">P1</span><b>Form follows force</b><small>Eiffel, Gaudí, Candela, Isler, Frei Otto, Burj Khalifa</small></div>
+      <div><span class="label">P2</span><b>Put stiffness where it works</b><small>Hancock, Sears, 30 St Mary Axe, Brock Commons</small></div>
+      <div><span class="label">P3</span><b>Separate support from skin</b><small>Chartres, Barcelona Pavilion, Seagram, Pompidou</small></div>
+      <div><span class="label">P4</span><b>Light is a material</b><small>Pantheon, Kimbell, Church of the Light, Louvre Abu Dhabi</small></div>
+      <div><span class="label">P5</span><b>Climate first, machines second</b><small>Yazd, Eastgate, Gando School, Bait Ur Rouf</small></div>
+      <div><span class="label">P6</span><b>Rationalise to build</b><small>Sydney Opera House, Nervi, Crystal Palace, Bilbao</small></div>
+      <div><span class="label">P7</span><b>Time and care are design</b><small>Djenné, Seagram patina, Fallingwater creep, IMA upkeep</small></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-tl">
+    <h2 id="t-tl">Timeline</h2>
+    <p>Dates before 1800 are compressed. Select a dot to jump to its entry.</p>
+    <div class="tl-wrap"><svg id="tl" role="img" aria-label="Timeline of the precedents, compressed before 1800"></svg></div>
+  </section>
+
+  <section aria-labelledby="t-c">
+    <h2 id="t-c">Collection</h2>
+    <div class="controls" role="group" aria-label="Filter by theme" id="chips"></div>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search names, places, designers, ideas" aria-label="Search the collection">
+      <label class="label" for="era">Era</label>
+      <select id="era"><option value="">All eras</option><option value="historic">Before 1800</option><option value="modern">1800–1990</option><option value="contemporary">1990–today</option></select>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section aria-labelledby="t-a">
+    <h2 id="t-a">Lessons turned into actions</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Lesson</th><th>From</th><th>Action for the pavilion</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Stiffness where it works</td><td>Hancock, Sears, Brock Commons</td><td>Adopt CR-003 south lateral elements</td><td>Proposed</td></tr>
+        <tr><td>Timber can resist lateral load</td><td>Mjøstårnet, Sara Kulturhus</td><td>Compare concrete, glulam-braced and CLT south elements on carbon, cost, ductility</td><td>New</td></tr>
+        <tr><td>Form-finding</td><td>Frei Otto, Isler, Gaudí</td><td>Form-find the hall diagrid for its dominant load</td><td>New</td></tr>
+        <tr><td>Gridshells need upkeep</td><td>Multihalle Mannheim</td><td>Keep the diagrid under cover; plan access and inspection</td><td>New</td></tr>
+        <tr><td>Rationalise to build</td><td>Sydney Opera House</td><td>Limit diagrid node types; standardise CLT panels</td><td>New</td></tr>
+        <tr><td>Static perforation lasts</td><td>Institut du Monde Arabe, Louvre Abu Dhabi, Kolumba</td><td>Keep the veil fixed; run daylight and solar simulation</td><td>Toy model only</td></tr>
+        <tr><td>Cantilevers creep</td><td>Fallingwater</td><td>Long-term deflection design for the entry cantilever</td><td>New</td></tr>
+        <tr><td>Isolation suits stiff buildings</td><td>Te Papa</td><td>Evaluate base isolation once the hazard is known</td><td>Conditional</td></tr>
+        <tr><td>Climate first</td><td>Eastgate, Gando, Yazd</td><td>Size stack ventilation and night purge by simulation</td><td>New</td></tr>
+        <tr><td>Complexity costs</td><td>Elbphilharmonie</td><td>Price bespoke nodes and veil panels at concept stage</td><td>New</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var DATA = /*__DATA__*/[];
+  var THEMES = /*__THEMES__*/[];
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var state = { theme: '', q: '', era: '' };
+  $('n-total').textContent = DATA.length;
+
+  // timeline: piecewise scale, 0–1800 compressed into the first 30 %
+  function tx(y, w) { return y < 1800 ? 40 + (y / 1800) * (w - 80) * 0.3 : 40 + (w - 80) * (0.3 + 0.7 * (y - 1800) / (2025 - 1800)); }
+  function drawTL() {
+    var W = 1100, H = 150, svg = $('tl');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var ticks = [0, 600, 1200, 1800, 1850, 1900, 1950, 2000, 2025], out = [];
+    out.push('<line x1="40" y1="96" x2="' + (W - 40) + '" y2="96" stroke="currentColor" stroke-width="1"/>');
+    out.push('<rect x="' + tx(0, W) + '" y="92" width="' + (tx(1800, W) - tx(0, W)) + '" height="8" fill="var(--line)"/>');
+    ticks.forEach(function (t) { var x = tx(t, W); out.push('<line x1="' + x + '" y1="96" x2="' + x + '" y2="104" stroke="currentColor"/><text x="' + x + '" y="120" text-anchor="middle">' + (t === 0 ? '0 CE' : t) + '</text>'); });
+    var placed = {};
+    DATA.filter(function (d) { return d.year_num !== null; }).sort(function (a, b) { return a.year_num - b.year_num; }).forEach(function (d) {
+      var x = tx(d.year_num, W), bucket = Math.round(x / 10), lane = placed[bucket] = (placed[bucket] || 0) + 1;
+      var y = 96 - 10 - (lane - 1) * 11;
+      var on = visible(d);
+      out.push('<g class="tl-dot" tabindex="0" role="button" data-id="' + d.id + '" aria-label="' + esc(d.name + ', ' + d.year) + '"><title>' + esc(d.name + ' · ' + d.year) + '</title><circle cx="' + x.toFixed(1) + '" cy="' + Math.max(y, 8) + '" r="4.5" fill="' + (on ? 'var(--copper)' : 'var(--line)') + '"/></g>');
+    });
+    out.push('<text x="40" y="142">Undated vernacular entries appear in the collection only.</text>');
+    svg.innerHTML = out.join('');
+    svg.querySelectorAll('.tl-dot').forEach(function (g) {
+      var go = function () { var el = document.getElementById('c-' + g.getAttribute('data-id')); if (!el) return; el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' }); el.classList.add('flash'); setTimeout(function () { el.classList.remove('flash'); }, 1600); };
+      g.addEventListener('click', go); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+  }
+
+  function visible(d) {
+    if (state.theme && d.themes.indexOf(state.theme) < 0) return false;
+    if (state.era && d.era !== state.era) return false;
+    if (state.q) {
+      var hay = [d.name, d.place, d.designers, d.typology, d.structure, d.materials, d.climate_light, d.innovation, d.lesson_for_pavilion, d.tags.join(' ')].join(' ').toLowerCase();
+      if (hay.indexOf(state.q) < 0) return false;
+    }
+    return true;
+  }
+
+  function card(d) {
+    return '<article class="card" id="c-' + d.id + '"><div><h3>' + esc(d.name) + '</h3><div class="meta">' + esc(d.place) + ' · ' + esc(d.year) + '</div></div>' +
+      '<dl><dt>Designers</dt><dd>' + esc(d.designers) + '</dd><dt>Type</dt><dd>' + esc(d.typology) + '</dd><dt>Structure</dt><dd>' + esc(d.structure) + '</dd><dt>Materials</dt><dd>' + esc(d.materials) + '</dd><dt>Climate, light</dt><dd>' + esc(d.climate_light) + '</dd><dt>Innovation</dt><dd>' + esc(d.innovation) + '</dd></dl>' +
+      '<div class="lesson"><span>For the pavilion</span>' + esc(d.lesson_for_pavilion) + '</div>' +
+      '<div class="tags">' + d.themes.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div></article>';
+  }
+
+  function render() {
+    var list = DATA.filter(visible).sort(function (a, b) { return (a.year_num === null ? 1700 : a.year_num) - (b.year_num === null ? 1700 : b.year_num); });
+    $('grid').innerHTML = list.length ? list.map(card).join('') : '<div class="empty">No buildings match. Clear the search or pick another theme.</div>';
+    $('count').textContent = list.length + ' of ' + DATA.length;
+    drawTL();
+  }
+
+  var chips = ['All'].concat(THEMES);
+  $('chips').innerHTML = chips.map(function (t, i) { return '<button class="chip" aria-pressed="' + (i === 0) + '" data-t="' + (i === 0 ? '' : esc(t)) + '">' + esc(t) + '</button>'; }).join('');
+  $('chips').querySelectorAll('.chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.theme = b.getAttribute('data-t');
+      $('chips').querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', c === b); });
+      render();
+    });
+  });
+  $('q').addEventListener('input', function (e) { state.q = e.target.value.trim().toLowerCase(); render(); });
+  $('era').addEventListener('change', function (e) { state.era = e.target.value; render(); });
+  render();
+})();
+</script>

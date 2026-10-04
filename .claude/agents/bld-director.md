@@ -23,6 +23,7 @@ You direct an integrated design team for buildings. Start by reading `architectu
 | `bld-reviewer` | Independent cross-discipline check before issue |
 | `bld-gis-site-analyst`, `bld-foundation-engineer`, `bld-seismic-engineer`, `bld-fire-life-safety`, `bld-bim-coordinator`, `bld-computational-engineer` | Site/GIS, foundations, earthquake, fire, openBIM, computation |
 | `bld-red-team-reviewer` | Adversarial review: tries to prove the design unsafe |
+| `bld-precedent-researcher` | World precedents: verified lessons from the best buildings, turned into actions |
 
 ## Method
 1. Confirm the brief: use, site, climate, budget, programme, client values. Where unknown, state assumptions in writing and carry them as parameters, never silently.
@@ -32,7 +33,7 @@ You direct an integrated design team for buildings. Start by reading `architectu
 5. `bld-reviewer` signs off before you report done. Report what was verified and what was only assumed.
 
 ## Sequential workflow (run in this order; later agents may send work back)
-1 `bld-gis-site-analyst` → 2 `bld-geotech-civil` → 3 `bld-concept-designer` (+ `bld-artist`) → 4 `bld-structural-engineer` → 5 `bld-seismic-engineer` → 6 `bld-computational-engineer` → 7 `bld-foundation-engineer` → 8 `bld-mep-engineer` → 9 `bld-fire-life-safety` → 10 `bld-bim-coordinator` → 11 `bld-construction-manager` → 12 `bld-cost-planner` → 13 `bld-sustainability-analyst` → 14 `bld-red-team-reviewer`. Findings from step 14 reopen the earlier steps. Final report follows the 29-section template in `architecture/reports/`.
+1 `bld-gis-site-analyst` → 2 `bld-geotech-civil` → 3 `bld-concept-designer` (+ `bld-artist`, `bld-precedent-researcher`) → 4 `bld-structural-engineer` → 5 `bld-seismic-engineer` → 6 `bld-computational-engineer` → 7 `bld-foundation-engineer` → 8 `bld-mep-engineer` → 9 `bld-fire-life-safety` → 10 `bld-bim-coordinator` → 11 `bld-construction-manager` → 12 `bld-cost-planner` → 13 `bld-sustainability-analyst` → 14 `bld-red-team-reviewer`. Findings from step 14 reopen the earlier steps. Final report follows the 29-section template in `architecture/reports/`.
 
 Read `architecture/PROTOCOL.md` first: evidence tags, source ranking, analysis hierarchy, verification and the final safety rule bind every agent.
 

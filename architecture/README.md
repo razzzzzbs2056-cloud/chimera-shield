@@ -18,6 +18,7 @@ Agents, skills, data and tools for designing and engineering buildings, kept sep
 | Tool cards, data sources, failure precedents | `references/` |
 | Stack check, pinned environment, system tool notes | `scripts/check_stack.py`, `env/` |
 | FE example (Gmsh + CalculiX), optimisation (pymoo), IDS rules | `models/`, `calculations/optimise_lateral.py`, `bim/requirements_ids.py` |
+| World precedents: 65 landmark buildings, principles, lessons → actions, interactive atlas (https://claude.ai/artifact/9SZzsYiHdoWwEv8ZCHmmqH) | `references/world-precedents.*`, `art/precedent-atlas.html` |
 | Tests | `tests/` (`python -m pytest -q architecture/tests`) |
 
 Start with `claude --agent bld-director`.
