@@ -20,6 +20,7 @@ Agents, skills, data and tools for designing and engineering buildings, kept sep
 | FE example (Gmsh + CalculiX), optimisation (pymoo), IDS rules | `models/`, `calculations/optimise_lateral.py`, `bim/requirements_ids.py` |
 | World precedents: 65 landmark buildings, principles, lessons → actions, interactive atlas (https://claude.ai/artifact/9SZzsYiHdoWwEv8ZCHmmqH) | `references/world-precedents.*`, `art/precedent-atlas.html` |
 | 3D model + business case (layers, section, sun shadows, NPV/IRR, sensitivity) | `art/pavilion-3d.html` (https://claude.ai/artifact/Hy7KFGYW2YJqSus9ifdmqy) |
+| Houses: 3-bedroom single-storey and 3-storey Lantern House, 3D models | `house/` |
 | Tests | `tests/` (`python -m pytest -q architecture/tests`) |
 
 Start with `claude --agent bld-director`.

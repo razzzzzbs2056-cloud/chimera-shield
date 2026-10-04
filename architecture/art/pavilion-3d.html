@@ -448,7 +448,8 @@ function tornado(p, keys) {
   }
   ['saz', 'salt'].forEach(function (id) { $(id).addEventListener('input', setSun); }); setSun();
   // section cut keeps x <= cut (brief coords)
-  function setCut() { var c = +$('cut').value; clip.constant = c - 24; $('cut-v').textContent = c >= 48 ? 'off' : 'x = ' + c + ' m'; }
+  // 'off' must sit well clear of the plinth and veil 
+  function setCut() { var c = +$('cut').value; clip.constant = c >= 48 ? 1e4 : c - 24; $('cut-v').textContent = c >= 48 ? 'off' : 'x = ' + c + ' m'; }
   $('cut').addEventListener('input', setCut); setCut();
   function setExp() { var e = +$('exp').value; levelGroups.forEach(function (g) { g.position.y = e * g.userData.baseLevel; }); $('exp-v').textContent = e ? e + ' m' : 'off'; }
   $('exp').addEventListener('input', setExp); setExp();

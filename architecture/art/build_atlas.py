@@ -19,6 +19,7 @@ THEMES = {
     "Earth, brick & craft": {"earth", "brick", "craft", "community", "vernacular"},
     "Space, services & pavilions": {"pavilion", "space", "material", "services", "flexibility", "roof", "minimal", "module", "acoustics"},
     "Ground & water": {"foundation", "water", "site"},
+    "Houses": {"house", "residential"},
     "Cautionary": {"failure-lesson", "cost-lesson", "maintenance", "fire"},
 }
 

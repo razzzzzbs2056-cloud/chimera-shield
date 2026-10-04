@@ -50,6 +50,10 @@ Yazd, Djenné, New Gourna, Eastgate, Gando School, Bullitt Center, Bosco Vertica
 ### Cautionary lessons inside great buildings
 Fallingwater's cantilevers crept and needed post-tensioning; Crystal Palace burned; Elbphilharmonie overran cost and schedule; IMA's mechanisms needed constant upkeep; Hagia Sophia's first dome fell. Great architecture is not exempt from physics, fire, money or maintenance.
 
+### Houses
+Villa Rotonda (proportion), Robie House (horizontal shading), Rietveld Schröder House (sliding walls), Villa Müller (Raumplan), Maison de Verre (glass-block light), Melnikov House (patterned wall), Villa Mairea (timber and nature), Casa Barragán (sky-framed roof terrace), Eames House (industrial parts), Glass House (solid cores), Farnsworth House (glass without shading and flooding as warnings), Moriyama House (rooms as a village), plus Villa Savoye, Fallingwater and Katsura.
+**Takeaway:** used directly in the 3-storey Lantern House (`architecture/house/lantern-house-3d.html`).
+
 ## 3. Lessons → actions for the pavilion
 
 | Lesson (precedents) | Action | Owner agent | Status |
