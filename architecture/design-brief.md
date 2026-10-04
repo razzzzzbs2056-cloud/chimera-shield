@@ -64,7 +64,7 @@ Passive first: stack-ventilated hall (lattice cavity as exhaust), exposed CLT an
 
 ## 8. Sustainability and scientific value
 
-**Embodied carbon (tool, A1–A3, structure + glazing + copper only):** 537–1,181 tCO₂e = **128–282 kgCO₂e/m² GFA**. Insulation, MEP, finishes, transport (A4), construction (A5), use (B) and end of life (C) are **not** included, so this is a floor, not a result. **Biogenic carbon in timber: ~675 tCO₂e**, reported separately and only a benefit if the wood is sustainably sourced and reused or kept out of landfill at end of life.
+**Embodied carbon (A1–A3, structure + glazing + copper only), corrected by CR-002:** v0.2 IFC take-off gives 504–1,106 tCO₂e = **146–320 kgCO₂e/m²** on the 3,456 m² floor area the geometry actually provides (the earlier 128–282 figure used an overstated CLT area). Insulation, MEP, finishes, A4, A5, B and C are **not** included, so this is a floor, not a result. **Biogenic carbon in timber: ~528 tCO₂e**, reported separately. The program (4,188 m²) does not fit the geometry: see CR-001 and `reports/engineering-report-v0.1.md`.
 
 **Research questions** (what the building can teach):
 1. How much whole-life carbon does a timber-concrete hybrid save against an all-concrete and an all-steel baseline of identical program, with ranges from EPD variance? (method: EN 15978 modules A–D, Monte Carlo over `materials.csv` ranges)
@@ -101,3 +101,5 @@ Site, soils, climate and jurisdiction are assumed. Loads follow Eurocode convent
 | D2 | 8 m grid | Efficient glulam spans, fits hall 3 × 3 bays | Program changes |
 | D3 | Lattice roof, not trusses | Lighter and expressive; shares the concept | Cost or buckling checks fail |
 | D4 | Presumptive foundations only | No ground data | Site investigation arrives |
+| D5 | CR-002 implemented: take-off and carbon corrected from IFC | Hand take-off overstated CLT | Geometry changes |
+| D6 | CR-001 and CR-003 proposed: area gap; south lateral elements to fix torsion | Engineering report v0.1 | Client decision |

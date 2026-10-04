@@ -11,6 +11,11 @@ Agents, skills, data and tools for designing and engineering buildings, kept sep
 | Art: philosophy + interactive concept page | `art/` (live page: https://claude.ai/artifact/LzZ4CjjUCeCNzjWLxutW8m) |
 | Poster: *Perforated Light* (PNG + PDF, philosophy, source) | `art/poster/` |
 | Calculators (beam sizing, embodied carbon) | `tools/quickcheck.py` |
+| Engineering protocol (evidence tags, verification, safety rule) | `PROTOCOL.md` |
+| Engineering report v0.1 (29 sections), change records, risk register | `reports/` |
+| Seismic screening (hand model + OpenSeesPy check), take-off reconciliation | `calculations/` |
+| IFC4 coordination model + audit (IfcOpenShell) | `bim/` |
+| Tool cards, data sources, failure precedents | `references/` |
 | Tests | `tests/` (`python -m pytest -q architecture/tests`) |
 
 Start with `claude --agent bld-director`.
