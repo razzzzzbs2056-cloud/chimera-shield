@@ -26,6 +26,8 @@ Chosen because they fit the problem, not because they are free. Every result fro
 | Gmsh 4.15.2 + CalculiX 2.21 | installed | `models/calculix_beam/run_beam.py` | FE within 0.3 % (iso) / 1.3 % (timber) of Timoshenko |
 | pymoo 0.6.2 | installed | `calculations/optimise_lateral.py` | GA optimum = brute-force grid within 0.002 |
 | QGIS, FreeCAD, Code_Aster, EnergyPlus, Radiance | not installed | workflows in skills | no results may be cited |
+| OpenFOAM | not installed | wind division (CFD) | supplements, never replaces, code methods and wind tunnels |
+| BCF (issues), IFC 4.3 | IFC4 used now | BIM division | move coordination model to IFC4X3 when civil works are modelled |
 | Member code checks | **no mature open-source tool** | skill `bld-member-design-checks` | custom tested scripts + engineer sign-off |
 
 ## Data sources (prefer jurisdiction-specific and authoritative)

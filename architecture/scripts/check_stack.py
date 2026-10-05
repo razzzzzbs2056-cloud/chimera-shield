@@ -15,7 +15,8 @@ CLI = {"ccx": ("calculix", ["ccx", "-v"]), "gmsh-cli": ("gmsh CLI", ["gmsh", "--
        "qgis_process": ("QGIS processing", ["qgis_process", "--version"]),
        "FreeCADCmd": ("FreeCAD headless", ["FreeCADCmd", "--version"]),
        "run_aster": ("Code_Aster", ["run_aster", "--version"]), "energyplus": ("EnergyPlus", ["energyplus", "--version"]),
-       "rtrace": ("Radiance", ["rtrace", "-version"])}
+       "rtrace": ("Radiance", ["rtrace", "-version"]),
+       "simpleFoam": ("OpenFOAM CFD", ["simpleFoam", "-help"])}
 
 
 def check() -> dict:

@@ -22,6 +22,7 @@ Agents, skills, data and tools for designing and engineering buildings, kept sep
 | 3D model + business case (layers, section, sun shadows, NPV/IRR, sensitivity) | `art/pavilion-3d.html` (https://claude.ai/artifact/Hy7KFGYW2YJqSus9ifdmqy) |
 | Houses: 3-bedroom single-storey and 3-storey Lantern House, 3D models | `house/` |
 | Houses gallery: 12 landmark houses in 3D + index of all pages (https://claude.ai/artifact/WG33osXsiDT3qke1P3yu2V) | `art/houses-gallery.html` (built from the CSV by `art/build_atlas.py`) |
+| Engineering organisation: Chief Director + 10 staff + 3 leads + divisions; 10-section return format; A/B/C verification | `ORG.md`, `org.json`, `tools/build_org.py`, `tools/validate_return.py`, `tools/verify_compare.py`, `tools/pareto.py`, `seismic/pipeline.py`, `memory/` |
 | Tests | `tests/` (`python -m pytest -q architecture/tests`) |
 
 Start with `claude --agent bld-director`.

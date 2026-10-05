@@ -34,3 +34,17 @@ The independent reviewer (`bld-red-team-reviewer`) does not treat agreement as s
 
 ## 8. Final safety rule
 Never say a building is "earthquake proof". State the hazard and the intended performance level (operational / immediate occupancy / life safety / collapse prevention). Never issue construction-ready dimensions, reinforcement, connection details, foundation capacities or approvals from AI reasoning. Construction needs survey, geotechnical investigation, calculations, jurisdiction-specific code compliance, certified drawings, inspection, and licensed professional review and approval.
+
+## 9. Specialist return format (mandatory)
+Every specialist returns exactly these sections, in order, each non-empty (`None` if nothing applies):
+`INPUTS USED · ASSUMPTIONS · METHOD · CALCULATIONS · RESULTS · CODE / STANDARD · UNCERTAINTIES · FAILED CHECKS · RECOMMENDATIONS · REQUIRED HUMAN REVIEW`.
+Validate with `python architecture/tools/validate_return.py <file>`. Fire returns state one verdict per check: PASS / FAIL / INSUFFICIENT INFORMATION / PROFESSIONAL REVIEW REQUIRED (`--fire`); hedged phrases such as "probably safe" are rejected. Unauditable confident conclusions are not accepted from any agent.
+
+## 10. Independent verification (A / B / C)
+Never let the same model generate and approve a calculation. Agent A solves; agent B recalculates by a different method without seeing A's numbers; agent C (`tools/verify_compare.py`) compares against stated tolerances: within tolerance → PROCEED, outside → INVESTIGATE. State whether B's inputs were independent; shared inputs mean a wrong input can agree twice.
+
+## 11. Requirement source classes
+Classify every requirement as LAW, BUILDING CODE, REFERENCED STANDARD, GUIDANCE, PROJECT SPECIFICATION, CLIENT REQUIREMENT or ENGINEERING ASSUMPTION. Codes are retrieved for the stated jurisdiction at their current edition, never recalled from memory.
+
+## 12. Options before answers
+Design divisions generate several alternatives for named objectives (e.g. cheapest, lowest carbon, most usable area, best daylight, strongest identity); infeasible options are removed by hard constraints first, then compared (`tools/pareto.py`, pymoo) and the choice is recorded by the decision manager.
