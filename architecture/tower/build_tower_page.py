@@ -21,11 +21,12 @@ def load(name):
 def status():
     rows = []
     for div, title in [("architecture", "Architecture (options A-E)"), ("structure", "Structure"), ("verification-structure", "Independent verification"),
-                       ("seismic", "Earthquake (OpenSees)"), ("wind", "Wind"), ("foundation", "Foundations"), ("geotechnical", "Geotechnical"), ("codes", "Codes")]:
+                       ("seismic", "Earthquake (OpenSees)"), ("wind", "Wind"), ("foundation", "Foundations"), ("geotechnical", "Geotechnical"), ("codes", "Codes"),
+                       ("fire", "Fire"), ("critic", "Engineering critic"), ("safety-qa", "Safety / QA gate")]:
         p = HERE / "returns" / f"{div}.md"
         if not p.exists():
             rows.append({"div": title, "state": "running", "valid": None}); continue
-        errs = validate(p.read_text())
+        errs = validate(p.read_text(), fire=(div == "fire"))
         rows.append({"div": title, "state": "returned", "valid": not errs})
     return rows
 
