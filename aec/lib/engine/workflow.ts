@@ -274,7 +274,7 @@ export function runWorkflow(input: WorkflowInput) {
     geotech: geo, structure: { ...structure, model: undefined, modal: { ...structure.modal, shapes: structure.modal.shapes.slice(0, 4) } },
     wind: { ...wind, roofDrift: windRoofDrift }, hvac: hv, electrical: el, hydraulics: hy, fire, facade: fac, physics: phys, energy: en, accessibility: access,
     bim: { elements: model.elements.length, byDiscipline: countBy(model.elements.map((e) => e.discipline)), byType: countBy(model.elements.map((e) => e.ifc)), levels: model.levels.length },
-    clashes, cost, construction: cons, ve, resilience, findings, verification, specs, kpis,
+    clashes, cost, construction: cons, ve, resilience, findings, verification, specs, kpis, bimInputs: bimIn,
   };
 }
 export type WorkflowResult = ReturnType<typeof runWorkflow>;
