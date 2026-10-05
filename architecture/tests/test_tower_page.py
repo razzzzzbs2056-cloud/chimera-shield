@@ -18,3 +18,11 @@ def test_page_embeds_current_division_data():
     assert data["floor"] == a["typical_floor"]
     assert data["basis"]["site"]["latitude"] == -33.87
     assert all(r["valid"] for r in data["status"] if r["state"] == "returned")   # returned rows must validate; pending rows allowed
+
+
+def test_page_shows_the_safety_qa_gate():
+    html = build_tower_page.main().read_text()
+    data = json.loads(re.search(r"var DATA = (\{.*?\});\n</script>", html, re.S).group(1).replace("<\\/", "</"))
+    qa = (ROOT / "tower" / "returns" / "safety-qa.md").read_text()
+    if "**HOLD.**" in qa:
+        assert data["gate"] == "HOLD" and "suspended" in (data["verification"] or "")

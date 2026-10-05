@@ -69,6 +69,7 @@
     <span class="label">Engineering organisation run · 30-storey residential tower · Sydney, NSW</span>
     <h1>A 30-storey tower for Sydney</h1>
     <p>Built from the divisions' own outputs: the structural scheme and member sizes, the architects' typical floor of eight apartments around a central core, the foundation study and the independent check. The sun is computed for Sydney's latitude, so north light and winter shadows are real for any date and hour.</p>
+    <p class="note" id="gate"></p>
     <p class="note">Concept feasibility only. No lot has been chosen: the surrounding buildings are illustrative, and Sydney's wind and earthquake values are still to be retrieved and cited by the Codes division. Not for construction.</p>
   </header>
 
@@ -139,18 +140,20 @@ var DATA = /*__DATA__*/{};
   ];
   $('facts').innerHTML = facts.map(function (f) { return '<div><span class="label">' + f[0] + '</span><b>' + f[1] + '</b><small>' + f[2] + '</small></div>'; }).join('');
 
+  if (DATA.gate) $('gate').innerHTML = '<b>Safety/QA gate: ' + DATA.gate + '.</b>' + (DATA.gate === 'HOLD' ? ' Six blockers (B1-B6) must be resolved before this concept is issued; see the division table.' : '');
+
   // ---- division table
   var headline = {
     'Architecture (options A-E)': '5 options; reference A: 8 apartments (2×1B, 4×2B, 2×3B) around a 12 × 8 m core; 4 lifts by estimate',
     'Structure': 'RC core + 14 columns + 250 mm PT flat plate; base columns up to 1.05 m; core walls 0.6/0.5/0.4 m; outrigger as upgrade',
     'Independent verification': 'Blind recalculation of 8 governing values: ' + (DATA.verification || 'pending'),
-    'Earthquake (OpenSees)': seis ? 'T1 = 4.55 s (Y), 3.30 s (X), torsion 1.28 s, matches structure within 0.01 %; independent check PROCEED; P-Delta θ ≈ 0.09 in Y, near the usual 0.1 limit; demands per unit Sa pending Sydney hazard' : 'Running',
+    'Earthquake (OpenSees)': seis ? 'T1 = 4.55 s (Y), 3.30 s (X), torsion 1.28 s, matches structure within 0.01 %; independent check PROCEED' + (DATA.gate === 'HOLD' ? ' (suspended by the gate)' : '') + '; P-Delta θ ≈ 0.09 in Y, near the usual 0.1 limit; demands per unit Sa pending Sydney hazard' : 'Running',
     'Wind': wind ? 'Base shear 6.4–18.6 MN for 35–55 m/s; vortex shedding on the 24 m face credible (V_cr ≈ 44 m/s); comfort ≈ 23 milli-g at 45 m/s exceeds residential order; wind-tunnel test recommended' : 'Running',
     'Foundations': 'Raft 30×24 m gross ≈ 495 kPa; core zone ≈ 1,560 kPa; pile counts parametric (no soil data)',
     'Geotechnical': 'Investigation scope: 7+ boreholes, 8 CPTu + 2 SCPTu, 12-month groundwater monitoring; all soil values UNKNOWN',
     'Fire': 'Verdicts: 1 PASS (no dead ends), 9 INSUFFICIENT INFORMATION (code limits not retrieved), 6 PROFESSIONAL REVIEW REQUIRED (stair separation 13.1 m in one core, smoke control, PT slab and façade fire, fire after earthquake, accessible evacuation)',
     'Engineering critic': 'Core is not a closed tube: the lift lobby cuts both 8 m core webs at mid-depth (confirmed by the director from the data). Uncoupled halves give I ≈ 10 m⁴ vs 229 m⁴ modelled; also punching at upper columns, core-base tension 29–82 MN, interior columns missing from the structural scheme',
-    'Safety / QA gate': 'Pending',
+    'Safety / QA gate': DATA.gate === 'HOLD' ? '<b>HOLD: not issued.</b> B1 core is not a closed tube (lobby cuts both webs); B2 column scheme contradicts architecture; B3 punching at upper perimeter columns; B4 core-base tension not carried to foundation; B5 verification not independent (both PROCEEDs suspended); B6 core too small for lifts, stairs, firefighting lobby. Accessibility and Risk not yet run' : (DATA.gate || 'Pending'),
     'Codes': 'NSW: NCC 2022 Vol. One + NSW Schedule 5 (NCC 2025 from 1 May 2027); AS/NZS 1170.0/1/2, AS 1170.4, AS 3600 identified. Sydney wind region and Z found only in conflicting secondary sources: NOT applied as facts; standards text must be read'
   };
   $('divs').innerHTML = '<thead><tr><th>Division</th><th>Return</th><th>Headline</th></tr></thead><tbody>' + DATA.status.map(function (r) {

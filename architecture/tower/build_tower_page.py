@@ -40,7 +40,12 @@ def main():
     if A and B:
         sys.path.insert(0, str(ROOT / "architecture" / "tools")); from verify_compare import compare
         cmp = compare(A, B, json.loads((HERE / "verification" / "tol_structure.json").read_text()))["decision"]
+    qa = HERE / "returns" / "safety-qa.md"
+    gate = next((g for g in ("HOLD", "CONDITIONAL", "PASS") if qa.exists() and f"**{g}.**" in qa.read_text()), None)
+    if cmp and gate == "HOLD":
+        cmp += " (suspended by the Safety/QA HOLD)"
     data = {
+        "gate": gate,
         "basis": json.loads((HERE / "basis.json").read_text()),
         "structure": {"columns": {k: {"x": v["x_m"], "y": v["y_m"], "zones": v["size_by_zone_m"], "N_Ed_kN": v["N_Ed_kN"]} for k, v in s["columns"].items()},
                       "core_box": s["core"]["box_m"], "core_t": s["core"]["wall_t_zones_m"], "slab_t": s["slab_thickness_m"],

@@ -57,6 +57,9 @@ def validate(text: str, fire: bool = False) -> list[str]:
 
 
 if __name__ == "__main__":
-    path = Path(sys.argv[1]); errs = validate(path.read_text(), fire="--fire" in sys.argv)
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]          # flags may come before or after the path
+    if len(args) != 1:
+        print("usage: validate_return.py <file> [--fire]"); sys.exit(2)
+    path = Path(args[0]); errs = validate(path.read_text(), fire="--fire" in sys.argv)
     print("VALID" if not errs else "INVALID\n- " + "\n- ".join(errs))
     sys.exit(1 if errs else 0)
