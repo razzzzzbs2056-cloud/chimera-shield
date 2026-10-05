@@ -17,10 +17,11 @@ DATA = HERE.parent / "data"
 # ---- ASSUMPTIONS (all labelled in the return) ----
 RHO = 1.25            # kg/m3 air density (1.2-1.25 typical)
 SPEEDS = [35.0, 45.0, 55.0]   # m/s basic speed at 10 m (parametric; averaging time/return period UNKNOWN)
-ALPHA = 0.25          # power-law exponent, urban/suburban-type terrain
+ALPHA = 0.20          # power-law exponent, suburban-type terrain (ASSUMPTION)
+GUST_RATIO = 1.5      # ASSUMPTION: nominal V is a ~3-s gust at 10 m; mean-hourly = V / GUST_RATIO (1.0 if V is already a mean)
 Z_REF = 10.0
 Z_MIN = 10.0          # profile held constant below 10 m
-Z0 = 1.0              # roughness length for turbulence intensity I(z)=1/ln(z/z0)
+Z0 = 0.5              # roughness length for turbulence intensity I(z)=1/ln(z/z0)
 CF = 1.3              # net along-wind force coefficient (0.8 windward + 0.5 leeward suction), rectangular
 ZETA = 0.015          # critical damping ratio, strength-level wind (ASSUMPTION)
 ST = 0.12             # Strouhal number, rectangular section (range 0.08-0.15)
@@ -37,13 +38,15 @@ def q_of_v(v, rho=RHO):
     return 0.5 * rho * v * v
 
 
-def v_profile(v_ref, z, alpha=ALPHA):
+def v_profile(v_ref, z, alpha=ALPHA, gust_ratio=None):
+    """Mean-hourly-type speed profile V(z) = (V_ref/GR) (z/10)^alpha, z >= 10 m."""
+    gr = GUST_RATIO if gust_ratio is None else gust_ratio
     z = np.maximum(np.asarray(z, float), Z_MIN)
-    return v_ref * (z / Z_REF) ** alpha
+    return v_ref / gr * (z / Z_REF) ** alpha
 
 
-def q_profile(v_ref, z, alpha=ALPHA):
-    return q_of_v(v_profile(v_ref, z, alpha))
+def q_profile(v_ref, z, alpha=ALPHA, gust_ratio=None):
+    return q_of_v(v_profile(v_ref, z, alpha, gust_ratio))
 
 
 def v_crit(period_s, width_m, st=ST):
@@ -56,10 +59,10 @@ def peak_factor(n0, t_avg=600.0):
     return k + 0.577 / k
 
 
-def gust_factor(v_ref, period_s, b, h=H_TOP, zeta=ZETA, alpha=ALPHA):
+def gust_factor(v_ref, period_s, b, h=H_TOP, zeta=ZETA, alpha=ALPHA, gust_ratio=None):
     """Davenport-type gust factor G = 1 + 2 g I sqrt(B^2 + R^2) at z_s = 0.6 h. Returns dict."""
     zs = max(0.6 * h, Z_MIN)
-    vh = float(v_profile(v_ref, zs, alpha))
+    vh = float(v_profile(v_ref, zs, alpha, gust_ratio))
     iz = 1.0 / math.log(zs / Z0)
     ls = L_SCALE_REF[0] * (zs / L_SCALE_REF[1]) ** L_SCALE_REF[2]
     b2 = 1.0 / (1.0 + 0.9 * ((b + h) / ls) ** 0.63)
@@ -178,7 +181,7 @@ def run():
     out = {"_meta": {"script": "architecture/tower/calcs/wind_tower.py", "level": "L1-L2 hand calc",
                      "status": "CONCEPT. Not for construction. Site/code UNKNOWN; generic forms; verify against applicable wind standard.",
                      "units": "m, s, kN, kNm, Pa, mm"},
-           "assumptions": {"rho": RHO, "alpha": ALPHA, "z0": Z0, "Cf_net": CF, "zeta": ZETA, "St": ST,
+           "assumptions": {"rho": RHO, "alpha": ALPHA, "gust_ratio": GUST_RATIO, "z0": Z0, "Cf_net": CF, "zeta": ZETA, "St": ST,
                            "St_range": ST_RANGE, "plant_width_m": PLANT_WIDTH,
                            "comfort_speed_fraction": COMFORT_SPEED_FRAC, "drift_limit": "H/%d (JUDGMENT)" % DRIFT_LIMIT_DENOM,
                            "height_m": {"roof_slab": H_ROOF, "top_of_plant": H_TOP},
@@ -216,6 +219,17 @@ def run():
                     "V_roof_m_s_for_V35_45_55": [float(v_profile(v, H_TOP)) for v in SPEEDS]}
             cw[tag] = row
         out["crosswind"][name] = cw
+    # sensitivity: nominal V is already a mean-hourly speed (GUST_RATIO = 1) -> loads up ~ x2.25
+    global GUST_RATIO
+    keep = GUST_RATIO
+    GUST_RATIO = 1.0
+    out["sensitivity_V_is_mean_speed"] = {}
+    for name, d in dirs.items():
+        r = analyse_direction(st, d["direction"], d["face_w"], d["T_cr"], d["T_gr"], 45.0, True)
+        out["sensitivity_V_is_mean_speed"][name] = {k: r[k] for k in (
+            "base_shear_kN", "base_moment_kNm", "top_deflection_mm", "max_interstorey_drift_1_over")}
+        out["sensitivity_V_is_mean_speed"][name]["G"] = r["gust"]["G"]
+    GUST_RATIO = keep
     (DATA / "wind.json").write_text(json.dumps(out, indent=1))
     return out
 
