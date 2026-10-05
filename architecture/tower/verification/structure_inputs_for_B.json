@@ -1,0 +1,257 @@
+{
+ "_note": "Design INPUTS for the independent verifier (Agent B). Deliberately excludes Agent A's results (loads, weights, stiffness, periods).",
+ "plate_m": [
+  30.0,
+  24.0
+ ],
+ "floor_area_m2": 720.0,
+ "columns": {
+  "C_0_0": {
+   "x_m": 0.0,
+   "y_m": 0.0,
+   "type": "corner",
+   "size_by_zone_m": {
+    "1-10": 0.75,
+    "11-20": 0.6,
+    "21-31": 0.45
+   }
+  },
+  "E_0_8": {
+   "x_m": 0.0,
+   "y_m": 8.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 1.05,
+    "11-20": 0.85,
+    "21-31": 0.6
+   }
+  },
+  "E_0_16": {
+   "x_m": 0.0,
+   "y_m": 16.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 1.05,
+    "11-20": 0.85,
+    "21-31": 0.6
+   }
+  },
+  "C_0_24": {
+   "x_m": 0.0,
+   "y_m": 24.0,
+   "type": "corner",
+   "size_by_zone_m": {
+    "1-10": 0.75,
+    "11-20": 0.6,
+    "21-31": 0.45
+   }
+  },
+  "E_7.5_0": {
+   "x_m": 7.5,
+   "y_m": 0.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 0.95,
+    "11-20": 0.8,
+    "21-31": 0.55
+   }
+  },
+  "E_7.5_24": {
+   "x_m": 7.5,
+   "y_m": 24.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 0.95,
+    "11-20": 0.8,
+    "21-31": 0.55
+   }
+  },
+  "E_15_0": {
+   "x_m": 15.0,
+   "y_m": 0.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 0.95,
+    "11-20": 0.75,
+    "21-31": 0.55
+   }
+  },
+  "E_15_24": {
+   "x_m": 15.0,
+   "y_m": 24.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 0.95,
+    "11-20": 0.75,
+    "21-31": 0.55
+   }
+  },
+  "E_22.5_0": {
+   "x_m": 22.5,
+   "y_m": 0.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 0.95,
+    "11-20": 0.8,
+    "21-31": 0.55
+   }
+  },
+  "E_22.5_24": {
+   "x_m": 22.5,
+   "y_m": 24.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 0.95,
+    "11-20": 0.8,
+    "21-31": 0.55
+   }
+  },
+  "C_30_0": {
+   "x_m": 30.0,
+   "y_m": 0.0,
+   "type": "corner",
+   "size_by_zone_m": {
+    "1-10": 0.75,
+    "11-20": 0.6,
+    "21-31": 0.45
+   }
+  },
+  "E_30_8": {
+   "x_m": 30.0,
+   "y_m": 8.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 1.05,
+    "11-20": 0.85,
+    "21-31": 0.6
+   }
+  },
+  "E_30_16": {
+   "x_m": 30.0,
+   "y_m": 16.0,
+   "type": "edge",
+   "size_by_zone_m": {
+    "1-10": 1.05,
+    "11-20": 0.85,
+    "21-31": 0.6
+   }
+  },
+  "C_30_24": {
+   "x_m": 30.0,
+   "y_m": 24.0,
+   "type": "corner",
+   "size_by_zone_m": {
+    "1-10": 0.75,
+    "11-20": 0.6,
+    "21-31": 0.45
+   }
+  }
+ },
+ "core": {
+  "outer_dims_m": [
+   12.0,
+   8.0
+  ],
+  "box_m": [
+   9.0,
+   8.0,
+   21.0,
+   16.0
+  ],
+  "wall_t_zones_m": {
+   "1-10": 0.6,
+   "11-20": 0.5,
+   "21-31": 0.4
+  }
+ },
+ "slab_thickness_m": 0.25,
+ "assumptions": {
+  "gamma_rc_kN_m3": 25.0,
+  "slab_thickness_m": 0.25,
+  "slab_span_governing_m": 9.0,
+  "pt_span_depth_ratio_range": [
+   35,
+   45
+  ],
+  "rc_span_depth_ratio_range": [
+   26,
+   30
+  ],
+  "sdl_kPa": 1.0,
+  "partitions_kPa": 0.5,
+  "facade_kN_m": 6.0,
+  "live_res_kPa": 2.0,
+  "live_corridor_kPa": 3.0,
+  "corridor_band_m": 1.5,
+  "roof_live_kPa": 1.5,
+  "roof_sdl_kPa": 1.5,
+  "roof_plant_kPa": 2.0,
+  "core_floor_fraction": 0.6,
+  "core_live_kPa": 3.0,
+  "core_roof_plant_kPa": 5.0,
+  "core_internal_wall_t_m": 0.25,
+  "core_internal_wall_count": 2,
+  "core_wall_t_zones_m": {
+   "1-10": 0.6,
+   "11-20": 0.5,
+   "21-31": 0.4
+  },
+  "column_min_m": 0.45,
+  "column_round_m": 0.05,
+  "column_stress_limit_frac_fck": 0.45,
+  "psi_live_seismic": 0.3,
+  "load_factors_EC_form": [
+   1.35,
+   1.5
+  ],
+  "load_factors_LRFD_form": [
+   1.2,
+   1.6
+  ],
+  "live_load_reduction": "none (conservative)",
+  "cracked_factor": 0.5,
+  "poisson": 0.2,
+  "base_fixity": "fixed at ground slab (z=0); basement box and soil flexibility ignored",
+  "grid_resolution_m": 0.05
+ },
+ "levels_z_m": [
+  4.5,
+  7.6,
+  10.7,
+  13.8,
+  16.9,
+  20.0,
+  23.1,
+  26.2,
+  29.3,
+  32.4,
+  35.5,
+  38.6,
+  41.7,
+  44.8,
+  47.9,
+  51.0,
+  54.1,
+  57.2,
+  60.3,
+  63.4,
+  66.5,
+  69.6,
+  72.7,
+  75.8,
+  78.9,
+  82.0,
+  85.1,
+  88.2,
+  91.3,
+  94.4,
+  99.4
+ ],
+ "concrete": {
+  "grade": "Concrete C40/50",
+  "fck_MPa": 40.0,
+  "source": "architecture/data/materials.csv"
+ },
+ "E_concrete_MPa": 35000.0,
+ "cracked_factor": 0.5
+}
