@@ -168,6 +168,7 @@ def comfort_indication(res, v_ref, face_w):
 
 
 def run():
+    global GUST_RATIO
     st = load_structure()
     lc, lg = st["lateral_cracked"], st["lateral_gross"]
     dirs = {
@@ -199,6 +200,10 @@ def run():
             for tag, cr in (("cracked", True), ("gross", False)):
                 r = analyse_direction(st, d["direction"], d["face_w"], d["T_cr"], d["T_gr"], v, cr)
                 r["comfort_indicative"] = comfort_indication(r, v, d["face_w"])
+                rs = analyse_direction(st, d["direction"], d["face_w"], d["T_cr"], d["T_gr"],
+                                       COMFORT_SPEED_FRAC * v, cr)
+                r["serviceability_0p7V"] = {k: rs[k] for k in (
+                    "top_deflection_mm", "top_drift_ratio_H_over", "max_interstorey_drift_1_over")}
                 c[tag] = r
             out["cases"][name][str(int(v))] = c
         # period sensitivity at 45 m/s (cracked stiffness, period scaled, loads/EI unchanged -> gust only)
@@ -214,13 +219,12 @@ def run():
                 vc = v_crit(T, d["across_width_m"], stv)
                 row["St"][str(stv)] = {
                     "V_cr_m_s": vc,
-                    "V_basic_at_which_Vcr_reached_at_roof": vc / float((H_TOP / Z_REF) ** ALPHA),
-                    "height_where_Vcr_m_for_V35_45_55": [float(Z_REF * (vc / v) ** (1 / ALPHA)) for v in SPEEDS],
+                    "V_basic_at_which_Vcr_reached_at_roof": vc * GUST_RATIO / float((H_TOP / Z_REF) ** ALPHA),
+                    "height_where_Vcr_m_for_V35_45_55": [float(Z_REF * (vc * GUST_RATIO / v) ** (1 / ALPHA)) for v in SPEEDS],
                     "V_roof_m_s_for_V35_45_55": [float(v_profile(v, H_TOP)) for v in SPEEDS]}
             cw[tag] = row
         out["crosswind"][name] = cw
     # sensitivity: nominal V is already a mean-hourly speed (GUST_RATIO = 1) -> loads up ~ x2.25
-    global GUST_RATIO
     keep = GUST_RATIO
     GUST_RATIO = 1.0
     out["sensitivity_V_is_mean_speed"] = {}
