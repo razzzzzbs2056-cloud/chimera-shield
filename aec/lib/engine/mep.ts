@@ -39,13 +39,13 @@ export function pmv(ta: number, tr: number, vel: number, rh: number, met: number
 
 const INTERNAL: Record<BuildingType, { light: number; equip: number; Rp: number; Ra: number; hours: number; dhw: number; water: number }> = {
   // W/m² lighting & equipment; ASHRAE 62.1-2022 Table 6.2.2.1 Rp (L/s·person), Ra (L/s·m²); operating h/yr; DHW & cold water L/person/day
-  office: { light: 6.5, equip: 12, Rp: 2.5, Ra: 0.3, hours: 3000, dhw: 4, water: 40 },
+  office: { light: 7, equip: 15, Rp: 2.5, Ra: 0.3, hours: 3000, dhw: 4, water: 40 },
   residential: { light: 5, equip: 6, Rp: 2.5, Ra: 0.3, hours: 6000, dhw: 50, water: 150 },
-  hospital: { light: 10, equip: 20, Rp: 2.5, Ra: 0.6, hours: 8760, dhw: 60, water: 400 },
+  hospital: { light: 10, equip: 30, Rp: 2.5, Ra: 1.2, hours: 8760, dhw: 60, water: 400 },
   school: { light: 8, equip: 6, Rp: 3.8, Ra: 0.3, hours: 2200, dhw: 5, water: 25 },
   retail: { light: 12, equip: 8, Rp: 3.8, Ra: 0.6, hours: 4000, dhw: 2, water: 10 },
   "mixed-use": { light: 7, equip: 10, Rp: 2.5, Ra: 0.3, hours: 4000, dhw: 20, water: 70 },
-  laboratory: { light: 10, equip: 35, Rp: 5, Ra: 0.9, hours: 4500, dhw: 6, water: 60 },
+  laboratory: { light: 10, equip: 45, Rp: 5, Ra: 2.5, hours: 4500, dhw: 6, water: 60 },
   hotel: { light: 7, equip: 8, Rp: 2.5, Ra: 0.3, hours: 7000, dhw: 70, water: 250 },
   warehouse: { light: 5, equip: 3, Rp: 0, Ra: 0.3, hours: 3000, dhw: 2, water: 15 },
 };
@@ -69,21 +69,21 @@ export function hvac(intake: Intake, d: Derived, p: DesignParams): HvacResult {
   const floorFacade = d.perimeter * p.floorHeight;
   const glazing = floorFacade * p.wwr, opaque = floorFacade - glazing;
   const people = d.occupantsPerFloor;
-  const solarI = 420 + intake.climateZone * -20; // W/m² peak on glazing, orientation-averaged
+  const solarI = 560 - intake.climateZone * 25; // W/m² peak incident on glazing, orientation-averaged
   const perimeterDepth = 4.5;
   const perimArea = d.perimeter * perimeterDepth - 4 * perimeterDepth ** 2;
   const coreZoneArea = d.plateArea - perimArea - d.coreArea;
   const oaFloor = (g.Rp * people + g.Ra * (d.plateArea - d.coreArea)) / 0.8; // Ez = 0.8 ceiling supply
   const comps = {
     conduction: (glazing * p.glazingU + opaque * p.wallU) * dTs / 1000,
-    solar: glazing * p.shgc * solarI * 0.6 / 1000,
+    solar: glazing * p.shgc * solarI * 0.85 / 1000,
     people: people * 75 / 1000,
     lighting: (d.plateArea - d.coreArea) * g.light / 1000,
     equipment: (d.plateArea - d.coreArea) * g.equip / 1000,
     ventilation: 1.23 * oaFloor * dTs / 1000,
   };
   const latentPeople = people * 55 / 1000;
-  const latentOA = 3010 * (oaFloor / 1000) * 0.006; // Δw ≈ 6 g/kg
+  const latentOA = 3010 * (oaFloor / 1000) * (intake.climateZone <= 3 ? 0.008 : 0.005); // Δw g/kg → kg/kg
   const sensFloor = sum(Object.values(comps).slice(0, 5));
   const zones = ["North", "East", "South", "West"].map((n, i) => {
     const area = perimArea / 4;
@@ -157,8 +157,8 @@ export function electrical(intake: Intake, d: Derived, p: DesignParams, h: HvacR
   const evChargers = Math.ceil(intake.parkingSpaces * 0.2);
   const rows = [
     { load: "Lighting", connected: nla * g.light / 1000, demandFactor: 0.9 },
-    { load: "Small power", connected: nla * g.equip / 1000, demandFactor: 0.6 },
-    { load: "Chillers", connected: (h.coolingPeak / 5.8) * (h.plant.chillers - 1) / Math.max(h.plant.chillers - 1, 1), demandFactor: 0.9 },
+    { load: "Small power & tenant supplementary", connected: nla * (g.equip + 10) / 1000, demandFactor: 0.7 },
+    { load: "Chillers, towers & CHW pumps", connected: h.coolingPeak / 4.2, demandFactor: 0.9 },
     { load: "Heating / heat pumps", connected: hp ? h.heatingPeak / 3.2 : h.heatingPeak * 0.02, demandFactor: 0.7 },
     { load: "AHU & fans", connected: h.fanPower, demandFactor: 0.85 },
     { load: "Pumps", connected: h.pumpPower + 30, demandFactor: 0.8 },

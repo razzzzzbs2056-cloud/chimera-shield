@@ -17,7 +17,7 @@ export interface FoundationOption {
 export interface GeotechResult {
   profile: { name: string; gwl: number; layers: (BoreholeLayer & { vs: number })[] }[];
   vs30: number; siteClass: SiteClass; foundingDepth: number; foundingSoil: string;
-  qult: number; qall: number; bearingPressure: number; raftSettlement: number;
+  qult: number; qall: number; bearingPressure: number; raftSettlement: number; raftSettlementBoussinesq: number;
   liquefaction: LiquefactionRow[]; liquefactionRisk: "none" | "low" | "high"; liquefiedThickness: number;
   options: FoundationOption[]; selected: FoundationOption; dewatering: boolean; gwlMin: number;
   pile: { diameter: number; length: number; capacity: number; count: number; shaft: number; base: number };
@@ -89,14 +89,18 @@ export function geotech(boreholes: Borehole[], p: DesignParams, plate: { Lx: num
   const area = plate.Lx * plate.Ly;
   const bearingPressure = loads.totalService / area - sv.total * (p.basementLevels > 0 ? 1 : 0); // net of excavation relief
 
-  // Settlement under raft (2:1 distribution, elastic + 1-D consolidation)
-  const raftSettle = (bh: Borehole, q: number) => {
+  // Settlement under raft (elastic + 1-D consolidation) with a pluggable stress-distribution model
+  const newmark = (b: number, l: number, z: number) => { // corner influence factor for a uniformly loaded rectangle
+    const m = b / z, n = l / z, m2 = m * m, n2 = n * n, s = Math.sqrt(m2 + n2 + 1);
+    return (1 / (4 * Math.PI)) * (((2 * m * n * s) / (m2 + n2 + m2 * n2 + 1)) * ((m2 + n2 + 2) / (m2 + n2 + 1)) + Math.atan2(2 * m * n * s, m2 + n2 + 1 - m2 * n2));
+  };
+  const raftSettle = (bh: Borehole, q: number, method: "2:1" | "boussinesq" = "2:1") => {
     let s = 0;
     for (let z = foundingDepth; z < Math.min(foundingDepth + 2 * B, bh.layers[bh.layers.length - 1].bottom); z += 0.5) {
       const l = layerAt(bh, z);
       const dz = 0.5;
       const zr = z - foundingDepth;
-      const dsig = (q * B * L) / ((B + zr) * (L + zr));
+      const dsig = method === "2:1" ? (q * B * L) / ((B + zr) * (L + zr)) : 4 * q * newmark(B / 2, L / 2, Math.max(zr, 0.25));
       if (l.soil === "clay" && l.cc && l.e0) {
         const s0 = Math.max(sigmaV(bh, z).eff, 10);
         s += (l.cc * dz / (1 + l.e0)) * Math.log10((s0 + dsig) / s0);
@@ -109,6 +113,7 @@ export function geotech(boreholes: Borehole[], p: DesignParams, plate: { Lx: num
   const qNet = Math.max(bearingPressure, 0);
   const sets = bhs.map((b) => raftSettle(b, qNet));
   const raftSettlement = Math.max(...sets);
+  const raftSettlementBoussinesq = Math.max(...bhs.map((b) => raftSettle(b, qNet, "boussinesq")));
   const differential = Math.max(...sets) - Math.min(...sets) + raftSettlement * 0.25;
 
   // Liquefaction triggering — simplified procedure (Youd et al. 2001)
@@ -191,7 +196,7 @@ export function geotech(boreholes: Borehole[], p: DesignParams, plate: { Lx: num
 
   return {
     profile, vs30: round(vs30, 0), siteClass, foundingDepth, foundingSoil: fl.soil, qult: round(qult, 0), qall: round(qall, 0),
-    bearingPressure: round(qNet, 0), raftSettlement: round(raftSettlement * 1000, 1), liquefaction, liquefactionRisk,
+    bearingPressure: round(qNet, 0), raftSettlement: round(raftSettlement * 1000, 1), raftSettlementBoussinesq: round(raftSettlementBoussinesq * 1000, 1), liquefaction, liquefactionRisk,
     liquefiedThickness: round(liquefiedThickness, 1), options: opts, selected, dewatering: gwlMin < foundingDepth, gwlMin,
     pile: { diameter: pileD, length: pileLen, capacity: round(pileCap, 0), count: pileCount, shaft: round(shaftCap(pileLen), 0), base: round(baseCap(pileLen), 0) },
   };

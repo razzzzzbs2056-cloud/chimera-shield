@@ -490,10 +490,32 @@ export function syntheticRecord(seed: number, pgaG: number, duration = 24, dt = 
   return a.map((v) => (v / peak) * pgaG * G);
 }
 
+/** Pseudo-spectral acceleration of a linear SDOF (Newmark average acceleration). */
+export function sdofPSA(ag: number[], dt: number, T: number, zeta: number) {
+  const w = (2 * Math.PI) / T, k = w * w, c = 2 * zeta * w;
+  const a1 = 4 / (dt * dt) + (2 * c) / dt, keff = k + a1;
+  let u = 0, v = 0, a = -ag[0], peak = 0;
+  for (let i = 1; i < ag.length; i++) {
+    const p = -ag[i] + (4 / (dt * dt)) * u + (4 / dt) * v + a + c * ((2 / dt) * u + v);
+    const un = p / keff;
+    const vn = (2 / dt) * (un - u) - v;
+    a = (4 / (dt * dt)) * (un - u) - (4 / dt) * v - a;
+    u = un; v = vn;
+    peak = Math.max(peak, Math.abs(u));
+  }
+  return peak * k;
+}
+
 function runHistory(K: Matrix, m: number[], omegas: number[], seis: SeismicParams, po: Pushover, d: Derived, phi1: number[], _gamma1: number, intake: Intake): History {
   const n = m.length;
   const dt = 0.01;
-  const ag = syntheticRecord(Math.round(intake.Ss * 1000 + intake.S1 * 100 + n), seis.pga);
+  const raw = syntheticRecord(Math.round(intake.Ss * 1000 + intake.S1 * 100 + n), seis.pga);
+  // amplitude-scale the record so its 5 %-damped spectrum matches the design spectrum over 0.2T1–1.5T1 (ASCE 7-22 §16.2.3 style)
+  const T1 = (2 * Math.PI) / omegas[0];
+  const periods = [0.2, 0.35, 0.5, 0.75, 1.0, 1.25, 1.5].map((f) => f * T1);
+  const ratios = periods.map((T) => (designSa(T, seis) * G) / Math.max(sdofPSA(raw, dt, T, 0.05), 1e-6));
+  const scaleF = ratios.reduce((a, b) => a + b, 0) / ratios.length;
+  const ag = raw.map((v) => v * scaleF);
   // Rayleigh damping 5 % at modes 1 and 3 (or last)
   const w1 = omegas[0], w2 = omegas[Math.min(2, n - 1)];
   const z = 0.05;
@@ -551,7 +573,7 @@ function runHistory(K: Matrix, m: number[], omegas: number[], seis: SeismicParam
     if (s % 6 === 0) hyst.push({ d: round(x * Gam * 1000, 2), f: round(fs * Gam, 0) });
   }
   return {
-    dt, pga: seis.pga, record: ag.filter((_, i) => i % 8 === 0).map((a, i) => ({ t: round(i * 8 * dt, 2), a: round(a / G, 4) })),
+    dt, pga: round((Math.max(...ag.map(Math.abs)) / G), 3), record: ag.filter((_, i) => i % 8 === 0).map((a, i) => ({ t: round(i * 8 * dt, 2), a: round(a / G, 4) })),
     roof, peakRoof, peakDriftRatio: peakDrift, peakBaseShearElastic: peakV,
     nl: { peakDisp: peak * Gam, ductility: peak / Dy, residual: Math.abs(x) * Gam, hysteresis: hyst },
   };
@@ -566,8 +588,9 @@ export function structuralQuantities(d: Derived, p: DesignParams, system: string
     const tier = Math.min(2, Math.floor((3 * i) / p.floors));
     colVol += nCols * s.colSize(tier) ** 2 * d.storyHeights[i];
   }
-  const hasCore = ["core", "core-outrigger", "dual", "shear-wall"].includes(system);
-  const coreVol = hasCore ? s.coreA * d.height * (system === "shear-wall" ? 1 : 1) : 0;
+  const hasCore = system !== "clt-wall"; // stair/lift shafts are concrete even when not part of the lateral system
+  const core = sections(p, "core");
+  const coreVol = (hasCore ? core.coreA * d.height : 0) + (system === "shear-wall" ? s.coreA * d.height : 0);
   const cltWallVol = system === "clt-wall" ? s.coreA * d.height : 0;
   const slabVolPerFloor = d.plateArea * (p.slabSystem === "composite-deck" ? p.slabThickness * 0.75 : p.slabSystem === "clt" ? 0.06 : p.slabThickness);
   const beamLen = (p.baysX * (p.baysY + 1) * p.spanX + p.baysY * (p.baysX + 1) * p.spanY);
