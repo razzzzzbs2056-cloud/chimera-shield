@@ -1,0 +1,5 @@
+pytest==8.2.2
+numpy
+scipy
+ifcopenshell
+openseespy

@@ -1,0 +1,22 @@
+material,category,density_kg_m3,E_GPa,strength_MPa,strength_basis,thermal_k_W_mK,embodied_kgCO2e_per_kg_low,embodied_kgCO2e_per_kg_high,biogenic_kgCO2e_per_kg,fire_note,notes
+Concrete C30/37,structural,2400,33,30,fck cylinder,1.7,0.10,0.18,0,non-combustible; cover protects rebar,Cement content dominates carbon; GGBS/fly-ash blends lower it
+Concrete C40/50,structural,2450,35,40,fck cylinder,1.8,0.12,0.22,0,non-combustible,
+Reinforcing steel B500,structural,7850,200,500,fy,50,0.7,2.5,0,loses strength >500C,Low end = recycled EAF steel
+Structural steel S355,structural,7850,210,355,fy,50,0.8,2.5,0,needs fire protection for R60+,EAF vs BOF route changes carbon 2-3x
+Stainless steel 316,structural/finish,8000,193,205,fy (0.2% proof),16,3.0,6.5,0,non-combustible,Corrosion resistant
+Aluminium (extruded),envelope,2700,70,160,fy typical alloy,160,4.0,16,0,melts ~660C,Strongly dependent on smelter electricity
+Glulam GL24h,structural,420,11.5,24,fm_k bending,0.13,0.3,0.7,1.6,predictable char ~0.65 mm/min,Biogenic carbon is stored only while in use; account separately
+CLT 5-ply,structural,470,11.0,24,fm_k lamella-based,0.12,0.3,0.7,1.6,char ~0.65 mm/min; encapsulation may be required,Rolling shear governs short spans
+LVL,structural,510,13.8,44,fm_k,0.13,0.4,0.9,1.5,char ~0.7 mm/min,
+Bamboo (laminated),structural,700,11,60,fm typical,0.17,0.3,0.8,1.5,combustible,Limited code recognition; test-based approval often needed
+Brick (fired clay),envelope,1900,10,20,fc masonry unit,0.8,0.2,0.3,0,non-combustible,High energy to fire
+Rammed earth (stabilised),envelope,2000,1.5,3,fc,1.1,0.03,0.1,0,non-combustible,Thick walls; strong thermal mass; moisture protection essential
+Granite,finish/structural,2700,50,150,fc,3.0,0.05,0.2,0,non-combustible,Transport distance matters
+Limestone,finish,2400,25,60,fc,1.5,0.05,0.15,0,non-combustible,
+Float glass,envelope,2500,70,40,design bending strength annealed,1.0,0.8,1.5,0,non-combustible; thermal stress breakage,Double/triple units add spacer + coating
+ETFE foil,envelope,1750,0.8,40,tensile,0.2,6,10,0,self-extinguishing; melts,Lightweight roofs; ~1% of glass weight
+GFRP (glass fibre polymer),structural/facade,1900,25,300,tensile pultruded,0.3,2.5,8,0,combustible; needs fire strategy,Corrosion-proof; creep and joint design critical
+Hempcrete,insulation/infill,350,0.05,0.5,fc,0.07,-0.2,0.2,0.4,combustible but slow burning,Non-structural; needs a frame
+Mineral wool insulation,insulation,60,,,,0.036,1.0,1.4,0,non-combustible,
+Wood-fibre insulation,insulation,150,,,,0.04,0.2,0.6,1.2,combustible,
+Copper sheet,cladding,8900,120,70,fy,390,2.5,4.0,0,non-combustible,Patinates; long life

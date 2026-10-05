@@ -1,0 +1,330 @@
+{
+ "division": "12 Fire Engineering",
+ "status": "concept geometry checks (not for construction); code limits NOT retrieved",
+ "routing_factor_assumption": 1.3,
+ "occupancy": {
+  "bedrooms_per_floor": 16,
+  "residential_floors": 29,
+  "base": {
+   "persons_per_bedroom": 1.5,
+   "per_floor": 24.0,
+   "total": 696.0
+  },
+  "high": {
+   "persons_per_bedroom": 2.0,
+   "per_floor": 32.0,
+   "total": 928.0
+  },
+  "ground_floor_area_m2": 720.0,
+  "ground_floor_parametric": {
+   "1 person per 1.0 m2": 720.0,
+   "1 person per 3.0 m2": 240.0,
+   "1 person per 5.0 m2": 144.0
+  }
+ },
+ "egress": {
+  "ring": {
+   "x_w": 8.25,
+   "x_e": 21.75,
+   "y_s": 7.25,
+   "y_n": 16.75,
+   "perimeter_m": 46.0
+  },
+  "stair_doors": {
+   "stair1": [
+    9.0,
+    9.4
+   ],
+   "stair2": [
+    21.0,
+    14.6
+   ]
+  },
+  "stair_separation": {
+   "straight_line_m": 13.078226179417452,
+   "floor_diagonal_m": 38.41874542459709,
+   "fraction_of_diagonal": 0.34041263021161255,
+   "ring_path_short_m": 24.5,
+   "ring_path_long_m": 24.5,
+   "third_of_diagonal_m": 12.806248474865697,
+   "stair_centre_distance_m": 8.324061508662703
+  },
+  "apartments": [
+   {
+    "name": "A01 SW corner",
+    "type": "2B",
+    "area_m2": 67.5,
+    "door": [
+     7.5,
+     7.25
+    ],
+    "corridor": "Corridor S",
+    "inside_straight_m": 10.431323022512533,
+    "inside_routed_m": 13.560719929266293,
+    "corridor_to_nearest_stair_door_m": 3.6499999999999986,
+    "total_to_nearest_stair_m": 17.21071992926629,
+    "corridor_to_other_stair_m": 22.35,
+    "total_to_other_stair_m": 35.91071992926629,
+    "routes": {
+     "stair1": {
+      "short": 3.6499999999999986,
+      "long": 45.35
+     },
+     "stair2": {
+      "short": 22.35,
+      "long": 26.65
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A02 W",
+    "type": "1B",
+    "area_m2": 45.0,
+    "door": [
+     7.5,
+     12.0
+    ],
+    "corridor": "Corridor W",
+    "inside_straight_m": 8.077747210701755,
+    "inside_routed_m": 10.501071373912282,
+    "corridor_to_nearest_stair_door_m": 4.100000000000001,
+    "total_to_nearest_stair_m": 14.601071373912283,
+    "corridor_to_other_stair_m": 21.9,
+    "total_to_other_stair_m": 32.40107137391228,
+    "routes": {
+     "stair1": {
+      "short": 4.100000000000001,
+      "long": 44.9
+     },
+     "stair2": {
+      "short": 21.9,
+      "long": 27.1
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A03 NW corner",
+    "type": "2B",
+    "area_m2": 67.5,
+    "door": [
+     7.5,
+     16.75
+    ],
+    "corridor": "Corridor N",
+    "inside_straight_m": 10.431323022512533,
+    "inside_routed_m": 13.560719929266293,
+    "corridor_to_nearest_stair_door_m": 8.850000000000001,
+    "total_to_nearest_stair_m": 22.410719929266293,
+    "corridor_to_other_stair_m": 17.15,
+    "total_to_other_stair_m": 30.71071992926629,
+    "routes": {
+     "stair1": {
+      "short": 8.850000000000001,
+      "long": 40.15
+     },
+     "stair2": {
+      "short": 17.15,
+      "long": 31.85
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A04 N",
+    "type": "3B",
+    "area_m2": 97.5,
+    "door": [
+     15.0,
+     17.5
+    ],
+    "corridor": "Corridor N",
+    "inside_straight_m": 9.924716620639604,
+    "inside_routed_m": 12.902131606831485,
+    "corridor_to_nearest_stair_door_m": 10.399999999999999,
+    "total_to_nearest_stair_m": 23.302131606831484,
+    "corridor_to_other_stair_m": 15.600000000000001,
+    "total_to_other_stair_m": 28.502131606831487,
+    "routes": {
+     "stair1": {
+      "short": 15.600000000000001,
+      "long": 33.4
+     },
+     "stair2": {
+      "short": 10.399999999999999,
+      "long": 38.6
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A05 NE corner",
+    "type": "2B",
+    "area_m2": 67.5,
+    "door": [
+     22.5,
+     16.75
+    ],
+    "corridor": "Corridor N",
+    "inside_straight_m": 10.431323022512533,
+    "inside_routed_m": 13.560719929266293,
+    "corridor_to_nearest_stair_door_m": 3.6499999999999986,
+    "total_to_nearest_stair_m": 17.21071992926629,
+    "corridor_to_other_stair_m": 22.35,
+    "total_to_other_stair_m": 35.91071992926629,
+    "routes": {
+     "stair1": {
+      "short": 22.35,
+      "long": 26.65
+     },
+     "stair2": {
+      "short": 3.6499999999999986,
+      "long": 45.35
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A06 E",
+    "type": "1B",
+    "area_m2": 45.0,
+    "door": [
+     22.5,
+     12.0
+    ],
+    "corridor": "Corridor E",
+    "inside_straight_m": 8.077747210701755,
+    "inside_routed_m": 10.501071373912282,
+    "corridor_to_nearest_stair_door_m": 4.100000000000001,
+    "total_to_nearest_stair_m": 14.601071373912283,
+    "corridor_to_other_stair_m": 21.9,
+    "total_to_other_stair_m": 32.40107137391228,
+    "routes": {
+     "stair1": {
+      "short": 21.9,
+      "long": 27.1
+     },
+     "stair2": {
+      "short": 4.100000000000001,
+      "long": 44.9
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A07 SE corner",
+    "type": "2B",
+    "area_m2": 67.5,
+    "door": [
+     22.5,
+     7.25
+    ],
+    "corridor": "Corridor S",
+    "inside_straight_m": 10.431323022512533,
+    "inside_routed_m": 13.560719929266293,
+    "corridor_to_nearest_stair_door_m": 8.850000000000001,
+    "total_to_nearest_stair_m": 22.410719929266293,
+    "corridor_to_other_stair_m": 17.15,
+    "total_to_other_stair_m": 30.71071992926629,
+    "routes": {
+     "stair1": {
+      "short": 17.15,
+      "long": 31.85
+     },
+     "stair2": {
+      "short": 8.850000000000001,
+      "long": 40.15
+     }
+    },
+    "dead_end_m": 0.0
+   },
+   {
+    "name": "A08 S",
+    "type": "3B",
+    "area_m2": 97.5,
+    "door": [
+     15.0,
+     6.5
+    ],
+    "corridor": "Corridor S",
+    "inside_straight_m": 9.924716620639604,
+    "inside_routed_m": 12.902131606831485,
+    "corridor_to_nearest_stair_door_m": 10.399999999999999,
+    "total_to_nearest_stair_m": 23.302131606831484,
+    "corridor_to_other_stair_m": 15.600000000000001,
+    "total_to_other_stair_m": 28.502131606831487,
+    "routes": {
+     "stair1": {
+      "short": 10.399999999999999,
+      "long": 38.6
+     },
+     "stair2": {
+      "short": 15.600000000000001,
+      "long": 33.4
+     }
+    },
+    "dead_end_m": 0.0
+   }
+  ],
+  "max_total_to_nearest_stair_m": 23.302131606831484,
+  "max_total_to_other_stair_m": 35.91071992926629,
+  "max_total_straight_inside_m": 20.324716620639602,
+  "max_corridor_only_to_nearest_stair_m": 10.399999999999999
+ },
+ "stair_flow": {
+  "base": {
+   "total_persons": 696.0,
+   "per_stair_both_available": 348.0,
+   "per_stair_one_lost": 696.0,
+   "rows": [
+    {
+     "eff_width_m": 1.0,
+     "t_both_min": 5.8,
+     "t_one_lost_min": 11.6
+    },
+    {
+     "eff_width_m": 1.2,
+     "t_both_min": 4.833333333333333,
+     "t_one_lost_min": 9.666666666666666
+    },
+    {
+     "eff_width_m": 1.5,
+     "t_both_min": 3.8666666666666667,
+     "t_one_lost_min": 7.733333333333333
+    }
+   ]
+  },
+  "high": {
+   "total_persons": 928.0,
+   "per_stair_both_available": 464.0,
+   "per_stair_one_lost": 928.0,
+   "rows": [
+    {
+     "eff_width_m": 1.0,
+     "t_both_min": 7.733333333333333,
+     "t_one_lost_min": 15.466666666666667
+    },
+    {
+     "eff_width_m": 1.2,
+     "t_both_min": 6.444444444444445,
+     "t_one_lost_min": 12.88888888888889
+    },
+    {
+     "eff_width_m": 1.5,
+     "t_both_min": 5.155555555555555,
+     "t_one_lost_min": 10.31111111111111
+    }
+   ]
+  },
+  "flow_assumption_p_per_s_per_m": 1.0,
+  "note": "Full simultaneous evacuation, flow-limited at stair base, no merging losses: lower bound on time."
+ },
+ "exits_per_floor": 2,
+ "firefighting_lift_candidate": "Lift 2 (adjacent to Stair 1 side of core; in core with 4 lifts sharing one lobby)",
+ "stair_core_distance_to_facade_m": {
+  "stair1_min_to_external_wall": 8.0,
+  "stair2_min_to_external_wall": 8.0
+ },
+ "verdicts": {}
+}

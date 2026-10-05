@@ -1,0 +1,8 @@
+ground,typical_presumptive_bearing_kPa,settlement_risk,foundation_options,notes
+Rock (sound),1000-4000,very low,pads on rock,Verify no voids or weathering
+Dense gravel/sand,200-600,low,pads/rafts,
+Medium dense sand,100-300,low-moderate,pads/rafts,Liquefaction check in seismic zones
+Stiff clay,100-300,moderate (consolidation),rafts/piles,Shrink-swell near trees
+Soft clay,<75,high,piles/ground improvement,
+Peat/organic fill,not suitable,very high,piles to competent stratum,
+Made ground/fill,unknown,unpredictable,remove or pile,Always investigate

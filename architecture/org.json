@@ -1,0 +1,848 @@
+{
+ "director": {
+  "agent": "bld-director",
+  "role": "Chief Engineering Director",
+  "staff": [
+   [
+    "bld-requirements-interpreter",
+    "Requirements Interpreter",
+    "Turns a request ('Design a 40-storey mixed-use tower in Sydney') into a structured brief: use, scale, site, jurisdiction, performance targets, budget, programme, client values, and an explicit list of UNKNOWNs and questions for the client."
+   ],
+   [
+    "bld-task-planner",
+    "Engineering Task Planner",
+    "Breaks the brief into engineering tasks with owners, inputs, outputs, analysis level (PROTOCOL.md §3) and definition of done; writes the work breakdown."
+   ],
+   [
+    "bld-discipline-router",
+    "Discipline Router",
+    "Maps each task to the right division agent and sub-specialty focus using architecture/org.json; flags tasks no agent covers."
+   ],
+   [
+    "bld-dependency-manager",
+    "Dependency Manager",
+    "Orders tasks by data dependency (site and ground before foundations, structure before façade loads), finds what can run in parallel, and detects circular dependencies that need an iteration loop."
+   ],
+   [
+    "bld-iteration-manager",
+    "Design-Iteration Manager",
+    "Runs design → simulate → evaluate → modify loops: what changed between iterations, convergence criteria, iteration limits, and which results are invalidated by a change."
+   ],
+   [
+    "bld-constraint-manager",
+    "Constraint Manager",
+    "Keeps the single list of hard constraints (codes, strength, serviceability, drift, vibration, fire, accessibility, planning, budget, geometry) with their source class and value, and checks every option against it."
+   ],
+   [
+    "bld-decision-manager",
+    "Decision Manager",
+    "Records decisions with options considered, criteria, evidence, who decided (human or agent), and what would reopen them; prepares decisions that must go to a human."
+   ],
+   [
+    "bld-conflict-resolver",
+    "Conflict Resolver",
+    "Resolves clashes between disciplines (duct vs beam, glazing vs overheating, cost vs carbon) by stating the trade-off, quantifying each side, and recommending; never resolves a conflict by relaxing a safety constraint."
+   ],
+   [
+    "bld-engineering-memory",
+    "Engineering Memory Agent",
+    "Maintains architecture/memory/: assumptions register, facts with sources, decisions, lessons and known errors, so later agents start from the project's record instead of re-deriving or contradicting it."
+   ],
+   [
+    "bld-deliverables-manager",
+    "Deliverables Manager",
+    "Tracks every deliverable (reports, models, drawings, schedules, IFC, pages), its status, version, reviewer and whether it passed the return-format validator and Safety/QA gate."
+   ]
+  ]
+ },
+ "leads": {
+  "bld-project-lead": "Project Agent: scope, programme, cost, procurement, construction, transport.",
+  "bld-design-lead": "Design Agent: architecture and engineering design integration.",
+  "bld-safety-qa-lead": "Safety / QA Agent: life safety, codes, accessibility, risk, critique and independent verification; holds the issue gate."
+ },
+ "divisions": [
+  {
+   "n": 2,
+   "name": "Architecture",
+   "agent": "bld-concept-designer",
+   "lead": "bld-design-lead",
+   "support": [
+    "bld-artist",
+    "bld-precedent-researcher"
+   ],
+   "subs": [
+    "Site Analysis",
+    "Concept Design",
+    "Building Massing",
+    "Space Planning",
+    "Floor-Plan Generation",
+    "Circulation",
+    "Core Design",
+    "Vertical Transportation",
+    "Accessibility",
+    "Universal Design",
+    "Building Envelope",
+    "Façade Design",
+    "Roof Design",
+    "Interior Architecture",
+    "Human Factors",
+    "Ergonomics",
+    "Daylighting",
+    "Passive Design",
+    "Climate Response",
+    "Urban Design",
+    "Landscape Coordination",
+    "Parametric Design",
+    "Generative Design",
+    "Design-for-Manufacture",
+    "Modular Construction",
+    "Adaptive Reuse",
+    "Heritage",
+    "Architectural Documentation"
+   ],
+   "rules": "Always generate several alternatives before recommending one, each optimised for a named objective, e.g. Option A cheapest, Option B lowest carbon, Option C maximum usable floor area, Option D best daylight, Option E strongest architectural identity. Hand the option set with its metrics to `bld-optimisation-agent` (non-dominated comparison: `python architecture/tools/pareto.py`)."
+  },
+  {
+   "n": 3,
+   "name": "Structural Engineering",
+   "agent": "bld-structural-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Analysis: Statics",
+    "Analysis: Dynamics",
+    "Analysis: Structural Mechanics",
+    "Analysis: Finite Element Analysis",
+    "Analysis: Linear Analysis",
+    "Analysis: Nonlinear Analysis",
+    "Analysis: Buckling",
+    "Analysis: Stability",
+    "Analysis: Second-Order Effects",
+    "Analysis: Progressive Collapse",
+    "Analysis: Robustness",
+    "Analysis: Fatigue",
+    "Analysis: Fracture",
+    "Analysis: Vibration",
+    "Analysis: Human-Induced Vibration",
+    "Analysis: Impact",
+    "Analysis: Blast",
+    "Analysis: Structural Reliability",
+    "Material: Reinforced Concrete",
+    "Material: Prestressed Concrete",
+    "Material: Post-Tensioned Concrete",
+    "Material: Structural Steel",
+    "Material: Composite Structures",
+    "Material: Timber",
+    "Material: Mass Timber",
+    "Material: Masonry",
+    "Material: Aluminium",
+    "Material: Glass Structures",
+    "Material: FRP",
+    "Material: Ultra-High-Performance Concrete",
+    "Element: Beam",
+    "Element: Column",
+    "Element: Slab",
+    "Element: Wall",
+    "Element: Shear Wall",
+    "Element: Core",
+    "Element: Truss",
+    "Element: Frame",
+    "Element: Connection",
+    "Element: Diaphragm",
+    "Element: Transfer Structure",
+    "Element: Cantilever",
+    "Element: Long Span",
+    "Element: Shell",
+    "Element: Cable",
+    "Element: Tensile Structure"
+   ],
+   "rules": "Run as analysis × material × element focus (e.g. `focus: Buckling / Mass Timber / Column`). Every governing result needs an independent check through `bld-independent-verifier` and `architecture/tools/verify_compare.py`. Tools: OpenSeesPy, Gmsh + CalculiX, Code_Aster (skills bld-opensees-modelling, bld-fe-gmsh-calculix, bld-code-aster-advanced)."
+  },
+  {
+   "n": 4,
+   "name": "Earthquake Engineering",
+   "agent": "bld-seismic-engineer",
+   "lead": "bld-design-lead",
+   "support": [
+    "bld-results-interpreter"
+   ],
+   "subs": [
+    "Seismic Hazard",
+    "Ground-Motion Selection",
+    "Response Spectrum",
+    "Time-History Analysis",
+    "Modal Analysis",
+    "Mode Shapes",
+    "Base Shear",
+    "Drift",
+    "Torsion",
+    "P-Delta",
+    "Ductility",
+    "Capacity Design",
+    "Plastic Hinges",
+    "Performance-Based Design",
+    "Nonlinear Static Pushover",
+    "Nonlinear Dynamic Analysis",
+    "Liquefaction",
+    "Soil-Structure Interaction",
+    "Base Isolation",
+    "Viscous Dampers",
+    "Tuned Mass Dampers",
+    "Seismic Retrofit",
+    "Progressive Collapse",
+    "Post-Earthquake Assessment"
+   ],
+   "rules": "Pipeline, never text-only seismic numbers: Earthquake agent → generates OpenSees model → OpenSees simulation → `bld-results-interpreter` → independent seismic review (`bld-independent-verifier` + `verify_compare.py`). Reference implementation: `python architecture/seismic/pipeline.py`. Hazard values only from the jurisdiction's official source."
+  },
+  {
+   "n": 5,
+   "name": "Geotechnical Engineering",
+   "agent": "bld-geotech-civil",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Site Investigation",
+    "Soil Classification",
+    "Rock Mechanics",
+    "Groundwater",
+    "Bearing Capacity",
+    "Settlement",
+    "Slope Stability",
+    "Retaining Structures",
+    "Excavation",
+    "Shoring",
+    "Piles",
+    "Rafts",
+    "Pile-Raft Foundations",
+    "Liquefaction",
+    "Ground Improvement",
+    "Soil Dynamics",
+    "Soil-Structure Interaction",
+    "Tunnel Interaction",
+    "Basement Engineering"
+   ],
+   "rules": "Consume actual geotechnical investigation data (borehole logs, SPT, CPT, lab results). If none exists, return the investigation scope and mark every soil parameter UNKNOWN; never invent soil properties."
+  },
+  {
+   "n": 6,
+   "name": "Foundation Engineering",
+   "agent": "bld-foundation-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Isolated footing",
+    "Strip footing",
+    "Combined footing",
+    "Raft",
+    "Pile",
+    "Barrette",
+    "Caisson",
+    "Pile-raft"
+   ],
+   "rules": "Evaluate the alternatives and compare them on settlement, bearing capacity, uplift, lateral forces, seismic effects, cost, constructability and embodied carbon; use `architecture/tools/pareto.py` for the comparison. Capacities only from investigation data."
+  },
+  {
+   "n": 7,
+   "name": "Wind Engineering",
+   "agent": "bld-wind-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Regional Wind Hazard",
+    "Terrain",
+    "Topography",
+    "Pressure Coefficients",
+    "Façade Loading",
+    "Structural Wind Loads",
+    "Cross-Wind Response",
+    "Along-Wind Response",
+    "Vortex Shedding",
+    "Pedestrian Wind",
+    "Comfort",
+    "Wind-Tunnel Data Interpretation",
+    "CFD",
+    "Aeroelastic Effects"
+   ],
+   "rules": "Critical for towers. Detailed CFD via OpenFOAM (not installed here: see skill bld-eng-stack-setup); CFD supplements but does not replace code methods or wind-tunnel testing for tall or unusual buildings."
+  },
+  {
+   "n": 8,
+   "name": "Mechanical / HVAC",
+   "agent": "bld-mechanical-hvac",
+   "lead": "bld-design-lead",
+   "support": [
+    "bld-mep-engineer"
+   ],
+   "subs": [
+    "Heating Loads",
+    "Cooling Loads",
+    "Psychrometrics",
+    "HVAC Zoning",
+    "Air Distribution",
+    "Duct Design",
+    "Pipe Design",
+    "Hydronics",
+    "Chillers",
+    "Heat Pumps",
+    "Boilers",
+    "Cooling Towers",
+    "VRF",
+    "Ventilation",
+    "Indoor Air Quality",
+    "Smoke Control",
+    "Controls",
+    "Building Management Systems",
+    "Thermal Comfort",
+    "Plant Optimisation",
+    "Energy Recovery"
+   ],
+   "rules": "Smoke control is designed with `bld-fire-life-safety`, whose verdict governs."
+  },
+  {
+   "n": 9,
+   "name": "Building Energy",
+   "agent": "bld-energy-modeller",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Geometry and Zoning",
+    "Constructions and Materials",
+    "Internal Gains and Schedules",
+    "HVAC System Modelling",
+    "Annual Energy Simulation",
+    "Peak Loads",
+    "Overheating and Comfort",
+    "Renewables",
+    "Parametric Energy Studies",
+    "Calibration"
+   ],
+   "rules": "Pipeline: Architect agent → building geometry → Energy agent → EnergyPlus → annual simulation → `bld-optimisation-agent` → back to Architect + HVAC agents. EnergyPlus is not installed in this container; until it is, return method and inputs only and mark energy results UNKNOWN."
+  },
+  {
+   "n": 10,
+   "name": "Electrical Engineering",
+   "agent": "bld-electrical-engineer",
+   "lead": "bld-design-lead",
+   "support": [
+    "bld-mep-engineer"
+   ],
+   "subs": [
+    "Demand Estimation",
+    "Load Schedules",
+    "Maximum Demand",
+    "Transformers",
+    "Switchboards",
+    "Distribution",
+    "Cable Sizing",
+    "Voltage Drop",
+    "Short Circuit",
+    "Protection Coordination",
+    "Earthing",
+    "Lightning Protection",
+    "Emergency Power",
+    "Generators",
+    "UPS",
+    "Solar PV",
+    "Battery Storage",
+    "EV Charging",
+    "Lighting Power",
+    "Building Automation",
+    "ICT",
+    "Communications",
+    "Security Systems"
+   ]
+  },
+  {
+   "n": 11,
+   "name": "Hydraulic / Plumbing",
+   "agent": "bld-plumbing-hydraulic",
+   "lead": "bld-design-lead",
+   "support": [
+    "bld-mep-engineer"
+   ],
+   "subs": [
+    "Cold Water",
+    "Hot Water",
+    "Sanitary Drainage",
+    "Stormwater",
+    "Roof Drainage",
+    "Pumps",
+    "Water Storage",
+    "Greywater",
+    "Rainwater Harvesting",
+    "Gas",
+    "Sewer",
+    "Hydraulic Pressure",
+    "Fixture Loading",
+    "Backflow Protection"
+   ]
+  },
+  {
+   "n": 12,
+   "name": "Fire Engineering",
+   "agent": "bld-fire-life-safety",
+   "lead": "bld-safety-qa-lead",
+   "subs": [
+    "Fire Compartmentation",
+    "Occupant Load",
+    "Egress",
+    "Travel Distance",
+    "Evacuation Modelling",
+    "Smoke Movement",
+    "Smoke Exhaust",
+    "Sprinklers",
+    "Hydrants",
+    "Fire Resistance",
+    "Structural Fire",
+    "Façade Fire",
+    "Fire Detection",
+    "Emergency Warning",
+    "Fire Brigade Access",
+    "Performance-Based Fire Engineering"
+   ],
+   "rules": "Operate conservatively. Every check concludes with exactly one of: PASS, FAIL, INSUFFICIENT INFORMATION, PROFESSIONAL REVIEW REQUIRED. Never 'probably safe' or any hedged equivalent; the return-format validator rejects it."
+  },
+  {
+   "n": 13,
+   "name": "Façade Engineering",
+   "agent": "bld-facade-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Curtain Walls",
+    "Glazing",
+    "Mullions",
+    "Anchors",
+    "Wind Pressure",
+    "Water Penetration",
+    "Air Leakage",
+    "Thermal Bridging",
+    "Condensation",
+    "Solar Heat Gain",
+    "Façade Fire",
+    "Movement Joints",
+    "Differential Movement",
+    "Structural Glass",
+    "Stone",
+    "Metal Panels",
+    "GRC",
+    "Precast"
+   ]
+  },
+  {
+   "n": 14,
+   "name": "Building Physics",
+   "agent": "bld-building-physicist",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Heat Transfer",
+    "Moisture",
+    "Condensation",
+    "Thermal Bridges",
+    "Air Leakage",
+    "Solar Radiation",
+    "Thermal Mass",
+    "Indoor Comfort",
+    "Natural Ventilation",
+    "Daylight",
+    "Glare",
+    "Acoustics"
+   ]
+  },
+  {
+   "n": 15,
+   "name": "Sustainability",
+   "agent": "bld-sustainability-analyst",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Operational Carbon",
+    "Embodied Carbon",
+    "Life-Cycle Assessment",
+    "Material Carbon",
+    "Energy",
+    "Water",
+    "Waste",
+    "Circular Economy",
+    "Reuse",
+    "Recycling",
+    "Passive Design",
+    "Renewables",
+    "Climate Resilience",
+    "Net Zero"
+   ]
+  },
+  {
+   "n": 16,
+   "name": "Civil / Site Engineering",
+   "agent": "bld-civil-site-engineer",
+   "lead": "bld-design-lead",
+   "support": [
+    "bld-gis-site-analyst",
+    "bld-flood-stormwater",
+    "bld-transport-parking"
+   ],
+   "subs": [
+    "Topography",
+    "Earthworks",
+    "Roads",
+    "Access",
+    "Drainage",
+    "Stormwater",
+    "Utilities",
+    "Sewer",
+    "Water",
+    "Flooding",
+    "Retaining Walls",
+    "Pavements",
+    "Parking",
+    "Traffic",
+    "Site Grading",
+    "Erosion Control"
+   ]
+  },
+  {
+   "n": 17,
+   "name": "BIM",
+   "agent": "bld-bim-coordinator",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Model Author",
+    "IFC Parser",
+    "Geometry Agent",
+    "Property Agent",
+    "Model Validator",
+    "Clash Detection",
+    "Model Federation",
+    "4D BIM",
+    "5D BIM",
+    "Drawing Generator",
+    "Schedule Generator",
+    "Quantity Extraction",
+    "Change Detection",
+    "Issue Management",
+    "Digital Twin"
+   ],
+   "rules": "The BIM model is the central digital representation of the building. Standards: IFC (IFC 4.3 is the current official buildingSMART release and covers infrastructure; the coordination model here is IFC4 and should move to IFC4X3 when site and civil works are modelled), BCF for issues, IDS for information requirements, openBIM throughout."
+  },
+  {
+   "n": 18,
+   "name": "Open-source BIM engine",
+   "engine": "IfcOpenShell (ifcopenshell 0.9.0, IfcTester)",
+   "agent": "bld-bim-coordinator",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Read and write IFC",
+    "Change geometry",
+    "Generate drawings",
+    "Quantities",
+    "Construction schedules (4D)",
+    "Costing (5D)",
+    "Clash detection",
+    "Structural models",
+    "IFC validation (IDS)"
+   ],
+   "rules": "Engine, not an agent: used by the BIM division through `architecture/bim/make_ifc.py`, `requirements_ids.py` and `calculations/takeoff_reconcile.py`."
+  },
+  {
+   "n": 19,
+   "name": "Quantity Surveyor",
+   "agent": "bld-cost-planner",
+   "lead": "bld-project-lead",
+   "subs": [
+    "Quantity Takeoff",
+    "BOQ",
+    "Material Quantities",
+    "Labour Cost",
+    "Equipment Cost",
+    "Rate Analysis",
+    "Cost Planning",
+    "Cash Flow",
+    "Tender Comparison",
+    "Value Engineering",
+    "Lifecycle Cost",
+    "Cost Risk",
+    "Contingency"
+   ]
+  },
+  {
+   "n": 20,
+   "name": "Construction Engineering",
+   "agent": "bld-construction-manager",
+   "lead": "bld-project-lead",
+   "subs": [
+    "Construction Method",
+    "Temporary Works",
+    "Crane Planning",
+    "Formwork",
+    "Scaffolding",
+    "Excavation",
+    "Lifting",
+    "Site Logistics",
+    "Sequence",
+    "Precast",
+    "Modular Assembly",
+    "Temporary Stability",
+    "Construction Safety",
+    "Buildability"
+   ]
+  },
+  {
+   "n": 21,
+   "name": "Planning",
+   "agent": "bld-scheduler",
+   "lead": "bld-project-lead",
+   "subs": [
+    "WBS",
+    "Critical Path",
+    "Resource Loading",
+    "4D BIM",
+    "Procurement",
+    "Lead Times",
+    "Construction Sequence",
+    "Delay Analysis",
+    "Risk Simulation",
+    "Monte Carlo Schedule Analysis"
+   ]
+  },
+  {
+   "n": 22,
+   "name": "Codes",
+   "agent": "bld-code-compliance",
+   "lead": "bld-safety-qa-lead",
+   "subs": [
+    "Australia",
+    "USA",
+    "Canada",
+    "UK",
+    "EU",
+    "Japan",
+    "New Zealand",
+    "India",
+    "Nepal",
+    "UAE",
+    "Singapore"
+   ],
+   "rules": "Do not rely on remembered codes; standards change. Pipeline: user specifies jurisdiction → retrieve the current standard (edition and date) → extract applicable clauses → express as compliance rules → run design checks → cite evidence. Classify every requirement as LAW, BUILDING CODE, REFERENCED STANDARD, GUIDANCE, PROJECT SPECIFICATION, CLIENT REQUIREMENT or ENGINEERING ASSUMPTION. Without a retrieved current text, the result is INSUFFICIENT INFORMATION."
+  },
+  {
+   "n": 23,
+   "name": "Optimisation",
+   "agent": "bld-optimisation-agent",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Genetic Algorithms",
+    "Bayesian Optimisation",
+    "Gradient Optimisation",
+    "Topology Optimisation",
+    "Multi-objective Optimisation",
+    "Monte Carlo",
+    "Parametric Search"
+   ],
+   "rules": "Objectives such as: minimise construction cost, embodied carbon, energy, structural weight; maximise rentable area, daylight, structural robustness, constructability. Subject to hard constraints from `bld-constraint-manager`: codes, strength, serviceability, drift, vibration, fire, accessibility, budget, geometry, planning rules. Loop: design → simulation → evaluate → modify → repeat (with `bld-iteration-manager`). Tools: pymoo, `architecture/tools/pareto.py`. Cross-check every optimum (brute force, multiple seeds) and keep margin off active safety constraints."
+  },
+  {
+   "n": 24,
+   "name": "Engineering Critic",
+   "agent": "bld-red-team-reviewer",
+   "lead": "bld-safety-qa-lead",
+   "subs": [
+    "What assumption could cause collapse?",
+    "What loads were omitted?",
+    "Is the load path continuous?",
+    "Could punching shear govern?",
+    "Could torsional irregularity occur?",
+    "What if the soil stiffness estimate is wrong?",
+    "Are there brittle failure modes?",
+    "What happens if one column disappears?",
+    "What happens during construction?",
+    "What happens in fire?",
+    "What happens in an earthquake beyond design level?",
+    "What happens after 50 years?",
+    "Where could water enter?",
+    "Where could humans misuse the building?"
+   ],
+   "rules": "Never designs anything. Attacks designs: every question above gets an answer or an explicit UNKNOWN, and every credible mechanism becomes CAUSE · MECHANISM · CONSEQUENCE · DETECTION · MITIGATION · RESIDUAL RISK."
+  },
+  {
+   "n": 25,
+   "name": "Independent Verification",
+   "agent": "bld-independent-verifier",
+   "lead": "bld-safety-qa-lead",
+   "support": [
+    "bld-reviewer"
+   ],
+   "subs": [
+    "Independent recalculation (Agent B)",
+    "Automated comparison (Agent C: verify_compare.py)",
+    "Tolerance setting",
+    "Discrepancy investigation"
+   ],
+   "rules": "Never let the same model generate and approve a calculation. Engineer agent A → solution; independent agent B → independent calculation by a different method, without seeing A's numbers; agent C compares (`python architecture/tools/verify_compare.py a.json b.json --tol tol.json`). Difference < tolerance → PROCEED; difference > tolerance → INVESTIGATE."
+  },
+  {
+   "n": 26,
+   "name": "Acoustics",
+   "agent": "bld-acoustics-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Room Acoustics",
+    "Sound Insulation",
+    "Impact Sound",
+    "Services Noise",
+    "Environmental Noise",
+    "Vibration"
+   ]
+  },
+  {
+   "n": 27,
+   "name": "Lighting / Daylight",
+   "agent": "bld-lighting-daylight",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Daylight Provision",
+    "Glare",
+    "Electric Lighting",
+    "Controls",
+    "Emergency Lighting",
+    "Exterior Lighting"
+   ]
+  },
+  {
+   "n": 28,
+   "name": "Flood / Stormwater",
+   "agent": "bld-flood-stormwater",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Flood Risk",
+    "Floor Levels",
+    "Runoff",
+    "Attenuation",
+    "Infiltration",
+    "Overland Flow",
+    "Resilience"
+   ]
+  },
+  {
+   "n": 29,
+   "name": "Transportation / Parking",
+   "agent": "bld-transport-parking",
+   "lead": "bld-project-lead",
+   "subs": [
+    "Parking",
+    "Cycle Provision",
+    "Servicing",
+    "Emergency Access",
+    "Pedestrian Routes",
+    "Trip Generation"
+   ]
+  },
+  {
+   "n": 30,
+   "name": "Accessibility",
+   "agent": "bld-accessibility",
+   "lead": "bld-safety-qa-lead",
+   "subs": [
+    "Step-free Routes",
+    "Lifts and Ramps",
+    "Doors and Clearances",
+    "Accessible Toilets",
+    "Wayfinding",
+    "Accessible Evacuation"
+   ]
+  },
+  {
+   "n": 31,
+   "name": "Materials",
+   "agent": "bld-materials-scientist",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Mechanical Properties",
+    "Durability",
+    "Fire Behaviour",
+    "Embodied Carbon",
+    "Novel Materials",
+    "Supply Chain"
+   ]
+  },
+  {
+   "n": 32,
+   "name": "Risk / Reliability",
+   "agent": "bld-risk-reliability",
+   "lead": "bld-safety-qa-lead",
+   "subs": [
+    "Risk Register",
+    "Reliability",
+    "Redundancy",
+    "Robustness",
+    "Sensitivity",
+    "Residual Risk"
+   ]
+  },
+  {
+   "n": 33,
+   "name": "MEP Coordination",
+   "agent": "bld-mep-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Services Strategy",
+    "Space Allocation",
+    "Risers and Plant",
+    "Services Clashes"
+   ]
+  },
+  {
+   "n": 34,
+   "name": "Computational Engineering",
+   "agent": "bld-computational-engineer",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Scripting",
+    "Model Building",
+    "Sensitivity",
+    "Monte Carlo",
+    "Automation"
+   ]
+  },
+  {
+   "n": 35,
+   "name": "Simulation Results Interpretation",
+   "agent": "bld-results-interpreter",
+   "lead": "bld-design-lead",
+   "subs": [
+    "Plausibility",
+    "Units",
+    "Convergence",
+    "Mode Shapes",
+    "Energy Balance",
+    "Sensitivity"
+   ]
+  }
+ ],
+ "support_only": {
+  "bld-artist": "bld-design-lead",
+  "bld-precedent-researcher": "bld-design-lead",
+  "bld-gis-site-analyst": "bld-design-lead",
+  "bld-reviewer": "bld-safety-qa-lead"
+ },
+ "return_format": [
+  "INPUTS USED",
+  "ASSUMPTIONS",
+  "METHOD",
+  "CALCULATIONS",
+  "RESULTS",
+  "CODE / STANDARD",
+  "UNCERTAINTIES",
+  "FAILED CHECKS",
+  "RECOMMENDATIONS",
+  "REQUIRED HUMAN REVIEW"
+ ],
+ "fire_verdicts": [
+  "PASS",
+  "FAIL",
+  "INSUFFICIENT INFORMATION",
+  "PROFESSIONAL REVIEW REQUIRED"
+ ],
+ "source_classes": [
+  "LAW",
+  "BUILDING CODE",
+  "REFERENCED STANDARD",
+  "GUIDANCE",
+  "PROJECT SPECIFICATION",
+  "CLIENT REQUIREMENT",
+  "ENGINEERING ASSUMPTION"
+ ]
+}

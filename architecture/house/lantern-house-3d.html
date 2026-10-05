@@ -1,0 +1,524 @@
+<title>Lantern House 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+  /* Layout concept: a house monograph. Model first, then floor-by-floor schedule, then the lineage of houses each design move comes from. */
+  :root {
+    --bg: #ECEAE4; --surface: #F7F5F0; --ink: #1D2320; --muted: #5E6661; --line: #C9C5BB;
+    --accent: #375E7A; --warm: #B0683A; --hi: #F0E6D2;
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #111513; --surface: #1A1F1C; --ink: #E6EAE7; --muted: #9AA59F; --line: #2F3833; --accent: #8FB8D6; --warm: #E0A070; --hi: #2E281F; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #111513; --surface: #1A1F1C; --ink: #E6EAE7; --muted: #9AA59F; --line: #2F3833; --accent: #8FB8D6; --warm: #E0A070; --hi: #2E281F; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--f-body); padding-inline: 16px; padding-block: 24px 64px; margin: 0; }
+  main { max-width: 1240px; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.06; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 { font-size: 1.02rem; font-weight: 800; }
+  p { margin: 0; max-width: 68ch; }
+  .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .note { border-left: 3px solid var(--warm); padding-left: 12px; max-width: 74ch; }
+  .tab { font-variant-numeric: tabular-nums; }
+  section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .stage { grid-template-columns: 1fr; } }
+  .viewport { position: relative; border: 1px solid var(--line); background: var(--surface); min-width: 0; }
+  .viewport canvas { display: block; width: 100%; touch-action: none; }
+  #tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 12px/1.4 var(--f-mono); padding: 6px 8px; max-width: 260px; }
+  #fallback { padding: 32px; color: var(--muted); }
+  .hud { position: absolute; left: 10px; bottom: 8px; font: 11px var(--f-mono); color: var(--muted); pointer-events: none; }
+  .tray { border: 1px solid var(--line); background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .tray fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .tray legend { padding: 0; margin-bottom: 4px; }
+  .chk { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { font: 600 13px var(--f-body); padding: 7px 11px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+  button:hover, button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .rng { display: flex; flex-direction: column; gap: 2px; }
+  .rng .row { display: flex; justify-content: space-between; gap: 8px; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+  .facts div { border: 1px solid var(--line); background: var(--surface); padding: 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .facts b { font: 800 1.35rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+  .facts small { color: var(--muted); font-size: 12.5px; }
+  .three { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; align-items: start; }
+  .panel { border: 1px solid var(--line); background: var(--surface); padding: 14px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { font-weight: 600; border-bottom: 0; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+  .tablewrap table { min-width: 720px; }
+  .lineage td:first-child { font-weight: 600; }
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:14px">
+    <span class="label">Concept house · 3 storeys · 3 bedrooms + study + studio · 289 m² · roof garden</span>
+    <h1>The Lantern House</h1>
+    <p>A three-storey family home that glows at night through a two-storey glass living room. Each of its main moves is borrowed from a house that changed architecture: the double-height glass of the Maison de Verre, Savoye's ribbon windows and roof garden, Fallingwater's balcony, Aalto's timber stair screen, Rietveld's sliding walls, and Barragán's sky-framed roof terrace.</p>
+    <p class="note">Concept design on an assumed flat 12 × 10 m footprint with the garden facing the sun. Not for construction: a real house needs a survey, planning and building code checks, structural and energy design, and a licensed architect or designer.</p>
+  </header>
+
+  <section aria-labelledby="t-m">
+    <h2 id="t-m">Model</h2>
+    <div class="stage">
+      <div class="viewport" id="vp">
+        <div id="fallback" hidden>The 3D view needs WebGL and the three.js library. The schedules below still work.</div>
+        <div id="tip" hidden></div>
+        <div class="hud" id="hud">Drag to orbit · scroll to zoom · right-drag to pan · hover for details</div>
+      </div>
+      <div class="tray">
+        <fieldset><legend class="label">Floors shown</legend>
+          <div class="btns"><button data-floors="3" aria-pressed="true">All + roof</button><button data-floors="2">Up to 2nd</button><button data-floors="1">Up to 1st</button><button data-floors="0">Ground</button></div>
+        </fieldset>
+        <fieldset><legend class="label">Show</legend>
+          <label class="chk"><input type="checkbox" id="ly-furn" checked> Furniture</label>
+          <label class="chk"><input type="checkbox" id="ly-labels"> Room labels</label>
+          <label class="chk"><input type="checkbox" id="ly-site" checked> Garden</label>
+        </fieldset>
+        <fieldset><legend class="label">View</legend>
+          <div class="btns"><button data-view="persp" aria-pressed="true">3D</button><button data-view="garden">Garden</button><button data-view="street">Street</button><button data-view="living">Living</button><button data-view="plan">Plan</button></div>
+        </fieldset>
+        <div class="rng"><div class="row"><label class="label" for="exp">Exploded floors</label><span class="label tab" id="exp-v"></span></div><input id="exp" type="range" min="0" max="5" step="0.25" value="0"></div>
+        <div class="rng"><div class="row"><label class="label" for="cut">Section cut (east → west)</label><span class="label tab" id="cut-v"></span></div><input id="cut" type="range" min="0" max="12" step="0.25" value="12"></div>
+        <div class="rng"><div class="row"><label class="label" for="saz">Sun direction</label><span class="label tab" id="saz-v"></span></div><input id="saz" type="range" min="-90" max="90" value="-35"></div>
+        <div class="rng"><div class="row"><label class="label" for="salt">Sun height</label><span class="label tab" id="salt-v"></span></div><input id="salt" type="range" min="5" max="80" value="32"></div>
+        <div class="btns"><button id="night" aria-pressed="false">Night</button><button id="spin" aria-pressed="false">Turn slowly</button></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div><span class="label">Floor area</span><b id="f-gfa"></b><small>three storeys on 12 × 10 m</small></div>
+      <div><span class="label">Bedrooms</span><b>3</b><small>+ ground-floor study, top-floor studio</small></div>
+      <div><span class="label">Bathrooms</span><b>2 + WC</b><small>family bath, ensuite, guest WC</small></div>
+      <div><span class="label">Double-height living</span><b>6.4 m</b><small>glass wall to the garden</small></div>
+      <div><span class="label">Outdoor rooms</span><b id="f-out"></b><small>garden deck, balcony, roof garden</small></div>
+      <div><span class="label">Height</span><b>3 × 3.2 m</b><small>9.6 m to roof, lift shaft to every floor</small></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-s">
+    <h2 id="t-s">Floor by floor</h2>
+    <div class="three" id="sched"></div>
+  </section>
+
+  <section aria-labelledby="t-l">
+    <h2 id="t-l">Where each idea comes from</h2>
+    <p>The house is a conversation with twelve landmark homes and three already in the precedent atlas. Each move is used for the reason it worked there, and its known problems are designed out.</p>
+    <div class="tablewrap"><table class="lineage">
+      <thead><tr><th>Design move</th><th>From history</th><th>Why it works</th><th>What we change</th></tr></thead>
+      <tbody>
+        <tr><td>Two-storey glass living room</td><td>Maison de Verre (Chareau, 1932); Villa Müller (Loos, 1930); Eames House (1949)</td><td>Light deep into the plan; one generous room seen from the floor above</td><td>Deep horizontal louvre shades high sun, as the Farnsworth House lacked</td></tr>
+        <tr><td>Ribbon windows</td><td>Villa Savoye (Le Corbusier, 1931)</td><td>Even daylight and long views at desk and bed height</td><td>Sill at 1.0 m for street-side privacy</td></tr>
+        <tr><td>Roof garden with high walls</td><td>Villa Savoye; Casa Barragán (1948)</td><td>Gives back the ground the house occupies; a private room open to the sky</td><td>Parapet 1.1 m, pergola for shade, roof designed for soil and water loads</td></tr>
+        <tr><td>Cantilevered balcony</td><td>Fallingwater (Wright, 1937); Robie House (1910)</td><td>Connects the family lounge to the garden; horizontal lines</td><td>Short 1.8 m span, designed for long-term creep (Fallingwater needed repairs)</td></tr>
+        <tr><td>Timber slat stair screen</td><td>Villa Mairea (Aalto, 1939)</td><td>Separates without closing; filtered light; warmth</td><td>Slats at 150 mm centres, safe for children</td></tr>
+        <tr><td>Family lounge with sliding walls</td><td>Rietveld Schröder House (1924)</td><td>One open room by day, private rooms when needed</td><td>Ceiling-track partitions (described, not modelled)</td></tr>
+        <tr><td>Solid cores for stair, lift and baths</td><td>Glass House (Johnson, 1949)</td><td>Concentrating services lets the rest open up</td><td>Bathrooms stacked over each other for short plumbing runs</td></tr>
+        <tr><td>Lift shaft</td><td>Lesson from ageing in multi-storey houses</td><td>Three storeys stay usable for life</td><td>Shaft built now, lift fitted when needed</td></tr>
+        <tr><td>One proportion system</td><td>Villa Rotonda (Palladio, 1567)</td><td>Rooms and façades read as one</td><td>3.2 m storey, bays of 4.4 / 2.4 / 1.2 / 4.0 m</td></tr>
+        <tr><td>Outdoor rooms on every level</td><td>Moriyama House (Nishizawa, 2005); Katsura's verandas</td><td>Each floor has its own garden</td><td>Deck, balcony and roof garden</td></tr>
+        <tr><td>Wall as pattern</td><td>Melnikov House (1929)</td><td>Structure and window as one system</td><td>Optional perforated brick panel on the west stair wall (not modelled)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="label">Precedent facts are from general knowledge and should be verified before citing; see the Precedent Atlas.</p>
+  </section>
+</main>
+
+<script>
+/* ---------- PLAN-START: rooms per level; x east 0..12, y street (0) to garden (10); kinds: in, stair, lift, void, out ---------- */
+var LEVELS = [0, 3.2, 6.4];
+var ROOF = 9.6;
+var ROOMS = [
+  // Ground floor
+  { L: 0, name: 'Entry', kind: 'in', x0: 4.4, y0: 0, x1: 6.8, y1: 3, floor: 'stone' },
+  { L: 0, name: 'Entry', kind: 'in', x0: 6.8, y0: 1.4, x1: 8, y1: 3, floor: 'stone' },
+  { L: 0, name: 'Lift', kind: 'lift', x0: 6.8, y0: 0, x1: 8, y1: 1.4, floor: 'stone' },
+  { L: 0, name: 'Study', kind: 'in', x0: 0, y0: 0, x1: 4.4, y1: 4, floor: 'timber' },
+  { L: 0, name: 'Library nook', kind: 'in', x0: 0, y0: 4, x1: 4.4, y1: 6.2, floor: 'timber' },
+  { L: 0, name: 'Guest WC', kind: 'in', x0: 8, y0: 0, x1: 9.6, y1: 3, floor: 'tile' },
+  { L: 0, name: 'Utility', kind: 'in', x0: 9.6, y0: 0, x1: 12, y1: 3, floor: 'tile' },
+  { L: 0, name: 'Stair', kind: 'stair', x0: 4.4, y0: 3, x1: 6.8, y1: 6.2, floor: 'timber' },
+  { L: 0, name: 'Hall', kind: 'in', x0: 6.8, y0: 3, x1: 8, y1: 6.2, floor: 'stone' },
+  { L: 0, name: 'Kitchen', kind: 'in', x0: 8, y0: 3, x1: 12, y1: 6.2, floor: 'stone' },
+  { L: 0, name: 'Living', kind: 'in', x0: 0, y0: 6.2, x1: 6.8, y1: 10, floor: 'timber' },
+  { L: 0, name: 'Dining', kind: 'in', x0: 6.8, y0: 6.2, x1: 12, y1: 10, floor: 'stone' },
+  { L: 0, name: 'Garden deck', kind: 'out', x0: 0, y0: 10, x1: 12, y1: 12, floor: 'deck' },
+  // First floor
+  { L: 1, name: 'Bedroom 2', kind: 'in', x0: 0, y0: 0, x1: 4.4, y1: 6.2, floor: 'timber' },
+  { L: 1, name: 'Landing', kind: 'in', x0: 4.4, y0: 0, x1: 6.8, y1: 3, floor: 'timber' },
+  { L: 1, name: 'Landing', kind: 'in', x0: 6.8, y0: 1.4, x1: 8, y1: 3, floor: 'timber' },
+  { L: 1, name: 'Lift', kind: 'lift', x0: 6.8, y0: 0, x1: 8, y1: 1.4, floor: 'stone' },
+  { L: 1, name: 'Stair', kind: 'stair', x0: 4.4, y0: 3, x1: 6.8, y1: 6.2, floor: 'timber' },
+  { L: 1, name: 'Corridor', kind: 'in', x0: 6.8, y0: 3, x1: 8, y1: 6.2, floor: 'timber' },
+  { L: 1, name: 'Bedroom 3', kind: 'in', x0: 8, y0: 0, x1: 12, y1: 3.6, floor: 'timber' },
+  { L: 1, name: 'Family bath', kind: 'in', x0: 8, y0: 3.6, x1: 12, y1: 6.2, floor: 'tile' },
+  { L: 1, name: 'Living void', kind: 'void', x0: 0, y0: 6.2, x1: 6.8, y1: 10, floor: 'none' },
+  { L: 1, name: 'Family lounge', kind: 'in', x0: 6.8, y0: 6.2, x1: 12, y1: 10, floor: 'timber' },
+  { L: 1, name: 'Balcony', kind: 'out', x0: 6.8, y0: 10, x1: 12, y1: 11.8, floor: 'deck' },
+  // Second floor
+  { L: 2, name: 'Studio', kind: 'in', x0: 0, y0: 0, x1: 4.4, y1: 6.2, floor: 'timber' },
+  { L: 2, name: 'Landing', kind: 'in', x0: 4.4, y0: 0, x1: 6.8, y1: 3, floor: 'timber' },
+  { L: 2, name: 'Landing', kind: 'in', x0: 6.8, y0: 1.4, x1: 8, y1: 3, floor: 'timber' },
+  { L: 2, name: 'Lift', kind: 'lift', x0: 6.8, y0: 0, x1: 8, y1: 1.4, floor: 'stone' },
+  { L: 2, name: 'Stair', kind: 'stair', x0: 4.4, y0: 3, x1: 6.8, y1: 6.2, floor: 'timber' },
+  { L: 2, name: 'Corridor', kind: 'in', x0: 6.8, y0: 3, x1: 8, y1: 6.2, floor: 'timber' },
+  { L: 2, name: 'Main bedroom', kind: 'in', x0: 8, y0: 0, x1: 12, y1: 3.6, floor: 'timber' },
+  { L: 2, name: 'Ensuite', kind: 'in', x0: 8, y0: 3.6, x1: 12, y1: 6.2, floor: 'tile' },
+  { L: 2, name: 'Roof garden', kind: 'out', x0: 0, y0: 6.2, x1: 12, y1: 10, floor: 'deck' }
+];
+/* ---------- PLAN-END ---------- */
+</script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  var area = function (r) { return (r.x1 - r.x0) * (r.y1 - r.y0); };
+  var FLOOR_NAME = ['Ground floor', 'First floor', 'Second floor'];
+
+  // schedules (merge rooms with the same name on a level)
+  var gfa = 0, outA = 0, html = '';
+  [0, 1, 2].forEach(function (L) {
+    var m = {}; ROOMS.filter(function (r) { return r.L === L; }).forEach(function (r) { m[r.name] = m[r.name] || { a: 0, kind: r.kind }; m[r.name].a += area(r); });
+    var t = 0, rows = '';
+    Object.keys(m).forEach(function (k) {
+      var o = m[k]; if (o.kind === 'void') { rows += '<tr><td>' + k + ' (open to below)</td><td class="n">' + o.a.toFixed(1) + '</td></tr>'; return; }
+      if (o.kind === 'out') { outA += o.a; rows += '<tr><td>' + k + ' (outdoor)</td><td class="n">' + o.a.toFixed(1) + '</td></tr>'; return; }
+      t += o.a; rows += '<tr><td>' + k + '</td><td class="n">' + o.a.toFixed(1) + '</td></tr>';
+    });
+    gfa += t;
+    html += '<div class="panel"><h3>' + FLOOR_NAME[L] + ' · +' + LEVELS[L].toFixed(1) + ' m</h3><table><thead><tr><th>Room</th><th class="n">m²</th></tr></thead><tbody>' + rows + '<tr class="total"><td>Floor area</td><td class="n">' + t.toFixed(1) + '</td></tr></tbody></table></div>';
+  });
+  $('sched').innerHTML = html;
+  $('f-gfa').textContent = Math.round(gfa) + ' m²';
+  $('f-out').textContent = Math.round(outA) + ' m²';
+
+  if (!window.THREE || !THREE.OrbitControls || !(function () { try { var c = document.createElement('canvas'); return !!(c.getContext('webgl') || c.getContext('experimental-webgl')); } catch (e) { return false; } })()) {
+    $('fallback').hidden = false; $('hud').hidden = true; return;
+  }
+
+  var STOREY = 3.2, SLAB = 0.25, WH = STOREY - SLAB, TE = 0.3, TI = 0.12;
+  var vp = $('vp'), renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.localClippingEnabled = true;
+  vp.insertBefore(renderer.domElement, vp.firstChild);
+  var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(40, 1.6, 0.1, 900);
+  var controls = new THREE.OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.495;
+  var hemi = new THREE.HemisphereLight(0xe6eeff, 0x7a6a55, 0.6); scene.add(hemi);
+  var sun = new THREE.DirectionalLight(0xfff0d8, 1.0); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+  var sc = sun.shadow.camera; sc.left = -18; sc.right = 18; sc.top = 18; sc.bottom = -18; sc.near = 1; sc.far = 140; sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02;
+  scene.add(sun); scene.add(sun.target);
+  var clip = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 6);
+  var P3 = function (x, y, z) { return new THREE.Vector3(x - 6, z, y - 5); };
+
+  var M = {}, mat = function (k, c, o) { M[k] = new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.85, clippingPlanes: [clip] }, o || {})); return M[k]; };
+  mat('ext', 0xe9e4d8); mat('int', 0xf4f2ec); mat('slab', 0xb3aea3); mat('glass', 0xa5ccd6, { transparent: true, opacity: 0.26, roughness: 0.05, depthWrite: false });
+  mat('frame', 0x2b3330, { roughness: 0.5 }); mat('timber', 0xc49a6c); mat('stone', 0xcfcabd); mat('tile', 0xdfe3e1); mat('deck', 0x9c7552);
+  mat('grass', 0x7f9a62, { roughness: 1 }); mat('path', 0xc2bcae); mat('door', 0x2f3d46); mat('slat', 0xb98a58); mat('roof', 0x8e9086);
+  mat('fab', 0x7b8794); mat('bed', 0xf0ece4); mat('wood', 0x8a6446); mat('white', 0xf7f7f5); mat('steel', 0x9aa0a3, { metalness: 0.5, roughness: 0.35 });
+  mat('plant', 0x56804a); mat('trunk', 0x6b4d36); mat('soil', 0x5b4734); mat('lift', 0x7f8c8d, { metalness: 0.4, roughness: 0.4 }); mat('ceil', 0xf2f0ea, { emissive: 0x8d8a84, roughness: 1 });
+  var FLOORM = { stone: M.stone, timber: M.timber, tile: M.tile, deck: M.deck };
+
+  var levelG = [0, 1, 2].map(function () { var g = new THREE.Group(); scene.add(g); return g; });
+  var roofG = new THREE.Group(); scene.add(roofG);
+  var furnG = [0, 1, 2].map(function (L) { var g = new THREE.Group(); levelG[L].add(g); return g; });
+  var labelG = [0, 1, 2].map(function (L) { var g = new THREE.Group(); g.visible = false; levelG[L].add(g); return g; });
+  var siteG = new THREE.Group(); scene.add(siteG);
+  var pick = [], lights = [];
+  function box(group, w, h, d, m, pos, info, noCast) {
+    var o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.copy(pos); o.castShadow = !noCast; o.receiveShadow = true;
+    if (info) { o.userData.info = info; pick.push(o); } group.add(o); return o;
+  }
+
+  // ---- site
+  var gr = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), M.grass); gr.rotation.x = -Math.PI / 2; gr.position.y = -0.02; gr.receiveShadow = true; siteG.add(gr);
+  box(siteG, 1.4, 0.04, 5, M.path, P3(5.6, -2.6, 0), { t: 'Front path', d: 'Street to front door' }, true);
+  [[-3, 13], [15, 14], [15.5, 2], [-3.5, 4]].forEach(function (t) {
+    box(siteG, 0.25, 2.6, 0.25, M.trunk, P3(t[0], t[1], 1.3));
+    var c = new THREE.Mesh(new THREE.SphereGeometry(1.8, 16, 12), M.plant); c.position.copy(P3(t[0], t[1], 3.8)); c.castShadow = true; siteG.add(c);
+  });
+  box(levelG[0], 12.2, 0.3, 10.2, M.slab, P3(6, 5, -0.15), null);
+
+  // ---- rules for shared edges between two rooms on one level
+  function key(a, b) { return [a, b].sort().join('|'); }
+  var RULE = {};
+  [['Entry', 'Stair', 'open'], ['Entry', 'Hall', 'open'], ['Hall', 'Dining', 'open'], ['Kitchen', 'Dining', 'open'], ['Library nook', 'Living', 'open'],
+   ['Living', 'Dining', 'open'], ['Landing', 'Stair', 'open'], ['Landing', 'Corridor', 'open'], ['Corridor', 'Family lounge', 'open'],
+   ['Stair', 'Living', 'screen'], ['Bedroom 2', 'Living void', 'glass'], ['Family lounge', 'Living void', 'glass'], ['Stair', 'Living void', 'balustrade'],
+   ['Hall', 'Kitchen', 'open']].forEach(function (r) { RULE[key(r[0], r[1])] = r[2]; });
+  var DOORS = [ // [level, x, y, width]
+    [0, 4.4, 1.5, 0.82], [0, 8, 2.2, 0.8], [0, 10.8, 3, 0.82], [0, 7.4, 1.4, 0.9],
+    [1, 4.4, 1.5, 0.82], [1, 8, 2.2, 0.82], [1, 8, 4.9, 0.82], [1, 7.4, 1.4, 0.9],
+    [2, 4.4, 1.5, 0.82], [2, 8, 2.2, 0.82], [2, 11, 3.6, 0.72], [2, 7.4, 1.4, 0.9]
+  ];
+  // exterior openings per level and side: at = position along the side, sill/head relative to the floor
+  var WIN = {
+    '0N': [[2.2, 1.8, 0.9, 2.4, 'window'], [5.6, 1.1, 0, 2.4, 'front'], [8.8, 0.6, 1.6, 2.4, 'window'], [10.8, 1.2, 1.1, 2.4, 'window']],
+    '0S': [[3.4, 6.2, 0, 3.0, 'glass'], [9.4, 4.4, 0, 2.6, 'glass']],
+    '0W': [[2.0, 1.2, 0.9, 2.4, 'window'], [5.1, 1.6, 0.45, 2.4, 'window'], [8.1, 2.4, 0, 3.0, 'glass']],
+    '0E': [[4.6, 2.2, 1.05, 2.4, 'window'], [8.1, 1.6, 0.6, 2.4, 'window']],
+    '1N': [[2.2, 3.6, 1.0, 2.2, 'window'], [5.6, 2.0, 1.0, 2.2, 'window'], [10.0, 3.2, 1.0, 2.2, 'window']],
+    '1S': [[3.4, 6.2, -0.25, 2.95, 'glass'], [9.4, 4.4, 0, 2.6, 'glass']],
+    '1W': [[3.1, 1.6, 0.9, 2.3, 'window'], [8.1, 2.4, -0.25, 2.95, 'glass']],
+    '1E': [[1.8, 1.4, 0.9, 2.3, 'window'], [4.9, 1.0, 1.5, 2.3, 'window'], [8.1, 1.6, 0.9, 2.3, 'window']],
+    '2N': [[2.2, 3.6, 1.0, 2.2, 'window'], [5.6, 1.2, 1.5, 2.2, 'window'], [10.0, 2.4, 1.0, 2.2, 'window']],
+    '2S': [[2.2, 3.0, 0, 2.6, 'glass'], [7.4, 1.0, 0, 2.4, 'glass'], [10.0, 1.0, 1.5, 2.2, 'window']],
+    '2W': [[3.1, 1.6, 0.9, 2.3, 'window']],
+    '2E': [[1.8, 1.6, 0.9, 2.3, 'window'], [4.9, 0.8, 1.5, 2.2, 'window']]
+  };
+
+  // ---- segment builder with openings (axis 'x' = wall runs along x at fixed y)
+  function wallRun(group, axis, fixed, s, e, z0, height, t, m, openings, info) {
+    var piece = function (a, b, za, zb, mm, inf, th) {
+      if (b - a < 1e-3 || zb - za < 1e-3) return;
+      var len = b - a, mid = (a + b) / 2, tt = th || t;
+      var pos = axis === 'x' ? P3(mid, fixed, z0 + (za + zb) / 2) : P3(fixed, mid, z0 + (za + zb) / 2);
+      box(group, axis === 'x' ? len : tt, zb - za, axis === 'x' ? tt : len, mm, pos, inf);
+    };
+    var ops = openings.slice().sort(function (p, q) { return p.at - q.at; }), cur = s, top = height;
+    ops.forEach(function (o) {
+      var a = Math.max(s, o.at - o.w / 2), b = Math.min(e, o.at + o.w / 2), sill = Math.max(0, o.sill - (z0 % 1 === 0 ? 0 : 0)), head = Math.min(o.head, top);
+      if (o.sill < 0) sill = 0;
+      piece(cur, a, 0, top, m, info);
+      piece(a, b, 0, sill, m, info);
+      piece(a, b, head, top, m, info);
+      if (o.kind === 'window' || o.kind === 'glass') {
+        piece(a, b, sill, head, M.glass, { t: o.kind === 'glass' ? 'Glazed wall' : 'Window', d: (b - a).toFixed(2) + ' × ' + (head - sill).toFixed(2) + ' m · double glazed' + (o.note ? ' · ' + o.note : '') }, 0.024);
+        var fr = 0.05, ft = 0.07;
+        piece(a, a + fr, sill, head, M.frame, null, ft); piece(b - fr, b, sill, head, M.frame, null, ft); piece(a, b, head - fr, head, M.frame, null, ft);
+        if (sill > 0) piece(a, b, sill, sill + fr, M.frame, null, ft);
+        for (var mm = a + 1.5; mm < b - 0.5; mm += 1.5) piece(mm - fr / 2, mm + fr / 2, sill, head, M.frame, null, ft);
+      }
+      if (o.kind === 'front') {
+        var leaf = box(group, o.w, head, 0.06, M.door, P3(a, fixed, z0 + head / 2), { t: 'Front door', d: '1.1 m pivot door in dark oak, under the entrance canopy' });
+        leaf.geometry.translate(o.w / 2, 0, 0); leaf.rotation.y = -0.55;
+      }
+      cur = b;
+    });
+    piece(cur, e, 0, top, m, info);
+  }
+
+  // ---- walls per level from room adjacency
+  function overlap(a0, a1, b0, b1) { return [Math.max(a0, b0), Math.min(a1, b1)]; }
+  [0, 1, 2].forEach(function (L) {
+    var z0 = LEVELS[L], G = levelG[L];
+    var rooms = ROOMS.filter(function (r) { return r.L === L; });
+    var bld = rooms.filter(function (r) { return r.kind !== 'out'; });
+    var shared = []; // [axis, fixed, s, e, a, b]
+    bld.forEach(function (a, i) { bld.slice(i + 1).forEach(function (b) {
+      [['x', 'y0', 'y1', 'x0', 'x1'], ['y', 'x0', 'x1', 'y0', 'y1']].forEach(function (ax) {
+        [[a[ax[2]], b[ax[1]]], [a[ax[1]], b[ax[2]]]].forEach(function (pair) {
+          if (Math.abs(pair[0] - pair[1]) > 1e-6) return;
+          var ov = overlap(a[ax[3]], a[ax[4]], b[ax[3]], b[ax[4]]); if (ov[1] - ov[0] < 1e-6) return;
+          shared.push([ax[0], pair[0], ov[0], ov[1], a, b]);
+        });
+      });
+    }); });
+    // interior edges
+    shared.forEach(function (sg) {
+      var a = sg[4], b = sg[5], rule = a.name === b.name ? 'open' : (RULE[key(a.name, b.name)] || 'wall');
+      if (a.kind === 'void' && b.kind === 'void') rule = 'open';
+      if (rule === 'open') return;
+      var len = sg[3] - sg[2], info;
+      if (rule === 'wall') {
+        var ops = DOORS.filter(function (d) { return d[0] === L && (sg[0] === 'x' ? Math.abs(d[2] - sg[1]) < 1e-6 && d[1] > sg[2] && d[1] < sg[3] : Math.abs(d[1] - sg[1]) < 1e-6 && d[2] > sg[2] && d[2] < sg[3]); })
+          .map(function (d) { return { at: sg[0] === 'x' ? d[1] : d[2], w: d[3], sill: 0, head: 2.1, kind: 'door' }; });
+        var isLift = a.kind === 'lift' || b.kind === 'lift';
+        wallRun(G, sg[0], sg[1], sg[2], sg[3], z0, WH, isLift ? 0.2 : TI, M.int, ops, { t: isLift ? 'Lift shaft wall' : 'Internal wall', d: isLift ? 'Shaft for a home lift, built now, fitted when needed' : '120 mm stud wall' });
+      } else if (rule === 'glass') {
+        wallRun(G, sg[0], sg[1], sg[2], sg[3], z0, WH, TI, M.int, [{ at: (sg[2] + sg[3]) / 2, w: len - 0.3, sill: rule === 'glass' && (a.name === 'Bedroom 2' || b.name === 'Bedroom 2') ? 0.9 : 0, head: 2.6, kind: 'window', note: 'interior window over the double-height living room' }], { t: 'Internal wall', d: '' });
+      } else if (rule === 'balustrade') {
+        var pos = sg[0] === 'x' ? P3((sg[2] + sg[3]) / 2, sg[1], z0 + 0.5) : P3(sg[1], (sg[2] + sg[3]) / 2, z0 + 0.5);
+        box(G, sg[0] === 'x' ? len : 0.03, 1.0, sg[0] === 'x' ? 0.03 : len, M.glass, pos, { t: 'Glass balustrade', d: '1.0 m high' }, true);
+      } else if (rule === 'screen') {
+        for (var p = sg[2] + 0.075; p < sg[3]; p += 0.15) {
+          var sp = sg[0] === 'x' ? P3(p, sg[1], z0 + WH / 2) : P3(sg[1], p, z0 + WH / 2);
+          box(G, 0.05, WH, 0.05, M.slat, sp, { t: 'Timber slat screen', d: 'Oak slats at 150 mm centres around the stair · after Aalto, Villa Mairea' });
+        }
+      }
+    });
+    // exterior edges: room edges minus shared parts
+    bld.forEach(function (r) {
+      [['x', r.y0, r.x0, r.x1, 'N'], ['x', r.y1, r.x0, r.x1, 'S'], ['y', r.x0, r.y0, r.y1, 'W'], ['y', r.x1, r.y0, r.y1, 'E']].forEach(function (ed) {
+        var parts = [[ed[2], ed[3]]];
+        shared.forEach(function (sg) {
+          if (sg[0] !== ed[0] || Math.abs(sg[1] - ed[1]) > 1e-6 || (sg[4] !== r && sg[5] !== r)) return;
+          parts = parts.reduce(function (acc, pp) { if (sg[3] <= pp[0] || sg[2] >= pp[1]) acc.push(pp); else { if (sg[2] > pp[0]) acc.push([pp[0], sg[2]]); if (sg[3] < pp[1]) acc.push([sg[3], pp[1]]); } return acc; }, []);
+        });
+        parts.forEach(function (pp) {
+          if (pp[1] - pp[0] < 1e-6) return;
+          var ops = (WIN[L + ed[4]] || []).filter(function (o) { return o[0] > pp[0] && o[0] < pp[1]; }).map(function (o) { return { at: o[0], w: o[1], sill: o[2], head: o[3], kind: o[4] }; });
+          var isVoid = r.kind === 'void', base = isVoid ? z0 - SLAB : z0, h = isVoid ? WH + SLAB : WH;
+          ops.forEach(function (o) { if (isVoid) { o.sill += SLAB; o.head = Math.min(o.head + SLAB, h); } });
+          // the ground-floor living glass runs up to the slab line so it meets the void glazing above
+          if (L === 0 && r.name === 'Living') ops.forEach(function (o) { if (o.kind === 'glass') o.head = WH; });
+          wallRun(G, ed[0], ed[1], pp[0], pp[1], base, h, TE, M.ext, ops, { t: 'External wall', d: '300 mm insulated masonry, lime render' });
+        });
+      });
+    });
+    // floors (finishes + slabs)
+    rooms.forEach(function (r) {
+      if (r.kind === 'void') return;
+      var cx = (r.x0 + r.x1) / 2, cy = (r.y0 + r.y1) / 2, w = r.x1 - r.x0, d = r.y1 - r.y0;
+      if (L > 0 && r.kind !== 'stair' && r.kind !== 'lift') box(G, w, SLAB, d, M.slab, P3(cx, cy, z0 - SLAB / 2), null);
+      if (r.kind === 'stair' || r.kind === 'lift') return;
+      if (L === 0 && r.kind === 'out') { box(G, w, 0.12, d, M.deck, P3(cx, cy, -0.06), { t: r.name, d: area(r).toFixed(1) + ' m² timber deck · a veranda in the spirit of Katsura' }); return; }
+      box(G, w, 0.02, d, FLOORM[r.floor] || M.timber, P3(cx, cy, z0 + 0.01), { t: r.name + ' · ' + FLOOR_NAME[L], d: area(r).toFixed(1) + ' m² · ' + w.toFixed(1) + ' × ' + d.toFixed(1) + ' m' }, true);
+      if (r.kind === 'out' && L > 0) {
+        var isBal = r.name === 'Balcony', ph = 1.1, edges = [['x', r.y1, r.x0, r.x1], ['y', r.x0, r.y0, r.y1], ['y', r.x1, r.y0, r.y1]];
+        if (!isBal) edges = [['x', r.y1, r.x0, r.x1], ['y', r.x0, r.y0, r.y1], ['y', r.x1, r.y0, r.y1]];
+        edges.forEach(function (ed) {
+          var len = ed[3] - ed[2], pos = ed[0] === 'x' ? P3((ed[2] + ed[3]) / 2, ed[1], z0 + ph / 2) : P3(ed[1], (ed[2] + ed[3]) / 2, z0 + ph / 2);
+          box(G, ed[0] === 'x' ? len : (isBal ? 0.03 : 0.2), ph, ed[0] === 'x' ? (isBal ? 0.03 : 0.2) : len, isBal ? M.glass : M.ext, pos,
+              isBal ? { t: 'Balcony', d: '1.8 m cantilever, glass balustrade · after Fallingwater; designed for long-term creep' } : { t: 'Roof garden parapet', d: '1.1 m rendered wall framing the sky · after Casa Barragán' }, isBal);
+        });
+      }
+    });
+    // ceilings (face down only)
+    rooms.forEach(function (r) {
+      if (r.kind === 'out' || r.kind === 'void' || (L === 0 && r.name === 'Living')) return;
+      var c = new THREE.Mesh(new THREE.PlaneGeometry(r.x1 - r.x0, r.y1 - r.y0), M.ceil); c.rotation.x = Math.PI / 2; c.position.copy(P3((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, z0 + WH - 0.001)); G.add(c);
+    });
+    // labels
+    var seen = {};
+    rooms.forEach(function (r) {
+      if (seen[r.name] || r.kind === 'lift') return; seen[r.name] = 1;
+      var tot = rooms.filter(function (q) { return q.name === r.name; }).reduce(function (s, q) { return s + area(q); }, 0);
+      var cv = document.createElement('canvas'); cv.width = 512; cv.height = 160; var x = cv.getContext('2d');
+      x.fillStyle = 'rgba(29,35,32,0.86)'; x.fillRect(0, 0, 512, 160); x.fillStyle = '#fff'; x.textAlign = 'center';
+      x.font = '600 50px "IBM Plex Sans", sans-serif'; x.fillText(r.name, 256, 70); x.font = '400 38px "IBM Plex Mono", monospace'; x.fillText(tot.toFixed(1) + ' m²', 256, 126);
+      var s = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false })); var w = 2.2; s.scale.set(w, w * 160 / 512, 1);
+      s.position.copy(P3((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, z0 + 1.4)); s.renderOrder = 10; labelG[L].add(s);
+    });
+  });
+
+  // ---- stairs: U-shaped, 18 risers of 178 mm per storey, treads 250 mm
+  [0, 1].forEach(function (L) {
+    var z0 = LEVELS[L], rh = STOREY / 18, G = levelG[L], info = { t: 'Stair', d: 'U-shaped oak stair, 18 risers of 178 mm, 250 mm treads, half landing' };
+    for (var i = 0; i < 9; i++) {
+      box(G, 1.15, rh, 0.25, M.timber, P3(4.45 + 0.575, 3.1 + i * 0.25 + 0.125, z0 + (i + 0.5) * rh), info);
+      box(G, 1.15, rh, 0.25, M.timber, P3(5.65 + 0.575, 5.1 - i * 0.25 - 0.125, z0 + STOREY / 2 + (i + 0.5) * rh), info);
+    }
+    box(G, 2.35, 0.2, 1.1, M.timber, P3(5.6, 5.65, z0 + STOREY / 2 - 0.1), { t: 'Half landing', d: '+' + (z0 + 1.6).toFixed(1) + ' m' });
+    box(G, 0.05, STOREY, 2.0, M.int, P3(5.6, 4.1, z0 + STOREY / 2), null);
+  });
+  // guard the stairwell edge above the first flight on the upper landings
+  [1, 2].forEach(function (L) { box(levelG[L], 1.2, 1.0, 0.03, M.glass, P3(5.0, 3.0, LEVELS[L] + 0.5), { t: 'Stairwell balustrade', d: '1.0 m glass guard where the landing overlooks the flight below' }, true); });
+  // lift car parked at ground
+  box(levelG[0], 1.0, 2.2, 1.2, M.lift, P3(7.4, 0.7, 1.1), { t: 'Home lift', d: 'Shaft on all three floors; car fitted when needed · ageing in place' });
+
+  // ---- roof, louvre, canopy, pergola
+  box(roofG, 12.3, 0.3, 6.5, M.roof, P3(6, 3.1, ROOF - 0.15), { t: 'Roof', d: 'Flat green roof with PV, +9.6 m' });
+  [['x', -0.15, 0, 12], ['y', -0.15, 0, 6.2], ['y', 12.15, 0, 6.2], ['x', 6.35, 0, 12]].forEach(function (ed) {
+    var len = ed[3] - ed[2]; box(roofG, ed[0] === 'x' ? len + 0.3 : 0.3, 0.5, ed[0] === 'x' ? 0.3 : len, M.ext, ed[0] === 'x' ? P3(6, ed[1], ROOF + 0.25) : P3(ed[1], 3.1, ROOF + 0.25), null);
+  });
+  for (var px = 1; px < 12; px += 1.2) box(roofG, 0.9, 0.04, 1.6, M.frame, P3(px + 0.3, 3.1, ROOF + 0.45), { t: 'PV panel', d: 'Roof-mounted solar' });
+  for (var lz = 0; lz < 7; lz++) box(levelG[1], 6.8, 0.04, 0.16, M.slat, P3(3.4, 10.2 + lz * 0.2, LEVELS[2] - 0.05 - 0.0), lz === 0 ? { t: 'Horizontal louvre', d: '1.4 m deep timber brise-soleil over the double-height glass: shades high summer sun' } : null);
+  box(levelG[0], 2.4, 0.2, 1.8, M.ext, P3(5.6, -0.9, 2.6), { t: 'Entrance canopy', d: '1.8 m deep rendered canopy' });
+  // roof garden: pergola, planters, loungers
+  for (var pg = 0.6; pg < 6.8; pg += 0.6) box(levelG[2], 0.08, 0.16, 3.6, M.slat, P3(pg, 8.1, LEVELS[2] + 2.6), pg < 0.7 ? { t: 'Pergola', d: 'Timber pergola over the roof garden · after Villa Savoye\'s roof garden' } : null);
+  [[0.4, 6.4], [6.8, 6.4]].forEach(function (p) { box(levelG[2], 0.1, 2.6, 0.1, M.steel, P3(p[0], 9.8, LEVELS[2] + 1.3), null); box(levelG[2], 0.1, 2.6, 0.1, M.steel, P3(p[0] === 0.4 ? 0.4 : 6.8, 6.4, LEVELS[2] + 1.3), null); });
+  box(furnG[2], 5.0, 0.6, 0.8, M.soil, P3(9.4, 9.5, LEVELS[2] + 0.3), { t: 'Planter', d: 'Raised beds for herbs and grasses' });
+  [[1.6, 8.6], [3.2, 8.6]].forEach(function (p) { box(furnG[2], 0.7, 0.35, 1.9, M.fab, P3(p[0], p[1], LEVELS[2] + 0.18), { t: 'Lounger', d: 'Roof garden' }); });
+  [[8.6, 8.2], [10.4, 8.2]].forEach(function (p) { var c = new THREE.Mesh(new THREE.SphereGeometry(0.7, 12, 10), M.plant); c.position.copy(P3(p[0], p[1], LEVELS[2] + 1.0)); c.castShadow = true; furnG[2].add(c); });
+
+  // ---- furniture
+  var F0 = furnG[0], F1 = furnG[1], F2 = furnG[2];
+  function bed(G, x, y, w, l, z, label) { box(G, w, 0.5, l, M.bed, P3(x, y, z + 0.25), { t: label, d: Math.round(w * 1000) + ' × ' + Math.round(l * 1000) + ' mm' }); box(G, w, 1.0, 0.08, M.wood, P3(x, y - l / 2, z + 0.5), null); }
+  // ground
+  box(F0, 1.6, 0.75, 0.8, M.wood, P3(2.2, 1.0, 0.375), { t: 'Desk', d: 'Study / guest room' }); box(F0, 0.4, 2.2, 3.2, M.wood, P3(0.35, 2.4, 1.1), { t: 'Bookshelves', d: '' });
+  box(F0, 1.4, 0.45, 0.8, M.fab, P3(2.8, 3.4, 0.22), { t: 'Sofa bed', d: 'Guest bed' });
+  box(F0, 0.6, 0.45, 2.0, M.fab, P3(0.5, 5.1, 0.22), { t: 'Window seat', d: 'Reading nook' }); box(F0, 4.0, 2.2, 0.35, M.wood, P3(2.2, 6.0, 1.1), null);
+  box(F0, 3.0, 0.75, 1.0, M.fab, P3(3.4, 8.8, 0.375), { t: 'Sofa', d: 'Under the 6.4 m glass wall' }); box(F0, 1.0, 0.75, 2.0, M.fab, P3(1.2, 8.0, 0.375), null);
+  box(F0, 1.2, 0.4, 0.7, M.wood, P3(3.4, 7.6, 0.2), { t: 'Coffee table', d: '' });
+  box(F0, 2.6, 0.75, 1.0, M.wood, P3(9.4, 8.2, 0.375), { t: 'Dining table', d: 'Seats 8' });
+  [[8.5, 7.5], [9.4, 7.5], [10.3, 7.5], [8.5, 8.9], [9.4, 8.9], [10.3, 8.9]].forEach(function (c) { box(F0, 0.45, 0.45, 0.45, M.fab, P3(c[0], c[1], 0.225), null); });
+  box(F0, 0.65, 0.9, 3.2, M.white, P3(11.62, 4.6, 0.45), { t: 'Kitchen bench', d: 'Sink under the window' }); box(F0, 2.6, 0.9, 1.0, M.white, P3(9.8, 5.2, 0.45), { t: 'Island', d: '2.6 m island facing the dining room' });
+  box(F0, 2.0, 2.3, 0.65, M.wood, P3(9.4, 3.35, 1.15), { t: 'Tall units', d: 'Fridge, ovens, pantry' });
+  box(F0, 0.4, 0.4, 0.65, M.white, P3(8.8, 0.5, 0.2), { t: 'WC', d: 'Guest WC' }); box(F0, 2.4, 0.9, 0.6, M.white, P3(10.8, 0.35, 0.45), { t: 'Laundry bench', d: 'Washer, dryer, sink' });
+  // first
+  var z1 = LEVELS[1];
+  bed(F1, 2.2, 2.0, 1.53, 2.03, z1, 'Queen bed'); box(F1, 2.4, 2.2, 0.6, M.wood, P3(1.6, 0.35, z1 + 1.1), { t: 'Wardrobe', d: '' }); box(F1, 1.4, 0.75, 0.6, M.wood, P3(2.2, 5.7, z1 + 0.375), { t: 'Desk', d: 'Looks over the living room through an interior window' });
+  bed(F1, 10.0, 1.4, 1.37, 1.9, z1, 'Double bed'); box(F1, 0.6, 2.2, 1.8, M.wood, P3(11.65, 2.5, z1 + 1.1), { t: 'Wardrobe', d: '' });
+  box(F1, 1.7, 0.55, 0.75, M.white, P3(11.0, 5.75, z1 + 0.28), { t: 'Bath', d: '' }); box(F1, 1.2, 0.85, 0.5, M.white, P3(9.2, 3.9, z1 + 0.43), { t: 'Vanity', d: 'Double basin' }); box(F1, 0.4, 0.4, 0.65, M.white, P3(8.4, 5.6, z1 + 0.2), { t: 'WC', d: '' });
+  box(F1, 2.6, 0.75, 0.95, M.fab, P3(9.4, 8.6, z1 + 0.375), { t: 'Family lounge', d: 'Ceiling-track sliding walls can split it into two rooms · after the Rietveld Schröder House' }); box(F1, 1.6, 0.6, 0.5, M.wood, P3(9.4, 6.6, z1 + 0.3), { t: 'Media unit', d: '' });
+  // second
+  var z2 = LEVELS[2];
+  bed(F2, 10.0, 1.6, 1.83, 2.03, z2, 'King bed'); box(F2, 0.6, 2.2, 2.4, M.wood, P3(11.65, 2.2, z2 + 1.1), { t: 'Wardrobe', d: '' });
+  box(F2, 0.9, 0.05, 1.6, M.tile, P3(11.5, 5.3, z2 + 0.03), { t: 'Walk-in shower', d: '' }); box(F2, 1.4, 0.85, 0.5, M.white, P3(9.0, 3.9, z2 + 0.43), { t: 'Vanity', d: 'Ensuite' }); box(F2, 1.7, 0.55, 0.75, M.white, P3(9.2, 5.7, z2 + 0.28), { t: 'Bath', d: 'Freestanding bath' });
+  box(F2, 2.4, 0.75, 0.9, M.wood, P3(2.2, 2.0, z2 + 0.375), { t: 'Studio table', d: 'Workspace with north ribbon light, ideal for drawing and painting' }); box(F2, 2.4, 0.75, 0.9, M.fab, P3(2.2, 5.0, z2 + 0.375), { t: 'Daybed', d: 'Opens onto the roof garden' });
+
+  // interior lights for night mode
+  ROOMS.forEach(function (r) { if (r.kind !== 'in') return; var l = new THREE.PointLight(0xffc98a, 0, 9, 2); l.position.copy(P3((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, LEVELS[r.L] + 2.4)); levelG[r.L].add(l); lights.push(l); });
+  var hallLight = new THREE.PointLight(0xffc98a, 0, 16, 2); hallLight.position.copy(P3(3.4, 8.1, 4.5)); levelG[0].add(hallLight); lights.push(hallLight);
+
+  // ---- UI
+  function setFloors(n) {
+    levelG.forEach(function (g, i) { g.visible = i <= n; }); roofG.visible = n >= 3;
+    document.querySelectorAll('[data-floors]').forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-floors') === n); });
+  }
+  document.querySelectorAll('[data-floors]').forEach(function (b) { b.addEventListener('click', function () { setFloors(+b.getAttribute('data-floors')); }); });
+  $('ly-furn').addEventListener('change', function (e) { furnG.forEach(function (g) { g.visible = e.target.checked; }); });
+  $('ly-labels').addEventListener('change', function (e) { labelG.forEach(function (g) { g.visible = e.target.checked; }); });
+  $('ly-site').addEventListener('change', function (e) { siteG.visible = e.target.checked; });
+  function setExp() { var e = +$('exp').value; levelG.forEach(function (g, i) { g.position.y = e * i; }); roofG.position.y = e * 3; $('exp-v').textContent = e ? e + ' m' : 'off'; }
+  $('exp').addEventListener('input', setExp); setExp();
+  // 'off' must sit well clear of the façade 
+  function setCut() { var c = +$('cut').value; clip.constant = c >= 12 ? 1e4 : c - 6; $('cut-v').textContent = c >= 12 ? 'off' : 'x = ' + c + ' m'; }
+  $('cut').addEventListener('input', setCut); setCut();
+  var night = false;
+  function setSun() {
+    var az = +$('saz').value * Math.PI / 180, al = +$('salt').value * Math.PI / 180;
+    sun.position.set(-Math.sin(az) * Math.cos(al) * 60, Math.sin(al) * 60, Math.cos(az) * Math.cos(al) * 60); sun.target.position.set(0, 3, 0);
+    sun.intensity = night ? 0.05 : 0.35 + 0.8 * Math.sin(al); hemi.intensity = night ? 0.12 : 0.6;
+    lights.forEach(function (l) { l.intensity = night ? (l === hallLight ? 2.2 : 1.1) : 0; });
+    scene.background = night ? new THREE.Color(0x101826) : new THREE.Color(css('--surface') || '#F7F5F0');
+    $('saz-v').textContent = +$('saz').value === 0 ? 'facing garden' : Math.abs(+$('saz').value) + '° ' + (+$('saz').value < 0 ? 'east' : 'west');
+    $('salt-v').textContent = $('salt').value + '°';
+  }
+  ['saz', 'salt'].forEach(function (id) { $(id).addEventListener('input', setSun); });
+  $('night').addEventListener('click', function () { night = !night; this.setAttribute('aria-pressed', night); this.textContent = night ? 'Day' : 'Night'; setSun(); });
+  setSun();
+  var VIEWS = { persp: [[20, 15, 21], [0, 4, 0], 3], garden: [[-2, 4, 24], [0, 4.5, 0], 3], street: [[3, 4, -22], [0, 4.5, 0], 3],
+                living: [[-4.4, 1.6, 4.4], [2, 3.0, -1.6], 3], plan: [[0, 36, 0.01], [0, 0, 0], 0] };
+  function view(k) {
+    var v = VIEWS[k]; camera.position.set(v[0][0], v[0][1], v[0][2]); controls.target.set(v[1][0], v[1][1], v[1][2]); controls.update(); setFloors(v[2]);
+    var lab = k === 'plan'; $('ly-labels').checked = lab; labelG.forEach(function (g) { g.visible = lab; });
+    document.querySelectorAll('[data-view]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === k); });
+  }
+  document.querySelectorAll('[data-view]').forEach(function (b) { b.addEventListener('click', function () { view(b.getAttribute('data-view')); }); });
+  view('persp');
+
+  var ray = new THREE.Raycaster(), mouse = new THREE.Vector2(), tip = $('tip');
+  renderer.domElement.addEventListener('pointermove', function (e) {
+    var r = renderer.domElement.getBoundingClientRect(); mouse.x = (e.clientX - r.left) / r.width * 2 - 1; mouse.y = -(e.clientY - r.top) / r.height * 2 + 1;
+    ray.setFromCamera(mouse, camera);
+    var vis = pick.filter(function (m) { var o = m; while (o) { if (!o.visible) return false; o = o.parent; } return true; });
+    var hits = ray.intersectObjects(vis, false).filter(function (h) { return clip.distanceToPoint(h.point) >= 0; });
+    if (hits.length) { var inf = hits[0].object.userData.info; tip.innerHTML = '<b>' + inf.t + '</b>' + (inf.d ? '<br>' + inf.d : ''); tip.hidden = false;
+      tip.style.left = Math.min(e.clientX - r.left + 14, r.width - 270) + 'px'; tip.style.top = Math.min(e.clientY - r.top + 14, r.height - 70) + 'px'; }
+    else tip.hidden = true;
+  });
+  renderer.domElement.addEventListener('pointerleave', function () { tip.hidden = true; });
+  function theme() { if (!night) scene.background = new THREE.Color(css('--surface') || '#F7F5F0'); }
+  if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', theme);
+  new MutationObserver(theme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  function size() { var w = vp.clientWidth, h = Math.round(Math.min(Math.max(w * 0.62, 340), window.innerHeight * 0.8)); renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  window.addEventListener('resize', size); size();
+  var spinning = false, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('spin').addEventListener('click', function () { spinning = !spinning; controls.autoRotate = spinning && !reduce; controls.autoRotateSpeed = 0.7; this.setAttribute('aria-pressed', spinning); this.textContent = spinning ? 'Stop' : 'Turn slowly'; });
+  (function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+  window.__lantern = { rooms: ROOMS.length, gfa: gfa, pick: pick.length, lights: lights.length };
+})();
+</script>

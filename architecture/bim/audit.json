@@ -1,0 +1,37 @@
+{
+  "counts": {
+    "columns": 23,
+    "joists": 105,
+    "girders": 51,
+    "slabs": 10,
+    "walls": 8
+  },
+  "volume_by_material_m3": {
+    "Glulam GL24h": 301.78879999999936,
+    "CLT 5-ply": 432.00000000000256,
+    "Concrete C30/37": 307.2,
+    "Concrete C40/50": 400.25600000000134
+  },
+  "volume_by_class_material_m3": {
+    "IfcBeam|Glulam GL24h": 251.98080000000357,
+    "IfcColumn|Glulam GL24h": 49.807999999995786,
+    "IfcSlab|CLT 5-ply": 432.00000000000256,
+    "IfcSlab|Concrete C30/37": 307.2,
+    "IfcSlab|Concrete C40/50": 62.207999999999416,
+    "IfcWall|Concrete C40/50": 338.04800000000193
+  },
+  "bbox_min": [
+    -0.2,
+    -0.2,
+    -0.2
+  ],
+  "bbox_max": [
+    48.2,
+    32.2,
+    13.9
+  ],
+  "gfa_m2": 3456.0,
+  "hall_void_m2": 576.0,
+  "clt_slab_area_m2": 2880.0,
+  "path": "chimera-pavilion-structure.ifc"
+}

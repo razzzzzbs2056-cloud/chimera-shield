@@ -1,0 +1,828 @@
+{
+ "_meta": {
+  "script": "architecture/tower/calcs/wind_tower.py",
+  "level": "L1-L2 hand calc",
+  "status": "CONCEPT. Not for construction. Site/code UNKNOWN; generic forms; verify against applicable wind standard.",
+  "units": "m, s, kN, kNm, Pa, mm"
+ },
+ "assumptions": {
+  "rho": 1.25,
+  "alpha": 0.2,
+  "gust_ratio": 1.5,
+  "z0": 0.5,
+  "Cf_net": 1.3,
+  "zeta": 0.015,
+  "St": 0.12,
+  "St_range": [
+   0.08,
+   0.12,
+   0.15
+  ],
+  "plant_width_m": {
+   "Y": 12.0,
+   "X": 8.0
+  },
+  "comfort_speed_fraction": 0.7,
+  "drift_limit": "H/500 (JUDGMENT)",
+  "height_m": {
+   "roof_slab": 94.4,
+   "top_of_plant": 99.4
+  },
+  "gust_form": "G = 1 + 2 I sqrt(gB^2 B^2 + gR^2 R^2) Davenport-type, gB=3.5, z_s=0.6H"
+ },
+ "q_hand_check_Pa": {
+  "35": 765.625,
+  "45": 1265.625,
+  "55": 1890.625
+ },
+ "profile": {
+  "35": {
+   "z_m": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    94.4,
+    99.4
+   ],
+   "V_m_s": [
+    23.333333333333332,
+    26.802961616597486,
+    29.067055257695404,
+    30.788517918034195,
+    32.19369210076168,
+    33.38927855912263,
+    34.43470710387288,
+    35.366719885242624,
+    36.55705348608908,
+    36.93635725817945
+   ],
+   "q_Pa": [
+    340.2777777777777,
+    448.9992196379988,
+    528.0585633461988,
+    592.4580222431954,
+    647.7711319241531,
+    696.7774516866789,
+    741.0931583309459,
+    781.75304715076,
+    835.2613497404861,
+    852.684054689916
+   ]
+  },
+  "45": {
+   "z_m": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    94.4,
+    99.4
+   ],
+   "V_m_s": [
+    30.0,
+    34.460950649911055,
+    37.371928188465525,
+    39.585237323186824,
+    41.391889843836445,
+    42.929072433157664,
+    44.273194847836564,
+    45.471496995311945,
+    47.00192591068597,
+    47.48960218908786
+   ],
+   "q_Pa": [
+    562.5,
+    742.2231998097533,
+    872.91313532739,
+    979.3693837081395,
+    1070.8053405276817,
+    1151.8157874820608,
+    1225.072363771564,
+    1292.2856493716645,
+    1380.738149571008,
+    1409.5389475486365
+   ]
+  },
+  "55": {
+   "z_m": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    94.4,
+    99.4
+   ],
+   "V_m_s": [
+    36.666666666666664,
+    42.11893968322462,
+    45.676801119235634,
+    48.38195672833945,
+    50.59008758691121,
+    52.4688663071927,
+    54.111682591800246,
+    55.576274105381266,
+    57.44679833528285,
+    58.04284711999627
+   ],
+   "q_Pa": [
+    840.2777777777776,
+    1108.753175024446,
+    1303.9813503038786,
+    1463.0085855393195,
+    1599.5981012820923,
+    1720.6137072262882,
+    1830.046370572336,
+    1930.451402147795,
+    2062.58414935916,
+    2105.607563622037
+   ]
+  }
+ },
+ "cases": {
+  "wind_on_30m_face": {
+   "35": {
+    "cracked": {
+     "period_s": 4.54809174854644,
+     "gust": {
+      "G": 2.7855607751624065,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5631519513900263,
+      "R2": 1.0339238832911422,
+      "g_R": 3.3094621717036703,
+      "g_B": 3.5,
+      "V_zs_m_s": 33.34911491608877,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 2300.248912240461,
+     "mean_base_moment_kNm": 127444.26130206253,
+     "base_shear_kN": 6407.483143047021,
+     "base_moment_kNm": 355003.73530257354,
+     "moment_arm_m": 55.40455236121849,
+     "top_deflection_mm": 239.05115500971408,
+     "top_drift_ratio_H_over": 415.81058245027424,
+     "roof_slab_deflection_mm": 223.0600972961759,
+     "max_interstorey_drift_ratio": 0.003209187013876467,
+     "max_interstorey_drift_1_over": 311.6053990234966,
+     "max_interstorey_level_index": 28,
+     "mean_top_deflection_mm": 85.81796424663425,
+     "comfort_indicative": {
+      "V_serv_m_s": 24.5,
+      "peak_accel_m_s2": 0.11296542034854407,
+      "peak_accel_milli_g": 11.515333368862798
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 105.29463965531497,
+      "top_drift_ratio_H_over": 944.01766628756,
+      "max_interstorey_drift_1_over": 707.4399113542064
+     }
+    },
+    "gross": {
+     "period_s": 3.2159865168557698,
+     "gust": {
+      "G": 2.5329090450540788,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5631519513900263,
+      "R2": 0.5610046353974735,
+      "g_R": 3.4122466354607495,
+      "g_B": 3.5,
+      "V_zs_m_s": 33.34911491608877,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 2300.248912240461,
+     "mean_base_moment_kNm": 127444.26130206253,
+     "base_shear_kN": 5826.32127568967,
+     "base_moment_kNm": 322804.72219222964,
+     "moment_arm_m": 55.40455236121849,
+     "top_deflection_mm": 108.68454893421372,
+     "top_drift_ratio_H_over": 914.5734234970822,
+     "roof_slab_deflection_mm": 101.41421847081881,
+     "max_interstorey_drift_ratio": 0.001459056087951263,
+     "max_interstorey_drift_1_over": 685.3746118863411,
+     "max_interstorey_level_index": 28,
+     "mean_top_deflection_mm": 42.908982123317124,
+     "comfort_indicative": {
+      "V_serv_m_s": 24.5,
+      "peak_accel_m_s2": 0.085796082209663,
+      "peak_accel_milli_g": 8.74577800302375
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 49.05703559436883,
+      "top_drift_ratio_H_over": 2026.212933490216,
+      "max_interstorey_drift_1_over": 1518.4291028049677
+     }
+    }
+   },
+   "45": {
+    "cracked": {
+     "period_s": 4.54809174854644,
+     "gust": {
+      "G": 3.040129839174419,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5631519513900263,
+      "R2": 1.5421584208139014,
+      "g_R": 3.3094621717036703,
+      "g_B": 3.5,
+      "V_zs_m_s": 42.87743346354271,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 3802.4522834995387,
+     "mean_base_moment_kNm": 210673.16664218498,
+     "base_shear_kN": 11559.948649103855,
+     "base_moment_kNm": 640473.7802222715,
+     "moment_arm_m": 55.404552361218485,
+     "top_deflection_mm": 431.279960435003,
+     "top_drift_ratio_H_over": 230.47674160362547,
+     "roof_slab_deflection_mm": 402.42997333609793,
+     "max_interstorey_drift_ratio": 0.0057897986241351816,
+     "max_interstorey_drift_1_over": 172.71757878269372,
+     "max_interstorey_level_index": 28,
+     "mean_top_deflection_mm": 141.86234906076282,
+     "comfort_indicative": {
+      "V_serv_m_s": 31.499999999999996,
+      "peak_accel_m_s2": 0.2280629158519122,
+      "peak_accel_milli_g": 23.248003654629173
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 187.14945189758552,
+      "top_drift_ratio_H_over": 531.1263217291976,
+      "max_interstorey_drift_1_over": 398.02216778381774
+     }
+    },
+    "gross": {
+     "period_s": 3.2159865168557698,
+     "gust": {
+      "G": 2.731872414417862,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5631519513900263,
+      "R2": 0.8798719173925451,
+      "g_R": 3.4122466354607495,
+      "g_B": 3.5,
+      "V_zs_m_s": 42.87743346354271,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 3802.4522834995387,
+     "mean_base_moment_kNm": 210673.16664218498,
+     "base_shear_kN": 10387.814500432596,
+     "base_moment_kNm": 575532.2124078425,
+     "moment_arm_m": 55.40455236121849,
+     "top_deflection_mm": 193.7749190218081,
+     "top_drift_ratio_H_over": 512.9662832619384,
+     "roof_slab_deflection_mm": 180.81256410916194,
+     "max_interstorey_drift_ratio": 0.002601367701881549,
+     "max_interstorey_drift_1_over": 384.41316822558684,
+     "max_interstorey_level_index": 28,
+     "mean_top_deflection_mm": 70.93117453038141,
+     "comfort_indicative": {
+      "V_serv_m_s": 31.499999999999996,
+      "peak_accel_m_s2": 0.17761633279000286,
+      "peak_accel_milli_g": 18.10564044750284
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 85.64636303382174,
+      "top_drift_ratio_H_over": 1160.586351585612,
+      "max_interstorey_drift_1_over": 869.734894807076
+     }
+    }
+   },
+   "55": {
+    "cracked": {
+     "period_s": 4.54809174854644,
+     "gust": {
+      "G": 3.2717716216851254,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5631519513900263,
+      "R2": 2.063394451612624,
+      "g_R": 3.3094621717036703,
+      "g_B": 3.5,
+      "V_zs_m_s": 52.405752010996636,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 5680.206497573384,
+     "mean_base_moment_kNm": 314709.29831733805,
+     "base_shear_kN": 18584.338424072055,
+     "base_moment_kNm": 1029656.951315105,
+     "moment_arm_m": 55.40455236121849,
+     "top_deflection_mm": 693.3467425796764,
+     "top_drift_ratio_H_over": 143.36261194531735,
+     "roof_slab_deflection_mm": 646.9660933180794,
+     "max_interstorey_drift_ratio": 0.009307963236194556,
+     "max_interstorey_drift_1_over": 107.43488931192185,
+     "max_interstorey_level_index": 28,
+     "mean_top_deflection_mm": 211.91783007842366,
+     "comfort_indicative": {
+      "V_serv_m_s": 38.5,
+      "peak_accel_m_s2": 0.3940775172934792,
+      "peak_accel_milli_g": 40.17100074347392
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 298.7426872252608,
+      "top_drift_ratio_H_over": 332.7278097523755,
+      "max_interstorey_drift_1_over": 249.34377887436463
+     }
+    },
+    "gross": {
+     "period_s": 3.2159865168557698,
+     "gust": {
+      "G": 2.9259675873213706,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5631519513900263,
+      "R2": 1.2283874650862376,
+      "g_R": 3.4122466354607495,
+      "g_B": 3.5,
+      "V_zs_m_s": 52.405752010996636,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 5680.206497573384,
+     "mean_base_moment_kNm": 314709.29831733805,
+     "base_shear_kN": 16620.100101191965,
+     "base_moment_kNm": 920829.2063051831,
+     "moment_arm_m": 55.4045523612185,
+     "top_deflection_mm": 310.03235099247263,
+     "top_drift_ratio_H_over": 320.6117028813337,
+     "roof_slab_deflection_mm": 289.29308613686857,
+     "max_interstorey_drift_ratio": 0.0041620873768470285,
+     "max_interstorey_drift_1_over": 240.26405730038894,
+     "max_interstorey_level_index": 28,
+     "mean_top_deflection_mm": 105.95891503921183,
+     "comfort_indicative": {
+      "V_serv_m_s": 38.5,
+      "peak_accel_m_s2": 0.31350264563292607,
+      "peak_accel_milli_g": 31.957456231694806
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 135.12151867282364,
+      "top_drift_ratio_H_over": 735.6341238339845,
+      "max_interstorey_drift_1_over": 551.2788138815613
+     }
+    }
+   },
+   "gust_factor_vs_period_45ms": {
+    "3.18": 2.723799877185388,
+    "4.55": 3.040129839174419,
+    "5.91": 3.3029352421269484
+   }
+  },
+  "wind_on_24m_face": {
+   "35": {
+    "cracked": {
+     "period_s": 3.3038553486037245,
+     "gust": {
+      "G": 2.599274964316083,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5704959130070908,
+      "R2": 0.6583582037446756,
+      "g_R": 3.4043619439438046,
+      "g_B": 3.5,
+      "V_zs_m_s": 33.34911491608877,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 1831.4213460338353,
+     "mean_base_moment_kNm": 101104.7663304799,
+     "base_shear_kN": 4760.36765385981,
+     "base_moment_kNm": 262799.0878958441,
+     "moment_arm_m": 55.20562843140085,
+     "top_deflection_mm": 93.02241579440748,
+     "top_drift_ratio_H_over": 1068.5596493181588,
+     "roof_slab_deflection_mm": 86.84358531647702,
+     "max_interstorey_drift_ratio": 0.0012423293922840014,
+     "max_interstorey_drift_1_over": 804.9395001123793,
+     "max_interstorey_level_index": 27,
+     "mean_top_deflection_mm": 35.78783201910435,
+     "comfort_indicative": {
+      "V_serv_m_s": 24.5,
+      "peak_accel_m_s2": 0.07327979366100403,
+      "peak_accel_milli_g": 7.469907610703774
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 41.74358697082824,
+      "top_drift_ratio_H_over": 2381.2040893721933,
+      "max_interstorey_drift_1_over": 1793.7465920483737
+     }
+    },
+    "gross": {
+     "period_s": 2.3361785210571386,
+     "gust": {
+      "G": 2.4003051542583345,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5704959130070908,
+      "R2": 0.34353785869374864,
+      "g_R": 3.5044013075913956,
+      "g_B": 3.5,
+      "V_zs_m_s": 33.34911491608877,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 1831.4213460338353,
+     "mean_base_moment_kNm": 101104.7663304799,
+     "base_shear_kN": 4395.970096503751,
+     "base_moment_kNm": 242682.29174313546,
+     "moment_arm_m": 55.20562843140086,
+     "top_deflection_mm": 42.95085882759389,
+     "top_drift_ratio_H_over": 2314.272699388731,
+     "roof_slab_deflection_mm": 40.09793275261679,
+     "max_interstorey_drift_ratio": 0.0005736156590825468,
+     "max_interstorey_drift_1_over": 1743.3275820946408,
+     "max_interstorey_level_index": 27,
+     "mean_top_deflection_mm": 17.893916009552175,
+     "comfort_indicative": {
+      "V_serv_m_s": 24.5,
+      "peak_accel_m_s2": 0.054490214911378634,
+      "peak_accel_milli_g": 5.554558094941757
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 19.786349715784066,
+      "top_drift_ratio_H_over": 5023.665376777716,
+      "max_interstorey_drift_1_over": 3784.2966461401197
+     }
+    }
+   },
+   "45": {
+    "cracked": {
+     "period_s": 3.3038553486037245,
+     "gust": {
+      "G": 2.8110405175476485,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5704959130070908,
+      "R2": 1.0145155983004308,
+      "g_R": 3.4043619439438046,
+      "g_B": 3.5,
+      "V_zs_m_s": 42.87743346354271,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 3027.4516128314426,
+     "mean_base_moment_kNm": 167132.36883201782,
+     "base_shear_kN": 8510.28914858416,
+     "base_moment_kNm": 469815.8605805199,
+     "moment_arm_m": 55.20562843140086,
+     "top_deflection_mm": 166.2996880226978,
+     "top_drift_ratio_H_over": 597.7160942504785,
+     "roof_slab_deflection_mm": 155.25355927996583,
+     "max_interstorey_drift_ratio": 0.002220959202079507,
+     "max_interstorey_drift_1_over": 450.25590702597765,
+     "max_interstorey_level_index": 27,
+     "mean_top_deflection_mm": 59.15947741933588,
+     "comfort_indicative": {
+      "V_serv_m_s": 31.499999999999996,
+      "peak_accel_m_s2": 0.15037353704233514,
+      "peak_accel_milli_g": 15.328597048148332
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 73.19087063667726,
+      "top_drift_ratio_H_over": 1358.092876001244,
+      "max_interstorey_drift_1_over": 1023.0431229666855
+     }
+    },
+    "gross": {
+     "period_s": 2.3361785210571386,
+     "gust": {
+      "G": 2.5533367886212135,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5704959130070908,
+      "R2": 0.5539035643991963,
+      "g_R": 3.5044013075913956,
+      "g_B": 3.5,
+      "V_zs_m_s": 42.87743346354271,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 3027.4516128314426,
+     "mean_base_moment_kNm": 167132.36883201782,
+     "base_shear_kN": 7730.1035788131485,
+     "base_moment_kNm": 426745.22590820066,
+     "moment_arm_m": 55.205628431400854,
+     "top_deflection_mm": 75.52703504519808,
+     "top_drift_ratio_H_over": 1316.0850275734444,
+     "roof_slab_deflection_mm": 70.51030072304935,
+     "max_interstorey_drift_ratio": 0.0010086757557026772,
+     "max_interstorey_drift_1_over": 991.398865637815,
+     "max_interstorey_level_index": 27,
+     "mean_top_deflection_mm": 29.57973870966794,
+     "comfort_indicative": {
+      "V_serv_m_s": 31.499999999999996,
+      "peak_accel_m_s2": 0.11437661448294971,
+      "peak_accel_milli_g": 11.65918598195206
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 34.055730870717845,
+      "top_drift_ratio_H_over": 2918.745170301635,
+      "max_interstorey_drift_1_over": 2198.6730266646136
+     }
+    }
+   },
+   "55": {
+    "cracked": {
+     "period_s": 3.3038553486037245,
+     "gust": {
+      "G": 3.0136705061430176,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5704959130070908,
+      "R2": 1.3967189043800352,
+      "g_R": 3.4043619439438046,
+      "g_B": 3.5,
+      "V_zs_m_s": 52.405752010996636,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 4522.48944632845,
+     "mean_base_moment_kNm": 249666.87195894017,
+     "base_shear_kN": 13629.293058743116,
+     "base_moment_kNm": 752413.6883836432,
+     "moment_arm_m": 55.20562843140085,
+     "top_deflection_mm": 266.3302202858747,
+     "top_drift_ratio_H_over": 373.22088305752754,
+     "roof_slab_deflection_mm": 248.63976075262266,
+     "max_interstorey_drift_ratio": 0.003556883122084032,
+     "max_interstorey_drift_1_over": 281.145026608039,
+     "max_interstorey_level_index": 27,
+     "mean_top_deflection_mm": 88.37403416962523,
+     "comfort_indicative": {
+      "V_serv_m_s": 38.5,
+      "peak_accel_m_s2": 0.2635705652174513,
+      "peak_accel_milli_g": 26.867539777517973
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 115.78914324139535,
+      "top_drift_ratio_H_over": 858.4569953399904,
+      "max_interstorey_drift_1_over": 646.6704457143634
+     }
+    },
+    "gross": {
+     "period_s": 2.3361785210571386,
+     "gust": {
+      "G": 2.71048070332643,
+      "I_zs": 0.20914054304612134,
+      "L_zs_m": 163.82307529771256,
+      "B2": 0.5704959130070908,
+      "R2": 0.7926073530483742,
+      "g_R": 3.5044013075913956,
+      "g_B": 3.5,
+      "V_zs_m_s": 52.405752010996636,
+      "zs_m": 59.64
+     },
+     "mean_base_shear_kN": 4522.48944632845,
+     "mean_base_moment_kNm": 249666.87195894017,
+     "base_shear_kN": 12258.120375270693,
+     "base_moment_kNm": 676717.2387045779,
+     "moment_arm_m": 55.205628431400854,
+     "top_deflection_mm": 119.7680571459396,
+     "top_drift_ratio_H_over": 829.9374839059071,
+     "roof_slab_deflection_mm": 111.81270019830441,
+     "max_interstorey_drift_ratio": 0.001599521753745883,
+     "max_interstorey_drift_1_over": 625.1868707994269,
+     "max_interstorey_level_index": 27,
+     "mean_top_deflection_mm": 44.18701708481262,
+     "comfort_indicative": {
+      "V_serv_m_s": 38.5,
+      "peak_accel_m_s2": 0.20438525320496922,
+      "peak_accel_milli_g": 20.83437851222928
+     },
+     "serviceability_0p7V": {
+      "top_deflection_mm": 53.107508680979294,
+      "top_drift_ratio_H_over": 1871.6750694728144,
+      "max_interstorey_drift_1_over": 1409.9214730367307
+     }
+    }
+   },
+   "gust_factor_vs_period_45ms": {
+    "2.31": 2.546882675115952,
+    "3.30": 2.8110405175476485,
+    "4.30": 3.0474937388370815
+   }
+  }
+ },
+ "crosswind": {
+  "wind_on_30m_face": {
+   "cracked": {
+    "T1_cross_s": 3.3038553486037245,
+    "b_m": 30.0,
+    "St": {
+     "0.08": {
+      "V_cr_m_s": 113.50375861899721,
+      "V_basic_at_which_Vcr_reached_at_roof": 107.55342016801548,
+      "height_where_Vcr_m_for_V35_45_55": [
+       27237.502904336376,
+       7752.556543094405,
+       2842.458049395419
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.12": {
+      "V_cr_m_s": 75.66917241266479,
+      "V_basic_at_which_Vcr_reached_at_roof": 71.7022801120103,
+      "height_where_Vcr_m_for_V35_45_55": [
+       3586.83165818421,
+       1020.9127957984388,
+       374.31546329486935
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.15": {
+      "V_cr_m_s": 60.535337930131845,
+      "V_basic_at_which_Vcr_reached_at_roof": 57.361824089608255,
+      "height_where_Vcr_m_for_V35_45_55": [
+       1175.3329977538037,
+       334.53270492723306,
+       122.655691012463
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     }
+    }
+   },
+   "gross": {
+    "T1_cross_s": 2.3361785210571386,
+    "b_m": 30.0,
+    "St": {
+     "0.08": {
+      "V_cr_m_s": 160.51855481930792,
+      "V_basic_at_which_Vcr_reached_at_roof": 152.10350548121943,
+      "height_where_Vcr_m_for_V35_45_55": [
+       154078.58404995615,
+       43855.0824252335,
+       16079.370895726288
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.12": {
+      "V_cr_m_s": 107.01236987953861,
+      "V_basic_at_which_Vcr_reached_at_roof": 101.40233698747963,
+      "height_where_Vcr_m_for_V35_45_55": [
+       20290.18390781316,
+       5775.154887273551,
+       2117.4480191902935
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.15": {
+      "V_cr_m_s": 85.6098959036309,
+      "V_basic_at_which_Vcr_reached_at_roof": 81.12186958998372,
+      "height_where_Vcr_m_for_V35_45_55": [
+       6648.687462912222,
+       1892.4027534617985,
+       693.8453669282758
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     }
+    }
+   }
+  },
+  "wind_on_24m_face": {
+   "cracked": {
+    "T1_cross_s": 4.54809174854644,
+    "b_m": 24.0,
+    "St": {
+     "0.08": {
+      "V_cr_m_s": 65.96173001476484,
+      "V_basic_at_which_Vcr_reached_at_roof": 62.50374216329964,
+      "height_where_Vcr_m_for_V35_45_55": [
+       1805.411737241607,
+       513.8707694934665,
+       188.4096035902894
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.12": {
+      "V_cr_m_s": 43.97448667650989,
+      "V_basic_at_which_Vcr_reached_at_roof": 41.66916144219976,
+      "height_where_Vcr_m_for_V35_45_55": [
+       237.74969379313347,
+       67.67022478926306,
+       24.811141213536057
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.15": {
+      "V_cr_m_s": 35.17958934120791,
+      "V_basic_at_which_Vcr_reached_at_roof": 33.3353291537598,
+      "height_where_Vcr_m_for_V35_45_55": [
+       77.90581966213394,
+       22.17417925894571,
+       8.13011475285149
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     }
+    }
+   },
+   "gross": {
+    "T1_cross_s": 3.2159865168557698,
+    "b_m": 24.0,
+    "St": {
+     "0.08": {
+      "V_cr_m_s": 93.28397318447288,
+      "V_basic_at_which_Vcr_reached_at_roof": 88.3936398664094,
+      "height_where_Vcr_m_for_V35_45_55": [
+       10212.951057898605,
+       2906.892046099035,
+       1065.8056667149035
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.12": {
+      "V_cr_m_s": 62.18931545631526,
+      "V_basic_at_which_Vcr_reached_at_roof": 58.92909324427294,
+      "height_where_Vcr_m_for_V35_45_55": [
+       1344.9153656492003,
+       382.8005986632474,
+       140.353009608547
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     },
+     "0.15": {
+      "V_cr_m_s": 49.75145236505221,
+      "V_basic_at_which_Vcr_reached_at_roof": 47.14327459541835,
+      "height_where_Vcr_m_for_V35_45_55": [
+       440.7018670159297,
+       125.43610016997289,
+       45.990874188528664
+      ],
+      "V_roof_m_s_for_V35_45_55": [
+       36.93635725817945,
+       47.48960218908786,
+       58.04284711999627
+      ]
+     }
+    }
+   }
+  }
+ },
+ "sensitivity_V_is_mean_speed": {
+  "wind_on_30m_face": {
+   "base_shear_kN": 30179.653950985074,
+   "base_moment_kNm": 1672090.217570807,
+   "top_deflection_mm": 1125.946174763667,
+   "max_interstorey_drift_1_over": 66.15736365858258,
+   "G": 3.527507653936027
+  },
+  "wind_on_24m_face": {
+   "base_shear_kN": 22122.477903579907,
+   "base_moment_kNm": 1221285.295126908,
+   "top_deflection_mm": 432.29567285224726,
+   "max_interstorey_drift_1_over": 173.20880492456158,
+   "G": 3.2476860604207753
+  }
+ }
+}

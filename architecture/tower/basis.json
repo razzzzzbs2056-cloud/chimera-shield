@@ -1,0 +1,62 @@
+{
+ "project": "30-storey residential tower (concept feasibility)",
+ "status": "Director's reference design basis v2: site set to Sydney by the user (decision D-T1).",
+ "site": {
+  "location": "Sydney, New South Wales, Australia (specific lot UNKNOWN)",
+  "latitude": -33.87,
+  "longitude": 151.21,
+  "jurisdiction": "Australia / NSW (governing documents and hazard values to be retrieved and cited by the Codes division; none entered from memory)",
+  "geotechnical_data": "NONE",
+  "survey": "NONE"
+ },
+ "geometry": {
+  "storeys_above_grade": 30,
+  "basements": 2,
+  "basement_floor_to_floor_m": 3.3,
+  "ground_floor_to_floor_m": 4.5,
+  "typical_floor_to_floor_m": 3.1,
+  "height_to_roof_slab_m": 94.4,
+  "rooftop_plant_m": 5.0,
+  "floor_plate_m": [
+   30.0,
+   24.0
+  ],
+  "floor_plate_area_m2": 720.0,
+  "core_m": [
+   12.0,
+   8.0
+  ],
+  "core_position": "central"
+ },
+ "use": {
+  "type": "residential apartments",
+  "apartments_per_floor_target": 8,
+  "ground_floor": "lobby, amenity, retail",
+  "basements": "parking, plant, storage"
+ },
+ "loads_assumed": {
+  "residential_live_kPa_range": [
+   1.5,
+   2.0
+  ],
+  "corridor_live_kPa": 3.0,
+  "roof_live_kPa": 1.5,
+  "superimposed_dead_kPa": 1.0,
+  "partitions_kPa": 0.5,
+  "facade_line_load_kN_per_m": 6.0,
+  "note": "ASSUMPTION ranges; the governing code values depend on the jurisdiction"
+ },
+ "hazards": {
+  "wind_basic_speed_m_s": "UNKNOWN; report results for 35, 45 and 55 m/s",
+  "seismic": "UNKNOWN; report demand per unit spectral acceleration Sa (g)",
+  "flood": "UNKNOWN",
+  "soil": "UNKNOWN; no parameters may be assumed as fact"
+ },
+ "return_format": "architecture/org.json return_format; validate with python architecture/tools/validate_return.py <file>",
+ "outputs": {
+  "returns": "architecture/tower/returns/<division>.md",
+  "data": "architecture/tower/data/<division>.json",
+  "scripts": "architecture/tower/calcs/",
+  "tests": "architecture/tests/test_tower_<division>.py"
+ }
+}

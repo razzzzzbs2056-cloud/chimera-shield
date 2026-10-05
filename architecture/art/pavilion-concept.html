@@ -1,0 +1,455 @@
+<title>Chimera Pavilion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout concept: a drawing sheet. Each section is a plate with a title block; the generative façade is the hero plate. */
+  :root {
+    --bg: #E8EAE6; --surface: #F3F4F1; --ink: #14201D; --muted: #55645F; --line: #B9C0BA;
+    --copper: #9A4E29; --patina: #23695D; --glow: #F0C987;
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1614; --surface: #17211E; --ink: #E4E9E5; --muted: #8FA09A; --line: #2D3B37;
+      --copper: #E08A5C; --patina: #58B8A5; --glow: #F0C987; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1614; --surface: #17211E; --ink: #E4E9E5; --muted: #8FA09A; --line: #2D3B37;
+    --copper: #E08A5C; --patina: #58B8A5; --glow: #F0C987; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--f-body); padding-inline: 16px; padding-block: 24px 64px; margin: 0; }
+  main { max-width: 1120px; margin-inline: auto; display: flex; flex-direction: column; gap: 56px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.05; }
+  h1 { font-size: clamp(2.6rem, 8vw, 5.6rem); font-weight: 800; letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 { font-size: 1.15rem; font-weight: 800; }
+  p { margin: 0; max-width: 65ch; }
+  .mono, .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .tabular { font-variant-numeric: tabular-nums; }
+  a { color: var(--patina); }
+
+  .plate { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+  .sheet { border: 1px solid var(--line); background: var(--surface); padding: 16px; min-width: 0; }
+  .titleblock { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-top: 1px solid var(--line); padding-top: 8px; }
+
+  .head { display: flex; flex-direction: column; gap: 16px; }
+  .head p.lede { font-size: 1.15rem; color: var(--ink); }
+
+  canvas { display: block; width: 100%; height: auto; }
+  .facade-wrap { position: relative; border: 1px solid var(--line); background: #1b1512; }
+  .dim { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 8px; }
+  .dim::before, .dim::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+  .dim span { white-space: nowrap; }
+
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px 24px; align-items: end; }
+  .ctl { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .ctl .row { display: flex; justify-content: space-between; gap: 8px; }
+  input[type=range] { width: 100%; accent-color: var(--copper); }
+  input[type=number] { width: 100%; font: 500 14px var(--f-mono); padding: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+  button { font: 600 13px var(--f-body); padding: 9px 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+  button:hover { background: var(--ink); color: var(--bg); }
+  button.solid { background: var(--copper); border-color: var(--copper); color: var(--surface); }
+  button.solid:hover { filter: brightness(1.1); background: var(--copper); color: var(--surface); }
+  :focus-visible { outline: 2px solid var(--patina); outline-offset: 2px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .stat { background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .stat b { font: 800 clamp(1.5rem, 4vw, 2.1rem)/1 var(--f-display); font-variant-numeric: tabular-nums; }
+  .stat small { color: var(--muted); font-size: 13px; }
+
+  .trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .trio .sheet { display: flex; flex-direction: column; gap: 10px; }
+  .chip { width: 100%; height: 72px; border: 1px solid var(--line); }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  figcaption { color: var(--muted); font-size: 14px; max-width: 70ch; }
+  .scroll { overflow-x: auto; }
+  svg { display: block; width: 100%; height: auto; min-width: 520px; }
+  svg text { font-family: var(--f-mono); font-size: 11px; fill: currentColor; }
+  svg .soft { fill: var(--line); }
+  svg .hatch { fill: url(#hatch); }
+
+  .bars { display: flex; flex-direction: column; gap: 8px; }
+  .bar { display: grid; grid-template-columns: minmax(110px, 190px) 1fr 70px; gap: 12px; align-items: center; }
+  .bar .track { height: 14px; background: var(--bg); border: 1px solid var(--line); }
+  .bar .fill { height: 100%; background: var(--copper); }
+  .bar.muted .fill { background: var(--muted); }
+  .bar .v { text-align: right; font: 500 13px var(--f-mono); }
+  @media (max-width: 520px) { .bar { grid-template-columns: 1fr 70px; } .bar .track { grid-column: 1 / -1; order: 3; } }
+
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .sw div.card { border: 1px solid var(--line); background: var(--surface); display: flex; flex-direction: column; min-width: 0; }
+  .sw .col { height: 84px; }
+  .sw .meta { padding: 10px; display: flex; flex-direction: column; gap: 2px; font-size: 13px; }
+  .sw .meta b { font-family: var(--f-display); font-size: 15px; }
+  ol.rq { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+  .note { border-left: 3px solid var(--copper); padding-left: 12px; color: var(--ink); max-width: 70ch; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<main>
+  <header class="head">
+    <span class="label">Concept sheet CP-01 · community and cultural pavilion · 4,188 m² program, 3,456 m² in the drawn geometry (under review)</span>
+    <h1>Chimera<br>Pavilion</h1>
+    <p class="lede">Three beings in one body: a stone-like heart, a timber skeleton and a copper veil that opens where people look out and closes where the sun is harshest.</p>
+    <p class="note">Concept stage. Site, soils and jurisdiction are assumed, and nothing here is a construction document.</p>
+  </header>
+
+  <section class="plate" aria-labelledby="t-facade">
+    <h2 id="t-facade">The veil, grown from the sun</h2>
+    <p>Each 1 m cell of the 48 × 17 m south façade is perforated according to how much sun it receives. Move the sun and the pattern re-grows. The same seed always gives the same façade.</p>
+    <div class="sheet">
+      <div class="facade-wrap"><canvas id="facade" role="img" aria-label="Copper façade with a gradient of circular perforations, denser holes where sun exposure is low and near eye level"></canvas></div>
+      <div class="dim"><span class="mono">48 m</span></div>
+      <div class="controls" style="margin-top:16px">
+        <div class="ctl"><div class="row"><label class="label" for="seed">Seed</label></div>
+          <div class="btns"><button id="prev" aria-label="Previous seed">←</button><input id="seed" type="number" value="1618" min="1" max="999999" style="flex:1;min-width:0"><button id="next" aria-label="Next seed">→</button></div></div>
+        <div class="ctl"><div class="row"><label class="label" for="az">Sun direction</label><span class="mono tabular" id="az-v"></span></div><input id="az" type="range" min="-80" max="80" value="0"></div>
+        <div class="ctl"><div class="row"><label class="label" for="alt">Sun height</label><span class="mono tabular" id="alt-v"></span></div><input id="alt" type="range" min="8" max="75" value="48"></div>
+        <div class="ctl"><div class="row"><label class="label" for="open">Base openness</label><span class="mono tabular" id="open-v"></span></div><input id="open" type="range" min="30" max="80" value="64"></div>
+        <div class="ctl"><div class="row"><label class="label" for="scale">Cloud scale</label><span class="mono tabular" id="scale-v"></span></div><input id="scale" type="range" min="4" max="40" value="14"></div>
+        <div class="ctl"><span class="label">Time of day</span><div class="btns"><button data-sun="-62,16">Morning</button><button data-sun="0,48">Noon</button><button data-sun="62,16">Evening</button><button id="rand" class="solid">New seed</button></div></div>
+      </div>
+      <div class="stats" style="margin-top:16px">
+        <div class="stat"><span class="label">Open area</span><b id="s-open">–</b><small>mean share of veil that is hole</small></div>
+        <div class="stat"><span class="label">Sun load vs uniform veil</span><b id="s-red">–</b><small>same open area, even pattern</small></div>
+        <div class="stat"><span class="label">Eye-level openness</span><b id="s-eye">–</b><small>0 to 3.5 m above ground</small></div>
+        <div class="stat"><span class="label">Holes</span><b id="s-n">816</b><small>48 × 17 cells</small></div>
+      </div>
+      <p class="mono" style="margin-top:12px">Toy model: incidence = cos(height) · cos(direction), modulated by seeded cloud noise. A real design needs annual daylight and energy simulation.</p>
+    </div>
+    <div class="titleblock mono"><span>Sheet CP-01 · South elevation</span><span>Scale 1:200 · panels 2 × 4 m · fins at 1 m</span></div>
+  </section>
+
+  <section class="plate" aria-labelledby="t-body">
+    <h2 id="t-body">One body, three beings</h2>
+    <div class="trio">
+      <div class="sheet"><div class="chip" style="background:linear-gradient(135deg,#8a6f55,#b49a7d 55%,#5d5a56)"></div><h3>Heart</h3><p>Two reinforced-concrete cores and a brick and rammed-earth plinth. Heavy, cool and fire-safe. They carry wind and seismic loads and anchor the building.</p><span class="mono">Concrete C40/50 · rammed earth · brick</span></div>
+      <div class="sheet"><div class="chip" style="background:linear-gradient(90deg,#c58f55,#d9ab72 30%,#b97d45 60%,#d4a066)"></div><h3>Skeleton</h3><p>Glulam posts and beams on an 8 m grid, cross-laminated timber floors and a 24 × 24 m diagrid roof on steel nodes. Warm to touch, and it stores carbon while it stands.</p><span class="mono">GL24h · CLT 5-ply · S355 nodes</span></div>
+      <div class="sheet"><div class="chip" style="background:linear-gradient(135deg,#b06238,#8f6a4a 55%,#5e8c7c)"></div><h3>Skin</h3><p>A copper veil with a perforation gradient over glass. It patinates toward green as it ages and filters light into the hall.</p><span class="mono">Copper 0.7 mm · low-e glazing</span></div>
+    </div>
+  </section>
+
+  <section class="plate" aria-labelledby="t-draw">
+    <h2 id="t-draw">Plan and section</h2>
+    <figure>
+      <div class="sheet scroll">
+        <svg viewBox="0 0 700 470" role="img" aria-label="Ground floor plan on an 8 metre grid: hall 24 by 24 metres south-central, foyer west, workshops north, cores at both north corners" style="color:var(--ink)">
+          <defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1" opacity="0.5"/></pattern></defs>
+          <g transform="translate(60,36)" stroke="currentColor" fill="none" stroke-width="1">
+            <!-- 8 m grid, 12 px per metre -->
+            <g stroke="var(--line)"><path d="M0 0V384M96 0V384M192 0V384M288 0V384M384 0V384M480 0V384M576 0V384M0 0H576M0 96H576M0 192H576M0 288H576M0 384H576"/></g>
+            <rect x="0" y="0" width="96" height="96" class="hatch" fill="url(#hatch)"/><rect x="480" y="0" width="96" height="96" fill="url(#hatch)"/>
+            <rect x="96" y="96" width="288" height="288" fill="var(--bg)" stroke-width="2"/>
+            <rect x="0" y="96" width="96" height="288"/><rect x="96" y="0" width="288" height="96"/><rect x="384" y="0" width="96" height="96"/>
+            <rect x="384" y="96" width="192" height="144"/><rect x="384" y="240" width="192" height="144"/>
+            <rect x="192" y="384" width="192" height="48" stroke-dasharray="5 4"/>
+            <g fill="var(--copper)" stroke="none"><circle cx="0" cy="0" r="3.5"/><circle cx="96" cy="0" r="3.5"/><circle cx="192" cy="0" r="3.5"/><circle cx="288" cy="0" r="3.5"/><circle cx="384" cy="0" r="3.5"/><circle cx="480" cy="0" r="3.5"/><circle cx="576" cy="0" r="3.5"/>
+              <circle cx="0" cy="96" r="3.5"/><circle cx="96" cy="96" r="3.5"/><circle cx="192" cy="96" r="3.5"/><circle cx="288" cy="96" r="3.5"/><circle cx="384" cy="96" r="3.5"/><circle cx="480" cy="96" r="3.5"/><circle cx="576" cy="96" r="3.5"/>
+              <circle cx="0" cy="192" r="3.5"/><circle cx="96" cy="192" r="3.5"/><circle cx="192" cy="192" r="3.5"/><circle cx="288" cy="192" r="3.5"/><circle cx="384" cy="192" r="3.5"/><circle cx="480" cy="192" r="3.5"/><circle cx="576" cy="192" r="3.5"/>
+              <circle cx="0" cy="288" r="3.5"/><circle cx="96" cy="288" r="3.5"/><circle cx="192" cy="288" r="3.5"/><circle cx="288" cy="288" r="3.5"/><circle cx="384" cy="288" r="3.5"/><circle cx="480" cy="288" r="3.5"/><circle cx="576" cy="288" r="3.5"/>
+              <circle cx="0" cy="384" r="3.5"/><circle cx="96" cy="384" r="3.5"/><circle cx="192" cy="384" r="3.5"/><circle cx="288" cy="384" r="3.5"/><circle cx="384" cy="384" r="3.5"/><circle cx="480" cy="384" r="3.5"/><circle cx="576" cy="384" r="3.5"/></g>
+            <g stroke="none"><text x="48" y="52" text-anchor="middle">CORE</text><text x="528" y="52" text-anchor="middle">CORE</text><text x="240" y="52" text-anchor="middle">WORKSHOPS</text><text x="432" y="52" text-anchor="middle">MAKERS</text>
+              <text x="48" y="240" text-anchor="middle">FOYER</text><text x="48" y="254" text-anchor="middle">CAFE</text>
+              <text x="240" y="236" text-anchor="middle" style="font-size:14px">HALL 24 × 24 m</text><text x="240" y="254" text-anchor="middle">400 people · diagrid roof</text>
+              <text x="480" y="172" text-anchor="middle">BACK OF HOUSE</text><text x="480" y="316" text-anchor="middle">TOILETS · PLANT</text>
+              <text x="288" y="412" text-anchor="middle">ENTRY CANTILEVER</text></g>
+            <!-- dimensions -->
+            <g stroke-width="1"><path d="M0 -16H576M0 -21V-11M576 -21V-11"/><path d="M-22 0V384M-27 0H-17M-27 384H-17"/></g>
+            <g stroke="none"><text x="288" y="-22" text-anchor="middle">48 m  (6 bays × 8 m)</text><text transform="translate(-30,192) rotate(-90)" text-anchor="middle">32 m  (4 bays)</text></g>
+            <!-- north arrow -->
+            <g transform="translate(626,30)" stroke-width="1"><path d="M0 24V-14M-6 -6L0 -16L6 -6"/></g><g stroke="none"><text x="626" y="48" text-anchor="middle">N</text></g>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Ground floor plan. Copper dots mark the 35 column positions on the 8 m grid; hatched squares are the concrete cores. The dashed rectangle is the entry cantilever that makes the dim, earthen threshold before the hall opens.</figcaption>
+    </figure>
+    <figure>
+      <div class="sheet scroll">
+        <svg viewBox="0 0 700 340" role="img" aria-label="North-south section: three-storey service block to the north, a double-height hall with a lattice roof to the south, and a roof terrace" style="color:var(--ink)">
+          <g transform="translate(60,16)" stroke="currentColor" fill="none" stroke-width="1">
+            <!-- 12 px per metre, ground at y=288 -->
+            <path d="M-20 288H604" stroke-width="2"/>
+            <g stroke="none" class="soft"><rect x="-20" y="288" width="624" height="10" fill="var(--line)"/></g>
+            <rect x="0" y="274" width="384" height="14" fill="url(#hatch)"/>
+            <!-- north block (0-8 m = 0-96 px): L1 at 5.5 m=66, L2 at 9.7 m=116, roof at 13.9 m=167 -->
+            <path d="M0 288V121M96 288V121M0 222H96M0 172H96M0 121H96" stroke-width="1.5"/>
+            <path d="M0 121H96" stroke-width="3" stroke="var(--copper)"/>
+            <!-- hall roof lattice at 9.7 m (y=172) to 11.5 m (y=150) over 8-32 m -->
+            <path d="M96 172L120 158L144 172L168 158L192 172L216 158L240 172L264 158L288 172L312 158L336 172L360 158L384 172" stroke="var(--copper)" stroke-width="2"/>
+            <path d="M96 172H384M96 158H384" stroke-dasharray="3 3" opacity="0.5"/>
+            <!-- glazed south wall -->
+            <path d="M384 288V172" stroke-width="3" stroke="var(--patina)"/>
+            <!-- hall columns -->
+            <path d="M192 288V172M288 288V172" stroke-dasharray="2 3" opacity="0.6"/>
+            <!-- canopy pergola over terrace -->
+            <path d="M0 121L24 84L48 121L72 84L96 121" stroke="var(--copper)" stroke-width="2"/>
+            <!-- entry cantilever -->
+            <path d="M384 262H432" stroke-width="2"/><path d="M384 262V288" opacity="0"/>
+            <!-- heights -->
+            <g stroke-width="0.8" opacity="0.8"><path d="M130 288V172M126 288H134M126 172H134"/><path d="M-14 288V121M-18 288H-10M-18 121H-10"/></g>
+            <g stroke="none">
+              <text x="144" y="246">HALL · 9.7 m clear to lattice</text>
+              <text x="2" y="256" >WORKSHOPS</text><text x="2" y="206">GALLERY</text><text x="2" y="150">LEARNING</text>
+              <text x="2" y="70">LATTICE PERGOLA</text><text x="108" y="108" >ROOF TERRACE · 420 m²</text>
+              <text x="392" y="200">GLAZED</text><text x="392" y="213">SOUTH</text><text x="392" y="226">WALL</text>
+              <text x="396" y="258">ENTRY</text>
+              <text x="-12" y="318">L0 ±0.0</text><text x="150" y="318">L1 +5.5 · L2 +9.7 · roof terrace +13.9 · canopy +17.0 m</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Section looking east. Floor-to-floor is 5.5 m at ground and 4.2 m above, a 1 : 0.76 ratio. The hall is column-free under a diagrid; the north block carries three floors and a roof terrace under a lattice pergola.</figcaption>
+    </figure>
+    <div class="titleblock mono"><span>Sheets CP-02, CP-03 · Plan, section A-A</span><span>Scale 1:200 · diagrammatic</span></div>
+  </section>
+
+  <section class="plate" aria-labelledby="t-lat">
+    <h2 id="t-lat">The roof, a canopy of branches</h2>
+    <p>Curved glulam ribs cross on steel nodes the way veins cross in a leaf. Change the number of ribs and the rise and see how the node pattern, and each node's load share, shifts.</p>
+    <div class="sheet">
+      <canvas id="lattice" role="img" aria-label="Rotating wireframe diagrid shell roof; larger nodes near the centre carry more load"></canvas>
+      <div class="controls" style="margin-top:16px">
+        <div class="ctl"><div class="row"><label class="label" for="n">Ribs per direction</label><span class="mono tabular" id="n-v"></span></div><input id="n" type="range" min="4" max="16" step="2" value="10"></div>
+        <div class="ctl"><div class="row"><label class="label" for="rise">Rise</label><span class="mono tabular" id="rise-v"></span></div><input id="rise" type="range" min="10" max="60" value="30"></div>
+        <div class="ctl"><div class="row"><label class="label" for="rot">View angle</label><span class="mono tabular" id="rot-v"></span></div><input id="rot" type="range" min="0" max="360" value="30"></div>
+        <div class="ctl"><span class="label">Motion</span><div class="btns"><button id="spin" aria-pressed="false">Turn slowly</button></div></div>
+      </div>
+      <p class="mono" style="margin-top:12px">Shape z = rise · cos(πu/2)·cos(πv/2). Shell stiffness comes from the curvature, so a flatter roof needs deeper ribs. Not yet analysed for buckling or snow drift.</p>
+    </div>
+    <div class="titleblock mono"><span>Sheet CP-04 · Hall roof axonometric</span><span>24 × 24 m span · rib depth ~1.2 m (to verify)</span></div>
+  </section>
+
+  <section class="plate" aria-labelledby="t-num">
+    <h2 id="t-num">The numbers behind it</h2>
+    <div class="stats">
+      <div class="stat"><span class="label">Primary beam</span><b>240×680</b><small>GL24h, 8 m span, 4 m tributary</small></div>
+      <div class="stat"><span class="label">Deflection</span><b>L/476</b><small>service load, limit L/300</small></div>
+      <div class="stat"><span class="label">Embodied carbon A1–A3</span><b>146–320</b><small>kgCO₂e/m² on 3,456 m², structure, glass, copper only</small></div>
+      <div class="stat"><span class="label">Carbon stored in timber</span><b>~528 t</b><small>CO₂e, reported separately</small></div>
+    </div>
+    <div class="sheet">
+      <h3 style="margin-bottom:14px">Program, m² of 4,188</h3>
+      <div class="bars" id="bars"></div>
+    </div>
+    <p>Figures come from <span class="mono">architecture/tools/quickcheck.py</span> and the CSVs in <span class="mono">architecture/data/</span>. Carbon covers only part of the building and excludes use, transport, construction and end of life, so it is a floor, not a result.</p>
+  </section>
+
+  <section class="plate" aria-labelledby="t-mat">
+    <h2 id="t-mat">Material palette</h2>
+    <div class="sw">
+      <div class="card"><div class="col" style="background:linear-gradient(135deg,#b06238,#7d5236)"></div><div class="meta"><b>Copper</b><span>8,900 kg/m³ · k 390</span><span class="mono">2.5–4.0 kgCO₂e/kg</span></div></div>
+      <div class="card"><div class="col" style="background:repeating-linear-gradient(90deg,#d4a066 0 14px,#c58f55 14px 28px)"></div><div class="meta"><b>Glulam GL24h</b><span>420 kg/m³ · E 11.5 GPa</span><span class="mono">0.3–0.7 kgCO₂e/kg</span></div></div>
+      <div class="card"><div class="col" style="background:repeating-linear-gradient(0deg,#9b7a58 0 10px,#8a6a49 10px 14px,#a6865f 14px 26px)"></div><div class="meta"><b>Rammed earth</b><span>2,000 kg/m³ · k 1.1</span><span class="mono">0.03–0.1 kgCO₂e/kg</span></div></div>
+      <div class="card"><div class="col" style="background:repeating-linear-gradient(0deg,#9a5444 0 12px,#c9c1b4 12px 14px)"></div><div class="meta"><b>Brick</b><span>1,900 kg/m³ · k 0.8</span><span class="mono">0.2–0.3 kgCO₂e/kg</span></div></div>
+      <div class="card"><div class="col" style="background:linear-gradient(180deg,#bcd6d6,#e8f2f0)"></div><div class="meta"><b>Low-e glass</b><span>2,500 kg/m³ · U 0.8–1.2</span><span class="mono">0.8–1.5 kgCO₂e/kg</span></div></div>
+      <div class="card"><div class="col" style="background:linear-gradient(135deg,#b9b3a7,#8d8a83)"></div><div class="meta"><b>Concrete C40/50</b><span>2,450 kg/m³ · E 35 GPa</span><span class="mono">0.12–0.22 kgCO₂e/kg</span></div></div>
+    </div>
+  </section>
+
+  <section class="plate" aria-labelledby="t-rq">
+    <h2 id="t-rq">What the building can teach</h2>
+    <ol class="rq">
+      <li>How much whole-life carbon does a timber and concrete hybrid save against all-concrete and all-steel versions of the same program, once EPD variance is included?</li>
+      <li>Does the solar-driven perforation gradient cut cooling load without breaking daylight targets, compared with an even veil?</li>
+      <li>Do exposed timber and earth mass lower peak indoor temperature under future climate files?</li>
+      <li>Are people-induced vibrations acceptable on 8 m timber floors at 4 kPa assembly loading?</li>
+    </ol>
+    <p class="note">Open: seismic and wind loads, geotechnical report, fire strategy, cost rates, acoustics of the hall, and planning approval. Real construction needs a site investigation and stamped design by licensed professionals.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+
+  function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function makeNoise(seed) {
+    var r = mulberry32(seed), N = 64, g = new Float32Array(N * N), i;
+    for (i = 0; i < g.length; i++) g[i] = r();
+    var sm = function (t) { return t * t * (3 - 2 * t); };
+    var v = function (a, b) { return g[(b & 63) * N + (a & 63)]; };
+    return function (x, y) {
+      var xi = Math.floor(x), yi = Math.floor(y), u = sm(x - xi), w = sm(y - yi);
+      return (v(xi, yi) * (1 - u) + v(xi + 1, yi) * u) * (1 - w) + (v(xi, yi + 1) * (1 - u) + v(xi + 1, yi + 1) * u) * w;
+    };
+  }
+
+  /* ---------- Facade ---------- */
+  var COLS = 48, ROWS = 17;
+  var st = { seed: 1618, az: 0, alt: 48, open: 0.64, scale: 0.14 };
+  var fc = $('facade'), fx = fc.getContext('2d');
+  var off = document.createElement('canvas'), ox = off.getContext('2d');
+
+  function compute() {
+    var noise = makeNoise(st.seed), rnd = mulberry32(st.seed * 7919 + 1);
+    var az = st.az * Math.PI / 180, alt = st.alt * Math.PI / 180;
+    var inc = Math.max(0, Math.cos(alt) * Math.cos(az));
+    var cells = [], sumF = 0, sumFe = 0, sumE = 0, eyeF = 0, eyeN = 0, j, i;
+    for (j = 0; j < ROWS; j++) {
+      var ym = ROWS - 1 - j + 0.5;
+      for (i = 0; i < COLS; i++) {
+        var n = noise(i * st.scale + 3.1, ym * st.scale + 7.7);
+        var e = Math.min(1, inc * (0.85 + 0.3 * ym / ROWS) * (0.7 + 0.6 * n));
+        var f = st.open - 0.55 * e + (rnd() - 0.5) * 0.06;
+        if (ym < 3.5) f += 0.28 * (1 - ym / 3.5);
+        f = clamp(f, 0.05, 0.78);
+        cells.push({ i: i, j: j, f: f, e: e, t: rnd() });
+        sumF += f; sumFe += f * e; sumE += e;
+        if (ym < 3.5) { eyeF += f; eyeN++; }
+      }
+    }
+    var mean = sumF / cells.length;
+    var red = sumE > 0 ? 1 - sumFe / (mean * sumE) : 0;
+    return { cells: cells, mean: mean, red: red, eye: eyeF / eyeN };
+  }
+
+  function drawFacade() {
+    var W = fc.parentElement.clientWidth, dpr = window.devicePixelRatio || 1;
+    var cell = W / COLS, H = Math.round(cell * ROWS);
+    fc.width = Math.round(W * dpr); fc.height = Math.round(H * dpr);
+    fc.style.height = H + 'px';
+    var d = compute();
+    // interior glow seen through the holes
+    var g = fx.createLinearGradient(0, 0, 0, fc.height);
+    g.addColorStop(0, '#1a2321'); g.addColorStop(0.55, '#3a2c20'); g.addColorStop(1, css('--glow'));
+    fx.setTransform(1, 0, 0, 1, 0, 0);
+    fx.fillStyle = g; fx.fillRect(0, 0, fc.width, fc.height);
+    // copper panel on an offscreen canvas, holes cut out
+    off.width = fc.width; off.height = fc.height;
+    ox.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var pg = ox.createLinearGradient(0, 0, 0, H);
+    pg.addColorStop(0, '#b8693f'); pg.addColorStop(0.5, '#93694a'); pg.addColorStop(1, '#5e8c7c');
+    ox.fillStyle = pg; ox.fillRect(0, 0, W, H);
+    d.cells.forEach(function (c) {
+      ox.fillStyle = c.t > 0.5 ? 'rgba(255,255,255,' + (c.t - 0.5) * 0.16 + ')' : 'rgba(0,0,0,' + (0.5 - c.t) * 0.2 + ')';
+      ox.fillRect(c.i * cell, c.j * cell, cell, cell);
+    });
+    ox.strokeStyle = 'rgba(0,0,0,0.18)'; ox.lineWidth = 1;
+    ox.beginPath();
+    for (var k = 1; k < COLS; k++) { ox.moveTo(k * cell, 0); ox.lineTo(k * cell, H); }
+    ox.stroke();
+    ox.globalCompositeOperation = 'destination-out';
+    ox.fillStyle = '#000';
+    d.cells.forEach(function (c) {
+      var r = cell * Math.sqrt(c.f / Math.PI);
+      ox.beginPath(); ox.arc((c.i + 0.5) * cell, (c.j + 0.5) * cell, r, 0, 6.2832); ox.fill();
+    });
+    ox.globalCompositeOperation = 'source-over';
+    fx.drawImage(off, 0, 0);
+    $('s-open').textContent = Math.round(d.mean * 100) + '%';
+    $('s-red').textContent = (d.red >= 0 ? '−' : '+') + Math.abs(Math.round(d.red * 100)) + '%';
+    $('s-eye').textContent = Math.round(d.eye * 100) + '%';
+  }
+
+  function bind(id, key, fmt, conv) {
+    var el = $(id), out = $(id + '-v');
+    var upd = function () { st[key] = conv(+el.value); out.textContent = fmt(+el.value); drawFacade(); };
+    el.addEventListener('input', upd); out.textContent = fmt(+el.value);
+  }
+  bind('az', 'az', function (v) { return (v === 0 ? 'south' : (v < 0 ? 'east ' : 'west ') + Math.abs(v) + '°'); }, function (v) { return v; });
+  bind('alt', 'alt', function (v) { return v + '°'; }, function (v) { return v; });
+  bind('open', 'open', function (v) { return v + '%'; }, function (v) { return v / 100; });
+  bind('scale', 'scale', function (v) { return v / 100 + ''; }, function (v) { return v / 100; });
+  var seedEl = $('seed');
+  function setSeed(v) { v = clamp(Math.round(v) || 1, 1, 999999); st.seed = v; seedEl.value = v; drawFacade(); }
+  seedEl.addEventListener('change', function () { setSeed(+seedEl.value); });
+  $('prev').addEventListener('click', function () { setSeed(st.seed - 1); });
+  $('next').addEventListener('click', function () { setSeed(st.seed + 1); });
+  $('rand').addEventListener('click', function () { setSeed(1 + Math.floor(Math.random() * 99999)); });
+  document.querySelectorAll('[data-sun]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-sun').split(',');
+      $('az').value = p[0]; $('alt').value = p[1];
+      st.az = +p[0]; st.alt = +p[1];
+      $('az').dispatchEvent(new Event('input')); $('alt').dispatchEvent(new Event('input'));
+    });
+  });
+
+  /* ---------- Lattice ---------- */
+  var lc = $('lattice'), lx = lc.getContext('2d');
+  var ls = { n: 10, rise: 0.3, rot: 30 }, spinning = false;
+  function drawLattice() {
+    var W = lc.parentElement.clientWidth - 32, dpr = window.devicePixelRatio || 1;
+    if (W < 200) W = 200;
+    var H = Math.round(W * 0.5);
+    lc.width = Math.round(W * dpr); lc.height = Math.round(H * dpr); lc.style.height = H + 'px'; lc.style.width = W + 'px';
+    lx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    lx.clearRect(0, 0, W, H);
+    var n = ls.n, th = ls.rot * Math.PI / 180, tilt = 0.5, S = Math.min(W, H * 2) * 0.3;
+    var pts = [], a, b;
+    for (a = 0; a <= n; a++) { pts[a] = []; for (b = 0; b <= n; b++) {
+      var u = a / n * 2 - 1, v = b / n * 2 - 1;
+      var z = ls.rise * Math.cos(Math.PI * u / 2) * Math.cos(Math.PI * v / 2);
+      var x = u * Math.cos(th) - v * Math.sin(th), y = u * Math.sin(th) + v * Math.cos(th);
+      pts[a][b] = { sx: W / 2 + x * S, sy: H * 0.62 + y * S * tilt - z * S * 1.6, d: y, z: z, load: Math.cos(Math.PI * u / 2) * Math.cos(Math.PI * v / 2) };
+    } }
+    var ink = css('--ink'), cop = css('--copper'), line = css('--line');
+    // plan outline
+    lx.strokeStyle = line; lx.lineWidth = 1; lx.beginPath();
+    [[0, 0], [n, 0], [n, n], [0, n]].forEach(function (c, i) { var p = pts[c[0]][c[1]]; i ? lx.lineTo(p.sx, p.sy + 0) : lx.moveTo(p.sx, p.sy); });
+    lx.closePath(); lx.stroke();
+    // diagrid members: both diagonals, back to front
+    var segs = [];
+    for (a = 0; a < n; a++) for (b = 0; b < n; b++) {
+      segs.push([pts[a][b], pts[a + 1][b + 1]]); segs.push([pts[a + 1][b], pts[a][b + 1]]);
+    }
+    segs.sort(function (s, t) { return (s[0].d + s[1].d) - (t[0].d + t[1].d); });
+    lx.lineCap = 'round';
+    segs.forEach(function (s) {
+      var depth = clamp(((s[0].d + s[1].d) / 2 + 1) / 2, 0, 1);
+      lx.globalAlpha = 0.35 + 0.65 * depth; lx.strokeStyle = cop; lx.lineWidth = 1 + depth * 1.4;
+      lx.beginPath(); lx.moveTo(s[0].sx, s[0].sy); lx.lineTo(s[1].sx, s[1].sy); lx.stroke();
+    });
+    lx.globalAlpha = 1;
+    for (a = 0; a <= n; a++) for (b = 0; b <= n; b++) {
+      var p = pts[a][b]; lx.fillStyle = ink; lx.globalAlpha = 0.45 + 0.55 * clamp((p.d + 1) / 2, 0, 1);
+      lx.beginPath(); lx.arc(p.sx, p.sy, 1.5 + p.load * 3.2, 0, 6.2832); lx.fill();
+    }
+    lx.globalAlpha = 1;
+  }
+  function bindL(id, key, fmt, conv) {
+    var el = $(id), out = $(id + '-v');
+    el.addEventListener('input', function () { ls[key] = conv(+el.value); out.textContent = fmt(+el.value); drawLattice(); });
+    out.textContent = fmt(+el.value);
+  }
+  bindL('n', 'n', function (v) { return v; }, function (v) { return v; });
+  bindL('rise', 'rise', function (v) { return (v / 100 * 24 * 0.5).toFixed(1) + ' m'; }, function (v) { return v / 100; });
+  bindL('rot', 'rot', function (v) { return v + '°'; }, function (v) { return v; });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var spinBtn = $('spin');
+  if (reduce) { spinBtn.disabled = true; spinBtn.textContent = 'Motion off'; }
+  spinBtn.addEventListener('click', function () {
+    spinning = !spinning; spinBtn.setAttribute('aria-pressed', spinning);
+    spinBtn.textContent = spinning ? 'Stop' : 'Turn slowly';
+    if (spinning) requestAnimationFrame(tick);
+  });
+  function tick() {
+    if (!spinning) return;
+    ls.rot = (ls.rot + 0.3) % 360; $('rot').value = Math.round(ls.rot); $('rot-v').textContent = Math.round(ls.rot) + '°';
+    drawLattice(); requestAnimationFrame(tick);
+  }
+
+  /* ---------- Program bars ---------- */
+  var prog = [['Circulation', 1000, 1], ['Main hall', 600, 0], ['Gallery', 480, 0], ['Foyer and cafe', 420, 0], ['Maker studios', 360, 0], ['Learning rooms', 280, 0], ['Library', 260, 0], ['Plant and risers', 230, 1], ['Back of house', 230, 1], ['Toilets', 168, 1], ['Offices', 160, 0]];
+  $('bars').innerHTML = prog.map(function (p) {
+    return '<div class="bar' + (p[2] ? ' muted' : '') + '"><span>' + p[0] + '</span><div class="track"><div class="fill" style="width:' + (p[1] / 1000 * 100) + '%"></div></div><span class="v tabular">' + p[1].toLocaleString('en-US') + '</span></div>';
+  }).join('');
+
+  /* ---------- redraw hooks ---------- */
+  function all() { drawFacade(); drawLattice(); }
+  var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(all, 80); });
+  if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', all);
+  new MutationObserver(all).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(all);
+  all();
+})();
+</script>

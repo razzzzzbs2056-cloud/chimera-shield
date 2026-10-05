@@ -1,0 +1,314 @@
+{
+ "_meta": {
+  "script": "architecture/tower/calcs/foundation_tower.py",
+  "status": "CONCEPT. Soil parameters are UNKNOWN; every soil-dependent figure is parametric.",
+  "units": "kN, kPa, MN, m"
+ },
+ "assumptions": {
+  "basements": 2,
+  "basement_h_m": 3.3,
+  "tower_footprint_m": [
+   30.0,
+   24.0
+  ],
+  "enlarged_raft_m": [
+   36.0,
+   30.0
+  ],
+  "raft_thickness_m": 2.0,
+  "basement_slab_floor_kPa": 10.0,
+  "basement_wall_t_m": 0.4,
+  "soil_unit_weights_kN_m3": [
+   16.0,
+   18.0,
+   20.0
+  ],
+  "pile_working_MN": [
+   3.0,
+   5.0,
+   8.0,
+   12.0
+  ],
+  "raft_share_of_load": [
+   0.0,
+   0.25,
+   0.5
+  ]
+ },
+ "loads": {
+  "G_kN": 254191.85000000003,
+  "Q_kN": 44457.00000000001,
+  "service_GQ_kN": 298648.85000000003,
+  "factored_EC_kN": 409844.49750000006,
+  "factors_EC": [
+   1.35,
+   1.5
+  ],
+  "core_G_kN": 127484.0,
+  "core_Q_kN": 22096.90000000001,
+  "columns_G_kN": 126707.85000000005,
+  "columns_Q_kN": 22360.1,
+  "core_share_service": 0.5008587844888738,
+  "core_N_Ed_kN": 205248.75000000003,
+  "max_column_service_kN": 13328.192500000003,
+  "max_column": "E_0_8"
+ },
+ "raft_pressures": {
+  "tower_footprint": {
+   "size_m": [
+    30.0,
+    24.0
+   ],
+   "area_m2": 720.0,
+   "basement_weight_kN": {
+    "raft": 36000.0,
+    "floors": 14400.0,
+    "walls": 7128.0,
+    "total": 57528.0
+   },
+   "total_service_kN": 356176.85000000003,
+   "gross_service_kPa": 494.6900694444445,
+   "superstructure_only_kPa": 414.7900694444445,
+   "factored_superstructure_kPa": 569.22846875,
+   "founding_depth_m": 8.6,
+   "net_after_unloading_kPa_by_gamma": {
+    "gamma_16": 357.09006944444445,
+    "gamma_18": 339.8900694444445,
+    "gamma_20": 322.6900694444445
+   },
+   "Z_long_m3": 3600.0,
+   "Z_short_m3": 2880.0
+  },
+  "enlarged": {
+   "size_m": [
+    36.0,
+    30.0
+   ],
+   "area_m2": 1080.0,
+   "basement_weight_kN": {
+    "raft": 54000.0,
+    "floors": 21600.0,
+    "walls": 8712.0,
+    "total": 84312.0
+   },
+   "total_service_kN": 382960.85000000003,
+   "gross_service_kPa": 354.5933796296297,
+   "superstructure_only_kPa": 276.526712962963,
+   "factored_superstructure_kPa": 379.48564583333336,
+   "founding_depth_m": 8.6,
+   "net_after_unloading_kPa_by_gamma": {
+    "gamma_16": 216.9933796296297,
+    "gamma_18": 199.7933796296297,
+    "gamma_20": 182.59337962962968
+   },
+   "Z_long_m3": 6480.0,
+   "Z_short_m3": 5400.0
+  }
+ },
+ "concentration": {
+  "core_area_m2": 96.0,
+  "core_service_kN": 149580.90000000002,
+  "core_pressure_on_core_footprint_kPa": 1558.1343750000003,
+  "columns_service_kN": 149067.95000000004,
+  "columns_pressure_on_rest_kPa": 238.89094551282056,
+  "ratio_core_to_rest": 6.522366813255298
+ },
+ "pile_counts_parametric": {
+  "note": "PARAMETRIC working capacity per pile; NOT capacities. n = ceil(P / Pw). Group efficiency, negative skin friction, overturning and seismic extra loads NOT included.",
+  "total_tower_footprint_MN": 356.17685000000006,
+  "total_enlarged_MN": 382.96085000000005,
+  "superstructure_service_MN": 298.64885000000004,
+  "core_service_MN": 149.5809,
+  "columns_service_MN": 149.06795000000005,
+  "all_load_tower_raft": [
+   {
+    "Pw_MN": 3.0,
+    "n_piles": 119
+   },
+   {
+    "Pw_MN": 5.0,
+    "n_piles": 72
+   },
+   {
+    "Pw_MN": 8.0,
+    "n_piles": 45
+   },
+   {
+    "Pw_MN": 12.0,
+    "n_piles": 30
+   }
+  ],
+  "all_load_enlarged_raft": [
+   {
+    "Pw_MN": 3.0,
+    "n_piles": 128
+   },
+   {
+    "Pw_MN": 5.0,
+    "n_piles": 77
+   },
+   {
+    "Pw_MN": 8.0,
+    "n_piles": 48
+   },
+   {
+    "Pw_MN": 12.0,
+    "n_piles": 32
+   }
+  ],
+  "core_only": [
+   {
+    "Pw_MN": 3.0,
+    "n_piles": 50
+   },
+   {
+    "Pw_MN": 5.0,
+    "n_piles": 30
+   },
+   {
+    "Pw_MN": 8.0,
+    "n_piles": 19
+   },
+   {
+    "Pw_MN": 12.0,
+    "n_piles": 13
+   }
+  ],
+  "piled_raft_by_raft_share": {
+   "raft_carries_0pct": [
+    {
+     "Pw_MN": 3.0,
+     "n_piles": 119
+    },
+    {
+     "Pw_MN": 5.0,
+     "n_piles": 72
+    },
+    {
+     "Pw_MN": 8.0,
+     "n_piles": 45
+    },
+    {
+     "Pw_MN": 12.0,
+     "n_piles": 30
+    }
+   ],
+   "raft_carries_25pct": [
+    {
+     "Pw_MN": 3.0,
+     "n_piles": 90
+    },
+    {
+     "Pw_MN": 5.0,
+     "n_piles": 54
+    },
+    {
+     "Pw_MN": 8.0,
+     "n_piles": 34
+    },
+    {
+     "Pw_MN": 12.0,
+     "n_piles": 23
+    }
+   ],
+   "raft_carries_50pct": [
+    {
+     "Pw_MN": 3.0,
+     "n_piles": 60
+    },
+    {
+     "Pw_MN": 5.0,
+     "n_piles": 36
+    },
+    {
+     "Pw_MN": 8.0,
+     "n_piles": 23
+    },
+    {
+     "Pw_MN": 12.0,
+     "n_piles": 15
+    }
+   ]
+  },
+  "isolated_footing_check": [
+   {
+    "column": "E_0_8",
+    "service_MN": 13.328192500000004,
+    "piles_at_Pw": [
+     {
+      "Pw_MN": 3.0,
+      "n_piles": 5
+     },
+     {
+      "Pw_MN": 5.0,
+      "n_piles": 3
+     },
+     {
+      "Pw_MN": 8.0,
+      "n_piles": 2
+     },
+     {
+      "Pw_MN": 12.0,
+      "n_piles": 2
+     }
+    ]
+   }
+  ]
+ },
+ "uplift_parametric": {
+  "note": "Stage 0 = basement structure only, no tower; groundwater head UNKNOWN. Code partial factors (verify) not applied.",
+  "cases": [
+   {
+    "head_above_base_m": 0.0,
+    "uplift_kN": 0.0,
+    "uplift_kPa": 0.0,
+    "basement_only_weight_kN_stage0": 57528.0,
+    "stage0_ratio_weight_over_uplift": null,
+    "with_tower_ratio": null
+   },
+   {
+    "head_above_base_m": 2.0,
+    "uplift_kN": 14126.400000000001,
+    "uplift_kPa": 19.62,
+    "basement_only_weight_kN_stage0": 57528.0,
+    "stage0_ratio_weight_over_uplift": 4.072375127420998,
+    "with_tower_ratio": 25.213561133763733
+   },
+   {
+    "head_above_base_m": 4.0,
+    "uplift_kN": 28252.800000000003,
+    "uplift_kPa": 39.24,
+    "basement_only_weight_kN_stage0": 57528.0,
+    "stage0_ratio_weight_over_uplift": 2.036187563710499,
+    "with_tower_ratio": 12.606780566881866
+   },
+   {
+    "head_above_base_m": 6.0,
+    "uplift_kN": 42379.2,
+    "uplift_kPa": 58.86,
+    "basement_only_weight_kN_stage0": 57528.0,
+    "stage0_ratio_weight_over_uplift": 1.3574583758069998,
+    "with_tower_ratio": 8.404520377921246
+   },
+   {
+    "head_above_base_m": 8.6,
+    "uplift_kN": 60743.52,
+    "uplift_kPa": 84.366,
+    "basement_only_weight_kN_stage0": 57528.0,
+    "stage0_ratio_weight_over_uplift": 0.9470639831211626,
+    "with_tower_ratio": 5.863618868317148
+   }
+  ]
+ },
+ "overturning": {
+  "M_wind_kNm": null,
+  "M_seismic_kNm": null,
+  "status": "PENDING from wind and earthquake divisions (placeholder)",
+  "formula": "q_max,min = N/A +- M/Z; Z = B*L^2/6; no-tension if e = M/N <= L/6",
+  "sensitivity_per_100MNm_kPa": {
+   "tower_footprint": 27.77777777777778,
+   "enlarged": 15.432098765432098
+  },
+  "sensitivity_note": "bending along the 30 m side (Z_long); short side in raft_pressures Z_short_m3"
+ }
+}

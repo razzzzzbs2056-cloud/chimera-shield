@@ -1,4 +1,4 @@
-.PHONY: dev frontend backend install install-fe install-be
+.PHONY: test dev frontend backend install install-fe install-be
 
 ## Start both servers concurrently
 dev:
@@ -24,3 +24,7 @@ frontend:
 ## Start backend only
 backend:
 	python -m uvicorn backend.main:app --reload --port 8000
+
+## Run backend tests
+test:
+	python -m pytest -q tests

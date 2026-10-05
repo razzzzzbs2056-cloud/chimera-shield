@@ -1,0 +1,592 @@
+{
+ "division": "architecture",
+ "status": "concept options v1 (not for construction)",
+ "reference_option": "A_cheapest",
+ "options": {
+  "A_cheapest": {
+   "objective": "cheapest (lowest construction-cost proxy within the reference 30 x 24 m footprint)",
+   "description": "Reference compact rectangle 30 x 24 m, central 12 x 8 m RC core, 1.5 m ring corridor, 8 apartments per floor, maximum repetition, regular 7.5 x 8 m column grid, flat slab.",
+   "plate": {
+    "shape": "rectangle",
+    "L": 30.0,
+    "W": 24.0
+   },
+   "core_m": [
+    12.0,
+    8.0
+   ],
+   "core_position": "central",
+   "corridor_width_m": 1.5,
+   "mix": {
+    "1B": 2,
+    "2B": 4,
+    "3B": 2
+   },
+   "dual_aspect_apartments": 4,
+   "lifts_provided": 4,
+   "stairs": 2,
+   "structural_system_intent": "RC shear-wall core + RC columns on 7.5 x 8.0 m grid (x 0/7.5/15/22.5/30, y 0/8/16/24), RC flat slab",
+   "identity_score": 1,
+   "proxy_factors": {
+    "cost_structure_factor": 1.0,
+    "carbon_structure_factor": 1.0
+   },
+   "storeys_above_grade": 30,
+   "residential_floors": 29,
+   "height_to_roof_slab_m": 94.4,
+   "gfa_floor_m2": 720.0,
+   "core_area_m2": 96.0,
+   "corridor_area_m2": 69.0,
+   "nsa_floor_m2": 555.0,
+   "efficiency_nsa_gfa": 0.771,
+   "perimeter_m": 108.0,
+   "facade_area_floor_m2": 334.8,
+   "facade_per_gfa": 0.465,
+   "max_depth_facade_to_core_m": 9.0,
+   "apartment_depth_max_m": 7.5,
+   "core_area_ratio": 0.133,
+   "apartments_per_floor": 8,
+   "apartments_total": 232,
+   "nsa_total_m2": 16095.0,
+   "gfa_above_grade_m2": 21600.0,
+   "dual_aspect_share": 0.5,
+   "slenderness_h_over_b": 3.933,
+   "fits_reference_footprint": true,
+   "cost_proxy_index": 1.0,
+   "carbon_proxy_index": 1.0,
+   "population_per_floor": 24.0
+  },
+  "B_lowest_carbon": {
+   "objective": "lowest embodied-carbon proxy",
+   "description": "Same compact plate and core as A (form efficiency kept), but hybrid structure: RC core with timber-concrete composite / CLT floors on glulam or steel beams; low glazing ratio.",
+   "plate": {
+    "shape": "rectangle",
+    "L": 30.0,
+    "W": 24.0
+   },
+   "core_m": [
+    12.0,
+    8.0
+   ],
+   "core_position": "central",
+   "corridor_width_m": 1.5,
+   "mix": {
+    "1B": 2,
+    "2B": 4,
+    "3B": 2
+   },
+   "dual_aspect_apartments": 4,
+   "lifts_provided": 4,
+   "stairs": 2,
+   "structural_system_intent": "RC core + mass-timber/composite floors on 7.5 x 8.0 m grid with secondary beams; fire and code feasibility at 94 m UNKNOWN (jurisdiction)",
+   "identity_score": 3,
+   "proxy_factors": {
+    "cost_structure_factor": 1.15,
+    "carbon_structure_factor": 0.65
+   },
+   "storeys_above_grade": 30,
+   "residential_floors": 29,
+   "height_to_roof_slab_m": 94.4,
+   "gfa_floor_m2": 720.0,
+   "core_area_m2": 96.0,
+   "corridor_area_m2": 69.0,
+   "nsa_floor_m2": 555.0,
+   "efficiency_nsa_gfa": 0.771,
+   "perimeter_m": 108.0,
+   "facade_area_floor_m2": 334.8,
+   "facade_per_gfa": 0.465,
+   "max_depth_facade_to_core_m": 9.0,
+   "apartment_depth_max_m": 7.5,
+   "core_area_ratio": 0.133,
+   "apartments_per_floor": 8,
+   "apartments_total": 232,
+   "nsa_total_m2": 16095.0,
+   "gfa_above_grade_m2": 21600.0,
+   "dual_aspect_share": 0.5,
+   "slenderness_h_over_b": 3.933,
+   "fits_reference_footprint": true,
+   "cost_proxy_index": 1.088,
+   "carbon_proxy_index": 0.716,
+   "population_per_floor": 24.0
+  },
+  "C_max_nsa": {
+   "objective": "maximum net saleable area",
+   "description": "Enlarged 34 x 26 m plate (core dilution), 13 x 8 m core, 10 apartments per floor, deeper units; exceeds the reference footprint (site fit UNKNOWN).",
+   "plate": {
+    "shape": "rectangle",
+    "L": 34.0,
+    "W": 26.0
+   },
+   "core_m": [
+    13.0,
+    8.0
+   ],
+   "core_position": "central",
+   "corridor_width_m": 1.5,
+   "mix": {
+    "1B": 2,
+    "2B": 6,
+    "3B": 2
+   },
+   "dual_aspect_apartments": 4,
+   "lifts_provided": 4,
+   "stairs": 2,
+   "structural_system_intent": "RC core + RC columns, post-tensioned flat slab for spans up to about 10.5 m",
+   "identity_score": 1,
+   "proxy_factors": {
+    "cost_structure_factor": 1.03,
+    "carbon_structure_factor": 0.95
+   },
+   "storeys_above_grade": 30,
+   "residential_floors": 29,
+   "height_to_roof_slab_m": 94.4,
+   "gfa_floor_m2": 884.0,
+   "core_area_m2": 104.0,
+   "corridor_area_m2": 72.0,
+   "nsa_floor_m2": 708.0,
+   "efficiency_nsa_gfa": 0.801,
+   "perimeter_m": 120.0,
+   "facade_area_floor_m2": 372.0,
+   "facade_per_gfa": 0.421,
+   "max_depth_facade_to_core_m": 10.5,
+   "apartment_depth_max_m": 9.0,
+   "core_area_ratio": 0.118,
+   "apartments_per_floor": 10,
+   "apartments_total": 290,
+   "nsa_total_m2": 20532.0,
+   "gfa_above_grade_m2": 26520.0,
+   "dual_aspect_share": 0.4,
+   "slenderness_h_over_b": 3.631,
+   "fits_reference_footprint": false,
+   "cost_proxy_index": 0.942,
+   "carbon_proxy_index": 0.906,
+   "population_per_floor": 30.0
+  },
+  "D_best_daylight": {
+   "objective": "best daylight (shallowest plan, highest dual-aspect share)",
+   "description": "Shallow 27 x 21 m plate around the same 12 x 8 m core, 6 apartments per floor, apartment depth at most 6.0 m, four corner dual-aspect units.",
+   "plate": {
+    "shape": "rectangle",
+    "L": 27.0,
+    "W": 21.0
+   },
+   "core_m": [
+    12.0,
+    8.0
+   ],
+   "core_position": "central",
+   "corridor_width_m": 1.5,
+   "mix": {
+    "1B": 2,
+    "2B": 4
+   },
+   "dual_aspect_apartments": 4,
+   "lifts_provided": 3,
+   "stairs": 2,
+   "structural_system_intent": "RC core + RC columns, flat slab spans 6.5-7.5 m; slenderness about 4.5 so wind/drift and core stiffness to be checked by structure",
+   "identity_score": 2,
+   "proxy_factors": {
+    "cost_structure_factor": 1.0,
+    "carbon_structure_factor": 1.0
+   },
+   "storeys_above_grade": 30,
+   "residential_floors": 29,
+   "height_to_roof_slab_m": 94.4,
+   "gfa_floor_m2": 567.0,
+   "core_area_m2": 96.0,
+   "corridor_area_m2": 69.0,
+   "nsa_floor_m2": 402.0,
+   "efficiency_nsa_gfa": 0.709,
+   "perimeter_m": 96.0,
+   "facade_area_floor_m2": 297.6,
+   "facade_per_gfa": 0.525,
+   "max_depth_facade_to_core_m": 7.5,
+   "apartment_depth_max_m": 6.0,
+   "core_area_ratio": 0.169,
+   "apartments_per_floor": 6,
+   "apartments_total": 174,
+   "nsa_total_m2": 11658.0,
+   "gfa_above_grade_m2": 17010.0,
+   "dual_aspect_share": 0.667,
+   "slenderness_h_over_b": 4.495,
+   "fits_reference_footprint": true,
+   "cost_proxy_index": 1.145,
+   "carbon_proxy_index": 1.114,
+   "population_per_floor": 15.0
+  },
+  "E_identity": {
+   "objective": "strongest architectural identity",
+   "description": "30 x 24 m plate with 4.5 m 45-degree chamfered corners (octagonal plan) wrapped by corner balconies that rotate position every three floors, giving a carved, faceted silhouette.",
+   "plate": {
+    "shape": "chamfered_rectangle",
+    "L": 30.0,
+    "W": 24.0,
+    "chamfer": 4.5
+   },
+   "core_m": [
+    12.0,
+    8.0
+   ],
+   "core_position": "central",
+   "corridor_width_m": 1.5,
+   "mix": {
+    "1B": 2,
+    "2B": 4,
+    "3B": 2
+   },
+   "dual_aspect_apartments": 4,
+   "lifts_provided": 4,
+   "stairs": 2,
+   "structural_system_intent": "RC core + RC columns set back from chamfers, cantilevered balcony slabs with thermal breaks, RC flat slab",
+   "identity_score": 5,
+   "proxy_factors": {
+    "cost_structure_factor": 1.08,
+    "carbon_structure_factor": 1.05
+   },
+   "storeys_above_grade": 30,
+   "residential_floors": 29,
+   "height_to_roof_slab_m": 94.4,
+   "gfa_floor_m2": 679.5,
+   "core_area_m2": 96.0,
+   "corridor_area_m2": 69.0,
+   "nsa_floor_m2": 514.5,
+   "efficiency_nsa_gfa": 0.757,
+   "perimeter_m": 97.46,
+   "facade_area_floor_m2": 302.11,
+   "facade_per_gfa": 0.445,
+   "max_depth_facade_to_core_m": 9.0,
+   "apartment_depth_max_m": 7.5,
+   "core_area_ratio": 0.141,
+   "apartments_per_floor": 8,
+   "apartments_total": 232,
+   "nsa_total_m2": 14920.5,
+   "gfa_above_grade_m2": 20385.0,
+   "dual_aspect_share": 0.5,
+   "slenderness_h_over_b": 3.933,
+   "fits_reference_footprint": true,
+   "cost_proxy_index": 1.048,
+   "carbon_proxy_index": 1.051,
+   "population_per_floor": 24.0
+  }
+ },
+ "objective_senses": {
+  "cost_proxy_index": "min",
+  "carbon_proxy_index": "min",
+  "nsa_total_m2": "max",
+  "max_depth_facade_to_core_m": "min",
+  "identity_score": "max"
+ },
+ "typical_floor": [
+  {
+   "name": "A01 SW corner",
+   "type": "2B",
+   "x0": 0.0,
+   "y0": 0.0,
+   "x1": 7.5,
+   "y1": 9.0,
+   "area_m2": 67.5
+  },
+  {
+   "name": "A02 W",
+   "type": "1B",
+   "x0": 0.0,
+   "y0": 9.0,
+   "x1": 7.5,
+   "y1": 15.0,
+   "area_m2": 45.0
+  },
+  {
+   "name": "A03 NW corner",
+   "type": "2B",
+   "x0": 0.0,
+   "y0": 15.0,
+   "x1": 7.5,
+   "y1": 24.0,
+   "area_m2": 67.5
+  },
+  {
+   "name": "A04 N",
+   "type": "3B",
+   "x0": 7.5,
+   "y0": 17.5,
+   "x1": 22.5,
+   "y1": 24.0,
+   "area_m2": 97.5
+  },
+  {
+   "name": "A05 NE corner",
+   "type": "2B",
+   "x0": 22.5,
+   "y0": 15.0,
+   "x1": 30.0,
+   "y1": 24.0,
+   "area_m2": 67.5
+  },
+  {
+   "name": "A06 E",
+   "type": "1B",
+   "x0": 22.5,
+   "y0": 9.0,
+   "x1": 30.0,
+   "y1": 15.0,
+   "area_m2": 45.0
+  },
+  {
+   "name": "A07 SE corner",
+   "type": "2B",
+   "x0": 22.5,
+   "y0": 0.0,
+   "x1": 30.0,
+   "y1": 9.0,
+   "area_m2": 67.5
+  },
+  {
+   "name": "A08 S",
+   "type": "3B",
+   "x0": 7.5,
+   "y0": 0.0,
+   "x1": 22.5,
+   "y1": 6.5,
+   "area_m2": 97.5
+  },
+  {
+   "name": "Corridor S",
+   "type": "corridor",
+   "x0": 7.5,
+   "y0": 6.5,
+   "x1": 22.5,
+   "y1": 8.0,
+   "area_m2": 22.5
+  },
+  {
+   "name": "Corridor N",
+   "type": "corridor",
+   "x0": 7.5,
+   "y0": 16.0,
+   "x1": 22.5,
+   "y1": 17.5,
+   "area_m2": 22.5
+  },
+  {
+   "name": "Corridor W",
+   "type": "corridor",
+   "x0": 7.5,
+   "y0": 8.0,
+   "x1": 9.0,
+   "y1": 16.0,
+   "area_m2": 12.0
+  },
+  {
+   "name": "Corridor E",
+   "type": "corridor",
+   "x0": 21.0,
+   "y0": 8.0,
+   "x1": 22.5,
+   "y1": 16.0,
+   "area_m2": 12.0
+  },
+  {
+   "name": "Stair 1",
+   "type": "stair",
+   "x0": 9.0,
+   "y0": 8.0,
+   "x1": 14.5,
+   "y1": 10.8,
+   "area_m2": 15.4
+  },
+  {
+   "name": "Lift 1",
+   "type": "lift",
+   "x0": 14.5,
+   "y0": 8.0,
+   "x1": 17.0,
+   "y1": 10.8,
+   "area_m2": 7.0
+  },
+  {
+   "name": "Lift 2 (firefighting candidate)",
+   "type": "lift",
+   "x0": 17.0,
+   "y0": 8.0,
+   "x1": 19.5,
+   "y1": 10.8,
+   "area_m2": 7.0
+  },
+  {
+   "name": "Riser 1",
+   "type": "riser",
+   "x0": 19.5,
+   "y0": 8.0,
+   "x1": 21.0,
+   "y1": 10.8,
+   "area_m2": 4.2
+  },
+  {
+   "name": "Lift lobby",
+   "type": "lobby",
+   "x0": 9.0,
+   "y0": 10.8,
+   "x1": 21.0,
+   "y1": 13.2,
+   "area_m2": 28.8
+  },
+  {
+   "name": "Lift 3",
+   "type": "lift",
+   "x0": 9.0,
+   "y0": 13.2,
+   "x1": 11.5,
+   "y1": 16.0,
+   "area_m2": 7.0
+  },
+  {
+   "name": "Lift 4",
+   "type": "lift",
+   "x0": 11.5,
+   "y0": 13.2,
+   "x1": 14.0,
+   "y1": 16.0,
+   "area_m2": 7.0
+  },
+  {
+   "name": "Riser 2",
+   "type": "riser",
+   "x0": 14.0,
+   "y0": 13.2,
+   "x1": 15.5,
+   "y1": 16.0,
+   "area_m2": 4.2
+  },
+  {
+   "name": "Stair 2",
+   "type": "stair",
+   "x0": 15.5,
+   "y0": 13.2,
+   "x1": 21.0,
+   "y1": 16.0,
+   "area_m2": 15.4
+  }
+ ],
+ "lift_check": {
+  "A_cheapest": {
+   "label": "CALCULATION (concept estimate, not a traffic simulation)",
+   "residential_floors_served": 29,
+   "rise_m": 91.3,
+   "probable_stops": 8.58,
+   "round_trip_time_s": 192.87,
+   "hc5_per_lift_persons": 15.55,
+   "population_per_floor": 24.0,
+   "population_total": 696.0,
+   "demand_5min_persons": 48.72,
+   "lifts_required": 4,
+   "lifts_provided": 4,
+   "interval_s": 48.22,
+   "hc5_provided_pct": 8.94,
+   "pass": true
+  },
+  "B_lowest_carbon": {
+   "label": "CALCULATION (concept estimate, not a traffic simulation)",
+   "residential_floors_served": 29,
+   "rise_m": 91.3,
+   "probable_stops": 8.58,
+   "round_trip_time_s": 192.87,
+   "hc5_per_lift_persons": 15.55,
+   "population_per_floor": 24.0,
+   "population_total": 696.0,
+   "demand_5min_persons": 48.72,
+   "lifts_required": 4,
+   "lifts_provided": 4,
+   "interval_s": 48.22,
+   "hc5_provided_pct": 8.94,
+   "pass": true
+  },
+  "C_max_nsa": {
+   "label": "CALCULATION (concept estimate, not a traffic simulation)",
+   "residential_floors_served": 29,
+   "rise_m": 91.3,
+   "probable_stops": 8.58,
+   "round_trip_time_s": 192.87,
+   "hc5_per_lift_persons": 15.55,
+   "population_per_floor": 30.0,
+   "population_total": 870.0,
+   "demand_5min_persons": 60.9,
+   "lifts_required": 4,
+   "lifts_provided": 4,
+   "interval_s": 48.22,
+   "hc5_provided_pct": 7.15,
+   "pass": true
+  },
+  "D_best_daylight": {
+   "label": "CALCULATION (concept estimate, not a traffic simulation)",
+   "residential_floors_served": 29,
+   "rise_m": 91.3,
+   "probable_stops": 8.58,
+   "round_trip_time_s": 192.87,
+   "hc5_per_lift_persons": 15.55,
+   "population_per_floor": 15.0,
+   "population_total": 435.0,
+   "demand_5min_persons": 30.45,
+   "lifts_required": 2,
+   "lifts_provided": 3,
+   "interval_s": 64.29,
+   "hc5_provided_pct": 10.73,
+   "pass": true
+  },
+  "E_identity": {
+   "label": "CALCULATION (concept estimate, not a traffic simulation)",
+   "residential_floors_served": 29,
+   "rise_m": 91.3,
+   "probable_stops": 8.58,
+   "round_trip_time_s": 192.87,
+   "hc5_per_lift_persons": 15.55,
+   "population_per_floor": 24.0,
+   "population_total": 696.0,
+   "demand_5min_persons": 48.72,
+   "lifts_required": 4,
+   "lifts_provided": 4,
+   "interval_s": 48.22,
+   "hc5_provided_pct": 8.94,
+   "pass": true
+  }
+ },
+ "evidence": {
+  "gfa_floor_m2": "CALCULATION",
+  "core_area_m2": "CALCULATION",
+  "corridor_area_m2": "CALCULATION",
+  "nsa_floor_m2": "CALCULATION",
+  "efficiency_nsa_gfa": "CALCULATION",
+  "perimeter_m": "CALCULATION",
+  "facade_area_floor_m2": "CALCULATION",
+  "facade_per_gfa": "CALCULATION",
+  "max_depth_facade_to_core_m": "CALCULATION",
+  "apartment_depth_max_m": "CALCULATION",
+  "core_area_ratio": "CALCULATION",
+  "apartments_total": "CALCULATION",
+  "nsa_total_m2": "CALCULATION",
+  "gfa_above_grade_m2": "CALCULATION",
+  "dual_aspect_share": "CALCULATION (count is JUDGMENT for options without a drawn layout)",
+  "slenderness_h_over_b": "CALCULATION",
+  "height_to_roof_slab_m": "CALCULATION",
+  "cost_proxy_index": "CALCULATION on JUDGMENT weights (cost division to replace)",
+  "carbon_proxy_index": "CALCULATION on JUDGMENT weights (carbon division to replace)",
+  "identity_score": "JUDGMENT",
+  "mix": "JUDGMENT",
+  "lifts_provided": "JUDGMENT informed by lift_check (CALCULATION)",
+  "fits_reference_footprint": "CALCULATION (reference footprint itself is an ASSUMPTION; site UNKNOWN)"
+ },
+ "proxy_weights": {
+  "K_FC_facade_cost": 1.5,
+  "K_FE_facade_carbon": 0.5,
+  "label": "JUDGMENT"
+ },
+ "lift_assumptions": {
+  "hc5_target_fraction": 0.07,
+  "car_rated_persons": 13,
+  "passengers_per_trip": 10,
+  "speed_m_s": 2.5,
+  "t_stop_s": 10.0,
+  "t_pass_s": 1.2,
+  "persons_per_bedroom": 1.5,
+  "label": "ASSUMPTION"
+ }
+}

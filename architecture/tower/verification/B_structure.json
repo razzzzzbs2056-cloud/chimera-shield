@@ -1,0 +1,10 @@
+{
+ "W_kN": 268338.2,
+ "G_ground_kN": 255027.0,
+ "Q_ground_kN": 44370.6,
+ "core_I_x_base_m4": 229.01,
+ "core_I_y_base_m4": 438.16,
+ "N_Ed_corner_kN": 9174.2,
+ "T1_Y_cracked_s": 4.553,
+ "T1_X_cracked_s": 3.307
+}
