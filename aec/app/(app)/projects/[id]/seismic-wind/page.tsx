@@ -15,6 +15,7 @@ export default async function SeismicWind({ params }: { params: Promise<{ id: st
   const spectrum = Array.from({ length: 80 }, (_, i) => { const T = i * 0.075; return { T: +T.toFixed(3), Sa: +designSa(T, seis).toFixed(4) }; });
   const modes = s.modal.periods.slice(0, 8).map((T, i) => ({ T: +T.toFixed(3), Sa: +designSa(T, seis).toFixed(4), mode: i + 1 }));
   const po = s.pushover;
+  const sdMax = Math.max(...po.capacity.map((c) => c.Sd)) * 1.6;
   const hist = s.history;
   const windRows = w.stories.filter((_, i, a) => a.length < 25 || i % Math.ceil(a.length / 25) === 0 || i === a.length - 1);
   const faces = ["Windward", "Side", "Leeward", "Corner"];
@@ -26,7 +27,7 @@ export default async function SeismicWind({ params }: { params: Promise<{ id: st
       <SectionTitle sub={`Site Class ${seis.siteClass} · SDC ${seis.sdc} · Risk Category ${run.derived.riskCategory} (Ie ${run.derived.Ie})`}>Earthquake engineering</SectionTitle>
       <div className="grid gap-4 lg:grid-cols-3">
         <Card title="Design response spectrum" subtitle="ASCE 7-22 §11.4.5 with modal periods marked" className="lg:col-span-2">
-          <MultiLine sets={[{ name: "Design spectrum Sa", data: spectrum }, { name: "Modes", data: modes, color: "#eb6834", dashed: true }]} x="T" y="Sa" xLabel="Period T (s)" yLabel="Sa (g)" refX={{ v: +s.T1.toFixed(2), label: `T₁ ${s.T1.toFixed(2)} s` }} />
+          <MultiLine sets={[{ name: "Design spectrum Sa", data: spectrum }, { name: "Modal periods", data: modes, color: "#eb6834", points: true }]} x="T" y="Sa" xLabel="Period T (s)" yLabel="Sa (g)" refX={{ v: +s.T1.toFixed(2), label: `T₁ ${s.T1.toFixed(2)} s` }} />
         </Card>
         <Card title="Seismic parameters">
           <KV cols={1} rows={[["Ss / S1", `${(seis.SMS / seis.Fa).toFixed(2)} / ${(seis.SM1 / seis.Fv).toFixed(2)} g`], ["Fa / Fv", `${seis.Fa} / ${seis.Fv}`], ["SDS / SD1", `${seis.SDS} / ${seis.SD1} g`], ["T₀ / Ts", `${seis.T0} / ${seis.Ts} s`], ["Ta / CuTa", `${s.Ta.toFixed(2)} / ${s.CuTa.toFixed(2)} s`], ["T₁ (modal)", `${s.T1.toFixed(2)} s`], ["Cs", s.Cs.toFixed(4)], ["V (ELF) / Vrsa", `${fmt.n(s.Vbase)} / ${fmt.n(s.Vrsa)} kN`], ["Torsion", `${s.torsionRatio.toFixed(2)} — ${s.torsionClass}`], ["Max θ (P-Δ)", `${s.maxTheta.toFixed(3)} ≤ ${s.thetaMax.toFixed(3)}`]]} />
@@ -34,14 +35,14 @@ export default async function SeismicWind({ params }: { params: Promise<{ id: st
       </div>
       <div className="grid gap-4 lg:grid-cols-2">
         <Card title="Modal analysis" subtitle="Eigenvalue solution of the condensed lateral stiffness, lumped floor masses" pad={false}>
-          <Table head={["Mode", "Period (s)", "Mass ratio", "Cumulative", "Γ"]}>
+          <Table head={["Mode", "Period (s)", "Mass ratio", "Cumulative", "|Γ| (roof = 1)"]}>
             {s.modal.periods.slice(0, 8).map((T, i) => (
-              <tr key={i}><td className="td num">{i + 1}</td><td className="td num">{T.toFixed(3)}</td><td className="td num">{(s.modal.massRatios[i] * 100).toFixed(1)}%</td><td className="td num">{(s.modal.cumMass[i] * 100).toFixed(1)}%</td><td className="td num">{s.modal.gammas[i].toFixed(3)}</td></tr>
+              <tr key={i}><td className="td num">{i + 1}</td><td className="td num">{T.toFixed(3)}</td><td className="td num">{(s.modal.massRatios[i] * 100).toFixed(1)}%</td><td className="td num">{(s.modal.cumMass[i] * 100).toFixed(1)}%</td><td className="td num">{Math.abs(s.modal.gammas[i]).toFixed(3)}</td></tr>
             ))}
           </Table>
         </Card>
         <Card title="Pushover — capacity spectrum method" subtitle={`MCE demand reduced for β_eff ${(po.perfPoint.beff * 100).toFixed(1)}% (FEMA 440)`} action={<Badge tone={po.level === "Immediate Occupancy" ? "green" : po.level === "Life Safety" ? "blue" : "red"}>{po.level}</Badge>}>
-          <MultiLine sets={[{ name: "Capacity", data: po.capacity.map((c) => ({ Sd: +(c.Sd * 1000).toFixed(1), Sa: +c.Sa.toFixed(4) })) }, { name: "Reduced MCE demand", data: po.demand.map((c) => ({ Sd: +(c.Sd * 1000).toFixed(1), Sa: +c.Sa.toFixed(4) })), color: "#eb6834", dashed: true }]}
+          <MultiLine sets={[{ name: "Capacity", data: po.capacity.map((c) => ({ Sd: +(c.Sd * 1000).toFixed(1), Sa: +c.Sa.toFixed(4) })) }, { name: "Reduced MCE demand", data: po.demand.filter((c) => c.Sd <= sdMax).map((c) => ({ Sd: +(c.Sd * 1000).toFixed(1), Sa: +c.Sa.toFixed(4) })), color: "#eb6834", dashed: true }]}
             x="Sd" y="Sa" xLabel="Spectral displacement Sd (mm)" yLabel="Sa (g)" height={240} />
           <p className="mt-1 text-xs text-slate-500">Performance point: roof drift {(po.perfPoint.driftRatio * 100).toFixed(2)}%, base shear {fmt.n(po.perfPoint.V)} kN (Vy {fmt.n(po.Vy)} kN).</p>
         </Card>

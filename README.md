@@ -1,5 +1,7 @@
 # 🛡️ ChimeraShield
 
+> **New:** [`aec/`](aec/README.md) contains **Chimera AEC**, a full-stack multi-agent architecture & engineering workflow (solvers, BIM/IFC, codes, cost, verification). Run it with `cd aec && npm install && npm run dev`.
+
 An AI-powered security scanning tool built with a Next.js frontend and FastAPI backend. ChimeraShield leverages OpenAI and Anthropic models to analyze and identify security threats.
 
 ---

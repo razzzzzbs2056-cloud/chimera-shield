@@ -320,7 +320,7 @@ export function analyse(intake: Intake, d: Derived, p: DesignParams, seis: Seism
   const A = K.map((r, i) => r.map((v, j) => v * Mh[i] * Mh[j]));
   const eig = jacobiEigen(A);
   const omegas = eig.values.map((v) => Math.sqrt(Math.max(v, 1e-9)));
-  const shapes = eig.vectors.map((v) => v.map((x, i) => x * Mh[i]));
+  const shapes = eig.vectors.map((v) => v.map((x, i) => x * Mh[i])).map((ph) => { const r = ph[ph.length - 1]; const ref = Math.abs(r) > 1e-9 * Math.max(...ph.map(Math.abs)) ? r : ph.reduce((a, b) => (Math.abs(b) > Math.abs(a) ? b : a), 0); return ph.map((x) => x / ref); }); // roof-normalised
   const totalMass = sum(masses);
   const gammas: number[] = [], massRatios: number[] = [];
   shapes.forEach((ph) => {

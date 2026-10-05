@@ -63,7 +63,7 @@ export function BarViz({ data, x, series, height = 240, horizontal, stacked, col
         {horizontal ? (
           <>
             <XAxis type="number" {...axis} tickFormatter={valueFormatter} />
-            <YAxis type="category" dataKey={x} {...axis} width={130} />
+            <YAxis type="category" dataKey={x} {...axis} width={150} tick={{ fontSize: 11, width: 145 }} />
           </>
         ) : (
           <>

@@ -15,7 +15,7 @@ export default async function Dashboard() {
   const activity = listActivity(user.id, 10);
   const withK = s.projects.filter((p) => p.kpis);
   const total = s.pass + s.fail + s.warn;
-  const short = (n: string) => (n.length > 16 ? n.slice(0, 15) + "…" : n);
+  const short = (n: string) => (n.length > 20 ? n.slice(0, 19) + "…" : n);
   return (
     <Container>
       <PageHeader eyebrow={new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })} title={`Good to see you, ${user.name.split(" ")[0]}`} subtitle="Portfolio health across design, compliance, cost, carbon and operations."

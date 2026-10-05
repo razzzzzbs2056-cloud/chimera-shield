@@ -9,18 +9,18 @@ const axis = { stroke: "#94a3b8", fontSize: 11, tickLine: false, axisLine: { str
 const tip = { contentStyle: { borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 12 } };
 type Pt = Record<string, number>;
 
-export function MultiLine({ sets, x, y, xLabel, yLabel, height = 260, refX, refY, dot }: { sets: { name: string; data: Pt[]; color?: string; dashed?: boolean }[]; x: string; y: string; xLabel: string; yLabel: string; height?: number; refX?: { v: number; label: string }; refY?: { v: number; label: string }; dot?: { x: number; y: number; label: string } }) {
+export function MultiLine({ sets, x, y, xLabel, yLabel, height = 260, refX, refY, dot }: { sets: { name: string; data: Pt[]; color?: string; dashed?: boolean; points?: boolean }[]; x: string; y: string; xLabel: string; yLabel: string; height?: number; refX?: { v: number; label: string }; refY?: { v: number; label: string }; dot?: { x: number; y: number; label: string } }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <LineChart margin={{ top: 8, right: 16, bottom: 18, left: 4 }}>
+      <LineChart margin={{ top: 20, right: 24, bottom: 22, left: 4 }}>
         <CartesianGrid stroke="#f1f5f9" />
         <XAxis type="number" dataKey={x} {...axis} domain={["dataMin", "dataMax"]} allowDuplicatedCategory={false} label={{ value: xLabel, position: "insideBottom", offset: -10, fontSize: 11, fill: "#64748b" }} tickFormatter={(v) => (Math.abs(v) < 10 ? (+v).toFixed(2) : Math.round(v).toString())} />
         <YAxis type="number" {...axis} width={56} label={{ value: yLabel, angle: -90, position: "insideLeft", fontSize: 11, fill: "#64748b" }} tickFormatter={(v) => (Math.abs(v) < 10 ? (+v).toFixed(2) : Math.round(v).toString())} />
         <Tooltip {...tip} />
-        {sets.length > 1 && <Legend wrapperStyle={{ fontSize: 12 }} iconType="plainline" />}
-        {refX && <ReferenceLine x={refX.v} stroke="#64748b" strokeDasharray="4 4" label={{ value: refX.label, fontSize: 10, fill: "#64748b", position: "top" }} />}
+        {sets.length > 1 && <Legend verticalAlign="top" align="right" wrapperStyle={{ fontSize: 12, paddingBottom: 8 }} iconType="plainline" />}
+        {refX && <ReferenceLine x={refX.v} stroke="#64748b" strokeDasharray="4 4" label={{ value: refX.label, fontSize: 10, fill: "#64748b", position: "insideTopLeft" }} />}
         {refY && <ReferenceLine y={refY.v} stroke="#b91c1c" strokeDasharray="4 4" label={{ value: refY.label, fontSize: 10, fill: "#b91c1c", position: "insideTopRight" }} />}
-        {sets.map((s, i) => <Line key={s.name} data={s.data} dataKey={y} name={s.name} stroke={s.color ?? SERIES[i]} strokeWidth={2} strokeDasharray={s.dashed ? "5 4" : undefined} dot={false} isAnimationActive={false} type="linear" />)}
+        {sets.map((s, i) => <Line key={s.name} data={s.data} dataKey={y} name={s.name} stroke={s.points ? "none" : s.color ?? SERIES[i]} strokeWidth={2} strokeDasharray={s.dashed ? "5 4" : undefined} dot={s.points ? { r: 4.5, fill: s.color ?? SERIES[i], stroke: "#fff", strokeWidth: 2 } : false} legendType={s.points ? "circle" : "plainline"} isAnimationActive={false} type="linear" />)}
         {dot && <ReferenceDot x={dot.x} y={dot.y} r={5} fill="#b91c1c" stroke="#fff" strokeWidth={2} label={{ value: dot.label, fontSize: 10, position: "right", fill: "#0f172a" }} />}
       </LineChart>
     </ResponsiveContainer>
