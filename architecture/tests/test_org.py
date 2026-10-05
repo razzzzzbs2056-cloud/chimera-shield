@@ -64,3 +64,10 @@ def test_requested_divisions_and_roles_exist():
 
 def test_org_md_is_current():
     assert (ROOT / "architecture" / "ORG.md").read_text() == build_org.render_md(write=False)
+
+
+def test_specialists_can_run_the_validator():
+    # the return format must be self-validated, which needs a shell (lesson L8 in architecture/memory/lessons.md)
+    for n in DIVS | SUPPORT:
+        tools = re.search(r"^tools: (.*)$", read(n), re.M).group(1)
+        assert "Bash" in tools, n

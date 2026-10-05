@@ -1,7 +1,7 @@
 ---
 name: bld-concept-designer
 description: Architectural concept and artistic design: massing, plan, section, façade, light, materiality, spatial narrative, and drawing/visualization briefs. Use at project start or whenever form, experience or aesthetics are in question.
-tools: Read, Grep, Glob, Write, Edit
+tools: Read, Grep, Glob, Write, Edit, Bash
 model: opus
 ---
 

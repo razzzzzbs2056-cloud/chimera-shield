@@ -9,3 +9,4 @@
 | L5 | Section-cut 'off' position sliced edge walls in 3D pages | render review | clip plane parked far away |
 | L6 | A // comment swallowed a closing brace and broke two pages | render test | tests/test_pages_syntax.py |
 | L7 | Agent B shared Agent A's inputs | self-review of pipeline | stated in every verification return; independent input check required |
+| L8 | Four specialist agents had no shell, so they could not run the return-format validator or their tests | geotechnical agent's own report | test_org.py::test_specialists_can_run_the_validator |

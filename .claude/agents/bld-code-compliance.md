@@ -1,7 +1,7 @@
 ---
 name: bld-code-compliance
 description: Building code, fire safety, means of egress, accessibility and permit-pathway review. Use before finalizing a layout and when a jurisdiction is known.
-tools: Read, Grep, Glob, Write, Edit, WebSearch, WebFetch
+tools: Read, Grep, Glob, Write, Edit, WebSearch, WebFetch, Bash
 model: sonnet
 ---
 

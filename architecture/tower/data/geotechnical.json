@@ -1,0 +1,96 @@
+{
+ "project": "30-storey residential tower, 2 basements (concept feasibility)",
+ "status": "Investigation scope and risk framework only. No ground data exists. Every soil property, capacity, groundwater level and hazard value is UNKNOWN. Counts and depths are scope proposals (JUDGMENT) for the geotechnical engineer of record to confirm against the local code (verify).",
+ "evidence_tags": "FACT / ASSUMPTION / JUDGMENT / UNKNOWN per architecture/PROTOCOL.md section 1",
+ "geometry_used": {
+  "footprint_m": [30.0, 24.0], "core_m": [12.0, 8.0],
+  "basement_floor_to_floor_m": 3.3, "basements": 2,
+  "basement_clear_depth_m_ASSUMPTION": "about 6.6 plus raft/slab thickness; excavation depth below grade is therefore roughly 8 to 10 m or more (ASSUMPTION; raft thickness and ground-floor level are not fixed)",
+  "excavation_plan_ASSUMPTION": "footprint plus working/retention zone, say 36 x 30 m or larger; site boundary UNKNOWN"
+ },
+ "desk_study_before_drilling": [
+  "geology and hydrogeology maps, previous investigations on or near the site (verify availability)",
+  "historic land use and contamination screening; made ground, fill, landfill, mining, karst, voids",
+  "flood maps, river/sea level, tidal influence on groundwater",
+  "seismic zone and active faults from the jurisdiction's hazard maps (UNKNOWN until site known)",
+  "neighbouring buildings, basements, utilities, tunnels, piles, party-wall conditions",
+  "aerial photographs, topography, existing structures to demolish and their foundations"
+ ],
+ "boreholes": [
+  {"id": "BH-C", "count": 1, "location": "within the 12 x 8 m core, near centre", "depth_rule": "deepest hole: the greater of (a) about 1.5 to 2 x the raft/group width B (B = 24 m) below founding level or to the depth where net stress increase falls to an engineer-set fraction of in-situ stress, and (b) pile toe depth plus an engineer-set depth (often several pile diameters, or 1.5 x group width, below toe) ; if rock is met, an engineer-set socket depth in rock (verify code)", "purpose": "profile under the highest load; settlement and pile design; sampling for lab tests", "numeric_depth_m": "UNKNOWN until pile/raft option and ground are known; indicative planning range 40 to 60 m is a budgeting placeholder only (JUDGMENT)"},
+  {"id": "BH-1..4", "count": 4, "location": "four corners of the tower footprint, positioned just outside or at the edge so as not to be lost in the pile/raft layout, inside the excavation line", "depth_rule": "at least the deeper of (a) founding level + 1.0 to 1.5 x B and (b) the retention wall toe + engineer-set depth (below the deepest of any hydraulic cut-off / heave check depth); at least two of the four to the full depth of BH-C", "purpose": "variability across the footprint, differential settlement, tilt risk, retaining wall design"},
+  {"id": "BH-5..6", "count": 2, "location": "on the excavation perimeter / retaining wall line, at least one on each long side, near the most sensitive neighbour", "depth_rule": "retention wall toe depth plus engineer-set margin; deeper if a low-permeability layer is needed as a cut-off", "purpose": "wall design, dewatering, neighbour effects"},
+  {"id": "BH-extra", "count": "contingency", "location": "added wherever the first holes disagree (changing stratigraphy, dipping rock, soft pockets, fill)", "depth_rule": "as nearest hole", "purpose": "target: no unexplained variation between points; spacing to be reduced where ground is variable"}
+ ],
+ "total_boreholes_proposed": "7 minimum (1 core + 4 corners + 2 perimeter), plus contingency holes (JUDGMENT; verify minimum number/spacing against the local code and EN 1997-2 or equivalent)",
+ "cpts": [
+  {"id": "CPTu-1..8", "count": 8, "location": "paired close (about 2 to 5 m, not in the same hole) to each borehole and additional points on a grid across the footprint, including the core centre", "depth_rule": "to refusal or the borehole depth, whichever is shallower; if refusal occurs in a possibly non-bearing layer (cobbles, dense lens) it is verified by the adjacent borehole", "purpose": "continuous profile, layering, pore pressure, liquefaction screening, correlation with SPT/lab; includes pore-pressure dissipation tests at selected depths for groundwater and consolidation parameters"},
+  {"id": "SCPTu", "count": 2, "location": "at BH-C and one corner", "purpose": "seismic cone; shear-wave velocity profile"}
+ ],
+ "in_situ_tests": [
+  {"test": "SPT (energy-measured, with sampler type and rod length recorded)", "where": "in all boreholes, typically at 1.5 m intervals and at stratum changes in granular or mixed soils", "why": "index of density and correlation; liquefaction screening; correlation to CPT"},
+  {"test": "Undisturbed sampling (thin-wall piston / Shelby, block, triple-tube core barrel)", "where": "cohesive layers and weak rock", "why": "laboratory strength and consolidation parameters"},
+  {"test": "Pressuremeter (Menard or similar) and/or dilatometer", "where": "at least in BH-C and one corner, in the stratum proposed for founding or pile bearing, and in weak rock / very dense or stiff layers where SPT and CPT are poor", "why": "stiffness at working strain for settlement of the raft and pile group; limit pressure for design checks"},
+  {"test": "Packer / Lugeon testing", "where": "in rock or fractured layers", "why": "permeability of rock for dewatering and cut-off"},
+  {"test": "Variable-head / pumping tests", "where": "aquifer layers affecting the basement, at least one full-scale pumping test with observation wells where dewatering is expected to be significant", "why": "permeability and storage for dewatering design and neighbour drawdown"},
+  {"test": "Pile load test (preliminary, instrumented) - NOT part of site investigation but flagged", "where": "once a pile option is chosen, before detailed design", "why": "calibrates pile capacity and stiffness; programme and cost item"},
+  {"test": "Geophysics (MASW / downhole / crosshole / cross-hole or suspension logging) for shear-wave velocity", "where": "downhole in BH-C and one corner (or the SCPTu), MASW across the site as check", "why": "Vs profile to the depth required by the seismic code to classify the site class (commonly top 30 m but deeper where required, verify), and for soil-structure interaction and site response; deeper profiling to bedrock may be needed if a site-specific response analysis is required (verify)"},
+  {"test": "Cross-hole or downhole to bedrock / site-specific ground-response data", "where": "decided after seismic hazard and local code known", "why": "site-specific response analysis if the code requires it for tall buildings or soft soils (verify)"}
+ ],
+ "groundwater_monitoring": {
+  "installations": "standpipe or vibrating-wire piezometers in each distinct aquifer and perched layer (at least 3 to 4 locations on the site, with response zones in different strata), plus a deep one below the basement base",
+  "duration": "minimum several months, ideally one full hydrological year to capture seasonal high and low (verify requirement); with readings at least monthly and data loggers at selected points; add tidal/river correlation if applicable",
+  "why": "design uplift (flotation) uses the maximum credible groundwater level, which may be much higher than the level measured in a single drilling campaign; dewatering uses the range and the hydraulic gradient; the design level is set by the engineer (and local code) not by this scope",
+  "also": "record artesian pressure, water chemistry, and neighbouring wells / pumping; include the hydraulic conductivity from pumping and falling-head tests"
+ },
+ "laboratory_tests": [
+  "classification: moisture content, Atterberg limits, particle size distribution (sieve + hydrometer), particle density, organic content",
+  "strength: unconsolidated undrained and consolidated (isotropically or anisotropically) triaxial with pore pressure measurement, direct shear / ring shear where residual strength matters, UCS for cohesive and weak rock",
+  "stiffness and compressibility: oedometer (including unload-reload and creep/secondary compression), small-strain stiffness via bender elements or local strain measurement for deep excavations",
+  "dynamic / cyclic: cyclic simple shear or cyclic triaxial on undisturbed or reconstituted samples of potentially liquefiable layers, resonant column for G-gamma curves where site response is required (verify)",
+  "rock: UCS, point load, Brazilian, density, slake durability, RQD from cores, joint characterization, rock-socket interface where used",
+  "swelling / collapse / dispersivity where relevant to the soil type found",
+  "permeability: constant/falling head in lab (supplement to field tests)",
+  "chemical (aggressivity): pH, sulphate (water and soil-extract), chloride, magnesium, ammonium, aggressive CO2, resistivity, organic content, to classify exposure of concrete and steel (limits from the local code or standard, verify)",
+  "contamination: screening and laboratory analysis for metals, hydrocarbons, PAHs, asbestos, ground gas (methane, CO2) and groundwater contaminants, with the suite set by the environmental regulator (verify); informs disposal of excavated material and dewatering discharge"
+ ],
+ "rock_coring_if_rock_met": "Core with triple-tube barrel at least to an engineer-set depth into rock (commonly several metres or more than a pile-diameter multiple; verify), log RQD, fracture spacing and weathering grade, check for solution cavities / voids beyond the borehole (probing or geophysics for karst), packer tests, UCS tests and, if rock sockets are intended, rock-mass quality along the socket length.",
+ "decision_rules": [
+  {"id": "R1", "option": "raft (mat) on natural ground", "pushed_toward_by": "founding stratum within and below the excavation is laterally consistent across BH-C and BH-1..4 and is of a stiffness the settlement analysis shows can carry the factored/service tower load with total and differential settlements and tilt below limits to be set by the structural engineer; no compressible, loose, organic or collapsible layer within the stress influence depth (about 1.5 to 2 x B); groundwater not causing unmanageable uplift; liquefaction not predicted", "pushed_away_by": "any of the above not satisfied", "data_that_decides": "CPT/SPT/PMT stiffness profile, oedometer data, variation between holes, settlement analysis (limits to be set by engineer)"},
+  {"id": "R2", "option": "piles (end-bearing or socketed)", "pushed_toward_by": "shallow ground is soft, loose, organic, fill, liquefiable or highly variable, or a competent stratum (dense granular, hard clay or rock) exists at a depth that a pile can reach and be proved; ground conditions allow the chosen installation method (noise, vibration and neighbour limits); the raft alone would exceed settlement or tilt limits", "pushed_away_by": "no competent stratum within a reachable depth; obstructions; artesian pressure; karst; neighbouring structures that cannot tolerate installation effects", "data_that_decides": "depth and continuity of the bearing stratum, rock level and quality, negative skin friction potential (compressible layer plus fill), lateral loads from seismic action, pile load test results"},
+  {"id": "R3", "option": "piled raft", "pushed_toward_by": "raft alone satisfies bearing capacity (to be shown) but settlement or differential settlement exceeds limits, and the ground beneath the raft is reasonably uniform and not liquefiable; piles used as settlement reducers with the raft carrying part of the load", "pushed_away_by": "liquefiable layers, soft deep layers that cause continued consolidation settlement, uncertain raft-soil contact (voids, softening), absence of reliable data for the raft-soil interaction", "data_that_decides": "load-settlement response from preliminary pile tests, soil stiffness from small-strain data, consolidation behaviour, and a 3D soil-structure interaction analysis (code treatment of piled rafts: verify)"},
+  {"id": "R4", "option": "ground improvement (densification, stone columns, deep soil mixing, grouting, preloading with drains)", "pushed_toward_by": "problem layer is limited in thickness and extent (for example a liquefiable layer, soft clay or loose fill) and a competent layer lies beneath; improvement is feasible and verifiable (pre/post CPT) and acceptable to neighbours (vibration, spoil, groundwater)", "pushed_away_by": "problem extends to depth beyond practical improvement; contamination mobilised by treatment; fine-grained soils where densification is ineffective; no time for preloading", "data_that_decides": "CPT-based layer thickness and fines content, cyclic test results, depth to competent layer, trial area results"},
+  {"id": "R5", "option": "liquefaction assessment", "pushed_toward_by": "loose to medium saturated sand/silt layers (CPT/SPT/Vs + fines content + groundwater depth) and a seismic hazard that is not low; the hazard level comes from the jurisdiction's maps (UNKNOWN)", "outcome": "if susceptible: piles through the layer designed for loss of support and lateral spreading, ground improvement, or relocation; screening method and acceptance factor are set by the local code (verify)"},
+  {"id": "R6", "option": "basement retention", "pushed_toward_by": "see basement_excavation_risks", "data_that_decides": "see basement_excavation_risks"}
+ ],
+ "basement_excavation_risks": [
+  {"risk": "retention wall choice", "options": ["secant or contiguous bored pile wall", "diaphragm wall", "sheet pile (limited depth, vibration, water-tight if interlocked)", "soldier pile and lagging", "soil nailing (needs space and no neighbouring underground structures, above the water table or with dewatering)", "top-down construction with permanent floors as props", "anchors (need neighbour consent for tendons beyond boundary) or internal struts"], "data_that_decides": "soil strength and stiffness, groundwater level and permeability, depth to rock or hydraulic cut-off layer, neighbour distance and sensitivity, available site width, noise/vibration limits, utilities, construction programme"},
+  {"risk": "dewatering", "mechanism": "pumping lowers groundwater, increasing effective stress in compressible layers outside the excavation and causing settlement; also may mobilise contamination, wash out fines", "data_that_decides": "permeability, aquifer thickness and boundaries, recharge, compressible layer thickness and its stress history, contamination plume, the discharge consent", "mitigation_options": "cut-off wall embedded in a low-permeability stratum, recharge wells, staged excavation, reducing drawdown inside the box, monitoring wells, settlement monitoring"},
+  {"risk": "effects on neighbouring buildings, roads and utilities", "mechanism": "wall deflection, ground loss, dewatering drawdown, vibration from installation", "data_that_decides": "condition survey of neighbours (including foundations), small-strain soil stiffness, wall stiffness, numerical prediction of movement, trigger levels set with the neighbours' owners and the authority", "mitigation_options": "stiffer wall, top-down sequence, more props, underpinning, protective monitoring with action levels"},
+  {"risk": "base heave and basal instability", "mechanism": "undrained shear failure of soft clay below the excavation, or hydraulic uplift/piping where a low-permeability layer overlies a pressurised aquifer, or excess unloading heave", "data_that_decides": "undrained shear strength profile, depth of the stiff layer below the base, piezometric pressure in layers beneath the base, thickness of the layer between the base and aquifer, unload-reload stiffness", "mitigation_options": "deeper wall embedment, base slab by jet grouting, deep wells to relieve pressure, staged excavation"},
+  {"risk": "uplift and flotation of the completed basement", "mechanism": "water pressure at the base exceeds the weight of structure available to resist it, especially when the tower is not yet complete (construction stage) or when the design groundwater level rises", "data_that_decides": "design maximum groundwater level and flood level (from monitoring and flood data, set by the engineer), basement geometry, weight at each construction stage, tension pile / anchor capacity if used (to be derived, not assumed)", "mitigation_options": "tension piles or anchors, extra ballast, permanent drainage (needs reliable maintenance and consent), staged dewatering until the weight is sufficient"},
+  {"risk": "temporary works and excavation stability", "mechanism": "props, anchors, groundwater inflow, surcharge from cranes or stockpiles, wall toe stability, construction sequence", "data_that_decides": "full ground model, contractor method, monitoring data; design by a temporary works engineer with checking (jurisdiction-specific requirement, verify)"},
+  {"risk": "waterproofing and groundwater chemistry", "data_that_decides": "water level range, chemical aggressivity tests, chlorides, sulphates"}
+ ],
+ "load_reference": "The structural division owns foundation loads. Checked at the end of this task: architecture/tower/data/structure.json does not exist, so the foundation load is PENDING. No load value is assumed here.",
+ "unknowns": [
+  "site location and jurisdiction",
+  "geology, stratigraphy, depth to rock",
+  "soil classification and every soil strength, stiffness, density and permeability parameter",
+  "groundwater level, range, pressure, chemistry",
+  "contamination and aggressivity class",
+  "seismic hazard and site class, Vs30 / Vs profile, liquefaction susceptibility",
+  "bearing capacity, pile capacity, settlement (all values)",
+  "neighbouring structures and underground services",
+  "flood level",
+  "foundation loads (pending structural division)",
+  "local code requirements for the number, spacing and depth of investigation points (verify)"
+ ],
+ "code_references_to_verify": [
+  "EN 1997-1 and EN 1997-2 (Eurocode 7) if the site is in a Eurocode country, with the national annex",
+  "ISO 22476 series (in-situ tests) and ISO 14688/14689 (soil and rock identification)",
+  "ASTM D1586 (SPT), D5778 (CPTu), D1587 (thin-wall sampling) and the IBC/ASCE 7 site class and geotechnical investigation provisions if in the US",
+  "local building code and the seismic code of the jurisdiction (UNKNOWN until site is known)",
+  "none of these clauses were retrieved for this task; each must be verified against the current edition"
+ ]
+}

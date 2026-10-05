@@ -1,7 +1,7 @@
 ---
 name: bld-construction-manager
 description: Constructability, sequencing, site logistics, temporary works, health and safety, and quality control for building projects. Use to test whether a design can actually be built safely.
-tools: Read, Grep, Glob, Write, Edit
+tools: Read, Grep, Glob, Write, Edit, Bash
 model: sonnet
 ---
 
