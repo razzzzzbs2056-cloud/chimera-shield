@@ -1,0 +1,154 @@
+{
+ "division": "22 Codes",
+ "project": "30-storey residential tower (concept feasibility)",
+ "retrieved_on": "2026-10-05",
+ "overall_result": "INSUFFICIENT INFORMATION",
+ "reason": "Jurisdiction is UNKNOWN (basis.json site.jurisdiction). No code text can be selected, retrieved or checked until it is supplied.",
+ "information_needed": [
+  "Country, and the state/province/emirate/city and local authority (local amendments govern)",
+  "Site address or lot, so planning controls (height, setbacks, heritage, airport/flight-path, flood) and the approving authority can be identified",
+  "Permit/application date or intended lodgement date, to fix the code edition in force (transition rules)",
+  "Building classification inputs: use mix (basement parking, ground retail, residential), tenure (strata/rental), final height incl. rooftop plant, storeys, occupant load",
+  "Which approval route: prescriptive/deemed-to-satisfy vs performance/alternative solution (tall buildings usually need performance-based fire and wind work)",
+  "Hazard data source: authority-issued seismic and wind maps for the site; geotechnical report (not assumed)",
+  "Any client or project specification requirements above code (rating tools, insurer requirements)"
+ ],
+ "verification_method": "Official publishers' pages could not be opened (network egress blocked for ncc.abcb.gov.au, codes.iccsafe.org, gov.uk, legislation.gov.uk, building.govt.nz, bis.gov.in, u.ae, scdf.gov.sg, bulletin.nzsee.org.nz). Status 'cited' means an edition/date appears in a WebSearch result whose URL is an official or authoritative publisher; full text was NOT read, so no clause numbers are quoted. Status 'verify' means the edition could not be confirmed and none is stated as fact. Every item must be re-confirmed against the current text by a licensed professional.",
+ "jurisdictions": {
+  "Australia": {
+   "note": "Building law is State/Territory; the NCC is adopted and varied by each. A 30-storey apartment building is NCC Class 2 (Volume One).",
+   "items": [
+    {"name": "State/Territory building Act and regulations (adoption of NCC, certification, variations)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "National Construction Code Volume One (Class 2-9): structure, fire resistance, egress, services, access, energy", "source_class": "BUILDING CODE", "edition_or_verify": "NCC 2022 incl. Amendment 1 (1 May 2025) and Amendment 2 (29 Jul 2025) reported current by ABCB sources; confirm edition in force in the State", "citation_url": "https://ncc.abcb.gov.au/editions-national-construction-code", "status": "cited"},
+    {"name": "NCC 2025 (preview released 1 Feb 2026; jurisdictions may adopt from 1 May 2026) - may now supersede NCC 2022 in the relevant State", "source_class": "BUILDING CODE", "edition_or_verify": "NCC 2025: verify State adoption date and transition", "citation_url": "https://www.abcb.gov.au/faq/general-ncc", "status": "cited"},
+    {"name": "NCC Volume One Specification 17 fire sprinkler systems (Class 2 via AS 2118.1 with NCC modification)", "source_class": "BUILDING CODE", "edition_or_verify": "NCC 2022 Vol One Spec 17 (AS 2118.1 edition: verify)", "citation_url": "https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one/e-services-and-equipment/17-fire-sprinkler-systems", "status": "cited"},
+    {"name": "NCC Volume One Part E1 fire fighting equipment (hydrants, hose reels, booster, fire control centre etc.)", "source_class": "BUILDING CODE", "edition_or_verify": "NCC 2022 Vol One Part E1; later amendment check: verify", "citation_url": "https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one/e-services-and-equipment/part-e1-fire-fighting-equipment", "status": "cited"},
+    {"name": "AS/NZS 1170 series (permanent/imposed actions, wind 1170.2), AS 1170.4 earthquake, AS 3600 concrete, AS 4100 steel, AS 2159 piling (as referenced by NCC B1)", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "https://ncc.abcb.gov.au/", "status": "verify"},
+    {"name": "NCC fire provisions: type of construction/fire resistance (Section C), egress and smoke hazard management (Section D/E), external wall/cladding provisions", "source_class": "BUILDING CODE", "edition_or_verify": "verify (read text for edition in force)", "citation_url": "https://codes.iccsafe.org/content/ABCBNCCBCAV12022P1/section-c-fire-resistance", "status": "verify"},
+    {"name": "Disability (Access to Premises - Buildings) Standards 2010 (federal) with NCC Part D4/E3 lifts and AS 1428.1; owned by bld-accessibility", "source_class": "LAW", "edition_or_verify": "verify (NCC 2022 Amendment 2 reportedly aligned to updated Standards)", "citation_url": "https://ncc.abcb.gov.au/", "status": "verify"},
+    {"name": "NCC Section J energy efficiency (and State apartment design guides / BASIX-type schemes)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "https://ncc.abcb.gov.au/", "status": "verify"},
+    {"name": "State planning instruments (height, setbacks, heritage, flood, design review)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "USA": {
+   "note": "No national building code. States/cities adopt model codes (IBC) with amendments; edition varies by jurisdiction. NYC, Chicago, California, Florida etc. have major local amendments.",
+   "items": [
+    {"name": "State/municipal adoption ordinance of the building code (which IBC edition, amendments)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "International Building Code (model; occupancy R-2, high-rise provisions, egress, fire resistance, structural chapters 16-23)", "source_class": "BUILDING CODE", "edition_or_verify": "2024 IBC published; adopted edition in the project jurisdiction: verify", "citation_url": "https://codes.iccsafe.org/content/IBC2024P1/chapter-35-referenced-standards", "status": "cited"},
+    {"name": "ASCE/SEI 7 Minimum Design Loads (dead, live, wind incl. wind-tunnel procedure, seismic, tornado where mapped)", "source_class": "REFERENCED STANDARD", "edition_or_verify": "ASCE/SEI 7-22 referenced by 2024 IBC; older IBC editions reference older ASCE 7: verify", "citation_url": "https://www.iccsafe.org/news-and-events-calendar/2024-ibc-significant-structural-changes-and-asce-7-22-live-online-5/", "status": "cited"},
+    {"name": "ACI 318 Building Code Requirements for Structural Concrete", "source_class": "REFERENCED STANDARD", "edition_or_verify": "ACI 318-19 reported retained in 2024 IBC; verify against Chapter 19/35", "citation_url": "https://www.pci.org/PCI_Docs/Publications/PCI%20Journal/2024/March-April/23-0001_Feature_Ghosh_MA24.pdf", "status": "cited"},
+    {"name": "NFPA 13 sprinklers, NFPA 14 standpipes, NFPA 72 alarm, NFPA 20 pumps as referenced by IBC Ch.9/35; NFPA 101 where adopted by State", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "https://codes.iccsafe.org/content/IBC2024P1/chapter-35-referenced-standards", "status": "verify"},
+    {"name": "International Fire Code (adopted locally) and local fire department requirements", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Americans with Disabilities Act (Title II/III) and Fair Housing Act (multifamily) with ICC A117.1 / IBC Ch.11; owned by bld-accessibility", "source_class": "LAW", "edition_or_verify": "verify (ICC A117.1 edition: verify)", "citation_url": "", "status": "verify"},
+    {"name": "Energy: IECC and/or ASHRAE 90.1 as adopted by State; local green/benchmarking laws", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "AISC 360/341 (steel), PTI/ACI 319-type provisions as applicable, special inspection (IBC Ch.17)", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Local zoning and design review (height, FAR, setbacks, historic districts)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "UK": {
+   "note": "Building regulations are devolved: England (Building Regulations 2010 and Building Safety Act 2022), Scotland (Building (Scotland) Act 2003 and Technical Handbooks), Wales, Northern Ireland differ. Entries below are England-focused; confirm the nation.",
+   "items": [
+    {"name": "Building Safety Act 2022 (higher-risk building regime, Building Safety Regulator gateways, accountable person)", "source_class": "LAW", "edition_or_verify": "Act 2022; commencement and secondary regulations: verify", "citation_url": "https://legislation.gov.uk/uksi/2022/561/regulation/3/made?view=plain", "status": "cited"},
+    {"name": "The Building (Higher-Risk Buildings Procedures) (England) Regulations 2023, SI 2023/909 (gateway applications)", "source_class": "LAW", "edition_or_verify": "SI 2023/909 (amendments: verify)", "citation_url": "https://www.legislation.gov.uk/uksi/2023/909", "status": "cited"},
+    {"name": "Building Act 1984 and Building Regulations 2010 (Schedule 1 requirements A-S; Regulation 7 materials)", "source_class": "LAW", "edition_or_verify": "verify (as amended)", "citation_url": "", "status": "verify"},
+    {"name": "Approved Document B Fire safety, Volume 1 Dwellings (blocks of flats)", "source_class": "GUIDANCE", "edition_or_verify": "2019 edition incorporating 2020, 2022 and 2025 amendments, collated with 2026 and 2029 amendments (title of published PDF); confirm which amendments apply by date", "citation_url": "https://assets.publishing.service.gov.uk/media/67d2bb074702aacd2251cb94/Approved_Document_B_volume_1_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf", "status": "cited"},
+    {"name": "Approved Document A Structure; Eurocodes BS EN 1990-1999 with UK National Annexes (loads, wind 1991-1-4, concrete 1992, geotechnical 1997, seismic 1998 if required)", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Approved Document M (access; M4(2)/(3)), owned by bld-accessibility", "source_class": "GUIDANCE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Approved Documents L (energy), F (ventilation), O (overheating), plus Future Homes Standard developments", "source_class": "GUIDANCE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Fire standards BS 9999 / BS 9991 (residential), BS 8519, BS 9990/BS 9251 sprinklers, BS EN 81-72 firefighting lifts, BS 7974 fire engineering", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Regulatory Reform (Fire Safety) Order 2005 and Fire Safety (England) Regulations 2022 (in-use duties)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Town and Country Planning (local plan, tall-building policy, GLA policy in London)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "New Zealand": {
+   "note": "Building Act 2004 with the Building Code (a schedule to the Building Regulations 1992); compliance via MBIE Acceptable Solutions / Verification Methods or alternative solutions. Tall residential generally needs an alternative solution / fire engineering design.",
+   "items": [
+    {"name": "Building Act 2004 and Building Regulations 1992 (Building Code in Schedule 1)", "source_class": "LAW", "edition_or_verify": "verify (as amended)", "citation_url": "", "status": "verify"},
+    {"name": "MBIE Acceptable Solutions and Verification Methods (B1 Structure, C Protection from Fire, D1 Access routes, G, H1 Energy efficiency, etc.)", "source_class": "BUILDING CODE", "edition_or_verify": "Amendments came into force 28 Jul 2025; preceding versions remained usable until 31 Jul 2026 (per search result); confirm latest versions on building.govt.nz", "citation_url": "https://www.building.govt.nz/building-code-compliance/how-the-building-code-works/different-ways-to-comply/acceptable-solutions-and-verification-methods", "status": "cited"},
+    {"name": "B1/VM1 structural design: AS/NZS 1170 series with NZS 1170.5 earthquake actions", "source_class": "REFERENCED STANDARD", "edition_or_verify": "NZS 1170.5:2004 cited in B1/VM1 (second edition document); confirm current B1 amendment", "citation_url": "https://www.building.govt.nz/assets/Uploads/building-code-compliance/b-stability/b1-structure/asvm/b1-structure-vm1-second-edition.pdf", "status": "cited"},
+    {"name": "TS 1170.5 (Technical Specification, seismic actions) published 2025 - status as an MBIE-cited document: verify", "source_class": "REFERENCED STANDARD", "edition_or_verify": "TS 1170.5:2025 exists per NZSEE Bulletin; whether Building Code cites it: verify", "citation_url": "https://bulletin.nzsee.org.nz/article/view/1695", "status": "cited"},
+    {"name": "NZS 3101 concrete structures; NZS 3404 steel; NZS 3604 not applicable at this height", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Fire: C clauses, C/VM2 / C/AS series, NZS 4541 sprinklers, NZS 4510 fire hydrants, NZS 4512 alarms", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Accessibility: Building Code D1 and NZS 4121 (owned by bld-accessibility)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Energy: Building Code H1 (apartments) ", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Resource Management / district plan rules (height, heritage, hazards such as liquefaction, fault, tsunami)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "India": {
+   "note": "Building law and bye-laws are State/municipal; the National Building Code is a model that applies only where adopted. Fire clearance is separate (State Fire Services). Seismic zone and wind zone are site-specific.",
+   "items": [
+    {"name": "State building bye-laws / Unified Building Bye-Laws and municipal development control regulations (adopt or vary NBC)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "State Fire Services Act / fire NOC and high-rise fire clearance", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "National Building Code of India (BIS), all parts", "source_class": "BUILDING CODE", "edition_or_verify": "NBC 2016 is the edition shown on the BIS NBC page; revision in progress reported: verify", "citation_url": "https://www.bis.gov.in/standards/technical-department/national-building-code/", "status": "cited"},
+    {"name": "NBC Part 4 Fire and Life Safety (high-rise provisions)", "source_class": "BUILDING CODE", "edition_or_verify": "NBC 2016 Part 4; confirm adopted version", "citation_url": "https://www.bis.gov.in/standards/technical-department/national-building-code/", "status": "cited"},
+    {"name": "NBC Part 6 Structural Design (directs to IS 456, IS 800, IS 875, IS 1893, IS 13920)", "source_class": "BUILDING CODE", "edition_or_verify": "NBC 2016 Part 6; confirm adopted version", "citation_url": "https://www.bis.gov.in/standards/technical-department/national-building-code/", "status": "cited"},
+    {"name": "IS 456 plain and reinforced concrete", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify (secondary sources say 2000, reaffirmed; unconfirmed)", "citation_url": "https://www.bis.gov.in/", "status": "verify"},
+    {"name": "IS 875 (Parts 1-5) design loads incl. Part 3 wind", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "https://www.bis.gov.in/", "status": "verify"},
+    {"name": "IS 1893 (Part 1) earthquake criteria and IS 13920 ductile detailing", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify: a 2025 revision (Zone VI) was reportedly notified 6 Nov 2025 then withdrawn by BIS notification 3 Mar 2026 with the 2016 edition reportedly reinstated - secondary news sources only, confirm with BIS", "citation_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/rollback-of-seismic-code-of-2025", "status": "verify"},
+    {"name": "Tall-building structural criteria (BIS standard for tall buildings) and IS 1904 foundations", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify existence and edition (recalled, not retrieved)", "citation_url": "", "status": "verify"},
+    {"name": "Rights of Persons with Disabilities Act 2016 and Harmonised Guidelines (MoHUA); NBC Part 3 accessibility", "source_class": "LAW", "edition_or_verify": "verify (guidelines are GUIDANCE)", "citation_url": "", "status": "verify"},
+    {"name": "Energy: Energy Conservation Building Code / ECBC-Residential (Eco Niwas Samhita)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "Nepal": {
+   "note": "National Building Code (NBC) under the Building Act 2055 BS, administered by DUDBC and enforced through municipalities. Several NBC parts target low-rise buildings; applicability to a 30-storey tower, and whether tall-building review by an expert panel is required, must be confirmed with the authority.",
+   "items": [
+    {"name": "Building Act 2055 BS and amendments; municipal building by-laws (Kathmandu Valley and others)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "https://dudbc.gov.np", "status": "verify"},
+    {"name": "NBC 000 Requirements for state-of-the-art design (introduction to NBC)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "https://learningfromearthquakes.org/resources/nepal-national-building-code-nbc-an-overview/", "status": "verify"},
+    {"name": "NBC 105 Seismic Design of Buildings in Nepal (replaces 1994 version; includes ductile detailing)", "source_class": "BUILDING CODE", "edition_or_verify": "NBC 105:2020", "citation_url": "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1989", "status": "cited"},
+    {"name": "NBC 205 Ready-to-use detailing guideline for low-rise RC buildings without masonry infill - NOT applicable at this height (listed to exclude)", "source_class": "BUILDING CODE", "edition_or_verify": "NBC 205:2024", "citation_url": "https://birendranagarmun.gov.np/sites/birendranagarmun.gov.np/files/documents/NBC-205-2024.pdf", "status": "cited"},
+    {"name": "NBC 206 Architectural design requirements (egress, access, etc.)", "source_class": "BUILDING CODE", "edition_or_verify": "NBC 206:2024 (revision reported approved by MoUD 2081/1/25 BS); confirm gazetted status", "citation_url": "https://giwmscdnone.gov.np/media/pdf_upload/NBC_206_ARCHITECTURAL_DESIGN_REQUIREMENTS-signed.pdf", "status": "cited"},
+    {"name": "NBC parts for loads (unit weights, imposed loads, wind), concrete and fire safety: identify part numbers and editions", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "https://www.iibh.org/kijun/pdf/Nepal_04_Table_of_NBC_Nepal.pdf", "status": "verify"},
+    {"name": "Where NBC lacks tall-building provisions: authority-approved reference to foreign standards (e.g. ACI 318, ASCE 7, Eurocodes) and peer review", "source_class": "ENGINEERING ASSUMPTION", "edition_or_verify": "verify with DUDBC/municipality", "citation_url": "", "status": "verify"},
+    {"name": "Accessibility (persons with disabilities legislation and NBC 206 provisions) and energy: no known building energy code", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "UAE": {
+   "note": "Federal fire code plus emirate-level building codes and authorities (Dubai Municipality/Dubai Civil Defence; Abu Dhabi DMT and ADCD; Sharjah, Ajman, RAK, Fujairah, UAQ differ). Local amendments are significant.",
+   "items": [
+    {"name": "Emirate building/planning law and authority approvals (Dubai Municipality, Abu Dhabi DMT/ADM, other emirates) and Civil Defence approval", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "https://u.ae/en/information-and-services/justice-safety-and-the-law/building-safety", "status": "verify"},
+    {"name": "UAE Fire and Life Safety Code of Practice (Ministry of Interior / Civil Defence)", "source_class": "BUILDING CODE", "edition_or_verify": "verify (secondary sources mention a 2018 edition with Abu Dhabi amendments; not confirmed)", "citation_url": "https://u.ae/en/information-and-services/justice-safety-and-the-law/building-safety", "status": "verify"},
+    {"name": "Dubai Building Code", "source_class": "BUILDING CODE", "edition_or_verify": "verify (a 2021 edition is reported by secondary sources; not confirmed)", "citation_url": "https://www.dm.gov.ae", "status": "verify"},
+    {"name": "Abu Dhabi International Building Code (ADIBC) and Estidama Pearl Building Rating System", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Structural loads, concrete and seismic standards referenced by the emirate code (IBC-family: ASCE 7, ACI 318; BS/EN alternatives), plus wind-tunnel requirement for tall buildings", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Façade/cladding fire performance requirements after post-2012 incidents (Civil Defence / emirate rules)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Accessibility (federal persons-with-disabilities law and emirate universal design codes) - owned by bld-accessibility", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"},
+    {"name": "Energy/green building regulations (Dubai Green Building Regulations and Specifications; Estidama)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  },
+  "Singapore": {
+   "note": "Single national regime: Building Control Act under BCA, fire under SCDF, planning under URA, with CORENET submissions. Structural design is by Eurocodes with Singapore National Annexes. Accredited Checker review applies to structure.",
+   "items": [
+    {"name": "Building Control Act 1989 and Building Control Regulations (qualified person, accredited checker, permits)", "source_class": "LAW", "edition_or_verify": "verify (current Revised Edition)", "citation_url": "https://sso.agc.gov.sg", "status": "verify"},
+    {"name": "BCA Approved Document: Acceptable Solutions (under Building Control Act)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "https://www1.bca.gov.sg/docs/default-source/docs-corp-news-and-publications/publications/codes-acts-and-regulations/approveddoc.pdf?sfvrsn=e856e230_0", "status": "verify"},
+    {"name": "Fire Safety Act 1993 and Code of Practice for Fire Precautions in Buildings (Fire Code)", "source_class": "BUILDING CODE", "edition_or_verify": "Fire Code 2023 (released 25 Aug 2023) with amendment batches incl. 3rd (3 Mar 2025) and 4th (circular dated Sep 2025); confirm latest", "citation_url": "https://www.scdf.gov.sg/fire-safety-services-listing/fire-code-2023", "status": "cited"},
+    {"name": "Eurocodes as SS EN 1990-1999 with Singapore National Annexes (actions, wind SS EN 1991-1-4, concrete SS EN 1992, seismic SS EN 1998, geotechnical SS EN 1997)", "source_class": "REFERENCED STANDARD", "edition_or_verify": "verify (adoption since about 2013 reported by secondary sources)", "citation_url": "https://www1.bca.gov.sg/", "status": "verify"},
+    {"name": "Code on Accessibility in the Built Environment (BCA) - owned by bld-accessibility", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "https://www1.bca.gov.sg/", "status": "verify"},
+    {"name": "Environmental sustainability legislation and Green Mark (energy, envelope)", "source_class": "BUILDING CODE", "edition_or_verify": "verify", "citation_url": "https://www1.bca.gov.sg/", "status": "verify"},
+    {"name": "URA planning controls (height, GFA, setbacks, civil-aviation height limits)", "source_class": "LAW", "edition_or_verify": "verify", "citation_url": "", "status": "verify"}
+   ]
+  }
+ },
+ "height_sensitive_topics": [
+  "Classification as a high-rise / tall / higher-risk building and the extra approval gateway or independent peer review this triggers",
+  "Sprinkler protection and water supply: whether, standard, pump redundancy, tanks, standpipes/risers",
+  "Firefighting shaft or fire-fighting lift(s): number, size, power supply, lobby, shaft pressurisation",
+  "Number of stairs, whether a second stair is needed, stair width, scissor stair acceptability, refuge floors, evacuation lifts, travel distances",
+  "Stair and lobby smoke control: pressurisation, smoke extract, smoke-control design standard",
+  "Structural fire resistance period and compartmentation (floor/wall ratings, protection of the structural frame, concrete spalling)",
+  "Façade and cladding fire performance: reaction-to-fire classes, cavity barriers, limits on combustible materials, external fire spread tests",
+  "Fire command centre, emergency voice communication, firefighter access, aerial appliance reach limits, dry/wet risers, fire-service communications",
+  "Emergency and standby power, duration, fire-rated cabling",
+  "Wind: need for wind-tunnel testing or high-frequency force balance, serviceability accelerations, façade pressures, dynamic response, tornado/cyclone provisions",
+  "Seismic: importance factor / risk category / consequence class, height limits for structural systems, irregularity limits, nonlinear time-history or peer review, drift limits, detailing class",
+  "Structural robustness / disproportionate collapse and progressive collapse requirements",
+  "Foundation and basement: geotechnical category, deep excavation, groundwater, liquefaction, independent geotechnical review",
+  "Design life, durability class and exposure, special inspection or independent supervision regime",
+  "Lifts: evacuation lifts, number and speed, lift lobby protection, access for stretcher",
+  "Accessibility: accessible apartments proportion, accessible refuge, lift sizes (cross-check with bld-accessibility)",
+  "Energy and overheating at height: envelope performance, glazing ratio, solar, ventilation, thermal comfort",
+  "Planning: aviation obstacle limits, overshadowing, wind microclimate assessment at pedestrian level, heritage view corridors",
+  "Fire engineering: whether performance-based (alternative solution) design is mandatory above some height and the peer-review process",
+  "Rooftop plant, helipad / aircraft warning lights, lightning protection, window cleaning / BMU anchorage, and construction-stage fire safety"
+ ]
+}
