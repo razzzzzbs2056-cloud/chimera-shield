@@ -93,8 +93,8 @@
         <fieldset><legend class="label">View</legend>
           <div class="btns"><button data-view="aerial" aria-pressed="true">Aerial</button><button data-view="street">Street</button><button data-view="north">North face</button><button data-view="floor">Typical floor</button></div>
         </fieldset>
-        <div class="rng"><div class="row"><label class="label" for="month">Date (21st)</label><span class="label tab" id="month-v"></span></div><input id="month" type="range" min="1" max="12" step="1" value="6"></div>
-        <div class="rng"><div class="row"><label class="label" for="hour">Time (AEST)</label><span class="label tab" id="hour-v"></span></div><input id="hour" type="range" min="6" max="19" step="0.25" value="12"></div>
+        <div class="rng"><div class="row"><label class="label" for="month">Date (21st)</label><span class="label tab" id="month-v"></span></div><input id="month" type="range" min="1" max="12" step="1" value="9"></div>
+        <div class="rng"><div class="row"><label class="label" for="hour">Time (AEST)</label><span class="label tab" id="hour-v"></span></div><input id="hour" type="range" min="6" max="19" step="0.25" value="13"></div>
         <p class="label" id="sun-v"></p>
         <div class="btns"><button id="day" aria-pressed="false">Play the day</button><button id="spin" aria-pressed="false">Turn</button></div>
         <div class="legend" id="legend"></div>
@@ -144,7 +144,7 @@ var DATA = /*__DATA__*/{};
     'Architecture (options A-E)': '5 options; reference A: 8 apartments (2×1B, 4×2B, 2×3B) around a 12 × 8 m core; 4 lifts by estimate',
     'Structure': 'RC core + 14 columns + 250 mm PT flat plate; base columns up to 1.05 m; core walls 0.6/0.5/0.4 m; outrigger as upgrade',
     'Independent verification': 'Blind recalculation of 8 governing values: ' + (DATA.verification || 'pending'),
-    'Earthquake (OpenSees)': seis ? 'Returned: see seismic.json' : 'Running',
+    'Earthquake (OpenSees)': seis ? 'T1 = 4.55 s (Y), 3.30 s (X), torsion 1.28 s, matches structure within 0.01 %; independent check PROCEED; P-Delta θ ≈ 0.09 in Y, near the usual 0.1 limit; demands per unit Sa pending Sydney hazard' : 'Running',
     'Wind': wind ? 'Base shear 6.4–18.6 MN for 35–55 m/s; vortex shedding on the 24 m face credible (V_cr ≈ 44 m/s); comfort ≈ 23 milli-g at 45 m/s exceeds residential order; wind-tunnel test recommended' : 'Running',
     'Foundations': 'Raft 30×24 m gross ≈ 495 kPa; core zone ≈ 1,560 kPa; pile counts parametric (no soil data)',
     'Geotechnical': 'Investigation scope: 7+ boreholes, 8 CPTu + 2 SCPTu, 12-month groundwater monitoring; all soil values UNKNOWN',
@@ -180,7 +180,7 @@ var DATA = /*__DATA__*/{};
   var M = function (c, o) { return new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.8 }, o || {})); };
   var mats = { conc: M(0xbab6ad), slab: M(0xa9a59c), glass: M(0x8fb5c9, { transparent: true, opacity: 0.28, roughness: 0.08, metalness: 0.2, depthWrite: false }),
     spandrel: M(0x3a4246, { roughness: 0.5, metalness: 0.3 }), mullion: M(0x2a3033, { metalness: 0.4, roughness: 0.4 }), ground: M(0x8d9488, { roughness: 1 }),
-    road: M(0x5b5f61, { roughness: 1 }), ctx: M(0xd3d2cc), base: M(0x9b968c, { transparent: true, opacity: 0.45 }), wall: M(0xf2f0ea), plant: M(0x7d8589), grass: M(0x7f9a62) };
+    road: M(0x5b5f61, { roughness: 1 }), ctx: M(0xe4e2dc, { roughness: 0.95 }), base: M(0x9b968c, { transparent: true, opacity: 0.45 }), wall: M(0xf2f0ea), plant: M(0x7d8589), grass: M(0x7f9a62) };
   var tiles = {}; Object.keys(COL).forEach(function (k) { tiles[k] = M(COL[k]); });
 
   var pick = [], groups = { facade: [], struct: [], apts: [] }, storeyG = [];
@@ -195,8 +195,8 @@ var DATA = /*__DATA__*/{};
   var ctx = new THREE.Group(); scene.add(ctx);
   box(ctx, 900, 0.05, 20, mats.road, new THREE.Vector3(0, 0.02, 32), null, true);  box(ctx, 20, 0.05, 900, mats.road, new THREE.Vector3(-44, 0.02, 0), null, true);
   box(ctx, 900, 0.05, 16, mats.road, new THREE.Vector3(0, 0.02, -60), null, true);
-  [[70, 10, 40, 30, 62], [70, -30, 34, 26, 118], [-95, 8, 30, 32, 46], [-95, -40, 36, 30, 84], [10, 85, 60, 28, 28], [-60, 90, 38, 30, 54], [110, 80, 40, 40, 36],
-   [20, -110, 50, 34, 140], [-90, -110, 40, 30, 70], [120, -100, 36, 36, 96], [-160, 20, 40, 60, 38], [170, 0, 40, 50, 74]].forEach(function (b) {
+  [[95, 10, 40, 30, 52], [100, -45, 34, 26, 96], [-110, 8, 30, 32, 40], [-115, -50, 36, 30, 70], [10, 105, 60, 28, 24], [-70, 110, 38, 30, 44], [130, 95, 40, 40, 30],
+   [25, -140, 50, 34, 120], [-100, -140, 40, 30, 60], [140, -120, 36, 36, 84], [-185, 20, 40, 60, 32], [195, 0, 40, 50, 64]].forEach(function (b) {
     box(ctx, b[2], b[4], b[3], mats.ctx, new THREE.Vector3(b[0], b[4] / 2, b[1]), { t: 'Illustrative neighbour', d: 'Placeholder massing ' + b[4] + ' m tall. Not a real Sydney building: no lot has been chosen.' });
   });
   var park = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), mats.grass); park.rotation.x = -Math.PI / 2; park.position.set(10, 0.03, 60); park.receiveShadow = true; ctx.add(park);
@@ -208,12 +208,12 @@ var DATA = /*__DATA__*/{};
 
   // storeys
   var box_ = S.core_box; // [x0, y0, x1, y1]
-  for (var i = 1; i < Z.length; i++) {
+  for (var i = 1; i <= Z.length; i++) {          // storey i spans Z[i-2]..Z[i-1]; i = Z.length is the rooftop plant
     var z0 = i === 1 ? 0 : Z[i - 2], z1 = Z[i - 1], h = z1 - z0, g = new THREE.Group(); g.userData.i = i; scene.add(g); storeyG.push(g);
     var sg = new THREE.Group(), fg = new THREE.Group(), ag = new THREE.Group(); g.add(sg); g.add(fg); g.add(ag); groups.struct.push(sg); groups.facade.push(fg); groups.apts.push(ag);
-    var plantLevel = i === Z.length - 1, zone = zoneOf(i), t = S.core_t[zone];
+    var plantLevel = i === Z.length, zone = zoneOf(i), t = S.core_t[zone];
     // slab at top of storey
-    if (!plantLevel) box(sg, 30, S.slab_t, 24, mats.slab, P(15, 12, z1 - S.slab_t / 2), { t: 'Slab level ' + i + ' (+' + z1.toFixed(1) + ' m)', d: (S.slab_t * 1000) + ' mm post-tensioned flat plate, 9 m governing span' });
+    if (!plantLevel) g.userData.slab = box(sg, 30, S.slab_t, 24, mats.slab, P(15, 12, z1 - S.slab_t / 2), { t: 'Slab level ' + i + ' (+' + z1.toFixed(1) + ' m)', d: (S.slab_t * 1000) + ' mm post-tensioned flat plate, 9 m governing span' });
     else box(sg, box_[2] - box_[0], 0.3, box_[3] - box_[1], mats.slab, P((box_[0] + box_[2]) / 2, (box_[1] + box_[3]) / 2, z1 - 0.15), { t: 'Plant roof (+' + z1.toFixed(1) + ' m)', d: 'Over the core' });
     // core walls
     var cx = (box_[0] + box_[2]) / 2, cy = (box_[1] + box_[3]) / 2, cw = box_[2] - box_[0], cd = box_[3] - box_[1];
@@ -248,7 +248,7 @@ var DATA = /*__DATA__*/{};
   var wallG = new THREE.Group(); scene.add(wallG);
   function buildWalls(i) {
     while (wallG.children.length) { var o = wallG.children.pop(); o.geometry.dispose(); }
-    if (i < 2 || i >= Z.length - 1) return;
+    if (i < 2 || i > Z.length - 1) return;
     var z0 = Z[i - 2], wh = 2.6;
     F.forEach(function (r) {
       if (!/^\dB$/.test(r.type)) return;
@@ -262,9 +262,11 @@ var DATA = /*__DATA__*/{};
   // ---- UI
   function setCut() {
     var n = +$('cut').value; storeyG.forEach(function (g) { g.visible = g.userData.i <= n; });
-    var reveal = n < Z.length - 1; storeyG.forEach(function (g) { if (g.userData.i === n) g.children[1].visible = !reveal && $('ly-facade').checked; else g.children[1].visible = $('ly-facade').checked; });
+    var reveal = n < Z.length;                     // any storey below the plant level: show its plan
+    storeyG.forEach(function (g) { if (g.userData.slab) g.userData.slab.visible = !(reveal && g.userData.i === n); });   // lift the ceiling slab off the revealed floor storeyG.forEach(function (g) { if (g.userData.i === n) g.children[1].visible = !reveal && $('ly-facade').checked; else g.children[1].visible = $('ly-facade').checked; });
     buildWalls(reveal ? n : -1); wallG.visible = $('ly-apts').checked;
-    $('cut-v').textContent = n >= Z.length ? 'all + plant' : (n === Z.length - 1 ? 'roof' : 'L' + n + ' (+' + Z[n - 1].toFixed(1) + ' m)');
+    var floorZ = n === 1 ? 0 : Z[n - 2];
+    $('cut-v').textContent = n >= Z.length ? 'all + plant' : (n === 1 ? 'ground (+0.0 m)' : 'L' + n + ' (floor +' + floorZ.toFixed(1) + ' m)');
   }
   $('cut').max = Z.length; $('cut').value = Z.length;
   $('cut').addEventListener('input', setCut);
@@ -302,7 +304,7 @@ var DATA = /*__DATA__*/{};
     dayTimer = setInterval(function () { var h = +$('hour').value + 0.25; if (h > 19) h = 6; $('hour').value = h; setSun(); }, 200);
   });
 
-  var VIEWS = { aerial: [[150, 120, 170], [0, 40, 0], null], street: [[40, 1.7, 75], [0, 45, 0], null], north: [[-10, 50, -150], [0, 48, 0], null], floor: [[0.5, 95, 0.5], [0, 40, 0], 16] };
+  var VIEWS = { aerial: [[170, 150, 200], [0, 42, 0], null], street: [[40, 1.7, 75], [0, 45, 0], null], north: [[-10, 50, -150], [0, 48, 0], null], floor: [[0, 125, 0.01], [0, 45, 0], 16] };
   function view(k) {
     var v = VIEWS[k]; camera.position.set(v[0][0], v[0][1], v[0][2]); controls.target.set(v[1][0], v[1][1], v[1][2]); controls.update();
     $('cut').value = v[2] || Z.length; setCut();
