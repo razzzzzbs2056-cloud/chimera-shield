@@ -148,7 +148,7 @@ var DATA = /*__DATA__*/{};
     'Wind': wind ? 'Base shear 6.4–18.6 MN for 35–55 m/s; vortex shedding on the 24 m face credible (V_cr ≈ 44 m/s); comfort ≈ 23 milli-g at 45 m/s exceeds residential order; wind-tunnel test recommended' : 'Running',
     'Foundations': 'Raft 30×24 m gross ≈ 495 kPa; core zone ≈ 1,560 kPa; pile counts parametric (no soil data)',
     'Geotechnical': 'Investigation scope: 7+ boreholes, 8 CPTu + 2 SCPTu, 12-month groundwater monitoring; all soil values UNKNOWN',
-    'Codes': 'Jurisdiction now Australia / NSW; retrieval of governing documents and hazard values is the next step'
+    'Codes': 'NSW: NCC 2022 Vol. One + NSW Schedule 5 (NCC 2025 from 1 May 2027); AS/NZS 1170.0/1/2, AS 1170.4, AS 3600 identified. Sydney wind region and Z found only in conflicting secondary sources: NOT applied as facts; standards text must be read'
   };
   $('divs').innerHTML = '<thead><tr><th>Division</th><th>Return</th><th>Headline</th></tr></thead><tbody>' + DATA.status.map(function (r) {
     var st = r.state === 'running' ? '<span class="pill warn">running</span>' : (r.valid ? '<span class="pill ok">valid</span>' : '<span class="pill bad">invalid</span>');

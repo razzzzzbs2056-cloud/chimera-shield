@@ -1,91 +1,71 @@
-# Division 22 Codes: 30-storey residential tower, jurisdiction identification and code retrieval framework
+# Division 22 Codes (focus: Australia, NSW): 30-storey Class 2 tower, Sydney
 
 ## INPUTS USED
-- architecture/tower/BRIEF.md and architecture/tower/basis.json: use = residential apartments, 30 storeys above grade, 2 basements, about 94.4 m to roof slab, 5 m rooftop plant; site, jurisdiction, geotechnical data, survey = UNKNOWN. FACT (project record).
-- architecture/PROTOCOL.md sections 1, 9, 11 (evidence tags, return format, source classes).
-- architecture/data/codes_standards.csv used as an index only.
-- WebSearch results retrieved 2026-10-05 for eight candidate jurisdictions (Australia, USA, UK, New Zealand, India, Nepal, UAE, Singapore). Official pages (ncc.abcb.gov.au, codes.iccsafe.org, gov.uk, legislation.gov.uk, building.govt.nz, bis.gov.in, u.ae, scdf.gov.sg) could not be opened because the network egress proxy blocked them, so no code text was read.
-- Structured output: architecture/tower/data/codes.json (73 items: 20 cited, 53 verify).
+- architecture/tower/basis.json and decision D-T1: site = Sydney, NSW, Australia, lot UNKNOWN; 30 storeys, 2 basements, about 94.4 m to roof slab plus 5 m plant, residential apartments with ground retail and basement parking. FACT (project record).
+- Tower returns for wind, seismic and structure (what they need: wind region, regional speed, terrain, Z, site class, governing standards; seismic T1 about 4.55 s as reported there).
+- architecture/PROTOCOL.md sections 1, 9, 11. Previous return (INSUFFICIENT INFORMATION, jurisdiction unknown).
+- WebSearch results retrieved 2026-10-05 (nsw.gov.au, ABCB, legislation.nsw.gov.au, Standards Australia store, AEES, technical blogs). WebFetch was blocked by the egress proxy for every domain tried (nsw.gov.au, ncc.abcb.gov.au, aees.org.au, ecat.ga.gov.au, store.standards.org.au, scribd, others), so no page or standard text was opened. All findings below are from search-result summaries (secondary, unaudited).
+- Structured output: architecture/tower/data/codes.json ("nsw" and "hazard_inputs" sections added).
 
 ## ASSUMPTIONS
-- ASSUMPTION: the eight listed jurisdictions are only candidates; none is selected. The client must confirm the real jurisdiction (and sub-jurisdiction).
-- ASSUMPTION: "cited" means an edition/date appears in a search result hosted by an official or authoritative publisher; it does not mean the text was read. Clause numbers are therefore not quoted anywhere.
-- ASSUMPTION: the UK entries are England-focused; Scotland, Wales and Northern Ireland have separate regimes.
-- No numeric height or storey thresholds are stated, because none was verified from a current text.
+- ASSUMPTION: the building is NCC Class 2 with Class 6/7a parts at the base; the certifier confirms the mixed-use classification.
+- ASSUMPTION: the construction certificate will be lodged before 1 May 2027, so NCC 2022 applies (per search summary); if lodged later, NCC 2025 governs. The client must confirm the lodgement date.
+- ASSUMPTION: "search-summary" evidence is treated as a pointer, not as FACT; nothing is labelled primary because no standard was read.
+- No clause numbers are quoted other than part names that appeared in summaries (B1, D2, E1, Spec 17, Spec 18, Schedule 5); verify against current code.
 
 ## METHOD
-Pipeline per the Codes division rule: (1) jurisdiction = UNKNOWN, so result is INSUFFICIENT INFORMATION; (2) for each candidate, search for the governing law, building code and referenced standards; (3) classify each item as LAW, BUILDING CODE, REFERENCED STANDARD or GUIDANCE (ENGINEERING ASSUMPTION used once for Nepal's fallback route); (4) record edition only where a search result from an authoritative publisher showed it, else "verify"; (5) list height-sensitive topics to check once the jurisdiction is known; (6) no design check is run because no applicable text has been retrieved.
+Pipeline per division rule: jurisdiction fixed by user (NSW) -> retrieve current NCC edition and NSW adoption -> identify NSW law layer -> identify referenced standards and editions -> look up hazard values Z and wind region/speed -> look for tall-building wind-tunnel or performance-solution requirements -> classify each requirement (LAW, BUILDING CODE, REFERENCED STANDARD, GUIDANCE) -> record source type (primary/secondary), conflicts and retrieval failures. No design check was run because no clause text was read.
 
 ## CALCULATIONS
-None. No numeric design check is possible without a jurisdiction and a retrieved current text. Inventory counts only: 8 jurisdictions, 73 items, 20 cited, 53 verify.
+None. One consistency check only: tower height about 94.4 m + 5 m is above the 25 m effective-height threshold that the NCC uses for Specification 18 concessions (so those concessions are not available; verify effective-height definition) and below the 200 m limit that the AS/NZS 1170.2:2021 summary quotes for tall-building scope. The seismic return reports T1 about 4.55 s (f about 0.22 Hz), close to the 0.2 Hz dynamic trigger quoted in the same summary.
 
 ## RESULTS
-**Overall compliance result for the tower: INSUFFICIENT INFORMATION.** Jurisdiction is UNKNOWN, so no occupancy classification, construction type, egress, structural, seismic, wind, fire or accessibility compliance verdict can be issued. Nothing is PASS or FAIL.
+**Determined (secondary evidence, verify):**
+1. Governing building code: NCC 2022 Volume One (Class 2-9), incl. Amendment 1 (1 May 2025) and Amendment 2 (29 Jul 2025), with NSW variations in Schedule 5. NSW will adopt NCC 2025 on 1 May 2027 (NSW Government release, search summary); NCC 2022 applies to 30 Apr 2027. A secondary source says the edition is locked by construction-certificate lodgement. BUILDING CODE.
+2. NSW law layer: Environmental Planning and Assessment Act 1979 (Part 6 certificates), Design and Building Practitioners Act 2020 (design compliance declarations by registered design practitioners for Class 2), Residential Apartment Buildings (Compliance and Enforcement Powers) Act 2020, Building and Development Certifiers Act 2018. All LAW. Planning controls (LEP/DCP, housing SEPP, BASIX) are LAW and are lot-specific: not retrieved.
+3. Referenced standards (REFERENCED STANDARD, editions from secondary sources): AS/NZS 1170.0:2002 (Amdt 1-5); AS/NZS 1170.1:2002 (Amdt 1, 2); AS/NZS 1170.2:2021 (Amd 1:2023 reported); AS 1170.4: edition conflict (see below); AS 3600:2018 Amdt 2 (2021). Fire: NCC Section C, Part D2, Part E1, Spec 17 (sprinklers via AS 2118.1); Spec 18 concessions do not apply above 25 m effective height.
+4. Hazard inputs (all SECONDARY, not read in the standard; none is primary):
+   - Sydney wind region: Region A (non-cyclonic). Low confidence: one summary said Region B.
+   - Regional wind speed V500: 45 m/s (Region A). Low confidence: another summary gave about 40.6 m/s (likely an AS 4055 figure). Within the 35/45/55 m/s parametric range used by the wind division, so 45 m/s is the likely reference case, still to be confirmed.
+   - Hazard factor Z: 0.08 (g). Low-medium confidence: source discusses AS 1170.4:2007; 2024 edition value not read.
+5. Wind tunnel / performance route: no source found that mandates wind-tunnel testing for a tower of about 94 m. A summary says AS/NZS 1170.2:2021 requires dynamic analysis when first-mode frequency is below 0.2 Hz, height above 200 m, or coupling in the first three modes, and sends out-of-scope structures to specialist methods such as wind tunnel. The NCC allows Performance Solutions with peer review decided at the Performance-Based Design Brief stage.
 
-Exact information needed to proceed:
-1. Country and the state/province/emirate/city and approving authority (local amendments govern).
-2. Site address or lot (planning controls, flood, aviation limits, seismic and wind map location).
-3. Application or lodgement date, to fix the edition in force and transition rules.
-4. Final building height including rooftop plant, storey count, use mix (basement parking, retail, residential), tenure and occupant load.
-5. Approval route: prescriptive/deemed-to-satisfy versus performance-based/alternative solution (usually needed for tall buildings).
-6. Authority-issued hazard data and a geotechnical report (not assumed).
-7. Any project specification or client requirements above code (rating tools, insurer rules).
-
-Governing framework per candidate (full list with sources in codes.json). Source class in brackets; "cited" = edition seen in an authoritative search result, otherwise "verify".
-- **Australia**: State/Territory building law [LAW, verify]; National Construction Code Volume One, Class 2 [BUILDING CODE, cited: NCC 2022 incl. Amendment 2 effective 29 Jul 2025; NCC 2025 preview released 1 Feb 2026 with State adoption possible from 1 May 2026, so which edition applies in the State must be verified]; Spec 17 sprinklers and Part E1 fire-fighting equipment [BUILDING CODE, cited]; AS/NZS 1170 series, AS 1170.4, AS 3600 [REFERENCED STANDARD, verify]; Disability (Access to Premises) Standards [LAW, verify]; NCC Section J energy [BUILDING CODE, verify]. Sources: https://ncc.abcb.gov.au/editions-national-construction-code, https://www.abcb.gov.au/faq/general-ncc
-- **USA**: State/local adoption ordinance [LAW, verify]; International Building Code [BUILDING CODE, cited: 2024 IBC exists; adopted edition locally verify]; ASCE/SEI 7 [REFERENCED STANDARD, cited: ASCE 7-22 referenced by 2024 IBC]; ACI 318 [REFERENCED STANDARD, cited: ACI 318-19 reported retained in 2024 IBC]; NFPA 13/14/72/20 and IFC [verify]; ADA, Fair Housing Act, ICC A117.1 [LAW/REFERENCED, verify]; IECC/ASHRAE 90.1 [verify]. Sources: https://codes.iccsafe.org/content/IBC2024P1/chapter-35-referenced-standards, https://www.iccsafe.org/news-and-events-calendar/2024-ibc-significant-structural-changes-and-asce-7-22-live-online-5/
-- **UK (England)**: Building Safety Act 2022 and Higher-Risk Buildings Procedures Regulations 2023, SI 2023/909 [LAW, cited]; Building Regulations 2010 [LAW, verify]; Approved Document B Vol 1 [GUIDANCE, cited: 2019 edition with 2020, 2022, 2025 amendments, collated with 2026 and 2029 amendments]; Approved Documents A, M, L, F, O and Eurocodes with UK National Annexes, BS 9991, BS 8519, BS EN 81-72 [verify]. Sources: https://www.legislation.gov.uk/uksi/2023/909, https://assets.publishing.service.gov.uk/media/67d2bb074702aacd2251cb94/Approved_Document_B_volume_1_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf
-- **New Zealand**: Building Act 2004 and Building Code [LAW, verify]; MBIE Acceptable Solutions and Verification Methods [BUILDING CODE, cited: amendments in force 28 Jul 2025, earlier versions usable to 31 Jul 2026, so confirm latest]; B1/VM1 citing AS/NZS 1170 and NZS 1170.5:2004 [REFERENCED STANDARD, cited]; TS 1170.5:2025 published but whether the Building Code cites it is verify; NZS 3101, fire C-clauses, D1/NZS 4121, H1 [verify]. Sources: https://www.building.govt.nz/building-code-compliance/how-the-building-code-works/different-ways-to-comply/acceptable-solutions-and-verification-methods, https://bulletin.nzsee.org.nz/article/view/1695
-- **India**: State/municipal bye-laws and State fire services law [LAW, verify]; National Building Code, with Part 4 fire and Part 6 structural [BUILDING CODE, cited: NBC 2016 on the BIS page; applies only where adopted]; IS 456, IS 875, IS 13920 [REFERENCED STANDARD, verify]; IS 1893 (Part 1) [verify: a 2025 revision was reported notified then withdrawn in March 2026, per secondary news only]; RPwD Act 2016 and Harmonised Guidelines; ECBC [verify]. Source: https://www.bis.gov.in/standards/technical-department/national-building-code/
-- **Nepal**: Building Act 2055 BS and municipal by-laws [LAW, verify]; NBC 105:2020 seismic [BUILDING CODE, cited via ASCE Library paper]; NBC 205:2024 is for low-rise RC and does not apply to this tower [cited, excluded]; NBC 206:2024 architectural requirements [cited, gazette status verify]; NBC parts for loads, concrete and fire [verify, part numbers not confirmed]; tall-building route probably needs authority-approved foreign standards and peer review [verify with DUDBC]. Sources: https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1989, https://giwmscdnone.gov.np/media/pdf_upload/NBC_206_ARCHITECTURAL_DESIGN_REQUIREMENTS-signed.pdf
-- **UAE**: emirate law and Civil Defence approval [LAW, verify]; UAE Fire and Life Safety Code of Practice [BUILDING CODE, verify edition]; Dubai Building Code or Abu Dhabi International Building Code plus Estidama [verify]; referenced loads/concrete/seismic standards, façade rules, green regulations [verify]. Local amendments by emirate are significant. No edition could be confirmed from an authoritative source, so none is stated. Index: https://u.ae/en/information-and-services/justice-safety-and-the-law/building-safety
-- **Singapore**: Building Control Act and BCA Approved Document [LAW/BUILDING CODE, verify]; SCDF Fire Code 2023 (released 25 Aug 2023, amendment batches through 2025) [BUILDING CODE, cited]; Eurocodes SS EN with National Annexes [REFERENCED STANDARD, verify]; Code on Accessibility in the Built Environment and Green Mark [verify]. Source: https://www.scdf.gov.sg/fire-safety-services-listing/fire-code-2023
-
-Tall-residential topics where requirements typically change with height, to check once the jurisdiction is known (no thresholds asserted):
-1. High-rise/tall/higher-risk building classification and extra approval gateway or peer review.
-2. Sprinklers and water supply (standard, pumps, tanks, standpipes).
-3. Fire-fighting shaft and fire-fighting lifts (number, power, lobbies).
-4. Number of stairs, second-stair rule, scissor stairs, refuge floors, evacuation lifts, travel distances.
-5. Stair and lobby pressurisation and smoke control.
-6. Structural fire resistance period, compartmentation, spalling.
-7. Façade/cladding fire performance and cavity barriers.
-8. Fire command centre, emergency communications, firefighter access and risers.
-9. Emergency and standby power.
-10. Wind: wind-tunnel or force-balance testing, occupant-comfort accelerations, façade pressures, tornado/cyclone provisions.
-11. Seismic: importance factor/risk category, system height limits, irregularity, nonlinear analysis and peer review, drift.
-12. Robustness/progressive collapse.
-13. Basement/foundation: geotechnical category, groundwater, liquefaction, independent review.
-14. Durability, design life, special inspection regime.
-15. Lifts, accessibility proportion and accessible refuge (cross-check with bld-accessibility).
-16. Energy, overheating and glazing at height.
-17. Planning: aviation limits, overshadowing, pedestrian wind microclimate, heritage view corridors.
-18. Whether performance-based fire engineering is mandatory and its peer-review process.
-19. Rooftop plant, lightning protection, façade access (BMU) and construction-stage fire safety.
+**Still INSUFFICIENT INFORMATION / UNKNOWN:** terrain category and topography (lot), directional/shielding factors, importance level and design ARI, site class (needs geotechnical data), flood, aviation height limit, local planning controls and council, lodgement date, approval route (DTS vs Performance Solution) and whether peer review is required, confirmation of NCC-referenced edition of AS 1170.4, clause-level compliance verdicts for fire, egress, structure and energy. Overall compliance verdict: INSUFFICIENT INFORMATION (no PASS or FAIL issued).
 
 ## CODE / STANDARD
-Evidence status: no code text was read; official publisher pages were blocked, so every entry needs retrieval of the current text by edition and date before use. Source classes used: LAW, BUILDING CODE, REFERENCED STANDARD, GUIDANCE (one ENGINEERING ASSUMPTION for Nepal). Items in codes.json carry status "cited" (20) or "verify" (53). Non-owned scope: detailed accessibility belongs to bld-accessibility; this division only confirms which accessibility instrument applies. Project specification and client requirement classes: none yet.
+- NCC 2022 Volume One incl. Amdt 1 and 2, NSW Schedule 5: BUILDING CODE. https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one ; https://codes.iccsafe.org/content/ABCBNCCBCAV12022P1/schedule-5-new-south-wales ; https://ncc.abcb.gov.au/editions-national-construction-code
+- NSW adoption of NCC 2025: https://www.nsw.gov.au/ministerial-releases/nsw-to-adopt-new-national-construction-code-may-2027 ; https://ncc.abcb.gov.au/ncc-2025/ncc-2025-state-and-territory-adoption-information (secondary: search summaries; not opened).
+- LAW: https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-1979-203 ; .../act-2020-007 ; .../act-2020-009 ; https://legislation.nsw.gov.au/view/whole/pdf/inforce/2025-09-04/act-2018-063
+- REFERENCED STANDARDS: https://store.standards.org.au/product/as-nzs-1170-0-2002 ; https://www.thenbs.com/PublicationIndex/documents/details?Pub=SA%2FSNZ&DocId=318816 ; https://store.standards.org.au/product/as-1170-4-2024 ; https://store.accuristech.com/standards/as-3600-2018-amd-2-2021?product_id=2221958 ; https://docs.bentley.com/LiveContent/web/RAM%20Structural%20System-v2024/Help/en/Topic/RAM_Frame/Building_Codes/c-rssfa_ASNZS_1170.2-2021_(wind).html
+- Hazard sources: https://energycompliance.com.au/wind-regions-in-australia-in-accordance-with-as-nzs-1170-22011/ ; https://www.domeshelter.com.au/app/uploads/2024/11/Wind-Regions-of-Australia-ASNZS-1170.2.2021.pdf ; https://aees.org.au/wp-content/uploads/2013/11/24-Weller.pdf (all secondary).
+- Tall-building: https://www.researchgate.net/publication/365940062_Research_and_Revisions_in_ASNZS_11702_-_2021 ; https://ncc.abcb.gov.au/resources/videos/ncc-tutor-lesson-understanding-performance-based-code-0
+- Source classes: LAW, BUILDING CODE, REFERENCED STANDARD used; GUIDANCE (e.g., certifier practice standards, Fire Safety Engineering Guidelines) not retrieved; PROJECT SPECIFICATION / CLIENT REQUIREMENT: none. Detailed accessibility belongs to bld-accessibility; the applicable instruments are the Disability (Access to Premises - Buildings) Standards 2010 and NCC Part D4 with AS 1428.1 (verify).
 
 ## UNCERTAINTIES
-- Jurisdiction, sub-jurisdiction, approval date and edition in force are all UNKNOWN.
-- Editions marked "cited" rest on search-result snippets, not on reading the text; they may be superseded (NCC 2025 adoption, IBC local edition, NZ amendments after Jul 2025, UK ADB 2026/2029 amendments with dates to confirm, Singapore Fire Code later batches).
-- India's IS 1893 status rests on secondary news reports of the 2025 revision and its withdrawal; confirm with BIS.
-- UAE and Nepal editions and part numbers are unverified; Nepal NBC may not cover a 30-storey tower, and the acceptable route is authority-dependent.
-- Search tool summaries are not authoritative; any figure in them (including height thresholds) was deliberately not used.
+- Every item rests on search summaries; the standards, the NCC text and NSW pages were not read. Summaries conflict (Sydney Region A vs B; V500 45 vs about 40.6 m/s).
+- AS 1170.4: AS 1170.4:2024 was published 21 Jun 2024 and supersedes the 2007 edition, but a secondary source says NCC 2022 B1D3 still references the 2007 edition (Amdt 1, 2). The edition NSW applies at lodgement, and whether Z for Sydney changed, is unconfirmed; a 2026 amendment with draft Z maps is reported.
+- Whether NCC 2022 references AS/NZS 1170.2:2021 with Amd 1:2023 is unconfirmed.
+- Effective-height threshold definition and the Class 2 over 25 m requirements (sprinklers, fire-fighting shaft, etc.) not read.
+- Wind-tunnel claim wording is from a summary of a research paper; no authority requirement for a 94 m tower was found.
+- Z and wind values were looked up by web summary, not computed; confidence low to low-medium.
 
 ## FAILED CHECKS
-- Jurisdiction identification: FAILED (UNKNOWN). Consequence: overall result INSUFFICIENT INFORMATION.
-- Retrieval of current official text: FAILED for all eight jurisdictions (access blocked), so no clause-level compliance rules could be extracted and no design check was run.
-- Edition confirmation: 53 of 73 items unconfirmed (verify).
+- Retrieval of primary text: FAILED for NCC 2022, NSW Schedule 5, AS/NZS 1170.0/.1/.2, AS 1170.4, AS 3600 (WebFetch blocked; Standards Australia texts are also paywalled).
+- Hazard values from a primary source: FAILED; values are secondary only.
+- Sydney wind region confirmation: FAILED (conflicting snippets).
+- Compliance checks (occupancy, construction type, fire resistance, egress, accessibility, structure, energy): not run, INSUFFICIENT INFORMATION.
 
 ## RECOMMENDATIONS
-1. Ask the client for the seven items listed under RESULTS; then rerun this division with a single focus jurisdiction.
-2. Re-run retrieval from a network that can reach the official publishers (ABCB, ICC, gov.uk, MBIE, BIS, DUDBC, Civil Defence, SCDF/BCA) and record edition, date and amendments per item.
-3. Do not let structure, wind, seismic or fire divisions state jurisdiction-specific demands; keep reporting parametric results (35/45/55 m/s wind, per-unit Sa) as basis.json directs.
-4. Once the jurisdiction is known, convert the height-sensitive topic list into compliance rules with clause citations and a PASS / FAIL / INSUFFICIENT INFORMATION verdict each.
-5. Confirm early whether a performance-based fire and wind route is mandatory, since it drives programme and cost.
+1. Have a licensed structural engineer read AS/NZS 1170.2 (map and Table 3.1 for Sydney) and AS 1170.4 (Table 3.2 and the edition cited by NCC B1D3) and confirm or correct the three hazard values before wind and seismic divisions treat them as basis. Until then, wind and seismic should keep reporting parametric results (35/45/55 m/s; per-unit Sa) and add 45 m/s and Z = 0.08 as a labelled secondary reference case.
+2. Re-run retrieval from a network that can reach ncc.abcb.gov.au, legislation.nsw.gov.au and planning.nsw.gov.au, or obtain the standards (SAI Global / Standards Australia) and extract clauses.
+3. Fix the construction-certificate lodgement date to fix the NCC edition; check NCC 2025 transition if after 1 May 2027.
+4. Obtain the lot address for terrain category, planning controls, aviation limits and flood; commission geotechnical investigation for site class.
+5. Plan for a wind-tunnel study (the wind division already recommends it): T1 is near the 0.2 Hz dynamic trigger, and the façade and pedestrian-level effects are not covered by simplified methods.
+6. Engage a fire engineer early to decide DTS versus Performance Solution; agree a Performance-Based Design Brief with the certifier and fire brigade, and decide on peer review.
+7. Plan for the DBP Act process: registered design practitioners and design compliance declarations.
 
 ## REQUIRED HUMAN REVIEW
-- Client or project owner to supply the jurisdiction and site information.
-- A licensed local professional (registered engineer or architect, certifier or approved checker) must confirm the governing codes and editions, local amendments and approval sequence.
-- Fire engineer and the approving authority must confirm the fire route; building authority pre-lodgement meeting recommended.
+- Registered structural engineer (and registered design practitioner under the DBP Act) to confirm standards, editions and the three hazard values against the standard text.
+- NSW registered certifier to confirm NCC edition, classification, NSW variations and approval sequence; fire engineer for the fire route.
+- Town planner for LEP/DCP, height, aviation and heritage controls once the lot is known.
 - This is not certified engineering; nothing here is an approval or construction-ready.
