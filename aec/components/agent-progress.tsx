@@ -18,7 +18,7 @@ export function AgentProgress() {
     return () => clearInterval(t);
   }, []);
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm" role="status" aria-live="polite">
+    <div className="fixed inset-0 !mt-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm" role="status" aria-live="polite">
       <div className="w-full max-w-md rounded-2xl bg-white p-5 shadow-xl">
         <div className="flex items-center gap-2 text-sm font-semibold"><Loader2 className="h-4 w-4 animate-spin text-brand-600" /> Agents are working…</div>
         <ul className="mt-4 space-y-1.5">

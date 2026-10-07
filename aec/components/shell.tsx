@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { BookOpen, Building2, ChevronRight, LayoutDashboard, LogOut, Menu, Settings, X } from "lucide-react";
+import { BookOpen, Bot, Building2, ChevronRight, LayoutDashboard, LogOut, Menu, Settings, Store, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -11,6 +11,8 @@ const NAV = [
   { href: "/dashboard", label: "Dashboard", Icon: LayoutDashboard },
   { href: "/projects", label: "Projects", Icon: Building2 },
   { href: "/codes", label: "Code library", Icon: BookOpen },
+  { href: "/agents", label: "Agent catalog", Icon: Bot },
+  { href: "/sell", label: "Sell agents", Icon: Store },
   { href: "/settings", label: "Settings", Icon: Settings },
 ];
 
@@ -73,7 +75,7 @@ export function Shell({ user, recent, children }: { user: { name: string; email:
     <div className="min-h-screen lg:pl-64">
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 lg:block">{sidebar}</aside>
       {open && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 !mt-0 z-40 lg:hidden">
           <div className="absolute inset-0 bg-slate-900/50" onClick={() => setOpen(false)} />
           <aside className="absolute inset-y-0 left-0 w-72 shadow-xl">{sidebar}</aside>
           <button onClick={() => setOpen(false)} className="absolute left-[18.5rem] top-3 rounded-md bg-white p-1.5" aria-label="Close menu"><X className="h-4 w-4" /></button>

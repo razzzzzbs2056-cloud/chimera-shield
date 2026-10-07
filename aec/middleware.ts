@@ -6,7 +6,7 @@ export function middleware(req: NextRequest) {
   const has = req.cookies.has("aec_session");
   const { pathname } = req.nextUrl;
   const isAuthPage = pathname === "/login" || pathname === "/register";
-  if (!has && !isAuthPage && !pathname.startsWith("/api/auth")) {
+  if (!has && !isAuthPage && !pathname.startsWith("/api/auth") && !pathname.startsWith("/api/v1/")) {
     if (pathname.startsWith("/api/")) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     const url = req.nextUrl.clone();
     url.pathname = "/login";

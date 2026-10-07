@@ -1,0 +1,25 @@
+# Agent IDs
+
+- `intake` — **Intake & Brief** (Management): Turns a site and a client brief into an engineering-ready design basis. Returns: `derived`, `params`.
+- `codes` — **Code Intelligence** (Compliance): Finds the applicable codes, the right editions, and checks every clause. Returns: `codes`, `findings`.
+- `architecture` — **Architecture** (Architecture): Plans the core and negotiates space with structure, fire and MEP. Returns: `derived`, `changes`.
+- `geotech` — **Geotechnical** (Geotechnical): Reads borehole logs and turns them into design parameters. Returns: `geotech`.
+- `structural` — **Structural** (Structural): Selects the lateral system and designs the frame with a finite-element solver. Returns: `structure`, `selection`, `iterations`.
+- `seismic` — **Seismic** (Structural): Earthquake demand, dynamics and performance assessment. Returns: `seismic`, `structure`.
+- `wind` — **Wind Engineering** (Structural): Wind loads, sway, occupant comfort and façade pressures. Returns: `wind`.
+- `foundation` — **Foundation Optimiser** (Geotechnical): Compares five foundation systems on capacity, settlement, cost, carbon and time. Returns: `geotech`.
+- `hvac` — **HVAC** (Mechanical): Loads, ventilation, plant, ducts and thermal comfort. Returns: `hvac`.
+- `electrical` — **Electrical** (Electrical): Load schedules, transformers, cables, protection, renewables and backup power. Returns: `electrical`.
+- `hydraulic` — **Hydraulic** (Hydraulics): Water, drainage, pumps, hot water, rainwater and greywater. Returns: `hydraulics`.
+- `fire` — **Fire Engineering** (Fire): Egress, construction type, sprinklers and evacuation modelling. Returns: `fire`.
+- `facade` — **Façade Engineering** (Façade): Mullions, glass, anchors, thermal bridges, condensation and façade fire risk. Returns: `facade`.
+- `physics` — **Building Physics & Energy** (Sustainability): Daylight, glare, acoustics, comfort and annual energy. Returns: `physics`, `energy`.
+- `sustainability` — **Carbon & Resilience** (Sustainability): Embodied carbon by element and system, plus climate-risk screening. Returns: `cost`, `resilience`.
+- `accessibility` — **Accessibility** (Architecture): Routes, lifts, gradients and accessible facilities. Returns: `accessibility`.
+- `civil` — **Civil & Stormwater** (Civil): Roof and site drainage, detention and rainwater reuse. Returns: `hydraulics`.
+- `bim` — **BIM Coordination** (BIM): Authors an openBIM IFC4 model and finds physical and semantic clashes. Returns: `bim`, `clashes`.
+- `cost` — **Cost & BOQ** (Commercial): Quantity take-off, bill of quantities and a full cost plan. Returns: `cost`.
+- `ve` — **Value Engineering** (Commercial): Proposes cheaper or lower-carbon alternatives and proves they still work. Returns: `ve`.
+- `construction` — **Construction Planning** (Construction): Sequencing, critical path, 4D/5D, cranes, temporary works and constructability. Returns: `construction`.
+- `operations` — **Digital Twin & Operations** (Operations): Asset health, predictive maintenance and operational optimisation. Returns: operations data (app only).
+- `verifier` — **Independent Verifier** (QA): Re-derives key results by a second method so nobody has to trust a black box. Returns: `verification`.

@@ -118,3 +118,14 @@ test("IFC export contains the spatial hierarchy and all elements", () => {
   assert.equal((ifc.match(/IFCBUILDINGSTOREY\(/g) ?? []).length, new Set(m.elements.map((e) => e.level)).size);
   assert.equal((ifc.match(/=IFCCOLUMN\(/g) ?? []).length, m.elements.filter((e) => e.ifc === "IfcColumn").length);
 });
+
+test("agent catalog covers every routed agent and only advertises real result sections", async () => {
+  const { AGENTS } = await import("../lib/agent-catalog");
+  const { AGENT_CATALOG } = await import("../lib/engine/agents");
+  assert.deepEqual(AGENTS.map((a) => a.id).sort(), AGENT_CATALOG.map((a) => a.id).sort());
+  const keys = new Set(Object.keys(result));
+  for (const a of AGENTS) {
+    assert.ok(a.skills.length >= 3 && a.buyers.length >= 1, `${a.id} needs skills and buyers`);
+    for (const k of a.resultKeys) assert.ok(keys.has(k), `${a.id} advertises missing section ${k}`);
+  }
+});

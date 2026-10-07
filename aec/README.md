@@ -24,6 +24,16 @@ Optional: `cp .env.example .env.local` and set `ANTHROPIC_API_KEY` to turn on th
 | `npm run typecheck` | TypeScript check |
 | `npm run db:reset` | Delete the SQLite database and re-seed |
 
+## Selling the agents
+
+- **Agent catalog** (`/agents` in the app, generated [`docs/AGENTS.md`](docs/AGENTS.md)): every agent with its skills, inputs, outputs, standards, collaborators, buyers and limits.
+- **Go-to-market playbook** (`/sell` in the app, generated [`docs/GO-TO-MARKET.md`](docs/GO-TO-MARKET.md)): buyer segments, 13 sales channels and marketplaces, suggested pricing, a 24-week launch plan and a pre-sale readiness checklist.
+- **Metered API**: create keys under **Settings → API keys** (shown once, stored hashed, 5,000 runs per key per month; only successful runs are metered).
+  - `GET /api/v1/agents` returns the public catalog and plans.
+  - `POST /api/v1/analyze` runs the agents on a brief: `{"buildingType":"office","city":"Seattle","floors":24,"agents":["structural","cost","codes"]}` with `Authorization: Bearer aec_live_…`.
+- **Claude Skill** ([`skills/chimera-aec-agents/`](skills/chimera-aec-agents/SKILL.md)): lets Claude users run your agents through your API. Copy it into `.claude/skills/` or distribute it with an MCP connector.
+- `npm run docs` regenerates the docs and the skill reference from `lib/agent-catalog.ts` and `lib/gtm.ts`.
+
 ## How the workflow runs
 
 ```

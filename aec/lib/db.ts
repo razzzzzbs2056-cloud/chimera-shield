@@ -52,6 +52,11 @@ CREATE TABLE IF NOT EXISTS assets (
   runtime_hours REAL NOT NULL DEFAULT 0, criticality REAL NOT NULL DEFAULT 0.5, location TEXT,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+CREATE TABLE IF NOT EXISTS api_keys (
+  id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, name TEXT NOT NULL,
+  prefix TEXT NOT NULL, key_hash TEXT NOT NULL UNIQUE, runs INTEGER NOT NULL DEFAULT 0, month TEXT, month_runs INTEGER NOT NULL DEFAULT 0,
+  last_used_at TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
 CREATE TABLE IF NOT EXISTS activity (
   id INTEGER PRIMARY KEY AUTOINCREMENT, user_id TEXT, project_id TEXT, action TEXT NOT NULL, detail TEXT,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))

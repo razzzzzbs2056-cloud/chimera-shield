@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "seed": "tsx scripts/seed.ts",
-    "db:reset": "rm -f data/aec.db* && tsx scripts/seed.ts"
+    "db:reset": "rm -f data/aec.db* && tsx scripts/seed.ts",
+    "docs": "tsx scripts/export-docs.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
