@@ -1,7 +1,10 @@
+import Link from "next/link";
+import Hologram from "./components/Hologram";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-8">
-      <div className="max-w-2xl w-full text-center space-y-6">
+      <div className="max-w-4xl w-full text-center space-y-6">
         <div className="inline-block bg-blue-600 text-xs font-semibold px-3 py-1 rounded-full tracking-widest uppercase">
           Project Chimera
         </div>
@@ -12,10 +15,11 @@ export default function Home() {
           AI-powered cybersecurity for small and medium businesses.
           Detect threats before they become breaches.
         </p>
+        <Hologram label="Chimera · Threat model 01" className="my-8" />
         <div className="flex gap-4 justify-center pt-4">
-          <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
+          <Link href="/scan" className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
             Start Free Scan
-          </button>
+          </Link>
           <button className="border border-gray-700 hover:border-gray-500 px-6 py-3 rounded-lg font-semibold transition">
             Learn More
           </button>
