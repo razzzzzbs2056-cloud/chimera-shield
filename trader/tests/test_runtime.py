@@ -34,6 +34,8 @@ class FakeData:
         return self.c
 
     def book(self, symbol, depth=20):
+        if symbol in self.fail:
+            raise ConnectionError("down")
         px = self.c[-1].close
         return Book(int(self.now) - self.book_age, ((px * 0.9999, 5000.0),), ((px * 1.0001, 5000.0),))
 
@@ -199,6 +201,60 @@ def test_paper_funding_is_charged_on_eight_hour_boundaries(tmp_path):
         assert events and r.core.account.balance == pytest.approx(1000 + 10 * px * 0.0001, rel=1e-3)
     else:
         assert not events and r.core.account.balance == 1000.0
-    r._apply_funding(28800 * 60000, {"AAA/USDT:USDT": (data.c, None, 0.01)}, {"AAA/USDT:USDT": px})
-    assert [e for e in r.core.journal.read("events") if e["type"] == "funding"]  # a short receives positive funding
-    assert r.core.account.balance > 1000.0
+    t = 28800 * 60000
+    r._apply_funding(t, {"AAA/USDT:USDT": (data.c, None, 0.01, None)}, {"AAA/USDT:USDT": px})
+    n = len([e for e in r.core.journal.read("events") if e["type"] == "funding"])
+    assert n >= 1 and r.core.account.balance > 1000.0  # a short receives positive funding
+    bal = r.core.account.balance
+    r._apply_funding(t, {"AAA/USDT:USDT": (data.c, None, 0.01, None)}, {"AAA/USDT:USDT": px})  # a retried pass
+    assert r.core.account.balance == bal  # is never charged twice
+
+
+def _hold(r, data, sym, qty=1.0, stop_mult=0.5):
+    from trader.types import Position
+    px = data.c[-1].close
+    r.core.account.positions[sym] = Position(sym, qty, px, px * stop_mult, px * 3, data.c[-1].ts_open, "aaa-long")
+    r.core.broker._pos[sym] = qty
+    return px
+
+
+def test_feed_outage_on_a_held_symbol_still_runs_risk_and_exits_and_blocks_entries(tmp_path):
+    r, data = make_runner(tmp_path, reflex=StubReflex(good_decision()))
+    px = _hold(r, data, "AAA/USDT", stop_mult=1.5)  # stop already breached: must exit
+    r.marks["AAA/USDT"], r.mark_ts["AAA/USDT"] = px, int(data.now)
+    real_book = data.book
+    data.book = lambda symbol, depth=20: (_ for _ in ()).throw(ConnectionError("book down"))
+    recs = r.run_once()  # candles still arrive: exit is priced off the last close
+    assert "AAA/USDT" not in r.core.account.positions
+    assert recs and recs[0]["status"] == "fault" and r.last_asof == data.c[-1].ts_close
+    data.book = real_book
+
+
+def test_orphan_and_unpriced_positions_do_not_freeze_the_pass(tmp_path):
+    r, data = make_runner(tmp_path, reflex=StubReflex(good_decision()))
+    _hold(r, data, "ZZZ/USDT")  # a position whose setup no longer exists, with a working feed
+    recs = r.run_once()
+    assert "ZZZ/USDT" not in r.core.account.positions  # orphan is closed, not ignored
+    assert recs and r.last_asof == data.c[-1].ts_close
+
+    r, data = make_runner(tmp_path / "b", reflex=StubReflex(good_decision()))
+    _hold(r, data, "ZZZ/USDT")
+    data.fail.add("ZZZ/USDT")  # no data at all for the orphan
+    recs = r.run_once()
+    assert recs[0]["reasons"] == ["stale_marks"] and "AAA/USDT" not in r.core.account.positions
+    assert any("STALE PRICES" in t for _, t in r.alerts.sent)
+    assert any("cannot manage open position ZZZ/USDT" in t for _, t in r.alerts.sent)
+    assert r.last_asof == data.c[-1].ts_close  # the pass completed; risk was read
+
+
+def test_stop_touched_in_a_skipped_candle_is_not_missed(tmp_path):
+    import dataclasses
+    r, data = make_runner(tmp_path, reflex=StubReflex(good_decision(direction="neutral")))
+    px = _hold(r, data, "AAA/USDT", stop_mult=0.9)
+    r.core.account.positions["AAA/USDT"] = dataclasses.replace(
+        r.core.account.positions["AAA/USDT"], opened_ts=data.c[-6].ts_open)
+    r.last_asof = data.c[-4].ts_close  # we were down for the last three candles
+    data.c[-3] = dataclasses.replace(data.c[-3], low=px * 0.85)  # the stop was hit in a candle we never saw
+    r.run_once()
+    assert "AAA/USDT" not in r.core.account.positions
+    assert r.core.journal.read("trades")[0]["reason"] == "stop"

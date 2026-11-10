@@ -55,7 +55,11 @@ class CcxtData:
 
     def book(self, symbol: str, depth: int = 20) -> Book:
         ob = self.ex.fetch_order_book(symbol, depth)
-        ts = int((ob.get("timestamp") or self.ex.milliseconds()) / 1000)
+        if not ob.get("timestamp"):  # never substitute the local clock: that would defeat the staleness check
+            from trader.state.engine import DataFault
+
+            raise DataFault("missing_data", f"{symbol}: order book has no exchange timestamp")
+        ts = int(ob["timestamp"] / 1000)
         return Book(ts, tuple((float(p), float(q)) for p, q, *_ in ob["bids"]),
                     tuple((float(p), float(q)) for p, q, *_ in ob["asks"]))
 

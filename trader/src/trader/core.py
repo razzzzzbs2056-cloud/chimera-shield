@@ -254,7 +254,9 @@ class TraderCore:
         p_win = self.policy.calibrator.p_win(confidence)
         cost = self.cost_of(sym)
         spread_bps = (view.ask - view.bid) / view.mid * 1e4
-        cost_frac = cost.round_trip_frac(spread_bps)
+        # Budget for market impact as if the order were as large as the position cap allows.
+        cap = self.risk.limits.max_position_frac * reading.equity
+        cost_frac = cost.round_trip_frac(spread_bps, cap / view.depth_usd if view.depth_usd > 0 else 1.0)
         pending_gross = sum(i.qty * i.ref_price for i in self.pending.values())
         scale = self.risk.risk_scale(reading.drawdown)  # smaller bets the deeper the drawdown
         rec["risk_scale"] = round(scale, 3)
@@ -294,9 +296,11 @@ class TraderCore:
         px = view.ask if long else view.bid
         marks = {**marks, intent.symbol: view.mid}
         cost = self.cost_of(intent.symbol)
-        cost_frac = cost.round_trip_frac((view.ask - view.bid) / view.mid * 1e4)
-        dist = abs(px - (intent.stop_price or px))
         equity = self.account.equity(marks)
+        cap = self.risk.limits.max_position_frac * equity
+        cost_frac = cost.round_trip_frac((view.ask - view.bid) / view.mid * 1e4,
+                                         cap / view.depth_usd if view.depth_usd > 0 else 1.0)
+        dist = abs(px - (intent.stop_price or px))
         qty = intent.qty
         if dist > 0:
             qty = min(qty, self.risk.limits.risk_per_trade * equity / (dist + px * cost_frac))
@@ -317,6 +321,9 @@ class TraderCore:
                                      "target": intent.target_price})
         if fill.done:
             self.ledger.apply(fill, intent)
+            pos = self.account.positions[intent.symbol]  # align the open time to the candle grid so the
+            tf = self.cfg.tf_seconds                     # time stop counts the same bars live and in backtests
+            self.account.positions[intent.symbol] = replace(pos, opened_ts=fill.ts // tf * tf)
             self.stats["entries"] += 1
         else:
             self.stats["order_failures"] += 1

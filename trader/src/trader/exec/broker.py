@@ -61,8 +61,11 @@ class CostModel:
     max_depth_frac: float = 0.25  # an order larger than this share of depth is partially filled
     min_notional: float = 5.0
 
-    def round_trip_frac(self, spread_bps: float) -> float:
-        return 2 * (self.taker_fee + self.slippage_bps / 1e4 + spread_bps / 2e4)
+    def round_trip_frac(self, spread_bps: float, depth_share: float = 0.0) -> float:
+        """Expected cost of entering and exiting, as a fraction of notional. depth_share is the
+        order's size relative to visible depth; it adds the impact term the paper broker charges."""
+        impact = self.impact_bps_full_depth * min(1.0, max(0.0, depth_share))
+        return 2 * (self.taker_fee + (self.slippage_bps + impact) / 1e4 + spread_bps / 2e4)
 
 
 class PaperBroker:
@@ -142,7 +145,7 @@ class Ledger:
             a.positions[fill.symbol] = Position(
                 symbol=fill.symbol, qty=signed, entry_price=fill.price,
                 stop_price=intent.stop_price or 0.0, target_price=intent.target_price or 0.0,
-                opened_ts=fill.ts, setup_id=intent.setup_id,
+                opened_ts=fill.ts, setup_id=intent.setup_id, entry_fee=fill.fee,
             )
             return None
         if (pos.qty > 0) == (signed > 0):
@@ -151,12 +154,14 @@ class Ledger:
         pnl = closed * (fill.price - pos.entry_price) * (1 if pos.qty > 0 else -1)
         a.balance += pnl
         remaining = pos.qty + (closed if pos.qty < 0 else -closed)
+        entry_fee = pos.entry_fee * closed / abs(pos.qty)  # the share of the entry fee for what was closed
         if abs(remaining) <= 1e-12:
             del a.positions[fill.symbol]
         else:
-            a.positions[fill.symbol] = replace(pos, qty=remaining)
+            a.positions[fill.symbol] = replace(pos, qty=remaining, entry_fee=pos.entry_fee - entry_fee)
         rec = {"symbol": fill.symbol, "setup_id": pos.setup_id, "side": pos.side.value, "qty": closed,
-               "entry": pos.entry_price, "exit": fill.price, "pnl": pnl, "exit_fee": fill.fee,
+               "entry": pos.entry_price, "exit": fill.price, "gross_pnl": pnl, "entry_fee": entry_fee,
+               "exit_fee": fill.fee, "pnl": pnl - entry_fee - fill.fee,  # pnl is NET of both fees
                "opened_ts": pos.opened_ts, "closed_ts": fill.ts, "reason": intent.reason}
         self.realized.append(rec)
         return rec

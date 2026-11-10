@@ -131,6 +131,7 @@ def run_backtest(
             marks.setdefault(s, float(S.o[k]))
             if s in core.pending:
                 core.execute_pending(s, synth(s, float(S.o[k]), t), marks)
+        core.pending.clear()  # an entry that could not fill on the very next bar is dropped, not carried
         for s, k in live:  # 2. exits against this bar's range
             if s in account.positions:
                 S = series[s]
@@ -172,7 +173,8 @@ def run_backtest(
         core.exit_pending[s] = "end_of_test"
         px = marks[s]
         bar = Candle(last - tf_seconds, last, px, px, px, px, 0.0)
-        core.process_exits(s, last, bar, lambda ref, s=s, px=px: synth(s, px, last), marks)
+        # last + 1: a distinct order id, so a failed exit cached for the final bar cannot be replayed
+        core.process_exits(s, last + 1, bar, lambda ref, s=s, px=px: synth(s, px, last), marks)
     if eq_ts:
         eq_val[-1] = account.equity(marks)
     return BacktestResult(pd.Series(eq_val, index=eq_ts, dtype=float), journal.read("trades"),

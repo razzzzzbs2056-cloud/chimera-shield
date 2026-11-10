@@ -38,6 +38,8 @@ def test_round_trip_at_flat_price_loses_exactly_costs():
     trade = led.apply(b.place(i2, view(spread_bps=10)), i2)
     assert not led.account.positions and trade["pnl"] < 0
     lost = 1000.0 - led.account.balance
+    assert trade["pnl"] == pytest.approx(-lost)  # the trade record is net of both fees
+    assert trade["gross_pnl"] > trade["pnl"] and trade["entry_fee"] > 0 and trade["exit_fee"] > 0
     assert lost == pytest.approx(100 * CostModel(0.001, 2, 0).round_trip_frac(10), rel=0.01)
 
 
@@ -73,6 +75,7 @@ def test_ledger_short_pnl_partial_close_and_funding():
     c = OrderIntent("X/USDT:USDT", Side.BUY, 1.0, 90.0, None, None, True, "s", "c", "target")
     t = led.apply(b.place(c, view("X/USDT:USDT", px=90.0, spread_bps=0)), c)
     assert t["pnl"] == pytest.approx(10.0) and led.account.positions["X/USDT:USDT"].qty == -1.0
+    assert CostModel(0.001, 2, 20).round_trip_frac(10, depth_share=0.5) > CostModel(0.001, 2, 20).round_trip_frac(10)
     assert led.account.balance == pytest.approx(1010.02)
     assert led.account.equity({"X/USDT:USDT": 90.0}) == pytest.approx(1020.02)
 

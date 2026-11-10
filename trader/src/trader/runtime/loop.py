@@ -17,12 +17,13 @@ from trader.alerts import Alerts
 from trader.config import Config
 from trader.core import CoreConfig, TraderCore
 from trader.data.market import TF_SECONDS, view_from_book
-from trader.exec.broker import PaperBroker
+from trader.exec.broker import MarketView, PaperBroker
 from trader.journal import Journal, load_state, save_state
 from trader.policy import Policy
 from trader.reflex.base import Reflex
 from trader.risk.engine import Account, RiskEngine
 from trader.state.engine import DataFault, EngineConfig, build_snapshot
+from trader.types import Candle
 
 log = logging.getLogger("trader.runtime")
 
@@ -59,6 +60,8 @@ class Runner:
         self.core.halt_reason = extra.get("halt_reason", "")
         self.last_asof = int(extra.get("last_asof", 0))
         self.marks: dict[str, float] = dict(extra.get("marks", {}))
+        self.mark_ts: dict[str, int] = {k: int(v) for k, v in extra.get("mark_ts", {}).items()}
+        self.last_funding = int(extra.get("last_funding", 0))
 
     def save(self) -> None:
         c = self.core
@@ -66,24 +69,33 @@ class Runner:
             "global_pause": c.global_pause, "global_pause_until": c.global_pause_until,
             "paused_until": c.paused_until, "exit_pending": c.exit_pending,
             "halt_reason": c.halt_reason, "last_asof": self.last_asof, "marks": self.marks,
+            "mark_ts": self.mark_ts, "last_funding": self.last_funding,
             "policy": c.policy.version, "reflex": c.reflex.name, "mode": self.cfg.mode, "stats": c.stats,
         })
         (self.root / "heartbeat").write_text(str(int(self.clock())))
 
-    def _fetch(self, symbol: str):
-        """Returns (candles, book, funding) or a DataFault. Never raises."""
-        try:
-            candles = self.data.candles(symbol, 300)
-            book = self.data.book(symbol)
-            funding = self.data.funding_pct(symbol)
-            return candles, book, funding
-        except DataFault as e:
-            return e
-        except Exception as e:
-            return DataFault("exchange_error", f"{symbol}: {type(e).__name__}")
+    def _fetch(self, symbol: str) -> tuple:
+        """Returns (candles, book, funding, fault). Each feed is fetched on its own so that losing
+        one (say the order book) still leaves the others usable for pricing and exits. Never raises."""
+        out: list = [None, None, None, None]
+        for i, call in enumerate((lambda: self.data.candles(symbol, 300), lambda: self.data.book(symbol),
+                                  lambda: self.data.funding_pct(symbol))):
+            try:
+                out[i] = call()
+            except DataFault as e:
+                out[3] = out[3] or e
+            except Exception as e:
+                out[3] = out[3] or DataFault("exchange_error", f"{symbol}: {type(e).__name__}")
+        return tuple(out)
 
     def run_once(self) -> list[dict]:
-        """Process the most recent closed candle once. Returns the decision records."""
+        """Process the most recent closed candle once. Returns the decision records.
+
+        Order matters: price everything we hold (falling back to the last candle, then to the
+        last known price), run the risk read and kill check, manage EVERY open position, and
+        only then consider entries. Missing data for one symbol never stops the others, and
+        any position priced from stale data blocks all new entries for the pass.
+        """
         try:
             ex_now = self.data.exchange_time()
         except Exception as e:
@@ -102,17 +114,31 @@ class Runner:
         except Exception as e:
             ctx = DataFault("exchange_error", f"context: {type(e).__name__}")
 
-        fetched = {s: self._fetch(s) for s in core.setups}
-        for s, f in fetched.items():
-            if not isinstance(f, DataFault) and f[1].bids and f[1].asks:
-                self.marks[s] = (f[1].bids[0][0] + f[1].asks[0][0]) / 2
-        missing = [s for s in core.account.positions if s not in self.marks]
-        if missing:  # cannot value the account: do nothing risky, shout
-            self.alerts.notify("critical", f"no price for open positions {missing}; skipping candle",
-                               key="nomark")
-            self.save()
-            return []
-        marks = {s: self.marks[s] for s in set(core.setups) | set(core.account.positions) if s in self.marks}
+        symbols = list(core.setups) + [s for s in core.account.positions if s not in core.setups]
+        fetched = {s: self._fetch(s) for s in symbols}
+        views: dict[str, object] = {}
+        closed_bars: dict[str, list] = {}
+        for s, (candles, book, _, _fault) in fetched.items():
+            closed_bars[s] = [c for c in candles or [] if c.ts_close <= asof]
+            try:
+                views[s] = view_from_book(s, book, contract_size=self.data.contract_size(s) if ":" in s else 1.0)
+                self.marks[s], self.mark_ts[s] = views[s].mid, int(ex_now)
+            except Exception:
+                if closed_bars[s]:  # no usable book: the last closed bar is the next best price
+                    self.marks[s], self.mark_ts[s] = closed_bars[s][-1].close, closed_bars[s][-1].ts_close
+
+        # Every open position needs a price. Unknown or stale prices make the account "not valued".
+        unvalued = []
+        for s, pos in core.account.positions.items():
+            if s not in self.marks:
+                self.marks[s], self.mark_ts[s] = pos.entry_price, 0
+            if ex_now - self.mark_ts.get(s, 0) > 2 * self.tf_s:
+                unvalued.append(s)
+        if unvalued:
+            self.alerts.notify("critical", f"STALE PRICES for open positions {unvalued}: equity and the kill "
+                               "switch are computed from old prices. No new entries. Check the exchange and "
+                               "close by hand if this persists.", key="stale_marks")
+        marks = {s: self.marks[s] for s in symbols if s in self.marks}
         if not marks:
             self.alerts.notify("error", "no market data for any symbol; skipping candle", key="nodata")
             self.save()
@@ -120,40 +146,48 @@ class Runner:
         self._apply_funding(asof, fetched, marks)
         reading = core.begin_bar(asof, marks)
 
+        # Exits first, for everything held (including positions whose setup was removed).
+        for s in list(core.account.positions):
+            pos = core.account.positions[s]
+            bars = [c for c in closed_bars.get(s, []) if c.ts_close > max(self.last_asof, pos.opened_ts)]
+            view = views.get(s)
+            if view is None and s in closed_bars and closed_bars[s]:
+                px = closed_bars[s][-1].close  # degraded: quote around the last close, with a wide spread
+                view = MarketView(s, px * 0.999, px * 1.001, 0.0, closed_bars[s][-1].ts_close)
+            if view is None:
+                self.alerts.notify("critical", f"cannot manage open position {s}: no market data at all",
+                                   key=f"noexit:{s}")
+                continue
+            if not bars:
+                bars = closed_bars.get(s, [])[-1:]
+            # One bar covering everything since the last check, widened by the live price, so a stop
+            # touched in a skipped candle or since the last close is not missed.
+            lo = min([c.low for c in bars] + [view.bid])
+            hi = max([c.high for c in bars] + [view.ask])
+            span = Candle(bars[0].ts_open, bars[-1].ts_close, bars[0].open, hi, lo, view.mid, 0.0) if bars \
+                else Candle(asof - self.tf_s, asof, view.mid, hi, lo, view.mid, 0.0)
+            core.process_exits(s, asof, span, lambda ref, v=view: v, marks)
+
         records = []
         for s in core.setups:
             f = fetched[s]
-            view = None
-            if not isinstance(f, DataFault):
-                candles, book, funding = f
-                closed = [c for c in candles if c.ts_close <= asof]
-                try:
-                    view = view_from_book(s, book, contract_size=self.data.contract_size(s) if ":" in s else 1.0)
-                except Exception:
-                    view = None
-                if s in core.account.positions:
-                    if view is not None and closed:
-                        core.process_exits(s, asof, closed[-1], lambda ref, v=view: v, marks)
-                    else:
-                        self.alerts.notify("critical", f"cannot price exit for {s}: no order book",
-                                           key=f"noexit:{s}")
-            elif s in core.account.positions:
-                self.alerts.notify("critical", f"cannot manage open position {s}: {f}", key=f"noexit:{s}")
-
-            if isinstance(f, DataFault):
-                snap: object = f
+            view = views.get(s)
+            if f[3] is not None:
+                snap: object = f[3]
             elif isinstance(ctx, DataFault):
                 snap = ctx
             elif late:
                 snap = DataFault("late_start", f"{ex_now - asof:.0f}s after the close")
+            elif unvalued:
+                snap = DataFault("stale_marks", f"positions without a fresh price: {unvalued}")
             else:
                 try:
                     # Decision time is "now" on the exchange clock: the book is live, bars must be closed.
                     decision_ts = math.ceil(ex_now + (self.clock() - local_now))
                     snap = build_snapshot(
-                        asof=decision_ts, symbol=s, cfg=self.ecfg, bias=core.setups[s].bias, candles=closed,
-                        btc_candles=[c for c in ctx if c.ts_close <= asof], book=book, funding_pct=funding,
-                        invalidation_price=core.setups[s].invalidation_price,
+                        asof=decision_ts, symbol=s, cfg=self.ecfg, bias=core.setups[s].bias,
+                        candles=closed_bars[s], btc_candles=[c for c in ctx if c.ts_close <= asof], book=f[1],
+                        funding_pct=f[2], invalidation_price=core.setups[s].invalidation_price,
                         account=core.account_view(s, marks, reading), local_ts=local_now, exchange_ts=ex_now)
                 except DataFault as e:
                     snap = e
@@ -166,13 +200,12 @@ class Runner:
     def _apply_funding(self, asof: int, fetched: dict, marks: dict[str, float]) -> None:
         """Paper approximation of perp funding: charge the current rate on 8-hour boundaries
         (00:00, 08:00, 16:00 UTC). On a real exchange the venue settles funding itself."""
-        from trader.exec.broker import PaperBroker
-
-        if asof % 28800 != 0 or not isinstance(self.core.broker, PaperBroker):
+        if asof % 28800 != 0 or asof <= self.last_funding or not isinstance(self.core.broker, PaperBroker):
             return
+        self.last_funding = asof  # recorded first, so a retried pass can never charge twice
         for s, pos in list(self.core.account.positions.items()):
             f = fetched.get(s)
-            if ":" not in s or f is None or isinstance(f, DataFault) or f[2] is None:
+            if ":" not in s or f is None or f[2] is None:
                 continue
             paid = self.core.ledger.apply_funding(s, f[2] / 100, marks[s])
             self.core.journal.write("events", {"ts": asof, "type": "funding", "symbol": s, "paid": paid,

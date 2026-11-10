@@ -79,6 +79,7 @@ class Position:
     target_price: float
     opened_ts: int
     setup_id: str
+    entry_fee: float = 0.0  # fee paid to open what is still held; used for net PnL on close
 
     @property
     def side(self) -> Direction:

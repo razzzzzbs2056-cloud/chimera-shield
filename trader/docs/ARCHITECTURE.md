@@ -58,6 +58,10 @@
 - **Fail closed.** Any data fault, REFLEX error or timeout means no new order. Exits use
   reduce-only orders, which the risk layer always allows. A failed exit is retried every
   candle and alerts.
+- **Every held position is managed every pass.** The live loop prices each position from the
+  order book, else the last closed candle, else the last known price. Stops are checked
+  against every bar since the last check plus the live quote. A price older than two
+  candles blocks all new entries and raises a critical alert.
 - **Latched stops need a human.** The kill switch and a reconciliation mismatch stay set
   across restarts until cleared from the CLI.
 - **Idempotent orders.** Client order ids are derived from setup and candle time, so a

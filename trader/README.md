@@ -32,4 +32,4 @@ Docker: see `docs/RUNBOOK.md`.
 | `docs/results/` | Walk-forward results versus holding BTC |
 | `config/default.yaml` | Mode, limits, costs, off-limits coins, setups |
 | `policies/` | Versioned gate thresholds and the active pointer |
-| `src/trader/`, `tests/` | Code and 102 tests |
+| `src/trader/`, `tests/` | Code and 106 tests |

@@ -36,7 +36,8 @@ Read this first in every new session. Update it before ending one.
 | Nightly review | Tested on synthetic logs; never promotes |
 | Runtime | One pass on live OKX data: 8 symbols in 9.1 s. Refuses to trade when started late |
 | Docker | Image built; Compose service ran healthy; restarted by Docker after its process was killed, with state reloaded |
-| Tests | 103 passing, lint clean |
+| Tests | 106 passing, lint clean |
+| Independent code review | A subagent reviewed the risk-critical paths: no way found around the gate or limits; 10 findings (2 high, in the live loop's handling of missing data), all fixed with regression tests |
 
 ## Result versus holding BTC
 
@@ -46,11 +47,11 @@ next 91:
 
 | | Return | Max drawdown | Trades |
 |---|---|---|---|
-| Rule baseline | -10.3% | -15.1% (kill switch tripped mid-2024, then idle) | 109, 33% winners |
+| Rule baseline | -10.3% | -15.1% (kill switch tripped mid-2024, then idle) | 109, 33% winners, profit factor 0.79 net of fees |
 | Hold BTC | +76.7% | -53.7% | 1 |
 
 Diagnostic, each 91-day window with a fresh account: positive in 4 of 12 windows, mean
--3.2% per window against +8.4% for BTC. Full numbers:
+-3.3% per window against +8.4% for BTC. Full numbers:
 `docs/results/walkforward-2026-11-10.json`.
 
 Limits of this test: no historical order book (spread and depth are today's values
@@ -100,7 +101,9 @@ OKX history, and the setups were chosen with today's knowledge, which flatters t
 | 15 | Model backtests refused before the training cutoff | The model may remember earlier prices |
 | 16 | PUMP excluded | Its revenue is memecoin trading; the owner excluded memecoins |
 | 17 | Containers run as the host user | So they can write the mounted `var/` and `policies/` |
-| 18 | Environment network allowlist edited | Added OKX, Bybit, Binance public data, CoinGecko and DefiLlama hosts to the owner's "git" cloud environment, with approval, to read market data |
+| 18 | Live loop prices every held position from book, then last candle, then last known price; stale prices block entries | Review finding: one unpriced position froze all exits and the kill check |
+| 19 | Trade records are net of entry and exit fees | Review finding: gross records overstated win rate and profit factor |
+| 20 | Environment network allowlist edited | Added OKX, Bybit, Binance public data, CoinGecko and DefiLlama hosts to the owner's "git" cloud environment, with approval, to read market data |
 
 ## Session log
 
