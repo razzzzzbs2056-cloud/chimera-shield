@@ -33,9 +33,9 @@ Read this first in every new session. Update it before ending one.
 | REFLEX: rule baseline | Tested; runs live |
 | REFLEX: Haiku 5.5 | Request shape tested against a fake client only |
 | Backtest and walk-forward | Run on real OKX hourly history 2023-01-01 to 2026-11-10 |
-| Nightly review | Tested on synthetic logs; never promotes |
+| Nightly review | Tested on synthetic logs; run end to end once on the real journal (refreshed history, regression tests passed, nothing to calibrate yet, no proposals); never promotes |
 | Runtime | One pass on live OKX data: 8 symbols in 9.1 s. Refuses to trade when started late |
-| Docker | Image built; Compose service ran healthy; restarted by Docker after its process was killed, with state reloaded |
+| Docker | Image built; Compose service ran healthy; restarted by Docker after its process was killed, with state reloaded; processed the 09:00 UTC candle on 2026-11-10 11 s after the close (8 decisions, all held; XRP short refused at confidence 0.874). Test container stopped afterwards: **nothing is running now** |
 | Tests | 106 passing, lint clean |
 | Independent code review | A subagent reviewed the risk-critical paths: no way found around the gate or limits; 10 findings (2 high, in the live loop's handling of missing data), all fixed with regression tests |
 
