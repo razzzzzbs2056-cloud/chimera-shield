@@ -191,8 +191,8 @@ def _nightly(cfg: Config, args) -> dict:
               for s in sorted({x.symbol for x in scfgs} | {cfg.context_symbol})}
     tf_s = TF_SECONDS[cfg.timeframe]
     j = Journal(root / "journal")
-    project = Path(__file__).resolve().parents[2]
-    has_tests = (project / "tests").exists()
+    project = Path.cwd()  # the regression suite lives next to the config (repo checkout or /app in Docker)
+    has_tests = (project / "tests").exists() and (project / "pyproject.toml").exists()
     return review(
         decisions=j.read("decisions"), trades=j.read("trades"), fills=j.read("fills"), events=j.read("events"),
         series=prepare(frames, cfg.context_symbol, tf_s), setups=[s.build() for s in scfgs],
