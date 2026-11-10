@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trader"
+version = "0.1.0"
+description = "Two-layer crypto trading agent: code owns risk and orders, a small model only judges."
+requires-python = ">=3.11"
+dependencies = [
+  "ccxt>=4.5,<5",
+  "pydantic>=2.9,<3",
+  "pyyaml>=6",
+  "numpy>=2",
+  "pandas>=2.2",
+  "anthropic>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+trader = "trader.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"

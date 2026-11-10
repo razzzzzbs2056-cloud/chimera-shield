@@ -1,0 +1,51 @@
+# Trading agent configuration. No secrets here: keys come from the environment (.env.example).
+mode: paper            # paper | testnet | live. Live also needs explicit approval (docs/RUNBOOK.md).
+exchange: okx
+timeframe: 1h
+paper_balance: 1000
+context_symbol: BTC/USDT
+data_dir: var
+max_book_age_s: 15
+max_clock_skew_s: 2.0
+
+reflex:
+  kind: rule           # rule | haiku. haiku needs ANTHROPIC_API_KEY. Jev: blocked, see PROGRESS.md.
+  latency_budget_s: 5  # a decision slower than this is discarded and the candle is skipped
+
+limits:                # hard risk layer; no model can change these
+  risk_per_trade: 0.02
+  max_daily_loss: 0.05
+  max_open_positions: 3
+  max_leverage: 2.0
+  kill_drawdown: 0.15
+  max_position_frac: 1.0
+
+costs:                 # OKX base-tier taker fees (assumption: no fee discounts)
+  spot: {taker_fee: 0.001, slippage_bps: 2}
+  swap: {taker_fee: 0.0005, slippage_bps: 2}
+
+# Off-limits coins. A setup naming any of these fails config validation.
+denylist:
+  memecoins: [DOGE, SHIB, PEPE, WIF, BONK, FLOKI, TRUMP, FARTCOIN, PENGU, BRETT, MEME, M, PUMP, SPX, MOG]
+  privacy: [XMR, ZEC, DASH, BDX, SCRT, ZEN]
+  stock_tokens: [TSLAX, NVDAX, AAPLX, SPYX, QQQX, COINX, MSTRX, GOOGLX, METAX, AMZNX, HOODX, CRCLX]
+
+# Finalists from docs/RESEARCH.md (2026-11-10). bt_* are backtest assumptions measured on
+# OKX on 2026-11-10 and applied to all history. Longs trade spot; shorts trade the perp.
+setups:
+  - {id: hype-long, base: HYPE, symbol: HYPE/USDT, market: spot, bias: long, invalidation_price: 60.0,
+     bt_spread_bps: 1.0, bt_depth_usd: 236000, research: "neutral: buybacks vs team unlock overhang"}
+  - {id: aave-long, base: AAVE, symbol: AAVE/USDT, market: spot, bias: long,
+     bt_spread_bps: 2.4, bt_depth_usd: 105000, research: "neutral, leaning long: cheap but buyback paused"}
+  - {id: sky-long, base: SKY, symbol: SKY/USDT, market: spot, bias: long, invalidation_price: 0.0358,
+     bt_spread_bps: 9.8, bt_depth_usd: 16000, research: "neutral, leaning avoid: TVL and revenue shrinking"}
+  - {id: uni-long, base: UNI, symbol: UNI/USDT, market: spot, bias: long,
+     bt_spread_bps: 1.4, bt_depth_usd: 232000, research: "neutral: fee switch done and priced"}
+  - {id: trx-long, base: TRX, symbol: TRX/USDT, market: spot, bias: long,
+     bt_spread_bps: 0.3, bt_depth_usd: 343000, research: "neutral: ~90x revenue, net issuance"}
+  - {id: link-long, base: LINK, symbol: LINK/USDT, market: spot, bias: long,
+     bt_spread_bps: 0.9, bt_depth_usd: 290000, research: "neutral, leaning avoid: supply overhang"}
+  - {id: xrp-short, base: XRP, symbol: "XRP/USDT:USDT", market: swap, bias: short,
+     bt_spread_bps: 0.9, bt_depth_usd: 1000000, research: "attractive short in small size"}
+  - {id: ada-short, base: ADA, symbol: "ADA/USDT:USDT", market: swap, bias: short,
+     bt_spread_bps: 5.6, bt_depth_usd: 162000, research: "neutral/avoid: -94% already, ETF event risk"}
