@@ -1,0 +1,42 @@
+# 24/7 runtime. Start: docker compose up -d --build     Logs: docker compose logs -f trader
+# Both services restart on crash and on host reboot (as long as the Docker daemon starts on boot).
+# The containers run as your host user so they can write ./var and ./policies:
+#   mkdir -p var data_cache && echo "TRADER_UID=$(id -u)" >> .env && echo "TRADER_GID=$(id -g)" >> .env
+services:
+  trader:
+    build: .
+    command: ["run"]
+    restart: unless-stopped
+    user: "${TRADER_UID:-1000}:${TRADER_GID:-1000}"
+    env_file:
+      - {path: .env, required: false}
+    environment:
+      TRADER_CONFIG: /app/config/default.yaml
+    volumes:
+      - ./var:/app/var                 # account state, journal, heartbeat, nightly reports
+      - ./policies:/app/policies       # versioned policies and the ACTIVE pointer
+      - ./config:/app/config:ro
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "5"}
+
+  reviewer:
+    build: .
+    command: ["nightly", "--loop"]     # once per UTC day at 00:10; writes reports and CANDIDATE policies only
+    restart: unless-stopped
+    user: "${TRADER_UID:-1000}:${TRADER_GID:-1000}"
+    env_file:
+      - {path: .env, required: false}
+    environment:
+      TRADER_CONFIG: /app/config/default.yaml
+    volumes:
+      - ./var:/app/var
+      - ./policies:/app/policies
+      - ./config:/app/config:ro
+      - ./data_cache:/app/data_cache
+    healthcheck:
+      disable: true
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "5"}

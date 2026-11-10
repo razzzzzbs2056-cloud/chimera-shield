@@ -38,6 +38,8 @@ class Policy:
     min_confidence: float = 0.88
     pause_confidence: float = 0.60
     pause_bars: int = 12
+    # All new risk pauses this many bars after the LAST crisis reading; 0 = until a human resumes.
+    crisis_cooldown_bars: int = 72
     kelly_mult: float = 0.25
     rr: float = 2.0  # target distance / stop distance
     stop_atr_mult: float = 2.5

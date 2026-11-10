@@ -4,8 +4,14 @@ import pandas as pd
 import pytest
 
 from tests.conftest import T0, TF, make_candles, snap_for
-from trader.state.engine import (TOKEN_BUDGET, DataFault, EngineConfig, book_metrics, candles_to_frame,
-                                 check_clock)
+from trader.state.engine import (
+    TOKEN_BUDGET,
+    DataFault,
+    EngineConfig,
+    book_metrics,
+    candles_to_frame,
+    check_clock,
+)
 from trader.state.features import FEATURE_COLS, WARMUP, compute_features
 from trader.types import Book
 

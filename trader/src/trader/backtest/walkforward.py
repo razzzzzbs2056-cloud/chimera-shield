@@ -120,6 +120,14 @@ def run(series: dict[str, Series], setups: list[Setup], base: Policy, *, limits:
         row["test_return"] = float(e.iloc[-1] / e0 - 1) if len(e) else 0.0
         row["btc_return"] = float(b.iloc[-1] / b0 - 1) if len(b) else 0.0
         row["test_trades"] = sum(1 for t in oos.trades if te0 < t["closed_ts"] <= te1)
+        # Diagnostic only: the same window with a fresh account (as if a human had cleared the
+        # kill switch and reset the balance). Still out-of-sample for the picked parameters.
+        fr = run_backtest(series, setups, policy_at=lambda t, p=policy_at(te0): p, limits=limits,
+                          cost_of=cost_of, spread_bps=spread, depth_usd=depth, t_start=te0, t_end=te1, tf=tf,
+                          tf_seconds=tf_seconds, start_balance=balance)
+        fm = metrics(fr.equity, fr.trades, tf_seconds, balance)
+        row["fresh_return"], row["fresh_trades"], row["fresh_max_drawdown"] = (
+            fm["total_return"], fm["trades"], fm["max_drawdown"])
     by_setup: dict[str, dict] = {}
     for tr in oos.trades:
         d = by_setup.setdefault(tr["setup_id"], {"trades": 0, "pnl": 0.0, "wins": 0})
@@ -129,6 +137,12 @@ def run(series: dict[str, Series], setups: list[Setup], base: Policy, *, limits:
     return {
         "oos_span": [_d(oos0), _d(oos1)], "strategy": strat, "btc_hold": bench,
         "beats_btc_hold": strat["total_return"] > bench["total_return"],
+        "fresh_folds_summary": {
+            "note": "diagnostic: each test window with a fresh account; not a tradable track record",
+            "windows_beating_btc": sum(r["fresh_return"] > r["btc_return"] for r in fold_rows),
+            "windows_positive": sum(r["fresh_return"] > 0 for r in fold_rows), "windows": len(fold_rows),
+            "mean_return": sum(r["fresh_return"] for r in fold_rows) / len(fold_rows),
+            "mean_btc_return": sum(r["btc_return"] for r in fold_rows) / len(fold_rows)},
         "folds": fold_rows, "by_setup": by_setup, "stats": oos.stats, "killed": oos.killed,
         "exit_reasons": _count(t["reason"] for t in oos.trades),
         "assumptions": {"spread_bps": spread, "depth_usd": depth, "funding": "not simulated",
@@ -145,4 +159,29 @@ def _count(items) -> dict:
     out: dict = {}
     for i in items:
         out[i] = out.get(i, 0) + 1
+    return out
+
+
+def run_from_config(cfg, cache_dir, base: Policy, workers: int = 4, train_days: int = 365,
+                    test_days: int = 91, only: list[str] | None = None) -> dict:
+    """Load cached history for every enabled setup and run the walk-forward."""
+    from pathlib import Path
+
+    from trader.backtest.engine import load_frame, prepare
+    from trader.data.market import TF_SECONDS
+
+    tf_s = TF_SECONDS[cfg.timeframe]
+    scfgs = [s for s in cfg.setups if s.enabled and (not only or s.id in only)]
+    symbols = {s.symbol for s in scfgs} | {cfg.context_symbol}
+    frames = {s: load_frame(Path(cache_dir), cfg.exchange, s, cfg.timeframe) for s in sorted(symbols)}
+    series = prepare(frames, cfg.context_symbol, tf_s)
+    ctx = frames[cfg.context_symbol]["ts"]
+    out = run(series, [s.build() for s in scfgs], base, limits=cfg.limits.build(), cost_of=cfg.cost_of,
+              spread={**{s.symbol: s.bt_spread_bps for s in scfgs}, cfg.context_symbol: 1.0},
+              depth={s.symbol: s.bt_depth_usd for s in scfgs}, t_start=int(ctx.min()),
+              t_end=int(ctx.max()) + tf_s, tf=cfg.timeframe, tf_seconds=tf_s, balance=cfg.paper_balance,
+              benchmark=cfg.context_symbol, train_days=train_days, test_days=test_days, workers=workers)
+    out["history"] = {s: [_d(int(f["ts"].min())), _d(int(f["ts"].max())), len(f)] for s, f in frames.items()}
+    out["setups"] = [s.id for s in scfgs]
+    out["base_policy"] = base.version
     return out

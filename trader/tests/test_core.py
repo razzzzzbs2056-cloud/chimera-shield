@@ -1,4 +1,3 @@
-import dataclasses
 
 import pytest
 
@@ -7,7 +6,7 @@ from trader.core import Setup
 from trader.exec.broker import CostModel, PaperBroker
 from trader.risk.engine import RiskLimits
 from trader.state.engine import DataFault
-from trader.types import Candle, Direction, Regime, RiskState
+from trader.types import Candle, Direction, Regime
 
 SYM = "AAA/USDT"
 CANDLES = make_candles()
@@ -145,11 +144,21 @@ def test_low_confidence_pauses_symbol_and_crisis_pauses_everything():
     assert enter(core, T0 + (core.policy.pause_bars + 1) * TF)["action"] == "enter"
 
     reflex = StubReflex(good_decision(regime=Regime.CRISIS))
-    core = make_core(reflex)
+    core = make_core(reflex)  # default: cooldown that renews on every crisis reading
+    assert enter(core)["action"] == "pause" and not core.account.positions
+    assert enter(core, T0 + 10 * TF)["action"] == "pause"
+    reflex.decision = good_decision()
+    cool = core.policy.crisis_cooldown_bars
+    assert "paused" in enter(core, T0 + (10 + cool - 1) * TF)["reasons"]
+    assert enter(core, T0 + (10 + cool + 1) * TF)["action"] == "enter"
+    assert any(lvl == "critical" for lvl, _ in core.alerts.sent)
+
+    from trader.policy import Policy
+    reflex = StubReflex(good_decision(regime=Regime.CRISIS))
+    core = make_core(reflex, policy=Policy(version="m", crisis_cooldown_bars=0))  # manual resume only
     assert enter(core)["action"] == "pause" and core.global_pause
     reflex.decision = good_decision()
-    assert "paused" in enter(core, T0 + 500 * TF)["reasons"]  # stays paused until a human resumes
-    assert any(lvl == "critical" for lvl, _ in core.alerts.sent)
+    assert "paused" in enter(core, T0 + 5000 * TF)["reasons"]
 
 
 def test_kill_switch_flattens_and_blocks_new_orders():
@@ -237,3 +246,14 @@ def test_risk_layer_rejects_an_oversized_position():
     a = Account(balance=1000.0, peak_equity=1000.0, day="d", day_start_equity=1000.0)
     big = OrderIntent("A", Side.BUY, 15.0, 100.0, 99.9, None, False, "s", "c")
     assert "position_too_large" in RiskEngine(RiskLimits()).check_order(big, a, {"A": 100.0}).reasons
+
+
+def test_size_shrinks_in_drawdown():
+    full = make_core(limits=RiskLimits(risk_per_trade=0.002))
+    enter(full)
+    hurt = make_core(limits=RiskLimits(risk_per_trade=0.002))
+    hurt.account.peak_equity = 1000 / 0.925  # 7.5% below the peak
+    rec = enter(hurt)
+    assert rec["risk_scale"] == pytest.approx(0.5, abs=0.01)
+    ratio = hurt.account.positions[SYM].qty / full.account.positions[SYM].qty
+    assert ratio == pytest.approx(0.5, abs=0.02)

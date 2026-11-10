@@ -70,7 +70,8 @@ class TraderCore:
         self.pending: dict[str, OrderIntent] = {}
         self.exit_pending: dict[str, str] = {}
         self.paused_until: dict[str, int] = {}
-        self.global_pause = False
+        self.global_pause = False  # manual: stays set until a human runs `trader resume`
+        self.global_pause_until = 0  # automatic crisis cooldown
         self.halt_reason = ""
         self.stats = {"candles": 0, "late": 0, "error": 0, "fault": 0, "entries": 0, "exits": 0,
                       "order_failures": 0, "escalations": 0}
@@ -180,7 +181,8 @@ class TraderCore:
         return max(0.0, cap)
 
     def _paused(self, symbol: str, asof: int) -> bool:
-        return bool(self.global_pause or self.halt_reason or self.paused_until.get(symbol, 0) > asof)
+        return bool(self.global_pause or self.halt_reason or self.global_pause_until > asof
+                    or self.paused_until.get(symbol, 0) > asof)
 
     def decide(self, symbol: str, asof: int, snap: Snapshot | DataFault, view: MarketView | None,
                marks: dict[str, float], reading: RiskReading) -> dict:
@@ -212,12 +214,16 @@ class TraderCore:
         rec.update(decision=d.model_dump(mode="json"), action=g.action.value, reasons=list(g.reasons))
         if g.action is gate.GateAction.PAUSE:
             self.stats["escalations"] += 1
-            if g.global_pause:
+            cool = self.policy.crisis_cooldown_bars
+            if g.global_pause and cool <= 0:
                 self.global_pause = True
+            elif g.global_pause:
+                self.global_pause_until = max(self.global_pause_until, asof + cool * self.cfg.tf_seconds)
             else:
                 self.paused_until[symbol] = asof + self.policy.pause_bars * self.cfg.tf_seconds
-            scope = "ALL new risk paused until a human resumes" if g.global_pause else \
-                f"{symbol} paused for {self.policy.pause_bars} candles"
+            scope = (("ALL new risk paused until a human resumes" if cool <= 0 else
+                      f"ALL new risk paused for {cool} candles after the last crisis reading")
+                     if g.global_pause else f"{symbol} paused for {self.policy.pause_bars} candles")
             if self.alerts.notify("critical" if g.global_pause else "warning",
                                   f"ESCALATION {symbol}: {', '.join(g.reasons)} "
                                   f"(regime={d.regime.value}, conf={d.direction_confidence:.2f}). {scope}.",
@@ -250,9 +256,11 @@ class TraderCore:
         spread_bps = (view.ask - view.bid) / view.mid * 1e4
         cost_frac = cost.round_trip_frac(spread_bps)
         pending_gross = sum(i.qty * i.ref_price for i in self.pending.values())
+        scale = self.risk.risk_scale(reading.drawdown)  # smaller bets the deeper the drawdown
+        rec["risk_scale"] = round(scale, 3)
         size = size_position(
             equity=reading.equity, price=px, stop=stop, p_win=p_win, rr=self.policy.rr,
-            risk_per_trade=L.risk_per_trade, kelly_mult=self.policy.kelly_mult, cost_frac=cost_frac,
+            risk_per_trade=L.risk_per_trade * scale, kelly_mult=self.policy.kelly_mult, cost_frac=cost_frac,
             gross_exposure=self.account.gross_exposure(marks) + pending_gross, max_leverage=L.max_leverage,
             depth_usd=view.depth_usd or None, lot=setup.lot, min_notional=cost.min_notional,
         )

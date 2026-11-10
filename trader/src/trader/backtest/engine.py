@@ -138,7 +138,7 @@ def run_backtest(
                 forced = s in core.exit_pending
                 core.process_exits(
                     s, asof, bar,
-                    lambda ref, s=s, bar=bar, forced=forced: synth(
+                    lambda ref, s=s, bar=bar, forced=forced, asof=asof: synth(
                         s, ref if ref is not None else (bar.open if forced else bar.close), asof), marks)
         for s, k in live:
             marks[s] = float(series[s].c[k])

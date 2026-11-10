@@ -22,7 +22,8 @@ class RiskLimits:
     max_leverage: float = 2.0
     kill_drawdown: float = 0.15
     max_position_frac: float = 1.0  # one position's notional may not exceed this share of equity
-    near_fraction: float = 0.7  # "near_limit" starts at this share of any limit
+    near_fraction: float = 0.7  # "near_limit" starts at this share of the daily-loss or leverage limit
+    min_risk_scale: float = 0.25  # floor for drawdown-based size reduction
 
     def __post_init__(self) -> None:
         if not (0 < self.risk_per_trade <= 0.05):
@@ -111,14 +112,22 @@ class RiskEngine:
         if reasons:
             state = RiskState.REDUCE
         else:
+            # Drawdown is deliberately NOT here: it only recovers by trading, so gating on it
+            # would deadlock the system below the kill level. Drawdown shrinks size instead
+            # (risk_scale) and the kill switch is the hard stop.
             near = (
-                dd >= L.near_fraction * L.kill_drawdown
-                or dl >= L.near_fraction * L.max_daily_loss
+                dl >= L.near_fraction * L.max_daily_loss
                 or lev >= L.near_fraction * L.max_leverage
                 or len(acct.positions) >= L.max_open_positions
             )
             state = RiskState.NEAR_LIMIT if near else RiskState.SAFE
         return RiskReading(state, eq, dd, dl, lev, len(acct.positions), acct.kill_latched, tuple(reasons))
+
+    def risk_scale(self, drawdown: float) -> float:
+        """Share of the per-trade risk budget allowed at this drawdown: 1.0 at the peak,
+        falling linearly to min_risk_scale at the kill level."""
+        L = self.limits
+        return max(L.min_risk_scale, 1.0 - max(0.0, drawdown) / L.kill_drawdown)
 
     def check_order(self, intent: OrderIntent, acct: Account, marks: dict[str, float],
                     est_cost: float = 0.0) -> Verdict:

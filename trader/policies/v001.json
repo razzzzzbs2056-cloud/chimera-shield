@@ -1,0 +1,28 @@
+{
+  "version": "v001",
+  "min_setup_quality": 2,
+  "min_confidence": 0.88,
+  "pause_confidence": 0.6,
+  "pause_bars": 12,
+  "crisis_cooldown_bars": 72,
+  "kelly_mult": 0.25,
+  "rr": 2.0,
+  "stop_atr_mult": 2.5,
+  "time_stop_bars": 96,
+  "calibrator": {
+    "shrink": 0.5,
+    "knots": [],
+    "max_p": 0.8
+  },
+  "rule": {
+    "er_full": 0.45,
+    "trend_min": 2.0,
+    "breakout_band": 4.0,
+    "rsi_cap": 78.0,
+    "hv_ratio": 1.8,
+    "crisis_btc_drop": 8.0,
+    "toxic_imbalance": 0.6
+  },
+  "parent": null,
+  "note": "baseline: thresholds from the brief; hypotheses"
+}

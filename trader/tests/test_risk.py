@@ -103,10 +103,15 @@ def test_non_finite_equity_trips_the_kill():
     assert ENG.read(a, {"A": float("nan")}).kill
 
 
-def test_near_limit_state():
-    a = acct(balance=890.0, peak=1000.0, day_start=890.0)  # 11% drawdown >= 70% of 15%
+def test_near_limit_state_and_drawdown_scaling():
+    a = acct(balance=962.0, peak=1000.0, day_start=1000.0)  # 3.8% daily loss >= 70% of 5%
     assert ENG.read(a, M).state is RiskState.NEAR_LIMIT
     assert ENG.read(acct(), M).state is RiskState.SAFE
+    # drawdown below the kill level must not deadlock trading; it shrinks size instead
+    deep = acct(balance=890.0, peak=1000.0, day_start=890.0)
+    assert ENG.read(deep, M).state is RiskState.SAFE
+    assert ENG.risk_scale(0.0) == 1.0 and ENG.risk_scale(0.075) == pytest.approx(0.5)
+    assert ENG.risk_scale(0.14) == 0.25 and ENG.risk_scale(0.5) == 0.25
 
 
 def test_kelly_math():

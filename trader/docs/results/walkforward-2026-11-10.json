@@ -1,0 +1,422 @@
+{
+  "oos_span": [
+    "2024-01-01",
+    "2026-11-10"
+  ],
+  "strategy": {
+    "total_return": -0.10344142075805707,
+    "cagr": -0.037448419116018594,
+    "max_drawdown": -0.15076423753373724,
+    "sharpe": -0.3726022545390869,
+    "trades": 109,
+    "win_rate": 0.3302752293577982,
+    "profit_factor": 0.8949096805277711,
+    "final_equity": 896.5585792419429
+  },
+  "btc_hold": {
+    "total_return": 0.7664959129905067,
+    "cagr": 0.22004965619013528,
+    "max_drawdown": -0.5373629896740321,
+    "sharpe": 0.6591864991449427,
+    "trades": 0,
+    "win_rate": 0.0,
+    "profit_factor": 0.0,
+    "final_equity": 1766.4959129905067
+  },
+  "beats_btc_hold": false,
+  "fresh_folds_summary": {
+    "note": "diagnostic: each test window with a fresh account; not a tradable track record",
+    "windows_beating_btc": 7,
+    "windows_positive": 4,
+    "windows": 12,
+    "mean_return": -0.032017134710767364,
+    "mean_btc_return": 0.08400388769798821
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "test": [
+        "2024-01-01",
+        "2024-04-01"
+      ],
+      "picked": "v001+s2.0r3.0e0.55",
+      "train_return": 0.11313163989636066,
+      "train_trades": 42,
+      "train_score": 0.7488370465690422,
+      "test_return": -0.08578486690745413,
+      "btc_return": 0.6838870577332659,
+      "test_trades": 91,
+      "fresh_return": -0.08677705135514502,
+      "fresh_trades": 93,
+      "fresh_max_drawdown": -0.13810255892330758
+    },
+    {
+      "fold": 1,
+      "train": [
+        "2023-04-02",
+        "2024-04-01"
+      ],
+      "test": [
+        "2024-04-01",
+        "2024-07-01"
+      ],
+      "picked": "v001+s2.0r1.5e0.55",
+      "train_return": -0.14885998408398404,
+      "train_trades": 55,
+      "train_score": -0.9857798811902438,
+      "test_return": -0.01931334672931484,
+      "btc_return": -0.11945911446826718,
+      "test_trades": 18,
+      "fresh_return": 0.04565461319089015,
+      "fresh_trades": 106,
+      "fresh_max_drawdown": -0.11621528002303472
+    },
+    {
+      "fold": 2,
+      "train": [
+        "2023-07-02",
+        "2024-07-01"
+      ],
+      "test": [
+        "2024-07-01",
+        "2024-09-30"
+      ],
+      "picked": "v001+s3.5r1.5e0.35",
+      "train_return": 0.09501013917670398,
+      "train_trades": 300,
+      "train_score": 0.6945063869082849,
+      "test_return": 0.0,
+      "btc_return": 0.04507106422702334,
+      "test_trades": 0,
+      "fresh_return": 0.2648933938238376,
+      "fresh_trades": 87,
+      "fresh_max_drawdown": -0.0776068766756165
+    },
+    {
+      "fold": 3,
+      "train": [
+        "2023-10-01",
+        "2024-09-30"
+      ],
+      "test": [
+        "2024-09-30",
+        "2024-12-30"
+      ],
+      "picked": "v001+s3.5r1.5e0.35",
+      "train_return": 0.24229199776348698,
+      "train_trades": 325,
+      "train_score": 1.7711005635835266,
+      "test_return": 0.0,
+      "btc_return": 0.42885059486155486,
+      "test_trades": 0,
+      "fresh_return": 0.026473823928768514,
+      "fresh_trades": 84,
+      "fresh_max_drawdown": -0.1121118617559077
+    },
+    {
+      "fold": 4,
+      "train": [
+        "2023-12-31",
+        "2024-12-30"
+      ],
+      "test": [
+        "2024-12-30",
+        "2025-03-31"
+      ],
+      "picked": "v001+s3.5r3.0e0.35",
+      "train_return": 0.223787120635635,
+      "train_trades": 257,
+      "train_score": 1.4945591741534827,
+      "test_return": 0.0,
+      "btc_return": -0.12096960024579273,
+      "test_trades": 0,
+      "fresh_return": -0.0638412617477574,
+      "fresh_trades": 60,
+      "fresh_max_drawdown": -0.12366280996658985
+    },
+    {
+      "fold": 5,
+      "train": [
+        "2024-03-31",
+        "2025-03-31"
+      ],
+      "test": [
+        "2025-03-31",
+        "2025-06-30"
+      ],
+      "picked": "v001+s3.5r3.0e0.55",
+      "train_return": 0.4806312905951873,
+      "train_trades": 240,
+      "train_score": 3.4437246290343384,
+      "test_return": 0.0,
+      "btc_return": 0.3150954753865982,
+      "test_trades": 0,
+      "fresh_return": -0.06870564110241029,
+      "fresh_trades": 74,
+      "fresh_max_drawdown": -0.12605765597758212
+    },
+    {
+      "fold": 6,
+      "train": [
+        "2024-06-30",
+        "2025-06-30"
+      ],
+      "test": [
+        "2025-06-30",
+        "2025-09-29"
+      ],
+      "picked": "v001+s3.5r3.0e0.55",
+      "train_return": 0.5351141628958034,
+      "train_trades": 253,
+      "train_score": 3.5728991503094436,
+      "test_return": 0.0,
+      "btc_return": 0.03516562616796559,
+      "test_trades": 0,
+      "fresh_return": 0.059383204760958375,
+      "fresh_trades": 67,
+      "fresh_max_drawdown": -0.11141336428150583
+    },
+    {
+      "fold": 7,
+      "train": [
+        "2024-09-29",
+        "2025-09-29"
+      ],
+      "test": [
+        "2025-09-29",
+        "2025-12-29"
+      ],
+      "picked": "v001+s3.5r3.0e0.55",
+      "train_return": 0.3035575019841943,
+      "train_trades": 255,
+      "train_score": 2.026855249220808,
+      "test_return": 0.0,
+      "btc_return": -0.21592802488319296,
+      "test_trades": 0,
+      "fresh_return": -0.12632117576758728,
+      "fresh_trades": 80,
+      "fresh_max_drawdown": -0.14118598912883895
+    },
+    {
+      "fold": 8,
+      "train": [
+        "2024-12-29",
+        "2025-12-29"
+      ],
+      "test": [
+        "2025-12-29",
+        "2026-03-30"
+      ],
+      "picked": "v001+s3.5r3.0e0.55",
+      "train_return": -0.0520042254851788,
+      "train_trades": 250,
+      "train_score": -0.3444194122630878,
+      "test_return": 0.0,
+      "btc_return": -0.24938659026048593,
+      "test_trades": 0,
+      "fresh_return": -0.13846746764973428,
+      "fresh_trades": 117,
+      "fresh_max_drawdown": -0.15198943778835627
+    },
+    {
+      "fold": 9,
+      "train": [
+        "2025-03-30",
+        "2026-03-30"
+      ],
+      "test": [
+        "2026-03-30",
+        "2026-06-29"
+      ],
+      "picked": "v001+s3.5r3.0e0.55",
+      "train_return": -0.0774986813784222,
+      "train_trades": 194,
+      "train_score": -0.5137601077115493,
+      "test_return": 0.0,
+      "btc_return": -0.09757002720503138,
+      "test_trades": 0,
+      "fresh_return": -0.1388464542680964,
+      "fresh_trades": 88,
+      "fresh_max_drawdown": -0.15050673005379933
+    },
+    {
+      "fold": 10,
+      "train": [
+        "2025-06-29",
+        "2026-06-29"
+      ],
+      "test": [
+        "2026-06-29",
+        "2026-09-28"
+      ],
+      "picked": "v001+s3.5r3.0e0.35",
+      "train_return": 0.004143672815952515,
+      "train_trades": 124,
+      "train_score": 0.027429122899429954,
+      "test_return": 0.0,
+      "btc_return": 0.41800627434919146,
+      "test_trades": 0,
+      "fresh_return": -0.0698680403571863,
+      "fresh_trades": 81,
+      "fresh_max_drawdown": -0.15187907462418393
+    },
+    {
+      "fold": 11,
+      "train": [
+        "2025-09-28",
+        "2026-09-28"
+      ],
+      "test": [
+        "2026-09-28",
+        "2026-11-10"
+      ],
+      "picked": "v001+s2.0r3.0e0.55",
+      "train_return": -0.06568848939926453,
+      "train_trades": 77,
+      "train_score": -0.43161339264846543,
+      "test_return": 0.0,
+      "btc_return": -0.1147160832869707,
+      "test_trades": 0,
+      "fresh_return": -0.08778355998574605,
+      "fresh_trades": 41,
+      "fresh_max_drawdown": -0.1508835429626968
+    }
+  ],
+  "by_setup": {
+    "xrp-short": {
+      "trades": 18,
+      "pnl": 10.063257583713456,
+      "wins": 6
+    },
+    "trx-long": {
+      "trades": 19,
+      "pnl": 2.1404903325601703,
+      "wins": 7
+    },
+    "link-long": {
+      "trades": 17,
+      "pnl": 13.253251097737095,
+      "wins": 6
+    },
+    "aave-long": {
+      "trades": 21,
+      "pnl": -38.183030324747804,
+      "wins": 5
+    },
+    "uni-long": {
+      "trades": 17,
+      "pnl": -3.553260691142774,
+      "wins": 5
+    },
+    "ada-short": {
+      "trades": 17,
+      "pnl": -30.930121904559353,
+      "wins": 7
+    }
+  },
+  "stats": {
+    "candles": 169117,
+    "late": 0,
+    "error": 0,
+    "fault": 2,
+    "entries": 109,
+    "exits": 109,
+    "order_failures": 0,
+    "escalations": 555
+  },
+  "killed": true,
+  "exit_reasons": {
+    "stop": 69,
+    "time_stop": 12,
+    "target": 27,
+    "kill_switch": 1
+  },
+  "assumptions": {
+    "spread_bps": {
+      "HYPE/USDT": 1.0,
+      "AAVE/USDT": 2.4,
+      "SKY/USDT": 9.8,
+      "UNI/USDT": 1.4,
+      "TRX/USDT": 0.3,
+      "LINK/USDT": 0.9,
+      "XRP/USDT:USDT": 0.9,
+      "ADA/USDT:USDT": 5.6,
+      "BTC/USDT": 1.0
+    },
+    "depth_usd": {
+      "HYPE/USDT": 236000.0,
+      "AAVE/USDT": 105000.0,
+      "SKY/USDT": 16000.0,
+      "UNI/USDT": 232000.0,
+      "TRX/USDT": 343000.0,
+      "LINK/USDT": 290000.0,
+      "XRP/USDT:USDT": 1000000.0,
+      "ADA/USDT:USDT": 162000.0
+    },
+    "funding": "not simulated",
+    "order_book": "none in history; snapshot spr/imb are null",
+    "fills": "next bar open plus spread, slippage, impact and taker fee"
+  },
+  "history": {
+    "AAVE/USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ],
+    "ADA/USDT:USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ],
+    "BTC/USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ],
+    "HYPE/USDT": [
+      "2025-11-04",
+      "2026-11-10",
+      8895
+    ],
+    "LINK/USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ],
+    "SKY/USDT": [
+      "2025-09-11",
+      "2026-11-10",
+      10194
+    ],
+    "TRX/USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ],
+    "UNI/USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ],
+    "XRP/USDT:USDT": [
+      "2023-01-01",
+      "2026-11-10",
+      33821
+    ]
+  },
+  "setups": [
+    "hype-long",
+    "aave-long",
+    "sky-long",
+    "uni-long",
+    "trx-long",
+    "link-long",
+    "xrp-short",
+    "ada-short"
+  ],
+  "base_policy": "v001"
+}

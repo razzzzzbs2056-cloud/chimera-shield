@@ -98,8 +98,9 @@ def test_rule_reflex_is_deterministic_and_respects_bias():
 
 
 def test_rule_reflex_flags_crisis_and_echoes_risk_state():
-    from tests.conftest import SAFE_VIEW
     import dataclasses
+
+    from tests.conftest import SAFE_VIEW
     crash = make_candles(n=300, seed=5)
     last = crash[-1]
     px = last.open
