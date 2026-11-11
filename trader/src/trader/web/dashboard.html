@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trader dashboard</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --line: #e3e6eb; --text: #14181f; --muted: #5d6675;
+  --accent: #2456d6; --good: #0f7b4f; --bad: #c0362c; --warn: #9a6200;
+  --good-bg: #e4f5ec; --bad-bg: #fbe9e7; --warn-bg: #fdf3dc; --chip: #eef0f4;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1116; --panel: #161a22; --line: #272d38; --text: #e8ebf0; --muted: #98a2b3;
+    --accent: #7ea2ff; --good: #4ecb8f; --bad: #ff8375; --warn: #f0b849;
+    --good-bg: #12301f; --bad-bg: #3a1a17; --warn-bg: #33270d; --chip: #222835;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 20px 16px 48px; }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 16px; }
+h1 { font-size: 20px; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 13px; margin: 0 0 10px; color: var(--muted); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em; }
+.spacer { flex: 1; }
+.meta { color: var(--muted); font-size: 13px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; background: var(--chip); white-space: nowrap; }
+.badge.good { background: var(--good-bg); color: var(--good); }
+.badge.bad { background: var(--bad-bg); color: var(--bad); }
+.badge.warn { background: var(--warn-bg); color: var(--warn); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.notice { padding: 10px 14px; border-radius: 8px; margin-bottom: 10px; font-weight: 500; }
+.notice.critical { background: var(--bad-bg); color: var(--bad); }
+.notice.warning { background: var(--warn-bg); color: var(--warn); }
+.notice.info { background: var(--chip); color: var(--muted); font-weight: 400; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.kpi .label { color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.kpi .value { font-size: 26px; font-weight: 650; letter-spacing: -0.02em; margin-top: 2px;
+  font-variant-numeric: tabular-nums; }
+.kpi .sub { color: var(--muted); font-size: 13px; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.pos { color: var(--good); } .neg { color: var(--bad); }
+.meter { height: 6px; border-radius: 3px; background: var(--chip); margin-top: 8px; position: relative; overflow: hidden; }
+.meter > i { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--accent); }
+.meter.hot > i { background: var(--bad); } .meter.mid > i { background: var(--warn); }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-bottom: 16px; }
+.grid2 > * { min-width: 0; margin-bottom: 0 !important; }
+@media (min-width: 900px) { .grid2 { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); } }
+section.card { margin-bottom: 16px; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.card { min-width: 0; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; color: var(--muted); font-size: 12px; font-weight: 600; padding: 6px 10px 6px 0;
+  border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sym { font-weight: 600; white-space: nowrap; }
+.dim { color: var(--muted); }
+.small { font-size: 12.5px; }
+.conf { display: inline-block; width: 92px; height: 8px; border-radius: 4px; background: var(--chip);
+  position: relative; vertical-align: middle; margin-right: 6px; }
+.conf > i { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: var(--muted); }
+.conf.pass > i { background: var(--good); }
+.conf > b { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); opacity: 0.55; }
+.q { letter-spacing: 2px; }
+.empty { color: var(--muted); padding: 14px 0 6px; }
+svg { display: block; width: 100%; height: 220px; }
+.axis { fill: var(--muted); font-size: 11px; }
+footer { color: var(--muted); font-size: 13px; margin-top: 20px; }
+code { font-family: var(--mono); font-size: 12.5px; background: var(--chip); padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Trader</h1>
+    <span id="mode" class="badge">…</span>
+    <span id="health" class="badge">…</span>
+    <span class="spacer"></span>
+    <span id="meta" class="meta"></span>
+  </header>
+  <div id="notices"></div>
+  <div id="kpis" class="kpis"></div>
+  <div class="grid2">
+    <section class="card"><h2>Account value</h2><div id="chart"></div></section>
+    <section class="card"><h2>Nightly review</h2><div id="nightly"></div></section>
+  </div>
+  <section class="card"><h2>Open positions</h2><div id="positions" class="scroll"></div></section>
+  <section class="card"><h2>Setups: latest verdict per coin</h2><div id="setups" class="scroll"></div></section>
+  <div class="grid2">
+    <section class="card"><h2>Closed trades</h2><div id="trades" class="scroll"></div></section>
+    <section class="card"><h2>Alerts and events</h2><div id="events"></div></section>
+  </div>
+  <footer id="footer"></footer>
+</div>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+// Every value from the server is inserted as text, never as HTML.
+function el(tag, attrs, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") n.className = v; else if (k === "style") n.style.cssText = v; else n.setAttribute(k, v);
+  }
+  for (const k of kids.flat(Infinity)) if (k != null && k !== false) n.append(k.nodeType ? k : String(k));
+  return n;
+}
+function svg(tag, attrs, ...kids) {
+  const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k, v] of Object.entries(attrs || {})) n.setAttribute(k, v);
+  for (const k of kids) n.append(k.nodeType ? k : String(k));
+  return n;
+}
+const fill = (id, ...kids) => { const n = $(id); n.replaceChildren(...kids.flat(Infinity).filter(k => k != null && k !== false)); };
+const usd = (x, d = 2) => x == null ? "–" : (x < 0 ? "-$" : "$") + Math.abs(x).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d});
+const signed = x => (x >= 0 ? "+" : "-") + usd(Math.abs(x)).replace("-", "");
+const pct = (x, d = 1) => x == null ? "–" : (x * 100).toFixed(d) + "%";
+const spct = (x, d = 2) => (x >= 0 ? "+" : "") + (x * 100).toFixed(d) + "%";
+const px = x => x == null ? "–" : x >= 1000 ? x.toLocaleString("en-US", {maximumFractionDigits: 1}) : x >= 1 ? x.toFixed(3) : x.toPrecision(4);
+const cls = x => x > 0 ? "pos" : x < 0 ? "neg" : "";
+function when(ts) {
+  if (!ts) return "–";
+  const d = new Date(ts * 1000);
+  return d.toISOString().slice(5, 16).replace("T", " ") + " UTC";
+}
+function ago(s) {
+  if (s == null) return "never";
+  if (s < 90) return Math.round(s) + " s ago";
+  if (s < 5400) return Math.round(s / 60) + " min ago";
+  if (s < 172800) return Math.round(s / 3600) + " h ago";
+  return Math.round(s / 86400) + " d ago";
+}
+const WHY = {
+  direction_neutral: "no direction", direction_against_thesis: "against the thesis",
+  setup_quality_below_min: "setup too weak", confidence_below_min: "not confident enough",
+  risk_state_not_safe: "risk limits near", toxic_flow: "one-sided order flow", paused: "paused",
+  already_in_position: "already holding", max_open_positions: "position limit reached",
+  regime_crisis: "crisis regime", confidence_below_pause_floor: "very low confidence",
+  late_start: "started after the candle closed", stale_data: "data too old", missing_data: "data missing",
+  exchange_error: "exchange error", clock_skew: "clock out of sync", stale_marks: "prices too old",
+  bad_data: "bad data", lookahead: "data from the future rejected",
+  reflex_late: "model answered too late", reflex_error: "model call failed",
+};
+const why = r => WHY[r] || String(r).replace(/^size:/, "size: ").replace(/_/g, " ");
+const ACTION = {enter: ["Entered", "good"], enter_pending: ["Entering", "good"], enter_failed: ["Order failed", "bad"],
+  hold: ["Hold", ""], pause: ["Paused", "warn"]};
+
+function render(s) {
+  const st = s.status, a = s.account, L = s.limits;
+  const live = st.mode === "live";
+  fill("mode", st.mode === "paper" ? "Paper trading" : st.mode === "testnet" ? "OKX demo" : "LIVE: real money");
+  $("mode").className = "badge " + (live ? "bad" : "");
+  const h = {ok: ["Running", "good"], stale: ["Not responding", "bad"], not_started: ["Not started", "warn"]}[st.health];
+  fill("health", el("span", {class: "dot"}), h[0]);
+  $("health").className = "badge " + h[1];
+  fill("meta", [st.exchange.toUpperCase(), st.timeframe + " candles", st.reflex ? "REFLEX " + st.reflex : null,
+    st.policy ? "policy " + st.policy : null, "last candle " + when(st.last_candle_ts),
+    "heartbeat " + ago(st.heartbeat_age_s)].filter(Boolean).join("  ·  "));
+
+  const notes = s.notices.map(n => el("div", {class: "notice " + n.level}, n.text + (n.until ? " Until " + when(n.until) + "." : "")));
+  if (st.health === "not_started") notes.push(el("div", {class: "notice info"},
+    "The trading service has not written any state yet. Start it with ", el("code", {}, "docker compose up -d"), "."));
+  if (st.health === "stale") notes.push(el("div", {class: "notice critical"},
+    "The trading service has not reported for " + ago(st.heartbeat_age_s).replace(" ago", "") + ". Numbers below may be out of date."));
+  fill("notices", notes);
+
+  const total = a.equity - a.start_balance, ddShare = a.drawdown / L.kill_drawdown;
+  const kpi = (label, value, sub, vc, meter) => el("div", {class: "card kpi"},
+    el("div", {class: "label"}, label), el("div", {class: "value " + (vc || "")}, value),
+    el("div", {class: "sub"}, sub), meter);
+  const bar = share => el("div", {class: "meter " + (share >= 0.7 ? "hot" : share >= 0.4 ? "mid" : "")},
+    el("i", {style: "width:" + Math.min(100, Math.max(0, share * 100)).toFixed(1) + "%"}));
+  fill("kpis",
+    kpi("Account value", usd(a.equity), signed(total) + " (" + spct(total / a.start_balance) + ") since start", ""),
+    kpi("Today", signed(a.day_pnl), spct(a.day_pnl_frac) + "  ·  stops new trades at -" + pct(L.max_daily_loss, 0),
+      cls(a.day_pnl), bar(Math.max(0, -a.day_pnl_frac) / L.max_daily_loss)),
+    kpi("Drawdown from peak", pct(a.drawdown), "kill switch at " + pct(L.kill_drawdown, 0), a.drawdown > 0 ? "neg" : "", bar(ddShare)),
+    kpi("Open positions", a.open_positions + " / " + L.max_open_positions,
+      "leverage " + a.leverage.toFixed(2) + "x of " + L.max_leverage.toFixed(0) + "x", "", bar(a.leverage / L.max_leverage)),
+    kpi("Closed trades", String(s.trade_stats.count),
+      s.trade_stats.count ? s.trade_stats.wins + " winners  ·  net " + signed(s.trade_stats.net_pnl) : "none yet",
+      ""));
+
+  fill("chart", chart(s.equity_curve, a.start_balance));
+
+  fill("positions", s.positions.length ? el("table", {},
+    el("thead", {}, el("tr", {}, ["Coin", "Side"].map(t => el("th", {}, t)),
+      ["Size", "Entry", "Now", "Stop", "Target", "Profit / loss", "Loss if stopped"].map(t => el("th", {class: "num"}, t)), el("th", {}, "Opened"))),
+    el("tbody", {}, s.positions.map(p => el("tr", {},
+      el("td", {class: "sym"}, p.symbol), el("td", {}, el("span", {class: "badge " + (p.side === "long" ? "good" : "bad")}, p.side)),
+      el("td", {class: "num"}, usd(p.notional)), el("td", {class: "num"}, px(p.entry)),
+      el("td", {class: "num"}, px(p.mark), p.mark_age_s > 7200 ? el("div", {class: "small neg"}, "price " + ago(p.mark_age_s)) : null),
+      el("td", {class: "num"}, px(p.stop)), el("td", {class: "num"}, px(p.target)),
+      el("td", {class: "num " + cls(p.unrealized)}, signed(p.unrealized)),
+      el("td", {class: "num"}, usd(p.risk_at_stop)), el("td", {class: "dim small"}, when(p.opened_ts)))))
+  ) : el("div", {class: "empty"}, "No open positions. The account is in cash."));
+
+  fill("setups", el("table", {},
+    el("thead", {}, el("tr", {}, ["Coin", "Thesis", "Market read", "Verdict", "Confidence (gate 0.88)", "Quality", "Outcome", "Checked"].map(t => el("th", {}, t)))),
+    el("tbody", {}, s.setups.map(u => {
+      const act = ACTION[u.action] || [u.action || "–", ""];
+      const fault = u.status && u.status !== "ok";
+      const conf = u.confidence;
+      return el("tr", {},
+        el("td", {}, el("div", {class: "sym"}, u.base), el("div", {class: "dim small"}, u.market === "swap" ? "perp" : "spot")),
+        el("td", {}, el("span", {class: "badge " + (u.bias === "long" ? "good" : "bad")}, u.bias + " only"),
+          el("div", {class: "dim small", style: "min-width:150px;max-width:230px;margin-top:3px"}, u.research || "")),
+        el("td", {}, u.regime ? u.regime.replace("_", " ") : "–"),
+        el("td", {}, u.direction || "–"),
+        el("td", {}, conf == null ? "–" : [el("span", {class: "conf " + (conf > 0.88 && u.direction !== "neutral" ? "pass" : "")},
+          el("i", {style: "width:" + (conf * 100).toFixed(0) + "%"}), el("b", {style: "left:88%"})), conf.toFixed(2)]),
+        el("td", {class: "q"}, u.quality == null ? "–" : "●".repeat(u.quality) + "○".repeat(3 - u.quality)),
+        el("td", {}, fault ? el("span", {class: "badge warn"}, "Skipped") : el("span", {class: "badge " + act[1]}, act[0]),
+          el("div", {class: "dim small", style: "margin-top:3px"}, (u.reasons || []).map(why).join(", "))),
+        el("td", {class: "dim small"}, when(u.ts)));
+    }))));
+
+  fill("trades", s.trades.length ? el("table", {},
+    el("thead", {}, el("tr", {}, ["Coin", "Side"].map(t => el("th", {}, t)),
+      ["Entry", "Exit", "Net profit / loss"].map(t => el("th", {class: "num"}, t)), el("th", {}, "Why closed"), el("th", {}, "Closed"))),
+    el("tbody", {}, s.trades.slice(0, 12).map(t => el("tr", {},
+      el("td", {class: "sym"}, t.symbol), el("td", {}, t.side),
+      el("td", {class: "num"}, px(t.entry)), el("td", {class: "num"}, px(t.exit)),
+      el("td", {class: "num " + cls(t.pnl)}, signed(t.pnl)),
+      el("td", {}, String(t.reason || "").replace(/_/g, " ")), el("td", {class: "dim small"}, when(t.closed_ts))))),
+    s.trade_stats.count > 12 ? el("caption", {class: "dim small", style: "caption-side:bottom;text-align:left;padding-top:8px"},
+      "Latest 12 of " + s.trade_stats.count + ". Full list: var/journal/trades.jsonl") : null
+  ) : el("div", {class: "empty"}, "No closed trades yet."));
+
+  fill("events", s.events.length ? el("table", {}, el("tbody", {}, s.events.map(e => el("tr", {},
+    el("td", {class: "dim small", style: "white-space:nowrap"}, when(e.ts)),
+    el("td", {}, el("span", {class: "badge " + (["kill_switch", "halt"].includes(e.type) ? "bad" : e.type === "escalation" ? "warn" : "")},
+      String(e.type).replace(/_/g, " ")), " ",
+      e.type === "funding" ? e.symbol + " funding " + signed(-e.paid) :
+      e.type === "escalation" ? e.symbol + ": " + (e.reasons || []).map(why).join(", ") : (e.detail || ""))))))
+    : el("div", {class: "empty"}, "No alerts or events."));
+
+  const n = s.nightly;
+  fill("nightly", !n ? el("div", {class: "empty"}, "No review has run yet. It runs once a day at 00:10 UTC.") : [
+    el("div", {class: "dim small"}, "Last run " + String(n.generated_utc || "").slice(0, 16).replace("T", " ") + " UTC"),
+    el("table", {style: "margin-top:8px"}, el("tbody", {},
+      el("tr", {}, el("td", {}, "Resolved predictions"), el("td", {class: "num"}, String(n.resolved))),
+      el("tr", {}, el("td", {}, "Calibration (Brier, lower is better)"),
+        el("td", {class: "num"}, n.brier == null ? "–" : n.brier.toFixed(3) + (n.brier_base_rate == null ? "" : " vs " + n.brier_base_rate.toFixed(3) + " naive"))),
+      el("tr", {}, el("td", {}, "Regression tests"),
+        el("td", {class: "num"}, el("span", {class: "badge " + (n.tests_passed ? "good" : "bad")}, n.tests_passed ? "passed" : "failed"))),
+      el("tr", {}, el("td", {}, "Proposed policy changes"),
+        el("td", {class: "num"}, n.proposals.length ? n.proposals.filter(p => p.recommended).length + " recommended of " + n.proposals.length : "none")))),
+    n.proposals.map(p => el("div", {class: "small", style: "margin-top:6px"},
+      el("span", {class: "badge " + (p.recommended ? "good" : "")}, p.recommended ? "recommended" : "not recommended"), " ", el("code", {}, p.version), " ", p.note)),
+    n.notes.map(t => el("div", {class: "dim small", style: "margin-top:6px"}, t)),
+    el("div", {class: "dim small", style: "margin-top:8px"}, "Changes are never applied automatically. You approve them from the command line.")]);
+
+  fill("footer", "Read-only view: nothing on this page can place, change or cancel an order. Limits enforced in code: ",
+    pct(L.risk_per_trade, 0) + " risk per trade, " + pct(L.max_daily_loss, 0) + " daily loss, " + L.max_open_positions +
+    " positions, " + L.max_leverage.toFixed(0) + "x leverage, kill switch at " + pct(L.kill_drawdown, 0) +
+    " drawdown. Updated " + new Date(s.now * 1000).toISOString().slice(11, 19) + " UTC; refreshes every 30 s.");
+}
+
+function chart(points, start) {
+  if (points.length < 2) return el("div", {class: "empty"},
+    "The chart appears after the service has processed two candles (two hours on hourly candles).");
+  const W = 720, H = 220, m = {l: 54, r: 12, t: 10, b: 24};
+  const xs = points.map(p => p.ts), ys = points.map(p => p.equity).concat([start]);
+  let lo = Math.min(...ys), hi = Math.max(...ys);
+  const pad = Math.max((hi - lo) * 0.12, start * 0.002); lo -= pad; hi += pad;
+  const X = t => m.l + (t - xs[0]) / (xs[xs.length - 1] - xs[0]) * (W - m.l - m.r);
+  const Y = v => m.t + (hi - v) / (hi - lo) * (H - m.t - m.b);
+  const last = points[points.length - 1].equity, color = last >= start ? "var(--good)" : "var(--bad)";
+  const g = svg("svg", {viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Account value over time"});
+  for (const v of [lo + pad, (lo + hi) / 2, hi - pad]) {
+    g.append(svg("line", {x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v), stroke: "var(--line)", "stroke-width": 1}));
+    g.append(svg("text", {x: m.l - 8, y: Y(v) + 4, "text-anchor": "end", class: "axis"}, "$" + v.toFixed(v >= 10000 ? 0 : 1)));
+  }
+  g.append(svg("line", {x1: m.l, x2: W - m.r, y1: Y(start), y2: Y(start), stroke: "var(--muted)", "stroke-width": 1, "stroke-dasharray": "4 4"}));
+  g.append(svg("text", {x: W - m.r, y: Y(start) - 5, "text-anchor": "end", class: "axis"}, "start $" + start.toFixed(0)));
+  g.append(svg("path", {d: points.map((p, i) => (i ? "L" : "M") + X(p.ts).toFixed(1) + " " + Y(p.equity).toFixed(1)).join(" "),
+    fill: "none", stroke: color, "stroke-width": 2, "stroke-linejoin": "round"}));
+  g.append(svg("circle", {cx: X(xs[xs.length - 1]), cy: Y(last), r: 3.5, fill: color}));
+  const d = t => new Date(t * 1000).toISOString().slice(5, 10);
+  g.append(svg("text", {x: m.l, y: H - 6, class: "axis"}, d(xs[0])));
+  g.append(svg("text", {x: W - m.r, y: H - 6, "text-anchor": "end", class: "axis"}, d(xs[xs.length - 1])));
+  return g;
+}
+
+async function load() {
+  try {
+    const r = await fetch("api/state", {cache: "no-store"});
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    render(await r.json());
+  } catch (e) {
+    fill("notices", el("div", {class: "notice critical"}, "Cannot reach the dashboard server (" + e.message + "). Retrying."));
+  }
+}
+load();
+setInterval(load, 30000);
+</script>
+</body>
+</html>

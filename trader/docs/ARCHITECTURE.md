@@ -45,6 +45,7 @@
 | `backtest/engine.py`, `backtest/walkforward.py` | Event-driven backtest and walk-forward versus BTC |
 | `review/nightly.py` | Calibration, misses, candidate policies |
 | `runtime/loop.py` | The 24/7 loop, saved state, heartbeat |
+| `web/server.py`, `web/dashboard.html` | Read-only dashboard: reads state and journal files, GET only, no write endpoints |
 | `config.py`, `cli.py`, `alerts.py`, `journal.py` | Config validation, commands, Telegram, records |
 
 ## Design rules

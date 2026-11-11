@@ -36,7 +36,8 @@ Read this first in every new session. Update it before ending one.
 | Nightly review | Tested on synthetic logs; run end to end once on the real journal (refreshed history, regression tests passed, nothing to calibrate yet, no proposals); never promotes |
 | Runtime | One pass on live OKX data: 8 symbols in 9.1 s. Refuses to trade when started late |
 | Docker | Image built; Compose service ran healthy; restarted by Docker after its process was killed, with state reloaded; processed the 09:00 UTC candle on 2026-11-10 11 s after the close (8 decisions, all held; XRP short refused at confidence 0.874). Test container stopped afterwards: **nothing is running now** |
-| Tests | 106 passing, lint clean |
+| Web dashboard | Read-only site (`trader dashboard`, Compose service on `127.0.0.1:8080`): status, account, positions, per-coin verdicts, trades, alerts, nightly review. Rendered in a headless browser on desktop and phone with no errors, using a 60-day replay of real OKX history. No login: must not be exposed to the internet as is |
+| Tests | 114 passing, lint clean |
 | Independent code review | A subagent reviewed the risk-critical paths: no way found around the gate or limits; 10 findings (2 high, in the live loop's handling of missing data), all fixed with regression tests |
 
 ## Result versus holding BTC
@@ -103,10 +104,13 @@ OKX history, and the setups were chosen with today's knowledge, which flatters t
 | 17 | Containers run as the host user | So they can write the mounted `var/` and `policies/` |
 | 18 | Live loop prices every held position from book, then last candle, then last known price; stale prices block entries | Review finding: one unpriced position froze all exits and the kill check |
 | 19 | Trade records are net of entry and exit fees | Review finding: gross records overstated win rate and profit factor |
-| 20 | Environment network allowlist edited | Added OKX, Bybit, Binance public data, CoinGecko and DefiLlama hosts to the owner's "git" cloud environment, with approval, to read market data |
+| 20 | Dashboard is read-only, GET only, bound to loopback, with no control buttons | A web page that can resume trading or clear the kill switch would be a new way to lose money; controls stay on the CLI |
+| 21 | Runtime logs equity each candle (`var/journal/equity.jsonl`) | Needed for the dashboard chart |
+| 22 | Environment network allowlist edited | Added OKX, Bybit, Binance public data, CoinGecko and DefiLlama hosts to the owner's "git" cloud environment, with approval, to read market data |
 
 ## Session log
 
+- 2026-11-11: owner asked for a website or app. Built the read-only dashboard.
 - 2026-11-10: first session. Asked setup questions, researched regime and eight
   candidates with five research subagents, built and tested the system, ran the
   walk-forward, verified the Docker runtime, wrote docs.

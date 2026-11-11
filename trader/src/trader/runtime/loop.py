@@ -145,6 +145,8 @@ class Runner:
             return []
         self._apply_funding(asof, fetched, marks)
         reading = core.begin_bar(asof, marks)
+        core.journal.write("equity", {"ts": asof, "equity": round(reading.equity, 4),
+                                      "drawdown": round(reading.drawdown, 5)})  # for the dashboard chart
 
         # Exits first, for everything held (including positions whose setup was removed).
         for s in list(core.account.positions):

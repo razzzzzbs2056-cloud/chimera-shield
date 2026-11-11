@@ -14,7 +14,7 @@ from trader.types import Position
 class Journal:
     def __init__(self, root: Path | None):
         self.root = Path(root) if root else None
-        self.mem: dict[str, list[dict]] = {"decisions": [], "fills": [], "trades": [], "events": []}
+        self.mem: dict[str, list[dict]] = {"decisions": [], "fills": [], "trades": [], "events": [], "equity": []}
         if self.root:
             self.root.mkdir(parents=True, exist_ok=True)
 

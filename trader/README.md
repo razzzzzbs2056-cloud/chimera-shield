@@ -20,7 +20,10 @@ python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
 ```bash
 .venv/bin/trader once
 ```
-Docker: see `docs/RUNBOOK.md`.
+```bash
+.venv/bin/trader dashboard
+```
+Then open http://localhost:8080. Docker: see `docs/RUNBOOK.md`.
 
 ## Where things are
 | Path | What |
@@ -32,4 +35,5 @@ Docker: see `docs/RUNBOOK.md`.
 | `docs/results/` | Walk-forward results versus holding BTC |
 | `config/default.yaml` | Mode, limits, costs, off-limits coins, setups |
 | `policies/` | Versioned gate thresholds and the active pointer |
-| `src/trader/`, `tests/` | Code and 106 tests |
+| `src/trader/web/` | Read-only web dashboard (`trader dashboard`, port 8080) |
+| `src/trader/`, `tests/` | Code and 114 tests |

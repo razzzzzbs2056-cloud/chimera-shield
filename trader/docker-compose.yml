@@ -21,6 +21,32 @@ services:
       driver: json-file
       options: {max-size: "10m", max-file: "5"}
 
+  dashboard:
+    build: .
+    # Read-only web page. Inside the container it listens on all interfaces, but the port is
+    # published on this machine's loopback only: open http://localhost:8080 on the server, or
+    # tunnel from your laptop with:  ssh -L 8080:localhost:8080 <user>@<server>
+    # Do not publish it to the internet without a login in front (it has none).
+    command: ["dashboard", "--host", "0.0.0.0", "--port", "8080"]
+    restart: unless-stopped
+    user: "${TRADER_UID:-1000}:${TRADER_GID:-1000}"
+    environment:
+      TRADER_CONFIG: /app/config/default.yaml
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./var:/app/var:ro
+      - ./policies:/app/policies:ro
+      - ./config:/app/config:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz', timeout=5)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    logging:
+      driver: json-file
+      options: {max-size: "5m", max-file: "3"}
+
   reviewer:
     build: .
     command: ["nightly", "--loop"]     # once per UTC day at 00:10; writes reports and CANDIDATE policies only

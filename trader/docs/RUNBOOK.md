@@ -25,10 +25,28 @@ To use the Haiku REFLEX, put `ANTHROPIC_API_KEY` in `.env`, set `reflex.kind: ha
 
 For Telegram alerts, put `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in `.env` and restart.
 
+## Dashboard (website)
+`docker compose up -d` also starts a read-only web page on the server at
+`http://localhost:8080`. It shows whether the bot is running, account value, drawdown
+against the kill switch, open positions, each coin's latest verdict, closed trades,
+alerts and the last nightly review. It refreshes every 30 seconds and works on a phone.
+
+To view it from your own computer, open a tunnel and then browse to
+`http://localhost:8080`:
+```bash
+ssh -L 8080:localhost:8080 <user>@<server>
+```
+Without Docker: `trader dashboard`.
+
+The page cannot place, change or cancel anything; resuming, clearing the kill switch and
+promoting policies stay on the command line. It has **no login**, so the port is bound to
+the server's loopback address. Do not expose it to the internet as it is; put it behind a
+VPN or a reverse proxy with authentication if you want remote access without SSH.
+
 ## Daily checks
 | Question | Command |
 |---|---|
-| Is it alive? | `docker compose ps` (health) or `trader health` |
+| Is it alive? | The dashboard, `docker compose ps` (health) or `trader health` |
 | What does it hold? | `trader status` |
 | What did it decide? | `tail var/journal/decisions.jsonl` |
 | What traded? | `cat var/journal/trades.jsonl` |

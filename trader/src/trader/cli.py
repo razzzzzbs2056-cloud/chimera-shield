@@ -73,6 +73,9 @@ def main(argv: list[str] | None = None) -> int:
     n = sub.add_parser("nightly", help="nightly review: calibration, misses, candidate policies")
     n.add_argument("--cache", default="data_cache")
     n.add_argument("--loop", action="store_true", help="stay up and run once per UTC day at 00:10")
+    d = sub.add_parser("dashboard", help="serve the read-only web dashboard")
+    d.add_argument("--host", default="127.0.0.1", help="use 0.0.0.0 only behind a firewall or reverse proxy")
+    d.add_argument("--port", type=int, default=8080)
     sub.add_parser("resume", help="clear pauses and halts set by escalations (human decision)")
     k = sub.add_parser("clear-kill", help="clear the latched kill switch (human decision)")
     k.add_argument("--i-have-reviewed-the-drawdown", action="store_true", required=True)
@@ -92,6 +95,11 @@ def main(argv: list[str] | None = None) -> int:
             runner.run_forever()
         for r in runner.run_once():
             print(json.dumps({k: r.get(k) for k in ("symbol", "status", "action", "reasons", "latency_ms")}))
+        return 0
+    if args.cmd == "dashboard":
+        from trader.web.server import serve
+
+        serve(cfg, root, Path(args.policies), args.host, args.port)
         return 0
     if args.cmd == "health":
         from trader.runtime.loop import heartbeat_ok
