@@ -2,12 +2,16 @@
 
 Read this first in every new session. Update it before ending one.
 
-## Where things stand (2026-11-10)
+## Where things stand (2026-11-15)
 
 - **Mode:** paper only. No exchange keys exist. No live order has ever been placed.
 - **Edge:** none demonstrated. The rule baseline loses to holding BTC out of sample.
 - **Branch:** `claude/compassionate-gates-mvl606` in `razzzzzbs2056-cloud/chimera-shield`,
   code under `trader/`. The rest of the repository (ChimeraShield) is unrelated and untouched.
+
+- **Freqtrade rebuild (2026-11-15):** the owner asked to rebuild on an open-source bot.
+  `trader-freqtrade/` holds the rule strategy as a freqtrade strategy (dry run). The custom
+  engine in `trader/` is kept, not deleted. Details and differences: `trader-freqtrade/README.md`.
 
 ## Owner's answers
 
@@ -38,6 +42,7 @@ Read this first in every new session. Update it before ending one.
 | Docker | Image built; Compose service ran healthy; restarted by Docker after its process was killed, with state reloaded; processed the 09:00 UTC candle on 2026-11-10 11 s after the close (8 decisions, all held; XRP short refused at confidence 0.874). Test container stopped afterwards: **nothing is running now** |
 | Web dashboard | Read-only site (`trader dashboard`, Compose service on `127.0.0.1:8080`): status, account, positions, per-coin verdicts, trades, alerts, nightly review. Rendered in a headless browser on desktop and phone with no errors, using a 60-day replay of real OKX history. No login: must not be exposed to the internet as is |
 | Tests | 114 passing, lint clean |
+| Freqtrade rebuild | `trader-freqtrade/`: strategy `ChimeraRule` on freqtrade 2026.10. 48 tests pass, including a bar-by-bar match with `RuleReflex`. Backtested on OKX perps 2024-01-01 to 2026-11-10: +18.8%, max drawdown 15.2% (kill switch tripped 2025-05-23), 521 trades, profit factor 1.06, against +76.7% for holding BTC. Dry-run bot started on live OKX data for two minutes with no errors (REST only). Docker Compose, FreqUI, Telegram and websockets not verified |
 | Independent code review | A subagent reviewed the risk-critical paths: no way found around the gate or limits; 10 findings (2 high, in the live loop's handling of missing data), all fixed with regression tests |
 
 ## Result versus holding BTC
@@ -106,9 +111,17 @@ OKX history, and the setups were chosen with today's knowledge, which flatters t
 | 19 | Trade records are net of entry and exit fees | Review finding: gross records overstated win rate and profit factor |
 | 20 | Dashboard is read-only, GET only, bound to loopback, with no control buttons | A web page that can resume trading or clear the kill switch would be a new way to lose money; controls stay on the CLI |
 | 21 | Runtime logs equity each candle (`var/journal/equity.jsonl`) | Needed for the dashboard chart |
+| 23 | Freqtrade rebuild trades all eight coins on perps at 1x in one bot | Freqtrade runs one market type per bot; one bot keeps the 3-position, daily-loss and kill limits global. Costs: longs now pay funding |
+| 24 | Freqtrade kill switch and daily stop use realised equity from the trade database | Stateless, survives restarts, identical in backtest and live. Weaker than the custom engine's marked equity; each open trade is still bounded by its stop |
+| 25 | Custom engine kept beside the freqtrade rebuild | It holds the model REFLEX, policy versions and nightly review, which are not ported |
 | 22 | Environment network allowlist edited | Added OKX, Bybit, Binance public data, CoinGecko and DefiLlama hosts to the owner's "git" cloud environment, with approval, to read market data |
 
 ## Session log
+
+- 2026-11-15: owner asked to "make these work from open sources" and chose "rebuild on an
+  open-source bot". Built `trader-freqtrade/`, tested, backtested, smoke-tested in dry run.
+- 2026-11-12: ran the paper bot and dashboard in the cloud session for the owner; sent the
+  project as a zip for VS Code.
 
 - 2026-11-11: owner asked for a website or app. Built the read-only dashboard.
 - 2026-11-10: first session. Asked setup questions, researched regime and eight

@@ -1,0 +1,19 @@
+{
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 8080,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "jwt_secret_key": "REPLACE-with-a-long-random-string",
+    "ws_token": "REPLACE-with-another-long-random-string",
+    "CORS_origins": [],
+    "username": "REPLACE-me",
+    "password": "REPLACE-with-a-strong-password"
+  },
+  "telegram": {
+    "enabled": false,
+    "token": "REPLACE-with-bot-token",
+    "chat_id": "REPLACE-with-chat-id"
+  }
+}
