@@ -6,3 +6,5 @@ pydantic>=2.7
 python-dotenv>=1.0
 # Optional: local transcription when no transcript is supplied
 # faster-whisper>=1.0
+# Optional: validates .otio exports in tests
+# opentimelineio>=0.17

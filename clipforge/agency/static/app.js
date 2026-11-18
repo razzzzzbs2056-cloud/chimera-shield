@@ -7,17 +7,21 @@ const secs = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart
 
 const DEPTS = [
   ["Growth", ["research", "sales"]],
-  ["Production", ["intake", "strategist", "clipper", "captioner"]],
+  ["Production", ["intake", "strategist", "clipper"]],
+  ["Editing", ["pacing", "motion", "audio", "captioner"]],
   ["Quality & distribution", ["quality", "publisher"]],
   ["Business", ["business"]],
 ];
 const STAGES = [
-  ["Planned", ["planned"]], ["Cutting", ["cutting", "cut"]], ["Captions", ["captioning", "captioned"]],
+  ["Planned", ["planned"]], ["Cutting", ["cutting", "cut"]],
+  ["Editing", ["trimming", "paced", "zooming", "zoomed", "mixing", "edited"]], ["Captions", ["captioning", "captioned"]],
   ["QC", ["qc"]], ["Fixing", ["needs_recut", "needs_recaption"]], ["Your approval", ["awaiting_approval"]],
   ["Publishing", ["approved", "publishing"]], ["Scheduled", ["scheduled"]], ["Stopped", ["rejected", "qc_failed"]],
 ];
 
+const EDITORS = new Set(["pacing", "motion", "audio"]);
 let state = null;
+let musicCount = 0;
 let queueKey = "";
 
 function toast(msg) {
@@ -53,9 +57,10 @@ function renderAgents(agents) {
       <div class="agent ${a.status}">
         <div class="agent-top"><span class="dot ${a.status}"></span><b>${esc(a.name)}</b><span class="hint">${a.status}</span></div>
         <div class="role">${esc(a.role)}</div>
-        <div class="task" title="${esc(a.current_task)}">${esc(a.current_task || (a.status === "paused" ? "Paused by you" : "Waiting for work"))}</div>
+        <div class="task" title="${esc(a.current_task)}">${esc(a.current_task || ({ paused: "Paused by you", bypassed: "Bypassed: clips pass through unedited" }[a.status] || "Waiting for work"))}</div>
         <div class="stats"><span>${a.processed} done</span>${a.errors ? `<span style="color:var(--err)">${a.errors} errors</span>` : ""}
-          <button class="btn sm" data-toggle="${esc(a.name)}">${a.enabled ? "Pause" : "Resume"}</button></div>
+          <button class="btn sm" data-toggle="${esc(a.name)}">${a.enabled ? (EDITORS.has(a.name) ? "Bypass" : "Pause") : (EDITORS.has(a.name) ? "Enable" : "Resume")}</button></div>
+        ${a.name === "audio" ? `<div class="stats"><span>Music library: ${musicCount} track${musicCount === 1 ? "" : "s"}</span></div>` : ""}
       </div>`; }).join("")}
     </div>`).join("");
 }
@@ -76,6 +81,7 @@ function renderQueue(queue) {
         <div class="hook">${esc(c.hook)}</div>
         <div class="meta">${esc(c.client_name || "")} · ${esc(c.order_title)} · ${secs(c.end - c.start)} · moment ${c.score}/100 · QC ${c.qc_score}/100</div>
         <div class="meta">${esc(c.reason)}</div>
+        ${(c.edit_log || []).length ? `<ul class="edits">${c.edit_log.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}
         <div class="checks">${checkChips(c.qc_report)}</div>
       </div>
       <div class="clip-actions">
@@ -84,6 +90,7 @@ function renderQueue(queue) {
         <button class="btn sm" data-review="revise" data-id="${c.id}">New hook</button>
         <button class="btn danger sm" data-review="reject" data-id="${c.id}">Reject</button>
         <a class="btn sm" href="${esc(c.srt_url)}" download>SRT</a>
+        ${c.otio_url ? `<a class="btn sm" href="${esc(c.otio_url)}" download title="Open this edit in FilmCraft (File ▸ Import) to fine-tune it">Edit in FilmCraft (.otio)</a>` : ""}
       </div>
     </div>`).join("") : `<div class="empty">Nothing to review. Clips appear here once they pass QC.</div>`;
 }
@@ -155,6 +162,7 @@ async function refresh() {
     const ai = $("#ai-mode");
     ai.textContent = state.ai_mode === "claude" ? `AI: ${state.model}` : "AI: heuristic mode (no API key)";
     ai.className = "pill " + (state.ai_mode === "claude" ? "claude" : "");
+    musicCount = (state.music || []).length;
     renderKpis(state.kpis); renderAgents(state.agents); renderQueue(state.approval_queue);
     renderBoard(state.clips); fillSelects(state);
     // don't clobber an email draft that's being edited
@@ -230,6 +238,13 @@ $("#lead-csv").addEventListener("change", async (ev) => {
 $("#discover").addEventListener("submit", async (ev) => {
   ev.preventDefault();
   try { const r = await api("/api/leads/discover", { json: { query: ev.target.query.value } }); toast(`Found ${r.created} new channels`); refresh(); }
+  catch (e) { toast(e.message); }
+});
+
+document.addEventListener("change", async (ev) => {
+  if (ev.target.id !== "music-file" || !ev.target.files[0]) return;
+  const fd = new FormData(); fd.append("file", ev.target.files[0]);
+  try { const r = await api("/api/music", { body: fd }); toast(`Added ${r.name} to the music library`); refresh(); }
   catch (e) { toast(e.message); }
 });
 

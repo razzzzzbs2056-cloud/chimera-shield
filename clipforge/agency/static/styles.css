@@ -55,7 +55,9 @@ a.btn { color: var(--text); text-decoration: none; }
 .dot { width: 9px; height: 9px; border-radius: 50%; background: #3a4152; flex: none; }
 .dot.working { background: var(--accent); animation: pulse 1s infinite; }
 .dot.idle { background: var(--ok); }
-.dot.paused { background: var(--warn); }
+.dot.paused, .dot.bypassed { background: var(--warn); }
+.edits { margin: 0; padding-left: 16px; font-size: 12px; color: #c9cdd8; }
+.edits li { margin: 1px 0; }
 @keyframes pulse { 50% { opacity: .35; } }
 .agent .role { color: var(--muted); font-size: 12px; }
 .agent .task { font-size: 12px; margin-top: 6px; min-height: 18px; color: #c9cdd8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -14,7 +14,8 @@ class Orchestrator:
         db.init()
         # Anything left mid-flight by a crash/restart goes back to its queue.
         for table, busy, back in [("orders", "intake", "received"), ("orders", "planning", "transcribed"),
-                                  ("clips", "cutting", "planned"), ("clips", "captioning", "cut"),
+                                  ("clips", "cutting", "planned"), ("clips", "trimming", "cut"), ("clips", "zooming", "paced"),
+                                  ("clips", "mixing", "zoomed"), ("clips", "captioning", "edited"),
                                   ("clips", "qc", "captioned"), ("clips", "publishing", "approved")]:
             db.execute(f"UPDATE {table} SET status = ? WHERE status = ?", (back, busy))
         self.agents = [A() for A in ALL]
@@ -26,7 +27,7 @@ class Orchestrator:
     async def _run_agent(self, agent):
         while self.running:
             did = False
-            if agent.enabled():
+            if agent.enabled() or getattr(agent, "always_tick", False):
                 did = await asyncio.to_thread(agent.tick)
             if not did:
                 await asyncio.sleep(config.TICK_SECONDS)
@@ -50,6 +51,6 @@ class Orchestrator:
         rounds = 0
         while rounds < max_rounds:
             rounds += 1
-            if not any(a.tick() for a in self.agents if a.enabled()):
+            if not any([a.tick() for a in self.agents if a.enabled() or getattr(a, "always_tick", False)]):
                 break
         return rounds

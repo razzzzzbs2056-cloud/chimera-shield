@@ -1,10 +1,13 @@
 """Caption agent: writes the on-screen hook and burns punchy word-chunk subtitles."""
 import json
+import re
 from pathlib import Path
 
 from pydantic import BaseModel
 
-from .. import config, db, llm, media, transcript
+from .. import config, db, editing, handoff, llm, media, transcript
+from .editors import load_map
+from .strategist import EMOTION_WORDS, HOOK_WORDS
 from .base import Agent
 
 HOOK_SECONDS = 3.0
@@ -54,10 +57,33 @@ def _esc(t: str) -> str:
     return t.replace("\\", "").replace("{", "(").replace("}", ")").replace("\n", " ")
 
 
-def build_ass(hook: str, chunks: list[dict]) -> str:
+HIGHLIGHT = r"{\c&H00E5FF&}"  # ASS colours are BGR: this is the hook-box yellow
+
+
+def keyword(words: list[str]) -> int | None:
+    """Index of the word in a caption chunk worth colouring, if any."""
+    best, best_score = None, 0
+    for i, w in enumerate(words):
+        lw = re.sub(r"[^a-z0-9']", "", w.lower())
+        score = (3 if re.search(r"\d", lw) else 0) + (2 if lw in EMOTION_WORDS else 0) \
+            + (1 if lw in HOOK_WORDS and lw not in ("you", "people", "most") else 0) + (1 if len(lw) >= 8 else 0)
+        if score > best_score:
+            best, best_score = i, score
+    return best
+
+
+def caption_text(text: str, highlight: bool = True) -> str:
+    words = _esc(text).upper().split()
+    k = keyword(words) if highlight else None
+    if k is not None:
+        words[k] = HIGHLIGHT + words[k] + r"{\r}"
+    return " ".join(words)
+
+
+def build_ass(hook: str, chunks: list[dict], highlight: bool = True) -> str:
     lines = [f"Dialogue: 1,{_t(0)},{_t(HOOK_SECONDS)},Hook,,0,0,0,,{_esc(hook).upper()}"]
     for c in chunks:
-        lines.append(f"Dialogue: 0,{_t(c['start'])},{_t(c['end'])},Caption,,0,0,0,,{_esc(c['text']).upper()}")
+        lines.append(f"Dialogue: 0,{_t(c['start'])},{_t(c['end'])},Caption,,0,0,0,,{caption_text(c['text'], highlight)}")
     return ASS_HEADER + "\n".join(lines) + "\n"
 
 
@@ -71,7 +97,7 @@ class CaptionAgent(Agent):
     role = "Subtitles and hooks"
 
     def step(self) -> bool:
-        clip = db.claim("clips", "cut", "captioning") or db.claim("clips", "needs_recaption", "captioning")
+        clip = db.claim("clips", "edited", "captioning") or db.claim("clips", "needs_recaption", "captioning")
         if not clip:
             return False
         cid = clip["id"]
@@ -92,7 +118,8 @@ class CaptionAgent(Agent):
             else:
                 from .strategist import make_hook
                 hook = make_hook(text, 8)
-        words = transcript.words_between(segs, clip["start"], clip["end"])
+        em = load_map(clip)
+        words = editing.remap_words(transcript.words_between(segs, clip["start"], clip["end"]), em["keeps"])
         chunks = chunk_words(words, 2 if "caption_density" in notes else 3)
 
         ass = Path(config.WORK) / f"clip_{cid}.ass"
@@ -100,11 +127,15 @@ class CaptionAgent(Agent):
         ass.write_text(build_ass(hook, chunks))
         srt.write_text(build_srt(chunks))
         final = Path(config.OUTPUT) / f"clip_{cid}.mp4"
-        media.burn_subtitles(clip["raw_path"], str(ass), str(final))
+        src = clip["edit_path"] or clip["raw_path"]
+        info = media.probe(src)
+        media.burn_subtitles(src, str(ass), str(final), duration=info["duration"])
+        otio = handoff.write_otio({**clip, "hook": hook}, order, em, media.probe(order["source_path"]), str(srt))
         thumb = Path(config.OUTPUT) / f"clip_{cid}.jpg"
         media.thumbnail(str(final), str(thumb), at=1.0)
         db.update("clips", cid, status="captioned", hook=hook, final_path=str(final),
                   srt_path=str(srt), thumb_path=str(thumb))
-        self.log(f"Clip #{cid}: {len(chunks)} caption cues + hook \"{hook}\"", entity=("clip", cid))
+        self.log(f"Clip #{cid}: {len(chunks)} caption cues, keyword highlights, progress bar + hook \"{hook}\". "
+                 f"Editable timeline: {Path(otio).name}", entity=("clip", cid))
         self.done()
         return True

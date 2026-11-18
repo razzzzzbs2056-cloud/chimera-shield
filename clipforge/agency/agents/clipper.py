@@ -37,7 +37,8 @@ class ClipperAgent(Agent):
         self.working(f"Cutting clip #{cid} ({b - a:.0f}s) to 9:16")
         out = Path(config.WORK) / f"clip_{cid}_raw.mp4"
         media.cut_vertical(order["source_path"], a, b, str(out))
-        db.update("clips", cid, status="cut", start=a, end=b, raw_path=str(out))
+        db.update("clips", cid, status="cut", start=a, end=b, raw_path=str(out), edit_path=str(out),
+                  edit_map={"keeps": [[0.0, b - a]], "zooms": []}, edit_log=[])
         self.log(f"Clip #{cid} cut and reframed to {config.OUT_W}x{config.OUT_H}", entity=("clip", cid))
         self.done()
         return True

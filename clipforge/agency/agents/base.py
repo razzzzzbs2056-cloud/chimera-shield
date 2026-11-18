@@ -26,7 +26,7 @@ class Agent:
         db.update("agents", self.name, key="name", status="working", current_task=task, updated_at=db.now())
 
     def idle(self):
-        db.update("agents", self.name, key="name", status="idle" if self.enabled() else "paused",
+        db.update("agents", self.name, key="name", status="idle" if self.enabled() else ("bypassed" if getattr(self, "always_tick", False) else "paused"),
                   current_task=None, updated_at=db.now())
 
     def enabled(self) -> bool:

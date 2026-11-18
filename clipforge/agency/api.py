@@ -14,6 +14,7 @@ from pydantic import BaseModel
 
 from . import config, db, llm
 from .agents.business import price_for
+from .agents.editors import MUSIC_DIR
 from .agents.research import discover_youtube
 from .orchestrator import Orchestrator
 
@@ -42,12 +43,14 @@ def _file_url(path: str | None) -> str | None:
 
 def _clip_view(c: dict) -> dict:
     c = dict(c)
-    for k in ("qc_report", "publish", "fix_notes"):
+    for k in ("qc_report", "publish", "fix_notes", "edit_log", "edit_map"):
         c[k] = json.loads(c[k]) if c.get(k) else None
     c["video_url"] = _file_url(c.get("final_path"))
     c["thumb_url"] = _file_url(c.get("thumb_path"))
     c["srt_url"] = _file_url(c.get("srt_path"))
-    for k in ("raw_path", "final_path", "thumb_path", "srt_path"):
+    otio = config.OUTPUT / f"clip_{c['id']}.otio"
+    c["otio_url"] = _file_url(str(otio)) if otio.exists() else None
+    for k in ("raw_path", "final_path", "thumb_path", "srt_path", "edit_path"):
         c.pop(k, None)
     return c
 
@@ -100,6 +103,7 @@ def dashboard():
                            "FROM clients c ORDER BY c.id DESC"),
         "invoices": db.rows("SELECT i.*, c.name client_name FROM invoices i LEFT JOIN clients c ON c.id = i.client_id "
                             "ORDER BY i.id DESC LIMIT 50"),
+        "music": sorted(p.name for p in MUSIC_DIR.iterdir() if p.is_file()),
         "packages": {k: {"clips": v[0], "price": v[1] / 100} for k, v in config.PACKAGES.items()},
     }
 
@@ -286,3 +290,15 @@ def toggle_agent(name: str):
     db.update("agents", name, key="name", enabled=en, status="idle" if en else "paused")
     db.log("ceo", f"{'Resumed' if en else 'Paused'} {name} agent")
     return {"enabled": bool(en)}
+
+
+@app.post("/api/music")
+async def upload_music(file: UploadFile = File(...)):
+    """Add a track to the audio engineer's music library (use music you have the rights to)."""
+    name = Path(file.filename or "").name
+    if Path(name).suffix.lower() not in (".mp3", ".wav", ".m4a", ".aac", ".flac", ".ogg"):
+        raise HTTPException(400, "upload an audio file (mp3, wav, m4a, aac, flac, ogg)")
+    with (MUSIC_DIR / name).open("wb") as f:
+        shutil.copyfileobj(file.file, f)
+    db.log("audio", f"Music track added to library: {name}")
+    return {"ok": True, "name": name}

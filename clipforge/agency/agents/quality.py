@@ -7,7 +7,8 @@ import re
 
 from pydantic import BaseModel
 
-from .. import config, db, llm, media, transcript
+from .. import config, db, editing, llm, media, transcript
+from .editors import load_map
 from .base import Agent
 from .captioner import HOOK_SECONDS
 
@@ -49,6 +50,9 @@ def run_checks(clip: dict, segs: list[dict]) -> list[dict]:
     if info["has_audio"]:
         vol = media.mean_volume_db(clip["final_path"])
         add("loudness", vol is None or vol > -35, f"mean volume {vol} dB", severity="warn")
+        lufs = media.integrated_loudness(clip["final_path"])
+        add("loudness_target", lufs is None or -17 <= lufs <= -11,
+            f"{lufs} LUFS (platform target -14)", severity="warn")
 
     starts = [s["start"] for s in segs]
     on_boundary = any(abs(clip["start"] - s) < 0.25 for s in starts)
@@ -61,8 +65,10 @@ def run_checks(clip: dict, segs: list[dict]) -> list[dict]:
 
     cues = _srt_cues(clip["srt_path"]) if clip.get("srt_path") else []
     covered = sum(min(b, dur) - max(a, 0) for a, b, _ in cues if b > a)
-    speech = sum(min(s["end"], clip["end"]) - max(s["start"], clip["start"])
-                 for s in segs if s["end"] > clip["start"] and s["start"] < clip["end"])
+    keeps = load_map(clip)["keeps"]
+    speech = sum(b - a for s in segs if s["end"] > clip["start"] and s["start"] < clip["end"]
+                 for a, b in editing.remap_span(max(s["start"], clip["start"]) - clip["start"],
+                                               min(s["end"], clip["end"]) - clip["start"], keeps))
     coverage = covered / speech if speech > 0 else 1.0
     add("subtitles", cues and coverage >= 0.8, f"{len(cues)} cues covering {coverage:.0%} of speech", "caption_density")
     longest = max((len(t.split()) for *_, t in cues), default=0)

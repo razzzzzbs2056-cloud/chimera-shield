@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS orders (
 CREATE TABLE IF NOT EXISTS clips (
   id INTEGER PRIMARY KEY, order_id INTEGER, start REAL, end REAL, title TEXT, hook TEXT,
   reason TEXT, score INTEGER, status TEXT DEFAULT 'planned', raw_path TEXT, final_path TEXT,
-  srt_path TEXT, thumb_path TEXT, qc_report TEXT, qc_score INTEGER, attempts INTEGER DEFAULT 0,
+  srt_path TEXT, thumb_path TEXT, edit_path TEXT, edit_map TEXT, edit_log TEXT, qc_report TEXT, qc_score INTEGER, attempts INTEGER DEFAULT 0,
   fix_notes TEXT, publish TEXT, review_note TEXT, created_at REAL, updated_at REAL
 );
 CREATE TABLE IF NOT EXISTS invoices (
@@ -66,6 +66,10 @@ def init():
     with conn() as c:
         c.executescript(SCHEMA)
         c.execute("PRAGMA journal_mode=WAL")
+        have = {r[1] for r in c.execute("PRAGMA table_info(clips)")}
+        for col in ("edit_path", "edit_map", "edit_log"):  # upgrade older databases
+            if col not in have:
+                c.execute(f"ALTER TABLE clips ADD COLUMN {col} TEXT")
 
 
 def now() -> float:

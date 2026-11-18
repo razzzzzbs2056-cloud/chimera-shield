@@ -29,6 +29,11 @@ def test_full_pipeline(agency):
     from agency.orchestrator import Orchestrator
 
     oid = demo.seed()
+    # one music track in the library so the audio engineer lays a bed
+    from agency.agents.editors import MUSIC_DIR
+    import subprocess
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "sine=frequency=440:duration=8",
+                    str(MUSIC_DIR / "calm_pad.wav")], check=True)
     orch = Orchestrator()
     orch.run_until_idle()
 
@@ -41,7 +46,15 @@ def test_full_pipeline(agency):
         assert 15 <= c["end"] - c["start"] <= 60
         assert Path(c["final_path"]).exists() and Path(c["srt_path"]).exists()
         report = json.loads(c["qc_report"])
-        assert all(ch["ok"] for ch in report if ch["severity"] == "error")
+        assert all(ch["ok"] for ch in report if ch["severity"] == "error"), report
+        log = " | ".join(json.loads(c["edit_log"]))
+        assert "pacing: removed" in log and "punch-in" in log and "LUFS" in log and "calm pad" in log, log
+        em = json.loads(c["edit_map"])
+        assert len(em["keeps"]) >= 2 and em["zooms"]
+        lufs = next(ch for ch in report if ch["check"] == "loudness_target")
+        assert lufs["ok"], lufs
+        otio_path = Path(c["final_path"]).with_suffix(".otio")
+        assert otio_path.exists()
     # no overlapping moments
     spans = sorted((c["start"], c["end"]) for c in clips)
     assert all(a[1] <= b[0] for a, b in zip(spans, spans[1:]))
@@ -95,3 +108,45 @@ def test_transcript_formats():
     vtt = "WEBVTT\n\n00:01.000 --> 00:02.000\nhi\n"
     assert transcript.parse(vtt)[0]["text"] == "hi"
     assert transcript.parse('{"segments":[{"start":0,"end":1,"text":"x"}]}')[0]["text"] == "x"
+
+
+def test_edit_map_math():
+    sys.path.insert(0, str(ROOT))
+    from agency import editing
+    keeps = editing.keeps_from_silences(20.0, [(0.0, 1.0), (5.0, 7.0), (19.5, 20.0)], pad=0.1)
+    assert keeps == [[0.9, 5.1], [6.9, 19.6]]  # a 0.1s breath is kept around speech
+    assert editing.remap(0.5, keeps) is None            # inside the cut leading silence
+    assert abs(editing.remap(7.0, keeps) - 4.3) < 1e-9  # 4.2s kept before, +0.1 into the 2nd span
+    assert editing.remap(6.0, keeps) is None
+    words = [{"word": "a", "start": 4.8, "end": 5.4}, {"word": "b", "start": 5.5, "end": 6.5}]
+    out = editing.remap_words(words, keeps)
+    assert [w["word"] for w in out] == ["a"]           # 'b' sat entirely in removed silence
+
+
+def test_zoom_plan():
+    sys.path.insert(0, str(ROOT))
+    from agency.agents.editors import plan_zooms, zoom_expr
+    z = plan_zooms([0.0, 3.0, 6.0, 9.0, 12.0], 20.0)
+    assert z == [[3.0, 6.0, 1.12], [9.0, 12.0, 1.12]]
+    assert "between(it,3.0,6.0)" in zoom_expr(z)
+
+
+def test_otio_is_valid_and_matches_edit(tmp_path):
+    otio = pytest.importorskip("opentimelineio")
+    sys.path.insert(0, str(ROOT))
+    from agency import handoff
+    clip = {"id": 7, "order_id": 1, "start": 10.0, "end": 40.0, "hook": "Why prices matter", "title": "t"}
+    order = {"source_path": str(tmp_path / "ep.mp4")}
+    em = {"keeps": [[0.0, 12.0], [13.5, 30.0]], "zooms": [[4.0, 7.0, 1.12]]}
+    doc = handoff.build_otio(clip, order, em, {"duration": 600.0, "fps": 30.0}, "clip_7.srt")
+    p = tmp_path / "c.otio"
+    p.write_text(json.dumps(doc))
+    tl = otio.adapters.read_from_file(str(p))
+    v, a = tl.tracks
+    assert v.kind == "Video" and a.kind == "Audio"
+    ranges = [(c.source_range.start_time.to_seconds(), c.source_range.duration.to_seconds()) for c in v]
+    assert ranges == [(10.0, 12.0), (23.5, 16.5)]        # source time = clip start + kept span
+    assert abs(tl.duration().to_seconds() - 28.5) < 1e-6
+    names = [m.name for m in tl.tracks.markers]
+    assert names[0].startswith("HOOK") and "Jump cut" in names and "Punch-in 112%" in names
+    assert v[0].media_reference.target_url.startswith("file://")

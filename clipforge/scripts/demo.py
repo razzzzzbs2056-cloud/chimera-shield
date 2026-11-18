@@ -54,20 +54,22 @@ LEADS = [
 ]
 
 
-def make_video(path: Path, transcript_path: Path, seg_len: float = 6.5) -> None:
+def make_video(path: Path, transcript_path: Path) -> None:
+    """Test-pattern video whose audio is a tone while someone "speaks" and silence
+    between lines, with a few long pauses for the pacing editor to cut."""
     segs, t = [], 0.0
-    for line in LINES:
-        n = len(line.split())
-        dur = max(2.5, min(seg_len, n / 2.6))
+    for i, line in enumerate(LINES):
+        dur = max(2.5, min(6.5, len(line.split()) / 2.6))
         segs.append({"start": round(t, 2), "end": round(t + dur, 2), "text": line})
-        t += dur + 0.3
+        t += dur + (1.4 if i % 3 == 2 else 0.3)
     transcript_path.write_text(json.dumps(segs, indent=1))
     total = t + 1
+    speaking = "+".join(f"between(t,{s['start']},{s['end']})" for s in segs)
     subprocess.run([
         "ffmpeg", "-y", "-f", "lavfi", "-i", f"testsrc2=size=1920x1080:rate=30:duration={total:.1f}",
         "-f", "lavfi", "-i", f"sine=frequency=220:sample_rate=48000:duration={total:.1f}",
-        "-af", "volume=0.3", "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-shortest", str(path)], check=True, capture_output=True)
+        "-af", f"volume='0.3*gt({speaking},0)':eval=frame", "-c:v", "libx264", "-preset", "ultrafast",
+        "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest", str(path)], check=True, capture_output=True)
 
 
 def seed() -> int:
