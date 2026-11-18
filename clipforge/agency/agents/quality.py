@@ -85,7 +85,7 @@ class QualityAgent(Agent):
     role = "Reviews finished clips"
 
     def step(self) -> bool:
-        clip = db.claim("clips", "captioned", "qc")
+        clip = db.claim("clips", "finished", "qc")
         if not clip:
             return False
         cid = clip["id"]

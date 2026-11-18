@@ -29,8 +29,9 @@ def _get_client():
     return _client
 
 
-def structured(system: str, prompt: str, schema: type[T], effort: str = "medium") -> T | None:
-    """Ask Claude for output validated against `schema`. Returns None on any failure."""
+def structured(system: str, prompt: str | list, schema: type[T], effort: str = "medium") -> T | None:
+    """Ask Claude for output validated against `schema` (`prompt` may be a list of content
+    blocks, e.g. an image plus text). Returns None on any failure."""
     if not enabled():
         return None
     import anthropic

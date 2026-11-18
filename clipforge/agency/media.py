@@ -35,6 +35,12 @@ def probe(path: str | Path) -> dict:
     }
 
 
+def duration(path: str | Path) -> float:
+    """Container duration in seconds (works for audio-only files too)."""
+    out = _run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)]).stdout
+    return float(out.strip() or 0)
+
+
 def _fps(r: str) -> float:
     n, _, d = r.partition("/")
     try:

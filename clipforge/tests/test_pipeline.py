@@ -24,8 +24,9 @@ def agency(tmp_path, monkeypatch):
     return importlib.import_module("scripts.demo"), db
 
 
-def test_full_pipeline(agency):
+def test_full_pipeline(agency, monkeypatch):
     demo, db = agency
+    monkeypatch.delenv("FILMCRAFT_CLI", raising=False)  # this test covers the ffmpeg-only path
     from agency.orchestrator import Orchestrator
 
     oid = demo.seed()
@@ -150,3 +151,39 @@ def test_otio_is_valid_and_matches_edit(tmp_path):
     names = [m.name for m in tl.tracks.markers]
     assert names[0].startswith("HOOK") and "Jump cut" in names and "Punch-in 112%" in names
     assert v[0].media_reference.target_url.startswith("file://")
+
+
+def test_filmcraft_zoom_keys():
+    sys.path.insert(0, str(ROOT))
+    from agency.agents.filmcraft_agents import zoom_at, zoom_keys, heuristic_look
+    keys = zoom_keys([[4.0, 7.0, 1.12]], 30)
+    assert keys[0] == (0.0, 1.0, "linear") and (4.0, 1.12, "hold") in keys and (7.0, 1.0, "hold") in keys
+    assert zoom_at(1.25, []) == pytest.approx(1.03) and zoom_at(5.0, [[4.0, 7.0, 1.12]]) == 1.12
+    assert heuristic_look({"luma": 40, "sat": 20})[0] == "Lift Shadows"
+    assert heuristic_look({"luma": 120, "sat": 20})[0] == "Boost Vibrance"
+
+
+@pytest.mark.skipif(not os.getenv("FILMCRAFT_CLI"), reason="set FILMCRAFT_CLI to run the FilmCraft agents for real")
+def test_filmcraft_agents_end_to_end(agency):
+    """Slow (FilmCraft renders ~7x real time on CPU): one clip through all three FilmCraft agents."""
+    demo, db = agency
+    from agency.orchestrator import Orchestrator
+    from agency import filmcraft
+    demo.seed()
+    db.update("orders", 1, clips_requested=1)
+    Orchestrator().run_until_idle()
+    c = db.row("SELECT * FROM clips WHERE order_id = 1")
+    assert c["status"] == "awaiting_approval", c["status"]
+    log = json.loads(c["edit_log"])
+    assert any(l.startswith("assembler: FilmCraft project") for l in log), log
+    assert any(l.startswith("colorist: '") for l in log), log
+    assert any(l.startswith("finisher: rendered by FilmCraft") for l in log), log
+    proj = json.loads(c["edit_map"])["filmcraft"]["project"]
+    seq = filmcraft.inspect(proj)["sequence"]
+    assert (seq["settings"]["width"], seq["settings"]["height"]) == (1080, 1920)
+    fg = seq["video"][1]["items"]
+    assert fg and all(any(e["effect"] == "lumetri" for e in it["effects"]) for it in fg)
+    tracks = filmcraft.run([{"id": "captions.list", "params": {}}], project=proj)[0]["tracks"]
+    assert {t["name"] for t in tracks} == {"Captions", "Hook"}
+    lufs = next(r for r in json.loads(c["qc_report"]) if r["check"] == "loudness_target")
+    assert lufs["ok"], lufs

@@ -16,6 +16,8 @@ class Orchestrator:
         for table, busy, back in [("orders", "intake", "received"), ("orders", "planning", "transcribed"),
                                   ("clips", "cutting", "planned"), ("clips", "trimming", "cut"), ("clips", "zooming", "paced"),
                                   ("clips", "mixing", "zoomed"), ("clips", "captioning", "edited"),
+                                  ("clips", "fc_assembling", "captioned"), ("clips", "grading", "assembled"),
+                                  ("clips", "fc_rendering", "graded"),
                                   ("clips", "qc", "captioned"), ("clips", "publishing", "approved")]:
             db.execute(f"UPDATE {table} SET status = ? WHERE status = ?", (back, busy))
         self.agents = [A() for A in ALL]

@@ -15,6 +15,8 @@ from pydantic import BaseModel
 from . import config, db, llm
 from .agents.business import price_for
 from .agents.editors import MUSIC_DIR
+from .agents.filmcraft_agents import LOOKS
+from . import filmcraft
 from .agents.research import discover_youtube
 from .orchestrator import Orchestrator
 
@@ -50,6 +52,9 @@ def _clip_view(c: dict) -> dict:
     c["srt_url"] = _file_url(c.get("srt_path"))
     otio = config.OUTPUT / f"clip_{c['id']}.otio"
     c["otio_url"] = _file_url(str(otio)) if otio.exists() else None
+    for key, name in (("fcproj_url", f"clip_{c['id']}.fcproj"), ("grade_url", f"clip_{c['id']}_graded.jpg")):
+        f = config.OUTPUT / name
+        c[key] = _file_url(str(f)) if f.exists() else None
     for k in ("raw_path", "final_path", "thumb_path", "srt_path", "edit_path"):
         c.pop(k, None)
     return c
@@ -103,6 +108,8 @@ def dashboard():
                            "FROM clients c ORDER BY c.id DESC"),
         "invoices": db.rows("SELECT i.*, c.name client_name FROM invoices i LEFT JOIN clients c ON c.id = i.client_id "
                             "ORDER BY i.id DESC LIMIT 50"),
+        "filmcraft": filmcraft.available(),
+        "looks": LOOKS,
         "music": sorted(p.name for p in MUSIC_DIR.iterdir() if p.is_file()),
         "packages": {k: {"clips": v[0], "price": v[1] / 100} for k, v in config.PACKAGES.items()},
     }
@@ -113,13 +120,16 @@ class ClientIn(BaseModel):
     name: str
     email: str | None = None
     package: str = "starter"
+    look: str | None = None  # a FilmCraft colour look; blank lets the colorist choose
 
 
 @app.post("/api/clients")
 def create_client(c: ClientIn):
     if c.package not in config.PACKAGES:
         raise HTTPException(400, f"package must be one of {list(config.PACKAGES)}")
-    cid = db.insert("clients", name=c.name, email=c.email, package=c.package, status="active")
+    if c.look and c.look not in LOOKS:
+        raise HTTPException(400, f"look must be one of {list(LOOKS)}")
+    cid = db.insert("clients", name=c.name, email=c.email, package=c.package, status="active", look=c.look or None)
     db.log("business", f"Client added: {c.name}", entity_type="client", entity_id=cid)
     return {"id": cid}
 

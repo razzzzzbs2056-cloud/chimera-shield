@@ -9,17 +9,20 @@ const DEPTS = [
   ["Growth", ["research", "sales"]],
   ["Production", ["intake", "strategist", "clipper"]],
   ["Editing", ["pacing", "motion", "audio", "captioner"]],
+  ["FilmCraft", ["assembler", "colorist", "finisher"]],
   ["Quality & distribution", ["quality", "publisher"]],
   ["Business", ["business"]],
 ];
 const STAGES = [
   ["Planned", ["planned"]], ["Cutting", ["cutting", "cut"]],
   ["Editing", ["trimming", "paced", "zooming", "zoomed", "mixing", "edited"]], ["Captions", ["captioning", "captioned"]],
+  ["FilmCraft", ["fc_assembling", "assembled", "grading", "graded", "fc_rendering", "finished"]],
   ["QC", ["qc"]], ["Fixing", ["needs_recut", "needs_recaption"]], ["Your approval", ["awaiting_approval"]],
   ["Publishing", ["approved", "publishing"]], ["Scheduled", ["scheduled"]], ["Stopped", ["rejected", "qc_failed"]],
 ];
 
-const EDITORS = new Set(["pacing", "motion", "audio"]);
+const EDITORS = new Set(["pacing", "motion", "audio", "assembler", "colorist", "finisher"]);
+const FILMCRAFT = new Set(["assembler", "colorist", "finisher"]);
 let state = null;
 let musicCount = 0;
 let queueKey = "";
@@ -57,7 +60,7 @@ function renderAgents(agents) {
       <div class="agent ${a.status}">
         <div class="agent-top"><span class="dot ${a.status}"></span><b>${esc(a.name)}</b><span class="hint">${a.status}</span></div>
         <div class="role">${esc(a.role)}</div>
-        <div class="task" title="${esc(a.current_task)}">${esc(a.current_task || ({ paused: "Paused by you", bypassed: "Bypassed: clips pass through unedited" }[a.status] || "Waiting for work"))}</div>
+        <div class="task" title="${esc(a.current_task)}">${esc(a.current_task || (FILMCRAFT.has(a.name) && !state.filmcraft ? "FilmCraft not installed: set FILMCRAFT_CLI" : ({ paused: "Paused by you", bypassed: "Bypassed: clips pass through unedited" }[a.status] || "Waiting for work")))}</div>
         <div class="stats"><span>${a.processed} done</span>${a.errors ? `<span style="color:var(--err)">${a.errors} errors</span>` : ""}
           <button class="btn sm" data-toggle="${esc(a.name)}">${a.enabled ? (EDITORS.has(a.name) ? "Bypass" : "Pause") : (EDITORS.has(a.name) ? "Enable" : "Resume")}</button></div>
         ${a.name === "audio" ? `<div class="stats"><span>Music library: ${musicCount} track${musicCount === 1 ? "" : "s"}</span></div>` : ""}
@@ -81,6 +84,7 @@ function renderQueue(queue) {
         <div class="hook">${esc(c.hook)}</div>
         <div class="meta">${esc(c.client_name || "")} · ${esc(c.order_title)} · ${secs(c.end - c.start)} · moment ${c.score}/100 · QC ${c.qc_score}/100</div>
         <div class="meta">${esc(c.reason)}</div>
+        ${c.grade_url ? `<img class="grade" src="${esc(c.grade_url)}" alt="Before and after the FilmCraft colour grade" title="Before / after grade">` : ""}
         ${(c.edit_log || []).length ? `<ul class="edits">${c.edit_log.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}
         <div class="checks">${checkChips(c.qc_report)}</div>
       </div>
@@ -90,7 +94,8 @@ function renderQueue(queue) {
         <button class="btn sm" data-review="revise" data-id="${c.id}">New hook</button>
         <button class="btn danger sm" data-review="reject" data-id="${c.id}">Reject</button>
         <a class="btn sm" href="${esc(c.srt_url)}" download>SRT</a>
-        ${c.otio_url ? `<a class="btn sm" href="${esc(c.otio_url)}" download title="Open this edit in FilmCraft (File ▸ Import) to fine-tune it">Edit in FilmCraft (.otio)</a>` : ""}
+        ${c.fcproj_url ? `<a class="btn sm" href="${esc(c.fcproj_url)}" download title="The full FilmCraft project: cuts, keyframes, grade, captions and mix, all editable">FilmCraft project</a>` : ""}
+        ${c.otio_url ? `<a class="btn sm" href="${esc(c.otio_url)}" download title="Timeline for FilmCraft (File ▸ Import), Resolve or any OTIO-capable editor">${c.fcproj_url ? "Timeline (.otio)" : "Edit in FilmCraft (.otio)"}</a>` : ""}
       </div>
     </div>`).join("") : `<div class="empty">Nothing to review. Clips appear here once they pass QC.</div>`;
 }
@@ -151,6 +156,8 @@ function fillSelects(s) {
   const sel = $("#order-client"), cur = sel.value;
   sel.innerHTML = s.clients.map((c) => `<option value="${c.id}">${esc(c.name)} (${esc(c.package)})</option>`).join("");
   if (cur) sel.value = cur;
+  const lk = $("#client-look");
+  if (lk.options.length <= 1) lk.innerHTML = `<option value="">Let the colorist choose</option>` + Object.entries(s.looks || {}).map(([k, v]) => `<option value="${esc(k)}">${esc(k)}: ${esc(v)}</option>`).join("");
   const pk = $("#client-package");
   if (!pk.options.length) pk.innerHTML = Object.entries(s.packages).map(([k, v]) => `<option value="${k}">${k}: ${v.clips} clips · ${money(v.price)}/video</option>`).join("");
 }
@@ -216,7 +223,8 @@ $("#order-form").addEventListener("submit", async (ev) => {
 
 $("#client-form").addEventListener("submit", async (ev) => {
   ev.preventDefault();
-  try { await api("/api/clients", { json: Object.fromEntries(new FormData(ev.target)) }); ev.target.reset(); ev.target.closest("dialog").close(); toast("Client added"); refresh(); }
+  const d = Object.fromEntries(new FormData(ev.target)); if (!d.look) delete d.look;
+  try { await api("/api/clients", { json: d }); ev.target.reset(); ev.target.closest("dialog").close(); toast("Client added"); refresh(); }
   catch (e) { toast(e.message); }
 });
 

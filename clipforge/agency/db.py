@@ -12,7 +12,7 @@ _lock = threading.Lock()
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS clients (
   id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT, package TEXT DEFAULT 'starter',
-  status TEXT DEFAULT 'active', lead_id INTEGER, created_at REAL
+  status TEXT DEFAULT 'active', lead_id INTEGER, look TEXT, created_at REAL
 );
 CREATE TABLE IF NOT EXISTS leads (
   id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT, channel_url TEXT, platform TEXT,
@@ -66,10 +66,11 @@ def init():
     with conn() as c:
         c.executescript(SCHEMA)
         c.execute("PRAGMA journal_mode=WAL")
-        have = {r[1] for r in c.execute("PRAGMA table_info(clips)")}
-        for col in ("edit_path", "edit_map", "edit_log"):  # upgrade older databases
-            if col not in have:
-                c.execute(f"ALTER TABLE clips ADD COLUMN {col} TEXT")
+        for table, cols in (("clips", ("edit_path", "edit_map", "edit_log")), ("clients", ("look",))):
+            have = {r[1] for r in c.execute(f"PRAGMA table_info({table})")}
+            for col in cols:  # upgrade older databases
+                if col not in have:
+                    c.execute(f"ALTER TABLE {table} ADD COLUMN {col} TEXT")
 
 
 def now() -> float:

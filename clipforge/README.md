@@ -6,14 +6,14 @@ clip before it ships. One dashboard shows every agent working, every video in pr
 every finished clip waiting for approval.
 
 ```
-                         YOU (CEO): dashboard, approvals, final say
-                                          │
- GROWTH              PRODUCTION                      EDITING                                    QC & DISTRIBUTION        BUSINESS
- research ► sales    intake ► strategist ► clipper ► pacing ► motion ► audio ► captioner ► quality ► [you] ► publisher ► business
-                                            9:16    jump    punch-  -14 LUFS  captions,  review   approve  platform    deliver,
-                                            cut     cuts    ins     + music   progress   clips             packages    invoice
-                                              ▲                               bar, .otio   │
-                                              └──── re-cut / re-caption (automatic fixes, max 2 tries)
+                              YOU (CEO): dashboard, approvals, final say
+                                               │
+ GROWTH            PRODUCTION                    EDITING (ffmpeg)                     FILMCRAFT                       QC & DISTRIBUTION     BUSINESS
+ research ► sales  intake ► strategist ► clipper ► pacing ► motion ► audio ► captioner ► assembler ► colorist ► finisher ► quality ► [you] ► publisher ► business
+                                         9:16     jump     punch-   -14 LUFS captions,  .fcproj     Lumetri    FilmCraft  review   approve  platform   deliver,
+                                         cut      cuts     ins      + music  .otio      project     look       render     clips             packages   invoice
+                                           ▲                                                                                │
+                                           └──────────────── re-cut / re-caption (automatic fixes, max 2 tries) ─────────────┘
 ```
 
 ## Run it
@@ -43,12 +43,42 @@ Within about a minute of running the demo you'll see 3 clips waiting for approva
 | **publisher** | clips you approved | Writes captions and hashtags for TikTok, Reels and Shorts and books the next free posting slot per platform. | business |
 | **business** | finished orders, won leads | Marks orders delivered, issues invoices, flags overdue ones, and turns won leads into clients. | n/a |
 
+| **assembler** (FilmCraft) | captioned clips | Builds a real FilmCraft project: a 1080x1920 sequence, the kept spans as cuts, a blurred fill on V1 behind the full frame on V2, keyframed push-in and punch-ins (Motion ▸ Scale, hold keyframes), a styled Captions track and a Hook track, and the music on A2 with Essential Sound auto-ducking and dialogue matched to -14 LUFS. | colorist |
+| **colorist** (FilmCraft) | assembled clips | Picks a Lumetri look: the client's house look if set, otherwise Claude reads a rendered frame, otherwise a brightness/saturation heuristic. Grades every shot and saves a before/after still for your review. | finisher |
+| **finisher** (FilmCraft) | graded clips | Renders the project with FilmCraft's engine (normalised to -14 LUFS), then burns ClipForge's styled captions, hook box and progress bar on top. | quality |
+
 You can pause any agent from the dashboard. Pausing an editor **bypasses** it instead: clips keep
 flowing, just without that pass. If an editing pass fails, the clip continues unedited and the error
 shows on the dashboard. QC also checks loudness against the -14 LUFS target and checks caption
 coverage against the edited timeline.
 
-## Fine-tuning an edit in FilmCraft
+## The FilmCraft department
+
+[FilmCraft](https://getartcraft.com/apps/filmcraft) is an open-source professional video editor
+where every action is a command an agent can run. ClipForge's three FilmCraft agents drive its
+headless engine (`filmcraft-cli run`) with the same commands its UI uses. So every clip ships with
+`clip_N.fcproj`, a complete FilmCraft project you can open and change: cuts, keyframes, grade,
+captions and mix. Download it from the approval card ("FilmCraft project").
+
+```bash
+# build FilmCraft's command-line tool (Rust 1.95+), or install a release (Linux: /usr/bin/filmcraft-cli)
+git clone https://github.com/storytold/filmcraft && cd filmcraft
+cargo build --release -p filmcraft-cli
+export FILMCRAFT_CLI=$PWD/target/release/filmcraft-cli
+```
+
+Without `FILMCRAFT_CLI` (or `filmcraft-cli` on `PATH`), the FilmCraft agents skip themselves and the
+ffmpeg render ships. If a FilmCraft pass fails, the clip continues with what it already has, and
+the error shows on the dashboard. You can bypass any of the three from the dashboard.
+
+**Speed:** FilmCraft renders on the CPU today (its README lists this as a known gap). On a 4-core
+machine a 30-second vertical clip takes about 3-4 minutes. That runs in parallel with every other
+agent, so it adds latency per clip, not a queue for the agency. Bypass the finisher to deliver the
+faster ffmpeg render and still get the `.fcproj` project.
+
+Set a client's **house look** in the "+ Client" dialog to grade all their clips the same way.
+
+## Fine-tuning an edit in other editors
 
 The captioner writes every clip's edit as an [OpenTimelineIO](https://opentimeline.io) timeline
 (`data/output/clip_N.otio`, "Edit in FilmCraft (.otio)" on each approval card). It points at the
@@ -80,7 +110,7 @@ The dashboard header shows which mode is active.
 - **Payments**: invoices are tracked and marked paid by hand. A Stripe Payment Link per invoice is the natural next step.
 - **Speaker tracking**: reframing and punch-ins are centred. Face tracking (e.g. MediaPipe) would improve two-person podcasts.
 - **Filler words** ("um", "uh"): removing them needs word-level timestamps. `faster-whisper` can provide them (`word_timestamps=True`); the edit-map plumbing for that already exists in `agency/editing.py`.
-- **Driving FilmCraft directly**: FilmCraft has an MCP server and a JSON control channel, so an agent could apply the punch-ins as real Scale keyframes and grade colour. That needs FilmCraft installed next to ClipForge.
+- **Live FilmCraft sessions**: the agents use FilmCraft headlessly. Its MCP bridge (`filmcraft --control`) would let you watch an agent edit inside the running app, or ask Claude to make changes there.
 
 ## Pricing (edit `PACKAGES` in `agency/config.py`)
 
@@ -97,6 +127,7 @@ agency/
   agents/       one file per agent (base.py has the shared status/logging loop)
   editing.py    edit maps: remap transcript/caption timing through jump cuts
   handoff.py    OpenTimelineIO export for FilmCraft and other editors
+  filmcraft.py  client for FilmCraft's headless engine (filmcraft-cli run/exec/inspect/export/render)
   orchestrator.py  runs all agents concurrently and recovers interrupted work on restart
   api.py        REST API + dashboard data
   static/       dashboard (plain HTML/CSS/JS, refreshes every 2s)
@@ -104,7 +135,8 @@ agency/
   media.py      ffmpeg/ffprobe helpers
   transcript.py SRT/VTT/JSON parsing, optional Whisper transcription
 scripts/demo.py seeds demo data (`--run` processes it without the server)
-tests/          end-to-end pipeline test (heuristic mode, real ffmpeg renders)
+tests/          end-to-end pipeline tests (heuristic mode, real ffmpeg renders);
+                FILMCRAFT_CLI=... pytest also runs the FilmCraft agents for real (slow)
 ```
 
 Leads can be imported from CSV; see `leads_sample.csv` for the columns.
