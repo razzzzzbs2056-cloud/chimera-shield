@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipForge HQ</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo">▶</span>
+    <div>
+      <h1>ClipForge HQ</h1>
+      <p class="sub">AI clipping agency · CEO dashboard</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <span id="ai-mode" class="pill">…</span>
+    <button class="btn" data-open="dlg-client">+ Client</button>
+    <button class="btn primary" data-open="dlg-order">+ New order</button>
+  </div>
+</header>
+
+<main>
+  <section class="kpis" id="kpis"></section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>The team</h2><span class="hint">Live status of every agent. Pause any of them at any time.</span></div>
+    <div class="org">
+      <div class="ceo-card"><div class="avatar">👤</div><div><b>You · CEO</b><span>Approvals, pricing, final say</span></div></div>
+      <div class="depts" id="agents"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Waiting for your approval</h2><span class="hint" id="queue-hint"></span></div>
+    <div class="queue" id="queue"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Production line</h2><span class="hint">Every clip, by stage</span></div>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section class="panel">
+    <nav class="tabs" id="tabs">
+      <button data-tab="orders" class="active">Orders</button>
+      <button data-tab="leads">Leads &amp; outreach</button>
+      <button data-tab="clients">Clients &amp; invoices</button>
+      <button data-tab="activity">Activity log</button>
+    </nav>
+    <div class="tab" id="tab-orders"></div>
+    <div class="tab hidden" id="tab-leads">
+      <div class="row-actions">
+        <button class="btn" data-open="dlg-lead">+ Lead</button>
+        <label class="btn">Import CSV<input type="file" accept=".csv" id="lead-csv" hidden></label>
+        <form id="discover" class="inline">
+          <input name="query" placeholder="Discover YouTube channels, e.g. business podcast" required>
+          <button class="btn">Discover</button>
+        </form>
+      </div>
+      <h3>Outreach drafts</h3>
+      <div id="outreach"></div>
+      <h3>Pipeline</h3>
+      <div id="leads"></div>
+    </div>
+    <div class="tab hidden" id="tab-clients"></div>
+    <div class="tab hidden" id="tab-activity"><ul class="feed" id="feed"></ul></div>
+  </section>
+</main>
+
+<dialog id="dlg-order">
+  <form id="order-form" method="dialog">
+    <h3>New order</h3>
+    <label>Client<select name="client_id" id="order-client" required></select></label>
+    <label>Title<input name="title" required placeholder="Episode 42: Scaling to $1M"></label>
+    <label>Brief<textarea name="brief" rows="3" placeholder="Topics to focus on, tone, anything to avoid"></textarea></label>
+    <label>Long-form video<input type="file" name="video" accept="video/*" required></label>
+    <label>Transcript (optional: SRT, VTT or JSON)<input type="file" name="transcript" accept=".srt,.vtt,.json,.txt"></label>
+    <label>Clips (blank = client's package)<input type="number" name="clips_requested" min="1" max="20"></label>
+    <p class="err" id="order-err"></p>
+    <div class="dlg-actions"><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" id="order-submit">Upload</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-client">
+  <form id="client-form" method="dialog">
+    <h3>New client</h3>
+    <label>Name<input name="name" required></label>
+    <label>Email<input name="email" type="email"></label>
+    <label>Package<select name="package" id="client-package"></select></label>
+    <div class="dlg-actions"><button type="button" class="btn" data-close>Cancel</button><button class="btn primary">Add</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-lead">
+  <form id="lead-form" method="dialog">
+    <h3>New lead</h3>
+    <label>Name<input name="name" required></label>
+    <label>Email<input name="email" type="email"></label>
+    <label>Channel URL<input name="channel_url"></label>
+    <div class="grid2">
+      <label>Platform<select name="platform"><option>youtube</option><option>podcast</option><option>tiktok</option><option>instagram</option><option>other</option></select></label>
+      <label>Niche<input name="niche" placeholder="business"></label>
+      <label>Followers<input name="followers" type="number" value="0"></label>
+      <label>Avg views<input name="avg_views" type="number" value="0"></label>
+      <label>Long videos / week<input name="uploads_per_week" type="number" step="0.5" value="1"></label>
+      <label class="check"><input name="has_shorts" type="checkbox"> Already posts shorts</label>
+    </div>
+    <label>Notes<textarea name="notes" rows="2"></textarea></label>
+    <div class="dlg-actions"><button type="button" class="btn" data-close>Cancel</button><button class="btn primary">Add</button></div>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

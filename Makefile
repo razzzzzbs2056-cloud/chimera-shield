@@ -1,4 +1,4 @@
-.PHONY: dev frontend backend install install-fe install-be
+.PHONY: dev frontend backend install install-fe install-be clipforge clipforge-install clipforge-demo clipforge-test
 
 ## Start both servers concurrently
 dev:
@@ -24,3 +24,16 @@ frontend:
 ## Start backend only
 backend:
 	python -m uvicorn backend.main:app --reload --port 8000
+
+## ClipForge (AI clipping agency)
+clipforge-install:
+	pip install -r clipforge/requirements.txt
+
+clipforge:
+	cd clipforge && python -m uvicorn agency.api:app --reload --port 8100
+
+clipforge-demo:
+	cd clipforge && python -m scripts.demo
+
+clipforge-test:
+	cd clipforge && python -m pytest -q tests
